@@ -46,22 +46,22 @@ pub mod voice_connector_termination {
     pub struct VoiceConnectorTerminationArgs {
         /// The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
         #[builder(into)]
-        pub calling_regions: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub calling_regions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The IP addresses allowed to make calls, in CIDR format.
         #[builder(into)]
-        pub cidr_allow_lists: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub cidr_allow_lists: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The limit on calls per second. Max value based on account service quota. Default value of `1`.
         #[builder(into, default)]
-        pub cps_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub cps_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The default caller ID phone number.
         #[builder(into, default)]
-        pub default_phone_number: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_phone_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// When termination settings are disabled, outbound calls can not be made.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Chime Voice Connector ID.
         #[builder(into)]
-        pub voice_connector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub voice_connector_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VoiceConnectorTerminationResult {

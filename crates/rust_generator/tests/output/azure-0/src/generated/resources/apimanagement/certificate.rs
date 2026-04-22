@@ -137,33 +137,33 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// The Name of the API Management Service where this Service should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The base-64 encoded certificate data, which must be a PFX file.
         #[builder(into, default)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Client ID of the User Assigned Managed Identity to use for retrieving certificate.
         ///
         /// > **NOTE:** If not specified, will use System Assigned identity of the API Management Service.
         #[builder(into, default)]
-        pub key_vault_identity_client_id: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_identity_client_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the Key Vault Secret containing the SSL Certificate, which must be of the type `application/x-pkcs12`.
         ///
         /// > **NOTE:** Setting this field requires the `identity` block to be specified in API Management Service, since this identity is used to retrieve the Key Vault Certificate. Possible values are versioned or versionless secret ID. Auto-updating the Certificate from the Key Vault requires that Secret version isn't specified.
         #[builder(into, default)]
-        pub key_vault_secret_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_secret_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the API Management Certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password used for this certificate.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Either `data` or `key_vault_secret_id` must be specified - but not both.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateResult {

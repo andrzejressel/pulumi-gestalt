@@ -146,28 +146,28 @@ pub mod cosmosdb_data_connection {
     pub struct CosmosdbDataConnectionArgs {
         /// The name of an existing container in the Cosmos DB database. Changing this forces a new Kusto Cosmos DB Connection to be created.
         #[builder(into)]
-        pub cosmosdb_container_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cosmosdb_container_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the database in the Kusto cluster. Changing this forces a new Kusto Cosmos DB Connection to be created.
         #[builder(into)]
-        pub kusto_database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kusto_database_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Data Explorer should exist. Changing this forces a new Kusto Cosmos DB Connection to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos DB. Changing this forces a new Kusto Cosmos DB Connection to be created.
         #[builder(into)]
-        pub managed_identity_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_identity_id: pulumi_gestalt_rust::Input<String>,
         /// The name of an existing mapping rule to use when ingesting the retrieved data. Changing this forces a new Kusto Cosmos DB Connection to be created.
         #[builder(into, default)]
-        pub mapping_rule_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mapping_rule_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the data connection. Changing this forces a new Kusto Cosmos DB Connection to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If defined, the data connection retrieves Cosmos DB documents created or updated after the specified retrieval start date. Changing this forces a new Kusto Cosmos DB Connection to be created.
         #[builder(into, default)]
-        pub retrieval_start_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub retrieval_start_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// The case-sensitive name of the existing target table in your cluster. Retrieved data is ingested into this table. Changing this forces a new Kusto Cosmos DB Connection to be created.
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CosmosdbDataConnectionResult {

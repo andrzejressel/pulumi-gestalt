@@ -201,21 +201,21 @@ pub mod lifecycle_policy {
     pub struct LifecyclePolicyArgs {
         /// A description for the DLM lifecycle policy.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// The ARN of an IAM role that is able to be assumed by the DLM service.
         #[builder(into)]
-        pub execution_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub execution_role_arn: pulumi_gestalt_rust::Input<String>,
         /// See the `policy_details` configuration block. Max of 1.
         #[builder(into)]
-        pub policy_details: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_details: pulumi_gestalt_rust::Input<
             super::super::types::dlm::LifecyclePolicyPolicyDetails,
         >,
         /// Whether the lifecycle policy should be enabled or disabled. `ENABLED` or `DISABLED` are valid values. Defaults to `ENABLED`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

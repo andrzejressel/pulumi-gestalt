@@ -55,22 +55,22 @@ pub mod global_schema {
     pub struct GlobalSchemaArgs {
         /// The Name of the API Management Service where the API exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The description of the schema.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A unique identifier for this Schema. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub schema_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema_id: pulumi_gestalt_rust::Input<String>,
         /// The content type of the Schema. Possible values are `xml` and `json`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// The string defining the document representing the Schema.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GlobalSchemaResult {

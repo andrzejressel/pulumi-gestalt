@@ -10,19 +10,19 @@ pub mod get_record {
     pub struct GetRecordArgs {
         /// Content to filter record results on.
         #[builder(into, default)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content: pulumi_gestalt_rust::Input<Option<String>>,
         /// Hostname to filter DNS record results on.
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// DNS priority to filter record results on.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// DNS record type to filter record results on. Defaults to `A`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRecordResult {

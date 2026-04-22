@@ -43,25 +43,25 @@ pub mod layer_version_permission {
     pub struct LayerVersionPermissionArgs {
         /// Action, which will be allowed. `lambda:GetLayerVersion` value is suggested by AWS documantation.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// The name or ARN of the Lambda Layer, which you want to grant access to.
         #[builder(into)]
-        pub layer_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub layer_name: pulumi_gestalt_rust::Input<String>,
         /// An identifier of AWS Organization, which should be able to use your Lambda Layer. `principal` should be equal to `*` if `organization_id` provided.
         #[builder(into, default)]
-        pub organization_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub organization_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS account ID which should be able to use your Lambda Layer. `*` can be used here, if you want to share your Lambda Layer widely.
         #[builder(into)]
-        pub principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal: pulumi_gestalt_rust::Input<String>,
         /// Whether to retain the old version of a previously deployed Lambda Layer. Default is `false`. When this is not set to `true`, changing any of `compatible_architectures`, `compatible_runtimes`, `description`, `filename`, `layer_name`, `license_info`, `s3_bucket`, `s3_key`, `s3_object_version`, or `source_code_hash` forces deletion of the existing layer version and creation of a new layer version.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of Lambda Layer Permission, for example `dev-account` - human readable note about what is this permission for.
         #[builder(into)]
-        pub statement_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub statement_id: pulumi_gestalt_rust::Input<String>,
         /// Version of Lambda Layer, which you want to grant access to. Note: permissions only apply to a single version of a layer.
         #[builder(into)]
-        pub version_number: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub version_number: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct LayerVersionPermissionResult {

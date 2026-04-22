@@ -86,10 +86,10 @@ pub mod instance {
     pub struct InstanceArgs {
         /// Required. Immutable. Storage capacity of Parallelstore instance in Gibibytes (GiB).
         #[builder(into)]
-        pub capacity_gib: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub capacity_gib: pulumi_gestalt_rust::Input<String>,
         /// The description of the instance. 2048 characters or less.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Stripe level for directories.
         /// MIN when directory has a small number of files.
         /// MAX when directory has a large number of files.
@@ -99,7 +99,7 @@ pub mod instance {
         /// DIRECTORY_STRIPE_LEVEL_BALANCED
         /// DIRECTORY_STRIPE_LEVEL_MAX
         #[builder(into, default)]
-        pub directory_stripe_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub directory_stripe_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// Stripe level for files.
         /// MIN better suited for small size files.
         /// MAX higher throughput performance for larger files.
@@ -109,7 +109,7 @@ pub mod instance {
         /// FILE_STRIPE_LEVEL_BALANCED
         /// FILE_STRIPE_LEVEL_MAX
         #[builder(into, default)]
-        pub file_stripe_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_stripe_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// The logical name of the Parallelstore instance in the user project with the following restrictions:
         /// * Must contain only lowercase letters, numbers, and hyphens.
         /// * Must start with a letter.
@@ -120,7 +120,7 @@ pub mod instance {
         ///
         /// - - -
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Cloud Labels are a flexible and lightweight mechanism for
         /// organizing cloud resources into groups that reflect a customer's organizational
         /// needs and deployment strategies. Cloud Labels can be used to filter collections
@@ -143,26 +143,26 @@ pub mod instance {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Part of `parent`. See documentation of `projectsId`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Immutable. The name of the Google Compute Engine [VPC network](https://cloud.google.com/vpc/docs/vpc)
         /// to which the instance is connected.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. Contains the id of the allocated IP address range
         /// associated with the private service access connection for example, \"test-default\"
         /// associated with IP range 10.0.0.0/29. If no range id is provided all ranges will
         /// be considered.
         #[builder(into, default)]
-        pub reserved_ip_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reserved_ip_range: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

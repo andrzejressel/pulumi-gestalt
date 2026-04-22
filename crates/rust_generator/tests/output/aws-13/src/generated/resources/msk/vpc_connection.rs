@@ -22,24 +22,24 @@ pub mod vpc_connection {
     pub struct VpcConnectionArgs {
         /// The authentication type for the client VPC connection. Specify one of these auth type strings: SASL_IAM, SASL_SCRAM, or TLS.
         #[builder(into)]
-        pub authentication: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication: pulumi_gestalt_rust::Input<String>,
         /// The list of subnets in the client VPC to connect to.
         #[builder(into)]
-        pub client_subnets: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub client_subnets: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The security groups to attach to the ENIs for the broker nodes.
         #[builder(into)]
-        pub security_groups: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub security_groups: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Amazon Resource Name (ARN) of the cluster.
         #[builder(into)]
-        pub target_cluster_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_cluster_arn: pulumi_gestalt_rust::Input<String>,
         /// The VPC ID of the remote client.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcConnectionResult {

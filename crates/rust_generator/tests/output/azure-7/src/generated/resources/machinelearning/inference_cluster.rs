@@ -126,35 +126,35 @@ pub mod inference_cluster {
         ///
         /// > **NOTE:** When creating or attaching a cluster, if the cluster will be used for production (`cluster_purpose = "FastProd"`), then it must contain at least 12 virtual CPUs. The number of virtual CPUs can be calculated by multiplying the number of nodes in the cluster by the number of cores provided by the VM size selected. For example, if you use a VM size of "Standard_D3_v2", which has 4 virtual cores, then you should select 3 or greater as the number of nodes.
         #[builder(into, default)]
-        pub cluster_purpose: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_purpose: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the Machine Learning Inference Cluster. Changing this forces a new Machine Learning Inference Cluster to be created.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below. Changing this forces a new Machine Learning Inference Cluster to be created.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::machinelearning::InferenceClusterIdentity>,
         >,
         /// The ID of the Kubernetes Cluster. Changing this forces a new Machine Learning Inference Cluster to be created.
         #[builder(into)]
-        pub kubernetes_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Machine Learning Inference Cluster should exist. Changing this forces a new Machine Learning Inference Cluster to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Machine Learning Workspace. Changing this forces a new Machine Learning Inference Cluster to be created.
         #[builder(into)]
-        pub machine_learning_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub machine_learning_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Machine Learning Inference Cluster. Changing this forces a new Machine Learning Inference Cluster to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `ssl` block as defined below. Changing this forces a new Machine Learning Inference Cluster to be created.
         #[builder(into, default)]
-        pub ssl: pulumi_gestalt_rust::InputOrOutput<
+        pub ssl: pulumi_gestalt_rust::Input<
             Option<super::super::types::machinelearning::InferenceClusterSsl>,
         >,
         /// A mapping of tags which should be assigned to the Machine Learning Inference Cluster. Changing this forces a new Machine Learning Inference Cluster to be created.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

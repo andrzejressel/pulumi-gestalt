@@ -37,97 +37,97 @@ pub mod custom_layer {
     pub struct CustomLayerArgs {
         /// Whether to automatically assign an elastic IP address to the layer's instances.
         #[builder(into, default)]
-        pub auto_assign_elastic_ips: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_assign_elastic_ips: pulumi_gestalt_rust::Input<Option<bool>>,
         /// For stacks belonging to a VPC, whether to automatically assign a public IP address to each of the layer's instances.
         #[builder(into, default)]
-        pub auto_assign_public_ips: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_assign_public_ips: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to enable auto-healing for the layer.
         #[builder(into, default)]
-        pub auto_healing: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_healing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Will create an EBS volume and connect it to the layer's instances. See Cloudwatch Configuration.
         #[builder(into, default)]
-        pub cloudwatch_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudwatch_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::opsworks::CustomLayerCloudwatchConfiguration>,
         >,
         #[builder(into, default)]
-        pub custom_configure_recipes: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_configure_recipes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         #[builder(into, default)]
-        pub custom_deploy_recipes: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_deploy_recipes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The ARN of an IAM profile that will be used for the layer's instances.
         #[builder(into, default)]
-        pub custom_instance_profile_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_instance_profile_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Custom JSON attributes to apply to the layer.
         #[builder(into, default)]
-        pub custom_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ids for a set of security groups to apply to the layer's instances.
         #[builder(into, default)]
-        pub custom_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_security_group_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         #[builder(into, default)]
-        pub custom_setup_recipes: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_setup_recipes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         #[builder(into, default)]
-        pub custom_shutdown_recipes: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_shutdown_recipes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         #[builder(into, default)]
-        pub custom_undeploy_recipes: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_undeploy_recipes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Whether to enable Elastic Load Balancing connection draining.
         #[builder(into, default)]
-        pub drain_elb_on_shutdown: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub drain_elb_on_shutdown: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Will create an EBS volume and connect it to the layer's instances. See EBS Volume.
         #[builder(into, default)]
-        pub ebs_volumes: pulumi_gestalt_rust::InputOrOutput<
+        pub ebs_volumes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::opsworks::CustomLayerEbsVolume>>,
         >,
         /// Name of an Elastic Load Balancer to attach to this layer
         #[builder(into, default)]
-        pub elastic_load_balancer: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub elastic_load_balancer: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to install OS and package updates on each instance when it boots.
         #[builder(into, default)]
-        pub install_updates_on_boot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub install_updates_on_boot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The time, in seconds, that OpsWorks will wait for Chef to complete after triggering the Shutdown event.
         #[builder(into, default)]
-        pub instance_shutdown_timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub instance_shutdown_timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Load-based auto scaling configuration. See Load Based AutoScaling
         #[builder(into, default)]
-        pub load_based_auto_scaling: pulumi_gestalt_rust::InputOrOutput<
+        pub load_based_auto_scaling: pulumi_gestalt_rust::Input<
             Option<super::super::types::opsworks::CustomLayerLoadBasedAutoScaling>,
         >,
         /// A human-readable name for the layer.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A short, machine-readable name for the layer, which will be used to identify it in the Chef node JSON.
         #[builder(into)]
-        pub short_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub short_name: pulumi_gestalt_rust::Input<String>,
         /// ID of the stack the layer will belong to.
         #[builder(into)]
-        pub stack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_id: pulumi_gestalt_rust::Input<String>,
         /// Names of a set of system packages to install on the layer's instances.
         #[builder(into, default)]
-        pub system_packages: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub system_packages: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         ///
         /// The following extra optional arguments, all lists of Chef recipe names, allow
         /// custom Chef recipes to be applied to layer instances at the five different
         /// lifecycle events, if custom cookbooks are enabled on the layer's stack:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whether to use EBS-optimized instances.
         #[builder(into, default)]
-        pub use_ebs_optimized_instances: pulumi_gestalt_rust::InputOrOutput<
+        pub use_ebs_optimized_instances: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

@@ -33,7 +33,7 @@ pub mod cidr_collection {
     pub struct CidrCollectionArgs {
         /// Unique name for the CIDR collection.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CidrCollectionResult {

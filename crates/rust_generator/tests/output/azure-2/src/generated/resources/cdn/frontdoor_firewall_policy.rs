@@ -110,52 +110,52 @@ pub mod frontdoor_firewall_policy {
     pub struct FrontdoorFirewallPolicyArgs {
         /// If a `custom_rule` block's action type is `block`, this is the response body. The body must be specified in base64 encoding.
         #[builder(into, default)]
-        pub custom_block_response_body: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_block_response_body: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// If a `custom_rule` block's action type is `block`, this is the response status code. Possible values are `200`, `403`, `405`, `406`, or `429`.
         #[builder(into, default)]
-        pub custom_block_response_status_code: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_block_response_status_code: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// One or more `custom_rule` blocks as defined below.
         #[builder(into, default)]
-        pub custom_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cdn::FrontdoorFirewallPolicyCustomRule>>,
         >,
         /// Is the Front Door Firewall Policy enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `managed_rule` blocks as defined below.
         #[builder(into, default)]
-        pub managed_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub managed_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cdn::FrontdoorFirewallPolicyManagedRule>>,
         >,
         /// The Front Door Firewall Policy mode. Possible values are `Detection`, `Prevention`.
         #[builder(into)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mode: pulumi_gestalt_rust::Input<String>,
         /// The name of the policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If action type is redirect, this field represents redirect URL for the client.
         #[builder(into, default)]
-        pub redirect_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub redirect_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should policy managed rules inspect the request body content? Defaults to `true`.
         ///
         /// > **NOTE:** When run in `Detection` mode, the Front Door Firewall Policy doesn't take any other actions other than monitoring and logging the request and its matched Front Door Rule to the Web Application Firewall logs.
         #[builder(into, default)]
-        pub request_body_check_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub request_body_check_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The sku's pricing tier for this Front Door Firewall Policy. Possible values include `Standard_AzureFrontDoor` or `Premium_AzureFrontDoor`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The `Standard_AzureFrontDoor` Front Door Firewall Policy sku may contain `custom` rules only. The `Premium_AzureFrontDoor` Front Door Firewall Policy skus may contain both `custom` and `managed` rules.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the Front Door Firewall Policy.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

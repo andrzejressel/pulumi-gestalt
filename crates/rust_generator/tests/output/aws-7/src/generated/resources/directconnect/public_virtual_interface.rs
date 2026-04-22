@@ -42,36 +42,36 @@ pub mod public_virtual_interface {
     pub struct PublicVirtualInterfaceArgs {
         /// The address family for the BGP peer. `ipv4 ` or `ipv6`.
         #[builder(into)]
-        pub address_family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address_family: pulumi_gestalt_rust::Input<String>,
         /// The IPv4 CIDR address to use to send traffic to Amazon. Required for IPv4 BGP peers.
         #[builder(into, default)]
-        pub amazon_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub amazon_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
         #[builder(into)]
-        pub bgp_asn: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub bgp_asn: pulumi_gestalt_rust::Input<i32>,
         /// The authentication key for BGP configuration.
         #[builder(into, default)]
-        pub bgp_auth_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bgp_auth_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Direct Connect connection (or LAG) on which to create the virtual interface.
         #[builder(into)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_id: pulumi_gestalt_rust::Input<String>,
         /// The IPv4 CIDR destination address to which Amazon should send traffic. Required for IPv4 BGP peers.
         #[builder(into, default)]
-        pub customer_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the virtual interface.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of routes to be advertised to the AWS network in this region.
         #[builder(into)]
-        pub route_filter_prefixes: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub route_filter_prefixes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The VLAN ID.
         #[builder(into)]
-        pub vlan: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub vlan: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct PublicVirtualInterfaceResult {

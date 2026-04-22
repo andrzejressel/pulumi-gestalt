@@ -45,7 +45,7 @@ pub mod domain_identity_verification {
     pub struct DomainIdentityVerificationArgs {
         /// The domain name of the SES domain identity to verify.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainIdentityVerificationResult {

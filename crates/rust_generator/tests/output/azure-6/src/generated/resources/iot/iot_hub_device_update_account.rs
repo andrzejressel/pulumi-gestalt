@@ -42,29 +42,29 @@ pub mod iot_hub_device_update_account {
     pub struct IotHubDeviceUpdateAccountArgs {
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::IotHubDeviceUpdateAccountIdentity>,
         >,
         /// Specifies the Azure Region where the IoT Hub Device Update Account should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this IoT Hub Device Update Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the public network access is enabled for the IoT Hub Device Update Account. Possible values are `true` and `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the name of the Resource Group where the IoT Hub Device Update Account should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Sku of the IoT Hub Device Update Account. Possible values are `Free` and `Standard`. Defaults to `Standard`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the IoT Hub Device Update Account.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

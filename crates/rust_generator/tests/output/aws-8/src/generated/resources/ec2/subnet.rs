@@ -65,70 +65,70 @@ pub mod subnet {
         /// that network interfaces created in the specified subnet should be
         /// assigned an IPv6 address. Default is `false`
         #[builder(into, default)]
-        pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::InputOrOutput<
+        pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// AZ for the subnet.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// AZ ID of the subnet. This argument is not supported in all regions or partitions. If necessary, use `availability_zone` instead.
         #[builder(into, default)]
-        pub availability_zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 CIDR block for the subnet.
         #[builder(into, default)]
-        pub cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer owned IPv4 address pool. Typically used with the `map_customer_owned_ip_on_launch` argument. The `outpost_arn` argument must be specified when configured.
         #[builder(into, default)]
-        pub customer_owned_ipv4_pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_owned_ipv4_pool: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations. Default: `false`.
         #[builder(into, default)]
-        pub enable_dns64: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_dns64: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates the device position for local network interfaces in this subnet. For example, 1 indicates local network interfaces in this subnet are the secondary network interface (eth1). A local network interface cannot be the primary network interface (eth0).
         #[builder(into, default)]
-        pub enable_lni_at_device_index: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub enable_lni_at_device_index: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Indicates whether to respond to DNS queries for instance hostnames with DNS A records. Default: `false`.
         #[builder(into, default)]
-        pub enable_resource_name_dns_a_record_on_launch: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_resource_name_dns_a_record_on_launch: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. Default: `false`.
         #[builder(into, default)]
-        pub enable_resource_name_dns_aaaa_record_on_launch: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_resource_name_dns_aaaa_record_on_launch: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The IPv6 network range for the subnet,
         /// in CIDR notation. The subnet size must use a /64 prefix length.
         #[builder(into, default)]
-        pub ipv6_cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether to create an IPv6-only subnet. Default: `false`.
         #[builder(into, default)]
-        pub ipv6_native: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ipv6_native: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specify `true` to indicate that network interfaces created in the subnet should be assigned a customer owned IP address. The `customer_owned_ipv4_pool` and `outpost_arn` arguments must be specified when set to `true`. Default is `false`.
         #[builder(into, default)]
-        pub map_customer_owned_ip_on_launch: pulumi_gestalt_rust::InputOrOutput<
+        pub map_customer_owned_ip_on_launch: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specify true to indicate
         /// that instances launched into the subnet should be assigned
         /// a public IP address. Default is `false`.
         #[builder(into, default)]
-        pub map_public_ip_on_launch: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub map_public_ip_on_launch: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Resource Name (ARN) of the Outpost.
         #[builder(into, default)]
-        pub outpost_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub outpost_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of hostnames to assign to instances in the subnet at launch. For IPv6-only subnets, an instance DNS name must be based on the instance ID. For dual-stack and IPv4-only subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID. Valid values: `ip-name`, `resource-name`.
         #[builder(into, default)]
-        pub private_dns_hostname_type_on_launch: pulumi_gestalt_rust::InputOrOutput<
+        pub private_dns_hostname_type_on_launch: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The VPC ID.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubnetResult {

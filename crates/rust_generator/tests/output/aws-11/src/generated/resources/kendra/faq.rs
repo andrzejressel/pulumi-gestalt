@@ -87,27 +87,27 @@ pub mod faq {
     #[allow(dead_code)]
     pub struct FaqArgs {
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub file_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier of the index for a FAQ.
         #[builder(into)]
-        pub index_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language_code: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name that should be associated with the FAQ.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see [IAM Roles for Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html).
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// The S3 location of the FAQ input data. Detailed below.
         #[builder(into)]
-        pub s3_path: pulumi_gestalt_rust::InputOrOutput<
+        pub s3_path: pulumi_gestalt_rust::Input<
             super::super::types::kendra::FaqS3Path,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -64,20 +64,20 @@ pub mod region_network_firewall_policy {
     pub struct RegionNetworkFirewallPolicyArgs {
         /// An optional description of this resource. Provide this property when you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-provided name of the Network firewall policy. The name should be unique in the project in which the firewall policy is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression a-z? which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of this resource.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RegionNetworkFirewallPolicyResult {

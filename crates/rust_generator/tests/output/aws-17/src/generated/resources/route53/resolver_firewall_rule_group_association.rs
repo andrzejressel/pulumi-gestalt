@@ -42,24 +42,24 @@ pub mod resolver_firewall_rule_group_association {
     pub struct ResolverFirewallRuleGroupAssociationArgs {
         /// The unique identifier of the firewall rule group.
         #[builder(into)]
-        pub firewall_rule_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_rule_group_id: pulumi_gestalt_rust::Input<String>,
         /// If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. Valid values: `ENABLED`, `DISABLED`.
         #[builder(into, default)]
-        pub mutation_protection: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mutation_protection: pulumi_gestalt_rust::Input<Option<String>>,
         /// A name that lets you identify the rule group association, to manage and use it.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The unique identifier of the VPC that you want to associate with the rule group.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResolverFirewallRuleGroupAssociationResult {

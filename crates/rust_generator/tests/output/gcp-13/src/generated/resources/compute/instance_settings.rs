@@ -61,19 +61,19 @@ pub mod instance_settings {
         /// The metadata key/value pairs assigned to all the instances in the corresponding scope.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceSettingsMetadata>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the zone where the machine resides.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InstanceSettingsResult {

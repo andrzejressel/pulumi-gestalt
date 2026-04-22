@@ -122,46 +122,46 @@ pub mod autonomous_database {
     pub struct AutonomousDatabaseArgs {
         /// The password for the default ADMIN user.
         #[builder(into, default)]
-        pub admin_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub admin_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Autonomous Database to create. This value is restricted
         /// to (^a-z?$) and must be a maximum of 63
         /// characters in length. The value must start with a letter and end with
         /// a letter or a number.
         #[builder(into)]
-        pub autonomous_database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub autonomous_database_id: pulumi_gestalt_rust::Input<String>,
         /// The subnet CIDR range for the Autonmous Database.
         #[builder(into)]
-        pub cidr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cidr: pulumi_gestalt_rust::Input<String>,
         /// The name of the Autonomous Database. The database name must be unique in
         /// the project. The name must begin with a letter and can
         /// contain a maximum of 30 alphanumeric characters.
         #[builder(into)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The display name for the Autonomous Database. The name does not have to be unique within your project.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The labels or tags associated with the Autonomous Database. **Note**: This field is non-authoritative, and will only
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. See documentation for resource type `oracledatabase.googleapis.com/AutonomousDatabaseBackup`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the VPC network used by the Autonomous Database.
         /// Format: projects/{project}/global/networks/{network}
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The properties of an Autonomous Database.
         /// Structure is documented below.
         #[builder(into)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             super::super::types::oracledatabase::AutonomousDatabaseProperties,
         >,
     }

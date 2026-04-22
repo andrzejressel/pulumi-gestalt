@@ -72,20 +72,20 @@ pub mod slot_custom_hostname_binding {
     pub struct SlotCustomHostnameBindingArgs {
         /// The ID of the App Service Slot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub app_service_slot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_slot_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Custom Hostname to use for the App Service, example `www.example.com`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** A CNAME needs to be configured from this Hostname to the Azure Website - otherwise Azure will reject the Hostname Binding.
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// The SSL type. Possible values are `IpBasedEnabled` and `SniEnabled`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub ssl_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ssl_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SSL certificate thumbprint. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** `thumbprint` must be specified when `ssl_state` is set.
         #[builder(into, default)]
-        pub thumbprint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub thumbprint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SlotCustomHostnameBindingResult {

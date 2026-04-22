@@ -212,25 +212,25 @@ pub mod instance {
         /// AUTH_DISABLED
         /// IAM_AUTH
         #[builder(into, default)]
-        pub authorization_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. If set to true deletion of the instance will fail.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Required. Immutable. User inputs for the auto-created PSC connections.
         #[builder(into)]
-        pub desired_psc_auto_connections: pulumi_gestalt_rust::InputOrOutput<
+        pub desired_psc_auto_connections: pulumi_gestalt_rust::Input<
             Vec<super::super::types::memorystore::InstanceDesiredPscAutoConnection>,
         >,
         /// Optional. User-provided engine configurations for the instance.
         #[builder(into, default)]
-        pub engine_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub engine_configs: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Optional. Immutable. Engine version of the instance.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. The ID to use for the instance, which will become the final component of
         /// the instance's resource name.
         /// This value is subject to the following restrictions:
@@ -243,24 +243,24 @@ pub mod instance {
         ///
         /// - - -
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Optional. Labels to represent user-provided metadata.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `memorystore.googleapis.com/CertificateAuthority`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Optional. Standalone or cluster.
         /// Possible values:
         /// CLUSTER
         /// STANDALONE
         /// Possible values are: `CLUSTER`, `STANDALONE`.
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Immutable. Machine type for individual nodes of the instance.
         /// Possible values:
         /// SHARED_CORE_NANO
@@ -268,33 +268,33 @@ pub mod instance {
         /// HIGHMEM_XLARGE
         /// STANDARD_SMALL
         #[builder(into, default)]
-        pub node_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub node_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Represents persistence configuration for a instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub persistence_config: pulumi_gestalt_rust::InputOrOutput<
+        pub persistence_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::memorystore::InstancePersistenceConfig>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Number of replica nodes per shard. If omitted the default is 0 replicas.
         #[builder(into, default)]
-        pub replica_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub replica_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Required. Number of shards for the instance.
         #[builder(into)]
-        pub shard_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub shard_count: pulumi_gestalt_rust::Input<i32>,
         /// Optional. Immutable. In-transit encryption mode of the instance.
         /// Possible values:
         /// TRANSIT_ENCRYPTION_DISABLED
         /// SERVER_AUTHENTICATION
         #[builder(into, default)]
-        pub transit_encryption_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub transit_encryption_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Zone distribution configuration for allocation of instance resources.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub zone_distribution_config: pulumi_gestalt_rust::InputOrOutput<
+        pub zone_distribution_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::memorystore::InstanceZoneDistributionConfig>,
         >,
     }

@@ -80,22 +80,22 @@ pub mod dns_authorization {
     pub struct DnsAuthorizationArgs {
         /// A human-readable description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A domain which is being authorized. A DnsAuthorization resource covers a
         /// single domain and its wildcard, e.g. authorization for "example.com" can
         /// be used to issue certificates for "example.com" and "*.example.com".
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// Set of label tags associated with the DNS Authorization resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Certificate Manager location. If not specified, "global" is used.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource; provided by the client when the resource is created.
         /// The name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]* which means the first character must be a letter,
         /// and all following characters must be a dash, underscore, letter or digit.
@@ -103,11 +103,11 @@ pub mod dns_authorization {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// type of DNS authorization. If unset during the resource creation, FIXED_RECORD will
         /// be used for global resources, and PER_PROJECT_RECORD will be used for other locations.
         /// FIXED_RECORD DNS authorization uses DNS-01 validation method
@@ -116,7 +116,7 @@ pub mod dns_authorization {
         /// projects.
         /// Possible values are: `FIXED_RECORD`, `PER_PROJECT_RECORD`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DnsAuthorizationResult {

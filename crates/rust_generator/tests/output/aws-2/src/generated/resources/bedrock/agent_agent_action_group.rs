@@ -150,51 +150,51 @@ pub mod agent_agent_action_group {
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub action_group_executor: pulumi_gestalt_rust::InputOrOutput<
+        pub action_group_executor: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bedrock::AgentAgentActionGroupActionGroupExecutor,
             >,
         >,
         /// Name of the action group.
         #[builder(into)]
-        pub action_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action_group_name: pulumi_gestalt_rust::Input<String>,
         /// Whether the action group is available for the agent to invoke or not when sending an [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html) request. Valid values: `ENABLED`, `DISABLED`.
         #[builder(into, default)]
-        pub action_group_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub action_group_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique identifier of the agent for which to create the action group.
         #[builder(into)]
-        pub agent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agent_id: pulumi_gestalt_rust::Input<String>,
         /// Version of the agent for which to create the action group. Valid values: `DRAFT`.
         #[builder(into)]
-        pub agent_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agent_version: pulumi_gestalt_rust::Input<String>,
         /// Either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema. For more information, see [Action group OpenAPI schemas](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html). See `api_schema` Block for details.
         #[builder(into, default)]
-        pub api_schema: pulumi_gestalt_rust::InputOrOutput<
+        pub api_schema: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentAgentActionGroupApiSchema>,
         >,
         /// Description of the action group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Describes the function schema for the action group.
         /// Each function represents an action in an action group.
         /// See `function_schema` Block for details.
         #[builder(into, default)]
-        pub function_schema: pulumi_gestalt_rust::InputOrOutput<
+        pub function_schema: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentAgentActionGroupFunctionSchema>,
         >,
         /// To allow your agent to request the user for additional information when trying to complete a task, set this argument to `AMAZON.UserInput`. You must leave the `description`, `api_schema`, and `action_group_executor` arguments blank for this action group. Valid values: `AMAZON.UserInput`.
         #[builder(into, default)]
-        pub parent_action_group_signature: pulumi_gestalt_rust::InputOrOutput<
+        pub parent_action_group_signature: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Whether or not to prepare the agent after creation or modification. Defaults to `true`.
         #[builder(into, default)]
-        pub prepare_agent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub prepare_agent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the in-use check is skipped when deleting the action group.
         #[builder(into, default)]
-        pub skip_resource_in_use_check: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_resource_in_use_check: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentAgentActionGroupTimeouts>,
         >,
     }

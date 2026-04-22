@@ -10,47 +10,47 @@ pub mod get_engine_version {
     pub struct GetEngineVersionArgs {
         /// Whether the engine version must be an AWS-defined default version. Some engines have multiple default versions, such as for each major version. Using `default_only` may help avoid `multiple RDS engine versions` errors. See also `latest`.
         #[builder(into, default)]
-        pub default_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub default_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Database engine. Engine values include `aurora`, `aurora-mysql`, `aurora-postgresql`, `docdb`, `mariadb`, `mysql`, `neptune`, `oracle-ee`, `oracle-se`, `oracle-se1`, `oracle-se2`, `postgres`, `sqlserver-ee`, `sqlserver-ex`, `sqlserver-se`, and `sqlserver-web`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine: pulumi_gestalt_rust::Input<String>,
         /// One or more name/value pairs to use in filtering versions. There are several valid keys; for a full reference, check out [describe-db-engine-versions in the AWS CLI reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/describe-db-engine-versions.html).
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::rds::GetEngineVersionFilter>>,
         >,
         /// Whether the engine version must have one or more major upgrade targets. Not including `has_major_target` or setting it to `false` doesn't imply that there's no corresponding major upgrade target for the engine version.
         #[builder(into, default)]
-        pub has_major_target: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub has_major_target: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the engine version must have one or more minor upgrade targets. Not including `has_minor_target` or setting it to `false` doesn't imply that there's no corresponding minor upgrade target for the engine version.
         #[builder(into, default)]
-        pub has_minor_target: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub has_minor_target: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the engine version `status` can either be `deprecated` or `available`. When not set or set to `false`, the engine version `status` will always be `available`.
         #[builder(into, default)]
-        pub include_all: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_all: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the engine version is the most recent version matching the other criteria. This is different from `default_only` in important ways: "default" relies on AWS-defined defaults, the latest version isn't always the default, and AWS might have multiple default versions for an engine. As a result, `default_only` might not prevent errors from `multiple RDS engine versions`, while `latest` will. (`latest` can be used with `default_only`.) **Note:** The data source uses a best-effort approach at selecting the latest version. Due to the complexity of version identifiers across engines and incomplete version date information provided by AWS, using `latest` may not always result in the engine version being the actual latest version.
         #[builder(into, default)]
-        pub latest: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub latest: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of a specific database parameter group family. Examples of parameter group families are `mysql8.0`, `mariadb10.4`, and `postgres12`.
         #[builder(into, default)]
-        pub parameter_group_family: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameter_group_family: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred major version upgrade targets. The engine version will be the first match in the list unless the `latest` parameter is set to `true`. The engine version will be the default version if you don't include any criteria, such as `preferred_major_targets`.
         #[builder(into, default)]
-        pub preferred_major_targets: pulumi_gestalt_rust::InputOrOutput<
+        pub preferred_major_targets: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Ordered list of preferred version upgrade targets. The engine version will be the first match in this list unless the `latest` parameter is set to `true`. The engine version will be the default version if you don't include any criteria, such as `preferred_upgrade_targets`.
         #[builder(into, default)]
-        pub preferred_upgrade_targets: pulumi_gestalt_rust::InputOrOutput<
+        pub preferred_upgrade_targets: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Ordered list of preferred versions. The engine version will be the first match in this list unless the `latest` parameter is set to `true`. The engine version will be the default version if you don't include any criteria, such as `preferred_versions`.
         #[builder(into, default)]
-        pub preferred_versions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub preferred_versions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetEngineVersionResult {

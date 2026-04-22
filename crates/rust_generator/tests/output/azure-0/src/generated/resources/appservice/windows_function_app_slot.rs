@@ -77,41 +77,41 @@ pub mod windows_function_app_slot {
     pub struct WindowsFunctionAppSlotArgs {
         /// A map of key-value pairs for [App Settings](https://docs.microsoft.com/azure/azure-functions/functions-app-settings) and custom values.
         #[builder(into, default)]
-        pub app_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub app_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// an `auth_settings` block as detailed below.
         #[builder(into, default)]
-        pub auth_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::WindowsFunctionAppSlotAuthSettings>,
         >,
         /// an `auth_settings_v2` block as detailed below.
         #[builder(into, default)]
-        pub auth_settings_v2: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_settings_v2: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::WindowsFunctionAppSlotAuthSettingsV2>,
         >,
         /// a `backup` block as detailed below.
         #[builder(into, default)]
-        pub backup: pulumi_gestalt_rust::InputOrOutput<
+        pub backup: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::WindowsFunctionAppSlotBackup>,
         >,
         /// Should built-in logging be enabled. Configures `AzureWebJobsDashboard` app setting based on the configured storage setting. Defaults to `true`.
         #[builder(into, default)]
-        pub builtin_logging_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub builtin_logging_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the Function App Slot use Client Certificates.
         #[builder(into, default)]
-        pub client_certificate_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_certificate_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Paths to exclude when using client certificates, separated by ;
         #[builder(into, default)]
-        pub client_certificate_exclusion_paths: pulumi_gestalt_rust::InputOrOutput<
+        pub client_certificate_exclusion_paths: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The mode of the Function App Slot's client certificates requirement for incoming requests. Possible values are `Required`, `Optional`, and `OptionalInteractiveUser`. Defaults to `Optional`.
         #[builder(into, default)]
-        pub client_certificate_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_certificate_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// a `connection_string` block as detailed below.
         #[builder(into, default)]
-        pub connection_strings: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_strings: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::appservice::WindowsFunctionAppSlotConnectionString,
@@ -120,68 +120,68 @@ pub mod windows_function_app_slot {
         >,
         /// Force disable the content share settings.
         #[builder(into, default)]
-        pub content_share_force_disabled: pulumi_gestalt_rust::InputOrOutput<
+        pub content_share_force_disabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps in Consumption Plans. Defaults to `0`.
         #[builder(into, default)]
-        pub daily_memory_time_quota: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub daily_memory_time_quota: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Is the Windows Function App Slot enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the default FTP Basic Authentication publishing profile be enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub ftp_publish_basic_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub ftp_publish_basic_authentication_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the Windows Function App this Slot is a member of. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub function_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_app_id: pulumi_gestalt_rust::Input<String>,
         /// The runtime version associated with the Function App Slot. Defaults to `~4`.
         #[builder(into, default)]
-        pub functions_extension_version: pulumi_gestalt_rust::InputOrOutput<
+        pub functions_extension_version: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Can the Function App Slot only be accessed via HTTPS?. Defaults to `false`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// an `identity` block as detailed below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::WindowsFunctionAppSlotIdentity>,
         >,
         /// The User Assigned Identity ID used for accessing KeyVault secrets. The identity must be assigned to the application in the `identity` block. [For more information see - Access vaults with a user-assigned identity](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#access-vaults-with-a-user-assigned-identity)
         #[builder(into, default)]
-        pub key_vault_reference_identity_id: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the name of the Windows Function App Slot. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should public network access be enabled for the Function App. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the Service Plan in which to run this slot. If not specified the same Service Plan as the Windows Function App will be used.
         #[builder(into, default)]
-        pub service_plan_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_plan_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// a `site_config` block as detailed below.
         #[builder(into)]
-        pub site_config: pulumi_gestalt_rust::InputOrOutput<
+        pub site_config: pulumi_gestalt_rust::Input<
             super::super::types::appservice::WindowsFunctionAppSlotSiteConfig,
         >,
         /// The access key which will be used to access the storage account for the Function App Slot.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The backend storage account name which will be used by this Function App Slot.
         #[builder(into, default)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `storage_account` blocks as defined below.
         #[builder(into, default)]
-        pub storage_accounts: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_accounts: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::appservice::WindowsFunctionAppSlotStorageAccount,
@@ -194,31 +194,31 @@ pub mod windows_function_app_slot {
         ///
         /// > **NOTE:** `storage_key_vault_secret_id` used without a version will use the latest version of the secret, however, the service can take up to 24h to pick up a rotation of the latest version. See the [official docs](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#rotation) for more information.
         #[builder(into, default)]
-        pub storage_key_vault_secret_id: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_key_vault_secret_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Should the Function App Slot use its Managed Identity to access storage.
         ///
         /// > **NOTE:** One of `storage_account_access_key` or `storage_uses_managed_identity` must be specified when using `storage_account_name`.
         #[builder(into, default)]
-        pub storage_uses_managed_identity: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_uses_managed_identity: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A mapping of tags which should be assigned to the Windows Function App Slot.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub virtual_network_subnet_id: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Is container image pull over virtual network enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub vnet_image_pull_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub vnet_image_pull_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the default WebDeploy Basic Authentication publishing credentials enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub webdeploy_publish_basic_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub webdeploy_publish_basic_authentication_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

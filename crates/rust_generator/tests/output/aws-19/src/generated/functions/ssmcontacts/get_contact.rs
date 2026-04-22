@@ -10,10 +10,10 @@ pub mod get_contact {
     pub struct GetContactArgs {
         /// The Amazon Resource Name (ARN) of the contact or escalation plan.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

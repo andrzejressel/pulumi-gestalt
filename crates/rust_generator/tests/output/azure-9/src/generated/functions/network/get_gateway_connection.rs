@@ -10,10 +10,10 @@ pub mod get_gateway_connection {
     pub struct GetGatewayConnectionArgs {
         /// Specifies the name of the Virtual Network Gateway Connection.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group the Virtual Network Gateway Connection is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGatewayConnectionResult {

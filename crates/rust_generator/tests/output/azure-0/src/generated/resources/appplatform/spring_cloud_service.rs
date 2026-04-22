@@ -58,17 +58,17 @@ pub mod spring_cloud_service {
     pub struct SpringCloudServiceArgs {
         /// Specifies the size for this Spring Cloud Service's default build agent pool. Possible values are `S1`, `S2`, `S3`, `S4` and `S5`. This field is applicable only for Spring Cloud Service with enterprise tier.
         #[builder(into, default)]
-        pub build_agent_pool_size: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub build_agent_pool_size: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `config_server_git_setting` block as defined below. This field is applicable only for Spring Cloud Service with basic and standard tier.
         #[builder(into, default)]
-        pub config_server_git_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub config_server_git_setting: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appplatform::SpringCloudServiceConfigServerGitSetting,
             >,
         >,
         /// One or more `container_registry` block as defined below. This field is applicable only for Spring Cloud Service with enterprise tier.
         #[builder(into, default)]
-        pub container_registries: pulumi_gestalt_rust::InputOrOutput<
+        pub container_registries: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::appplatform::SpringCloudServiceContainerRegistry,
@@ -77,60 +77,60 @@ pub mod spring_cloud_service {
         >,
         /// A `default_build_service` block as defined below. This field is applicable only for Spring Cloud Service with enterprise tier.
         #[builder(into, default)]
-        pub default_build_service: pulumi_gestalt_rust::InputOrOutput<
+        pub default_build_service: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appplatform::SpringCloudServiceDefaultBuildService,
             >,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the log stream in vnet injection instance could be accessed from Internet?
         #[builder(into, default)]
-        pub log_stream_public_endpoint_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub log_stream_public_endpoint_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The resource Id of the Managed Environment that the Spring Apps instance builds on. Can only be specified when `sku_tier` is set to `StandardGen2`.
         #[builder(into, default)]
-        pub managed_environment_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub managed_environment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `marketplace` block as defined below. Can only be specified when `sku` is set to `E0`.
         #[builder(into, default)]
-        pub marketplace: pulumi_gestalt_rust::InputOrOutput<
+        pub marketplace: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudServiceMarketplace>,
         >,
         /// Specifies the name of the Spring Cloud Service resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<
+        pub network: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudServiceNetwork>,
         >,
         /// Specifies The name of the resource group in which to create the Spring Cloud Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Whether enable the default Service Registry. This field is applicable only for Spring Cloud Service with enterprise tier.
         #[builder(into, default)]
-        pub service_registry_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub service_registry_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the SKU Name for this Spring Cloud Service. Possible values are `B0`, `S0` and `E0`. Defaults to `S0`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the SKU Tier for this Spring Cloud Service. Possible values are `Basic`, `Enterprise`, `Standard` and `StandardGen2`. The attribute is automatically computed from API response except when `managed_environment_id` is defined. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sku_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `trace` block as defined below.
         #[builder(into, default)]
-        pub trace: pulumi_gestalt_rust::InputOrOutput<
+        pub trace: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudServiceTrace>,
         >,
         /// Whether zone redundancy is enabled for this Spring Cloud Service. Defaults to `false`.
         #[builder(into, default)]
-        pub zone_redundant: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_redundant: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudServiceResult {

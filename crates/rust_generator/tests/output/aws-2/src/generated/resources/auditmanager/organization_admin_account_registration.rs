@@ -37,7 +37,7 @@ pub mod organization_admin_account_registration {
     pub struct OrganizationAdminAccountRegistrationArgs {
         /// Identifier for the organization administrator account.
         #[builder(into)]
-        pub admin_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OrganizationAdminAccountRegistrationResult {

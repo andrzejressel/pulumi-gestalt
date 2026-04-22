@@ -33,18 +33,18 @@ pub mod template_alias {
     pub struct TemplateAliasArgs {
         /// Display name of the template alias.
         #[builder(into)]
-        pub alias_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alias_name: pulumi_gestalt_rust::Input<String>,
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the template.
         #[builder(into)]
-        pub template_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub template_id: pulumi_gestalt_rust::Input<String>,
         /// Version number of the template.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub template_version_number: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub template_version_number: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct TemplateAliasResult {

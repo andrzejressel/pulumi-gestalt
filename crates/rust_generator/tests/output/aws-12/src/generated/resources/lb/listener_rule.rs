@@ -153,23 +153,23 @@ pub mod listener_rule {
     pub struct ListenerRuleArgs {
         /// An Action block. Action blocks are documented below.
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::lb::ListenerRuleAction>,
         >,
         /// A Condition block. Multiple condition blocks of different types can be set and all must be satisfied for the rule to match. Condition blocks are documented below.
         #[builder(into)]
-        pub conditions: pulumi_gestalt_rust::InputOrOutput<
+        pub conditions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::lb::ListenerRuleCondition>,
         >,
         /// The ARN of the listener to which to attach the rule.
         #[builder(into)]
-        pub listener_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub listener_arn: pulumi_gestalt_rust::Input<String>,
         /// The priority for the rule between `1` and `50000`. Leaving it unset will automatically set the rule with next available priority after currently existing highest rule. A listener can't have multiple rules with the same priority.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

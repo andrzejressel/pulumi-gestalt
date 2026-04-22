@@ -9,25 +9,25 @@ pub mod role_assignment {
     #[allow(dead_code)]
     pub struct RoleAssignmentArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub condition: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub condition_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub condition_version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub delegated_managed_identity_resource_id: pulumi_gestalt_rust::InputOrOutput<
+        pub delegated_managed_identity_resource_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub role_definition_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_definition_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub role_definition_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_definition_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub skip_service_principal_aad_check: pulumi_gestalt_rust::InputOrOutput<
+        pub skip_service_principal_aad_check: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

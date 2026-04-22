@@ -39,23 +39,23 @@ pub mod report_plan {
     pub struct ReportPlanArgs {
         /// The description of the report plan with a maximum of 1,024 characters
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters, numbers, and underscores.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An object that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. Detailed below.
         #[builder(into)]
-        pub report_delivery_channel: pulumi_gestalt_rust::InputOrOutput<
+        pub report_delivery_channel: pulumi_gestalt_rust::Input<
             super::super::types::backup::ReportPlanReportDeliveryChannel,
         >,
         /// An object that identifies the report template for the report. Reports are built using a report template. Detailed below.
         #[builder(into)]
-        pub report_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub report_setting: pulumi_gestalt_rust::Input<
             super::super::types::backup::ReportPlanReportSetting,
         >,
         /// Metadata that you can assign to help organize the report plans you create. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

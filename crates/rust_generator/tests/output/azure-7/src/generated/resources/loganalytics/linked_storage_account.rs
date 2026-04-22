@@ -65,16 +65,16 @@ pub mod linked_storage_account {
     pub struct LinkedStorageAccountArgs {
         /// The data source type which should be used for this Log Analytics Linked Storage Account. Possible values are `CustomLogs`, `AzureWatson`, `Query`, `Ingestion` and `Alerts`. Changing this forces a new Log Analytics Linked Storage Account to be created.
         #[builder(into)]
-        pub data_source_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Log Analytics Linked Storage Account should exist. Changing this forces a new Log Analytics Linked Storage Account to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The storage account resource ids to be linked.
         #[builder(into)]
-        pub storage_account_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub storage_account_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The resource ID of the Log Analytics Workspace. Changing this forces a new Log Analytics Linked Storage Account to be created.
         #[builder(into)]
-        pub workspace_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LinkedStorageAccountResult {

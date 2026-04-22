@@ -45,74 +45,74 @@ pub mod fleet {
     pub struct FleetArgs {
         /// Configuration block for the desired capacity of the fleet. See below.
         #[builder(into)]
-        pub compute_capacity: pulumi_gestalt_rust::InputOrOutput<
+        pub compute_capacity: pulumi_gestalt_rust::Input<
             super::super::types::appstream::FleetComputeCapacity,
         >,
         /// Description to display.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time that a streaming session remains active after users disconnect.
         #[builder(into, default)]
-        pub disconnect_timeout_in_seconds: pulumi_gestalt_rust::InputOrOutput<
+        pub disconnect_timeout_in_seconds: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Human-readable friendly name for the AppStream fleet.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. See below.
         #[builder(into, default)]
-        pub domain_join_info: pulumi_gestalt_rust::InputOrOutput<
+        pub domain_join_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::appstream::FleetDomainJoinInfo>,
         >,
         /// Enables or disables default internet access for the fleet.
         #[builder(into, default)]
-        pub enable_default_internet_access: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_default_internet_access: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Fleet type. Valid values are: `ON_DEMAND`, `ALWAYS_ON`
         #[builder(into, default)]
-        pub fleet_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fleet_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the IAM role to apply to the fleet.
         #[builder(into, default)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the `disconnect_timeout_in_seconds` time interval begins. Defaults to `0`. Valid value is between `60` and `3600 `seconds.
         #[builder(into, default)]
-        pub idle_disconnect_timeout_in_seconds: pulumi_gestalt_rust::InputOrOutput<
+        pub idle_disconnect_timeout_in_seconds: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// ARN of the public, private, or shared image to use.
         #[builder(into, default)]
-        pub image_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the image used to create the fleet.
         #[builder(into, default)]
-        pub image_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instance type to use when launching fleet instances.
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// The maximum number of user sessions on an instance. This only applies to multi-session fleets.
         #[builder(into, default)]
-        pub max_sessions_per_instance: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_sessions_per_instance: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum amount of time that a streaming session can remain active, in seconds.
         #[builder(into, default)]
-        pub max_user_duration_in_seconds: pulumi_gestalt_rust::InputOrOutput<
+        pub max_user_duration_in_seconds: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Unique name for the fleet.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// AppStream 2.0 view that is displayed to your users when they stream from the fleet. When `APP` is specified, only the windows of applications opened by users display. When `DESKTOP` is specified, the standard desktop that is provided by the operating system displays. If not specified, defaults to `APP`.
         #[builder(into, default)]
-        pub stream_view: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stream_view: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to attach to AppStream instances.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for the VPC configuration for the image builder. See below.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appstream::FleetVpcConfig>,
         >,
     }

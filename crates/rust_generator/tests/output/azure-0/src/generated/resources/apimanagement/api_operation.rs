@@ -53,45 +53,45 @@ pub mod api_operation {
     pub struct ApiOperationArgs {
         /// The Name of the API Management Service where the API exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the API within the API Management Service where this API Operation should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_name: pulumi_gestalt_rust::Input<String>,
         /// A description for this API Operation, which may include HTML formatting tags.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Display Name for this API Management Operation.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The HTTP Method used for this API Management Operation, like `GET`, `DELETE`, `PUT` or `POST` - but not limited to these values.
         #[builder(into)]
-        pub method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub method: pulumi_gestalt_rust::Input<String>,
         /// A unique identifier for this API Operation. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub operation_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub operation_id: pulumi_gestalt_rust::Input<String>,
         /// A `request` block as defined below.
         #[builder(into, default)]
-        pub request: pulumi_gestalt_rust::InputOrOutput<
+        pub request: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiOperationRequest>,
         >,
         /// The Name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `response` blocks as defined below.
         #[builder(into, default)]
-        pub responses: pulumi_gestalt_rust::InputOrOutput<
+        pub responses: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apimanagement::ApiOperationResponse>>,
         >,
         /// One or more `template_parameter` blocks as defined below. Required if `url_template` contains one or more parameters.
         #[builder(into, default)]
-        pub template_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub template_parameters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::apimanagement::ApiOperationTemplateParameter>,
             >,
         >,
         /// The relative URL Template identifying the target resource for this operation, which may include parameters.
         #[builder(into)]
-        pub url_template: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub url_template: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiOperationResult {

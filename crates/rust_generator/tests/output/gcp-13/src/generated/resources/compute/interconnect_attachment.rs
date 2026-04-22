@@ -115,7 +115,7 @@ pub mod interconnect_attachment {
         /// Whether the VLAN attachment is enabled or disabled.  When using
         /// PARTNER type this will Pre-Activate the interconnect attachment
         #[builder(into, default)]
-        pub admin_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub admin_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Provisioned bandwidth capacity for the interconnect attachment.
         /// For attachments of type DEDICATED, the user can set the bandwidth.
         /// For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth.
@@ -123,7 +123,7 @@ pub mod interconnect_attachment {
         /// Defaults to BPS_10G
         /// Possible values are: `BPS_50M`, `BPS_100M`, `BPS_200M`, `BPS_300M`, `BPS_400M`, `BPS_500M`, `BPS_1G`, `BPS_2G`, `BPS_5G`, `BPS_10G`, `BPS_20G`, `BPS_50G`.
         #[builder(into, default)]
-        pub bandwidth: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bandwidth: pulumi_gestalt_rust::Input<Option<String>>,
         /// Up to 16 candidate prefixes that can be used to restrict the allocation
         /// of cloudRouterIpAddress and customerRouterIpAddress for this attachment.
         /// All prefixes must be within link-local address space (169.254.0.0/16)
@@ -132,10 +132,10 @@ pub mod interconnect_attachment {
         /// fail if all possible /29s are in use on Google's edge. If not supplied,
         /// Google will randomly select an unused /29 from all of link-local space.
         #[builder(into, default)]
-        pub candidate_subnets: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub candidate_subnets: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Desired availability domain for the attachment. Only available for type
         /// PARTNER, at creation time. For improved reliability, customers should
         /// configure a pair of attachments with one per availability domain. The
@@ -143,7 +143,7 @@ pub mod interconnect_attachment {
         /// pairing key so that the provisioned circuit will lie in the specified
         /// domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
         #[builder(into, default)]
-        pub edge_availability_domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edge_availability_domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates the user-supplied encryption option of this interconnect
         /// attachment. Can only be specified at attachment creation for PARTNER or
         /// DEDICATED attachments.
@@ -158,12 +158,12 @@ pub mod interconnect_attachment {
         /// Default value is `NONE`.
         /// Possible values are: `NONE`, `IPSEC`.
         #[builder(into, default)]
-        pub encryption: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encryption: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the underlying Interconnect object that this attachment's
         /// traffic will traverse through. Required if type is DEDICATED, must not
         /// be set if type is PARTNER.
         #[builder(into, default)]
-        pub interconnect: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub interconnect: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of addresses that have been reserved for the interconnect attachment,
         /// Used only for interconnect attachment that has the encryption option as
         /// IPSEC.
@@ -180,13 +180,13 @@ pub mod interconnect_attachment {
         /// interconnect attachment, the HA VPN gateway's IP address will be
         /// allocated from regional external IP address pool.
         #[builder(into, default)]
-        pub ipsec_internal_addresses: pulumi_gestalt_rust::InputOrOutput<
+        pub ipsec_internal_addresses: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Maximum Transmission Unit (MTU), in bytes, of packets passing through
         /// this interconnect attachment. Currently, only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
         #[builder(into, default)]
-        pub mtu: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mtu: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. Provided by the client when the resource is created. The
         /// name must be 1-63 characters long, and comply with RFC1035. Specifically, the
         /// name must be 1-63 characters long and match the regular expression
@@ -197,27 +197,27 @@ pub mod interconnect_attachment {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where the regional interconnect attachment resides.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the cloud router to be used for dynamic routing. This router must be in
         /// the same region as this InterconnectAttachment. The InterconnectAttachment will
         /// automatically connect the Interconnect to the network & region within which the
         /// Cloud Router is configured.
         #[builder(into)]
-        pub router: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub router: pulumi_gestalt_rust::Input<String>,
         /// The stack type for this interconnect attachment to identify whether the IPv6
         /// feature is enabled or not. If not specified, IPV4_ONLY will be used.
         /// This field can be both set at interconnect attachments creation and update
         /// interconnect attachment operations.
         /// Possible values are: `IPV4_IPV6`, `IPV4_ONLY`.
         #[builder(into, default)]
-        pub stack_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stack_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Length of the IPv4 subnet mask. Allowed values: 29 (default), 30. The default value is 29,
         /// except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a
         /// constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure
@@ -225,16 +225,16 @@ pub mod interconnect_attachment {
         /// requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it
         /// gives Google Cloud Support more debugging visibility.
         #[builder(into, default)]
-        pub subnet_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub subnet_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The type of InterconnectAttachment you wish to create. Defaults to
         /// DEDICATED.
         /// Possible values are: `DEDICATED`, `PARTNER`, `PARTNER_PROVIDER`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. When
         /// using PARTNER type this will be managed upstream.
         #[builder(into, default)]
-        pub vlan_tag8021q: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub vlan_tag8021q: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct InterconnectAttachmentResult {

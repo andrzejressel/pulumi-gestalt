@@ -67,52 +67,52 @@ pub mod virtual_network {
     pub struct VirtualNetworkArgs {
         /// The address space that is used the virtual network. You can supply more than one address space.
         #[builder(into)]
-        pub address_spaces: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub address_spaces: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The BGP community attribute in format `<as-number>:<community-value>`.
         ///
         /// > **NOTE** The `as-number` segment is the Microsoft ASN, which is always `12076` for now.
         #[builder(into, default)]
-        pub bgp_community: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bgp_community: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `ddos_protection_plan` block as documented below.
         #[builder(into, default)]
-        pub ddos_protection_plan: pulumi_gestalt_rust::InputOrOutput<
+        pub ddos_protection_plan: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::VirtualNetworkDdosProtectionPlan>,
         >,
         /// List of IP addresses of DNS servers
         ///
         /// > **NOTE** Since `dns_servers` can be configured both inline and via the separate `azure.network.VirtualNetworkDnsServers` resource, we have to explicitly set it to empty slice (`[]`) to remove it.
         #[builder(into, default)]
-        pub dns_servers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub dns_servers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the Edge Zone within the Azure Region where this Virtual Network should exist. Changing this forces a new Virtual Network to be created.
         #[builder(into, default)]
-        pub edge_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edge_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `encryption` block as defined below.
         #[builder(into, default)]
-        pub encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::VirtualNetworkEncryption>,
         >,
         /// The flow timeout in minutes for the Virtual Network, which is used to enable connection tracking for intra-VM flows. Possible values are between `4` and `30` minutes.
         #[builder(into, default)]
-        pub flow_timeout_in_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub flow_timeout_in_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The location/region where the virtual network is created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the virtual network. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the virtual network. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Can be specified multiple times to define multiple subnets. Each `subnet` block supports fields documented below.
         ///
         /// > **NOTE** Since `subnet` can be configured both inline and via the separate `azure.network.Subnet` resource, we have to explicitly set it to empty slice (`[]`) to remove it.
         #[builder(into, default)]
-        pub subnets: pulumi_gestalt_rust::InputOrOutput<
+        pub subnets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::VirtualNetworkSubnet>>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

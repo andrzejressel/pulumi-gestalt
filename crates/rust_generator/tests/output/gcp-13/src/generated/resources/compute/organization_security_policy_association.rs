@@ -93,16 +93,16 @@ pub mod organization_security_policy_association {
     pub struct OrganizationSecurityPolicyAssociationArgs {
         /// The resource that the security policy is attached to.
         #[builder(into)]
-        pub attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub attachment_id: pulumi_gestalt_rust::Input<String>,
         /// The name for an association.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The security policy ID of the association.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OrganizationSecurityPolicyAssociationResult {

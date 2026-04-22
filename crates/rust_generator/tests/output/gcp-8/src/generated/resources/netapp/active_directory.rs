@@ -85,80 +85,80 @@ pub mod active_directory {
     pub struct ActiveDirectoryArgs {
         /// Domain user accounts to be added to the local Administrators group of the SMB service. Comma-separated list of domain users or groups. The Domain Admin group is automatically added when the service joins your domain as a hidden group.
         #[builder(into, default)]
-        pub administrators: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub administrators: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Enables AES-128 and AES-256 encryption for Kerberos-based communication with Active Directory.
         #[builder(into, default)]
-        pub aes_encryption: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub aes_encryption: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Domain user/group accounts to be added to the Backup Operators group of the SMB service. The Backup Operators group allows members to backup and restore files regardless of whether they have read or write access to the files. Comma-separated list.
         #[builder(into, default)]
-        pub backup_operators: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub backup_operators: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Comma separated list of DNS server IP addresses for the Active Directory domain.
         #[builder(into)]
-        pub dns: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns: pulumi_gestalt_rust::Input<String>,
         /// Fully qualified domain name for the Active Directory domain.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// If enabled, traffic between the SMB server to Domain Controller (DC) will be encrypted.
         #[builder(into, default)]
-        pub encrypt_dc_connections: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub encrypt_dc_connections: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Hostname of the Active Directory server used as Kerberos Key Distribution Center. Only required for volumes using kerberized NFSv4.1
         #[builder(into, default)]
-        pub kdc_hostname: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kdc_hostname: pulumi_gestalt_rust::Input<Option<String>>,
         /// IP address of the Active Directory server used as Kerberos Key Distribution Center.
         #[builder(into, default)]
-        pub kdc_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kdc_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies whether or not the LDAP traffic needs to be signed.
         #[builder(into, default)]
-        pub ldap_signing: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ldap_signing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the region for the policy to apply to.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name of the Active Directory pool. Needs to be unique per location.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// NetBIOS name prefix of the server to be created.
         /// A five-character random ID is generated automatically, for example, -6f9a, and appended to the prefix. The full UNC share path will have the following format:
         /// `\\NetBIOS_PREFIX-ABCD.DOMAIN_NAME\SHARE_NAME`
         #[builder(into)]
-        pub net_bios_prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub net_bios_prefix: pulumi_gestalt_rust::Input<String>,
         /// Local UNIX users on clients without valid user information in Active Directory are blocked from access to LDAP enabled volumes.
         /// This option can be used to temporarily switch such volumes to AUTH_SYS authentication (user ID + 1-16 groups).
         #[builder(into, default)]
-        pub nfs_users_with_ldap: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub nfs_users_with_ldap: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the Organizational Unit where you intend to create the computer account for NetApp Volumes.
         /// Defaults to `CN=Computers` if left empty.
         #[builder(into, default)]
-        pub organizational_unit: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub organizational_unit: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Domain accounts that require elevated privileges such as `SeSecurityPrivilege` to manage security logs. Comma-separated list.
         #[builder(into, default)]
-        pub security_operators: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_operators: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies an Active Directory site to manage domain controller selection.
         /// Use when Active Directory domain controllers in multiple regions are configured. Defaults to `Default-First-Site-Name` if left empty.
         #[builder(into, default)]
-        pub site: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub site: pulumi_gestalt_rust::Input<Option<String>>,
         /// Username for the Active Directory account with permissions to create the compute account within the specified organizational unit.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ActiveDirectoryResult {

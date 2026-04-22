@@ -50,28 +50,28 @@ pub mod api_schema {
     pub struct ApiSchemaArgs {
         /// The Name of the API Management Service where the API exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the API within the API Management Service where this API Schema should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_name: pulumi_gestalt_rust::Input<String>,
         /// Types definitions. Used for Swagger/OpenAPI v2/v3 schemas only.
         #[builder(into, default)]
-        pub components: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub components: pulumi_gestalt_rust::Input<Option<String>>,
         /// The content type of the API Schema.
         #[builder(into)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content_type: pulumi_gestalt_rust::Input<String>,
         /// Types definitions. Used for Swagger/OpenAPI v1 schemas only.
         #[builder(into, default)]
-        pub definitions: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub definitions: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A unique identifier for this API Schema. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub schema_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema_id: pulumi_gestalt_rust::Input<String>,
         /// The JSON escaped string defining the document representing the Schema.
         #[builder(into, default)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub value: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiSchemaResult {

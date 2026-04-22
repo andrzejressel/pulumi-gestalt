@@ -10,7 +10,7 @@ pub mod get_vcenter_credentials {
     pub struct GetVcenterCredentialsArgs {
         /// The resource name of the private cloud which contains the Vcenter.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVcenterCredentialsResult {

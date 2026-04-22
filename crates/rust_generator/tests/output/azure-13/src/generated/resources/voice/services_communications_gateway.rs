@@ -77,54 +77,54 @@ pub mod services_communications_gateway {
     pub struct ServicesCommunicationsGatewayArgs {
         /// Details of API bridge functionality, if required.
         #[builder(into, default)]
-        pub api_bridge: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_bridge: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the scope at which the auto-generated domain name can be re-used. Possible values are `TenantReuse`, `SubscriptionReuse`, `ResourceGroupReuse` and `NoReuse` . Changing this forces a new resource to be created. Defaults to `TenantReuse`.
         #[builder(into, default)]
-        pub auto_generated_domain_name_label_scope: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_generated_domain_name_label_scope: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The voice codecs expected for communication with Teams. Possible values are `PCMA`, `PCMU`,`G722`,`G722_2`,`SILK_8` and `SILK_16`.
         #[builder(into)]
-        pub codecs: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub codecs: pulumi_gestalt_rust::Input<String>,
         /// How to connect back to the operator network, e.g. MAPS. Possible values is `PublicAddress`. Changing this forces a new Voice Services Communications Gateways to be created.
         #[builder(into)]
-        pub connectivity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connectivity: pulumi_gestalt_rust::Input<String>,
         /// How to handle 911 calls. Possible values are `Standard` and `DirectToEsrp`.
         #[builder(into)]
-        pub e911_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub e911_type: pulumi_gestalt_rust::Input<String>,
         /// A list of dial strings used for emergency calling.
         #[builder(into, default)]
-        pub emergency_dial_strings: pulumi_gestalt_rust::InputOrOutput<
+        pub emergency_dial_strings: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Specifies the Azure Region where the Voice Services Communications Gateways should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// This number is used in Teams Phone Mobile scenarios for access to the voicemail IVR from the native dialer.
         #[builder(into, default)]
-        pub microsoft_teams_voicemail_pilot_number: pulumi_gestalt_rust::InputOrOutput<
+        pub microsoft_teams_voicemail_pilot_number: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the name which should be used for this Voice Services Communications Gateways. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether an on-premises Mobile Control Point is in use.
         #[builder(into, default)]
-        pub on_prem_mcp_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub on_prem_mcp_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Voice Services Communications GatewaysAvailable supports platform types. Possible values are `OperatorConnect`, `TeamsPhoneMobile`.
         #[builder(into)]
-        pub platforms: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub platforms: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the name of the Resource Group where the Voice Services Communications Gateways should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `service_location` block as defined below.
         #[builder(into)]
-        pub service_locations: pulumi_gestalt_rust::InputOrOutput<
+        pub service_locations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::voice::ServicesCommunicationsGatewayServiceLocation>,
         >,
         /// A mapping of tags which should be assigned to the Voice Services Communications Gateways.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

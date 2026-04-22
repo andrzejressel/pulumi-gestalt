@@ -125,10 +125,10 @@ pub mod application_security_group_association {
     pub struct ApplicationSecurityGroupAssociationArgs {
         /// The id of application security group to associate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_security_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_security_group_id: pulumi_gestalt_rust::Input<String>,
         /// The id of private endpoint to associate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub private_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_endpoint_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApplicationSecurityGroupAssociationResult {

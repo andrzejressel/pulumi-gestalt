@@ -111,33 +111,33 @@ pub mod cloud_exadata_infrastructure {
         ///
         /// - - -
         #[builder(into)]
-        pub cloud_exadata_infrastructure_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cloud_exadata_infrastructure_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User friendly name for this resource.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// GCP location where Oracle Exadata is hosted.
         #[builder(into, default)]
-        pub gcp_oracle_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gcp_oracle_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels or tags associated with the resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. See documentation for resource type `oracledatabase.googleapis.com/DbServer`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Various properties of Exadata Infrastructure.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::oracledatabase::CloudExadataInfrastructureProperties,
             >,

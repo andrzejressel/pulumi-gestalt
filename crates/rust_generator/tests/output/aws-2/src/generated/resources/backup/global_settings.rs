@@ -30,7 +30,7 @@ pub mod global_settings {
     pub struct GlobalSettingsArgs {
         /// A list of resources along with the opt-in preferences for the account.
         #[builder(into)]
-        pub global_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub global_settings: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
     }

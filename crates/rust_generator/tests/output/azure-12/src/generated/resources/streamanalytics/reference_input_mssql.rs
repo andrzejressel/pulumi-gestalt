@@ -72,42 +72,42 @@ pub mod reference_input_mssql {
     pub struct ReferenceInputMssqlArgs {
         /// The MS SQL database name where the reference data exists.
         #[builder(into)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database: pulumi_gestalt_rust::Input<String>,
         /// The query used to retrieve incremental changes in the reference data from the MS SQL database. Cannot be set when `refresh_type` is `Static`.
         #[builder(into, default)]
-        pub delta_snapshot_query: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delta_snapshot_query: pulumi_gestalt_rust::Input<Option<String>>,
         /// The query used to retrieve the reference data from the MS SQL database.
         #[builder(into)]
-        pub full_snapshot_query: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub full_snapshot_query: pulumi_gestalt_rust::Input<String>,
         /// The name of the Reference Input MS SQL data. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password to connect to the MS SQL database.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The frequency in `hh:mm:ss` with which the reference data should be retrieved from the MS SQL database e.g. `00:20:00` for every 20 minutes. Must be set when `refresh_type` is `RefreshPeriodicallyWithFull` or `RefreshPeriodicallyWithDelta`.
         #[builder(into, default)]
-        pub refresh_interval_duration: pulumi_gestalt_rust::InputOrOutput<
+        pub refresh_interval_duration: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Defines whether and how the reference data should be refreshed. Accepted values are `Static`, `RefreshPeriodicallyWithFull` and `RefreshPeriodicallyWithDelta`.
         #[builder(into)]
-        pub refresh_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub refresh_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Stream Analytics Job should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The fully qualified domain name of the MS SQL server.
         #[builder(into)]
-        pub server: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the table in the Azure SQL database.
         #[builder(into, default)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub table: pulumi_gestalt_rust::Input<Option<String>>,
         /// The username to connect to the MS SQL database.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReferenceInputMssqlResult {

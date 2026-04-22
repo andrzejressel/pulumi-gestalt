@@ -71,39 +71,39 @@ pub mod service {
     pub struct ServiceArgs {
         /// Configuration for the authentication for pulling the images of the service
         #[builder(into, default)]
-        pub auth: pulumi_gestalt_rust::InputOrOutput<Option<super::types::ServiceAuth>>,
+        pub auth: pulumi_gestalt_rust::Input<Option<super::types::ServiceAuth>>,
         /// A configuration to ensure that a service converges aka reaches the desired that of all task up and running
         #[builder(into, default)]
-        pub converge_config: pulumi_gestalt_rust::InputOrOutput<
+        pub converge_config: pulumi_gestalt_rust::Input<
             Option<super::types::ServiceConvergeConfig>,
         >,
         /// Properties that can be configured to access and load balance a service
         #[builder(into, default)]
-        pub endpoint_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint_spec: pulumi_gestalt_rust::Input<
             Option<super::types::ServiceEndpointSpec>,
         >,
         /// User-defined key/value metadata
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ServiceLabel>>,
         >,
         /// Scheduling mode for the service
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<super::types::ServiceMode>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<super::types::ServiceMode>>,
         /// Name of the service
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specification for the rollback strategy of the service
         #[builder(into, default)]
-        pub rollback_config: pulumi_gestalt_rust::InputOrOutput<
+        pub rollback_config: pulumi_gestalt_rust::Input<
             Option<super::types::ServiceRollbackConfig>,
         >,
         /// User modifiable task configuration
         #[builder(into)]
-        pub task_spec: pulumi_gestalt_rust::InputOrOutput<super::types::ServiceTaskSpec>,
+        pub task_spec: pulumi_gestalt_rust::Input<super::types::ServiceTaskSpec>,
         /// Specification for the update strategy of the service
         #[builder(into, default)]
-        pub update_config: pulumi_gestalt_rust::InputOrOutput<
+        pub update_config: pulumi_gestalt_rust::Input<
             Option<super::types::ServiceUpdateConfig>,
         >,
     }

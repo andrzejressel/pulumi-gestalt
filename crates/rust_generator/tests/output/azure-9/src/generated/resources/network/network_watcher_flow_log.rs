@@ -84,47 +84,47 @@ pub mod network_watcher_flow_log {
     pub struct NetworkWatcherFlowLogArgs {
         /// Should Network Flow Logging be Enabled?
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The location where the Network Watcher Flow Log resides. Changing this forces a new resource to be created. Defaults to the `location` of the Network Watcher.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Network Watcher Flow Log. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub network_security_group_id: pulumi_gestalt_rust::InputOrOutput<
+        pub network_security_group_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the Network Watcher. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_watcher_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_watcher_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Network Watcher was deployed. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `retention_policy` block as documented below.
         #[builder(into)]
-        pub retention_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_policy: pulumi_gestalt_rust::Input<
             super::super::types::network::NetworkWatcherFlowLogRetentionPolicy,
         >,
         /// The ID of the Storage Account where flow logs are stored.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Network Watcher Flow Log.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Resource for which to enable flow logs for. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `traffic_analytics` block as documented below.
         #[builder(into, default)]
-        pub traffic_analytics: pulumi_gestalt_rust::InputOrOutput<
+        pub traffic_analytics: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::NetworkWatcherFlowLogTrafficAnalytics>,
         >,
         /// The version (revision) of the flow log. Possible values are `1` and `2`. Defaults to `1`.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub version: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct NetworkWatcherFlowLogResult {

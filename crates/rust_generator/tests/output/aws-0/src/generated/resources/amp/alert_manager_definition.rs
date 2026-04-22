@@ -39,10 +39,10 @@ pub mod alert_manager_definition {
     pub struct AlertManagerDefinitionArgs {
         /// the alert manager definition that you want to be applied. See more [in AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-alert-manager.html).
         #[builder(into)]
-        pub definition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub definition: pulumi_gestalt_rust::Input<String>,
         /// ID of the prometheus workspace the alert manager definition should be linked to
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AlertManagerDefinitionResult {

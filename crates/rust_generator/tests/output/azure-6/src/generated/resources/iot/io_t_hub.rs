@@ -133,75 +133,75 @@ pub mod io_t_hub {
     #[allow(dead_code)]
     pub struct IoTHubArgs {
         #[builder(into, default)]
-        pub cloud_to_device: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_to_device: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::IoTHubCloudToDevice>,
         >,
         /// An `endpoint` block as defined below.
         #[builder(into, default)]
-        pub endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::IoTHubEndpoint>>,
         >,
         #[builder(into, default)]
-        pub enrichments: pulumi_gestalt_rust::InputOrOutput<
+        pub enrichments: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::IoTHubEnrichment>>,
         >,
         /// The number of device-to-cloud partitions used by backing event hubs. Must be between `2` and `128`. Defaults to `4`.
         #[builder(into, default)]
-        pub event_hub_partition_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub event_hub_partition_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The event hub retention to use in days. Must be between `1` and `7`. Defaults to `1`.
         #[builder(into, default)]
-        pub event_hub_retention_in_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub event_hub_retention_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A `fallback_route` block as defined below. If the fallback route is enabled, messages that don't match any of the supplied routes are automatically sent to this route. Defaults to messages/events.
         ///
         /// > **NOTE:** If `fallback_route` isn't explicitly specified, the fallback route wouldn't be enabled by default.
         #[builder(into, default)]
-        pub fallback_route: pulumi_gestalt_rust::InputOrOutput<
+        pub fallback_route: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::IoTHubFallbackRoute>,
         >,
         /// A `file_upload` block as defined below.
         #[builder(into, default)]
-        pub file_upload: pulumi_gestalt_rust::InputOrOutput<
+        pub file_upload: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::IoTHubFileUpload>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::IoTHubIdentity>,
         >,
         /// If false, SAS tokens with Iot hub scoped SAS keys cannot be used for authentication. Defaults to `true`.
         #[builder(into, default)]
-        pub local_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub local_authentication_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the supported Azure location where the resource has to be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub min_tls_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub min_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the IotHub resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_rule_set` block as defined below.
         #[builder(into, default)]
-        pub network_rule_sets: pulumi_gestalt_rust::InputOrOutput<
+        pub network_rule_sets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::IoTHubNetworkRuleSet>>,
         >,
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the resource group under which the IotHub resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub routes: pulumi_gestalt_rust::InputOrOutput<
+        pub routes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::IoTHubRoute>>,
         >,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<super::super::types::iot::IoTHubSku>,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::iot::IoTHubSku>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

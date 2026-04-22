@@ -61,32 +61,32 @@ pub mod load_balancer {
     pub struct LoadBalancerArgs {
         /// Specifies the Edge Zone within the Azure Region where this Load Balancer should exist. Changing this forces a new Load Balancer to be created.
         #[builder(into, default)]
-        pub edge_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edge_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `frontend_ip_configuration` blocks as documented below.
         #[builder(into, default)]
-        pub frontend_ip_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub frontend_ip_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lb::LoadBalancerFrontendIpConfiguration>>,
         >,
         /// Specifies the supported Azure Region where the Load Balancer should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Load Balancer. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which to create the Load Balancer. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU of the Azure Load Balancer. Accepted values are `Basic`, `Standard` and `Gateway`. Defaults to `Standard`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The `Microsoft.Network/AllowGatewayLoadBalancer` feature is required to be registered in order to use the `Gateway` SKU. The feature can only be registered by the Azure service team, please submit an [Azure support ticket](https://azure.microsoft.com/en-us/support/create-ticket/) for that.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// `sku_tier` - (Optional) The SKU tier of this Load Balancer. Possible values are `Global` and `Regional`. Defaults to `Regional`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sku_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

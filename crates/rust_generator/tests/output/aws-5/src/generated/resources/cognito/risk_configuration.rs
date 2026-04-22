@@ -49,31 +49,31 @@ pub mod risk_configuration {
     pub struct RiskConfigurationArgs {
         /// The account takeover risk configuration. See details below.
         #[builder(into, default)]
-        pub account_takeover_risk_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub account_takeover_risk_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cognito::RiskConfigurationAccountTakeoverRiskConfiguration,
             >,
         >,
         /// The app client ID. When the client ID is not provided, the same risk configuration is applied to all the clients in the User Pool.
         #[builder(into, default)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The compromised credentials risk configuration. See details below.
         #[builder(into, default)]
-        pub compromised_credentials_risk_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub compromised_credentials_risk_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cognito::RiskConfigurationCompromisedCredentialsRiskConfiguration,
             >,
         >,
         /// The configuration to override the risk decision. See details below.
         #[builder(into, default)]
-        pub risk_exception_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub risk_exception_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cognito::RiskConfigurationRiskExceptionConfiguration,
             >,
         >,
         /// The user pool ID.
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RiskConfigurationResult {

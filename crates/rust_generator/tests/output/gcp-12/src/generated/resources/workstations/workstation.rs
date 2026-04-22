@@ -96,22 +96,22 @@ pub mod workstation {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Human-readable name for this resource.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// 'Client-specified environment variables passed to the workstation container's entrypoint.'
         #[builder(into, default)]
-        pub env: pulumi_gestalt_rust::InputOrOutput<
+        pub env: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where the workstation parent resources reside.
@@ -119,20 +119,20 @@ pub mod workstation {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the parent workstation cluster.
         #[builder(into)]
-        pub workstation_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workstation_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the parent workstation cluster config.
         #[builder(into)]
-        pub workstation_config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workstation_config_id: pulumi_gestalt_rust::Input<String>,
         /// ID to use for the workstation.
         #[builder(into)]
-        pub workstation_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workstation_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkstationResult {

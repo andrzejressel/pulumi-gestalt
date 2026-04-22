@@ -10,13 +10,13 @@ pub mod get_group {
     pub struct GetGroupArgs {
         /// The Name of the API Management Service in which this Group exists.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the API Management Group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group in which the API Management Service exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGroupResult {

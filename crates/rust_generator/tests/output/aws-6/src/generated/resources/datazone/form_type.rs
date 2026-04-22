@@ -103,25 +103,25 @@ pub mod form_type {
     pub struct FormTypeArgs {
         /// Description of form type. Must have a length of between 1 and 2048 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the domain.
         #[builder(into)]
-        pub domain_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_identifier: pulumi_gestalt_rust::Input<String>,
         /// Object of the model of the form type that contains the following attributes.
         #[builder(into, default)]
-        pub model: pulumi_gestalt_rust::InputOrOutput<
+        pub model: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::FormTypeModel>,
         >,
         /// Name of the form type. Must be the name of the structure in smithy document.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of project that owns the form type. Must follow regex of ^[a-zA-Z0-9_-]{1,36}.
         #[builder(into)]
-        pub owning_project_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owning_project_identifier: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::FormTypeTimeouts>,
         >,
     }

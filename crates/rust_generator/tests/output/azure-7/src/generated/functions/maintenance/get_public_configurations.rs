@@ -10,13 +10,13 @@ pub mod get_public_configurations {
     pub struct GetPublicConfigurationsArgs {
         /// The Azure location to filter the list of Public Maintenance Configurations against.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The recurring window to filter the list of Public Maintenance Configurations against. Possible values are `Monday-Thursday` and `Friday-Sunday`
         #[builder(into, default)]
-        pub recur_every: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub recur_every: pulumi_gestalt_rust::Input<Option<String>>,
         /// The scope to filter the list of Public Maintenance Configurations against. Possible values are `Extension`, `Host`, `InGuestPatch`, `OSImage`, `SQLDB` and `SQLManagedInstance`.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scope: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetPublicConfigurationsResult {

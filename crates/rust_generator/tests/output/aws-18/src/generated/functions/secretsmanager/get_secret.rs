@@ -10,13 +10,13 @@ pub mod get_secret {
     pub struct GetSecretArgs {
         /// ARN of the secret to retrieve.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the secret to retrieve.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags of the secret.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

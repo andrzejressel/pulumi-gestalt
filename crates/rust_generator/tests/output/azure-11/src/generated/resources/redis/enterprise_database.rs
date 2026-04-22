@@ -73,39 +73,39 @@ pub mod enterprise_database {
     pub struct EnterpriseDatabaseArgs {
         /// Specifies whether redis clients can connect using TLS-encrypted or plaintext redis protocols. Possible values are `Encrypted` and `Plaintext`. Defaults to `Encrypted`. Changing this forces a new Redis Enterprise Database to be created.
         #[builder(into, default)]
-        pub client_protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource id of the Redis Enterprise Cluster to deploy this Redis Enterprise Database. Changing this forces a new Redis Enterprise Database to be created.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Clustering policy Specified at create time. Possible values are `EnterpriseCluster` and `OSSCluster`. Defaults to `OSSCluster`. Changing this forces a new Redis Enterprise Database to be created.
         #[builder(into, default)]
-        pub clustering_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub clustering_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Redis eviction policy possible values are `AllKeysLFU`, `AllKeysLRU`, `AllKeysRandom`, `VolatileLRU`, `VolatileLFU`, `VolatileTTL`, `VolatileRandom` and `NoEviction`. Changing this forces a new Redis Enterprise Database to be created. Defaults to `VolatileLRU`.
         #[builder(into, default)]
-        pub eviction_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eviction_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Nickname of the group of linked databases. Changing this force a new Redis Enterprise Geo Database to be created.
         #[builder(into, default)]
-        pub linked_database_group_nickname: pulumi_gestalt_rust::InputOrOutput<
+        pub linked_database_group_nickname: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A list of database resources to link with this database with a maximum of 5.
         ///
         /// > **NOTE:** Only the newly created databases can be added to an existing geo-replication group. Existing regular databases or recreated databases cannot be added to the existing geo-replication group. Any linked database be removed from the list will be forcefully unlinked.The only recommended operation is to delete after force-unlink and the recommended scenario of force-unlink is region outrage. The database cannot be linked again after force-unlink.
         #[builder(into, default)]
-        pub linked_database_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub linked_database_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `module` block as defined below. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Only `RediSearch` and `RedisJSON` modules are allowed with geo-replication
         #[builder(into, default)]
-        pub modules: pulumi_gestalt_rust::InputOrOutput<
+        pub modules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::redis::EnterpriseDatabaseModule>>,
         >,
         /// The name which should be used for this Redis Enterprise Database. Currently the acceptable value for this argument is `default`. Defaults to `default`. Changing this forces a new Redis Enterprise Database to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// TCP port of the database endpoint. Specified at create time. Defaults to an available port. Changing this forces a new Redis Enterprise Database to be created. Defaults to `10000`.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct EnterpriseDatabaseResult {

@@ -62,15 +62,15 @@ pub mod random_id {
     pub struct RandomIdArgs {
         /// The number of random bytes to produce. The minimum value is 1, which produces eight bits of randomness.
         #[builder(into)]
-        pub byte_length: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub byte_length: pulumi_gestalt_rust::Input<i32>,
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         #[builder(into, default)]
-        pub keepers: pulumi_gestalt_rust::InputOrOutput<
+        pub keepers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Arbitrary string to prefix the output value with. This string is supplied as-is, meaning it is not guaranteed to be URL-safe or base64 encoded.
         #[builder(into, default)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RandomIdResult {

@@ -10,16 +10,16 @@ pub mod get_account_access_token {
     pub struct GetAccountAccessTokenArgs {
         /// Delegate chain of approvals needed to perform full impersonation. Specify the fully qualified service account name.  (e.g. `["projects/-/serviceAccounts/delegate-svc-account@project-id.iam.gserviceaccount.com"]`)
         #[builder(into, default)]
-        pub delegates: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub delegates: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Lifetime of the impersonated token (defaults to its max: `3600s`).
         #[builder(into, default)]
-        pub lifetime: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lifetime: pulumi_gestalt_rust::Input<Option<String>>,
         /// The scopes the new credential should have (e.g. `["cloud-platform"]`)
         #[builder(into)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub scopes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The service account _to_ impersonate (e.g. `service_B@your-project-id.iam.gserviceaccount.com`)
         #[builder(into)]
-        pub target_service_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_service_account: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccountAccessTokenResult {

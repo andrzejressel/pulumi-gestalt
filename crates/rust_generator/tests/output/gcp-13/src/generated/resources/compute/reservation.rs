@@ -87,7 +87,7 @@ pub mod reservation {
     pub struct ReservationArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -96,29 +96,29 @@ pub mod reservation {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The share setting for reservations.
         #[builder(into, default)]
-        pub share_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub share_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ReservationShareSettings>,
         >,
         /// Reservation for instances with specific machine shapes.
         /// Structure is documented below.
         #[builder(into)]
-        pub specific_reservation: pulumi_gestalt_rust::InputOrOutput<
+        pub specific_reservation: pulumi_gestalt_rust::Input<
             super::super::types::compute::ReservationSpecificReservation,
         >,
         /// When set to true, only VMs that target this reservation by name can consume this reservation. Otherwise, it can be
         /// consumed by VMs with affinity for any reservation. Defaults to false.
         #[builder(into, default)]
-        pub specific_reservation_required: pulumi_gestalt_rust::InputOrOutput<
+        pub specific_reservation_required: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The zone where the reservation is made.
         #[builder(into)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReservationResult {

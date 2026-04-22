@@ -58,22 +58,22 @@ pub mod ip_set {
     pub struct IPSetArgs {
         /// Specifies whether GuardDuty is to start using the uploaded IPSet.
         #[builder(into)]
-        pub activate: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub activate: pulumi_gestalt_rust::Input<bool>,
         /// The detector ID of the GuardDuty.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
         /// The format of the file that contains the IPSet. Valid values: `TXT` | `STIX` | `OTX_CSV` | `ALIEN_VAULT` | `PROOF_POINT` | `FIRE_EYE`
         #[builder(into)]
-        pub format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub format: pulumi_gestalt_rust::Input<String>,
         /// The URI of the file that contains the IPSet.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The friendly name to identify the IPSet.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

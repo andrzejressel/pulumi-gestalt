@@ -57,61 +57,61 @@ pub mod api {
         /// Valid values: `$context.authorizer.usageIdentifierKey`, `$request.header.x-api-key`. Defaults to `$request.header.x-api-key`.
         /// Applicable for WebSocket APIs.
         #[builder(into, default)]
-        pub api_key_selection_expression: pulumi_gestalt_rust::InputOrOutput<
+        pub api_key_selection_expression: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// An OpenAPI specification that defines the set of routes and integrations to create as part of the HTTP APIs. Supported only for HTTP APIs.
         #[builder(into, default)]
-        pub body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub body: pulumi_gestalt_rust::Input<Option<String>>,
         /// Cross-origin resource sharing (CORS) [configuration](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html). Applicable for HTTP APIs.
         #[builder(into, default)]
-        pub cors_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub cors_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigatewayv2::ApiCorsConfiguration>,
         >,
         /// Part of _quick create_. Specifies any credentials required for the integration. Applicable for HTTP APIs.
         #[builder(into, default)]
-        pub credentials_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub credentials_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the API. Must be less than or equal to 1024 characters in length.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether clients can invoke the API by using the default `execute-api` endpoint.
         /// By default, clients can invoke the API with the default `{api_id}.execute-api.{region}.amazonaws.com endpoint`.
         /// To require that clients use a custom domain name to invoke the API, disable the default endpoint.
         #[builder(into, default)]
-        pub disable_execute_api_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub disable_execute_api_endpoint: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Whether warnings should return an error while API Gateway is creating or updating the resource using an OpenAPI specification. Defaults to `false`. Applicable for HTTP APIs.
         #[builder(into, default)]
-        pub fail_on_warnings: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub fail_on_warnings: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the API. Must be less than or equal to 128 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// API protocol. Valid values: `HTTP`, `WEBSOCKET`.
         #[builder(into)]
-        pub protocol_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol_type: pulumi_gestalt_rust::Input<String>,
         /// Part of _quick create_. Specifies any [route key](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-routes.html). Applicable for HTTP APIs.
         #[builder(into, default)]
-        pub route_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub route_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [route selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-route-selection-expressions) for the API.
         /// Defaults to `$request.method $request.path`.
         #[builder(into, default)]
-        pub route_selection_expression: pulumi_gestalt_rust::InputOrOutput<
+        pub route_selection_expression: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Map of tags to assign to the API. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Part of _quick create_. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes.
         /// For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN.
         /// The type of the integration will be `HTTP_PROXY` or `AWS_PROXY`, respectively. Applicable for HTTP APIs.
         #[builder(into, default)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version identifier for the API. Must be between 1 and 64 characters in length.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiResult {

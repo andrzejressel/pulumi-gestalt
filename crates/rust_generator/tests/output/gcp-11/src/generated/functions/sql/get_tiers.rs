@@ -10,7 +10,7 @@ pub mod get_tiers {
     pub struct GetTiersArgs {
         /// The Project ID for which to list tiers. If `project` is not provided, the project defined within the default provider configuration is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetTiersResult {

@@ -111,13 +111,13 @@ pub mod settings {
         /// Top level wrapper for all access related setting in IAP.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub access_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub access_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::iap::SettingsAccessSettings>,
         >,
         /// Top level wrapper for all application related settings in IAP.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub application_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub application_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::iap::SettingsApplicationSettings>,
         >,
         /// The resource name of the IAP protected resource. Name can have below resources:
@@ -136,7 +136,7 @@ pub mod settings {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SettingsResult {

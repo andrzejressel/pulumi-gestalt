@@ -92,38 +92,38 @@ pub mod contact_profile {
     pub struct ContactProfileArgs {
         /// Auto-tracking configurations for a spacecraft. Possible values are `disabled`, `xBand` and `sBand`.
         #[builder(into)]
-        pub auto_tracking: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auto_tracking: pulumi_gestalt_rust::Input<String>,
         /// ARM resource identifier of the Event Hub used for telemetry. Requires granting Orbital Resource Provider the rights to send telemetry into the hub.
         #[builder(into, default)]
-        pub event_hub_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_hub_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of spacecraft links. A `links` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub links: pulumi_gestalt_rust::InputOrOutput<
+        pub links: pulumi_gestalt_rust::Input<
             Vec<super::super::types::orbital::ContactProfileLink>,
         >,
         /// The location where the contact profile exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maximum elevation of the antenna during the contact in decimal degrees.
         #[builder(into, default)]
-        pub minimum_elevation_degrees: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub minimum_elevation_degrees: pulumi_gestalt_rust::Input<Option<f64>>,
         /// Minimum viable contact duration in ISO 8601 format. Used for listing the available contacts with a spacecraft at a given ground station.
         #[builder(into)]
-        pub minimum_variable_contact_duration: pulumi_gestalt_rust::InputOrOutput<
+        pub minimum_variable_contact_duration: pulumi_gestalt_rust::Input<
             String,
         >,
         /// The name of the contact profile. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARM resource identifier of the subnet delegated to the Microsoft.Orbital/orbitalGateways. Needs to be at least a class C subnet, and should not have any IP created in it. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_configuration_subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_configuration_subnet_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the contact profile exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

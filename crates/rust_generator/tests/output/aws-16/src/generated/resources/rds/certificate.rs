@@ -33,7 +33,7 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// Certificate identifier. For example, `rds-ca-rsa4096-g1`. Refer to [AWS RDS (Relational Database) Certificate Identifier](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificateIdentifier) for more information.
         #[builder(into)]
-        pub certificate_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_identifier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateResult {

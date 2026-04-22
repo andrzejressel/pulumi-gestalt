@@ -48,15 +48,15 @@ pub mod mesh {
     pub struct MeshArgs {
         /// Name to use for the service mesh. Must be between 1 and 255 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service mesh specification to apply.
         #[builder(into, default)]
-        pub spec: pulumi_gestalt_rust::InputOrOutput<
+        pub spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::appmesh::MeshSpec>,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

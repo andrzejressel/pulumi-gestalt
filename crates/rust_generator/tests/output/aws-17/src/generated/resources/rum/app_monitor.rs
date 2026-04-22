@@ -33,26 +33,26 @@ pub mod app_monitor {
     pub struct AppMonitorArgs {
         /// configuration data for the app monitor. See app_monitor_configuration below.
         #[builder(into, default)]
-        pub app_monitor_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub app_monitor_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::rum::AppMonitorAppMonitorConfiguration>,
         >,
         /// Specifies whether this app monitor allows the web client to define and send custom events. If you omit this parameter, custom events are `DISABLED`. See custom_events below.
         #[builder(into, default)]
-        pub custom_events: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_events: pulumi_gestalt_rust::Input<
             Option<super::super::types::rum::AppMonitorCustomEvents>,
         >,
         /// Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter  specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges. Default value is `false`.
         #[builder(into, default)]
-        pub cw_log_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cw_log_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The top-level internet domain name for which your application has administrative authority.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// The name of the log stream.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -52,41 +52,41 @@ pub mod workbook {
     pub struct WorkbookArgs {
         /// Workbook category, as defined by the user at creation time. There may be additional category types beyond the following: `workbook`, `sentinel`. Defaults to `workbook`.
         #[builder(into, default)]
-        pub category: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub category: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration of this particular workbook. Configuration data is a string containing valid JSON.
         #[builder(into)]
-        pub data_json: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_json: pulumi_gestalt_rust::Input<String>,
         /// Specifies the description of the workbook.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the user-defined name (display name) of the workbook.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below. Changing this forces a new Workbook to be created.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appinsights::WorkbookIdentity>,
         >,
         /// Specifies the Azure Region where the Workbook should exist. Changing this forces a new Workbook to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this Workbook as a UUID/GUID. It should not contain any uppercase letters. Changing this forces a new Workbook to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Workbook should exist. Changing this forces a new Workbook to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Resource ID for a source resource. It should not contain any uppercase letters. Defaults to `azure monitor`.
         #[builder(into, default)]
-        pub source_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Resource Manager ID of the Storage Container when bring your own storage is used. Changing this forces a new Workbook to be created.
         ///
         /// > **Note:** This is the Resource Manager ID of the Storage Container, rather than the regular ID - and can be accessed on the `azure.storage.Container` Data Source/Resource as `resource_manager_id`.
         #[builder(into, default)]
-        pub storage_container_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_container_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Workbook.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

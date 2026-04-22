@@ -75,34 +75,34 @@ pub mod network {
     pub struct NetworkArgs {
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels associated with this resource.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Google Cloud region to which the target Distributed Cloud Edge zone belongs.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// IP (L3) MTU value of the network. Default value is `1500`. Possible values are: `1500`, `9000`.
         #[builder(into, default)]
-        pub mtu: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub mtu: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A unique ID that identifies this network.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the target Distributed Cloud Edge zone.
         #[builder(into)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkResult {

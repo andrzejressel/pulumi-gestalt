@@ -56,22 +56,22 @@ pub mod federated_identity_credential {
     pub struct FederatedIdentityCredentialArgs {
         /// Specifies the audience for this Federated Identity Credential.
         #[builder(into)]
-        pub audience: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub audience: pulumi_gestalt_rust::Input<String>,
         /// Specifies the issuer of this Federated Identity Credential.
         #[builder(into)]
-        pub issuer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub issuer: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of this Federated Identity Credential. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies parent ID of User Assigned Identity for this Federated Identity Credential. Changing this forces a new Federated Identity Credential to be created.
         #[builder(into)]
-        pub parent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Resource Group within which this Federated Identity Credential should exist. Changing this forces a new Federated Identity Credential to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the subject for this Federated Identity Credential.
         #[builder(into)]
-        pub subject: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subject: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FederatedIdentityCredentialResult {

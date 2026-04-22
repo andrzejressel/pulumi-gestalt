@@ -33,16 +33,16 @@ pub mod bucket {
     pub struct BucketArgs {
         /// The ID of the bundle to use for the bucket. A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. Use the [get-bucket-bundles](https://docs.aws.amazon.com/cli/latest/reference/lightsail/get-bucket-bundles.html) cli command to get a list of bundle IDs that you can specify.
         #[builder(into)]
-        pub bundle_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bundle_id: pulumi_gestalt_rust::Input<String>,
         /// Force Delete non-empty buckets using `pulumi destroy`. AWS by default will not delete an s3 bucket which is not empty, to prevent losing bucket data and affecting other resources in lightsail. If `force_delete` is set to `true` the bucket will be deleted even when not empty.
         #[builder(into, default)]
-        pub force_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name for the bucket.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

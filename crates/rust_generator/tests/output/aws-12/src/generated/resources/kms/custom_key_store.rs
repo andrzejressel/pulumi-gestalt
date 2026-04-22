@@ -39,16 +39,16 @@ pub mod custom_key_store {
     pub struct CustomKeyStoreArgs {
         /// Cluster ID of CloudHSM.
         #[builder(into)]
-        pub cloud_hsm_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cloud_hsm_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Unique name for Custom Key Store.
         #[builder(into)]
-        pub custom_key_store_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_key_store_name: pulumi_gestalt_rust::Input<String>,
         /// Password for `kmsuser` on CloudHSM.
         #[builder(into)]
-        pub key_store_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_store_password: pulumi_gestalt_rust::Input<String>,
         /// Customer certificate used for signing on CloudHSM.
         #[builder(into)]
-        pub trust_anchor_certificate: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trust_anchor_certificate: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomKeyStoreResult {

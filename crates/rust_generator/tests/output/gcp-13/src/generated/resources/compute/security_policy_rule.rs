@@ -186,54 +186,54 @@ pub mod security_policy_rule {
         /// * redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. This action is only supported in Global Security Policies of type CLOUD_ARMOR.
         /// * throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rateLimitOptions to be set for this.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// An optional description of this resource. Provide this property when you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional, additional actions that are performed on headers. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub header_action: pulumi_gestalt_rust::InputOrOutput<
+        pub header_action: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityPolicyRuleHeaderAction>,
         >,
         /// A match condition that incoming traffic is evaluated against.
         /// If it evaluates to true, the corresponding 'action' is enforced.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub match_: pulumi_gestalt_rust::InputOrOutput<
+        pub match_: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityPolicyRuleMatch>,
         >,
         /// Preconfigured WAF configuration to be applied for the rule.
         /// If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub preconfigured_waf_config: pulumi_gestalt_rust::InputOrOutput<
+        pub preconfigured_waf_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::SecurityPolicyRulePreconfiguredWafConfig,
             >,
         >,
         /// If set to true, the specified action is not enforced.
         #[builder(into, default)]
-        pub preview: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub preview: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An integer indicating the priority of a rule in the list.
         /// The priority must be a positive value between 0 and 2147483647.
         /// Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Must be specified if the action is "rate_based_ban" or "throttle". Cannot be specified for any other actions.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub rate_limit_options: pulumi_gestalt_rust::InputOrOutput<
+        pub rate_limit_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityPolicyRuleRateLimitOptions>,
         >,
         /// Parameters defining the redirect action. Cannot be specified for any other actions. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub redirect_options: pulumi_gestalt_rust::InputOrOutput<
+        pub redirect_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityPolicyRuleRedirectOptions>,
         >,
         /// The name of the security policy this rule belongs to.
@@ -241,7 +241,7 @@ pub mod security_policy_rule {
         ///
         /// - - -
         #[builder(into)]
-        pub security_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SecurityPolicyRuleResult {

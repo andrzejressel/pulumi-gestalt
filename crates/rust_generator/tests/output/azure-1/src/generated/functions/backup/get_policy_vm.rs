@@ -10,13 +10,13 @@ pub mod get_policy_vm {
     pub struct GetPolicyVmArgs {
         /// Specifies the name of the VM Backup Policy.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Recovery Services Vault.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the VM Backup Policy resides.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPolicyVmResult {

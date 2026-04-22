@@ -108,28 +108,28 @@ pub mod data_lake_settings {
     pub struct DataLakeSettingsArgs {
         /// Set of ARNs of AWS Lake Formation principals (IAM users or roles).
         #[builder(into, default)]
-        pub admins: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub admins: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to allow Amazon EMR clusters to access data managed by Lake Formation.
         #[builder(into, default)]
-        pub allow_external_data_filtering: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_external_data_filtering: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Whether to allow a third-party query engine to get data access credentials without session tags when a caller has full data access permissions.
         #[builder(into, default)]
-        pub allow_full_table_external_data_access: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_full_table_external_data_access: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it.
         #[builder(into, default)]
-        pub authorized_session_tag_value_lists: pulumi_gestalt_rust::InputOrOutput<
+        pub authorized_session_tag_value_lists: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Identifier for the Data Catalog. By default, the account ID.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Up to three configuration blocks of principal permissions for default create database permissions. Detailed below.
         #[builder(into, default)]
-        pub create_database_default_permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub create_database_default_permissions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::lakeformation::DataLakeSettingsCreateDatabaseDefaultPermission,
@@ -138,7 +138,7 @@ pub mod data_lake_settings {
         >,
         /// Up to three configuration blocks of principal permissions for default create table permissions. Detailed below.
         #[builder(into, default)]
-        pub create_table_default_permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub create_table_default_permissions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::lakeformation::DataLakeSettingsCreateTableDefaultPermission,
@@ -147,22 +147,22 @@ pub mod data_lake_settings {
         >,
         /// A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.
         #[builder(into, default)]
-        pub external_data_filtering_allow_lists: pulumi_gestalt_rust::InputOrOutput<
+        pub external_data_filtering_allow_lists: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Key-value map of additional configuration. Valid values for the `CROSS_ACCOUNT_VERSION` key are `"1"`, `"2"`, `"3"`, or `"4"`. `SET_CONTEXT` is also returned with a value of `TRUE`. In a fresh account, prior to configuring, `CROSS_ACCOUNT_VERSION` is `"1"`. Destroying this resource sets the `CROSS_ACCOUNT_VERSION` to `"1"`.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Set of ARNs of AWS Lake Formation principals (IAM users or roles) with only view access to the resources.
         #[builder(into, default)]
-        pub read_only_admins: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub read_only_admins: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs).
         ///
         /// > **NOTE:** Although optional, not including `admins`, `create_database_default_permissions`, `create_table_default_permissions`, `parameters`, and/or `trusted_resource_owners` results in the setting being cleared.
         #[builder(into, default)]
-        pub trusted_resource_owners: pulumi_gestalt_rust::InputOrOutput<
+        pub trusted_resource_owners: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
     }

@@ -34,13 +34,13 @@ pub mod connection {
     pub struct ConnectionArgs {
         /// Name of the connection.
         #[builder(into)]
-        pub connection_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_name: pulumi_gestalt_rust::Input<String>,
         /// Source repository provider. Valid values: `GITHUB`.
         #[builder(into)]
-        pub provider_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provider_type: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

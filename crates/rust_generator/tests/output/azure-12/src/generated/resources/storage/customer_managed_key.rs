@@ -121,29 +121,29 @@ pub mod customer_managed_key {
     pub struct CustomerManagedKeyArgs {
         /// The Client ID of the multi-tenant application to be used in conjunction with the user-assigned identity for cross-tenant customer-managed-keys server-side encryption on the storage account.
         #[builder(into, default)]
-        pub federated_identity_client_id: pulumi_gestalt_rust::InputOrOutput<
+        pub federated_identity_client_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of Key Vault Key.
         #[builder(into)]
-        pub key_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// URI pointing at the Key Vault. Required when using `federated_identity_client_id`. Exactly one of `managed_hsm_key_id`, `key_vault_id`, or `key_vault_uri` must be specified.
         #[builder(into, default)]
-        pub key_vault_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version of Key Vault Key. Remove or omit this argument to enable Automatic Key Rotation.
         #[builder(into, default)]
-        pub key_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key ID of a key in a managed HSM.  Exactly one of `managed_hsm_key_id`, `key_vault_id`, or `key_vault_uri` must be specified.
         #[builder(into, default)]
-        pub managed_hsm_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub managed_hsm_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of a user assigned identity.
         #[builder(into, default)]
-        pub user_assigned_identity_id: pulumi_gestalt_rust::InputOrOutput<
+        pub user_assigned_identity_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

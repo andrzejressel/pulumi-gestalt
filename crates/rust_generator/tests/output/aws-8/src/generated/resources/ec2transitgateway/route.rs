@@ -63,18 +63,18 @@ pub mod route {
     pub struct RouteArgs {
         /// Indicates whether to drop traffic that matches this route (default to `false`).
         #[builder(into, default)]
-        pub blackhole: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub blackhole: pulumi_gestalt_rust::Input<Option<bool>>,
         /// IPv4 or IPv6 RFC1924 CIDR used for destination matches. Routing decisions are based on the most specific match.
         #[builder(into)]
-        pub destination_cidr_block: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_cidr_block: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Transit Gateway Attachment (required if `blackhole` is set to false).
         #[builder(into, default)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Identifier of EC2 Transit Gateway Route Table.
         #[builder(into)]
-        pub transit_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteResult {

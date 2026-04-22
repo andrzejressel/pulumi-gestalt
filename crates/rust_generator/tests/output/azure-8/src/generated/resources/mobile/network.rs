@@ -42,22 +42,22 @@ pub mod network {
     pub struct NetworkArgs {
         /// Specifies the Azure Region where the Mobile Network should exist. Changing this forces a new Mobile Network to be created. The possible values are `eastus` and `northeurope`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mobile country code (MCC), defined in https://www.itu.int/rec/T-REC-E.212 . Changing this forces a new resource to be created.
         #[builder(into)]
-        pub mobile_country_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_country_code: pulumi_gestalt_rust::Input<String>,
         /// Mobile network code (MNC), defined in https://www.itu.int/rec/T-REC-E.212 . Changing this forces a new resource to be created.
         #[builder(into)]
-        pub mobile_network_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_code: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this Mobile Network. Changing this forces a new Mobile Network to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Mobile Network should exist. Changing this forces a new Mobile Network to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Mobile Network.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

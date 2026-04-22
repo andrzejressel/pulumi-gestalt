@@ -44,10 +44,10 @@ pub mod resolver_config {
     pub struct ResolverConfigArgs {
         /// Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. Valid values: `ENABLE`, `DISABLE`.
         #[builder(into)]
-        pub autodefined_reverse_flag: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub autodefined_reverse_flag: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPC that the configuration is for.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResolverConfigResult {

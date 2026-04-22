@@ -60,22 +60,22 @@ pub mod log_scope {
     pub struct LogScopeArgs {
         /// Describes this log scopes.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the resource. The only supported location is global so far.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of the log scope. For example: \`projects/my-project/locations/global/logScopes/my-log-scope\`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parent of the resource.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// Names of one or more parent resources : *  \`projects/[PROJECT_ID]\` May alternatively be one or more views : * \`projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]\` A log scope can include a maximum of 50 projects and a maximum of 100 resources in total.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub resource_names: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub resource_names: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct LogScopeResult {

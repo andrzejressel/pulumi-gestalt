@@ -113,7 +113,7 @@ pub mod dicom_store {
         ///
         /// - - -
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset: pulumi_gestalt_rust::Input<String>,
         /// User-supplied key-value pairs used to organize DICOM stores.
         /// Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must
         /// conform to the following PCRE regular expression: [\p{Ll}\p{Lo}][\p{Ll}\p{Lo}\p{N}_-]{0,62}
@@ -126,24 +126,24 @@ pub mod dicom_store {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The resource name for the DicomStore.
         /// ** Changing this property may recreate the Dicom store (removing all data) **
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub notification_config: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::DicomStoreNotificationConfig>,
         >,
         /// To enable streaming to BigQuery, configure the streamConfigs object in your DICOM store.
         /// streamConfigs is an array, so you can specify multiple BigQuery destinations. You can stream metadata from a single DICOM store to up to five BigQuery tables in a BigQuery dataset.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub stream_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub stream_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::healthcare::DicomStoreStreamConfig>>,
         >,
     }

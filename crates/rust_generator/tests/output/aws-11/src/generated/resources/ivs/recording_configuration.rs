@@ -46,25 +46,25 @@ pub mod recording_configuration {
     pub struct RecordingConfigurationArgs {
         /// Object containing destination configuration for where recorded video will be stored.
         #[builder(into)]
-        pub destination_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_configuration: pulumi_gestalt_rust::Input<
             super::super::types::ivs::RecordingConfigurationDestinationConfiguration,
         >,
         /// Recording Configuration name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together.
         #[builder(into, default)]
-        pub recording_reconnect_window_seconds: pulumi_gestalt_rust::InputOrOutput<
+        pub recording_reconnect_window_seconds: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Object containing information to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.
         #[builder(into, default)]
-        pub thumbnail_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub thumbnail_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ivs::RecordingConfigurationThumbnailConfiguration,
             >,

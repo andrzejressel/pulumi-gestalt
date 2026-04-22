@@ -36,10 +36,10 @@ pub mod snapshot_create_volume_permission {
     pub struct SnapshotCreateVolumePermissionArgs {
         /// An AWS Account ID to add create volume permissions. The AWS Account cannot be the snapshot's owner
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// A snapshot ID
         #[builder(into)]
-        pub snapshot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub snapshot_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SnapshotCreateVolumePermissionResult {

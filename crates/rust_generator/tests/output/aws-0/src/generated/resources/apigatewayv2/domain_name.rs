@@ -87,20 +87,20 @@ pub mod domain_name {
     pub struct DomainNameArgs {
         /// Domain name. Must be between 1 and 512 characters in length.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Domain name configuration. See below.
         #[builder(into)]
-        pub domain_name_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub domain_name_configuration: pulumi_gestalt_rust::Input<
             super::super::types::apigatewayv2::DomainNameDomainNameConfiguration,
         >,
         /// Mutual TLS authentication configuration for the domain name.
         #[builder(into, default)]
-        pub mutual_tls_authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub mutual_tls_authentication: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigatewayv2::DomainNameMutualTlsAuthentication>,
         >,
         /// Map of tags to assign to the domain name. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

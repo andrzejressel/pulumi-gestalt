@@ -152,13 +152,13 @@ pub mod index {
     pub struct IndexArgs {
         /// The API scope at which a query is run. Default value: "ANY_API" Possible values: ["ANY_API", "DATASTORE_MODE_API"]
         #[builder(into, default)]
-        pub api_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// The collection being indexed.
         #[builder(into)]
-        pub collection: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub collection: pulumi_gestalt_rust::Input<String>,
         /// The Firestore database id. Defaults to '"(default)"'.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database: pulumi_gestalt_rust::Input<Option<String>>,
         /// The fields supported by this index. The last non-stored field entry is
         /// always for the field path `__name__`. If, on creation, `__name__` was not
         /// specified as the last field, it will be added automatically with the same
@@ -167,15 +167,15 @@ pub mod index {
         /// `"ASCENDING"` (unless explicitly specified otherwise).
         /// Structure is documented below.
         #[builder(into)]
-        pub fields: pulumi_gestalt_rust::InputOrOutput<
+        pub fields: pulumi_gestalt_rust::Input<
             Vec<super::super::types::firestore::IndexField>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The scope at which a query is run. Default value: "COLLECTION" Possible values: ["COLLECTION", "COLLECTION_GROUP",
         /// "COLLECTION_RECURSIVE"]
         #[builder(into, default)]
-        pub query_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query_scope: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IndexResult {

@@ -47,30 +47,30 @@ pub mod app_authorization {
     pub struct AppAuthorizationArgs {
         /// The name of the application for valid values see https://docs.aws.amazon.com/appfabric/latest/api/API_CreateAppAuthorization.html.
         #[builder(into)]
-        pub app: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the app bundle to use for the request.
         #[builder(into)]
-        pub app_bundle_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_bundle_arn: pulumi_gestalt_rust::Input<String>,
         /// The authorization type for the app authorization valid values are oauth2 and apiKey.
         #[builder(into)]
-        pub auth_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auth_type: pulumi_gestalt_rust::Input<String>,
         /// Contains credentials for the application, such as an API key or OAuth2 client ID and secret.
         /// Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (oauth2), then you should provide only the OAuth2 credentials.
         #[builder(into, default)]
-        pub credential: pulumi_gestalt_rust::InputOrOutput<
+        pub credential: pulumi_gestalt_rust::Input<
             Option<super::super::types::appfabric::AppAuthorizationCredential>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Contains information about an application tenant, such as the application display name and identifier.
         #[builder(into, default)]
-        pub tenants: pulumi_gestalt_rust::InputOrOutput<
+        pub tenants: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appfabric::AppAuthorizationTenant>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::appfabric::AppAuthorizationTimeouts>,
         >,
     }

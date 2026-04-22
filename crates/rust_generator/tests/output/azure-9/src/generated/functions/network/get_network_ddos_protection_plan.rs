@@ -10,10 +10,10 @@ pub mod get_network_ddos_protection_plan {
     pub struct GetNetworkDdosProtectionPlanArgs {
         /// The name of the Network DDoS Protection Plan.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group where the Network DDoS Protection Plan exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkDdosProtectionPlanResult {

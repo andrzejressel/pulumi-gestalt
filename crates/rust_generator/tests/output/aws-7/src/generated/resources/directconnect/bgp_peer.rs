@@ -29,24 +29,24 @@ pub mod bgp_peer {
     pub struct BgpPeerArgs {
         /// The address family for the BGP peer. `ipv4 ` or `ipv6`.
         #[builder(into)]
-        pub address_family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address_family: pulumi_gestalt_rust::Input<String>,
         /// The IPv4 CIDR address to use to send traffic to Amazon.
         /// Required for IPv4 BGP peers on public virtual interfaces.
         #[builder(into, default)]
-        pub amazon_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub amazon_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
         #[builder(into)]
-        pub bgp_asn: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub bgp_asn: pulumi_gestalt_rust::Input<i32>,
         /// The authentication key for BGP configuration.
         #[builder(into, default)]
-        pub bgp_auth_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bgp_auth_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 CIDR destination address to which Amazon should send traffic.
         /// Required for IPv4 BGP peers on public virtual interfaces.
         #[builder(into, default)]
-        pub customer_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Direct Connect virtual interface on which to create the BGP peer.
         #[builder(into)]
-        pub virtual_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_interface_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BgpPeerResult {

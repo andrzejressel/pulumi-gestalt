@@ -104,13 +104,13 @@ pub mod certificate_binding {
     pub struct CertificateBindingArgs {
         /// The ID of the certificate to bind to the custom domain. Changing this forces a new App Service Certificate Binding to be created.
         #[builder(into)]
-        pub certificate_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Custom Domain/Hostname Binding. Changing this forces a new App Service Certificate Binding to be created.
         #[builder(into)]
-        pub hostname_binding_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname_binding_id: pulumi_gestalt_rust::Input<String>,
         /// The type of certificate binding. Allowed values are `IpBasedEnabled` or `SniEnabled`. Changing this forces a new App Service Certificate Binding to be created.
         #[builder(into)]
-        pub ssl_state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ssl_state: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateBindingResult {

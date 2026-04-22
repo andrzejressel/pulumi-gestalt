@@ -63,28 +63,28 @@ pub mod spring_cloud_dev_tool_portal {
     pub struct SpringCloudDevToolPortalArgs {
         /// Should the Accelerator plugin be enabled?
         #[builder(into, default)]
-        pub application_accelerator_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub application_accelerator_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Should the Application Live View be enabled?
         #[builder(into, default)]
-        pub application_live_view_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub application_live_view_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name which should be used for this Spring Cloud Dev Tool Portal. The only possible value is `default`. Changing this forces a new Spring Cloud Dev Tool Portal to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is public network access enabled?
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud Dev Tool Portal to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
         /// A `sso` block as defined below.
         #[builder(into, default)]
-        pub sso: pulumi_gestalt_rust::InputOrOutput<
+        pub sso: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudDevToolPortalSso>,
         >,
     }

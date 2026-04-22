@@ -41,7 +41,7 @@ pub mod endpoint_group {
     pub struct EndpointGroupArgs {
         /// The list of endpoint objects. Fields documented below.
         #[builder(into, default)]
-        pub endpoint_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::globalaccelerator::EndpointGroupEndpointConfiguration,
@@ -50,38 +50,38 @@ pub mod endpoint_group {
         >,
         /// The name of the AWS Region where the endpoint group is located.
         #[builder(into, default)]
-        pub endpoint_group_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint_group_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
         #[builder(into, default)]
-        pub health_check_interval_seconds: pulumi_gestalt_rust::InputOrOutput<
+        pub health_check_interval_seconds: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (`/`). the provider will only perform drift detection of its value when present in a configuration.
         #[builder(into, default)]
-        pub health_check_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub health_check_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.
         /// the provider will only perform drift detection of its value when present in a configuration.
         #[builder(into, default)]
-        pub health_check_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub health_check_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.
         #[builder(into, default)]
-        pub health_check_protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub health_check_protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the listener.
         #[builder(into)]
-        pub listener_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub listener_arn: pulumi_gestalt_rust::Input<String>,
         /// Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. Fields documented below.
         #[builder(into, default)]
-        pub port_overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub port_overrides: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::globalaccelerator::EndpointGroupPortOverride>,
             >,
         >,
         /// The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.
         #[builder(into, default)]
-        pub threshold_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub threshold_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. The default value is 100.
         #[builder(into, default)]
-        pub traffic_dial_percentage: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub traffic_dial_percentage: pulumi_gestalt_rust::Input<Option<f64>>,
     }
     #[allow(dead_code)]
     pub struct EndpointGroupResult {

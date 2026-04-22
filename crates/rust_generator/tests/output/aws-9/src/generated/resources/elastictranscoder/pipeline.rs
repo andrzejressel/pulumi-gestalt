@@ -49,15 +49,15 @@ pub mod pipeline {
     pub struct PipelineArgs {
         /// The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
         #[builder(into, default)]
-        pub aws_kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ContentConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. (documented below)
         #[builder(into, default)]
-        pub content_config: pulumi_gestalt_rust::InputOrOutput<
+        pub content_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::elastictranscoder::PipelineContentConfig>,
         >,
         /// The permissions for the `content_config` object. (documented below)
         #[builder(into, default)]
-        pub content_config_permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub content_config_permissions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::elastictranscoder::PipelineContentConfigPermission,
@@ -66,24 +66,24 @@ pub mod pipeline {
         >,
         /// The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.
         #[builder(into)]
-        pub input_bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub input_bucket: pulumi_gestalt_rust::Input<String>,
         /// The name of the pipeline. Maximum 40 characters
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status. (documented below)
         #[builder(into, default)]
-        pub notifications: pulumi_gestalt_rust::InputOrOutput<
+        pub notifications: pulumi_gestalt_rust::Input<
             Option<super::super::types::elastictranscoder::PipelineNotifications>,
         >,
         /// The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files.
         #[builder(into, default)]
-        pub output_bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub output_bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         /// The ThumbnailConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files. (documented below)
         #[builder(into, default)]
-        pub thumbnail_config: pulumi_gestalt_rust::InputOrOutput<
+        pub thumbnail_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::elastictranscoder::PipelineThumbnailConfig>,
         >,
         /// The permissions for the `thumbnail_config` object. (documented below)
@@ -95,7 +95,7 @@ pub mod pipeline {
         /// `thumbnail_config`. If you specify values for `content_config` and
         /// `thumbnail_config`, omit the `output_bucket` object.
         #[builder(into, default)]
-        pub thumbnail_config_permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub thumbnail_config_permissions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::elastictranscoder::PipelineThumbnailConfigPermission,

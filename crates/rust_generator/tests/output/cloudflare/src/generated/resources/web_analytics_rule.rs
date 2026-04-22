@@ -47,22 +47,22 @@ pub mod web_analytics_rule {
     pub struct WebAnalyticsRuleArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The host to apply the rule to.
         #[builder(into)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host: pulumi_gestalt_rust::Input<String>,
         /// Whether the rule includes or excludes the matched traffic from being measured in Web Analytics.
         #[builder(into)]
-        pub inclusive: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub inclusive: pulumi_gestalt_rust::Input<bool>,
         /// Whether the rule is paused or not.
         #[builder(into)]
-        pub is_paused: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub is_paused: pulumi_gestalt_rust::Input<bool>,
         /// A list of paths to apply the rule to.
         #[builder(into)]
-        pub paths: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub paths: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The Web Analytics ruleset id. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub ruleset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ruleset_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WebAnalyticsRuleResult {

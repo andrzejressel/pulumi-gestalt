@@ -56,61 +56,61 @@ pub mod notebook_instance {
     pub struct NotebookInstanceArgs {
         /// A list of Elastic Inference (EI) instance types to associate with this notebook instance. See [Elastic Inference Accelerator](https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html) for more details. Valid values: `ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`.
         #[builder(into, default)]
-        pub accelerator_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub accelerator_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An array of up to three Git repositories to associate with the notebook instance.
         /// These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in [AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html) or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance.
         #[builder(into, default)]
-        pub additional_code_repositories: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_code_repositories: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in [AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html) or in any other Git repository.
         #[builder(into, default)]
-        pub default_code_repository: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_code_repository: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to `Disabled` to disable internet access to notebook. Requires `security_groups` and `subnet_id` to be set. Supported values: `Enabled` (Default) or `Disabled`. If set to `Disabled`, the notebook instance will be able to access resources only in your VPC, and will not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your VPC.
         #[builder(into, default)]
-        pub direct_internet_access: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub direct_internet_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information on the IMDS configuration of the notebook instance. Conflicts with `instance_metadata_service_configuration`. see details below.
         #[builder(into, default)]
-        pub instance_metadata_service_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_metadata_service_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::sagemaker::NotebookInstanceInstanceMetadataServiceConfiguration,
             >,
         >,
         /// The name of ML compute instance type.
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a lifecycle configuration to associate with the notebook instance.
         #[builder(into, default)]
-        pub lifecycle_config_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lifecycle_config_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the notebook instance (must be unique).
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The platform identifier of the notebook instance runtime environment. This value can be either `notebook-al1-v1`, `notebook-al2-v1`, `notebook-al2-v2`, or `notebook-al2-v3`, depending on which version of Amazon Linux you require.
         #[builder(into, default)]
-        pub platform_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the IAM role to be used by the notebook instance which allows SageMaker to call other services on your behalf.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Whether root access is `Enabled` or `Disabled` for users of the notebook instance. The default value is `Enabled`.
         #[builder(into, default)]
-        pub root_access: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub root_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// The associated security groups.
         #[builder(into, default)]
-        pub security_groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The VPC subnet ID.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.
         #[builder(into, default)]
-        pub volume_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub volume_size: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct NotebookInstanceResult {

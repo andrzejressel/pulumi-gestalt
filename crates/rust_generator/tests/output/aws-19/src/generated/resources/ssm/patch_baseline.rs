@@ -152,52 +152,52 @@ pub mod patch_baseline {
     pub struct PatchBaselineArgs {
         /// Set of rules used to include patches in the baseline. Up to 10 approval rules can be specified. See `approval_rule` below.
         #[builder(into, default)]
-        pub approval_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub approval_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ssm::PatchBaselineApprovalRule>>,
         >,
         /// List of explicitly approved patches for the baseline. Cannot be specified with `approval_rule`.
         #[builder(into, default)]
-        pub approved_patches: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub approved_patches: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. Valid values are `CRITICAL`, `HIGH`, `MEDIUM`, `LOW`, `INFORMATIONAL`, `UNSPECIFIED`. The default value is `UNSPECIFIED`.
         #[builder(into, default)]
-        pub approved_patches_compliance_level: pulumi_gestalt_rust::InputOrOutput<
+        pub approved_patches_compliance_level: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Whether the list of approved patches includes non-security updates that should be applied to the instances. Applies to Linux instances only.
         #[builder(into, default)]
-        pub approved_patches_enable_non_security: pulumi_gestalt_rust::InputOrOutput<
+        pub approved_patches_enable_non_security: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Description of the patch baseline.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of global filters used to exclude patches from the baseline. Up to 4 global filters can be specified using Key/Value pairs. Valid Keys are `PRODUCT`, `CLASSIFICATION`, `MSRC_SEVERITY`, and `PATCH_ID`.
         #[builder(into, default)]
-        pub global_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub global_filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ssm::PatchBaselineGlobalFilter>>,
         >,
         /// Name of the patch baseline.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Operating system the patch baseline applies to. Valid values are `ALMA_LINUX`, `AMAZON_LINUX`, `AMAZON_LINUX_2`, `AMAZON_LINUX_2022`, `AMAZON_LINUX_2023`, `CENTOS`, `DEBIAN`, `MACOS`, `ORACLE_LINUX`, `RASPBIAN`, `REDHAT_ENTERPRISE_LINUX`, `ROCKY_LINUX`, `SUSE`, `UBUNTU`, and `WINDOWS`. The default value is `WINDOWS`.
         #[builder(into, default)]
-        pub operating_system: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub operating_system: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of rejected patches.
         #[builder(into, default)]
-        pub rejected_patches: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub rejected_patches: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Action for Patch Manager to take on patches included in the `rejected_patches` list. Valid values are `ALLOW_AS_DEPENDENCY` and `BLOCK`.
         #[builder(into, default)]
-        pub rejected_patches_action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rejected_patches_action: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with alternate sources for patches. Applies to Linux instances only. See `source` below.
         #[builder(into, default)]
-        pub sources: pulumi_gestalt_rust::InputOrOutput<
+        pub sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ssm::PatchBaselineSource>>,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

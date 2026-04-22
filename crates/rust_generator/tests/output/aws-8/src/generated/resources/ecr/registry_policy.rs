@@ -55,7 +55,7 @@ pub mod registry_policy {
     pub struct RegistryPolicyArgs {
         /// The policy document. This is a JSON formatted string.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegistryPolicyResult {

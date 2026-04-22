@@ -93,7 +93,7 @@ pub mod firewall_policy_rule_collection_group {
     pub struct FirewallPolicyRuleCollectionGroupArgs {
         /// One or more `application_rule_collection` blocks as defined below.
         #[builder(into, default)]
-        pub application_rule_collections: pulumi_gestalt_rust::InputOrOutput<
+        pub application_rule_collections: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::FirewallPolicyRuleCollectionGroupApplicationRuleCollection,
@@ -102,13 +102,13 @@ pub mod firewall_policy_rule_collection_group {
         >,
         /// The ID of the Firewall Policy where the Firewall Policy Rule Collection Group should exist. Changing this forces a new Firewall Policy Rule Collection Group to be created.
         #[builder(into)]
-        pub firewall_policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_policy_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Firewall Policy Rule Collection Group. Changing this forces a new Firewall Policy Rule Collection Group to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `nat_rule_collection` blocks as defined below.
         #[builder(into, default)]
-        pub nat_rule_collections: pulumi_gestalt_rust::InputOrOutput<
+        pub nat_rule_collections: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::FirewallPolicyRuleCollectionGroupNatRuleCollection,
@@ -117,7 +117,7 @@ pub mod firewall_policy_rule_collection_group {
         >,
         /// One or more `network_rule_collection` blocks as defined below.
         #[builder(into, default)]
-        pub network_rule_collections: pulumi_gestalt_rust::InputOrOutput<
+        pub network_rule_collections: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::FirewallPolicyRuleCollectionGroupNetworkRuleCollection,
@@ -126,7 +126,7 @@ pub mod firewall_policy_rule_collection_group {
         >,
         /// The priority of the Firewall Policy Rule Collection Group. The range is 100-65000.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct FirewallPolicyRuleCollectionGroupResult {

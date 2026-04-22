@@ -38,18 +38,18 @@ pub mod product_portfolio_association {
     pub struct ProductPortfolioAssociationArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Portfolio identifier.
         #[builder(into)]
-        pub portfolio_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub portfolio_id: pulumi_gestalt_rust::Input<String>,
         /// Product identifier.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the source portfolio.
         #[builder(into, default)]
-        pub source_portfolio_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_portfolio_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProductPortfolioAssociationResult {

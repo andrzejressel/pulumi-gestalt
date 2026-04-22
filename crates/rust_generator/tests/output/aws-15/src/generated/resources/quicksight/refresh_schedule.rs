@@ -116,20 +116,20 @@ pub mod refresh_schedule {
     pub struct RefreshScheduleArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the dataset.
         #[builder(into)]
-        pub data_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_set_id: pulumi_gestalt_rust::Input<String>,
         /// The [refresh schedule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html). See schedule
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::RefreshScheduleSchedule>,
         >,
         /// The ID of the refresh schedule.
         #[builder(into)]
-        pub schedule_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schedule_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RefreshScheduleResult {

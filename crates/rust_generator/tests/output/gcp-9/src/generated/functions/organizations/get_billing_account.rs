@@ -10,19 +10,19 @@ pub mod get_billing_account {
     pub struct GetBillingAccountArgs {
         /// The name of the billing account in the form `{billing_account_id}` or `billingAccounts/{billing_account_id}`.
         #[builder(into, default)]
-        pub billing_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub billing_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the billing account.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// `true` if projects associated with the billing account should be read, `false` if this step
         /// should be skipped. Setting `false` may be useful if the user permissions do not allow listing projects. Defaults to `true`.
         ///
         /// > **NOTE:** One of `billing_account` or `display_name` must be specified.
         #[builder(into, default)]
-        pub lookup_projects: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub lookup_projects: pulumi_gestalt_rust::Input<Option<bool>>,
         /// `true` if the billing account is open, `false` if the billing account is closed.
         #[builder(into, default)]
-        pub open: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub open: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetBillingAccountResult {

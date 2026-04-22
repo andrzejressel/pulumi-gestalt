@@ -172,7 +172,7 @@ pub mod instance {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// 'Availability type of an Instance. Defaults to REGIONAL for both primary and read instances.
@@ -183,77 +183,77 @@ pub mod instance {
         /// can have regional availability (nodes are present in 2 or more zones in a region).'
         /// Possible values are: `AVAILABILITY_TYPE_UNSPECIFIED`, `ZONAL`, `REGIONAL`.
         #[builder(into, default)]
-        pub availability_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Client connection specific configurations.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub client_connection_config: pulumi_gestalt_rust::InputOrOutput<
+        pub client_connection_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::alloydb::InstanceClientConnectionConfig>,
         >,
         /// Identifies the alloydb cluster. Must be in the format
         /// 'projects/{project}/locations/{location}/clusters/{cluster_id}'
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// Database flags. Set at instance level. * They are copied from primary instance on read instance creation. * Read instances can set new or override existing flags that are relevant for reads, e.g. for enabling columnar cache on a read instance. Flags set on read instance may or may not be present on primary.
         #[builder(into, default)]
-        pub database_flags: pulumi_gestalt_rust::InputOrOutput<
+        pub database_flags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// User-settable and human-readable display name for the Instance.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Compute Engine zone that the instance should serve from, per https://cloud.google.com/compute/docs/regions-zones This can ONLY be specified for ZONAL instances. If present for a REGIONAL instance, an error will be thrown. If this is absent for a ZONAL instance, instance is created in a random zone with available capacity.
         #[builder(into, default)]
-        pub gce_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gce_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the alloydb instance.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// User-defined labels for the alloydb instance.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configurations for the machines that host the underlying database engine.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub machine_config: pulumi_gestalt_rust::InputOrOutput<
+        pub machine_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::alloydb::InstanceMachineConfig>,
         >,
         /// Instance level network configuration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::alloydb::InstanceNetworkConfig>,
         >,
         /// Configuration for enhanced query insights.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub observability_config: pulumi_gestalt_rust::InputOrOutput<
+        pub observability_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::alloydb::InstanceObservabilityConfig>,
         >,
         /// Configuration for Private Service Connect (PSC) for the instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub psc_instance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub psc_instance_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::alloydb::InstancePscInstanceConfig>,
         >,
         /// Configuration for query insights.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub query_insights_config: pulumi_gestalt_rust::InputOrOutput<
+        pub query_insights_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::alloydb::InstanceQueryInsightsConfig>,
         >,
         /// Read pool specific config. If the instance type is READ_POOL, this configuration must be provided.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub read_pool_config: pulumi_gestalt_rust::InputOrOutput<
+        pub read_pool_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::alloydb::InstanceReadPoolConfig>,
         >,
     }

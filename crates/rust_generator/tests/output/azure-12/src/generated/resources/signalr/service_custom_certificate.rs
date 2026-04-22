@@ -101,15 +101,15 @@ pub mod service_custom_certificate {
         ///
         /// > **Note:** Self assigned certificate is not supported and the provisioning status will fail.
         #[builder(into)]
-        pub custom_certificate_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_certificate_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the SignalR Custom Certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SignalR ID of the SignalR Custom Certificate. Changing this forces a new resource to be created.
         ///
         /// > **Note:** Custom Certificate is only available for SignalR Premium tier. Please enable managed identity in the corresponding SignalR Service and give the managed identity access to the key vault, the required permission is Get Certificate and Secret.
         #[builder(into)]
-        pub signalr_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signalr_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceCustomCertificateResult {

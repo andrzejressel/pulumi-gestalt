@@ -46,40 +46,40 @@ pub mod application {
         ///
         /// > **NOTE:** Due to a bug in the provider, the default value of `display_name` of a newly created IoT Central App will be the Resource Group Name, it will be fixed and use resource name in 4.0. For an existing IoT Central App, this could be fixed by specifying the `display_name` explicitly.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::iotcentral::ApplicationIdentity>,
         >,
         /// Specifies the supported Azure location where the resource has to be create. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the IotHub resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is allowed for the IoT Central Application. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the resource group under which the IotHub resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` name. Possible values is `ST0`, `ST1`, `ST2`, Default value is `ST1`
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `sub_domain` name. Subdomain for the IoT Central URL. Each application must have a unique subdomain.
         #[builder(into)]
-        pub sub_domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sub_domain: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `template` name. IoT Central application template name. Defaults to `iotc-pnp-preview@1.0.0`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub template: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {

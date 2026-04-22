@@ -52,21 +52,21 @@ pub mod managed_prefix_list {
     pub struct ManagedPrefixListArgs {
         /// Address family (`IPv4` or `IPv6`) of this prefix list.
         #[builder(into)]
-        pub address_family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address_family: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for prefix list entry. Detailed below. Different entries may have overlapping CIDR blocks, but a particular CIDR should not be duplicated.
         #[builder(into, default)]
-        pub entries: pulumi_gestalt_rust::InputOrOutput<
+        pub entries: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::ManagedPrefixListEntry>>,
         >,
         /// Maximum number of entries that this prefix list can contain.
         #[builder(into)]
-        pub max_entries: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub max_entries: pulumi_gestalt_rust::Input<i32>,
         /// Name of this resource. The name must not start with `com.amazonaws`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

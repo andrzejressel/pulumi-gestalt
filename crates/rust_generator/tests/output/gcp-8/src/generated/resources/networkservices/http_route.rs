@@ -235,36 +235,36 @@ pub mod http_route {
     pub struct HttpRouteArgs {
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Gateways defines a list of gateways this HttpRoute is attached to, as one of the routing rules to route the requests
         /// served by the gateway. Each gateway reference should match the pattern:
         /// projects/*/locations/global/gateways/<gateway_name>
         #[builder(into, default)]
-        pub gateways: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub gateways: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Set of hosts that should match against the HTTP host header to select a HttpRoute to process the request.
         #[builder(into)]
-        pub hostnames: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub hostnames: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Set of label tags associated with the HttpRoute resource. **Note**: This field is non-authoritative, and will only
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Meshes defines a list of meshes this HttpRoute is attached to, as one of the routing rules to route the requests served
         /// by the mesh. Each mesh reference should match the pattern: projects/*/locations/global/meshes/<mesh_name>. The attached
         /// Mesh should be of a type SIDECAR.
         #[builder(into, default)]
-        pub meshes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub meshes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the HttpRoute resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rules that define how traffic is routed and handled.
         /// Structure is documented below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::networkservices::HttpRouteRule>,
         >,
     }

@@ -108,19 +108,19 @@ pub mod cluster_customer_managed_key {
     pub struct ClusterCustomerManagedKeyArgs {
         /// The ID of the Kusto Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The name of Key Vault Key.
         #[builder(into)]
-        pub key_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Key Vault.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// The version of Key Vault Key.
         #[builder(into, default)]
-        pub key_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user assigned identity that has access to the Key Vault Key. If not specified, system assigned identity will be used.
         #[builder(into, default)]
-        pub user_identity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_identity: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ClusterCustomerManagedKeyResult {

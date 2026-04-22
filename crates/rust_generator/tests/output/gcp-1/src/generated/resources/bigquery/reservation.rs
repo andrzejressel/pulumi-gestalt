@@ -69,38 +69,38 @@ pub mod reservation {
         /// The configuration parameters for the auto scaling feature.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub autoscale: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscale: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::ReservationAutoscale>,
         >,
         /// Maximum number of queries that are allowed to run concurrently in this reservation. This is a soft limit due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency will be automatically set based on the reservation size.
         #[builder(into, default)]
-        pub concurrency: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub concurrency: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The edition type. Valid values are STANDARD, ENTERPRISE, ENTERPRISE_PLUS
         #[builder(into, default)]
-        pub edition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edition: pulumi_gestalt_rust::Input<Option<String>>,
         /// If false, any query using this reservation will use idle slots from other reservations within
         /// the same admin project. If true, a query using this reservation will execute with the slot
         /// capacity specified above at most.
         #[builder(into, default)]
-        pub ignore_idle_slots: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ignore_idle_slots: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The geographic location where the transfer config should reside.
         /// Examples: US, EU, asia-northeast1. The default value is US.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the reservation. This field must only contain alphanumeric characters or dash.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Minimum slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the
         /// unit of parallelism. Queries using this reservation might use more slots during runtime if ignoreIdleSlots is set to false.
         #[builder(into)]
-        pub slot_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub slot_capacity: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct ReservationResult {

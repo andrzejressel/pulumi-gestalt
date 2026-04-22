@@ -10,13 +10,13 @@ pub mod get_assets {
     pub struct GetAssetsArgs {
         /// Outpost ARN.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Filters by list of Host IDs of a Dedicated Host.
         #[builder(into, default)]
-        pub host_id_filters: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub host_id_filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Filters by list of state status. Valid values: "ACTIVE", "RETIRING".
         #[builder(into, default)]
-        pub status_id_filters: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub status_id_filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetAssetsResult {

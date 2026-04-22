@@ -66,17 +66,17 @@ pub mod tag_value {
     pub struct TagValueArgs {
         /// User-assigned description of the TagValue. Must not exceed 256 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Input only. The resource name of the new TagValue's parent. Must be of the form tagKeys/{tag_key_id}.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Input only. User-assigned short name for TagValue. The short name should be unique for TagValues within the same parent TagKey.
         /// The short name can have a maximum length of 256 characters. The permitted character set for the shortName includes all UTF-8 encoded Unicode characters except single quotes ('), double quotes ("), backslashes (\\), and forward slashes (/).
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub short_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub short_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagValueResult {

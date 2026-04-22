@@ -64,84 +64,84 @@ pub mod app_service {
     pub struct AppServiceArgs {
         /// The ID of the App Service Plan within which to create this App Service.
         #[builder(into)]
-        pub app_service_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_plan_id: pulumi_gestalt_rust::Input<String>,
         /// A key-value pair of App Settings.
         #[builder(into, default)]
-        pub app_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub app_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `auth_settings` block as defined below.
         #[builder(into, default)]
-        pub auth_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::AppServiceAuthSettings>,
         >,
         /// A `backup` block as defined below.
         #[builder(into, default)]
-        pub backup: pulumi_gestalt_rust::InputOrOutput<
+        pub backup: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::AppServiceBackup>,
         >,
         /// Should the App Service send session affinity cookies, which route client requests in the same session to the same instance?
         #[builder(into, default)]
-        pub client_affinity_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_affinity_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Does the App Service require client certificates for incoming requests? Defaults to `false`.
         #[builder(into, default)]
-        pub client_cert_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_cert_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Mode of client certificates for this App Service. Possible values are `Required`, `Optional` and `OptionalInteractiveUser`. If this parameter is set, `client_cert_enabled` must be set to `true`, otherwise this parameter is ignored.
         #[builder(into, default)]
-        pub client_cert_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_cert_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `connection_string` blocks as defined below.
         #[builder(into, default)]
-        pub connection_strings: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_strings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::AppServiceConnectionString>>,
         >,
         /// Is the App Service Enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Can the App Service only be accessed via HTTPS? Defaults to `false`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::AppServiceIdentity>,
         >,
         /// The User Assigned Identity Id used for looking up KeyVault secrets. The identity must be assigned to the application. [For more information see - Access vaults with a user-assigned identity](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#access-vaults-with-a-user-assigned-identity)
         #[builder(into, default)]
-        pub key_vault_reference_identity_id: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `logs` block as defined below.
         #[builder(into, default)]
-        pub logs: pulumi_gestalt_rust::InputOrOutput<
+        pub logs: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::AppServiceLogs>,
         >,
         /// Specifies the name of the App Service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the App Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `site_config` block as defined below.
         #[builder(into, default)]
-        pub site_config: pulumi_gestalt_rust::InputOrOutput<
+        pub site_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::AppServiceSiteConfig>,
         >,
         /// A `source_control` block as defined below.
         #[builder(into, default)]
-        pub source_control: pulumi_gestalt_rust::InputOrOutput<
+        pub source_control: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::AppServiceSourceControl>,
         >,
         /// One or more `storage_account` blocks as defined below.
         #[builder(into, default)]
-        pub storage_accounts: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_accounts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::AppServiceStorageAccount>>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

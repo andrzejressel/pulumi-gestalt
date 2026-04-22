@@ -11,10 +11,10 @@ pub mod get_connection {
         /// Concatenation of the catalog ID and connection name. For example, if your account ID is
         /// `123456789123` and the connection name is `conn` then the ID is `123456789123:conn`.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
         /// Tags assigned to the resource
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

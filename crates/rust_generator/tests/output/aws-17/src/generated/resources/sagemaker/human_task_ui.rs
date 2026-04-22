@@ -36,15 +36,15 @@ pub mod human_task_ui {
     pub struct HumanTaskUIArgs {
         /// The name of the Human Task UI.
         #[builder(into)]
-        pub human_task_ui_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub human_task_ui_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Liquid template for the worker user interface. See UI Template below.
         #[builder(into)]
-        pub ui_template: pulumi_gestalt_rust::InputOrOutput<
+        pub ui_template: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::HumanTaskUiUiTemplate,
         >,
     }

@@ -179,26 +179,26 @@ pub mod server_microsoft_support_auditing_policy {
     pub struct ServerMicrosoftSupportAuditingPolicyArgs {
         /// The blob storage endpoint (e.g. https://example.blob.core.windows.net). This blob storage will hold all Microsoft support auditing logs.
         #[builder(into, default)]
-        pub blob_storage_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub blob_storage_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable the extended auditing policy. Possible values are `true` and `false`. Defaults to `true`.
         ///
         /// ->**NOTE:**  If `enabled` is `true`, `blob_storage_endpoint` or `log_monitoring_enabled` are required.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable audit events to Azure Monitor? To enable server audit events to Azure Monitor, please enable its main database audit events to Azure Monitor. Defaults to `true`.
         #[builder(into, default)]
-        pub log_monitoring_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub log_monitoring_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the SQL Server to set the extended auditing policy. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         /// The access key to use for the auditing storage account.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the Subscription containing the Storage Account.
         #[builder(into, default)]
-        pub storage_account_subscription_id: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_subscription_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

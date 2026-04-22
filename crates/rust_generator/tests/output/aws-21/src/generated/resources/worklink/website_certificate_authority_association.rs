@@ -41,13 +41,13 @@ pub mod website_certificate_authority_association {
     pub struct WebsiteCertificateAuthorityAssociationArgs {
         /// The root certificate of the Certificate Authority.
         #[builder(into)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate: pulumi_gestalt_rust::Input<String>,
         /// The certificate name to display.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the fleet.
         #[builder(into)]
-        pub fleet_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub fleet_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WebsiteCertificateAuthorityAssociationResult {

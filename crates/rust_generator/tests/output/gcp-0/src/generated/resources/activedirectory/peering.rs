@@ -64,30 +64,30 @@ pub mod peering {
     pub struct PeeringArgs {
         /// The full names of the Google Compute Engine networks to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.
         #[builder(into)]
-        pub authorized_network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authorized_network: pulumi_gestalt_rust::Input<String>,
         /// Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form projects/{projectId}/locations/global/domains/{domainName}
         #[builder(into)]
-        pub domain_resource: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_resource: pulumi_gestalt_rust::Input<String>,
         /// Resource labels that can contain user-provided metadata
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// - - -
         #[builder(into)]
-        pub peering_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peering_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The current state of this Peering.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Additional information about the current status of this peering, if available.
         #[builder(into, default)]
-        pub status_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status_message: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PeeringResult {

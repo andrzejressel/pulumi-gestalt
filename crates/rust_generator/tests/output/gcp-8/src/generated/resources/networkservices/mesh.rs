@@ -64,19 +64,19 @@ pub mod mesh {
     pub struct MeshArgs {
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the
         /// specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to
         /// be redirected to this port regardless of its actual ip:port destination. If unset, a port
         /// '15001' is used as the interception port. This will is applicable only for sidecar proxy
         /// deployments.
         #[builder(into, default)]
-        pub interception_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub interception_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Set of label tags associated with the Mesh resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Short name of the Mesh resource to be created.
@@ -84,11 +84,11 @@ pub mod mesh {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MeshResult {

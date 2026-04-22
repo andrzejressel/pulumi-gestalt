@@ -81,7 +81,7 @@ pub mod auth_config {
         /// Raw client certificate
         /// Structure is documented below.
         #[builder(into, default)]
-        pub client_certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub client_certificate: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::applicationintegration::AuthConfigClientCertificate,
             >,
@@ -89,21 +89,21 @@ pub mod auth_config {
         /// Raw auth credentials.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub decrypted_credential: pulumi_gestalt_rust::InputOrOutput<
+        pub decrypted_credential: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::applicationintegration::AuthConfigDecryptedCredential,
             >,
         >,
         /// A description of the auth config.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the auth config.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// User can define the time to receive notification after which the auth config becomes invalid. Support up to 30 days. Support granularity in hours.
         /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub expiry_notification_durations: pulumi_gestalt_rust::InputOrOutput<
+        pub expiry_notification_durations: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Location in which client needs to be provisioned.
@@ -111,19 +111,19 @@ pub mod auth_config {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// User provided expiry time to override. For the example of Salesforce, username/password credentials can be valid for 6 months depending on the instance settings.
         /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
         #[builder(into, default)]
-        pub override_valid_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub override_valid_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The visibility of the auth config.
         /// Possible values are: `PRIVATE`, `CLIENT_VISIBLE`.
         #[builder(into, default)]
-        pub visibility: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub visibility: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AuthConfigResult {

@@ -86,16 +86,16 @@ pub mod user_pool_ui_customization {
     pub struct UserPoolUICustomizationArgs {
         /// The client ID for the client app. Defaults to `ALL`. If `ALL` is specified, the `css` and/or `image_file` settings will be used for every client that has no UI customization set previously.
         #[builder(into, default)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The CSS values in the UI customization, provided as a String. At least one of `css` or `image_file` is required.
         #[builder(into, default)]
-        pub css: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub css: pulumi_gestalt_rust::Input<Option<String>>,
         /// The uploaded logo image for the UI customization, provided as a base64-encoded String. Drift detection is not possible for this argument. At least one of `css` or `image_file` is required.
         #[builder(into, default)]
-        pub image_file: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_file: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user pool ID for the user pool.
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserPoolUICustomizationResult {

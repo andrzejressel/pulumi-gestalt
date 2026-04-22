@@ -62,7 +62,7 @@ pub mod private_link_association {
         ///
         /// > **Note:** For now, `management_group_id` must be the ID of [Root Management Group](https://learn.microsoft.com/en-us/azure/governance/management-groups/overview#root-management-group-for-each-directory).
         #[builder(into)]
-        pub management_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub management_group_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of this Private Link Association, which should be a UUID. If `name` is not provided, a UUID will be generated, you should use the `ignore_changes` attribute to ignore changes to this field. Changing this forces a new Private Link Association to be created.
         ///
         /// ```ignore
@@ -83,13 +83,13 @@ pub mod private_link_association {
         /// }
         /// ```
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is allowed. Changing this forces a new Private Link Association to be created.
         #[builder(into)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<bool>,
         /// The Resource ID of Resource Management Private Link. Changing this forces a new Private Link Association to be created.
         #[builder(into)]
-        pub resource_management_private_link_id: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_management_private_link_id: pulumi_gestalt_rust::Input<
             String,
         >,
     }

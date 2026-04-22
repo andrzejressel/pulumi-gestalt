@@ -56,33 +56,33 @@ pub mod subscription_policy_remediation {
     pub struct SubscriptionPolicyRemediationArgs {
         /// A number between 0.0 to 1.0 representing the percentage failure threshold. The remediation will fail if the percentage of failed remediation operations (i.e. failed deployments) exceeds this threshold.
         #[builder(into, default)]
-        pub failure_percentage: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub failure_percentage: pulumi_gestalt_rust::Input<Option<f64>>,
         /// A list of the resource locations that will be remediated.
         #[builder(into, default)]
-        pub location_filters: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub location_filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the Policy Remediation. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Determines how many resources to remediate at any given time. Can be used to increase or reduce the pace of the remediation. If not provided, the default parallel deployments value is used.
         #[builder(into, default)]
-        pub parallel_deployments: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub parallel_deployments: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Policy Assignment that should be remediated.
         #[builder(into)]
-        pub policy_assignment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_assignment_id: pulumi_gestalt_rust::Input<String>,
         /// The unique ID for the policy definition reference within the policy set definition that should be remediated. Required when the policy assignment being remediated assigns a policy set definition.
         #[builder(into, default)]
-        pub policy_definition_reference_id: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_definition_reference_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Determines the max number of resources that can be remediated by the remediation job. If not provided, the default resource count is used.
         #[builder(into, default)]
-        pub resource_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub resource_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The way that resources to remediate are discovered. Possible values are `ExistingNonCompliant`, `ReEvaluateCompliance`. Defaults to `ExistingNonCompliant`.
         #[builder(into, default)]
-        pub resource_discovery_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_discovery_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Subscription ID at which the Policy Remediation should be applied. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionPolicyRemediationResult {

@@ -161,52 +161,52 @@ pub mod node_group {
         /// One of `initial_size` or `autoscaling_policy` must be configured on resource creation.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub autoscaling_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscaling_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::NodeGroupAutoscalingPolicy>,
         >,
         /// An optional textual description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The initial number of nodes in the node group. One of `initial_size` or `autoscaling_policy` must be configured on resource creation.
         #[builder(into, default)]
-        pub initial_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub initial_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the frequency of planned maintenance events. Set to one of the following:
         /// - AS_NEEDED: Hosts are eligible to receive infrastructure and hypervisor updates as they become available.
         /// - RECURRENT: Hosts receive planned infrastructure and hypervisor updates on a periodic basis, but not more frequently than every 28 days. This minimizes the number of planned maintenance operations on individual hosts and reduces the frequency of disruptions, both live migrations and terminations, on individual VMs.
         /// Possible values are: `AS_NEEDED`, `RECURRENT`.
         #[builder(into, default)]
-        pub maintenance_interval: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub maintenance_interval: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT.
         #[builder(into, default)]
-        pub maintenance_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub maintenance_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// contains properties for the timeframe of maintenance
         /// Structure is documented below.
         #[builder(into, default)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_window: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::NodeGroupMaintenanceWindow>,
         >,
         /// Name of the resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URL of the node template to which this node group belongs.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub node_template: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_template: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Share settings for the node group.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub share_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub share_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::NodeGroupShareSettings>,
         >,
         /// Zone where this node group is located
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NodeGroupResult {

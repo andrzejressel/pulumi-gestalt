@@ -51,26 +51,26 @@ pub mod peering_attachment {
     pub struct PeeringAttachmentArgs {
         /// Describes whether dynamic routing is enabled or disabled for the transit gateway peering request. See options below for more details!
         #[builder(into, default)]
-        pub options: pulumi_gestalt_rust::InputOrOutput<
+        pub options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2transitgateway::PeeringAttachmentOptions>,
         >,
         /// Account ID of EC2 Transit Gateway to peer with. Defaults to the account ID the AWS provider is currently connected to.
         #[builder(into, default)]
-        pub peer_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peer_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region of EC2 Transit Gateway to peer with.
         #[builder(into)]
-        pub peer_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_region: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Transit Gateway to peer with.
         #[builder(into)]
-        pub peer_transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_transit_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the EC2 Transit Gateway Peering Attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of EC2 Transit Gateway.
         #[builder(into)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PeeringAttachmentResult {

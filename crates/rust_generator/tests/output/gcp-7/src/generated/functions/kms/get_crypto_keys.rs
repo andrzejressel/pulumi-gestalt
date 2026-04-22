@@ -17,10 +17,10 @@ pub mod get_crypto_keys {
         ///
         /// [See the documentation about using filters](https://cloud.google.com/kms/docs/sorting-and-filtering)
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The key ring that the keys belongs to. Format: 'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'.,
         #[builder(into)]
-        pub key_ring: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_ring: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCryptoKeysResult {

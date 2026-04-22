@@ -10,7 +10,7 @@ pub mod get_serverless_vpc_endpoint {
     pub struct GetServerlessVpcEndpointArgs {
         /// The unique identifier of the endpoint.
         #[builder(into)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServerlessVpcEndpointResult {

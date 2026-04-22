@@ -10,21 +10,21 @@ pub mod get_service {
     pub struct GetServiceArgs {
         /// DNS name of the service (_e.g.,_ `rds.us-east-1.amazonaws.com`). One of `dns_name`, `reverse_dns_name`, or `service_id` is required.
         #[builder(into, default)]
-        pub dns_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dns_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region of the service (_e.g.,_ `us-west-2`, `ap-northeast-1`).
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Reverse DNS name of the service (_e.g.,_ `com.amazonaws.us-west-2.s3`). One of `dns_name`, `reverse_dns_name`, or `service_id` is required.
         #[builder(into, default)]
-        pub reverse_dns_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reverse_dns_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Prefix of the service (_e.g.,_ `com.amazonaws` in AWS Commercial, `cn.com.amazonaws` in AWS China).
         #[builder(into, default)]
-        pub reverse_dns_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reverse_dns_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service endpoint ID (_e.g.,_ `s3`, `rds`, `ec2`). One of `dns_name`, `reverse_dns_name`, or `service_id` is required. A service's endpoint ID can be found in the [_AWS General Reference_](https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html).
         #[builder(into, default)]
-        pub service_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetServiceResult {

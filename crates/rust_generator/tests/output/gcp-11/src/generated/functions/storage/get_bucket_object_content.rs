@@ -10,13 +10,13 @@ pub mod get_bucket_object_content {
     pub struct GetBucketObjectContentArgs {
         /// The name of the containing bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// (Computed) [Content-Language](https://tools.ietf.org/html/rfc7231#section-3.1.3.2) of the object content.
         #[builder(into, default)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the object.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBucketObjectContentResult {

@@ -67,14 +67,14 @@ pub mod notification_channel {
     pub struct NotificationChannelArgs {
         /// Filter configurations for the Amazon SNS notification topic. See the `filters` argument reference below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<super::super::types::devopsguru::NotificationChannelFilters>,
         >,
         /// SNS noficiation channel configurations. See the `sns` argument reference below.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub sns: pulumi_gestalt_rust::InputOrOutput<
+        pub sns: pulumi_gestalt_rust::Input<
             Option<super::super::types::devopsguru::NotificationChannelSns>,
         >,
     }

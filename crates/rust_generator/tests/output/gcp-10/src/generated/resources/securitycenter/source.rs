@@ -61,21 +61,21 @@ pub mod source {
     pub struct SourceArgs {
         /// The description of the source (max of 1024 characters).
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source’s display name. A source’s display name must be unique
         /// amongst its siblings, for example, two sources with the same parent
         /// can't share the same display name. The display name must start and end
         /// with a letter or digit, may contain letters, digits, spaces, hyphens,
         /// and underscores, and can be no longer than 32 characters.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The organization whose Cloud Security Command Center the Source
         /// lives in.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SourceResult {

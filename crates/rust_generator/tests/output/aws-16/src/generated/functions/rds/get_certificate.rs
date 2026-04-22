@@ -10,10 +10,10 @@ pub mod get_certificate {
     pub struct GetCertificateArgs {
         /// Certificate identifier. For example, `rds-ca-2019`.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// When enabled, returns the certificate with the latest `ValidTill`.
         #[builder(into, default)]
-        pub latest_valid_till: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub latest_valid_till: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetCertificateResult {

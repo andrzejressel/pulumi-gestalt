@@ -9,9 +9,9 @@ pub mod module_test {
     #[allow(dead_code)]
     pub struct moduleTestArgs {
         #[builder(into, default)]
-        pub mod1: pulumi_gestalt_rust::InputOrOutput<Option<super::types::mod1::Typ>>,
+        pub mod1: pulumi_gestalt_rust::Input<Option<super::types::mod1::Typ>>,
         #[builder(into, default)]
-        pub val: pulumi_gestalt_rust::InputOrOutput<Option<super::types::Typ>>,
+        pub val: pulumi_gestalt_rust::Input<Option<super::types::Typ>>,
     }
     #[allow(dead_code)]
     pub struct moduleTestResult {

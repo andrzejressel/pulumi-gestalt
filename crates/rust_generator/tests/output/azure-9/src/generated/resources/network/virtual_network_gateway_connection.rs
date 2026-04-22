@@ -249,112 +249,112 @@ pub mod virtual_network_gateway_connection {
     pub struct VirtualNetworkGatewayConnectionArgs {
         /// The authorization key associated with the Express Route Circuit. This field is required only if the type is an ExpressRoute connection.
         #[builder(into, default)]
-        pub authorization_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Connection mode to use. Possible values are `Default`, `InitiatorOnly` and `ResponderOnly`. Defaults to `Default`. Changing this value will force a resource to be created.
         #[builder(into, default)]
-        pub connection_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IKE protocol version to use. Possible values are `IKEv1` and `IKEv2`, values are `IKEv1` and `IKEv2`. Defaults to `IKEv2`. Changing this forces a new resource to be created.
         /// > **Note:** Only valid for `IPSec` connections on virtual network gateways with SKU `VpnGw1`, `VpnGw2`, `VpnGw3`, `VpnGw1AZ`, `VpnGw2AZ` or `VpnGw3AZ`.
         #[builder(into, default)]
-        pub connection_protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `custom_bgp_addresses` block which is documented below.
         /// The block can only be used on `IPSec` / `activeactive` connections,
         /// For details about see [the relevant section in the Azure documentation](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-aws-bgp).
         #[builder(into, default)]
-        pub custom_bgp_addresses: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_bgp_addresses: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::network::VirtualNetworkGatewayConnectionCustomBgpAddresses,
             >,
         >,
         /// The dead peer detection timeout of this connection in seconds. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub dpd_timeout_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub dpd_timeout_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A list of the egress NAT Rule Ids.
         #[builder(into, default)]
-        pub egress_nat_rule_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub egress_nat_rule_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// If `true`, BGP (Border Gateway Protocol) is enabled for this connection. Defaults to `false`.
         #[builder(into, default)]
-        pub enable_bgp: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_bgp: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Express Route Circuit when creating an ExpressRoute connection (i.e. when `type` is `ExpressRoute`). The Express Route Circuit can be in the same or in a different subscription. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub express_route_circuit_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub express_route_circuit_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// If `true`, data packets will bypass ExpressRoute Gateway for data forwarding This is only valid for ExpressRoute connections.
         #[builder(into, default)]
-        pub express_route_gateway_bypass: pulumi_gestalt_rust::InputOrOutput<
+        pub express_route_gateway_bypass: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A list of the ingress NAT Rule Ids.
         #[builder(into, default)]
-        pub ingress_nat_rule_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress_nat_rule_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A `ipsec_policy` block which is documented below.
         /// Only a single policy can be defined for a connection. For details on
         /// custom policies refer to [the relevant section in the Azure documentation](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell).
         #[builder(into, default)]
-        pub ipsec_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub ipsec_policy: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::network::VirtualNetworkGatewayConnectionIpsecPolicy,
             >,
         >,
         /// Use private local Azure IP for the connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub local_azure_ip_address_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub local_azure_ip_address_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the local network gateway when creating Site-to-Site connection (i.e. when `type` is `IPsec`).
         #[builder(into, default)]
-        pub local_network_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub local_network_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location/region where the connection is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the connection. Changing the name forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the peer virtual network gateway when creating a VNet-to-VNet connection (i.e. when `type` is `Vnet2Vnet`). The peer Virtual Network Gateway can be in the same or in a different subscription. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub peer_virtual_network_gateway_id: pulumi_gestalt_rust::InputOrOutput<
+        pub peer_virtual_network_gateway_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Bypass the Express Route gateway when accessing private-links. When enabled `express_route_gateway_bypass` must be set to `true`. Defaults to `false`.
         #[builder(into, default)]
-        pub private_link_fast_path_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub private_link_fast_path_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the resource group in which to create the connection Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The routing weight. Defaults to `10`.
         #[builder(into, default)]
-        pub routing_weight: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub routing_weight: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The shared IPSec key. A key could be provided if a Site-to-Site, VNet-to-VNet or ExpressRoute connection is created.
         #[builder(into, default)]
-        pub shared_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub shared_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// One or more `traffic_selector_policy` blocks which are documented below.
         /// A `traffic_selector_policy` allows to specify a traffic selector policy proposal to be used in a virtual network gateway connection.
         /// For details about traffic selectors refer to [the relevant section in the Azure documentation](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps).
         #[builder(into, default)]
-        pub traffic_selector_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub traffic_selector_policy: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::network::VirtualNetworkGatewayConnectionTrafficSelectorPolicy,
             >,
         >,
         /// The type of connection. Valid options are `IPsec` (Site-to-Site), `ExpressRoute` (ExpressRoute), and `Vnet2Vnet` (VNet-to-VNet). Each connection type requires different mandatory arguments (refer to the examples above). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// If `true`, policy-based traffic selectors are enabled for this connection. Enabling policy-based traffic selectors requires an `ipsec_policy` block. Defaults to `false`.
         #[builder(into, default)]
-        pub use_policy_based_traffic_selectors: pulumi_gestalt_rust::InputOrOutput<
+        pub use_policy_based_traffic_selectors: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the Virtual Network Gateway in which the connection will be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_network_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_network_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkGatewayConnectionResult {

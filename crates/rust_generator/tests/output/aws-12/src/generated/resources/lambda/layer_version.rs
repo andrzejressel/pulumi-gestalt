@@ -49,41 +49,41 @@ pub mod layer_version {
     pub struct LayerVersionArgs {
         /// Path to the function's deployment package within the local filesystem. If defined, The `s3_`-prefixed options cannot be used.
         #[builder(into, default)]
-        pub code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub code: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of [Architectures](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-CompatibleArchitectures) this layer is compatible with. Currently `x86_64` and `arm64` can be specified.
         #[builder(into, default)]
-        pub compatible_architectures: pulumi_gestalt_rust::InputOrOutput<
+        pub compatible_architectures: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// List of [Runtimes](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-CompatibleRuntimes) this layer is compatible with. Up to 15 runtimes can be specified.
         #[builder(into, default)]
-        pub compatible_runtimes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub compatible_runtimes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Description of what your Lambda Layer does.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name for your Lambda Layer
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub layer_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub layer_name: pulumi_gestalt_rust::Input<String>,
         /// License info for your Lambda Layer. See [License Info](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-LicenseInfo).
         #[builder(into, default)]
-        pub license_info: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub license_info: pulumi_gestalt_rust::Input<Option<String>>,
         /// S3 bucket location containing the function's deployment package. Conflicts with `filename`. This bucket must reside in the same AWS region where you are creating the Lambda function.
         #[builder(into, default)]
-        pub s3_bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// S3 key of an object containing the function's deployment package. Conflicts with `filename`.
         #[builder(into, default)]
-        pub s3_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object version containing the function's deployment package. Conflicts with `filename`.
         #[builder(into, default)]
-        pub s3_object_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_object_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to retain the old version of a previously deployed Lambda Layer. Default is `false`. When this is not set to `true`, changing any of `compatible_architectures`, `compatible_runtimes`, `description`, `filename`, `layer_name`, `license_info`, `s3_bucket`, `s3_key`, `s3_object_version`, or `source_code_hash` forces deletion of the existing layer version and creation of a new layer version.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Virtual attribute used to trigger replacement when source code changes. Must be set to a base64-encoded SHA256 hash of the package file specified with either `filename` or `s3_key`.
         #[builder(into, default)]
-        pub source_code_hash: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_code_hash: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LayerVersionResult {

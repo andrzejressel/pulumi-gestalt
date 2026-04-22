@@ -10,13 +10,13 @@ pub mod get_user_ssh_key {
     pub struct GetUserSshKeyArgs {
         /// Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use `SSH`. To retrieve the public key in PEM format, use `PEM`.
         #[builder(into)]
-        pub encoding: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub encoding: pulumi_gestalt_rust::Input<String>,
         /// Unique identifier for the SSH public key.
         #[builder(into)]
-        pub ssh_public_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ssh_public_key_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the IAM user associated with the SSH public key.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetUserSshKeyResult {

@@ -64,80 +64,80 @@ pub mod registry_task {
     pub struct RegistryTaskArgs {
         /// The name of the dedicated Container Registry Agent Pool for this Container Registry Task.
         #[builder(into, default)]
-        pub agent_pool_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub agent_pool_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `agent_setting` block as defined below.
         ///
         /// > **NOTE:** Only one of `agent_pool_name` and `agent_setting` can be specified.
         #[builder(into, default)]
-        pub agent_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub agent_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryTaskAgentSetting>,
         >,
         /// A `base_image_trigger` block as defined below.
         #[builder(into, default)]
-        pub base_image_trigger: pulumi_gestalt_rust::InputOrOutput<
+        pub base_image_trigger: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryTaskBaseImageTrigger>,
         >,
         /// The ID of the Container Registry that this Container Registry Task resides in. Changing this forces a new Container Registry Task to be created.
         #[builder(into)]
-        pub container_registry_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_registry_id: pulumi_gestalt_rust::Input<String>,
         /// A `docker_step` block as defined below.
         #[builder(into, default)]
-        pub docker_step: pulumi_gestalt_rust::InputOrOutput<
+        pub docker_step: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryTaskDockerStep>,
         >,
         /// Should this Container Registry Task be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `encoded_step` block as defined below.
         #[builder(into, default)]
-        pub encoded_step: pulumi_gestalt_rust::InputOrOutput<
+        pub encoded_step: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryTaskEncodedStep>,
         >,
         /// A `file_step` block as defined below.
         ///
         /// > **NOTE:** For non-system task (when `is_system_task` is set to `false`), one and only one of the `docker_step`, `encoded_step` and `file_step` should be specified.
         #[builder(into, default)]
-        pub file_step: pulumi_gestalt_rust::InputOrOutput<
+        pub file_step: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryTaskFileStep>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryTaskIdentity>,
         >,
         /// Whether this Container Registry Task is a system task. Changing this forces a new Container Registry Task to be created. Defaults to `false`.
         #[builder(into, default)]
-        pub is_system_task: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_system_task: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub log_template: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub log_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Container Registry Task. Changing this forces a new Container Registry Task to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `platform` block as defined below.
         ///
         /// > **NOTE:** The `platform` is required for non-system task (when `is_system_task` is set to `false`).
         #[builder(into, default)]
-        pub platform: pulumi_gestalt_rust::InputOrOutput<
+        pub platform: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryTaskPlatform>,
         >,
         #[builder(into, default)]
-        pub registry_credential: pulumi_gestalt_rust::InputOrOutput<
+        pub registry_credential: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryTaskRegistryCredential>,
         >,
         /// One or more `source_trigger` blocks as defined below.
         #[builder(into, default)]
-        pub source_triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub source_triggers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerservice::RegistryTaskSourceTrigger>>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeout_in_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more `timer_trigger` blocks as defined below.
         #[builder(into, default)]
-        pub timer_triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub timer_triggers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerservice::RegistryTaskTimerTrigger>>,
         >,
     }

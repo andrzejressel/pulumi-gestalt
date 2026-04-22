@@ -123,13 +123,13 @@ pub mod job_schedule {
         ///
         /// > **Note:** Setting `start_mode` to `LastOutputEventTime` is only possible if the job had been previously started and produced output.
         #[builder(into)]
-        pub start_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_mode: pulumi_gestalt_rust::Input<String>,
         /// The time in ISO8601 format at which the Stream Analytics Job should be started e.g. `2022-04-01T00:00:00Z`. This property can only be specified if `start_mode` is set to `CustomTime`
         #[builder(into, default)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Stream Analytics Job that should be scheduled or started. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct JobScheduleResult {

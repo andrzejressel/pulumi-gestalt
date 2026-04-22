@@ -10,7 +10,7 @@ pub mod get_organizational_unit_descendant_organizational_units {
     pub struct GetOrganizationalUnitDescendantOrganizationalUnitsArgs {
         /// Parent ID of the organizational unit.
         #[builder(into)]
-        pub parent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOrganizationalUnitDescendantOrganizationalUnitsResult {

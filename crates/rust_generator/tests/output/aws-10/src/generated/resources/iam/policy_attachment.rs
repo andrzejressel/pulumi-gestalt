@@ -79,19 +79,19 @@ pub mod policy_attachment {
     pub struct PolicyAttachmentArgs {
         /// Group(s) the policy should be applied to.
         #[builder(into, default)]
-        pub groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the attachment. This cannot be an empty string.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the policy you want to apply. Typically this should be a reference to the ARN of another resource to ensure dependency ordering, such as `aws_iam_policy.example.arn`.
         #[builder(into)]
-        pub policy_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_arn: pulumi_gestalt_rust::Input<String>,
         /// Role(s) the policy should be applied to.
         #[builder(into, default)]
-        pub roles: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub roles: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// User(s) the policy should be applied to.
         #[builder(into, default)]
-        pub users: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub users: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct PolicyAttachmentResult {

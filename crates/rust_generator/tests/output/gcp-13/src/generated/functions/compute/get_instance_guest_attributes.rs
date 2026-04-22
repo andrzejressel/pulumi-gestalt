@@ -10,27 +10,27 @@ pub mod get_instance_guest_attributes {
     pub struct GetInstanceGuestAttributesArgs {
         /// The name or self_link of the instance.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If `self_link` is provided, this value is ignored.  If neither `self_link`
         /// nor `project` are provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Path to query for the guest attributes. Consists of
         /// `namespace` name for the attributes followed with a `/`.
         #[builder(into, default)]
-        pub query_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query_path: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key of a variable to get the value of. Consists of
         /// `namespace` name and `key` name for the variable separated by a `/`.
         #[builder(into, default)]
-        pub variable_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub variable_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone of the instance. If `self_link` is provided, this
         /// value is ignored.  If neither `self_link` nor `zone` are provided, the
         /// provider zone is used.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceGuestAttributesResult {

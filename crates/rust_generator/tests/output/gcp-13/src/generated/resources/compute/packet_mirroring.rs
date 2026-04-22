@@ -138,43 +138,43 @@ pub mod packet_mirroring {
         /// set to true.
         /// Structure is documented below.
         #[builder(into)]
-        pub collector_ilb: pulumi_gestalt_rust::InputOrOutput<
+        pub collector_ilb: pulumi_gestalt_rust::Input<
             super::super::types::compute::PacketMirroringCollectorIlb,
         >,
         /// A human-readable description of the rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A filter for mirrored traffic. If unset, all traffic is mirrored.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::PacketMirroringFilter>,
         >,
         /// A means of specifying which resources to mirror.
         /// Structure is documented below.
         #[builder(into)]
-        pub mirrored_resources: pulumi_gestalt_rust::InputOrOutput<
+        pub mirrored_resources: pulumi_gestalt_rust::Input<
             super::super::types::compute::PacketMirroringMirroredResources,
         >,
         /// The name of the packet mirroring rule
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the mirrored VPC network. Only packets in this network
         /// will be mirrored. All mirrored VMs should have a NIC in the given
         /// network. All mirrored subnetworks should belong to the given network.
         /// Structure is documented below.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<
+        pub network: pulumi_gestalt_rust::Input<
             super::super::types::compute::PacketMirroringNetwork,
         >,
         /// Since only one rule can be active at a time, priority is used to break ties in the case of two rules that apply to the
         /// same instances.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Region in which the created address should reside. If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PacketMirroringResult {

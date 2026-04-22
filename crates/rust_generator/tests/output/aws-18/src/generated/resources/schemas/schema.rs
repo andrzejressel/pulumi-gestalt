@@ -53,24 +53,24 @@ pub mod schema {
     pub struct SchemaArgs {
         /// The schema specification. Must be a valid Open API 3.0 spec.
         #[builder(into)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content: pulumi_gestalt_rust::Input<String>,
         /// The description of the schema. Maximum of 256 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the schema. Maximum of 385 characters consisting of lower case letters, upper case letters, ., -, _, @.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the registry in which this schema belongs.
         #[builder(into)]
-        pub registry_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub registry_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of the schema. Valid values: `OpenApi3` or `JSONSchemaDraft4`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SchemaResult {

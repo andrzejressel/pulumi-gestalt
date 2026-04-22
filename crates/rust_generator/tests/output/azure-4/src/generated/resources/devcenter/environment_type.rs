@@ -48,13 +48,13 @@ pub mod environment_type {
     pub struct EnvironmentTypeArgs {
         /// The ID of the associated Dev Center. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub dev_center_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of this Dev Center Environment Type. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Dev Center Environment Type.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

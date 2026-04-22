@@ -61,15 +61,15 @@ pub mod watchlist_item {
     pub struct WatchlistItemArgs {
         /// The name in UUID format which should be used for this Sentinel Watchlist Item. Changing this forces a new Sentinel Watchlist Item to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The key value pairs of the Sentinel Watchlist Item.
         #[builder(into)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
         /// The ID of the Sentinel Watchlist that this Item resides in. Changing this forces a new Sentinel Watchlist Item to be created.
         #[builder(into)]
-        pub watchlist_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub watchlist_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WatchlistItemResult {

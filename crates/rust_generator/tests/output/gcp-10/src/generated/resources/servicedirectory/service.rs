@@ -68,19 +68,19 @@ pub mod service {
         /// up to 2000 characters, spread across all key-value pairs.
         /// Metadata that goes beyond any these limits will be rejected.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The resource name of the namespace this service will belong to.
         #[builder(into)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace: pulumi_gestalt_rust::Input<String>,
         /// The Resource ID must be 1-63 characters long, including digits,
         /// lowercase letters or the hyphen character.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceResult {

@@ -78,40 +78,40 @@ pub mod integration_account_agreement {
     pub struct IntegrationAccountAgreementArgs {
         /// The type of the Logic App Integration Account Agreement. Possible values are `AS2`, `X12` and `Edifact`.
         #[builder(into)]
-        pub agreement_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agreement_type: pulumi_gestalt_rust::Input<String>,
         /// The content of the Logic App Integration Account Agreement.
         #[builder(into)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content: pulumi_gestalt_rust::Input<String>,
         /// A `guest_identity` block as documented below.
         #[builder(into)]
-        pub guest_identity: pulumi_gestalt_rust::InputOrOutput<
+        pub guest_identity: pulumi_gestalt_rust::Input<
             super::super::types::logicapps::IntegrationAccountAgreementGuestIdentity,
         >,
         /// The name of the guest Logic App Integration Account Partner.
         #[builder(into)]
-        pub guest_partner_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub guest_partner_name: pulumi_gestalt_rust::Input<String>,
         /// A `host_identity` block as documented below.
         #[builder(into)]
-        pub host_identity: pulumi_gestalt_rust::InputOrOutput<
+        pub host_identity: pulumi_gestalt_rust::Input<
             super::super::types::logicapps::IntegrationAccountAgreementHostIdentity,
         >,
         /// The name of the host Logic App Integration Account Partner.
         #[builder(into)]
-        pub host_partner_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_partner_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Logic App Integration Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub integration_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_account_name: pulumi_gestalt_rust::Input<String>,
         /// The metadata of the Logic App Integration Account Agreement.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Agreement. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Logic App Integration Account Agreement should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IntegrationAccountAgreementResult {

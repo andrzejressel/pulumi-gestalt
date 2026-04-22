@@ -78,10 +78,10 @@ pub mod subnet_network_security_group_association {
     pub struct SubnetNetworkSecurityGroupAssociationArgs {
         /// The ID of the Network Security Group which should be associated with the Subnet. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_security_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_security_group_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubnetNetworkSecurityGroupAssociationResult {

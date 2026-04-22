@@ -10,10 +10,10 @@ pub mod get_cluster {
     pub struct GetClusterArgs {
         /// Specifies the name of this HDInsight Cluster.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Resource Group in which this HDInsight Cluster exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetClusterResult {

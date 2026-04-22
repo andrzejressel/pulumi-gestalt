@@ -44,19 +44,19 @@ pub mod service_trust {
     pub struct ServiceTrustArgs {
         /// The ID of the Active Directory Domain Service. Changing this forces a new Active Directory Domain Service Trust to be created.
         #[builder(into)]
-        pub domain_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_service_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Active Directory Domain Service Trust. Changing this forces a new Active Directory Domain Service Trust to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password of the inbound trust set in the on-premise Active Directory Domain Service.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of DNS IPs that are used to resolve the on-premise Active Directory Domain Service.
         #[builder(into)]
-        pub trusted_domain_dns_ips: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub trusted_domain_dns_ips: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The FQDN of the on-premise Active Directory Domain Service.
         #[builder(into)]
-        pub trusted_domain_fqdn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trusted_domain_fqdn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceTrustResult {

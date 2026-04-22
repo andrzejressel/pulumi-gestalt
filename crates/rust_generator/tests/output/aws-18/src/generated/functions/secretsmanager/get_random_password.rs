@@ -10,28 +10,28 @@ pub mod get_random_password {
     pub struct GetRandomPasswordArgs {
         /// String of the characters that you don't want in the password.
         #[builder(into, default)]
-        pub exclude_characters: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub exclude_characters: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether to exclude lowercase letters from the password.
         #[builder(into, default)]
-        pub exclude_lowercase: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exclude_lowercase: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether to exclude numbers from the password.
         #[builder(into, default)]
-        pub exclude_numbers: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exclude_numbers: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether to exclude the following punctuation characters from the password: ``! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ .``
         #[builder(into, default)]
-        pub exclude_punctuation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exclude_punctuation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether to exclude uppercase letters from the password.
         #[builder(into, default)]
-        pub exclude_uppercase: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exclude_uppercase: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether to include the space character.
         #[builder(into, default)]
-        pub include_space: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_space: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Length of the password.
         #[builder(into, default)]
-        pub password_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub password_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies whether to include at least one upper and lowercase letter, one number, and one punctuation.
         #[builder(into, default)]
-        pub require_each_included_type: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub require_each_included_type: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetRandomPasswordResult {

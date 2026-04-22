@@ -307,25 +307,25 @@ pub mod cx_flow {
         /// Hierarchy: Agent->Flow->Page->Fulfillment/Parameter.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub advanced_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::CxFlowAdvancedSettings>,
         >,
         /// The description of the flow. The maximum length is 500 characters. If exceeded, the request is rejected.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The human-readable name of the flow.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// A flow's event handlers serve two purposes:
         /// They are responsible for handling events (e.g. no match, webhook errors) in the flow.
         /// They are inherited by every page's [event handlers][Page.event_handlers], which can be used to handle common events regardless of the current page. Event handlers defined in the page have higher priority than those defined in the flow.
         /// Unlike transitionRoutes, these handlers are evaluated on a first-match basis. The first one that matches the event get executed, with the rest being ignored.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub event_handlers: pulumi_gestalt_rust::InputOrOutput<
+        pub event_handlers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::diagflow::CxFlowEventHandler>>,
         >,
         /// Marks this as the [Default Start Flow](https://cloud.google.com/dialogflow/cx/docs/concept/flow#start) for an agent. When you create an agent, the Default Start Flow is created automatically.
@@ -333,7 +333,7 @@ pub mod cx_flow {
         ///
         /// > Avoid having multiple `gcp.diagflow.CxFlow` resources linked to the same agent with `is_default_start_flow = true` because they will compete to control a single Default Start Flow resource in GCP.
         #[builder(into, default)]
-        pub is_default_start_flow: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_default_start_flow: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The language of the following fields in flow:
         /// Flow.event_handlers.trigger_fulfillment.messages
         /// Flow.event_handlers.trigger_fulfillment.conditional_cases
@@ -341,23 +341,23 @@ pub mod cx_flow {
         /// Flow.transition_routes.trigger_fulfillment.conditional_cases
         /// If not specified, the agent's default language is used. Many languages are supported. Note: languages must be enabled in the agent before they can be used.
         #[builder(into, default)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language_code: pulumi_gestalt_rust::Input<Option<String>>,
         /// NLU related settings of the flow.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub nlu_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub nlu_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::CxFlowNluSettings>,
         >,
         /// The agent to create a flow for.
         /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// A flow's transition route group serve two purposes:
         /// They are responsible for matching the user's first utterances in the flow.
         /// They are inherited by every page's [transition route groups][Page.transition_route_groups]. Transition route groups defined in the page have higher priority than those defined in the flow.
         /// Format:projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>.
         #[builder(into, default)]
-        pub transition_route_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub transition_route_groups: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A flow's transition routes serve two purposes:
@@ -369,7 +369,7 @@ pub mod cx_flow {
         /// TransitionRoutes with intent specified are inherited by pages in the flow.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub transition_routes: pulumi_gestalt_rust::InputOrOutput<
+        pub transition_routes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::diagflow::CxFlowTransitionRoute>>,
         >,
     }

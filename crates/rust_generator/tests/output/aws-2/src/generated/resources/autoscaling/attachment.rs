@@ -45,13 +45,13 @@ pub mod attachment {
     pub struct AttachmentArgs {
         /// Name of ASG to associate with the ELB.
         #[builder(into)]
-        pub autoscaling_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub autoscaling_group_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the ELB.
         #[builder(into, default)]
-        pub elb: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub elb: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of a load balancer target group.
         #[builder(into, default)]
-        pub lb_target_group_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lb_target_group_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AttachmentResult {

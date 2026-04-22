@@ -10,10 +10,10 @@ pub mod get_managed_hardware_security_module {
     pub struct GetManagedHardwareSecurityModuleArgs {
         /// The name of the Key Vault Managed Hardware Security Module.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Key Vault Managed Hardware Security Module exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetManagedHardwareSecurityModuleResult {

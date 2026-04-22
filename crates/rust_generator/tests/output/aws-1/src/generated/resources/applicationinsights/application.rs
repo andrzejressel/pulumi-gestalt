@@ -43,30 +43,30 @@ pub mod application {
     pub struct ApplicationArgs {
         /// Indicates whether Application Insights automatically configures unmonitored resources in the resource group.
         #[builder(into, default)]
-        pub auto_config_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_config_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configures all of the resources in the resource group by applying the recommended configurations.
         #[builder(into, default)]
-        pub auto_create: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_create: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as instance terminated, failed deployment, and others.
         #[builder(into, default)]
-        pub cwe_monitor_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cwe_monitor_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to `ACCOUNT_BASED`.
         #[builder(into, default)]
-        pub grouping_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub grouping_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// When set to `true`, creates opsItems for any problems detected on an application.
         #[builder(into, default)]
-        pub ops_center_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ops_center_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.
         #[builder(into, default)]
-        pub ops_item_sns_topic_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ops_item_sns_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource group.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

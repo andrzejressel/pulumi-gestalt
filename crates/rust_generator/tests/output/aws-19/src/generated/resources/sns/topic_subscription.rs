@@ -181,44 +181,44 @@ pub mod topic_subscription {
     pub struct TopicSubscriptionArgs {
         /// Integer indicating number of minutes to wait in retrying mode for fetching subscription arn before marking it as failure. Only applicable for http and https protocols. Default is `1`.
         #[builder(into, default)]
-        pub confirmation_timeout_in_minutes: pulumi_gestalt_rust::InputOrOutput<
+        pub confirmation_timeout_in_minutes: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// JSON String with the delivery policy (retries, backoff, etc.) that will be used in the subscription - this only applies to HTTP/S subscriptions. Refer to the [SNS docs](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for more details.
         #[builder(into, default)]
-        pub delivery_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delivery_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Endpoint to send data to. The contents vary with the protocol. See details below.
         #[builder(into)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint: pulumi_gestalt_rust::Input<String>,
         /// Whether the endpoint is capable of [auto confirming subscription](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.prepare) (e.g., PagerDuty). Default is `false`.
         #[builder(into, default)]
-        pub endpoint_auto_confirms: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub endpoint_auto_confirms: pulumi_gestalt_rust::Input<Option<bool>>,
         /// JSON String with the filter policy that will be used in the subscription to filter messages seen by the target resource. Refer to the [SNS docs](https://docs.aws.amazon.com/sns/latest/dg/message-filtering.html) for more details.
         #[builder(into, default)]
-        pub filter_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the `filter_policy` applies to `MessageAttributes` (default) or `MessageBody`.
         #[builder(into, default)]
-        pub filter_policy_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter_policy_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Protocol to use. Valid values are: `sqs`, `sms`, `lambda`, `firehose`, and `application`. Protocols `email`, `email-json`, `http` and `https` are also valid but partially supported. See details below.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable raw message delivery (the original message is directly passed, not wrapped in JSON with the original message in the message property). Default is `false`.
         #[builder(into, default)]
-        pub raw_message_delivery: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub raw_message_delivery: pulumi_gestalt_rust::Input<Option<bool>>,
         /// JSON String with the redrive policy that will be used in the subscription. Refer to the [SNS docs](https://docs.aws.amazon.com/sns/latest/dg/sns-dead-letter-queues.html#how-messages-moved-into-dead-letter-queue) for more details.
         #[builder(into, default)]
-        pub redrive_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub redrive_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// JSON String with the archived message replay policy that will be used in the subscription. Refer to the [SNS docs](https://docs.aws.amazon.com/sns/latest/dg/message-archiving-and-replay-subscriber.html) for more details.
         #[builder(into, default)]
-        pub replay_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub replay_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the IAM role to publish to Kinesis Data Firehose delivery stream. Refer to [SNS docs](https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html).
         #[builder(into, default)]
-        pub subscription_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subscription_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the SNS topic to subscribe to.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub topic: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub topic: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TopicSubscriptionResult {

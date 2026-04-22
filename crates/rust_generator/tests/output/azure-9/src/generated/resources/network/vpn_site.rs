@@ -63,40 +63,40 @@ pub mod vpn_site {
         ///
         /// > **NOTE:** The `address_cidrs` has to be set when the `link.bgp` isn't specified.
         #[builder(into, default)]
-        pub address_cidrs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub address_cidrs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The model of the VPN device.
         #[builder(into, default)]
-        pub device_model: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub device_model: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the VPN device vendor.
         #[builder(into, default)]
-        pub device_vendor: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub device_vendor: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `link` blocks as defined below.
         #[builder(into, default)]
-        pub links: pulumi_gestalt_rust::InputOrOutput<
+        pub links: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::VpnSiteLink>>,
         >,
         /// The Azure Region where the VPN Site should exist. Changing this forces a new VPN Site to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this VPN Site. Changing this forces a new VPN Site to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `o365_policy` block as defined below.
         #[builder(into, default)]
-        pub o365_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub o365_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::VpnSiteO365Policy>,
         >,
         /// The name of the Resource Group where the VPN Site should exist. Changing this forces a new VPN Site to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the VPN Site.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Virtual Wan where this VPN site resides in. Changing this forces a new VPN Site to be created.
         #[builder(into)]
-        pub virtual_wan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_wan_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpnSiteResult {

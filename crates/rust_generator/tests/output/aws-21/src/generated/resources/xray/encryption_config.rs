@@ -75,10 +75,10 @@ pub mod encryption_config {
     pub struct EncryptionConfigArgs {
         /// An AWS KMS customer master key (CMK) ARN.
         #[builder(into, default)]
-        pub key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of encryption. Set to `KMS` to use your own key for encryption. Set to `NONE` for default encryption.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EncryptionConfigResult {

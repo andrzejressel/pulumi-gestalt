@@ -174,32 +174,32 @@ pub mod app_group {
         /// A list of attributes
         /// Structure is documented below.
         #[builder(into, default)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigee::AppGroupAttribute>>,
         >,
         /// Channel identifier identifies the owner maintaining this grouping.
         #[builder(into, default)]
-        pub channel_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub channel_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the associated storefront/marketplace.
         #[builder(into, default)]
-        pub channel_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub channel_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// App group name displayed in the UI
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the AppGroup. Characters you can use in the name are restricted to: A-Z0-9._-$ %.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apigee Organization associated with the Apigee app group,
         /// in the format `organizations/{{org_name}}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// Valid values are active or inactive. Note that the status of the AppGroup should be updated via UpdateAppGroupRequest by setting the action as active or inactive.
         /// Possible values are: `active`, `inactive`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppGroupResult {

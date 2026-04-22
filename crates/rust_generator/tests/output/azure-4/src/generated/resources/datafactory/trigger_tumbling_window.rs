@@ -73,55 +73,55 @@ pub mod trigger_tumbling_window {
     pub struct TriggerTumblingWindowArgs {
         /// Specifies if the Data Factory Tumbling Window Trigger is activated. Defaults to `true`.
         #[builder(into, default)]
-        pub activated: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub activated: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of additional properties to associate with the Data Factory Tumbling Window Trigger.
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Tumbling Window Trigger.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of Data Factory in which to associate the Trigger with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies how long the trigger waits before triggering new run. formatted as an `D.HH:MM:SS`.
         #[builder(into, default)]
-        pub delay: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delay: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description for the Data Factory Tumbling Window Trigger.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the end time of Tumbling Window, formatted as an RFC3339 string.
         #[builder(into, default)]
-        pub end_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the frequency of Tumbling Window. Possible values are `Hour`, `Minute` and `Month`. Changing this forces a new resource.
         #[builder(into)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frequency: pulumi_gestalt_rust::Input<String>,
         /// Specifies the interval of Tumbling Window. Changing this forces a new resource.
         #[builder(into)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub interval: pulumi_gestalt_rust::Input<i32>,
         /// The max number for simultaneous trigger run fired by Tumbling Window. Possible values are between `1` and `50`. Defaults to `50`.
         #[builder(into, default)]
-        pub max_concurrency: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_concurrency: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Data Factory Tumbling Window Trigger. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `pipeline` block as defined below.
         #[builder(into)]
-        pub pipeline: pulumi_gestalt_rust::InputOrOutput<
+        pub pipeline: pulumi_gestalt_rust::Input<
             super::super::types::datafactory::TriggerTumblingWindowPipeline,
         >,
         /// A `retry` block as defined below.
         #[builder(into, default)]
-        pub retry: pulumi_gestalt_rust::InputOrOutput<
+        pub retry: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafactory::TriggerTumblingWindowRetry>,
         >,
         /// Specifies the start time of Tumbling Window, formatted as an RFC3339 string. Changing this forces a new resource.
         #[builder(into)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_time: pulumi_gestalt_rust::Input<String>,
         /// One or more `trigger_dependency` block as defined below.
         #[builder(into, default)]
-        pub trigger_dependencies: pulumi_gestalt_rust::InputOrOutput<
+        pub trigger_dependencies: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::datafactory::TriggerTumblingWindowTriggerDependency,

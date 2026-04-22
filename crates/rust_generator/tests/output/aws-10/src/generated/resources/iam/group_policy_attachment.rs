@@ -42,10 +42,10 @@ pub mod group_policy_attachment {
     pub struct GroupPolicyAttachmentArgs {
         /// The group the policy should be applied to
         #[builder(into)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the policy you want to apply
         #[builder(into)]
-        pub policy_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GroupPolicyAttachmentResult {

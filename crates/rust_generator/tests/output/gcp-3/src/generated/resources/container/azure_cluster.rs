@@ -143,20 +143,20 @@ pub mod azure_cluster {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration related to the cluster RBAC settings.
         #[builder(into)]
-        pub authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub authorization: pulumi_gestalt_rust::Input<
             super::super::types::container::AzureClusterAuthorization,
         >,
         /// The Azure region where the cluster runs. Each Google Cloud region supports a subset of nearby Azure regions. You can call to list all supported Azure regions within a given Google Cloud region.
         #[builder(into)]
-        pub azure_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub azure_region: pulumi_gestalt_rust::Input<String>,
         /// Azure authentication configuration for management of Azure resources
         #[builder(into, default)]
-        pub azure_services_authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_services_authentication: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::container::AzureClusterAzureServicesAuthentication,
             >,
@@ -166,42 +166,42 @@ pub mod azure_cluster {
         /// `projects/<project-number>/locations/<region>/azureClients/<client-id>`. See Resource Names
         /// (https:cloud.google.com/apis/design/resource_names) for more details on Google Cloud resource names.
         #[builder(into, default)]
-        pub client: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration related to the cluster control plane.
         #[builder(into)]
-        pub control_plane: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane: pulumi_gestalt_rust::Input<
             super::super::types::container::AzureClusterControlPlane,
         >,
         /// Optional. A human readable description of this cluster. Cannot be longer than 255 UTF-8 encoded bytes.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Fleet configuration.
         #[builder(into)]
-        pub fleet: pulumi_gestalt_rust::InputOrOutput<
+        pub fleet: pulumi_gestalt_rust::Input<
             super::super::types::container::AzureClusterFleet,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Logging configuration.
         #[builder(into, default)]
-        pub logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AzureClusterLoggingConfig>,
         >,
         /// The name of this resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Cluster-wide networking configuration.
         #[builder(into)]
-        pub networking: pulumi_gestalt_rust::InputOrOutput<
+        pub networking: pulumi_gestalt_rust::Input<
             super::super::types::container::AzureClusterNetworking,
         >,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARM ID of the resource group where the cluster resources are deployed. For example: `/subscriptions/*/resourceGroups/*`
         #[builder(into)]
-        pub resource_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AzureClusterResult {

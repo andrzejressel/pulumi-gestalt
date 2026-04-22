@@ -10,7 +10,7 @@ pub mod get_received_license {
     pub struct GetReceivedLicenseArgs {
         /// The ARN of the received license you want data for.
         #[builder(into)]
-        pub license_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub license_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetReceivedLicenseResult {

@@ -10,16 +10,16 @@ pub mod get_hours_of_operation {
     pub struct GetHoursOfOperationArgs {
         /// Returns information on a specific Hours of Operation by hours of operation id
         #[builder(into, default)]
-        pub hours_of_operation_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hours_of_operation_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Returns information on a specific Hours of Operation by name
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the Hours of Operation.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -36,10 +36,10 @@ pub mod domain_name_api_association {
     pub struct DomainNameApiAssociationArgs {
         /// API ID.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// Appsync domain name.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainNameApiAssociationResult {

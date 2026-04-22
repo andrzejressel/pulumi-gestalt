@@ -10,15 +10,15 @@ pub mod list_product_families {
     pub struct ListProductFamiliesArgs {
         /// Customer subscription properties. Clients can display available products to unregistered customers by explicitly passing subscription details
         #[builder(into, default)]
-        pub customer_subscription_details: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_subscription_details: pulumi_gestalt_rust::Input<
             Option<super::super::types::CustomerSubscriptionDetails>,
         >,
         /// $expand is supported on configurations parameter for product, which provides details on the configurations for the product.
         #[builder(into, default)]
-        pub expand: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expand: pulumi_gestalt_rust::Input<Option<String>>,
         /// Dictionary of filterable properties on product family.
         #[builder(into)]
-        pub filterable_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub filterable_properties: pulumi_gestalt_rust::Input<
             std::collections::HashMap<
                 String,
                 Vec<super::super::types::FilterableProperty>,
@@ -26,7 +26,7 @@ pub mod list_product_families {
         >,
         /// $skipToken is supported on list of product families, which provides the next page in the list of product families.
         #[builder(into, default)]
-        pub skip_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub skip_token: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ListProductFamiliesResult {

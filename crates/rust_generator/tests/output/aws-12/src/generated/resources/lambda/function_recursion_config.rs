@@ -38,10 +38,10 @@ pub mod function_recursion_config {
     pub struct FunctionRecursionConfigArgs {
         /// Lambda function name.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// Lambda function recursion configuration. Valid values are `Allow` or `Terminate`.
         #[builder(into)]
-        pub recursive_loop: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recursive_loop: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FunctionRecursionConfigResult {

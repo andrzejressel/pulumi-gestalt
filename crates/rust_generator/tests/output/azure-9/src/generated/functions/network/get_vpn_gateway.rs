@@ -10,10 +10,10 @@ pub mod get_vpn_gateway {
     pub struct GetVpnGatewayArgs {
         /// The Name of the VPN Gateway.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the VPN Gateway exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVpnGatewayResult {

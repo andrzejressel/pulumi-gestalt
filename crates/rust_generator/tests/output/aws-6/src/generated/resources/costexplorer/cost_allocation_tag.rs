@@ -36,10 +36,10 @@ pub mod cost_allocation_tag {
     pub struct CostAllocationTagArgs {
         /// The status of a cost allocation tag. Valid values are `Active` and `Inactive`.
         #[builder(into)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub status: pulumi_gestalt_rust::Input<String>,
         /// The key for the cost allocation tag.
         #[builder(into)]
-        pub tag_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tag_key: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CostAllocationTagResult {

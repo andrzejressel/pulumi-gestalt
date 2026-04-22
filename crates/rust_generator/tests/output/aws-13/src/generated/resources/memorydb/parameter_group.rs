@@ -44,26 +44,26 @@ pub mod parameter_group {
     pub struct ParameterGroupArgs {
         /// Description for the parameter group. Defaults to `"Managed by Pulumi"`.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The engine version that the parameter group can be used with.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub family: pulumi_gestalt_rust::Input<String>,
         /// Name of the parameter group. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of MemoryDB parameters to apply. Any parameters not specified will fall back to their family defaults. Detailed below.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::memorydb::ParameterGroupParameter>>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

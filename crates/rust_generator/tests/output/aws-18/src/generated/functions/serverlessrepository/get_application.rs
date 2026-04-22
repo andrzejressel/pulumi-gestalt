@@ -10,10 +10,10 @@ pub mod get_application {
     pub struct GetApplicationArgs {
         /// ARN of the application.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// Requested version of the application. By default, retrieves the latest version.
         #[builder(into, default)]
-        pub semantic_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub semantic_version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetApplicationResult {

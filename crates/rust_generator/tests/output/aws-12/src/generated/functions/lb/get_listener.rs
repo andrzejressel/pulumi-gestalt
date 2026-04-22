@@ -10,15 +10,15 @@ pub mod get_listener {
     pub struct GetListenerArgs {
         /// ARN of the listener. Required if `load_balancer_arn` and `port` is not set.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the load balancer. Required if `arn` is not set.
         #[builder(into, default)]
-        pub load_balancer_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub load_balancer_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Port of the listener. Required if `arn` is not set.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

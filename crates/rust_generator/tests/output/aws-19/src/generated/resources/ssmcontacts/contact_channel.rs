@@ -73,18 +73,18 @@ pub mod contact_channel {
     pub struct ContactChannelArgs {
         /// Amazon Resource Name (ARN) of the AWS SSM Contact that the contact channel belongs to.
         #[builder(into)]
-        pub contact_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub contact_id: pulumi_gestalt_rust::Input<String>,
         /// Block that contains contact engagement details. See details below.
         #[builder(into)]
-        pub delivery_address: pulumi_gestalt_rust::InputOrOutput<
+        pub delivery_address: pulumi_gestalt_rust::Input<
             super::super::types::ssmcontacts::ContactChannelDeliveryAddress,
         >,
         /// Name of the contact channel. Must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), hyphens (`-`), periods (`.`), and spaces.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of the contact channel. One of `SMS`, `VOICE` or `EMAIL`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ContactChannelResult {

@@ -10,13 +10,13 @@ pub mod get_security_policy {
     pub struct GetSecurityPolicyArgs {
         /// The name of the security policy. Provide either this or a `self_link`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project in which the resource belongs. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The self_link of the security policy. Provide either this or a `name`
         #[builder(into, default)]
-        pub self_link: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub self_link: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSecurityPolicyResult {

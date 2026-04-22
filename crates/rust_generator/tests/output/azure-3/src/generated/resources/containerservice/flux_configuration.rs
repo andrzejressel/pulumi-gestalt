@@ -68,41 +68,41 @@ pub mod flux_configuration {
     pub struct FluxConfigurationArgs {
         /// An `blob_storage` block as defined below.
         #[builder(into, default)]
-        pub blob_storage: pulumi_gestalt_rust::InputOrOutput<
+        pub blob_storage: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::FluxConfigurationBlobStorage>,
         >,
         /// A `bucket` block as defined below.
         #[builder(into, default)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<
+        pub bucket: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::FluxConfigurationBucket>,
         >,
         /// Specifies the Cluster ID. Changing this forces a new Kubernetes Cluster Extension to be created.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Whether the configuration will keep its reconciliation of its kustomizations and sources with the repository. Defaults to `true`.
         #[builder(into, default)]
-        pub continuous_reconciliation_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub continuous_reconciliation_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A `git_repository` block as defined below.
         #[builder(into, default)]
-        pub git_repository: pulumi_gestalt_rust::InputOrOutput<
+        pub git_repository: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::FluxConfigurationGitRepository>,
         >,
         /// A `kustomizations` block as defined below.
         #[builder(into)]
-        pub kustomizations: pulumi_gestalt_rust::InputOrOutput<
+        pub kustomizations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::containerservice::FluxConfigurationKustomization>,
         >,
         /// Specifies the name which should be used for this Kubernetes Flux Configuration. Changing this forces a new Kubernetes Flux Configuration to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the namespace to which this configuration is installed to. Changing this forces a new Kubernetes Flux Configuration to be created.
         #[builder(into)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace: pulumi_gestalt_rust::Input<String>,
         /// Specifies the scope at which the operator will be installed. Possible values are `cluster` and `namespace`. Defaults to `namespace`. Changing this forces a new Kubernetes Flux Configuration to be created.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scope: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FluxConfigurationResult {

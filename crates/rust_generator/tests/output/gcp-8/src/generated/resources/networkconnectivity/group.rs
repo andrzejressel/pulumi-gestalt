@@ -73,33 +73,33 @@ pub mod group {
         /// Optional. The auto-accept setting for this group.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub auto_accept: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_accept: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkconnectivity::GroupAutoAccept>,
         >,
         /// An optional description of the group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the hub. Hub names must be unique. They use the following form: projects/{projectNumber}/locations/global/hubs/{hubId}
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub hub: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hub: pulumi_gestalt_rust::Input<String>,
         /// Optional labels in key:value format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the group. Group names must be unique.
         /// Possible values are: `default`, `center`, `edge`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GroupResult {

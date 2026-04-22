@@ -356,19 +356,19 @@ pub mod region_target_https_proxy {
         /// sslCertificates and certificateManagerCertificates can't be defined together.
         /// Accepted format is `//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}` or just the self_link `projects/{project}/locations/{location}/certificates/{resourceName}`
         #[builder(into, default)]
-        pub certificate_manager_certificates: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate_manager_certificates: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies how long to keep a connection open, after completing a response,
         /// while there is no matching traffic (in seconds). If an HTTP keepalive is
         /// not specified, a default value (600 seconds) will be used. For Regioanl
         /// HTTP(S) load balancer, the minimum allowed value is 5 seconds and the
         /// maximum allowed value is 600 seconds.
         #[builder(into, default)]
-        pub http_keep_alive_timeout_sec: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub http_keep_alive_timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -377,15 +377,15 @@ pub mod region_target_https_proxy {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Region in which the created target https proxy should reside.
         /// If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// A URL referring to a networksecurity.ServerTlsPolicy
         /// resource that describes how the proxy should authenticate inbound
         /// traffic. serverTlsPolicy only applies to a global TargetHttpsProxy
@@ -400,24 +400,24 @@ pub mod region_target_https_proxy {
         /// receive a resourceInUseByAnotherResource error. Use lifecycle.create_before_destroy
         /// within the ServerTlsPolicy resource to avoid this.
         #[builder(into, default)]
-        pub server_tls_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub server_tls_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer.
         /// At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
         /// sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
         #[builder(into, default)]
-        pub ssl_certificates: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ssl_certificates: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A reference to the Region SslPolicy resource that will be associated with
         /// the TargetHttpsProxy resource. If not set, the TargetHttpsProxy
         /// resource will not have any SSL policy configured.
         #[builder(into, default)]
-        pub ssl_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ssl_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the RegionUrlMap resource that defines the mapping from URL
         /// to the RegionBackendService.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub url_map: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub url_map: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegionTargetHttpsProxyResult {

@@ -32,10 +32,10 @@ pub mod vpn_gateway_route_propagation {
     pub struct VpnGatewayRoutePropagationArgs {
         /// The id of the `aws.ec2.RouteTable` to propagate routes into.
         #[builder(into)]
-        pub route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_table_id: pulumi_gestalt_rust::Input<String>,
         /// The id of the `aws.ec2.VpnGateway` to propagate routes from.
         #[builder(into)]
-        pub vpn_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpn_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpnGatewayRoutePropagationResult {

@@ -82,13 +82,13 @@ pub mod dataset_kusto_database {
     pub struct DatasetKustoDatabaseArgs {
         /// The resource ID of the Kusto Cluster Database to be shared with the receiver. Changing this forces a new Data Share Kusto Database Dataset to be created.
         #[builder(into)]
-        pub kusto_database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kusto_database_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Data Share Kusto Database Dataset. Changing this forces a new Data Share Kusto Database Dataset to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Data Share where this Data Share Kusto Database Dataset should be created. Changing this forces a new Data Share Kusto Database Dataset to be created.
         #[builder(into)]
-        pub share_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub share_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DatasetKustoDatabaseResult {

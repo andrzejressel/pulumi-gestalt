@@ -116,46 +116,46 @@ pub mod firewall {
         /// connection.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub allows: pulumi_gestalt_rust::InputOrOutput<
+        pub allows: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::FirewallAllow>>,
         >,
         /// The list of DENY rules specified by this firewall. Each rule specifies
         /// a protocol and port-range tuple that describes a denied connection.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub denies: pulumi_gestalt_rust::InputOrOutput<
+        pub denies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::FirewallDeny>>,
         >,
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// If destination ranges are specified, the firewall will apply only to
         /// traffic that has destination IP address in these ranges. These ranges
         /// must be expressed in CIDR format. IPv4 or IPv6 ranges are supported.
         #[builder(into, default)]
-        pub destination_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub destination_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Direction of traffic to which this firewall applies; default is
         /// INGRESS. Note: For INGRESS traffic, one of `source_ranges`,
         /// `source_tags` or `source_service_accounts` is required.
         /// Possible values are: `INGRESS`, `EGRESS`.
         #[builder(into, default)]
-        pub direction: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub direction: pulumi_gestalt_rust::Input<Option<String>>,
         /// Denotes whether the firewall rule is disabled, i.e not applied to the
         /// network it is associated with. When set to true, the firewall rule is
         /// not enforced and the network behaves as if it did not exist. If this
         /// is unspecified, the firewall rule will be enabled.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// This field denotes whether to enable logging for a particular firewall rule.
         /// If logging is enabled, logs will be exported to Stackdriver. Deprecated in favor of `log_config`
         #[builder(into, default)]
-        pub enable_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// This field denotes the logging options for a particular firewall rule.
         /// If defined, logging is enabled, and logs will be exported to Cloud Logging.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub log_config: pulumi_gestalt_rust::InputOrOutput<
+        pub log_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::FirewallLogConfig>,
         >,
         /// Name of the resource. Provided by the client when the resource is
@@ -166,13 +166,13 @@ pub mod firewall {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name or self_link of the network to attach this firewall to.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// Priority for this rule. This is an integer between 0 and 65535, both
         /// inclusive. When not specified, the value assumed is 1000. Relative
         /// priorities determine precedence of conflicting rules. Lower value of
@@ -180,11 +180,11 @@ pub mod firewall {
         /// higher precedence than a rule with priority 1). DENY rules take
         /// precedence over ALLOW rules having equal priority.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// If source ranges are specified, the firewall will apply only to
         /// traffic that has source IP address in these ranges. These ranges must
         /// be expressed in CIDR format. One or both of sourceRanges and
@@ -195,7 +195,7 @@ pub mod firewall {
         /// apply. IPv4 or IPv6 ranges are supported. For INGRESS traffic, one of
         /// `source_ranges`, `source_tags` or `source_service_accounts` is required.
         #[builder(into, default)]
-        pub source_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub source_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// If source service accounts are specified, the firewall will apply only
         /// to traffic originating from an instance with a service account in this
         /// list. Source service accounts cannot be used to control traffic to an
@@ -209,7 +209,7 @@ pub mod firewall {
         /// used at the same time as sourceTags or targetTags. For INGRESS traffic,
         /// one of `source_ranges`, `source_tags` or `source_service_accounts` is required.
         #[builder(into, default)]
-        pub source_service_accounts: pulumi_gestalt_rust::InputOrOutput<
+        pub source_service_accounts: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// If source tags are specified, the firewall will apply only to traffic
@@ -223,7 +223,7 @@ pub mod firewall {
         /// to match both properties for the firewall to apply. For INGRESS traffic,
         /// one of `source_ranges`, `source_tags` or `source_service_accounts` is required.
         #[builder(into, default)]
-        pub source_tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub source_tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of service accounts indicating sets of instances located in the
         /// network that may make network connections as specified in allowed[].
         /// targetServiceAccounts cannot be used at the same time as targetTags or
@@ -231,7 +231,7 @@ pub mod firewall {
         /// specified, the firewall rule applies to all instances on the specified
         /// network.
         #[builder(into, default)]
-        pub target_service_accounts: pulumi_gestalt_rust::InputOrOutput<
+        pub target_service_accounts: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A list of instance tags indicating sets of instances located in the
@@ -239,7 +239,7 @@ pub mod firewall {
         /// If no targetTags are specified, the firewall rule applies to all
         /// instances on the specified network.
         #[builder(into, default)]
-        pub target_tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub target_tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct FirewallResult {

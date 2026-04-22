@@ -109,29 +109,29 @@ pub mod repository {
     pub struct RepositoryArgs {
         /// Description of the repository, which cannot exceed 500 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Initial configurations for the repository.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub initial_config: pulumi_gestalt_rust::InputOrOutput<
+        pub initial_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::securesourcemanager::RepositoryInitialConfig>,
         >,
         /// The name of the instance in which the repository is hosted.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The location for the Repository.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID for the Repository.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub repository_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RepositoryResult {

@@ -82,43 +82,43 @@ pub mod stream_input_event_hub {
     pub struct StreamInputEventHubArgs {
         /// The authentication mode for the Stream Output. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         #[builder(into, default)]
-        pub authentication_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of an Event Hub Consumer Group that should be used to read events from the Event Hub. Specifying distinct consumer group names for multiple inputs allows each of those inputs to receive the same events from the Event Hub. If not set the input will use the Event Hub's default consumer group.
         #[builder(into, default)]
-        pub eventhub_consumer_group_name: pulumi_gestalt_rust::InputOrOutput<
+        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the Event Hub.
         #[builder(into)]
-        pub eventhub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Input EventHub. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The property the input Event Hub has been partitioned by.
         #[builder(into, default)]
-        pub partition_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub partition_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `serialization` block as defined below.
         #[builder(into)]
-        pub serialization: pulumi_gestalt_rust::InputOrOutput<
+        pub serialization: pulumi_gestalt_rust::Input<
             super::super::types::streamanalytics::StreamInputEventHubSerialization,
         >,
         /// The namespace that is associated with the desired Event Hub, Service Bus Queue, Service Bus Topic, etc.
         #[builder(into)]
-        pub servicebus_namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub servicebus_namespace: pulumi_gestalt_rust::Input<String>,
         /// The shared access policy key for the specified shared access policy.
         #[builder(into, default)]
-        pub shared_access_policy_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub shared_access_policy_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc.
         #[builder(into, default)]
-        pub shared_access_policy_name: pulumi_gestalt_rust::InputOrOutput<
+        pub shared_access_policy_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StreamInputEventHubResult {

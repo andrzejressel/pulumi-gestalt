@@ -176,13 +176,13 @@ pub mod region_disk {
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub async_primary_disk: pulumi_gestalt_rust::InputOrOutput<
+        pub async_primary_disk: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionDiskAsyncPrimaryDisk>,
         >,
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Encrypts the disk using a customer-supplied encryption key.
         /// After you encrypt a disk with a customer-supplied key, you must
         /// provide the same key if you use the disk later (e.g. to create a disk
@@ -194,32 +194,32 @@ pub mod region_disk {
         /// you do not need to provide a key to use the disk later.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub disk_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub disk_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionDiskDiskEncryptionKey>,
         >,
         /// A list of features to enable on the guest operating system.
         /// Applicable only for bootable disks.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub guest_os_features: pulumi_gestalt_rust::InputOrOutput<
+        pub guest_os_features: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::RegionDiskGuestOsFeature>>,
         >,
         /// Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI.
         ///
         /// > **Warning:** `interface` is deprecated and will be removed in a future major release. This field is no longer used and can be safely removed from your configurations; disk interfaces are automatically determined on attachment.
         #[builder(into, default)]
-        pub interface: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub interface: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels to apply to this disk.  A list of key->value pairs.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Any applicable license URI.
         #[builder(into, default)]
-        pub licenses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub licenses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -228,27 +228,27 @@ pub mod region_disk {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Physical block size of the persistent disk, in bytes. If not present
         /// in a request, a default value is used. Currently supported sizes
         /// are 4096 and 16384, other sizes may be added in the future.
         /// If an unsupported value is requested, the error message will list
         /// the supported values for the caller's project.
         #[builder(into, default)]
-        pub physical_block_size_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub physical_block_size_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the region where the disk resides.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// URLs of the zones where the disk should be replicated to.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub replica_zones: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub replica_zones: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Size of the persistent disk, specified in GB. You can specify this
         /// field when creating a persistent disk using the sourceImage or
         /// sourceSnapshot parameter, or specify it alone to create an empty
@@ -257,7 +257,7 @@ pub mod region_disk {
         /// the value of sizeGb must not be less than the size of the sourceImage
         /// or the size of the snapshot.
         #[builder(into, default)]
-        pub size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The source snapshot used to create this disk. You can provide this as
         /// a partial or full URL to the resource. For example, the following are
         /// valid values:
@@ -265,7 +265,7 @@ pub mod region_disk {
         /// * `projects/project/global/snapshots/snapshot`
         /// * `global/snapshots/snapshot`
         #[builder(into, default)]
-        pub snapshot: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source disk used to create this disk. You can provide this as a partial or full URL to the resource.
         /// For example, the following are valid values:
         /// * https://www.googleapis.com/compute/v1/projects/{project}/zones/{zone}/disks/{disk}
@@ -275,19 +275,19 @@ pub mod region_disk {
         /// * zones/{zone}/disks/{disk}
         /// * regions/{region}/disks/{disk}
         #[builder(into, default)]
-        pub source_disk: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_disk: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer-supplied encryption key of the source snapshot. Required
         /// if the source snapshot is protected by a customer-supplied encryption
         /// key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub source_snapshot_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub source_snapshot_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionDiskSourceSnapshotEncryptionKey>,
         >,
         /// URL of the disk type resource describing which disk type to use to
         /// create the disk. Provide this when creating the disk.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RegionDiskResult {

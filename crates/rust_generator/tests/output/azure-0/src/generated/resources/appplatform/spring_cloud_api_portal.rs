@@ -75,30 +75,30 @@ pub mod spring_cloud_api_portal {
     pub struct SpringCloudApiPortalArgs {
         /// Specifies whether the API try-out feature is enabled. When enabled, users can try out the API by sending requests and viewing responses in API portal.
         #[builder(into, default)]
-        pub api_try_out_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub api_try_out_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies a list of Spring Cloud Gateway.
         #[builder(into, default)]
-        pub gateway_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub gateway_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// is only https is allowed?
         #[builder(into, default)]
-        pub https_only_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the required instance count of the Spring Cloud API Portal. Possible Values are between `1` and `500`. Defaults to `1` if not specified.
         #[builder(into, default)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub instance_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name which should be used for this Spring Cloud API Portal. Changing this forces a new Spring Cloud API Portal to be created. The only possible value is `default`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the public network access enabled?
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud API Portal to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
         /// A `sso` block as defined below.
         #[builder(into, default)]
-        pub sso: pulumi_gestalt_rust::InputOrOutput<
+        pub sso: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudApiPortalSso>,
         >,
     }

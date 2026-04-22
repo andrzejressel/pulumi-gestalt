@@ -41,86 +41,86 @@ pub mod open_zfs_file_system {
     pub struct OpenZfsFileSystemArgs {
         /// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days.
         #[builder(into, default)]
-        pub automatic_backup_retention_days: pulumi_gestalt_rust::InputOrOutput<
+        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The ID of the source backup to create the filesystem from.
         #[builder(into, default)]
-        pub backup_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub backup_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean flag indicating whether tags for the file system should be copied to backups. The default value is false.
         #[builder(into, default)]
-        pub copy_tags_to_backups: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_tags_to_backups: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A boolean flag indicating whether tags for the file system should be copied to snapshots. The default value is false.
         #[builder(into, default)]
-        pub copy_tags_to_volumes: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_tags_to_volumes: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A recurring daily time, in the format HH:MM. HH is the zero-padded hour of the day (0-23), and MM is the zero-padded minute of the hour. For example, 05:00 specifies 5 AM daily. Requires `automatic_backup_retention_days` to be set.
         #[builder(into, default)]
-        pub daily_automatic_backup_start_time: pulumi_gestalt_rust::InputOrOutput<
+        pub daily_automatic_backup_start_time: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// List of delete options, which at present supports only one value that specifies whether to delete all child volumes and snapshots when the file system is deleted. Valid values: `DELETE_CHILD_VOLUMES_AND_SNAPSHOTS`.
         #[builder(into, default)]
-        pub delete_options: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub delete_options: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Filesystem deployment type. See the [AWS API documentation](https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemOpenZFSConfiguration.html#FSx-Type-CreateFileSystemOpenZFSConfiguration-DeploymentType) for a list of valid values.
         #[builder(into)]
-        pub deployment_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployment_type: pulumi_gestalt_rust::Input<String>,
         /// The SSD IOPS configuration for the Amazon FSx for OpenZFS file system. See `disk_iops_configuration` Block for details.
         #[builder(into, default)]
-        pub disk_iops_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub disk_iops_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::OpenZfsFileSystemDiskIopsConfiguration>,
         >,
         /// (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
         #[builder(into, default)]
-        pub endpoint_ip_address_range: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint_ip_address_range: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A map of tags to apply to the file system's final backup.
         #[builder(into, default)]
-        pub final_backup_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub final_backup_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ARN for the KMS Key to encrypt the file system at rest, Defaults to an AWS managed KMS Key.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// (Multi-AZ only) Required when `deployment_type` is set to `MULTI_AZ_1`. This specifies the subnet in which you want the preferred file server to be located.
         #[builder(into, default)]
-        pub preferred_subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The configuration for the root volume of the file system. All other volumes are children or the root volume. See `root_volume_configuration` Block for details.
         #[builder(into, default)]
-        pub root_volume_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub root_volume_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::OpenZfsFileSystemRootVolumeConfiguration>,
         >,
         /// (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
         #[builder(into, default)]
-        pub route_table_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub route_table_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// When enabled, will skip the default final backup taken when the file system is deleted. This configuration must be applied separately before attempting to delete the resource to have the desired behavior. Defaults to `false`.
         #[builder(into, default)]
-        pub skip_final_backup: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_backup: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The storage capacity (GiB) of the file system. Valid values between `64` and `524288`.
         #[builder(into, default)]
-        pub storage_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub storage_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The filesystem storage type. Only `SSD` is supported.
         #[builder(into, default)]
-        pub storage_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IDs for the subnets that the file system will be accessible from.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Throughput (MB/s) of the file system. Valid values depend on `deployment_type`. Must be one of `64`, `128`, `256`, `512`, `1024`, `2048`, `3072`, `4096` for `SINGLE_AZ_1`. Must be one of `160`, `320`, `640`, `1280`, `2560`, `3840`, `5120`, `7680`, `10240` for `SINGLE_AZ_2`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub throughput_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub throughput_capacity: pulumi_gestalt_rust::Input<i32>,
         /// The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone.
         #[builder(into, default)]
-        pub weekly_maintenance_start_time: pulumi_gestalt_rust::InputOrOutput<
+        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

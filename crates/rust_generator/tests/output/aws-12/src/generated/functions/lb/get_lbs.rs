@@ -11,7 +11,7 @@ pub mod get_lbs {
         /// Map of tags, each pair of which must exactly match
         /// a pair on the desired Load Balancers.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

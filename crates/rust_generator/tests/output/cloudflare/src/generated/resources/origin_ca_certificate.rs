@@ -49,18 +49,18 @@ pub mod origin_ca_certificate {
     pub struct OriginCaCertificateArgs {
         /// The Certificate Signing Request. Must be newline-encoded. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub csr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub csr: pulumi_gestalt_rust::Input<String>,
         /// A list of hostnames or wildcard names bound to the certificate. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub hostnames: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub hostnames: pulumi_gestalt_rust::Input<Vec<String>>,
         #[builder(into, default)]
-        pub min_days_for_renewal: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_days_for_renewal: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The signature type desired on the certificate. Available values: `origin-rsa`, `origin-ecc`, `keyless-certificate`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub request_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub request_type: pulumi_gestalt_rust::Input<String>,
         /// The number of days for which the certificate should be valid. Available values: `7`, `30`, `90`, `365`, `730`, `1095`, `5475`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub requested_validity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub requested_validity: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct OriginCaCertificateResult {

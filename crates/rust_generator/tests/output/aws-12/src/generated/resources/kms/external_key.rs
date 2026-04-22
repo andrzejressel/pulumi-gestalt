@@ -37,35 +37,35 @@ pub mod external_key {
     pub struct ExternalKeyArgs {
         /// Specifies whether to disable the policy lockout check performed when creating or updating the key's policy. Setting this value to `true` increases the risk that the key becomes unmanageable. For more information, refer to the scenario in the [Default Key Policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam) section in the AWS Key Management Service Developer Guide. Defaults to `false`.
         #[builder(into, default)]
-        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::InputOrOutput<
+        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Duration in days after which the key is deleted after destruction of the resource. Must be between `7` and `30` days. Defaults to `30`.
         #[builder(into, default)]
-        pub deletion_window_in_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub deletion_window_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Description of the key.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the key is enabled. Keys pending import can only be `false`. Imported keys default to `true` unless expired.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Base64 encoded 256-bit symmetric encryption key material to import. The CMK is permanently associated with this key material. The same key material can be reimported, but you cannot import different key material.
         #[builder(into, default)]
-        pub key_material_base64: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_material_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether the KMS key is a multi-Region (`true`) or regional (`false`) key. Defaults to `false`.
         #[builder(into, default)]
-        pub multi_region: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub multi_region: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A key policy JSON document. If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK.
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A key-value map of tags to assign to the key. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Time at which the imported key material expires. When the key material expires, AWS KMS deletes the key material and the CMK becomes unusable. If not specified, key material does not expire. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)
         #[builder(into, default)]
-        pub valid_to: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub valid_to: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ExternalKeyResult {

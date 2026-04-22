@@ -75,34 +75,34 @@ pub mod lifecycle_policy {
     pub struct LifecyclePolicyArgs {
         /// description for the lifecycle policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions. More information about this role can be found [`here`](https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-lifecycle-prerequisites.html#image-lifecycle-prereq-role).
         #[builder(into)]
-        pub execution_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub execution_role: pulumi_gestalt_rust::Input<String>,
         /// The name of the lifecycle policy to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with policy details. Detailed below.
         #[builder(into, default)]
-        pub policy_details: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_details: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::imagebuilder::LifecyclePolicyPolicyDetail>>,
         >,
         /// Selection criteria for the resources that the lifecycle policy applies to. Detailed below.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub resource_selection: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_selection: pulumi_gestalt_rust::Input<
             Option<super::super::types::imagebuilder::LifecyclePolicyResourceSelection>,
         >,
         /// The type of Image Builder resource that the lifecycle policy applies to. Valid values: `AMI_IMAGE` or `CONTAINER_IMAGE`.
         #[builder(into)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type: pulumi_gestalt_rust::Input<String>,
         /// The status of the lifecycle policy.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags for the Image Builder Lifecycle Policy. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

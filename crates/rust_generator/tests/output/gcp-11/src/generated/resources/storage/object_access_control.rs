@@ -71,7 +71,7 @@ pub mod object_access_control {
     pub struct ObjectAccessControlArgs {
         /// The name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// The entity holding the permission, in one of the following forms:
         /// * user-{{userId}}
         /// * user-{{email}} (such as "user-liz@example.com")
@@ -82,17 +82,17 @@ pub mod object_access_control {
         /// * allUsers
         /// * allAuthenticatedUsers
         #[builder(into)]
-        pub entity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub entity: pulumi_gestalt_rust::Input<String>,
         /// The name of the object to apply the access control to.
         #[builder(into)]
-        pub object: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object: pulumi_gestalt_rust::Input<String>,
         /// The access permission for the entity.
         /// Possible values are: `OWNER`, `READER`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ObjectAccessControlResult {

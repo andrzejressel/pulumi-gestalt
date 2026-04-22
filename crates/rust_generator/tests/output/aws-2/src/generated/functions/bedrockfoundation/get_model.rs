@@ -10,7 +10,7 @@ pub mod get_model {
     pub struct GetModelArgs {
         /// Model identifier.
         #[builder(into)]
-        pub model_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub model_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetModelResult {

@@ -10,10 +10,10 @@ pub mod get_network_interface {
     pub struct GetNetworkInterfaceArgs {
         /// Specifies the name of the Network Interface.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group the Network Interface is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkInterfaceResult {

@@ -38,13 +38,13 @@ pub mod bucket {
     pub struct BucketArgs {
         /// Name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the Outpost to contain this bucket.
         #[builder(into)]
-        pub outpost_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub outpost_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

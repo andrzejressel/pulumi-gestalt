@@ -39,13 +39,13 @@ pub mod regional_hostname {
     pub struct RegionalHostnameArgs {
         /// The hostname to regionalize.
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// The region key. See [the full region list](https://developers.cloudflare.com/data-localization/regional-services/get-started/).
         #[builder(into)]
-        pub region_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region_key: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegionalHostnameResult {

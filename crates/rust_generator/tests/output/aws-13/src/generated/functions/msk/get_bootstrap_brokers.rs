@@ -10,7 +10,7 @@ pub mod get_bootstrap_brokers {
     pub struct GetBootstrapBrokersArgs {
         /// ARN of the cluster the nodes belong to.
         #[builder(into)]
-        pub cluster_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBootstrapBrokersResult {

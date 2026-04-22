@@ -61,61 +61,61 @@ pub mod service {
     #[allow(dead_code)]
     pub struct ServiceArgs {
         #[builder(into, default)]
-        pub access_policy_object_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub access_policy_object_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// An `authentication_configuration` block as defined below.
         #[builder(into, default)]
-        pub authentication_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::ServiceAuthenticationConfiguration>,
         >,
         /// Specifies the name of the storage account which the operation configuration information is exported to.
         #[builder(into, default)]
-        pub configuration_export_storage_account_name: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_export_storage_account_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A `cors_configuration` block as defined below.
         #[builder(into, default)]
-        pub cors_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub cors_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::ServiceCorsConfiguration>,
         >,
         /// A versionless Key Vault Key ID for CMK encryption of the backing database. Changing this forces a new resource to be created.
         ///
         /// > **Please Note** In order to use a `Custom Key` from Key Vault for encryption you must grant Azure Cosmos DB Service access to your key vault. For instructions on how to configure your Key Vault correctly please refer to the [product documentation](https://docs.microsoft.com/azure/cosmos-db/how-to-setup-cmk#add-an-access-policy-to-your-azure-key-vault-instance)
         #[builder(into, default)]
-        pub cosmosdb_key_vault_key_versionless_id: pulumi_gestalt_rust::InputOrOutput<
+        pub cosmosdb_key_vault_key_versionless_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The provisioned throughput for the backing database. Range of `400`-`100000`. Defaults to `1000`.
         #[builder(into, default)]
-        pub cosmosdb_throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub cosmosdb_throughput: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::ServiceIdentity>,
         >,
         /// The type of the service. Values at time of publication are: `fhir`, `fhir-Stu3` and `fhir-R4`. Default value is `fhir`.
         #[builder(into, default)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure Region where the Service should be created. Changing this forces a new resource to be created.
         ///
         /// > **Please Note**: Not all locations support this resource. Some are `West US 2`, `North Central US`, and `UK West`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the service instance. Used for service endpoint, must be unique within the audience. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is enabled or disabled for this service instance. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the Resource Group in which to create the Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

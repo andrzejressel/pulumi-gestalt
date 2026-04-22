@@ -10,18 +10,18 @@ pub mod get_voices {
     pub struct GetVoicesArgs {
         /// Engine used by Amazon Polly when processing input text for speech synthesis. Valid values are `standard`, `neural`, and `long-form`.
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to return any bilingual voices that use the specified language as an additional language.
         #[builder(into, default)]
-        pub include_additional_language_codes: pulumi_gestalt_rust::InputOrOutput<
+        pub include_additional_language_codes: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Language identification tag for filtering the list of voices returned. If not specified, all available voices are returned.
         #[builder(into, default)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language_code: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of voices with their properties. See `voices` Attribute Reference below.
         #[builder(into, default)]
-        pub voices: pulumi_gestalt_rust::InputOrOutput<
+        pub voices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::polly::GetVoicesVoice>>,
         >,
     }

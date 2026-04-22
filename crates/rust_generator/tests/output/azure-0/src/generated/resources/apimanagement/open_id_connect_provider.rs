@@ -60,28 +60,28 @@ pub mod open_id_connect_provider {
     pub struct OpenIdConnectProviderArgs {
         /// The name of the API Management Service in which this OpenID Connect Provider should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The Client ID used for the Client Application.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// The Client Secret used for the Client Application.
         #[builder(into)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_secret: pulumi_gestalt_rust::Input<String>,
         /// A description of this OpenID Connect Provider.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A user-friendly name for this OpenID Connect Provider.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The URI of the Metadata endpoint.
         #[builder(into)]
-        pub metadata_endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub metadata_endpoint: pulumi_gestalt_rust::Input<String>,
         /// the Name of the OpenID Connect Provider which should be created within the API Management Service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OpenIdConnectProviderResult {

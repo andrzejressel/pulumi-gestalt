@@ -10,13 +10,13 @@ pub mod get_user {
     pub struct GetUserArgs {
         /// The Name of the API Management Service in which this User exists.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group in which the API Management Service exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Identifier for the User.
         #[builder(into)]
-        pub user_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetUserResult {

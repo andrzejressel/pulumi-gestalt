@@ -103,78 +103,78 @@ pub mod teams_account {
     pub struct TeamsAccountArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable the activity log.
         #[builder(into, default)]
-        pub activity_log_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub activity_log_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block for antivirus traffic scanning.
         #[builder(into, default)]
-        pub antivirus: pulumi_gestalt_rust::InputOrOutput<
+        pub antivirus: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountAntivirus>,
         >,
         /// Configuration for a custom block page.
         #[builder(into, default)]
-        pub block_page: pulumi_gestalt_rust::InputOrOutput<
+        pub block_page: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountBlockPage>,
         >,
         /// Configuration for body scanning.
         #[builder(into, default)]
-        pub body_scanning: pulumi_gestalt_rust::InputOrOutput<
+        pub body_scanning: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountBodyScanning>,
         >,
         /// Configuration for TLS interception certificate. This will be required starting Feb 2025.
         #[builder(into, default)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountCertificate>,
         >,
         /// Configuration for custom certificates / BYO-PKI. Conflicts with `certificate`.
         #[builder(into, default)]
-        pub custom_certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_certificate: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountCustomCertificate>,
         >,
         /// Configuration for extended e-mail matching.
         #[builder(into, default)]
-        pub extended_email_matching: pulumi_gestalt_rust::InputOrOutput<
+        pub extended_email_matching: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountExtendedEmailMatching>,
         >,
         /// Configure compliance with Federal Information Processing Standards.
         #[builder(into, default)]
-        pub fips: pulumi_gestalt_rust::InputOrOutput<
+        pub fips: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountFips>,
         >,
         #[builder(into, default)]
-        pub logging: pulumi_gestalt_rust::InputOrOutput<
+        pub logging: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountLogging>,
         >,
         /// Enable non-identity onramp for Browser Isolation. Defaults to `false`.
         #[builder(into, default)]
-        pub non_identity_browser_isolation_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub non_identity_browser_isolation_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Configuration for DLP Payload Logging.
         #[builder(into, default)]
-        pub payload_log: pulumi_gestalt_rust::InputOrOutput<
+        pub payload_log: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountPayloadLog>,
         >,
         /// Indicator that protocol detection is enabled.
         #[builder(into, default)]
-        pub protocol_detection_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub protocol_detection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block for specifying which protocols are proxied.
         #[builder(into, default)]
-        pub proxy: pulumi_gestalt_rust::InputOrOutput<
+        pub proxy: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountProxy>,
         >,
         /// Configuration for SSH Session Logging.
         #[builder(into, default)]
-        pub ssh_session_log: pulumi_gestalt_rust::InputOrOutput<
+        pub ssh_session_log: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountSshSessionLog>,
         >,
         /// Indicator that decryption of TLS traffic is enabled.
         #[builder(into, default)]
-        pub tls_decrypt_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls_decrypt_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Safely browse websites in Browser Isolation through a URL. Defaults to `false`.
         #[builder(into, default)]
-        pub url_browser_isolation_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub url_browser_isolation_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

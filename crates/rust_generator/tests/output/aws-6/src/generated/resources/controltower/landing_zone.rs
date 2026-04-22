@@ -20,15 +20,15 @@ pub mod landing_zone {
     pub struct LandingZoneArgs {
         /// The manifest JSON file is a text file that describes your AWS resources. For examples, review [Launch your landing zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch).
         #[builder(into)]
-        pub manifest_json: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub manifest_json: pulumi_gestalt_rust::Input<String>,
         /// Tags to apply to the landing zone. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The landing zone version.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LandingZoneResult {

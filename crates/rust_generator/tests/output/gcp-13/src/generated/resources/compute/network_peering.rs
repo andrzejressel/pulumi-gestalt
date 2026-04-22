@@ -60,33 +60,33 @@ pub mod network_peering {
     pub struct NetworkPeeringArgs {
         /// Whether to export the custom routes to the peer network. Defaults to `false`.
         #[builder(into, default)]
-        pub export_custom_routes: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub export_custom_routes: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
         #[builder(into, default)]
-        pub export_subnet_routes_with_public_ip: pulumi_gestalt_rust::InputOrOutput<
+        pub export_subnet_routes_with_public_ip: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Whether to import the custom routes from the peer network. Defaults to `false`.
         #[builder(into, default)]
-        pub import_custom_routes: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub import_custom_routes: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
         #[builder(into, default)]
-        pub import_subnet_routes_with_public_ip: pulumi_gestalt_rust::InputOrOutput<
+        pub import_subnet_routes_with_public_ip: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Name of the peering.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The primary network of the peering.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The peer network in the peering. The peer network
         /// may belong to a different project.
         #[builder(into)]
-        pub peer_network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_network: pulumi_gestalt_rust::Input<String>,
         /// Which IP version(s) of traffic and routes are allowed to be imported or exported between peer networks. The default value is IPV4_ONLY. Possible values: ["IPV4_ONLY", "IPV4_IPV6"].
         #[builder(into, default)]
-        pub stack_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stack_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NetworkPeeringResult {

@@ -46,12 +46,12 @@ pub mod byte_match_set {
         /// with ASCII characters) that you want to search for in web requests,
         /// the location in requests that you want to search, and other settings.
         #[builder(into, default)]
-        pub byte_match_tuples: pulumi_gestalt_rust::InputOrOutput<
+        pub byte_match_tuples: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::waf::ByteMatchSetByteMatchTuple>>,
         >,
         /// The name or description of the Byte Match Set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ByteMatchSetResult {

@@ -75,46 +75,46 @@ pub mod schedule {
     pub struct ScheduleArgs {
         /// Brief description of the schedule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the end date you specify. EventBridge Scheduler ignores the end date for one-time schedules. Example: `2030-01-01T01:00:00Z`.
         #[builder(into, default)]
-        pub end_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configures a time window during which EventBridge Scheduler invokes the schedule. Detailed below.
         #[builder(into)]
-        pub flexible_time_window: pulumi_gestalt_rust::InputOrOutput<
+        pub flexible_time_window: pulumi_gestalt_rust::Input<
             super::super::types::scheduler::ScheduleFlexibleTimeWindow,
         >,
         /// Name of the schedule group to associate with this schedule. When omitted, the `default` schedule group is used.
         #[builder(into, default)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN for the customer managed KMS key that EventBridge Scheduler will use to encrypt and decrypt your data.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the schedule. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines when the schedule runs. Read more in [Schedule types on EventBridge Scheduler](https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html).
         #[builder(into)]
-        pub schedule_expression: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schedule_expression: pulumi_gestalt_rust::Input<String>,
         /// Timezone in which the scheduling expression is evaluated. Defaults to `UTC`. Example: `Australia/Sydney`.
         #[builder(into, default)]
-        pub schedule_expression_timezone: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule_expression_timezone: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the start date you specify. EventBridge Scheduler ignores the start date for one-time schedules. Example: `2030-01-01T01:00:00Z`.
         #[builder(into, default)]
-        pub start_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the schedule is enabled or disabled. One of: `ENABLED` (default), `DISABLED`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configures the target of the schedule. Detailed below.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<
+        pub target: pulumi_gestalt_rust::Input<
             super::super::types::scheduler::ScheduleTarget,
         >,
     }

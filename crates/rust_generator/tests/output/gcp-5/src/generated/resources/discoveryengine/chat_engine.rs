@@ -159,35 +159,35 @@ pub mod chat_engine {
         /// Configurations for a chat Engine.
         /// Structure is documented below.
         #[builder(into)]
-        pub chat_engine_config: pulumi_gestalt_rust::InputOrOutput<
+        pub chat_engine_config: pulumi_gestalt_rust::Input<
             super::super::types::discoveryengine::ChatEngineChatEngineConfig,
         >,
         /// The collection ID.
         #[builder(into)]
-        pub collection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub collection_id: pulumi_gestalt_rust::Input<String>,
         /// Common config spec that specifies the metadata of the engine.
         #[builder(into, default)]
-        pub common_config: pulumi_gestalt_rust::InputOrOutput<
+        pub common_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::discoveryengine::ChatEngineCommonConfig>,
         >,
         /// The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.
         #[builder(into)]
-        pub data_store_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub data_store_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The ID to use for chat engine.
         #[builder(into)]
-        pub engine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_id: pulumi_gestalt_rust::Input<String>,
         /// The industry vertical that the chat engine registers. Vertical on Engine has to match vertical of the DataStore linked
         /// to the engine. Default value: "GENERIC" Possible values: ["GENERIC"]
         #[builder(into, default)]
-        pub industry_vertical: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub industry_vertical: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ChatEngineResult {

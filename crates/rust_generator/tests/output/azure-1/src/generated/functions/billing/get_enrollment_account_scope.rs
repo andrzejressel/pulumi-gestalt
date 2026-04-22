@@ -10,10 +10,10 @@ pub mod get_enrollment_account_scope {
     pub struct GetEnrollmentAccountScopeArgs {
         /// The Billing Account Name of the Enterprise Account.
         #[builder(into)]
-        pub billing_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_account_name: pulumi_gestalt_rust::Input<String>,
         /// The Enrollment Account Name in the above Enterprise Account.
         #[builder(into)]
-        pub enrollment_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub enrollment_account_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEnrollmentAccountScopeResult {

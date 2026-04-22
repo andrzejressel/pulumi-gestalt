@@ -141,22 +141,22 @@ pub mod organization_policy {
     pub struct OrganizationPolicyArgs {
         /// A boolean policy is a constraint that is either enforced or not. Structure is documented below.
         #[builder(into, default)]
-        pub boolean_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub boolean_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::projects::OrganizationPolicyBooleanPolicy>,
         >,
         /// The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints).
         ///
         /// - - -
         #[builder(into)]
-        pub constraint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub constraint: pulumi_gestalt_rust::Input<String>,
         /// A policy that can define specific values that are allowed or denied for the given constraint. It can also be used to allow or deny all values. Structure is documented below.
         #[builder(into, default)]
-        pub list_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub list_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::projects::OrganizationPolicyListPolicy>,
         >,
         /// The project id of the project to set the policy for.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
         /// A restore policy is a constraint to restore the default policy. Structure is documented below.
         ///
         /// > **Note:** If none of [`boolean_policy`, `list_policy`, `restore_policy`] are defined the policy for a given constraint will
@@ -164,12 +164,12 @@ pub mod organization_policy {
         ///
         /// - - -
         #[builder(into, default)]
-        pub restore_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub restore_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::projects::OrganizationPolicyRestorePolicy>,
         >,
         /// Version of the Policy. Default version is 0.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub version: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct OrganizationPolicyResult {

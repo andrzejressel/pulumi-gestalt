@@ -38,16 +38,16 @@ pub mod identity_notification_topic {
     pub struct IdentityNotificationTopicArgs {
         /// The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or by using its Amazon Resource Name (ARN).
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity: pulumi_gestalt_rust::Input<String>,
         /// Whether SES should include original email headers in SNS notifications of this type. `false` by default.
         #[builder(into, default)]
-        pub include_original_headers: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_original_headers: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The type of notifications that will be published to the specified Amazon SNS topic. Valid Values: `Bounce`, `Complaint` or `Delivery`.
         #[builder(into)]
-        pub notification_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub notification_type: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic. Can be set to `""` (an empty string) to disable publishing.
         #[builder(into, default)]
-        pub topic_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IdentityNotificationTopicResult {

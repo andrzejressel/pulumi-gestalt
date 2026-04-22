@@ -15,9 +15,9 @@ pub mod get_replication_task {
         /// - Cannot end with a hyphen.
         /// - Cannot contain two consecutive hyphens.
         #[builder(into)]
-        pub replication_task_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_task_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,16 +10,16 @@ pub mod get_user_hierarchy_group {
     pub struct GetUserHierarchyGroupArgs {
         /// Returns information on a specific hierarchy group by hierarchy group id
         #[builder(into, default)]
-        pub hierarchy_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hierarchy_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Returns information on a specific hierarchy group by name
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the hierarchy group.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

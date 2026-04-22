@@ -88,56 +88,56 @@ pub mod route {
     pub struct RouteArgs {
         /// Identifier of a carrier gateway. This attribute can only be used when the VPC contains a subnet which is associated with a Wavelength Zone.
         #[builder(into, default)]
-        pub carrier_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub carrier_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of a core network.
         #[builder(into, default)]
-        pub core_network_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub core_network_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The destination CIDR block.
         #[builder(into, default)]
-        pub destination_cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// The destination IPv6 CIDR block.
         #[builder(into, default)]
-        pub destination_ipv6_cidr_block: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_ipv6_cidr_block: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of a managed prefix list destination.
         ///
         /// One of the following target arguments must be supplied:
         #[builder(into, default)]
-        pub destination_prefix_list_id: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_prefix_list_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Identifier of a VPC Egress Only Internet Gateway.
         #[builder(into, default)]
-        pub egress_only_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub egress_only_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of a VPC internet gateway or a virtual private gateway. Specify `local` when updating a previously imported local route.
         #[builder(into, default)]
-        pub gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of a Outpost local gateway.
         #[builder(into, default)]
-        pub local_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub local_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of a VPC NAT gateway.
         #[builder(into, default)]
-        pub nat_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nat_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of an EC2 network interface.
         #[builder(into, default)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the routing table.
         ///
         /// One of the following destination arguments must be supplied:
         #[builder(into)]
-        pub route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_table_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of an EC2 Transit Gateway.
         #[builder(into, default)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of a VPC Endpoint.
         #[builder(into, default)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of a VPC peering connection.
         ///
         /// Note that the default route, mapping the VPC's CIDR block to "local", is created implicitly and cannot be specified.
         #[builder(into, default)]
-        pub vpc_peering_connection_id: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_peering_connection_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

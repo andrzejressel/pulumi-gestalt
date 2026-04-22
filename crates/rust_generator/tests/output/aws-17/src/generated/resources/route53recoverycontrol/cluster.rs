@@ -33,7 +33,7 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// Unique name describing the cluster.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

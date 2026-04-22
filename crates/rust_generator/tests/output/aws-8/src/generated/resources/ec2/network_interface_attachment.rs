@@ -37,13 +37,13 @@ pub mod network_interface_attachment {
     pub struct NetworkInterfaceAttachmentArgs {
         /// Network interface index (int).
         #[builder(into)]
-        pub device_index: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub device_index: pulumi_gestalt_rust::Input<i32>,
         /// Instance ID to attach.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// ENI ID to attach.
         #[builder(into)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkInterfaceAttachmentResult {

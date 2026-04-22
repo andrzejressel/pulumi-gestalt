@@ -10,15 +10,15 @@ pub mod get_subnetworks {
     pub struct GetSubnetworksArgs {
         /// A string filter as defined in the [REST API](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks/list#query-parameters).
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region this subnetwork has been created in. If
         /// unspecified, this defaults to the region configured in the provider.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSubnetworksResult {

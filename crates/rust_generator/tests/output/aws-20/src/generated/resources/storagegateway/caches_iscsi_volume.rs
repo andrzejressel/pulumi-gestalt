@@ -63,33 +63,33 @@ pub mod caches_iscsi_volume {
     pub struct CachesIscsiVolumeArgs {
         /// The Amazon Resource Name (ARN) of the gateway.
         #[builder(into)]
-        pub gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_arn: pulumi_gestalt_rust::Input<String>,
         /// Set to `true` to use Amazon S3 server side encryption with your own AWS KMS key, or `false` to use a key managed by Amazon S3.
         #[builder(into, default)]
-        pub kms_encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub kms_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. Is required when `kms_encrypted` is set.
         #[builder(into, default)]
-        pub kms_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted.
         #[builder(into)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<String>,
         /// The snapshot ID of the snapshot to restore as the new cached volumeE.g., `snap-1122aabb`.
         #[builder(into, default)]
-        pub snapshot_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN for an existing volume. Specifying this ARN makes the new volume into an exact copy of the specified existing volume's latest recovery point. The `volume_size_in_bytes` value for this new volume must be equal to or larger than the size of the existing volume, in bytes.
         #[builder(into, default)]
-        pub source_volume_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_volume_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. The target name must be unique across all volumes of a gateway.
         #[builder(into)]
-        pub target_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_name: pulumi_gestalt_rust::Input<String>,
         /// The size of the volume in bytes.
         #[builder(into)]
-        pub volume_size_in_bytes: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub volume_size_in_bytes: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct CachesIscsiVolumeResult {

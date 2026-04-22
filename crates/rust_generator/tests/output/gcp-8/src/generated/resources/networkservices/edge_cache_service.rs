@@ -349,61 +349,61 @@ pub mod edge_cache_service {
     pub struct EdgeCacheServiceArgs {
         /// A human-readable description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Disables HTTP/2. HTTP/2 (h2) is enabled by default and recommended for performance. HTTP/2 improves connection re-use
         /// and reduces connection setup overhead by sending multiple streams over the same connection. Some legacy HTTP clients may
         /// have issues with HTTP/2 connections due to broken HTTP/2 implementations. Setting this to true will prevent HTTP/2 from
         /// being advertised and negotiated.
         #[builder(into, default)]
-        pub disable_http2: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_http2: pulumi_gestalt_rust::Input<Option<bool>>,
         /// HTTP/3 (IETF QUIC) and Google QUIC are enabled by default.
         #[builder(into, default)]
-        pub disable_quic: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_quic: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Resource URL that points at the Cloud Armor edge security policy that is applied on each request against the
         /// EdgeCacheService.
         #[builder(into, default)]
-        pub edge_security_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edge_security_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// URLs to sslCertificate resources that are used to authenticate connections between users and the EdgeCacheService. Note
         /// that only "global" certificates with a "scope" of "EDGE_CACHE" can be attached to an EdgeCacheService.
         #[builder(into, default)]
-        pub edge_ssl_certificates: pulumi_gestalt_rust::InputOrOutput<
+        pub edge_ssl_certificates: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Set of label tags associated with the EdgeCache resource. **Note**: This field is non-authoritative, and will only
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the logging options for the traffic served by this service. If logging is enabled, logs will be exported to
         /// Cloud Logging.
         #[builder(into, default)]
-        pub log_config: pulumi_gestalt_rust::InputOrOutput<
+        pub log_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkservices::EdgeCacheServiceLogConfig>,
         >,
         /// Name of the resource; provided by the client when the resource is created.
         /// The name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]* which means the first character must be a letter,
         /// and all following characters must be a dash, underscore, letter or digit.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Require TLS (HTTPS) for all clients connecting to this service. Clients who connect over HTTP (port 80) will receive a
         /// HTTP 301 to the same URL over HTTPS (port 443). You must have at least one (1) edgeSslCertificate specified to enable
         /// this.
         #[builder(into, default)]
-        pub require_tls: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub require_tls: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Defines how requests are routed, modified, cached and/or which origin content is filled from.
         /// Structure is documented below.
         #[builder(into)]
-        pub routing: pulumi_gestalt_rust::InputOrOutput<
+        pub routing: pulumi_gestalt_rust::Input<
             super::super::types::networkservices::EdgeCacheServiceRouting,
         >,
         /// URL of the SslPolicy resource that will be associated with the EdgeCacheService. If not set, the EdgeCacheService has no
         /// SSL policy configured, and will default to the "COMPATIBLE" policy.
         #[builder(into, default)]
-        pub ssl_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ssl_policy: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EdgeCacheServiceResult {

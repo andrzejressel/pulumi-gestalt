@@ -88,38 +88,38 @@ pub mod network_manager_connectivity_configuration {
     pub struct NetworkManagerConnectivityConfigurationArgs {
         /// One or more `applies_to_group` blocks as defined below.
         #[builder(into)]
-        pub applies_to_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub applies_to_groups: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::network::NetworkManagerConnectivityConfigurationAppliesToGroup,
             >,
         >,
         /// Specifies the connectivity topology type. Possible values are `HubAndSpoke` and `Mesh`.
         #[builder(into)]
-        pub connectivity_topology: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connectivity_topology: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether to remove current existing Virtual Network Peering in the Connectivity Configuration affected scope. Possible values are `true` and `false`.
         #[builder(into, default)]
-        pub delete_existing_peering_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub delete_existing_peering_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A description of the Connectivity Configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether to global mesh is supported. Possible values are `true` and `false`.
         #[builder(into, default)]
-        pub global_mesh_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub global_mesh_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `hub` block as defined below.
         #[builder(into, default)]
-        pub hub: pulumi_gestalt_rust::InputOrOutput<
+        pub hub: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::network::NetworkManagerConnectivityConfigurationHub,
             >,
         >,
         /// Specifies the name which should be used for this Network Manager Connectivity Configuration. Changing this forces a new Network Manager Connectivity Configuration to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Network Manager. Changing this forces a new Network Manager Connectivity Configuration to be created.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkManagerConnectivityConfigurationResult {

@@ -42,24 +42,24 @@ pub mod shared_image_gallery {
     pub struct SharedImageGalleryArgs {
         /// A description for this Shared Image Gallery.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Shared Image Gallery. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Shared Image Gallery. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sharing` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sharing: pulumi_gestalt_rust::InputOrOutput<
+        pub sharing: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SharedImageGallerySharing>,
         >,
         /// A mapping of tags to assign to the Shared Image Gallery.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

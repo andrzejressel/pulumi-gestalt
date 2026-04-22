@@ -93,23 +93,23 @@ pub mod app_check_device_check_config {
         ///
         /// - - -
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// The key identifier of a private key enabled with DeviceCheck, created in your Apple Developer account.
         #[builder(into)]
-        pub key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_id: pulumi_gestalt_rust::Input<String>,
         /// The contents of the private key (.p8) file associated with the key specified by keyId.
         /// **Note**: This property is sensitive and will not be displayed in the plan.
         #[builder(into)]
-        pub private_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_key: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the duration for which App Check tokens exchanged from DeviceCheck artifacts will be valid.
         /// If unset, a default value of 1 hour is assumed. Must be between 30 minutes and 7 days, inclusive.
         /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub token_ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_ttl: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppCheckDeviceCheckConfigResult {

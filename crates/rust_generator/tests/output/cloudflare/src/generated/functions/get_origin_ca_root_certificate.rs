@@ -10,7 +10,7 @@ pub mod get_origin_ca_root_certificate {
     pub struct GetOriginCaRootCertificateArgs {
         /// The name of the algorithm used when creating an Origin CA certificate. Available values: `rsa`, `ecc`.
         #[builder(into)]
-        pub algorithm: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub algorithm: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOriginCaRootCertificateResult {

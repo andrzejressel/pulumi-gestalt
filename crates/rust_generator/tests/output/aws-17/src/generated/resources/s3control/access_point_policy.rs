@@ -56,10 +56,10 @@ pub mod access_point_policy {
     pub struct AccessPointPolicyArgs {
         /// The ARN of the access point that you want to associate with the specified policy.
         #[builder(into)]
-        pub access_point_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_point_arn: pulumi_gestalt_rust::Input<String>,
         /// The policy that you want to apply to the specified access point.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessPointPolicyResult {

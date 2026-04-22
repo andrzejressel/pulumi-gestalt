@@ -43,10 +43,10 @@ pub mod vpc_endpoint {
     pub struct VpcEndpointArgs {
         /// Specifies the Amazon Resource Name (ARN) of the domain to create the endpoint for
         #[builder(into)]
-        pub domain_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_arn: pulumi_gestalt_rust::Input<String>,
         /// Options to specify the subnets and security groups for the endpoint.
         #[builder(into)]
-        pub vpc_options: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_options: pulumi_gestalt_rust::Input<
             super::super::types::opensearch::VpcEndpointVpcOptions,
         >,
     }

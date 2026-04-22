@@ -24,25 +24,25 @@ pub mod replicator {
     pub struct ReplicatorArgs {
         /// A summary description of the replicator.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Kafka clusters which are targets of the replicator.
         #[builder(into)]
-        pub kafka_clusters: pulumi_gestalt_rust::InputOrOutput<
+        pub kafka_clusters: pulumi_gestalt_rust::Input<
             Vec<super::super::types::msk::ReplicatorKafkaCluster>,
         >,
         /// A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
         #[builder(into)]
-        pub replication_info_list: pulumi_gestalt_rust::InputOrOutput<
+        pub replication_info_list: pulumi_gestalt_rust::Input<
             super::super::types::msk::ReplicatorReplicationInfoList,
         >,
         /// The name of the replicator.
         #[builder(into)]
-        pub replicator_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replicator_name: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters).
         #[builder(into)]
-        pub service_execution_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_execution_role_arn: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

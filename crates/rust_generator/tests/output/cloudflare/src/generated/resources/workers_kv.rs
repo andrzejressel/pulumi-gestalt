@@ -44,16 +44,16 @@ pub mod workers_kv {
     pub struct WorkersKvArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the KV pair. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Workers KV namespace in which you want to create the KV pair. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_id: pulumi_gestalt_rust::Input<String>,
         /// Value of the KV pair.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkersKvResult {

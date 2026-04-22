@@ -20,19 +20,19 @@ pub mod gcm_channel {
     pub struct GcmChannelArgs {
         /// Platform credential API key from Google.
         #[builder(into, default)]
-        pub api_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The application ID.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub default_authentication_method: pulumi_gestalt_rust::InputOrOutput<
+        pub default_authentication_method: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Whether the channel is enabled or disabled. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub service_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_json: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GcmChannelResult {

@@ -10,10 +10,10 @@ pub mod get_managed_database {
     pub struct GetManagedDatabaseArgs {
         /// The SQL Managed Instance ID.
         #[builder(into)]
-        pub managed_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_instance_id: pulumi_gestalt_rust::Input<String>,
         /// The name of this Azure SQL Azure Managed Database.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetManagedDatabaseResult {

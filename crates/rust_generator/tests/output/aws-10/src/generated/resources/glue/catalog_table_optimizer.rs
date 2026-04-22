@@ -117,21 +117,21 @@ pub mod catalog_table_optimizer {
     pub struct CatalogTableOptimizerArgs {
         /// The Catalog ID of the table.
         #[builder(into)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub catalog_id: pulumi_gestalt_rust::Input<String>,
         /// A configuration block that defines the table optimizer settings. See Configuration for additional details.
         #[builder(into, default)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::CatalogTableOptimizerConfiguration>,
         >,
         /// The name of the database in the catalog in which the table resides.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the table.
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
         /// The type of table optimizer. Valid values are `compaction`, `retention`, and `orphan_file_deletion`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CatalogTableOptimizerResult {

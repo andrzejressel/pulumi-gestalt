@@ -56,13 +56,13 @@ pub mod tag {
     pub struct TagArgs {
         /// Tag name.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the DynamoDB resource to tag.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
         /// Tag value.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagResult {

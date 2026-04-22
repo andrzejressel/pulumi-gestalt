@@ -48,24 +48,24 @@ pub mod services_communications_gateway_test_line {
     pub struct ServicesCommunicationsGatewayTestLineArgs {
         /// Specifies the Azure Region where the Voice Services Communications Gateway Test Line should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Voice Services Communications Gateway Test Line. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the phone number.
         #[builder(into)]
-        pub phone_number: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub phone_number: pulumi_gestalt_rust::Input<String>,
         /// The purpose of the Voice Services Communications Gateway Test Line. Possible values are `Automated` or `Manual`.
         #[builder(into)]
-        pub purpose: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub purpose: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Voice Services Communications Gateway Test Line.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the ID of the Voice Services Communications Gateway. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub voice_services_communications_gateway_id: pulumi_gestalt_rust::InputOrOutput<
+        pub voice_services_communications_gateway_id: pulumi_gestalt_rust::Input<
             String,
         >,
     }

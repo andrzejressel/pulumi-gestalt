@@ -42,23 +42,23 @@ pub mod project_exclusion {
     pub struct ProjectExclusionArgs {
         /// A human-readable description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether this exclusion rule should be disabled or not. This defaults to
         /// false.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The filter to apply when excluding logs. Only log entries that match the filter are excluded.
         /// See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to
         /// write a filter.
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter: pulumi_gestalt_rust::Input<String>,
         /// The name of the logging exclusion.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project to create the exclusion in. If omitted, the project associated with the provider is
         /// used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProjectExclusionResult {

@@ -55,10 +55,10 @@ pub mod bucket_policy {
     pub struct BucketPolicyArgs {
         /// Name of the bucket to which to apply the policy.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Text of the policy. Although this is a bucket policy rather than an IAM policy, the `aws.iam.getPolicyDocument` data source may be used, so long as it specifies a principal. For more information about building AWS IAM policy documents, see the AWS IAM Policy Document Guide. Note: Bucket policies are limited to 20 KB in size.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BucketPolicyResult {

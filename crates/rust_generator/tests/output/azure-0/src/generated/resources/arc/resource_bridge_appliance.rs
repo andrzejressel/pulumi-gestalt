@@ -44,30 +44,30 @@ pub mod resource_bridge_appliance {
     pub struct ResourceBridgeApplianceArgs {
         /// Specifies a supported Fabric/Infrastructure for this Arc Resource Bridge Appliance. The possible value is `AKSEdge`.
         #[builder(into)]
-        pub distro: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub distro: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             super::super::types::arc::ResourceBridgeApplianceIdentity,
         >,
         /// The infrastructure provider about the connected Arc Resource Bridge Appliance. Possible values are `HCI`,`SCVMM` and `VMWare`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub infrastructure_provider: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub infrastructure_provider: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Arc Resource Bridge Appliance should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name which should be used for this Arc Resource Bridge Appliance. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The `public_key_base64` is an RSA public key in PKCS1 format encoded in base64. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub public_key_base64: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_key_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the resource group where the Arc Resource Bridge Appliance exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Arc Resource Bridge Appliance.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -201,75 +201,75 @@ pub mod data_set {
     pub struct DataSetArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported. See column_groups.
         #[builder(into, default)]
-        pub column_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub column_groups: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::DataSetColumnGroup>>,
         >,
         /// A set of 1 or more definitions of a [ColumnLevelPermissionRule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html). See column_level_permission_rules.
         #[builder(into, default)]
-        pub column_level_permission_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub column_level_permission_rules: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::quicksight::DataSetColumnLevelPermissionRule>,
             >,
         >,
         /// Identifier for the data set.
         #[builder(into)]
-        pub data_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_set_id: pulumi_gestalt_rust::Input<String>,
         /// The usage configuration to apply to child datasets that reference this dataset as a source. See data_set_usage_configuration.
         #[builder(into, default)]
-        pub data_set_usage_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub data_set_usage_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DataSetDataSetUsageConfiguration>,
         >,
         /// The folder that contains fields and nested subfolders for your dataset. See field_folders.
         #[builder(into, default)]
-        pub field_folders: pulumi_gestalt_rust::InputOrOutput<
+        pub field_folders: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::DataSetFieldFolder>>,
         >,
         /// Indicates whether you want to import the data into SPICE. Valid values are `SPICE` and `DIRECT_QUERY`.
         #[builder(into)]
-        pub import_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub import_mode: pulumi_gestalt_rust::Input<String>,
         /// Configures the combination and transformation of the data from the physical tables. Maximum of 1 entry. See logical_table_map.
         #[builder(into, default)]
-        pub logical_table_maps: pulumi_gestalt_rust::InputOrOutput<
+        pub logical_table_maps: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::DataSetLogicalTableMap>>,
         >,
         /// Display name for the dataset.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of resource permissions on the data source. Maximum of 64 items. See permissions.
         #[builder(into, default)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::DataSetPermission>>,
         >,
         /// Declares the physical tables that are available in the underlying data sources. See physical_table_map.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub physical_table_maps: pulumi_gestalt_rust::InputOrOutput<
+        pub physical_table_maps: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::DataSetPhysicalTableMap>>,
         >,
         /// The refresh properties for the data set. **NOTE**: Only valid when `import_mode` is set to `SPICE`. See refresh_properties.
         #[builder(into, default)]
-        pub refresh_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub refresh_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DataSetRefreshProperties>,
         >,
         /// The row-level security configuration for the data that you want to create. See row_level_permission_data_set.
         #[builder(into, default)]
-        pub row_level_permission_data_set: pulumi_gestalt_rust::InputOrOutput<
+        pub row_level_permission_data_set: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DataSetRowLevelPermissionDataSet>,
         >,
         /// The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. See row_level_permission_tag_configuration.
         #[builder(into, default)]
-        pub row_level_permission_tag_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub row_level_permission_tag_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::quicksight::DataSetRowLevelPermissionTagConfiguration,
             >,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

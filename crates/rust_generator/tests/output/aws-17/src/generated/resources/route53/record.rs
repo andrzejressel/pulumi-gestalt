@@ -192,70 +192,70 @@ pub mod record {
         /// An alias block. Conflicts with `ttl` & `records`.
         /// Documented below.
         #[builder(into, default)]
-        pub aliases: pulumi_gestalt_rust::InputOrOutput<
+        pub aliases: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::route53::RecordAlias>>,
         >,
         /// Allow creation of this record to overwrite an existing record, if any. This does not affect the ability to update the record using this provider and does not prevent other resources within this provider or manual Route 53 changes outside this provider from overwriting this record. `false` by default. This configuration is not recommended for most environments.
         ///
         /// Exactly one of `records` or `alias` must be specified: this determines whether it's an alias record.
         #[builder(into, default)]
-        pub allow_overwrite: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_overwrite: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A block indicating a routing policy based on the IP network ranges of requestors. Conflicts with any other routing policy. Documented below.
         #[builder(into, default)]
-        pub cidr_routing_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub cidr_routing_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::route53::RecordCidrRoutingPolicy>,
         >,
         /// A block indicating the routing behavior when associated health check fails. Conflicts with any other routing policy. Documented below.
         #[builder(into, default)]
-        pub failover_routing_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub failover_routing_policies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::route53::RecordFailoverRoutingPolicy>>,
         >,
         /// A block indicating a routing policy based on the geolocation of the requestor. Conflicts with any other routing policy. Documented below.
         #[builder(into, default)]
-        pub geolocation_routing_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub geolocation_routing_policies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::route53::RecordGeolocationRoutingPolicy>>,
         >,
         /// A block indicating a routing policy based on the geoproximity of the requestor. Conflicts with any other routing policy. Documented below.
         #[builder(into, default)]
-        pub geoproximity_routing_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub geoproximity_routing_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::route53::RecordGeoproximityRoutingPolicy>,
         >,
         /// The health check the record should be associated with.
         #[builder(into, default)]
-        pub health_check_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub health_check_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block indicating a routing policy based on the latency between the requestor and an AWS region. Conflicts with any other routing policy. Documented below.
         #[builder(into, default)]
-        pub latency_routing_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub latency_routing_policies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::route53::RecordLatencyRoutingPolicy>>,
         >,
         /// Set to `true` to indicate a multivalue answer routing policy. Conflicts with any other routing policy.
         #[builder(into, default)]
-        pub multivalue_answer_routing_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub multivalue_answer_routing_policy: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the record.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// A string list of records. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\"\"` inside the provider configuration string (e.g., `"first255characters\"\"morecharacters"`).
         #[builder(into, default)]
-        pub records: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub records: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Unique identifier to differentiate records with routing policies from one another. Required if using `cidr_routing_policy`, `failover_routing_policy`, `geolocation_routing_policy`,`geoproximity_routing_policy`, `latency_routing_policy`, `multivalue_answer_routing_policy`, or `weighted_routing_policy`.
         #[builder(into, default)]
-        pub set_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub set_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The TTL of the record.
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The record type. Valid values are `A`, `AAAA`, `CAA`, `CNAME`, `DS`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV` and `TXT`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// A block indicating a weighted routing policy. Conflicts with any other routing policy. Documented below.
         #[builder(into, default)]
-        pub weighted_routing_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub weighted_routing_policies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::route53::RecordWeightedRoutingPolicy>>,
         >,
         /// The ID of the hosted zone to contain this record.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RecordResult {

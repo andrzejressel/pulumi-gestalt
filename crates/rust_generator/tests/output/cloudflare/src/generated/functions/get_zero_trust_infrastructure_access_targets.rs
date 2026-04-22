@@ -10,28 +10,28 @@ pub mod get_zero_trust_infrastructure_access_targets {
     pub struct GetZeroTrustInfrastructureAccessTargetsArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// A date and time after a target was created to filter on.
         #[builder(into, default)]
-        pub created_after: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub created_after: pulumi_gestalt_rust::Input<Option<String>>,
         /// The hostname of the target.
         #[builder(into, default)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hostname: pulumi_gestalt_rust::Input<Option<String>>,
         /// Partial match to the hostname of a target
         #[builder(into, default)]
-        pub hostname_contains: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hostname_contains: pulumi_gestalt_rust::Input<Option<String>>,
         /// The target's IPv4 address.
         #[builder(into, default)]
-        pub ipv4: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv4: pulumi_gestalt_rust::Input<Option<String>>,
         /// The target's IPv6 address.
         #[builder(into, default)]
-        pub ipv6: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv6: pulumi_gestalt_rust::Input<Option<String>>,
         /// A date and time after a target was modified to filter on.
         #[builder(into, default)]
-        pub modified_after: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub modified_after: pulumi_gestalt_rust::Input<Option<String>>,
         /// The private virtual network identifier for the target.
         #[builder(into, default)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetZeroTrustInfrastructureAccessTargetsResult {

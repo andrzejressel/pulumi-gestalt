@@ -109,11 +109,11 @@ pub mod owner {
         ///
         /// - - -
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
         /// The id of of the web resource to which the owner will be added, in the form `webResource/<resource_id>`,
         /// such as `webResource/https://www.example.com/`
         #[builder(into)]
-        pub web_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OwnerResult {

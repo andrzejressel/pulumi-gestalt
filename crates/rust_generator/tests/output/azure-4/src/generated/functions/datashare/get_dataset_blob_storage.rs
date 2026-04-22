@@ -10,10 +10,10 @@ pub mod get_dataset_blob_storage {
     pub struct GetDatasetBlobStorageArgs {
         /// The ID of the Data Share in which this Data Share Blob Storage Dataset should be created.
         #[builder(into)]
-        pub data_share_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_share_id: pulumi_gestalt_rust::Input<String>,
         /// The name of this Data Share Blob Storage Dataset.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDatasetBlobStorageResult {

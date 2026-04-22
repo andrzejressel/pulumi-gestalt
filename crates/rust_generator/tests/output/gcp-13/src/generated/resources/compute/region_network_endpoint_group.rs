@@ -411,27 +411,27 @@ pub mod region_network_endpoint_group {
         /// Only one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub app_engine: pulumi_gestalt_rust::InputOrOutput<
+        pub app_engine: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionNetworkEndpointGroupAppEngine>,
         >,
         /// This field is only used for SERVERLESS NEGs.
         /// Only one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloud_function: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_function: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionNetworkEndpointGroupCloudFunction>,
         >,
         /// This field is only used for SERVERLESS NEGs.
         /// Only one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloud_run: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_run: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionNetworkEndpointGroupCloudRun>,
         >,
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource; provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -440,43 +440,43 @@ pub mod region_network_endpoint_group {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// This field is only used for PSC and INTERNET NEGs.
         /// The URL of the network to which all network endpoints in the NEG belong. Uses
         /// "default" project network if unspecified.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of network endpoints in this network endpoint group. Defaults to SERVERLESS.
         /// Default value is `SERVERLESS`.
         /// Possible values are: `SERVERLESS`, `PRIVATE_SERVICE_CONNECT`, `INTERNET_IP_PORT`, `INTERNET_FQDN_PORT`, `GCE_VM_IP_PORTMAP`.
         #[builder(into, default)]
-        pub network_endpoint_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_endpoint_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// This field is only used for PSC NEGs.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub psc_data: pulumi_gestalt_rust::InputOrOutput<
+        pub psc_data: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionNetworkEndpointGroupPscData>,
         >,
         /// This field is only used for PSC and INTERNET NEGs.
         /// The target service url used to set up private service connection to
         /// a Google API or a PSC Producer Service Attachment.
         #[builder(into, default)]
-        pub psc_target_service: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub psc_target_service: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the region where the regional NEGs reside.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
         /// This field is only used for SERVERLESS NEGs.
         /// Only one of cloudRun, appEngine, cloudFunction or serverlessDeployment may be set.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub serverless_deployment: pulumi_gestalt_rust::InputOrOutput<
+        pub serverless_deployment: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::RegionNetworkEndpointGroupServerlessDeployment,
             >,
@@ -484,7 +484,7 @@ pub mod region_network_endpoint_group {
         /// This field is only used for PSC NEGs.
         /// Optional URL of the subnetwork to which all network endpoints in the NEG belong.
         #[builder(into, default)]
-        pub subnetwork: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnetwork: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RegionNetworkEndpointGroupResult {

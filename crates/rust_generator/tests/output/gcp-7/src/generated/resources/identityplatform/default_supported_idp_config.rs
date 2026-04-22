@@ -64,16 +64,16 @@ pub mod default_supported_idp_config {
     pub struct DefaultSupportedIdpConfigArgs {
         /// OAuth client ID
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// OAuth client secret
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_secret: pulumi_gestalt_rust::Input<String>,
         /// If this IDP allows the user to sign in
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the IDP. Possible values include:
         /// * `apple.com`
         /// * `facebook.com`
@@ -86,11 +86,11 @@ pub mod default_supported_idp_config {
         /// * `twitter.com`
         /// * `yahoo.com`
         #[builder(into)]
-        pub idp_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub idp_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DefaultSupportedIdpConfigResult {

@@ -70,13 +70,13 @@ pub mod gallery {
     pub struct GalleryArgs {
         /// Specifies the ID of the Dev Center within which this Dev Center Gallery should exist. Changing this forces a new Dev Center Gallery to be created.
         #[builder(into)]
-        pub dev_center_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of this Dev Center Gallery. Changing this forces a new Dev Center Gallery to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Shared Gallery which should be connected to the Dev Center Gallery. Changing this forces a new Dev Center Gallery to be created.
         #[builder(into)]
-        pub shared_gallery_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub shared_gallery_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GalleryResult {

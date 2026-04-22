@@ -19,49 +19,49 @@ pub mod v_2_models_slot {
     pub struct V2modelsSlotArgs {
         /// Identifier of the bot associated with the slot.
         #[builder(into)]
-        pub bot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_id: pulumi_gestalt_rust::Input<String>,
         /// Version of the bot associated with the slot.
         #[builder(into)]
-        pub bot_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_version: pulumi_gestalt_rust::Input<String>,
         /// Description of the slot.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the intent that contains the slot.
         #[builder(into)]
-        pub intent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub intent_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the language and locale that the slot will be used in.
         #[builder(into)]
-        pub locale_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub locale_id: pulumi_gestalt_rust::Input<String>,
         /// Whether the slot returns multiple values in one response.
         /// See the `multiple_values_setting` argument reference below.
         #[builder(into, default)]
-        pub multiple_values_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub multiple_values_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lex::V2ModelsSlotMultipleValuesSetting>>,
         >,
         /// Name of the slot.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Determines how slot values are used in Amazon CloudWatch logs.
         /// See the `obfuscation_setting` argument reference below.
         #[builder(into, default)]
-        pub obfuscation_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub obfuscation_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lex::V2ModelsSlotObfuscationSetting>>,
         >,
         /// Unique identifier for the slot type associated with this slot.
         #[builder(into, default)]
-        pub slot_type_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub slot_type_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifications for the constituent sub slots and the expression for the composite slot.
         /// See the `sub_slot_setting` argument reference below.
         #[builder(into, default)]
-        pub sub_slot_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub sub_slot_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSetting>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsSlotTimeouts>,
         >,
         #[builder(into, default)]
-        pub value_elicitation_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub value_elicitation_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsSlotValueElicitationSetting>,
         >,
     }

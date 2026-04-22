@@ -12,12 +12,12 @@ pub mod get_quicksight_analysis {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub analysis_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub analysis_id: pulumi_gestalt_rust::Input<String>,
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

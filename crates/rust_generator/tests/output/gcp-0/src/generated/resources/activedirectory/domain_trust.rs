@@ -69,32 +69,32 @@ pub mod domain_trust {
         ///
         /// - - -
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the trusted side has forest/domain wide access or selective access to an approved set of resources.
         #[builder(into, default)]
-        pub selective_authentication: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub selective_authentication: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The target DNS server IP addresses which can resolve the remote domain involved in the trust.
         #[builder(into)]
-        pub target_dns_ip_addresses: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub target_dns_ip_addresses: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The fully qualified target domain name which will be in trust with the current domain.
         #[builder(into)]
-        pub target_domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_domain_name: pulumi_gestalt_rust::Input<String>,
         /// The trust direction, which decides if the current domain is trusted, trusting, or both.
         /// Possible values are: `INBOUND`, `OUTBOUND`, `BIDIRECTIONAL`.
         #[builder(into)]
-        pub trust_direction: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trust_direction: pulumi_gestalt_rust::Input<String>,
         /// The trust secret used for the handshake with the target domain. This will not be stored.
         /// **Note**: This property is sensitive and will not be displayed in the plan.
         #[builder(into)]
-        pub trust_handshake_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trust_handshake_secret: pulumi_gestalt_rust::Input<String>,
         /// The type of trust represented by the trust resource.
         /// Possible values are: `FOREST`, `EXTERNAL`.
         #[builder(into)]
-        pub trust_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trust_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainTrustResult {

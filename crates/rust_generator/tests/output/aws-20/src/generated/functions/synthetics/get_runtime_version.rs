@@ -10,15 +10,15 @@ pub mod get_runtime_version {
     pub struct GetRuntimeVersionArgs {
         /// Whether the latest version of the runtime should be fetched. Conflicts with `version`. Valid values: `true`.
         #[builder(into, default)]
-        pub latest: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub latest: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name prefix of the runtime version (for example, `syn-nodejs-puppeteer`).
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub prefix: pulumi_gestalt_rust::Input<String>,
         /// Version of the runtime to be fetched (for example, `9.0`). Conflicts with `latest`.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRuntimeVersionResult {

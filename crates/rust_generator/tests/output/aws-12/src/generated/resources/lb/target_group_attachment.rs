@@ -104,18 +104,18 @@ pub mod target_group_attachment {
     pub struct TargetGroupAttachmentArgs {
         /// The Availability Zone where the IP address of the target is to be registered. If the private IP address is outside of the VPC scope, this value must be set to `all`.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port on which targets receive traffic.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ARN of the target group with which to register targets.
         #[builder(into)]
-        pub target_group_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_group_arn: pulumi_gestalt_rust::Input<String>,
         /// The ID of the target. This is the Instance ID for an instance, or the container ID for an ECS container. If the target type is `ip`, specify an IP address. If the target type is `lambda`, specify the Lambda function ARN. If the target type is `alb`, specify the ALB ARN.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TargetGroupAttachmentResult {

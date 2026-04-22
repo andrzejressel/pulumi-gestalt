@@ -208,60 +208,60 @@ pub mod flow_log {
     pub struct FlowLogArgs {
         /// ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts.
         #[builder(into, default)]
-        pub deliver_cross_account_role: pulumi_gestalt_rust::InputOrOutput<
+        pub deliver_cross_account_role: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Describes the destination options for a flow log. More details below.
         #[builder(into, default)]
-        pub destination_options: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::FlowLogDestinationOptions>,
         >,
         /// Elastic Network Interface ID to attach to
         #[builder(into, default)]
-        pub eni_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eni_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group
         #[builder(into, default)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the logging destination. Either `log_destination` or `log_group_name` must be set.
         #[builder(into, default)]
-        pub log_destination: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub log_destination: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the logging destination. Valid values: `cloud-watch-logs`, `s3`, `kinesis-data-firehose`. Default: `cloud-watch-logs`.
         #[builder(into, default)]
-        pub log_destination_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub log_destination_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The fields to include in the flow log record. Accepted format example: `"$${interface-id} $${srcaddr} $${dstaddr} $${srcport} $${dstport}"`.
         #[builder(into, default)]
-        pub log_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub log_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// **Deprecated:** Use `log_destination` instead. The name of the CloudWatch log group. Either `log_group_name` or `log_destination` must be set.
         #[builder(into, default)]
-        pub log_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub log_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum interval of time
         /// during which a flow of packets is captured and aggregated into a flow
         /// log record. Valid Values: `60` seconds (1 minute) or `600` seconds (10
         /// minutes). Default: `600`. When `transit_gateway_id` or `transit_gateway_attachment_id` is specified, `max_aggregation_interval` *must* be 60 seconds (1 minute).
         #[builder(into, default)]
-        pub max_aggregation_interval: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_aggregation_interval: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Subnet ID to attach to
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of traffic to capture. Valid values: `ACCEPT`,`REJECT`, `ALL`.
         #[builder(into, default)]
-        pub traffic_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub traffic_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Transit Gateway Attachment ID to attach to
         #[builder(into, default)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Transit Gateway ID to attach to
         #[builder(into, default)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// VPC ID to attach to
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FlowLogResult {

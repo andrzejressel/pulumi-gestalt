@@ -66,16 +66,16 @@ pub mod alert_rule_threat_intelligence {
     pub struct AlertRuleThreatIntelligenceArgs {
         /// The GUID of the alert rule template which is used for this Sentinel Threat Intelligence Alert Rule. Changing this forces a new Sentinel Threat Intelligence Alert Rule to be created.
         #[builder(into)]
-        pub alert_rule_template_guid: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alert_rule_template_guid: pulumi_gestalt_rust::Input<String>,
         /// Whether the Threat Intelligence Alert rule enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Log Analytics Workspace this Sentinel Threat Intelligence Alert Rule belongs to. Changing this forces a new Sentinel Threat Intelligence Alert Rule to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Sentinel Threat Intelligence Alert Rule. Changing this forces a new Sentinel Threat Intelligence Alert Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AlertRuleThreatIntelligenceResult {

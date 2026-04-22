@@ -152,7 +152,7 @@ pub mod policy {
         /// A whitelist of image patterns to exclude from admission rules. If an image's name matches a whitelist pattern, the
         /// image's admission requests will always be permitted regardless of your admission rules.
         #[builder(into, default)]
-        pub admission_whitelist_patterns: pulumi_gestalt_rust::InputOrOutput<
+        pub admission_whitelist_patterns: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::binaryauthorization::PolicyAdmissionWhitelistPattern,
@@ -164,7 +164,7 @@ pub mod policy {
         /// denied. There can be at most one admission rule per cluster spec. Identifier format: '{{location}}.{{clusterId}}'. A
         /// location is either a compute zone (e.g. 'us-central1-a') or a region (e.g. 'us-central1').
         #[builder(into, default)]
-        pub cluster_admission_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub cluster_admission_rules: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::binaryauthorization::PolicyClusterAdmissionRule>,
             >,
@@ -173,20 +173,20 @@ pub mod policy {
         /// rule.
         /// Structure is documented below.
         #[builder(into)]
-        pub default_admission_rule: pulumi_gestalt_rust::InputOrOutput<
+        pub default_admission_rule: pulumi_gestalt_rust::Input<
             super::super::types::binaryauthorization::PolicyDefaultAdmissionRule,
         >,
         /// A descriptive comment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Controls the evaluation of a Google-maintained global admission policy for common system-level images. Images not
         /// covered by the global policy will be subject to the project admission policy. Possible values: ["ENABLE", "DISABLE"]
         #[builder(into, default)]
-        pub global_policy_evaluation_mode: pulumi_gestalt_rust::InputOrOutput<
+        pub global_policy_evaluation_mode: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PolicyResult {

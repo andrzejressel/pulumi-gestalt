@@ -38,16 +38,16 @@ pub mod appregistry_attribute_group {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub attributes: pulumi_gestalt_rust::Input<String>,
         /// Description of the Attribute Group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Attribute Group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags assigned to the Attribute Group. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

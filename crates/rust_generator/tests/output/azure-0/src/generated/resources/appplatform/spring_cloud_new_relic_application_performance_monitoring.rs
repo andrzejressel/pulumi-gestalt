@@ -54,44 +54,44 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
     pub struct SpringCloudNewRelicApplicationPerformanceMonitoringArgs {
         /// Specifies whether enable the agent. Defaults to `true`.
         #[builder(into, default)]
-        pub agent_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub agent_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the application name used to report data to New Relic.
         #[builder(into)]
-        pub app_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the port number to differentiate JVMs for the same app on the same machine.
         #[builder(into, default)]
-        pub app_server_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub app_server_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies whether enable plain text logging of all data sent to New Relic to the agent logfile. Defaults to `false`.
         #[builder(into, default)]
-        pub audit_mode_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub audit_mode_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether enable the reporting of data separately for each web app. Defaults to `false`.
         #[builder(into, default)]
-        pub auto_app_naming_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_app_naming_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether enable the component-based transaction naming. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_transaction_naming_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_transaction_naming_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies whether enable all instrumentation using an `@Trace` annotation. Disabling this causes `@Trace` annotations to be ignored. Defaults to `true`.
         #[builder(into, default)]
-        pub custom_tracing_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub custom_tracing_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether the Spring Cloud Application Performance Monitoring resource for Application Insights is enabled globally. Defaults to `false`.
         #[builder(into, default)]
-        pub globally_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub globally_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies a mapping of labels to be added to the New Relic application.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the license key associated with the New Relic account. This key binds your agent's data to your account in New Relic service.
         #[builder(into)]
-        pub license_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub license_key: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Spring Cloud Application Performance Monitoring resource for New Relic. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudNewRelicApplicationPerformanceMonitoringResult {

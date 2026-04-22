@@ -10,7 +10,7 @@ pub mod get_location {
     pub struct GetLocationArgs {
         /// Code for the location to retrieve.
         #[builder(into)]
-        pub location_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location_code: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetLocationResult {

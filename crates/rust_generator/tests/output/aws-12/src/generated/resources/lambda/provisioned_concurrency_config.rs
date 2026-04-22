@@ -59,18 +59,18 @@ pub mod provisioned_concurrency_config {
     pub struct ProvisionedConcurrencyConfigArgs {
         /// Name or Amazon Resource Name (ARN) of the Lambda Function.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// Amount of capacity to allocate. Must be greater than or equal to `1`.
         #[builder(into)]
-        pub provisioned_concurrent_executions: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub provisioned_concurrent_executions: pulumi_gestalt_rust::Input<i32>,
         /// Lambda Function version or Lambda Alias name.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub qualifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub qualifier: pulumi_gestalt_rust::Input<String>,
         /// Whether to retain the provisoned concurrency configuration upon destruction. Defaults to `false`. If set to `true`, the resource in simply removed from state instead.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ProvisionedConcurrencyConfigResult {

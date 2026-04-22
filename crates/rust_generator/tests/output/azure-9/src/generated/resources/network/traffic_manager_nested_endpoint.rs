@@ -81,7 +81,7 @@ pub mod traffic_manager_nested_endpoint {
     pub struct TrafficManagerNestedEndpointArgs {
         /// One or more `custom_header` blocks as defined below.
         #[builder(into, default)]
-        pub custom_headers: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_headers: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::TrafficManagerNestedEndpointCustomHeader,
@@ -90,48 +90,48 @@ pub mod traffic_manager_nested_endpoint {
         >,
         /// Is the endpoint enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the Azure location of the Endpoint, this must be specified for Profiles using the `Performance` routing method.
         #[builder(into, default)]
-        pub endpoint_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Geographic Regions used to distribute traffic, such as `WORLD`, `UK` or `DE`. The same location can't be specified in two endpoints. [See the Geographic Hierarchies documentation for more information](https://docs.microsoft.com/rest/api/trafficmanager/geographichierarchies/getdefault).
         #[builder(into, default)]
-        pub geo_mappings: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub geo_mappings: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// This argument specifies the minimum number of endpoints that must be ‘online’ in the child profile in order for the parent profile to direct traffic to any of the endpoints in that child profile. This value must be larger than `0`.
         ///
         /// ~>**NOTE:** If `min_child_endpoints` is less than either `minimum_required_child_endpoints_ipv4` or `minimum_required_child_endpoints_ipv6`, then it won't have any effect.
         #[builder(into)]
-        pub minimum_child_endpoints: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub minimum_child_endpoints: pulumi_gestalt_rust::Input<i32>,
         /// This argument specifies the minimum number of IPv4 (DNS record type A) endpoints that must be ‘online’ in the child profile in order for the parent profile to direct traffic to any of the endpoints in that child profile. This argument only applies to Endpoints of type `nestedEndpoints` and
         #[builder(into, default)]
-        pub minimum_required_child_endpoints_ipv4: pulumi_gestalt_rust::InputOrOutput<
+        pub minimum_required_child_endpoints_ipv4: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// This argument specifies the minimum number of IPv6 (DNS record type AAAA) endpoints that must be ‘online’ in the child profile in order for the parent profile to direct traffic to any of the endpoints in that child profile. This argument only applies to Endpoints of type `nestedEndpoints` and
         #[builder(into, default)]
-        pub minimum_required_child_endpoints_ipv6: pulumi_gestalt_rust::InputOrOutput<
+        pub minimum_required_child_endpoints_ipv6: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The name of the External Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the priority of this Endpoint, this must be specified for Profiles using the `Priority` traffic routing method. Supports values between 1 and 1000, with no Endpoints sharing the same value. If omitted the value will be computed in order of creation. Defaults to `1`.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Traffic Manager Profile that this External Endpoint should be created within. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub profile_id: pulumi_gestalt_rust::Input<String>,
         /// One or more `subnet` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub subnets: pulumi_gestalt_rust::InputOrOutput<
+        pub subnets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::TrafficManagerNestedEndpointSubnet>>,
         >,
         /// The resource id of an Azure resource to target.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies how much traffic should be distributed to this endpoint, this must be specified for Profiles using the Weighted traffic routing method. Valid values are between `1` and `1000`. Defaults to `1`.
         #[builder(into, default)]
-        pub weight: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub weight: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct TrafficManagerNestedEndpointResult {

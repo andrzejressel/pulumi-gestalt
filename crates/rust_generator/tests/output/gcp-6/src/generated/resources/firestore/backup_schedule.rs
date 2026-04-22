@@ -98,16 +98,16 @@ pub mod backup_schedule {
     pub struct BackupScheduleArgs {
         /// For a schedule that runs daily.
         #[builder(into, default)]
-        pub daily_recurrence: pulumi_gestalt_rust::InputOrOutput<
+        pub daily_recurrence: pulumi_gestalt_rust::Input<
             Option<super::super::types::firestore::BackupScheduleDailyRecurrence>,
         >,
         /// The Firestore database id. Defaults to `"(default)"`.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// At what relative time in the future, compared to its creation time, the backup should be deleted, e.g. keep backups for 7 days.
         /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
         /// You can set this to a value up to 14 weeks.
@@ -115,11 +115,11 @@ pub mod backup_schedule {
         ///
         /// - - -
         #[builder(into)]
-        pub retention: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub retention: pulumi_gestalt_rust::Input<String>,
         /// For a schedule that runs weekly on a specific day.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub weekly_recurrence: pulumi_gestalt_rust::InputOrOutput<
+        pub weekly_recurrence: pulumi_gestalt_rust::Input<
             Option<super::super::types::firestore::BackupScheduleWeeklyRecurrence>,
         >,
     }

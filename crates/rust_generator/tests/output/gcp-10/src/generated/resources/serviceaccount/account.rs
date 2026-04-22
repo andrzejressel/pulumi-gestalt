@@ -56,28 +56,28 @@ pub mod account {
         /// must be 6-30 characters long, and match the regular expression `a-z`
         /// to comply with RFC1035. Changing this forces a new service account to be created.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set to true, skip service account creation if a service account with the same email already exists.
         #[builder(into, default)]
-        pub create_ignore_already_exists: pulumi_gestalt_rust::InputOrOutput<
+        pub create_ignore_already_exists: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A text description of the service account.
         /// Must be less than or equal to 256 UTF-8 bytes.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether a service account is disabled or not. Defaults to `false`. This field has no effect during creation.
         /// Must be set after creation to disable a service account.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The display name for the service account.
         /// Can be updated without creating a new resource.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project that the service account will be created in.
         /// Defaults to the provider project configuration.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountResult {

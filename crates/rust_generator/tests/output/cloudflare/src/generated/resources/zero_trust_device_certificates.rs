@@ -37,10 +37,10 @@ pub mod zero_trust_device_certificates {
     pub struct ZeroTrustDeviceCertificatesArgs {
         /// `true` if certificate generation is enabled.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustDeviceCertificatesResult {

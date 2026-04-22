@@ -39,32 +39,32 @@ pub mod key {
     #[allow(dead_code)]
     pub struct KeyArgs {
         #[builder(into, default)]
-        pub deletion_window_in_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub deletion_window_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether to enable the key.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the key is exportable from the service.
         #[builder(into)]
-        pub exportable: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub exportable: pulumi_gestalt_rust::Input<bool>,
         /// Role of the key, the algorithm it supports, and the cryptographic operations allowed with the key.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub key_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub key_attributes: pulumi_gestalt_rust::Input<
             Option<super::super::types::paymentcryptography::KeyKeyAttributes>,
         >,
         /// Algorithm that AWS Payment Cryptography uses to calculate the key check value (KCV).
         #[builder(into, default)]
-        pub key_check_value_algorithm: pulumi_gestalt_rust::InputOrOutput<
+        pub key_check_value_algorithm: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Map of tags assigned to the WorkSpaces Connection Alias. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::paymentcryptography::KeyTimeouts>,
         >,
     }

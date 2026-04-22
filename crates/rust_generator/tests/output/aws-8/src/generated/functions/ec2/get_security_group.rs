@@ -10,20 +10,20 @@ pub mod get_security_group {
     pub struct GetSecurityGroupArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetSecurityGroupFilter>>,
         >,
         /// Id of the specific security group to retrieve.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the field to filter by, as defined by
         /// [the underlying AWS API](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html).
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match
         /// a pair on the desired security group.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Id of the VPC that the desired security group belongs to.
@@ -31,7 +31,7 @@ pub mod get_security_group {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSecurityGroupResult {

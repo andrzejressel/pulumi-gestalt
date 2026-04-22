@@ -10,7 +10,7 @@ pub mod get_private_link_resource {
     pub struct GetPrivateLinkResourceArgs {
         /// The ID of an existing Web Pubsub Resource which Private Link Resource should be retrieved for.
         #[builder(into)]
-        pub web_pubsub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_pubsub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPrivateLinkResourceResult {

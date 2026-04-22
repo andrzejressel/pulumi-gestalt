@@ -34,16 +34,16 @@ pub mod profile {
     pub struct ProfileArgs {
         /// The As2Id is the AS2 name as defined in the RFC 4130. For inbound ttransfers this is the AS2 From Header for the AS2 messages sent from the partner. For Outbound messages this is the AS2 To Header for the AS2 messages sent to the partner. his ID cannot include spaces.
         #[builder(into)]
-        pub as2_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub as2_id: pulumi_gestalt_rust::Input<String>,
         /// The list of certificate Ids from the imported certificate operation.
         #[builder(into, default)]
-        pub certificate_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub certificate_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The profile type should be LOCAL or PARTNER.
         #[builder(into)]
-        pub profile_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub profile_type: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

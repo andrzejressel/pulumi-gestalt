@@ -70,26 +70,26 @@ pub mod iot_hub_device_update_instance {
     pub struct IotHubDeviceUpdateInstanceArgs {
         /// Specifies the ID of the IoT Hub Device Update Account where the IoT Hub Device Update Instance exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub device_update_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_update_account_id: pulumi_gestalt_rust::Input<String>,
         /// Whether the diagnostic log collection is enabled. Possible values are `true` and `false`. Defaults to `false`.
         #[builder(into, default)]
-        pub diagnostic_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub diagnostic_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `diagnostic_storage_account` block as defined below.
         #[builder(into, default)]
-        pub diagnostic_storage_account: pulumi_gestalt_rust::InputOrOutput<
+        pub diagnostic_storage_account: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::iot::IotHubDeviceUpdateInstanceDiagnosticStorageAccount,
             >,
         >,
         /// Specifies the ID of the IoT Hub associated with the IoT Hub Device Update Instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this IoT Hub Device Update Instance. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the IoT Hub Device Update Instance.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

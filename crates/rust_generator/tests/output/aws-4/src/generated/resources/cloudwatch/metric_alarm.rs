@@ -172,22 +172,22 @@ pub mod metric_alarm {
     pub struct MetricAlarmArgs {
         /// Indicates whether or not actions should be executed during any changes to the alarm's state. Defaults to `true`.
         #[builder(into, default)]
-        pub actions_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub actions_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The list of actions to execute when this alarm transitions into an ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         #[builder(into, default)]
-        pub alarm_actions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub alarm_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The description for the alarm.
         #[builder(into, default)]
-        pub alarm_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alarm_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The arithmetic operation to use when comparing the specified Statistic and Threshold. The specified Statistic value is used as the first operand. Either of the following is supported: `GreaterThanOrEqualToThreshold`, `GreaterThanThreshold`, `LessThanThreshold`, `LessThanOrEqualToThreshold`. Additionally, the values  `LessThanLowerOrGreaterThanUpperThreshold`, `LessThanLowerThreshold`, and `GreaterThanUpperThreshold` are used only for alarms based on anomaly detection models.
         #[builder(into)]
-        pub comparison_operator: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub comparison_operator: pulumi_gestalt_rust::Input<String>,
         /// The number of datapoints that must be breaching to trigger the alarm.
         #[builder(into, default)]
-        pub datapoints_to_alarm: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub datapoints_to_alarm: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The dimensions for the alarm's associated metric.  For the list of available dimensions see the AWS documentation [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html).
         #[builder(into, default)]
-        pub dimensions: pulumi_gestalt_rust::InputOrOutput<
+        pub dimensions: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Used only for alarms based on percentiles.
@@ -195,66 +195,66 @@ pub mod metric_alarm {
         /// If you specify `evaluate` or omit this parameter, the alarm will always be evaluated and possibly change state no matter how many data points are available.
         /// The following values are supported: `ignore`, and `evaluate`.
         #[builder(into, default)]
-        pub evaluate_low_sample_count_percentiles: pulumi_gestalt_rust::InputOrOutput<
+        pub evaluate_low_sample_count_percentiles: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The number of periods over which data is compared to the specified threshold.
         #[builder(into)]
-        pub evaluation_periods: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub evaluation_periods: pulumi_gestalt_rust::Input<i32>,
         /// The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
         #[builder(into, default)]
-        pub extended_statistic: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub extended_statistic: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of actions to execute when this alarm transitions into an INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         #[builder(into, default)]
-        pub insufficient_data_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub insufficient_data_actions: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The name for the alarm's associated metric.
         /// See docs for [supported metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html).
         #[builder(into, default)]
-        pub metric_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metric_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables you to create an alarm based on a metric math expression. You may specify at most 20.
         #[builder(into, default)]
-        pub metric_queries: pulumi_gestalt_rust::InputOrOutput<
+        pub metric_queries: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudwatch::MetricAlarmMetricQuery>>,
         >,
         /// The descriptive name for the alarm. This name must be unique within the user's AWS account
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The namespace for the alarm's associated metric. See docs for the [list of namespaces](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/aws-namespaces.html).
         /// See docs for [supported metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html).
         #[builder(into, default)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of actions to execute when this alarm transitions into an OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         #[builder(into, default)]
-        pub ok_actions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ok_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The period in seconds over which the specified `statistic` is applied.
         /// Valid values are `10`, `30`, or any multiple of `60`.
         #[builder(into, default)]
-        pub period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The statistic to apply to the alarm's associated metric.
         /// Either of the following is supported: `SampleCount`, `Average`, `Sum`, `Minimum`, `Maximum`
         #[builder(into, default)]
-        pub statistic: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub statistic: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         ///
         /// > **NOTE:**  If you specify at least one `metric_query`, you may not specify a `metric_name`, `namespace`, `period` or `statistic`. If you do not specify a `metric_query`, you must specify each of these (although you may use `extended_statistic` instead of `statistic`).
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The value against which the specified statistic is compared. This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.
         #[builder(into, default)]
-        pub threshold: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub threshold: pulumi_gestalt_rust::Input<Option<f64>>,
         /// If this is an alarm based on an anomaly detection model, make this value match the ID of the ANOMALY_DETECTION_BAND function.
         #[builder(into, default)]
-        pub threshold_metric_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub threshold_metric_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Sets how this alarm is to handle missing data points. The following values are supported: `missing`, `ignore`, `breaching` and `notBreaching`. Defaults to `missing`.
         #[builder(into, default)]
-        pub treat_missing_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub treat_missing_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unit for the alarm's associated metric.
         #[builder(into, default)]
-        pub unit: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub unit: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MetricAlarmResult {

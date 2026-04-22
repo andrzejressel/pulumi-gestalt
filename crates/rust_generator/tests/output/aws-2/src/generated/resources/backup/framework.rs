@@ -72,18 +72,18 @@ pub mod framework {
     pub struct FrameworkArgs {
         /// One or more control blocks that make up the framework. Each control in the list has a name, input parameters, and scope. Detailed below.
         #[builder(into)]
-        pub controls: pulumi_gestalt_rust::InputOrOutput<
+        pub controls: pulumi_gestalt_rust::Input<
             Vec<super::super::types::backup::FrameworkControl>,
         >,
         /// The description of the framework with a maximum of 1,024 characters
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters, numbers, and underscores.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Metadata that you can assign to help organize the frameworks you create. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

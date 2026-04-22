@@ -10,14 +10,14 @@ pub mod get_zones {
     pub struct GetZonesArgs {
         /// Project from which to list available zones. Defaults to project declared in the provider.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region from which to list available zones. Defaults to region declared in the provider.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Allows to filter list of zones based on their current status. Status can be either `UP` or `DOWN`.
         /// Defaults to no filtering (all available zones - both `UP` and `DOWN`).
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetZonesResult {

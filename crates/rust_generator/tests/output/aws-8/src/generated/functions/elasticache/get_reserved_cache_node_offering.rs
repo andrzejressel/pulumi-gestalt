@@ -12,21 +12,21 @@ pub mod get_reserved_cache_node_offering {
         /// See AWS documentation for information on [supported node types for Redis](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html) and [guidance on selecting node types for Redis](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes-select-size.html).
         /// See AWS documentation for information on [supported node types for Memcached](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html) and [guidance on selecting node types for Memcached](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/nodes-select-size.html).
         #[builder(into)]
-        pub cache_node_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cache_node_type: pulumi_gestalt_rust::Input<String>,
         /// Duration of the reservation in RFC3339 duration format.
         /// Valid values are `P1Y` (one year) and `P3Y` (three years).
         #[builder(into)]
-        pub duration: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub duration: pulumi_gestalt_rust::Input<String>,
         /// Offering type of this reserved cache node.
         /// For the latest generation of nodes (e.g. M5, R5, T4 and newer) valid values are `No Upfront`, `Partial Upfront`, and `All Upfront`.
         /// For other current generation nodes (i.e. T2, M3, M4, R3, or R4) the only valid value is `Heavy Utilization`.
         /// For previous generation modes (i.e. T1, M1, M2, or C1) valid values are `Heavy Utilization`, `Medium Utilization`, and `Light Utilization`.
         #[builder(into)]
-        pub offering_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub offering_type: pulumi_gestalt_rust::Input<String>,
         /// Engine type for the reserved cache node.
         /// Valid values are `redis`, `valkey` and `memcached`.
         #[builder(into)]
-        pub product_description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_description: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetReservedCacheNodeOfferingResult {

@@ -45,13 +45,13 @@ pub mod webhook {
     pub struct WebhookArgs {
         /// Unique ID for an Amplify app.
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// Name for a branch that is part of the Amplify app.
         #[builder(into)]
-        pub branch_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub branch_name: pulumi_gestalt_rust::Input<String>,
         /// Description for a webhook.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct WebhookResult {

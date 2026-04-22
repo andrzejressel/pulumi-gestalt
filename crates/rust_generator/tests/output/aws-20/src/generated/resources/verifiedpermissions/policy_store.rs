@@ -38,10 +38,10 @@ pub mod policy_store {
     pub struct PolicyStoreArgs {
         /// A description of the Policy Store.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Validation settings for the policy store.
         #[builder(into, default)]
-        pub validation_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_settings: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::verifiedpermissions::PolicyStoreValidationSettings,
             >,

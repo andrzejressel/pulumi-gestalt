@@ -87,35 +87,35 @@ pub mod lite_topic {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The settings for this topic's partitions.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub partition_config: pulumi_gestalt_rust::InputOrOutput<
+        pub partition_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::LiteTopicPartitionConfig>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the pubsub lite topic.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The settings for this topic's Reservation usage.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub reservation_config: pulumi_gestalt_rust::InputOrOutput<
+        pub reservation_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::LiteTopicReservationConfig>,
         >,
         /// The settings for a topic's message retention.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub retention_config: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::LiteTopicRetentionConfig>,
         >,
         /// The zone of the pubsub lite topic.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LiteTopicResult {

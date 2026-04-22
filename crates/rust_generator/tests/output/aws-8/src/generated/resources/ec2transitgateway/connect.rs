@@ -44,28 +44,28 @@ pub mod connect {
     pub struct ConnectArgs {
         /// The tunnel protocol. Valid values: `gre`. Default is `gre`.
         #[builder(into, default)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value tags for the EC2 Transit Gateway Connect. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Boolean whether the Connect should be associated with the EC2 Transit Gateway association default route table. This cannot be configured or perform drift detection with Resource Access Manager shared EC2 Transit Gateways. Default value: `true`.
         #[builder(into, default)]
-        pub transit_gateway_default_route_table_association: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_default_route_table_association: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Boolean whether the Connect should propagate routes with the EC2 Transit Gateway propagation default route table. This cannot be configured or perform drift detection with Resource Access Manager shared EC2 Transit Gateways. Default value: `true`.
         #[builder(into, default)]
-        pub transit_gateway_default_route_table_propagation: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_default_route_table_propagation: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Identifier of EC2 Transit Gateway.
         #[builder(into)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// The underlaying VPC attachment
         #[builder(into)]
-        pub transport_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transport_attachment_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConnectResult {

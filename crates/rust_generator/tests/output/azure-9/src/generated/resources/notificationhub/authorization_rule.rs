@@ -68,27 +68,27 @@ pub mod authorization_rule {
     pub struct AuthorizationRuleArgs {
         /// Does this Authorization Rule have Listen access to the Notification Hub? Defaults to `false`.
         #[builder(into, default)]
-        pub listen: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub listen: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Does this Authorization Rule have Manage access to the Notification Hub? Defaults to `false`.
         ///
         /// > **NOTE:** If `manage` is set to `true` then both `send` and `listen` must also be set to `true`.
         #[builder(into, default)]
-        pub manage: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name to use for this Authorization Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Notification Hub Namespace in which the Notification Hub exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Notification Hub for which the Authorization Rule should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub notification_hub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub notification_hub_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Notification Hub Namespace exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Does this Authorization Rule have Send access to the Notification Hub? Defaults to `false`.
         #[builder(into, default)]
-        pub send: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub send: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct AuthorizationRuleResult {

@@ -10,7 +10,7 @@ pub mod get_bucket_policy {
     pub struct GetBucketPolicyArgs {
         /// Bucket name.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBucketPolicyResult {

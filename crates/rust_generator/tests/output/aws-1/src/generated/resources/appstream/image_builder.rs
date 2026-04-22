@@ -40,53 +40,53 @@ pub mod image_builder {
     pub struct ImageBuilderArgs {
         /// Set of interface VPC endpoint (interface endpoint) objects. Maximum of 4. See below.
         #[builder(into, default)]
-        pub access_endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub access_endpoints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appstream::ImageBuilderAccessEndpoint>>,
         >,
         /// Version of the AppStream 2.0 agent to use for this image builder.
         #[builder(into, default)]
-        pub appstream_agent_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub appstream_agent_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description to display.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Human-readable friendly name for the AppStream image builder.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. See below.
         #[builder(into, default)]
-        pub domain_join_info: pulumi_gestalt_rust::InputOrOutput<
+        pub domain_join_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::appstream::ImageBuilderDomainJoinInfo>,
         >,
         /// Enables or disables default internet access for the image builder.
         #[builder(into, default)]
-        pub enable_default_internet_access: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_default_internet_access: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// ARN of the IAM role to apply to the image builder.
         #[builder(into, default)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the public, private, or shared image to use.
         #[builder(into, default)]
-        pub image_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the image used to create the image builder.
         #[builder(into, default)]
-        pub image_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instance type to use when launching the image builder.
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// Unique name for the image builder.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the instance. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for the VPC configuration for the image builder. See below.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appstream::ImageBuilderVpcConfig>,
         >,
     }

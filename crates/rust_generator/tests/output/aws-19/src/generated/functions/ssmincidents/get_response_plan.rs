@@ -10,10 +10,10 @@ pub mod get_response_plan {
     pub struct GetResponsePlanArgs {
         /// The Amazon Resource Name (ARN) of the response plan.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// The tags applied to the response plan.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

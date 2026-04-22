@@ -37,13 +37,13 @@ pub mod receipt_filter {
     pub struct ReceiptFilterArgs {
         /// The IP address or address range to filter, in CIDR notation
         #[builder(into)]
-        pub cidr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cidr: pulumi_gestalt_rust::Input<String>,
         /// The name of the filter
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Block or Allow
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReceiptFilterResult {

@@ -54,14 +54,14 @@ pub mod taxonomy {
         /// defaults to an empty list.
         /// Each value may be one of: `POLICY_TYPE_UNSPECIFIED`, `FINE_GRAINED_ACCESS_CONTROL`.
         #[builder(into, default)]
-        pub activated_policy_types: pulumi_gestalt_rust::InputOrOutput<
+        pub activated_policy_types: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Description of this taxonomy. It must: contain only unicode characters,
         /// tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
         /// long when encoded in UTF-8. If not set, defaults to an empty description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User defined name of this taxonomy.
         /// The taxonomy display name must be unique within an organization.
         /// It must: contain only unicode letters, numbers, underscores, dashes
@@ -71,14 +71,14 @@ pub mod taxonomy {
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Taxonomy location region.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TaxonomyResult {

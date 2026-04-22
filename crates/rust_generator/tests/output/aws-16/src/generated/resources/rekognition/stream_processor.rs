@@ -183,56 +183,56 @@ pub mod stream_processor {
     pub struct StreamProcessorArgs {
         /// See `data_sharing_preference`.
         #[builder(into, default)]
-        pub data_sharing_preference: pulumi_gestalt_rust::InputOrOutput<
+        pub data_sharing_preference: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::rekognition::StreamProcessorDataSharingPreference,
             >,
         >,
         /// Input video stream. See `input`.
         #[builder(into, default)]
-        pub input: pulumi_gestalt_rust::InputOrOutput<
+        pub input: pulumi_gestalt_rust::Input<
             Option<super::super::types::rekognition::StreamProcessorInput>,
         >,
         /// Optional parameter for label detection stream processors.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Stream Processor.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status. See `notification_channel`.
         #[builder(into, default)]
-        pub notification_channel: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_channel: pulumi_gestalt_rust::Input<
             Option<super::super::types::rekognition::StreamProcessorNotificationChannel>,
         >,
         /// Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. See `output`.
         #[builder(into, default)]
-        pub output: pulumi_gestalt_rust::InputOrOutput<
+        pub output: pulumi_gestalt_rust::Input<
             Option<super::super::types::rekognition::StreamProcessorOutput>,
         >,
         /// Specifies locations in the frames where Amazon Rekognition checks for objects or people. See `regions_of_interest`.
         #[builder(into, default)]
-        pub regions_of_interests: pulumi_gestalt_rust::InputOrOutput<
+        pub regions_of_interests: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::rekognition::StreamProcessorRegionsOfInterest>,
             >,
         >,
         /// The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Input parameters used in a streaming video analyzed by a stream processor. See `settings`.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::rekognition::StreamProcessorSettings>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::rekognition::StreamProcessorTimeouts>,
         >,
     }

@@ -9,13 +9,13 @@ pub mod get_membership_binding {
     #[allow(dead_code)]
     pub struct GetMembershipBindingArgs {
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub membership_binding_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub membership_binding_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub membership_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub membership_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetMembershipBindingResult {

@@ -36,32 +36,32 @@ pub mod room {
         /// List of Logging Configuration
         /// ARNs to attach to the room.
         #[builder(into, default)]
-        pub logging_configuration_identifiers: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_configuration_identifiers: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Maximum number of characters in a single
         /// message. Messages are expected to be UTF-8 encoded and this limit applies
         /// specifically to rune/code-point count, not number of bytes.
         #[builder(into, default)]
-        pub maximum_message_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub maximum_message_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum number of messages per
         /// second that can be sent to the room (by all clients).
         #[builder(into, default)]
-        pub maximum_message_rate_per_second: pulumi_gestalt_rust::InputOrOutput<
+        pub maximum_message_rate_per_second: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Configuration information for optional
         /// review of messages.
         #[builder(into, default)]
-        pub message_review_handler: pulumi_gestalt_rust::InputOrOutput<
+        pub message_review_handler: pulumi_gestalt_rust::Input<
             Option<super::super::types::ivschat::RoomMessageReviewHandler>,
         >,
         /// Room name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

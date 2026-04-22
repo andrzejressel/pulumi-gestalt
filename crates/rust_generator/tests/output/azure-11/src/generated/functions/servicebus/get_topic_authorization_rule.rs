@@ -10,20 +10,20 @@ pub mod get_topic_authorization_rule {
     pub struct GetTopicAuthorizationRuleArgs {
         /// The name of the ServiceBus Topic Authorization Rule resource.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the ServiceBus Namespace.
         #[builder(into, default)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub queue_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub queue_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the ServiceBus Namespace exists.
         #[builder(into, default)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub topic_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub topic_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the ServiceBus Topic.
         #[builder(into, default)]
-        pub topic_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub topic_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetTopicAuthorizationRuleResult {

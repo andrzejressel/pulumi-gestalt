@@ -58,19 +58,19 @@ pub mod flexible_database {
     pub struct FlexibleDatabaseArgs {
         /// Specifies the Charset for the MySQL Database, which needs [to be a valid MySQL Charset](https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub charset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub charset: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Collation for the MySQL Database, which needs [to be a valid MySQL Collation](https://dev.mysql.com/doc/refman/5.7/en/charset-mysql.html). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub collation: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub collation: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the MySQL Database, which needs [to be a valid MySQL identifier](https://dev.mysql.com/doc/refman/5.7/en/identifiers.html). Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the MySQL Server exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the MySQL Flexible Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FlexibleDatabaseResult {

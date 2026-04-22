@@ -39,16 +39,16 @@ pub mod registry_image {
     pub struct RegistryImageArgs {
         /// If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
         #[builder(into, default)]
-        pub insecure_skip_verify: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub insecure_skip_verify: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker registry on destroy operation. Defaults to `false`
         #[builder(into, default)]
-        pub keep_remotely: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub keep_remotely: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Docker image.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of arbitrary strings that, when changed, will force the `docker.RegistryImage` resource to be replaced. This can be used to repush a local image
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

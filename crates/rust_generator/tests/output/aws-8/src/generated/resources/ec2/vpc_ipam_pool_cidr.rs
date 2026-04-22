@@ -90,18 +90,18 @@ pub mod vpc_ipam_pool_cidr {
     pub struct VpcIpamPoolCidrArgs {
         /// The CIDR you want to assign to the pool. Conflicts with `netmask_length`.
         #[builder(into, default)]
-        pub cidr: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr: pulumi_gestalt_rust::Input<Option<String>>,
         /// A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidr_authorization_context for more information.
         #[builder(into, default)]
-        pub cidr_authorization_context: pulumi_gestalt_rust::InputOrOutput<
+        pub cidr_authorization_context: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::VpcIpamPoolCidrCidrAuthorizationContext>,
         >,
         /// The ID of the pool to which you want to assign a CIDR.
         #[builder(into)]
-        pub ipam_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ipam_pool_id: pulumi_gestalt_rust::Input<String>,
         /// If provided, the cidr provisioned into the specified pool will be the next available cidr given this declared netmask length. Conflicts with `cidr`.
         #[builder(into, default)]
-        pub netmask_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub netmask_length: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct VpcIpamPoolCidrResult {

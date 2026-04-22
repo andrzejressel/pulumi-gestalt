@@ -75,19 +75,19 @@ pub mod registry_token {
     pub struct RegistryTokenArgs {
         /// The name of the Container Registry. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_registry_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_registry_name: pulumi_gestalt_rust::Input<String>,
         /// Should the Container Registry token be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the token. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Container Registry token. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Container Registry Scope Map associated with the token.
         #[builder(into)]
-        pub scope_map_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope_map_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegistryTokenResult {

@@ -84,58 +84,58 @@ pub mod vpc_ipam_pool {
     pub struct VpcIpamPoolArgs {
         /// The IP protocol assigned to this pool. You must choose either IPv4 or IPv6 protocol for a pool.
         #[builder(into)]
-        pub address_family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address_family: pulumi_gestalt_rust::Input<String>,
         /// A default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16 (unless you provide a different netmask value when you create the new allocation).
         #[builder(into, default)]
-        pub allocation_default_netmask_length: pulumi_gestalt_rust::InputOrOutput<
+        pub allocation_default_netmask_length: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The maximum netmask length that will be required for CIDR allocations in this pool.
         #[builder(into, default)]
-        pub allocation_max_netmask_length: pulumi_gestalt_rust::InputOrOutput<
+        pub allocation_max_netmask_length: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The minimum netmask length that will be required for CIDR allocations in this pool.
         #[builder(into, default)]
-        pub allocation_min_netmask_length: pulumi_gestalt_rust::InputOrOutput<
+        pub allocation_min_netmask_length: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.
         #[builder(into, default)]
-        pub allocation_resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub allocation_resource_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// If you include this argument, IPAM automatically imports any VPCs you have in your scope that fall
         /// within the CIDR range in the pool.
         #[builder(into, default)]
-        pub auto_import: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_import: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Limits which AWS service the pool can be used in. Only useable on public scopes. Valid Values: `ec2`.
         #[builder(into, default)]
-        pub aws_service: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_service: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.
         #[builder(into, default)]
-        pub cascade: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cascade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A description for the IPAM pool.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the scope in which you would like to create the IPAM pool.
         #[builder(into)]
-        pub ipam_scope_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ipam_scope_id: pulumi_gestalt_rust::Input<String>,
         /// The locale in which you would like to create the IPAM pool. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC's Region. Possible values: Any AWS region, such as `us-east-1`.
         #[builder(into, default)]
-        pub locale: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub locale: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Valid values are `byoip` or `amazon`. Default is `byoip`.
         #[builder(into, default)]
-        pub public_ip_source: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_ip_source: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines whether or not IPv6 pool space is publicly advertisable over the internet. This argument is required if `address_family = "ipv6"` and `public_ip_source = "byoip"`, default is `false`. This option is not available for IPv4 pool space or if `public_ip_source = "amazon"`. Setting this argument to `true` when it is not available may result in erroneous differences being reported.
         #[builder(into, default)]
-        pub publicly_advertisable: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publicly_advertisable: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the source IPAM pool. Use this argument to create a child pool within an existing pool.
         #[builder(into, default)]
-        pub source_ipam_pool_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_ipam_pool_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

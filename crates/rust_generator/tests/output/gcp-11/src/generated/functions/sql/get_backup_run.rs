@@ -11,18 +11,18 @@ pub mod get_backup_run {
         /// The identifier for this backup run. Unique only for a specific Cloud SQL instance.
         /// If left empty and multiple backups exist for the instance, `most_recent` must be set to `true`.
         #[builder(into, default)]
-        pub backup_id: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub backup_id: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the instance the backup is taken from.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// Toggles use of the most recent backup run if multiple backups exist for a
         /// Cloud SQL instance.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The project to list instances for. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBackupRunResult {

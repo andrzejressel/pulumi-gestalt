@@ -52,27 +52,27 @@ pub mod network_manager {
     pub struct NetworkManagerArgs {
         /// A description of the network manager.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Azure Region where the Network Managers should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Network Managers. Changing this forces a new Network Managers to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Network Managers should exist. Changing this forces a new Network Managers to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `scope` block as defined below.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<
+        pub scope: pulumi_gestalt_rust::Input<
             super::super::types::network::NetworkManagerScope,
         >,
         /// A list of configuration deployment type. Possible values are `Connectivity`, `SecurityAdmin` and `Routing`, corresponds to if Connectivity Configuration, Security Admin Configuration or Routing Configuration is allowed for the Network Manager.
         #[builder(into)]
-        pub scope_accesses: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub scope_accesses: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A mapping of tags which should be assigned to the Network Managers.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

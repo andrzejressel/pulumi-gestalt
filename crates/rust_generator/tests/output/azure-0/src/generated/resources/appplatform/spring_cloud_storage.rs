@@ -64,16 +64,16 @@ pub mod spring_cloud_storage {
     pub struct SpringCloudStorageArgs {
         /// The name which should be used for this Spring Cloud Storage. Changing this forces a new Spring Cloud Storage to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud Service where the Spring Cloud Storage should exist. Changing this forces a new Spring Cloud Storage to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
         /// The access key of the Azure Storage Account.
         #[builder(into)]
-        pub storage_account_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_key: pulumi_gestalt_rust::Input<String>,
         /// The account name of the Azure Storage Account.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudStorageResult {

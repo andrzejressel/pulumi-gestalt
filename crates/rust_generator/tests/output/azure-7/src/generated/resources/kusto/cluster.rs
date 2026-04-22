@@ -43,93 +43,93 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// List of allowed FQDNs(Fully Qualified Domain Name) for egress from Cluster.
         #[builder(into, default)]
-        pub allowed_fqdns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub allowed_fqdns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The list of ips in the format of CIDR allowed to connect to the cluster.
         #[builder(into, default)]
-        pub allowed_ip_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub allowed_ip_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies if the cluster could be automatically stopped (due to lack of data or no activity for many days). Defaults to `true`.
         #[builder(into, default)]
-        pub auto_stop_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_stop_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies if the cluster's disks are encrypted.
         #[builder(into, default)]
-        pub disk_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disk_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is the cluster's double encryption enabled? Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub double_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub double_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::kusto::ClusterIdentity>,
         >,
         /// An list of `language_extensions` to enable. Valid values are: `PYTHON`, `PYTHON_3.10.8` and `R`. `PYTHON` is used to specify Python 3.6.5 image and `PYTHON_3.10.8` is used to specify Python 3.10.8 image. Note that `PYTHON_3.10.8` is only available in skus which support nested virtualization.
         ///
         /// > **NOTE:** In `v4.0.0` and later version of the AzureRM Provider, `language_extensions` will be changed to a list of `language_extension` block. In each block, `name` and `image` are required. `name` is the name of the language extension, possible values are `PYTHON`, `R`. `image` is the image of the language extension, possible values are `Python3_6_5`, `Python3_10_8` and `R`.
         #[builder(into, default)]
-        pub language_extensions: pulumi_gestalt_rust::InputOrOutput<
+        pub language_extensions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::kusto::ClusterLanguageExtension>>,
         >,
         /// The location where the Kusto Cluster should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Kusto Cluster to create. Only lowercase Alphanumeric characters allowed, starting with a letter. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `optimized_auto_scale` block as defined below.
         #[builder(into, default)]
-        pub optimized_auto_scale: pulumi_gestalt_rust::InputOrOutput<
+        pub optimized_auto_scale: pulumi_gestalt_rust::Input<
             Option<super::super::types::kusto::ClusterOptimizedAutoScale>,
         >,
         /// Whether to restrict outbound network access. Value is optional but if passed in, must be `true` or `false`, default is `false`.
         #[builder(into, default)]
-        pub outbound_network_access_restricted: pulumi_gestalt_rust::InputOrOutput<
+        pub outbound_network_access_restricted: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6). Defaults to `IPv4`.
         #[builder(into, default)]
-        pub public_ip_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_ip_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the public network access enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies if the purge operations are enabled.
         #[builder(into, default)]
-        pub purge_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub purge_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the Resource Group where the Kusto Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
+        pub sku: pulumi_gestalt_rust::Input<
             super::super::types::kusto::ClusterSku,
         >,
         /// Specifies if the streaming ingest is enabled.
         #[builder(into, default)]
-        pub streaming_ingestion_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub streaming_ingestion_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies a list of tenant IDs that are trusted by the cluster. Default setting trusts all other tenants. Use `trusted_external_tenants = ["*"]` to explicitly allow all other tenants, `trusted_external_tenants = ["MyTenantOnly"]` for only your tenant or `trusted_external_tenants = ["<tenantId1>", "<tenantIdx>"]` to allow specific other tenants.
         ///
         /// > **NOTE:** In v3.0 of `azurerm` a new or updated Kusto Cluster will only allow your own tenant by default. Explicit configuration of this setting will change from `trusted_external_tenants = ["MyTenantOnly"]` to `trusted_external_tenants = []`.
         #[builder(into, default)]
-        pub trusted_external_tenants: pulumi_gestalt_rust::InputOrOutput<
+        pub trusted_external_tenants: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A `virtual_network_configuration` block as defined below.
         ///
         /// > **NOTE:** Currently removing `virtual_network_configuration` sets the `virtual_network_configuration` to `Disabled` state. But any changes to `virtual_network_configuration` in `Disabled` state forces a new resource to be created.
         #[builder(into, default)]
-        pub virtual_network_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_network_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::kusto::ClusterVirtualNetworkConfiguration>,
         >,
         /// Specifies a list of Availability Zones in which this Kusto Cluster should be located. Changing this forces a new Kusto Cluster to be created.
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

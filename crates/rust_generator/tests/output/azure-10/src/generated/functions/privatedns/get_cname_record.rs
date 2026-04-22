@@ -10,13 +10,13 @@ pub mod get_cname_record {
     pub struct GetCnameRecordArgs {
         /// The name of the Private DNS CNAME Record.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the resource group where the Private DNS Zone (parent resource) exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Private DNS Zone where the resource exists.
         #[builder(into)]
-        pub zone_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCnameRecordResult {

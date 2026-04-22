@@ -10,10 +10,10 @@ pub mod func_with_all_optional_inputs {
     pub struct FuncWithAllOptionalInputsArgs {
         /// Property A
         #[builder(into, default)]
-        pub a: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub a: pulumi_gestalt_rust::Input<Option<String>>,
         /// Property B
         #[builder(into, default)]
-        pub b: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub b: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FuncWithAllOptionalInputsResult {

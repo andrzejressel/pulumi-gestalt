@@ -47,50 +47,50 @@ pub mod spring_cloud_app {
     pub struct SpringCloudAppArgs {
         /// A JSON object that contains the addon configurations of the Spring Cloud Service.
         #[builder(into, default)]
-        pub addon_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub addon_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `custom_persistent_disk` block as defined below.
         #[builder(into, default)]
-        pub custom_persistent_disks: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_persistent_disks: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::appplatform::SpringCloudAppCustomPersistentDisk>,
             >,
         >,
         /// Is only HTTPS allowed? Defaults to `false`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudAppIdentity>,
         >,
         /// An `ingress_settings` block as defined below.
         #[builder(into, default)]
-        pub ingress_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudAppIngressSettings>,
         >,
         /// Does the Spring Cloud Application have public endpoint? Defaults to `false`.
         #[builder(into, default)]
-        pub is_public: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_public: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Spring Cloud Application. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `persistent_disk` block as defined below.
         #[builder(into, default)]
-        pub persistent_disk: pulumi_gestalt_rust::InputOrOutput<
+        pub persistent_disk: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudAppPersistentDisk>,
         >,
         /// Should the App in vnet injection instance exposes endpoint which could be accessed from Internet?
         #[builder(into, default)]
-        pub public_endpoint_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub public_endpoint_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the resource group in which to create the Spring Cloud Application. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Spring Cloud Service resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
         /// Is End to End TLS Enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub tls_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudAppResult {

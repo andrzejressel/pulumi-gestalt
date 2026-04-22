@@ -38,23 +38,23 @@ pub mod snapshot_copy {
     pub struct SnapshotCopyArgs {
         /// Identifier of the source cluster.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// AWS Region to copy snapshots to.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub destination_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_region: pulumi_gestalt_rust::Input<String>,
         /// Number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the source AWS Region. If the value is `-1`, the manual snapshot is retained indefinitely.
         #[builder(into, default)]
-        pub manual_snapshot_retention_period: pulumi_gestalt_rust::InputOrOutput<
+        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Number of days to retain automated snapshots in the destination region after they are copied from the source region.
         #[builder(into, default)]
-        pub retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Name of the snapshot copy grant to use when snapshots of an AWS KMS-encrypted cluster are copied to the destination region.
         #[builder(into, default)]
-        pub snapshot_copy_grant_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_copy_grant_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SnapshotCopyResult {

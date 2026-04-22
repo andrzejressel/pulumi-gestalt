@@ -41,10 +41,10 @@ pub mod vpc_dhcp_options_association {
     pub struct VpcDhcpOptionsAssociationArgs {
         /// The ID of the DHCP Options Set to associate to the VPC.
         #[builder(into)]
-        pub dhcp_options_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dhcp_options_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPC to which we would like to associate a DHCP Options Set.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcDhcpOptionsAssociationResult {

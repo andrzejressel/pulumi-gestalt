@@ -64,35 +64,35 @@ pub mod medtech_service {
     pub struct MedtechServiceArgs {
         /// Specifies the Device Mappings of the Med Tech Service.
         #[builder(into)]
-        pub device_mapping_json: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_mapping_json: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Consumer Group of the Event Hub to connect to.
         #[builder(into)]
-        pub eventhub_consumer_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Event Hub to connect to.
         #[builder(into)]
-        pub eventhub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the namespace name of the Event Hub to connect to.
         #[builder(into)]
-        pub eventhub_namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_namespace_name: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::MedtechServiceIdentity>,
         >,
         /// Specifies the Azure Region where the Healthcare Med Tech Service should be created. Changing this forces a new Healthcare Med Tech Service to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Healthcare Med Tech Service. Changing this forces a new Healthcare Med Tech Service to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the Healthcare Med Tech Service.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the id of the Healthcare Workspace where the Healthcare Med Tech Service should exist. Changing this forces a new Healthcare Med Tech Service to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MedtechServiceResult {

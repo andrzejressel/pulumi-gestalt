@@ -27,21 +27,21 @@ pub mod resource {
     pub struct ResourceArgs {
         /// JSON string matching the CloudFormation resource type schema with desired configuration.
         #[builder(into)]
-        pub desired_state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub desired_state: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the IAM Role to assume for operations.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// JSON string of the CloudFormation resource type schema which is used for plan time validation where possible. Automatically fetched if not provided. In large scale environments with multiple resources using the same `type_name`, it is recommended to fetch the schema once via the `aws.cloudformation.CloudFormationType` data source and use this argument to reduce `DescribeType` API operation throttling. This value is marked sensitive only to prevent large plan differences from showing.
         #[builder(into, default)]
-        pub schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schema: pulumi_gestalt_rust::Input<Option<String>>,
         /// CloudFormation resource type name. For example, `AWS::EC2::VPC`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_name: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the CloudFormation resource type version.
         #[builder(into, default)]
-        pub type_version_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_version_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ResourceResult {

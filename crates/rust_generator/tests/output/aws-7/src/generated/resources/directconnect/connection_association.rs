@@ -44,10 +44,10 @@ pub mod connection_association {
     pub struct ConnectionAssociationArgs {
         /// The ID of the connection.
         #[builder(into)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the LAG with which to associate the connection.
         #[builder(into)]
-        pub lag_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lag_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConnectionAssociationResult {

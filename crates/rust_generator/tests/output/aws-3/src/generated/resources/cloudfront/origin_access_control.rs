@@ -43,21 +43,21 @@ pub mod origin_access_control {
     pub struct OriginAccessControlArgs {
         /// The description of the Origin Access Control. Defaults to "Managed by Pulumi" if omitted.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A name that identifies the Origin Access Control.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of origin that this Origin Access Control is for. Valid values are `lambda`, `mediapackagev2`, `mediastore`, and `s3`.
         #[builder(into)]
-        pub origin_access_control_origin_type: pulumi_gestalt_rust::InputOrOutput<
+        pub origin_access_control_origin_type: pulumi_gestalt_rust::Input<
             String,
         >,
         /// Specifies which requests CloudFront signs. Specify `always` for the most common use case. Allowed values: `always`, `never`, and `no-override`.
         #[builder(into)]
-        pub signing_behavior: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signing_behavior: pulumi_gestalt_rust::Input<String>,
         /// Determines how CloudFront signs (authenticates) requests. The only valid value is `sigv4`.
         #[builder(into)]
-        pub signing_protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signing_protocol: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OriginAccessControlResult {

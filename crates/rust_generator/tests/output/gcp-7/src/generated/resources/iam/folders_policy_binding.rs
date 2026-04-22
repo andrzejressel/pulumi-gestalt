@@ -84,7 +84,7 @@ pub mod folders_policy_binding {
         /// limitations **Note**: This field is non-authoritative, and will only manage the annotations present in your
         /// configuration. Please refer to the field 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The
@@ -98,33 +98,33 @@ pub mod folders_policy_binding {
         /// functions that may be referenced within an expression are determined by the service that evaluates it. See the service
         /// documentation for additional information.
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::iam::FoldersPolicyBindingCondition>,
         >,
         /// Optional. The description of the policy binding. Must be less than or equal to 63 characters.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parent folder for the PolicyBinding.
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
         /// The location of the PolicyBinding.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Required. Immutable. The resource name of the policy to be bound. The binding parent and policy must belong to the same Organization (or Project).
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// The Policy Binding ID.
         #[builder(into)]
-        pub policy_binding_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_binding_id: pulumi_gestalt_rust::Input<String>,
         /// Immutable. The kind of the policy to attach in this binding. This field must be one of the following: - Left empty (will
         /// be automatically set to the policy kind) - The input policy kind Possible values: POLICY_KIND_UNSPECIFIED
         /// PRINCIPAL_ACCESS_BOUNDARY ACCESS
         #[builder(into, default)]
-        pub policy_kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// Target is the full resource name of the resource to which the policy will be bound. Immutable once set.
         /// Structure is documented below.
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<
+        pub target: pulumi_gestalt_rust::Input<
             super::super::types::iam::FoldersPolicyBindingTarget,
         >,
     }

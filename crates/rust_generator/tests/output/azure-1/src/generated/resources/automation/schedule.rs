@@ -60,42 +60,42 @@ pub mod schedule {
     pub struct ScheduleArgs {
         /// The name of the automation account in which the Schedule is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// A description for this Schedule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The end time of the schedule.
         #[builder(into, default)]
-        pub expiry_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiry_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The frequency of the schedule. - can be either `OneTime`, `Day`, `Hour`, `Week`, or `Month`.
         #[builder(into)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frequency: pulumi_gestalt_rust::Input<String>,
         /// The number of `frequency`s between runs. Only valid when frequency is `Day`, `Hour`, `Week`, or `Month` and defaults to `1`.
         #[builder(into, default)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub interval: pulumi_gestalt_rust::Input<Option<i32>>,
         /// List of days of the month that the job should execute on. Must be between `1` and `31`. `-1` for last day of the month. Only valid when frequency is `Month`.
         #[builder(into, default)]
-        pub month_days: pulumi_gestalt_rust::InputOrOutput<Option<Vec<i32>>>,
+        pub month_days: pulumi_gestalt_rust::Input<Option<Vec<i32>>>,
         /// One `monthly_occurrence` blocks as defined below to specifies occurrences of days within a month. Only valid when frequency is `Month`. The `monthly_occurrence` block supports fields documented below.
         #[builder(into, default)]
-        pub monthly_occurrence: pulumi_gestalt_rust::InputOrOutput<
+        pub monthly_occurrence: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::ScheduleMonthlyOccurrence>,
         >,
         /// Specifies the name of the Schedule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Schedule is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Start time of the schedule. Must be at least five minutes in the future. Defaults to seven minutes in the future from the time the resource is created.
         #[builder(into, default)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The timezone of the start time. Defaults to `Etc/UTC`. For possible values see: <https://docs.microsoft.com/en-us/rest/api/maps/timezone/gettimezoneenumwindows>
         #[builder(into, default)]
-        pub timezone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub timezone: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of days of the week that the job should execute on. Only valid when frequency is `Week`. Possible values are `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday` and `Sunday`.
         #[builder(into, default)]
-        pub week_days: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub week_days: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ScheduleResult {

@@ -71,32 +71,32 @@ pub mod route_server {
     pub struct RouteServerArgs {
         /// Whether to enable route exchange between Azure Route Server and the gateway(s)
         #[builder(into, default)]
-        pub branch_to_branch_traffic_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub branch_to_branch_traffic_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the supported Azure location where the Route Server should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Route Server. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Public IP Address. This option is required since September 1st 2021. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub public_ip_address_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub public_ip_address_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Resource Group where the Route Server should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU of the Route Server. The only possible value is `Standard`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet that the Route Server will reside. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Azure Route Server requires a dedicated subnet named RouteServerSubnet. The subnet size has to be at least /27 or short prefix (such as /26 or /25) and cannot be attached to any security group, otherwise, you'll receive an error message when deploying the Route Server
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

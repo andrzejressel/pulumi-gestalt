@@ -118,24 +118,24 @@ pub mod medtech_service_fhir_destination {
     pub struct MedtechServiceFhirDestinationArgs {
         /// Specifies the destination Fhir mappings of the Med Tech Service Fhir Destination.
         #[builder(into)]
-        pub destination_fhir_mapping_json: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_fhir_mapping_json: pulumi_gestalt_rust::Input<String>,
         /// Specifies the destination fhir service id of the Med Tech Service Fhir Destination.
         #[builder(into)]
-        pub destination_fhir_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_fhir_service_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the destination identity resolution type where the Healthcare Med Tech Service Fhir Destination should be created. Possible values are `Create`, `Lookup`.
         #[builder(into)]
-        pub destination_identity_resolution_type: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_identity_resolution_type: pulumi_gestalt_rust::Input<
             String,
         >,
         /// Specifies the Azure Region where the Healthcare Med Tech Service Fhir Destination should be created. Changing this forces a new Healthcare Med Tech Service Fhir Destination to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Healthcare Med Tech Service where the Healthcare Med Tech Service Fhir Destination should exist. Changing this forces a new Healthcare Med Tech Service Fhir Destination to be created.
         #[builder(into)]
-        pub medtech_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub medtech_service_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Healthcare Med Tech Service Fhir Destination. Changing this forces a new Healthcare Med Tech Service Fhir Destination to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MedtechServiceFhirDestinationResult {

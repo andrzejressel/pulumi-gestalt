@@ -37,55 +37,55 @@ pub mod open_zfs_volume {
     pub struct OpenZfsVolumeArgs {
         /// A boolean flag indicating whether tags for the file system should be copied to snapshots. The default value is false.
         #[builder(into, default)]
-        pub copy_tags_to_snapshots: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_tags_to_snapshots: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Method used to compress the data on the volume. Valid values are `NONE` or `ZSTD`. Child volumes that don't specify compression option will inherit from parent volume. This option on file system applies to the root volume.
         #[builder(into, default)]
-        pub data_compression_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_compression_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to delete all child volumes and snapshots. Valid values: `DELETE_CHILD_VOLUMES_AND_SNAPSHOTS`. This configuration must be applied separately before attempting to delete the resource to have the desired behavior..
         #[builder(into, default)]
-        pub delete_volume_options: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delete_volume_options: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Volume. You can use a maximum of 203 alphanumeric characters, plus the underscore (_) special character.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// NFS export configuration for the root volume. Exactly 1 item. See `nfs_exports` Block Below for details.
         #[builder(into, default)]
-        pub nfs_exports: pulumi_gestalt_rust::InputOrOutput<
+        pub nfs_exports: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::OpenZfsVolumeNfsExports>,
         >,
         /// Specifies the configuration to use when creating the OpenZFS volume. See `origin_snapshot` Block below for details.
         #[builder(into, default)]
-        pub origin_snapshot: pulumi_gestalt_rust::InputOrOutput<
+        pub origin_snapshot: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::OpenZfsVolumeOriginSnapshot>,
         >,
         /// The volume id of volume that will be the parent volume for the volume being created, this could be the root volume created from the `aws.fsx.OpenZfsFileSystem` resource with the `root_volume_id` or the `id` property of another `aws.fsx.OpenZfsVolume`.
         #[builder(into)]
-        pub parent_volume_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_volume_id: pulumi_gestalt_rust::Input<String>,
         /// specifies whether the volume is read-only. Default is false.
         #[builder(into, default)]
-        pub read_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub read_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are `4`, `8`, `16`, `32`, `64`, `128`, `256`, `512`, or `1024` KiB. The default is `128` KiB.
         #[builder(into, default)]
-        pub record_size_kib: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub record_size_kib: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent.
         #[builder(into, default)]
-        pub storage_capacity_quota_gib: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub storage_capacity_quota_gib: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The amount of storage in gibibytes (GiB) to reserve from the parent volume.
         #[builder(into, default)]
-        pub storage_capacity_reservation_gib: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_capacity_reservation_gib: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specify how much storage users or groups can use on the volume. Maximum of 100 items. See `user_and_group_quotas` Block Below.
         #[builder(into, default)]
-        pub user_and_group_quotas: pulumi_gestalt_rust::InputOrOutput<
+        pub user_and_group_quotas: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::fsx::OpenZfsVolumeUserAndGroupQuota>>,
         >,
         #[builder(into, default)]
-        pub volume_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub volume_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OpenZfsVolumeResult {

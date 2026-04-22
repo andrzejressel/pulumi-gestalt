@@ -96,23 +96,23 @@ pub mod bucket_website_configuration_v_2 {
     pub struct BucketWebsiteConfigurationV2Args {
         /// Name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Name of the error document for the website. See below.
         #[builder(into, default)]
-        pub error_document: pulumi_gestalt_rust::InputOrOutput<
+        pub error_document: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketWebsiteConfigurationV2ErrorDocument>,
         >,
         /// Account ID of the expected bucket owner.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the index document for the website. See below.
         #[builder(into, default)]
-        pub index_document: pulumi_gestalt_rust::InputOrOutput<
+        pub index_document: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketWebsiteConfigurationV2IndexDocument>,
         >,
         /// Redirect behavior for every request to this bucket's website endpoint. See below. Conflicts with `error_document`, `index_document`, and `routing_rule`.
         #[builder(into, default)]
-        pub redirect_all_requests_to: pulumi_gestalt_rust::InputOrOutput<
+        pub redirect_all_requests_to: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::s3::BucketWebsiteConfigurationV2RedirectAllRequestsTo,
             >,
@@ -120,10 +120,10 @@ pub mod bucket_website_configuration_v_2 {
         /// JSON array containing [routing rules](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html)
         /// describing redirect behavior and when redirects are applied. Use this parameter when your routing rules contain empty String values (`""`) as seen in the example above.
         #[builder(into, default)]
-        pub routing_rule_details: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub routing_rule_details: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of rules that define when a redirect is applied and the redirect behavior. See below.
         #[builder(into, default)]
-        pub routing_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketWebsiteConfigurationV2RoutingRule>>,
         >,
     }

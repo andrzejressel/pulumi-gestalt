@@ -37,19 +37,19 @@ pub mod endpoint_access {
     pub struct EndpointAccessArgs {
         /// The cluster identifier of the cluster to access.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The Redshift-managed VPC endpoint name.
         #[builder(into)]
-        pub endpoint_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_name: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.
         #[builder(into, default)]
-        pub resource_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.
         #[builder(into)]
-        pub subnet_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_group_name: pulumi_gestalt_rust::Input<String>,
         /// The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
     }

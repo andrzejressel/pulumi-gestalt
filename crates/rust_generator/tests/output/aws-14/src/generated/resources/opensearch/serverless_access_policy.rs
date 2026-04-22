@@ -114,18 +114,18 @@ pub mod serverless_access_policy {
     pub struct ServerlessAccessPolicyArgs {
         /// Description of the policy. Typically used to store information about the permissions defined in the policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// JSON policy document to use as the content for the new policy
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// Type of access policy. Must be `data`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServerlessAccessPolicyResult {

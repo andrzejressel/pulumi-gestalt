@@ -34,16 +34,16 @@ pub mod custom_ssl {
     pub struct CustomSslArgs {
         /// The certificate associated parameters. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub custom_ssl_options: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_ssl_options: pulumi_gestalt_rust::Input<
             Option<super::types::CustomSslCustomSslOptions>,
         >,
         #[builder(into, default)]
-        pub custom_ssl_priorities: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_ssl_priorities: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::CustomSslCustomSslPriority>>,
         >,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomSslResult {

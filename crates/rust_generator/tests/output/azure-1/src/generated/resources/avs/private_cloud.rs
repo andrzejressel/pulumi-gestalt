@@ -56,41 +56,41 @@ pub mod private_cloud {
         /// Is the Azure VMware Solution Private Cloud connected to the internet? This field can not be updated with `management_cluster[0].size` together.
         /// > **NOTE :** `internet_connection_enabled` and `management_cluster[0].size` cannot be updated at the same time.
         #[builder(into, default)]
-        pub internet_connection_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub internet_connection_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The Azure Region where the Azure VMware Solution Private Cloud should exist. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `management_cluster` block as defined below.
         /// > **NOTE :** `internet_connection_enabled` and `management_cluster[0].size` cannot be updated at the same time.
         #[builder(into)]
-        pub management_cluster: pulumi_gestalt_rust::InputOrOutput<
+        pub management_cluster: pulumi_gestalt_rust::Input<
             super::super::types::avs::PrivateCloudManagementCluster,
         >,
         /// The name which should be used for this Azure VMware Solution Private Cloud. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The subnet which should be unique across virtual network in your subscription as well as on-premise. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into)]
-        pub network_subnet_cidr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_subnet_cidr: pulumi_gestalt_rust::Input<String>,
         /// The password of the VMware NSX Manager cloudadmin. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into, default)]
-        pub nsxt_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nsxt_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Azure VMware Solution Private Cloud should exist. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the SKU used for this Azure VMware Solution Private Cloud. Possible values are `av20`, `av36`, `av36t`, `av36p`, `av36pt`, `av52`, `av52t`, and `av64`. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Azure VMware Solution Private Cloud.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The password of the VMware vCenter Server cloudadmin. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into, default)]
-        pub vcenter_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vcenter_password: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PrivateCloudResult {

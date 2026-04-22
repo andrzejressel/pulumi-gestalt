@@ -38,23 +38,23 @@ pub mod provisioned_model_throughput {
     pub struct ProvisionedModelThroughputArgs {
         /// Commitment duration requested for the Provisioned Throughput. For custom models, you can purchase on-demand Provisioned Throughput by omitting this argument. Valid values: `OneMonth`, `SixMonths`.
         #[builder(into, default)]
-        pub commitment_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub commitment_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the model to associate with this Provisioned Throughput.
         #[builder(into)]
-        pub model_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub model_arn: pulumi_gestalt_rust::Input<String>,
         /// Number of model units to allocate. A model unit delivers a specific throughput level for the specified model.
         #[builder(into)]
-        pub model_units: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub model_units: pulumi_gestalt_rust::Input<i32>,
         /// Unique name for this Provisioned Throughput.
         #[builder(into)]
-        pub provisioned_model_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provisioned_model_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::ProvisionedModelThroughputTimeouts>,
         >,
     }

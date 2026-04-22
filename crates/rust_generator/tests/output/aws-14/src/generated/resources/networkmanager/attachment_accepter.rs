@@ -47,10 +47,10 @@ pub mod attachment_accepter {
     pub struct AttachmentAccepterArgs {
         /// The ID of the attachment.
         #[builder(into)]
-        pub attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub attachment_id: pulumi_gestalt_rust::Input<String>,
         /// The type of attachment. Valid values can be found in the [AWS Documentation](https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachments.html#API_ListAttachments_RequestSyntax)
         #[builder(into)]
-        pub attachment_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub attachment_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AttachmentAccepterResult {

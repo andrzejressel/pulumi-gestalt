@@ -59,19 +59,19 @@ pub mod managed_private_endpoint {
     pub struct ManagedPrivateEndpointArgs {
         /// The name which should be used for this Stream Analytics Managed Private Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Stream Analytics Managed Private Endpoint should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Cluster where the Managed Private Endpoint should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the sub resource name which the Stream Analytics Private Endpoint is able to connect to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subresource_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subresource_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Private Link Enabled Remote Resource which this Stream Analytics Private endpoint should be connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedPrivateEndpointResult {

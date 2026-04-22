@@ -81,39 +81,39 @@ pub mod endpoint_policy {
         /// This field specifies the URL of AuthorizationPolicy resource that applies authorization policies to the inbound traffic
         /// at the matched endpoints.
         #[builder(into, default)]
-        pub authorization_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A URL referring to a ClientTlsPolicy resource. ClientTlsPolicy can be set to specify the authentication for traffic from
         /// the proxy to the actual endpoints.
         #[builder(into, default)]
-        pub client_tls_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_tls_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. A matcher that selects endpoints to which the policies should be applied.
         /// Structure is documented below.
         #[builder(into)]
-        pub endpoint_matcher: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint_matcher: pulumi_gestalt_rust::Input<
             super::super::types::networkservices::EndpointPolicyEndpointMatcher,
         >,
         /// Set of label tags associated with the TcpRoute resource. **Note**: This field is non-authoritative, and will only manage
         /// the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on
         /// the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the EndpointPolicy resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A URL referring to ServerTlsPolicy resource. ServerTlsPolicy is used to determine the authentication policy to be
         /// applied to terminate the inbound traffic at the identified backends.
         #[builder(into, default)]
-        pub server_tls_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub server_tls_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Port selector for the (matched) endpoints. If no port selector is provided, the matched config is applied to all ports.
         #[builder(into, default)]
-        pub traffic_port_selector: pulumi_gestalt_rust::InputOrOutput<
+        pub traffic_port_selector: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkservices::EndpointPolicyTrafficPortSelector,
             >,
@@ -121,7 +121,7 @@ pub mod endpoint_policy {
         /// The type of endpoint policy. This is primarily used to validate the configuration.
         /// Possible values are: `SIDECAR_PROXY`, `GRPC_SERVER`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointPolicyResult {

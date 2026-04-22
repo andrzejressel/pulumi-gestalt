@@ -10,13 +10,13 @@ pub mod get_database {
     pub struct GetDatabaseArgs {
         /// The name of the Cloud SQL database instance in which the database belongs.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The name of the database.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the instance belongs.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDatabaseResult {

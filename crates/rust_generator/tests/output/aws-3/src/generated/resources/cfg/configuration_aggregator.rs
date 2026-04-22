@@ -84,17 +84,17 @@ pub mod configuration_aggregator {
     pub struct ConfigurationAggregatorArgs {
         /// The account(s) to aggregate config data from as documented below.
         #[builder(into, default)]
-        pub account_aggregation_source: pulumi_gestalt_rust::InputOrOutput<
+        pub account_aggregation_source: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cfg::ConfigurationAggregatorAccountAggregationSource,
             >,
         >,
         /// The name of the configuration aggregator.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The organization to aggregate config data from as documented below.
         #[builder(into, default)]
-        pub organization_aggregation_source: pulumi_gestalt_rust::InputOrOutput<
+        pub organization_aggregation_source: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cfg::ConfigurationAggregatorOrganizationAggregationSource,
             >,
@@ -103,7 +103,7 @@ pub mod configuration_aggregator {
         ///
         /// Either `account_aggregation_source` or `organization_aggregation_source` must be specified.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

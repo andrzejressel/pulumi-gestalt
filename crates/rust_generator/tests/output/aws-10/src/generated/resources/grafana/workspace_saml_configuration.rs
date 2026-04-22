@@ -56,47 +56,47 @@ pub mod workspace_saml_configuration {
     pub struct WorkspaceSamlConfigurationArgs {
         /// The admin role values.
         #[builder(into, default)]
-        pub admin_role_values: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub admin_role_values: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The allowed organizations.
         #[builder(into, default)]
-        pub allowed_organizations: pulumi_gestalt_rust::InputOrOutput<
+        pub allowed_organizations: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The editor role values.
         #[builder(into)]
-        pub editor_role_values: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub editor_role_values: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The email assertion.
         #[builder(into, default)]
-        pub email_assertion: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub email_assertion: pulumi_gestalt_rust::Input<Option<String>>,
         /// The groups assertion.
         #[builder(into, default)]
-        pub groups_assertion: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub groups_assertion: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IDP Metadata URL. Note that either `idp_metadata_url` or `idp_metadata_xml` (but not both) must be specified.
         #[builder(into, default)]
-        pub idp_metadata_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub idp_metadata_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IDP Metadata XML. Note that either `idp_metadata_url` or `idp_metadata_xml` (but not both) must be specified.
         #[builder(into, default)]
-        pub idp_metadata_xml: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub idp_metadata_xml: pulumi_gestalt_rust::Input<Option<String>>,
         /// The login assertion.
         #[builder(into, default)]
-        pub login_assertion: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub login_assertion: pulumi_gestalt_rust::Input<Option<String>>,
         /// The login validity duration.
         #[builder(into, default)]
-        pub login_validity_duration: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub login_validity_duration: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name assertion.
         #[builder(into, default)]
-        pub name_assertion: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_assertion: pulumi_gestalt_rust::Input<Option<String>>,
         /// The org assertion.
         #[builder(into, default)]
-        pub org_assertion: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub org_assertion: pulumi_gestalt_rust::Input<Option<String>>,
         /// The role assertion.
         #[builder(into, default)]
-        pub role_assertion: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_assertion: pulumi_gestalt_rust::Input<Option<String>>,
         /// The workspace id.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceSamlConfigurationResult {

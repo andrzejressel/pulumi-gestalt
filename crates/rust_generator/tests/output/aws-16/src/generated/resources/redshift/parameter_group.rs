@@ -45,23 +45,23 @@ pub mod parameter_group {
     pub struct ParameterGroupArgs {
         /// The description of the Redshift parameter group. Defaults to "Managed by Pulumi".
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The family of the Redshift parameter group.
         #[builder(into)]
-        pub family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub family: pulumi_gestalt_rust::Input<String>,
         /// The name of the Redshift parameter.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Redshift parameters to apply.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::redshift::ParameterGroupParameter>>,
         >,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         ///
         /// You can read more about the parameters that Redshift supports in the [documentation](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html)
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

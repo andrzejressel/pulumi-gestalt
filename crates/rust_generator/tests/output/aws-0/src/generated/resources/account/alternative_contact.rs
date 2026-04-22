@@ -48,22 +48,22 @@ pub mod alternative_contact {
     pub struct AlternativeContactArgs {
         /// ID of the target account when managing member accounts. Will manage current user's account by default if omitted.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of the alternate contact. Allowed values are: `BILLING`, `OPERATIONS`, `SECURITY`.
         #[builder(into)]
-        pub alternate_contact_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alternate_contact_type: pulumi_gestalt_rust::Input<String>,
         /// An email address for the alternate contact.
         #[builder(into)]
-        pub email_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_address: pulumi_gestalt_rust::Input<String>,
         /// Name of the alternate contact.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Phone number for the alternate contact.
         #[builder(into)]
-        pub phone_number: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub phone_number: pulumi_gestalt_rust::Input<String>,
         /// Title for the alternate contact.
         #[builder(into)]
-        pub title: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub title: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AlternativeContactResult {

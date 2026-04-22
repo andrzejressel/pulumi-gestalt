@@ -80,38 +80,38 @@ pub mod policy {
         /// Names such as .internal are not available when an alternative name server is specified.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub alternative_name_server_config: pulumi_gestalt_rust::InputOrOutput<
+        pub alternative_name_server_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::PolicyAlternativeNameServerConfig>,
         >,
         /// A textual description field. Defaults to 'Managed by Pulumi'.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Allows networks bound to this policy to receive DNS queries sent
         /// by VMs or applications over VPN connections. When enabled, a
         /// virtual IP address will be allocated from each of the sub-networks
         /// that are bound to this policy.
         #[builder(into, default)]
-        pub enable_inbound_forwarding: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_inbound_forwarding: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Controls whether logging is enabled for the networks bound to this policy.
         /// Defaults to no logging if not set.
         #[builder(into, default)]
-        pub enable_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User assigned name for this policy.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of network names specifying networks to which this policy is applied.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub networks: pulumi_gestalt_rust::InputOrOutput<
+        pub networks: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dns::PolicyNetwork>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PolicyResult {

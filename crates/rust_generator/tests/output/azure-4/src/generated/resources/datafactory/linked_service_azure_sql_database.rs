@@ -56,61 +56,61 @@ pub mod linked_service_azure_sql_database {
     pub struct LinkedServiceAzureSqlDatabaseArgs {
         /// A map of additional properties to associate with the Data Factory Linked Service Azure SQL Database.
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service Azure SQL Database.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The connection string in which to authenticate with Azure SQL Database. Exactly one of either `connection_string` or `key_vault_connection_string` is required.
         #[builder(into, default)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a User-assigned Managed Identity. Use this argument to authenticate against the linked resource using a User-assigned Managed Identity.
         #[builder(into, default)]
-        pub credential_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub credential_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Linked Service Azure SQL Database.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The integration runtime reference to associate with the Data Factory Linked Service Azure SQL Database.
         #[builder(into, default)]
-        pub integration_runtime_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_runtime_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `key_vault_connection_string` block as defined below. Use this argument to store Azure SQL Database connection string in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `connection_string` or `key_vault_connection_string` is required.
         #[builder(into, default)]
-        pub key_vault_connection_string: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_connection_string: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::LinkedServiceAzureSqlDatabaseKeyVaultConnectionString,
             >,
         >,
         /// A `key_vault_password` block as defined below. Use this argument to store SQL Server password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
         #[builder(into, default)]
-        pub key_vault_password: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_password: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::LinkedServiceAzureSqlDatabaseKeyVaultPassword,
             >,
         >,
         /// Specifies the name of the Data Factory Linked Service Azure SQL Database. Changing this forces a new resource to be created. Must be unique within a data factory. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Linked Service Azure SQL Database.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The service principal id in which to authenticate against the Azure SQL Database. Required if `service_principal_key` is set.
         #[builder(into, default)]
-        pub service_principal_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_principal_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service principal key in which to authenticate against the Azure SQL Database. Required if `service_principal_id` is set.
         #[builder(into, default)]
-        pub service_principal_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_principal_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The tenant id or name in which to authenticate against the Azure SQL Database.
         #[builder(into, default)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to use the Data Factory's managed identity to authenticate against the Azure SQL Database. Incompatible with `service_principal_id` and `service_principal_key`
         #[builder(into, default)]
-        pub use_managed_identity: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_managed_identity: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct LinkedServiceAzureSqlDatabaseResult {

@@ -10,22 +10,22 @@ pub mod get_cluster_credentials {
     pub struct GetClusterCredentialsArgs {
         /// Create a database user with the name specified for the user named in `db_user` if one does not exist.
         #[builder(into, default)]
-        pub auto_create: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_create: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Unique identifier of the cluster that contains the database for which your are requesting credentials.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// List of the names of existing database groups that the user named in `db_user` will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to `PUBLIC`.
         #[builder(into, default)]
-        pub db_groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub db_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of a database that DbUser is authorized to log on to. If `db_name` is not specified, `db_user` can log on to any existing database.
         #[builder(into, default)]
-        pub db_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of a database user. If a user name matching `db_user` exists in the database, the temporary user credentials have the same permissions as the  existing user. If `db_user` doesn't exist in the database and `auto_create` is `True`, a new user is created using the value for `db_user` with `PUBLIC` permissions.  If a database user matching the value for `db_user` doesn't exist and `not` is `False`, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.
         #[builder(into)]
-        pub db_user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_user: pulumi_gestalt_rust::Input<String>,
         /// The number of seconds until the returned temporary password expires. Valid values are between `900` and `3600`. Default value is `900`.
         #[builder(into, default)]
-        pub duration_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub duration_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct GetClusterCredentialsResult {

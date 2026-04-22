@@ -10,10 +10,10 @@ pub mod get_application {
     pub struct GetApplicationArgs {
         /// ARN of the application.
         #[builder(into)]
-        pub application_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_arn: pulumi_gestalt_rust::Input<String>,
         /// Options for the portal associated with an application. See the `aws.ssoadmin.Application` resource documentation. The attributes are the same.
         #[builder(into, default)]
-        pub portal_options: pulumi_gestalt_rust::InputOrOutput<
+        pub portal_options: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ssoadmin::GetApplicationPortalOption>>,
         >,
     }

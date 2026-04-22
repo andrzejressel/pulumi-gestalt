@@ -10,13 +10,13 @@ pub mod get_elastic_pool {
     pub struct GetElasticPoolArgs {
         /// The name of the elastic pool.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group which contains the elastic pool.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the SQL Server which contains the elastic pool.
         #[builder(into)]
-        pub server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetElasticPoolResult {

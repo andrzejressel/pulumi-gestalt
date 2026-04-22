@@ -90,20 +90,20 @@ pub mod managed_private_endpoint {
     pub struct ManagedPrivateEndpointArgs {
         /// Specifies the name which should be used for this Managed Private Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the sub resource name which the Synapse Private Endpoint is able to connect to. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Possible values are listed in [documentation](https://docs.microsoft.com/azure/private-link/private-endpoint-overview#dns-configuration).
         #[builder(into)]
-        pub subresource_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subresource_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Synapse Workspace on which to create the Managed Private Endpoint. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** A Synapse firewall rule including local IP is needed for managing current resource.
         #[builder(into)]
-        pub synapse_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub synapse_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Private Link Enabled Remote Resource which this Synapse Private Endpoint should be connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedPrivateEndpointResult {

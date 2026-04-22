@@ -10,20 +10,20 @@ pub mod get_nat_gateway {
     pub struct GetNatGatewayArgs {
         /// Specifies the Name of the NAT Gateway.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// A list of existing Public IP Address resource IDs which the NAT Gateway is using.
         #[builder(into, default)]
-        pub public_ip_address_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub public_ip_address_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A list of existing Public IP Prefix resource IDs which the NAT Gateway is using.
         #[builder(into, default)]
-        pub public_ip_prefix_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub public_ip_prefix_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Specifies the name of the Resource Group where the NAT Gateway exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNatGatewayResult {

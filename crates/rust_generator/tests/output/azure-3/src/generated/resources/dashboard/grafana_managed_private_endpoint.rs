@@ -63,30 +63,30 @@ pub mod grafana_managed_private_endpoint {
     pub struct GrafanaManagedPrivateEndpointArgs {
         /// The id of the associated managed Grafana. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
         #[builder(into)]
-        pub grafana_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub grafana_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of private link group IDs. The value of this will depend on the private link resource to which you are connecting. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
         #[builder(into, default)]
-        pub group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Azure Region where the Dashboard Grafana Managed Private Endpoint should exist. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Dashboard Grafana Managed Private Endpoint. Must be between 2 and 20 alphanumeric characters or dashes, must begin with letter and end with a letter or number. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the resource to which this Dashboard Grafana Managed Private Endpoint will connect. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
         #[builder(into)]
-        pub private_link_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_link_resource_id: pulumi_gestalt_rust::Input<String>,
         /// The region in which to create the private link. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
         #[builder(into, default)]
-        pub private_link_resource_region: pulumi_gestalt_rust::InputOrOutput<
+        pub private_link_resource_region: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A message to provide in the request which will be seen by approvers.
         #[builder(into, default)]
-        pub request_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Dashboard Grafana Managed Private Endpoint.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

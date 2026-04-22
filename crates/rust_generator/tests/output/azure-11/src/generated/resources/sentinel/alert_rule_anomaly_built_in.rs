@@ -61,19 +61,19 @@ pub mod alert_rule_anomaly_built_in {
         ///
         /// > **Note:** One of `name` or `display_name` block must be specified.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Built-in Anomaly Alert Rule be enabled?
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The ID of the Log Analytics Workspace. Changing this forces a new Built-in Anomaly Alert Rule to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// mode of the Built-in Anomaly Alert Rule. Possible Values are `Production` and `Flighting`.
         #[builder(into)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mode: pulumi_gestalt_rust::Input<String>,
         /// The Name of the built-in Anomaly Alert Rule.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AlertRuleAnomalyBuiltInResult {

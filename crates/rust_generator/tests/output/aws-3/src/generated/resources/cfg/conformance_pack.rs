@@ -87,24 +87,24 @@ pub mod conformance_pack {
     pub struct ConformancePackArgs {
         /// Amazon S3 bucket where AWS Config stores conformance pack templates. Maximum length of 63.
         #[builder(into, default)]
-        pub delivery_s3_bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delivery_s3_bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// The prefix for the Amazon S3 bucket. Maximum length of 1024.
         #[builder(into, default)]
-        pub delivery_s3_key_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delivery_s3_key_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of configuration blocks describing input parameters passed to the conformance pack template. Documented below. When configured, the parameters must also be included in the `template_body` or in the template stored in Amazon S3 if using `template_s3_uri`.
         #[builder(into, default)]
-        pub input_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub input_parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cfg::ConformancePackInputParameter>>,
         >,
         /// The name of the conformance pack. Must begin with a letter and contain from 1 to 256 alphanumeric characters and hyphens.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A string containing full conformance pack template body. Maximum length of 51200. Drift detection is not possible with this argument.
         #[builder(into, default)]
-        pub template_body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location of file, e.g., `s3://bucketname/prefix`, containing the template body. The uri must point to the conformance pack template that is located in an Amazon S3 bucket in the same region as the conformance pack. Maximum length of 1024. Drift detection is not possible with this argument.
         #[builder(into, default)]
-        pub template_s3_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_s3_uri: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConformancePackResult {

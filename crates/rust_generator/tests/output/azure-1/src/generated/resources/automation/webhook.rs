@@ -65,33 +65,33 @@ pub mod webhook {
     pub struct WebhookArgs {
         /// The name of the automation account in which the Webhook is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// Controls if Webhook is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Timestamp when the webhook expires. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub expiry_time: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub expiry_time: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Webhook. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of input parameters passed to runbook.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the resource group in which the Webhook is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the hybrid worker group the Webhook job will run on.
         #[builder(into, default)]
-        pub run_on_worker_group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub run_on_worker_group: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Automation Runbook to execute by Webhook.
         #[builder(into)]
-        pub runbook_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub runbook_name: pulumi_gestalt_rust::Input<String>,
         /// URI to initiate the webhook. Can be generated using [Generate URI API](https://docs.microsoft.com/rest/api/automation/webhook/generate-uri). By default, new URI is generated on each new resource creation. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub uri: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct WebhookResult {

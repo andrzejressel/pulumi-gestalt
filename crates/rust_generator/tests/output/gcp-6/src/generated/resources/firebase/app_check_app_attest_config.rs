@@ -116,16 +116,16 @@ pub mod app_check_app_attest_config {
         ///
         /// - - -
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the duration for which App Check tokens exchanged from App Attest artifacts will be valid.
         /// If unset, a default value of 1 hour is assumed. Must be between 30 minutes and 7 days, inclusive.
         /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub token_ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_ttl: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppCheckAppAttestConfigResult {

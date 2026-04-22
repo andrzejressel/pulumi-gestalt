@@ -131,54 +131,54 @@ pub mod event_grid_data_connection {
     pub struct EventGridDataConnectionArgs {
         /// Specifies the blob storage event type that needs to be processed. Possible Values are `Microsoft.Storage.BlobCreated` and `Microsoft.Storage.BlobRenamed`. Defaults to `Microsoft.Storage.BlobCreated`.
         #[builder(into, default)]
-        pub blob_storage_event_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub blob_storage_event_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the data format of the EventHub messages. Allowed values: `APACHEAVRO`, `AVRO`, `CSV`, `JSON`, `MULTIJSON`, `ORC`, `PARQUET`, `PSV`, `RAW`, `SCSV`, `SINGLEJSON`, `SOHSV`, `TSV`, `TSVE`, `TXT` and `W3CLOGFILE`.
         #[builder(into, default)]
-        pub data_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Kusto Database this data connection will be added to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Indication for database routing information from the data connection, by default only database routing information is allowed. Allowed values: `Single`, `Multi`. Changing this forces a new resource to be created. Defaults to `Single`.
         #[builder(into, default)]
-        pub database_routing_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database_routing_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the event grid that is subscribed to the storage account events.
         #[builder(into, default)]
-        pub eventgrid_resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eventgrid_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Event Hub consumer group this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_consumer_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the resource id of the Event Hub this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_id: pulumi_gestalt_rust::Input<String>,
         /// The location where the Kusto Database should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Empty for non-managed identity based data connection. For system assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
         #[builder(into, default)]
-        pub managed_identity_resource_id: pulumi_gestalt_rust::InputOrOutput<
+        pub managed_identity_resource_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the mapping rule used for the message ingestion. Mapping rule must exist before resource is created.
         #[builder(into, default)]
-        pub mapping_rule_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mapping_rule_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Kusto Event Grid Data Connection to create. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Resource Group where the Kusto Database should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// is the first record of every file ignored? Defaults to `false`.
         #[builder(into, default)]
-        pub skip_first_record: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_first_record: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the resource id of the Storage Account this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the target table name used for the message ingestion. Table must exist before resource is created.
         #[builder(into, default)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub table_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EventGridDataConnectionResult {

@@ -10,15 +10,15 @@ pub mod get_open_id_connect_provider {
     pub struct GetOpenIdConnectProviderArgs {
         /// ARN of the OpenID Connect provider.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of resource tags for the IAM OIDC provider.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// URL of the OpenID Connect provider.
         #[builder(into, default)]
-        pub url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub url: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetOpenIdConnectProviderResult {

@@ -10,7 +10,7 @@ pub mod get_release_labels {
     pub struct GetReleaseLabelsArgs {
         /// Filters the results of the request. Prefix specifies the prefix of release labels to return. Application specifies the application (with/without version) of release labels to return. See Filters.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::emr::GetReleaseLabelsFilters>,
         >,
     }

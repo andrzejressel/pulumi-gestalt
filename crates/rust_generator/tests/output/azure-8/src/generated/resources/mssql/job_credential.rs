@@ -74,16 +74,16 @@ pub mod job_credential {
     pub struct JobCredentialArgs {
         /// The ID of the Elastic Job Agent. Changing this forces a new Elastic Job Credential to be created.
         #[builder(into)]
-        pub job_agent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub job_agent_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Elastic Job Credential. Changing this forces a new Elastic Job Credential to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password part of the credential.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The username part of the credential.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct JobCredentialResult {

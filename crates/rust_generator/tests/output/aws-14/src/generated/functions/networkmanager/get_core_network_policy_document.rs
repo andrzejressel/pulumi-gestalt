@@ -10,7 +10,7 @@ pub mod get_core_network_policy_document {
     pub struct GetCoreNetworkPolicyDocumentArgs {
         /// In a core network, all attachments use the block argument `attachment_policies` section to map an attachment to a segment. Instead of manually associating a segment to each attachment, attachments use tags, and then the tags are used to associate the attachment to the specified segment. Detailed below.
         #[builder(into, default)]
-        pub attachment_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub attachment_policies: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::networkmanager::GetCoreNetworkPolicyDocumentAttachmentPolicy,
@@ -19,14 +19,14 @@ pub mod get_core_network_policy_document {
         >,
         /// The core network configuration section defines the Regions where a core network should operate. For AWS Regions that are defined in the policy, the core network creates a Core Network Edge where you can connect attachments. After it's created, each Core Network Edge is peered with every other defined Region and is configured with consistent segment and routing across all Regions. Regions cannot be removed until the associated attachments are deleted. Detailed below.
         #[builder(into)]
-        pub core_network_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub core_network_configurations: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::super::types::networkmanager::GetCoreNetworkPolicyDocumentCoreNetworkConfiguration,
             >,
         >,
         /// Block argument that defines the service insertion actions you want to include. Detailed below.
         #[builder(into, default)]
-        pub network_function_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub network_function_groups: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::networkmanager::GetCoreNetworkPolicyDocumentNetworkFunctionGroup,
@@ -35,7 +35,7 @@ pub mod get_core_network_policy_document {
         >,
         /// A block argument, `segment_actions` define how routing works between segments. By default, attachments can only communicate with other attachments in the same segment. Detailed below.
         #[builder(into, default)]
-        pub segment_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub segment_actions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::networkmanager::GetCoreNetworkPolicyDocumentSegmentAction,
@@ -44,13 +44,13 @@ pub mod get_core_network_policy_document {
         >,
         /// Block argument that defines the different segments in the network. Here you can provide descriptions, change defaults, and provide explicit Regional operational and route filters. The names defined for each segment are used in the `segment_actions` and `attachment_policies` section. Each segment is created, and operates, as a completely separated routing domain. By default, attachments can only communicate with other attachments in the same segment. Detailed below.
         #[builder(into)]
-        pub segments: pulumi_gestalt_rust::InputOrOutput<
+        pub segments: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::super::types::networkmanager::GetCoreNetworkPolicyDocumentSegment,
             >,
         >,
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetCoreNetworkPolicyDocumentResult {

@@ -44,19 +44,19 @@ pub mod usage_limit {
     pub struct UsageLimitArgs {
         /// The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.
         #[builder(into)]
-        pub amount: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub amount: pulumi_gestalt_rust::Input<i32>,
         /// The action that Amazon Redshift Serverless takes when the limit is reached. Valid values are `log`, `emit-metric`, and `deactivate`. The default is `log`.
         #[builder(into, default)]
-        pub breach_action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub breach_action: pulumi_gestalt_rust::Input<Option<String>>,
         /// The time period that the amount applies to. A weekly period begins on Sunday. Valid values are `daily`, `weekly`, and `monthly`. The default is `monthly`.
         #[builder(into, default)]
-        pub period: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub period: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
         /// The type of Amazon Redshift Serverless usage to create a usage limit for. Valid values are `serverless-compute` or `cross-region-datasharing`.
         #[builder(into)]
-        pub usage_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub usage_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UsageLimitResult {

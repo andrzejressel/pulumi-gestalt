@@ -52,19 +52,19 @@ pub mod app_cookie_stickiness_policy {
     pub struct AppCookieStickinessPolicyArgs {
         /// Application cookie whose lifetime the ELB's cookie should follow.
         #[builder(into)]
-        pub cookie_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cookie_name: pulumi_gestalt_rust::Input<String>,
         /// Load balancer port to which the policy
         /// should be applied. This must be an active listener on the load
         /// balancer.
         #[builder(into)]
-        pub lb_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub lb_port: pulumi_gestalt_rust::Input<i32>,
         /// Name of load balancer to which the policy
         /// should be attached.
         #[builder(into)]
-        pub load_balancer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancer: pulumi_gestalt_rust::Input<String>,
         /// Name of the stickiness policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppCookieStickinessPolicyResult {

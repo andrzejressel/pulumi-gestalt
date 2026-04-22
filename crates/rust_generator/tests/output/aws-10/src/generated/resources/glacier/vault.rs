@@ -63,18 +63,18 @@ pub mod vault {
         /// The policy document. This is a JSON formatted string.
         /// The heredoc syntax or `file` function is helpful here. Use the [Glacier Developer Guide](https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html) for more information on Glacier Vault Policy
         #[builder(into, default)]
-        pub access_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Vault. Names can be between 1 and 255 characters long and the valid characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), and '.' (period).
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The notifications for the Vault. Fields documented below.
         #[builder(into, default)]
-        pub notification: pulumi_gestalt_rust::InputOrOutput<
+        pub notification: pulumi_gestalt_rust::Input<
             Option<super::super::types::glacier::VaultNotification>,
         >,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

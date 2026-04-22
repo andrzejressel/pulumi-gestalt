@@ -10,7 +10,7 @@ pub mod get_node_groups {
     pub struct GetNodeGroupsArgs {
         /// Name of the cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNodeGroupsResult {

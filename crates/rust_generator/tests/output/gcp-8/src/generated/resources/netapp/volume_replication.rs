@@ -97,14 +97,14 @@ pub mod volume_replication {
     #[allow(dead_code)]
     pub struct VolumeReplicationArgs {
         #[builder(into, default)]
-        pub delete_destination_volume: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub delete_destination_volume: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Destination volume parameters.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub destination_volume_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_volume_parameters: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::netapp::VolumeReplicationDestinationVolumeParameters,
             >,
@@ -114,43 +114,43 @@ pub mod volume_replication {
         /// to stop anyway. All data transferred to the destination will be discarded and content of destination
         /// volume will remain at the state of the last successful update. Default is false.
         #[builder(into, default)]
-        pub force_stopping: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_stopping: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of region for this resource. The resource needs to be created in the region of the destination volume.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the replication. Needs to be unique per location.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to false to stop/break the mirror. Stopping the mirror makes the destination volume read-write
         /// and act independently from the source volume.
         /// Set to true to enable/resume the mirror. WARNING: Resuming a mirror overwrites any changes
         /// done to the destination volume with the content of the source volume.
         #[builder(into, default)]
-        pub replication_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub replication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the replication interval.
         /// Possible values are: `EVERY_10_MINUTES`, `HOURLY`, `DAILY`.
         #[builder(into)]
-        pub replication_schedule: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_schedule: pulumi_gestalt_rust::Input<String>,
         /// The name of the existing source volume.
         #[builder(into)]
-        pub volume_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub wait_for_mirror: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_for_mirror: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct VolumeReplicationResult {

@@ -54,34 +54,34 @@ pub mod gallery_application {
     pub struct GalleryApplicationArgs {
         /// A description of the Gallery Application.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The end of life date in RFC3339 format of the Gallery Application.
         #[builder(into, default)]
-        pub end_of_life_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_of_life_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// The End User Licence Agreement of the Gallery Application.
         #[builder(into, default)]
-        pub eula: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eula: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Shared Image Gallery. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub gallery_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gallery_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Gallery Application exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Gallery Application. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URI containing the Privacy Statement associated with the Gallery Application.
         #[builder(into, default)]
-        pub privacy_statement_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub privacy_statement_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URI containing the Release Notes associated with the Gallery Application.
         #[builder(into, default)]
-        pub release_note_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub release_note_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the Operating System supported for the Gallery Application. Possible values are `Linux` and `Windows`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub supported_os_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub supported_os_type: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the Gallery Application.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

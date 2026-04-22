@@ -38,19 +38,19 @@ pub mod snapshot {
     pub struct SnapshotArgs {
         /// Name of the MemoryDB cluster to take a snapshot of.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// ARN of the KMS key used to encrypt the snapshot at rest.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the snapshot. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

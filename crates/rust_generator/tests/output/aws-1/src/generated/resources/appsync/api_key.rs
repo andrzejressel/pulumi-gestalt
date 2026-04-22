@@ -43,13 +43,13 @@ pub mod api_key {
     pub struct ApiKeyArgs {
         /// ID of the associated AppSync API
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// API key description. Defaults to "Managed by Pulumi".
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// RFC3339 string representation of the expiry date. Rounded down to nearest hour. By default, it is 7 days from the date of creation.
         #[builder(into, default)]
-        pub expires: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expires: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiKeyResult {

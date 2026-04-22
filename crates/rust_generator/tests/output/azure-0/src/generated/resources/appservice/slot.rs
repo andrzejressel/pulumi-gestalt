@@ -139,71 +139,71 @@ pub mod slot {
     pub struct SlotArgs {
         /// The name of the App Service within which to create the App Service Slot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub app_service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the App Service Plan within which to create this App Service Slot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub app_service_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_plan_id: pulumi_gestalt_rust::Input<String>,
         /// A key-value pair of App Settings.
         #[builder(into, default)]
-        pub app_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub app_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `auth_settings` block as defined below.
         #[builder(into, default)]
-        pub auth_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::SlotAuthSettings>,
         >,
         /// Should the App Service Slot send session affinity cookies, which route client requests in the same session to the same instance?
         #[builder(into, default)]
-        pub client_affinity_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_affinity_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `connection_string` block as defined below.
         #[builder(into, default)]
-        pub connection_strings: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_strings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::SlotConnectionString>>,
         >,
         /// Is the App Service Slot Enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Can the App Service Slot only be accessed via HTTPS? Defaults to `false`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::SlotIdentity>,
         >,
         /// The User Assigned Identity Id used for looking up KeyVault secrets. The identity must be assigned to the application. See [Access vaults with a user-assigned identity](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#access-vaults-with-a-user-assigned-identity) for more information.
         #[builder(into, default)]
-        pub key_vault_reference_identity_id: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `logs` block as defined below.
         #[builder(into, default)]
-        pub logs: pulumi_gestalt_rust::InputOrOutput<
+        pub logs: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::SlotLogs>,
         >,
         /// Specifies the name of the App Service Slot component. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the App Service Slot component. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `site_config` object as defined below.
         #[builder(into, default)]
-        pub site_config: pulumi_gestalt_rust::InputOrOutput<
+        pub site_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::SlotSiteConfig>,
         >,
         /// One or more `storage_account` blocks as defined below.
         #[builder(into, default)]
-        pub storage_accounts: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_accounts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::SlotStorageAccount>>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

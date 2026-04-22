@@ -23,7 +23,7 @@ pub mod resource_group {
     pub struct ResourceGroupArgs {
         /// Key-value map of tags that are used to select the EC2 instances to be included in an Amazon Inspector assessment target.
         #[builder(into)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
     }

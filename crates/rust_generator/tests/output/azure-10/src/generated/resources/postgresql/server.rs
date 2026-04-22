@@ -56,91 +56,91 @@ pub mod server {
     pub struct ServerArgs {
         /// The Administrator login for the PostgreSQL Server. Required when `create_mode` is `Default`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub administrator_login: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub administrator_login: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Password associated with the `administrator_login` for the PostgreSQL Server. Required when `create_mode` is `Default`.
         #[builder(into, default)]
-        pub administrator_login_password: pulumi_gestalt_rust::InputOrOutput<
+        pub administrator_login_password: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only. If storage auto grow is enabled, the storage automatically grows without impacting the workload. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_grow_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_grow_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Backup retention days for the server, supported values are between `7` and `35` days.
         #[builder(into, default)]
-        pub backup_retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub backup_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The creation mode. Can be used to restore or replicate existing servers. Possible values are `Default`, `Replica`, `GeoRestore`, and `PointInTimeRestore`. Defaults to `Default`.
         #[builder(into, default)]
-        pub create_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub create_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// For creation modes other than `Default`, the source server ID to use.
         #[builder(into, default)]
-        pub creation_source_server_id: pulumi_gestalt_rust::InputOrOutput<
+        pub creation_source_server_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Turn Geo-redundant server backups on/off. This allows you to choose between locally redundant or geo-redundant backup storage in the General Purpose and Memory Optimized tiers. When the backups are stored in geo-redundant backup storage, they are not only stored within the region in which your server is hosted, but are also replicated to a paired data center. This provides better protection and ability to restore your server in a different region in the event of a disaster. This is not support for the Basic tier. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::postgresql::ServerIdentity>,
         >,
         /// Whether or not infrastructure is encrypted for this server. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** This property is currently still in development and not supported by Microsoft. If the `infrastructure_encryption_enabled` attribute is set to `true` the PostgreSQL instance will incur a substantial performance degradation due to a second encryption pass on top of the existing default encryption that is already provided by Azure Storage. It is strongly suggested to leave this value `false` as not doing so can lead to unclear error messages.
         #[builder(into, default)]
-        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the PostgreSQL Server. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not public network access is allowed for this server. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the resource group in which to create the PostgreSQL Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// When `create_mode` is `PointInTimeRestore` the point in time to restore from `creation_source_server_id`. It should be provided in [RFC3339](https://www.rfc-editor.org/rfc/rfc3339) format, e.g. `2013-11-08T22:00:40Z`.
         #[builder(into, default)]
-        pub restore_point_in_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub restore_point_in_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the SKU Name for this PostgreSQL Server. The name of the SKU, follows the `tier` + `family` + `cores` pattern (e.g. `B_Gen4_1`, `GP_Gen5_8`). For more information see the [product documentation](https://docs.microsoft.com/rest/api/postgresql/singleserver/servers/create#sku). Possible values are `B_Gen4_1`, `B_Gen4_2`, `B_Gen5_1`, `B_Gen5_2`, `GP_Gen4_2`, `GP_Gen4_4`, `GP_Gen4_8`, `GP_Gen4_16`, `GP_Gen4_32`, `GP_Gen5_2`, `GP_Gen5_4`, `GP_Gen5_8`, `GP_Gen5_16`, `GP_Gen5_32`, `GP_Gen5_64`, `MO_Gen5_2`, `MO_Gen5_4`, `MO_Gen5_8`, `MO_Gen5_16` and `MO_Gen5_32`.
         ///
         /// > **NOTE:** When replication is set up and `sku_name` is changed to a higher tier or more capacity for the primary, all replicas are scaled up to the same tier/capacity. This is an Azure requirement, for more information see the [replica scaling documentation](https://docs.microsoft.com/azure/postgresql/concepts-read-replicas#scaling)
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies if SSL should be enforced on connections. Possible values are `true` and `false`.
         ///
         /// > **NOTE:** `ssl_minimal_tls_version_enforced` must be set to `TLSEnforcementDisabled` when `ssl_enforcement_enabled` is set to `false`.
         #[builder(into)]
-        pub ssl_enforcement_enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub ssl_enforcement_enabled: pulumi_gestalt_rust::Input<bool>,
         /// The minimum TLS version to support on the sever. Possible values are `TLSEnforcementDisabled`, `TLS1_0`, `TLS1_1`, and `TLS1_2`. Defaults to `TLS1_2`.
         #[builder(into, default)]
-        pub ssl_minimal_tls_version_enforced: pulumi_gestalt_rust::InputOrOutput<
+        pub ssl_minimal_tls_version_enforced: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Max storage allowed for a server. Possible values are between `5120` MB(5GB) and `1048576` MB(1TB) for the Basic SKU and between `5120` MB(5GB) and `16777216` MB(16TB) for General Purpose/Memory Optimized SKUs. For more information see the [product documentation](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers#storage).
         #[builder(into, default)]
-        pub storage_mb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub storage_mb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Threat detection policy configuration, known in the API as Server Security Alerts Policy. The `threat_detection_policy` block supports fields documented below.
         #[builder(into, default)]
-        pub threat_detection_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub threat_detection_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::postgresql::ServerThreatDetectionPolicy>,
         >,
         /// Specifies the version of PostgreSQL to use. Valid values are `9.5`, `9.6`, `10`, `10.0`, `10.2` and `11`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServerResult {

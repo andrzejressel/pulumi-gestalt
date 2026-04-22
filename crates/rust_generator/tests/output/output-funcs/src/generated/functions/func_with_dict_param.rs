@@ -9,11 +9,11 @@ pub mod func_with_dict_param {
     #[allow(dead_code)]
     pub struct FuncWithDictParamArgs {
         #[builder(into, default)]
-        pub a: pulumi_gestalt_rust::InputOrOutput<
+        pub a: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub b: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub b: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FuncWithDictParamResult {

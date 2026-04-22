@@ -44,48 +44,48 @@ pub mod input {
     pub struct InputArgs {
         /// Destination settings for PUSH type inputs. See Destinations for more details.
         #[builder(into, default)]
-        pub destinations: pulumi_gestalt_rust::InputOrOutput<
+        pub destinations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::medialive::InputDestination>>,
         >,
         /// Settings for the devices. See Input Devices for more details.
         #[builder(into, default)]
-        pub input_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub input_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::medialive::InputInputDevice>>,
         >,
         /// List of input security groups.
         #[builder(into, default)]
-        pub input_security_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub input_security_groups: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A list of the MediaConnect Flows. See Media Connect Flows for more details.
         #[builder(into, default)]
-        pub media_connect_flows: pulumi_gestalt_rust::InputOrOutput<
+        pub media_connect_flows: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::medialive::InputMediaConnectFlow>>,
         >,
         /// Name of the input.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the role this input assumes during and after creation.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source URLs for a PULL-type input. See Sources for more details.
         #[builder(into, default)]
-        pub sources: pulumi_gestalt_rust::InputOrOutput<
+        pub sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::medialive::InputSource>>,
         >,
         /// A map of tags to assign to the Input. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The different types of inputs that AWS Elemental MediaLive supports.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Settings for a private VPC Input. See VPC for more details.
         #[builder(into, default)]
-        pub vpc: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc: pulumi_gestalt_rust::Input<
             Option<super::super::types::medialive::InputVpc>,
         >,
     }

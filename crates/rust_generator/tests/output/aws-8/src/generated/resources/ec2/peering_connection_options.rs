@@ -123,17 +123,17 @@ pub mod peering_connection_options {
     pub struct PeeringConnectionOptionsArgs {
         /// An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that acceptsthe peering connection (a maximum of one).
         #[builder(into, default)]
-        pub accepter: pulumi_gestalt_rust::InputOrOutput<
+        pub accepter: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::PeeringConnectionOptionsAccepter>,
         >,
         /// A optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that requeststhe peering connection (a maximum of one).
         #[builder(into, default)]
-        pub requester: pulumi_gestalt_rust::InputOrOutput<
+        pub requester: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::PeeringConnectionOptionsRequester>,
         >,
         /// The ID of the requester VPC peering connection.
         #[builder(into)]
-        pub vpc_peering_connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_peering_connection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PeeringConnectionOptionsResult {

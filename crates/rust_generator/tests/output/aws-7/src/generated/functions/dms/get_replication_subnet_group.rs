@@ -10,9 +10,9 @@ pub mod get_replication_subnet_group {
     pub struct GetReplicationSubnetGroupArgs {
         /// Name for the replication subnet group. This value is stored as a lowercase string. It must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens and cannot be `default`.
         #[builder(into)]
-        pub replication_subnet_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_subnet_group_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -67,27 +67,27 @@ pub mod storage_insights {
     pub struct StorageInsightsArgs {
         /// The names of the blob containers that the workspace should read.
         #[builder(into, default)]
-        pub blob_container_names: pulumi_gestalt_rust::InputOrOutput<
+        pub blob_container_names: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The name which should be used for this Log Analytics Storage Insights. Changing this forces a new Log Analytics Storage Insights to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Log Analytics Storage Insights should exist. Changing this forces a new Log Analytics Storage Insights to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Storage Account used by this Log Analytics Storage Insights.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// The storage access key to be used to connect to the storage account.
         #[builder(into)]
-        pub storage_account_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_key: pulumi_gestalt_rust::Input<String>,
         /// The names of the Azure tables that the workspace should read.
         #[builder(into, default)]
-        pub table_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub table_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the Log Analytics Workspace within which the Storage Insights should exist. Changing this forces a new Log Analytics Storage Insights to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StorageInsightsResult {

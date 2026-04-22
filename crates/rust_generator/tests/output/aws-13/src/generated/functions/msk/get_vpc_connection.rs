@@ -10,10 +10,10 @@ pub mod get_vpc_connection {
     pub struct GetVpcConnectionArgs {
         /// ARN of the VPC Connection.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Map of key-value pairs assigned to the VPC Connection.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

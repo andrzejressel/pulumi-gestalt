@@ -61,16 +61,16 @@ pub mod environment_custom_domain {
     pub struct EnvironmentCustomDomainArgs {
         /// The bundle of Private Key and Certificate for the Custom DNS Suffix as a base64 encoded PFX or PEM.
         #[builder(into)]
-        pub certificate_blob_base64: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_blob_base64: pulumi_gestalt_rust::Input<String>,
         /// The password for the Certificate bundle.
         #[builder(into)]
-        pub certificate_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_password: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Container Apps Managed Environment. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_app_environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_app_environment_id: pulumi_gestalt_rust::Input<String>,
         /// Custom DNS Suffix for the Container App Environment.
         #[builder(into)]
-        pub dns_suffix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns_suffix: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentCustomDomainResult {

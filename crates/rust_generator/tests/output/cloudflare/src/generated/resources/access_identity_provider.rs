@@ -91,26 +91,26 @@ pub mod access_identity_provider {
     pub struct AccessIdentityProviderArgs {
         /// The account identifier to target for the resource. Conflicts with `zone_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Provider configuration from the [developer documentation](https://developers.cloudflare.com/access/configuring-identity-providers/).
         #[builder(into, default)]
-        pub configs: pulumi_gestalt_rust::InputOrOutput<
+        pub configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::AccessIdentityProviderConfig>>,
         >,
         /// Friendly name of the Access Identity Provider configuration.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Configuration for SCIM settings for a given IDP.
         #[builder(into, default)]
-        pub scim_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub scim_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::AccessIdentityProviderScimConfig>>,
         >,
         /// The provider type to use. Available values: `azureAD`, `centrify`, `facebook`, `github`, `google`, `google-apps`, `linkedin`, `oidc`, `okta`, `onelogin`, `onetimepin`, `pingone`, `saml`, `yandex`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. Conflicts with `account_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccessIdentityProviderResult {

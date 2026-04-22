@@ -88,21 +88,21 @@ pub mod sync_cloud_endpoint {
     pub struct SyncCloudEndpointArgs {
         /// The Storage Share name to be synchronized in this Storage Sync Cloud Endpoint. Changing this forces a new Storage Sync Cloud Endpoint to be created.
         #[builder(into)]
-        pub file_share_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file_share_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Storage Sync Cloud Endpoint. Changing this forces a new Storage Sync Cloud Endpoint to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Account where the Storage Share exists. Changing this forces a new Storage Sync Cloud Endpoint to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// The Tenant ID of the Storage Account where the Storage Share exists. Changing this forces a new Storage Sync Cloud Endpoint to be created. Defaults to the current tenant id.
         #[builder(into, default)]
-        pub storage_account_tenant_id: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_tenant_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the Storage Sync Group where this Cloud Endpoint should be created. Changing this forces a new Storage Sync Cloud Endpoint to be created.
         #[builder(into)]
-        pub storage_sync_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_sync_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SyncCloudEndpointResult {

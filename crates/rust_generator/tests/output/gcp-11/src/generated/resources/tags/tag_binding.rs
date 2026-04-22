@@ -82,13 +82,13 @@ pub mod tag_binding {
     pub struct TagBindingArgs {
         /// The full resource name of the resource the TagValue is bound to. E.g. //cloudresourcemanager.googleapis.com/projects/123
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// The TagValue of the TagBinding. Must be of the form tagValues/456.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub tag_value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tag_value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagBindingResult {

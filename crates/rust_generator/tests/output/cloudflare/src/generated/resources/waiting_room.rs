@@ -52,67 +52,67 @@ pub mod waiting_room {
     pub struct WaitingRoomArgs {
         /// A list of additional hostname and paths combination to be applied on the waiting room.
         #[builder(into, default)]
-        pub additional_routes: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_routes: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WaitingRoomAdditionalRoute>>,
         >,
         /// A cookie suffix to be appended to the Cloudflare waiting room cookie name.
         #[builder(into, default)]
-        pub cookie_suffix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cookie_suffix: pulumi_gestalt_rust::Input<Option<String>>,
         /// This is a templated html file that will be rendered at the edge.
         #[builder(into, default)]
-        pub custom_page_html: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_page_html: pulumi_gestalt_rust::Input<Option<String>>,
         /// The language to use for the default waiting room page. Available values: `de-DE`, `es-ES`, `en-US`, `fr-FR`, `id-ID`, `it-IT`, `ja-JP`, `ko-KR`, `nl-NL`, `pl-PL`, `pt-BR`, `tr-TR`, `zh-CN`, `zh-TW`, `ru-RU`, `fa-IR`, `bg-BG`, `hr-HR`, `cs-CZ`, `da-DK`, `fi-FI`, `lt-LT`, `ms-MY`, `nb-NO`, `ro-RO`, `el-GR`, `he-IL`, `hi-IN`, `hu-HU`, `sr-BA`, `sk-SK`, `sl-SI`, `sv-SE`, `tl-PH`, `th-TH`, `uk-UA`, `vi-VN`. Defaults to `en-US`.
         #[builder(into, default)]
-        pub default_template_language: pulumi_gestalt_rust::InputOrOutput<
+        pub default_template_language: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A description to add more details about the waiting room.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Disables automatic renewal of session cookies.
         #[builder(into, default)]
-        pub disable_session_renewal: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_session_renewal: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The list of enabled origin commands for the waiting room. Available values: `revoke`.
         #[builder(into, default)]
-        pub enabled_origin_commands: pulumi_gestalt_rust::InputOrOutput<
+        pub enabled_origin_commands: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Host name for which the waiting room will be applied (no wildcards).
         #[builder(into)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host: pulumi_gestalt_rust::Input<String>,
         /// If true, requests to the waiting room with the header `Accept: application/json` will receive a JSON response object.
         #[builder(into, default)]
-        pub json_response_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub json_response_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A unique name to identify the waiting room. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The number of new users that will be let into the route every minute.
         #[builder(into)]
-        pub new_users_per_minute: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub new_users_per_minute: pulumi_gestalt_rust::Input<i32>,
         /// The path within the host to enable the waiting room on. Defaults to `/`.
         #[builder(into, default)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path: pulumi_gestalt_rust::Input<Option<String>>,
         /// If queue_all is true, then all traffic will be sent to the waiting room.
         #[builder(into, default)]
-        pub queue_all: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub queue_all: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The queueing method used by the waiting room. Available values: `fifo`, `random`, `passthrough`, `reject`. Defaults to `fifo`.
         #[builder(into, default)]
-        pub queueing_method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub queueing_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// HTTP status code returned to a user while in the queue. Defaults to `200`.
         #[builder(into, default)]
-        pub queueing_status_code: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub queueing_status_code: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Lifetime of a cookie (in minutes) set by Cloudflare for users who get access to the origin. Defaults to `5`.
         #[builder(into, default)]
-        pub session_duration: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub session_duration: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Suspends the waiting room.
         #[builder(into, default)]
-        pub suspended: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub suspended: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The total number of active user sessions on the route at a point in time.
         #[builder(into)]
-        pub total_active_users: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub total_active_users: pulumi_gestalt_rust::Input<i32>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WaitingRoomResult {

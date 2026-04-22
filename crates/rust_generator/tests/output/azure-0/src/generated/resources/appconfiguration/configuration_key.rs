@@ -137,42 +137,42 @@ pub mod configuration_key {
     pub struct ConfigurationKeyArgs {
         /// Specifies the id of the App Configuration. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub configuration_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_store_id: pulumi_gestalt_rust::Input<String>,
         /// The content type of the App Configuration Key. This should only be set when type is set to `kv`.
         #[builder(into, default)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// (Optional) The ETag of the key.
         #[builder(into, default)]
-        pub etag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub etag: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the App Configuration Key to create. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// The label of the App Configuration Key. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub label: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub label: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should this App Configuration Key be Locked to prevent changes?
         #[builder(into, default)]
-        pub locked: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub locked: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of the App Configuration Key. It can either be `kv` (simple [key/value](https://docs.microsoft.com/azure/azure-app-configuration/concept-key-value)) or `vault` (where the value is a reference to a [Key Vault Secret](https://azure.microsoft.com/en-gb/services/key-vault/). Defaults to `kv`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The value of the App Configuration Key. This should only be set when type is set to `kv`.
         ///
         /// > **NOTE:** `value` and `vault_key_reference` are mutually exclusive.
         #[builder(into, default)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub value: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the vault secret this App Configuration Key refers to. This should only be set when `type` is set to `vault`.
         ///
         /// > **NOTE:** `vault_key_reference` and `value` are mutually exclusive.
         ///
         /// > **NOTE:** When setting the `vault_key_reference` using the `id` will pin the value to specific version of the secret, to reference latest secret value use `versionless_id`
         #[builder(into, default)]
-        pub vault_key_reference: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vault_key_reference: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConfigurationKeyResult {

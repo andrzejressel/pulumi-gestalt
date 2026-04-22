@@ -44,43 +44,43 @@ pub mod provider {
     pub struct ProviderArgs {
         /// The Azure Region where the Attestation Provider should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Attestation Provider. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the base64 URI Encoded RFC 7519 JWT that should be used for the Attestation Policy.
         #[builder(into, default)]
-        pub open_enclave_policy_base64: pulumi_gestalt_rust::InputOrOutput<
+        pub open_enclave_policy_base64: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A valid X.509 certificate (Section 4 of [RFC4648](https://tools.ietf.org/html/rfc4648)). Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** If the `policy_signing_certificate_data` argument contains more than one valid X.509 certificate only the first certificate will be used.
         #[builder(into, default)]
-        pub policy_signing_certificate_data: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_signing_certificate_data: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the Resource Group where the attestation provider should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the base64 URI Encoded RFC 7519 JWT that should be used for the Attestation Policy.
         ///
         /// > [More information on the JWT Policies can be found in this article on `learn.microsoft.com`](https://learn.microsoft.com/azure/attestation/author-sign-policy).
         #[builder(into, default)]
-        pub sev_snp_policy_base64: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sev_snp_policy_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the base64 URI Encoded RFC 7519 JWT that should be used for the Attestation Policy.
         #[builder(into, default)]
-        pub sgx_enclave_policy_base64: pulumi_gestalt_rust::InputOrOutput<
+        pub sgx_enclave_policy_base64: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A mapping of tags which should be assigned to the Attestation Provider.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the base64 URI Encoded RFC 7519 JWT that should be used for the Attestation Policy.
         #[builder(into, default)]
-        pub tpm_policy_base64: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tpm_policy_base64: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProviderResult {

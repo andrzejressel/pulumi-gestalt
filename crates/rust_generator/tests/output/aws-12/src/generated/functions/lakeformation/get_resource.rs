@@ -10,7 +10,7 @@ pub mod get_resource {
     pub struct GetResourceArgs {
         /// ARN of the resource, an S3 path.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResourceResult {

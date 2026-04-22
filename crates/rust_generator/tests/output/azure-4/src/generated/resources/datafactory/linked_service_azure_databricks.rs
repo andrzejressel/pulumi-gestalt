@@ -123,62 +123,62 @@ pub mod linked_service_azure_databricks {
     pub struct LinkedServiceAzureDatabricksArgs {
         /// Authenticate to ADB via an access token.
         #[builder(into, default)]
-        pub access_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// The domain URL of the databricks instance.
         #[builder(into)]
-        pub adb_domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub adb_domain: pulumi_gestalt_rust::Input<String>,
         /// A map of additional properties to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Linked Service.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The cluster_id of an existing cluster within the linked ADB instance.
         #[builder(into, default)]
-        pub existing_cluster_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub existing_cluster_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Leverages an instance pool within the linked ADB instance as one `instance_pool` block defined below.
         #[builder(into, default)]
-        pub instance_pool: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_pool: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::LinkedServiceAzureDatabricksInstancePool,
             >,
         >,
         /// The integration runtime reference to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub integration_runtime_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_runtime_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Authenticate to ADB via Azure Key Vault Linked Service as defined in the `key_vault_password` block below.
         #[builder(into, default)]
-        pub key_vault_password: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_password: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::LinkedServiceAzureDatabricksKeyVaultPassword,
             >,
         >,
         /// Authenticate to ADB via managed service identity.
         #[builder(into, default)]
-        pub msi_work_space_resource_id: pulumi_gestalt_rust::InputOrOutput<
+        pub msi_work_space_resource_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the name of the Data Factory Linked Service. Changing this forces a new resource to be created. Must be unique within a data factory. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates new clusters within the linked ADB instance as defined in the `new_cluster_config` block below.
         #[builder(into, default)]
-        pub new_cluster_config: pulumi_gestalt_rust::InputOrOutput<
+        pub new_cluster_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::LinkedServiceAzureDatabricksNewClusterConfig,
             >,
         >,
         /// A map of parameters to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

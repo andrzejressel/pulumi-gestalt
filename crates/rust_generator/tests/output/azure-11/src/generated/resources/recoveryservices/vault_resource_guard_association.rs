@@ -62,10 +62,10 @@ pub mod vault_resource_guard_association {
     pub struct VaultResourceGuardAssociationArgs {
         /// ID of the Resource Guard which should be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_guard_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_guard_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the Recovery Services Vault which should be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VaultResourceGuardAssociationResult {

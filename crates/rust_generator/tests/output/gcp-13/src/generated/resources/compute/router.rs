@@ -110,16 +110,16 @@ pub mod router {
         /// BGP information specific to this router.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub bgp: pulumi_gestalt_rust::InputOrOutput<
+        pub bgp: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RouterBgp>,
         >,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates if a router is dedicated for use with encrypted VLAN
         /// attachments (interconnectAttachments).
         #[builder(into, default)]
-        pub encrypted_interconnect_router: pulumi_gestalt_rust::InputOrOutput<
+        pub encrypted_interconnect_router: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Name of the resource. The name must be 1-63 characters long, and
@@ -129,20 +129,20 @@ pub mod router {
         /// following characters must be a dash, lowercase letter, or digit,
         /// except the last character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the network to which this router belongs.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where the router resides.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RouterResult {

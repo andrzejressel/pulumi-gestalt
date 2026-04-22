@@ -149,7 +149,7 @@ pub mod enterprise_key {
     pub struct EnterpriseKeyArgs {
         /// Settings for keys that can be used by Android apps.
         #[builder(into, default)]
-        pub android_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub android_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::recaptcha::EnterpriseKeyAndroidSettings>,
         >,
         /// Human-readable display name of this key. Modifiable by user.
@@ -158,10 +158,10 @@ pub mod enterprise_key {
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Settings for keys that can be used by iOS apps.
         #[builder(into, default)]
-        pub ios_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub ios_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::recaptcha::EnterpriseKeyIosSettings>,
         >,
         /// See [Creating and managing labels](https://cloud.google.com/recaptcha-enterprise/docs/labels).
@@ -169,25 +169,25 @@ pub mod enterprise_key {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options for user acceptance testing.
         #[builder(into, default)]
-        pub testing_options: pulumi_gestalt_rust::InputOrOutput<
+        pub testing_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::recaptcha::EnterpriseKeyTestingOptions>,
         >,
         /// Settings specific to keys that can be used for WAF (Web Application Firewall).
         #[builder(into, default)]
-        pub waf_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub waf_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::recaptcha::EnterpriseKeyWafSettings>,
         >,
         /// Settings for keys that can be used by websites.
         #[builder(into, default)]
-        pub web_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub web_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::recaptcha::EnterpriseKeyWebSettings>,
         >,
     }

@@ -56,13 +56,13 @@ pub mod disk_attachment {
     pub struct Disk_attachmentArgs {
         /// The name of the Lightsail Disk.
         #[builder(into)]
-        pub disk_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub disk_name: pulumi_gestalt_rust::Input<String>,
         /// The disk path to expose to the instance.
         #[builder(into)]
-        pub disk_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub disk_path: pulumi_gestalt_rust::Input<String>,
         /// The name of the Lightsail Instance to attach to.
         #[builder(into)]
-        pub instance_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct Disk_attachmentResult {

@@ -187,47 +187,47 @@ pub mod node_pool {
         ///
         /// - - -
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// Labels associated with this resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Local disk encryption options. This field is only used when enabling CMEK support.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub local_disk_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub local_disk_encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::edgecontainer::NodePoolLocalDiskEncryption>,
         >,
         /// The location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Only machines matching this filter will be allowed to join the node pool.
         /// The filtering language accepts strings like "name=<name>", and is
         /// documented in more detail in [AIP-160](https://google.aip.dev/160).
         #[builder(into, default)]
-        pub machine_filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub machine_filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of the node pool.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for each node in the NodePool
         /// Structure is documented below.
         #[builder(into, default)]
-        pub node_config: pulumi_gestalt_rust::InputOrOutput<
+        pub node_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::edgecontainer::NodePoolNodeConfig>,
         >,
         /// The number of nodes in the pool.
         #[builder(into)]
-        pub node_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub node_count: pulumi_gestalt_rust::Input<i32>,
         /// Name of the Google Distributed Cloud Edge zone where this node pool will be created. For example: `us-central1-edge-customer-a`.
         #[builder(into)]
-        pub node_location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NodePoolResult {

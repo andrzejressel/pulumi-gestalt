@@ -54,14 +54,14 @@ pub mod indexing_configuration {
     pub struct IndexingConfigurationArgs {
         /// Thing group indexing configuration. See below.
         #[builder(into, default)]
-        pub thing_group_indexing_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub thing_group_indexing_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::iot::IndexingConfigurationThingGroupIndexingConfiguration,
             >,
         >,
         /// Thing indexing configuration. See below.
         #[builder(into, default)]
-        pub thing_indexing_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub thing_indexing_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::iot::IndexingConfigurationThingIndexingConfiguration,
             >,

@@ -10,13 +10,13 @@ pub mod get_template_spec_version {
     pub struct GetTemplateSpecVersionArgs {
         /// The name of this Template Spec.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Template Spec exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Version Name of the Template Spec.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTemplateSpecVersionResult {

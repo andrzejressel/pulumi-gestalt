@@ -11,19 +11,19 @@ pub mod get_router_nat {
         /// Name of the NAT service. The name must be 1-63 characters long and
         /// comply with RFC1035.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where the router and NAT reside.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Cloud Router in which this NAT will be configured.
         ///
         /// - - -
         #[builder(into)]
-        pub router: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub router: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRouterNatResult {

@@ -35,31 +35,31 @@ pub mod space {
     pub struct SpaceArgs {
         /// The ID of the associated Domain.
         #[builder(into)]
-        pub domain_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_id: pulumi_gestalt_rust::Input<String>,
         /// A collection of ownership settings. Required if `space_sharing_settings` is set. See `ownership_settings` Block below.
         #[builder(into, default)]
-        pub ownership_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub ownership_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::SpaceOwnershipSettings>,
         >,
         /// The name of the space that appears in the SageMaker Studio UI.
         #[builder(into, default)]
-        pub space_display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub space_display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the space.
         #[builder(into)]
-        pub space_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub space_name: pulumi_gestalt_rust::Input<String>,
         /// A collection of space settings. See `space_settings` Block below.
         #[builder(into, default)]
-        pub space_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub space_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::SpaceSpaceSettings>,
         >,
         /// A collection of space sharing settings. Required if `ownership_settings` is set. See `space_sharing_settings` Block below.
         #[builder(into, default)]
-        pub space_sharing_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub space_sharing_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::SpaceSpaceSharingSettings>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

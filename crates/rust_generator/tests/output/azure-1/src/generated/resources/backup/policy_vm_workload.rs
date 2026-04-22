@@ -76,26 +76,26 @@ pub mod policy_vm_workload {
     pub struct PolicyVMWorkloadArgs {
         /// The name of the VM Workload Backup Policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `protection_policy` blocks as defined below.
         #[builder(into)]
-        pub protection_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub protection_policies: pulumi_gestalt_rust::Input<
             Vec<super::super::types::backup::PolicyVmWorkloadProtectionPolicy>,
         >,
         /// The name of the Recovery Services Vault to use. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the VM Workload Backup Policy. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `settings` block as defined below.
         #[builder(into)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             super::super::types::backup::PolicyVmWorkloadSettings,
         >,
         /// The VM Workload type for the Backup Policy. Possible values are `SQLDataBase` and `SAPHanaDatabase`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub workload_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workload_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyVMWorkloadResult {

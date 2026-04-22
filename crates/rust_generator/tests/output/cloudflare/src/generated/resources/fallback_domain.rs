@@ -23,14 +23,14 @@ pub mod fallback_domain {
     pub struct FallbackDomainArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub domains: pulumi_gestalt_rust::InputOrOutput<
+        pub domains: pulumi_gestalt_rust::Input<
             Vec<super::types::FallbackDomainDomain>,
         >,
         /// The settings policy for which to configure this fallback domain policy.
         #[builder(into, default)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FallbackDomainResult {

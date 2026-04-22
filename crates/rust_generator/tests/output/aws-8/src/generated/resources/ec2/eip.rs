@@ -132,37 +132,37 @@ pub mod eip {
     pub struct EipArgs {
         /// IP address from an EC2 BYOIP pool. This option is only available for VPC EIPs.
         #[builder(into, default)]
-        pub address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub address: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-specified primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.
         #[builder(into, default)]
-        pub associate_with_private_ip: pulumi_gestalt_rust::InputOrOutput<
+        pub associate_with_private_ip: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// ID  of a customer-owned address pool. For more on customer owned IP addressed check out [Customer-owned IP addresses guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing).
         #[builder(into, default)]
-        pub customer_owned_ipv4_pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_owned_ipv4_pool: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates if this EIP is for use in VPC (`vpc`).
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// EC2 instance ID.
         #[builder(into, default)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of an IPAM pool which has an Amazon-provided or BYOIP public IPv4 CIDR provisioned to it.
         #[builder(into, default)]
-        pub ipam_pool_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipam_pool_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location from which the IP address is advertised. Use this parameter to limit the address to this location.
         #[builder(into, default)]
-        pub network_border_group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_border_group: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network interface ID to associate with.
         #[builder(into, default)]
-        pub network_interface: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_interface: pulumi_gestalt_rust::Input<Option<String>>,
         /// EC2 IPv4 address pool identifier or `amazon`.
         /// This option is only available for VPC EIPs.
         #[builder(into, default)]
-        pub public_ipv4_pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_ipv4_pool: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. Tags can only be applied to EIPs in a VPC. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Boolean if the EIP is in a VPC or not. Use `domain` instead.
@@ -173,7 +173,7 @@ pub mod eip {
         /// > **NOTE:** Specifying both `public_ipv4_pool` and `address` won't cause an error but `address` will be used in the
         /// case both options are defined as the api only requires one or the other.
         #[builder(into, default)]
-        pub vpc: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub vpc: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EipResult {

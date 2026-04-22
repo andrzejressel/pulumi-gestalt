@@ -133,17 +133,17 @@ pub mod attestor {
         /// A Container Analysis ATTESTATION_AUTHORITY Note, created by the user.
         /// Structure is documented below.
         #[builder(into)]
-        pub attestation_authority_note: pulumi_gestalt_rust::InputOrOutput<
+        pub attestation_authority_note: pulumi_gestalt_rust::Input<
             super::super::types::binaryauthorization::AttestorAttestationAuthorityNote,
         >,
         /// A descriptive comment. This field may be updated. The field may be displayed in chooser dialogs.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AttestorResult {

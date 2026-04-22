@@ -10,18 +10,18 @@ pub mod get_network_insights_analysis {
     pub struct GetNetworkInsightsAnalysisArgs {
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::ec2::GetNetworkInsightsAnalysisFilter>,
             >,
         >,
         /// ID of the Network Insights Analysis to select.
         #[builder(into, default)]
-        pub network_insights_analysis_id: pulumi_gestalt_rust::InputOrOutput<
+        pub network_insights_analysis_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

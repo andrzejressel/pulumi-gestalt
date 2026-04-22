@@ -10,10 +10,10 @@ pub mod get_service {
     pub struct GetServiceArgs {
         /// Specifies the name of the SignalR service.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group the SignalR service is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServiceResult {

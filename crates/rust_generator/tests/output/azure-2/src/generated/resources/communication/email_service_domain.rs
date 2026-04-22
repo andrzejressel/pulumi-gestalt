@@ -53,21 +53,21 @@ pub mod email_service_domain {
     pub struct EmailServiceDomainArgs {
         /// Describes how a Domains resource is being managed. Possible values are `AzureManaged`, `CustomerManaged`, `CustomerManagedInExchangeOnline`. Changing this forces a new Email Communication Service to be created.
         #[builder(into)]
-        pub domain_management: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_management: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the Email Communication Service where the Domain belongs to. Changing this forces a new Email Communication Service to be created.
         #[builder(into)]
-        pub email_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_service_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Email Communication Service resource. If `domain_management` is `AzureManaged`, the name must be `AzureManagedDomain`. Changing this forces a new Email Communication Service to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Email Communication Service.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Describes user engagement tracking is enabled or disabled. Defaults to `false`.
         #[builder(into, default)]
-        pub user_engagement_tracking_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub user_engagement_tracking_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

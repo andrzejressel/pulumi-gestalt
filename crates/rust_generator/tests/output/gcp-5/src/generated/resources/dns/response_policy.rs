@@ -102,29 +102,29 @@ pub mod response_policy {
     pub struct ResponsePolicyArgs {
         /// The description of the response policy, such as `My new response policy`.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of Google Kubernetes Engine clusters that can see this zone.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub gke_clusters: pulumi_gestalt_rust::InputOrOutput<
+        pub gke_clusters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dns::ResponsePolicyGkeCluster>>,
         >,
         /// The list of network names specifying networks to which this policy is applied.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub networks: pulumi_gestalt_rust::InputOrOutput<
+        pub networks: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dns::ResponsePolicyNetwork>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user assigned name for this Response Policy, such as `myresponsepolicy`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub response_policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub response_policy_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResponsePolicyResult {

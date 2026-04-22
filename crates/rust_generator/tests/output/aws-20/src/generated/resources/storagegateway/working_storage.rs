@@ -38,10 +38,10 @@ pub mod working_storage {
     pub struct WorkingStorageArgs {
         /// Local disk identifier. For example, `pci-0000:03:00.0-scsi-0:0:0:0`.
         #[builder(into)]
-        pub disk_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub disk_id: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the gateway.
         #[builder(into)]
-        pub gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkingStorageResult {

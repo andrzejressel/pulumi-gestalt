@@ -38,12 +38,12 @@ pub mod fast_snapshot_restore {
     pub struct FastSnapshotRestoreArgs {
         /// Availability zone in which to enable fast snapshot restores.
         #[builder(into)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub availability_zone: pulumi_gestalt_rust::Input<String>,
         /// ID of the snapshot.
         #[builder(into)]
-        pub snapshot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub snapshot_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::ebs::FastSnapshotRestoreTimeouts>,
         >,
     }

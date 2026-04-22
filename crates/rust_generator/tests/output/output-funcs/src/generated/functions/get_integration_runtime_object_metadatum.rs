@@ -10,16 +10,16 @@ pub mod get_integration_runtime_object_metadatum {
     pub struct GetIntegrationRuntimeObjectMetadatumArgs {
         /// The factory name.
         #[builder(into)]
-        pub factory_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub factory_name: pulumi_gestalt_rust::Input<String>,
         /// The integration runtime name.
         #[builder(into)]
-        pub integration_runtime_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_runtime_name: pulumi_gestalt_rust::Input<String>,
         /// Metadata path.
         #[builder(into, default)]
-        pub metadata_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource group name.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetIntegrationRuntimeObjectMetadatumResult {

@@ -95,19 +95,19 @@ pub mod restore_point_collection {
     pub struct RestorePointCollectionArgs {
         /// The Azure location where the Virtual Machine Restore Point Collection should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Virtual Machine Restore Point Collection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the Virtual Machine Restore Point Collection should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the virtual machine that will be associated with this Virtual Machine Restore Point Collection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source_virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_virtual_machine_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to this Virtual Machine Restore Point Collection.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

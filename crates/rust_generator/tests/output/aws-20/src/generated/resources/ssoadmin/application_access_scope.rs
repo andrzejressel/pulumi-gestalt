@@ -47,15 +47,15 @@ pub mod application_access_scope {
     pub struct ApplicationAccessScopeArgs {
         /// Specifies the ARN of the application with the access scope with the targets to add or update.
         #[builder(into)]
-        pub application_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_arn: pulumi_gestalt_rust::Input<String>,
         /// Specifies an array list of ARNs that represent the authorized targets for this access scope.
         #[builder(into, default)]
-        pub authorized_targets: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub authorized_targets: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the name of the access scope to be associated with the specified targets.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApplicationAccessScopeResult {

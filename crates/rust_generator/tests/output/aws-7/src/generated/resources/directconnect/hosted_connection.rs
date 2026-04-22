@@ -31,19 +31,19 @@ pub mod hosted_connection {
     pub struct HostedConnectionArgs {
         /// The bandwidth of the connection. Valid values for dedicated connections: 1Gbps, 10Gbps. Valid values for hosted connections: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps and 10Gbps. Case sensitive.
         #[builder(into)]
-        pub bandwidth: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bandwidth: pulumi_gestalt_rust::Input<String>,
         /// The ID of the interconnect or LAG.
         #[builder(into)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the connection.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the AWS account of the customer for the connection.
         #[builder(into)]
-        pub owner_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owner_account_id: pulumi_gestalt_rust::Input<String>,
         /// The dedicated VLAN provisioned to the hosted connection.
         #[builder(into)]
-        pub vlan: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub vlan: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct HostedConnectionResult {

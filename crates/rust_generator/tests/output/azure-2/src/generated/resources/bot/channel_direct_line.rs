@@ -55,16 +55,16 @@ pub mod channel_direct_line {
     pub struct ChannelDirectLineArgs {
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// The supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Bot Channel. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A site represents a client application that you want to connect to your bot. One or more `site` blocks as defined below.
         #[builder(into)]
-        pub sites: pulumi_gestalt_rust::InputOrOutput<
+        pub sites: pulumi_gestalt_rust::Input<
             Vec<super::super::types::bot::ChannelDirectLineSite>,
         >,
     }

@@ -49,22 +49,22 @@ pub mod dev_box_definition {
     pub struct DevBoxDefinitionArgs {
         /// The ID of the associated Dev Center. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub dev_center_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the image for the Dev Center Dev Box Definition.
         #[builder(into)]
-        pub image_reference_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_reference_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Dev Center Dev Box Definition should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this Dev Center Dev Box Definition. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the SKU for the Dev Center Dev Box Definition.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Dev Center Dev Box Definition.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -36,16 +36,16 @@ pub mod cluster_snapshot {
     pub struct ClusterSnapshotArgs {
         /// The DB Cluster Identifier from which to take the snapshot.
         #[builder(into)]
-        pub db_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The Identifier for the snapshot.
         #[builder(into)]
-        pub db_cluster_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<String>,
         /// List of AWS Account IDs to share the snapshot with. Use `all` to make the snapshot public.
         #[builder(into, default)]
-        pub shared_accounts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub shared_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the DB cluster. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -105,39 +105,39 @@ pub mod network_sim_policy {
     pub struct NetworkSimPolicyArgs {
         /// The ID of default slice to use if the UE does not explicitly specify it. This slice must exist in the `slice` block.
         #[builder(into)]
-        pub default_slice_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_slice_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Azure Region where the Mobile Network Sim Policy should exist. Changing this forces a new Mobile Network Sim Policies to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Mobile Network which the Sim Policy belongs to. Changing this forces a new Mobile Network Sim Policies to be created.
         #[builder(into)]
-        pub mobile_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Mobile Network Sim Policies. Changing this forces a new Mobile Network Sim Policies to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// RAT/Frequency Selection Priority Index, defined in 3GPP TS 36.413.
         #[builder(into, default)]
-        pub rat_frequency_selection_priority_index: pulumi_gestalt_rust::InputOrOutput<
+        pub rat_frequency_selection_priority_index: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Interval for the user equipment periodic registration update procedure. Defaults to `3240`.
         #[builder(into, default)]
-        pub registration_timer_in_seconds: pulumi_gestalt_rust::InputOrOutput<
+        pub registration_timer_in_seconds: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// An array of `slice` block as defined below. The allowed slices and the settings to use for them. The list must not contain duplicate items and must contain at least one item.
         #[builder(into)]
-        pub slices: pulumi_gestalt_rust::InputOrOutput<
+        pub slices: pulumi_gestalt_rust::Input<
             Vec<super::super::types::mobile::NetworkSimPolicySlice>,
         >,
         /// A mapping of tags which should be assigned to the Mobile Network Sim Policies.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `user_equipment_aggregate_maximum_bit_rate` block as defined below.
         #[builder(into)]
-        pub user_equipment_aggregate_maximum_bit_rate: pulumi_gestalt_rust::InputOrOutput<
+        pub user_equipment_aggregate_maximum_bit_rate: pulumi_gestalt_rust::Input<
             super::super::types::mobile::NetworkSimPolicyUserEquipmentAggregateMaximumBitRate,
         >,
     }

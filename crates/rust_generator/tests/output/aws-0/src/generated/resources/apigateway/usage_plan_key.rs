@@ -57,13 +57,13 @@ pub mod usage_plan_key {
     pub struct UsagePlanKeyArgs {
         /// Identifier of the API key resource.
         #[builder(into)]
-        pub key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_id: pulumi_gestalt_rust::Input<String>,
         /// Type of the API key resource. Currently, the valid key type is API_KEY.
         #[builder(into)]
-        pub key_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_type: pulumi_gestalt_rust::Input<String>,
         /// Id of the usage plan resource representing to associate the key to.
         #[builder(into)]
-        pub usage_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub usage_plan_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UsagePlanKeyResult {

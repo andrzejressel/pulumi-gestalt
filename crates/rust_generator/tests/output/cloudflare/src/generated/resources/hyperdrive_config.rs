@@ -45,23 +45,23 @@ pub mod hyperdrive_config {
     pub struct HyperdriveConfigArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The caching details for the Hyperdrive configuration.
         #[builder(into, default)]
-        pub caching: pulumi_gestalt_rust::InputOrOutput<
+        pub caching: pulumi_gestalt_rust::Input<
             Option<super::types::HyperdriveConfigCaching>,
         >,
         /// The name of the Hyperdrive configuration.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The origin details for the Hyperdrive configuration.
         #[builder(into)]
-        pub origin: pulumi_gestalt_rust::InputOrOutput<
+        pub origin: pulumi_gestalt_rust::Input<
             super::types::HyperdriveConfigOrigin,
         >,
         /// The identifier of this resource. This is the hyperdrive config value.
         #[builder(into, default)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HyperdriveConfigResult {

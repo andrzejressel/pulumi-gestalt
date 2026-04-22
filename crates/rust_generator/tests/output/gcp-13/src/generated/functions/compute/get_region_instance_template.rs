@@ -12,21 +12,21 @@ pub mod get_region_instance_template {
         /// See [API filter parameter documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionInstanceTemplates/list#body.QUERY_PARAMETERS.filter) for reference.
         /// If multiple instance templates match, either adjust the filter or specify `most_recent`. One of `name` or `filter` must be provided.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// If `filter` is provided, ensures the most recent template is returned when multiple instance templates match. One of `name` or `filter` must be provided.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the instance template. One of `name` or `filter` must be provided.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If `project` is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Region in which the resource belongs.
         /// If `region` is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegionInstanceTemplateResult {

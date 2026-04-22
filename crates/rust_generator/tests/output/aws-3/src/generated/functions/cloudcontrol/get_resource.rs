@@ -10,18 +10,18 @@ pub mod get_resource {
     pub struct GetResourceArgs {
         /// Identifier of the CloudFormation resource type. For example, `vpc-12345678`.
         #[builder(into)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identifier: pulumi_gestalt_rust::Input<String>,
         /// ARN of the IAM Role to assume for operations.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// CloudFormation resource type name. For example, `AWS::EC2::VPC`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_name: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the CloudFormation resource type version.
         #[builder(into, default)]
-        pub type_version_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_version_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetResourceResult {

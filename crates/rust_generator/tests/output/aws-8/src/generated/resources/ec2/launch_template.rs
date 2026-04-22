@@ -20,169 +20,169 @@ pub mod launch_template {
         /// Specify volumes to attach to the instance besides the volumes specified by the AMI.
         /// See Block Devices below for details.
         #[builder(into, default)]
-        pub block_device_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub block_device_mappings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::LaunchTemplateBlockDeviceMapping>>,
         >,
         /// Targeting for EC2 capacity reservations. See Capacity Reservation Specification below for more details.
         #[builder(into, default)]
-        pub capacity_reservation_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_reservation_specification: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ec2::LaunchTemplateCapacityReservationSpecification,
             >,
         >,
         /// The CPU options for the instance. See CPU Options below for more details.
         #[builder(into, default)]
-        pub cpu_options: pulumi_gestalt_rust::InputOrOutput<
+        pub cpu_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateCpuOptions>,
         >,
         /// Customize the credit specification of the instance. See Credit
         /// Specification below for more details.
         #[builder(into, default)]
-        pub credit_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub credit_specification: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateCreditSpecification>,
         >,
         /// Default Version of the launch template.
         #[builder(into, default)]
-        pub default_version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_version: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Description of the launch template.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, enables [EC2 Instance Stop Protection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html).
         #[builder(into, default)]
-        pub disable_api_stop: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_api_stop: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If `true`, enables [EC2 Instance
         /// Termination Protection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingDisableAPITermination.html)
         #[builder(into, default)]
-        pub disable_api_termination: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_api_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If `true`, the launched EC2 instance will be EBS-optimized.
         #[builder(into, default)]
-        pub ebs_optimized: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ebs_optimized: pulumi_gestalt_rust::Input<Option<String>>,
         /// The elastic GPU to attach to the instance. See Elastic GPU
         /// below for more details.
         #[builder(into, default)]
-        pub elastic_gpu_specifications: pulumi_gestalt_rust::InputOrOutput<
+        pub elastic_gpu_specifications: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::LaunchTemplateElasticGpuSpecification>>,
         >,
         /// Configuration block containing an Elastic Inference Accelerator to attach to the instance. See Elastic Inference Accelerator below for more details.
         #[builder(into, default)]
-        pub elastic_inference_accelerator: pulumi_gestalt_rust::InputOrOutput<
+        pub elastic_inference_accelerator: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateElasticInferenceAccelerator>,
         >,
         /// Enable Nitro Enclaves on launched instances. See Enclave Options below for more details.
         #[builder(into, default)]
-        pub enclave_options: pulumi_gestalt_rust::InputOrOutput<
+        pub enclave_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateEnclaveOptions>,
         >,
         /// The hibernation options for the instance. See Hibernation Options below for more details.
         #[builder(into, default)]
-        pub hibernation_options: pulumi_gestalt_rust::InputOrOutput<
+        pub hibernation_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateHibernationOptions>,
         >,
         /// The IAM Instance Profile to launch the instance with. See Instance Profile
         /// below for more details.
         #[builder(into, default)]
-        pub iam_instance_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub iam_instance_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateIamInstanceProfile>,
         >,
         /// The AMI from which to launch the instance or use a Systems Manager parameter convention e.g. `resolve:ssm:parameter-name`. See [docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id) for more details.
         #[builder(into, default)]
-        pub image_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Shutdown behavior for the instance. Can be `stop` or `terminate`.
         /// (Default: `stop`).
         #[builder(into, default)]
-        pub instance_initiated_shutdown_behavior: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_initiated_shutdown_behavior: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The market (purchasing) option for the instance. See Market Options
         /// below for details.
         #[builder(into, default)]
-        pub instance_market_options: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_market_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateInstanceMarketOptions>,
         >,
         /// The attribute requirements for the type of instance. If present then `instance_type` cannot be present.
         #[builder(into, default)]
-        pub instance_requirements: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_requirements: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateInstanceRequirements>,
         >,
         /// The type of the instance. If present then `instance_requirements` cannot be present.
         #[builder(into, default)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The kernel ID.
         #[builder(into, default)]
-        pub kernel_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kernel_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The key name to use for the instance.
         #[builder(into, default)]
-        pub key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of license specifications to associate with. See License Specification below for more details.
         #[builder(into, default)]
-        pub license_specifications: pulumi_gestalt_rust::InputOrOutput<
+        pub license_specifications: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::LaunchTemplateLicenseSpecification>>,
         >,
         /// The maintenance options for the instance. See Maintenance Options below for more details.
         #[builder(into, default)]
-        pub maintenance_options: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateMaintenanceOptions>,
         >,
         /// Customize the metadata options for the instance. See Metadata Options below for more details.
         #[builder(into, default)]
-        pub metadata_options: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateMetadataOptions>,
         >,
         /// The monitoring option for the instance. See Monitoring below for more details.
         #[builder(into, default)]
-        pub monitoring: pulumi_gestalt_rust::InputOrOutput<
+        pub monitoring: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplateMonitoring>,
         >,
         /// The name of the launch template. If you leave this blank, the provider will auto-generate a unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Customize network interfaces to be attached at instance boot time. See Network
         /// Interfaces below for more details.
         #[builder(into, default)]
-        pub network_interfaces: pulumi_gestalt_rust::InputOrOutput<
+        pub network_interfaces: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::LaunchTemplateNetworkInterface>>,
         >,
         /// The placement of the instance. See Placement below for more details.
         #[builder(into, default)]
-        pub placement: pulumi_gestalt_rust::InputOrOutput<
+        pub placement: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplatePlacement>,
         >,
         /// The options for the instance hostname. The default values are inherited from the subnet. See Private DNS Name Options below for more details.
         #[builder(into, default)]
-        pub private_dns_name_options: pulumi_gestalt_rust::InputOrOutput<
+        pub private_dns_name_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchTemplatePrivateDnsNameOptions>,
         >,
         /// The ID of the RAM disk.
         #[builder(into, default)]
-        pub ram_disk_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ram_disk_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of security group names to associate with. If you are creating Instances in a VPC, use
         /// `vpc_security_group_ids` instead.
         #[builder(into, default)]
-        pub security_group_names: pulumi_gestalt_rust::InputOrOutput<
+        pub security_group_names: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The tags to apply to the resources during launch. See Tag Specifications below for more details. Default tags are currently not propagated to ASG created resources so you may wish to inject your default tags into this variable against the relevant child resource types created.
         #[builder(into, default)]
-        pub tag_specifications: pulumi_gestalt_rust::InputOrOutput<
+        pub tag_specifications: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::LaunchTemplateTagSpecification>>,
         >,
         /// A map of tags to assign to the launch template. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whether to update Default Version each update. Conflicts with `default_version`.
         #[builder(into, default)]
-        pub update_default_version: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub update_default_version: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The base64-encoded user data to provide when launching the instance.
         #[builder(into, default)]
-        pub user_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of security group IDs to associate with. Conflicts with `network_interfaces.security_groups`
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
     }

@@ -47,18 +47,18 @@ pub mod application {
     #[allow(dead_code)]
     pub struct ApplicationArgs {
         #[builder(into, default)]
-        pub appversion_lifecycle: pulumi_gestalt_rust::InputOrOutput<
+        pub appversion_lifecycle: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticbeanstalk::ApplicationAppversionLifecycle>,
         >,
         /// Short description of the application
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the application, must be unique within your account
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of tags for the Elastic Beanstalk Application. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

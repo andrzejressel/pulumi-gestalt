@@ -86,17 +86,17 @@ pub mod deny_policy {
     pub struct DenyPolicyArgs {
         /// The display name of the rule.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The attachment point is identified by its URL-encoded full resource name.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Rules to be applied.
         /// Structure is documented below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::iam::DenyPolicyRule>,
         >,
     }

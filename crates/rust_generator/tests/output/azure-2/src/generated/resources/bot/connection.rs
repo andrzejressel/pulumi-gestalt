@@ -56,33 +56,33 @@ pub mod connection {
     pub struct ConnectionArgs {
         /// The name of the Bot Resource this connection will be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// The Client ID that will be used to authenticate with the service provider.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// The Client Secret that will be used to authenticate with the service provider.
         #[builder(into)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_secret: pulumi_gestalt_rust::Input<String>,
         /// The supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Bot Connection. Changing this forces a new resource to be created. Must be globally unique.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of additional parameters to apply to the connection.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the resource group in which to create the Bot Connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Scopes at which the connection should be applied.
         #[builder(into, default)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scopes: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the service provider that will be associated with this connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub service_provider_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_provider_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConnectionResult {

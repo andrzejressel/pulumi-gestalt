@@ -11,7 +11,7 @@ pub mod get_crypto_key_versions {
         /// The `id` of the Google Cloud Platform CryptoKey to which the key version belongs. This is also the `id` field of the
         /// `gcp.kms.CryptoKey` resource/datasource.
         #[builder(into)]
-        pub crypto_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub crypto_key: pulumi_gestalt_rust::Input<String>,
         /// The filter argument is used to add a filter query parameter that limits which versions are retrieved by the data source: ?filter={{filter}}. When no value is provided there is no filtering.
         ///
         /// Example filter values if filtering on name. Note: names take the form projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}/cryptoKeys/{{cryptoKey}}/cryptoKeyVersions.
@@ -21,7 +21,7 @@ pub mod get_crypto_key_versions {
         ///
         /// [See the documentation about using filters](https://cloud.google.com/kms/docs/sorting-and-filtering)
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetCryptoKeyVersionsResult {

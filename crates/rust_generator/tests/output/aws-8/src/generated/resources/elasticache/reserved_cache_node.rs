@@ -46,20 +46,20 @@ pub mod reserved_cache_node {
         /// Number of cache node instances to reserve.
         /// Default value is `1`.
         #[builder(into, default)]
-        pub cache_node_count: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub cache_node_count: pulumi_gestalt_rust::Input<Option<f64>>,
         /// ID of the reserved cache node offering to purchase.
         /// To determine an `reserved_cache_nodes_offering_id`, see the `aws.elasticache.getReservedCacheNodeOffering` data source.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub reserved_cache_nodes_offering_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub reserved_cache_nodes_offering_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the reservation. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticache::ReservedCacheNodeTimeouts>,
         >,
     }

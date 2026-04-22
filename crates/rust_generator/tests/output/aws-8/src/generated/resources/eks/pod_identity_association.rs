@@ -68,21 +68,21 @@ pub mod pod_identity_association {
     pub struct PodIdentityAssociationArgs {
         /// The name of the cluster to create the association in.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.
         #[builder(into)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_account: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

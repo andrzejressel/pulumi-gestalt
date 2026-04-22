@@ -66,19 +66,19 @@ pub mod registry_scope_map {
     pub struct RegistryScopeMapArgs {
         /// A list of actions to attach to the scope map (e.g. `repo/content/read`, `repo2/content/delete`).
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub actions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name of the Container Registry. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_registry_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_registry_name: pulumi_gestalt_rust::Input<String>,
         /// The description of the Container Registry.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the scope map. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Container Registry token. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegistryScopeMapResult {

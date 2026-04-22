@@ -44,16 +44,16 @@ pub mod email_template {
     pub struct EmailTemplateArgs {
         /// Specifies the content and settings for a message template that can be used in messages that are sent through the email channel. See Email Template
         #[builder(into, default)]
-        pub email_templates: pulumi_gestalt_rust::InputOrOutput<
+        pub email_templates: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::pinpoint::EmailTemplateEmailTemplate>>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.
         #[builder(into)]
-        pub template_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub template_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EmailTemplateResult {

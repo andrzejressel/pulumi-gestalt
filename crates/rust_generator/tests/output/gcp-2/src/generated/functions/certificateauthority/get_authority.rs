@@ -12,17 +12,17 @@ pub mod get_authority {
         ///
         /// - - -
         #[builder(into, default)]
-        pub certificate_authority_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_authority_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location the certificate authority exists in.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the pool the certificate authority belongs to.
         #[builder(into, default)]
-        pub pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pool: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAuthorityResult {

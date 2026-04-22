@@ -10,13 +10,13 @@ pub mod get_zone_virtual_network_link {
     pub struct GetZoneVirtualNetworkLinkArgs {
         /// The name of the Private DNS Zone Virtual Network Link.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Private DNS zone (without a terminating dot).
         #[builder(into)]
-        pub private_dns_zone_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_dns_zone_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the resource group where the Private DNS Zone exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetZoneVirtualNetworkLinkResult {

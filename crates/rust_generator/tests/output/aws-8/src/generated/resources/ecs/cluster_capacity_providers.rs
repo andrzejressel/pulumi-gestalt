@@ -48,13 +48,13 @@ pub mod cluster_capacity_providers {
     pub struct ClusterCapacityProvidersArgs {
         /// Set of names of one or more capacity providers to associate with the cluster. Valid values also include `FARGATE` and `FARGATE_SPOT`.
         #[builder(into, default)]
-        pub capacity_providers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub capacity_providers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the ECS cluster to manage capacity providers for.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Set of capacity provider strategies to use by default for the cluster. Detailed below.
         #[builder(into, default)]
-        pub default_capacity_provider_strategies: pulumi_gestalt_rust::InputOrOutput<
+        pub default_capacity_provider_strategies: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::ecs::ClusterCapacityProvidersDefaultCapacityProviderStrategy,

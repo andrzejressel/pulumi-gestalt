@@ -33,10 +33,10 @@ pub mod organization_configuration {
     pub struct OrganizationConfigurationArgs {
         /// When this setting is enabled, all new accounts that are created in, or added to, the organization are added as a member accounts of the organization’s Detective delegated administrator and Detective is enabled in that AWS Region.
         #[builder(into)]
-        pub auto_enable: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub auto_enable: pulumi_gestalt_rust::Input<bool>,
         /// ARN of the behavior graph.
         #[builder(into)]
-        pub graph_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub graph_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OrganizationConfigurationResult {

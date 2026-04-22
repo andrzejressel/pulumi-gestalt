@@ -10,19 +10,19 @@ pub mod get_dev_environment {
     pub struct GetDevEnvironmentArgs {
         /// The user-specified alias for the Dev Environment.
         #[builder(into, default)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// The system-generated unique ID of the user who created the Dev Environment.
         #[builder(into, default)]
-        pub creator_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub creator_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// - (Required) The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use [ListDevEnvironments](https://docs.aws.amazon.com/codecatalyst/latest/APIReference/API_ListDevEnvironments.html).
         #[builder(into)]
-        pub env_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub env_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the project in the space.
         #[builder(into)]
-        pub project_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_name: pulumi_gestalt_rust::Input<String>,
         /// The source repository that contains the branch to clone into the Dev Environment.
         #[builder(into, default)]
-        pub repositories: pulumi_gestalt_rust::InputOrOutput<
+        pub repositories: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::codecatalyst::GetDevEnvironmentRepository,
@@ -31,9 +31,9 @@ pub mod get_dev_environment {
         >,
         /// The name of the space.
         #[builder(into)]
-        pub space_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub space_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

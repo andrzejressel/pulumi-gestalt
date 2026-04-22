@@ -11,11 +11,11 @@ pub mod get_mesh_istio_service {
         /// Identifier for the mesh in which this Istio service is defined.
         /// Corresponds to the meshUid metric label in Istio metrics.
         #[builder(into)]
-        pub mesh_uid: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mesh_uid: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Istio service underlying this service.
         /// Corresponds to the destination_service_name metric label in Istio metrics.
         ///
@@ -23,11 +23,11 @@ pub mod get_mesh_istio_service {
         ///
         /// Other optional fields include:
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
         /// The namespace of the Istio service underlying this service.
         /// Corresponds to the destination_service_namespace metric label in Istio metrics.
         #[builder(into)]
-        pub service_namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_namespace: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetMeshIstioServiceResult {

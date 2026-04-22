@@ -10,7 +10,7 @@ pub mod get_repository {
     pub struct GetRepositoryArgs {
         /// Name for the repository. This needs to be less than 100 characters.
         #[builder(into)]
-        pub repository_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRepositoryResult {

@@ -44,18 +44,18 @@ pub mod ip_group {
     pub struct IpGroupArgs {
         /// The description of the IP group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the IP group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more pairs specifying the IP group rule (in CIDR format) from which web requests originate.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::workspaces::IpGroupRule>>,
         >,
         /// A map of tags assigned to the WorkSpaces directory. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

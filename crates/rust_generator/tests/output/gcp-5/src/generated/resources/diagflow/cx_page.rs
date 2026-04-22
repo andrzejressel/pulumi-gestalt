@@ -394,7 +394,7 @@ pub mod cx_page {
         /// Hierarchy: Agent->Flow->Page->Fulfillment/Parameter.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub advanced_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::CxPageAdvancedSettings>,
         >,
         /// The human-readable name of the page, unique within the agent.
@@ -402,23 +402,23 @@ pub mod cx_page {
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The fulfillment to call when the session is entering the page.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub entry_fulfillment: pulumi_gestalt_rust::InputOrOutput<
+        pub entry_fulfillment: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::CxPageEntryFulfillment>,
         >,
         /// Handlers associated with the page to handle events such as webhook errors, no match or no input.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub event_handlers: pulumi_gestalt_rust::InputOrOutput<
+        pub event_handlers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::diagflow::CxPageEventHandler>>,
         >,
         /// The form associated with the page, used for collecting parameters relevant to the page.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub form: pulumi_gestalt_rust::InputOrOutput<
+        pub form: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::CxPageForm>,
         >,
         /// The language of the following fields in page:
@@ -434,17 +434,17 @@ pub mod cx_page {
         /// Page.transition_routes.trigger_fulfillment.conditional_cases
         /// If not specified, the agent's default language is used. Many languages are supported. Note: languages must be enabled in the agent before they can be used.
         #[builder(into, default)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language_code: pulumi_gestalt_rust::Input<Option<String>>,
         /// The flow to create a page for.
         /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of TransitionRouteGroups associated with the page. Transition route groups must be unique within a page.
         /// If multiple transition routes within a page scope refer to the same intent, then the precedence order is: page's transition route > page's transition route group > flow's transition routes.
         /// If multiple transition route groups within a page contain the same intent, then the first group in the ordered list takes precedence.
         /// Format:projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>.
         #[builder(into, default)]
-        pub transition_route_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub transition_route_groups: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A list of transitions for the transition rules of this page. They route the conversation to another page in the same flow, or another flow.
@@ -457,7 +457,7 @@ pub mod cx_page {
         /// TransitionRoutes defined in the transition route groups with only condition specified.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub transition_routes: pulumi_gestalt_rust::InputOrOutput<
+        pub transition_routes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::diagflow::CxPageTransitionRoute>>,
         >,
     }

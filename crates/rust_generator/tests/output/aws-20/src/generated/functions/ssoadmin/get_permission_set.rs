@@ -10,16 +10,16 @@ pub mod get_permission_set {
     pub struct GetPermissionSetArgs {
         /// ARN of the permission set.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the SSO Instance associated with the permission set.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// Name of the SSO Permission Set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

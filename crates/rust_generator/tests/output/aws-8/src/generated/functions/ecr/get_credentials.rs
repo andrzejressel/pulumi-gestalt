@@ -9,7 +9,7 @@ pub mod get_credentials {
     #[allow(dead_code)]
     pub struct GetCredentialsArgs {
         #[builder(into)]
-        pub registry_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub registry_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCredentialsResult {

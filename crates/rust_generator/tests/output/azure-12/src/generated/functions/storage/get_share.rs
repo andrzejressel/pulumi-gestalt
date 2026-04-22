@@ -10,25 +10,25 @@ pub mod get_share {
     pub struct GetShareArgs {
         /// One or more acl blocks as defined below.
         #[builder(into, default)]
-        pub acls: pulumi_gestalt_rust::InputOrOutput<
+        pub acls: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::storage::GetShareAcl>>,
         >,
         /// A map of custom file share metadata.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the share.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the storage account in which the share exists.
         ///
         /// > **NOTE:** One of `storage_account_name` or `storage_account_id` must be specified. When specifying `storage_account_id` the resource will use the Resource Manager API, rather than the Data Plane API.
         #[builder(into, default)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the storage account in which the share exists. This property is deprecated in favour of `storage_account_id`.
         #[builder(into, default)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetShareResult {

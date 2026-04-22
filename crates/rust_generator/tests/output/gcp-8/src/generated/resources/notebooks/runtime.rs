@@ -181,7 +181,7 @@ pub mod runtime {
         /// The config settings for accessing runtime.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub access_config: pulumi_gestalt_rust::InputOrOutput<
+        pub access_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::RuntimeAccessConfig>,
         >,
         /// The labels to associate with this runtime. Label **keys** must
@@ -194,7 +194,7 @@ pub mod runtime {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A reference to the zone where the machine resides.
@@ -202,24 +202,24 @@ pub mod runtime {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name specified for the Notebook runtime.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The config settings for software inside the runtime.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub software_config: pulumi_gestalt_rust::InputOrOutput<
+        pub software_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::RuntimeSoftwareConfig>,
         >,
         /// Use a Compute Engine VM image to start the managed notebook instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub virtual_machine: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_machine: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::RuntimeVirtualMachine>,
         >,
     }

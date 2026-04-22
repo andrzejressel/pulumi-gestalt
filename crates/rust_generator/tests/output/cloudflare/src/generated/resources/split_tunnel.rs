@@ -21,16 +21,16 @@ pub mod split_tunnel {
     pub struct SplitTunnelArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The mode of the split tunnel policy. Available values: `include`, `exclude`.
         #[builder(into)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mode: pulumi_gestalt_rust::Input<String>,
         /// The settings policy for which to configure this split tunnel policy.
         #[builder(into, default)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The value of the tunnel attributes.
         #[builder(into)]
-        pub tunnels: pulumi_gestalt_rust::InputOrOutput<
+        pub tunnels: pulumi_gestalt_rust::Input<
             Vec<super::types::SplitTunnelTunnel>,
         >,
     }

@@ -37,20 +37,20 @@ pub mod security_profile {
     pub struct SecurityProfileArgs {
         /// Specifies the description of the Security Profile.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the identifier of the hosting Amazon Connect Instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Security Profile.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of permissions assigned to the security profile.
         #[builder(into, default)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Tags to apply to the Security Profile. If configured with a provider
         /// `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

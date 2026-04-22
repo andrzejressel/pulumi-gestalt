@@ -126,24 +126,24 @@ pub mod managed_instance_failover_group {
     pub struct ManagedInstanceFailoverGroupArgs {
         /// The Azure Region where the Managed Instance Failover Group should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Azure SQL Managed Instance which will be replicated using a Managed Instance Failover Group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub managed_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_instance_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Managed Instance Failover Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Azure SQL Managed Instance which will be replicated to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub partner_managed_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partner_managed_instance_id: pulumi_gestalt_rust::Input<String>,
         /// A `read_write_endpoint_failover_policy` block as defined below.
         #[builder(into)]
-        pub read_write_endpoint_failover_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub read_write_endpoint_failover_policy: pulumi_gestalt_rust::Input<
             super::super::types::mssql::ManagedInstanceFailoverGroupReadWriteEndpointFailoverPolicy,
         >,
         /// Failover policy for the read-only endpoint. Defaults to `true`.
         #[builder(into, default)]
-        pub readonly_endpoint_failover_policy_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub readonly_endpoint_failover_policy_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

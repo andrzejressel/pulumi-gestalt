@@ -161,11 +161,11 @@ pub mod job_iam_member {
     #[allow(dead_code)]
     pub struct JobIAMMemberArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobIamMemberCondition>,
         >,
         #[builder(into)]
-        pub job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub job_id: pulumi_gestalt_rust::Input<String>,
         /// Identities that will be granted the privilege in `role`.
         /// Each entry can have one of the following values:
         /// * **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.
@@ -175,22 +175,22 @@ pub mod job_iam_member {
         /// * **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.
         /// * **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
         #[builder(into)]
-        pub member: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member: pulumi_gestalt_rust::Input<String>,
         /// The project in which the job belongs. If it
         /// is not provided, the provider will use a default.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region in which the job belongs. If it
         /// is not provided, the provider will use a default.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The role that should be applied. Only one
         /// `gcp.dataproc.JobIAMBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         ///
         /// `gcp.dataproc.JobIAMPolicy` only:
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct JobIAMMemberResult {

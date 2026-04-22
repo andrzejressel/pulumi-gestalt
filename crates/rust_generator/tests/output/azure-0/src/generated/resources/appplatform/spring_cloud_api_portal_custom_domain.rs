@@ -70,13 +70,13 @@ pub mod spring_cloud_api_portal_custom_domain {
     pub struct SpringCloudApiPortalCustomDomainArgs {
         /// The name which should be used for this Spring Cloud API Portal Domain. Changing this forces a new Spring Cloud API Portal Domain to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud API Portal. Changing this forces a new Spring Cloud API Portal Domain to be created.
         #[builder(into)]
-        pub spring_cloud_api_portal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_api_portal_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the thumbprint of the Spring Cloud Certificate that binds to the Spring Cloud API Portal Domain.
         #[builder(into, default)]
-        pub thumbprint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub thumbprint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudApiPortalCustomDomainResult {

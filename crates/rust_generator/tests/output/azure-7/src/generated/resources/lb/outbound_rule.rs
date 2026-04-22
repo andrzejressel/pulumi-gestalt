@@ -85,30 +85,30 @@ pub mod outbound_rule {
     pub struct OutboundRuleArgs {
         /// The number of outbound ports to be used for NAT. Defaults to `1024`.
         #[builder(into, default)]
-        pub allocated_outbound_ports: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub allocated_outbound_ports: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Backend Address Pool. Outbound traffic is randomly load balanced across IPs in the backend IPs.
         #[builder(into)]
-        pub backend_address_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backend_address_pool_id: pulumi_gestalt_rust::Input<String>,
         /// Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
         #[builder(into, default)]
-        pub enable_tcp_reset: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_tcp_reset: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `frontend_ip_configuration` blocks as defined below.
         #[builder(into, default)]
-        pub frontend_ip_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub frontend_ip_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lb::OutboundRuleFrontendIpConfiguration>>,
         >,
         /// The timeout for the TCP idle connection Defaults to `4`.
         #[builder(into, default)]
-        pub idle_timeout_in_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub idle_timeout_in_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Load Balancer in which to create the Outbound Rule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub loadbalancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub loadbalancer_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Outbound Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The transport protocol for the external endpoint. Possible values are `Udp`, `Tcp` or `All`.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OutboundRuleResult {

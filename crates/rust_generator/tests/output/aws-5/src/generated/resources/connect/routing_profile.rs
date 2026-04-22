@@ -43,30 +43,30 @@ pub mod routing_profile {
     pub struct RoutingProfileArgs {
         /// Specifies the default outbound queue for the Routing Profile.
         #[builder(into)]
-        pub default_outbound_queue_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_outbound_queue_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the description of the Routing Profile.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// Specifies the identifier of the hosting Amazon Connect Instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// One or more `media_concurrencies` blocks that specify the channels that agents can handle in the Contact Control Panel (CCP) for this Routing Profile. The `media_concurrencies` block is documented below.
         #[builder(into)]
-        pub media_concurrencies: pulumi_gestalt_rust::InputOrOutput<
+        pub media_concurrencies: pulumi_gestalt_rust::Input<
             Vec<super::super::types::connect::RoutingProfileMediaConcurrency>,
         >,
         /// Specifies the name of the Routing Profile.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `queue_configs` blocks that specify the inbound queues associated with the routing profile. If no queue is added, the agent only can make outbound calls. The `queue_configs` block is documented below.
         #[builder(into, default)]
-        pub queue_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub queue_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::connect::RoutingProfileQueueConfig>>,
         >,
         /// Tags to apply to the Routing Profile. If configured with a provider
         /// `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

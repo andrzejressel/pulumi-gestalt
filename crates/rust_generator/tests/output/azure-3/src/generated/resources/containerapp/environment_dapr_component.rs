@@ -65,41 +65,41 @@ pub mod environment_dapr_component {
     pub struct EnvironmentDaprComponentArgs {
         /// The Dapr Component Type. For example `state.azure.blobstorage`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub component_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub component_type: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Container App Managed Environment for this Dapr Component. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_app_environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_app_environment_id: pulumi_gestalt_rust::Input<String>,
         /// Should the Dapr sidecar to continue initialisation if the component fails to load. Defaults to `false`
         #[builder(into, default)]
-        pub ignore_errors: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ignore_errors: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The timeout for component initialisation as a `ISO8601` formatted string. e.g. `5s`, `2h`, `1m`. Defaults to `5s`.
         #[builder(into, default)]
-        pub init_timeout: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub init_timeout: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `metadata` blocks as detailed below.
         #[builder(into, default)]
-        pub metadatas: pulumi_gestalt_rust::InputOrOutput<
+        pub metadatas: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::containerapp::EnvironmentDaprComponentMetadata>,
             >,
         >,
         /// The name for this Dapr component. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of scopes to which this component applies.
         ///
         /// > **NOTE:** See the official docs for more information at https://learn.microsoft.com/en-us/azure/container-apps/dapr-overview?tabs=bicep1%2Cyaml#component-scopes
         #[builder(into, default)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `secret` block as detailed below.
         #[builder(into, default)]
-        pub secrets: pulumi_gestalt_rust::InputOrOutput<
+        pub secrets: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::containerapp::EnvironmentDaprComponentSecret>,
             >,
         >,
         /// The version of the component.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentDaprComponentResult {

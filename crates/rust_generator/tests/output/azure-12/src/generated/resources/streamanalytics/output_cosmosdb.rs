@@ -82,25 +82,25 @@ pub mod output_cosmosdb {
     pub struct OutputCosmosdbArgs {
         /// The name of the CosmosDB container.
         #[builder(into)]
-        pub container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_name: pulumi_gestalt_rust::Input<String>,
         /// The account key for the CosmosDB database.
         #[builder(into)]
-        pub cosmosdb_account_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cosmosdb_account_key: pulumi_gestalt_rust::Input<String>,
         /// The ID of the CosmosDB database.
         #[builder(into)]
-        pub cosmosdb_sql_database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cosmosdb_sql_database_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the field in output events used to specify the primary key which insert or update operations are based on.
         #[builder(into, default)]
-        pub document_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub document_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Stream Analytics Output. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the field in output events used to specify the key for partitioning output across collections. If `container_name` contains `{partition}` token, this property is required to be specified.
         #[builder(into, default)]
-        pub partition_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub partition_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OutputCosmosdbResult {

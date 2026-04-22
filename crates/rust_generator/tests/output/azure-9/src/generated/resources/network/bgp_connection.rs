@@ -94,19 +94,19 @@ pub mod bgp_connection {
     pub struct BgpConnectionArgs {
         /// The name which should be used for this Virtual Hub Bgp Connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The peer autonomous system number for the Virtual Hub Bgp Connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub peer_asn: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub peer_asn: pulumi_gestalt_rust::Input<i32>,
         /// The peer IP address for the Virtual Hub Bgp Connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub peer_ip: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_ip: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Virtual Hub within which this Bgp connection should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of virtual network connection.
         #[builder(into, default)]
-        pub virtual_network_connection_id: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_network_connection_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

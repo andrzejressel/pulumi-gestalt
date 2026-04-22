@@ -39,22 +39,22 @@ pub mod user_profile {
     pub struct UserProfileArgs {
         /// The domain identifier.
         #[builder(into)]
-        pub domain_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_identifier: pulumi_gestalt_rust::Input<String>,
         /// The user profile status.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::UserProfileTimeouts>,
         >,
         /// The user identifier.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub user_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_identifier: pulumi_gestalt_rust::Input<String>,
         /// The user type.
         #[builder(into, default)]
-        pub user_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct UserProfileResult {

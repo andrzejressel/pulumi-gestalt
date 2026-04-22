@@ -72,22 +72,22 @@ pub mod vpc_block_public_access_exclusion {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub internet_gateway_exclusion_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub internet_gateway_exclusion_mode: pulumi_gestalt_rust::Input<String>,
         /// Id of the subnet to which this exclusion applies. Either this or the vpc_id needs to be provided.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the exclusion. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::VpcBlockPublicAccessExclusionTimeouts>,
         >,
         /// Id of the VPC to which this exclusion applies. Either this or the subnet_id needs to be provided.
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VpcBlockPublicAccessExclusionResult {

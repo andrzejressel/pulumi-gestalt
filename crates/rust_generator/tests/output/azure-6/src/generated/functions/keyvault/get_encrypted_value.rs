@@ -10,18 +10,18 @@ pub mod get_encrypted_value {
     pub struct GetEncryptedValueArgs {
         /// The Algorithm which should be used to Decrypt/Encrypt this Value. Possible values are `RSA1_5`, `RSA-OAEP` and `RSA-OAEP-256`.
         #[builder(into)]
-        pub algorithm: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub algorithm: pulumi_gestalt_rust::Input<String>,
         /// The Base64 URL Encoded Encrypted Data which should be decrypted into `plain_text_value`.
         #[builder(into, default)]
-        pub encrypted_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encrypted_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Key Vault Key which should be used to Decrypt/Encrypt this Value.
         #[builder(into)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<String>,
         /// The plain-text value which should be Encrypted into `encrypted_data`.
         ///
         /// > **Note:** One of either `encrypted_data` or `plain_text_value` must be specified and is used to populate the encrypted/decrypted value for the other field.
         #[builder(into, default)]
-        pub plain_text_value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub plain_text_value: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetEncryptedValueResult {

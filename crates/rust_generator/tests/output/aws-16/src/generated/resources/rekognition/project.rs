@@ -37,17 +37,17 @@ pub mod project {
     pub struct ProjectArgs {
         /// Specify if automatic retraining should occur. Valid values are `ENABLED` or `DISABLED`. Defaults to `DISABLED`
         #[builder(into, default)]
-        pub auto_update: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_update: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the feature being customized. Valid values are `CONTENT_MODERATION` or `CUSTOM_LABELS`. Defaults to `CUSTOM_LABELS`
         #[builder(into, default)]
-        pub feature: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub feature: pulumi_gestalt_rust::Input<Option<String>>,
         /// Desired name of the project
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::rekognition::ProjectTimeouts>,
         >,
     }

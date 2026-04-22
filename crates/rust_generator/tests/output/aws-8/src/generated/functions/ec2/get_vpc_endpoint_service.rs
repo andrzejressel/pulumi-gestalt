@@ -10,23 +10,23 @@ pub mod get_vpc_endpoint_service {
     pub struct GetVpcEndpointServiceArgs {
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetVpcEndpointServiceFilter>>,
         >,
         /// Common name of an AWS service (e.g., `s3`).
         #[builder(into, default)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service name that is specified when creating a VPC endpoint. For AWS services the service name is usually in the form `com.amazonaws.<region>.<service>` (the SageMaker Notebook service is an exception to this rule, the service name is in the form `aws.sagemaker.<region>.notebook`).
         #[builder(into, default)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service type, `Gateway` or `Interface`.
         #[builder(into, default)]
-        pub service_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match a pair on the desired VPC Endpoint Service.
         ///
         /// > **NOTE:** Specifying `service` will not work for non-AWS services or AWS services that don't follow the standard `service_name` pattern of `com.amazonaws.<region>.<service>`.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -66,15 +66,15 @@ pub mod vpc_origin {
     #[allow(dead_code)]
     pub struct VpcOriginArgs {
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfront::VpcOriginTimeouts>,
         >,
         #[builder(into, default)]
-        pub vpc_origin_endpoint_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_origin_endpoint_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfront::VpcOriginVpcOriginEndpointConfig>,
         >,
     }

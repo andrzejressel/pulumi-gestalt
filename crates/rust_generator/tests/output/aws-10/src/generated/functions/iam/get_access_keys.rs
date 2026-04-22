@@ -10,7 +10,7 @@ pub mod get_access_keys {
     pub struct GetAccessKeysArgs {
         /// Name of the IAM user associated with the access keys.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccessKeysResult {

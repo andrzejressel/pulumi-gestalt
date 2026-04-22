@@ -51,13 +51,13 @@ pub mod tag {
     pub struct TagArgs {
         /// The tag name.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// The ID of the EC2 resource to manage the tag for.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// The value of the tag.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagResult {

@@ -106,15 +106,15 @@ pub mod object_replication {
     pub struct ObjectReplicationArgs {
         /// The ID of the destination storage account. Changing this forces a new Storage Object Replication to be created.
         #[builder(into)]
-        pub destination_storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// One or more `rules` blocks as defined below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::storage::ObjectReplicationRule>,
         >,
         /// The ID of the source storage account. Changing this forces a new Storage Object Replication to be created.
         #[builder(into)]
-        pub source_storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ObjectReplicationResult {

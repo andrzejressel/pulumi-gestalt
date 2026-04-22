@@ -36,13 +36,13 @@ pub mod subnet_group {
     pub struct SubnetGroupArgs {
         /// A description of the subnet group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the subnet group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of VPC subnet IDs for the subnet group.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct SubnetGroupResult {

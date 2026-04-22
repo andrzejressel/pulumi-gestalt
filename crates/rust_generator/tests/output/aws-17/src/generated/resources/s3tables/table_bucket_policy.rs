@@ -44,10 +44,10 @@ pub mod table_bucket_policy {
     pub struct TableBucketPolicyArgs {
         /// Amazon Web Services resource-based policy document in JSON format.
         #[builder(into)]
-        pub resource_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_policy: pulumi_gestalt_rust::Input<String>,
         /// ARN referencing the Table Bucket that owns this policy.
         #[builder(into)]
-        pub table_bucket_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_bucket_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TableBucketPolicyResult {

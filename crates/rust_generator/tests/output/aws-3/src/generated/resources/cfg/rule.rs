@@ -155,36 +155,36 @@ pub mod rule {
     pub struct RuleArgs {
         /// Description of the rule
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The modes the Config rule can be evaluated in. See Evaluation Mode for more details.
         #[builder(into, default)]
-        pub evaluation_modes: pulumi_gestalt_rust::InputOrOutput<
+        pub evaluation_modes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cfg::RuleEvaluationMode>>,
         >,
         /// A string in JSON format that is passed to the AWS Config rule Lambda function.
         #[builder(into, default)]
-        pub input_parameters: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub input_parameters: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum frequency with which AWS Config runs evaluations for a rule.
         #[builder(into, default)]
-        pub maximum_execution_frequency: pulumi_gestalt_rust::InputOrOutput<
+        pub maximum_execution_frequency: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the rule
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Scope defines which resources can trigger an evaluation for the rule. See Scope Below.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<
+        pub scope: pulumi_gestalt_rust::Input<
             Option<super::super::types::cfg::RuleScope>,
         >,
         /// Source specifies the rule owner, the rule identifier, and the notifications that cause the function to evaluate your AWS resources. See Source Below.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             super::super::types::cfg::RuleSource,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

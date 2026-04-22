@@ -10,10 +10,10 @@ pub mod get_registry_image {
     pub struct GetRegistryImageArgs {
         /// If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
         #[builder(into, default)]
-        pub insecure_skip_verify: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub insecure_skip_verify: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Docker image, including any tags. e.g. `alpine:latest`
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRegistryImageResult {

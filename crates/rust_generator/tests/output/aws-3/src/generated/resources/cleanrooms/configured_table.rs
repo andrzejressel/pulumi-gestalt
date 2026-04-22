@@ -43,26 +43,26 @@ pub mod configured_table {
     pub struct ConfiguredTableArgs {
         /// The columns of the references table which will be included in the configured table.
         #[builder(into)]
-        pub allowed_columns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub allowed_columns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.
         #[builder(into)]
-        pub analysis_method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub analysis_method: pulumi_gestalt_rust::Input<String>,
         /// A description for the configured table.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the configured table.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the AWS Glue table which will be used to create the configured table.
         /// * `table_reference.database_name` - (Required - Forces new resource) - The name of the AWS Glue database which contains the table.
         /// * `table_reference.table_name` - (Required - Forces new resource) - The name of the AWS Glue table which will be used to create the configured table.
         #[builder(into)]
-        pub table_reference: pulumi_gestalt_rust::InputOrOutput<
+        pub table_reference: pulumi_gestalt_rust::Input<
             super::super::types::cleanrooms::ConfiguredTableTableReference,
         >,
         /// Key value pairs which tag the configured table.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -53,16 +53,16 @@ pub mod namespace_schema_group {
     pub struct NamespaceSchemaGroupArgs {
         /// Specifies the name of this schema group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the EventHub Namespace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the compatibility of this schema group. Possible values are `None`, `Backward`, `Forward`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub schema_compatibility: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema_compatibility: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Type of this schema group. Possible values are `Avro`, `Unknown`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub schema_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NamespaceSchemaGroupResult {

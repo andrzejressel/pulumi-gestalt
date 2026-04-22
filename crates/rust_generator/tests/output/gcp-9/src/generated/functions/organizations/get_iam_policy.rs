@@ -10,7 +10,7 @@ pub mod get_iam_policy {
     pub struct GetIamPolicyArgs {
         /// A nested configuration block that defines logging additional configuration for your project. This field is only supported on `gcp.projects.IAMPolicy`, `gcp.folder.IAMPolicy` and `gcp.organizations.IAMPolicy`.
         #[builder(into, default)]
-        pub audit_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub audit_configs: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::organizations::GetIamPolicyAuditConfig>,
             >,
@@ -22,7 +22,7 @@ pub mod get_iam_policy {
         /// Each document configuration must have one or more `binding` blocks, which
         /// each accept the following arguments:
         #[builder(into, default)]
-        pub bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::organizations::GetIamPolicyBinding>>,
         >,
     }

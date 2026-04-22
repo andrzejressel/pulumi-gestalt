@@ -101,19 +101,19 @@ pub mod gallery_application_assignment {
     pub struct GalleryApplicationAssignmentArgs {
         /// Specifies the URI to an Azure Blob that will replace the default configuration for the package if provided. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub configuration_blob_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub configuration_blob_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Gallery Application Version. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub gallery_application_version_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gallery_application_version_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the order in which the packages have to be installed. Possible values are between `0` and `2147483647`. Defaults to `0`.
         #[builder(into, default)]
-        pub order: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub order: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies a passthrough value for more generic context. This field can be any valid `string` value. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tag: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GalleryApplicationAssignmentResult {

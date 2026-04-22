@@ -84,104 +84,104 @@ pub mod topic_rule {
     #[allow(dead_code)]
     pub struct TopicRuleArgs {
         #[builder(into, default)]
-        pub cloudwatch_alarms: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudwatch_alarms: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleCloudwatchAlarm>>,
         >,
         #[builder(into, default)]
-        pub cloudwatch_logs: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudwatch_logs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleCloudwatchLog>>,
         >,
         #[builder(into, default)]
-        pub cloudwatch_metrics: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudwatch_metrics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleCloudwatchMetric>>,
         >,
         /// The description of the rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub dynamodbs: pulumi_gestalt_rust::InputOrOutput<
+        pub dynamodbs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleDynamodb>>,
         >,
         #[builder(into, default)]
-        pub dynamodbv2s: pulumi_gestalt_rust::InputOrOutput<
+        pub dynamodbv2s: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleDynamodbv2>>,
         >,
         #[builder(into, default)]
-        pub elasticsearch: pulumi_gestalt_rust::InputOrOutput<
+        pub elasticsearch: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleElasticsearch>>,
         >,
         /// Specifies whether the rule is enabled.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// Configuration block with error action to be associated with the rule. See the documentation for `cloudwatch_alarm`, `cloudwatch_logs`, `cloudwatch_metric`, `dynamodb`, `dynamodbv2`, `elasticsearch`, `firehose`, `http`, `iot_analytics`, `iot_events`, `kafka`, `kinesis`, `lambda`, `republish`, `s3`, `sns`, `sqs`, `step_functions`, `timestream` configuration blocks for further configuration details.
         #[builder(into, default)]
-        pub error_action: pulumi_gestalt_rust::InputOrOutput<
+        pub error_action: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::TopicRuleErrorAction>,
         >,
         #[builder(into, default)]
-        pub firehoses: pulumi_gestalt_rust::InputOrOutput<
+        pub firehoses: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleFirehose>>,
         >,
         #[builder(into, default)]
-        pub https: pulumi_gestalt_rust::InputOrOutput<
+        pub https: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleHttp>>,
         >,
         #[builder(into, default)]
-        pub iot_analytics: pulumi_gestalt_rust::InputOrOutput<
+        pub iot_analytics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleIotAnalytic>>,
         >,
         #[builder(into, default)]
-        pub iot_events: pulumi_gestalt_rust::InputOrOutput<
+        pub iot_events: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleIotEvent>>,
         >,
         #[builder(into, default)]
-        pub kafkas: pulumi_gestalt_rust::InputOrOutput<
+        pub kafkas: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleKafka>>,
         >,
         #[builder(into, default)]
-        pub kineses: pulumi_gestalt_rust::InputOrOutput<
+        pub kineses: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleKinesis>>,
         >,
         #[builder(into, default)]
-        pub lambdas: pulumi_gestalt_rust::InputOrOutput<
+        pub lambdas: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleLambda>>,
         >,
         /// The name of the rule.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub republishes: pulumi_gestalt_rust::InputOrOutput<
+        pub republishes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleRepublish>>,
         >,
         #[builder(into, default)]
-        pub s3: pulumi_gestalt_rust::InputOrOutput<
+        pub s3: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleS3>>,
         >,
         #[builder(into, default)]
-        pub sns: pulumi_gestalt_rust::InputOrOutput<
+        pub sns: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleSns>>,
         >,
         /// The SQL statement used to query the topic. For more information, see AWS IoT SQL Reference (http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference) in the AWS IoT Developer Guide.
         #[builder(into)]
-        pub sql: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql: pulumi_gestalt_rust::Input<String>,
         /// The version of the SQL rules engine to use when evaluating the rule.
         #[builder(into)]
-        pub sql_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql_version: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub sqs: pulumi_gestalt_rust::InputOrOutput<
+        pub sqs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleSqs>>,
         >,
         #[builder(into, default)]
-        pub step_functions: pulumi_gestalt_rust::InputOrOutput<
+        pub step_functions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleStepFunction>>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timestreams: pulumi_gestalt_rust::InputOrOutput<
+        pub timestreams: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::TopicRuleTimestream>>,
         >,
     }

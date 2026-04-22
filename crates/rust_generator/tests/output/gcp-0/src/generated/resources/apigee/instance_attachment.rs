@@ -39,14 +39,14 @@ pub mod instance_attachment {
     pub struct InstanceAttachmentArgs {
         /// The resource ID of the environment.
         #[builder(into)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment: pulumi_gestalt_rust::Input<String>,
         /// The Apigee instance associated with the Apigee environment,
         /// in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InstanceAttachmentResult {

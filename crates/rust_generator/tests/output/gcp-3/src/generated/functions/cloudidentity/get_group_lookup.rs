@@ -12,7 +12,7 @@ pub mod get_group_lookup {
         /// An entity can represent either a group with an optional namespace or a user without a namespace.
         /// The combination of id and namespace must be unique; however, the same id can be used with different namespaces. Structure is documented below.
         #[builder(into)]
-        pub group_key: pulumi_gestalt_rust::InputOrOutput<
+        pub group_key: pulumi_gestalt_rust::Input<
             super::super::super::types::cloudidentity::GetGroupLookupGroupKey,
         >,
     }

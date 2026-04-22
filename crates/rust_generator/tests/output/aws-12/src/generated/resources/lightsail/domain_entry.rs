@@ -44,19 +44,19 @@ pub mod domain_entry {
     pub struct DomainEntryArgs {
         /// The name of the Lightsail domain in which to create the entry
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// If the entry should be an alias Defaults to `false`
         #[builder(into, default)]
-        pub is_alias: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_alias: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the entry record
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Target of the domain entry
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target: pulumi_gestalt_rust::Input<String>,
         /// Type of record
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainEntryResult {

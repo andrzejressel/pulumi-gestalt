@@ -37,13 +37,13 @@ pub mod argo {
     pub struct ArgoArgs {
         /// Whether smart routing is enabled. Available values: `on`, `off`.
         #[builder(into, default)]
-        pub smart_routing: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub smart_routing: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether tiered caching is enabled. Available values: `on`, `off`.
         #[builder(into, default)]
-        pub tiered_caching: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tiered_caching: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ArgoResult {

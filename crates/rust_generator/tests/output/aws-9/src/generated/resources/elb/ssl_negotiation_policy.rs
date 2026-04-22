@@ -62,28 +62,28 @@ pub mod ssl_negotiation_policy {
     pub struct SslNegotiationPolicyArgs {
         /// An SSL Negotiation policy attribute. Each has two properties:
         #[builder(into, default)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::elb::SslNegotiationPolicyAttribute>>,
         >,
         /// The load balancer port to which the policy
         /// should be applied. This must be an active listener on the load
         /// balancer.
         #[builder(into)]
-        pub lb_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub lb_port: pulumi_gestalt_rust::Input<i32>,
         /// The load balancer to which the policy
         /// should be attached.
         #[builder(into)]
-        pub load_balancer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancer: pulumi_gestalt_rust::Input<String>,
         /// The name of the SSL negotiation policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of arbitrary keys and values that, when changed, will trigger a redeployment.
         ///
         /// To set your attributes, please see the [AWS Elastic Load Balancing Developer Guide](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-policy-table.html) for a listing of the supported SSL protocols, SSL options, and SSL ciphers.
         ///
         /// > **NOTE:** The AWS documentation references Server Order Preference, which the AWS Elastic Load Balancing API refers to as `Server-Defined-Cipher-Order`. If you wish to set Server Order Preference, use this value instead.
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

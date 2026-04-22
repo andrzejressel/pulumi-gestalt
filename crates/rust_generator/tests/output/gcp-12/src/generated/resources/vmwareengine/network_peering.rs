@@ -98,21 +98,21 @@ pub mod network_peering {
     pub struct NetworkPeeringArgs {
         /// User-provided description for this network peering.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// True if custom routes are exported to the peered network; false otherwise.
         #[builder(into, default)]
-        pub export_custom_routes: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub export_custom_routes: pulumi_gestalt_rust::Input<Option<bool>>,
         /// True if all subnet routes with a public IP address range are exported; false otherwise.
         #[builder(into, default)]
-        pub export_custom_routes_with_public_ip: pulumi_gestalt_rust::InputOrOutput<
+        pub export_custom_routes_with_public_ip: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// True if custom routes are imported from the peered network; false otherwise.
         #[builder(into, default)]
-        pub import_custom_routes: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub import_custom_routes: pulumi_gestalt_rust::Input<Option<bool>>,
         /// True if custom routes are imported from the peered network; false otherwise.
         #[builder(into, default)]
-        pub import_custom_routes_with_public_ip: pulumi_gestalt_rust::InputOrOutput<
+        pub import_custom_routes_with_public_ip: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the Network Peering.
@@ -120,24 +120,24 @@ pub mod network_peering {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative resource name of the network to peer with a standard VMware Engine network.
         /// The provided network can be a consumer VPC network or another standard VMware Engine network.
         #[builder(into)]
-        pub peer_network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_network: pulumi_gestalt_rust::Input<String>,
         /// The type of the network to peer with the VMware Engine network.
         /// Possible values are: `STANDARD`, `VMWARE_ENGINE_NETWORK`, `PRIVATE_SERVICES_ACCESS`, `NETAPP_CLOUD_VOLUMES`, `THIRD_PARTY_SERVICE`, `DELL_POWERSCALE`.
         #[builder(into)]
-        pub peer_network_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_network_type: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative resource name of the VMware Engine network. Specify the name in the following form:
         /// projects/{project}/locations/{location}/vmwareEngineNetworks/{vmwareEngineNetworkId} where {project}
         /// can either be a project number or a project ID.
         #[builder(into)]
-        pub vmware_engine_network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vmware_engine_network: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkPeeringResult {

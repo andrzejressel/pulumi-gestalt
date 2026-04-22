@@ -36,15 +36,15 @@ pub mod readiness_check {
     pub struct ReadinessCheckArgs {
         /// Unique name describing the readiness check.
         #[builder(into)]
-        pub readiness_check_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub readiness_check_name: pulumi_gestalt_rust::Input<String>,
         /// Name describing the resource set that will be monitored for readiness.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub resource_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_set_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

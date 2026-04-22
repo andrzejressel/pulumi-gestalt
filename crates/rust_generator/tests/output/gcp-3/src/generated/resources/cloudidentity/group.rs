@@ -57,28 +57,28 @@ pub mod group {
     pub struct GroupArgs {
         /// An extended description to help users determine the purpose of a Group. Must not be longer than 4,096 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the Group.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// EntityKey of the Group.
         /// Structure is documented below.
         #[builder(into)]
-        pub group_key: pulumi_gestalt_rust::InputOrOutput<
+        pub group_key: pulumi_gestalt_rust::Input<
             super::super::types::cloudidentity::GroupGroupKey,
         >,
         /// The initial configuration options for creating a Group. See the [API
         /// reference](https://cloud.google.com/identity/docs/reference/rest/v1beta1/groups/create#initialgroupconfig) for possible
         /// values. Default value: "EMPTY" Possible values: ["INITIAL_GROUP_CONFIG_UNSPECIFIED", "WITH_INITIAL_OWNER", "EMPTY"]
         #[builder(into, default)]
-        pub initial_group_config: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub initial_group_config: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more label entries that apply to the Group. Currently supported labels contain a key with an empty value.
         /// Google Groups are the default type of group and have a label with a key of cloudidentity.googleapis.com/groups.discussion_forum and an empty value.
         /// Existing Google Groups can have an additional label with a key of cloudidentity.googleapis.com/groups.security and an empty value added to them. This is an immutable change and the security label cannot be removed once added.
         /// Dynamic groups have a label with a key of cloudidentity.googleapis.com/groups.dynamic.
         /// Identity-mapped groups for Cloud Search have a label with a key of system/groups/external and an empty value.
         #[builder(into)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
         /// The resource name of the entity under which this Group resides in the
@@ -86,7 +86,7 @@ pub mod group {
         /// Must be of the form identitysources/{identity_source_id} for external-identity-mapped
         /// groups or customers/{customer_id} for Google Groups.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GroupResult {

@@ -38,7 +38,7 @@ pub mod default_subnet {
     #[allow(dead_code)]
     pub struct DefaultSubnetArgs {
         #[builder(into, default)]
-        pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::InputOrOutput<
+        pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// is required
@@ -47,38 +47,38 @@ pub mod default_subnet {
         ///
         /// This resource supports the following additional arguments:
         #[builder(into)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub availability_zone: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub customer_owned_ipv4_pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_owned_ipv4_pool: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub enable_dns64: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_dns64: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub enable_resource_name_dns_a_record_on_launch: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_resource_name_dns_a_record_on_launch: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         #[builder(into, default)]
-        pub enable_resource_name_dns_aaaa_record_on_launch: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_resource_name_dns_aaaa_record_on_launch: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Whether destroying the resource deletes the default subnet. Default: `false`
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub ipv6_cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub ipv6_native: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ipv6_native: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub map_customer_owned_ip_on_launch: pulumi_gestalt_rust::InputOrOutput<
+        pub map_customer_owned_ip_on_launch: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         #[builder(into, default)]
-        pub map_public_ip_on_launch: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub map_public_ip_on_launch: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub private_dns_hostname_type_on_launch: pulumi_gestalt_rust::InputOrOutput<
+        pub private_dns_hostname_type_on_launch: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

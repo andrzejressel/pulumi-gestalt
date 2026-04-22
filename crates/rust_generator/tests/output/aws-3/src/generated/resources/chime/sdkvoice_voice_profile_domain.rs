@@ -42,17 +42,17 @@ pub mod sdkvoice_voice_profile_domain {
     pub struct SdkvoiceVoiceProfileDomainArgs {
         /// Description of Voice Profile Domain.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of Voice Profile Domain.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for server side encryption.
         #[builder(into)]
-        pub server_side_encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub server_side_encryption_configuration: pulumi_gestalt_rust::Input<
             super::super::types::chime::SdkvoiceVoiceProfileDomainServerSideEncryptionConfiguration,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

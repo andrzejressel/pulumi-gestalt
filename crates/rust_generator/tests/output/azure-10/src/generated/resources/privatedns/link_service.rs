@@ -96,44 +96,44 @@ pub mod link_service {
     pub struct LinkServiceArgs {
         /// A list of Subscription UUID/GUID's that will be automatically be able to use this Private Link Service.
         #[builder(into, default)]
-        pub auto_approval_subscription_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_approval_subscription_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Should the Private Link Service support the Proxy Protocol?
         #[builder(into, default)]
-        pub enable_proxy_protocol: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_proxy_protocol: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of FQDNs allowed for the Private Link Service.
         #[builder(into, default)]
-        pub fqdns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub fqdns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of Frontend IP Configuration IDs from a Standard Load Balancer, where traffic from the Private Link Service should be routed. You can use Load Balancer Rules to direct this traffic to appropriate backend pools where your applications are running. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub load_balancer_frontend_ip_configuration_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancer_frontend_ip_configuration_ids: pulumi_gestalt_rust::Input<
             Vec<String>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this Private Link Service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more (up to 8) `nat_ip_configuration` block as defined below.
         #[builder(into)]
-        pub nat_ip_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub nat_ip_configurations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::privatedns::LinkServiceNatIpConfiguration>,
         >,
         /// The name of the Resource Group where the Private Link Service should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A list of Subscription UUID/GUID's that will be able to see this Private Link Service.
         ///
         /// > **NOTE:** If no Subscription IDs are specified then Azure allows every Subscription to see this Private Link Service.
         #[builder(into, default)]
-        pub visibility_subscription_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub visibility_subscription_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
     }

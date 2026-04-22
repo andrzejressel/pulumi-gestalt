@@ -66,12 +66,12 @@ pub mod service_binding {
     pub struct ServiceBindingArgs {
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of label tags associated with the ServiceBinding resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the ServiceBinding resource.
@@ -79,15 +79,15 @@ pub mod service_binding {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The full Service Directory Service name of the format
         /// projects/*/locations/*/namespaces/*/services/*
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceBindingResult {

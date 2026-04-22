@@ -156,18 +156,18 @@ pub mod membership {
         /// https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
         /// Structure is documented below.
         #[builder(into, default)]
-        pub authority: pulumi_gestalt_rust::InputOrOutput<
+        pub authority: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkehub::MembershipAuthority>,
         >,
         /// The name of this entity type to be displayed on the console. This field is unavailable in v1 of the API.
         ///
         /// > **Warning:** `description` is deprecated and will be removed in a future major release.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkehub::MembershipEndpoint>,
         >,
         /// Labels to apply to this membership.
@@ -175,23 +175,23 @@ pub mod membership {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location of the membership.
         /// The default value is `global`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The client-provided identifier of the membership.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub membership_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub membership_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MembershipResult {

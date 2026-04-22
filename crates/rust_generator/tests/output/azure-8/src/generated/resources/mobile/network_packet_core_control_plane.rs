@@ -79,73 +79,73 @@ pub mod network_packet_core_control_plane {
     pub struct NetworkPacketCoreControlPlaneArgs {
         /// The IPv4 address for the control plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub control_plane_access_ipv4_address: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane_access_ipv4_address: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The default IPv4 gateway for the control plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub control_plane_access_ipv4_gateway: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane_access_ipv4_gateway: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The IPv4 subnet for the control plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub control_plane_access_ipv4_subnet: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane_access_ipv4_subnet: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the logical name for this interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub control_plane_access_name: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane_access_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The core network technology generation. Possible values are `5GC` and `EPC`.
         #[builder(into, default)]
-        pub core_network_technology: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub core_network_technology: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::mobile::NetworkPacketCoreControlPlaneIdentity>,
         >,
         /// Settings in JSON format to allow interoperability with third party components e.g. RANs and UEs.
         #[builder(into, default)]
-        pub interoperability_settings_json: pulumi_gestalt_rust::InputOrOutput<
+        pub interoperability_settings_json: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// One or more `local_diagnostics_access` blocks as defined below. Specifies the Kubernetes ingress configuration that controls access to the packet core diagnostics through local APIs.
         #[builder(into)]
-        pub local_diagnostics_access: pulumi_gestalt_rust::InputOrOutput<
+        pub local_diagnostics_access: pulumi_gestalt_rust::Input<
             super::super::types::mobile::NetworkPacketCoreControlPlaneLocalDiagnosticsAccess,
         >,
         /// Specifies the Azure Region where the Mobile Network Packet Core Control Plane should exist. Changing this forces a new Mobile Network Packet Core Control Plane to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies The name of the Mobile Network Packet Core Control Plane. Changing this forces a new Mobile Network Packet Core Control Plane to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `platform` block as defined below.
         #[builder(into, default)]
-        pub platform: pulumi_gestalt_rust::InputOrOutput<
+        pub platform: pulumi_gestalt_rust::Input<
             Option<super::super::types::mobile::NetworkPacketCoreControlPlanePlatform>,
         >,
         /// Specifies the name of the Resource Group where the Mobile Network Packet Core Control Plane should exist. Changing this forces a new Mobile Network Packet Core Control Plane to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A list of Mobile Network Site IDs in which this packet core control plane should be deployed. The Sites must be in the same location as the packet core control plane.
         #[builder(into)]
-        pub site_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub site_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The SKU defining the throughput and SIM allowances for this packet core control plane deployment. Possible values are `G0`, `G1`, `G2`, `G3`, `G4`, `G5` and `G10`.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// Specifies the version of the packet core software that is deployed.
         #[builder(into, default)]
-        pub software_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub software_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Mobile Network Packet Core Control Plane.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the MTU in bytes that can be sent to the user equipment. The same MTU is set on the user plane data links for all data networks. The MTU set on the user plane access link will be 60 bytes greater than this value to allow for GTP encapsulation.
         #[builder(into, default)]
-        pub user_equipment_mtu_in_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub user_equipment_mtu_in_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct NetworkPacketCoreControlPlaneResult {

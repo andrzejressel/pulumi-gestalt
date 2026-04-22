@@ -160,29 +160,29 @@ pub mod function_app_function {
     pub struct FunctionAppFunctionArgs {
         /// The config for this Function in JSON format.
         #[builder(into)]
-        pub config_json: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub config_json: pulumi_gestalt_rust::Input<String>,
         /// Should this function be enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `file` block as detailed below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub files: pulumi_gestalt_rust::InputOrOutput<
+        pub files: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::FunctionAppFunctionFile>>,
         >,
         /// The ID of the Function App in which this function should reside. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub function_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_app_id: pulumi_gestalt_rust::Input<String>,
         /// The language the Function is written in. Possible values are `CSharp`, `Custom`, `Java`, `Javascript`, `Python`, `PowerShell`, and `TypeScript`.
         ///
         /// > **NOTE:** when using `Custom` language, you must specify the code handler in the `host.json` file for your function. See the [official docs](https://docs.microsoft.com/azure/azure-functions/functions-custom-handlers#hostjson) for more information.
         #[builder(into, default)]
-        pub language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the function. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The test data for the function.
         #[builder(into, default)]
-        pub test_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub test_data: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FunctionAppFunctionResult {

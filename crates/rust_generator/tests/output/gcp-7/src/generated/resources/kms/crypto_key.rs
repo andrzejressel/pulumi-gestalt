@@ -85,16 +85,16 @@ pub mod crypto_key {
         /// The resource name of the backend environment associated with all CryptoKeyVersions within this CryptoKey.
         /// The resource name is in the format "projects/*/locations/*/ekmConnections/*" and only applies to "EXTERNAL_VPC" keys.
         #[builder(into, default)]
-        pub crypto_key_backend: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub crypto_key_backend: pulumi_gestalt_rust::Input<Option<String>>,
         /// The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.
         /// If not specified at creation time, the default duration is 30 days.
         #[builder(into, default)]
-        pub destroy_scheduled_duration: pulumi_gestalt_rust::InputOrOutput<
+        pub destroy_scheduled_duration: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Whether this key may contain imported versions only.
         #[builder(into, default)]
-        pub import_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub import_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The policy used for Key Access Justifications Policy Enforcement. If this
         /// field is present and this key is enrolled in Key Access Justifications
         /// Policy Enforcement, the policy will be evaluated in encrypt, decrypt, and
@@ -105,7 +105,7 @@ pub mod crypto_key {
         /// This field is currently in beta and is subject to change.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub key_access_justifications_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub key_access_justifications_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::kms::CryptoKeyKeyAccessJustificationsPolicy>,
         >,
         /// The KeyRing that this key belongs to.
@@ -114,41 +114,41 @@ pub mod crypto_key {
         ///
         /// - - -
         #[builder(into)]
-        pub key_ring: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_ring: pulumi_gestalt_rust::Input<String>,
         /// Labels with user-defined metadata to apply to this resource.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The resource name for the CryptoKey.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The immutable purpose of this CryptoKey. See the
         /// [purpose reference](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys#CryptoKeyPurpose)
         /// for possible inputs.
         /// Default value is "ENCRYPT_DECRYPT".
         #[builder(into, default)]
-        pub purpose: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub purpose: pulumi_gestalt_rust::Input<Option<String>>,
         /// Every time this period passes, generate a new CryptoKeyVersion and set it as the primary.
         /// The first rotation will take place after the specified period. The rotation period has
         /// the format of a decimal number with up to 9 fractional digits, followed by the
         /// letter `s` (seconds). It must be greater than a day (ie, 86400).
         #[builder(into, default)]
-        pub rotation_period: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rotation_period: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set to true, the request will create a CryptoKey without any CryptoKeyVersions.
         /// You must use the `gcp.kms.CryptoKeyVersion` resource to create a new CryptoKeyVersion
         /// or `gcp.kms.KeyRingImportJob` resource to import the CryptoKeyVersion.
         #[builder(into, default)]
-        pub skip_initial_version_creation: pulumi_gestalt_rust::InputOrOutput<
+        pub skip_initial_version_creation: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A template describing settings for new crypto key versions.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub version_template: pulumi_gestalt_rust::InputOrOutput<
+        pub version_template: pulumi_gestalt_rust::Input<
             Option<super::super::types::kms::CryptoKeyVersionTemplate>,
         >,
     }

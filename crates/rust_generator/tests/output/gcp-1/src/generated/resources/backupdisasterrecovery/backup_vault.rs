@@ -67,21 +67,21 @@ pub mod backup_vault {
         /// Default value is `WITHIN_ORGANIZATION`.
         /// Possible values are: `ACCESS_RESTRICTION_UNSPECIFIED`, `WITHIN_PROJECT`, `WITHIN_ORGANIZATION`, `UNRESTRICTED`, `WITHIN_ORG_BUT_UNRESTRICTED_FOR_BA`.
         #[builder(into, default)]
-        pub access_restriction: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_restriction: pulumi_gestalt_rust::Input<Option<String>>,
         /// Allow idempotent deletion of backup vault. The request will still succeed in case the backup vault does not exist.
         #[builder(into, default)]
-        pub allow_missing: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_missing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Optional. User annotations. See https://google.aip.dev/128#annotations
         /// Stores small amounts of arbitrary data.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Required. The default and minimum enforced retention for each backup within the backup vault. The enforced retention for each backup can be extended.
         #[builder(into)]
-        pub backup_minimum_enforced_retention_duration: pulumi_gestalt_rust::InputOrOutput<
+        pub backup_minimum_enforced_retention_duration: pulumi_gestalt_rust::Input<
             String,
         >,
         /// Required. ID of the requesting object.
@@ -89,13 +89,13 @@ pub mod backup_vault {
         ///
         /// - - -
         #[builder(into)]
-        pub backup_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_vault_id: pulumi_gestalt_rust::Input<String>,
         /// Optional. The description of the BackupVault instance (2048 characters or less).
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Time after which the BackupVault resource is locked.
         #[builder(into, default)]
-        pub effective_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub effective_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// (Optional, Deprecated)
         /// If set, the following restrictions against deletion of the backup vault instance can be overridden:
         /// * deletion of a backup vault instance containing no backups, but still containing empty datasources.
@@ -103,39 +103,39 @@ pub mod backup_vault {
         ///
         /// > **Warning:** `force_delete` is deprecated and will be removed in a future major release. Use `ignore_inactive_datasources` instead.
         #[builder(into, default)]
-        pub force_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If set, allow update to extend the minimum enforced retention for backup vault. This overrides
         /// the restriction against conflicting retention periods. This conflict may occur when the
         /// expiration schedule defined by the associated backup plan is shorter than the minimum
         /// retention set by the backup vault.
         #[builder(into, default)]
-        pub force_update: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_update: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If set, the following restrictions against deletion of the backup vault instance can be overridden:
         /// * deletion of a backup vault instance that is being referenced by an active backup plan.
         #[builder(into, default)]
-        pub ignore_backup_plan_references: pulumi_gestalt_rust::InputOrOutput<
+        pub ignore_backup_plan_references: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// If set, the following restrictions against deletion of the backup vault instance can be overridden:
         /// * deletion of a backup vault instance containing no backups, but still containing empty datasources.
         #[builder(into, default)]
-        pub ignore_inactive_datasources: pulumi_gestalt_rust::InputOrOutput<
+        pub ignore_inactive_datasources: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Optional. Resource labels to represent user provided metadata.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The GCP location for the backup vault.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BackupVaultResult {

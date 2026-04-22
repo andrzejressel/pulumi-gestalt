@@ -44,26 +44,26 @@ pub mod iam_policy_assignment {
     pub struct IamPolicyAssignmentArgs {
         /// Name of the assignment.
         #[builder(into)]
-        pub assignment_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub assignment_name: pulumi_gestalt_rust::Input<String>,
         /// Status of the assignment. Valid values are `ENABLED`, `DISABLED`, and `DRAFT`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub assignment_status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub assignment_status: pulumi_gestalt_rust::Input<String>,
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon QuickSight users, groups, or both to assign the policy to. See `identities` block.
         #[builder(into, default)]
-        pub identities: pulumi_gestalt_rust::InputOrOutput<
+        pub identities: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::IamPolicyAssignmentIdentities>,
         >,
         /// Namespace that contains the assignment. Defaults to `default`.
         #[builder(into, default)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.
         #[builder(into, default)]
-        pub policy_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IamPolicyAssignmentResult {

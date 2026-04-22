@@ -38,13 +38,13 @@ pub mod cluster_iam_roles {
     pub struct ClusterIamRolesArgs {
         /// The name of the Redshift Cluster IAM Roles.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created.
         #[builder(into, default)]
-        pub default_iam_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IAM Role ARNs to associate with the cluster. A Maximum of 10 can be associated to the cluster at any time.
         #[builder(into, default)]
-        pub iam_role_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub iam_role_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterIamRolesResult {

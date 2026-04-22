@@ -10,10 +10,10 @@ pub mod get_resource_group_template_deployment {
     pub struct GetResourceGroupTemplateDeploymentArgs {
         /// The name of this Resource Group Template Deployment.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group to which the Resource Group Template Deployment was applied.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResourceGroupTemplateDeploymentResult {

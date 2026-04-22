@@ -21,9 +21,9 @@ pub mod model_package_group_policy {
     pub struct ModelPackageGroupPolicyArgs {
         /// The name of the model package group.
         #[builder(into)]
-        pub model_package_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub model_package_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub resource_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ModelPackageGroupPolicyResult {

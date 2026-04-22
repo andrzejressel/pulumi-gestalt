@@ -51,23 +51,23 @@ pub mod project {
     pub struct ProjectArgs {
         /// Description of project.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of domain which the project is part of. Must follow the regex of `^dzd[-_][a-zA-Z0-9_-]{1,36}$`.
         #[builder(into)]
-        pub domain_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_identifier: pulumi_gestalt_rust::Input<String>,
         /// List of glossary terms that can be used in the project. The list cannot be empty or include over 20 values. Each value must follow the regex of `[a-zA-Z0-9_-]{1,36}$`.
         #[builder(into, default)]
-        pub glossary_terms: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub glossary_terms: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the project. Must follow the regex of `^[\w -]+$`. and have a length of at most 64.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional flag to delete all child entities within the project.
         #[builder(into, default)]
-        pub skip_deletion_check: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_deletion_check: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::ProjectTimeouts>,
         >,
     }

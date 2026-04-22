@@ -66,29 +66,29 @@ pub mod vpc_dhcp_options {
     pub struct VpcDhcpOptionsArgs {
         /// the suffix domain name to use by default when resolving non Fully Qualified Domain Names. In other words, this is what ends up being the `search` value in the `/etc/resolv.conf` file.
         #[builder(into, default)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of name servers to configure in `/etc/resolv.conf`. If you want to use the default AWS nameservers you should set this to `AmazonProvidedDNS`.
         #[builder(into, default)]
-        pub domain_name_servers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub domain_name_servers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// How frequently, in seconds, a running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values are between 140 and 2147483647 (approximately 68 years). If no value is entered, the default lease time is 140 seconds. If you use long-term addressing for EC2 instances, you can increase the lease time and avoid frequent lease renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
         #[builder(into, default)]
-        pub ipv6_address_preferred_lease_time: pulumi_gestalt_rust::InputOrOutput<
+        pub ipv6_address_preferred_lease_time: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// List of NETBIOS name servers.
         #[builder(into, default)]
-        pub netbios_name_servers: pulumi_gestalt_rust::InputOrOutput<
+        pub netbios_name_servers: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The NetBIOS node type (1, 2, 4, or 8). AWS recommends to specify 2 since broadcast and multicast are not supported in their network. For more information about these node types, see [RFC 2132](http://www.ietf.org/rfc/rfc2132.txt).
         #[builder(into, default)]
-        pub netbios_node_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub netbios_node_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of NTP servers to configure.
         #[builder(into, default)]
-        pub ntp_servers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ntp_servers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

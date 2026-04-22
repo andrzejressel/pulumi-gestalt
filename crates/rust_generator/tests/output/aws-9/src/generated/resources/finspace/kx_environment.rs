@@ -142,30 +142,30 @@ pub mod kx_environment {
     pub struct KxEnvironmentArgs {
         /// List of DNS server name and server IP. This is used to set up Route-53 outbound resolvers. Defined below.
         #[builder(into, default)]
-        pub custom_dns_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_dns_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::finspace::KxEnvironmentCustomDnsConfiguration>,
             >,
         >,
         /// Description for the KX environment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// KMS key ID to encrypt your data in the FinSpace environment.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the KX environment that you want to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Transit gateway and network configuration that is used to connect the KX environment to an internal network. Defined below.
         #[builder(into, default)]
-        pub transit_gateway_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::finspace::KxEnvironmentTransitGatewayConfiguration,
             >,

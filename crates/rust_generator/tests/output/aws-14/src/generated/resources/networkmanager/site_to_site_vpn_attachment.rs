@@ -38,17 +38,17 @@ pub mod site_to_site_vpn_attachment {
     pub struct SiteToSiteVpnAttachmentArgs {
         /// The ID of a core network for the VPN attachment.
         #[builder(into)]
-        pub core_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub core_network_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ARN of the site-to-site VPN connection.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vpn_connection_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpn_connection_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SiteToSiteVpnAttachmentResult {

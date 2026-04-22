@@ -36,21 +36,21 @@ pub mod directory_bucket {
     pub struct DirectoryBucketArgs {
         /// Name of the bucket. The name must be in the format `[bucket_name]--[azid]--x-s3`. Use the `aws.s3.BucketV2` resource to manage general purpose buckets.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Data redundancy. Valid values: `SingleAvailabilityZone`.
         #[builder(into, default)]
-        pub data_redundancy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_redundancy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean that indicates all objects should be deleted from the bucket *when the bucket is destroyed* so that the bucket can be destroyed without error. These objects are *not* recoverable. This only deletes objects when the bucket is destroyed, *not* when setting this parameter to `true`. Once this parameter is set to `true`, there must be a successful `pulumi up` run before a destroy is required to update this value in the resource state. Without a successful `pulumi up` after this parameter is set, this flag will have no effect. If setting this field in the same operation that would require replacing the bucket or destroying the bucket, this flag will not work. Additionally when importing a bucket, a successful `pulumi up` is required to set this value in state before it will take effect on a destroy operation.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Bucket location. See Location below for more details.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<
+        pub location: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::DirectoryBucketLocation>,
         >,
         /// Bucket type. Valid values: `Directory`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DirectoryBucketResult {

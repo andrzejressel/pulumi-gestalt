@@ -73,24 +73,24 @@ pub mod job {
     pub struct JobArgs {
         /// The ID of the Batch Pool. Changing this forces a new Batch Job to be created.
         #[builder(into)]
-        pub batch_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub batch_pool_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies a map of common environment settings applied to this Batch Job. Changing this forces a new Batch Job to be created.
         #[builder(into, default)]
-        pub common_environment_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub common_environment_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The display name of this Batch Job. Changing this forces a new Batch Job to be created.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Batch Job. Changing this forces a new Batch Job to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The priority of this Batch Job, possible values can range from -1000 (lowest) to 1000 (highest). Defaults to `0`.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The number of retries to each Batch Task belongs to this Batch Job. If this is set to `0`, the Batch service does not retry Tasks. If this is set to `-1`, the Batch service retries Batch Tasks without limit.
         #[builder(into, default)]
-        pub task_retry_maximum: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub task_retry_maximum: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct JobResult {

@@ -283,14 +283,14 @@ pub mod prevention_inspect_template {
     pub struct PreventionInspectTemplateArgs {
         /// A description of the inspect template.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User set display name of the inspect template.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The core content of the template.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub inspect_config: pulumi_gestalt_rust::InputOrOutput<
+        pub inspect_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataloss::PreventionInspectTemplateInspectConfig>,
         >,
         /// The parent of the inspect template in any of the following formats:
@@ -302,12 +302,12 @@ pub mod prevention_inspect_template {
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// The template id can contain uppercase and lowercase letters, numbers, and hyphens;
         /// that is, it must match the regular expression: [a-zA-Z\d-_]+. The maximum length is
         /// 100 characters. Can be empty to allow the system to generate one.
         #[builder(into, default)]
-        pub template_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PreventionInspectTemplateResult {

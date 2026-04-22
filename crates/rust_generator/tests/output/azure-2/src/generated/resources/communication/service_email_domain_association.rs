@@ -68,10 +68,10 @@ pub mod service_email_domain_association {
     pub struct ServiceEmailDomainAssociationArgs {
         /// The ID of the Communication Service. Changing this forces a new communication service email domain association to be created.
         #[builder(into)]
-        pub communication_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub communication_service_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the EMail Service Domain. Changing this forces a new communication service email domain association to be created.
         #[builder(into)]
-        pub email_service_domain_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_service_domain_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceEmailDomainAssociationResult {

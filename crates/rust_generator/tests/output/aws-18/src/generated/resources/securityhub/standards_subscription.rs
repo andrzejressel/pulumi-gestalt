@@ -65,7 +65,7 @@ pub mod standards_subscription {
         /// | NIST SP 800-53 Rev. 5                    | `arn:${var.partition}:securityhub:${var.region}::standards/nist-800-53/v/5.0.0`                              |
         /// | PCI DSS                                  | `arn:${var.partition}:securityhub:${var.region}::standards/pci-dss/v/3.2.1`                                  |
         #[builder(into)]
-        pub standards_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub standards_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StandardsSubscriptionResult {

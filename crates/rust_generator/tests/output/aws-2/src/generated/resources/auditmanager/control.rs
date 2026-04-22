@@ -44,31 +44,31 @@ pub mod control {
     pub struct ControlArgs {
         /// Recommended actions to carry out if the control isn't fulfilled.
         #[builder(into, default)]
-        pub action_plan_instructions: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub action_plan_instructions: pulumi_gestalt_rust::Input<Option<String>>,
         /// Title of the action plan for remediating the control.
         #[builder(into, default)]
-        pub action_plan_title: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub action_plan_title: pulumi_gestalt_rust::Input<Option<String>>,
         /// Data mapping sources. See `control_mapping_sources` below.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub control_mapping_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub control_mapping_sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::auditmanager::ControlControlMappingSource>>,
         >,
         /// Description of the control.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the control.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the control. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Steps to follow to determine if the control is satisfied.
         #[builder(into, default)]
-        pub testing_information: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub testing_information: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ControlResult {

@@ -78,16 +78,16 @@ pub mod customer_gateway_association {
     pub struct CustomerGatewayAssociationArgs {
         /// The Amazon Resource Name (ARN) of the customer gateway.
         #[builder(into)]
-        pub customer_gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub customer_gateway_arn: pulumi_gestalt_rust::Input<String>,
         /// The ID of the device.
         #[builder(into)]
-        pub device_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the global network.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the link.
         #[builder(into, default)]
-        pub link_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub link_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CustomerGatewayAssociationResult {

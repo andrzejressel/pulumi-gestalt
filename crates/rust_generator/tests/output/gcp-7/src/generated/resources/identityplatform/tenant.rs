@@ -65,25 +65,25 @@ pub mod tenant {
     pub struct TenantArgs {
         /// Whether to allow email/password user authentication.
         #[builder(into, default)]
-        pub allow_password_signup: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_password_signup: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether authentication is disabled for the tenant. If true, the users under
         /// the disabled tenant are not allowed to sign-in. Admins of the disabled tenant
         /// are not able to manage its users.
         #[builder(into, default)]
-        pub disable_auth: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_auth: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Human friendly display name of the tenant.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable email link user authentication.
         #[builder(into, default)]
-        pub enable_email_link_signin: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_email_link_signin: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TenantResult {

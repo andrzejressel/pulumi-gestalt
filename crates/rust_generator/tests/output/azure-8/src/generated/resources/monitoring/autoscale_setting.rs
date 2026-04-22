@@ -364,39 +364,39 @@ pub mod autoscale_setting {
     pub struct AutoscaleSettingArgs {
         /// Specifies whether automatic scaling is enabled for the target resource. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the AutoScale Setting should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the AutoScale Setting. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a `notification` block as defined below.
         #[builder(into, default)]
-        pub notification: pulumi_gestalt_rust::InputOrOutput<
+        pub notification: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::AutoscaleSettingNotification>,
         >,
         /// A `predictive` block as defined below.
         #[builder(into, default)]
-        pub predictive: pulumi_gestalt_rust::InputOrOutput<
+        pub predictive: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::AutoscaleSettingPredictive>,
         >,
         /// Specifies one or more (up to 20) `profile` blocks as defined below.
         #[builder(into)]
-        pub profiles: pulumi_gestalt_rust::InputOrOutput<
+        pub profiles: pulumi_gestalt_rust::Input<
             Vec<super::super::types::monitoring::AutoscaleSettingProfile>,
         >,
         /// The name of the Resource Group in the AutoScale Setting should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the resource ID of the resource that the autoscale setting should be added to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AutoscaleSettingResult {

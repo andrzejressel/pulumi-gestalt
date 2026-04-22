@@ -10,10 +10,10 @@ pub mod get_linux_web_app {
     pub struct GetLinuxWebAppArgs {
         /// The name of this Linux Web App.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Linux Web App exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetLinuxWebAppResult {

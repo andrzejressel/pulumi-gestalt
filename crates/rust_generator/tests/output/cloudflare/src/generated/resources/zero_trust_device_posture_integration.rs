@@ -47,23 +47,23 @@ pub mod zero_trust_device_posture_integration {
     pub struct ZeroTrustDevicePostureIntegrationArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The device posture integration's connection authorization parameters.
         #[builder(into, default)]
-        pub configs: pulumi_gestalt_rust::InputOrOutput<
+        pub configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ZeroTrustDevicePostureIntegrationConfig>>,
         >,
         #[builder(into, default)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates the frequency with which to poll the third-party API. Must be in the format `1h` or `30m`.
         #[builder(into, default)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub interval: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the device posture integration.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The device posture integration type. Available values: `workspace_one`, `uptycs`, `crowdstrike_s2s`, `intune`, `kolide`, `sentinelone_s2s`, `tanium_s2s`, `custom_s2s`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustDevicePostureIntegrationResult {

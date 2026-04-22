@@ -10,7 +10,7 @@ pub mod nursery {
     pub struct NurseryArgs {
         /// The sizes of trees available
         #[builder(into, default)]
-        pub sizes: pulumi_gestalt_rust::InputOrOutput<
+        pub sizes: pulumi_gestalt_rust::Input<
             Option<
                 std::collections::HashMap<
                     String,
@@ -20,7 +20,7 @@ pub mod nursery {
         >,
         /// The varieties available
         #[builder(into)]
-        pub varieties: pulumi_gestalt_rust::InputOrOutput<
+        pub varieties: pulumi_gestalt_rust::Input<
             Vec<super::super::super::types::tree::v1::RubberTreeVariety>,
         >,
     }

@@ -106,31 +106,31 @@ pub mod policy {
     pub struct PolicyArgs {
         /// One or more `custom_rules` blocks as defined below.
         #[builder(into, default)]
-        pub custom_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::waf::PolicyCustomRule>>,
         >,
         /// Resource location. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `managed_rules` blocks as defined below.
         #[builder(into)]
-        pub managed_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub managed_rules: pulumi_gestalt_rust::Input<
             super::super::types::waf::PolicyManagedRules,
         >,
         /// The name of the policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `policy_settings` block as defined below.
         #[builder(into, default)]
-        pub policy_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::waf::PolicyPolicySettings>,
         >,
         /// The name of the resource group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the Web Application Firewall Policy.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

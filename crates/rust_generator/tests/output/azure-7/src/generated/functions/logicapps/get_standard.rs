@@ -10,13 +10,13 @@ pub mod get_standard {
     pub struct GetStandardArgs {
         /// The name of this Logic App.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Logic App exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `site_config` object as defined below.
         #[builder(into, default)]
-        pub site_config: pulumi_gestalt_rust::InputOrOutput<
+        pub site_config: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::logicapps::GetStandardSiteConfig>,
         >,
     }

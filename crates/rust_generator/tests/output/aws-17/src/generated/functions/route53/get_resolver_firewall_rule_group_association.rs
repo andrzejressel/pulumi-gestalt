@@ -12,7 +12,7 @@ pub mod get_resolver_firewall_rule_group_association {
         ///
         /// The following attribute is additionally exported:
         #[builder(into)]
-        pub firewall_rule_group_association_id: pulumi_gestalt_rust::InputOrOutput<
+        pub firewall_rule_group_association_id: pulumi_gestalt_rust::Input<
             String,
         >,
     }

@@ -10,10 +10,10 @@ pub mod get_group_template_deployment {
     pub struct GetGroupTemplateDeploymentArgs {
         /// The ID of the Management Group to which this template was applied.
         #[builder(into)]
-        pub management_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub management_group_id: pulumi_gestalt_rust::Input<String>,
         /// The name of this Management Group Template Deployment.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGroupTemplateDeploymentResult {

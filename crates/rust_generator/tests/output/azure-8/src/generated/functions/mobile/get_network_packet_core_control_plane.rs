@@ -10,10 +10,10 @@ pub mod get_network_packet_core_control_plane {
     pub struct GetNetworkPacketCoreControlPlaneArgs {
         /// The name of the Mobile Network Packet Core Control Plane.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Mobile Network Packet Core Control Plane exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkPacketCoreControlPlaneResult {

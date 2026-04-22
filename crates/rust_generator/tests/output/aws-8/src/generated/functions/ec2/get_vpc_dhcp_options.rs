@@ -10,15 +10,15 @@ pub mod get_vpc_dhcp_options {
     pub struct GetVpcDhcpOptionsArgs {
         /// EC2 DHCP Options ID.
         #[builder(into, default)]
-        pub dhcp_options_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dhcp_options_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of custom filters as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetVpcDhcpOptionsFilter>>,
         >,
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

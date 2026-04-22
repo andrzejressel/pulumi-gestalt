@@ -10,13 +10,13 @@ pub mod get_environment {
     pub struct GetEnvironmentArgs {
         /// ID of the AppConfig Application to which this Environment belongs.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the AppConfig Environment.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags for the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -48,38 +48,38 @@ pub mod provisioning_artifact {
     pub struct ProvisioningArtifactArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). The default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the product version is active. Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact. Default is `true`.
         #[builder(into, default)]
-        pub active: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub active: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Description of the provisioning artifact (i.e., version), including how it differs from the previous provisioning artifact.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether AWS Service Catalog stops validating the specified provisioning artifact template even if it is invalid.
         #[builder(into, default)]
-        pub disable_template_validation: pulumi_gestalt_rust::InputOrOutput<
+        pub disable_template_validation: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Information set by the administrator to provide guidance to end users about which provisioning artifacts to use. Valid values are `DEFAULT` and `DEPRECATED`. The default is `DEFAULT`. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.
         #[builder(into, default)]
-        pub guidance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub guidance: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the provisioning artifact (for example, `v1`, `v2beta`). No spaces are allowed.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the product.
         #[builder(into)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_id: pulumi_gestalt_rust::Input<String>,
         /// Template source as the physical ID of the resource that contains the template. Currently only supports CloudFormation stack ARN. Specify the physical ID as `arn:[partition]:cloudformation:[region]:[account ID]:stack/[stack name]/[resource ID]`.
         #[builder(into, default)]
-        pub template_physical_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_physical_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Template source as URL of the CloudFormation template in Amazon S3.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub template_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of provisioning artifact. See [AWS Docs](https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisioningArtifactProperties.html) for valid list of values.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProvisioningArtifactResult {

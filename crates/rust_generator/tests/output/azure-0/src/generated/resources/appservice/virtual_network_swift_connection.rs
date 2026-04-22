@@ -192,10 +192,10 @@ pub mod virtual_network_swift_connection {
     pub struct VirtualNetworkSwiftConnectionArgs {
         /// The ID of the App Service or Function App to associate to the VNet. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub app_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the subnet the app service will be associated to (the subnet must have a `service_delegation` configured for `Microsoft.Web/serverFarms`).
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkSwiftConnectionResult {

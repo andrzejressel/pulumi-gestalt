@@ -77,26 +77,26 @@ pub mod backup_instance_blog_storage {
     pub struct BackupInstanceBlogStorageArgs {
         /// The ID of the Backup Policy.
         #[builder(into)]
-        pub backup_policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_policy_id: pulumi_gestalt_rust::Input<String>,
         /// The location of the source Storage Account. Changing this forces a new Backup Instance Blob Storage to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Backup Instance Blob Storage. Changing this forces a new Backup Instance Blob Storage to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of the container names of the source Storage Account.
         ///
         /// > **Note:** The `storage_account_container_names` should be specified in the vaulted backup policy/operational and vaulted hybrid backup policy. Removing the `storage_account_container_names` will force a new resource to be created since it can't be removed once specified.
         #[builder(into, default)]
-        pub storage_account_container_names: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_container_names: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The ID of the source Storage Account. Changing this forces a new Backup Instance Blob Storage to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Backup Vault within which the Backup Instance Blob Storage should exist. Changing this forces a new Backup Instance Blob Storage to be created.
         #[builder(into)]
-        pub vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupInstanceBlogStorageResult {

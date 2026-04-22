@@ -10,11 +10,11 @@ pub mod get_kms_crypto_key {
     pub struct GetKmsCryptoKeyArgs {
         /// The `id` of the Google Cloud Platform KeyRing to which the key belongs.
         #[builder(into)]
-        pub key_ring: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_ring: pulumi_gestalt_rust::Input<String>,
         /// The CryptoKey's name.
         /// A CryptoKey’s name belonging to the specified Google Cloud Platform KeyRing and match the regular expression `[a-zA-Z0-9_-]{1,63}`
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetKmsCryptoKeyResult {

@@ -74,15 +74,15 @@ pub mod zero_trust_tunnel_cloudflared_config {
     pub struct ZeroTrustTunnelCloudflaredConfigArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for Tunnel Configuration.
         #[builder(into)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             super::types::ZeroTrustTunnelCloudflaredConfigConfig,
         >,
         /// Identifier of the Tunnel to target for this configuration.
         #[builder(into)]
-        pub tunnel_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tunnel_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustTunnelCloudflaredConfigResult {

@@ -74,15 +74,15 @@ pub mod route_map {
     pub struct RouteMapArgs {
         /// The name which should be used for this Route Map. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `rule` block as defined below.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::RouteMapRule>>,
         >,
         /// The resource ID of the Virtual Hub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteMapResult {

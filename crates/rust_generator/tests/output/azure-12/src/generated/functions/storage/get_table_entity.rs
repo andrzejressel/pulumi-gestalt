@@ -10,13 +10,13 @@ pub mod get_table_entity {
     pub struct GetTableEntityArgs {
         /// The key for the partition where the entity will be retrieved.
         #[builder(into)]
-        pub partition_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partition_key: pulumi_gestalt_rust::Input<String>,
         /// The key for the row where the entity will be retrieved.
         #[builder(into)]
-        pub row_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub row_key: pulumi_gestalt_rust::Input<String>,
         /// The Storage Table ID where the entity exists.
         #[builder(into)]
-        pub storage_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTableEntityResult {

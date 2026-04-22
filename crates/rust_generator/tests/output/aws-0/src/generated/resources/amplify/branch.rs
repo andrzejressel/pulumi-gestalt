@@ -149,63 +149,63 @@ pub mod branch {
     pub struct BranchArgs {
         /// Unique ID for an Amplify app.
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// ARN for a backend environment that is part of an Amplify app.
         #[builder(into, default)]
-        pub backend_environment_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub backend_environment_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Basic authorization credentials for the branch.
         #[builder(into, default)]
-        pub basic_auth_credentials: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub basic_auth_credentials: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name for the branch.
         #[builder(into)]
-        pub branch_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub branch_name: pulumi_gestalt_rust::Input<String>,
         /// Description for the branch.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Display name for a branch. This is used as the default domain prefix.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables auto building for the branch.
         #[builder(into, default)]
-        pub enable_auto_build: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_auto_build: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables basic authorization for the branch.
         #[builder(into, default)]
-        pub enable_basic_auth: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_basic_auth: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables notifications for the branch.
         #[builder(into, default)]
-        pub enable_notification: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_notification: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables performance mode for the branch.
         #[builder(into, default)]
-        pub enable_performance_mode: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_performance_mode: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables pull request previews for this branch.
         #[builder(into, default)]
-        pub enable_pull_request_preview: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_pull_request_preview: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Environment variables for the branch.
         #[builder(into, default)]
-        pub environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub environment_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Framework for the branch.
         #[builder(into, default)]
-        pub framework: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub framework: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amplify environment name for the pull request.
         #[builder(into, default)]
-        pub pull_request_environment_name: pulumi_gestalt_rust::InputOrOutput<
+        pub pull_request_environment_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Describes the current stage for the branch. Valid values: `PRODUCTION`, `BETA`, `DEVELOPMENT`, `EXPERIMENTAL`, `PULL_REQUEST`.
         #[builder(into, default)]
-        pub stage: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stage: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Content Time To Live (TTL) for the website in seconds.
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ttl: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BranchResult {

@@ -10,10 +10,10 @@ pub mod get_serverless_security_config {
     pub struct GetServerlessSecurityConfigArgs {
         /// The unique identifier of the security configuration.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
         /// SAML options for the security configuration.
         #[builder(into, default)]
-        pub saml_options: pulumi_gestalt_rust::InputOrOutput<
+        pub saml_options: pulumi_gestalt_rust::Input<
             Option<
                 super::super::super::types::opensearch::GetServerlessSecurityConfigSamlOptions,
             >,

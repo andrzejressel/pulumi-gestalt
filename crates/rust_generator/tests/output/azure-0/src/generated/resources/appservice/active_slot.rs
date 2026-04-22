@@ -41,13 +41,13 @@ pub mod active_slot {
     pub struct ActiveSlotArgs {
         /// The name of the App Service within which the Slot exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub app_service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the App Service Slot which should be promoted to the Production Slot within the App Service.
         #[builder(into)]
-        pub app_service_slot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_slot_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the App Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ActiveSlotResult {

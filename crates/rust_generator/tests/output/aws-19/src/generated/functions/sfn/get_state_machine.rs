@@ -10,7 +10,7 @@ pub mod get_state_machine {
     pub struct GetStateMachineArgs {
         /// Friendly name of the state machine to match.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetStateMachineResult {

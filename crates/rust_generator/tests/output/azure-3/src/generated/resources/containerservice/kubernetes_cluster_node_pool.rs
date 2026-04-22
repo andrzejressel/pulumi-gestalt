@@ -60,162 +60,162 @@ pub mod kubernetes_cluster_node_pool {
     pub struct KubernetesClusterNodePoolArgs {
         /// Whether to enable [auto-scaler](https://docs.microsoft.com/azure/aks/cluster-autoscaler).
         #[builder(into, default)]
-        pub auto_scaling_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_scaling_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the ID of the Capacity Reservation Group where this Node Pool should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub capacity_reservation_group_id: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Eviction Policy which should be used for Virtual Machines within the Virtual Machine Scale Set powering this Node Pool. Possible values are `Deallocate` and `Delete`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** An Eviction Policy can only be configured when `priority` is set to `Spot` and will default to `Delete` unless otherwise specified.
         #[builder(into, default)]
-        pub eviction_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eviction_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the nodes in this Node Pool have Federal Information Processing Standard enabled? Changing this forces a new resource to be created.
         ///
         /// > **Note:** FIPS support is in Public Preview - more information and details on how to opt into the Preview can be found in [this article](https://docs.microsoft.com/azure/aks/use-multiple-node-pools#add-a-fips-enabled-node-pool-preview).
         #[builder(into, default)]
-        pub fips_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub fips_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the GPU MIG instance profile for supported GPU VM SKU. The allowed values are `MIG1g`, `MIG2g`, `MIG3g`, `MIG4g` and `MIG7g`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub gpu_instance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gpu_instance: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the nodes in this Node Pool have host encryption enabled? Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Additional fields must be configured depending on the value of this field - see below.
         #[builder(into, default)]
-        pub host_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub host_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The fully qualified resource ID of the Dedicated Host Group to provision virtual machines from. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub host_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `kubelet_config` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub kubelet_config: pulumi_gestalt_rust::InputOrOutput<
+        pub kubelet_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::containerservice::KubernetesClusterNodePoolKubeletConfig,
             >,
         >,
         /// The type of disk used by kubelet. Possible values are `OS` and `Temporary`.
         #[builder(into, default)]
-        pub kubelet_disk_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kubelet_disk_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Kubernetes Cluster where this Node Pool should exist. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The type of Default Node Pool for the Kubernetes Cluster must be `VirtualMachineScaleSets` to attach multiple node pools.
         #[builder(into)]
-        pub kubernetes_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// A `linux_os_config` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub linux_os_config: pulumi_gestalt_rust::InputOrOutput<
+        pub linux_os_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::containerservice::KubernetesClusterNodePoolLinuxOsConfig,
             >,
         >,
         #[builder(into, default)]
-        pub max_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum number of pods that can run on each agent. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub max_pods: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_pods: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub min_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Should this Node Pool be used for System or User resources? Possible values are `System` and `User`. Defaults to `User`.
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Node Pool which should be created within the Kubernetes Cluster. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** A Windows Node Pool cannot have a `name` longer than 6 characters.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub node_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub node_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A map of Kubernetes labels which should be applied to nodes in this Node Pool.
         #[builder(into, default)]
-        pub node_labels: pulumi_gestalt_rust::InputOrOutput<
+        pub node_labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `node_network_profile` block as documented below.
         #[builder(into, default)]
-        pub node_network_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub node_network_profile: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::containerservice::KubernetesClusterNodePoolNodeNetworkProfile,
             >,
         >,
         /// Should each node have a Public IP Address? Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub node_public_ip_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub node_public_ip_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Resource ID for the Public IP Addresses Prefix for the nodes in this Node Pool. `node_public_ip_enabled` should be `true`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub node_public_ip_prefix_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub node_public_ip_prefix_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Kubernetes taints which should be applied to nodes in the agent pool (e.g `key=value:NoSchedule`).
         #[builder(into, default)]
-        pub node_taints: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub node_taints: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Version of Kubernetes used for the Agents. If not specified, the latest recommended version will be used at provisioning time (but won't auto-upgrade). AKS does not require an exact patch version to be specified, minor version aliases such as `1.22` are also supported. - The minor version's latest GA patch is automatically chosen in that case. More details can be found in [the documentation](https://docs.microsoft.com/en-us/azure/aks/supported-kubernetes-versions?tabs=azure-cli#alias-minor-version).
         ///
         /// > **Note:** This version must be supported by the Kubernetes Cluster - as such the version of Kubernetes used on the Cluster/Control Plane may need to be upgraded first.
         #[builder(into, default)]
-        pub orchestrator_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub orchestrator_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Agent Operating System disk size in GB. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub os_disk_size_gb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub os_disk_size_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The type of disk which should be used for the Operating System. Possible values are `Ephemeral` and `Managed`. Defaults to `Managed`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub os_disk_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub os_disk_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the OS SKU used by the agent pool. Possible values are `AzureLinux`, `Ubuntu`, `Windows2019` and `Windows2022`. If not specified, the default is `Ubuntu` if OSType=Linux or `Windows2019` if OSType=Windows. And the default Windows OSSKU will be changed to `Windows2022` after Windows2019 is deprecated. Changing this from `AzureLinux` or `Ubuntu` to `AzureLinux` or `Ubuntu` will not replace the resource, otherwise it forces a new resource to be created.
         #[builder(into, default)]
-        pub os_sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub os_sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Operating System which should be used for this Node Pool. Changing this forces a new resource to be created. Possible values are `Linux` and `Windows`. Defaults to `Linux`.
         #[builder(into, default)]
-        pub os_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub os_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Subnet where the pods in the Node Pool should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub pod_subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pod_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Priority for Virtual Machines within the Virtual Machine Scale Set that powers this Node Pool. Possible values are `Regular` and `Spot`. Defaults to `Regular`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Proximity Placement Group where the Virtual Machine Scale Set that powers this Node Pool will be placed. Changing this forces a new resource to be created.
         ///
         /// > **Note:** When setting `priority` to Spot - you must configure an `eviction_policy`, `spot_max_price` and add the applicable `node_labels` and `node_taints` [as per the Azure Documentation](https://docs.microsoft.com/azure/aks/spot-node-pool).
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::InputOrOutput<
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies how the node pool should deal with scaled-down nodes. Allowed values are `Delete` and `Deallocate`. Defaults to `Delete`.
         #[builder(into, default)]
-        pub scale_down_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scale_down_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Snapshot which should be used to create this Node Pool. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub snapshot_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum price you're willing to pay in USD per Virtual Machine. Valid values are `-1` (the current on-demand price for a Virtual Machine) or a positive value with up to five decimal places. Changing this forces a new resource to be created.
         ///
         /// > **Note:** This field can only be configured when `priority` is set to `Spot`.
         #[builder(into, default)]
-        pub spot_max_price: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub spot_max_price: pulumi_gestalt_rust::Input<Option<f64>>,
         /// A mapping of tags to assign to the resource.
         ///
         /// > At this time there's a bug in the AKS API where Tags for a Node Pool are not stored in the correct case - you may wish to use [`ignoreChanges`](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) functionality to ignore changes to the casing until this is fixed in the AKS API.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Used to specify whether the UltraSSD is enabled in the Node Pool. Defaults to `false`. See [the documentation](https://docs.microsoft.com/azure/aks/use-ultra-disks) for more information. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub ultra_ssd_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ultra_ssd_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `upgrade_settings` block as documented below.
         #[builder(into, default)]
-        pub upgrade_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub upgrade_settings: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::containerservice::KubernetesClusterNodePoolUpgradeSettings,
             >,
         >,
         /// The SKU which should be used for the Virtual Machines used in this Node Pool. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub vm_size: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vm_size: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet where this Node Pool should exist. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** A route table must be configured on this Subnet.
         #[builder(into, default)]
-        pub vnet_subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vnet_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `windows_profile` block as documented below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub windows_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub windows_profile: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::containerservice::KubernetesClusterNodePoolWindowsProfile,
             >,
@@ -224,10 +224,10 @@ pub mod kubernetes_cluster_node_pool {
         ///
         /// > **Note:** WebAssembly System Interface node pools are in Public Preview - more information and details on how to opt into the preview can be found in [this article](https://docs.microsoft.com/azure/aks/use-wasi-node-pools)
         #[builder(into, default)]
-        pub workload_runtime: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workload_runtime: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Availability Zones in which this Kubernetes Cluster Node Pool should be located. Changing this forces a new Kubernetes Cluster Node Pool to be created.
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct KubernetesClusterNodePoolResult {

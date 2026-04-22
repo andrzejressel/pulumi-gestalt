@@ -23,35 +23,35 @@ pub mod application {
     pub struct ApplicationArgs {
         /// The application definition ID to deploy.
         #[builder(into, default)]
-        pub application_definition_id: pulumi_gestalt_rust::InputOrOutput<
+        pub application_definition_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The kind of the managed application to deploy. Possible values are `MarketPlace` and `ServiceCatalog`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kind: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the target resource group where all the resources deployed by the managed application will reside. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub managed_resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Managed Application. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parameter values to pass to the Managed Application. This field is a JSON object that allows you to assign parameters to this Managed Application.
         #[builder(into, default)]
-        pub parameter_values: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameter_values: pulumi_gestalt_rust::Input<Option<String>>,
         /// One `plan` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<
+        pub plan: pulumi_gestalt_rust::Input<
             Option<super::super::types::managedapplication::ApplicationPlan>,
         >,
         /// The name of the Resource Group where the Managed Application should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

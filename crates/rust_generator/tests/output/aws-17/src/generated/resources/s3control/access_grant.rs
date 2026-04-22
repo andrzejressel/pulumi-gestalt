@@ -62,30 +62,30 @@ pub mod access_grant {
     pub struct AccessGrantArgs {
         /// See Location Configuration below for more details.
         #[builder(into, default)]
-        pub access_grants_location_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub access_grants_location_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::s3control::AccessGrantAccessGrantsLocationConfiguration,
             >,
         >,
         /// The ID of the S3 Access Grants location to with the access grant is giving access.
         #[builder(into)]
-        pub access_grants_location_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_grants_location_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// See Grantee below for more details.
         #[builder(into, default)]
-        pub grantee: pulumi_gestalt_rust::InputOrOutput<
+        pub grantee: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3control::AccessGrantGrantee>,
         >,
         /// The access grant's level of access. Valid values: `READ`, `WRITE`, `READWRITE`.
         #[builder(into)]
-        pub permission: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub permission: pulumi_gestalt_rust::Input<String>,
         /// If you are creating an access grant that grants access to only one object, set this to `Object`. Valid values: `Object`.
         #[builder(into, default)]
-        pub s3_prefix_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_prefix_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

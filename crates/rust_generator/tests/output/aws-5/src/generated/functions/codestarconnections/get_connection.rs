@@ -10,15 +10,15 @@ pub mod get_connection {
     pub struct GetConnectionArgs {
         /// CodeStar Connection ARN.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// CodeStar Connection name.
         ///
         /// > **NOTE:** When both `arn` and `name` are specified, `arn` takes precedence.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of key-value resource tags to associate with the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

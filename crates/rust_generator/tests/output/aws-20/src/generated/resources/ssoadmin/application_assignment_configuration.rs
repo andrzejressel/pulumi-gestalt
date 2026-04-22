@@ -43,10 +43,10 @@ pub mod application_assignment_configuration {
     pub struct ApplicationAssignmentConfigurationArgs {
         /// ARN of the application.
         #[builder(into)]
-        pub application_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_arn: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether users must have an explicit assignment to access the application. If `false`, all users have access to the application.
         #[builder(into)]
-        pub assignment_required: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub assignment_required: pulumi_gestalt_rust::Input<bool>,
     }
     #[allow(dead_code)]
     pub struct ApplicationAssignmentConfigurationResult {

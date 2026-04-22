@@ -43,10 +43,10 @@ pub mod sql_injection_match_set {
     pub struct SqlInjectionMatchSetArgs {
         /// The name or description of the SQL Injection Match Set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parts of web requests that you want AWS WAF to inspect for malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
         #[builder(into, default)]
-        pub sql_injection_match_tuples: pulumi_gestalt_rust::InputOrOutput<
+        pub sql_injection_match_tuples: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::waf::SqlInjectionMatchSetSqlInjectionMatchTuple>,
             >,

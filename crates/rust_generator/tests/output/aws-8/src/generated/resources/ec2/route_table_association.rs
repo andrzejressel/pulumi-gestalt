@@ -61,13 +61,13 @@ pub mod route_table_association {
     pub struct RouteTableAssociationArgs {
         /// The gateway ID to create an association. Conflicts with `subnet_id`.
         #[builder(into, default)]
-        pub gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the routing table to associate with.
         #[builder(into)]
-        pub route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_table_id: pulumi_gestalt_rust::Input<String>,
         /// The subnet ID to create an association. Conflicts with `gateway_id`.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RouteTableAssociationResult {

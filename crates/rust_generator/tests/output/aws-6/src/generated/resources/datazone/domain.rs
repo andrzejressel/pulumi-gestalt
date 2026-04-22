@@ -66,32 +66,32 @@ pub mod domain {
     pub struct DomainArgs {
         /// Description of the Domain.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the role used by DataZone to configure the Domain.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub domain_execution_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_execution_role: pulumi_gestalt_rust::Input<String>,
         /// ARN of the KMS key used to encrypt the Amazon DataZone domain, metadata and reporting data.
         #[builder(into, default)]
-        pub kms_key_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Domain.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Single sign on options, used to [enable AWS IAM Identity Center](https://docs.aws.amazon.com/datazone/latest/userguide/enable-IAM-identity-center-for-datazone.html) for DataZone.
         #[builder(into, default)]
-        pub single_sign_on: pulumi_gestalt_rust::InputOrOutput<
+        pub single_sign_on: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::DomainSingleSignOn>,
         >,
         /// Whether to skip the deletion check for the Domain.
         #[builder(into, default)]
-        pub skip_deletion_check: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_deletion_check: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::DomainTimeouts>,
         >,
     }

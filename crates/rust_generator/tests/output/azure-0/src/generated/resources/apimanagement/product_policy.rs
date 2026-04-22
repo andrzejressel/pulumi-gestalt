@@ -47,19 +47,19 @@ pub mod product_policy {
     pub struct ProductPolicyArgs {
         /// The name of the API Management Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the API Management Product within the API Management Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The XML Content for this Policy.
         #[builder(into, default)]
-        pub xml_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub xml_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// A link to a Policy XML Document, which must be publicly available.
         #[builder(into, default)]
-        pub xml_link: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub xml_link: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProductPolicyResult {

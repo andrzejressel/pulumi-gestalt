@@ -195,66 +195,66 @@ pub mod instance {
     pub struct InstanceArgs {
         /// Indicates whether the instance is protected against deletion.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The reason for enabling deletion protection.
         #[builder(into, default)]
-        pub deletion_protection_reason: pulumi_gestalt_rust::InputOrOutput<
+        pub deletion_protection_reason: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A description of the instance.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// File system shares on the instance. For this version, only a
         /// single file share is supported.
         /// Structure is documented below.
         #[builder(into)]
-        pub file_shares: pulumi_gestalt_rust::InputOrOutput<
+        pub file_shares: pulumi_gestalt_rust::Input<
             super::super::types::filestore::InstanceFileShares,
         >,
         /// KMS key name used for data encryption.
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource labels to represent user-provided metadata. **Note**: This field is non-authoritative, and will only manage the
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the location of the instance. This can be a region for ENTERPRISE tier instances.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of the instance.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// VPC networks to which the instance is connected. For this version,
         /// only a single network is supported.
         /// Structure is documented below.
         #[builder(into)]
-        pub networks: pulumi_gestalt_rust::InputOrOutput<
+        pub networks: pulumi_gestalt_rust::Input<
             Vec<super::super::types::filestore::InstanceNetwork>,
         >,
         /// Performance configuration for the instance. If not provided, the default performance settings will be used.
         #[builder(into, default)]
-        pub performance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub performance_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::filestore::InstancePerformanceConfig>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Either NFSv3, for using NFS version 3 as file sharing protocol, or NFSv4.1, for using NFS version 4.1 as file sharing
         /// protocol. NFSv4.1 can be used with HIGH_SCALE_SSD, ZONAL, REGIONAL and ENTERPRISE. The default is NFSv3. Default value:
         /// "NFS_V3" Possible values: ["NFS_V3", "NFS_V4_1"]
         #[builder(into, default)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service tier of the instance.
         /// Possible values include: STANDARD, PREMIUM, BASIC_HDD, BASIC_SSD, HIGH_SCALE_SSD, ZONAL, REGIONAL and ENTERPRISE
         #[builder(into)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tier: pulumi_gestalt_rust::Input<String>,
         /// The name of the Filestore zone of the instance.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

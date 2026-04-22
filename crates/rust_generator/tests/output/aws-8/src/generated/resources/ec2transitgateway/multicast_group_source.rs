@@ -32,13 +32,13 @@ pub mod multicast_group_source {
     pub struct MulticastGroupSourceArgs {
         /// The IP address assigned to the transit gateway multicast group.
         #[builder(into)]
-        pub group_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_ip_address: pulumi_gestalt_rust::Input<String>,
         /// The group members' network interface ID to register with the transit gateway multicast group.
         #[builder(into)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the transit gateway multicast domain.
         #[builder(into)]
-        pub transit_gateway_multicast_domain_id: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_multicast_domain_id: pulumi_gestalt_rust::Input<
             String,
         >,
     }

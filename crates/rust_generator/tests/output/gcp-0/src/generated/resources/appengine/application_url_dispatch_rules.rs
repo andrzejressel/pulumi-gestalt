@@ -77,11 +77,11 @@ pub mod application_url_dispatch_rules {
         /// Rules to match an HTTP request and dispatch that request to a service.
         /// Structure is documented below.
         #[builder(into)]
-        pub dispatch_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub dispatch_rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::appengine::ApplicationUrlDispatchRulesDispatchRule>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApplicationUrlDispatchRulesResult {

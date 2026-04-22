@@ -40,10 +40,10 @@ pub mod policy_table_association {
     pub struct PolicyTableAssociationArgs {
         /// Identifier of EC2 Transit Gateway Attachment.
         #[builder(into)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Transit Gateway Policy Table.
         #[builder(into)]
-        pub transit_gateway_policy_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_policy_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyTableAssociationResult {

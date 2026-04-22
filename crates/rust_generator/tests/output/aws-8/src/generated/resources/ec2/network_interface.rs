@@ -60,70 +60,70 @@ pub mod network_interface {
     pub struct NetworkInterfaceArgs {
         /// Configuration block to define the attachment of the ENI. See Attachment below for more details!
         #[builder(into, default)]
-        pub attachments: pulumi_gestalt_rust::InputOrOutput<
+        pub attachments: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::NetworkInterfaceAttachment>>,
         >,
         /// Description for the network interface.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables assigning a primary IPv6 Global Unicast Address (GUA) to the network interface (ENI) in dual-stack or IPv6-only subnets. This ensures the instance attached to the ENI retains a consistent IPv6 address. Once enabled, the first IPv6 GUA becomes the primary IPv6 address and cannot be disabled. The primary IPv6 address remains assigned until the instance is terminated or the ENI is detached. Enabling and subsequent disabling forces recreation of the ENI.
         #[builder(into, default)]
-        pub enable_primary_ipv6: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_primary_ipv6: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Type of network interface to create. Set to `efa` for Elastic Fabric Adapter. Changing `interface_type` will cause the resource to be destroyed and re-created.
         #[builder(into, default)]
-        pub interface_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub interface_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of IPv4 prefixes that AWS automatically assigns to the network interface.
         #[builder(into, default)]
-        pub ipv4_prefix_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ipv4_prefix_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more IPv4 prefixes assigned to the network interface.
         #[builder(into, default)]
-        pub ipv4_prefixes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ipv4_prefixes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Number of IPv6 addresses to assign to a network interface. You can't use this option if specifying specific `ipv6_addresses`. If your subnet has the AssignIpv6AddressOnCreation attribute set to `true`, you can specify `0` to override this setting.
         #[builder(into, default)]
-        pub ipv6_address_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ipv6_address_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether `ipv6_address_list` is allowed and controls the IPs to assign to the ENI and `ipv6_addresses` and `ipv6_address_count` become read-only. Default is `false`.
         #[builder(into, default)]
-        pub ipv6_address_list_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ipv6_address_list_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of private IPs to assign to the ENI in sequential order.
         #[builder(into, default)]
-        pub ipv6_address_lists: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ipv6_address_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. Addresses are assigned without regard to order. You can't use this option if you're specifying `ipv6_address_count`.
         #[builder(into, default)]
-        pub ipv6_addresses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ipv6_addresses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Number of IPv6 prefixes that AWS automatically assigns to the network interface.
         #[builder(into, default)]
-        pub ipv6_prefix_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ipv6_prefix_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more IPv6 prefixes assigned to the network interface.
         #[builder(into, default)]
-        pub ipv6_prefixes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ipv6_prefixes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub private_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether `private_ip_list` is allowed and controls the IPs to assign to the ENI and `private_ips` and `private_ips_count` become read-only. Default is `false`.
         #[builder(into, default)]
-        pub private_ip_list_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub private_ip_list_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of private IPs to assign to the ENI in sequential order. Requires setting `private_ip_list_enabled` to `true`.
         #[builder(into, default)]
-        pub private_ip_lists: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub private_ip_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of private IPs to assign to the ENI without regard to order.
         #[builder(into, default)]
-        pub private_ips: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub private_ips: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Number of secondary private IPs to assign to the ENI. The total number of private IPs will be 1 + `private_ips_count`, as a primary private IP will be assiged to an ENI by default.
         #[builder(into, default)]
-        pub private_ips_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub private_ips_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// List of security group IDs to assign to the ENI.
         #[builder(into, default)]
-        pub security_groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to enable source destination checking for the ENI. Default true.
         #[builder(into, default)]
-        pub source_dest_check: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub source_dest_check: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Subnet ID to create the ENI in.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

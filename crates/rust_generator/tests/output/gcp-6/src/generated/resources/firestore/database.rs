@@ -237,7 +237,7 @@ pub mod database {
         /// The App Engine integration mode to use for this database.
         /// Possible values are: `ENABLED`, `DISABLED`.
         #[builder(into, default)]
-        pub app_engine_integration_mode: pulumi_gestalt_rust::InputOrOutput<
+        pub app_engine_integration_mode: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The CMEK (Customer Managed Encryption Key) configuration for a Firestore
@@ -245,21 +245,21 @@ pub mod database {
         /// encryption key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cmek_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cmek_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::firestore::DatabaseCmekConfig>,
         >,
         /// The concurrency control mode to use for this database.
         /// Possible values are: `OPTIMISTIC`, `PESSIMISTIC`, `OPTIMISTIC_WITH_ENTITY_GROUPS`.
         #[builder(into, default)]
-        pub concurrency_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub concurrency_mode: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub delete_protection_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delete_protection_state: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the database. Available locations are listed at
         /// https://cloud.google.com/firestore/docs/locations.
         #[builder(into)]
-        pub location_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location_id: pulumi_gestalt_rust::Input<String>,
         /// The ID to use for the database, which will become the final
         /// component of the database's resource name. This value should be 4-63
         /// characters. Valid characters are /[a-z][0-9]-/ with first character
@@ -267,7 +267,7 @@ pub mod database {
         /// UUID-like /[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}/.
         /// "(default)" database id is also valid.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable the PITR feature on this database.
         /// If `POINT_IN_TIME_RECOVERY_ENABLED` is selected, reads are supported on selected versions of the data from within the past 7 days.
         /// versionRetentionPeriod and earliestVersionTime can be used to determine the supported versions. These include reads against any timestamp within the past hour
@@ -276,13 +276,13 @@ pub mod database {
         /// Default value is `POINT_IN_TIME_RECOVERY_DISABLED`.
         /// Possible values are: `POINT_IN_TIME_RECOVERY_ENABLED`, `POINT_IN_TIME_RECOVERY_DISABLED`.
         #[builder(into, default)]
-        pub point_in_time_recovery_enablement: pulumi_gestalt_rust::InputOrOutput<
+        pub point_in_time_recovery_enablement: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the database.
         /// See https://cloud.google.com/datastore/docs/firestore-or-datastore
         /// for information about how to choose.
@@ -291,7 +291,7 @@ pub mod database {
         ///
         /// - - -
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DatabaseResult {

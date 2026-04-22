@@ -42,37 +42,37 @@ pub mod stream {
     pub struct StreamArgs {
         /// The Amazon Resource Name (ARN) specifying the Stream (same as `id`)
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The encryption type to use. The only acceptable values are `NONE` or `KMS`. The default value is `NONE`.
         #[builder(into, default)]
-        pub encryption_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encryption_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean that indicates all registered consumers should be deregistered from the stream so that the stream can be destroyed without error. The default value is `false`.
         #[builder(into, default)]
-        pub enforce_consumer_deletion: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enforce_consumer_deletion: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The GUID for the customer-managed KMS key to use for encryption. You can also use a Kinesis-owned master key by specifying the alias `alias/aws/kinesis`.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A name to identify the stream. This is unique to the AWS account and region the Stream is created in.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 8760 hours. Minimum value is 24. Default is 24.
         #[builder(into, default)]
-        pub retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The number of shards that the stream will use. If the `stream_mode` is `PROVISIONED`, this field is required.
         /// Amazon has guidelines for specifying the Stream size that should be referenced when creating a Kinesis stream. See [Amazon Kinesis Streams](https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-streams.html) for more.
         #[builder(into, default)]
-        pub shard_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub shard_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A list of shard-level CloudWatch metrics which can be enabled for the stream. See [Monitoring with CloudWatch](https://docs.aws.amazon.com/streams/latest/dev/monitoring-with-cloudwatch.html) for more. Note that the value ALL should not be used; instead you should provide an explicit list of metrics you wish to enable.
         #[builder(into, default)]
-        pub shard_level_metrics: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub shard_level_metrics: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Indicates the [capacity mode](https://docs.aws.amazon.com/streams/latest/dev/how-do-i-size-a-stream.html) of the data stream. Detailed below.
         #[builder(into, default)]
-        pub stream_mode_details: pulumi_gestalt_rust::InputOrOutput<
+        pub stream_mode_details: pulumi_gestalt_rust::Input<
             Option<super::super::types::kinesis::StreamStreamModeDetails>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

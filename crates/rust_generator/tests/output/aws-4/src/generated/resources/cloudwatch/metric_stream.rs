@@ -171,46 +171,46 @@ pub mod metric_stream {
     pub struct MetricStreamArgs {
         /// List of exclusive metric filters. If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces and the conditional metric names that you specify here. If you don't specify metric names or provide empty metric names whole metric namespace is excluded. Conflicts with `include_filter`.
         #[builder(into, default)]
-        pub exclude_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub exclude_filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudwatch::MetricStreamExcludeFilter>>,
         >,
         /// ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream.
         #[builder(into)]
-        pub firehose_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firehose_arn: pulumi_gestalt_rust::Input<String>,
         /// List of inclusive metric filters. If you specify this parameter, the stream sends only the conditional metric names from the metric namespaces that you specify here. If you don't specify metric names or provide empty metric names whole metric namespace is included. Conflicts with `exclude_filter`.
         #[builder(into, default)]
-        pub include_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub include_filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudwatch::MetricStreamIncludeFilter>>,
         >,
         /// If you are creating a metric stream in a monitoring account, specify true to include metrics from source accounts that are linked to this monitoring account, in the metric stream. The default is false. For more information about linking accounts, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
         #[builder(into, default)]
-        pub include_linked_accounts_metrics: pulumi_gestalt_rust::InputOrOutput<
+        pub include_linked_accounts_metrics: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Friendly name of the metric stream. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique friendly name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Output format for the stream. Possible values are `json`, `opentelemetry0.7`, and `opentelemetry1.0`. For more information about output formats, see [Metric streams output formats](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html).
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub output_format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub output_format: pulumi_gestalt_rust::Input<String>,
         /// ARN of the IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. For more information about role permissions, see [Trust between CloudWatch and Kinesis Data Firehose](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-trustpolicy.html).
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's `output_format`. If the OutputFormat is `json`, you can stream any additional statistic that is supported by CloudWatch, listed in [CloudWatch statistics definitions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html). If the OutputFormat is `opentelemetry0.7` or `opentelemetry1.0`, you can stream percentile statistics (p99 etc.). See details below.
         #[builder(into, default)]
-        pub statistics_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub statistics_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::cloudwatch::MetricStreamStatisticsConfiguration>,
             >,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

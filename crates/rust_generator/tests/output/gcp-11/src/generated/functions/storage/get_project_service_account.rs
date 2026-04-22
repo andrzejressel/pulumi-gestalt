@@ -10,11 +10,11 @@ pub mod get_project_service_account {
     pub struct GetProjectServiceAccountArgs {
         /// The project the unique service account was created for. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project the lookup originates from. This field is used if you are making the request
         /// from a different account than the one you are finding the service account for.
         #[builder(into, default)]
-        pub user_project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetProjectServiceAccountResult {

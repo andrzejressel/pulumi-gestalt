@@ -132,22 +132,22 @@ pub mod target_group {
     pub struct TargetGroupArgs {
         /// The target group configuration.
         #[builder(into, default)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             Option<super::super::types::vpclattice::TargetGroupConfig>,
         >,
         /// The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of target group. Valid Values are `IP` | `LAMBDA` | `INSTANCE` | `ALB`
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TargetGroupResult {

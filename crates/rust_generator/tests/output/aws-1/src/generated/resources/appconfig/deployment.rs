@@ -37,28 +37,28 @@ pub mod deployment {
     pub struct DeploymentArgs {
         /// Application ID. Must be between 4 and 7 characters in length.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration profile ID. Must be between 4 and 7 characters in length.
         #[builder(into)]
-        pub configuration_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_profile_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration version to deploy. Can be at most 1024 characters.
         #[builder(into)]
-        pub configuration_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_version: pulumi_gestalt_rust::Input<String>,
         /// Deployment strategy ID or name of a predefined deployment strategy. See [Predefined Deployment Strategies](https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html#appconfig-creating-deployment-strategy-predefined) for more details.
         #[builder(into)]
-        pub deployment_strategy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployment_strategy_id: pulumi_gestalt_rust::Input<String>,
         /// Description of the deployment. Can be at most 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Environment ID. Must be between 4 and 7 characters in length.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this to encrypt the configuration data using a customer managed key.
         #[builder(into, default)]
-        pub kms_key_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

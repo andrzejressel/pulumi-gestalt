@@ -194,7 +194,7 @@ pub mod service_iam_binding {
     #[allow(dead_code)]
     pub struct ServiceIamBindingArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::endpoints::ServiceIamBindingCondition>,
         >,
         /// Identities that will be granted the privilege in `role`.
@@ -209,14 +209,14 @@ pub mod service_iam_binding {
         /// * **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"
         /// * **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The role that should be applied. Only one
         /// `gcp.endpoints.ServiceIamBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceIamBindingResult {

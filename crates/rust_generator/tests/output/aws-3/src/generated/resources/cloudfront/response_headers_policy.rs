@@ -135,42 +135,42 @@ pub mod response_headers_policy {
     pub struct ResponseHeadersPolicyArgs {
         /// A comment to describe the response headers policy. The comment cannot be longer than 128 characters.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See Cors Config for more information.
         #[builder(into, default)]
-        pub cors_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cors_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfront::ResponseHeadersPolicyCorsConfig>,
         >,
         /// Object that contains an attribute `items` that contains a list of custom headers. See Custom Header for more information.
         #[builder(into, default)]
-        pub custom_headers_config: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_headers_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudfront::ResponseHeadersPolicyCustomHeadersConfig,
             >,
         >,
         /// The current version of the response headers policy.
         #[builder(into, default)]
-        pub etag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub etag: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique name to identify the response headers policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration for a set of HTTP headers to remove from the HTTP response. Object that contains an attribute `items` that contains a list of headers. See Remove Header for more information.
         #[builder(into, default)]
-        pub remove_headers_config: pulumi_gestalt_rust::InputOrOutput<
+        pub remove_headers_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudfront::ResponseHeadersPolicyRemoveHeadersConfig,
             >,
         >,
         /// A configuration for a set of security-related HTTP response headers. See Security Headers Config for more information.
         #[builder(into, default)]
-        pub security_headers_config: pulumi_gestalt_rust::InputOrOutput<
+        pub security_headers_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfig,
             >,
         >,
         /// A configuration for enabling the Server-Timing header in HTTP responses sent from CloudFront. See Server Timing Headers Config for more information.
         #[builder(into, default)]
-        pub server_timing_headers_config: pulumi_gestalt_rust::InputOrOutput<
+        pub server_timing_headers_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudfront::ResponseHeadersPolicyServerTimingHeadersConfig,
             >,

@@ -58,16 +58,16 @@ pub mod postgresql_firewall_rule {
     pub struct PostgresqlFirewallRuleArgs {
         /// The resource ID of the Azure Cosmos DB for PostgreSQL Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The end IP address of the Azure Cosmos DB for PostgreSQL Firewall Rule.
         #[builder(into)]
-        pub end_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub end_ip_address: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for the Azure Cosmos DB for PostgreSQL Firewall Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The start IP address of the Azure Cosmos DB for PostgreSQL Firewall Rule.
         #[builder(into)]
-        pub start_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_ip_address: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PostgresqlFirewallRuleResult {

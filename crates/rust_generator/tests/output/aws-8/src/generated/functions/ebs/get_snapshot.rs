@@ -12,26 +12,26 @@ pub mod get_snapshot {
         /// several valid keys, for a full reference, check out
         /// [describe-snapshots in the AWS CLI reference][1].
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ebs::GetSnapshotFilter>>,
         >,
         /// If more than one result is returned, use the most recent snapshot.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Returns the snapshots owned by the specified owner id. Multiple owners can be specified.
         #[builder(into, default)]
-        pub owners: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub owners: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more AWS accounts IDs that can create volumes from the snapshot.
         #[builder(into, default)]
-        pub restorable_by_user_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub restorable_by_user_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Returns information on a specific snapshot_id.
         #[builder(into, default)]
-        pub snapshot_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub snapshot_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Map of tags for the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

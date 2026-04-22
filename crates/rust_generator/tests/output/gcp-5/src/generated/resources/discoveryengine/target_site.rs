@@ -114,7 +114,7 @@ pub mod target_site {
         ///
         /// - - -
         #[builder(into)]
-        pub data_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_store_id: pulumi_gestalt_rust::Input<String>,
         /// If set to false, a uri_pattern is generated to include all pages whose
         /// address contains the provided_uri_pattern. If set to true, an uri_pattern
         /// is generated to try to be an exact match of the provided_uri_pattern or
@@ -122,23 +122,23 @@ pub mod target_site {
         /// provided_uri_pattern is always normalized to generate the URI pattern to
         /// be used by the search engine.
         #[builder(into, default)]
-        pub exact_match: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exact_match: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The geographic location where the data store should reside. The value can
         /// only be one of "global", "us" and "eu".
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user provided URI pattern from which the `generated_uri_pattern` is
         /// generated.
         #[builder(into)]
-        pub provided_uri_pattern: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provided_uri_pattern: pulumi_gestalt_rust::Input<String>,
         /// The possible target site types.
         /// Possible values are: `INCLUDE`, `EXCLUDE`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TargetSiteResult {

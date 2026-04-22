@@ -125,27 +125,27 @@ pub mod region_autoscaler {
         /// on cpuUtilization to 0.6 or 60%.
         /// Structure is documented below.
         #[builder(into)]
-        pub autoscaling_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscaling_policy: pulumi_gestalt_rust::Input<
             super::super::types::compute::RegionAutoscalerAutoscalingPolicy,
         >,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. The name must be 1-63 characters long and match
         /// the regular expression `a-z?` which means the
         /// first character must be a lowercase letter, and all following
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the region where the instance group resides.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the managed instance group that this autoscaler will scale.
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegionAutoscalerResult {

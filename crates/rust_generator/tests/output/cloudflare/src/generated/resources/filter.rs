@@ -47,19 +47,19 @@ pub mod filter {
     pub struct FilterArgs {
         /// A note that you can use to describe the purpose of the filter.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The filter expression to be used.
         #[builder(into)]
-        pub expression: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub expression: pulumi_gestalt_rust::Input<String>,
         /// Whether this filter is currently paused.
         #[builder(into, default)]
-        pub paused: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub paused: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Short reference tag to quickly select related rules.
         #[builder(into, default)]
-        pub ref_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ref_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FilterResult {

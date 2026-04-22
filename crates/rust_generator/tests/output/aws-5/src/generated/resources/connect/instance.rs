@@ -78,42 +78,42 @@ pub mod instance {
     pub struct InstanceArgs {
         /// Specifies whether auto resolve best voices is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_resolve_best_voices_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_resolve_best_voices_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies whether contact flow logs are enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub contact_flow_logs_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub contact_flow_logs_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether contact lens is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub contact_lens_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub contact_lens_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The identifier for the directory if identity_management_type is `EXISTING_DIRECTORY`.
         #[builder(into, default)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub directory_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether early media for outbound calls is enabled . Defaults to `true` if outbound calls is enabled.
         #[builder(into, default)]
-        pub early_media_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub early_media_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the identity management type attached to the instance. Allowed Values are: `SAML`, `CONNECT_MANAGED`, `EXISTING_DIRECTORY`.
         #[builder(into)]
-        pub identity_management_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_management_type: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether inbound calls are enabled.
         #[builder(into)]
-        pub inbound_calls_enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub inbound_calls_enabled: pulumi_gestalt_rust::Input<bool>,
         /// Specifies the name of the instance. Required if `directory_id` not specified.
         #[builder(into, default)]
-        pub instance_alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether multi-party calls/conference is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub multi_party_conference_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub multi_party_conference_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies whether outbound calls are enabled.
         #[builder(into)]
-        pub outbound_calls_enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub outbound_calls_enabled: pulumi_gestalt_rust::Input<bool>,
         /// Tags to apply to the Instance. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         /// <!-- * `use_custom_tts_voices` - (Optional) Whether use custom tts voices is enabled. Defaults to `false` -->
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -9,15 +9,15 @@ pub mod rubber_tree {
     #[allow(dead_code)]
     pub struct RubberTreeArgs {
         #[builder(into, default)]
-        pub container: pulumi_gestalt_rust::InputOrOutput<
+        pub container: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::Container>,
         >,
         #[builder(into)]
-        pub diameter: pulumi_gestalt_rust::InputOrOutput<
+        pub diameter: pulumi_gestalt_rust::Input<
             super::super::super::types::tree::v1::Diameter,
         >,
         #[builder(into, default)]
-        pub farm: pulumi_gestalt_rust::InputOrOutput<
+        pub farm: pulumi_gestalt_rust::Input<
             Option<
                 pulumi_gestalt_rust::OneOf2<
                     super::super::super::types::tree::v1::Farm,
@@ -26,11 +26,11 @@ pub mod rubber_tree {
             >,
         >,
         #[builder(into, default)]
-        pub size: pulumi_gestalt_rust::InputOrOutput<
+        pub size: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::tree::v1::TreeSize>,
         >,
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<
+        pub type_: pulumi_gestalt_rust::Input<
             super::super::super::types::tree::v1::RubberTreeVariety,
         >,
     }

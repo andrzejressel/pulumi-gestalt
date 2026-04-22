@@ -92,29 +92,29 @@ pub mod hub {
         /// Is anonymous connections are allowed for this hub? Defaults to `false`.
         /// Possible values are `true`, `false`.
         #[builder(into, default)]
-        pub anonymous_connections_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub anonymous_connections_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// An `event_handler` block as defined below.
         ///
         /// > **NOTE:** User can change the order of `event_handler` to change the priority accordingly.
         #[builder(into, default)]
-        pub event_handlers: pulumi_gestalt_rust::InputOrOutput<
+        pub event_handlers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::webpubsub::HubEventHandler>>,
         >,
         /// An `event_listener` block as defined below.
         ///
         /// > **NOTE:**  The managed identity of Web PubSub service must be enabled and the identity must have the "Azure Event Hubs Data sender" role to access the Event Hub.
         #[builder(into, default)]
-        pub event_listeners: pulumi_gestalt_rust::InputOrOutput<
+        pub event_listeners: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::webpubsub::HubEventListener>>,
         >,
         /// The name of the Web Pubsub hub service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the id of the Web Pubsub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub web_pubsub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_pubsub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HubResult {

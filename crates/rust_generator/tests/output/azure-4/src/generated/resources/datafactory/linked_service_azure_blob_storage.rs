@@ -56,67 +56,67 @@ pub mod linked_service_azure_blob_storage {
         ///
         /// The following supported arguments are specific to Azure Blob Storage Linked Service:
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The connection string. Conflicts with `connection_string_insecure`, `sas_uri` and `service_endpoint`.
         #[builder(into, default)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// The connection string sent insecurely. Conflicts with `connection_string`, `sas_uri` and `service_endpoint`.
         ///
         /// > **Note:** `connection_string` uses the Azure [SecureString](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.management.datafactory.models.securestring) to encrypt the contents within the REST payload sent to Azure whilst the `connection_string_insecure` is sent as a regular string. Both properties are still sent using SSL/HTTPS. At this time the portal will not decrypt Secure Strings so the `connection_string` property in the portal will show as `******` whilst `connection_string_insecure` will be viewable in the portal.
         #[builder(into, default)]
-        pub connection_string_insecure: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_string_insecure: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Linked Service.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The integration runtime reference to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub integration_runtime_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_runtime_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `key_vault_sas_token` block as defined below. Use this argument to store SAS Token in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. A `sas_uri` is required.
         #[builder(into, default)]
-        pub key_vault_sas_token: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_sas_token: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::LinkedServiceAzureBlobStorageKeyVaultSasToken,
             >,
         >,
         /// Specifies the name of the Data Factory Linked Service. Changing this forces a new resource to be created. Must be unique within a data factory. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The SAS URI. Conflicts with `connection_string_insecure`, `connection_string` and `service_endpoint`.
         #[builder(into, default)]
-        pub sas_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sas_uri: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub service_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub service_principal_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_principal_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub service_principal_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_principal_key: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub service_principal_linked_key_vault_key: pulumi_gestalt_rust::InputOrOutput<
+        pub service_principal_linked_key_vault_key: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::LinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKey,
             >,
         >,
         #[builder(into, default)]
-        pub storage_kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_kind: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub use_managed_identity: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_managed_identity: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct LinkedServiceAzureBlobStorageResult {

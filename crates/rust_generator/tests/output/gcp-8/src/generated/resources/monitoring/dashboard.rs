@@ -77,11 +77,11 @@ pub mod dashboard {
         /// The JSON representation of a dashboard, following the format at
         /// https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards.
         #[builder(into)]
-        pub dashboard_json: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dashboard_json: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DashboardResult {

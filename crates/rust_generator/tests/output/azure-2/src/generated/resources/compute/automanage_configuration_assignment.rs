@@ -109,10 +109,10 @@ pub mod automanage_configuration_assignment {
     pub struct AutomanageConfigurationAssignmentArgs {
         /// The ARM resource ID of the Automanage Configuration to assign to the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub configuration_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_id: pulumi_gestalt_rust::Input<String>,
         /// The ARM resource ID of the Virtual Machine to assign the Automanage Configuration to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AutomanageConfigurationAssignmentResult {

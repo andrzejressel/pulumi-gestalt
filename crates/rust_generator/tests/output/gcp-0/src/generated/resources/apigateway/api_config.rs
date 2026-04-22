@@ -47,28 +47,28 @@ pub mod api_config {
         ///
         /// - - -
         #[builder(into)]
-        pub api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api: pulumi_gestalt_rust::Input<String>,
         /// Identifier to assign to the API Config. Must be unique within scope of the parent resource(api).
         #[builder(into, default)]
-        pub api_config_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_config_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the
         /// specified prefix. If this and api_config_id are unspecified, a random value is chosen for the name.
         #[builder(into, default)]
-        pub api_config_id_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_config_id_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// A user-visible name for the API.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. Gateway specific configuration.
         /// If not specified, backend authentication will be set to use OIDC authentication using the default compute service account
         /// Structure is documented below.
         #[builder(into, default)]
-        pub gateway_config: pulumi_gestalt_rust::InputOrOutput<
+        pub gateway_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::ApiConfigGatewayConfig>,
         >,
         /// gRPC service definition files. If specified, openapiDocuments must not be included.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub grpc_services: pulumi_gestalt_rust::InputOrOutput<
+        pub grpc_services: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigateway::ApiConfigGrpcService>>,
         >,
         /// Resource labels to represent user-provided metadata.
@@ -76,26 +76,26 @@ pub mod api_config {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents.
         /// If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using "last one wins" semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub managed_service_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub managed_service_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigateway::ApiConfigManagedServiceConfig>>,
         >,
         /// OpenAPI specification documents. If specified, grpcServices and managedServiceConfigs must not be included.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub openapi_documents: pulumi_gestalt_rust::InputOrOutput<
+        pub openapi_documents: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigateway::ApiConfigOpenapiDocument>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiConfigResult {

@@ -9,7 +9,7 @@ pub mod next_generation_firewall_virtual_hub_panorama {
     #[allow(dead_code)]
     pub struct NextGenerationFirewallVirtualHubPanoramaArgs {
         #[builder(into, default)]
-        pub destination_nats: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_nats: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::paloalto::NextGenerationFirewallVirtualHubPanoramaDestinationNat,
@@ -17,25 +17,25 @@ pub mod next_generation_firewall_virtual_hub_panorama {
             >,
         >,
         #[builder(into, default)]
-        pub dns_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_settings: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::paloalto::NextGenerationFirewallVirtualHubPanoramaDnsSettings,
             >,
         >,
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub network_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub network_profile: pulumi_gestalt_rust::Input<
             super::super::types::paloalto::NextGenerationFirewallVirtualHubPanoramaNetworkProfile,
         >,
         #[builder(into)]
-        pub panorama_base64_config: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub panorama_base64_config: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

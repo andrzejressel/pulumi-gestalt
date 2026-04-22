@@ -108,28 +108,28 @@ pub mod scheduled_action {
     pub struct ScheduledActionArgs {
         /// The description of the scheduled action.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable the scheduled action. Default is `true` .
         #[builder(into, default)]
-        pub enable: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The end time in UTC when the schedule is active, in UTC RFC3339 format(for example, YYYY-MM-DDTHH:MM:SSZ).
         #[builder(into, default)]
-        pub end_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role to assume to run the scheduled action.
         #[builder(into)]
-        pub iam_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role: pulumi_gestalt_rust::Input<String>,
         /// The scheduled action name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The schedule of action. The schedule is defined format of "at expression" or "cron expression", for example `at(2016-03-04T17:27:00)` or `cron(0 10 ? * MON *)`. See [Scheduled Action](https://docs.aws.amazon.com/redshift/latest/APIReference/API_ScheduledAction.html) for more information.
         #[builder(into)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schedule: pulumi_gestalt_rust::Input<String>,
         /// The start time in UTC when the schedule is active, in UTC RFC3339 format(for example, YYYY-MM-DDTHH:MM:SSZ).
         #[builder(into, default)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Target action. Documented below.
         #[builder(into)]
-        pub target_action: pulumi_gestalt_rust::InputOrOutput<
+        pub target_action: pulumi_gestalt_rust::Input<
             super::super::types::redshift::ScheduledActionTargetAction,
         >,
     }

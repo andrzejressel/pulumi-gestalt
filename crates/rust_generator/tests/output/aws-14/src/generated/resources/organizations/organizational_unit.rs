@@ -36,13 +36,13 @@ pub mod organizational_unit {
     pub struct OrganizationalUnitArgs {
         /// The name for the organizational unit
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the parent organizational unit, which may be the root
         #[builder(into)]
-        pub parent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

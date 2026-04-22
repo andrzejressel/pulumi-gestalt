@@ -10,7 +10,7 @@ pub mod get_code_signing_config {
     pub struct GetCodeSigningConfigArgs {
         /// ARN of the code signing configuration.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCodeSigningConfigResult {

@@ -272,7 +272,7 @@ pub mod iam_member {
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::serviceaccount::IamMemberCondition>,
         >,
         /// Identities that will be granted the privilege in `role`.
@@ -284,15 +284,15 @@ pub mod iam_member {
         /// * **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.
         /// * **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
         #[builder(into)]
-        pub member: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member: pulumi_gestalt_rust::Input<String>,
         /// The role that should be applied. Only one
         /// `gcp.serviceaccount.IAMBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         /// The fully-qualified name of the service account to apply policy to.
         #[builder(into)]
-        pub service_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IAMMemberResult {

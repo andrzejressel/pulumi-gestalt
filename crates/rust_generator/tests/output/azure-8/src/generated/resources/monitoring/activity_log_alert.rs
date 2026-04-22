@@ -67,35 +67,35 @@ pub mod activity_log_alert {
     pub struct ActivityLogAlertArgs {
         /// One or more `action` blocks as defined below.
         #[builder(into, default)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActivityLogAlertAction>>,
         >,
         /// A `criteria` block as defined below.
         #[builder(into)]
-        pub criteria: pulumi_gestalt_rust::InputOrOutput<
+        pub criteria: pulumi_gestalt_rust::Input<
             super::super::types::monitoring::ActivityLogAlertCriteria,
         >,
         /// The description of this activity log alert.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should this Activity Log Alert be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure Region where the activity log alert rule should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the activity log alert. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the activity log alert instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Scope at which the Activity Log should be applied. A list of strings which could be a resource group , or a subscription, or a resource ID (such as a Storage Account).
         #[builder(into)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub scopes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

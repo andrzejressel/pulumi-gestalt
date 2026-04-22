@@ -100,31 +100,31 @@ pub mod file_system_association {
     pub struct FileSystemAssociationArgs {
         /// The Amazon Resource Name (ARN) of the storage used for the audit logs.
         #[builder(into, default)]
-        pub audit_destination_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub audit_destination_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Refresh cache information. see Cache Attributes for more details.
         #[builder(into, default)]
-        pub cache_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub cache_attributes: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::storagegateway::FileSystemAssociationCacheAttributes,
             >,
         >,
         /// The Amazon Resource Name (ARN) of the gateway.
         #[builder(into)]
-        pub gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_arn: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.
         #[builder(into)]
-        pub location_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location_arn: pulumi_gestalt_rust::Input<String>,
         /// The password of the user credential.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The user name of the user credential that has permission to access the root share of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FileSystemAssociationResult {

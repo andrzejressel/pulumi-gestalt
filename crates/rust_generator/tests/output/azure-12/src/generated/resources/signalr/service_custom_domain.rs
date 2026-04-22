@@ -109,16 +109,16 @@ pub mod service_custom_domain {
         ///
         /// > **NOTE:** Please ensure the custom domain name is included in the Subject Alternative Names of the selected SignalR Custom Certificate.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the SignalR Custom Domain. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the SignalR Custom Certificate ID of the SignalR Custom Domain. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub signalr_custom_certificate_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signalr_custom_certificate_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the SignalR ID of the SignalR Custom Domain. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub signalr_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signalr_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceCustomDomainResult {

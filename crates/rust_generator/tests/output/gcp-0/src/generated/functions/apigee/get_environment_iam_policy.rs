@@ -10,9 +10,9 @@ pub mod get_environment_iam_policy {
     pub struct GetEnvironmentIamPolicyArgs {
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub env_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub env_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEnvironmentIamPolicyResult {

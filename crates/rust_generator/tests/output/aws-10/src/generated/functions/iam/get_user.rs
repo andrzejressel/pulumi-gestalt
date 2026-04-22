@@ -10,12 +10,12 @@ pub mod get_user {
     pub struct GetUserArgs {
         /// Map of key-value pairs associated with the user.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Friendly IAM user name to match.
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetUserResult {

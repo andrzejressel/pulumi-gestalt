@@ -217,77 +217,77 @@ pub mod task_definition {
     pub struct TaskDefinitionArgs {
         /// A list of valid [container definitions](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html) provided as a single valid JSON document. Please note that you should only provide values that are part of the container definition document. For a detailed description of what parameters are available, see the [Task Definition Parameters](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) section from the official [Developer Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide).
         #[builder(into)]
-        pub container_definitions: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_definitions: pulumi_gestalt_rust::Input<String>,
         /// Number of cpu units used by the task. If the `requires_compatibilities` is `FARGATE` this field is required.
         #[builder(into, default)]
-        pub cpu: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cpu: pulumi_gestalt_rust::Input<Option<String>>,
         /// The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. See Ephemeral Storage.
         #[builder(into, default)]
-        pub ephemeral_storage: pulumi_gestalt_rust::InputOrOutput<
+        pub ephemeral_storage: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecs::TaskDefinitionEphemeralStorage>,
         >,
         /// ARN of the task execution role that the Amazon ECS container agent and the Docker daemon can assume.
         #[builder(into, default)]
-        pub execution_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub execution_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique name for your task definition.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub family: pulumi_gestalt_rust::Input<String>,
         /// Configuration block(s) with Inference Accelerators settings. Detailed below.
         #[builder(into, default)]
-        pub inference_accelerators: pulumi_gestalt_rust::InputOrOutput<
+        pub inference_accelerators: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ecs::TaskDefinitionInferenceAccelerator>>,
         >,
         /// IPC resource namespace to be used for the containers in the task The valid values are `host`, `task`, and `none`.
         #[builder(into, default)]
-        pub ipc_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipc_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount (in MiB) of memory used by the task. If the `requires_compatibilities` is `FARGATE` this field is required.
         #[builder(into, default)]
-        pub memory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub memory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Docker networking mode to use for the containers in the task. Valid values are `none`, `bridge`, `awsvpc`, and `host`.
         #[builder(into, default)]
-        pub network_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Process namespace to use for the containers in the task. The valid values are `host` and `task`.
         #[builder(into, default)]
-        pub pid_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pid_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for rules that are taken into consideration during task placement. Maximum number of `placement_constraints` is `10`. Detailed below.
         #[builder(into, default)]
-        pub placement_constraints: pulumi_gestalt_rust::InputOrOutput<
+        pub placement_constraints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ecs::TaskDefinitionPlacementConstraint>>,
         >,
         /// Configuration block for the App Mesh proxy. Detailed below.
         #[builder(into, default)]
-        pub proxy_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub proxy_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecs::TaskDefinitionProxyConfiguration>,
         >,
         /// Set of launch types required by the task. The valid values are `EC2` and `FARGATE`.
         #[builder(into, default)]
-        pub requires_compatibilities: pulumi_gestalt_rust::InputOrOutput<
+        pub requires_compatibilities: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Configuration block for runtime_platform that containers in your task may use.
         #[builder(into, default)]
-        pub runtime_platform: pulumi_gestalt_rust::InputOrOutput<
+        pub runtime_platform: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecs::TaskDefinitionRuntimePlatform>,
         >,
         /// Whether to retain the old revision when the resource is destroyed or replacement is necessary. Default is `false`.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ARN of IAM role that allows your Amazon ECS container task to make calls to other AWS services.
         #[builder(into, default)]
-        pub task_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub task_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether should track latest `ACTIVE` task definition on AWS or the one created with the resource stored in state. Default is `false`. Useful in the event the task definition is modified outside of this resource.
         #[builder(into, default)]
-        pub track_latest: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub track_latest: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block for volumes that containers in your task may use. Detailed below.
         #[builder(into, default)]
-        pub volumes: pulumi_gestalt_rust::InputOrOutput<
+        pub volumes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ecs::TaskDefinitionVolume>>,
         >,
     }

@@ -36,13 +36,13 @@ pub mod total_tls {
     pub struct TotalTlsArgs {
         /// The Certificate Authority that Total TLS certificates will be issued through. Available values: `google`, `lets_encrypt`.
         #[builder(into, default)]
-        pub certificate_authority: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_authority: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enable Total TLS for the zone.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TotalTlsResult {

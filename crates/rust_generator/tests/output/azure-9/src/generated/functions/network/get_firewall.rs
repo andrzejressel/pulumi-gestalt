@@ -10,13 +10,13 @@ pub mod get_firewall {
     pub struct GetFirewallArgs {
         /// Whether DNS proxy is enabled. It will forward DNS requests to the DNS servers when it is `true`.
         #[builder(into, default)]
-        pub dns_proxy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub dns_proxy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Azure Firewall.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Azure Firewall exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFirewallResult {

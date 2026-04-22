@@ -10,10 +10,10 @@ pub mod get_user_pool_client {
     pub struct GetUserPoolClientArgs {
         /// Client Id of the user pool.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// User pool the client belongs to.
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetUserPoolClientResult {

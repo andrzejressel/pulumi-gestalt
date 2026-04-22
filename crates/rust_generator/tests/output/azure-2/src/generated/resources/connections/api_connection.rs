@@ -59,23 +59,23 @@ pub mod api_connection {
     pub struct ApiConnectionArgs {
         /// A display name for this API Connection. Defaults to `Service Bus`. Changing this forces a new API Connection to be created.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Managed API which this API Connection is linked to. Changing this forces a new API Connection to be created.
         #[builder(into)]
-        pub managed_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_api_id: pulumi_gestalt_rust::Input<String>,
         /// The Name which should be used for this API Connection. Changing this forces a new API Connection to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub parameter_values: pulumi_gestalt_rust::InputOrOutput<
+        pub parameter_values: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the Resource Group where this API Connection should exist. Changing this forces a new API Connection to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the API Connection.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

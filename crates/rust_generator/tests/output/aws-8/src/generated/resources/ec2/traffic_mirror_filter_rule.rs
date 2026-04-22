@@ -76,40 +76,40 @@ pub mod traffic_mirror_filter_rule {
     pub struct TrafficMirrorFilterRuleArgs {
         /// Description of the traffic mirror filter rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Destination CIDR block to assign to the Traffic Mirror rule.
         #[builder(into)]
-        pub destination_cidr_block: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_cidr_block: pulumi_gestalt_rust::Input<String>,
         /// Destination port range. Supported only when the protocol is set to TCP(6) or UDP(17). See Traffic mirror port range documented below
         #[builder(into, default)]
-        pub destination_port_range: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_port_range: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::TrafficMirrorFilterRuleDestinationPortRange>,
         >,
         /// Protocol number, for example 17 (UDP), to assign to the Traffic Mirror rule. For information about the protocol value, see [Protocol Numbers](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) on the Internet Assigned Numbers Authority (IANA) website.
         #[builder(into, default)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub protocol: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Action to take (accept | reject) on the filtered traffic. Valid values are `accept` and `reject`
         #[builder(into)]
-        pub rule_action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_action: pulumi_gestalt_rust::Input<String>,
         /// Number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.
         #[builder(into)]
-        pub rule_number: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub rule_number: pulumi_gestalt_rust::Input<i32>,
         /// Source CIDR block to assign to the Traffic Mirror rule.
         #[builder(into)]
-        pub source_cidr_block: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_cidr_block: pulumi_gestalt_rust::Input<String>,
         /// Source port range. Supported only when the protocol is set to TCP(6) or UDP(17). See Traffic mirror port range documented below
         #[builder(into, default)]
-        pub source_port_range: pulumi_gestalt_rust::InputOrOutput<
+        pub source_port_range: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::TrafficMirrorFilterRuleSourcePortRange>,
         >,
         /// Direction of traffic to be captured. Valid values are `ingress` and `egress`
         ///
         /// Traffic mirror port range support following attributes:
         #[builder(into)]
-        pub traffic_direction: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub traffic_direction: pulumi_gestalt_rust::Input<String>,
         /// ID of the traffic mirror filter to which this rule should be added
         #[builder(into)]
-        pub traffic_mirror_filter_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub traffic_mirror_filter_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TrafficMirrorFilterRuleResult {

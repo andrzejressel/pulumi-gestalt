@@ -52,23 +52,23 @@ pub mod domain {
     pub struct DomainArgs {
         /// Domain endpoint options. Documented below.
         #[builder(into, default)]
-        pub endpoint_options: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudsearch::DomainEndpointOptions>,
         >,
         /// The index fields for documents added to the domain. Documented below.
         #[builder(into, default)]
-        pub index_fields: pulumi_gestalt_rust::InputOrOutput<
+        pub index_fields: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudsearch::DomainIndexField>>,
         >,
         /// Whether or not to maintain extra instances for the domain in a second Availability Zone to ensure high availability.
         #[builder(into, default)]
-        pub multi_az: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub multi_az: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the CloudSearch domain.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Domain scaling parameters. Documented below.
         #[builder(into, default)]
-        pub scaling_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub scaling_parameters: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudsearch::DomainScalingParameters>,
         >,
     }

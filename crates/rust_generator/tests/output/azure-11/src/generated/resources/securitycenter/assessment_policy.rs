@@ -38,28 +38,28 @@ pub mod assessment_policy {
     pub struct AssessmentPolicyArgs {
         /// A list of the categories of resource that is at risk when the Security Center Assessment is unhealthy. Possible values are `Unknown`, `Compute`, `Data`, `IdentityAndAccess`, `IoT` and `Networking`.
         #[builder(into, default)]
-        pub categories: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub categories: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The description of the Security Center Assessment.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// The user-friendly display name of the Security Center Assessment.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The implementation effort which is used to remediate the Security Center Assessment. Possible values are `Low`, `Moderate` and `High`.
         #[builder(into, default)]
-        pub implementation_effort: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub implementation_effort: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description which is used to mitigate the security issue.
         #[builder(into, default)]
-        pub remediation_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub remediation_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The severity level of the Security Center Assessment. Possible values are `Low`, `Medium` and `High`. Defaults to `Medium`.
         #[builder(into, default)]
-        pub severity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub severity: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of the threat impacts for the Security Center Assessment. Possible values are `AccountBreach`, `DataExfiltration`, `DataSpillage`, `DenialOfService`, `ElevationOfPrivilege`, `MaliciousInsider`, `MissingCoverage` and `ThreatResistance`.
         #[builder(into, default)]
-        pub threats: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub threats: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The user impact of the Security Center Assessment. Possible values are `Low`, `Moderate` and `High`.
         #[builder(into, default)]
-        pub user_impact: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_impact: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AssessmentPolicyResult {

@@ -493,18 +493,18 @@ pub mod certificate {
         /// argument `pool` should be set to `projects/my-project/locations/us-central1/caPools/my-pool`, argument `certificate_authority`
         /// should be set to `my-ca`.
         #[builder(into, default)]
-        pub certificate_authority: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_authority: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name for a CertificateTemplate used to issue this certificate,
         /// in the format `projects/*/locations/*/certificateTemplates/*`. If this is specified,
         /// the caller must have the necessary permission to use this template. If this is
         /// omitted, no template will be used. This template must be in the same location
         /// as the Certificate.
         #[builder(into, default)]
-        pub certificate_template: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// The config used to create a self-signed X.509 certificate or CSR.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             Option<super::super::types::certificateauthority::CertificateConfig>,
         >,
         /// Labels with user-defined metadata to apply to this resource.
@@ -512,34 +512,34 @@ pub mod certificate {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The desired lifetime of the CA certificate. Used to create the "notBeforeTime" and
         /// "notAfterTime" fields inside an X.509 certificate. A duration in seconds with up to nine
         /// fractional digits, terminated by 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub lifetime: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lifetime: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location of the Certificate. A full list of valid locations can be found by
         /// running `gcloud privateca locations list`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name for this Certificate.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. A pem-encoded X.509 certificate signing request (CSR).
         #[builder(into, default)]
-        pub pem_csr: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pem_csr: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the CaPool this Certificate belongs to.
         #[builder(into)]
-        pub pool: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pool: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CertificateResult {

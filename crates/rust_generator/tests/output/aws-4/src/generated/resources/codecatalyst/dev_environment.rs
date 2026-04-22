@@ -45,36 +45,36 @@ pub mod dev_environment {
     #[allow(dead_code)]
     pub struct DevEnvironmentArgs {
         #[builder(into, default)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information about the integrated development environment (IDE) configured for a Dev Environment.
         #[builder(into)]
-        pub ides: pulumi_gestalt_rust::InputOrOutput<
+        pub ides: pulumi_gestalt_rust::Input<
             super::super::types::codecatalyst::DevEnvironmentIdes,
         >,
         /// The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.
         #[builder(into, default)]
-        pub inactivity_timeout_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub inactivity_timeout_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Amazon EC2 instace type to use for the Dev Environment. Valid values include dev.standard1.small,dev.standard1.medium,dev.standard1.large,dev.standard1.xlarge
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// Information about the amount of storage allocated to the Dev Environment.
         #[builder(into)]
-        pub persistent_storage: pulumi_gestalt_rust::InputOrOutput<
+        pub persistent_storage: pulumi_gestalt_rust::Input<
             super::super::types::codecatalyst::DevEnvironmentPersistentStorage,
         >,
         /// The name of the project in the space.
         #[builder(into)]
-        pub project_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_name: pulumi_gestalt_rust::Input<String>,
         /// The source repository that contains the branch to clone into the Dev Environment.
         #[builder(into, default)]
-        pub repositories: pulumi_gestalt_rust::InputOrOutput<
+        pub repositories: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::codecatalyst::DevEnvironmentRepository>>,
         >,
         /// The name of the space.
         #[builder(into)]
-        pub space_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub space_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DevEnvironmentResult {

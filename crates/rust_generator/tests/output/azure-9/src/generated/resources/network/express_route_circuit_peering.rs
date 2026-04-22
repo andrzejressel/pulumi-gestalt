@@ -115,54 +115,54 @@ pub mod express_route_circuit_peering {
     pub struct ExpressRouteCircuitPeeringArgs {
         /// The name of the ExpressRoute Circuit in which to create the Peering. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub express_route_circuit_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub express_route_circuit_name: pulumi_gestalt_rust::Input<String>,
         /// A boolean value indicating whether the IPv4 peering is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub ipv4_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ipv4_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `ipv6` block as defined below.
         #[builder(into, default)]
-        pub ipv6: pulumi_gestalt_rust::InputOrOutput<
+        pub ipv6: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::ExpressRouteCircuitPeeringIpv6>,
         >,
         /// A `microsoft_peering_config` block as defined below. Required when `peering_type` is set to `MicrosoftPeering` and config for IPv4.
         #[builder(into, default)]
-        pub microsoft_peering_config: pulumi_gestalt_rust::InputOrOutput<
+        pub microsoft_peering_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::network::ExpressRouteCircuitPeeringMicrosoftPeeringConfig,
             >,
         >,
         /// The Either a 16-bit or a 32-bit ASN. Can either be public or private.
         #[builder(into, default)]
-        pub peer_asn: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub peer_asn: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The type of the ExpressRoute Circuit Peering. Acceptable values include `AzurePrivatePeering`, `AzurePublicPeering` and `MicrosoftPeering`.
         ///
         /// > **NOTE:** only one Peering of each Type can be created. Attempting to create multiple peerings of the same type will overwrite the original peering.
         #[builder(into)]
-        pub peering_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peering_type: pulumi_gestalt_rust::Input<String>,
         /// A subnet for the primary link.
         #[builder(into, default)]
-        pub primary_peer_address_prefix: pulumi_gestalt_rust::InputOrOutput<
+        pub primary_peer_address_prefix: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the resource group in which to create the Express Route Circuit Peering. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Route Filter. Only available when `peering_type` is set to `MicrosoftPeering`.
         ///
         /// > **NOTE:** `ipv6` can be specified when `peering_type` is `MicrosoftPeering` or `AzurePrivatePeering`
         #[builder(into, default)]
-        pub route_filter_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub route_filter_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A subnet for the secondary link.
         #[builder(into, default)]
-        pub secondary_peer_address_prefix: pulumi_gestalt_rust::InputOrOutput<
+        pub secondary_peer_address_prefix: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The shared key. Can be a maximum of 25 characters.
         #[builder(into, default)]
-        pub shared_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub shared_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valid VLAN ID to establish this peering on.
         #[builder(into)]
-        pub vlan_id: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub vlan_id: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct ExpressRouteCircuitPeeringResult {

@@ -70,18 +70,18 @@ pub mod api_tag_description {
     pub struct ApiTagDescriptionArgs {
         /// The The ID of the API Management API Tag. Changing this forces a new API Management API Tag Description to be created.
         #[builder(into)]
-        pub api_tag_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_tag_id: pulumi_gestalt_rust::Input<String>,
         /// The description of the Tag.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the external documentation resources describing the tag.
         #[builder(into, default)]
-        pub external_documentation_description: pulumi_gestalt_rust::InputOrOutput<
+        pub external_documentation_description: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The URL of external documentation resources describing the tag.
         #[builder(into, default)]
-        pub external_documentation_url: pulumi_gestalt_rust::InputOrOutput<
+        pub external_documentation_url: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

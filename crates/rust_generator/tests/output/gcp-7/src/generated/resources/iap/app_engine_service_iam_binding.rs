@@ -367,11 +367,11 @@ pub mod app_engine_service_iam_binding {
     pub struct AppEngineServiceIamBindingArgs {
         /// Id of the App Engine application. Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::iap::AppEngineServiceIamBindingCondition>,
         >,
         /// Identities that will be granted the privilege in `role`.
@@ -386,19 +386,19 @@ pub mod app_engine_service_iam_binding {
         /// * **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"
         /// * **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The role that should be applied. Only one
         /// `gcp.iap.AppEngineServiceIamBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         /// Service id of the App Engine application Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AppEngineServiceIamBindingResult {

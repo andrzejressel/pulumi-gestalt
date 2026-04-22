@@ -10,10 +10,10 @@ pub mod get_express_route_circuit {
     pub struct GetExpressRouteCircuitArgs {
         /// The name of the ExpressRoute circuit.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the ExpressRoute circuit exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetExpressRouteCircuitResult {

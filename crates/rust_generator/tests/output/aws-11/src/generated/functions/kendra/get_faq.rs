@@ -10,13 +10,13 @@ pub mod get_faq {
     pub struct GetFaqArgs {
         /// Identifier of the FAQ.
         #[builder(into)]
-        pub faq_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub faq_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the index that contains the FAQ.
         #[builder(into)]
-        pub index_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_id: pulumi_gestalt_rust::Input<String>,
         /// Metadata that helps organize the FAQs you create.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

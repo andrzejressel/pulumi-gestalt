@@ -36,10 +36,10 @@ pub mod size_constraint_set {
     pub struct SizeConstraintSetArgs {
         /// Name or description of the Size Constraint Set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parts of web requests that you want to inspect the size of.
         #[builder(into, default)]
-        pub size_constraints: pulumi_gestalt_rust::InputOrOutput<
+        pub size_constraints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::waf::SizeConstraintSetSizeConstraint>>,
         >,
     }

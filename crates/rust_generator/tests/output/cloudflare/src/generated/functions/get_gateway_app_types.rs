@@ -10,7 +10,7 @@ pub mod get_gateway_app_types {
     pub struct GetGatewayAppTypesArgs {
         /// The account ID to fetch Gateway App Types from.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGatewayAppTypesResult {

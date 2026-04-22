@@ -10,10 +10,10 @@ pub mod get_key_vault {
     pub struct GetKeyVaultArgs {
         /// Specifies the name of the Key Vault.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Key Vault exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetKeyVaultResult {

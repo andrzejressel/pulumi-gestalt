@@ -42,24 +42,24 @@ pub mod device_pool {
     pub struct DevicePoolArgs {
         /// The device pool's description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of devices that Device Farm can add to your device pool.
         #[builder(into, default)]
-        pub max_devices: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_devices: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the Device Pool
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the project for the device pool.
         #[builder(into)]
-        pub project_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_arn: pulumi_gestalt_rust::Input<String>,
         /// The device pool's rules. See Rule.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::devicefarm::DevicePoolRule>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

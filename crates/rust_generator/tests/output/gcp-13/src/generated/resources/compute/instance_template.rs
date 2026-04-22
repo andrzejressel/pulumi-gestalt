@@ -302,46 +302,46 @@ pub mod instance_template {
     pub struct InstanceTemplateArgs {
         /// Configure Nested Virtualisation and Simultaneous Hyper Threading on this VM. Structure is documented below
         #[builder(into, default)]
-        pub advanced_machine_features: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_machine_features: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceTemplateAdvancedMachineFeatures>,
         >,
         /// Whether to allow sending and receiving of
         /// packets with non-matching source or destination IPs. This defaults to false.
         #[builder(into, default)]
-        pub can_ip_forward: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub can_ip_forward: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable [Confidential Mode](https://cloud.google.com/compute/confidential-vm/docs/about-cvm) on this VM. Structure is documented below
         #[builder(into, default)]
-        pub confidential_instance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub confidential_instance_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::InstanceTemplateConfidentialInstanceConfig,
             >,
         >,
         /// A brief description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Disks to attach to instances created from this template.
         /// This can be specified multiple times for multiple disks. Structure is
         /// documented below.
         #[builder(into)]
-        pub disks: pulumi_gestalt_rust::InputOrOutput<
+        pub disks: pulumi_gestalt_rust::Input<
             Vec<super::super::types::compute::InstanceTemplateDisk>,
         >,
         /// Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable-instance-virtual-display#verify_display_driver) on this instance.
         /// **Note**: `allow_stopping_for_update` must be set to true in order to update this field.
         #[builder(into, default)]
-        pub enable_display: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_display: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of the type and count of accelerator cards attached to the instance. Structure documented below.
         #[builder(into, default)]
-        pub guest_accelerators: pulumi_gestalt_rust::InputOrOutput<
+        pub guest_accelerators: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::InstanceTemplateGuestAccelerator>>,
         >,
         /// A brief description to use for instances
         /// created from this template.
         #[builder(into, default)]
-        pub instance_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Action to be taken when a customer's encryption key is revoked. Supports `STOP` and `NONE`, with `NONE` being the default.
         #[builder(into, default)]
-        pub key_revocation_action_type: pulumi_gestalt_rust::InputOrOutput<
+        pub key_revocation_action_type: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A set of key/value label pairs to assign to instances
@@ -350,7 +350,7 @@ pub mod instance_template {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The machine type to create.
@@ -359,11 +359,11 @@ pub mod instance_template {
         ///
         /// - - -
         #[builder(into)]
-        pub machine_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub machine_type: pulumi_gestalt_rust::Input<String>,
         /// Metadata key/value pairs to make available from
         /// within instances created from this template.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An alternative to using the
@@ -371,15 +371,15 @@ pub mod instance_template {
         /// This replaces the startup-script metadata key on the created instance and
         /// thus the two mechanisms are not allowed to be used simultaneously.
         #[builder(into, default)]
-        pub metadata_startup_script: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata_startup_script: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a minimum CPU platform. Applicable values are the friendly names of CPU platforms, such as
         /// `Intel Haswell` or `Intel Skylake`. See the complete list [here](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
         #[builder(into, default)]
-        pub min_cpu_platform: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub min_cpu_platform: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the instance template. If you leave
         /// this blank, the provider will auto-generate a unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified
         /// prefix. Conflicts with `name`. Max length is 54 characters.
         /// Prefixes with lengths longer than 37 characters will use a shortened
@@ -390,12 +390,12 @@ pub mod instance_template {
         /// Resulting name for a `name_prefix` 38 - 54 characters:
         /// `name_prefix` + YYmmdd + 3 digit incremental counter
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Networks to attach to instances created from
         /// this template. This can be specified multiple times for multiple networks.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub network_interfaces: pulumi_gestalt_rust::InputOrOutput<
+        pub network_interfaces: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::InstanceTemplateNetworkInterface>>,
         >,
         /// (Optional, Configures network performance settings for the instance created from the
@@ -405,20 +405,20 @@ pub mod instance_template {
         /// in `guest-os-features`, and `network_interface.0.nic-type` must be `GVNIC`
         /// in order for this setting to take effect.
         #[builder(into, default)]
-        pub network_performance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_performance_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::InstanceTemplateNetworkPerformanceConfig,
             >,
         >,
         /// Beta key/value pair represents partner metadata assigned to instance template where key represent a defined namespace and value is a json string represent the entries associted with the namespace.
         #[builder(into, default)]
-        pub partner_metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub partner_metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// An instance template is a global resource that is not
         /// bound to a zone or a region. However, you can still specify some regional
         /// resources in an instance template, which restricts the template to the
@@ -426,41 +426,41 @@ pub mod instance_template {
         /// resource is tied to a specific region. Defaults to the region of the
         /// Provider if no value is given.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the reservations that this instance can consume from.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub reservation_affinity: pulumi_gestalt_rust::InputOrOutput<
+        pub reservation_affinity: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceTemplateReservationAffinity>,
         >,
         /// A set of key/value resource manager tag pairs to bind to the instances. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456.
         #[builder(into, default)]
-        pub resource_manager_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_manager_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// - A list of self_links of resource policies to attach to the instance. Modifying this list will cause the instance to recreate. Currently a max of 1 resource policy is supported.
         #[builder(into, default)]
-        pub resource_policies: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_policies: pulumi_gestalt_rust::Input<Option<String>>,
         /// The scheduling strategy to use. More details about
         /// this configuration option are detailed below.
         #[builder(into, default)]
-        pub scheduling: pulumi_gestalt_rust::InputOrOutput<
+        pub scheduling: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceTemplateScheduling>,
         >,
         /// Service account to attach to the instance. Structure is documented below.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<
+        pub service_account: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceTemplateServiceAccount>,
         >,
         /// Enable [Shielded VM](https://cloud.google.com/security/shielded-cloud/shielded-vm) on this instance. Shielded VM provides verifiable integrity to prevent against malware and rootkits. Defaults to disabled. Structure is documented below.
         /// **Note**: `shielded_instance_config` can only be used with boot images with shielded vm support. See the complete list [here](https://cloud.google.com/compute/docs/images#shielded-images).
         #[builder(into, default)]
-        pub shielded_instance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub shielded_instance_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceTemplateShieldedInstanceConfig>,
         >,
         /// Tags to attach to the instance.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct InstanceTemplateResult {

@@ -45,20 +45,20 @@ pub mod profiles_association {
     pub struct ProfilesAssociationArgs {
         /// Name of the Profile Association. Must match a regex of `(?!^[0-9]+$)([a-zA-Z0-9\\-_' ']+)`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the profile associated with the VPC.
         #[builder(into)]
-        pub profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub profile_id: pulumi_gestalt_rust::Input<String>,
         /// Resource ID of the VPC the profile to be associated with.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::route53::ProfilesAssociationTimeouts>,
         >,
     }

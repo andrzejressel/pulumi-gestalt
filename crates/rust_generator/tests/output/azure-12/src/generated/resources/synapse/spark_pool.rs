@@ -85,63 +85,63 @@ pub mod spark_pool {
     pub struct SparkPoolArgs {
         /// An `auto_pause` block as defined below.
         #[builder(into, default)]
-        pub auto_pause: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_pause: pulumi_gestalt_rust::Input<
             Option<super::super::types::synapse::SparkPoolAutoPause>,
         >,
         /// An `auto_scale` block as defined below. Exactly one of `node_count` or `auto_scale` must be specified.
         #[builder(into, default)]
-        pub auto_scale: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_scale: pulumi_gestalt_rust::Input<
             Option<super::super::types::synapse::SparkPoolAutoScale>,
         >,
         /// The cache size in the Spark Pool.
         #[builder(into, default)]
-        pub cache_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub cache_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Indicates whether compute isolation is enabled or not. Defaults to `false`.
         #[builder(into, default)]
-        pub compute_isolation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub compute_isolation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub dynamic_executor_allocation_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub dynamic_executor_allocation_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         #[builder(into, default)]
-        pub library_requirement: pulumi_gestalt_rust::InputOrOutput<
+        pub library_requirement: pulumi_gestalt_rust::Input<
             Option<super::super::types::synapse::SparkPoolLibraryRequirement>,
         >,
         #[builder(into, default)]
-        pub max_executors: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_executors: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub min_executors: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_executors: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name which should be used for this Synapse Spark Pool. Changing this forces a new Synapse Spark Pool to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of nodes in the Spark Pool. Exactly one of `node_count` or `auto_scale` must be specified.
         #[builder(into, default)]
-        pub node_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub node_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The level of node in the Spark Pool. Possible values are `Small`, `Medium`, `Large`, `None`, `XLarge`, `XXLarge` and `XXXLarge`.
         #[builder(into)]
-        pub node_size: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_size: pulumi_gestalt_rust::Input<String>,
         /// The kind of nodes that the Spark Pool provides. Possible values are `HardwareAcceleratedFPGA`, `HardwareAcceleratedGPU`, `MemoryOptimized`, and `None`.
         #[builder(into)]
-        pub node_size_family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_size_family: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub session_level_packages_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub session_level_packages_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         #[builder(into, default)]
-        pub spark_config: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::synapse::SparkPoolSparkConfig>,
         >,
         #[builder(into, default)]
-        pub spark_events_folder: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub spark_events_folder: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub spark_log_folder: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub spark_log_folder: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub spark_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spark_version: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Synapse Workspace where the Synapse Spark Pool should exist. Changing this forces a new Synapse Spark Pool to be created.
         #[builder(into)]
-        pub synapse_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub synapse_workspace_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

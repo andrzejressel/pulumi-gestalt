@@ -51,7 +51,7 @@ pub mod enrollment_status {
     pub struct EnrollmentStatusArgs {
         /// Flag to enroll member accounts of the organization if the account is the management account. No drift detection is currently supported for this argument. Default value is `false`.
         #[builder(into, default)]
-        pub include_member_accounts: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_member_accounts: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EnrollmentStatusResult {

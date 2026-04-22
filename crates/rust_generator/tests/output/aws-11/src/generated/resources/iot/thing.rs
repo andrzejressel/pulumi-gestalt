@@ -31,15 +31,15 @@ pub mod thing {
     pub struct ThingArgs {
         /// Map of attributes of the thing.
         #[builder(into, default)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the thing.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The thing type name.
         #[builder(into, default)]
-        pub thing_type_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub thing_type_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ThingResult {

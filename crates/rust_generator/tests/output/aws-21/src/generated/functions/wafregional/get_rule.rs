@@ -10,7 +10,7 @@ pub mod get_rule {
     pub struct GetRuleArgs {
         /// Name of the WAF Regional rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRuleResult {

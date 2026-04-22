@@ -46,41 +46,41 @@ pub mod provisioned_product {
     pub struct ProvisionedProductArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// _Only applies to deleting._ If set to `true`, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources. The default value is `false`.
         #[builder(into, default)]
-        pub ignore_errors: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ignore_errors: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User-friendly name of the provisioned product.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.
         #[builder(into, default)]
-        pub notification_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub notification_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use `aws.servicecatalog.getLaunchPaths`. When required, you must provide `path_id` or `path_name`, but not both.
         #[builder(into, default)]
-        pub path_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the path. You must provide `path_id` or `path_name`, but not both.
         #[builder(into, default)]
-        pub path_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Product identifier. For example, `prod-abcdzk7xy33qa`. You must provide `product_id` or `product_name`, but not both.
         #[builder(into, default)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub product_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the product. You must provide `product_id` or `product_name`, but not both.
         #[builder(into, default)]
-        pub product_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub product_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the provisioning artifact. For example, `pa-4abcdjnxjj6ne`. You must provide the `provisioning_artifact_id` or `provisioning_artifact_name`, but not both.
         #[builder(into, default)]
-        pub provisioning_artifact_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub provisioning_artifact_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the provisioning artifact. You must provide the `provisioning_artifact_id` or `provisioning_artifact_name`, but not both.
         #[builder(into, default)]
-        pub provisioning_artifact_name: pulumi_gestalt_rust::InputOrOutput<
+        pub provisioning_artifact_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Configuration block with parameters specified by the administrator that are required for provisioning the product. See `provisioning_parameters` Block for details.
         #[builder(into, default)]
-        pub provisioning_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub provisioning_parameters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::servicecatalog::ProvisionedProductProvisioningParameter,
@@ -89,17 +89,17 @@ pub mod provisioned_product {
         >,
         /// _Only applies to deleting._ Whether to delete the Service Catalog provisioned product but leave the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is `false`.
         #[builder(into, default)]
-        pub retain_physical_resources: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub retain_physical_resources: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block with information about the provisioning preferences for a stack set. See `stack_set_provisioning_preferences` Block for details.
         #[builder(into, default)]
-        pub stack_set_provisioning_preferences: pulumi_gestalt_rust::InputOrOutput<
+        pub stack_set_provisioning_preferences: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::servicecatalog::ProvisionedProductStackSetProvisioningPreferences,
             >,
         >,
         /// Tags to apply to the provisioned product. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

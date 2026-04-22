@@ -67,34 +67,34 @@ pub mod output_table {
     pub struct OutputTableArgs {
         /// The number of records for a batch operation. Must be between `1` and `100`.
         #[builder(into)]
-        pub batch_size: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub batch_size: pulumi_gestalt_rust::Input<i32>,
         /// A list of the column names to be removed from output event entities.
         #[builder(into, default)]
-        pub columns_to_removes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub columns_to_removes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the Stream Output. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the output column that contains the partition key.
         #[builder(into)]
-        pub partition_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partition_key: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the output column that contains the row key.
         #[builder(into)]
-        pub row_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub row_key: pulumi_gestalt_rust::Input<String>,
         /// The Access Key which should be used to connect to this Storage Account.
         #[builder(into)]
-        pub storage_account_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_key: pulumi_gestalt_rust::Input<String>,
         /// The name of the Storage Account.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the table where the stream should be output to.
         #[builder(into)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OutputTableResult {

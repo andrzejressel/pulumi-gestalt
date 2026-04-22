@@ -45,28 +45,28 @@ pub mod resolver_endpoint {
         /// Valid values are `INBOUND` (resolver forwards DNS queries to the DNS service for a VPC from your network or another VPC)
         /// or `OUTBOUND` (resolver forwards DNS queries from the DNS service for a VPC to your network or another VPC).
         #[builder(into)]
-        pub direction: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub direction: pulumi_gestalt_rust::Input<String>,
         /// Subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your VPCs
         /// to your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound endpoints). Described below.
         #[builder(into)]
-        pub ip_addresses: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_addresses: pulumi_gestalt_rust::Input<
             Vec<super::super::types::route53::ResolverEndpointIpAddress>,
         >,
         /// Friendly name of the Route 53 Resolver endpoint.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Protocols you want to use for the Route 53 Resolver endpoint. Valid values: `DoH`, `Do53`, `DoH-FIPS`.
         #[builder(into, default)]
-        pub protocols: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub protocols: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Route 53 Resolver endpoint IP address type. Valid values: `IPV4`, `IPV6`, `DUALSTACK`.
         #[builder(into, default)]
-        pub resolver_endpoint_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resolver_endpoint_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of one or more security groups that you want to use to control access to this VPC.
         #[builder(into)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

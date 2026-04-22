@@ -39,17 +39,17 @@ pub mod guardrail_version {
     pub struct GuardrailVersionArgs {
         /// Description of the Guardrail version.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Guardrail ARN.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub guardrail_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub guardrail_arn: pulumi_gestalt_rust::Input<String>,
         /// Whether to retain the old version of a previously deployed Guardrail. Default is `false`
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::GuardrailVersionTimeouts>,
         >,
     }

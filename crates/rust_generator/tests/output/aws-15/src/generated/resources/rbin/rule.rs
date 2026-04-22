@@ -40,29 +40,29 @@ pub mod rule {
     pub struct RuleArgs {
         /// The retention rule description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information about the retention rule lock configuration. See `lock_configuration` below.
         #[builder(into, default)]
-        pub lock_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub lock_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::rbin::RuleLockConfiguration>,
         >,
         /// Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. See `resource_tags` below.
         #[builder(into, default)]
-        pub resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_tags: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::rbin::RuleResourceTag>>,
         >,
         /// The resource type to be retained by the retention rule. Valid values are `EBS_SNAPSHOT` and `EC2_IMAGE`.
         #[builder(into)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type: pulumi_gestalt_rust::Input<String>,
         /// Information about the retention period for which the retention rule is to retain resources. See `retention_period` below.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub retention_period: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_period: pulumi_gestalt_rust::Input<
             super::super::types::rbin::RuleRetentionPeriod,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

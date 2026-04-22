@@ -10,18 +10,18 @@ pub mod get_managed_prefix_list {
     pub struct GetManagedPrefixListArgs {
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetManagedPrefixListFilter>>,
         >,
         /// ID of the prefix list to select.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the prefix list to select.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

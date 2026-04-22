@@ -10,10 +10,10 @@ pub mod get_zero_trust_tunnel_virtual_network {
     pub struct GetZeroTrustTunnelVirtualNetworkArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The Virtual Network Name.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetZeroTrustTunnelVirtualNetworkResult {

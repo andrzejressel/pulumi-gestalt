@@ -12,12 +12,12 @@ pub mod get_instance {
         /// several valid keys, for a full reference, check out
         /// [describe-instances in the AWS CLI reference][1].
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetInstanceFilter>>,
         >,
         /// If true, wait for password data to become available and retrieve it. Useful for getting the administrator password for instances running Microsoft Windows. The password data is exported to the `password_data` attribute. See [GetPasswordData](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetPasswordData.html) for more information.
         #[builder(into, default)]
-        pub get_password_data: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub get_password_data: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Retrieve Base64 encoded User Data contents into the `user_data_base64` attribute. A SHA-1 hash of the User Data contents will always be present in the `user_data` attribute. Defaults to `false`.
         ///
         /// > **NOTE:** At least one of `filter`, `instance_tags`, or `instance_id` must be specified.
@@ -26,19 +26,19 @@ pub mod get_instance {
         /// this call will fail. Ensure that your search is specific enough to return
         /// a single Instance ID only.
         #[builder(into, default)]
-        pub get_user_data: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub get_user_data: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specify the exact Instance ID with which to populate the data source.
         #[builder(into, default)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must
         /// exactly match a pair on the desired Instance.
         #[builder(into, default)]
-        pub instance_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Map of tags assigned to the Instance.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -19,10 +19,10 @@ pub mod group_policy_attachments_exclusive {
     pub struct GroupPolicyAttachmentsExclusiveArgs {
         /// IAM group name.
         #[builder(into)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_name: pulumi_gestalt_rust::Input<String>,
         /// A list of managed IAM policy ARNs to be attached to the group. Policies attached to this group but not configured in this argument will be removed.
         #[builder(into)]
-        pub policy_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub policy_arns: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct GroupPolicyAttachmentsExclusiveResult {

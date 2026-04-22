@@ -64,18 +64,18 @@ pub mod network_manager_security_admin_configuration {
     pub struct NetworkManagerSecurityAdminConfigurationArgs {
         /// A list of network intent policy based services. Possible values are `All`, `None` and `AllowRulesOnly`. Exactly one value should be set. The `All` option requires `Microsoft.Network/AllowAdminRulesOnNipBasedServices` feature registration to Subscription. Please see [this document](https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-security-admins#network-intent-policies-and-security-admin-rules) for more information.
         #[builder(into, default)]
-        pub apply_on_network_intent_policy_based_services: pulumi_gestalt_rust::InputOrOutput<
+        pub apply_on_network_intent_policy_based_services: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A description of the Security Admin Configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Network Manager Security Admin Configuration. Changing this forces a new Network Manager Security Admin Configuration to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Network Manager Security Admin Configuration. Changing this forces a new Network Manager Security Admin Configuration to be created.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkManagerSecurityAdminConfigurationResult {

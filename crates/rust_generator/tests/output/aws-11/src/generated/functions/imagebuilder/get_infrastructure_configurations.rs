@@ -10,7 +10,7 @@ pub mod get_infrastructure_configurations {
     pub struct GetInfrastructureConfigurationsArgs {
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::imagebuilder::GetInfrastructureConfigurationsFilter,

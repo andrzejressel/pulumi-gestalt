@@ -59,19 +59,19 @@ pub mod multiplex_program {
     pub struct MultiplexProgramArgs {
         /// Multiplex ID.
         #[builder(into)]
-        pub multiplex_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub multiplex_id: pulumi_gestalt_rust::Input<String>,
         /// MultiplexProgram settings. See Multiplex Program Settings for more details.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub multiplex_program_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub multiplex_program_settings: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::medialive::MultiplexProgramMultiplexProgramSettings,
             >,
         >,
         /// Unique program name.
         #[builder(into)]
-        pub program_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub program_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MultiplexProgramResult {

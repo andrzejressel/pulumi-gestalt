@@ -9,19 +9,19 @@ pub mod catalog {
     #[allow(dead_code)]
     pub struct CatalogArgs {
         #[builder(into, default)]
-        pub catalog_adogit: pulumi_gestalt_rust::InputOrOutput<
+        pub catalog_adogit: pulumi_gestalt_rust::Input<
             Option<super::super::types::devcenter::CatalogCatalogAdogit>,
         >,
         #[builder(into, default)]
-        pub catalog_github: pulumi_gestalt_rust::InputOrOutput<
+        pub catalog_github: pulumi_gestalt_rust::Input<
             Option<super::super::types::devcenter::CatalogCatalogGithub>,
         >,
         #[builder(into)]
-        pub dev_center_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CatalogResult {

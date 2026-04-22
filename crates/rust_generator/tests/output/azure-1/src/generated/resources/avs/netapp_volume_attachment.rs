@@ -195,15 +195,15 @@ pub mod netapp_volume_attachment {
     pub struct NetappVolumeAttachmentArgs {
         /// The name which should be used for this Azure VMware Solution Private Cloud Netapp File Volume Attachment. Changing this forces a new Azure VMware Solution Private Cloud Netapp File Volume Attachment to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The netapp file volume for this Azure VMware Solution Private Cloud Netapp File Volume Attachment to connect to. Changing this forces a new Azure VMware Solution Private Cloud Netapp File Volume Attachment to be created.
         #[builder(into)]
-        pub netapp_volume_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub netapp_volume_id: pulumi_gestalt_rust::Input<String>,
         /// The vmware cluster for this Azure VMware Solution Private Cloud Netapp File Volume Attachment to associated to. Changing this forces a new Azure VMware Solution Private Cloud Netapp File Volume Attachment to be created.
         ///
         /// > **NOTE :** please follow the prerequisites mentioned in this [article](https://learn.microsoft.com/en-us/azure/azure-vmware/attach-azure-netapp-files-to-azure-vmware-solution-hosts?tabs=azure-portal#prerequisites) before associating the netapp file volume to the Azure VMware Solution hosts.
         #[builder(into)]
-        pub vmware_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vmware_cluster_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetappVolumeAttachmentResult {

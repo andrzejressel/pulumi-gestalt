@@ -49,44 +49,44 @@ pub mod backup_vault {
         ///
         /// > **Note:** The `cross_region_restore_enabled` can only be specified when `redundancy` is specified for `GeoRedundant`. Once `cross_region_restore_enabled` is enabled, it cannot be disabled.
         #[builder(into, default)]
-        pub cross_region_restore_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub cross_region_restore_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the type of the data store. Possible values are `ArchiveStore`, `OperationalStore`, `SnapshotStore` and `VaultStore`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** The `SnapshotStore` will be removed in version 4.0 as it has been replaced by `OperationalStore`.
         #[builder(into)]
-        pub datastore_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub datastore_type: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataprotection::BackupVaultIdentity>,
         >,
         /// The Azure Region where the Backup Vault should exist. Changing this forces a new Backup Vault to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Backup Vault. Changing this forces a new Backup Vault to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the backup storage redundancy. Possible values are `GeoRedundant`, `LocallyRedundant` and `ZoneRedundant`. Changing this forces a new Backup Vault to be created.
         #[builder(into)]
-        pub redundancy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub redundancy: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Backup Vault should exist. Changing this forces a new Backup Vault to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The soft delete retention duration for this Backup Vault. Possible values are between `14` and `180`. Defaults to `14`.
         ///
         /// > **Note:** The `retention_duration_in_days` is the number of days for which deleted data is retained before being permanently deleted. Retention period till 14 days are free of cost, however, retention beyond 14 days may incur additional charges. The `retention_duration_in_days` is required when the `soft_delete` is set to `On`.
         #[builder(into, default)]
-        pub retention_duration_in_days: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub retention_duration_in_days: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The state of soft delete for this Backup Vault. Possible values are `AlwaysOn`, `Off` and `On`. Defaults to `On`.
         ///
         /// > **Note:** Once the `soft_delete` is set to `AlwaysOn`, the setting cannot be changed.
         #[builder(into, default)]
-        pub soft_delete: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub soft_delete: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Backup Vault.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

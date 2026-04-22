@@ -10,7 +10,7 @@ pub mod get_realtime_log_config {
     pub struct GetRealtimeLogConfigArgs {
         /// Unique name to identify this real-time log configuration.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRealtimeLogConfigResult {

@@ -45,34 +45,34 @@ pub mod virtual_wan {
     pub struct VirtualWanArgs {
         /// Boolean flag to specify whether branch to branch traffic is allowed. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_branch_to_branch_traffic: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_branch_to_branch_traffic: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Boolean flag to specify whether VPN encryption is disabled. Defaults to `false`.
         #[builder(into, default)]
-        pub disable_vpn_encryption: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_vpn_encryption: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Virtual WAN. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Office365 local breakout category. Possible values include: `Optimize`, `OptimizeAndAllow`, `All`, `None`. Defaults to `None`.
         #[builder(into, default)]
-        pub office365_local_breakout_category: pulumi_gestalt_rust::InputOrOutput<
+        pub office365_local_breakout_category: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the resource group in which to create the Virtual WAN. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the Virtual WAN.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Virtual WAN type. Possible Values include: `Basic` and `Standard`. Defaults to `Standard`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VirtualWanResult {

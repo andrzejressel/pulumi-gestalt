@@ -62,23 +62,23 @@ pub mod function_javascript_uda {
     pub struct FunctionJavascriptUdaArgs {
         /// One or more `input` blocks as defined below.
         #[builder(into)]
-        pub inputs: pulumi_gestalt_rust::InputOrOutput<
+        pub inputs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::streamanalytics::FunctionJavascriptUdaInput>,
         >,
         /// The name of the JavaScript UDA Function. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `output` block as defined below.
         #[builder(into)]
-        pub output: pulumi_gestalt_rust::InputOrOutput<
+        pub output: pulumi_gestalt_rust::Input<
             super::super::types::streamanalytics::FunctionJavascriptUdaOutput,
         >,
         /// The JavaScript of this UDA Function.
         #[builder(into)]
-        pub script: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub script: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the Stream Analytics Job where this Function should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FunctionJavascriptUdaResult {

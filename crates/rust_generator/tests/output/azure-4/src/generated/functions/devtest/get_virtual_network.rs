@@ -10,13 +10,13 @@ pub mod get_virtual_network {
     pub struct GetVirtualNetworkArgs {
         /// Specifies the name of the Dev Test Lab.
         #[builder(into)]
-        pub lab_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lab_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Virtual Network.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group that contains the Virtual Network.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVirtualNetworkResult {

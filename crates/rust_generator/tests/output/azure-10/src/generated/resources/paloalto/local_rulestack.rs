@@ -45,34 +45,34 @@ pub mod local_rulestack {
     pub struct LocalRulestackArgs {
         /// The setting to use for Anti-Spyware. Possible values include `BestPractice`, and `Custom`.
         #[builder(into, default)]
-        pub anti_spyware_profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub anti_spyware_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// The setting to use for Anti-Virus. Possible values include `BestPractice`, and `Custom`.
         #[builder(into, default)]
-        pub anti_virus_profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub anti_virus_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description for this Local Rulestack.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// TThe setting to use for DNS Subscription. Possible values include `BestPractice`, and `Custom`.
         #[builder(into, default)]
-        pub dns_subscription: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dns_subscription: pulumi_gestalt_rust::Input<Option<String>>,
         /// The setting to use for the File Blocking Profile. Possible values include `BestPractice`, and `Custom`.
         #[builder(into, default)]
-        pub file_blocking_profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_blocking_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Palo Alto Networks Rulestack should exist. Changing this forces a new Palo Alto Networks Rulestack to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Palo Alto Networks Rulestack. Changing this forces a new Palo Alto Networks Rulestack to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Palo Alto Networks Rulestack should exist. Changing this forces a new Palo Alto Networks Rulestack to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The setting to use for the URL Filtering Profile. Possible values include `BestPractice`, and `Custom`.
         #[builder(into, default)]
-        pub url_filtering_profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub url_filtering_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// The setting to use for the Vulnerability Profile. Possible values include `BestPractice`, and `Custom`.
         #[builder(into, default)]
-        pub vulnerability_profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vulnerability_profile: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LocalRulestackResult {

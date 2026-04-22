@@ -228,71 +228,71 @@ pub mod function_app {
     pub struct FunctionAppArgs {
         /// The ID of the App Service Plan within which to create this Function App.
         #[builder(into)]
-        pub app_service_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_plan_id: pulumi_gestalt_rust::Input<String>,
         /// A map of key-value pairs for [App Settings](https://docs.microsoft.com/azure/azure-functions/functions-app-settings) and custom values.
         ///
         /// > **NOTE:** The values for `AzureWebJobsStorage` and `FUNCTIONS_EXTENSION_VERSION` will be filled by other input arguments and shouldn't be configured separately. `AzureWebJobsStorage` is filled based on `storage_account_name` and `storage_account_access_key`. `FUNCTIONS_EXTENSION_VERSION` is filled based on `version`.
         #[builder(into, default)]
-        pub app_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub app_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `auth_settings` block as defined below.
         #[builder(into, default)]
-        pub auth_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::FunctionAppAuthSettings>,
         >,
         /// The mode of the Function App's client certificates requirement for incoming requests. Possible values are `Required` and `Optional`.
         #[builder(into, default)]
-        pub client_cert_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_cert_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `connection_string` block as defined below.
         #[builder(into, default)]
-        pub connection_strings: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_strings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::FunctionAppConnectionString>>,
         >,
         /// The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan.
         #[builder(into, default)]
-        pub daily_memory_time_quota: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub daily_memory_time_quota: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Should the built-in logging of this Function App be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enable_builtin_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_builtin_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is the Function App enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Can the Function App only be accessed via HTTPS? Defaults to `false`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::FunctionAppIdentity>,
         >,
         /// The User Assigned Identity Id used for looking up KeyVault secrets. The identity must be assigned to the application. See [Access vaults with a user-assigned identity](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#access-vaults-with-a-user-assigned-identity) for more information.
         #[builder(into, default)]
-        pub key_vault_reference_identity_id: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Function App. Changing this forces a new resource to be created. Limit the function name to 32 characters to avoid naming collisions. For more information about [Function App naming rule](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-name-rules#microsoftweb).
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A string indicating the Operating System type for this function app. Possible values are `linux` and ``(empty string). Changing this forces a new resource to be created. Defaults to `""`.
         ///
         /// > **NOTE:** This value will be `linux` for Linux derivatives, or an empty string for Windows (default). When set to `linux` you must also set `azure.appservice.Plan` arguments as `kind = "Linux"` and `reserved = true`
         #[builder(into, default)]
-        pub os_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub os_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Function App. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `site_config` object as defined below.
         #[builder(into, default)]
-        pub site_config: pulumi_gestalt_rust::InputOrOutput<
+        pub site_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::FunctionAppSiteConfig>,
         >,
         /// A `source_control` block, as defined below.
         #[builder(into, default)]
-        pub source_control: pulumi_gestalt_rust::InputOrOutput<
+        pub source_control: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::FunctionAppSourceControl>,
         >,
         /// The access key which will be used to access the backend storage account for the Function App.
@@ -301,18 +301,18 @@ pub mod function_app {
         ///
         /// > **Note:**  When using an App Service Plan in the `Free` or `Shared` Tiers `use_32_bit_worker_process` must be set to `true`.
         #[builder(into)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<String>,
         /// The backend storage account name which will be used by this Function App (such as the dashboard, logs). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The runtime version associated with the Function App. Defaults to `~1`.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FunctionAppResult {

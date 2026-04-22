@@ -58,19 +58,19 @@ pub mod tag_key {
     pub struct TagKeyArgs {
         /// User-assigned description of the TagKey. Must not exceed 256 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Input only. The resource name of the new TagKey's parent. Must be of the form organizations/{org_id} or projects/{project_id_or_number}.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Optional. A purpose cannot be changed once set.
         /// A purpose denotes that this Tag is intended for use in policies of a specific policy engine, and will involve that policy engine in management operations involving this Tag.
         /// Possible values are: `GCE_FIREWALL`.
         #[builder(into, default)]
-        pub purpose: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub purpose: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Purpose data cannot be changed once set.
         /// Purpose data corresponds to the policy system that the tag is intended for. For example, the GCE_FIREWALL purpose expects data in the following format: `network = "<project-name>/<vpc-name>"`.
         #[builder(into, default)]
-        pub purpose_data: pulumi_gestalt_rust::InputOrOutput<
+        pub purpose_data: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Input only. The user friendly name for a TagKey. The short name should be unique for TagKeys within the same tag namespace.
@@ -79,7 +79,7 @@ pub mod tag_key {
         ///
         /// - - -
         #[builder(into)]
-        pub short_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub short_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagKeyResult {

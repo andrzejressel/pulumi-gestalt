@@ -94,17 +94,17 @@ pub mod endpoint_attachment {
         ///
         /// - - -
         #[builder(into)]
-        pub endpoint_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_attachment_id: pulumi_gestalt_rust::Input<String>,
         /// Location of the endpoint attachment.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The Apigee Organization associated with the Apigee instance,
         /// in the format `organizations/{{org_name}}`.
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// Format: projects/*/regions/*/serviceAttachments/*
         #[builder(into)]
-        pub service_attachment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_attachment: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointAttachmentResult {

@@ -32,25 +32,25 @@ pub mod partition {
     pub struct PartitionArgs {
         /// ID of the Glue Catalog and database to create the table in. If omitted, this defaults to the AWS Account ID plus the database name.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Properties associated with this table, as a list of key-value pairs.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The values that define the partition.
         #[builder(into)]
-        pub partition_values: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub partition_values: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A storage descriptor object containing information about the physical storage of this table. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-StorageDescriptor) for a full explanation of this object.
         #[builder(into, default)]
-        pub storage_descriptor: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_descriptor: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::PartitionStorageDescriptor>,
         >,
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PartitionResult {

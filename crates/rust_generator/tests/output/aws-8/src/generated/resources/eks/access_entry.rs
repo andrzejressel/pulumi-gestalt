@@ -38,26 +38,26 @@ pub mod access_entry {
     pub struct AccessEntryArgs {
         /// Name of the EKS Cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// List of string which can optionally specify the Kubernetes groups the user would belong to when creating an access entry.
         #[builder(into, default)]
-        pub kubernetes_groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub kubernetes_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The IAM Principal ARN which requires Authentication access to the EKS cluster.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub principal_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Defaults to STANDARD which provides the standard workflow. EC2_LINUX, EC2_WINDOWS, FARGATE_LINUX types disallow users to input a username or groups, and prevent associations.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defaults to principal ARN if user is principal else defaults to assume-role/session-name is role is used.
         #[builder(into, default)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccessEntryResult {

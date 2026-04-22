@@ -10,10 +10,10 @@ pub mod get_policy_assignment {
     pub struct GetPolicyAssignmentArgs {
         /// The name of this Policy Assignment. Changing this forces a new Policy Assignment to be created.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the scope this Policy Assignment is assigned to. The `scope_id` can be a subscription id, a resource group id, a management group id, or an ID of any resource that is assigned with a policy. Changing this forces a new Policy Assignment to be created.
         #[builder(into)]
-        pub scope_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPolicyAssignmentResult {

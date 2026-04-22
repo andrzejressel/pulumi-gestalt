@@ -52,42 +52,42 @@ pub mod document_classifier {
     pub struct DocumentClassifierArgs {
         /// The ARN for an IAM Role which allows Comprehend to read the training and testing data.
         #[builder(into)]
-        pub data_access_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_access_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Configuration for the training and testing data.
         /// See the `input_data_config` Configuration Block section below.
         #[builder(into)]
-        pub input_data_config: pulumi_gestalt_rust::InputOrOutput<
+        pub input_data_config: pulumi_gestalt_rust::Input<
             super::super::types::comprehend::DocumentClassifierInputDataConfig,
         >,
         /// Two-letter language code for the language.
         /// One of `en`, `es`, `fr`, `it`, `de`, or `pt`.
         #[builder(into)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub language_code: pulumi_gestalt_rust::Input<String>,
         /// The document classification mode.
         /// One of `MULTI_CLASS` or `MULTI_LABEL`.
         /// `MULTI_CLASS` is also known as "Single Label" in the AWS Console.
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// KMS Key used to encrypt trained Document Classifiers.
         /// Can be a KMS Key ID or a KMS Key ARN.
         #[builder(into, default)]
-        pub model_kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub model_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name for the Document Classifier.
         /// Has a maximum length of 63 characters.
         /// Can contain upper- and lower-case letters, numbers, and hypen (`-`).
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for the output results of training.
         /// See the `output_data_config` Configuration Block section below.
         #[builder(into, default)]
-        pub output_data_config: pulumi_gestalt_rust::InputOrOutput<
+        pub output_data_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::comprehend::DocumentClassifierOutputDataConfig>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` Configuration Block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name for the version of the Document Classifier.
@@ -98,21 +98,21 @@ pub mod document_classifier {
         /// Can contain upper- and lower-case letters, numbers, and hypen (`-`).
         /// Conflicts with `version_name_prefix`.
         #[builder(into, default)]
-        pub version_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique version name beginning with the specified prefix.
         /// Has a maximum length of 37 characters.
         /// Can contain upper- and lower-case letters, numbers, and hypen (`-`).
         /// Conflicts with `version_name`.
         #[builder(into, default)]
-        pub version_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// KMS Key used to encrypt storage volumes during job processing.
         /// Can be a KMS Key ID or a KMS Key ARN.
         #[builder(into, default)]
-        pub volume_kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub volume_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration parameters for VPC to contain Document Classifier resources.
         /// See the `vpc_config` Configuration Block section below.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::comprehend::DocumentClassifierVpcConfig>,
         >,
     }

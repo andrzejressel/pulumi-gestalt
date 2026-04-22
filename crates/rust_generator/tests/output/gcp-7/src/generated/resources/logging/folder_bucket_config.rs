@@ -61,31 +61,31 @@ pub mod folder_bucket_config {
     pub struct FolderBucketConfigArgs {
         /// The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
         #[builder(into)]
-        pub bucket_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket_id: pulumi_gestalt_rust::Input<String>,
         /// The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK
         /// key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by
         /// updating the log bucket. Changing the KMS key is allowed.
         #[builder(into, default)]
-        pub cmek_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub cmek_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::logging::FolderBucketConfigCmekSettings>,
         >,
         /// Describes this bucket.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parent resource that contains the logging bucket.
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
         /// A list of indexed fields and related configuration data. Structure is documented below.
         #[builder(into, default)]
-        pub index_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub index_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::logging::FolderBucketConfigIndexConfig>>,
         >,
         /// The location of the bucket.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. Bucket retention can not be increased on buckets outside of projects.
         #[builder(into, default)]
-        pub retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct FolderBucketConfigResult {

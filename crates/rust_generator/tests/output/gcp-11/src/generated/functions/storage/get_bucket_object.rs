@@ -10,10 +10,10 @@ pub mod get_bucket_object {
     pub struct GetBucketObjectArgs {
         /// The name of the containing bucket.
         #[builder(into, default)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the object.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBucketObjectResult {

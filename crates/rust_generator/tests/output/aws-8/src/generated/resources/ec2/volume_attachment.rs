@@ -49,32 +49,32 @@ pub mod volume_attachment {
         /// The device name to expose to the instance (for
         /// example, `/dev/sdh` or `xvdh`).  See [Device Naming on Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html#available-ec2-device-names) and [Device Naming on Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/device_naming.html#available-ec2-device-names) for more information.
         #[builder(into)]
-        pub device_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_name: pulumi_gestalt_rust::Input<String>,
         /// Set to `true` if you want to force the
         /// volume to detach. Useful if previous attempts failed, but use this option only
         /// as a last resort, as this can result in **data loss**. See
         /// [Detaching an Amazon EBS Volume from an Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html) for more information.
         #[builder(into, default)]
-        pub force_detach: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_detach: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the Instance to attach to
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Set this to true if you do not wish
         /// to detach the volume from the instance to which it is attached at destroy
         /// time, and instead just remove the attachment from this provider state. This is
         /// useful when destroying an instance which has volumes created by some other
         /// means attached.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Set this to true to ensure that the target instance is stopped
         /// before trying to detach the volume. Stops the instance, if it is not already stopped.
         #[builder(into, default)]
-        pub stop_instance_before_detaching: pulumi_gestalt_rust::InputOrOutput<
+        pub stop_instance_before_detaching: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// ID of the Volume to be attached
         #[builder(into)]
-        pub volume_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VolumeAttachmentResult {

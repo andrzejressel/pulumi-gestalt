@@ -98,17 +98,17 @@ pub mod custom_https_configuration {
     pub struct CustomHttpsConfigurationArgs {
         /// A `custom_https_configuration` block as defined above.
         #[builder(into, default)]
-        pub custom_https_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_https_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::frontdoor::CustomHttpsConfigurationCustomHttpsConfiguration,
             >,
         >,
         /// Should the HTTPS protocol be enabled for this custom domain associated with the Front Door?
         #[builder(into)]
-        pub custom_https_provisioning_enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub custom_https_provisioning_enabled: pulumi_gestalt_rust::Input<bool>,
         /// The ID of the Front Door Frontend Endpoint which this configuration refers to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub frontend_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frontend_endpoint_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomHttpsConfigurationResult {

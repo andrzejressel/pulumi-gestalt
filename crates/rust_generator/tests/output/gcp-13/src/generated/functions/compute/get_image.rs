@@ -10,13 +10,13 @@ pub mod get_image {
     pub struct GetImageArgs {
         /// The family name of the image.
         #[builder(into, default)]
-        pub family: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub family: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean to indicate either to take to most recent image if your filter
         /// returns more than one image.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// , `family` or `filter` - (Required) The name of a specific image or a family.
         /// Exactly one of `name`, `family` or `filter` must be specified. If `name` is specified, it will fetch
         /// the corresponding image. If `family` is specified, it will return the latest image
@@ -26,12 +26,12 @@ pub mod get_image {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project in which the resource belongs. If it is not
         /// provided, the provider project is used. If you are using a
         /// [public base image][pubimg], be sure to specify the correct Image Project.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetImageResult {

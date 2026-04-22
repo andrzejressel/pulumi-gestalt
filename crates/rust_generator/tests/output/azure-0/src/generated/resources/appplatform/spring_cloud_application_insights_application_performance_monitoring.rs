@@ -70,30 +70,30 @@ pub mod spring_cloud_application_insights_application_performance_monitoring {
     pub struct SpringCloudApplicationInsightsApplicationPerformanceMonitoringArgs {
         /// The instrumentation key used to push data to Application Insights.
         #[builder(into, default)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the Spring Cloud Application Performance Monitoring resource for Application Insights is enabled globally. Defaults to `false`.
         #[builder(into, default)]
-        pub globally_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub globally_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Spring Cloud Application Performance Monitoring resource for Application Insights. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the cloud role instance.
         #[builder(into, default)]
-        pub role_instance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_instance: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the cloud role name used to label the component on the application map.
         #[builder(into, default)]
-        pub role_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the percentage for fixed-percentage sampling.
         #[builder(into, default)]
-        pub sampling_percentage: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub sampling_percentage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the number of requests per second for the rate-limited sampling.
         #[builder(into, default)]
-        pub sampling_requests_per_second: pulumi_gestalt_rust::InputOrOutput<
+        pub sampling_requests_per_second: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The ID of the Spring Cloud Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {

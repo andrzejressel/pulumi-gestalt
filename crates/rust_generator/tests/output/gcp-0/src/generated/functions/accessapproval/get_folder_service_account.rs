@@ -10,7 +10,7 @@ pub mod get_folder_service_account {
     pub struct GetFolderServiceAccountArgs {
         /// The folder ID the service account was created for.
         #[builder(into)]
-        pub folder_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFolderServiceAccountResult {

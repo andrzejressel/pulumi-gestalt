@@ -58,56 +58,56 @@ pub mod stack {
         /// Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
         /// See `access_endpoints` below.
         #[builder(into, default)]
-        pub access_endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub access_endpoints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appstream::StackAccessEndpoint>>,
         >,
         /// Settings for application settings persistence.
         /// See `application_settings` below.
         #[builder(into, default)]
-        pub application_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub application_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appstream::StackApplicationSettings>,
         >,
         /// Description for the AppStream stack.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Stack name to display.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.
         #[builder(into, default)]
-        pub embed_host_domains: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub embed_host_domains: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed. .
         #[builder(into, default)]
-        pub feedback_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub feedback_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name for the AppStream stack.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL that users are redirected to after their streaming session ends.
         #[builder(into, default)]
-        pub redirect_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub redirect_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the storage connectors to enable.
         /// See `storage_connectors` below.
         #[builder(into, default)]
-        pub storage_connectors: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_connectors: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appstream::StackStorageConnector>>,
         >,
         /// The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.
         /// See `streaming_experience_settings` below.
         #[builder(into, default)]
-        pub streaming_experience_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub streaming_experience_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appstream::StackStreamingExperienceSettings>,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS. If provided, the configuration should include a block for each configurable action.
         /// See `user_settings` below.
         #[builder(into, default)]
-        pub user_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub user_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appstream::StackUserSetting>>,
         >,
     }

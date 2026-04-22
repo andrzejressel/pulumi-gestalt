@@ -13,28 +13,28 @@ pub mod get_vpn_gateway {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub amazon_side_asn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub amazon_side_asn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of a VPC attached to the specific VPN Gateway to retrieve.
         #[builder(into, default)]
-        pub attached_vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub attached_vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Availability Zone of the specific VPN Gateway to retrieve.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetVpnGatewayFilter>>,
         >,
         /// ID of the specific VPN Gateway to retrieve.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// State of the specific VPN Gateway to retrieve.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match
         /// a pair on the desired VPN Gateway.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

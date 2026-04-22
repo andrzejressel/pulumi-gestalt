@@ -75,30 +75,30 @@ pub mod agent {
     pub struct AgentArgs {
         /// DataSync Agent activation key during resource creation. Conflicts with `ip_address`. If an `ip_address` is provided instead, the provider will retrieve the `activation_key` as part of the resource creation.
         #[builder(into, default)]
-        pub activation_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub activation_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// DataSync Agent IP address to retrieve activation key during resource creation. Conflicts with `activation_key`. DataSync Agent must be accessible on port 80 from where the provider is running.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the DataSync Agent.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IP address of the VPC endpoint the agent should connect to when retrieving an activation key during resource creation. Conflicts with `activation_key`.
         #[builder(into, default)]
-        pub private_link_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_link_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARNs of the security groups used to protect your data transfer task subnets.
         #[builder(into, default)]
-        pub security_group_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task.
         #[builder(into, default)]
-        pub subnet_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value pairs of resource tags to assign to the DataSync Agent. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the VPC (virtual private cloud) endpoint that the agent has access to.
         #[builder(into, default)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AgentResult {

@@ -47,12 +47,12 @@ pub mod drt_access_log_bucket_association {
     pub struct DrtAccessLogBucketAssociationArgs {
         /// The Amazon S3 bucket that contains the logs that you want to share.
         #[builder(into)]
-        pub log_bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_bucket: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Role Arn association used for allowing Shield DRT Access.
         #[builder(into)]
-        pub role_arn_association_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn_association_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::shield::DrtAccessLogBucketAssociationTimeouts>,
         >,
     }

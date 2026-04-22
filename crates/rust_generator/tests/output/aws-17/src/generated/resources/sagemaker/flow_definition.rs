@@ -147,35 +147,35 @@ pub mod flow_definition {
     pub struct FlowDefinitionArgs {
         /// The name of your flow definition.
         #[builder(into)]
-        pub flow_definition_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub flow_definition_name: pulumi_gestalt_rust::Input<String>,
         /// An object containing information about the events that trigger a human workflow. See Human Loop Activation Config details below.
         #[builder(into, default)]
-        pub human_loop_activation_config: pulumi_gestalt_rust::InputOrOutput<
+        pub human_loop_activation_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::sagemaker::FlowDefinitionHumanLoopActivationConfig,
             >,
         >,
         /// An object containing information about the tasks the human reviewers will perform. See Human Loop Config details below.
         #[builder(into)]
-        pub human_loop_config: pulumi_gestalt_rust::InputOrOutput<
+        pub human_loop_config: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::FlowDefinitionHumanLoopConfig,
         >,
         /// Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source. See Human Loop Request Source details below.
         #[builder(into, default)]
-        pub human_loop_request_source: pulumi_gestalt_rust::InputOrOutput<
+        pub human_loop_request_source: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::FlowDefinitionHumanLoopRequestSource>,
         >,
         /// An object containing information about where the human review results will be uploaded. See Output Config details below.
         #[builder(into)]
-        pub output_config: pulumi_gestalt_rust::InputOrOutput<
+        pub output_config: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::FlowDefinitionOutputConfig,
         >,
         /// The Amazon Resource Name (ARN) of the role needed to call other services on your behalf.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

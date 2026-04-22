@@ -36,23 +36,23 @@ pub mod place_index {
     pub struct PlaceIndexArgs {
         /// Specifies the geospatial data provider for the new place index.
         #[builder(into)]
-        pub data_source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source: pulumi_gestalt_rust::Input<String>,
         /// Configuration block with the data storage option chosen for requesting Places. Detailed below.
         #[builder(into, default)]
-        pub data_source_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub data_source_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::location::PlaceIndexDataSourceConfiguration>,
         >,
         /// The optional description for the place index resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the place index resource.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub index_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the place index. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

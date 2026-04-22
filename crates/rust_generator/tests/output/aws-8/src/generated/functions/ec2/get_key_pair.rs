@@ -10,21 +10,21 @@ pub mod get_key_pair {
     pub struct GetKeyPairArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetKeyPairFilter>>,
         >,
         /// Whether to include the public key material in the response.
         #[builder(into, default)]
-        pub include_public_key: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_public_key: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Key Pair name.
         #[builder(into, default)]
-        pub key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key Pair ID.
         #[builder(into, default)]
-        pub key_pair_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_pair_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Any tags assigned to the Key Pair.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

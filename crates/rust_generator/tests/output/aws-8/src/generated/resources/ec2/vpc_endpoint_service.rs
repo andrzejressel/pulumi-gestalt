@@ -62,34 +62,34 @@ pub mod vpc_endpoint_service {
     pub struct VpcEndpointServiceArgs {
         /// Whether or not VPC endpoint connection requests to the service must be accepted by the service owner - `true` or `false`.
         #[builder(into)]
-        pub acceptance_required: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub acceptance_required: pulumi_gestalt_rust::Input<bool>,
         /// The ARNs of one or more principals allowed to discover the endpoint service.
         #[builder(into, default)]
-        pub allowed_principals: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub allowed_principals: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Amazon Resource Names (ARNs) of one or more Gateway Load Balancers for the endpoint service.
         #[builder(into, default)]
-        pub gateway_load_balancer_arns: pulumi_gestalt_rust::InputOrOutput<
+        pub gateway_load_balancer_arns: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Amazon Resource Names (ARNs) of one or more Network Load Balancers for the endpoint service.
         #[builder(into, default)]
-        pub network_load_balancer_arns: pulumi_gestalt_rust::InputOrOutput<
+        pub network_load_balancer_arns: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The private DNS name for the service.
         #[builder(into, default)]
-        pub private_dns_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_dns_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The supported IP address types. The possible values are `ipv4` and `ipv6`.
         #[builder(into, default)]
-        pub supported_ip_address_types: pulumi_gestalt_rust::InputOrOutput<
+        pub supported_ip_address_types: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The set of regions from which service consumers can access the service.
         #[builder(into, default)]
-        pub supported_regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub supported_regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

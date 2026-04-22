@@ -10,7 +10,7 @@ pub mod get_source_control_token {
     pub struct GetSourceControlTokenArgs {
         /// The Token type. Possible values include `Bitbucket`, `Dropbox`, `Github`, and `OneDrive`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSourceControlTokenResult {

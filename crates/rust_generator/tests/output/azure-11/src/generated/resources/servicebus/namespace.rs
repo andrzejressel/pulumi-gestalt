@@ -41,56 +41,56 @@ pub mod namespace {
     pub struct NamespaceArgs {
         /// Specifies the capacity. When `sku` is `Premium`, capacity can be `1`, `2`, `4`, `8` or `16`. When `sku` is `Basic` or `Standard`, capacity can be `0` only.
         #[builder(into, default)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An `customer_managed_key` block as defined below.
         #[builder(into, default)]
-        pub customer_managed_key: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicebus::NamespaceCustomerManagedKey>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicebus::NamespaceIdentity>,
         >,
         /// Whether or not SAS authentication is enabled for the Service Bus namespace. Defaults to `true`.
         #[builder(into, default)]
-        pub local_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The minimum supported TLS version for this Service Bus Namespace. Valid values are: `1.0`, `1.1` and `1.2`. Defaults to `1.2`.
         #[builder(into, default)]
-        pub minimum_tls_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub minimum_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the ServiceBus Namespace resource . Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `network_rule_set` block as defined below.
         #[builder(into, default)]
-        pub network_rule_set: pulumi_gestalt_rust::InputOrOutput<
+        pub network_rule_set: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicebus::NamespaceNetworkRuleSet>,
         >,
         /// Specifies the number messaging partitions. Only valid when `sku` is `Premium` and the minimum number is `1`. Possible values include `0`, `1`, `2`, and `4`. Defaults to `0` for Standard, Basic namespace. Changing this forces a new resource to be created.
         ///
         /// > **Note:** It's not possible to change the partitioning option on any existing namespace. The number of partitions can only be set during namespace creation. Please check the doc https://learn.microsoft.com/en-us/azure/service-bus-messaging/enable-partitions-premium for more feature restrictions.
         #[builder(into, default)]
-        pub premium_messaging_partitions: pulumi_gestalt_rust::InputOrOutput<
+        pub premium_messaging_partitions: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Is public network access enabled for the Service Bus Namespace? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the resource group in which to Changing this forces a new resource to be created.
         /// create the namespace.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Defines which tier to use. Options are `Basic`, `Standard` or `Premium`. Please note that setting this field to `Premium` will force the creation of a new resource.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -52,14 +52,14 @@ pub mod notification {
     pub struct NotificationArgs {
         /// List of AutoScaling Group Names
         #[builder(into)]
-        pub group_names: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub group_names: pulumi_gestalt_rust::Input<Vec<String>>,
         /// List of Notification Types that trigger
         /// notifications. Acceptable values are documented [in the AWS documentation here](https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_NotificationConfiguration.html)
         #[builder(into)]
-        pub notifications: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub notifications: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Topic ARN for notifications to be sent through
         #[builder(into)]
-        pub topic_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub topic_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NotificationResult {

@@ -982,57 +982,57 @@ pub mod stream {
     pub struct StreamArgs {
         /// Backfill strategy to automatically backfill the Stream's objects. Specific objects can be excluded.
         #[builder(into, default)]
-        pub backfill_all: pulumi_gestalt_rust::InputOrOutput<
+        pub backfill_all: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::StreamBackfillAll>,
         >,
         /// Backfill strategy to disable automatic backfill for the Stream's objects.
         #[builder(into, default)]
-        pub backfill_none: pulumi_gestalt_rust::InputOrOutput<
+        pub backfill_none: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::StreamBackfillNone>,
         >,
         /// Create the stream without validating it.
         #[builder(into, default)]
-        pub create_without_validation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub create_without_validation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A reference to a KMS encryption key. If provided, it will be used to encrypt the data. If left blank, data will be
         /// encrypted using an internal Stream-specific encryption key provisioned through KMS.
         #[builder(into, default)]
-        pub customer_managed_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_encryption_key: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Desired state of the Stream. Set this field to 'RUNNING' to start the stream, 'NOT_STARTED' to create the stream without
         /// starting and 'PAUSED' to pause the stream from a 'RUNNING' state. Possible values: NOT_STARTED, RUNNING, PAUSED.
         /// Default: NOT_STARTED
         #[builder(into, default)]
-        pub desired_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub desired_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Destination connection profile configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub destination_config: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_config: pulumi_gestalt_rust::Input<
             super::super::types::datastream::StreamDestinationConfig,
         >,
         /// Display name.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Labels. **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please
         /// refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the location this stream is located in.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Source connection profile configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub source_config: pulumi_gestalt_rust::InputOrOutput<
+        pub source_config: pulumi_gestalt_rust::Input<
             super::super::types::datastream::StreamSourceConfig,
         >,
         /// The stream identifier.
         #[builder(into)]
-        pub stream_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StreamResult {

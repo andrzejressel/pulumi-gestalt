@@ -10,7 +10,7 @@ pub mod get_crypto_key_iam_policy {
     pub struct GetCryptoKeyIamPolicyArgs {
         /// The crypto key ID, in the form
         #[builder(into)]
-        pub crypto_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub crypto_key_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCryptoKeyIamPolicyResult {

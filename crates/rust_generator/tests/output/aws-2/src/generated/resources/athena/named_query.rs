@@ -73,19 +73,19 @@ pub mod named_query {
     pub struct NamedQueryArgs {
         /// Database to which the query belongs.
         #[builder(into)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database: pulumi_gestalt_rust::Input<String>,
         /// Brief explanation of the query. Maximum length of 1024.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Plain language name for the query. Maximum length of 128.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Text of the query itself. In other words, all query statements. Maximum length of 262144.
         #[builder(into)]
-        pub query: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query: pulumi_gestalt_rust::Input<String>,
         /// Workgroup to which the query belongs. Defaults to `primary`
         #[builder(into, default)]
-        pub workgroup: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workgroup: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NamedQueryResult {

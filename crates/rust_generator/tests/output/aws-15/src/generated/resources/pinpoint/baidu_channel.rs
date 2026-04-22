@@ -39,16 +39,16 @@ pub mod baidu_channel {
     pub struct BaiduChannelArgs {
         /// Platform credential API key from Baidu.
         #[builder(into)]
-        pub api_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_key: pulumi_gestalt_rust::Input<String>,
         /// The application ID.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether to enable the channel. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Platform credential Secret key from Baidu.
         #[builder(into)]
-        pub secret_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_key: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BaiduChannelResult {

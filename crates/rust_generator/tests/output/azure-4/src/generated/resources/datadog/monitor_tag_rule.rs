@@ -60,20 +60,20 @@ pub mod monitor_tag_rule {
     pub struct MonitorTagRuleArgs {
         /// The Datadog Monitor Id which should be used for this Datadog Monitor Tag Rule. Changing this forces a new Datadog Monitor Tag Rule to be created.
         #[builder(into)]
-        pub datadog_monitor_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub datadog_monitor_id: pulumi_gestalt_rust::Input<String>,
         /// A `log` block as defined below.
         #[builder(into, default)]
-        pub logs: pulumi_gestalt_rust::InputOrOutput<
+        pub logs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datadog::MonitorTagRuleLog>>,
         >,
         /// A `metric` block as defined below.
         #[builder(into, default)]
-        pub metrics: pulumi_gestalt_rust::InputOrOutput<
+        pub metrics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datadog::MonitorTagRuleMetric>>,
         >,
         /// The name of the Tag Rules configuration. The allowed value is `default`. Defaults to `default`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MonitorTagRuleResult {

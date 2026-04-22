@@ -45,13 +45,13 @@ pub mod multicast_domain_association {
     pub struct MulticastDomainAssociationArgs {
         /// The ID of the subnet to associate with the transit gateway multicast domain.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the transit gateway attachment.
         #[builder(into)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the transit gateway multicast domain.
         #[builder(into)]
-        pub transit_gateway_multicast_domain_id: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_multicast_domain_id: pulumi_gestalt_rust::Input<
             String,
         >,
     }

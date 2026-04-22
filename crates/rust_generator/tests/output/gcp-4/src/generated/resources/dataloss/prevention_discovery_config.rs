@@ -40,40 +40,40 @@ pub mod prevention_discovery_config {
         /// Actions to execute at the completion of scanning
         /// Structure is documented below.
         #[builder(into, default)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dataloss::PreventionDiscoveryConfigAction>>,
         >,
         /// Display Name (max 1000 Chars)
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Detection logic for profile generation
         #[builder(into, default)]
-        pub inspect_templates: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub inspect_templates: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Location to create the discovery config in.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub org_config: pulumi_gestalt_rust::InputOrOutput<
+        pub org_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataloss::PreventionDiscoveryConfigOrgConfig>,
         >,
         /// The parent of the discovery config in any of the following formats:
         /// * `projects/{{project}}/locations/{{location}}`
         /// * `organizations/{{organization_id}}/locations/{{location}}`
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Required. A status for this configuration
         /// Possible values are: `RUNNING`, `PAUSED`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Target to match against for determining what to scan and how frequently
         /// Structure is documented below.
         #[builder(into, default)]
-        pub targets: pulumi_gestalt_rust::InputOrOutput<
+        pub targets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dataloss::PreventionDiscoveryConfigTarget>>,
         >,
     }

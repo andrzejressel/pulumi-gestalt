@@ -10,7 +10,7 @@ pub mod get_route_table_routes {
     pub struct GetRouteTableRoutesArgs {
         /// Custom filter block as described below.
         #[builder(into)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Vec<super::super::super::types::ec2transitgateway::GetRouteTableRoutesFilter>,
         >,
         /// Identifier of EC2 Transit Gateway Route Table.
@@ -18,7 +18,7 @@ pub mod get_route_table_routes {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into)]
-        pub transit_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRouteTableRoutesResult {

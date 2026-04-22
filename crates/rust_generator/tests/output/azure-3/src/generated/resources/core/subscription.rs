@@ -98,28 +98,28 @@ pub mod subscription {
     pub struct SubscriptionArgs {
         /// The Alias name for the subscription. This provider will generate a new GUID if this is not supplied. Changing this forces a new Subscription to be created.
         #[builder(into, default)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Billing Scope ID. Can be a Microsoft Customer Account Billing Scope ID, a Microsoft Partner Account Billing Scope ID or an Enrollment Billing Scope ID.
         #[builder(into, default)]
-        pub billing_scope_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub billing_scope_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Subscription. Changing this forces a new Subscription to be created.
         ///
         /// > **NOTE:** This value can be specified only for adopting control of an existing Subscription, it cannot be used to provide a custom Subscription ID.
         ///
         /// > **NOTE:** Either `billing_scope_id` or `subscription_id` has to be specified.
         #[builder(into, default)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subscription_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of the Subscription. This is the Display Name in the portal.
         #[builder(into)]
-        pub subscription_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the Subscription.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The workload type of the Subscription. Possible values are `Production` (default) and `DevTest`. Changing this forces a new Subscription to be created.
         #[builder(into, default)]
-        pub workload: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workload: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionResult {

@@ -60,26 +60,26 @@ pub mod integration_account_batch_configuration {
     pub struct IntegrationAccountBatchConfigurationArgs {
         /// The batch group name of the Logic App Integration Batch Configuration. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub batch_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub batch_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Logic App Integration Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub integration_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_account_name: pulumi_gestalt_rust::Input<String>,
         /// A JSON mapping of any Metadata for this Logic App Integration Account Batch Configuration.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Batch Configuration. Only Alphanumeric characters allowed. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `release_criteria` block as documented below, which is used to select the criteria to meet before processing each batch.
         #[builder(into)]
-        pub release_criteria: pulumi_gestalt_rust::InputOrOutput<
+        pub release_criteria: pulumi_gestalt_rust::Input<
             super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteria,
         >,
         /// The name of the Resource Group where the Logic App Integration Account Batch Configuration should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IntegrationAccountBatchConfigurationResult {

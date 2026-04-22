@@ -21,64 +21,64 @@ pub mod image_pipeline {
     pub struct ImagePipelineArgs {
         /// Amazon Resource Name (ARN) of the container recipe.
         #[builder(into, default)]
-        pub container_recipe_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub container_recipe_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the image pipeline.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the Image Builder Distribution Configuration.
         #[builder(into, default)]
-        pub distribution_configuration_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub distribution_configuration_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Whether additional information about the image being created is collected. Defaults to `true`.
         #[builder(into, default)]
-        pub enhanced_image_metadata_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub enhanced_image_metadata_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Amazon Resource Name (ARN) of the service-linked role to be used by Image Builder to [execute workflows](https://docs.aws.amazon.com/imagebuilder/latest/userguide/manage-image-workflows.html).
         #[builder(into, default)]
-        pub execution_role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub execution_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the image recipe.
         #[builder(into, default)]
-        pub image_recipe_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_recipe_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with image scanning configuration. Detailed below.
         #[builder(into, default)]
-        pub image_scanning_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub image_scanning_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::imagebuilder::ImagePipelineImageScanningConfiguration,
             >,
         >,
         /// Configuration block with image tests configuration. Detailed below.
         #[builder(into, default)]
-        pub image_tests_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub image_tests_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::imagebuilder::ImagePipelineImageTestsConfiguration,
             >,
         >,
         /// Amazon Resource Name (ARN) of the Image Builder Infrastructure Configuration.
         #[builder(into)]
-        pub infrastructure_configuration_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub infrastructure_configuration_arn: pulumi_gestalt_rust::Input<String>,
         /// Name of the image pipeline.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with schedule settings. Detailed below.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::imagebuilder::ImagePipelineSchedule>,
         >,
         /// Status of the image pipeline. Valid values are `DISABLED` and `ENABLED`. Defaults to `ENABLED`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags for the image pipeline. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block with the workflow configuration. Detailed below.
         #[builder(into, default)]
-        pub workflows: pulumi_gestalt_rust::InputOrOutput<
+        pub workflows: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::imagebuilder::ImagePipelineWorkflow>>,
         >,
     }

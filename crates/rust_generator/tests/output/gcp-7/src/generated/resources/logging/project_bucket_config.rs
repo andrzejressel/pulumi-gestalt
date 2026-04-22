@@ -147,35 +147,35 @@ pub mod project_bucket_config {
     pub struct ProjectBucketConfigArgs {
         /// The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
         #[builder(into)]
-        pub bucket_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket_id: pulumi_gestalt_rust::Input<String>,
         /// The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed. Structure is documented below.
         #[builder(into, default)]
-        pub cmek_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub cmek_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::logging::ProjectBucketConfigCmekSettings>,
         >,
         /// Describes this bucket.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not Log Analytics is enabled. Logs for buckets with Log Analytics enabled can be queried in the **Log Analytics** page using SQL queries. Cannot be disabled once enabled.
         #[builder(into, default)]
-        pub enable_analytics: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_analytics: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of indexed fields and related configuration data. Structure is documented below.
         #[builder(into, default)]
-        pub index_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub index_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::logging::ProjectBucketConfigIndexConfig>>,
         >,
         /// The location of the bucket.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Whether the bucket is locked. The retention period on a locked bucket cannot be changed. Locked buckets may only be deleted if they are empty.
         #[builder(into, default)]
-        pub locked: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub locked: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The parent resource that contains the logging bucket.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
         /// Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used.
         #[builder(into, default)]
-        pub retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct ProjectBucketConfigResult {

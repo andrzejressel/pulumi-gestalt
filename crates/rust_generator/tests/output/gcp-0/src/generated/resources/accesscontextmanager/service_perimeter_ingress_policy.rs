@@ -38,7 +38,7 @@ pub mod service_perimeter_ingress_policy {
         /// to apply.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ingress_from: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress_from: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::accesscontextmanager::ServicePerimeterIngressPolicyIngressFrom,
             >,
@@ -47,7 +47,7 @@ pub mod service_perimeter_ingress_policy {
         /// this `IngressPolicy` to apply.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ingress_to: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress_to: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::accesscontextmanager::ServicePerimeterIngressPolicyIngressTo,
             >,
@@ -57,7 +57,7 @@ pub mod service_perimeter_ingress_policy {
         ///
         /// - - -
         #[builder(into)]
-        pub perimeter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub perimeter: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServicePerimeterIngressPolicyResult {

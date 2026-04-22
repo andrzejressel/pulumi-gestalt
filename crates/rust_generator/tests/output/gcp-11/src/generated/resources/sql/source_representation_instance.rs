@@ -93,48 +93,48 @@ pub mod source_representation_instance {
     pub struct SourceRepresentationInstanceArgs {
         /// The CA certificate on the external server. Include only if SSL/TLS is used on the external server.
         #[builder(into, default)]
-        pub ca_certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ca_certificate: pulumi_gestalt_rust::Input<Option<String>>,
         /// The client certificate on the external server. Required only for server-client authentication. Include only if SSL/TLS is used on the external server.
         #[builder(into, default)]
-        pub client_certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_certificate: pulumi_gestalt_rust::Input<Option<String>>,
         /// The private key file for the client certificate on the external server. Required only for server-client authentication. Include only if SSL/TLS is used on the external server.
         #[builder(into, default)]
-        pub client_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The MySQL version running on your source database server.
         /// Possible values are: `MYSQL_5_6`, `MYSQL_5_7`, `MYSQL_8_0`, `POSTGRES_9_6`, `POSTGRES_10`, `POSTGRES_11`, `POSTGRES_12`, `POSTGRES_13`, `POSTGRES_14`.
         #[builder(into)]
-        pub database_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_version: pulumi_gestalt_rust::Input<String>,
         /// A file in the bucket that contains the data from the external server.
         #[builder(into, default)]
-        pub dump_file_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dump_file_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 address and port for the external server, or the the DNS address for the external server. If the external server is hosted on Cloud SQL, the port is 5432.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host: pulumi_gestalt_rust::Input<String>,
         /// The name of the source representation instance. Use any valid Cloud SQL instance name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password for the replication user account.
         /// **Note**: This property is sensitive and will not be displayed in the plan.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The externally accessible port for the source database server.
         /// Defaults to 3306.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Region in which the created instance should reside.
         /// If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The replication user account on the external server.
         #[builder(into, default)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub username: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SourceRepresentationInstanceResult {

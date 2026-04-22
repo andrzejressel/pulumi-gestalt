@@ -81,20 +81,20 @@ pub mod mongo_user_definition {
     pub struct MongoUserDefinitionArgs {
         /// The resource ID of the Mongo DB. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cosmos_mongo_database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cosmos_mongo_database_id: pulumi_gestalt_rust::Input<String>,
         /// A list of Mongo Roles that are inherited to the Mongo User Definition.
         ///
         /// > **Note:** The role that needs to be inherited should exist in the Mongo DB of `cosmos_mongo_database_id`.
         #[builder(into, default)]
-        pub inherited_role_names: pulumi_gestalt_rust::InputOrOutput<
+        pub inherited_role_names: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The password for the Mongo User Definition.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The username for the Mongo User Definition. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MongoUserDefinitionResult {

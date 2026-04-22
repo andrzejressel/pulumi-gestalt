@@ -35,12 +35,12 @@ pub mod waiting_room_settings {
     pub struct WaitingRoomSettingsArgs {
         /// Whether to allow verified search engine crawlers to bypass all waiting rooms on this zone. Defaults to `false`.
         #[builder(into, default)]
-        pub search_engine_crawler_bypass: pulumi_gestalt_rust::InputOrOutput<
+        pub search_engine_crawler_bypass: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WaitingRoomSettingsResult {

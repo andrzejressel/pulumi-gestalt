@@ -42,19 +42,19 @@ pub mod model {
     pub struct ModelArgs {
         /// Content type of the model
         #[builder(into)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content_type: pulumi_gestalt_rust::Input<String>,
         /// Description of the model
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the model
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the associated REST API
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
         /// Schema of the model in a JSON form
         #[builder(into, default)]
-        pub schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schema: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ModelResult {

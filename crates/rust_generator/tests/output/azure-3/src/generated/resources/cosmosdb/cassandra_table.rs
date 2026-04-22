@@ -98,27 +98,27 @@ pub mod cassandra_table {
         ///
         /// > **Note:** throughput has a maximum value of `1000000` unless a higher limit is requested via Azure Support
         #[builder(into, default)]
-        pub analytical_storage_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub analytical_storage_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub autoscale_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscale_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::CassandraTableAutoscaleSettings>,
         >,
         /// The ID of the Cosmos DB Cassandra Keyspace to create the table within. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cassandra_keyspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cassandra_keyspace_id: pulumi_gestalt_rust::Input<String>,
         /// Time to live of the Cosmos DB Cassandra table. Possible values are at least `-1`. `-1` means the Cassandra table never expires.
         #[builder(into, default)]
-        pub default_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Cosmos DB Cassandra Table. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `schema` block as defined below.
         #[builder(into)]
-        pub schema: pulumi_gestalt_rust::InputOrOutput<
+        pub schema: pulumi_gestalt_rust::Input<
             super::super::types::cosmosdb::CassandraTableSchema,
         >,
         #[builder(into, default)]
-        pub throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub throughput: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct CassandraTableResult {

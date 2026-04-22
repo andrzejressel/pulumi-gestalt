@@ -10,15 +10,15 @@ pub mod get_constraint {
     pub struct GetConstraintArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the constraint.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Constraint identifier.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetConstraintResult {

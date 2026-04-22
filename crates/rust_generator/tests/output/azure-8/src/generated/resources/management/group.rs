@@ -48,20 +48,20 @@ pub mod group {
     pub struct GroupArgs {
         /// A friendly name for this Management Group. If not specified, this will be the same as the `name`.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name or UUID for this Management Group, which needs to be unique across your tenant. A new UUID will be generated if not provided. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Parent Management Group.
         #[builder(into, default)]
-        pub parent_management_group_id: pulumi_gestalt_rust::InputOrOutput<
+        pub parent_management_group_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A list of Subscription GUIDs which should be assigned to the Management Group.
         ///
         /// > **Note:** To clear all Subscriptions from the Management Group set `subscription_ids` to an empty list
         #[builder(into, default)]
-        pub subscription_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subscription_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GroupResult {

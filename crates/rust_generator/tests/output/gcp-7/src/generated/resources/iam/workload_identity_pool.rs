@@ -82,19 +82,19 @@ pub mod workload_identity_pool {
     pub struct WorkloadIdentityPoolArgs {
         /// A description of the pool. Cannot exceed 256 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the pool is disabled. You cannot use a disabled pool to exchange tokens, or use
         /// existing tokens to access resources. If the pool is re-enabled, existing tokens grant
         /// access again.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A display name for the pool. Cannot exceed 32 characters.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID to use for the pool, which becomes the final component of the resource name. This
         /// value should be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix
         /// `gcp-` is reserved for use by Google, and may not be specified.
@@ -102,7 +102,7 @@ pub mod workload_identity_pool {
         ///
         /// - - -
         #[builder(into)]
-        pub workload_identity_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workload_identity_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkloadIdentityPoolResult {

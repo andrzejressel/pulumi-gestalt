@@ -10,7 +10,7 @@ pub mod get_task_definition {
     pub struct GetTaskDefinitionArgs {
         /// Family for the latest ACTIVE revision, family and revision (family:revision) for a specific revision in the family, the ARN of the task definition to access to.
         #[builder(into)]
-        pub task_definition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub task_definition: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTaskDefinitionResult {

@@ -128,51 +128,51 @@ pub mod virtual_network_peering {
     pub struct VirtualNetworkPeeringArgs {
         /// Controls if forwarded traffic from VMs in the remote virtual network is allowed. Defaults to `false`.
         #[builder(into, default)]
-        pub allow_forwarded_traffic: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_forwarded_traffic: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Controls gatewayLinks can be used in the remote virtual network’s link to the local virtual network. Defaults to `false`.
         #[builder(into, default)]
-        pub allow_gateway_transit: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_gateway_transit: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Controls if the traffic from the local virtual network can reach the remote virtual network. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_virtual_network_access: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_virtual_network_access: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A list of local Subnet names that are Subnet peered with remote Virtual Network.
         #[builder(into, default)]
-        pub local_subnet_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub local_subnet_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the virtual network peering. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether only IPv6 address space is peered for Subnet peering. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub only_ipv6_peering_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub only_ipv6_peering_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether complete Virtual Network address space is peered. Defaults to `true`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub peer_complete_virtual_networks_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub peer_complete_virtual_networks_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A list of remote Subnet names from remote Virtual Network that are Subnet peered.
         #[builder(into, default)]
-        pub remote_subnet_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub remote_subnet_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The full Azure resource ID of the remote virtual network. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub remote_virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub remote_virtual_network_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the virtual network peering. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of key values pairs that can be used to sync network routes from the remote virtual network to the local virtual network. See the trigger example for an example on how to set it up.
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Controls if remote gateways can be used on the local virtual network. If the flag is set to `true`, and `allow_gateway_transit` on the remote peering is also `true`, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to `true`. This flag cannot be set if virtual network already has a gateway. Defaults to `false`.
         ///
         /// > **NOTE:** `use_remote_gateways` must be set to `false` if using Global Virtual Network Peerings.
         #[builder(into, default)]
-        pub use_remote_gateways: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_remote_gateways: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the virtual network. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_network_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_network_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkPeeringResult {

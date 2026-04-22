@@ -47,14 +47,14 @@ pub mod custom_routing_endpoint_group {
     pub struct CustomRoutingEndpointGroupArgs {
         /// The port ranges and protocols for all endpoints in a custom routing endpoint group to accept client traffic on. Fields documented below.
         #[builder(into)]
-        pub destination_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_configurations: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::globalaccelerator::CustomRoutingEndpointGroupDestinationConfiguration,
             >,
         >,
         /// The list of endpoint objects. Fields documented below.
         #[builder(into, default)]
-        pub endpoint_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::globalaccelerator::CustomRoutingEndpointGroupEndpointConfiguration,
@@ -63,10 +63,10 @@ pub mod custom_routing_endpoint_group {
         >,
         /// The name of the AWS Region where the custom routing endpoint group is located.
         #[builder(into, default)]
-        pub endpoint_group_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint_group_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the custom routing listener.
         #[builder(into)]
-        pub listener_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub listener_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomRoutingEndpointGroupResult {

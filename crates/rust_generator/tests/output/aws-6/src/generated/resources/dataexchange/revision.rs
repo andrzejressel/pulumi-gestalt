@@ -35,13 +35,13 @@ pub mod revision {
     pub struct RevisionArgs {
         /// An optional comment about the revision.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The dataset id.
         #[builder(into)]
-        pub data_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_set_id: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

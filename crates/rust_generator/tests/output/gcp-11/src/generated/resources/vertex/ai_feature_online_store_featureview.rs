@@ -463,18 +463,18 @@ pub mod ai_feature_online_store_featureview {
         /// Configures how data is supposed to be extracted from a BigQuery source to be loaded onto the FeatureOnlineStore.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub big_query_source: pulumi_gestalt_rust::InputOrOutput<
+        pub big_query_source: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiFeatureOnlineStoreFeatureviewBigQuerySource,
             >,
         >,
         /// The name of the FeatureOnlineStore to use for the featureview.
         #[builder(into)]
-        pub feature_online_store: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub feature_online_store: pulumi_gestalt_rust::Input<String>,
         /// Configures the features from a Feature Registry source that need to be loaded onto the FeatureOnlineStore.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub feature_registry_source: pulumi_gestalt_rust::InputOrOutput<
+        pub feature_registry_source: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiFeatureOnlineStoreFeatureviewFeatureRegistrySource,
             >,
@@ -484,26 +484,26 @@ pub mod ai_feature_online_store_featureview {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the FeatureView. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region for the resource. It should be the same as the featureonlinestore region.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
         /// Configures when data is to be synced/updated for this FeatureView. At the end of the sync the latest featureValues for each entityId of this FeatureView are made ready for online serving.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub sync_config: pulumi_gestalt_rust::InputOrOutput<
+        pub sync_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiFeatureOnlineStoreFeatureviewSyncConfig,
             >,
@@ -511,7 +511,7 @@ pub mod ai_feature_online_store_featureview {
         /// Configuration for vector search. It contains the required configurations to create an index from source data, so that approximate nearest neighbor (a.k.a ANN) algorithms search can be performed during online serving.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub vector_search_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vector_search_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiFeatureOnlineStoreFeatureviewVectorSearchConfig,
             >,

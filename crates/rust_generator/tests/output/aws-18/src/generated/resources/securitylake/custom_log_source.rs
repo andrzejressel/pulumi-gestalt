@@ -56,20 +56,20 @@ pub mod custom_log_source {
     pub struct CustomLogSourceArgs {
         /// The configuration for the third-party custom source.
         #[builder(into, default)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::securitylake::CustomLogSourceConfiguration>,
         >,
         /// The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake.
         #[builder(into, default)]
-        pub event_classes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub event_classes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specify the name for a third-party custom source.
         /// This must be a Regionally unique value.
         /// Has a maximum length of 20.
         #[builder(into)]
-        pub source_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_name: pulumi_gestalt_rust::Input<String>,
         /// Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.
         #[builder(into, default)]
-        pub source_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CustomLogSourceResult {

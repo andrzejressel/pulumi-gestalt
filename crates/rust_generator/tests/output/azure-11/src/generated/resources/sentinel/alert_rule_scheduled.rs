@@ -66,7 +66,7 @@ pub mod alert_rule_scheduled {
     pub struct AlertRuleScheduledArgs {
         /// An `alert_details_override` block as defined below.
         #[builder(into, default)]
-        pub alert_details_overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub alert_details_overrides: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::AlertRuleScheduledAlertDetailsOverride,
@@ -75,63 +75,63 @@ pub mod alert_rule_scheduled {
         >,
         /// The GUID of the alert rule template which is used for this Sentinel Scheduled Alert Rule. Changing this forces a new Sentinel Scheduled Alert Rule to be created.
         #[builder(into, default)]
-        pub alert_rule_template_guid: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alert_rule_template_guid: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version of the alert rule template which is used for this Sentinel Scheduled Alert Rule.
         #[builder(into, default)]
-        pub alert_rule_template_version: pulumi_gestalt_rust::InputOrOutput<
+        pub alert_rule_template_version: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A map of string key-value pairs of columns to be attached to this Sentinel Scheduled Alert Rule. The key will appear as the field name in alerts and the value is the event parameter you wish to surface in the alerts.
         #[builder(into, default)]
-        pub custom_details: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_details: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The description of this Sentinel Scheduled Alert Rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The friendly name of this Sentinel Scheduled Alert Rule.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Should the Sentinel Scheduled Alert Rule be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of `entity_mapping` blocks as defined below.
         #[builder(into, default)]
-        pub entity_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub entity_mappings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::sentinel::AlertRuleScheduledEntityMapping>>,
         >,
         /// A `event_grouping` block as defined below.
         #[builder(into, default)]
-        pub event_grouping: pulumi_gestalt_rust::InputOrOutput<
+        pub event_grouping: pulumi_gestalt_rust::Input<
             Option<super::super::types::sentinel::AlertRuleScheduledEventGrouping>,
         >,
         /// A `incident` block as defined below.
         #[builder(into, default)]
-        pub incident: pulumi_gestalt_rust::InputOrOutput<
+        pub incident: pulumi_gestalt_rust::Input<
             Option<super::super::types::sentinel::AlertRuleScheduledIncident>,
         >,
         /// The ID of the Log Analytics Workspace this Sentinel Scheduled Alert Rule belongs to. Changing this forces a new Sentinel Scheduled Alert Rule to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Sentinel Scheduled Alert Rule. Changing this forces a new Sentinel Scheduled Alert Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The query of this Sentinel Scheduled Alert Rule.
         #[builder(into)]
-        pub query: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query: pulumi_gestalt_rust::Input<String>,
         /// The ISO 8601 timespan duration between two consecutive queries. Defaults to `PT5H`.
         #[builder(into, default)]
-        pub query_frequency: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query_frequency: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ISO 8601 timespan duration, which determine the time period of the data covered by the query. For example, it can query the past 10 minutes of data, or the past 6 hours of data. Defaults to `PT5H`.
         ///
         /// > **NOTE** `query_period` must larger than or equal to `query_frequency`, which ensures there is no gaps in the overall query coverage.
         #[builder(into, default)]
-        pub query_period: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query_period: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of `sentinel_entity_mapping` blocks as defined below.
         ///
         /// > **NOTE:** `entity_mapping` and `sentinel_entity_mapping` together can't exceed 5.
         #[builder(into, default)]
-        pub sentinel_entity_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub sentinel_entity_mappings: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::AlertRuleScheduledSentinelEntityMapping,
@@ -140,27 +140,27 @@ pub mod alert_rule_scheduled {
         >,
         /// The alert severity of this Sentinel Scheduled Alert Rule. Possible values are `High`, `Medium`, `Low` and `Informational`.
         #[builder(into)]
-        pub severity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub severity: pulumi_gestalt_rust::Input<String>,
         /// If `suppression_enabled` is `true`, this is ISO 8601 timespan duration, which specifies the amount of time the query should stop running after alert is generated. Defaults to `PT5H`.
         ///
         /// > **NOTE** `suppression_duration` must larger than or equal to `query_frequency`, otherwise the suppression has no actual effect since no query will happen during the suppression duration.
         #[builder(into, default)]
-        pub suppression_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub suppression_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Sentinel Scheduled Alert Rulea stop running query after alert is generated? Defaults to `false`.
         #[builder(into, default)]
-        pub suppression_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub suppression_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of categories of attacks by which to classify the rule. Possible values are `Collection`, `CommandAndControl`, `CredentialAccess`, `DefenseEvasion`, `Discovery`, `Execution`, `Exfiltration`, `ImpairProcessControl`, `InhibitResponseFunction`, `Impact`, `InitialAccess`, `LateralMovement`, `Persistence`, `PrivilegeEscalation`, `PreAttack`, `Reconnaissance` and `ResourceDevelopment`.
         #[builder(into, default)]
-        pub tactics: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tactics: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of techniques of attacks by which to classify the rule.
         #[builder(into, default)]
-        pub techniques: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub techniques: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The alert trigger operator, combined with `trigger_threshold`, setting alert threshold of this Sentinel Scheduled Alert Rule. Possible values are `Equal`, `GreaterThan`, `LessThan`, `NotEqual`. Defaults to `GreaterThan`.
         #[builder(into, default)]
-        pub trigger_operator: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub trigger_operator: pulumi_gestalt_rust::Input<Option<String>>,
         /// The baseline number of query results generated, combined with `trigger_operator`, setting alert threshold of this Sentinel Scheduled Alert Rule. Defaults to `0`.
         #[builder(into, default)]
-        pub trigger_threshold: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub trigger_threshold: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct AlertRuleScheduledResult {

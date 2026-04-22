@@ -131,14 +131,14 @@ pub mod node_pool {
         /// Configuration required by cluster autoscaler to adjust
         /// the size of the node pool to the current cluster usage. Structure is documented below.
         #[builder(into, default)]
-        pub autoscaling: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscaling: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::NodePoolAutoscaling>,
         >,
         /// The cluster to create the node pool for. Cluster must be present in `location` provided for clusters. May be specified in the format `projects/{{project}}/locations/{{location}}/clusters/{{cluster}}` or as just the name of the cluster.
         ///
         /// - - -
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// The initial number of nodes for the pool. In
         /// regional or multi-zonal clusters, this is the number of nodes per zone. Changing
         /// this will force recreation of the resource. WARNING: Resizing your node pool manually
@@ -147,16 +147,16 @@ pub mod node_pool {
         /// need this value, don't set it.  If you do need it, you can use a lifecycle block to
         /// ignore subsqeuent changes to this field.
         #[builder(into, default)]
-        pub initial_node_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub initial_node_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The location (region or zone) of the cluster.
         ///
         /// - - -
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Node management configuration, wherein auto-repair and
         /// auto-upgrade is configured. Structure is documented below.
         #[builder(into, default)]
-        pub management: pulumi_gestalt_rust::InputOrOutput<
+        pub management: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::NodePoolManagement>,
         >,
         /// The maximum number of pods per node in this node pool.
@@ -165,32 +165,32 @@ pub mod node_pool {
         /// See the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr)
         /// for more information.
         #[builder(into, default)]
-        pub max_pods_per_node: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_pods_per_node: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the node pool. If left blank, the provider will
         /// auto-generate a unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name for the node pool beginning
         /// with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network configuration of the pool. Such as
         /// configuration for [Adding Pod IP address ranges](https://cloud.google.com/kubernetes-engine/docs/how-to/multi-pod-cidr)) to the node pool. Or enabling private nodes. Structure is
         /// documented below
         #[builder(into, default)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::NodePoolNetworkConfig>,
         >,
         /// Parameters used in creating the node pool. See
         /// gcp.container.Cluster for schema.
         #[builder(into, default)]
-        pub node_config: pulumi_gestalt_rust::InputOrOutput<
+        pub node_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::NodePoolNodeConfig>,
         >,
         /// The number of nodes per instance group. This field can be used to
         /// update the number of nodes per instance group but should not be used alongside `autoscaling`.
         #[builder(into, default)]
-        pub node_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub node_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The list of zones in which the node pool's nodes should be located. Nodes must
         /// be in the region of their regional cluster or in the same region as their
         /// cluster's zone for zonal clusters. If unspecified, the cluster-level
@@ -200,27 +200,27 @@ pub mod node_pool {
         /// upon being unset. You must manually reconcile the list of zones with your
         /// cluster.
         #[builder(into, default)]
-        pub node_locations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub node_locations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies a custom placement policy for the
         /// nodes.
         #[builder(into, default)]
-        pub placement_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub placement_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::NodePoolPlacementPolicy>,
         >,
         /// The ID of the project in which to create the node pool. If blank,
         /// the provider-configured project will be used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies node pool-level settings of queued provisioning.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub queued_provisioning: pulumi_gestalt_rust::InputOrOutput<
+        pub queued_provisioning: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::NodePoolQueuedProvisioning>,
         >,
         /// Specify node upgrade settings to change how GKE upgrades nodes.
         /// The maximum number of nodes upgraded simultaneously is limited to 20. Structure is documented below.
         #[builder(into, default)]
-        pub upgrade_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub upgrade_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::NodePoolUpgradeSettings>,
         >,
         /// The Kubernetes version for the nodes in this pool. Note that if this field
@@ -230,7 +230,7 @@ pub mod node_pool {
         /// when fuzzy versions are used. See the `gcp.container.getEngineVersions` data source's
         /// `version_prefix` field to approximate fuzzy versions in a provider-compatible way.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NodePoolResult {

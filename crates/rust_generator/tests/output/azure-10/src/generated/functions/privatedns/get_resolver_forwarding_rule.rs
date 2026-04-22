@@ -10,10 +10,10 @@ pub mod get_resolver_forwarding_rule {
     pub struct GetResolverForwardingRuleArgs {
         /// ID of the Private DNS Resolver Forwarding Ruleset.
         #[builder(into)]
-        pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Private DNS Resolver Forwarding Rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResolverForwardingRuleResult {

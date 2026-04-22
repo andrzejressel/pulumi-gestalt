@@ -40,38 +40,38 @@ pub mod account {
     #[allow(dead_code)]
     pub struct AccountArgs {
         #[builder(into, default)]
-        pub encryptions: pulumi_gestalt_rust::InputOrOutput<
+        pub encryptions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::automation::AccountEncryption>>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::AccountIdentity>,
         >,
         /// Whether requests using non-AAD authentication are blocked. Defaults to `true`.
         #[builder(into, default)]
-        pub local_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub local_authentication_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Automation Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is allowed for the automation account. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the resource group in which the Automation Account is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU of the account. Possible values are `Basic` and `Free`.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

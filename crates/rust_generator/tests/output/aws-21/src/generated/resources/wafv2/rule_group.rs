@@ -10,36 +10,36 @@ pub mod rule_group {
     pub struct RuleGroupArgs {
         /// The web ACL capacity units (WCUs) required for this rule group. See [here](https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html#API_CreateRuleGroup_RequestSyntax) for general information and [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statements-list.html) for capacity specific information.
         #[builder(into)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub capacity: pulumi_gestalt_rust::Input<i32>,
         /// Defines custom response bodies that can be referenced by `custom_response` actions. See Custom Response Body below for details.
         #[builder(into, default)]
-        pub custom_response_bodies: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_response_bodies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafv2::RuleGroupCustomResponseBody>>,
         >,
         /// A friendly description of the rule group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A friendly name of the rule group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafv2::RuleGroupRule>>,
         >,
         /// Specifies whether this is for an AWS CloudFront distribution or for a regional application. Valid values are `CLOUDFRONT` or `REGIONAL`. To work with CloudFront, you must also specify the region `us-east-1` (N. Virginia) on the AWS provider.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
         /// An array of key:value pairs to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Defines and enables Amazon CloudWatch metrics and web request sample collection. See Visibility Configuration below for details.
         #[builder(into)]
-        pub visibility_config: pulumi_gestalt_rust::InputOrOutput<
+        pub visibility_config: pulumi_gestalt_rust::Input<
             super::super::types::wafv2::RuleGroupVisibilityConfig,
         >,
     }

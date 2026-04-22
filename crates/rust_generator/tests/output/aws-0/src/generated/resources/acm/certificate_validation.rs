@@ -51,10 +51,10 @@ pub mod certificate_validation {
     pub struct CertificateValidationArgs {
         /// ARN of the certificate that is being validated.
         #[builder(into)]
-        pub certificate_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_arn: pulumi_gestalt_rust::Input<String>,
         /// List of FQDNs that implement the validation. Only valid for DNS validation method ACM certificates. If this is set, the resource can implement additional sanity checks and has an explicit dependency on the resource that is implementing the validation
         #[builder(into, default)]
-        pub validation_record_fqdns: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_record_fqdns: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
     }

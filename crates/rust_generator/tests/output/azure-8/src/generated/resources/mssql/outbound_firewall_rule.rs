@@ -56,10 +56,10 @@ pub mod outbound_firewall_rule {
     pub struct OutboundFirewallRuleArgs {
         /// The name of the outbound firewall rule. This should be a FQDN. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the SQL Server on which to create the Outbound Firewall Rule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OutboundFirewallRuleResult {

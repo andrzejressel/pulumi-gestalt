@@ -44,44 +44,44 @@ pub mod report_definition {
     pub struct ReportDefinitionArgs {
         /// A list of additional artifacts. Valid values are: `REDSHIFT`, `QUICKSIGHT`, `ATHENA`. When ATHENA exists within additional_artifacts, no other artifact type can be declared and report_versioning must be `OVERWRITE_REPORT`.
         #[builder(into, default)]
-        pub additional_artifacts: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_artifacts: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A list of schema elements. Valid values are: `RESOURCES`, `SPLIT_COST_ALLOCATION_DATA`.
         #[builder(into)]
-        pub additional_schema_elements: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub additional_schema_elements: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Compression format for report. Valid values are: `GZIP`, `ZIP`, `Parquet`. If `Parquet` is used, then format must also be `Parquet`.
         #[builder(into)]
-        pub compression: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub compression: pulumi_gestalt_rust::Input<String>,
         /// Format for report. Valid values are: `textORcsv`, `Parquet`. If `Parquet` is used, then Compression must also be `Parquet`.
         #[builder(into)]
-        pub format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub format: pulumi_gestalt_rust::Input<String>,
         /// Set to true to update your reports after they have been finalized if AWS detects charges related to previous months.
         #[builder(into, default)]
-        pub refresh_closed_reports: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub refresh_closed_reports: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Unique name for the report. Must start with a number/letter and is case sensitive. Limited to 256 characters.
         #[builder(into)]
-        pub report_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub report_name: pulumi_gestalt_rust::Input<String>,
         /// Overwrite the previous version of each report or to deliver the report in addition to the previous versions. Valid values are: `CREATE_NEW_REPORT` and `OVERWRITE_REPORT`.
         #[builder(into, default)]
-        pub report_versioning: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub report_versioning: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the existing S3 bucket to hold generated reports.
         #[builder(into)]
-        pub s3_bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub s3_bucket: pulumi_gestalt_rust::Input<String>,
         /// Report path prefix. Limited to 256 characters.
         #[builder(into, default)]
-        pub s3_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region of the existing S3 bucket to hold generated reports.
         #[builder(into)]
-        pub s3_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub s3_region: pulumi_gestalt_rust::Input<String>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The frequency on which report data are measured and displayed.  Valid values are: `DAILY`, `HOURLY`, `MONTHLY`.
         #[builder(into)]
-        pub time_unit: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub time_unit: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReportDefinitionResult {

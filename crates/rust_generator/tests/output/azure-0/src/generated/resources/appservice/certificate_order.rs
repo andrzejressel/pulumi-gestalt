@@ -47,38 +47,38 @@ pub mod certificate_order {
     pub struct CertificateOrderArgs {
         /// true if the certificate should be automatically renewed when it expires; otherwise, false. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_renew: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_renew: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Last CSR that was created for this order.
         #[builder(into, default)]
-        pub csr: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub csr: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Distinguished Name for the App Service Certificate Order.
         ///
         /// > **NOTE:** Either `csr` or `distinguished_name` must be set - but not both.
         #[builder(into, default)]
-        pub distinguished_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub distinguished_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Certificate key size. Defaults to `2048`.
         #[builder(into, default)]
-        pub key_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub key_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created. Currently the only valid value is `global`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Certificate product type, such as `Standard` or `WildCard`. Defaults to `Standard`.
         #[builder(into, default)]
-        pub product_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub product_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the certificate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// (Optional) A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Duration in years (must be between `1` and `3`). Defaults to `1`.
         #[builder(into, default)]
-        pub validity_in_years: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub validity_in_years: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct CertificateOrderResult {

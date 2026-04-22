@@ -11,13 +11,13 @@ pub mod get_workload_identity_pool {
         /// The project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The id of the pool which is the
         /// final component of the resource name.
         ///
         /// - - -
         #[builder(into)]
-        pub workload_identity_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workload_identity_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetWorkloadIdentityPoolResult {

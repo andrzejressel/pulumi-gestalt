@@ -10,10 +10,10 @@ pub mod get_instance {
     pub struct GetInstanceArgs {
         /// Name of the RDS instance.
         #[builder(into, default)]
-        pub db_instance_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_instance_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match a pair on the desired instance.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

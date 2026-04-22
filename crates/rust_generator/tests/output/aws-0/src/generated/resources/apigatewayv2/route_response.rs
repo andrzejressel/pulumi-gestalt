@@ -46,23 +46,23 @@ pub mod route_response {
     pub struct RouteResponseArgs {
         /// API identifier.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// The [model selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions) for the route response.
         #[builder(into, default)]
-        pub model_selection_expression: pulumi_gestalt_rust::InputOrOutput<
+        pub model_selection_expression: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Response models for the route response.
         #[builder(into, default)]
-        pub response_models: pulumi_gestalt_rust::InputOrOutput<
+        pub response_models: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of the `aws.apigatewayv2.Route`.
         #[builder(into)]
-        pub route_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_id: pulumi_gestalt_rust::Input<String>,
         /// Route response key.
         #[builder(into)]
-        pub route_response_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_response_key: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteResponseResult {

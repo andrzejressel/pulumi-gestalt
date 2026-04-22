@@ -10,13 +10,13 @@ pub mod get_site {
     pub struct GetSiteArgs {
         /// ID of the Global Network of the site to retrieve.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the specific site to retrieve.
         #[builder(into)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub site_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the Site.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

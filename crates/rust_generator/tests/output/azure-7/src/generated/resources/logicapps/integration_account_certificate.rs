@@ -57,26 +57,26 @@ pub mod integration_account_certificate {
     pub struct IntegrationAccountCertificateArgs {
         /// The name of the Logic App Integration Account. Changing this forces a new Logic App Integration Account Certificate to be created.
         #[builder(into)]
-        pub integration_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_account_name: pulumi_gestalt_rust::Input<String>,
         /// A `key_vault_key` block as documented below.
         #[builder(into, default)]
-        pub key_vault_key: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_key: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::logicapps::IntegrationAccountCertificateKeyVaultKey,
             >,
         >,
         /// A JSON mapping of any Metadata for this Logic App Integration Account Certificate.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Logic App Integration Account Certificate. Changing this forces a new Logic App Integration Account Certificate to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The public certificate for the Logic App Integration Account Certificate.
         #[builder(into, default)]
-        pub public_certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_certificate: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Logic App Integration Account Certificate should exist. Changing this forces a new Logic App Integration Account Certificate to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IntegrationAccountCertificateResult {

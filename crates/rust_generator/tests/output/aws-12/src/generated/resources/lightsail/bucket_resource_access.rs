@@ -19,10 +19,10 @@ pub mod bucket_resource_access {
     pub struct BucketResourceAccessArgs {
         /// The name of the bucket to grant access to.
         #[builder(into)]
-        pub bucket_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource to be granted bucket access.
         #[builder(into)]
-        pub resource_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BucketResourceAccessResult {

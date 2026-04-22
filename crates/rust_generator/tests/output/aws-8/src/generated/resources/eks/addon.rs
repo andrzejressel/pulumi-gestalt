@@ -159,38 +159,38 @@ pub mod addon {
         /// Name of the EKS add-on. The name must match one of
         /// the names returned by [describe-addon-versions](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-versions.html).
         #[builder(into)]
-        pub addon_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub addon_name: pulumi_gestalt_rust::Input<String>,
         /// The version of the EKS add-on. The version must
         /// match one of the versions returned by [describe-addon-versions](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-versions.html).
         #[builder(into, default)]
-        pub addon_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub addon_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the EKS Cluster.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// custom configuration values for addons with single JSON string. This JSON string value must match the JSON schema derived from [describe-addon-configuration](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-configuration.html).
         #[builder(into, default)]
-        pub configuration_values: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub configuration_values: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with EKS Pod Identity association settings. See `pod_identity_association` below for details.
         #[builder(into, default)]
-        pub pod_identity_associations: pulumi_gestalt_rust::InputOrOutput<
+        pub pod_identity_associations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::eks::AddonPodIdentityAssociation>>,
         >,
         /// Indicates if you want to preserve the created resources when deleting the EKS add-on.
         #[builder(into, default)]
-        pub preserve: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub preserve: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Define how to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on or when applying version updates to the add-on. Valid values are `NONE`, `OVERWRITE` and `PRESERVE`. Note that `PRESERVE` is only valid on addon update, not for initial addon creation. If you need to set this to `PRESERVE`, use the `resolve_conflicts_on_create` and `resolve_conflicts_on_update` attributes instead. For more details check [UpdateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html) API Docs.
         #[builder(into, default)]
-        pub resolve_conflicts: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resolve_conflicts: pulumi_gestalt_rust::Input<Option<String>>,
         /// How to resolve field value conflicts when migrating a self-managed add-on to an Amazon EKS add-on. Valid values are `NONE` and `OVERWRITE`. For more details see the [CreateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAddon.html) API Docs.
         #[builder(into, default)]
-        pub resolve_conflicts_on_create: pulumi_gestalt_rust::InputOrOutput<
+        pub resolve_conflicts_on_create: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Valid values are `NONE`, `OVERWRITE`, and `PRESERVE`. For more details see the [UpdateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html) API Docs.
         #[builder(into, default)]
-        pub resolve_conflicts_on_update: pulumi_gestalt_rust::InputOrOutput<
+        pub resolve_conflicts_on_update: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Amazon Resource Name (ARN) of an
@@ -205,10 +205,10 @@ pub mod addon {
         /// for service accounts on your cluster](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html)
         /// in the Amazon EKS User Guide.
         #[builder(into, default)]
-        pub service_account_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

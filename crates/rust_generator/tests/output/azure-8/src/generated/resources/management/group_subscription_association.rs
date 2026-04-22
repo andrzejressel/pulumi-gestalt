@@ -45,10 +45,10 @@ pub mod group_subscription_association {
     pub struct GroupSubscriptionAssociationArgs {
         /// The ID of the Management Group to associate the Subscription with. Changing this forces a new Management to be created.
         #[builder(into)]
-        pub management_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub management_group_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subscription to be associated with the Management Group. Changing this forces a new Management to be created.
         #[builder(into)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GroupSubscriptionAssociationResult {

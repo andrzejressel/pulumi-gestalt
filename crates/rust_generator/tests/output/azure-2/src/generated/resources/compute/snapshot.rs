@@ -52,52 +52,52 @@ pub mod snapshot {
         ///
         /// > **Note:** One of `source_uri`, `source_resource_id` or `storage_account_id` must be specified.
         #[builder(into)]
-        pub create_option: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub create_option: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the Disk Access which should be used for this Snapshot. This is used in conjunction with setting `network_access_policy` to `AllowPrivate`.
         #[builder(into, default)]
-        pub disk_access_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_access_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The size of the Snapshotted Disk in GB.
         #[builder(into, default)]
-        pub disk_size_gb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_size_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A `encryption_settings` block as defined below.
         ///
         /// > **NOTE:** Removing `encryption_settings` forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SnapshotEncryptionSettings>,
         >,
         /// Specifies if the Snapshot is incremental. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub incremental_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub incremental_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Snapshot resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy for accessing the disk via network. Possible values are `AllowAll`, `AllowPrivate`, or `DenyAll`. Defaults to `AllowAll`.
         #[builder(into, default)]
-        pub network_access_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_access_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy for controlling export on the disk. Possible values are `true` or `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the resource group in which to create the Snapshot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies a reference to an existing snapshot, when `create_option` is `Copy`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source_resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the URI to a Managed or Unmanaged Disk. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of an storage account. Used with `source_uri` to allow authorization during import of unmanaged blobs from a different subscription. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

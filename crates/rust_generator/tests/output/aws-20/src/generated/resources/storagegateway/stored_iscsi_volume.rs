@@ -64,33 +64,33 @@ pub mod stored_iscsi_volume {
     pub struct StoredIscsiVolumeArgs {
         /// The unique identifier for the gateway local disk that is configured as a stored volume.
         #[builder(into)]
-        pub disk_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub disk_id: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the gateway.
         #[builder(into)]
-        pub gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_arn: pulumi_gestalt_rust::Input<String>,
         /// `true` to use Amazon S3 server side encryption with your own AWS KMS key, or `false` to use a key managed by Amazon S3. Optional.
         #[builder(into, default)]
-        pub kms_encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub kms_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only be set when `kms_encrypted` is `true`.
         #[builder(into, default)]
-        pub kms_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted.
         #[builder(into)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<String>,
         /// Specify this field as `true` if you want to preserve the data on the local disk. Otherwise, specifying this field as false creates an empty volume.
         #[builder(into)]
-        pub preserve_existing_data: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub preserve_existing_data: pulumi_gestalt_rust::Input<bool>,
         /// The snapshot ID of the snapshot to restore as the new stored volumeE.g., `snap-1122aabb`.
         #[builder(into, default)]
-        pub snapshot_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. The target name must be unique across all volumes of a gateway.
         #[builder(into)]
-        pub target_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StoredIscsiVolumeResult {

@@ -58,19 +58,19 @@ pub mod repository {
     pub struct RepositoryArgs {
         /// The default branch of the repository. The branch specified here needs to exist.
         #[builder(into, default)]
-        pub default_branch: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_branch: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the repository. This needs to be less than 1000 characters
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the encryption key. If no key is specified, the default `aws/codecommit` Amazon Web Services managed key is used.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the repository. This needs to be less than 100 characters.
         #[builder(into)]
-        pub repository_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

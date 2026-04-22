@@ -53,25 +53,25 @@ pub mod traffic_mirror_target {
     pub struct TrafficMirrorTargetArgs {
         /// A description of the traffic mirror session.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The VPC Endpoint Id of the Gateway Load Balancer that is associated with the target.
         #[builder(into, default)]
-        pub gateway_load_balancer_endpoint_id: pulumi_gestalt_rust::InputOrOutput<
+        pub gateway_load_balancer_endpoint_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The network interface ID that is associated with the target.
         #[builder(into, default)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.
         #[builder(into, default)]
-        pub network_load_balancer_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub network_load_balancer_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         ///
         /// **NOTE:** Either `network_interface_id` or `network_load_balancer_arn` should be specified and both should not be specified together
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -46,19 +46,19 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// The Azure Region where the Stream Analytics Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Stream Analytics Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Stream Analytics Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The number of streaming units supported by the Cluster. Accepted values are multiples of `36` in the range of `36` to `216`.
         #[builder(into)]
-        pub streaming_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub streaming_capacity: pulumi_gestalt_rust::Input<i32>,
         /// A mapping of tags which should be assigned to the Stream Analytics.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

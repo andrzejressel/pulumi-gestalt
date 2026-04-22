@@ -55,15 +55,15 @@ pub mod identity_pool {
     pub struct IdentityPoolArgs {
         /// Enables or disables the classic / basic authentication flow. Default is `false`.
         #[builder(into, default)]
-        pub allow_classic_flow: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_classic_flow: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the identity pool supports unauthenticated logins or not.
         #[builder(into, default)]
-        pub allow_unauthenticated_identities: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_unauthenticated_identities: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// An array of Amazon Cognito Identity user pools and their client IDs.
         #[builder(into, default)]
-        pub cognito_identity_providers: pulumi_gestalt_rust::InputOrOutput<
+        pub cognito_identity_providers: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::cognito::IdentityPoolCognitoIdentityProvider>,
             >,
@@ -71,26 +71,26 @@ pub mod identity_pool {
         /// The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your
         /// backend and the Cognito service to communicate about the developer provider.
         #[builder(into, default)]
-        pub developer_provider_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub developer_provider_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Cognito Identity Pool name.
         #[builder(into)]
-        pub identity_pool_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_pool_name: pulumi_gestalt_rust::Input<String>,
         /// Set of OpendID Connect provider ARNs.
         #[builder(into, default)]
-        pub openid_connect_provider_arns: pulumi_gestalt_rust::InputOrOutput<
+        pub openid_connect_provider_arns: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// An array of Amazon Resource Names (ARNs) of the SAML provider for your identity.
         #[builder(into, default)]
-        pub saml_provider_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub saml_provider_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-Value pairs mapping provider names to provider app IDs.
         #[builder(into, default)]
-        pub supported_login_providers: pulumi_gestalt_rust::InputOrOutput<
+        pub supported_login_providers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A map of tags to assign to the Identity Pool. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

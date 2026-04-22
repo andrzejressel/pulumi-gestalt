@@ -128,36 +128,36 @@ pub mod time_series_database_connection {
     pub struct TimeSeriesDatabaseConnectionArgs {
         /// The ID of the Digital Twins. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub digital_twins_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub digital_twins_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Event Hub Consumer Group. Changing this forces a new resource to be created. Defaults to `$Default`.
         #[builder(into, default)]
-        pub eventhub_consumer_group_name: pulumi_gestalt_rust::InputOrOutput<
+        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Name of the Event Hub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_name: pulumi_gestalt_rust::Input<String>,
         /// URI of the Event Hub Namespace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_namespace_endpoint_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_namespace_endpoint_uri: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Event Hub Namespace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_namespace_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Kusto Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub kusto_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kusto_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// URI of the Kusto Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub kusto_cluster_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kusto_cluster_uri: pulumi_gestalt_rust::Input<String>,
         /// Name of the Kusto Database. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub kusto_database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kusto_database_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the Kusto Table. Defaults to `AdtPropertyEvents`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub kusto_table_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kusto_table_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Digital Twins Time Series Database Connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TimeSeriesDatabaseConnectionResult {

@@ -74,12 +74,12 @@ pub mod proactive_engagement {
     pub struct ProactiveEngagementArgs {
         /// One or more emergency contacts. You must provide at least one phone number in the emergency contact list. See `emergency_contacts`.
         #[builder(into, default)]
-        pub emergency_contacts: pulumi_gestalt_rust::InputOrOutput<
+        pub emergency_contacts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::shield::ProactiveEngagementEmergencyContact>>,
         >,
         /// Boolean value indicating if Proactive Engagement should be enabled or not.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
     }
     #[allow(dead_code)]
     pub struct ProactiveEngagementResult {

@@ -79,53 +79,53 @@ pub mod elastic_pool {
         ///
         /// > **NOTE:** The default value for `enclave_type` field is unset not `Default`.
         #[builder(into, default)]
-        pub enclave_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub enclave_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the license type applied to this database. Possible values are `LicenseIncluded` and `BasePrice`.
         #[builder(into, default)]
-        pub license_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub license_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Public Maintenance Configuration window to apply to the elastic pool. Valid values include `SQL_Default`, `SQL_EastUS_DB_1`, `SQL_EastUS2_DB_1`, `SQL_SoutheastAsia_DB_1`, `SQL_AustraliaEast_DB_1`, `SQL_NorthEurope_DB_1`, `SQL_SouthCentralUS_DB_1`, `SQL_WestUS2_DB_1`, `SQL_UKSouth_DB_1`, `SQL_WestEurope_DB_1`, `SQL_EastUS_DB_2`, `SQL_EastUS2_DB_2`, `SQL_WestUS2_DB_2`, `SQL_SoutheastAsia_DB_2`, `SQL_AustraliaEast_DB_2`, `SQL_NorthEurope_DB_2`, `SQL_SouthCentralUS_DB_2`, `SQL_UKSouth_DB_2`, `SQL_WestEurope_DB_2`, `SQL_AustraliaSoutheast_DB_1`, `SQL_BrazilSouth_DB_1`, `SQL_CanadaCentral_DB_1`, `SQL_CanadaEast_DB_1`, `SQL_CentralUS_DB_1`, `SQL_EastAsia_DB_1`, `SQL_FranceCentral_DB_1`, `SQL_GermanyWestCentral_DB_1`, `SQL_CentralIndia_DB_1`, `SQL_SouthIndia_DB_1`, `SQL_JapanEast_DB_1`, `SQL_JapanWest_DB_1`, `SQL_NorthCentralUS_DB_1`, `SQL_UKWest_DB_1`, `SQL_WestUS_DB_1`, `SQL_AustraliaSoutheast_DB_2`, `SQL_BrazilSouth_DB_2`, `SQL_CanadaCentral_DB_2`, `SQL_CanadaEast_DB_2`, `SQL_CentralUS_DB_2`, `SQL_EastAsia_DB_2`, `SQL_FranceCentral_DB_2`, `SQL_GermanyWestCentral_DB_2`, `SQL_CentralIndia_DB_2`, `SQL_SouthIndia_DB_2`, `SQL_JapanEast_DB_2`, `SQL_JapanWest_DB_2`, `SQL_NorthCentralUS_DB_2`, `SQL_UKWest_DB_2`, `SQL_WestUS_DB_2`, `SQL_WestCentralUS_DB_1`, `SQL_FranceSouth_DB_1`, `SQL_WestCentralUS_DB_2`, `SQL_FranceSouth_DB_2`, `SQL_SwitzerlandNorth_DB_1`, `SQL_SwitzerlandNorth_DB_2`, `SQL_BrazilSoutheast_DB_1`, `SQL_UAENorth_DB_1`, `SQL_BrazilSoutheast_DB_2`, `SQL_UAENorth_DB_2`, `SQL_SouthAfricaNorth_DB_1`, `SQL_SouthAfricaNorth_DB_2`, `SQL_WestUS3_DB_1`, `SQL_WestUS3_DB_2`. Defaults to `SQL_Default`.
         #[builder(into, default)]
-        pub maintenance_configuration_name: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_configuration_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The max data size of the elastic pool in bytes. Conflicts with `max_size_gb`.
         ///
         /// > **NOTE:** One of either `max_size_gb` or `max_size_bytes` must be specified.
         #[builder(into, default)]
-        pub max_size_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_size_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The max data size of the elastic pool in gigabytes. Conflicts with `max_size_bytes`.
         #[builder(into, default)]
-        pub max_size_gb: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub max_size_gb: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The name of the elastic pool. This needs to be globally unique. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `per_database_settings` block as defined below.
         #[builder(into)]
-        pub per_database_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub per_database_settings: pulumi_gestalt_rust::Input<
             super::super::types::mssql::ElasticPoolPerDatabaseSettings,
         >,
         /// The name of the resource group in which to create the elastic pool. This must be the same as the resource group of the underlying SQL server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the SQL Server on which to create the elastic pool. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
+        pub sku: pulumi_gestalt_rust::Input<
             super::super::types::mssql::ElasticPoolSku,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whether or not this elastic pool is zone redundant. `tier` needs to be `Premium` for `DTU` based or `BusinessCritical` for `vCore` based `sku`.
         #[builder(into, default)]
-        pub zone_redundant: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_redundant: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ElasticPoolResult {

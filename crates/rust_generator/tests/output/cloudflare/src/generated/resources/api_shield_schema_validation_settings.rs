@@ -29,17 +29,17 @@ pub mod api_shield_schema_validation_settings {
     pub struct ApiShieldSchemaValidationSettingsArgs {
         /// The default mitigation action used when there is no mitigation action defined on the operation.
         #[builder(into)]
-        pub validation_default_mitigation_action: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_default_mitigation_action: pulumi_gestalt_rust::Input<
             String,
         >,
         /// When set, this overrides both zone level and operation level mitigation actions.
         #[builder(into, default)]
-        pub validation_override_mitigation_action: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_override_mitigation_action: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiShieldSchemaValidationSettingsResult {

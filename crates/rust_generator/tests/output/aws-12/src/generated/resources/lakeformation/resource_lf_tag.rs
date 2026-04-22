@@ -44,33 +44,33 @@ pub mod resource_lf_tag {
     pub struct ResourceLfTagArgs {
         /// Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for a database resource. See Database for more details.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<
+        pub database: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::ResourceLfTagDatabase>,
         >,
         /// Set of LF-tags to attach to the resource. See LF Tag for more details.
         ///
         /// Exactly one of the following is required:
         #[builder(into, default)]
-        pub lf_tag: pulumi_gestalt_rust::InputOrOutput<
+        pub lf_tag: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::ResourceLfTagLfTag>,
         >,
         /// Configuration block for a table resource. See Table for more details.
         #[builder(into, default)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<
+        pub table: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::ResourceLfTagTable>,
         >,
         /// Configuration block for a table with columns resource. See Table With Columns for more details.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub table_with_columns: pulumi_gestalt_rust::InputOrOutput<
+        pub table_with_columns: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::ResourceLfTagTableWithColumns>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::ResourceLfTagTimeouts>,
         >,
     }

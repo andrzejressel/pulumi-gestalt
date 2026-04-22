@@ -10,10 +10,10 @@ pub mod get_cost_category {
     pub struct GetCostCategoryArgs {
         /// Unique name for the Cost Category.
         #[builder(into)]
-        pub cost_category_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cost_category_arn: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for the specific `Tag` to use for `Expression`. See below.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

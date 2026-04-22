@@ -10,12 +10,12 @@ pub mod get_vpc_iam_pool_cidrs {
     pub struct GetVpcIamPoolCidrsArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetVpcIamPoolCidrsFilter>>,
         >,
         /// ID of the IPAM pool you would like the list of provisioned CIDRs.
         #[builder(into)]
-        pub ipam_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ipam_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVpcIamPoolCidrsResult {

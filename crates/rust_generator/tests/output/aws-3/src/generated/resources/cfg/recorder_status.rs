@@ -92,10 +92,10 @@ pub mod recorder_status {
     pub struct RecorderStatusArgs {
         /// Whether the configuration recorder should be enabled or disabled.
         #[builder(into)]
-        pub is_enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub is_enabled: pulumi_gestalt_rust::Input<bool>,
         /// The name of the recorder
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RecorderStatusResult {

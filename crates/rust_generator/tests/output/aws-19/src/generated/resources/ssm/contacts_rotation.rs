@@ -127,28 +127,28 @@ pub mod contacts_rotation {
     pub struct ContactsRotationArgs {
         /// Amazon Resource Names (ARNs) of the contacts to add to the rotation. The order in which you list the contacts is their shift order in the rotation schedule.
         #[builder(into)]
-        pub contact_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub contact_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name for the rotation.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information about when an on-call rotation is in effect and how long the rotation period lasts. Exactly one of either `daily_settings`, `monthly_settings`, or `weekly_settings` must be populated. See Recurrence for more details.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub recurrence: pulumi_gestalt_rust::InputOrOutput<
+        pub recurrence: pulumi_gestalt_rust::Input<
             Option<super::super::types::ssm::ContactsRotationRecurrence>,
         >,
         /// The date and time, in RFC 3339 format, that the rotation goes into effect.
         #[builder(into, default)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format.
         #[builder(into)]
-        pub time_zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub time_zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ContactsRotationResult {

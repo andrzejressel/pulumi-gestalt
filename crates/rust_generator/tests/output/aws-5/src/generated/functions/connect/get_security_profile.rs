@@ -10,16 +10,16 @@ pub mod get_security_profile {
     pub struct GetSecurityProfileArgs {
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Returns information on a specific Security Profile by name
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Returns information on a specific Security Profile by Security Profile id
         #[builder(into, default)]
-        pub security_profile_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_profile_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the Security Profile.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

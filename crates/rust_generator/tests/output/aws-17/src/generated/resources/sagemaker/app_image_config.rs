@@ -48,29 +48,29 @@ pub mod app_image_config {
     pub struct AppImageConfigArgs {
         /// The name of the App Image Config.
         #[builder(into)]
-        pub app_image_config_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_image_config_name: pulumi_gestalt_rust::Input<String>,
         /// The CodeEditorAppImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor. See Code Editor App Image Config details below.
         #[builder(into, default)]
-        pub code_editor_app_image_config: pulumi_gestalt_rust::InputOrOutput<
+        pub code_editor_app_image_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::sagemaker::AppImageConfigCodeEditorAppImageConfig,
             >,
         >,
         /// The JupyterLabAppImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in JupyterLab. See Jupyter Lab Image Config details below.
         #[builder(into, default)]
-        pub jupyter_lab_image_config: pulumi_gestalt_rust::InputOrOutput<
+        pub jupyter_lab_image_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::AppImageConfigJupyterLabImageConfig>,
         >,
         /// The configuration for the file system and kernels in a SageMaker image running as a KernelGateway app. See Kernel Gateway Image Config details below.
         #[builder(into, default)]
-        pub kernel_gateway_image_config: pulumi_gestalt_rust::InputOrOutput<
+        pub kernel_gateway_image_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::sagemaker::AppImageConfigKernelGatewayImageConfig,
             >,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -38,25 +38,25 @@ pub mod vocabulary_filter {
     pub struct VocabularyFilterArgs {
         /// The language code you selected for your vocabulary filter. Refer to the [supported languages](https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html) page for accepted codes.
         #[builder(into)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub language_code: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the VocabularyFilter. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Amazon S3 location (URI) of the text file that contains your custom VocabularyFilter. Conflicts with `words` argument.
         #[builder(into, default)]
-        pub vocabulary_filter_file_uri: pulumi_gestalt_rust::InputOrOutput<
+        pub vocabulary_filter_file_uri: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the VocabularyFilter.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vocabulary_filter_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vocabulary_filter_name: pulumi_gestalt_rust::Input<String>,
         /// A list of terms to include in the vocabulary. Conflicts with `vocabulary_filter_file_uri` argument.
         #[builder(into, default)]
-        pub words: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub words: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct VocabularyFilterResult {

@@ -217,71 +217,71 @@ pub mod integration {
     pub struct IntegrationArgs {
         /// List of cache key parameters for the integration.
         #[builder(into, default)]
-        pub cache_key_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub cache_key_parameters: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Integration's cache namespace.
         #[builder(into, default)]
-        pub cache_namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cache_namespace: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the VpcLink used for the integration. **Required** if `connection_type` is `VPC_LINK`
         #[builder(into, default)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Integration input's [connectionType](https://docs.aws.amazon.com/apigateway/api-reference/resource/integration/#connectionType). Valid values are `INTERNET` (default for connections through the public routable internet), and `VPC_LINK` (for private connections between API Gateway and a network load balancer in a VPC).
         #[builder(into, default)]
-        pub connection_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// How to handle request payload content type conversions. Supported values are `CONVERT_TO_BINARY` and `CONVERT_TO_TEXT`. If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the passthroughBehaviors is configured to support payload pass-through.
         #[builder(into, default)]
-        pub content_handling: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_handling: pulumi_gestalt_rust::Input<Option<String>>,
         /// Credentials required for the integration. For `AWS` integrations, 2 options are available. To specify an IAM Role for Amazon API Gateway to assume, use the role's ARN. To require that the caller's identity be passed through from the request, specify the string `arn:aws:iam::\*:user/\*`.
         #[builder(into, default)]
-        pub credentials: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub credentials: pulumi_gestalt_rust::Input<Option<String>>,
         /// HTTP method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTION`, `ANY`)
         /// when calling the associated resource.
         #[builder(into)]
-        pub http_method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub http_method: pulumi_gestalt_rust::Input<String>,
         /// Integration HTTP method
         /// (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONs`, `ANY`, `PATCH`) specifying how API Gateway will interact with the back end.
         /// **Required** if `type` is `AWS`, `AWS_PROXY`, `HTTP` or `HTTP_PROXY`.
         /// Not all methods are compatible with all `AWS` integrations.
         /// e.g., Lambda function [can only be invoked](https://github.com/awslabs/aws-apigateway-importer/issues/9#issuecomment-129651005) via `POST`.
         #[builder(into, default)]
-        pub integration_http_method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_http_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// Integration passthrough behavior (`WHEN_NO_MATCH`, `WHEN_NO_TEMPLATES`, `NEVER`).  **Required** if `request_templates` is used.
         #[builder(into, default)]
-        pub passthrough_behavior: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub passthrough_behavior: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of request query string parameters and headers that should be passed to the backend responder.
         /// For example: `request_parameters = { "integration.request.header.X-Some-Other-Header" = "method.request.header.X-Some-Header" }`
         #[builder(into, default)]
-        pub request_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub request_parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Map of the integration's request templates.
         #[builder(into, default)]
-        pub request_templates: pulumi_gestalt_rust::InputOrOutput<
+        pub request_templates: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// API resource ID.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the associated REST API.
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
         /// Custom timeout between 50 and 300,000 milliseconds. The default value is 29,000 milliseconds. You need to raise a [Service Quota Ticket](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) to increase time beyond 29,000 milliseconds.
         #[builder(into, default)]
-        pub timeout_milliseconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout_milliseconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// TLS configuration. See below.
         #[builder(into, default)]
-        pub tls_config: pulumi_gestalt_rust::InputOrOutput<
+        pub tls_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::IntegrationTlsConfig>,
         >,
         /// Integration input's [type](https://docs.aws.amazon.com/apigateway/api-reference/resource/integration/). Valid values are `HTTP` (for HTTP backends), `MOCK` (not calling any real backend), `AWS` (for AWS services), `AWS_PROXY` (for Lambda proxy integration) and `HTTP_PROXY` (for HTTP proxy integration). An `HTTP` or `HTTP_PROXY` integration with a `connection_type` of `VPC_LINK` is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Input's URI. **Required** if `type` is `AWS`, `AWS_PROXY`, `HTTP` or `HTTP_PROXY`.
         /// For HTTP integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification . For AWS integrations, the URI should be of the form `arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}`. `region`, `subdomain` and `service` are used to determine the right endpoint.
         /// e.g., `arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:123456789012:function:my-func/invocations`. For private integrations, the URI parameter is not used for routing requests to your endpoint, but is used for setting the Host header and for certificate validation.
         #[builder(into, default)]
-        pub uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub uri: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IntegrationResult {

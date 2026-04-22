@@ -42,15 +42,15 @@ pub mod directory_config {
     pub struct DirectoryConfigArgs {
         /// Fully qualified name of the directory.
         #[builder(into)]
-        pub directory_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_name: pulumi_gestalt_rust::Input<String>,
         /// Distinguished names of the organizational units for computer accounts.
         #[builder(into)]
-        pub organizational_unit_distinguished_names: pulumi_gestalt_rust::InputOrOutput<
+        pub organizational_unit_distinguished_names: pulumi_gestalt_rust::Input<
             Vec<String>,
         >,
         /// Configuration block for the name of the directory and organizational unit (OU) to use to join the directory config to a Microsoft Active Directory domain. See `service_account_credentials` below.
         #[builder(into)]
-        pub service_account_credentials: pulumi_gestalt_rust::InputOrOutput<
+        pub service_account_credentials: pulumi_gestalt_rust::Input<
             super::super::types::appstream::DirectoryConfigServiceAccountCredentials,
         >,
     }

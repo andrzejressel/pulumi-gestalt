@@ -10,7 +10,7 @@ pub mod get_group_memberships {
     pub struct GetGroupMembershipsArgs {
         /// The parent Group resource under which to lookup the Membership names. Must be of the form groups/{group_id}.
         #[builder(into)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGroupMembershipsResult {

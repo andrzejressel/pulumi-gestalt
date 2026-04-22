@@ -38,16 +38,16 @@ pub mod request_validator {
     pub struct RequestValidatorArgs {
         /// Name of the request validator
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the associated Rest API
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
         /// Boolean whether to validate request body. Defaults to `false`.
         #[builder(into, default)]
-        pub validate_request_body: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub validate_request_body: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean whether to validate request parameters. Defaults to `false`.
         #[builder(into, default)]
-        pub validate_request_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub validate_request_parameters: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

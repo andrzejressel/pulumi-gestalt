@@ -44,33 +44,33 @@ pub mod account {
     pub struct AccountArgs {
         /// If `kind` is `TextAnalytics` this specifies the ID of the Search service.
         #[builder(into, default)]
-        pub custom_question_answering_search_service_id: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_question_answering_search_service_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// If `kind` is `TextAnalytics` this specifies the key of the Search service.
         ///
         /// > **NOTE:** `custom_question_answering_search_service_id` and `custom_question_answering_search_service_key` are used for [Custom Question Answering, the renamed version of QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/custom-question-answering), while `qna_runtime_endpoint` is used for [the old version of QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/overview/overview)
         #[builder(into, default)]
-        pub custom_question_answering_search_service_key: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_question_answering_search_service_key: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The subdomain name used for token-based authentication. This property is required when `network_acls` is specified. This property is also required when using the OpenAI service with libraries which assume the Azure OpenAI endpoint is a subdomain on `https://openai.azure.com/`, eg. `https://<custom_subdomain_name>.openai.azure.com/`.  Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub custom_subdomain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_subdomain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `customer_managed_key` block as documented below.
         #[builder(into, default)]
-        pub customer_managed_key: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognitive::AccountCustomerManagedKey>,
         >,
         /// Whether to enable the dynamic throttling for this Cognitive Service Account.
         #[builder(into, default)]
-        pub dynamic_throttling_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub dynamic_throttling_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of FQDNs allowed for the Cognitive Account.
         #[builder(into, default)]
-        pub fqdns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub fqdns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognitive::AccountIdentity>,
         >,
         /// Specifies the type of Cognitive Service Account that should be created. Possible values are `Academic`, `AnomalyDetector`, `Bing.Autosuggest`, `Bing.Autosuggest.v7`, `Bing.CustomSearch`, `Bing.Search`, `Bing.Search.v7`, `Bing.Speech`, `Bing.SpellCheck`, `Bing.SpellCheck.v7`, `CognitiveServices`, `ComputerVision`, `ContentModerator`, `ContentSafety`, `CustomSpeech`, `CustomVision.Prediction`, `CustomVision.Training`, `Emotion`, `Face`, `FormRecognizer`, `ImmersiveReader`, `LUIS`, `LUIS.Authoring`, `MetricsAdvisor`, `OpenAI`, `Personalizer`, `QnAMaker`, `Recommendations`, `SpeakerRecognition`, `Speech`, `SpeechServices`, `SpeechTranslation`, `TextAnalytics`, `TextTranslation` and `WebLM`. Changing this forces a new resource to be created.
@@ -79,72 +79,72 @@ pub mod account {
         ///
         /// > **NOTE:** You must create your first Face, Text Analytics, or Computer Vision resources from the Azure portal to review and acknowledge the terms and conditions. In Azure Portal, the checkbox to accept terms and conditions is only displayed when a US region is selected. More information on [Prerequisites](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows#prerequisites).
         #[builder(into)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kind: pulumi_gestalt_rust::Input<String>,
         /// Whether local authentication methods is enabled for the Cognitive Account. Defaults to `true`.
         #[builder(into, default)]
-        pub local_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure AD Client ID (Application ID). This attribute is only set when kind is `MetricsAdvisor`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub metrics_advisor_aad_client_id: pulumi_gestalt_rust::InputOrOutput<
+        pub metrics_advisor_aad_client_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Azure AD Tenant ID. This attribute is only set when kind is `MetricsAdvisor`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub metrics_advisor_aad_tenant_id: pulumi_gestalt_rust::InputOrOutput<
+        pub metrics_advisor_aad_tenant_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The super user of Metrics Advisor. This attribute is only set when kind is `MetricsAdvisor`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub metrics_advisor_super_user_name: pulumi_gestalt_rust::InputOrOutput<
+        pub metrics_advisor_super_user_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The website name of Metrics Advisor. This attribute is only set when kind is `MetricsAdvisor`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** This URL is mandatory if the `kind` is set to `QnAMaker`.
         #[builder(into, default)]
-        pub metrics_advisor_website_name: pulumi_gestalt_rust::InputOrOutput<
+        pub metrics_advisor_website_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the name of the Cognitive Service Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_acls` block as defined below. When this property is specified, `custom_subdomain_name` is also required to be set.
         #[builder(into, default)]
-        pub network_acls: pulumi_gestalt_rust::InputOrOutput<
+        pub network_acls: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognitive::AccountNetworkAcls>,
         >,
         /// Whether outbound network access is restricted for the Cognitive Account. Defaults to `false`.
         #[builder(into, default)]
-        pub outbound_network_access_restricted: pulumi_gestalt_rust::InputOrOutput<
+        pub outbound_network_access_restricted: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Whether public network access is allowed for the Cognitive Account. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A URL to link a QnAMaker cognitive account to a QnA runtime.
         #[builder(into, default)]
-        pub qna_runtime_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub qna_runtime_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Cognitive Service Account is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the SKU Name for this Cognitive Service Account. Possible values are `F0`, `F1`, `S0`, `S`, `S1`, `S2`, `S3`, `S4`, `S5`, `S6`, `P0`, `P1`, `P2`, `E0` and `DC0`.
         ///
         /// > **NOTE:** SKU `DC0` is the commitment tier for Cognitive Services containers running in disconnected environments. You must obtain approval from Microsoft by submitting the [request form](https://aka.ms/csdisconnectedcontainers) first, before you can use this SKU. More information on [Purchase a commitment plan to use containers in disconnected environments](https://learn.microsoft.com/en-us/azure/cognitive-services/containers/disconnected-containers?tabs=stt#purchase-a-commitment-plan-to-use-containers-in-disconnected-environments).
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// A `storage` block as defined below.
         #[builder(into, default)]
-        pub storages: pulumi_gestalt_rust::InputOrOutput<
+        pub storages: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cognitive::AccountStorage>>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

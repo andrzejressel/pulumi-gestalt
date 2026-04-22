@@ -52,26 +52,26 @@ pub mod mx_record {
     pub struct MxRecordArgs {
         /// The name of the DNS MX Record. Changing this forces a new resource to be created. Default to '@' for root zone entry.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `record` blocks as defined below.
         #[builder(into)]
-        pub records: pulumi_gestalt_rust::InputOrOutput<
+        pub records: pulumi_gestalt_rust::Input<
             Vec<super::super::types::privatedns::MxRecordRecord>,
         >,
         /// Specifies the resource group where the resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Time To Live (TTL) of the DNS record in seconds.
         #[builder(into)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub ttl: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the Private DNS Zone where the resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub zone_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MxRecordResult {

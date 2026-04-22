@@ -40,10 +40,10 @@ pub mod dedicated_ip_assignment {
     pub struct DedicatedIpAssignmentArgs {
         /// Dedicated IP address.
         #[builder(into)]
-        pub destination_pool_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_pool_name: pulumi_gestalt_rust::Input<String>,
         /// Dedicated IP address.
         #[builder(into)]
-        pub ip: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DedicatedIpAssignmentResult {

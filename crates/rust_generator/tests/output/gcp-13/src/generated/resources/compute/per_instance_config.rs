@@ -123,7 +123,7 @@ pub mod per_instance_config {
         ///
         /// - - -
         #[builder(into)]
-        pub instance_group_manager: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_group_manager: pulumi_gestalt_rust::Input<String>,
         /// The minimal action to perform on the instance during an update.
         /// Default is `NONE`. Possible values are:
         /// * REPLACE
@@ -131,7 +131,7 @@ pub mod per_instance_config {
         /// * REFRESH
         /// * NONE
         #[builder(into, default)]
-        pub minimal_action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub minimal_action: pulumi_gestalt_rust::Input<Option<String>>,
         /// The most disruptive action to perform on the instance during an update.
         /// Default is `REPLACE`. Possible values are:
         /// * REPLACE
@@ -139,36 +139,36 @@ pub mod per_instance_config {
         /// * REFRESH
         /// * NONE
         #[builder(into, default)]
-        pub most_disruptive_allowed_action: pulumi_gestalt_rust::InputOrOutput<
+        pub most_disruptive_allowed_action: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name for this per-instance config and its corresponding instance.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The preserved state for this instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub preserved_state: pulumi_gestalt_rust::InputOrOutput<
+        pub preserved_state: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::PerInstanceConfigPreservedState>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// When true, deleting this config will immediately remove the underlying instance.
         /// When false, deleting this config will use the behavior as determined by remove_instance_on_destroy.
         #[builder(into, default)]
-        pub remove_instance_on_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub remove_instance_on_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// When true, deleting this config will immediately remove any specified state from the underlying instance.
         /// When false, deleting this config will *not* immediately remove any state from the underlying instance.
         /// State will be removed on the next instance recreation or update.
         #[builder(into, default)]
-        pub remove_instance_state_on_destroy: pulumi_gestalt_rust::InputOrOutput<
+        pub remove_instance_state_on_destroy: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Zone where the containing instance group manager is located
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PerInstanceConfigResult {

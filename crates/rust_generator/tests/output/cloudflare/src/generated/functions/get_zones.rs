@@ -10,7 +10,7 @@ pub mod get_zones {
     pub struct GetZonesArgs {
         /// One or more values used to look up zone records. If more than one value is given all values must match in order to be included.
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             super::super::types::GetZonesFilter,
         >,
     }

@@ -80,31 +80,31 @@ pub mod tag_rule {
     pub struct TagRuleArgs {
         /// Whether activity logs from Azure resources should be sent for the Monitor resource. Defaults to `false`.
         #[builder(into, default)]
-        pub activity_log_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub activity_log_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether Azure Active Directory logs should be sent for the Monitor resource. Defaults to `false`.
         #[builder(into, default)]
-        pub azure_active_directory_log_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_active_directory_log_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A `log_tag_filter` block as defined below.
         #[builder(into, default)]
-        pub log_tag_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub log_tag_filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::newrelic::TagRuleLogTagFilter>>,
         >,
         /// Whether metrics should be sent for the Monitor resource. Defaults to `false`.
         #[builder(into, default)]
-        pub metric_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub metric_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `metric_tag_filter` block as defined below.
         #[builder(into, default)]
-        pub metric_tag_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub metric_tag_filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::newrelic::TagRuleMetricTagFilter>>,
         >,
         /// Specifies the ID of the New Relic Monitor this Tag Rule should be created within. Changing this forces a new Azure Native New Relic Tag Rule to be created.
         #[builder(into)]
-        pub monitor_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub monitor_id: pulumi_gestalt_rust::Input<String>,
         /// Whether subscription logs should be sent for the Monitor resource. Defaults to `false`.
         #[builder(into, default)]
-        pub subscription_log_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub subscription_log_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct TagRuleResult {

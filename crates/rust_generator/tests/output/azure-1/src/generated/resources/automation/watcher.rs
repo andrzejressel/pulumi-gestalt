@@ -75,36 +75,36 @@ pub mod watcher {
     pub struct WatcherArgs {
         /// The ID of Automation Account to manage this Watcher. Changing this forces a new Watcher to be created.
         #[builder(into)]
-        pub automation_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_id: pulumi_gestalt_rust::Input<String>,
         /// A description of this Automation Watcher.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A string of etag assigned to this Automation Watcher.
         #[builder(into, default)]
-        pub etag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub etag: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the frequency at which the watcher is invoked.
         #[builder(into)]
-        pub execution_frequency_in_seconds: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub execution_frequency_in_seconds: pulumi_gestalt_rust::Input<i32>,
         /// The Azure Region where the Automation Watcher should exist. Changing this forces a new Automation Watcher to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Automation Watcher. Changing this forces a new Automation Watcher to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the name of an existing runbook this watcher is attached to. Changing this forces a new Automation to be created.
         #[builder(into)]
-        pub script_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub script_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of key-vaule parameters. Changing this forces a new Automation watcher to be created.
         #[builder(into, default)]
-        pub script_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub script_parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specify the name of the Hybrid work group the watcher will run on.
         #[builder(into)]
-        pub script_run_on: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub script_run_on: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Automation Watcher.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

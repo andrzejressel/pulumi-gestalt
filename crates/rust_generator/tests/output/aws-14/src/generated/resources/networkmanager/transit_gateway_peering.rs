@@ -36,15 +36,15 @@ pub mod transit_gateway_peering {
     pub struct TransitGatewayPeeringArgs {
         /// The ID of a core network.
         #[builder(into)]
-        pub core_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub core_network_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the peering. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ARN of the transit gateway for the peering request.
         #[builder(into)]
-        pub transit_gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TransitGatewayPeeringResult {

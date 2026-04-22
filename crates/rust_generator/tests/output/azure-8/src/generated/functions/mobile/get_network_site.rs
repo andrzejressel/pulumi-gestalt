@@ -10,10 +10,10 @@ pub mod get_network_site {
     pub struct GetNetworkSiteArgs {
         /// the ID of the Mobile Network which the Mobile Network Site belongs to.
         #[builder(into)]
-        pub mobile_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Mobile Network Site.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkSiteResult {

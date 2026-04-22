@@ -10,18 +10,18 @@ pub mod get_vocabulary {
     pub struct GetVocabularyArgs {
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Returns information on a specific Vocabulary by name
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the Vocabulary.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Returns information on a specific Vocabulary by Vocabulary id
         #[builder(into, default)]
-        pub vocabulary_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vocabulary_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetVocabularyResult {

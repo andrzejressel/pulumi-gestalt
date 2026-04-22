@@ -94,7 +94,7 @@ pub mod membership_binding {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location of the membership
@@ -102,21 +102,21 @@ pub mod membership_binding {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The client-provided identifier of the membership binding.
         #[builder(into)]
-        pub membership_binding_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub membership_binding_id: pulumi_gestalt_rust::Input<String>,
         /// Id of the membership
         #[builder(into)]
-        pub membership_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub membership_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A Workspace resource name in the format
         /// `projects/*/locations/*/scopes/*`.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MembershipBindingResult {

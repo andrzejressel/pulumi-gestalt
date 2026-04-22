@@ -61,15 +61,15 @@ pub mod customer_managed_policy_attachment {
     pub struct CustomerManagedPolicyAttachmentArgs {
         /// Specifies the name and path of a customer managed policy. See below.
         #[builder(into)]
-        pub customer_managed_policy_reference: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_policy_reference: pulumi_gestalt_rust::Input<
             super::super::types::ssoadmin::CustomerManagedPolicyAttachmentCustomerManagedPolicyReference,
         >,
         /// The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Permission Set.
         #[builder(into)]
-        pub permission_set_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub permission_set_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomerManagedPolicyAttachmentResult {

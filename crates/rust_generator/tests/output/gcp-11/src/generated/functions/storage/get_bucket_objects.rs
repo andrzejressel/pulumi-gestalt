@@ -10,13 +10,13 @@ pub mod get_bucket_objects {
     pub struct GetBucketObjectsArgs {
         /// The name of the containing bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// A glob pattern used to filter results (for example, `foo*bar`).
         #[builder(into, default)]
-        pub match_glob: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub match_glob: pulumi_gestalt_rust::Input<Option<String>>,
         /// Filter results to include only objects whose names begin with this prefix.
         #[builder(into, default)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBucketObjectsResult {

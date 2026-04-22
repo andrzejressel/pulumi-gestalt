@@ -12,10 +12,10 @@ pub mod get_organization {
         ///
         /// > **NOTE:** One of `organization` or `domain` must be specified.
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Organization's numeric ID, including an optional `organizations/` prefix.
         #[builder(into, default)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub organization: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetOrganizationResult {

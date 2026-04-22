@@ -53,18 +53,18 @@ pub mod kx_database {
     pub struct KxDatabaseArgs {
         /// Description of the KX database.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique identifier for the KX environment.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the KX database.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

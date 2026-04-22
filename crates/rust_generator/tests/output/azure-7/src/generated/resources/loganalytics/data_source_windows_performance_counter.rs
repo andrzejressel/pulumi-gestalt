@@ -58,25 +58,25 @@ pub mod data_source_windows_performance_counter {
     pub struct DataSourceWindowsPerformanceCounterArgs {
         /// The friendly name of the performance counter.
         #[builder(into)]
-        pub counter_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub counter_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the virtual machine instance to which the Windows Performance Counter DataSource be applied. Specify a `*` will apply to all instances.
         #[builder(into)]
-        pub instance_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_name: pulumi_gestalt_rust::Input<String>,
         /// The time of sample interval in seconds. Supports values between 10 and 2147483647.
         #[builder(into)]
-        pub interval_seconds: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub interval_seconds: pulumi_gestalt_rust::Input<i32>,
         /// The Name which should be used for this Log Analytics Windows Performance Counter DataSource. Changing this forces a new Log Analytics Windows Performance Counter DataSource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The object name of the Log Analytics Windows Performance Counter DataSource.
         #[builder(into)]
-        pub object_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Log Analytics Windows Performance Counter DataSource should exist. Changing this forces a new Log Analytics Windows Performance Counter DataSource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Log Analytics Workspace where the Log Analytics Windows Performance Counter DataSource should exist. Changing this forces a new Log Analytics Windows Performance Counter DataSource to be created.
         #[builder(into)]
-        pub workspace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DataSourceWindowsPerformanceCounterResult {

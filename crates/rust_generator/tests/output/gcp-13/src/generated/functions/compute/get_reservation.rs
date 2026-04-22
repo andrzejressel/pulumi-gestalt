@@ -10,13 +10,13 @@ pub mod get_reservation {
     pub struct GetReservationArgs {
         /// The name of the Compute Reservation.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Project from which to list the Compute Reservation. Defaults to project declared in the provider.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Zone where the Compute Reservation resides.
         #[builder(into)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetReservationResult {

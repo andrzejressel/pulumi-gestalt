@@ -118,37 +118,37 @@ pub mod transfer_job {
     pub struct TransferJobArgs {
         /// Unique description to identify the Transfer Job.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Event-driven transfer options. Event-driven transfers listen to an event stream to transfer updated files. Structure documented below Either `event_stream` or `schedule` must be set.
         #[builder(into, default)]
-        pub event_stream: pulumi_gestalt_rust::InputOrOutput<
+        pub event_stream: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::TransferJobEventStream>,
         >,
         /// The name of the Transfer Job. This name must start with "transferJobs/" prefix and end with a letter or a number, and should be no more than 128 characters ( `transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$` ). For transfers involving PosixFilesystem, this name must start with transferJobs/OPI specifically ( `transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$` ). For all other transfer types, this name must not start with transferJobs/OPI. Default the provider will assign a random unique name with `transferJobs/{{name}}` format, where `name` is a numeric value.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Notification configuration. This is not supported for transfers involving PosixFilesystem. Structure documented below.
         #[builder(into, default)]
-        pub notification_config: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::TransferJobNotificationConfig>,
         >,
         /// The project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Schedule specification defining when the Transfer Job should be scheduled to start, end and what time to run. Structure documented below. Either `schedule` or `event_stream` must be set.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::TransferJobSchedule>,
         >,
         /// Status of the job. Default: `ENABLED`. **NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.**
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Transfer specification. Structure documented below.
         ///
         /// - - -
         #[builder(into)]
-        pub transfer_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub transfer_spec: pulumi_gestalt_rust::Input<
             super::super::types::storage::TransferJobTransferSpec,
         >,
     }

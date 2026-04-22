@@ -55,21 +55,21 @@ pub mod zero_trust_access_mtls_certificate {
     pub struct ZeroTrustAccessMtlsCertificateArgs {
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The hostnames that will be prompted for this certificate.
         #[builder(into, default)]
-        pub associated_hostnames: pulumi_gestalt_rust::InputOrOutput<
+        pub associated_hostnames: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The Root CA for your certificates.
         #[builder(into, default)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the certificate.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. Conflicts with `account_id`.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustAccessMtlsCertificateResult {

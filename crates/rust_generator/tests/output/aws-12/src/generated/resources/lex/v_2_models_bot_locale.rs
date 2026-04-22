@@ -65,31 +65,31 @@ pub mod v_2_models_bot_locale {
     pub struct V2modelsBotLocaleArgs {
         /// Identifier of the bot to create the locale for.
         #[builder(into)]
-        pub bot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_id: pulumi_gestalt_rust::Input<String>,
         /// Version of the bot to create the locale for. This can only be the draft version of the bot.
         #[builder(into)]
-        pub bot_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_version: pulumi_gestalt_rust::Input<String>,
         /// Description of the bot locale. Use this to help identify the bot locale in lists.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
         #[builder(into)]
-        pub locale_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub locale_id: pulumi_gestalt_rust::Input<String>,
         /// Determines the threshold where Amazon Lex will insert the AMAZON.FallbackIntent, AMAZON.KendraSearchIntent, or both when returning alternative intents.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub n_lu_intent_confidence_threshold: pulumi_gestalt_rust::InputOrOutput<f64>,
+        pub n_lu_intent_confidence_threshold: pulumi_gestalt_rust::Input<f64>,
         /// Specified locale name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsBotLocaleTimeouts>,
         >,
         /// Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. See `voice_settings`.
         #[builder(into, default)]
-        pub voice_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub voice_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsBotLocaleVoiceSettings>,
         >,
     }

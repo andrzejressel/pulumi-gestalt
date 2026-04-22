@@ -40,25 +40,25 @@ pub mod hsm_configuration {
     pub struct HsmConfigurationArgs {
         /// A text description of the HSM configuration to be created.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// The identifier to be assigned to the new Amazon Redshift HSM configuration.
         #[builder(into)]
-        pub hsm_configuration_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hsm_configuration_identifier: pulumi_gestalt_rust::Input<String>,
         /// The IP address that the Amazon Redshift cluster must use to access the HSM.
         #[builder(into)]
-        pub hsm_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hsm_ip_address: pulumi_gestalt_rust::Input<String>,
         /// The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.
         #[builder(into)]
-        pub hsm_partition_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hsm_partition_name: pulumi_gestalt_rust::Input<String>,
         /// The password required to access the HSM partition.
         #[builder(into)]
-        pub hsm_partition_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hsm_partition_password: pulumi_gestalt_rust::Input<String>,
         /// The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
         #[builder(into)]
-        pub hsm_server_public_certificate: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hsm_server_public_certificate: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

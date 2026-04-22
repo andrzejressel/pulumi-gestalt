@@ -145,7 +145,7 @@ pub mod target_grpc_proxy {
     pub struct TargetGrpcProxyArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. Provided by the client when the resource
         /// is created. The name must be 1-63 characters long, and comply
         /// with RFC1035. Specifically, the name must be 1-63 characters long
@@ -157,16 +157,16 @@ pub mod target_grpc_proxy {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL to the UrlMap resource that defines the mapping from URL to
         /// the BackendService. The protocol field in the BackendService
         /// must be set to GRPC.
         #[builder(into, default)]
-        pub url_map: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub url_map: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, indicates that the BackendServices referenced by
         /// the urlMap may be accessed by gRPC applications without using
         /// a sidecar proxy. This will enable configuration checks on urlMap
@@ -178,7 +178,7 @@ pub mod target_grpc_proxy {
         /// must not use "xds:///" scheme in the target URI of the service
         /// it is connecting to
         #[builder(into, default)]
-        pub validate_for_proxyless: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub validate_for_proxyless: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct TargetGrpcProxyResult {

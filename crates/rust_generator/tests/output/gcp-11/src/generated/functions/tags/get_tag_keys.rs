@@ -10,7 +10,7 @@ pub mod get_tag_keys {
     pub struct GetTagKeysArgs {
         /// The resource name of the parent organization or project. It can be in format `organizations/{org_id}` or `projects/{project_id_or_number}`.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTagKeysResult {

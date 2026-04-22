@@ -41,16 +41,16 @@ pub mod disk {
     pub struct DiskArgs {
         /// The Availability Zone in which to create your disk.
         #[builder(into)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub availability_zone: pulumi_gestalt_rust::Input<String>,
         /// The name of the disk.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The size of the disk in GB.
         #[builder(into)]
-        pub size_in_gb: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub size_in_gb: pulumi_gestalt_rust::Input<i32>,
         /// A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

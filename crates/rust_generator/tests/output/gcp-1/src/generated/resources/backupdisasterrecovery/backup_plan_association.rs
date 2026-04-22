@@ -101,26 +101,26 @@ pub mod backup_plan_association {
     pub struct BackupPlanAssociationArgs {
         /// The BP with which resource needs to be created
         #[builder(into)]
-        pub backup_plan: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_plan: pulumi_gestalt_rust::Input<String>,
         /// The id of backupplan association
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub backup_plan_association_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_plan_association_id: pulumi_gestalt_rust::Input<String>,
         /// The location for the backupplan association
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource for which BPA needs to be created
         #[builder(into)]
-        pub resource: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource: pulumi_gestalt_rust::Input<String>,
         /// The resource type of workload on which backupplan is applied
         #[builder(into)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupPlanAssociationResult {

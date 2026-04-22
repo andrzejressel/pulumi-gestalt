@@ -10,10 +10,10 @@ pub mod get_cluster {
     pub struct GetClusterArgs {
         /// ID of Cloud HSM v2 cluster.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// State of the cluster to be found.
         #[builder(into, default)]
-        pub cluster_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_state: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetClusterResult {

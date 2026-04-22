@@ -75,37 +75,37 @@ pub mod monitor {
     pub struct MonitorArgs {
         /// A `datadog_organization` block as defined below.
         #[builder(into)]
-        pub datadog_organization: pulumi_gestalt_rust::InputOrOutput<
+        pub datadog_organization: pulumi_gestalt_rust::Input<
             super::super::types::datadog::MonitorDatadogOrganization,
         >,
         /// A `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::datadog::MonitorIdentity>,
         >,
         /// The Azure Region where the Datadog Monitor should exist. Changing this forces a new Datadog Monitor to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is monitoring enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub monitoring_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub monitoring_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the user that will be associated with the Datadog Monitor. Changing this forces a new Datadog Monitor to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Datadog Monitor should exist. Changing this forces a new Datadog Monitor to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this sku.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Datadog Monitor.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `user` block as defined below.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<
+        pub user: pulumi_gestalt_rust::Input<
             super::super::types::datadog::MonitorUser,
         >,
     }

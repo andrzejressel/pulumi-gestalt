@@ -40,15 +40,15 @@ pub mod route_table_association {
     pub struct RouteTableAssociationArgs {
         /// Boolean whether the Gateway Attachment should remove any current Route Table association before associating with the specified Route Table. Default value: `false`. This argument is intended for use with EC2 Transit Gateways shared into the current account, otherwise the `transit_gateway_default_route_table_association` argument of the `aws.ec2transitgateway.VpcAttachment` resource should be used.
         #[builder(into, default)]
-        pub replace_existing_association: pulumi_gestalt_rust::InputOrOutput<
+        pub replace_existing_association: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Identifier of EC2 Transit Gateway Attachment.
         #[builder(into)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Transit Gateway Route Table.
         #[builder(into)]
-        pub transit_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteTableAssociationResult {

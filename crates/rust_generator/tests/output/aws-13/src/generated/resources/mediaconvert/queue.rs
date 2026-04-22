@@ -33,24 +33,24 @@ pub mod queue {
     pub struct QueueArgs {
         /// A description of the queue
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique identifier describing the queue
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the pricing plan for the queue is on-demand or reserved. Valid values are `ON_DEMAND` or `RESERVED`. Default to `ON_DEMAND`.
         #[builder(into, default)]
-        pub pricing_plan: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pricing_plan: pulumi_gestalt_rust::Input<Option<String>>,
         /// A detail pricing plan of the  reserved queue. See below.
         #[builder(into, default)]
-        pub reservation_plan_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub reservation_plan_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::mediaconvert::QueueReservationPlanSettings>,
         >,
         /// A status of the queue. Valid values are `ACTIVE` or `RESERVED`. Default to `PAUSED`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

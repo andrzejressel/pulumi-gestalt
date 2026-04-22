@@ -232,27 +232,27 @@ pub mod connection {
         /// authConfig for the connection.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub auth_config: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::integrationconnectors::ConnectionAuthConfig>,
         >,
         /// Config Variables for the connection.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub config_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub config_variables: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::integrationconnectors::ConnectionConfigVariable>,
             >,
         >,
         /// connectorVersion of the Connector.
         #[builder(into)]
-        pub connector_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connector_version: pulumi_gestalt_rust::Input<String>,
         /// An arbitrary description for the Conection.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Define the Connectors target endpoint.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub destination_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_configs: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::integrationconnectors::ConnectionDestinationConfig,
@@ -262,34 +262,34 @@ pub mod connection {
         /// Eventing Configuration of a connection
         /// Structure is documented below.
         #[builder(into, default)]
-        pub eventing_config: pulumi_gestalt_rust::InputOrOutput<
+        pub eventing_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::integrationconnectors::ConnectionEventingConfig>,
         >,
         /// Eventing enablement type. Will be nil if eventing is not enabled.
         /// Possible values are: `EVENTING_AND_CONNECTION`, `ONLY_EVENTING`.
         #[builder(into, default)]
-        pub eventing_enablement_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eventing_enablement_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource labels to represent user provided metadata.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location in which Connection needs to be created.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Determines whether or no a connection is locked. If locked, a reason must be specified.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub lock_config: pulumi_gestalt_rust::InputOrOutput<
+        pub lock_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::integrationconnectors::ConnectionLockConfig>,
         >,
         /// Log configuration for the connection.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub log_config: pulumi_gestalt_rust::InputOrOutput<
+        pub log_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::integrationconnectors::ConnectionLogConfig>,
         >,
         /// Name of Connection needs to be created.
@@ -297,29 +297,29 @@ pub mod connection {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Node configuration for the connection.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub node_config: pulumi_gestalt_rust::InputOrOutput<
+        pub node_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::integrationconnectors::ConnectionNodeConfig>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service account needed for runtime plane to access Google Cloud resources.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// SSL Configuration of a connection
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ssl_config: pulumi_gestalt_rust::InputOrOutput<
+        pub ssl_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::integrationconnectors::ConnectionSslConfig>,
         >,
         /// Suspended indicates if a user has suspended a connection or not.
         #[builder(into, default)]
-        pub suspended: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub suspended: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ConnectionResult {

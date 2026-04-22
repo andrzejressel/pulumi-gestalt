@@ -47,22 +47,22 @@ pub mod member {
     pub struct MemberArgs {
         /// AWS account ID for member account.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The detector ID of the GuardDuty account where you want to create member accounts.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
         /// Boolean whether an email notification is sent to the accounts. Defaults to `false`.
         #[builder(into, default)]
-        pub disable_email_notification: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_email_notification: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Email address for member account.
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
         /// Message for invitation.
         #[builder(into, default)]
-        pub invitation_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub invitation_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean whether to invite the account to GuardDuty as a member. Defaults to `false`. To detect if an invitation needs to be (re-)sent, the this provider state value is `true` based on a `relationship_status` of `Disabled`, `Enabled`, `Invited`, or `EmailVerificationInProgress`.
         #[builder(into, default)]
-        pub invite: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub invite: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct MemberResult {

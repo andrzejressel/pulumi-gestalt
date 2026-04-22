@@ -62,16 +62,16 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// The count of the Azure VMware Solution Cluster nodes.
         #[builder(into)]
-        pub cluster_node_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub cluster_node_count: pulumi_gestalt_rust::Input<i32>,
         /// The name which should be used for this Azure VMware Solution Cluster. Changing this forces a new Azure VMware Solution Cluster to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Cluster SKU to use. Possible values are `av20`, `av36`, `av36t`, `av36p`, `av36pt`, `av52`, `av52t`, and `av64`. Changing this forces a new Azure VMware Solution Cluster to be created.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Azure VMware Solution Private Cloud in which to create this Cluster. Changing this forces a new Azure VMware Solution Cluster to be created.
         #[builder(into)]
-        pub vmware_cloud_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vmware_cloud_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

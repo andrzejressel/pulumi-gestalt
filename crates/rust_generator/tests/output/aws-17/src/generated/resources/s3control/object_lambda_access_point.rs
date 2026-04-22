@@ -59,15 +59,15 @@ pub mod object_lambda_access_point {
     pub struct ObjectLambdaAccessPointArgs {
         /// The AWS account ID for the owner of the bucket for which you want to create an Object Lambda Access Point. Defaults to automatically determined account ID of the AWS provider.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration block containing details about the Object Lambda Access Point. See Configuration below for more details.
         #[builder(into)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             super::super::types::s3control::ObjectLambdaAccessPointConfiguration,
         >,
         /// The name for this Object Lambda Access Point.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ObjectLambdaAccessPointResult {

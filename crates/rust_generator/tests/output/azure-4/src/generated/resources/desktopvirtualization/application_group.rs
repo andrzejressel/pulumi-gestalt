@@ -82,35 +82,35 @@ pub mod application_group {
     pub struct ApplicationGroupArgs {
         /// Option to set the display name for the default sessionDesktop desktop when `type` is set to `Desktop`. A value here is mandatory for connections to the desktop using the Windows 365 portal. Without it the connection will hang at 'Loading Client'.
         #[builder(into, default)]
-        pub default_desktop_display_name: pulumi_gestalt_rust::InputOrOutput<
+        pub default_desktop_display_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Option to set a description for the Virtual Desktop Application Group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to set a friendly name for the Virtual Desktop Application Group.
         #[builder(into, default)]
-        pub friendly_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub friendly_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource ID for a Virtual Desktop Host Pool to associate with the Virtual Desktop Application Group. Changing the name forces a new resource to be created.
         #[builder(into)]
-        pub host_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The location/region where the Virtual Desktop Application Group is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Virtual Desktop Application Group. Changing the name forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Virtual Desktop Application Group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Type of Virtual Desktop Application Group. Valid options are `RemoteApp` or `Desktop` application groups. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApplicationGroupResult {

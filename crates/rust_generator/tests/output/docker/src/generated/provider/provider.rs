@@ -13,26 +13,26 @@
 pub struct ProviderArgs {
     /// PEM-encoded content of Docker host CA certificate
     #[builder(into, default)]
-    pub ca_material: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub ca_material: pulumi_gestalt_rust::Input<Option<String>>,
     /// PEM-encoded content of Docker client certificate
     #[builder(into, default)]
-    pub cert_material: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cert_material: pulumi_gestalt_rust::Input<Option<String>>,
     /// Path to directory with Docker TLS config
     #[builder(into, default)]
-    pub cert_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cert_path: pulumi_gestalt_rust::Input<Option<String>>,
     /// The Docker daemon address
     #[builder(into, default)]
-    pub host: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub host: pulumi_gestalt_rust::Input<Option<String>>,
     /// PEM-encoded content of Docker client private key
     #[builder(into, default)]
-    pub key_material: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub key_material: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub registry_auth: pulumi_gestalt_rust::InputOrOutput<
+    pub registry_auth: pulumi_gestalt_rust::Input<
         Option<Vec<super::types::ProviderRegistryAuth>>,
     >,
     /// Additional SSH option flags to be appended when using `ssh://` protocol
     #[builder(into, default)]
-    pub ssh_opts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+    pub ssh_opts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
 }
 #[allow(dead_code)]
 pub struct ProviderResult {

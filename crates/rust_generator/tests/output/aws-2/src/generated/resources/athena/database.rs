@@ -42,32 +42,32 @@ pub mod database {
     pub struct DatabaseArgs {
         /// That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.
         #[builder(into, default)]
-        pub acl_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub acl_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::athena::DatabaseAclConfiguration>,
         >,
         /// Name of S3 bucket to save the results of the query execution.
         #[builder(into, default)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the database.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Encryption key block AWS Athena uses to decrypt the data in S3, such as an AWS Key Management Service (AWS KMS) key. See Encryption Configuration below.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::athena::DatabaseEncryptionConfiguration>,
         >,
         /// AWS account ID that you expect to be the owner of the Amazon S3 bucket.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean that indicates all tables should be deleted from the database so that the database can be destroyed without error. The tables are *not* recoverable.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the database to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of custom metadata properties for the database definition.
         #[builder(into, default)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

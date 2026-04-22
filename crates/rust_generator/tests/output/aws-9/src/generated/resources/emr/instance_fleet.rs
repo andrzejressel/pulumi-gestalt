@@ -69,26 +69,26 @@ pub mod instance_fleet {
     pub struct InstanceFleetArgs {
         /// ID of the EMR Cluster to attach to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for instance fleet
         #[builder(into, default)]
-        pub instance_type_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_type_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::emr::InstanceFleetInstanceTypeConfig>>,
         >,
         /// Configuration block for launch specification
         #[builder(into, default)]
-        pub launch_specifications: pulumi_gestalt_rust::InputOrOutput<
+        pub launch_specifications: pulumi_gestalt_rust::Input<
             Option<super::super::types::emr::InstanceFleetLaunchSpecifications>,
         >,
         /// Friendly name given to the instance fleet.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand instances to provision.
         #[builder(into, default)]
-        pub target_on_demand_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub target_on_demand_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The target capacity of Spot units for the instance fleet, which determines how many Spot instances to provision.
         #[builder(into, default)]
-        pub target_spot_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub target_spot_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct InstanceFleetResult {

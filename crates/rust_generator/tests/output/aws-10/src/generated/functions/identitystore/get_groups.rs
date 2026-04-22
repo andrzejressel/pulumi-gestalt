@@ -10,7 +10,7 @@ pub mod get_groups {
     pub struct GetGroupsArgs {
         /// Identity Store ID associated with the Single Sign-On (SSO) Instance.
         #[builder(into)]
-        pub identity_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_store_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGroupsResult {

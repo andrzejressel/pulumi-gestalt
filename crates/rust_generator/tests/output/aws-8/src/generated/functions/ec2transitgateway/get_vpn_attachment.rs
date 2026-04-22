@@ -10,7 +10,7 @@ pub mod get_vpn_attachment {
     pub struct GetVpnAttachmentArgs {
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ec2transitgateway::GetVpnAttachmentFilter,
@@ -19,15 +19,15 @@ pub mod get_vpn_attachment {
         >,
         /// Map of tags, each pair of which must exactly match a pair on the desired Transit Gateway VPN Attachment.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of the EC2 Transit Gateway.
         #[builder(into, default)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the EC2 VPN Connection.
         #[builder(into, default)]
-        pub vpn_connection_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpn_connection_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetVpnAttachmentResult {

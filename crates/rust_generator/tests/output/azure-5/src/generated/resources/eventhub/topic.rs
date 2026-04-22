@@ -50,51 +50,51 @@ pub mod topic {
     pub struct TopicArgs {
         /// The ISO 8601 timespan duration of the idle interval after which the Topic is automatically deleted, minimum of 5 minutes. Defaults to `P10675199DT2H48M5.4775807S`.
         #[builder(into, default)]
-        pub auto_delete_on_idle: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_delete_on_idle: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean flag which controls if server-side batched operations are enabled.
         #[builder(into, default)]
-        pub batched_operations_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub batched_operations_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ISO 8601 timespan duration of TTL of messages sent to this topic if no TTL value is set on the message itself. Defaults to `P10675199DT2H48M5.4775807S`.
         #[builder(into, default)]
-        pub default_message_ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_message_ttl: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ISO 8601 timespan duration during which duplicates can be detected. Defaults to `PT10M` (10 Minutes).
         #[builder(into, default)]
-        pub duplicate_detection_history_time_window: pulumi_gestalt_rust::InputOrOutput<
+        pub duplicate_detection_history_time_window: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Boolean flag which controls whether Express Entities are enabled. An express topic holds a message in memory temporarily before writing it to persistent storage.
         #[builder(into, default)]
-        pub express_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub express_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Integer value which controls the maximum size of a message allowed on the topic for Premium SKU. For supported values see the "Large messages support" section of [this document](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-premium-messaging#large-messages-support-preview). Defaults to `256`.
         #[builder(into, default)]
-        pub max_message_size_in_kilobytes: pulumi_gestalt_rust::InputOrOutput<
+        pub max_message_size_in_kilobytes: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Integer value which controls the size of memory allocated for the topic. For supported values see the "Queue/topic size" section of [this document](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quotas). Defaults to `5120`.
         #[builder(into, default)]
-        pub max_size_in_megabytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_size_in_megabytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the ServiceBus Topic resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the ServiceBus Namespace to create this topic in. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_id: pulumi_gestalt_rust::Input<String>,
         /// Boolean flag which controls whether to enable the topic to be partitioned across multiple message brokers. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Partitioning is available at entity creation for all queues and topics in Basic or Standard SKUs. It is not available for the Premium messaging SKU, but any previously existing partitioned entities in Premium namespaces continue to work as expected. Please [see the documentation](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-partitioning) for more information.
         #[builder(into, default)]
-        pub partitioning_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub partitioning_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag which controls whether the Topic requires duplicate detection. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub requires_duplicate_detection: pulumi_gestalt_rust::InputOrOutput<
+        pub requires_duplicate_detection: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The Status of the Service Bus Topic. Acceptable values are `Active` or `Disabled`. Defaults to `Active`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean flag which controls whether the Topic supports ordering.
         #[builder(into, default)]
-        pub support_ordering: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub support_ordering: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct TopicResult {

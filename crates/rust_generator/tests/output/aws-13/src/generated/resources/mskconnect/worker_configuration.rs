@@ -40,18 +40,18 @@ pub mod worker_configuration {
     pub struct WorkerConfigurationArgs {
         /// A summary description of the worker configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the worker configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Contents of connect-distributed.properties file. The value can be either base64 encoded or in raw format.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub properties_file_content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub properties_file_content: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -85,17 +85,17 @@ pub mod engine_model {
         /// prediction requests that do not specify a version.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub default_version: pulumi_gestalt_rust::InputOrOutput<
+        pub default_version: pulumi_gestalt_rust::Input<
             Option<super::super::types::ml::EngineModelDefaultVersion>,
         >,
         /// The description specified for the model when it was created.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more labels that you can add, to organize your models.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name specified for the model.
@@ -103,23 +103,23 @@ pub mod engine_model {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, online prediction nodes send stderr and stdout streams to Stackdriver Logging
         #[builder(into, default)]
-        pub online_prediction_console_logging: pulumi_gestalt_rust::InputOrOutput<
+        pub online_prediction_console_logging: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// If true, online prediction access logs are sent to StackDriver Logging.
         #[builder(into, default)]
-        pub online_prediction_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub online_prediction_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of regions where the model is going to be deployed.
         /// Currently only one region per model is supported
         #[builder(into, default)]
-        pub regions: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub regions: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EngineModelResult {

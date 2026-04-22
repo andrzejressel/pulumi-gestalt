@@ -237,39 +237,39 @@ pub mod endpoint {
     pub struct EndpointArgs {
         /// The custom name of the network interface attached to the private endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub custom_network_interface_name: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_network_interface_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// One or more `ip_configuration` blocks as defined below. This allows a static IP address to be set for this Private Endpoint, otherwise an address is dynamically allocated from the Subnet.
         #[builder(into, default)]
-        pub ip_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::privatelink::EndpointIpConfiguration>>,
         >,
         /// The supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Name of the Private Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `private_dns_zone_group` block as defined below.
         #[builder(into, default)]
-        pub private_dns_zone_group: pulumi_gestalt_rust::InputOrOutput<
+        pub private_dns_zone_group: pulumi_gestalt_rust::Input<
             Option<super::super::types::privatelink::EndpointPrivateDnsZoneGroup>,
         >,
         /// A `private_service_connection` block as defined below.
         #[builder(into)]
-        pub private_service_connection: pulumi_gestalt_rust::InputOrOutput<
+        pub private_service_connection: pulumi_gestalt_rust::Input<
             super::super::types::privatelink::EndpointPrivateServiceConnection,
         >,
         /// Specifies the Name of the Resource Group within which the Private Endpoint should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

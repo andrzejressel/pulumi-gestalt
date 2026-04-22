@@ -111,60 +111,60 @@ pub mod network_attached_data_network {
     pub struct NetworkAttachedDataNetworkArgs {
         /// Specifies the DNS servers to signal to UEs to use for this attached data network.
         #[builder(into)]
-        pub dns_addresses: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub dns_addresses: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the Azure Region where the Mobile Network Attached Data Network should exist. Changing this forces a new Mobile Network Attached Data Network to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the `azure.mobile.NetworkDataNetwork` which the Attached Data Network belongs to, Changing this forces a new Mobile Network Attached Data Network to be created.
         #[builder(into)]
-        pub mobile_network_data_network_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_data_network_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the `azure.mobile.NetworkPacketCoreDataPlane` which the Mobile Network Attached Data Network belongs to. Changing this forces a new Mobile Network Attached Data Network to be created.
         #[builder(into)]
-        pub mobile_network_packet_core_data_plane_id: pulumi_gestalt_rust::InputOrOutput<
+        pub mobile_network_packet_core_data_plane_id: pulumi_gestalt_rust::Input<
             String,
         >,
         /// A `network_address_port_translation` block as defined below.
         #[builder(into, default)]
-        pub network_address_port_translation: pulumi_gestalt_rust::InputOrOutput<
+        pub network_address_port_translation: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::mobile::NetworkAttachedDataNetworkNetworkAddressPortTranslation,
             >,
         >,
         /// A mapping of tags which should be assigned to the Mobile Network Attached Data Network.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the user equipment (UE) address pool prefixes for the attached data network from which the packet core instance will dynamically assign IP addresses to UEs. The packet core instance assigns an IP address to a UE when the UE sets up a PDU session. At least one of `user_equipment_address_pool_prefixes` and `user_equipment_static_address_pool_prefix`. If you define both, they must be of the same size.
         #[builder(into, default)]
-        pub user_equipment_address_pool_prefixes: pulumi_gestalt_rust::InputOrOutput<
+        pub user_equipment_address_pool_prefixes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Specifies the user equipment (UE) address pool prefixes for the attached data network from which the packet core instance will assign static IP addresses to UEs. The packet core instance assigns an IP address to a UE when the UE sets up a PDU session. The static IP address for a specific UE is set in StaticIPConfiguration on the corresponding SIM resource. At least one of `user_equipment_address_pool_prefix` and `user_equipment_static_address_pool_prefixes`. If you define both, they must be of the same size.
         ///
         /// > **Note:** At least one of `user_equipment_address_pool_prefixes` and `user_equipment_static_address_pool_prefixes` must be specified.
         #[builder(into, default)]
-        pub user_equipment_static_address_pool_prefixes: pulumi_gestalt_rust::InputOrOutput<
+        pub user_equipment_static_address_pool_prefixes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The IPv4 address for the user data plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_address: pulumi_gestalt_rust::InputOrOutput<
+        pub user_plane_access_ipv4_address: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The default IPv4 gateway for the user data plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_gateway: pulumi_gestalt_rust::InputOrOutput<
+        pub user_plane_access_ipv4_gateway: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The IPv4 subnet for the user data plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_subnet: pulumi_gestalt_rust::InputOrOutput<
+        pub user_plane_access_ipv4_subnet: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the logical name for the user data plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_plane_access_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NetworkAttachedDataNetworkResult {

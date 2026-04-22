@@ -46,88 +46,88 @@ pub mod service {
     pub struct ServiceArgs {
         /// One or more `additional_location` blocks as defined below.
         #[builder(into, default)]
-        pub additional_locations: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_locations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apimanagement::ServiceAdditionalLocation>>,
         >,
         /// One or more `certificate` blocks (up to 10) as defined below.
         #[builder(into, default)]
-        pub certificates: pulumi_gestalt_rust::InputOrOutput<
+        pub certificates: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apimanagement::ServiceCertificate>>,
         >,
         /// Enforce a client certificate to be presented on each request to the gateway? This is only supported when SKU type is `Consumption`.
         #[builder(into, default)]
-        pub client_certificate_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_certificate_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `delegation` block as defined below.
         #[builder(into, default)]
-        pub delegation: pulumi_gestalt_rust::InputOrOutput<
+        pub delegation: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ServiceDelegation>,
         >,
         /// Disable the gateway in main region? This is only supported when `additional_location` is set.
         #[builder(into, default)]
-        pub gateway_disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub gateway_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `hostname_configuration` block as defined below.
         #[builder(into, default)]
-        pub hostname_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub hostname_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ServiceHostnameConfiguration>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ServiceIdentity>,
         >,
         /// The Azure location where the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version which the control plane API calls to API Management service are limited with version equal to or newer than.
         #[builder(into, default)]
-        pub min_api_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub min_api_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the API Management Service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Email address from which the notification will be sent.
         #[builder(into, default)]
-        pub notification_sender_email: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_sender_email: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A `protocols` block as defined below.
         #[builder(into, default)]
-        pub protocols: pulumi_gestalt_rust::InputOrOutput<
+        pub protocols: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ServiceProtocols>,
         >,
         /// ID of a standard SKU IPv4 Public IP.
         ///
         /// > **NOTE:** Custom public IPs are only supported on the `Premium` and `Developer` tiers when deployed in a virtual network.
         #[builder(into, default)]
-        pub public_ip_address_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_ip_address_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is public access to the service allowed? Defaults to `true`.
         ///
         /// > **NOTE:** This option is applicable only to the Management plane, not the API gateway or Developer portal. It is required to be `true` on the creation.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The email of publisher/company.
         #[builder(into)]
-        pub publisher_email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub publisher_email: pulumi_gestalt_rust::Input<String>,
         /// The name of publisher/company.
         #[builder(into)]
-        pub publisher_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub publisher_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the API Management Service should be exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `security` block as defined below.
         #[builder(into, default)]
-        pub security: pulumi_gestalt_rust::InputOrOutput<
+        pub security: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ServiceSecurity>,
         >,
         /// A `sign_in` block as defined below.
         #[builder(into, default)]
-        pub sign_in: pulumi_gestalt_rust::InputOrOutput<
+        pub sign_in: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ServiceSignIn>,
         >,
         /// A `sign_up` block as defined below.
         #[builder(into, default)]
-        pub sign_up: pulumi_gestalt_rust::InputOrOutput<
+        pub sign_up: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ServiceSignUp>,
         >,
         /// `sku_name` is a string consisting of two parts separated by an underscore(\_). The first part is the `name`, valid values include: `Consumption`, `Developer`, `Basic`, `Standard` and `Premium`. The second part is the `capacity` (e.g. the number of deployed units of the `sku`), which must be a positive `integer` (e.g. `Developer_1`).
@@ -136,20 +136,20 @@ pub mod service {
         ///
         /// > **NOTE:** Consumption SKU capacity should be 0 (e.g. `Consumption_0`) as this tier includes automatic scaling.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `tenant_access` block as defined below.
         #[builder(into, default)]
-        pub tenant_access: pulumi_gestalt_rust::InputOrOutput<
+        pub tenant_access: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ServiceTenantAccess>,
         >,
         /// A `virtual_network_configuration` block as defined below. Required when `virtual_network_type` is `External` or `Internal`.
         #[builder(into, default)]
-        pub virtual_network_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_network_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::apimanagement::ServiceVirtualNetworkConfiguration,
             >,
@@ -158,12 +158,12 @@ pub mod service {
         ///
         /// > **NOTE:** Please ensure that in the subnet, inbound port 3443 is open when `virtual_network_type` is `Internal` or `External`. And please ensure other necessary ports are open according to [api management network configuration](https://learn.microsoft.com/azure/api-management/virtual-network-reference).
         #[builder(into, default)]
-        pub virtual_network_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtual_network_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Availability Zones in which this API Management service should be located.
         ///
         /// > **NOTE:** Availability zones are only supported in the Premium tier.
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ServiceResult {

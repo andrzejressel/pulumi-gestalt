@@ -104,30 +104,30 @@ pub mod attached_database_configuration {
     pub struct AttachedDatabaseConfigurationArgs {
         /// Specifies the name of the Kusto Cluster for which the configuration will be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// The resource id of the cluster where the databases you would like to attach reside. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_resource_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the database which you would like to attach, use * if you want to follow all current and future databases. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// The default principals modification kind. Valid values are: `None` (default), `Replace` and `Union`. Defaults to `None`.
         #[builder(into, default)]
-        pub default_principal_modification_kind: pulumi_gestalt_rust::InputOrOutput<
+        pub default_principal_modification_kind: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the location of the Kusto Cluster for which the configuration will be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Kusto Attached Database Configuration to create. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the resource group of the Kusto Cluster for which the configuration will be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sharing` block as defined below.
         #[builder(into, default)]
-        pub sharing: pulumi_gestalt_rust::InputOrOutput<
+        pub sharing: pulumi_gestalt_rust::Input<
             Option<super::super::types::kusto::AttachedDatabaseConfigurationSharing>,
         >,
     }

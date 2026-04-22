@@ -10,7 +10,7 @@ pub mod get_policy {
     pub struct GetPolicyArgs {
         /// The unique identifier (ID) of the policy that you want more details on. Policy id starts with a "p-" followed by 8-28 lowercase or uppercase letters, digits, and underscores.
         #[builder(into)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPolicyResult {

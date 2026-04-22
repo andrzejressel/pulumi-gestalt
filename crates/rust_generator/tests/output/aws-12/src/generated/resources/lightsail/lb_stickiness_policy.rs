@@ -40,13 +40,13 @@ pub mod lb_stickiness_policy {
     pub struct LbStickinessPolicyArgs {
         /// The cookie duration in seconds. This determines the length of the session stickiness.
         #[builder(into)]
-        pub cookie_duration: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub cookie_duration: pulumi_gestalt_rust::Input<i32>,
         /// The Session Stickiness state of the load balancer. `true` to activate session stickiness or `false` to deactivate session stickiness.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The name of the load balancer to which you want to enable session stickiness.
         #[builder(into)]
-        pub lb_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lb_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LbStickinessPolicyResult {

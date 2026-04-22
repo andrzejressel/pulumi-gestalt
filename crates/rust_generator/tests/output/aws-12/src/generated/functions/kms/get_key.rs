@@ -10,14 +10,14 @@ pub mod get_key {
     pub struct GetKeyArgs {
         /// List of grant tokens
         #[builder(into, default)]
-        pub grant_tokens: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub grant_tokens: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key identifier which can be one of the following format:
         /// * Key ID. E.g: `1234abcd-12ab-34cd-56ef-1234567890ab`
         /// * Key ARN. E.g.: `arn:aws:kms:us-east-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab`
         /// * Alias name. E.g.: `alias/my-key`
         /// * Alias ARN: E.g.: `arn:aws:kms:us-east-1:111122223333:alias/my-key`
         #[builder(into)]
-        pub key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetKeyResult {

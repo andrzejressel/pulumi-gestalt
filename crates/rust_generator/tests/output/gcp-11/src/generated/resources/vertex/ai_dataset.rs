@@ -40,11 +40,11 @@ pub mod ai_dataset {
     pub struct AiDatasetArgs {
         /// The user-defined name of the Dataset. The name can be up to 128 characters long and can be consist of any UTF-8 characters.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Customer-managed encryption key spec for a Dataset. If set, this Dataset and all sub-resources of this Dataset will be secured by this key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub encryption_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiDatasetEncryptionSpec>,
         >,
         /// A set of key/value label pairs to assign to this Workflow.
@@ -52,7 +52,7 @@ pub mod ai_dataset {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Points to a YAML file stored on Google Cloud Storage describing additional information about the Dataset. The schema is defined as an OpenAPI 3.0.2 Schema Object. The schema files that can be used here are found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
@@ -60,14 +60,14 @@ pub mod ai_dataset {
         ///
         /// - - -
         #[builder(into)]
-        pub metadata_schema_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub metadata_schema_uri: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the dataset. eg us-central1
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiDatasetResult {

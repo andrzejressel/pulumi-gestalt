@@ -37,23 +37,23 @@ pub mod query_suggestions_block_list {
     #[allow(dead_code)]
     pub struct QuerySuggestionsBlockListArgs {
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the index for a block list.
         #[builder(into)]
-        pub index_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_id: pulumi_gestalt_rust::Input<String>,
         /// Name for the block list.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// IAM (Identity and Access Management) role used to access the block list text file in S3.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// S3 path where your block list text file is located. See details below.
         #[builder(into)]
-        pub source_s3_path: pulumi_gestalt_rust::InputOrOutput<
+        pub source_s3_path: pulumi_gestalt_rust::Input<
             super::super::types::kendra::QuerySuggestionsBlockListSourceS3Path,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,10 +10,10 @@ pub mod get_encryption_scope {
     pub struct GetEncryptionScopeArgs {
         /// The name of this Storage Encryption Scope.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Storage Account where this Storage Encryption Scope exists.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEncryptionScopeResult {

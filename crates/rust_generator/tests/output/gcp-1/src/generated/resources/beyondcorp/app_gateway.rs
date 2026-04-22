@@ -91,18 +91,18 @@ pub mod app_gateway {
     pub struct AppGatewayArgs {
         /// An arbitrary user-provided name for the AppGateway.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of hosting used by the AppGateway.
         /// Default value is `HOST_TYPE_UNSPECIFIED`.
         /// Possible values are: `HOST_TYPE_UNSPECIFIED`, `GCP_REGIONAL_MIG`.
         #[builder(into, default)]
-        pub host_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource labels to represent user provided metadata.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the AppGateway.
@@ -110,19 +110,19 @@ pub mod app_gateway {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the AppGateway.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of network connectivity used by the AppGateway.
         /// Default value is `TYPE_UNSPECIFIED`.
         /// Possible values are: `TYPE_UNSPECIFIED`, `TCP_PROXY`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppGatewayResult {

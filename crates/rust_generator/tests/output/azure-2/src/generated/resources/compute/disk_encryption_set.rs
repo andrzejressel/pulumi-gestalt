@@ -213,16 +213,16 @@ pub mod disk_encryption_set {
     #[allow(dead_code)]
     pub struct DiskEncryptionSetArgs {
         #[builder(into, default)]
-        pub auto_key_rotation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_key_rotation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The type of key used to encrypt the data of the disk. Possible values are `EncryptionAtRestWithCustomerKey`, `EncryptionAtRestWithPlatformAndCustomerKeys` and `ConfidentialVmEncryptedWithCustomerKey`. Defaults to `EncryptionAtRestWithCustomerKey`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encryption_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Multi-tenant application client id to access key vault in a different tenant.
         #[builder(into, default)]
-        pub federated_client_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub federated_client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             super::super::types::compute::DiskEncryptionSetIdentity,
         >,
         /// Specifies the URL to a Key Vault Key (either from a Key Vault Key, or the Key URL for the Key Vault Secret). Exactly one of `managed_hsm_key_id`, `key_vault_key_id` must be specified.
@@ -232,22 +232,22 @@ pub mod disk_encryption_set {
         /// > **NOTE** A KeyVault or Managed HSM using enable_rbac_authorization requires to use `azure.authorization.Assignment` to assign the role `Key Vault Crypto Service Encryption User` to this Disk Encryption Set.
         /// In this case, `azure.keyvault.AccessPolicy` is not needed.
         #[builder(into, default)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Azure Region where the Disk Encryption Set exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key ID of a key in a managed HSM.  Exactly one of `managed_hsm_key_id`, `key_vault_key_id` must be specified.
         #[builder(into, default)]
-        pub managed_hsm_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub managed_hsm_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Disk Encryption Set. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Disk Encryption Set should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the Disk Encryption Set.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

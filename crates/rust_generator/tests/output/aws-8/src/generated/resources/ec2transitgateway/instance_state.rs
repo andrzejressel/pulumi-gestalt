@@ -55,15 +55,15 @@ pub mod instance_state {
     pub struct InstanceStateArgs {
         /// Whether to request a forced stop when `state` is `stopped`. Otherwise (_i.e._, `state` is `running`), ignored. When an instance is forced to stop, it does not flush file system caches or file system metadata, and you must subsequently perform file system check and repair. Not recommended for Windows instances. Defaults to `false`.
         #[builder(into, default)]
-        pub force: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// State of the instance. Valid values are `stopped`, `running`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub state: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InstanceStateResult {

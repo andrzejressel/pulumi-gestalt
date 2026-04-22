@@ -10,10 +10,10 @@ pub mod get_identity_pool {
     pub struct GetIdentityPoolArgs {
         /// The Cognito Identity Pool name.
         #[builder(into)]
-        pub identity_pool_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_pool_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assigned to the Identity Pool.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

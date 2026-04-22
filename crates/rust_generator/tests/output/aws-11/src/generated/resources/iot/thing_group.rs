@@ -42,18 +42,18 @@ pub mod thing_group {
     pub struct ThingGroupArgs {
         /// The name of the Thing Group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the parent Thing Group.
         #[builder(into, default)]
-        pub parent_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Thing Group properties. Defined below.
         #[builder(into, default)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::ThingGroupProperties>,
         >,
         /// Key-value mapping of resource tags
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

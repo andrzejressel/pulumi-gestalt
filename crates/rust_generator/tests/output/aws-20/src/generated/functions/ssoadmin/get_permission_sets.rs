@@ -10,7 +10,7 @@ pub mod get_permission_sets {
     pub struct GetPermissionSetsArgs {
         /// ARN of the SSO Instance associated with the permission set.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPermissionSetsResult {

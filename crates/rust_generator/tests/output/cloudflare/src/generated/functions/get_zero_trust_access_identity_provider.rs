@@ -10,13 +10,13 @@ pub mod get_zero_trust_access_identity_provider {
     pub struct GetZeroTrustAccessIdentityProviderArgs {
         /// The account identifier to target for the resource. Must provide only one of `zone_id`, `account_id`.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Access Identity Provider name to search for.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. Must provide only one of `zone_id`, `account_id`.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetZeroTrustAccessIdentityProviderResult {

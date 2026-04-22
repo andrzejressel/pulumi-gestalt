@@ -66,50 +66,50 @@ pub mod file_system {
         ///
         /// > **NOTE:** Removing `encryption_key` forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::managedlustre::FileSystemEncryptionKey>,
         >,
         /// A `hsm_setting` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub hsm_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub hsm_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::managedlustre::FileSystemHsmSetting>,
         >,
         /// An `identity` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::managedlustre::FileSystemIdentity>,
         >,
         /// The Azure Region where the Azure Managed Lustre File System should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `maintenance_window` block as defined below.
         #[builder(into)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_window: pulumi_gestalt_rust::Input<
             super::super::types::managedlustre::FileSystemMaintenanceWindow,
         >,
         /// The name which should be used for this Azure Managed Lustre File System. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Azure Managed Lustre File System should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU name for the Azure Managed Lustre File System. Possible values are `AMLFS-Durable-Premium-40`, `AMLFS-Durable-Premium-125`, `AMLFS-Durable-Premium-250` and `AMLFS-Durable-Premium-500`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// The size of the Azure Managed Lustre File System in TiB. The valid values for this field are dependant on which `sku_name` has been defined in the configuration file. For more information on the valid values for this field please see the [product documentation](https://learn.microsoft.com/azure/azure-managed-lustre/create-file-system-resource-manager#file-system-type-and-size-options). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_capacity_in_tb: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub storage_capacity_in_tb: pulumi_gestalt_rust::Input<i32>,
         /// The resource ID of the Subnet that is used for managing the Azure Managed Lustre file system and for client-facing operations. This subnet should have at least a /24 subnet mask within the Virtual Network's address space. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Azure Managed Lustre File System.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A list of availability zones for the Azure Managed Lustre File System. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub zones: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct FileSystemResult {

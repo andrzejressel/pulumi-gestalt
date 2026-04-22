@@ -37,10 +37,10 @@ pub mod authorize_vpc_endpoint_access {
     pub struct AuthorizeVpcEndpointAccessArgs {
         /// AWS account ID to grant access to.
         #[builder(into)]
-        pub account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account: pulumi_gestalt_rust::Input<String>,
         /// Name of OpenSearch Service domain to provide access to.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AuthorizeVpcEndpointAccessResult {

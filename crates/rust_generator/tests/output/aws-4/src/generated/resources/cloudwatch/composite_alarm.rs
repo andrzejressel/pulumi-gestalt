@@ -41,35 +41,35 @@ pub mod composite_alarm {
     pub struct CompositeAlarmArgs {
         /// Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. Defaults to `true`.
         #[builder(into, default)]
-        pub actions_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub actions_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Actions will be suppressed if the suppressor alarm is in the ALARM state.
         #[builder(into, default)]
-        pub actions_suppressor: pulumi_gestalt_rust::InputOrOutput<
+        pub actions_suppressor: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::CompositeAlarmActionsSuppressor>,
         >,
         /// The set of actions to execute when this alarm transitions to the `ALARM` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.
         #[builder(into, default)]
-        pub alarm_actions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub alarm_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The description for the composite alarm.
         #[builder(into, default)]
-        pub alarm_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alarm_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the composite alarm. This name must be unique within the region.
         #[builder(into)]
-        pub alarm_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alarm_name: pulumi_gestalt_rust::Input<String>,
         /// An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For syntax, see [Creating a Composite Alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html). The maximum length is 10240 characters.
         #[builder(into)]
-        pub alarm_rule: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alarm_rule: pulumi_gestalt_rust::Input<String>,
         /// The set of actions to execute when this alarm transitions to the `INSUFFICIENT_DATA` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.
         #[builder(into, default)]
-        pub insufficient_data_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub insufficient_data_actions: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The set of actions to execute when this alarm transitions to an `OK` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.
         #[builder(into, default)]
-        pub ok_actions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ok_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to associate with the alarm. Up to 50 tags are allowed. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

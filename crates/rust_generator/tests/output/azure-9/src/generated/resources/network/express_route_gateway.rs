@@ -58,29 +58,29 @@ pub mod express_route_gateway {
     pub struct ExpressRouteGatewayArgs {
         /// Specified whether this gateway accept traffic from non-Virtual WAN networks. Defaults to `false`.
         #[builder(into, default)]
-        pub allow_non_virtual_wan_traffic: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_non_virtual_wan_traffic: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the ExpressRoute gateway. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the ExpressRoute gateway. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The number of scale units with which to provision the ExpressRoute gateway. Each scale unit is equal to 2Gbps, with support for up to 10 scale units (20Gbps).
         #[builder(into)]
-        pub scale_units: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub scale_units: pulumi_gestalt_rust::Input<i32>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of a Virtual HUB within which the ExpressRoute gateway should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ExpressRouteGatewayResult {

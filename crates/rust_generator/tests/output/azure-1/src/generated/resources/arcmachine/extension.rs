@@ -48,45 +48,45 @@ pub mod extension {
     pub struct ExtensionArgs {
         /// The ID of the Hybrid Compute Machine Extension. Changing this forces a new Hybrid Compute Machine Extension to be created.
         #[builder(into)]
-        pub arc_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arc_machine_id: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether the extension should be automatically upgraded by the platform if there is a newer version available. Supported values are `true` and `false`. Defaults to `true`.
         ///
         /// > **NOTE:** When `automatic_upgrade_enabled` can only be set during creation. Any later change will be ignored.
         ///
         /// > **NOTE:** When `automatic_upgrade_enabled` is set to `true`, the `type_handler_version` is automatically updated by the Azure platform when a new version is available and any change in `type_handler_version` will be automatically ignored.
         #[builder(into, default)]
-        pub automatic_upgrade_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub automatic_upgrade_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// How the extension handler should be forced to update even if the extension configuration has not changed.
         #[builder(into, default)]
-        pub force_update_tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub force_update_tag: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Hybrid Compute Machine Extension should exist. Changing this forces a new Hybrid Compute Machine Extension to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Hybrid Compute Machine Extension. Changing this forces a new Hybrid Compute Machine Extension to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Json formatted protected settings for the extension.
         #[builder(into, default)]
-        pub protected_settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protected_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the extension handler publisher, such as `Microsoft.Azure.Monitor`. Changing this forces a new Hybrid Compute Machine Extension to be created.
         #[builder(into)]
-        pub publisher: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub publisher: pulumi_gestalt_rust::Input<String>,
         /// Json formatted public settings for the extension.
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Hybrid Compute Machine Extension.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the type of the extension. For example `CustomScriptExtension` or `AzureMonitorLinuxAgent`. Changing this forces a new Hybrid Compute Machine Extension to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Specifies the version of the script handler.
         ///
         /// > **NOTE:** 1. When `automatic_upgrade_enabled` is set to `false` and no `type_handler_version` is specified, the `type_handler_version` change should be manually ignored by `ignore_changes` lifecycle block. This is because the `type_handler_version` is set by the Azure platform when the extension is created. 2. When `automatic_upgrade_enabled` is set to `false` and `type_handler_version` is specified, the provider will check whether the version prefix is aligned with user input. For example, if user specifies `1.24` in `type_handler_version`, `1.24.1` will be considered as no diff.
         #[builder(into, default)]
-        pub type_handler_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_handler_version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ExtensionResult {

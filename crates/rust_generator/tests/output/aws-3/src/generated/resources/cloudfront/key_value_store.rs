@@ -38,14 +38,14 @@ pub mod key_value_store {
     pub struct KeyValueStoreArgs {
         /// Comment.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name for your CloudFront KeyValueStore.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfront::KeyValueStoreTimeouts>,
         >,
     }

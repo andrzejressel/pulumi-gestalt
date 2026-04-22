@@ -63,16 +63,16 @@ pub mod route {
     pub struct RouteArgs {
         /// The ID of the Client VPN endpoint.
         #[builder(into)]
-        pub client_vpn_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_vpn_endpoint_id: pulumi_gestalt_rust::Input<String>,
         /// A brief description of the route.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 address range, in CIDR notation, of the route destination.
         #[builder(into)]
-        pub destination_cidr_block: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_cidr_block: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet to route the traffic through. It must already be attached to the Client VPN.
         #[builder(into)]
-        pub target_vpc_subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_vpc_subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteResult {

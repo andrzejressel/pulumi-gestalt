@@ -94,41 +94,41 @@ pub mod network_manager_admin_rule {
     pub struct NetworkManagerAdminRuleArgs {
         /// Specifies the action allowed for this Network Manager Admin Rule. Possible values are `Allow`, `AlwaysAllow`, and `Deny`.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the Network Manager Admin Rule Collection. Changing this forces a new Network Manager Admin Rule to be created.
         #[builder(into)]
-        pub admin_rule_collection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_rule_collection_id: pulumi_gestalt_rust::Input<String>,
         /// A description of the Network Manager Admin Rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of string specifies the destination port ranges. Specify one or more single port number or port ranges such as `1024-65535`. Use `*` to specify any port.
         #[builder(into, default)]
-        pub destination_port_ranges: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_port_ranges: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// One or more `destination` blocks as defined below.
         #[builder(into, default)]
-        pub destinations: pulumi_gestalt_rust::InputOrOutput<
+        pub destinations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::NetworkManagerAdminRuleDestination>>,
         >,
         /// Indicates if the traffic matched against the rule in inbound or outbound. Possible values are `Inbound` and `Outbound`.
         #[builder(into)]
-        pub direction: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub direction: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this Network Manager Admin Rule. Changing this forces a new Network Manager Admin Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The priority of the rule. Possible values are integers between `1` and `4096`. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// Specifies which network protocol this Network Manager Admin Rule applies to. Possible values are `Ah`, `Any`, `Esp`, `Icmp`, `Tcp`, and `Udp`.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// A list of string specifies the source port ranges. Specify one or more single port number or port ranges such as `1024-65535`. Use `*` to specify any port.
         #[builder(into, default)]
-        pub source_port_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub source_port_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more `source` blocks as defined below.
         #[builder(into, default)]
-        pub sources: pulumi_gestalt_rust::InputOrOutput<
+        pub sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::NetworkManagerAdminRuleSource>>,
         >,
     }

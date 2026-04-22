@@ -80,18 +80,18 @@ pub mod replication_subnet_group {
     pub struct ReplicationSubnetGroupArgs {
         /// Description for the subnet group.
         #[builder(into)]
-        pub replication_subnet_group_description: pulumi_gestalt_rust::InputOrOutput<
+        pub replication_subnet_group_description: pulumi_gestalt_rust::Input<
             String,
         >,
         /// Name for the replication subnet group. This value is stored as a lowercase string. It must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens and cannot be `default`.
         #[builder(into)]
-        pub replication_subnet_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_subnet_group_id: pulumi_gestalt_rust::Input<String>,
         /// List of at least 2 EC2 subnet IDs for the subnet group. The subnets must cover at least 2 availability zones.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

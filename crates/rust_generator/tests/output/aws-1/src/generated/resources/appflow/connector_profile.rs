@@ -83,23 +83,23 @@ pub mod connector_profile {
     pub struct ConnectorProfileArgs {
         /// Indicates the connection mode and specifies whether it is public or private. Private flows use AWS PrivateLink to route data over AWS infrastructure without exposing it to the public internet. One of: `Public`, `Private`.
         #[builder(into)]
-        pub connection_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_mode: pulumi_gestalt_rust::Input<String>,
         /// The label of the connector. The label is unique for each ConnectorRegistration in your AWS account. Only needed if calling for `CustomConnector` connector type.
         #[builder(into, default)]
-        pub connector_label: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connector_label: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the connector-specific configuration and credentials. See Connector Profile Config for more details.
         #[builder(into)]
-        pub connector_profile_config: pulumi_gestalt_rust::InputOrOutput<
+        pub connector_profile_config: pulumi_gestalt_rust::Input<
             super::super::types::appflow::ConnectorProfileConnectorProfileConfig,
         >,
         /// The type of connector. One of: `Amplitude`, `CustomConnector`, `CustomerProfiles`, `Datadog`, `Dynatrace`, `EventBridge`, `Googleanalytics`, `Honeycode`, `Infornexus`, `LookoutMetrics`, `Marketo`, `Redshift`, `S3`, `Salesforce`, `SAPOData`, `Servicenow`, `Singular`, `Slack`, `Snowflake`, `Trendmicro`, `Upsolver`, `Veeva`, `Zendesk`.
         #[builder(into)]
-        pub connector_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connector_type: pulumi_gestalt_rust::Input<String>,
         /// ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
         #[builder(into, default)]
-        pub kms_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_arn: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConnectorProfileResult {

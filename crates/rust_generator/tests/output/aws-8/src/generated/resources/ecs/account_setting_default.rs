@@ -40,10 +40,10 @@ pub mod account_setting_default {
     pub struct AccountSettingDefaultArgs {
         /// Name of the account setting to set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// State of the setting.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccountSettingDefaultResult {

@@ -38,16 +38,16 @@ pub mod vault_lock_configuration {
     pub struct VaultLockConfigurationArgs {
         /// Name of the backup vault to add a lock configuration for.
         #[builder(into)]
-        pub backup_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The number of days before the lock date. If omitted creates a vault lock in `governance` mode, otherwise it will create a vault lock in `compliance` mode.
         #[builder(into, default)]
-        pub changeable_for_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub changeable_for_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum retention period that the vault retains its recovery points.
         #[builder(into, default)]
-        pub max_retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The minimum retention period that the vault retains its recovery points.
         #[builder(into, default)]
-        pub min_retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct VaultLockConfigurationResult {

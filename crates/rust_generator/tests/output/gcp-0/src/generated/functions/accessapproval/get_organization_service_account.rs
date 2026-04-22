@@ -10,7 +10,7 @@ pub mod get_organization_service_account {
     pub struct GetOrganizationServiceAccountArgs {
         /// The organization ID the service account was created for.
         #[builder(into)]
-        pub organization_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOrganizationServiceAccountResult {

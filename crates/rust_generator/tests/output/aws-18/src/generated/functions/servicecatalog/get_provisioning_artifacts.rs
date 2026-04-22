@@ -10,12 +10,12 @@ pub mod get_provisioning_artifacts {
     pub struct GetProvisioningArtifactsArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Product identifier.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetProvisioningArtifactsResult {

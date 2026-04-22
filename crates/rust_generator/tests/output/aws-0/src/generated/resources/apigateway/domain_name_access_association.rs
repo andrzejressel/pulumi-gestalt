@@ -37,16 +37,16 @@ pub mod domain_name_access_association {
     pub struct DomainNameAccessAssociationArgs {
         /// The identifier of the domain name access association source. For a `VPCE`, the value is the VPC endpoint ID.
         #[builder(into)]
-        pub access_association_source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_association_source: pulumi_gestalt_rust::Input<String>,
         /// The type of the domain name access association source. Valid values are `VPCE`.
         #[builder(into)]
-        pub access_association_source_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_association_source_type: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the domain name.
         #[builder(into)]
-        pub domain_name_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,10 +10,10 @@ pub mod get_distribution_configuration {
     pub struct GetDistributionConfigurationArgs {
         /// ARN of the distribution configuration.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags for the distribution configuration.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

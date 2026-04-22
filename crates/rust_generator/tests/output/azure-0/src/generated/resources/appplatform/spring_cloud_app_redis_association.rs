@@ -65,19 +65,19 @@ pub mod spring_cloud_app_redis_association {
     pub struct SpringCloudAppRedisAssociationArgs {
         /// Specifies the name of the Spring Cloud Application Association. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Redis Cache access key.
         #[builder(into)]
-        pub redis_access_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub redis_access_key: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Redis Cache resource ID. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub redis_cache_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub redis_cache_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Spring Cloud Application resource ID in which the Association is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_app_id: pulumi_gestalt_rust::Input<String>,
         /// Should SSL be used when connecting to Redis? Defaults to `true`.
         #[builder(into, default)]
-        pub ssl_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ssl_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudAppRedisAssociationResult {

@@ -74,10 +74,10 @@ pub mod resource_data_sync {
     pub struct ResourceDataSyncArgs {
         /// Name for the configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon S3 configuration details for the sync.
         #[builder(into)]
-        pub s3_destination: pulumi_gestalt_rust::InputOrOutput<
+        pub s3_destination: pulumi_gestalt_rust::Input<
             super::super::types::ssm::ResourceDataSyncS3Destination,
         >,
     }

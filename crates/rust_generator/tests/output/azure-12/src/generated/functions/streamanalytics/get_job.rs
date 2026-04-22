@@ -10,10 +10,10 @@ pub mod get_job {
     pub struct GetJobArgs {
         /// Specifies the name of the Stream Analytics Job.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group the Stream Analytics Job is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetJobResult {

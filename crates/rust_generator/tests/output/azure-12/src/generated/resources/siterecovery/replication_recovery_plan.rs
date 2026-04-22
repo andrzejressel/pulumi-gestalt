@@ -23,7 +23,7 @@ pub mod replication_recovery_plan {
     pub struct ReplicationRecoveryPlanArgs {
         /// An `azure_to_azure_settings` block as defined below.
         #[builder(into, default)]
-        pub azure_to_azure_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_to_azure_settings: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::siterecovery::ReplicationRecoveryPlanAzureToAzureSettings,
             >,
@@ -32,7 +32,7 @@ pub mod replication_recovery_plan {
         ///
         /// > **NOTE:** At least one `boot_recovery_group` block will be required in the next major version of the AzureRM Provider.
         #[builder(into)]
-        pub boot_recovery_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub boot_recovery_groups: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::siterecovery::ReplicationRecoveryPlanBootRecoveryGroup,
             >,
@@ -41,28 +41,28 @@ pub mod replication_recovery_plan {
         ///
         /// > **NOTE:** `failover_recovery_group` will be required in the next major version of the AzureRM Provider.
         #[builder(into)]
-        pub failover_recovery_group: pulumi_gestalt_rust::InputOrOutput<
+        pub failover_recovery_group: pulumi_gestalt_rust::Input<
             super::super::types::siterecovery::ReplicationRecoveryPlanFailoverRecoveryGroup,
         >,
         /// The name of the Replication Plan. The name can contain only letters, numbers, and hyphens. It should start with a letter and end with a letter or a number. Can be a maximum of 63 characters. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the vault that should be updated. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_id: pulumi_gestalt_rust::Input<String>,
         /// One `shutdown_recovery_group` block as defined below.
         ///
         /// > **NOTE:** `shutdown_recovery_group` will be required in the next major version of the AzureRM Provider.
         #[builder(into)]
-        pub shutdown_recovery_group: pulumi_gestalt_rust::InputOrOutput<
+        pub shutdown_recovery_group: pulumi_gestalt_rust::Input<
             super::super::types::siterecovery::ReplicationRecoveryPlanShutdownRecoveryGroup,
         >,
         /// ID of source fabric to be recovered from. Changing this forces a new Replication Plan to be created.
         #[builder(into)]
-        pub source_recovery_fabric_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_recovery_fabric_id: pulumi_gestalt_rust::Input<String>,
         /// ID of target fabric to recover. Changing this forces a new Replication Plan to be created.
         #[builder(into)]
-        pub target_recovery_fabric_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_recovery_fabric_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReplicationRecoveryPlanResult {

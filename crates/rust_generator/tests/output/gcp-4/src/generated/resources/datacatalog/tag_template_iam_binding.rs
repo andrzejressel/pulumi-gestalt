@@ -197,7 +197,7 @@ pub mod tag_template_iam_binding {
     #[allow(dead_code)]
     pub struct TagTemplateIamBindingArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::datacatalog::TagTemplateIamBindingCondition>,
         >,
         /// Identities that will be granted the privilege in `role`.
@@ -212,21 +212,21 @@ pub mod tag_template_iam_binding {
         /// * **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"
         /// * **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The role that should be applied. Only one
         /// `gcp.datacatalog.TagTemplateIamBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub tag_template: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tag_template: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagTemplateIamBindingResult {

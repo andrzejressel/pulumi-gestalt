@@ -73,33 +73,33 @@ pub mod queue {
     pub struct QueueArgs {
         /// Specifies the description of the Queue.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the identifier of the Hours of Operation.
         #[builder(into)]
-        pub hours_of_operation_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hours_of_operation_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the identifier of the hosting Amazon Connect Instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the maximum number of contacts that can be in the queue before it is considered full. Minimum value of 0.
         #[builder(into, default)]
-        pub max_contacts: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_contacts: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Queue.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.
         #[builder(into, default)]
-        pub outbound_caller_config: pulumi_gestalt_rust::InputOrOutput<
+        pub outbound_caller_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::connect::QueueOutboundCallerConfig>,
         >,
         /// Specifies a list of quick connects ids that determine the quick connects available to agents who are working the queue.
         #[builder(into, default)]
-        pub quick_connect_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub quick_connect_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the description of the Queue. Valid values are `ENABLED`, `DISABLED`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags to apply to the Queue. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

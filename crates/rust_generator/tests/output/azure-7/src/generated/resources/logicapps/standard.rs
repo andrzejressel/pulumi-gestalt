@@ -117,83 +117,83 @@ pub mod standard {
     pub struct StandardArgs {
         /// The ID of the App Service Plan within which to create this Logic App.
         #[builder(into)]
-        pub app_service_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_plan_id: pulumi_gestalt_rust::Input<String>,
         /// A map of key-value pairs for [App Settings](https://docs.microsoft.com/azure/azure-functions/functions-app-settings) and custom values.
         ///
         /// > **NOTE:** There are a number of application settings that will be managed for you by this resource type and *shouldn't* be configured separately as part of the app_settings you specify.  `AzureWebJobsStorage` is filled based on `storage_account_name` and `storage_account_access_key`. `WEBSITE_CONTENTSHARE` is detailed below. `FUNCTIONS_EXTENSION_VERSION` is filled based on `version`. `APP_KIND` is set to workflowApp and `AzureFunctionsJobHost__extensionBundle__id` and `AzureFunctionsJobHost__extensionBundle__version` are set as detailed below.
         #[builder(into, default)]
-        pub app_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub app_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// If `use_extension_bundle` then controls the allowed range for bundle versions. Defaults to `[1.*, 2.0.0)`.
         #[builder(into, default)]
-        pub bundle_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bundle_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Logic App send session affinity cookies, which route client requests in the same session to the same instance?
         #[builder(into, default)]
-        pub client_affinity_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_affinity_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The mode of the Logic App's client certificates requirement for incoming requests. Possible values are `Required` and `Optional`.
         #[builder(into, default)]
-        pub client_certificate_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_certificate_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `connection_string` block as defined below.
         #[builder(into, default)]
-        pub connection_strings: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_strings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::logicapps::StandardConnectionString>>,
         >,
         /// Is the Logic App enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Can the Logic App only be accessed via HTTPS? Defaults to `false`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::logicapps::StandardIdentity>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Logic App Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether Public Network Access should be enabled or not. Possible values are `Enabled` and `Disabled`. Defaults to `Enabled`.
         ///
         /// > **Note:** Setting this property will also set it in the Site Config.
         #[builder(into, default)]
-        pub public_network_access: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_network_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Logic App. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `site_config` object as defined below.
         #[builder(into, default)]
-        pub site_config: pulumi_gestalt_rust::InputOrOutput<
+        pub site_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::logicapps::StandardSiteConfig>,
         >,
         /// The access key which will be used to access the backend storage account for the Logic App.
         #[builder(into)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<String>,
         /// The backend storage account name which will be used by this Logic App (e.g. for Stateful workflows data). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub storage_account_share_name: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_share_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Should the logic app use the bundled extension package? If true, then application settings for `AzureFunctionsJobHost__extensionBundle__id` and `AzureFunctionsJobHost__extensionBundle__version` will be created. Defaults to `true`.
         #[builder(into, default)]
-        pub use_extension_bundle: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_extension_bundle: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The runtime version associated with the Logic App. Defaults to `~4`.
         ///
         /// > **Note:**  Logic App version `3.x` will be out of support from December 3 2022. For more details refer [Logic Apps Standard Support for Functions Runtime V4](https://azure.microsoft.com/en-us/updates/logic-apps-standard-support-for-functions-runtime-v4/)
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub virtual_network_subnet_id: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

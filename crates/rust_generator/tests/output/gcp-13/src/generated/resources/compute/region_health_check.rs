@@ -287,43 +287,43 @@ pub mod region_health_check {
         /// How often (in seconds) to send a health check. The default value is 5
         /// seconds.
         #[builder(into, default)]
-        pub check_interval_sec: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub check_interval_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub grpc_health_check: pulumi_gestalt_rust::InputOrOutput<
+        pub grpc_health_check: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionHealthCheckGrpcHealthCheck>,
         >,
         /// A so-far unhealthy instance will be marked healthy after this many
         /// consecutive successes. The default value is 2.
         #[builder(into, default)]
-        pub healthy_threshold: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub healthy_threshold: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub http2_health_check: pulumi_gestalt_rust::InputOrOutput<
+        pub http2_health_check: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionHealthCheckHttp2HealthCheck>,
         >,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub http_health_check: pulumi_gestalt_rust::InputOrOutput<
+        pub http_health_check: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionHealthCheckHttpHealthCheck>,
         >,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub https_health_check: pulumi_gestalt_rust::InputOrOutput<
+        pub https_health_check: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionHealthCheckHttpsHealthCheck>,
         >,
         /// Configure logging on this health check.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub log_config: pulumi_gestalt_rust::InputOrOutput<
+        pub log_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionHealthCheckLogConfig>,
         >,
         /// Name of the resource. Provided by the client when the resource is
@@ -337,36 +337,36 @@ pub mod region_health_check {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Region in which the created health check should reside.
         /// If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ssl_health_check: pulumi_gestalt_rust::InputOrOutput<
+        pub ssl_health_check: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionHealthCheckSslHealthCheck>,
         >,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub tcp_health_check: pulumi_gestalt_rust::InputOrOutput<
+        pub tcp_health_check: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionHealthCheckTcpHealthCheck>,
         >,
         /// How long (in seconds) to wait before claiming failure.
         /// The default value is 5 seconds.  It is invalid for timeoutSec to have
         /// greater value than checkIntervalSec.
         #[builder(into, default)]
-        pub timeout_sec: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A so-far healthy instance will be marked unhealthy after this many
         /// consecutive failures. The default value is 2.
         #[builder(into, default)]
-        pub unhealthy_threshold: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub unhealthy_threshold: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct RegionHealthCheckResult {

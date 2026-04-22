@@ -49,31 +49,31 @@ pub mod eip_association {
     pub struct EipAssociationArgs {
         /// The allocation ID. This is required for EC2-VPC.
         #[builder(into, default)]
-        pub allocation_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub allocation_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to allow an Elastic IP to
         /// be re-associated. Defaults to `true` in VPC.
         #[builder(into, default)]
-        pub allow_reassociation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_reassociation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the instance. This is required for
         /// EC2-Classic. For EC2-VPC, you can specify either the instance ID or the
         /// network interface ID, but not both. The operation fails if you specify an
         /// instance ID unless exactly one network interface is attached.
         #[builder(into, default)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the network interface. If the
         /// instance has more than one network interface, you must specify a network
         /// interface ID.
         #[builder(into, default)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The primary or secondary private IP address
         /// to associate with the Elastic IP address. If no private IP address is
         /// specified, the Elastic IP address is associated with the primary private IP
         /// address.
         #[builder(into, default)]
-        pub private_ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Elastic IP address. This is required for EC2-Classic.
         #[builder(into, default)]
-        pub public_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_ip: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EipAssociationResult {

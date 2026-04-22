@@ -35,7 +35,7 @@ pub mod serial_console_access {
     pub struct SerialConsoleAccessArgs {
         /// Whether or not serial console access is enabled. Valid values are `true` or `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SerialConsoleAccessResult {

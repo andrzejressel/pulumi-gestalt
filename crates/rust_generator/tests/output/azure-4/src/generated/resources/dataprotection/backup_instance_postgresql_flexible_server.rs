@@ -96,19 +96,19 @@ pub mod backup_instance_postgresql_flexible_server {
     pub struct BackupInstancePostgresqlFlexibleServerArgs {
         /// The ID of the Backup Policy.
         #[builder(into)]
-        pub backup_policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_policy_id: pulumi_gestalt_rust::Input<String>,
         /// The location of the source database. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Backup Instance for the PostgreSQL Flexible Server. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the source server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Backup Vault within which the PostgreSQL Flexible Server Backup Instance should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupInstancePostgresqlFlexibleServerResult {

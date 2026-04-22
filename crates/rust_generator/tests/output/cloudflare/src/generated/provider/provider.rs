@@ -14,52 +14,52 @@ pub struct ProviderArgs {
     /// Configure the base path used by the API client. Alternatively, can be configured using the `CLOUDFLARE_API_BASE_PATH`
     /// environment variable.
     #[builder(into, default)]
-    pub api_base_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub api_base_path: pulumi_gestalt_rust::Input<Option<String>>,
     /// Whether to print logs from the API client (using the default log library logger). Alternatively, can be configured using
     /// the `CLOUDFLARE_API_CLIENT_LOGGING` environment variable.
     #[builder(into, default)]
-    pub api_client_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub api_client_logging: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Configure the hostname used by the API client. Alternatively, can be configured using the `CLOUDFLARE_API_HOSTNAME`
     /// environment variable.
     #[builder(into, default)]
-    pub api_hostname: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub api_hostname: pulumi_gestalt_rust::Input<Option<String>>,
     /// The API key for operations. Alternatively, can be configured using the `CLOUDFLARE_API_KEY` environment variable. API
     /// keys are [now considered legacy by
     /// Cloudflare](https://developers.cloudflare.com/fundamentals/api/get-started/keys/#limitations), API tokens should be used
     /// instead. Must provide only one of `api_key`, `api_token`, `api_user_service_key`.
     #[builder(into, default)]
-    pub api_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub api_key: pulumi_gestalt_rust::Input<Option<String>>,
     /// The API Token for operations. Alternatively, can be configured using the `CLOUDFLARE_API_TOKEN` environment variable.
     /// Must provide only one of `api_key`, `api_token`, `api_user_service_key`.
     #[builder(into, default)]
-    pub api_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub api_token: pulumi_gestalt_rust::Input<Option<String>>,
     /// A special Cloudflare API key good for a restricted set of endpoints. Alternatively, can be configured using the
     /// `CLOUDFLARE_API_USER_SERVICE_KEY` environment variable. Must provide only one of `api_key`, `api_token`,
     /// `api_user_service_key`.
     #[builder(into, default)]
-    pub api_user_service_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub api_user_service_key: pulumi_gestalt_rust::Input<Option<String>>,
     /// A registered Cloudflare email address. Alternatively, can be configured using the `CLOUDFLARE_EMAIL` environment
     /// variable. Required when using `api_key`. Conflicts with `api_token`.
     #[builder(into, default)]
-    pub email: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub email: pulumi_gestalt_rust::Input<Option<String>>,
     /// Maximum backoff period in seconds after failed API calls. Alternatively, can be configured using the
     /// `CLOUDFLARE_MAX_BACKOFF` environment variable.
     #[builder(into, default)]
-    pub max_backoff: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+    pub max_backoff: pulumi_gestalt_rust::Input<Option<i32>>,
     /// Minimum backoff period in seconds after failed API calls. Alternatively, can be configured using the
     /// `CLOUDFLARE_MIN_BACKOFF` environment variable.
     #[builder(into, default)]
-    pub min_backoff: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+    pub min_backoff: pulumi_gestalt_rust::Input<Option<i32>>,
     /// Maximum number of retries to perform when an API request fails. Alternatively, can be configured using the
     /// `CLOUDFLARE_RETRIES` environment variable.
     #[builder(into, default)]
-    pub retries: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+    pub retries: pulumi_gestalt_rust::Input<Option<i32>>,
     /// RPS limit to apply when making calls to the API. Alternatively, can be configured using the `CLOUDFLARE_RPS` environment
     /// variable.
     #[builder(into, default)]
-    pub rps: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+    pub rps: pulumi_gestalt_rust::Input<Option<i32>>,
     #[builder(into, default)]
-    pub user_agent_operator_suffix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub user_agent_operator_suffix: pulumi_gestalt_rust::Input<Option<String>>,
 }
 #[allow(dead_code)]
 pub struct ProviderResult {

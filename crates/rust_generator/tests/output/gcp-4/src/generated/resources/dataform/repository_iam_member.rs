@@ -9,19 +9,19 @@ pub mod repository_iam_member {
     #[allow(dead_code)]
     pub struct RepositoryIamMemberArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataform::RepositoryIamMemberCondition>,
         >,
         #[builder(into)]
-        pub member: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RepositoryIamMemberResult {

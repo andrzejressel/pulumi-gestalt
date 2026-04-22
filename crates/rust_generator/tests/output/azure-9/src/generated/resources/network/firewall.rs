@@ -82,59 +82,59 @@ pub mod firewall {
     pub struct FirewallArgs {
         /// Whether DNS proxy is enabled. It will forward DNS requests to the DNS servers when set to `true`. It will be set to `true` if `dns_servers` provided with a not empty list.
         #[builder(into, default)]
-        pub dns_proxy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub dns_proxy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of DNS servers that the Azure Firewall will direct DNS traffic to the for name resolution.
         #[builder(into, default)]
-        pub dns_servers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub dns_servers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the Firewall Policy applied to this Firewall.
         #[builder(into, default)]
-        pub firewall_policy_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub firewall_policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `ip_configuration` block as documented below.
         #[builder(into, default)]
-        pub ip_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::FirewallIpConfiguration>>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `management_ip_configuration` block as documented below, which allows force-tunnelling of traffic to be performed by the firewall. Adding or removing this block or changing the `subnet_id` in an existing block forces a new resource to be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub management_ip_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub management_ip_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::FirewallManagementIpConfiguration>,
         >,
         /// Specifies the name of the Firewall. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of SNAT private CIDR IP ranges, or the special string `IANAPrivateRanges`, which indicates Azure Firewall does not SNAT when the destination IP address is a private range per IANA RFC 1918.
         #[builder(into, default)]
-        pub private_ip_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub private_ip_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the resource group in which to create the resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// SKU name of the Firewall. Possible values are `AZFW_Hub` and `AZFW_VNet`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// SKU tier of the Firewall. Possible values are `Premium`, `Standard` and `Basic`.
         #[builder(into)]
-        pub sku_tier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_tier: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The operation mode for threat intelligence-based filtering. Possible values are: `Off`, `Alert` and `Deny`. Defaults to `Alert`.
         #[builder(into, default)]
-        pub threat_intel_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub threat_intel_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `virtual_hub` block as documented below.
         #[builder(into, default)]
-        pub virtual_hub: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_hub: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::FirewallVirtualHub>,
         >,
         /// Specifies a list of Availability Zones in which this Azure Firewall should be located. Changing this forces a new Azure Firewall to be created.
         ///
         /// > **Please Note**: Availability Zones are [only supported in several regions at this time](https://docs.microsoft.com/azure/availability-zones/az-overview).
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct FirewallResult {

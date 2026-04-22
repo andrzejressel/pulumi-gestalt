@@ -40,23 +40,23 @@ pub mod agent_agent_knowledge_base_association {
     pub struct AgentAgentKnowledgeBaseAssociationArgs {
         /// Unique identifier of the agent with which you want to associate the knowledge base.
         #[builder(into)]
-        pub agent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agent_id: pulumi_gestalt_rust::Input<String>,
         /// Version of the agent with which you want to associate the knowledge base. Valid values: `DRAFT`.
         #[builder(into, default)]
-        pub agent_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub agent_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of what the agent should use the knowledge base for.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// Unique identifier of the knowledge base to associate with the agent.
         #[builder(into)]
-        pub knowledge_base_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub knowledge_base_id: pulumi_gestalt_rust::Input<String>,
         /// Whether to use the knowledge base when sending an [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html) request. Valid values: `ENABLED`, `DISABLED`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub knowledge_base_state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub knowledge_base_state: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bedrock::AgentAgentKnowledgeBaseAssociationTimeouts,
             >,

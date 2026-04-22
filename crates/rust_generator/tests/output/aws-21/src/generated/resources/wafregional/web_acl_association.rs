@@ -95,10 +95,10 @@ pub mod web_acl_association {
     pub struct WebAclAssociationArgs {
         /// ARN of the resource to associate with. For example, an Application Load Balancer or API Gateway Stage.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
         /// The ID of the WAF Regional WebACL to create an association.
         #[builder(into)]
-        pub web_acl_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_acl_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WebAclAssociationResult {

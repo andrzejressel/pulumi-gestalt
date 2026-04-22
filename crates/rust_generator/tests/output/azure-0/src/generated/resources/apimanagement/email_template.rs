@@ -62,21 +62,21 @@ pub mod email_template {
     pub struct EmailTemplateArgs {
         /// The name of the API Management Service in which the Email Template should exist. Changing this forces a new API Management Email Template to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The body of the Email. Its format has to be a well-formed HTML document.
         ///
         /// > **NOTE:** In `subject` and `body` predefined parameters can be used. The available parameters depend on the template. Schema to use a parameter: `$` followed by the `parameter.name` - `$<parameter.name>`. The available parameters can be seen in the Notification templates section of the API-Management Service instance within the Azure Portal.
         #[builder(into)]
-        pub body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub body: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the API Management Email Template should exist. Changing this forces a new API Management Email Template to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The subject of the Email.
         #[builder(into)]
-        pub subject: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subject: pulumi_gestalt_rust::Input<String>,
         /// The name of the Email Template. Possible values are `AccountClosedDeveloper`, `ApplicationApprovedNotificationMessage`, `ConfirmSignUpIdentityDefault`, `EmailChangeIdentityDefault`, `InviteUserNotificationMessage`, `NewCommentNotificationMessage`, `NewDeveloperNotificationMessage`, `NewIssueNotificationMessage`, `PasswordResetByAdminNotificationMessage`, `PasswordResetIdentityDefault`, `PurchaseDeveloperNotificationMessage`, `QuotaLimitApproachingDeveloperNotificationMessage`, `RejectDeveloperNotificationMessage`, `RequestDeveloperNotificationMessage`. Changing this forces a new API Management Email Template to be created.
         #[builder(into)]
-        pub template_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub template_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EmailTemplateResult {

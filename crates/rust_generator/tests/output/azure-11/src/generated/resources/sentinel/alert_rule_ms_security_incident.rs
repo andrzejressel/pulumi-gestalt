@@ -64,40 +64,40 @@ pub mod alert_rule_ms_security_incident {
     pub struct AlertRuleMsSecurityIncidentArgs {
         /// The GUID of the alert rule template which is used to create this Sentinel Scheduled Alert Rule. Changing this forces a new Sentinel MS Security Incident Alert Rule to be created.
         #[builder(into, default)]
-        pub alert_rule_template_guid: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alert_rule_template_guid: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of this Sentinel MS Security Incident Alert Rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The friendly name of this Sentinel MS Security Incident Alert Rule.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Only create incidents when the alert display name doesn't contain text from this list.
         #[builder(into, default)]
-        pub display_name_exclude_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub display_name_exclude_filters: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Only create incidents when the alert display name contain text from this list, leave empty to apply no filter.
         #[builder(into, default)]
-        pub display_name_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub display_name_filters: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Should this Sentinel MS Security Incident Alert Rule be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Log Analytics Workspace this Sentinel MS Security Incident Alert Rule belongs to. Changing this forces a new Sentinel MS Security Incident Alert Rule to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Sentinel MS Security Incident Alert Rule. Changing this forces a new Sentinel MS Security Incident Alert Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Microsoft Security Service from where the alert will be generated. Possible values are `Azure Active Directory Identity Protection`, `Azure Advanced Threat Protection`, `Azure Security Center`, `Azure Security Center for IoT`, `Microsoft Cloud App Security`, `Microsoft Defender Advanced Threat Protection` and `Office 365 Advanced Threat Protection`.
         #[builder(into)]
-        pub product_filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_filter: pulumi_gestalt_rust::Input<String>,
         /// Only create incidents from alerts when alert severity level is contained in this list. Possible values are `High`, `Medium`, `Low` and `Informational`.
         ///
         /// > **NOTE** At least one of the severity filters need to be set.
         #[builder(into)]
-        pub severity_filters: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub severity_filters: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct AlertRuleMsSecurityIncidentResult {

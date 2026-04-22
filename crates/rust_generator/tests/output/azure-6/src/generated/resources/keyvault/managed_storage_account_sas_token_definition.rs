@@ -117,24 +117,24 @@ pub mod managed_storage_account_sas_token_definition {
     pub struct ManagedStorageAccountSasTokenDefinitionArgs {
         /// The ID of the Managed Storage Account.
         #[builder(into)]
-        pub managed_storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this SAS Definition.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SAS definition token template signed with an arbitrary key. Tokens created according to the SAS definition will have the same properties as the template, but regenerated with a new validity period.
         #[builder(into)]
-        pub sas_template_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sas_template_uri: pulumi_gestalt_rust::Input<String>,
         /// The type of SAS token the SAS definition will create. Possible values are `account` and `service`.
         #[builder(into)]
-        pub sas_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sas_type: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the SAS Definition. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Validity period of SAS token. Value needs to be in [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601#Durations).
         #[builder(into)]
-        pub validity_period: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub validity_period: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedStorageAccountSasTokenDefinitionResult {

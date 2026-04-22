@@ -45,19 +45,19 @@ pub mod load_balancer_cookie_stickiness_policy {
         /// The time period after which
         /// the session cookie should be considered stale, expressed in seconds.
         #[builder(into, default)]
-        pub cookie_expiration_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub cookie_expiration_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The load balancer port to which the policy
         /// should be applied. This must be an active listener on the load
         /// balancer.
         #[builder(into)]
-        pub lb_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub lb_port: pulumi_gestalt_rust::Input<i32>,
         /// The load balancer to which the policy
         /// should be attached.
         #[builder(into)]
-        pub load_balancer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancer: pulumi_gestalt_rust::Input<String>,
         /// The name of the stickiness policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LoadBalancerCookieStickinessPolicyResult {

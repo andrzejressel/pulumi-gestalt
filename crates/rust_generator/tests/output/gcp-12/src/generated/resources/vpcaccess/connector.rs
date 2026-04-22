@@ -101,48 +101,48 @@ pub mod connector {
     pub struct ConnectorArgs {
         /// The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`.
         #[builder(into, default)]
-        pub ip_cidr_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_cidr_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// Machine type of VM Instance underlying connector. Default is e2-micro
         #[builder(into, default)]
-        pub machine_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub machine_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maximum value of instances in autoscaling group underlying the connector. Value must be between 3 and 10, inclusive. Must be
         /// higher than the value specified by min_instances.
         #[builder(into, default)]
-        pub max_instances: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_instances: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum throughput of the connector in Mbps, must be greater than `min_throughput`. Default is 300. Refers to the expected throughput
         /// when using an e2-micro machine type. Value must be a multiple of 100 from 300 through 1000. Must be higher than the value specified by
         /// min_throughput. Only one of `max_throughput` and `max_instances` can be specified. The use of max_throughput is discouraged in favor of max_instances.
         #[builder(into, default)]
-        pub max_throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_throughput: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum value of instances in autoscaling group underlying the connector. Value must be between 2 and 9, inclusive. Must be
         /// lower than the value specified by max_instances.
         #[builder(into, default)]
-        pub min_instances: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_instances: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum throughput of the connector in Mbps. Default and min is 200. Refers to the expected throughput when using an e2-micro machine type.
         /// Value must be a multiple of 100 from 200 through 900. Must be lower than the value specified by max_throughput.
         /// Only one of `min_throughput` and `min_instances` can be specified. The use of min_throughput is discouraged in favor of min_instances.
         #[builder(into, default)]
-        pub min_throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_throughput: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the resource (Max 25 characters).
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name or self_link of the VPC network. Required if `ip_cidr_range` is set.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where the VPC Access connector resides. If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The subnet in which to house the connector
         /// Structure is documented below.
         #[builder(into, default)]
-        pub subnet: pulumi_gestalt_rust::InputOrOutput<
+        pub subnet: pulumi_gestalt_rust::Input<
             Option<super::super::types::vpcaccess::ConnectorSubnet>,
         >,
     }

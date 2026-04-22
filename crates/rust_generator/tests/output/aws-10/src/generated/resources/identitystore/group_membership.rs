@@ -54,13 +54,13 @@ pub mod group_membership {
     pub struct GroupMembershipArgs {
         /// The identifier for a group in the Identity Store.
         #[builder(into)]
-        pub group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_id: pulumi_gestalt_rust::Input<String>,
         /// Identity Store ID associated with the Single Sign-On Instance.
         #[builder(into)]
-        pub identity_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_store_id: pulumi_gestalt_rust::Input<String>,
         /// The identifier for a user in the Identity Store.
         #[builder(into)]
-        pub member_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GroupMembershipResult {

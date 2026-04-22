@@ -46,15 +46,15 @@ pub mod grafana {
     pub struct GrafanaArgs {
         /// Whether to enable the api key setting of the Grafana instance. Defaults to `false`.
         #[builder(into, default)]
-        pub api_key_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub api_key_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Scope for dns deterministic name hash calculation. The only possible value is `TenantReuse`. Defaults to `TenantReuse`.
         #[builder(into, default)]
-        pub auto_generated_domain_name_label_scope: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_generated_domain_name_label_scope: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A `azure_monitor_workspace_integrations` block as defined below.
         #[builder(into, default)]
-        pub azure_monitor_workspace_integrations: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_monitor_workspace_integrations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::dashboard::GrafanaAzureMonitorWorkspaceIntegration,
@@ -63,47 +63,47 @@ pub mod grafana {
         >,
         /// Whether to enable the Grafana instance to use deterministic outbound IPs. Defaults to `false`.
         #[builder(into, default)]
-        pub deterministic_outbound_ip_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub deterministic_outbound_ip_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Which major version of Grafana to deploy. Possible values are `9`, `10`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub grafana_major_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub grafana_major_version: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below. Changing this forces a new Dashboard Grafana to be created.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::dashboard::GrafanaIdentity>,
         >,
         /// Specifies the Azure Region where the Dashboard Grafana should exist. Changing this forces a new Dashboard Grafana to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Dashboard Grafana. Changing this forces a new Dashboard Grafana to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable traffic over the public interface. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the name of the Resource Group where the Dashboard Grafana should exist. Changing this forces a new Dashboard Grafana to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the SKU used for the Grafana instance. Possible values are `Standard` and `Essential`. Defaults to `Standard`. Changing this forces a new Dashboard Grafana to be created.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `smtp` block as defined below.
         #[builder(into, default)]
-        pub smtp: pulumi_gestalt_rust::InputOrOutput<
+        pub smtp: pulumi_gestalt_rust::Input<
             Option<super::super::types::dashboard::GrafanaSmtp>,
         >,
         /// A mapping of tags which should be assigned to the Dashboard Grafana.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whether to enable the zone redundancy setting of the Grafana instance. Defaults to `false`. Changing this forces a new Dashboard Grafana to be created.
         #[builder(into, default)]
-        pub zone_redundancy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_redundancy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GrafanaResult {

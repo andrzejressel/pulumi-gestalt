@@ -35,7 +35,7 @@ pub mod account_alias {
     pub struct AccountAliasArgs {
         /// The account alias
         #[builder(into)]
-        pub account_alias: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_alias: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccountAliasResult {

@@ -74,20 +74,20 @@ pub mod workflow {
     pub struct WorkflowArgs {
         /// A textual description for the workflow.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the steps (actions) to take if errors are encountered during execution of the workflow. See Workflow Steps below.
         #[builder(into, default)]
-        pub on_exception_steps: pulumi_gestalt_rust::InputOrOutput<
+        pub on_exception_steps: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::transfer::WorkflowOnExceptionStep>>,
         >,
         /// Specifies the details for the steps that are in the specified workflow. See Workflow Steps below.
         #[builder(into)]
-        pub steps: pulumi_gestalt_rust::InputOrOutput<
+        pub steps: pulumi_gestalt_rust::Input<
             Vec<super::super::types::transfer::WorkflowStep>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

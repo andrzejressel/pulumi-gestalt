@@ -40,13 +40,13 @@ pub mod assessment_report {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub assessment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub assessment_id: pulumi_gestalt_rust::Input<String>,
         /// Description of the assessment report.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the assessment report.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AssessmentReportResult {

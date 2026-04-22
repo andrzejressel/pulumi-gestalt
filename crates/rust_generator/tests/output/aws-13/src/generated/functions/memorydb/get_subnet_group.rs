@@ -10,10 +10,10 @@ pub mod get_subnet_group {
     pub struct GetSubnetGroupArgs {
         /// Name of the subnet group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags assigned to the subnet group.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

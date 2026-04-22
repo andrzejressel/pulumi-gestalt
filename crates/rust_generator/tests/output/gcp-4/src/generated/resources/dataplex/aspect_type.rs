@@ -208,31 +208,31 @@ pub mod aspect_type {
     pub struct AspectTypeArgs {
         /// The aspect type id of the aspect type.
         #[builder(into, default)]
-        pub aspect_type_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aspect_type_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the AspectType.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User friendly display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-defined labels for the AspectType.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where aspect type will be created in.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// MetadataTemplate of the Aspect.
         #[builder(into, default)]
-        pub metadata_template: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AspectTypeResult {

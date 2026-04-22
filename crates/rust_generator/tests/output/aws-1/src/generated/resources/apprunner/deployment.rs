@@ -27,9 +27,9 @@ pub mod deployment {
     pub struct DeploymentArgs {
         /// The Amazon Resource Name (ARN) of the App Runner service to start the deployment for.
         #[builder(into)]
-        pub service_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_arn: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::apprunner::DeploymentTimeouts>,
         >,
     }

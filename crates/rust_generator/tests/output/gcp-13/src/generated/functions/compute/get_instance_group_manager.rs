@@ -10,16 +10,16 @@ pub mod get_instance_group_manager {
     pub struct GetInstanceGroupManagerArgs {
         /// The name of the instance group. Either `name` or `self_link` must be provided.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The self link of the instance group. Either `name` or `self_link` must be provided.
         #[builder(into, default)]
-        pub self_link: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub self_link: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone of the instance group. If referencing the instance group by name and `zone` is not provided, the provider zone is used.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceGroupManagerResult {

@@ -10,10 +10,10 @@ pub mod get_static_ips {
     pub struct GetStaticIpsArgs {
         /// The location to list Datastream IPs for. For example: `us-east1`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Project from which to list static IP addresses. Defaults to project declared in the provider.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetStaticIpsResult {

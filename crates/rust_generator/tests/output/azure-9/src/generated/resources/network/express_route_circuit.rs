@@ -46,48 +46,48 @@ pub mod express_route_circuit {
     pub struct ExpressRouteCircuitArgs {
         /// Allow the circuit to interact with classic (RDFE) resources. Defaults to `false`.
         #[builder(into, default)]
-        pub allow_classic_operations: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_classic_operations: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The authorization key. This can be used to set up an ExpressRoute Circuit with an ExpressRoute Port from another subscription.
         #[builder(into, default)]
-        pub authorization_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The bandwidth in Gbps of the circuit being created on the Express Route Port.
         ///
         /// > **NOTE:** The `express_route_port_id` and the `bandwidth_in_gbps` should be set together and they conflict with `service_provider_name`, `peering_location` and `bandwidth_in_mbps`.
         #[builder(into, default)]
-        pub bandwidth_in_gbps: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub bandwidth_in_gbps: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The bandwidth in Mbps of the circuit being created on the Service Provider.
         ///
         /// > **NOTE:** Once you increase your bandwidth, you will not be able to decrease it to its previous value.
         ///
         /// > **NOTE:** The `service_provider_name`, the `peering_location` and the `bandwidth_in_mbps` should be set together and they conflict with `express_route_port_id` and `bandwidth_in_gbps`.
         #[builder(into, default)]
-        pub bandwidth_in_mbps: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub bandwidth_in_mbps: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Express Route Port this Express Route Circuit is based on. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub express_route_port_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub express_route_port_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the ExpressRoute circuit. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the peering location and **not** the Azure resource location. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub peering_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peering_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the ExpressRoute circuit. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the ExpressRoute Service Provider. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub service_provider_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_provider_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `sku` block for the ExpressRoute circuit as documented below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
+        pub sku: pulumi_gestalt_rust::Input<
             super::super::types::network::ExpressRouteCircuitSku,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

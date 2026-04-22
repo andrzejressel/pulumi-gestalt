@@ -80,61 +80,61 @@ pub mod policy_vm {
     pub struct PolicyVMArgs {
         /// Configures the Policy backup frequency, times & days as documented in the `backup` block below.
         #[builder(into)]
-        pub backup: pulumi_gestalt_rust::InputOrOutput<
+        pub backup: pulumi_gestalt_rust::Input<
             super::super::types::backup::PolicyVmBackup,
         >,
         /// Specifies the instant restore resource group name as documented in the `instant_restore_resource_group` block below.
         #[builder(into, default)]
-        pub instant_restore_resource_group: pulumi_gestalt_rust::InputOrOutput<
+        pub instant_restore_resource_group: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyVmInstantRestoreResourceGroup>,
         >,
         /// Specifies the instant restore retention range in days. Possible values are between `1` and `5` when `policy_type` is `V1`, and `1` to `30` when `policy_type` is `V2`.
         ///
         /// > **NOTE:** `instant_restore_retention_days` **must** be set to `5` if the backup frequency is set to `Weekly`.
         #[builder(into, default)]
-        pub instant_restore_retention_days: pulumi_gestalt_rust::InputOrOutput<
+        pub instant_restore_retention_days: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Specifies the name of the Backup Policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of the Backup Policy. Possible values are `V1` and `V2` where `V2` stands for the Enhanced Policy. Defaults to `V1`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub policy_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the policy. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Configures the policy daily retention as documented in the `retention_daily` block below. Required when backup frequency is `Daily`.
         #[builder(into, default)]
-        pub retention_daily: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_daily: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyVmRetentionDaily>,
         >,
         /// Configures the policy monthly retention as documented in the `retention_monthly` block below.
         #[builder(into, default)]
-        pub retention_monthly: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_monthly: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyVmRetentionMonthly>,
         >,
         /// Configures the policy weekly retention as documented in the `retention_weekly` block below. Required when backup frequency is `Weekly`.
         #[builder(into, default)]
-        pub retention_weekly: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_weekly: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyVmRetentionWeekly>,
         >,
         /// Configures the policy yearly retention as documented in the `retention_yearly` block below.
         #[builder(into, default)]
-        pub retention_yearly: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_yearly: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyVmRetentionYearly>,
         >,
         /// A `tiering_policy` block as defined below.
         #[builder(into, default)]
-        pub tiering_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub tiering_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyVmTieringPolicy>,
         >,
         /// Specifies the timezone. [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/). Defaults to `UTC`
         #[builder(into, default)]
-        pub timezone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub timezone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PolicyVMResult {

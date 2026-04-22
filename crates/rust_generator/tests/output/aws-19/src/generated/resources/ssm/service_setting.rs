@@ -38,10 +38,10 @@ pub mod service_setting {
     pub struct ServiceSettingArgs {
         /// ID of the service setting.
         #[builder(into)]
-        pub setting_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub setting_id: pulumi_gestalt_rust::Input<String>,
         /// Value of the service setting.
         #[builder(into)]
-        pub setting_value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub setting_value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceSettingResult {

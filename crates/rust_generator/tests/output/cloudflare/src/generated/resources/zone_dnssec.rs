@@ -36,10 +36,10 @@ pub mod zone_dnssec {
     pub struct ZoneDnssecArgs {
         /// Zone DNSSEC updated time.
         #[builder(into, default)]
-        pub modified_on: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub modified_on: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneDnssecResult {

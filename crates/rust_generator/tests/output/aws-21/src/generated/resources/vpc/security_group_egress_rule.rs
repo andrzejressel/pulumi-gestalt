@@ -45,38 +45,38 @@ pub mod security_group_egress_rule {
     pub struct SecurityGroupEgressRuleArgs {
         /// The destination IPv4 CIDR range.
         #[builder(into, default)]
-        pub cidr_ipv4: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr_ipv4: pulumi_gestalt_rust::Input<Option<String>>,
         /// The destination IPv6 CIDR range.
         #[builder(into, default)]
-        pub cidr_ipv6: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr_ipv6: pulumi_gestalt_rust::Input<Option<String>>,
         /// The security group rule description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type.
         #[builder(into, default)]
-        pub from_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub from_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The IP protocol name or number. Use `-1` to specify all protocols. Note that if `ip_protocol` is set to `-1`, it translates to all protocols, all port ranges, and `from_port` and `to_port` values should not be defined.
         #[builder(into)]
-        pub ip_protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip_protocol: pulumi_gestalt_rust::Input<String>,
         /// The ID of the destination prefix list.
         #[builder(into, default)]
-        pub prefix_list_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix_list_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The destination security group that is referenced in the rule.
         #[builder(into, default)]
-        pub referenced_security_group_id: pulumi_gestalt_rust::InputOrOutput<
+        pub referenced_security_group_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the security group.
         #[builder(into)]
-        pub security_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_group_id: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
         #[builder(into, default)]
-        pub to_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub to_port: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct SecurityGroupEgressRuleResult {

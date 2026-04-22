@@ -10,13 +10,13 @@ pub mod get_bastion_shareable_link {
     pub struct GetBastionShareableLinkArgs {
         /// The name of the Bastion Host.
         #[builder(into)]
-        pub bastion_host_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bastion_host_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// List of VM references.
         #[builder(into, default)]
-        pub vms: pulumi_gestalt_rust::InputOrOutput<
+        pub vms: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::BastionShareableLink>>,
         >,
     }

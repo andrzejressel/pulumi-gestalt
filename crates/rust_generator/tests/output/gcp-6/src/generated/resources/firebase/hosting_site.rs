@@ -86,16 +86,16 @@ pub mod hosting_site {
         /// Optional. The [ID of a Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id)
         /// associated with the Hosting site.
         #[builder(into, default)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub app_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Immutable. A globally unique identifier for the Hosting site. This identifier is
         /// used to construct the Firebase-provisioned subdomains for the site, so it must also be a valid
         /// domain name label.
         #[builder(into, default)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub site_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HostingSiteResult {

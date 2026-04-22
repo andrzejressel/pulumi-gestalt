@@ -63,25 +63,25 @@ pub mod watchlist {
     pub struct WatchlistArgs {
         /// The default duration in ISO8601 duration form of this Sentinel Watchlist. Changing this forces a new Sentinel Watchlist to be created.
         #[builder(into, default)]
-        pub default_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of this Sentinel Watchlist. Changing this forces a new Sentinel Watchlist to be created.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of this Sentinel Watchlist. Changing this forces a new Sentinel Watchlist to be created.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The key used to optimize query performance when using Watchlist for joins with other data. Changing this forces a new Sentinel Watchlist to be created.
         #[builder(into)]
-        pub item_search_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub item_search_key: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of labels related to this Sentinel Watchlist. Changing this forces a new Sentinel Watchlist to be created.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub labels: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the Log Analytics Workspace where this Sentinel Watchlist resides in. Changing this forces a new Sentinel Watchlist to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Sentinel Watchlist. Changing this forces a new Sentinel Watchlist to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct WatchlistResult {

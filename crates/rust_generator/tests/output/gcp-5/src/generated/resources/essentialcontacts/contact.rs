@@ -59,13 +59,13 @@ pub mod contact {
     pub struct ContactArgs {
         /// The email address to send notifications to. This does not need to be a Google account.
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
         /// The preferred language for notifications, as a ISO 639-1 language code. See Supported languages for a list of supported languages.
         #[builder(into)]
-        pub language_tag: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub language_tag: pulumi_gestalt_rust::Input<String>,
         /// The categories of notifications that the contact will receive communications for.
         #[builder(into)]
-        pub notification_category_subscriptions: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_category_subscriptions: pulumi_gestalt_rust::Input<
             Vec<String>,
         >,
         /// The resource to save this contact for. Format: organizations/{organization_id}, folders/{folder_id} or projects/{project_id}
@@ -73,7 +73,7 @@ pub mod contact {
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ContactResult {

@@ -72,21 +72,21 @@ pub mod shared_private_link_resource {
     pub struct SharedPrivateLinkResourceArgs {
         /// The name of the Signalr Shared Private Link Resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The request message for requesting approval of the Shared Private Link Enabled Remote Resource.
         #[builder(into, default)]
-        pub request_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// The id of the Signalr Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub signalr_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signalr_service_id: pulumi_gestalt_rust::Input<String>,
         /// The sub resource name which the Signalr Private Endpoint can connect to. Possible values are `sites`, `vault`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sub_resource_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sub_resource_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Shared Private Link Enabled Remote Resource which this Signalr Private Endpoint should be connected to. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The `sub_resource_name` should match with the type of the `target_resource_id` that's being specified.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SharedPrivateLinkResourceResult {

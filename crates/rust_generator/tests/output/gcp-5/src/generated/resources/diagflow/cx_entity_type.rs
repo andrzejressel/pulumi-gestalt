@@ -91,24 +91,24 @@ pub mod cx_entity_type {
         /// AUTO_EXPANSION_MODE_DEFAULT: Allows an agent to recognize values that have not been explicitly listed in the entity.
         /// Possible values: ["AUTO_EXPANSION_MODE_DEFAULT", "AUTO_EXPANSION_MODE_UNSPECIFIED"]
         #[builder(into, default)]
-        pub auto_expansion_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_expansion_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The human-readable name of the entity type, unique within the agent.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Enables fuzzy entity extraction during classification.
         #[builder(into, default)]
-        pub enable_fuzzy_extraction: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_fuzzy_extraction: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The collection of entity entries associated with the entity type.
         /// Structure is documented below.
         #[builder(into)]
-        pub entities: pulumi_gestalt_rust::InputOrOutput<
+        pub entities: pulumi_gestalt_rust::Input<
             Vec<super::super::types::diagflow::CxEntityTypeEntity>,
         >,
         /// Collection of exceptional words and phrases that shouldn't be matched. For example, if you have a size entity type with
         /// entry giant(an adjective), you might consider adding giants(a noun) as an exclusion. If the kind of entity type is
         /// KIND_MAP, then the phrases specified by entities and excluded phrases should be mutually exclusive.
         #[builder(into, default)]
-        pub excluded_phrases: pulumi_gestalt_rust::InputOrOutput<
+        pub excluded_phrases: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::diagflow::CxEntityTypeExcludedPhrase>>,
         >,
         /// Indicates whether the entity type can be automatically expanded.
@@ -117,19 +117,19 @@ pub mod cx_entity_type {
         /// * KIND_REGEXP: Regexp entity types allow to specify regular expressions in entries values.
         /// Possible values are: `KIND_MAP`, `KIND_LIST`, `KIND_REGEXP`.
         #[builder(into)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kind: pulumi_gestalt_rust::Input<String>,
         /// The language of the following fields in entityType: EntityType.entities.value EntityType.entities.synonyms
         /// EntityType.excluded_phrases.value If not specified, the agent's default language is used. Many languages are supported.
         /// Note: languages must be enabled in the agent before they can be used.
         #[builder(into, default)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language_code: pulumi_gestalt_rust::Input<Option<String>>,
         /// The agent to create a entity type for. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether parameters of the entity type should be redacted in log. If redaction is enabled, page parameters and
         /// intent parameters referring to the entity type will be replaced by parameter name when logging.
         #[builder(into, default)]
-        pub redact: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub redact: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct CxEntityTypeResult {

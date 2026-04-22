@@ -95,97 +95,97 @@ pub mod flexible_server {
     pub struct FlexibleServerArgs {
         /// The Administrator login for the MySQL Flexible Server. Required when `create_mode` is `Default`. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub administrator_login: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub administrator_login: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Password associated with the `administrator_login` for the MySQL Flexible Server. Required when `create_mode` is `Default`.
         #[builder(into, default)]
-        pub administrator_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub administrator_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The backup retention days for the MySQL Flexible Server. Possible values are between `1` and `35` days. Defaults to `7`.
         #[builder(into, default)]
-        pub backup_retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub backup_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The creation mode which can be used to restore or replicate existing servers. Possible values are `Default`, `PointInTimeRestore`, `GeoRestore`, and `Replica`. Changing this forces a new MySQL Flexible Server to be created.
         ///
         /// > **NOTE:** Creating a `GeoRestore` server requires the source server with `geo_redundant_backup_enabled` enabled.
         ///
         /// > **NOTE:** When a server is first created it may not be immediately available for `geo restore` or `replica`. It may take a few minutes to several hours for the necessary metadata to be populated. Please see the [Geo Restore](https://learn.microsoft.com/azure/mysql/single-server/how-to-restore-server-portal#geo-restore) and the [Replica](https://learn.microsoft.com/azure/mysql/flexible-server/concepts-read-replicas#create-a-replica) for more information.
         #[builder(into, default)]
-        pub create_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub create_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `customer_managed_key` block as defined below.
         ///
         /// > **NOTE:** `identity` is required when `customer_managed_key` is specified.
         #[builder(into, default)]
-        pub customer_managed_key: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::mysql::FlexibleServerCustomerManagedKey>,
         >,
         /// The ID of the virtual network subnet to create the MySQL Flexible Server. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub delegated_subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delegated_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should geo redundant backup enabled? Defaults to `false`. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A `high_availability` block as defined below.
         #[builder(into, default)]
-        pub high_availability: pulumi_gestalt_rust::InputOrOutput<
+        pub high_availability: pulumi_gestalt_rust::Input<
             Option<super::super::types::mysql::FlexibleServerHighAvailability>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::mysql::FlexibleServerIdentity>,
         >,
         /// The Azure Region where the MySQL Flexible Server should exist. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `maintenance_window` block as defined below.
         #[builder(into, default)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_window: pulumi_gestalt_rust::Input<
             Option<super::super::types::mysql::FlexibleServerMaintenanceWindow>,
         >,
         /// The name which should be used for this MySQL Flexible Server. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The point in time to restore from `creation_source_server_id` when `create_mode` is `PointInTimeRestore`. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub point_in_time_restore_time_in_utc: pulumi_gestalt_rust::InputOrOutput<
+        pub point_in_time_restore_time_in_utc: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the private DNS zone to create the MySQL Flexible Server. Changing this forces a new MySQL Flexible Server to be created.
         ///
         /// > **NOTE:** The `private_dns_zone_id` is required when setting a `delegated_subnet_id`. The `azure.privatedns.Zone` should end with suffix `.mysql.database.azure.com`.
         #[builder(into, default)]
-        pub private_dns_zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_dns_zone_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The replication role. Possible value is `None`.
         ///
         /// > **NOTE:** The `replication_role` cannot be set while creating and only can be updated from `Replica` to `None`.
         #[builder(into, default)]
-        pub replication_role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub replication_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the MySQL Flexible Server should exist. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU Name for the MySQL Flexible Server.
         ///
         /// > **NOTE:** `sku_name` should start with SKU tier `B (Burstable)`, `GP (General Purpose)`, `MO (Memory Optimized)` like `B_Standard_B1s`.
         #[builder(into, default)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the source MySQL Flexible Server to be restored. Required when `create_mode` is `PointInTimeRestore`, `GeoRestore`, and `Replica`. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub source_server_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_server_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `storage` block as defined below.
         #[builder(into, default)]
-        pub storage: pulumi_gestalt_rust::InputOrOutput<
+        pub storage: pulumi_gestalt_rust::Input<
             Option<super::super::types::mysql::FlexibleServerStorage>,
         >,
         /// A mapping of tags which should be assigned to the MySQL Flexible Server.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The version of the MySQL Flexible Server to use. Possible values are `5.7`, and `8.0.21`. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FlexibleServerResult {

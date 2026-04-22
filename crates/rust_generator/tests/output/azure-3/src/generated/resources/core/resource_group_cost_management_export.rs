@@ -61,32 +61,32 @@ pub mod resource_group_cost_management_export {
     pub struct ResourceGroupCostManagementExportArgs {
         /// Is the cost management export active? Default is `true`.
         #[builder(into, default)]
-        pub active: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub active: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `export_data_options` block as defined below.
         #[builder(into)]
-        pub export_data_options: pulumi_gestalt_rust::InputOrOutput<
+        pub export_data_options: pulumi_gestalt_rust::Input<
             super::super::types::core::ResourceGroupCostManagementExportExportDataOptions,
         >,
         /// A `export_data_storage_location` block as defined below.
         #[builder(into)]
-        pub export_data_storage_location: pulumi_gestalt_rust::InputOrOutput<
+        pub export_data_storage_location: pulumi_gestalt_rust::Input<
             super::super::types::core::ResourceGroupCostManagementExportExportDataStorageLocation,
         >,
         /// Specifies the name of the Cost Management Export. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The date the export will stop capturing information.
         #[builder(into)]
-        pub recurrence_period_end_date: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recurrence_period_end_date: pulumi_gestalt_rust::Input<String>,
         /// The date the export will start capturing information.
         #[builder(into)]
-        pub recurrence_period_start_date: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recurrence_period_start_date: pulumi_gestalt_rust::Input<String>,
         /// How often the requested information will be exported. Valid values include `Annually`, `Daily`, `Monthly`, `Weekly`.
         #[builder(into)]
-        pub recurrence_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recurrence_type: pulumi_gestalt_rust::Input<String>,
         /// The id of the resource group on which to create an export. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourceGroupCostManagementExportResult {

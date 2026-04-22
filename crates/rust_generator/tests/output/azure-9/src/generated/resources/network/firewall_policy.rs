@@ -45,73 +45,73 @@ pub mod firewall_policy {
     pub struct FirewallPolicyArgs {
         /// Whether enable auto learn private ip range.
         #[builder(into, default)]
-        pub auto_learn_private_ranges_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_learn_private_ranges_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the base Firewall Policy.
         #[builder(into, default)]
-        pub base_policy_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub base_policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `dns` block as defined below.
         #[builder(into, default)]
-        pub dns: pulumi_gestalt_rust::InputOrOutput<
+        pub dns: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::FirewallPolicyDns>,
         >,
         /// A `explicit_proxy` block as defined below.
         #[builder(into, default)]
-        pub explicit_proxy: pulumi_gestalt_rust::InputOrOutput<
+        pub explicit_proxy: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::FirewallPolicyExplicitProxy>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::FirewallPolicyIdentity>,
         >,
         /// An `insights` block as defined below.
         #[builder(into, default)]
-        pub insights: pulumi_gestalt_rust::InputOrOutput<
+        pub insights: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::FirewallPolicyInsights>,
         >,
         /// A `intrusion_detection` block as defined below.
         #[builder(into, default)]
-        pub intrusion_detection: pulumi_gestalt_rust::InputOrOutput<
+        pub intrusion_detection: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::FirewallPolicyIntrusionDetection>,
         >,
         /// The Azure Region where the Firewall Policy should exist. Changing this forces a new Firewall Policy to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Firewall Policy. Changing this forces a new Firewall Policy to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of private IP ranges to which traffic will not be SNAT.
         #[builder(into, default)]
-        pub private_ip_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub private_ip_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the Resource Group where the Firewall Policy should exist. Changing this forces a new Firewall Policy to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU Tier of the Firewall Policy. Possible values are `Standard`, `Premium` and `Basic`. Defaults to `Standard`. Changing this forces a new Firewall Policy to be created.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether SQL Redirect traffic filtering is allowed. Enabling this flag requires no rule using ports between `11000`-`11999`.
         #[builder(into, default)]
-        pub sql_redirect_allowed: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sql_redirect_allowed: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags which should be assigned to the Firewall Policy.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `threat_intelligence_allowlist` block as defined below.
         #[builder(into, default)]
-        pub threat_intelligence_allowlist: pulumi_gestalt_rust::InputOrOutput<
+        pub threat_intelligence_allowlist: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::network::FirewallPolicyThreatIntelligenceAllowlist,
             >,
         >,
         /// The operation mode for Threat Intelligence. Possible values are `Alert`, `Deny` and `Off`. Defaults to `Alert`.
         #[builder(into, default)]
-        pub threat_intelligence_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub threat_intelligence_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `tls_certificate` block as defined below.
         #[builder(into, default)]
-        pub tls_certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub tls_certificate: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::FirewallPolicyTlsCertificate>,
         >,
     }

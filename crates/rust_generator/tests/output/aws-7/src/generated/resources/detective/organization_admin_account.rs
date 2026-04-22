@@ -40,7 +40,7 @@ pub mod organization_admin_account {
     pub struct OrganizationAdminAccountArgs {
         /// AWS account identifier to designate as a delegated administrator for Detective.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OrganizationAdminAccountResult {

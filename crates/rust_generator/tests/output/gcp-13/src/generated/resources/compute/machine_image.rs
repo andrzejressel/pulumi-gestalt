@@ -138,33 +138,33 @@ pub mod machine_image {
     pub struct MachineImageArgs {
         /// A text description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify this to create an application consistent machine image by informing the OS to prepare for the snapshot process.
         /// Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
         #[builder(into, default)]
-        pub guest_flush: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub guest_flush: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Encrypts the machine image using a customer-supplied encryption key.
         /// After you encrypt a machine image with a customer-supplied key, you must
         /// provide the same key if you use the machine image later (e.g. to create a
         /// instance from the image)
         /// Structure is documented below.
         #[builder(into, default)]
-        pub machine_image_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub machine_image_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::MachineImageMachineImageEncryptionKey>,
         >,
         /// Name of the resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source instance used to create the machine image. You can provide this as a partial or full URL to the resource.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub source_instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_instance: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MachineImageResult {

@@ -40,16 +40,16 @@ pub mod lb_certificate {
     pub struct LbCertificateArgs {
         /// The domain name (e.g., example.com) for your SSL/TLS certificate.
         #[builder(into, default)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The load balancer name where you want to create the SSL/TLS certificate.
         #[builder(into)]
-        pub lb_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lb_name: pulumi_gestalt_rust::Input<String>,
         /// The SSL/TLS certificate name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of domains that should be SANs in the issued certificate. `domain_name` attribute is automatically added as a Subject Alternative Name.
         #[builder(into, default)]
-        pub subject_alternative_names: pulumi_gestalt_rust::InputOrOutput<
+        pub subject_alternative_names: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
     }

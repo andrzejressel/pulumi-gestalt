@@ -146,25 +146,25 @@ pub mod data_collection_rule_association {
     pub struct DataCollectionRuleAssociationArgs {
         /// The ID of the Data Collection Endpoint which will be associated to the target resource.
         #[builder(into, default)]
-        pub data_collection_endpoint_id: pulumi_gestalt_rust::InputOrOutput<
+        pub data_collection_endpoint_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the Data Collection Rule which will be associated to the target resource.
         ///
         /// > **NOTE** Exactly one of `data_collection_endpoint_id` and `data_collection_rule_id` blocks must be specified.
         #[builder(into, default)]
-        pub data_collection_rule_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_collection_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the Data Collection Rule Association.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Data Collection Rule Association. Changing this forces a new Data Collection Rule Association to be created. Defaults to `configurationAccessEndpoint`.
         ///
         /// > **NOTE** `name` is required when `data_collection_rule_id` is specified. And when `data_collection_endpoint_id` is specified, the `name` is populated with `configurationAccessEndpoint`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Azure Resource which to associate to a Data Collection Rule or a Data Collection Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DataCollectionRuleAssociationResult {

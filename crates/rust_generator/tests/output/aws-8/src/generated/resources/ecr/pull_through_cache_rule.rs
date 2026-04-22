@@ -42,13 +42,13 @@ pub mod pull_through_cache_rule {
     pub struct PullThroughCacheRuleArgs {
         /// ARN of the Secret which will be used to authenticate against the registry.
         #[builder(into, default)]
-        pub credential_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub credential_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The repository name prefix to use when caching images from the source registry.
         #[builder(into)]
-        pub ecr_repository_prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ecr_repository_prefix: pulumi_gestalt_rust::Input<String>,
         /// The registry URL of the upstream public registry to use as the source.
         #[builder(into)]
-        pub upstream_registry_url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub upstream_registry_url: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PullThroughCacheRuleResult {

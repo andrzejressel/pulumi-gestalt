@@ -64,22 +64,22 @@ pub mod threat_intelligence_indicator {
     pub struct ThreatIntelligenceIndicatorArgs {
         /// Confidence levels of the Threat Intelligence Indicator.
         #[builder(into, default)]
-        pub confidence: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub confidence: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The creator of the Threat Intelligence Indicator.
         #[builder(into, default)]
-        pub created_by: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub created_by: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the Threat Intelligence Indicator.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the Threat Intelligence Indicator.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The extension config of the Threat Intelligence Indicator in JSON format.
         #[builder(into, default)]
-        pub extension: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub extension: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `external_reference` blocks as defined below.
         #[builder(into, default)]
-        pub external_references: pulumi_gestalt_rust::InputOrOutput<
+        pub external_references: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::ThreatIntelligenceIndicatorExternalReference,
@@ -88,7 +88,7 @@ pub mod threat_intelligence_indicator {
         >,
         /// One or more `granular_marking` blocks as defined below.
         #[builder(into, default)]
-        pub granular_markings: pulumi_gestalt_rust::InputOrOutput<
+        pub granular_markings: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::ThreatIntelligenceIndicatorGranularMarking,
@@ -97,7 +97,7 @@ pub mod threat_intelligence_indicator {
         >,
         /// One or more `kill_chain_phase` blocks as defined below.
         #[builder(into, default)]
-        pub kill_chain_phases: pulumi_gestalt_rust::InputOrOutput<
+        pub kill_chain_phases: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::ThreatIntelligenceIndicatorKillChainPhase,
@@ -106,40 +106,40 @@ pub mod threat_intelligence_indicator {
         >,
         /// The language of the Threat Intelligence Indicator.
         #[builder(into, default)]
-        pub language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Threat Intelligence marking references.
         #[builder(into, default)]
-        pub object_marking_refs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub object_marking_refs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The pattern used by the Threat Intelligence Indicator. When `pattern_type` set to `file`, `pattern` must be specified with `<HashName>:<Value>` format, such as `MD5:78ecc5c05cd8b79af480df2f8fba0b9d`.
         #[builder(into)]
-        pub pattern: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pattern: pulumi_gestalt_rust::Input<String>,
         /// The type of pattern used by the Threat Intelligence Indicator. Possible values are `domain-name`, `file`, `ipv4-addr`, `ipv6-addr` and `url`.
         #[builder(into)]
-        pub pattern_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pattern_type: pulumi_gestalt_rust::Input<String>,
         /// The version of a Threat Intelligence entity.
         #[builder(into, default)]
-        pub pattern_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pattern_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the Threat Intelligence entity revoked.
         #[builder(into, default)]
-        pub revoked: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub revoked: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Source of the Threat Intelligence Indicator. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of tags of the Threat Intelligence Indicator.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies a list of threat types of this Threat Intelligence Indicator.
         #[builder(into, default)]
-        pub threat_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub threat_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The start of validate date in RFC3339.
         #[builder(into)]
-        pub validate_from_utc: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub validate_from_utc: pulumi_gestalt_rust::Input<String>,
         /// The end of validate date of the Threat Intelligence Indicator in RFC3339 format.
         #[builder(into, default)]
-        pub validate_until_utc: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub validate_until_utc: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Log Analytics Workspace. Changing this forces a new Sentinel Threat Intelligence Indicator to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ThreatIntelligenceIndicatorResult {

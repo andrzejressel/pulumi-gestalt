@@ -41,7 +41,7 @@ pub mod sdkvoice_global_settings {
     pub struct SdkvoiceGlobalSettingsArgs {
         /// The Voice Connector settings. See voice_connector.
         #[builder(into)]
-        pub voice_connector: pulumi_gestalt_rust::InputOrOutput<
+        pub voice_connector: pulumi_gestalt_rust::Input<
             super::super::types::chime::SdkvoiceGlobalSettingsVoiceConnector,
         >,
     }

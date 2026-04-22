@@ -81,51 +81,51 @@ pub mod linked_service_kusto {
         ///
         /// The following supported arguments are specific to Azure Kusto Linked Service:
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Linked Service.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The integration runtime reference to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub integration_runtime_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_runtime_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Kusto Database Name.
         #[builder(into)]
-        pub kusto_database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kusto_database_name: pulumi_gestalt_rust::Input<String>,
         /// The URI of the Kusto Cluster endpoint.
         #[builder(into)]
-        pub kusto_endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kusto_endpoint: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Data Factory Linked Service. Changing this forces a new resource to be created. Must be unique within a data factory. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The service principal id in which to authenticate against the Kusto Database.
         #[builder(into, default)]
-        pub service_principal_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_principal_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service principal key in which to authenticate against the Kusto Database.
         #[builder(into, default)]
-        pub service_principal_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_principal_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service principal tenant id or name in which to authenticate against the Kusto Database.
         ///
         /// > **NOTE** If `service_principal_id` is used, `service_principal_key` and `tenant` is also required.
         ///
         /// > **NOTE** One of Managed Identity authentication and Service Principal authentication must be set.
         #[builder(into, default)]
-        pub tenant: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to use the Data Factory's managed identity to authenticate against the Kusto Database.
         #[builder(into, default)]
-        pub use_managed_identity: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_managed_identity: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct LinkedServiceKustoResult {

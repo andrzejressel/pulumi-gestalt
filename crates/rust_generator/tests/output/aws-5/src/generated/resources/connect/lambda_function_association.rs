@@ -37,10 +37,10 @@ pub mod lambda_function_association {
     pub struct LambdaFunctionAssociationArgs {
         /// Amazon Resource Name (ARN) of the Lambda Function, omitting any version or alias qualifier.
         #[builder(into)]
-        pub function_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_arn: pulumi_gestalt_rust::Input<String>,
         /// The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LambdaFunctionAssociationResult {

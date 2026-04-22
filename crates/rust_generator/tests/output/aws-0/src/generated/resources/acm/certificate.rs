@@ -134,55 +134,55 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// ARN of an ACM PCA
         #[builder(into, default)]
-        pub certificate_authority_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate_authority_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Certificate's PEM-formatted public key
         #[builder(into, default)]
-        pub certificate_body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// Certificate's PEM-formatted chain
         /// * Creating a private CA issued certificate
         #[builder(into, default)]
-        pub certificate_chain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_chain: pulumi_gestalt_rust::Input<Option<String>>,
         /// Fully qualified domain name (FQDN) in the certificate.
         #[builder(into, default)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time to start automatic renewal process before expiration.
         /// Has no effect if less than 60 days.
         /// Represented by either
         /// a subset of [RFC 3339 duration](https://www.rfc-editor.org/rfc/rfc3339) supporting years, months, and days (e.g., `P90D`),
         /// or a string such as `2160h`.
         #[builder(into, default)]
-        pub early_renewal_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub early_renewal_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the algorithm of the public and private key pair that your Amazon issued certificate uses to encrypt data. See [ACM Certificate characteristics](https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms) for more details.
         #[builder(into, default)]
-        pub key_algorithm: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_algorithm: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block used to set certificate options. Detailed below.
         #[builder(into, default)]
-        pub options: pulumi_gestalt_rust::InputOrOutput<
+        pub options: pulumi_gestalt_rust::Input<
             Option<super::super::types::acm::CertificateOptions>,
         >,
         /// Certificate's PEM-formatted private key
         #[builder(into, default)]
-        pub private_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of domains that should be SANs in the issued certificate.
         /// To remove all elements of a previously configured list, set this value equal to an empty list (`[]`)
         #[builder(into, default)]
-        pub subject_alternative_names: pulumi_gestalt_rust::InputOrOutput<
+        pub subject_alternative_names: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Which method to use for validation. `DNS` or `EMAIL` are valid. This parameter must not be set for certificates that were imported into ACM and then into Pulumi.
         #[builder(into, default)]
-        pub validation_method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub validation_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block used to specify information about the initial validation of each domain name. Detailed below.
         /// * Importing an existing certificate
         #[builder(into, default)]
-        pub validation_options: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_options: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::acm::CertificateValidationOption>>,
         >,
     }

@@ -194,51 +194,51 @@ pub mod database {
     pub struct DatabaseArgs {
         /// When true , applies changes immediately. When false , applies changes during the preferred maintenance window. Some changes may cause an outage.
         #[builder(into, default)]
-        pub apply_immediately: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Availability Zone in which to create your new database. Use the us-east-2a case-sensitive format.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// When true, enables automated backup retention for your database. When false, disables automated backup retention for your database. Disabling backup retention deletes all automated database backups. Before disabling this, you may want to create a snapshot of your database.
         #[builder(into, default)]
-        pub backup_retention_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub backup_retention_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The blueprint ID for your new database. A blueprint describes the major engine version of a database. You can get a list of database blueprints IDs by using the AWS CLI command: `aws lightsail get-relational-database-blueprints`
         #[builder(into)]
-        pub blueprint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub blueprint_id: pulumi_gestalt_rust::Input<String>,
         /// The bundle ID for your new database. A bundle describes the performance specifications for your database (see list below). You can get a list of database bundle IDs by using the AWS CLI command: `aws lightsail get-relational-database-bundles`.
         #[builder(into)]
-        pub bundle_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bundle_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the database snapshot created if skip final snapshot is false, which is the default value for that parameter.
         #[builder(into, default)]
-        pub final_snapshot_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub final_snapshot_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the master database created when the Lightsail database resource is created.
         #[builder(into)]
-        pub master_database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub master_database_name: pulumi_gestalt_rust::Input<String>,
         /// The password for the master user of your new database. The password can include any printable ASCII character except "/", """, or "@".
         #[builder(into)]
-        pub master_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub master_password: pulumi_gestalt_rust::Input<String>,
         /// The master user name for your new database.
         #[builder(into)]
-        pub master_username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub master_username: pulumi_gestalt_rust::Input<String>,
         /// The daily time range during which automated backups are created for your new database if automated backups are enabled. Must be in the hh24:mi-hh24:mi format. Example: `16:00-16:30`. Specified in Coordinated Universal Time (UTC).
         #[builder(into, default)]
-        pub preferred_backup_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The weekly time range during which system maintenance can occur on your new database. Must be in the ddd:hh24:mi-ddd:hh24:mi format. Specified in Coordinated Universal Time (UTC). Example: `Tue:17:00-Tue:17:30`
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the accessibility options for your new database. A value of true specifies a database that is available to resources outside of your Lightsail account. A value of false specifies a database that is available only to your Lightsail resources in the same region as your database.
         #[builder(into, default)]
-        pub publicly_accessible: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name to use for your new Lightsail database resource. Names be unique within each AWS Region in your Lightsail account.
         #[builder(into)]
-        pub relational_database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub relational_database_name: pulumi_gestalt_rust::Input<String>,
         /// Determines whether a final database snapshot is created before your database is deleted. If true is specified, no database snapshot is created. If false is specified, a database snapshot is created before your database is deleted. You must specify the final relational database snapshot name parameter if the skip final snapshot parameter is false.
         #[builder(into, default)]
-        pub skip_final_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

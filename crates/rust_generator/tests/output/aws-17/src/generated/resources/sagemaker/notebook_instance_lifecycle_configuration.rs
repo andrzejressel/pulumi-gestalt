@@ -43,13 +43,13 @@ pub mod notebook_instance_lifecycle_configuration {
     pub struct NotebookInstanceLifecycleConfigurationArgs {
         /// The name of the lifecycle configuration (must be unique). If omitted, this provider will assign a random, unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A shell script (base64-encoded) that runs only once when the SageMaker Notebook Instance is created.
         #[builder(into, default)]
-        pub on_create: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub on_create: pulumi_gestalt_rust::Input<Option<String>>,
         /// A shell script (base64-encoded) that runs every time the SageMaker Notebook Instance is started including the time it's created.
         #[builder(into, default)]
-        pub on_start: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub on_start: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NotebookInstanceLifecycleConfigurationResult {

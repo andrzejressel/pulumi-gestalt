@@ -9,9 +9,9 @@ pub mod get_managed_folder_iam_policy {
     #[allow(dead_code)]
     pub struct GetManagedFolderIamPolicyArgs {
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub managed_folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_folder: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetManagedFolderIamPolicyResult {

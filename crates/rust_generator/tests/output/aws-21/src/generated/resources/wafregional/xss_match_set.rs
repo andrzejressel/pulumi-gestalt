@@ -46,10 +46,10 @@ pub mod xss_match_set {
     pub struct XssMatchSetArgs {
         /// The name of the set
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parts of web requests that you want to inspect for cross-site scripting attacks.
         #[builder(into, default)]
-        pub xss_match_tuples: pulumi_gestalt_rust::InputOrOutput<
+        pub xss_match_tuples: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafregional::XssMatchSetXssMatchTuple>>,
         >,
     }

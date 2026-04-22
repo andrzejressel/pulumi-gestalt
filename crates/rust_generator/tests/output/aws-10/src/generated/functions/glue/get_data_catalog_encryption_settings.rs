@@ -10,7 +10,7 @@ pub mod get_data_catalog_encryption_settings {
     pub struct GetDataCatalogEncryptionSettingsArgs {
         /// ID of the Data Catalog. This is typically the AWS account ID.
         #[builder(into)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub catalog_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDataCatalogEncryptionSettingsResult {

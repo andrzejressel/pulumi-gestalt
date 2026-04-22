@@ -35,26 +35,26 @@ pub mod channel {
     pub struct ChannelArgs {
         /// If `true`, channel is private (enabled for playback authorization).
         #[builder(into, default)]
-        pub authorized: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub authorized: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Channel latency mode. Valid values: `NORMAL`, `LOW`.
         #[builder(into, default)]
-        pub latency_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub latency_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Channel name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Recording configuration ARN.
         #[builder(into, default)]
-        pub recording_configuration_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub recording_configuration_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Channel type, which determines the allowable resolution and bitrate. Valid values: `STANDARD`, `BASIC`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ChannelResult {

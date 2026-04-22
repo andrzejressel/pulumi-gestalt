@@ -195,18 +195,18 @@ pub mod event_connection {
     pub struct EventConnectionArgs {
         /// Parameters used for authorization. A maximum of 1 are allowed. Documented below.
         #[builder(into)]
-        pub auth_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_parameters: pulumi_gestalt_rust::Input<
             super::super::types::cloudwatch::EventConnectionAuthParameters,
         >,
         /// Choose the type of authorization to use for the connection. One of `API_KEY`,`BASIC`,`OAUTH_CLIENT_CREDENTIALS`.
         #[builder(into)]
-        pub authorization_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authorization_type: pulumi_gestalt_rust::Input<String>,
         /// Enter a description for the connection. Maximum of 512 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the new connection. Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EventConnectionResult {

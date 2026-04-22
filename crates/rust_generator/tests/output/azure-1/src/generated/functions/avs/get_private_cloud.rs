@@ -10,10 +10,10 @@ pub mod get_private_cloud {
     pub struct GetPrivateCloudArgs {
         /// The name of this Azure VMware Solution Private Cloud.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Azure VMware Solution Private Cloud exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPrivateCloudResult {

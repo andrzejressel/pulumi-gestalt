@@ -100,56 +100,56 @@ pub mod v_2_models_slot_type {
     pub struct V2modelsSlotTypeArgs {
         /// Identifier of the bot associated with this slot type.
         #[builder(into)]
-        pub bot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_id: pulumi_gestalt_rust::Input<String>,
         /// Version of the bot associated with this slot type.
         #[builder(into)]
-        pub bot_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_version: pulumi_gestalt_rust::Input<String>,
         /// Specifications for a composite slot type.
         /// See `composite_slot_type_setting` argument reference below.
         #[builder(into, default)]
-        pub composite_slot_type_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub composite_slot_type_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsSlotTypeCompositeSlotTypeSetting>,
         >,
         /// Description of the slot type.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of external information used to create the slot type.
         /// See `external_source_setting` argument reference below.
         #[builder(into, default)]
-        pub external_source_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub external_source_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsSlotTypeExternalSourceSetting>,
         >,
         /// Identifier of the language and locale where this slot type is used.
         /// All of the bots, slot types, and slots used by the intent must have the same locale.
         #[builder(into)]
-        pub locale_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub locale_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the slot type.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Built-in slot type used as a parent of this slot type.
         /// When you define a parent slot type, the new slot type has the configuration of the parent slot type.
         /// Only `AMAZON.AlphaNumeric` is supported.
         #[builder(into, default)]
-        pub parent_slot_type_signature: pulumi_gestalt_rust::InputOrOutput<
+        pub parent_slot_type_signature: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// List of SlotTypeValue objects that defines the values that the slot type can take.
         /// Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.
         /// See `slot_type_values` argument reference below.
         #[builder(into, default)]
-        pub slot_type_values: pulumi_gestalt_rust::InputOrOutput<
+        pub slot_type_values: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsSlotTypeSlotTypeValues>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsSlotTypeTimeouts>,
         >,
         /// Determines the strategy that Amazon Lex uses to select a value from the list of possible values.
         /// See `value_selection_setting` argument reference below.
         #[builder(into, default)]
-        pub value_selection_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub value_selection_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsSlotTypeValueSelectionSetting>,
         >,
     }

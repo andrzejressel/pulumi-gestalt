@@ -12,15 +12,15 @@ pub mod get_role_definition {
         ///
         /// > You can also use this for built-in roles such as `Contributor`, `Owner`, `Reader` and `Virtual Machine Contributor`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Role Definition as a UUID/GUID.
         #[builder(into, default)]
-        pub role_definition_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_definition_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Scope at which the Custom Role Definition exists.
         ///
         /// > **Note:** One of `name` or `role_definition_id` must be specified.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scope: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRoleDefinitionResult {

@@ -42,12 +42,12 @@ pub mod ip_set {
     pub struct IpSetArgs {
         /// One or more pairs specifying the IP address type (IPV4 or IPV6) and the IP address range (in CIDR format) from which web requests originate.
         #[builder(into, default)]
-        pub ip_set_descriptors: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_set_descriptors: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::waf::IpSetIpSetDescriptor>>,
         >,
         /// The name or description of the IPSet.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IpSetResult {

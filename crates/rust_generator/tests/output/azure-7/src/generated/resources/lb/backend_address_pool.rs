@@ -70,23 +70,23 @@ pub mod backend_address_pool {
     pub struct BackendAddressPoolArgs {
         /// The ID of the Load Balancer in which to create the Backend Address Pool. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub loadbalancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub loadbalancer_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Backend Address Pool. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The backend address synchronous mode for the Backend Address Pool. Possible values are `Automatic` and `Manual`. This is required with `virtual_network_id`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The `synchronous_mode` can set only for Load Balancer with `Standard` SKU.
         #[builder(into, default)]
-        pub synchronous_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub synchronous_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `tunnel_interface` blocks as defined below.
         #[builder(into, default)]
-        pub tunnel_interfaces: pulumi_gestalt_rust::InputOrOutput<
+        pub tunnel_interfaces: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lb::BackendAddressPoolTunnelInterface>>,
         >,
         /// The ID of the Virtual Network within which the Backend Address Pool should exist.
         #[builder(into, default)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BackendAddressPoolResult {

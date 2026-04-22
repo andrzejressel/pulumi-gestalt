@@ -73,10 +73,10 @@ pub mod protection_health_check_association {
     pub struct ProtectionHealthCheckAssociationArgs {
         /// The ARN (Amazon Resource Name) of the Route53 Health Check resource which will be associated to the protected resource.
         #[builder(into)]
-        pub health_check_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub health_check_arn: pulumi_gestalt_rust::Input<String>,
         /// The ID of the protected resource.
         #[builder(into)]
-        pub shield_protection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub shield_protection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProtectionHealthCheckAssociationResult {

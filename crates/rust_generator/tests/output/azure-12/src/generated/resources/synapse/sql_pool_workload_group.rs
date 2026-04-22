@@ -79,34 +79,34 @@ pub mod sql_pool_workload_group {
     pub struct SqlPoolWorkloadGroupArgs {
         /// The workload group importance level. Defaults to `normal`.
         #[builder(into, default)]
-        pub importance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub importance: pulumi_gestalt_rust::Input<Option<String>>,
         /// The workload group cap percentage resource.
         #[builder(into)]
-        pub max_resource_percent: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub max_resource_percent: pulumi_gestalt_rust::Input<i32>,
         /// The workload group request maximum grant percentage. Defaults to `3`.
         #[builder(into, default)]
-        pub max_resource_percent_per_request: pulumi_gestalt_rust::InputOrOutput<
+        pub max_resource_percent_per_request: pulumi_gestalt_rust::Input<
             Option<f64>,
         >,
         /// The workload group minimum percentage resource.
         #[builder(into)]
-        pub min_resource_percent: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub min_resource_percent: pulumi_gestalt_rust::Input<i32>,
         /// The workload group request minimum grant percentage.
         #[builder(into, default)]
-        pub min_resource_percent_per_request: pulumi_gestalt_rust::InputOrOutput<
+        pub min_resource_percent_per_request: pulumi_gestalt_rust::Input<
             Option<f64>,
         >,
         /// The name which should be used for this Synapse SQL Pool Workload Group. Changing this forces a new Synapse SQL Pool Workload Group to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The workload group query execution timeout.
         #[builder(into, default)]
-        pub query_execution_timeout_in_seconds: pulumi_gestalt_rust::InputOrOutput<
+        pub query_execution_timeout_in_seconds: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The ID of the Synapse SQL Pool. Changing this forces a new Synapse SQL Pool Workload Group to be created.
         #[builder(into)]
-        pub sql_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SqlPoolWorkloadGroupResult {

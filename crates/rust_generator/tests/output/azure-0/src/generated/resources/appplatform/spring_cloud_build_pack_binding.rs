@@ -68,18 +68,18 @@ pub mod spring_cloud_build_pack_binding {
     pub struct SpringCloudBuildPackBindingArgs {
         /// Specifies the Build Pack Binding Type. Allowed values are `ApacheSkyWalking`, `AppDynamics`, `ApplicationInsights`, `Dynatrace`, `ElasticAPM` and `NewRelic`.
         #[builder(into, default)]
-        pub binding_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub binding_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `launch` block as defined below.
         #[builder(into, default)]
-        pub launch: pulumi_gestalt_rust::InputOrOutput<
+        pub launch: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudBuildPackBindingLaunch>,
         >,
         /// The name which should be used for this Spring Cloud Build Pack Binding. Changing this forces a new Spring Cloud Build Pack Binding to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud Builder. Changing this forces a new Spring Cloud Build Pack Binding to be created.
         #[builder(into)]
-        pub spring_cloud_builder_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_builder_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudBuildPackBindingResult {

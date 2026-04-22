@@ -107,10 +107,10 @@ pub mod plan {
     pub struct PlanArgs {
         /// The Amazon Resource Name (ARN) of the contact or escalation plan.
         #[builder(into)]
-        pub contact_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub contact_id: pulumi_gestalt_rust::Input<String>,
         /// One or more configuration blocks for specifying a list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods. See Stage below for more details.
         #[builder(into)]
-        pub stages: pulumi_gestalt_rust::InputOrOutput<
+        pub stages: pulumi_gestalt_rust::Input<
             Vec<super::super::types::ssmcontacts::PlanStage>,
         >,
     }

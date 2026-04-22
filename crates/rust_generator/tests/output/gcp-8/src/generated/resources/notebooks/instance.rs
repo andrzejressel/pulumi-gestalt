@@ -193,71 +193,71 @@ pub mod instance {
         /// machineType you have selected.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub accelerator_config: pulumi_gestalt_rust::InputOrOutput<
+        pub accelerator_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::InstanceAcceleratorConfig>,
         >,
         /// The size of the boot disk in GB attached to this instance,
         /// up to a maximum of 64000 GB (64 TB). The minimum recommended value is 100 GB.
         /// If not specified, this defaults to 100.
         #[builder(into, default)]
-        pub boot_disk_size_gb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub boot_disk_size_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Possible disk types for notebook instances.
         /// Possible values are: `DISK_TYPE_UNSPECIFIED`, `PD_STANDARD`, `PD_SSD`, `PD_BALANCED`, `PD_EXTREME`.
         #[builder(into, default)]
-        pub boot_disk_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub boot_disk_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use a container image to start the notebook instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub container_image: pulumi_gestalt_rust::InputOrOutput<
+        pub container_image: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::InstanceContainerImage>,
         >,
         /// Instance creation time
         #[builder(into, default)]
-        pub create_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub create_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify a custom Cloud Storage path where the GPU driver is stored.
         /// If not specified, we'll automatically choose from official GPU drivers.
         #[builder(into, default)]
-        pub custom_gpu_driver_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_gpu_driver_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The size of the data disk in GB attached to this instance,
         /// up to a maximum of 64000 GB (64 TB).
         /// You can choose the size of the data disk based on how big your notebooks and data are.
         /// If not specified, this defaults to 100.
         #[builder(into, default)]
-        pub data_disk_size_gb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub data_disk_size_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Possible disk types for notebook instances.
         /// Possible values are: `DISK_TYPE_UNSPECIFIED`, `PD_STANDARD`, `PD_SSD`, `PD_BALANCED`, `PD_EXTREME`.
         #[builder(into, default)]
-        pub data_disk_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_disk_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Desired state of the Notebook Instance. Set this field to `ACTIVE` to start the Instance, and `STOPPED` to stop the Instance.
         #[builder(into, default)]
-        pub desired_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub desired_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Disk encryption method used on the boot and data disks, defaults to GMEK.
         /// Possible values are: `DISK_ENCRYPTION_UNSPECIFIED`, `GMEK`, `CMEK`.
         #[builder(into, default)]
-        pub disk_encryption: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_encryption: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the end user authorizes Google Cloud to install GPU driver
         /// on this instance. If this field is empty or set to false, the GPU driver
         /// won't be installed. Only applicable to instances with GPUs.
         #[builder(into, default)]
-        pub install_gpu_driver: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub install_gpu_driver: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The list of owners of this instance after creation.
         /// Format: alias@example.com.
         /// Currently supports one owner only.
         /// If not specified, all of the service account users of
         /// your VM instance's service account can use the instance.
         #[builder(into, default)]
-        pub instance_owners: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub instance_owners: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The KMS key used to encrypt the disks, only applicable if diskEncryption is CMEK.
         /// Format: projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}
         #[builder(into, default)]
-        pub kms_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels to apply to this instance. These can be later modified by the setLabels method.
         /// An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A reference to the zone where the machine resides.
@@ -265,49 +265,49 @@ pub mod instance {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// A reference to a machine type which defines VM kind.
         #[builder(into)]
-        pub machine_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub machine_type: pulumi_gestalt_rust::Input<String>,
         /// Custom metadata to apply to this instance.
         /// An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name specified for the Notebook instance.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the VPC that this instance is in.
         /// Format: projects/{project_id}/global/networks/{network_id}
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of vNIC driver.
         /// Possible values are: `UNSPECIFIED_NIC_TYPE`, `VIRTIO_NET`, `GVNIC`.
         #[builder(into, default)]
-        pub nic_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nic_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The notebook instance will not register with the proxy..
         #[builder(into, default)]
-        pub no_proxy_access: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub no_proxy_access: pulumi_gestalt_rust::Input<Option<bool>>,
         /// No public IP will be assigned to this instance.
         #[builder(into, default)]
-        pub no_public_ip: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub no_public_ip: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true, the data disk will not be auto deleted when deleting the instance.
         #[builder(into, default)]
-        pub no_remove_data_disk: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub no_remove_data_disk: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Path to a Bash script that automatically runs after a
         /// notebook instance fully boots up. The path must be a URL
         /// or Cloud Storage path (gs://path-to-file/file-name).
         #[builder(into, default)]
-        pub post_startup_script: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub post_startup_script: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Reservation Affinity for consuming Zonal reservation.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub reservation_affinity: pulumi_gestalt_rust::InputOrOutput<
+        pub reservation_affinity: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::InstanceReservationAffinity>,
         >,
         /// The service account on this instance, giving access to other
@@ -316,36 +316,36 @@ pub mod instance {
         /// permission to use the instance. If not specified,
         /// the Compute Engine default service account is used.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The URIs of service account scopes to be included in Compute Engine instances.
         /// If not specified, the following scopes are defined:
         /// - https://www.googleapis.com/auth/cloud-platform
         /// - https://www.googleapis.com/auth/userinfo.email
         #[builder(into, default)]
-        pub service_account_scopes: pulumi_gestalt_rust::InputOrOutput<
+        pub service_account_scopes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A set of Shielded Instance options. Check [Images using supported Shielded VM features]
         /// Not all combinations are valid
         /// Structure is documented below.
         #[builder(into, default)]
-        pub shielded_instance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub shielded_instance_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::InstanceShieldedInstanceConfig>,
         >,
         /// The name of the subnet that this instance is in.
         /// Format: projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}
         #[builder(into, default)]
-        pub subnet: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Compute Engine tags to add to instance.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Instance update time.
         #[builder(into, default)]
-        pub update_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub update_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use a Compute Engine VM image to start the notebook instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub vm_image: pulumi_gestalt_rust::InputOrOutput<
+        pub vm_image: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::InstanceVmImage>,
         >,
     }

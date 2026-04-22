@@ -111,24 +111,24 @@ pub mod region_commitment {
         /// If the field is set to true, the commitment will be automatically renewed for either
         /// one or three years according to the terms of the existing commitment.
         #[builder(into, default)]
-        pub auto_renew: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_renew: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The category of the commitment. Category MACHINE specifies commitments composed of
         /// machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE
         /// specifies commitments composed of software licenses, listed in licenseResources.
         /// Note that only MACHINE commitments should have a Type specified.
         /// Possible values are: `LICENSE`, `MACHINE`.
         #[builder(into, default)]
-        pub category: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub category: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the already existing reservations to attach to the Commitment.
         #[builder(into, default)]
-        pub existing_reservations: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub existing_reservations: pulumi_gestalt_rust::Input<Option<String>>,
         /// The license specification required as part of a license commitment.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub license_resource: pulumi_gestalt_rust::InputOrOutput<
+        pub license_resource: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionCommitmentLicenseResource>,
         >,
         /// Name of the resource. The name must be 1-63 characters long and match
@@ -137,7 +137,7 @@ pub mod region_commitment {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The plan for this commitment, which determines duration and discount rate.
         /// The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
         /// Possible values are: `TWELVE_MONTH`, `THIRTY_SIX_MONTH`.
@@ -145,19 +145,19 @@ pub mod region_commitment {
         ///
         /// - - -
         #[builder(into)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plan: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the region where this commitment may be used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of commitment amounts for particular resources.
         /// Note that VCPU and MEMORY resource commitments must occur together.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub resources: pulumi_gestalt_rust::InputOrOutput<
+        pub resources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::RegionCommitmentResource>>,
         >,
         /// The type of commitment, which affects the discount rate and the eligible resources.
@@ -166,7 +166,7 @@ pub mod region_commitment {
         /// `GENERAL_PURPOSE_T2D`, `GENERAL_PURPOSE_C3`, `COMPUTE_OPTIMIZED_C2`, `COMPUTE_OPTIMIZED_C2D` and
         /// `GRAPHICS_OPTIMIZED_G2`
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RegionCommitmentResult {

@@ -40,21 +40,21 @@ pub mod kx_scaling_group {
     pub struct KxScalingGroupArgs {
         /// The availability zone identifiers for the requested regions.
         #[builder(into)]
-        pub availability_zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub availability_zone_id: pulumi_gestalt_rust::Input<String>,
         /// A unique identifier for the kdb environment, where you want to create the scaling group.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub host_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_type: pulumi_gestalt_rust::Input<String>,
         /// Unique name for the scaling group that you want to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level. You can add up to 50 tags to a scaling group.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

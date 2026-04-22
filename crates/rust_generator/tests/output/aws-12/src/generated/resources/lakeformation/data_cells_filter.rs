@@ -50,11 +50,11 @@ pub mod data_cells_filter {
     pub struct DataCellsFilterArgs {
         /// Information about the data cells filter. See Table Data below for details.
         #[builder(into, default)]
-        pub table_data: pulumi_gestalt_rust::InputOrOutput<
+        pub table_data: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::DataCellsFilterTableData>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::DataCellsFilterTimeouts>,
         >,
     }

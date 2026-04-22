@@ -58,24 +58,24 @@ pub mod fleet {
     pub struct FleetArgs {
         /// The ARN of the Amazon Kinesis data stream that receives the audit events. Kinesis data stream name must begin with `"AmazonWorkLink-"`.
         #[builder(into, default)]
-        pub audit_stream_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub audit_stream_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.
         #[builder(into, default)]
-        pub device_ca_certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub device_ca_certificate: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the fleet.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Provide this to allow manage the identity provider configuration for the fleet. Fields documented below.
         #[builder(into, default)]
-        pub identity_provider: pulumi_gestalt_rust::InputOrOutput<
+        pub identity_provider: pulumi_gestalt_rust::Input<
             Option<super::super::types::worklink::FleetIdentityProvider>,
         >,
         /// A region-unique name for the AMI.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Provide this to allow manage the company network configuration for the fleet. Fields documented below.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<
+        pub network: pulumi_gestalt_rust::Input<
             Option<super::super::types::worklink::FleetNetwork>,
         >,
         /// The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. Defaults to `true`.
@@ -84,7 +84,7 @@ pub mod fleet {
         ///
         /// > **NOTE:** `network` is cannot removed without force recreating.
         #[builder(into, default)]
-        pub optimize_for_end_user_location: pulumi_gestalt_rust::InputOrOutput<
+        pub optimize_for_end_user_location: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

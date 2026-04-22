@@ -63,20 +63,20 @@ pub mod prefix_list_reference {
     pub struct PrefixListReferenceArgs {
         /// Indicates whether to drop traffic that matches the Prefix List. Defaults to `false`.
         #[builder(into, default)]
-        pub blackhole: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub blackhole: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Identifier of EC2 Prefix List.
         #[builder(into)]
-        pub prefix_list_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub prefix_list_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Transit Gateway Attachment.
         #[builder(into, default)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Identifier of EC2 Transit Gateway Route Table.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub transit_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PrefixListReferenceResult {

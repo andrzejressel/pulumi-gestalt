@@ -47,31 +47,31 @@ pub mod game_session_queue {
     pub struct GameSessionQueueArgs {
         /// Information to be added to all events that are related to this game session queue.
         #[builder(into, default)]
-        pub custom_event_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_event_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of fleet/alias ARNs used by session queue for placing game sessions.
         #[builder(into, default)]
-        pub destinations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub destinations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the session queue.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An SNS topic ARN that is set up to receive game session placement notifications.
         #[builder(into, default)]
-        pub notification_target: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notification_target: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more policies used to choose fleet based on player latency. See below.
         #[builder(into, default)]
-        pub player_latency_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub player_latency_policies: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::gamelift::GameSessionQueuePlayerLatencyPolicy>,
             >,
         >,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Maximum time a game session request can remain in the queue.
         #[builder(into, default)]
-        pub timeout_in_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct GameSessionQueueResult {

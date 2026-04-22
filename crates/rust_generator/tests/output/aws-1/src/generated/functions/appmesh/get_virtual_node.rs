@@ -10,16 +10,16 @@ pub mod get_virtual_node {
     pub struct GetVirtualNodeArgs {
         /// Name of the service mesh in which the virtual node exists.
         #[builder(into)]
-        pub mesh_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mesh_name: pulumi_gestalt_rust::Input<String>,
         /// AWS account ID of the service mesh's owner.
         #[builder(into, default)]
-        pub mesh_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mesh_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the virtual node.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

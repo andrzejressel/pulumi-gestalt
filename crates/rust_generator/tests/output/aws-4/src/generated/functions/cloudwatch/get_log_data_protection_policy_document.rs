@@ -9,23 +9,23 @@ pub mod get_log_data_protection_policy_document {
     #[allow(dead_code)]
     pub struct GetLogDataProtectionPolicyDocumentArgs {
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the data protection policy document.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Configures the data protection policy.
         ///
         /// > There must be exactly two statements: the first with an `audit` operation, and the second with a `deidentify` operation.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub statements: pulumi_gestalt_rust::InputOrOutput<
+        pub statements: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::super::types::cloudwatch::GetLogDataProtectionPolicyDocumentStatement,
             >,
         >,
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetLogDataProtectionPolicyDocumentResult {

@@ -10,10 +10,10 @@ pub mod get_linux_function_app {
     pub struct GetLinuxFunctionAppArgs {
         /// The name which should be used for this Linux Function App.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Linux Function App should exist.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetLinuxFunctionAppResult {

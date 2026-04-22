@@ -38,46 +38,46 @@ pub mod smsvoicev_2_phone_number {
     pub struct Smsvoicev2PhoneNumberArgs {
         /// By default this is set to `false`. When set to true the phone number can’t be deleted.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.
         #[builder(into)]
-        pub iso_country_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iso_country_code: pulumi_gestalt_rust::Input<String>,
         /// The type of message. Valid values are `TRANSACTIONAL` for messages that are critical or time-sensitive and `PROMOTIONAL` for messages that aren’t critical or time-sensitive.
         #[builder(into)]
-        pub message_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub message_type: pulumi_gestalt_rust::Input<String>,
         /// Describes if the origination identity can be used for text messages, voice calls or both. valid values are `SMS` and `VOICE`.
         #[builder(into)]
-        pub number_capabilities: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub number_capabilities: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The type of phone number to request. Possible values are `LONG_CODE`, `TOLL_FREE`, `TEN_DLC`, or `SIMULATOR`.
         #[builder(into)]
-        pub number_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub number_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the opt-out list to associate with the phone number.
         #[builder(into, default)]
-        pub opt_out_list_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub opt_out_list_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use this field to attach your phone number for an external registration process.
         #[builder(into, default)]
-        pub registration_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub registration_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// When set to `false` an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the opt-out list. When set to true you’re responsible for responding to HELP and STOP requests. You’re also responsible for tracking and honoring opt-out request.
         #[builder(into, default)]
-        pub self_managed_opt_outs_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub self_managed_opt_outs_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::pinpoint::Smsvoicev2PhoneNumberTimeouts>,
         >,
         /// The Amazon Resource Name (ARN) of the two way channel.
         #[builder(into, default)]
-        pub two_way_channel_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub two_way_channel_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// By default this is set to `false`. When set to `true` you can receive incoming text messages from your end recipients.
         #[builder(into, default)]
-        pub two_way_channel_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub two_way_channel_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct Smsvoicev2PhoneNumberResult {

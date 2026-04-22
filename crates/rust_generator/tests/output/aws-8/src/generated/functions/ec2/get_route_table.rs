@@ -10,26 +10,26 @@ pub mod get_route_table {
     pub struct GetRouteTableArgs {
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetRouteTableFilter>>,
         >,
         /// ID of an Internet Gateway or Virtual Private Gateway which is connected to the Route Table (not exported if not passed as a parameter).
         #[builder(into, default)]
-        pub gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the specific Route Table to retrieve.
         #[builder(into, default)]
-        pub route_table_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub route_table_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of a Subnet which is connected to the Route Table (not exported if not passed as a parameter).
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match a pair on the desired Route Table.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the VPC that the desired Route Table belongs to.
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRouteTableResult {

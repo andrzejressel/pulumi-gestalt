@@ -102,14 +102,14 @@ pub mod windows_virtual_machine_scale_set {
     pub struct WindowsVirtualMachineScaleSetArgs {
         /// An `additional_capabilities` block as defined below.
         #[builder(into, default)]
-        pub additional_capabilities: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_capabilities: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::WindowsVirtualMachineScaleSetAdditionalCapabilities,
             >,
         >,
         /// One or more `additional_unattend_content` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub additional_unattend_contents: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_unattend_contents: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::compute::WindowsVirtualMachineScaleSetAdditionalUnattendContent,
@@ -118,29 +118,29 @@ pub mod windows_virtual_machine_scale_set {
         >,
         /// The Password which should be used for the local-administrator on this Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub admin_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_password: pulumi_gestalt_rust::Input<String>,
         /// The username of the local administrator on each Virtual Machine Scale Set instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub admin_username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_username: pulumi_gestalt_rust::Input<String>,
         /// An `automatic_instance_repair` block as defined below. To enable the automatic instance repair, this Virtual Machine Scale Set must have a valid `health_probe_id` or an [Application Health Extension](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension).
         ///
         /// > **Note:** For more information about Automatic Instance Repair, please refer to [this doc](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-instance-repairs).
         #[builder(into, default)]
-        pub automatic_instance_repair: pulumi_gestalt_rust::InputOrOutput<
+        pub automatic_instance_repair: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::WindowsVirtualMachineScaleSetAutomaticInstanceRepair,
             >,
         >,
         /// An `automatic_os_upgrade_policy` block as defined below. This can only be specified when `upgrade_mode` is set to either `Automatic` or `Rolling`.
         #[builder(into, default)]
-        pub automatic_os_upgrade_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub automatic_os_upgrade_policy: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::WindowsVirtualMachineScaleSetAutomaticOsUpgradePolicy,
             >,
         >,
         /// A `boot_diagnostics` block as defined below.
         #[builder(into, default)]
-        pub boot_diagnostics: pulumi_gestalt_rust::InputOrOutput<
+        pub boot_diagnostics: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::WindowsVirtualMachineScaleSetBootDiagnostics,
             >,
@@ -151,63 +151,63 @@ pub mod windows_virtual_machine_scale_set {
         ///
         /// > **Note:** `single_placement_group` must be set to `false` when `capacity_reservation_group_id` is specified.
         #[builder(into, default)]
-        pub capacity_reservation_group_id: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The prefix which should be used for the name of the Virtual Machines in this Scale Set. If unspecified this defaults to the value for the `name` field. If the value of the `name` field is not a valid `computer_name_prefix`, then you must specify `computer_name_prefix`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub computer_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub computer_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Base64-Encoded Custom Data which should be used for this Virtual Machine Scale Set.
         ///
         /// > **Note:** When Custom Data has been configured, it's not possible to remove it without tainting the Virtual Machine Scale Set, due to a limitation of the Azure API.
         #[builder(into, default)]
-        pub custom_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `data_disk` blocks as defined below.
         #[builder(into, default)]
-        pub data_disks: pulumi_gestalt_rust::InputOrOutput<
+        pub data_disks: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::compute::WindowsVirtualMachineScaleSetDataDisk>,
             >,
         >,
         /// Should Virtual Machine Extensions be run on Overprovisioned Virtual Machines in the Scale Set? Defaults to `false`.
         #[builder(into, default)]
-        pub do_not_run_extensions_on_overprovisioned_machines: pulumi_gestalt_rust::InputOrOutput<
+        pub do_not_run_extensions_on_overprovisioned_machines: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the Edge Zone within the Azure Region where this Windows Virtual Machine Scale Set should exist. Changing this forces a new Windows Virtual Machine Scale Set to be created.
         #[builder(into, default)]
-        pub edge_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edge_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Are automatic updates enabled for this Virtual Machine? Defaults to `true`.
         #[builder(into, default)]
-        pub enable_automatic_updates: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_automatic_updates: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should all of the disks (including the temp disk) attached to this Virtual Machine be encrypted by enabling Encryption at Host?
         #[builder(into, default)]
-        pub encryption_at_host_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub encryption_at_host_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the eviction policy for Virtual Machines in this Scale Set. Possible values are `Deallocate` and `Delete`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** This can only be configured when `priority` is set to `Spot`.
         #[builder(into, default)]
-        pub eviction_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eviction_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should extension operations be allowed on the Virtual Machine Scale Set? Possible values are `true` or `false`. Defaults to `true`. Changing this forces a new Windows Virtual Machine Scale Set to be created.
         ///
         /// > **Note:** `extension_operations_enabled` may only be set to `false` if there are no extensions defined in the `extension` field.
         #[builder(into, default)]
-        pub extension_operations_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub extension_operations_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// One or more `extension` blocks as defined below
         #[builder(into, default)]
-        pub extensions: pulumi_gestalt_rust::InputOrOutput<
+        pub extensions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::compute::WindowsVirtualMachineScaleSetExtension>,
             >,
         >,
         /// Specifies the duration allocated for all extensions to start. The time duration should be between `15` minutes and `120` minutes (inclusive) and should be specified in ISO 8601 format. Defaults to `PT1H30M`.
         #[builder(into, default)]
-        pub extensions_time_budget: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub extensions_time_budget: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `gallery_application` blocks as defined below.
         #[builder(into, default)]
-        pub gallery_applications: pulumi_gestalt_rust::InputOrOutput<
+        pub gallery_applications: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::compute::WindowsVirtualMachineScaleSetGalleryApplication,
@@ -216,150 +216,150 @@ pub mod windows_virtual_machine_scale_set {
         >,
         /// The ID of a Load Balancer Probe which should be used to determine the health of an instance. This is Required and can only be specified when `upgrade_mode` is set to `Automatic` or `Rolling`.
         #[builder(into, default)]
-        pub health_probe_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub health_probe_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the dedicated host group that the virtual machine scale set resides in. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub host_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::WindowsVirtualMachineScaleSetIdentity>,
         >,
         /// The number of Virtual Machines in the Scale Set.
         ///
         /// > **NOTE:** If you're using AutoScaling, you may wish to use [`Ignore Changes` functionality](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) to ignore changes to this field.
         #[builder(into)]
-        pub instances: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub instances: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the type of on-premise license (also known as [Azure Hybrid Use Benefit](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing)) which should be used for this Virtual Machine Scale Set. Possible values are `None`, `Windows_Client` and `Windows_Server`.
         #[builder(into, default)]
-        pub license_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub license_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure location where the Windows Virtual Machine Scale Set should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum price you're willing to pay for each Virtual Machine in this Scale Set, in US Dollars; which must be greater than the current spot price. If this bid price falls below the current spot price the Virtual Machines in the Scale Set will be evicted using the `eviction_policy`. Defaults to `-1`, which means that each Virtual Machine in the Scale Set should not be evicted for price reasons.
         ///
         /// > **Note:** This can only be configured when `priority` is set to `Spot`.
         #[builder(into, default)]
-        pub max_bid_price: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub max_bid_price: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The name of the Windows Virtual Machine Scale Set. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `network_interface` blocks as defined below.
         #[builder(into)]
-        pub network_interfaces: pulumi_gestalt_rust::InputOrOutput<
+        pub network_interfaces: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::compute::WindowsVirtualMachineScaleSetNetworkInterface,
             >,
         >,
         /// An `os_disk` block as defined below.
         #[builder(into)]
-        pub os_disk: pulumi_gestalt_rust::InputOrOutput<
+        pub os_disk: pulumi_gestalt_rust::Input<
             super::super::types::compute::WindowsVirtualMachineScaleSetOsDisk,
         >,
         /// Should Azure over-provision Virtual Machines in this Scale Set? This means that multiple Virtual Machines will be provisioned and Azure will keep the instances which become available first - which improves provisioning success rates and improves deployment time. You're not billed for these over-provisioned VM's and they don't count towards the Subscription Quota. Defaults to `true`.
         #[builder(into, default)]
-        pub overprovision: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub overprovision: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `plan` block as defined below. Changing this forces a new resource to be created.
         ///
         /// > **Note:** When using an image from Azure Marketplace a `plan` must be specified.
         #[builder(into, default)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<
+        pub plan: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::WindowsVirtualMachineScaleSetPlan>,
         >,
         /// Specifies the number of fault domains that are used by this Linux Virtual Machine Scale Set. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub platform_fault_domain_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub platform_fault_domain_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Priority of this Virtual Machine Scale Set. Possible values are `Regular` and `Spot`. Defaults to `Regular`. Changing this value forces a new resource.
         ///
         /// > **Note:** When `priority` is set to `Spot` an `eviction_policy` must be specified.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Azure VM Agent be provisioned on each Virtual Machine in the Scale Set? Defaults to `true`. Changing this value forces a new resource to be created.
         #[builder(into, default)]
-        pub provision_vm_agent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub provision_vm_agent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Proximity Placement Group in which the Virtual Machine Scale Set should be assigned to. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::InputOrOutput<
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the Resource Group in which the Windows Virtual Machine Scale Set should be exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `rolling_upgrade_policy` block as defined below. This is Required and can only be specified when `upgrade_mode` is set to `Automatic` or `Rolling`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub rolling_upgrade_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub rolling_upgrade_policy: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::WindowsVirtualMachineScaleSetRollingUpgradePolicy,
             >,
         >,
         /// A `scale_in` block as defined below.
         #[builder(into, default)]
-        pub scale_in: pulumi_gestalt_rust::InputOrOutput<
+        pub scale_in: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::WindowsVirtualMachineScaleSetScaleIn>,
         >,
         /// One or more `secret` blocks as defined below.
         #[builder(into, default)]
-        pub secrets: pulumi_gestalt_rust::InputOrOutput<
+        pub secrets: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::compute::WindowsVirtualMachineScaleSetSecret>,
             >,
         >,
         /// Specifies if Secure Boot and Trusted Launch is enabled for the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub secure_boot_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub secure_boot_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should this Virtual Machine Scale Set be limited to a Single Placement Group, which means the number of instances will be capped at 100 Virtual Machines. Defaults to `true`.
         #[builder(into, default)]
-        pub single_placement_group: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub single_placement_group: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Virtual Machine SKU for the Scale Set, such as `Standard_F2`.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// The ID of an Image which each Virtual Machine in this Scale Set should be based on. Possible Image ID types include `Image ID`, `Shared Image ID`, `Shared Image Version ID`, `Community Gallery Image ID`, `Community Gallery Image Version ID`, `Shared Gallery Image ID` and `Shared Gallery Image Version ID`.
         ///
         /// > **Note:** One of either `source_image_id` or `source_image_reference` must be set.
         #[builder(into, default)]
-        pub source_image_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_image_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `source_image_reference` block as defined below.
         ///
         /// > **Note:** One of either `source_image_id` or `source_image_reference` must be set.
         #[builder(into, default)]
-        pub source_image_reference: pulumi_gestalt_rust::InputOrOutput<
+        pub source_image_reference: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::WindowsVirtualMachineScaleSetSourceImageReference,
             >,
         >,
         /// A `spot_restore` block as defined below.
         #[builder(into, default)]
-        pub spot_restore: pulumi_gestalt_rust::InputOrOutput<
+        pub spot_restore: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::WindowsVirtualMachineScaleSetSpotRestore,
             >,
         >,
         /// A mapping of tags which should be assigned to this Virtual Machine Scale Set.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `termination_notification` block as defined below.
         #[builder(into, default)]
-        pub termination_notification: pulumi_gestalt_rust::InputOrOutput<
+        pub termination_notification: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::WindowsVirtualMachineScaleSetTerminationNotification,
             >,
         >,
         /// Specifies the time zone of the virtual machine, [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
         #[builder(into, default)]
-        pub timezone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub timezone: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub upgrade_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub upgrade_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Base64-Encoded User Data which should be used for this Virtual Machine Scale Set.
         #[builder(into, default)]
-        pub user_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if vTPM (Virtual Trusted Platform Module) and Trusted Launch is enabled for the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub vtpm_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub vtpm_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `winrm_listener` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub winrm_listeners: pulumi_gestalt_rust::InputOrOutput<
+        pub winrm_listeners: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::compute::WindowsVirtualMachineScaleSetWinrmListener,
@@ -370,12 +370,12 @@ pub mod windows_virtual_machine_scale_set {
         ///
         /// > **Note:** This can only be set to `true` when one or more `zones` are configured.
         #[builder(into, default)]
-        pub zone_balance: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_balance: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies a list of Availability Zones in which this Windows Virtual Machine Scale Set should be located.
         ///
         /// > **Note:** Updating `zones` to remove an existing zone forces a new Virtual Machine Scale Set to be created.
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct WindowsVirtualMachineScaleSetResult {

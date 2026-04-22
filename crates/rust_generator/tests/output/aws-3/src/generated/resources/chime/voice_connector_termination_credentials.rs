@@ -60,14 +60,14 @@ pub mod voice_connector_termination_credentials {
     pub struct VoiceConnectorTerminationCredentialsArgs {
         /// List of termination SIP credentials.
         #[builder(into)]
-        pub credentials: pulumi_gestalt_rust::InputOrOutput<
+        pub credentials: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::chime::VoiceConnectorTerminationCredentialsCredential,
             >,
         >,
         /// Amazon Chime Voice Connector ID.
         #[builder(into)]
-        pub voice_connector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub voice_connector_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VoiceConnectorTerminationCredentialsResult {

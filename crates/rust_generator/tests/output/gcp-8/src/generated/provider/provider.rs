@@ -12,525 +12,525 @@
 #[allow(dead_code)]
 pub struct ProviderArgs {
     #[builder(into, default)]
-    pub access_approval_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub access_approval_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub access_context_manager_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub access_context_manager_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub access_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub access_token: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub active_directory_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub active_directory_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub add_pulumi_attribution_label: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub add_pulumi_attribution_label: pulumi_gestalt_rust::Input<Option<bool>>,
     #[builder(into, default)]
-    pub alloydb_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub alloydb_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub api_gateway_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub api_gateway_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub apigee_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub apigee_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub apikeys_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub apikeys_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub app_engine_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub app_engine_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub apphub_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub apphub_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub artifact_registry_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub artifact_registry_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub assured_workloads_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub assured_workloads_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub backup_dr_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub backup_dr_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub batching: pulumi_gestalt_rust::InputOrOutput<
+    pub batching: pulumi_gestalt_rust::Input<
         Option<super::types::ProviderBatching>,
     >,
     #[builder(into, default)]
-    pub beyondcorp_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub beyondcorp_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub big_query_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub big_query_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub biglake_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub biglake_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub bigquery_analytics_hub_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub bigquery_analytics_hub_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub bigquery_connection_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub bigquery_connection_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub bigquery_data_transfer_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub bigquery_data_transfer_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub bigquery_datapolicy_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub bigquery_datapolicy_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub bigquery_reservation_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub bigquery_reservation_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub bigtable_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub bigtable_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub billing_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub billing_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub billing_project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub billing_project: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub binary_authorization_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub binary_authorization_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub blockchain_node_engine_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub blockchain_node_engine_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub certificate_manager_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub certificate_manager_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub cloud_asset_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cloud_asset_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub cloud_billing_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub cloud_billing_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub cloud_build_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cloud_build_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub cloud_build_worker_pool_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub cloud_build_worker_pool_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub cloud_functions_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub cloud_functions_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub cloud_identity_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub cloud_identity_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub cloud_ids_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cloud_ids_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub cloud_quotas_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cloud_quotas_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub cloud_resource_manager_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub cloud_resource_manager_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub cloud_run_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cloud_run_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub cloud_run_v2_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cloud_run_v2_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub cloud_scheduler_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub cloud_scheduler_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub cloud_tasks_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cloud_tasks_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub cloudbuildv2_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub cloudbuildv2_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub clouddeploy_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub clouddeploy_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub clouddomains_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub clouddomains_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub cloudfunctions2_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub cloudfunctions2_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub composer_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub composer_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub compute_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub compute_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub container_analysis_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub container_analysis_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub container_attached_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub container_attached_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub container_aws_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub container_aws_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub container_azure_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub container_azure_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub container_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub container_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub core_billing_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub core_billing_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub credentials: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub credentials: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub data_catalog_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub data_catalog_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub data_fusion_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub data_fusion_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub data_loss_prevention_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub data_loss_prevention_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub data_pipeline_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub data_pipeline_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub database_migration_service_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub database_migration_service_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub dataflow_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub dataflow_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub dataform_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub dataform_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub dataplex_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub dataplex_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub dataproc_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub dataproc_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub dataproc_gdc_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub dataproc_gdc_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub dataproc_metastore_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub dataproc_metastore_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub datastream_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub datastream_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub default_labels: pulumi_gestalt_rust::InputOrOutput<
+    pub default_labels: pulumi_gestalt_rust::Input<
         Option<std::collections::HashMap<String, String>>,
     >,
     #[builder(into, default)]
-    pub deployment_manager_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub deployment_manager_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub developer_connect_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub developer_connect_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub dialogflow_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub dialogflow_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub dialogflow_cx_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub dialogflow_cx_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub disable_google_partner_name: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub disable_google_partner_name: pulumi_gestalt_rust::Input<Option<bool>>,
     #[builder(into, default)]
-    pub discovery_engine_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub discovery_engine_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub dns_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub dns_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub document_ai_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub document_ai_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub document_ai_warehouse_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub document_ai_warehouse_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub edgecontainer_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub edgecontainer_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub edgenetwork_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub edgenetwork_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub essential_contacts_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub essential_contacts_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub eventarc_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub eventarc_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub filestore_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub filestore_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub firebase_app_check_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub firebase_app_check_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub firebase_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub firebase_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub firebase_database_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub firebase_database_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub firebase_extensions_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub firebase_extensions_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub firebase_hosting_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub firebase_hosting_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub firebase_storage_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub firebase_storage_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub firebaserules_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub firebaserules_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub firestore_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub firestore_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub gemini_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub gemini_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub gke_backup_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub gke_backup_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub gke_hub2_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub gke_hub2_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub gke_hub_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub gke_hub_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub gkehub_feature_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub gkehub_feature_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub gkeonprem_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub gkeonprem_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub google_partner_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub google_partner_name: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub healthcare_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub healthcare_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub iam2_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub iam2_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub iam3_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub iam3_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub iam_beta_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub iam_beta_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub iam_credentials_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub iam_credentials_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub iam_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub iam_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub iam_workforce_pool_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub iam_workforce_pool_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub iap_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub iap_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub identity_platform_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub identity_platform_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub impersonate_service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub impersonate_service_account: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub impersonate_service_account_delegates: pulumi_gestalt_rust::InputOrOutput<
+    pub impersonate_service_account_delegates: pulumi_gestalt_rust::Input<
         Option<Vec<String>>,
     >,
     #[builder(into, default)]
-    pub integration_connectors_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub integration_connectors_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub integrations_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub integrations_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub kms_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub kms_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub logging_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub logging_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub looker_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub looker_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub managed_kafka_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub managed_kafka_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub memcache_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub memcache_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub memorystore_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub memorystore_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub migration_center_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub migration_center_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub ml_engine_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub ml_engine_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub monitoring_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub monitoring_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub netapp_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub netapp_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub network_connectivity_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub network_connectivity_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub network_management_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub network_management_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub network_security_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub network_security_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub network_services_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub network_services_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub notebooks_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub notebooks_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub oracle_database_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub oracle_database_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub org_policy_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub org_policy_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub os_config_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub os_config_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub os_login_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub os_login_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub parallelstore_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub parallelstore_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub privateca_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub privateca_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub privileged_access_manager_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub privileged_access_manager_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub project: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub public_ca_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub public_ca_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub pubsub_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub pubsub_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub pubsub_lite_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub pubsub_lite_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub pulumi_attribution_label_addition_strategy: pulumi_gestalt_rust::InputOrOutput<
+    pub pulumi_attribution_label_addition_strategy: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub recaptcha_enterprise_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub recaptcha_enterprise_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub redis_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub redis_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub region: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub request_reason: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub request_reason: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub request_timeout: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub request_timeout: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub resource_manager_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub resource_manager_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub resource_manager_v3_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub resource_manager_v3_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub runtime_config_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub runtime_config_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub runtimeconfig_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub runtimeconfig_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub scopes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+    pub scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     #[builder(into, default)]
-    pub secret_manager_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub secret_manager_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub secret_manager_regional_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub secret_manager_regional_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub secure_source_manager_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub secure_source_manager_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub security_center_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub security_center_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub security_center_management_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub security_center_management_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub security_center_v2_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub security_center_v2_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub security_scanner_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub security_scanner_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub securityposture_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub securityposture_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub service_directory_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub service_directory_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub service_management_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub service_management_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub service_networking_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub service_networking_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub service_usage_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub service_usage_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub site_verification_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub site_verification_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub source_repo_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub source_repo_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub spanner_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub spanner_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub sql_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub sql_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub storage_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub storage_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub storage_insights_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub storage_insights_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub storage_transfer_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub storage_transfer_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub tags_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub tags_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub tags_location_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<
+    pub tags_location_custom_endpoint: pulumi_gestalt_rust::Input<
         Option<String>,
     >,
     #[builder(into, default)]
-    pub tpu_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub tpu_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub tpu_v2_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub tpu_v2_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub transcoder_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub transcoder_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub universe_domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub universe_domain: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub user_project_override: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub user_project_override: pulumi_gestalt_rust::Input<Option<bool>>,
     #[builder(into, default)]
-    pub vertex_ai_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub vertex_ai_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub vmwareengine_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub vmwareengine_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub vpc_access_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub vpc_access_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub workbench_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub workbench_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub workflows_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub workflows_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub workstations_custom_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub workstations_custom_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub zone: pulumi_gestalt_rust::Input<Option<String>>,
 }
 #[allow(dead_code)]
 pub struct ProviderResult {

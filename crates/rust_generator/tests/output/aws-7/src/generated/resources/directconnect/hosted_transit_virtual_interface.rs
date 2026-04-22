@@ -41,34 +41,34 @@ pub mod hosted_transit_virtual_interface {
     pub struct HostedTransitVirtualInterfaceArgs {
         /// The address family for the BGP peer. `ipv4 ` or `ipv6`.
         #[builder(into)]
-        pub address_family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address_family: pulumi_gestalt_rust::Input<String>,
         /// The IPv4 CIDR address to use to send traffic to Amazon. Required for IPv4 BGP peers.
         #[builder(into, default)]
-        pub amazon_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub amazon_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
         #[builder(into)]
-        pub bgp_asn: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub bgp_asn: pulumi_gestalt_rust::Input<i32>,
         /// The authentication key for BGP configuration.
         #[builder(into, default)]
-        pub bgp_auth_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bgp_auth_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Direct Connect connection (or LAG) on which to create the virtual interface.
         #[builder(into)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_id: pulumi_gestalt_rust::Input<String>,
         /// The IPv4 CIDR destination address to which Amazon should send traffic. Required for IPv4 BGP peers.
         #[builder(into, default)]
-        pub customer_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum transmission unit (MTU) is the size, in bytes, of the largest permissible packet that can be passed over the connection. The MTU of a virtual transit interface can be either `1500` or `8500` (jumbo frames). Default is `1500`.
         #[builder(into, default)]
-        pub mtu: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub mtu: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name for the virtual interface.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The AWS account that will own the new virtual interface.
         #[builder(into)]
-        pub owner_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owner_account_id: pulumi_gestalt_rust::Input<String>,
         /// The VLAN ID.
         #[builder(into)]
-        pub vlan: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub vlan: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct HostedTransitVirtualInterfaceResult {

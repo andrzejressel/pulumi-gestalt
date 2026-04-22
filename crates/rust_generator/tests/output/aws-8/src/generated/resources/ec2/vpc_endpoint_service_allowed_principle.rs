@@ -36,10 +36,10 @@ pub mod vpc_endpoint_service_allowed_principle {
     pub struct VpcEndpointServiceAllowedPrincipleArgs {
         /// The ARN of the principal to allow permissions.
         #[builder(into)]
-        pub principal_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_arn: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPC endpoint service to allow permission.
         #[builder(into)]
-        pub vpc_endpoint_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_endpoint_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcEndpointServiceAllowedPrincipleResult {

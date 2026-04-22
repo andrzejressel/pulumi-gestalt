@@ -110,44 +110,44 @@ pub mod assignment {
     pub struct AssignmentArgs {
         /// An `identity` block as defined below.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             super::super::types::blueprint::AssignmentIdentity,
         >,
         /// The Azure location of the Assignment. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// a list of up to 200 actions that are permitted to bypass the locks applied by the Blueprint.
         #[builder(into, default)]
-        pub lock_exclude_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub lock_exclude_actions: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// a list of up to 5 Principal IDs that are permitted to bypass the locks applied by the Blueprint.
         #[builder(into, default)]
-        pub lock_exclude_principals: pulumi_gestalt_rust::InputOrOutput<
+        pub lock_exclude_principals: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The locking mode of the Blueprint Assignment. One of `None` (Default), `AllResourcesReadOnly`, or `AllResourcesDoNotDelete`. Defaults to `None`.
         #[builder(into, default)]
-        pub lock_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lock_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Blueprint Assignment. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// a JSON string to supply Blueprint Assignment parameter values.
         ///
         /// > **NOTE:** Improperly formatted JSON, or missing values required by a Blueprint will cause the assignment to fail.
         #[builder(into, default)]
-        pub parameter_values: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameter_values: pulumi_gestalt_rust::Input<Option<String>>,
         /// a JSON string to supply the Blueprint Resource Group information.
         ///
         /// > **NOTE:** Improperly formatted JSON, or missing values required by a Blueprint will cause the assignment to fail.
         #[builder(into, default)]
-        pub resource_groups: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_groups: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Subscription ID the Blueprint Published Version is to be applied to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_subscription_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Published Version of the blueprint to be assigned.
         #[builder(into)]
-        pub version_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AssignmentResult {

@@ -10,10 +10,10 @@ pub mod get_prompt {
     pub struct GetPromptArgs {
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Returns information on a specific Prompt by name
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPromptResult {

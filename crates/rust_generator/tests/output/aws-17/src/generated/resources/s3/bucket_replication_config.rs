@@ -204,19 +204,19 @@ pub mod bucket_replication_config {
     pub struct BucketReplicationConfigArgs {
         /// Name of the source S3 bucket you want Amazon S3 to monitor.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// ARN of the IAM role for Amazon S3 to assume when replicating the objects.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         /// List of configuration blocks describing the rules managing the replication. See below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::s3::BucketReplicationConfigRule>,
         >,
         /// Token to allow replication to be enabled on an Object Lock-enabled bucket. You must contact AWS support for the bucket's "Object Lock token".
         /// For more details, see [Using S3 Object Lock with replication](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-managing-replication).
         #[builder(into, default)]
-        pub token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BucketReplicationConfigResult {

@@ -77,18 +77,18 @@ pub mod virtual_network_rule {
         ///
         /// > **NOTE:** If `ignore_missing_vnet_service_endpoint` is false, and the target subnet does not contain the `Microsoft.SQL` endpoint in the `service_endpoints` array, the deployment will fail when it tries to create the SQL virtual network rule.
         #[builder(into, default)]
-        pub ignore_missing_vnet_service_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub ignore_missing_vnet_service_endpoint: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the SQL virtual network rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the SQL Server to which this SQL virtual network rule will be applied. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the subnet from which the SQL server will accept communications.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkRuleResult {

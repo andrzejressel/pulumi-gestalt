@@ -59,19 +59,19 @@ pub mod registry_cache_rule {
     pub struct RegistryCacheRuleArgs {
         /// The ID of the Container Registry where the Cache Rule should apply. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_registry_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_registry_id: pulumi_gestalt_rust::Input<String>,
         /// The ARM resource ID of the Credential Store which is associated with the Cache Rule.
         #[builder(into, default)]
-        pub credential_set_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub credential_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Container Registry Cache Rule. Only Alphanumeric characters allowed. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the source repository path. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source_repo: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_repo: pulumi_gestalt_rust::Input<String>,
         /// The name of the new repository path to store artifacts. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_repo: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_repo: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegistryCacheRuleResult {

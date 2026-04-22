@@ -74,26 +74,26 @@ pub mod network_sim_group {
     pub struct NetworkSimGroupArgs {
         /// A key to encrypt the SIM data that belongs to this SIM group.
         #[builder(into, default)]
-        pub encryption_key_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encryption_key_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         ///
         /// > **NOTE:** A `UserAssigned` identity must be specified when `encryption_key_url` is specified.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::mobile::NetworkSimGroupIdentity>,
         >,
         /// Specifies the Azure Region where the Mobile Network Sim Groups should exist. Changing this forces a new Mobile Network Sim Group to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of Mobile Network which the Mobile Network Sim Group belongs to. Changing this forces a new Mobile Network Slice to be created.
         #[builder(into)]
-        pub mobile_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this Mobile Network Sim Groups. Changing this forces a new Mobile Network Sim Group to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Mobile Network Sim Groups.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

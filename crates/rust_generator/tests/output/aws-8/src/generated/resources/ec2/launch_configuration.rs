@@ -51,72 +51,72 @@ pub mod launch_configuration {
     pub struct LaunchConfigurationArgs {
         /// Associate a public ip address with an instance in a VPC.
         #[builder(into, default)]
-        pub associate_public_ip_address: pulumi_gestalt_rust::InputOrOutput<
+        pub associate_public_ip_address: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Additional EBS block devices to attach to the instance. See Block Devices below for details.
         #[builder(into, default)]
-        pub ebs_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub ebs_block_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::LaunchConfigurationEbsBlockDevice>>,
         >,
         /// If true, the launched EC2 instance will be EBS-optimized.
         #[builder(into, default)]
-        pub ebs_optimized: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ebs_optimized: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables/disables detailed monitoring. This is enabled by default.
         #[builder(into, default)]
-        pub enable_monitoring: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_monitoring: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Customize Ephemeral (also known as "Instance Store") volumes on the instance. See Block Devices below for details.
         #[builder(into, default)]
-        pub ephemeral_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub ephemeral_block_devices: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::ec2::LaunchConfigurationEphemeralBlockDevice>,
             >,
         >,
         /// The name attribute of the IAM instance profile to associate with launched instances.
         #[builder(into, default)]
-        pub iam_instance_profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub iam_instance_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// The EC2 image ID to launch.
         #[builder(into)]
-        pub image_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_id: pulumi_gestalt_rust::Input<String>,
         /// The size of instance to launch.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// The key name that should be used for the instance.
         #[builder(into, default)]
-        pub key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The metadata options for the instance.
         #[builder(into, default)]
-        pub metadata_options: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchConfigurationMetadataOptions>,
         >,
         /// The name of the launch configuration. If you leave this blank, this provider will auto-generate a unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The tenancy of the instance. Valid values are `default` or `dedicated`, see [AWS's Create Launch Configuration](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateLaunchConfiguration.html) for more details.
         #[builder(into, default)]
-        pub placement_tenancy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub placement_tenancy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Customize details about the root block device of the instance. See Block Devices below for details.
         #[builder(into, default)]
-        pub root_block_device: pulumi_gestalt_rust::InputOrOutput<
+        pub root_block_device: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::LaunchConfigurationRootBlockDevice>,
         >,
         /// A list of associated security group IDS.
         #[builder(into, default)]
-        pub security_groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The maximum price to use for reserving spot instances.
         #[builder(into, default)]
-        pub spot_price: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub spot_price: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see `user_data_base64` instead.
         #[builder(into, default)]
-        pub user_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// Can be used instead of `user_data` to pass base64-encoded binary data directly. Use this instead of `user_data` whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption.
         #[builder(into, default)]
-        pub user_data_base64: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_data_base64: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LaunchConfigurationResult {

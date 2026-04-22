@@ -62,34 +62,34 @@ pub mod spring_cloud_build_deployment {
     pub struct SpringCloudBuildDeploymentArgs {
         /// A JSON object that contains the addon configurations of the Spring Cloud Build Deployment.
         #[builder(into, default)]
-        pub addon_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub addon_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Spring Cloud Application Performance Monitoring IDs.
         #[builder(into, default)]
-        pub application_performance_monitoring_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub application_performance_monitoring_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The ID of the Spring Cloud Build Result.
         #[builder(into)]
-        pub build_result_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub build_result_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the environment variables of the Spring Cloud Deployment as a map of key-value pairs.
         #[builder(into, default)]
-        pub environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub environment_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the required instance count of the Spring Cloud Deployment. Possible Values are between `1` and `500`. Defaults to `1` if not specified.
         #[builder(into, default)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub instance_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name which should be used for this Spring Cloud Build Deployment. Changing this forces a new Spring Cloud Build Deployment to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `quota` block as defined below.
         #[builder(into, default)]
-        pub quota: pulumi_gestalt_rust::InputOrOutput<
+        pub quota: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudBuildDeploymentQuota>,
         >,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud Build Deployment to be created.
         #[builder(into)]
-        pub spring_cloud_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_app_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudBuildDeploymentResult {

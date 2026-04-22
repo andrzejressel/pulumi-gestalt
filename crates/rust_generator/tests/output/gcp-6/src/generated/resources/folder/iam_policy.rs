@@ -325,7 +325,7 @@ pub mod iam_policy {
     pub struct IAMPolicyArgs {
         /// The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
         /// The `gcp.organizations.getIAMPolicy` data source that represents
         /// the IAM policy that will be applied to the folder. The policy will be
         /// merged with any existing policy applied to the folder.
@@ -335,7 +335,7 @@ pub mod iam_policy {
         /// Deleting this removes all policies from the folder, locking out users without
         /// folder-level access.
         #[builder(into)]
-        pub policy_data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_data: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IAMPolicyResult {

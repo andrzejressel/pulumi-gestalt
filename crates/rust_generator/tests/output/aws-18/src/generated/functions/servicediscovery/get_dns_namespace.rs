@@ -10,15 +10,15 @@ pub mod get_dns_namespace {
     pub struct GetDnsNamespaceArgs {
         /// Name of the namespace.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags for the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Type of the namespace. Allowed values are `DNS_PUBLIC` or `DNS_PRIVATE`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDnsNamespaceResult {

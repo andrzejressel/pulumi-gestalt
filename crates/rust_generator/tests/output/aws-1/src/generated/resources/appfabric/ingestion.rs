@@ -37,21 +37,21 @@ pub mod ingestion {
         /// Name of the application.
         /// Refer to the AWS Documentation for the [list of valid values](https://docs.aws.amazon.com/appfabric/latest/api/API_CreateIngestion.html#appfabric-CreateIngestion-request-app)
         #[builder(into)]
-        pub app: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the app bundle to use for the request.
         #[builder(into)]
-        pub app_bundle_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_bundle_arn: pulumi_gestalt_rust::Input<String>,
         /// Ingestion type. Valid values are `auditLog`.
         #[builder(into)]
-        pub ingestion_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ingestion_type: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the application tenant.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IngestionResult {

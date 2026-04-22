@@ -46,13 +46,13 @@ pub mod keyvaluestore_key {
     pub struct KeyvaluestoreKeyArgs {
         /// Key to put.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the Key Value Store.
         #[builder(into)]
-        pub key_value_store_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_value_store_arn: pulumi_gestalt_rust::Input<String>,
         /// Value to put.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct KeyvaluestoreKeyResult {

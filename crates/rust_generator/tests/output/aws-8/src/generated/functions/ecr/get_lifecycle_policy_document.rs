@@ -9,7 +9,7 @@ pub mod get_lifecycle_policy_document {
     #[allow(dead_code)]
     pub struct GetLifecyclePolicyDocumentArgs {
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ecr::GetLifecyclePolicyDocumentRule>>,
         >,
     }

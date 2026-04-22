@@ -94,39 +94,39 @@ pub mod job_queue {
     pub struct JobQueueArgs {
         /// The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the VALID state before you can associate them with a job queue. You can associate up to three compute environments with a job queue.
         #[builder(into, default)]
-        pub compute_environment_orders: pulumi_gestalt_rust::InputOrOutput<
+        pub compute_environment_orders: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::batch::JobQueueComputeEnvironmentOrder>>,
         >,
         /// (Optional) This parameter is deprecated, please use `compute_environment_order` instead. List of compute environment ARNs mapped to a job queue. The position of the compute environments in the list will dictate the order. When importing a AWS Batch Job Queue, the parameter `compute_environments` will always be used over `compute_environment_order`. Please adjust your HCL accordingly.
         #[builder(into, default)]
-        pub compute_environments: pulumi_gestalt_rust::InputOrOutput<
+        pub compute_environments: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The set of job state time limit actions mapped to a job queue. Specifies an action that AWS Batch will take after the job has remained at the head of the queue in the specified state for longer than the specified time.
         #[builder(into, default)]
-        pub job_state_time_limit_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub job_state_time_limit_actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::batch::JobQueueJobStateTimeLimitAction>>,
         >,
         /// Specifies the name of the job queue.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The priority of the job queue. Job queues with a higher priority
         /// are evaluated first when associated with the same compute environment.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// The ARN of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
         #[builder(into, default)]
-        pub scheduling_policy_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scheduling_policy_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The state of the job queue. Must be one of: `ENABLED` or `DISABLED`
         #[builder(into)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub state: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::batch::JobQueueTimeouts>,
         >,
     }

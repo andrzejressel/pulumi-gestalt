@@ -109,27 +109,27 @@ pub mod list_item {
     pub struct ListItemArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Autonomous system number to include in the list. Must provide only one of: `ip`, `asn`, `redirect`, `hostname`.
         #[builder(into, default)]
-        pub asn: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub asn: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An optional comment for the item.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Hostname to store in the list. Must provide only one of: `ip`, `asn`, `redirect`, `hostname`.
         #[builder(into, default)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<
+        pub hostname: pulumi_gestalt_rust::Input<
             Option<super::types::ListItemHostname>,
         >,
         /// IP address to include in the list. Must provide only one of: `ip`, `asn`, `redirect`, `hostname`.
         #[builder(into, default)]
-        pub ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list identifier to target for the resource.
         #[builder(into)]
-        pub list_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub list_id: pulumi_gestalt_rust::Input<String>,
         /// Redirect configuration to store in the list. Must provide only one of: `ip`, `asn`, `redirect`, `hostname`.
         #[builder(into, default)]
-        pub redirect: pulumi_gestalt_rust::InputOrOutput<
+        pub redirect: pulumi_gestalt_rust::Input<
             Option<super::types::ListItemRedirect>,
         >,
     }

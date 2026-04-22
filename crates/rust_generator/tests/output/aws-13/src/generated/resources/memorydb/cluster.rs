@@ -45,88 +45,88 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// The name of the Access Control List to associate with the cluster.
         #[builder(into)]
-        pub acl_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub acl_name: pulumi_gestalt_rust::Input<String>,
         /// When set to `true`, the cluster will automatically receive minor engine version upgrades after launch. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_minor_version_upgrade: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_minor_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables data tiering. This option is not supported by all instance types. For more information, see [Data tiering](https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html).
         #[builder(into, default)]
-        pub data_tiering: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub data_tiering: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Description for the cluster. Defaults to `"Managed by Pulumi"`.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The engine that will run on your nodes. Supported values are `redis` and `valkey`.
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version number of the engine to be used for the cluster. Downgrades are not supported.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the final cluster snapshot to be created when this resource is deleted. If omitted, no final snapshot will be made.
         #[builder(into, default)]
-        pub final_snapshot_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub final_snapshot_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the KMS key used to encrypt the cluster at rest.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the weekly time range during which maintenance on the cluster is performed. Specify as a range in the format `ddd:hh24:mi-ddd:hh24:mi` (24H Clock UTC). The minimum maintenance window is a 60 minute period. Example: `sun:23:00-mon:01:30`.
         #[builder(into, default)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The multi region cluster identifier specified on `aws.memorydb.MultiRegionCluster`.
         #[builder(into, default)]
-        pub multi_region_cluster_name: pulumi_gestalt_rust::InputOrOutput<
+        pub multi_region_cluster_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Name of the cluster. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The compute and memory capacity of the nodes in the cluster. See AWS documentation on [supported node types](https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.supportedtypes.html) as well as [vertical scaling](https://docs.aws.amazon.com/memorydb/latest/devguide/cluster-vertical-scaling.html).
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub node_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_type: pulumi_gestalt_rust::Input<String>,
         /// The number of replicas to apply to each shard, up to a maximum of 5. Defaults to `1` (i.e. 2 nodes per shard).
         #[builder(into, default)]
-        pub num_replicas_per_shard: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub num_replicas_per_shard: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The number of shards in the cluster. Defaults to `1`.
         #[builder(into, default)]
-        pub num_shards: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub num_shards: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the parameter group associated with the cluster.
         #[builder(into, default)]
-        pub parameter_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port number on which each of the nodes accepts connections. Defaults to `6379`.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Set of VPC Security Group ID-s to associate with this cluster.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of ARN-s that uniquely identify RDB snapshot files stored in S3. The snapshot files will be used to populate the new cluster. Object names in the ARN-s cannot contain any commas.
         #[builder(into, default)]
-        pub snapshot_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub snapshot_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of a snapshot from which to restore data into the new cluster.
         #[builder(into, default)]
-        pub snapshot_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of days for which MemoryDB retains automatic snapshots before deleting them. When set to `0`, automatic backups are disabled. Defaults to `0`.
         #[builder(into, default)]
-        pub snapshot_retention_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub snapshot_retention_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: `05:00-09:00`.
         #[builder(into, default)]
-        pub snapshot_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the SNS topic to which cluster notifications are sent.
         #[builder(into, default)]
-        pub sns_topic_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sns_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the subnet group to be used for the cluster. Defaults to a subnet group consisting of default VPC subnets.
         #[builder(into, default)]
-        pub subnet_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A flag to enable in-transit encryption on the cluster. When set to `false`, the `acl_name` must be `open-access`. Defaults to `true`.
         #[builder(into, default)]
-        pub tls_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

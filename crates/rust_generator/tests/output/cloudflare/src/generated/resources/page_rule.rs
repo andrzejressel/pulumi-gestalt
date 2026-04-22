@@ -49,19 +49,19 @@ pub mod page_rule {
     pub struct PageRuleArgs {
         /// The actions taken by the page rule, options given below.
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<super::types::PageRuleActions>,
+        pub actions: pulumi_gestalt_rust::Input<super::types::PageRuleActions>,
         /// The priority of the page rule among others for this target, the higher the number the higher the priority as per [API documentation](https://api.cloudflare.com/#page-rules-for-a-zone-create-page-rule).
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether the page rule is active or disabled.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URL pattern to target with the page rule.
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target: pulumi_gestalt_rust::Input<String>,
         /// The DNS zone ID to which the page rule should be added.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PageRuleResult {

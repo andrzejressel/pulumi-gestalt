@@ -40,12 +40,12 @@ pub mod instance_desired_state {
     pub struct InstanceDesiredStateArgs {
         /// DB Instance Identifier
         #[builder(into)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identifier: pulumi_gestalt_rust::Input<String>,
         /// Configured state of the DB Instance. Valid values are `available` and `stopped`.
         #[builder(into)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub state: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::InstanceDesiredStateTimeouts>,
         >,
     }

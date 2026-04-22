@@ -36,18 +36,18 @@ pub mod zone {
     pub struct ZoneArgs {
         /// The name of the DNS Zone. Must be a valid domain name. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the resource group where the resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// An `soa_record` block as defined below.
         #[builder(into, default)]
-        pub soa_record: pulumi_gestalt_rust::InputOrOutput<
+        pub soa_record: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::ZoneSoaRecord>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

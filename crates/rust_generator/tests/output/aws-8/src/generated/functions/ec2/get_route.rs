@@ -10,52 +10,52 @@ pub mod get_route {
     pub struct GetRouteArgs {
         /// EC2 Carrier Gateway ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub carrier_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub carrier_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Core network ARN of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub core_network_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub core_network_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// CIDR block of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub destination_cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// IPv6 CIDR block of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub destination_ipv6_cidr_block: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_ipv6_cidr_block: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// ID of a managed prefix list destination of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub destination_prefix_list_id: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_prefix_list_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Egress Only Gateway ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub egress_only_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub egress_only_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Gateway ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instance ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Local Gateway ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub local_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub local_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// NAT Gateway ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub nat_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nat_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network Interface ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the specific Route Table containing the Route entry.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_table_id: pulumi_gestalt_rust::Input<String>,
         /// EC2 Transit Gateway ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// VPC Peering Connection ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub vpc_peering_connection_id: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_peering_connection_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

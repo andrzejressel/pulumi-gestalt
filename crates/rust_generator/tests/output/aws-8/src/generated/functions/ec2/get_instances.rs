@@ -12,18 +12,18 @@ pub mod get_instances {
         /// several valid keys, for a full reference, check out
         /// [describe-instances in the AWS CLI reference][1].
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetInstancesFilter>>,
         >,
         /// List of instance states that should be applicable to the desired instances. The permitted values are: `pending, running, shutting-down, stopped, stopping, terminated`. The default value is `running`.
         #[builder(into, default)]
-        pub instance_state_names: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_state_names: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Map of tags, each pair of which must
         /// exactly match a pair on desired instances.
         #[builder(into, default)]
-        pub instance_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

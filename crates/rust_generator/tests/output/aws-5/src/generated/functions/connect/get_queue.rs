@@ -10,16 +10,16 @@ pub mod get_queue {
     pub struct GetQueueArgs {
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Returns information on a specific Queue by name
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Returns information on a specific Queue by Queue id
         #[builder(into, default)]
-        pub queue_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub queue_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the Queue.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

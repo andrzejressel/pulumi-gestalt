@@ -298,36 +298,36 @@ pub mod connection {
     pub struct ConnectionArgs {
         /// ID of the Data Catalog in which to create the connection. If none is supplied, the AWS account ID is used by default.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of key-value pairs used as parameters for this connection. For more information, see the [AWS Documentation](https://docs.aws.amazon.com/glue/latest/dg/connection-properties.html).
         ///
         /// **Note:** Some connection types require the `SparkProperties` property with a JSON document that contains the actual connection properties. For specific examples, refer to Example Usage.
         #[builder(into, default)]
-        pub connection_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Type of the connection. Valid values: `AZURECOSMOS`, `AZURESQL`, `BIGQUERY`, `CUSTOM`, `JDBC`, `KAFKA`, `MARKETPLACE`, `MONGODB`, `NETWORK`, `OPENSEARCH`, `SNOWFLAKE`. Defaults to `JDBC`.
         #[builder(into, default)]
-        pub connection_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the connection.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of criteria that can be used in selecting this connection.
         #[builder(into, default)]
-        pub match_criterias: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub match_criterias: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the connection.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of physical connection requirements, such as VPC and SecurityGroup. See `physical_connection_requirements` Block for details.
         #[builder(into, default)]
-        pub physical_connection_requirements: pulumi_gestalt_rust::InputOrOutput<
+        pub physical_connection_requirements: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::ConnectionPhysicalConnectionRequirements>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

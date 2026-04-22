@@ -59,26 +59,26 @@ pub mod api {
         ///
         /// - - -
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// A user-visible name for the API.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource labels to represent user-provided metadata.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Immutable. The name of a Google Managed Service ( https://cloud.google.com/service-infrastructure/docs/glossary#managed).
         /// If not specified, a new Service will automatically be created in the same project as this API.
         #[builder(into, default)]
-        pub managed_service: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub managed_service: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiResult {

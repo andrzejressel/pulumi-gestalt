@@ -130,37 +130,37 @@ pub mod repository_workflow_config {
     pub struct RepositoryWorkflowConfigArgs {
         /// Optional. Optional schedule (in cron format) for automatic creation of compilation results.
         #[builder(into, default)]
-        pub cron_schedule: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cron_schedule: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. If left unset, a default InvocationConfig will be used.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub invocation_config: pulumi_gestalt_rust::InputOrOutput<
+        pub invocation_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataform::RepositoryWorkflowConfigInvocationConfig,
             >,
         >,
         /// The workflow's name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the region
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the release config whose releaseCompilationResult should be executed. Must be in the format projects/*/locations/*/repositories/*/releaseConfigs/*.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub release_config: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub release_config: pulumi_gestalt_rust::Input<String>,
         /// A reference to the Dataform repository
         #[builder(into, default)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub repository: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RepositoryWorkflowConfigResult {

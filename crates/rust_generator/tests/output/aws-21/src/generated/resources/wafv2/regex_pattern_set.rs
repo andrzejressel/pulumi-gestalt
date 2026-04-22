@@ -37,21 +37,21 @@ pub mod regex_pattern_set {
     pub struct RegexPatternSetArgs {
         /// A friendly description of the regular expression pattern set.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A friendly name of the regular expression pattern set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more blocks of regular expression patterns that you want AWS WAF to search for, such as `B[a@]dB[o0]t`. See Regular Expression below for details. A maximum of 10 `regular_expression` blocks may be specified.
         #[builder(into, default)]
-        pub regular_expressions: pulumi_gestalt_rust::InputOrOutput<
+        pub regular_expressions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafv2::RegexPatternSetRegularExpression>>,
         >,
         /// Specifies whether this is for an AWS CloudFront distribution or for a regional application. Valid values are `CLOUDFRONT` or `REGIONAL`. To work with CloudFront, you must also specify the region `us-east-1` (N. Virginia) on the AWS provider.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
         /// An array of key:value pairs to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

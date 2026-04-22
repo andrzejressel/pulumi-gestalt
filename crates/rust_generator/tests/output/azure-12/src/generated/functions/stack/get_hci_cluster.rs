@@ -10,10 +10,10 @@ pub mod get_hci_cluster {
     pub struct GetHciClusterArgs {
         /// The name of the Azure Stack HCI Cluster.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Azure Stack HCI Cluster exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetHciClusterResult {

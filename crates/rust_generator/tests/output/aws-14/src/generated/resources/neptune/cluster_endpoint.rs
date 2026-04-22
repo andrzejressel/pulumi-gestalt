@@ -37,22 +37,22 @@ pub mod cluster_endpoint {
     pub struct ClusterEndpointArgs {
         /// The identifier of the endpoint.
         #[builder(into)]
-        pub cluster_endpoint_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_endpoint_identifier: pulumi_gestalt_rust::Input<String>,
         /// The DB cluster identifier of the DB cluster associated with the endpoint.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The type of the endpoint. One of: `READER`, `WRITER`, `ANY`.
         #[builder(into)]
-        pub endpoint_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_type: pulumi_gestalt_rust::Input<String>,
         /// List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.
         #[builder(into, default)]
-        pub excluded_members: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub excluded_members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of DB instance identifiers that are part of the custom endpoint group.
         #[builder(into, default)]
-        pub static_members: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub static_members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the Neptune cluster. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

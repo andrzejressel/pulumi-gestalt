@@ -65,7 +65,7 @@ pub mod key_vault {
         ///
         /// > **NOTE** Since `access_policy` can be configured both inline and via the separate `azure.keyvault.AccessPolicy` resource, we have to explicitly set it to empty slice (`[]`) to remove it.
         #[builder(into, default)]
-        pub access_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub access_policies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::keyvault::KeyVaultAccessPolicy>>,
         >,
         /// One or more `contact` block as defined below.
@@ -74,67 +74,67 @@ pub mod key_vault {
         ///
         /// > **Note:** This field can only be set when `public_network_access_enabled` is set to `true`. To manage the `contact` with `public_network_access_enabled` set to `false`, please use the `azure.keyvault.CertificateContacts` resource instead of this property, and remove this property from the configuration. Especially for existing `azure.keyvault.KeyVault`, this means you'll need to import the `azure.keyvault.CertificateContacts` manually.
         #[builder(into, default)]
-        pub contacts: pulumi_gestalt_rust::InputOrOutput<
+        pub contacts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::keyvault::KeyVaultContact>>,
         >,
         /// Boolean flag to specify whether Azure Key Vault uses Role Based Access Control (RBAC) for authorization of data actions.
         #[builder(into, default)]
-        pub enable_rbac_authorization: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_rbac_authorization: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.
         #[builder(into, default)]
-        pub enabled_for_deployment: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled_for_deployment: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.
         #[builder(into, default)]
-        pub enabled_for_disk_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub enabled_for_disk_encryption: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
         #[builder(into, default)]
-        pub enabled_for_template_deployment: pulumi_gestalt_rust::InputOrOutput<
+        pub enabled_for_template_deployment: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Key Vault. Changing this forces a new resource to be created. The name must be globally unique. If the vault is in a recoverable state then the vault will need to be purged before reusing the name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_acls` block as defined below.
         #[builder(into, default)]
-        pub network_acls: pulumi_gestalt_rust::InputOrOutput<
+        pub network_acls: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyvault::KeyVaultNetworkAcls>,
         >,
         /// Whether public network access is allowed for this Key Vault. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Is Purge Protection enabled for this Key Vault?
         ///
         /// !> **Note:** Once Purge Protection has been Enabled it's not possible to Disable it. Support for [disabling purge protection is being tracked in this Azure API issue](https://github.com/Azure/azure-rest-api-specs/issues/8075). Deleting the Key Vault with Purge Protection Enabled will schedule the Key Vault to be deleted (which will happen by Azure in the configured number of days, currently 90 days).
         #[builder(into, default)]
-        pub purge_protection_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub purge_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Key Vault. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the SKU used for this Key Vault. Possible values are `standard` and `premium`.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// The number of days that items should be retained for once soft-deleted. This value can be between `7` and `90` (the default) days.
         ///
         /// > **Note:** This field can only be configured one time and cannot be updated.
         ///
         /// <!-- TODO: Remove `contact` and Notes in 4.0 -->
         #[builder(into, default)]
-        pub soft_delete_retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub soft_delete_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct KeyVaultResult {

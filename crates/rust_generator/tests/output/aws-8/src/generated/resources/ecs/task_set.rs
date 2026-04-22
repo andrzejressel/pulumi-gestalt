@@ -64,63 +64,63 @@ pub mod task_set {
     pub struct TaskSetArgs {
         /// The capacity provider strategy to use for the service. Can be one or more.  Defined below.
         #[builder(into, default)]
-        pub capacity_provider_strategies: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_provider_strategies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ecs::TaskSetCapacityProviderStrategy>>,
         >,
         /// The short name or ARN of the cluster that hosts the service to create the task set in.
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// The external ID associated with the task set.
         #[builder(into, default)]
-        pub external_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub external_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to allow deleting the task set without waiting for scaling down to 0. You can force a task set to delete even if it's in the process of scaling a resource. Normally, the provider drains all the tasks before deleting the task set. This bypasses that behavior and potentially leaves resources dangling.
         #[builder(into, default)]
-        pub force_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The launch type on which to run your service. The valid values are `EC2`, `FARGATE`, and `EXTERNAL`. Defaults to `EC2`.
         #[builder(into, default)]
-        pub launch_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub launch_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details on load balancers that are used with a task set. Detailed below.
         #[builder(into, default)]
-        pub load_balancers: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ecs::TaskSetLoadBalancer>>,
         >,
         /// The network configuration for the service. This parameter is required for task definitions that use the `awsvpc` network mode to receive their own Elastic Network Interface, and it is not supported for other network modes. Detailed below.
         #[builder(into, default)]
-        pub network_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub network_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecs::TaskSetNetworkConfiguration>,
         >,
         /// The platform version on which to run your service. Only applicable for `launch_type` set to `FARGATE`. Defaults to `LATEST`. More information about Fargate platform versions can be found in the [AWS ECS User Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html).
         #[builder(into, default)]
-        pub platform_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A floating-point percentage of the desired number of tasks to place and keep running in the task set. Detailed below.
         #[builder(into, default)]
-        pub scale: pulumi_gestalt_rust::InputOrOutput<
+        pub scale: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecs::TaskSetScale>,
         >,
         /// The short name or ARN of the ECS service.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
         /// The service discovery registries for the service. The maximum number of `service_registries` blocks is `1`. Detailed below.
         #[builder(into, default)]
-        pub service_registries: pulumi_gestalt_rust::InputOrOutput<
+        pub service_registries: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecs::TaskSetServiceRegistries>,
         >,
         /// A map of tags to assign to the file system. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level. If you have set `copy_tags_to_backups` to true, and you specify one or more tags, no existing file system tags are copied from the file system to the backup.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The family and revision (`family:revision`) or full ARN of the task definition that you want to run in your service.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub task_definition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub task_definition: pulumi_gestalt_rust::Input<String>,
         /// Whether the provider should wait until the task set has reached `STEADY_STATE`.
         #[builder(into, default)]
-        pub wait_until_stable: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_until_stable: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Wait timeout for task set to reach `STEADY_STATE`. Valid time units include `ns`, `us` (or `µs`), `ms`, `s`, `m`, and `h`. Default `10m`.
         #[builder(into, default)]
-        pub wait_until_stable_timeout: pulumi_gestalt_rust::InputOrOutput<
+        pub wait_until_stable_timeout: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

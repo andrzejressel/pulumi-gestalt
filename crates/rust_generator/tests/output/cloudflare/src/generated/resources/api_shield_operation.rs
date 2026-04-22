@@ -30,16 +30,16 @@ pub mod api_shield_operation {
     pub struct ApiShieldOperationArgs {
         /// The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with `{varN}`, starting with `{var1}`. This will then be [Cloudflare-normalized](https://developers.cloudflare.com/rules/normalization/how-it-works/). **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint: pulumi_gestalt_rust::Input<String>,
         /// RFC3986-compliant host. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host: pulumi_gestalt_rust::Input<String>,
         /// The HTTP method used to access the endpoint. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub method: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiShieldOperationResult {

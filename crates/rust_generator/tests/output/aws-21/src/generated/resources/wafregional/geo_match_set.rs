@@ -42,12 +42,12 @@ pub mod geo_match_set {
     pub struct GeoMatchSetArgs {
         /// The Geo Match Constraint objects which contain the country that you want AWS WAF to search for.
         #[builder(into, default)]
-        pub geo_match_constraints: pulumi_gestalt_rust::InputOrOutput<
+        pub geo_match_constraints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafregional::GeoMatchSetGeoMatchConstraint>>,
         >,
         /// The name or description of the Geo Match Set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GeoMatchSetResult {

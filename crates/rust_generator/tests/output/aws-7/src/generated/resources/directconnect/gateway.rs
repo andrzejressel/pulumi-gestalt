@@ -36,10 +36,10 @@ pub mod gateway {
     pub struct GatewayArgs {
         /// The ASN to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294.
         #[builder(into)]
-        pub amazon_side_asn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub amazon_side_asn: pulumi_gestalt_rust::Input<String>,
         /// The name of the connection.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GatewayResult {

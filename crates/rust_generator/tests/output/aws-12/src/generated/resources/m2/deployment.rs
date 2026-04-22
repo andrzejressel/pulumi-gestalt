@@ -40,20 +40,20 @@ pub mod deployment {
     pub struct DeploymentArgs {
         /// Application to deploy.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// Version to application to deploy
         #[builder(into)]
-        pub application_version: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub application_version: pulumi_gestalt_rust::Input<i32>,
         /// Environment to deploy application to.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub force_stop: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_stop: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Start the application once deployed.
         #[builder(into)]
-        pub start: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub start: pulumi_gestalt_rust::Input<bool>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::m2::DeploymentTimeouts>,
         >,
     }

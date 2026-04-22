@@ -10,10 +10,10 @@ pub mod get_database_instance_latest_recovery_time {
     pub struct GetDatabaseInstanceLatestRecoveryTimeArgs {
         /// The name of the instance.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDatabaseInstanceLatestRecoveryTimeResult {

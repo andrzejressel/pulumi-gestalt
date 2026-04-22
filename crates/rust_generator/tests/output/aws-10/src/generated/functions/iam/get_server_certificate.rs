@@ -10,16 +10,16 @@ pub mod get_server_certificate {
     pub struct GetServerCertificateArgs {
         /// sort results by expiration date. returns the certificate with expiration date in furthest in the future.
         #[builder(into, default)]
-        pub latest: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub latest: pulumi_gestalt_rust::Input<Option<bool>>,
         /// exact name of the cert to lookup
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// prefix of cert to filter by
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// prefix of path to filter by
         #[builder(into, default)]
-        pub path_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetServerCertificateResult {

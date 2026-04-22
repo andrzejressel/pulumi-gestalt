@@ -44,10 +44,10 @@ pub mod static_ip_attachment {
     pub struct StaticIpAttachmentArgs {
         /// The name of the Lightsail instance to attach the IP to
         #[builder(into)]
-        pub instance_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the allocated static IP
         #[builder(into)]
-        pub static_ip_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub static_ip_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StaticIpAttachmentResult {

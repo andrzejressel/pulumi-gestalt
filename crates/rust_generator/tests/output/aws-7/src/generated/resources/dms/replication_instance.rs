@@ -100,33 +100,33 @@ pub mod replication_instance {
     pub struct ReplicationInstanceArgs {
         /// The amount of storage (in gigabytes) to be initially allocated for the replication instance.
         #[builder(into, default)]
-        pub allocated_storage: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub allocated_storage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Indicates that major version upgrades are allowed.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Indicates whether the changes should be applied immediately or during the next maintenance window. Only used when updating an existing resource.
         #[builder(into, default)]
-        pub apply_immediately: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates that minor engine upgrades will be applied automatically to the replication instance during the maintenance window.
         #[builder(into, default)]
-        pub auto_minor_version_upgrade: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_minor_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The EC2 Availability Zone that the replication instance will be created in.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The engine version number of the replication instance.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for the KMS key that will be used to encrypt the connection parameters. If you do not specify a value for `kms_key_arn`, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if the replication instance is a multi-az deployment. You cannot set the `availability_zone` parameter if the `multi_az` parameter is set to `true`.
         #[builder(into, default)]
-        pub multi_az: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub multi_az: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The type of IP address protocol used by a replication instance. Valid values: `IPV4`, `DUAL`.
         #[builder(into, default)]
-        pub network_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
         ///
         /// - Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week.
@@ -134,15 +134,15 @@ pub mod replication_instance {
         /// - Valid Days: `mon, tue, wed, thu, fri, sat, sun`
         /// - Constraints: Minimum 30-minute window.
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the accessibility options for the replication instance. A value of true represents an instance with a public IP address. A value of false represents an instance with a private IP address.
         #[builder(into, default)]
-        pub publicly_accessible: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The compute and memory capacity of the replication instance as specified by the replication instance class. See [AWS DMS User Guide](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html) for available instance sizes and advice on which one to choose.
         #[builder(into)]
-        pub replication_instance_class: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_instance_class: pulumi_gestalt_rust::Input<String>,
         /// The replication instance identifier. This parameter is stored as a lowercase string.
         ///
         /// - Must contain from 1 to 63 alphanumeric characters or hyphens.
@@ -150,20 +150,20 @@ pub mod replication_instance {
         /// - Cannot end with a hyphen
         /// - Cannot contain two consecutive hyphens.
         #[builder(into)]
-        pub replication_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_instance_id: pulumi_gestalt_rust::Input<String>,
         /// A subnet group to associate with the replication instance.
         #[builder(into, default)]
-        pub replication_subnet_group_id: pulumi_gestalt_rust::InputOrOutput<
+        pub replication_subnet_group_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A list of VPC security group IDs to be used with the replication instance. The VPC security groups must work with the VPC containing the replication instance.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
     }

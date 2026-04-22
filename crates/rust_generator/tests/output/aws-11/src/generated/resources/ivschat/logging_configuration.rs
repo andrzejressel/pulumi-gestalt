@@ -117,17 +117,17 @@ pub mod logging_configuration {
     pub struct LoggingConfigurationArgs {
         /// Object containing destination configuration for where chat activity will be logged. This object must contain exactly one of the following children arguments:
         #[builder(into, default)]
-        pub destination_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ivschat::LoggingConfigurationDestinationConfiguration,
             >,
         >,
         /// Logging Configuration name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

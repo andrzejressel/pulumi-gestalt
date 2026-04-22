@@ -9,7 +9,7 @@ pub mod next_generation_firewall_virtual_hub_local_rulestack {
     #[allow(dead_code)]
     pub struct NextGenerationFirewallVirtualHubLocalRulestackArgs {
         #[builder(into, default)]
-        pub destination_nats: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_nats: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNat,
@@ -17,23 +17,23 @@ pub mod next_generation_firewall_virtual_hub_local_rulestack {
             >,
         >,
         #[builder(into, default)]
-        pub dns_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_settings: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDnsSettings,
             >,
         >,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub network_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub network_profile: pulumi_gestalt_rust::Input<
             super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackNetworkProfile,
         >,
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub rulestack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rulestack_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

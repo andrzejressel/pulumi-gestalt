@@ -38,27 +38,27 @@ pub mod location_fsx_windows {
     pub struct LocationFsxWindowsArgs {
         /// The name of the Windows domain that the FSx for Windows server belongs to.
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for the FSx for Windows file system.
         #[builder(into)]
-        pub fsx_filesystem_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub fsx_filesystem_arn: pulumi_gestalt_rust::Input<String>,
         /// The password of the user who has the permissions to access files and folders in the FSx for Windows file system.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows file system.
         #[builder(into)]
-        pub security_group_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub security_group_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Subdirectory to perform actions as source or destination.
         #[builder(into, default)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subdirectory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The user who has the permissions to access files and folders in the FSx for Windows file system.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LocationFsxWindowsResult {

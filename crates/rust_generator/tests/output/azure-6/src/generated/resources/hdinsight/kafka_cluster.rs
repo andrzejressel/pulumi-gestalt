@@ -108,104 +108,104 @@ pub mod kafka_cluster {
     pub struct KafkaClusterArgs {
         /// Specifies the Version of HDInsights which should be used for this Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_version: pulumi_gestalt_rust::Input<String>,
         /// A `component_version` block as defined below.
         #[builder(into)]
-        pub component_version: pulumi_gestalt_rust::InputOrOutput<
+        pub component_version: pulumi_gestalt_rust::Input<
             super::super::types::hdinsight::KafkaClusterComponentVersion,
         >,
         /// A `compute_isolation` block as defined below.
         #[builder(into, default)]
-        pub compute_isolation: pulumi_gestalt_rust::InputOrOutput<
+        pub compute_isolation: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterComputeIsolation>,
         >,
         /// One or more `disk_encryption` block as defined below.
         ///
         /// > **NOTE:** Starting on June 30, 2020, Azure HDInsight will enforce TLS 1.2 or later versions for all HTTPS connections. For more information, see [Azure HDInsight TLS 1.2 Enforcement](https://azure.microsoft.com/en-us/updates/azure-hdinsight-tls-12-enforcement/).
         #[builder(into, default)]
-        pub disk_encryptions: pulumi_gestalt_rust::InputOrOutput<
+        pub disk_encryptions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::hdinsight::KafkaClusterDiskEncryption>>,
         >,
         /// Whether encryption in transit is enabled for this HDInsight Kafka Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_in_transit_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_in_transit_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// An `extension` block as defined below.
         #[builder(into, default)]
-        pub extension: pulumi_gestalt_rust::InputOrOutput<
+        pub extension: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterExtension>,
         >,
         /// A `gateway` block as defined below.
         #[builder(into)]
-        pub gateway: pulumi_gestalt_rust::InputOrOutput<
+        pub gateway: pulumi_gestalt_rust::Input<
             super::super::types::hdinsight::KafkaClusterGateway,
         >,
         /// Specifies the Azure Region which this HDInsight Kafka Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `metastores` block as defined below.
         #[builder(into, default)]
-        pub metastores: pulumi_gestalt_rust::InputOrOutput<
+        pub metastores: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterMetastores>,
         >,
         /// A `monitor` block as defined below.
         #[builder(into, default)]
-        pub monitor: pulumi_gestalt_rust::InputOrOutput<
+        pub monitor: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterMonitor>,
         >,
         /// Specifies the name for this HDInsight Kafka Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network` block as defined below.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<
+        pub network: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterNetwork>,
         >,
         /// A `private_link_configuration` block as defined below.
         #[builder(into, default)]
-        pub private_link_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub private_link_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterPrivateLinkConfiguration>,
         >,
         /// Specifies the name of the Resource Group in which this HDInsight Kafka Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `rest_proxy` block as defined below.
         #[builder(into, default)]
-        pub rest_proxy: pulumi_gestalt_rust::InputOrOutput<
+        pub rest_proxy: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterRestProxy>,
         >,
         /// A `roles` block as defined below.
         #[builder(into)]
-        pub roles: pulumi_gestalt_rust::InputOrOutput<
+        pub roles: pulumi_gestalt_rust::Input<
             super::super::types::hdinsight::KafkaClusterRoles,
         >,
         /// A `security_profile` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub security_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub security_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterSecurityProfile>,
         >,
         /// A `storage_account_gen2` block as defined below.
         #[builder(into, default)]
-        pub storage_account_gen2: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_gen2: pulumi_gestalt_rust::Input<
             Option<super::super::types::hdinsight::KafkaClusterStorageAccountGen2>,
         >,
         /// One or more `storage_account` block as defined below.
         #[builder(into, default)]
-        pub storage_accounts: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_accounts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::hdinsight::KafkaClusterStorageAccount>>,
         >,
         /// A map of Tags which should be assigned to this HDInsight Kafka Cluster.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Tier which should be used for this HDInsight Kafka Cluster. Possible values are `Standard` or `Premium`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tier: pulumi_gestalt_rust::Input<String>,
         /// The minimal supported TLS version. Possible values are `1.0`, `1.1` or `1.2`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub tls_min_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tls_min_version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct KafkaClusterResult {

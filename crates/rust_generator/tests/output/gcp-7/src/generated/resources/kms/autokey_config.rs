@@ -139,12 +139,12 @@ pub mod autokey_config {
         ///
         /// - - -
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
         /// The target key project for a given folder where KMS Autokey will provision a
         /// CryptoKey for any new KeyHandle the Developer creates. Should have the form
         /// `projects/<project_id_or_number>`.
         #[builder(into, default)]
-        pub key_project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AutokeyConfigResult {

@@ -57,12 +57,12 @@ pub mod log_analytics_workspace_onboarding {
         ///
         /// > **Note:** Once a workspace is onboarded to Microsoft Sentinel with `customer_managed_key_enabled` set to true, it will not be able to be onboarded again with `customer_managed_key_enabled` set to false.
         #[builder(into, default)]
-        pub customer_managed_key_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_key_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the Workspace Id. Changing this forces the Log Analytics Workspace off the board and onboard again. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LogAnalyticsWorkspaceOnboardingResult {

@@ -63,26 +63,26 @@ pub mod domain_association {
     pub struct DomainAssociationArgs {
         /// Unique ID for an Amplify app.
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// The type of SSL/TLS certificate to use for your custom domain. If you don't specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.
         #[builder(into, default)]
-        pub certificate_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::amplify::DomainAssociationCertificateSettings>,
         >,
         /// Domain name for the domain association.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Enables the automated creation of subdomains for branches.
         #[builder(into, default)]
-        pub enable_auto_sub_domain: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_auto_sub_domain: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Setting for the subdomain. Documented below.
         #[builder(into)]
-        pub sub_domains: pulumi_gestalt_rust::InputOrOutput<
+        pub sub_domains: pulumi_gestalt_rust::Input<
             Vec<super::super::types::amplify::DomainAssociationSubDomain>,
         >,
         /// If enabled, the resource will wait for the domain association status to change to `PENDING_DEPLOYMENT` or `AVAILABLE`. Setting this to `false` will skip the process. Default: `true`.
         #[builder(into, default)]
-        pub wait_for_verification: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_for_verification: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct DomainAssociationResult {

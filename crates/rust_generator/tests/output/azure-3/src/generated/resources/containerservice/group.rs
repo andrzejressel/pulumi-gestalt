@@ -57,104 +57,104 @@ pub mod group {
     pub struct GroupArgs {
         /// The definition of a container that is part of the group as documented in the `container` block below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub containers: pulumi_gestalt_rust::InputOrOutput<
+        pub containers: pulumi_gestalt_rust::Input<
             Vec<super::super::types::containerservice::GroupContainer>,
         >,
         /// A `diagnostics` block as documented below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub diagnostics: pulumi_gestalt_rust::InputOrOutput<
+        pub diagnostics: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::GroupDiagnostics>,
         >,
         /// A `dns_config` block as documented below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub dns_config: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::GroupDnsConfig>,
         >,
         /// The DNS label/name for the container group's IP. Changing this forces a new resource to be created.
         ///
         /// > **Note:** DNS label/name is not supported when deploying to virtual networks.
         #[builder(into, default)]
-        pub dns_name_label: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dns_name_label: pulumi_gestalt_rust::Input<Option<String>>,
         /// The value representing the security enum. `Noreuse`, `ResourceGroupReuse`, `SubscriptionReuse`, `TenantReuse` or `Unsecure`. Defaults to `Unsecure`.
         #[builder(into, default)]
-        pub dns_name_label_reuse_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_name_label_reuse_policy: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Zero or more `exposed_port` blocks as defined below. Changing this forces a new resource to be created.
         ///
         /// > **Note:** The `exposed_port` can only contain ports that are also exposed on one or more containers in the group.
         #[builder(into, default)]
-        pub exposed_ports: pulumi_gestalt_rust::InputOrOutput<
+        pub exposed_ports: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerservice::GroupExposedPort>>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::GroupIdentity>,
         >,
         /// An `image_registry_credential` block as documented below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub image_registry_credentials: pulumi_gestalt_rust::InputOrOutput<
+        pub image_registry_credentials: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::containerservice::GroupImageRegistryCredential>,
             >,
         >,
         /// The definition of an init container that is part of the group as documented in the `init_container` block below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub init_containers: pulumi_gestalt_rust::InputOrOutput<
+        pub init_containers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerservice::GroupInitContainer>>,
         >,
         /// Specifies the IP address type of the container. `Public`, `Private` or `None`. Changing this forces a new resource to be created. If set to `Private`, `subnet_ids` also needs to be set. Defaults to `Public`.
         ///
         /// > **Note:** `dns_name_label` and `os_type` set to `windows` are not compatible with `Private` `ip_address_type`
         #[builder(into, default)]
-        pub ip_address_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Key Vault key URI for CMK encryption. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user assigned identity that has access to the Key Vault Key. If not specified, the RP principal named "Azure Container Instance Service" will be used instead. Make sure the identity has the proper `key_permissions` set, at least with `Get`, `UnwrapKey`, `WrapKey` and `GetRotationPolicy`.
         #[builder(into, default)]
-        pub key_vault_user_assigned_identity_id: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_user_assigned_identity_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Container Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub network_profile_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_profile_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The OS for the container group. Allowed values are `Linux` and `Windows`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** if `os_type` is set to `Windows` currently only a single `container` block is supported. Windows containers are not supported in virtual networks.
         #[builder(into)]
-        pub os_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub os_type: pulumi_gestalt_rust::Input<String>,
         /// The priority of the Container Group. Possible values are `Regular` and `Spot`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** When `priority` is set to `Spot`, the `ip_address_type` has to be `None`.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Container Group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Restart policy for the container group. Allowed values are `Always`, `Never`, `OnFailure`. Defaults to `Always`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub restart_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub restart_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the sku of the Container Group. Possible values are `Confidential`, `Dedicated` and `Standard`. Defaults to `Standard`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// The subnet resource IDs for a container group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A list of Availability Zones in which this Container Group is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GroupResult {

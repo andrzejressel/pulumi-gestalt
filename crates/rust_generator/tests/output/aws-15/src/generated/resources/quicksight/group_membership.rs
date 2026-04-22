@@ -36,16 +36,16 @@ pub mod group_membership {
     pub struct GroupMembershipArgs {
         /// The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the group in which the member will be added.
         #[builder(into)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the member to add to the group.
         #[builder(into)]
-        pub member_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member_name: pulumi_gestalt_rust::Input<String>,
         /// The namespace that you want the user to be a part of. Defaults to `default`.
         #[builder(into, default)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GroupMembershipResult {

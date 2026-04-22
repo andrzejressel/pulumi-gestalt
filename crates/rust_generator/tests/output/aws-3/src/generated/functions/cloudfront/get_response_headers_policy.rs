@@ -10,10 +10,10 @@ pub mod get_response_headers_policy {
     pub struct GetResponseHeadersPolicyArgs {
         /// Identifier for the response headers policy.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name to identify the response headers policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetResponseHeadersPolicyResult {

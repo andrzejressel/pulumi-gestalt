@@ -140,34 +140,34 @@ pub mod user {
         ///
         /// - - -
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The host the user can connect from. This is only supported
         /// for BUILT_IN users in MySQL instances. Don't set this field for PostgreSQL and SQL Server instances.
         /// Can be an IP address. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Cloud SQL instance. Changing this
         /// forces a new resource to be created.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The name of the user. Changing this forces a new resource
         /// to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password for the user. Can be updated. For Postgres
         /// instances this is a Required field, unless type is set to either CLOUD_IAM_USER
         /// or CLOUD_IAM_SERVICE_ACCOUNT. Don't set this field for CLOUD_IAM_USER
         /// and CLOUD_IAM_SERVICE_ACCOUNT user types for any Cloud SQL instance.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub password_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub password_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::sql::UserPasswordPolicy>,
         >,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user type. It determines the method to authenticate the
         /// user during login. The default is the database's built-in user type. Flags
         /// include "BUILT_IN", "CLOUD_IAM_USER", "CLOUD_IAM_SERVICE_ACCOUNT", "CLOUD_IAM_GROUP",
@@ -175,7 +175,7 @@ pub mod user {
         /// [Postgres](https://cloud.google.com/sql/docs/postgres/admin-api/rest/v1beta4/users#sqlusertype)
         /// and [MySQL](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/users#sqlusertype).
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct UserResult {

@@ -10,7 +10,7 @@ pub mod get_inference_profile {
     pub struct GetInferenceProfileArgs {
         /// Inference Profile identifier.
         #[builder(into)]
-        pub inference_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub inference_profile_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetInferenceProfileResult {

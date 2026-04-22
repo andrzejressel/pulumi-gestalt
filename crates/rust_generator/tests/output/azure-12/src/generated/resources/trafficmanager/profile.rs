@@ -56,31 +56,31 @@ pub mod profile {
     pub struct ProfileArgs {
         /// This block specifies the DNS configuration of the Profile. One `dns_config` block as defined below.
         #[builder(into)]
-        pub dns_config: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_config: pulumi_gestalt_rust::Input<
             super::super::types::trafficmanager::ProfileDnsConfig,
         >,
         /// The amount of endpoints to return for DNS queries to this Profile. Possible values range from `1` to `8`.
         ///
         /// > **NOTE:** `max_return` must be set when the `traffic_routing_method` is `MultiValue`.
         #[builder(into, default)]
-        pub max_return: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_return: pulumi_gestalt_rust::Input<Option<i32>>,
         /// This block specifies the Endpoint monitoring configuration for the Profile. One `monitor_config` block as defined below.
         #[builder(into)]
-        pub monitor_config: pulumi_gestalt_rust::InputOrOutput<
+        pub monitor_config: pulumi_gestalt_rust::Input<
             super::super::types::trafficmanager::ProfileMonitorConfig,
         >,
         /// The name of the Traffic Manager profile. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The status of the profile, can be set to either `Enabled` or `Disabled`. Defaults to `Enabled`.
         #[builder(into, default)]
-        pub profile_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub profile_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Traffic Manager profile. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the algorithm used to route traffic. Possible values are `Geographic`, `Weighted`, `Performance`, `Priority`, `Subnet` and `MultiValue`.
@@ -91,10 +91,10 @@ pub mod profile {
         /// * `Subnet` - Traffic is routed based on a mapping of sets of end-user IP address ranges to a specific Endpoint within a Traffic Manager profile.
         /// * `Weighted` - Traffic is spread across Endpoints proportional to their `weight` value.
         #[builder(into)]
-        pub traffic_routing_method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub traffic_routing_method: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether Traffic View is enabled for the Traffic Manager profile.
         #[builder(into, default)]
-        pub traffic_view_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub traffic_view_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ProfileResult {

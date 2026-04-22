@@ -38,24 +38,24 @@ pub mod user {
     pub struct UserArgs {
         /// Authentication type for the user. You must specify USERPOOL. Valid values: `API`, `SAML`, `USERPOOL`
         #[builder(into)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_type: pulumi_gestalt_rust::Input<String>,
         /// Whether the user in the user pool is enabled.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// First name, or given name, of the user.
         #[builder(into, default)]
-        pub first_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub first_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Last name, or surname, of the user.
         #[builder(into, default)]
-        pub last_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub last_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Send an email notification.
         #[builder(into, default)]
-        pub send_email_notification: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub send_email_notification: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Email address of the user.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserResult {

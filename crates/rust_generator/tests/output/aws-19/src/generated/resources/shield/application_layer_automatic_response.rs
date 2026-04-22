@@ -40,12 +40,12 @@ pub mod application_layer_automatic_response {
     pub struct ApplicationLayerAutomaticResponseArgs {
         /// One of `COUNT` or `BLOCK`
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// ARN of the resource to protect (Cloudfront Distributions and ALBs only at this time).
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::shield::ApplicationLayerAutomaticResponseTimeouts,
             >,

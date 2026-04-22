@@ -47,19 +47,19 @@ pub mod account_vdm_attributes {
     pub struct AccountVdmAttributesArgs {
         /// Specifies additional settings for your VDM configuration as applicable to the Dashboard.
         #[builder(into, default)]
-        pub dashboard_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub dashboard_attributes: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::AccountVdmAttributesDashboardAttributes>,
         >,
         /// Specifies additional settings for your VDM configuration as applicable to the Guardian.
         #[builder(into, default)]
-        pub guardian_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub guardian_attributes: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::AccountVdmAttributesGuardianAttributes>,
         >,
         /// Specifies the status of your VDM configuration. Valid values: `ENABLED`, `DISABLED`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vdm_enabled: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vdm_enabled: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccountVdmAttributesResult {

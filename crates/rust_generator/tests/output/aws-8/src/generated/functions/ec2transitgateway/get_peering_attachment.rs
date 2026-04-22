@@ -10,7 +10,7 @@ pub mod get_peering_attachment {
     pub struct GetPeeringAttachmentArgs {
         /// One or more configuration blocks containing name-values filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ec2transitgateway::GetPeeringAttachmentFilter,
@@ -19,14 +19,14 @@ pub mod get_peering_attachment {
         >,
         /// Identifier of the EC2 Transit Gateway Peering Attachment.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mapping of tags, each pair of which must exactly match
         /// a pair on the specific EC2 Transit Gateway Peering Attachment to retrieve.
         ///
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

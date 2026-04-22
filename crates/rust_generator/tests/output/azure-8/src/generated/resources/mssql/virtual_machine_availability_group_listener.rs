@@ -20,19 +20,19 @@ pub mod virtual_machine_availability_group_listener {
     pub struct VirtualMachineAvailabilityGroupListenerArgs {
         /// The name of the Availability Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub availability_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `load_balancer_configuration` block as defined below. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Either one of `load_balancer_configuration` or `multi_subnet_ip_configuration` must be specified.
         #[builder(into, default)]
-        pub load_balancer_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancer_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::mssql::VirtualMachineAvailabilityGroupListenerLoadBalancerConfiguration,
             >,
         >,
         /// One or more `multi_subnet_ip_configuration` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub multi_subnet_ip_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub multi_subnet_ip_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::mssql::VirtualMachineAvailabilityGroupListenerMultiSubnetIpConfiguration,
@@ -41,20 +41,20 @@ pub mod virtual_machine_availability_group_listener {
         >,
         /// The name which should be used for the Microsoft SQL Virtual Machine Availability Group Listener. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port of the listener. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more `replica` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub replicas: pulumi_gestalt_rust::InputOrOutput<
+        pub replicas: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::mssql::VirtualMachineAvailabilityGroupListenerReplica,
             >,
         >,
         /// The ID of the SQL Virtual Machine Group to create the listener. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sql_virtual_machine_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql_virtual_machine_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualMachineAvailabilityGroupListenerResult {

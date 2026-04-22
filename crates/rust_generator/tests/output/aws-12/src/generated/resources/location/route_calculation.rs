@@ -36,18 +36,18 @@ pub mod route_calculation {
     pub struct RouteCalculationArgs {
         /// The name of the route calculator resource.
         #[builder(into)]
-        pub calculator_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub calculator_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the data provider of traffic and road network data.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub data_source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source: pulumi_gestalt_rust::Input<String>,
         /// The optional description for the route calculator resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value tags for the route calculator. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

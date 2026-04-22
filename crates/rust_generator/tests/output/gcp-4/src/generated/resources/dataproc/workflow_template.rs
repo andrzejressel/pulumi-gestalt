@@ -124,10 +124,10 @@ pub mod workflow_template {
         /// cluster](https://www.terraform.io/dataproc/docs/concepts/workflows/using-workflows#configuring_or_selecting_a_cluster),
         /// the cluster is deleted.
         #[builder(into, default)]
-        pub dag_timeout: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dag_timeout: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. The Directed Acyclic Graph of Jobs to submit.
         #[builder(into)]
-        pub jobs: pulumi_gestalt_rust::InputOrOutput<
+        pub jobs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::dataproc::WorkflowTemplateJob>,
         >,
         /// Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created
@@ -137,32 +137,32 @@ pub mod workflow_template {
         /// associated with a template. **Note**: This field is non-authoritative, and will only manage the labels present in your
         /// configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. * For `projects.regions.workflowTemplates`, the resource name of the template has the following format: `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}` * For `projects.locations.workflowTemplates`, the resource name of the template has the following format: `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Template parameters whose values are substituted into the template. Values for parameters must be provided
         /// when the template is instantiated.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dataproc::WorkflowTemplateParameter>>,
         >,
         /// Required. WorkflowTemplate scheduling information.
         #[builder(into)]
-        pub placement: pulumi_gestalt_rust::InputOrOutput<
+        pub placement: pulumi_gestalt_rust::Input<
             super::super::types::dataproc::WorkflowTemplatePlacement,
         >,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Output only. The current version of this workflow template.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub version: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct WorkflowTemplateResult {

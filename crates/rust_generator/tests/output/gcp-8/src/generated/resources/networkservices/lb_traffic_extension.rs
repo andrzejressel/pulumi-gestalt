@@ -45,25 +45,25 @@ pub mod lb_traffic_extension {
     pub struct LbTrafficExtensionArgs {
         /// A human-readable description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of ordered extension chains that contain the match conditions and extensions to execute.
         /// Match conditions for each extension chain are evaluated in sequence for a given request.
         /// The first extension chain that has a condition that matches the request is executed.
         /// Any subsequent extension chains do not execute. Limited to 5 extension chains per resource.
         /// Structure is documented below.
         #[builder(into)]
-        pub extension_chains: pulumi_gestalt_rust::InputOrOutput<
+        pub extension_chains: pulumi_gestalt_rust::Input<
             Vec<super::super::types::networkservices::LbTrafficExtensionExtensionChain>,
         >,
         /// A list of references to the forwarding rules to which this service extension is attached to.
         /// At least one forwarding rule is required. There can be only one LBTrafficExtension resource per forwarding rule.
         #[builder(into)]
-        pub forwarding_rules: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub forwarding_rules: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Set of labels associated with the LbTrafficExtension resource. **Note**: This field is non-authoritative, and will only
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// All backend services and forwarding rules referenced by this extension must share the same load balancing scheme. For
@@ -72,15 +72,15 @@ pub mod lb_traffic_extension {
         /// balancers](https://cloud.google.com/service-extensions/docs/callouts-overview#supported-lbs). Possible values:
         /// ["INTERNAL_MANAGED", "EXTERNAL_MANAGED"]
         #[builder(into, default)]
-        pub load_balancing_scheme: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub load_balancing_scheme: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the traffic extension
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the LbTrafficExtension resource in the following format: projects/{project}/locations/{location}/lbTrafficExtensions/{lbTrafficExtension}.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LbTrafficExtensionResult {

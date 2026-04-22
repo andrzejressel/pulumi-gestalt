@@ -10,10 +10,10 @@ pub mod get_flexible_server {
     pub struct GetFlexibleServerArgs {
         /// Specifies the name of the MySQL Flexible Server.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group for the MySQL Flexible Server.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFlexibleServerResult {

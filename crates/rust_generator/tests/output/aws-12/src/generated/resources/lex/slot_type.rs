@@ -48,27 +48,27 @@ pub mod slot_type {
         /// Determines if a new slot type version is created when the initial resource is created and on each
         /// update. Defaults to `false`.
         #[builder(into, default)]
-        pub create_version: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub create_version: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A description of the slot type. Must be less than or equal to 200 characters in length.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of EnumerationValue objects that defines the values that
         /// the slot type can take. Each value can have a list of synonyms, which are additional values that help
         /// train the machine learning model about the values that it resolves for a slot. Attributes are
         /// documented under enumeration_value.
         #[builder(into)]
-        pub enumeration_values: pulumi_gestalt_rust::InputOrOutput<
+        pub enumeration_values: pulumi_gestalt_rust::Input<
             Vec<super::super::types::lex::SlotTypeEnumerationValue>,
         >,
         /// The name of the slot type. The name is not case sensitive. Must be less than or equal to 100 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Determines the slot resolution strategy that Amazon Lex
         /// uses to return slot type values. `ORIGINAL_VALUE` returns the value entered by the user if the user
         /// value is similar to the slot value. `TOP_RESOLUTION` returns the first value in the resolution list
         /// if there is a resolution list for the slot, otherwise null is returned. Defaults to `ORIGINAL_VALUE`.
         #[builder(into, default)]
-        pub value_selection_strategy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub value_selection_strategy: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SlotTypeResult {

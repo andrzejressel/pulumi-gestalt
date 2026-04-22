@@ -46,10 +46,10 @@ pub mod instance_public_ports {
     pub struct InstancePublicPortsArgs {
         /// Name of the Lightsail Instance.
         #[builder(into)]
-        pub instance_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration block with port information. AWS closes all currently open ports that are not included in the `port_info`. Detailed below.
         #[builder(into)]
-        pub port_infos: pulumi_gestalt_rust::InputOrOutput<
+        pub port_infos: pulumi_gestalt_rust::Input<
             Vec<super::super::types::lightsail::InstancePublicPortsPortInfo>,
         >,
     }

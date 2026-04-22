@@ -27,7 +27,7 @@ pub mod connection_confirmation {
     pub struct ConnectionConfirmationArgs {
         /// The ID of the hosted connection.
         #[builder(into)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConnectionConfirmationResult {

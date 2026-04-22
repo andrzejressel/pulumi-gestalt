@@ -55,40 +55,40 @@ pub mod virtual_hub {
     pub struct VirtualHubArgs {
         /// The Address Prefix which should be used for this Virtual Hub. Changing this forces a new resource to be created. [The address prefix subnet cannot be smaller than a `/24`. Azure recommends using a `/23`](https://docs.microsoft.com/azure/virtual-wan/virtual-wan-faq#what-is-the-recommended-hub-address-space-during-hub-creation).
         #[builder(into, default)]
-        pub address_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub address_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The hub routing preference. Possible values are `ExpressRoute`, `ASPath` and `VpnGateway`. Defaults to `ExpressRoute`.
         #[builder(into, default)]
-        pub hub_routing_preference: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hub_routing_preference: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the Virtual Hub should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Virtual Hub. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Virtual Hub should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `route` blocks as defined below.
         #[builder(into, default)]
-        pub routes: pulumi_gestalt_rust::InputOrOutput<
+        pub routes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::VirtualHubRoute>>,
         >,
         /// The SKU of the Virtual Hub. Possible values are `Basic` and `Standard`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the Virtual Hub.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Minimum instance capacity for the scaling configuration of the Virtual Hub Router. Defaults to `2`.
         #[builder(into, default)]
-        pub virtual_router_auto_scale_min_capacity: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_router_auto_scale_min_capacity: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The ID of a Virtual WAN within which the Virtual Hub should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub virtual_wan_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtual_wan_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VirtualHubResult {

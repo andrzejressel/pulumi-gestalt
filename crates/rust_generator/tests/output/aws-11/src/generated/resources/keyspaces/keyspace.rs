@@ -37,15 +37,15 @@ pub mod keyspace {
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The replication specification of the keyspace.
         #[builder(into, default)]
-        pub replication_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub replication_specification: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyspaces::KeyspaceReplicationSpecification>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

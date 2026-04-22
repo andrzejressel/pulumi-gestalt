@@ -10,7 +10,7 @@ pub mod get_project_settings {
     pub struct GetProjectSettingsArgs {
         /// The ID of the project for which to retrieve settings.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetProjectSettingsResult {

@@ -73,39 +73,39 @@ pub mod alert_processing_rule_action_group {
     pub struct AlertProcessingRuleActionGroupArgs {
         /// Specifies a list of Action Group IDs.
         #[builder(into)]
-        pub add_action_group_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub add_action_group_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A `condition` block as defined below.
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::monitoring::AlertProcessingRuleActionGroupCondition,
             >,
         >,
         /// Specifies a description for the Alert Processing Rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Alert Processing Rule be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Alert Processing Rule. Changing this forces a new Alert Processing Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Alert Processing Rule should exist. Changing this forces a new Alert Processing Rule to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `schedule` block as defined below.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::monitoring::AlertProcessingRuleActionGroupSchedule,
             >,
         >,
         /// A list of resource IDs which will be the target of alert processing rule.
         #[builder(into)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub scopes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A mapping of tags which should be assigned to the Alert Processing Rule.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

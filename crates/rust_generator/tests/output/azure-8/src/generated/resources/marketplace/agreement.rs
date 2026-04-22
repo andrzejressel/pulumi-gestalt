@@ -38,13 +38,13 @@ pub mod agreement {
     pub struct AgreementArgs {
         /// The Offer of the Marketplace Image. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub offer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub offer: pulumi_gestalt_rust::Input<String>,
         /// The Plan of the Marketplace Image. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plan: pulumi_gestalt_rust::Input<String>,
         /// The Publisher of the Marketplace Image. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub publisher: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub publisher: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AgreementResult {

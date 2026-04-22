@@ -280,39 +280,39 @@ pub mod instance {
         /// Users will need to either manually update their state file to include these diffed options, or include the field in a lifecycle ignore changes block.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub accelerators: pulumi_gestalt_rust::InputOrOutput<
+        pub accelerators: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datafusion::InstanceAccelerator>>,
         >,
         /// The crypto key configuration. This field is used by the Customer-Managed Encryption Keys (CMEK) feature.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub crypto_key_config: pulumi_gestalt_rust::InputOrOutput<
+        pub crypto_key_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafusion::InstanceCryptoKeyConfig>,
         >,
         /// User-managed service account to set on Dataproc when Cloud Data Fusion creates Dataproc to run data processing pipelines.
         #[builder(into, default)]
-        pub dataproc_service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dataproc_service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional description of the instance.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Display name for an instance.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to enable granular role-based access control.
         #[builder(into, default)]
-        pub enable_rbac: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_rbac: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Option to enable Stackdriver Logging.
         #[builder(into, default)]
-        pub enable_stackdriver_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_stackdriver_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Option to enable Stackdriver Monitoring.
         #[builder(into, default)]
-        pub enable_stackdriver_monitoring: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_stackdriver_monitoring: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Option to enable and pass metadata for event publishing.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub event_publish_config: pulumi_gestalt_rust::InputOrOutput<
+        pub event_publish_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafusion::InstanceEventPublishConfig>,
         >,
         /// The resource labels for instance to use to annotate any related underlying resources,
@@ -321,35 +321,35 @@ pub mod instance {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the instance or a fully qualified identifier for the instance.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network configuration options. These are required when a private Data Fusion instance is to be created.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafusion::InstanceNetworkConfig>,
         >,
         /// Map of additional options used to configure the behavior of Data Fusion instance.
         #[builder(into, default)]
-        pub options: pulumi_gestalt_rust::InputOrOutput<
+        pub options: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies whether the Data Fusion instance should be private. If set to
         /// true, all Data Fusion nodes will have private IP addresses and will not be
         /// able to access the public internet.
         #[builder(into, default)]
-        pub private_instance: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub private_instance: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the Data Fusion instance.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Represents the type of Data Fusion instance. Each type is configured with
         /// the default settings for processing and memory.
         /// - BASIC: Basic Data Fusion instance. In Basic type, the user will be able to create data pipelines
@@ -365,13 +365,13 @@ pub mod instance {
         ///
         /// - - -
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Current version of the Data Fusion.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the zone in which the Data Fusion instance will be created. Only DEVELOPER instances use this field.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

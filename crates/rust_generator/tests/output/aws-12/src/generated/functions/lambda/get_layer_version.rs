@@ -10,16 +10,16 @@ pub mod get_layer_version {
     pub struct GetLayerVersionArgs {
         /// Specific architecture the layer version could support. Conflicts with `version`. If specified, the latest available layer version supporting the provided architecture will be used.
         #[builder(into, default)]
-        pub compatible_architecture: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compatible_architecture: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specific runtime the layer version must support. Conflicts with `version`. If specified, the latest available layer version supporting the provided runtime will be used.
         #[builder(into, default)]
-        pub compatible_runtime: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compatible_runtime: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the lambda layer.
         #[builder(into)]
-        pub layer_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub layer_name: pulumi_gestalt_rust::Input<String>,
         /// Specific layer version. Conflicts with `compatible_runtime` and `compatible_architecture`. If omitted, the latest available layer version will be used.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub version: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct GetLayerVersionResult {

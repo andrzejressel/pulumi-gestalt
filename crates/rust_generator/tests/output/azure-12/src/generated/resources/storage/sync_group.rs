@@ -52,10 +52,10 @@ pub mod sync_group {
     pub struct SyncGroupArgs {
         /// The name which should be used for this Storage Sync Group. Changing this forces a new Storage Sync Group to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Storage Sync where this Storage Sync Group is. Changing this forces a new Storage Sync Group to be created.
         #[builder(into)]
-        pub storage_sync_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_sync_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SyncGroupResult {

@@ -343,18 +343,18 @@ pub mod bucket_lifecycle_configuration_v_2 {
     pub struct BucketLifecycleConfigurationV2Args {
         /// Name of the source S3 bucket you want Amazon S3 to monitor.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of configuration blocks describing the rules managing the replication. See below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::s3::BucketLifecycleConfigurationV2Rule>,
         >,
         /// The default minimum object size behavior applied to the lifecycle configuration. Valid values: `all_storage_classes_128K` (default), `varies_by_storage_class`. To customize the minimum object size for any transition you can add a `filter` that specifies a custom `object_size_greater_than` or `object_size_less_than` value. Custom filters always take precedence over the default transition behavior.
         #[builder(into, default)]
-        pub transition_default_minimum_object_size: pulumi_gestalt_rust::InputOrOutput<
+        pub transition_default_minimum_object_size: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

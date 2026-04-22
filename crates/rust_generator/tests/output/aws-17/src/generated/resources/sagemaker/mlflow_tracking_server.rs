@@ -39,32 +39,32 @@ pub mod mlflow_tracking_server {
     pub struct MlflowTrackingServerArgs {
         /// The S3 URI for a general purpose bucket to use as the MLflow Tracking Server artifact store.
         #[builder(into)]
-        pub artifact_store_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub artifact_store_uri: pulumi_gestalt_rust::Input<String>,
         /// A list of Member Definitions that contains objects that identify the workers that make up the work team.
         #[builder(into, default)]
-        pub automatic_model_registration: pulumi_gestalt_rust::InputOrOutput<
+        pub automatic_model_registration: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The version of MLflow that the tracking server uses. To see which MLflow versions are available to use, see [How it works](https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow.html#mlflow-create-tracking-server-how-it-works).
         #[builder(into, default)]
-        pub mlflow_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mlflow_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for an IAM role in your account that the MLflow Tracking Server uses to access the artifact store in Amazon S3. The role should have AmazonS3FullAccess permissions. For more information on IAM permissions for tracking server creation, see [Set up IAM permissions for MLflow](https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-create-tracking-server-iam.html).
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A unique string identifying the tracking server name. This string is part of the tracking server ARN.
         #[builder(into)]
-        pub tracking_server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tracking_server_name: pulumi_gestalt_rust::Input<String>,
         /// The size of the tracking server you want to create. You can choose between "Small", "Medium", and "Large". The default MLflow Tracking Server configuration size is "Small". You can choose a size depending on the projected use of the tracking server such as the volume of data logged, number of users, and frequency of use.
         #[builder(into, default)]
-        pub tracking_server_size: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tracking_server_size: pulumi_gestalt_rust::Input<Option<String>>,
         /// The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: TUE:03:30.
         #[builder(into, default)]
-        pub weekly_maintenance_window_start: pulumi_gestalt_rust::InputOrOutput<
+        pub weekly_maintenance_window_start: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
     }

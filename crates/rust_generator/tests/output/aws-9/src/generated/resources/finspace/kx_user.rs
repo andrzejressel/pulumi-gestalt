@@ -59,18 +59,18 @@ pub mod kx_user {
     pub struct KxUserArgs {
         /// Unique identifier for the KX environment.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// IAM role ARN to be associated with the user.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub iam_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role: pulumi_gestalt_rust::Input<String>,
         /// A unique identifier for the user.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

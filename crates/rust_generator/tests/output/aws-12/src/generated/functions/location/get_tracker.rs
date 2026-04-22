@@ -10,12 +10,12 @@ pub mod get_tracker {
     pub struct GetTrackerArgs {
         /// Key-value map of resource tags for the tracker.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the tracker resource.
         #[builder(into)]
-        pub tracker_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tracker_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTrackerResult {

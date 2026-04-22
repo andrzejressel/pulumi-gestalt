@@ -47,7 +47,7 @@ pub mod invite_accepter {
     pub struct InviteAccepterArgs {
         /// The account ID of the master Security Hub account whose invitation you're accepting.
         #[builder(into)]
-        pub master_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub master_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InviteAccepterResult {

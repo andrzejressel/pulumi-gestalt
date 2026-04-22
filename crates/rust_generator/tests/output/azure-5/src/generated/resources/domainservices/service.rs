@@ -152,50 +152,50 @@ pub mod service {
     pub struct ServiceArgs {
         /// The configuration type of this Active Directory Domain. Possible values are `FullySynced` and `ResourceTrusting`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub domain_configuration_type: pulumi_gestalt_rust::InputOrOutput<
+        pub domain_configuration_type: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Active Directory domain to use. See [official documentation](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance#create-a-managed-domain) for constraints and recommendations. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable group-based filtered sync (also called scoped synchronisation). Defaults to `false`.
         #[builder(into, default)]
-        pub filtered_sync_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub filtered_sync_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `initial_replica_set` block as defined below. The initial replica set inherits the same location as the Domain Service resource.
         #[builder(into)]
-        pub initial_replica_set: pulumi_gestalt_rust::InputOrOutput<
+        pub initial_replica_set: pulumi_gestalt_rust::Input<
             super::super::types::domainservices::ServiceInitialReplicaSet,
         >,
         /// The Azure location where the Domain Service exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name for your managed Active Directory Domain Service resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `notifications` block as defined below.
         #[builder(into, default)]
-        pub notifications: pulumi_gestalt_rust::InputOrOutput<
+        pub notifications: pulumi_gestalt_rust::Input<
             Option<super::super::types::domainservices::ServiceNotifications>,
         >,
         /// The name of the Resource Group in which the Domain Service should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `secure_ldap` block as defined below.
         #[builder(into, default)]
-        pub secure_ldap: pulumi_gestalt_rust::InputOrOutput<
+        pub secure_ldap: pulumi_gestalt_rust::Input<
             Option<super::super::types::domainservices::ServiceSecureLdap>,
         >,
         /// A `security` block as defined below.
         #[builder(into, default)]
-        pub security: pulumi_gestalt_rust::InputOrOutput<
+        pub security: pulumi_gestalt_rust::Input<
             Option<super::super::types::domainservices::ServiceSecurity>,
         >,
         /// The SKU to use when provisioning the Domain Service resource. One of `Standard`, `Enterprise` or `Premium`.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

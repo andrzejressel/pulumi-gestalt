@@ -56,19 +56,19 @@ pub mod data_source_windows_event {
     pub struct DataSourceWindowsEventArgs {
         /// Specifies the name of the Windows Event Log to collect events from.
         #[builder(into)]
-        pub event_log_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub event_log_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies an array of event types applied to the specified event log. Possible values include `Error`, `Warning` and `Information`.
         #[builder(into)]
-        pub event_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub event_types: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name which should be used for this Log Analytics Windows Event DataSource. Changing this forces a new Log Analytics Windows Event DataSource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Log Analytics Windows Event DataSource should exist. Changing this forces a new Log Analytics Windows Event DataSource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Log Analytics Workspace where the Log Analytics Windows Event DataSource should exist. Changing this forces a new Log Analytics Windows Event DataSource to be created.
         #[builder(into)]
-        pub workspace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DataSourceWindowsEventResult {

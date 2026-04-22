@@ -10,15 +10,15 @@ pub mod get_fhir_service {
     pub struct GetFhirServiceArgs {
         /// The name of the Healthcare FHIR Service.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The map of tags assigned to the Healthcare FHIR Service.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The id of the Healthcare Workspace in which the Healthcare FHIR Service exists.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFhirServiceResult {

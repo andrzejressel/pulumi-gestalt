@@ -10,20 +10,20 @@ pub mod get_instance_serial_port {
     pub struct GetInstanceSerialPortArgs {
         /// The name of the Compute Instance to read output from.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The number of the serial port to read output from. Possible values are 1-4.
         ///
         /// - - -
         #[builder(into)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub port: pulumi_gestalt_rust::Input<i32>,
         /// The project in which the Compute Instance exists. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone in which the Compute Instance exists.
         /// If it is not provided, the provider zone is used.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceSerialPortResult {

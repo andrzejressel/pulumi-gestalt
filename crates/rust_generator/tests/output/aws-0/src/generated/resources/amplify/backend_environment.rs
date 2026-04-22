@@ -42,16 +42,16 @@ pub mod backend_environment {
     pub struct BackendEnvironmentArgs {
         /// Unique ID for an Amplify app.
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// Name of deployment artifacts.
         #[builder(into, default)]
-        pub deployment_artifacts: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deployment_artifacts: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name for the backend environment.
         #[builder(into)]
-        pub environment_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_name: pulumi_gestalt_rust::Input<String>,
         /// AWS CloudFormation stack name of a backend environment.
         #[builder(into, default)]
-        pub stack_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stack_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BackendEnvironmentResult {

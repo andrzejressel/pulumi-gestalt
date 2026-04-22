@@ -10,10 +10,10 @@ pub mod get_environment_v_3 {
     pub struct GetEnvironmentV3Args {
         /// The name of this v3 App Service Environment.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the v3 App Service Environment exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEnvironmentV3Result {

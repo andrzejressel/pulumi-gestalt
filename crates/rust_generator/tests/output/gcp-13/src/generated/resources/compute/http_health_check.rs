@@ -73,20 +73,20 @@ pub mod http_health_check {
         /// How often (in seconds) to send a health check. The default value is 5
         /// seconds.
         #[builder(into, default)]
-        pub check_interval_sec: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub check_interval_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A so-far unhealthy instance will be marked healthy after this many
         /// consecutive successes. The default value is 2.
         #[builder(into, default)]
-        pub healthy_threshold: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub healthy_threshold: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The value of the host header in the HTTP health check request. If
         /// left empty (default value), the public IP on behalf of which this
         /// health check is performed will be used.
         #[builder(into, default)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035.  Specifically, the name must be 1-63 characters long and
@@ -98,28 +98,28 @@ pub mod http_health_check {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The TCP port number for the HTTP health check request.
         /// The default value is 80.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The request path of the HTTP health check request.
         /// The default value is /.
         #[builder(into, default)]
-        pub request_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// How long (in seconds) to wait before claiming failure.
         /// The default value is 5 seconds.  It is invalid for timeoutSec to have
         /// greater value than checkIntervalSec.
         #[builder(into, default)]
-        pub timeout_sec: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A so-far healthy instance will be marked unhealthy after this many
         /// consecutive failures. The default value is 2.
         #[builder(into, default)]
-        pub unhealthy_threshold: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub unhealthy_threshold: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct HttpHealthCheckResult {

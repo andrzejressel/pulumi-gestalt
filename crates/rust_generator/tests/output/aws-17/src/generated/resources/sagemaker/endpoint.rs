@@ -34,18 +34,18 @@ pub mod endpoint {
     pub struct EndpointArgs {
         /// The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations. See Deployment Config.
         #[builder(into, default)]
-        pub deployment_config: pulumi_gestalt_rust::InputOrOutput<
+        pub deployment_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::EndpointDeploymentConfig>,
         >,
         /// The name of the endpoint configuration to use.
         #[builder(into)]
-        pub endpoint_config_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_config_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the endpoint. If omitted, the provider will assign a random, unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

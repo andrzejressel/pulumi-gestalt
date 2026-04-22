@@ -9,7 +9,7 @@ pub mod random_terraform_config {
     #[allow(dead_code)]
     pub struct RandomTerraformConfigArgs {
         #[builder(into)]
-        pub self_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub self_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RandomTerraformConfigResult {

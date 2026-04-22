@@ -31,19 +31,19 @@ pub mod permission {
     pub struct PermissionArgs {
         /// Whether the user is allowed to use SSH to communicate with the instance
         #[builder(into, default)]
-        pub allow_ssh: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_ssh: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the user is allowed to use sudo to elevate privileges
         #[builder(into, default)]
-        pub allow_sudo: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_sudo: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The users permission level. Mus be one of `deny`, `show`, `deploy`, `manage`, `iam_only`
         #[builder(into, default)]
-        pub level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub level: pulumi_gestalt_rust::Input<Option<String>>,
         /// The stack to set the permissions for
         #[builder(into)]
-        pub stack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_id: pulumi_gestalt_rust::Input<String>,
         /// The user's IAM ARN to set permissions for
         #[builder(into)]
-        pub user_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PermissionResult {

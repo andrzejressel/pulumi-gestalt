@@ -10,21 +10,21 @@ pub mod get_export {
     pub struct GetExportArgs {
         /// Content-type of the export. Valid values are `application/json` and `application/yaml` are supported for `export_type` `ofoas30` and `swagger`.
         #[builder(into, default)]
-        pub accepts: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accepts: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of export. Acceptable values are `oas30` for OpenAPI 3.0.x and `swagger` for Swagger/OpenAPI 2.0.
         #[builder(into)]
-        pub export_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub export_type: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of query string parameters that specify properties of the export. the following parameters are supported: `extensions='integrations'` or `extensions='apigateway'` will export the API with x-amazon-apigateway-integration extensions. `extensions='authorizers'` will export the API with x-amazon-apigateway-authorizer extensions.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of the associated REST API.
         #[builder(into)]
-        pub rest_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Stage that will be exported.
         #[builder(into)]
-        pub stage_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stage_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetExportResult {

@@ -45,13 +45,13 @@ pub mod email_identity_policy {
     pub struct EmailIdentityPolicyArgs {
         /// The email identity.
         #[builder(into)]
-        pub email_identity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_identity: pulumi_gestalt_rust::Input<String>,
         /// The text of the policy in JSON format.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// The name of the policy.
         #[builder(into)]
-        pub policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EmailIdentityPolicyResult {

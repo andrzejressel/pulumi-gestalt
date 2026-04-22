@@ -495,34 +495,34 @@ pub mod backend_service {
         /// maximum allowed value for TTL is one day.
         /// When the load balancing scheme is INTERNAL, this field is not used.
         #[builder(into, default)]
-        pub affinity_cookie_ttl_sec: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub affinity_cookie_ttl_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The set of backends that serve this BackendService.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub backends: pulumi_gestalt_rust::InputOrOutput<
+        pub backends: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::BackendServiceBackend>>,
         >,
         /// Cloud CDN configuration for this BackendService.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cdn_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub cdn_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::BackendServiceCdnPolicy>,
         >,
         /// Settings controlling the volume of connections to a backend service. This field
         /// is applicable only when the load_balancing_scheme is set to INTERNAL_SELF_MANAGED.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub circuit_breakers: pulumi_gestalt_rust::InputOrOutput<
+        pub circuit_breakers: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::BackendServiceCircuitBreakers>,
         >,
         /// Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
         /// Possible values are: `AUTOMATIC`, `DISABLED`.
         #[builder(into, default)]
-        pub compression_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compression_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Time for which instance will be drained (not accept new
         /// connections, but still work to finish started).
         #[builder(into, default)]
-        pub connection_draining_timeout_sec: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_draining_timeout_sec: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Consistent Hash-based load balancing can be used to provide soft session
@@ -535,30 +535,30 @@ pub mod backend_service {
         /// set to MAGLEV or RING_HASH.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub consistent_hash: pulumi_gestalt_rust::InputOrOutput<
+        pub consistent_hash: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::BackendServiceConsistentHash>,
         >,
         /// Headers that the HTTP/S load balancer should add to proxied
         /// requests.
         #[builder(into, default)]
-        pub custom_request_headers: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_request_headers: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Headers that the HTTP/S load balancer should add to proxied
         /// responses.
         #[builder(into, default)]
-        pub custom_response_headers: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_response_headers: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource URL for the edge security policy associated with this backend service.
         #[builder(into, default)]
-        pub edge_security_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edge_security_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, enable Cloud CDN for this BackendService.
         #[builder(into, default)]
-        pub enable_cdn: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_cdn: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The set of URLs to the HttpHealthCheck or HttpsHealthCheck resource
         /// for health checking this BackendService. Currently at most one health
         /// check can be specified.
@@ -566,17 +566,17 @@ pub mod backend_service {
         /// or serverless NEG as a backend.
         /// For internal load balancing, a URL to a HealthCheck resource must be specified instead.
         #[builder(into, default)]
-        pub health_checks: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub health_checks: pulumi_gestalt_rust::Input<Option<String>>,
         /// Settings for enabling Cloud Identity Aware Proxy
         /// Structure is documented below.
         #[builder(into, default)]
-        pub iap: pulumi_gestalt_rust::InputOrOutput<
+        pub iap: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::BackendServiceIap>,
         >,
         /// Specifies preference of traffic to the backend (from the proxy and from the client for proxyless gRPC).
         /// Possible values are: `IPV4_ONLY`, `PREFER_IPV6`, `IPV6_ONLY`.
         #[builder(into, default)]
-        pub ip_address_selection_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_address_selection_policy: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Indicates whether the backend service will be used with internal or
@@ -586,7 +586,7 @@ pub mod backend_service {
         /// Default value is `EXTERNAL`.
         /// Possible values are: `EXTERNAL`, `INTERNAL_SELF_MANAGED`, `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`.
         #[builder(into, default)]
-        pub load_balancing_scheme: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub load_balancing_scheme: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of locality load balancing policies to be used in order of
         /// preference. Either the policy or the customPolicy field should be set.
         /// Overrides any value set in the localityLbPolicy field.
@@ -595,7 +595,7 @@ pub mod backend_service {
         /// validateForProxyless field set to true.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub locality_lb_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub locality_lb_policies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::BackendServiceLocalityLbPolicy>>,
         >,
         /// The load balancing algorithm used within the scope of the locality.
@@ -645,12 +645,12 @@ pub mod backend_service {
         /// field set to true.
         /// Possible values are: `ROUND_ROBIN`, `LEAST_REQUEST`, `RING_HASH`, `RANDOM`, `ORIGINAL_DESTINATION`, `MAGLEV`, `WEIGHTED_MAGLEV`.
         #[builder(into, default)]
-        pub locality_lb_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub locality_lb_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// This field denotes the logging options for the load balancer traffic served by this backend service.
         /// If logging is enabled, logs will be exported to Stackdriver.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub log_config: pulumi_gestalt_rust::InputOrOutput<
+        pub log_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::BackendServiceLogConfig>,
         >,
         /// Name of the resource. Provided by the client when the resource is
@@ -664,24 +664,24 @@ pub mod backend_service {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Settings controlling eviction of unhealthy hosts from the load balancing pool.
         /// Applicable backend service types can be a global backend service with the
         /// loadBalancingScheme set to INTERNAL_SELF_MANAGED or EXTERNAL_MANAGED.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub outlier_detection: pulumi_gestalt_rust::InputOrOutput<
+        pub outlier_detection: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::BackendServiceOutlierDetection>,
         >,
         /// Name of backend port. The same name should appear in the instance
         /// groups referenced by this service. Required when the load balancing
         /// scheme is EXTERNAL.
         #[builder(into, default)]
-        pub port_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub port_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The protocol this BackendService uses to communicate with backends.
         /// The default is HTTP. **NOTE**: HTTP2 is only valid for beta HTTP/2 load balancer
         /// types and may result in errors if used with the GA API. **NOTE**: With protocol “UNSPECIFIED”,
@@ -689,32 +689,32 @@ pub mod backend_service {
         /// with TCP/UDP/L3_DEFAULT Forwarding Rule protocol.
         /// Possible values are: `HTTP`, `HTTPS`, `HTTP2`, `TCP`, `SSL`, `GRPC`, `UNSPECIFIED`.
         #[builder(into, default)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// The security policy associated with this backend service.
         #[builder(into, default)]
-        pub security_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The security settings that apply to this backend service. This field is applicable to either
         /// a regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and
         /// load_balancing_scheme set to INTERNAL_MANAGED; or a global backend service with the
         /// load_balancing_scheme set to INTERNAL_SELF_MANAGED.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub security_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub security_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::BackendServiceSecuritySettings>,
         >,
         /// URL to networkservices.ServiceLbPolicy resource.
         /// Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
         #[builder(into, default)]
-        pub service_lb_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_lb_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of session affinity to use. The default is NONE. Session affinity is
         /// not applicable if the protocol is UDP.
         /// Possible values are: `NONE`, `CLIENT_IP`, `CLIENT_IP_PORT_PROTO`, `CLIENT_IP_PROTO`, `GENERATED_COOKIE`, `HEADER_FIELD`, `HTTP_COOKIE`, `STRONG_COOKIE_AFFINITY`.
         #[builder(into, default)]
-        pub session_affinity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub session_affinity: pulumi_gestalt_rust::Input<Option<String>>,
         /// Describes the HTTP cookie used for stateful session affinity. This field is applicable and required if the sessionAffinity is set to STRONG_COOKIE_AFFINITY.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub strong_session_affinity_cookie: pulumi_gestalt_rust::InputOrOutput<
+        pub strong_session_affinity_cookie: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::BackendServiceStrongSessionAffinityCookie,
             >,
@@ -724,7 +724,7 @@ pub mod backend_service {
         /// The default is 30 seconds.
         /// The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds.
         #[builder(into, default)]
-        pub timeout_sec: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct BackendServiceResult {

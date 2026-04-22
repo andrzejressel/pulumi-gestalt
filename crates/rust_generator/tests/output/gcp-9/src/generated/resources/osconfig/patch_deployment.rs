@@ -282,25 +282,25 @@ pub mod patch_deployment {
     pub struct PatchDeploymentArgs {
         /// Description of the patch deployment. Length of the description is limited to 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Duration of the patch. After the duration ends, the patch times out. A duration in seconds with up to nine fractional
         /// digits, terminated by 's'. Example: "3.5s"
         #[builder(into, default)]
-        pub duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// VM instances to patch.
         /// Structure is documented below.
         #[builder(into)]
-        pub instance_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_filter: pulumi_gestalt_rust::Input<
             super::super::types::osconfig::PatchDeploymentInstanceFilter,
         >,
         /// Schedule a one-time execution.
         #[builder(into, default)]
-        pub one_time_schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub one_time_schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::osconfig::PatchDeploymentOneTimeSchedule>,
         >,
         /// Patch configuration that is applied.
         #[builder(into, default)]
-        pub patch_config: pulumi_gestalt_rust::InputOrOutput<
+        pub patch_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::osconfig::PatchDeploymentPatchConfig>,
         >,
         /// A name for the patch deployment in the project. When creating a name the following rules apply:
@@ -310,17 +310,17 @@ pub mod patch_deployment {
         /// * Must end with a number or a letter.
         /// * Must be unique within the project.
         #[builder(into)]
-        pub patch_deployment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub patch_deployment_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Schedule recurring executions.
         #[builder(into, default)]
-        pub recurring_schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub recurring_schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::osconfig::PatchDeploymentRecurringSchedule>,
         >,
         /// Rollout strategy of the patch job.
         #[builder(into, default)]
-        pub rollout: pulumi_gestalt_rust::InputOrOutput<
+        pub rollout: pulumi_gestalt_rust::Input<
             Option<super::super::types::osconfig::PatchDeploymentRollout>,
         >,
     }

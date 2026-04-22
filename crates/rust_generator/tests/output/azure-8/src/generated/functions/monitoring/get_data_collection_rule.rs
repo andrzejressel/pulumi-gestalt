@@ -10,10 +10,10 @@ pub mod get_data_collection_rule {
     pub struct GetDataCollectionRuleArgs {
         /// Specifies the name of the Data Collection Rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group the Data Collection Rule is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDataCollectionRuleResult {

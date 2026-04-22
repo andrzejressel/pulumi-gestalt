@@ -80,30 +80,30 @@ pub mod response_policy_rule {
     pub struct ResponsePolicyRuleArgs {
         /// Answer this query with a behavior rather than DNS data. Acceptable values are 'behaviorUnspecified', and 'bypassResponsePolicy'
         #[builder(into, default)]
-        pub behavior: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub behavior: pulumi_gestalt_rust::Input<Option<String>>,
         /// The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
         #[builder(into)]
-        pub dns_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns_name: pulumi_gestalt_rust::Input<String>,
         /// Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name;
         /// in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub local_data: pulumi_gestalt_rust::InputOrOutput<
+        pub local_data: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::ResponsePolicyRuleLocalData>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifies the response policy addressed by this request.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub response_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub response_policy: pulumi_gestalt_rust::Input<String>,
         /// An identifier for this rule. Must be unique with the ResponsePolicy.
         #[builder(into)]
-        pub rule_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResponsePolicyRuleResult {

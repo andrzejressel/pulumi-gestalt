@@ -47,28 +47,28 @@ pub mod route_table {
     pub struct RouteTableArgs {
         /// Boolean flag which controls propagation of routes learned by BGP on that route table. Defaults to `true`.
         #[builder(into, default)]
-        pub bgp_route_propagation_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub bgp_route_propagation_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the route.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the route table. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A list of objects representing routes. Each object accepts the arguments documented below.
         ///
         /// > **NOTE** Since `route` can be configured both inline and via the separate `azure.network.Route` resource, we have to explicitly set it to empty slice (`[]`) to remove it.
         #[builder(into, default)]
-        pub routes: pulumi_gestalt_rust::InputOrOutput<
+        pub routes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::RouteTableRoute>>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }
