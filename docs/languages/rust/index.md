@@ -94,14 +94,7 @@ fn pulumi_main(context: &Context) -> Result<()> {
 
 ```yaml title="Pulumi.yaml"
 name: Pulumi-Gestalt-Example
-runtime: gestalt
-```
-
-### Add justfile
-
-```justfile title="justfile" 
-run:
-    cargo run
+runtime: rust
 ```
 
 You can now setup Pulumi stack using `pulumi stack` and run program using `pulumi up`

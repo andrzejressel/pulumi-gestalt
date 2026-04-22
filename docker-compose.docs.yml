@@ -1,6 +1,7 @@
 services:
   pulumi-gestalt-docker:
     image: squidfunk/mkdocs-material:9.7.6
+    command: serve --livereload --dev-addr=0.0.0.0:8000
     ports:
       - "8000:8000"
     volumes:

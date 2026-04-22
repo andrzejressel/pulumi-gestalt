@@ -38,11 +38,5 @@ https://github.com/andrzejressel/pulumi-gestalt-example
 #### Language plugin
 
 ```
-pulumi plugin install language gestalt "VERSION" --server github://api.github.com/andrzejressel/pulumi-gestalt
-```
-
-#### Wasm Runner
-
-```
-cargo binstall -y pulumi_gestalt_wasm_runner@VERSION
+pulumi plugin install language rust "VERSION" --server github://api.github.com/andrzejressel/pulumi-gestalt
 ```
