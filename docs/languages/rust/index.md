@@ -9,8 +9,7 @@
 ## Requirements
 
 - [Rust](https://www.rust-lang.org/tools/install)
-- [Just](https://github.com/casey/just)
-- Pulumi Gestalt language plugin: `pulumi plugin install language gestalt "<PULUMI_GESTALT_VERSION>" --server github://api.github.com/andrzejressel/pulumi-gestalt`
+- Pulumi Gestalt Rust language plugin: `pulumi plugin install language rust "<PULUMI_GESTALT_VERSION>" --server github://api.github.com/andrzejressel/pulumi-gestalt`
 
 ## Project setup
 

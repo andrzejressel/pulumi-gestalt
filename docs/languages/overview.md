@@ -18,9 +18,11 @@ runtime: rust
 In this case plugin will use `cargo build`  to build and `cargo run` to run the program.
 
 There is single option for rust: `binary` - it is location of binary that will be run instead of `cargo run`
+
 ```yaml title="Pulumi.yaml"
 name: Some_name
-options:
+runtime:
   name: rust
-  binary: "path/to/binary"
+  options:
+    binary: "path/to/precompiled_project"
 ```
