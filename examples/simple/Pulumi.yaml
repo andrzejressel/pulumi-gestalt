@@ -1,2 +1,5 @@
 name: Simple
-runtime: gestalt
+runtime: 
+  name: rust
+  options:
+    binary: ../../target/debug/pulumi_gestalt_example_simple

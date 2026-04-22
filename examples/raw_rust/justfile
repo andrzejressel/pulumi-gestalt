@@ -2,9 +2,6 @@ test_name := "raw_rust"
 
 set windows-shell := ["pwsh.exe", "-c"]
 
-run:
-    ../../target/debug/pulumi_gestalt_example_{{test_name}}
-
 [windows]
 local-test $RUST_BACKTRACE="full":
     #!pwsh

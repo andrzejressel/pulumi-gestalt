@@ -1,2 +1,5 @@
 name: Multiple-providers
-runtime: gestalt
+runtime: 
+  name: rust
+  options:
+    binary: ../../target/debug/pulumi_gestalt_example_multiple_providers

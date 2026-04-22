@@ -32,7 +32,7 @@ import (
 	"google.golang.org/protobuf/types/known/emptypb"
 )
 
-const pluginVersion = "dev"
+const pluginVersion = "0.0.0-DEV"
 
 func main() {
 	var tracing string
@@ -126,6 +126,24 @@ func newLanguageHost(
 	}
 }
 
+type rustOptions struct {
+	// Path to a pre-built binary to execute instead of running `cargo run`.
+	// Can be relative to ProgramDirectory or absolute.
+	binary string
+}
+
+func parseOptions(options map[string]interface{}) (rustOptions, error) {
+	var opts rustOptions
+	if binary, ok := options["binary"]; ok {
+		if binary, ok := binary.(string); ok {
+			opts.binary = binary
+		} else {
+			return opts, fmt.Errorf("binary option must be a string")
+		}
+	}
+	return opts, nil
+}
+
 func (host *rustLanguageHost) GetPluginInfo(context.Context, *emptypb.Empty) (*pulumirpc.PluginInfo, error) {
 	return &pulumirpc.PluginInfo{Version: pluginVersion}, nil
 }
@@ -135,6 +153,10 @@ func (host *rustLanguageHost) GetProgramDependencies(context.Context, *pulumirpc
 }
 
 func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) (*pulumirpc.RunResponse, error) {
+	opts, err := parseOptions(req.Info.Options.AsMap())
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse options: %w", err)
+	}
 
 	directoryName := path.Base(req.Info.RootDirectory) + "-" + path.Base(req.Info.ProgramDirectory)
 
@@ -151,16 +173,29 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 	var stderrBuf bytes.Buffer
 
 	env := host.constructEnv(req, config, configSecretKeys)
-	if host.testing {
-		home, err := os.UserHomeDir()
-		if err != nil {
-			return nil, fmt.Errorf("could not get user home directory: %w", err)
-		}
-		env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=%s/test_target/%s", home, directoryName))
-	}
 	env = append(env, "RUST_BACKTRACE=full")
 
-	cmd := exec.Command("cargo", "run") // nolint: gosec
+	var cmd *exec.Cmd
+	if opts.binary != "" {
+		// Run the pre-built binary directly.
+		binaryPath := opts.binary
+		if !filepath.IsAbs(binaryPath) {
+			binaryPath = filepath.Join(req.Info.ProgramDirectory, binaryPath)
+		}
+		logging.V(5).Infof("Run: using pre-built binary: %s", binaryPath)
+		cmd = exec.Command(binaryPath) // nolint: gosec
+	} else {
+		// Run from source via cargo.
+		if host.testing {
+			home, err := os.UserHomeDir()
+			if err != nil {
+				return nil, fmt.Errorf("could not get user home directory: %w", err)
+			}
+			env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=%s/test_target/%s", home, directoryName))
+		}
+		cmd = exec.Command("cargo", "run") // nolint: gosec
+	}
+
 	cmd.Stdout = &stdoutBuf
 	cmd.Stderr = &stderrBuf
 	cmd.Dir = req.Info.ProgramDirectory
@@ -172,7 +207,7 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 		os.Stdout.Write(stdoutBuf.Bytes())
 		os.Stderr.Write(stderrBuf.Bytes())
 
-		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
+		logging.V(5).Infof("Run(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
 		return nil, fmt.Errorf("Failed to run command: %w", err)
 	}
 
@@ -244,6 +279,10 @@ func (host *rustLanguageHost) InstallDependencies(
 	req *pulumirpc.InstallDependenciesRequest,
 	server pulumirpc.LanguageRuntime_InstallDependenciesServer,
 ) error {
+	opts, err := parseOptions(req.Info.Options.AsMap())
+	if err != nil {
+		return fmt.Errorf("failed to parse options: %w", err)
+	}
 
 	tracer := otel.Tracer("pulumi-language-rust")
 	_, otelSpan := cmdutil.StartSpan(server.Context(), tracer, "rust-install-deps")
@@ -254,6 +293,12 @@ func (host *rustLanguageHost) InstallDependencies(
 		return fmt.Errorf("failed to create install dependency streams: %w", err)
 	}
 	defer closer.Close()
+
+	if opts.binary != "" {
+		logging.V(5).Infof("InstallDependencies(Directory=%s): skipping build, binary option is set",
+			req.Info.ProgramDirectory)
+		return nil
+	}
 
 	directoryName := path.Base(req.Info.ProgramDirectory)
 

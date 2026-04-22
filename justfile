@@ -176,7 +176,7 @@ rust-docs-release $RUSTDOCFLAGS="--html-in-header docs_additions/umami.html":
 
 update-version NEW_VERSION:
     sd "0.0.0-DEV" "{{NEW_VERSION}}" "crates/wit/wit/world.wit" "examples/wasm/src/lib.rs" "examples/plugins/src/lib.rs" \
-    "Cargo.toml"
+    "Cargo.toml" "pulumi-language-rust/main.go"
 
 changelog-generate-for-repo NEW_VERSION:
     cargo run -p changelog -- generate-repo-changelog {{NEW_VERSION}}
