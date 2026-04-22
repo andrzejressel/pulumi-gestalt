@@ -67,53 +67,49 @@ pub mod virtual_machine_scale_set_extension {
     pub struct VirtualMachineScaleSetExtensionArgs {
         /// Should the latest version of the Extension be used at Deployment Time, if one is available? This won't auto-update the extension on existing installation. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_upgrade_minor_version: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_upgrade_minor_version: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the Extension be automatically updated whenever the Publisher releases a new version of this VM Extension?
         #[builder(into, default)]
-        pub automatic_upgrade_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub automatic_upgrade_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should failures from the extension be suppressed? Possible values are `true` or `false`. Defaults to `false`.
         ///
         /// > **NOTE:** Operational failures such as not connecting to the VM will not be suppressed regardless of the `failure_suppression_enabled` value.
         #[builder(into, default)]
-        pub failure_suppression_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub failure_suppression_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A value which, when different to the previous value can be used to force-run the Extension even if the Extension Configuration hasn't changed.
         #[builder(into, default)]
-        pub force_update_tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub force_update_tag: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the Virtual Machine Scale Set Extension. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A JSON String which specifies Sensitive Settings (such as Passwords) for the Extension.
         ///
         /// > **NOTE:** Keys within the `protected_settings` block are notoriously case-sensitive, where the casing required (e.g. TitleCase vs snakeCase) depends on the Extension being used. Please refer to the documentation for the specific Virtual Machine Extension you're looking to use for more information.
         #[builder(into, default)]
-        pub protected_settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protected_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `protected_settings_from_key_vault` block as defined below.
         ///
         /// > **Note:** `protected_settings_from_key_vault` cannot be used with `protected_settings`
         #[builder(into, default)]
-        pub protected_settings_from_key_vault: pulumi_gestalt_rust::InputOrOutput<
+        pub protected_settings_from_key_vault: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::VirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault,
             >,
         >,
         /// An ordered list of Extension names which this should be provisioned after.
         #[builder(into, default)]
-        pub provision_after_extensions: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub provision_after_extensions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the Publisher of the Extension. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub publisher: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub publisher: pulumi_gestalt_rust::Input<String>,
         /// A JSON String which specifies Settings for the Extension.
         ///
         /// > **NOTE:** Keys within the `settings` block are notoriously case-sensitive, where the casing required (e.g. TitleCase vs snakeCase) depends on the Extension being used. Please refer to the documentation for the specific Virtual Machine Extension you're looking to use for more information.
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Type of the Extension. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Specifies the version of the extension to use, available versions can be found using the Azure CLI.
         ///
         /// > **Note:** The `Publisher` and `Type` of Virtual Machine Scale Set Extensions can be found using the Azure CLI, via:
@@ -122,12 +118,12 @@ pub mod virtual_machine_scale_set_extension {
         /// az vmss extension image list --location westus -o table
         /// ```
         #[builder(into)]
-        pub type_handler_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_handler_version: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Virtual Machine Scale Set. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** This should be the ID from the `azure.compute.LinuxVirtualMachineScaleSet` or `azure.compute.WindowsVirtualMachineScaleSet` resource - when using the older `azure.compute.ScaleSet` resource extensions should instead be defined inline.
         #[builder(into)]
-        pub virtual_machine_scale_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_scale_set_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualMachineScaleSetExtensionResult {

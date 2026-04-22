@@ -73,22 +73,22 @@ pub mod bucket_object_lock_configuration_v_2 {
     pub struct BucketObjectLockConfigurationV2Args {
         /// Name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Account ID of the expected bucket owner.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether this bucket has an Object Lock configuration enabled. Defaults to `Enabled`. Valid values: `Enabled`.
         #[builder(into, default)]
-        pub object_lock_enabled: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub object_lock_enabled: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for specifying the Object Lock rule for the specified object. See below.
         #[builder(into, default)]
-        pub rule: pulumi_gestalt_rust::InputOrOutput<
+        pub rule: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketObjectLockConfigurationV2Rule>,
         >,
         /// This argument is deprecated and no longer needed to enable Object Lock.
         /// To enable Object Lock for an existing bucket, you must first enable versioning on the bucket and then enable Object Lock. For more details on versioning, see the `aws.s3.BucketVersioningV2` resource.
         #[builder(into, default)]
-        pub token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BucketObjectLockConfigurationV2Result {

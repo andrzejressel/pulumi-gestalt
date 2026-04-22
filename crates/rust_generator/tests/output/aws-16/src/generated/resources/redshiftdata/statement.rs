@@ -58,34 +58,34 @@ pub mod statement {
     pub struct StatementArgs {
         /// The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.
         #[builder(into, default)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the database.
         #[builder(into)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database: pulumi_gestalt_rust::Input<String>,
         /// The database user name.
         #[builder(into, default)]
-        pub db_user: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_user: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::redshiftdata::StatementParameter>>,
         >,
         /// The name or ARN of the secret that enables access to the database.
         #[builder(into, default)]
-        pub secret_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub secret_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SQL statement text to run.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub sql: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql: pulumi_gestalt_rust::Input<String>,
         /// The name of the SQL statement. You can name the SQL statement when you create it to identify the query.
         #[builder(into, default)]
-        pub statement_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub statement_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs.
         #[builder(into, default)]
-        pub with_event: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub with_event: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
         #[builder(into, default)]
-        pub workgroup_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workgroup_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StatementResult {

@@ -30,26 +30,24 @@ pub mod sms_preferences {
     pub struct SmsPreferencesArgs {
         /// A string, such as your business brand, that is displayed as the sender on the receiving device.
         #[builder(into, default)]
-        pub default_sender_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_sender_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of SMS message that you will send by default. Possible values are: Promotional, Transactional
         #[builder(into, default)]
-        pub default_sms_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_sms_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs.
         #[builder(into, default)]
-        pub delivery_status_iam_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub delivery_status_iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value must be between 0 and 100.
         #[builder(into, default)]
-        pub delivery_status_success_sampling_rate: pulumi_gestalt_rust::InputOrOutput<
+        pub delivery_status_success_sampling_rate: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The maximum amount in USD that you are willing to spend each month to send SMS messages.
         #[builder(into, default)]
-        pub monthly_spend_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub monthly_spend_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS.
         #[builder(into, default)]
-        pub usage_report_s3_bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub usage_report_s3_bucket: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SmsPreferencesResult {

@@ -39,16 +39,16 @@ pub mod hsm {
     pub struct HsmArgs {
         /// The IDs of AZ in which HSM module will be located. Conflicts with `subnet_id`.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of Cloud HSM v2 cluster to which HSM will be added.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The IP address of HSM module. Must be within the CIDR of selected subnet.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of subnet in which HSM module will be located. Conflicts with `availability_zone`.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HsmResult {

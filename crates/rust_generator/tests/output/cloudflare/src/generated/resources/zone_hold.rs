@@ -36,16 +36,16 @@ pub mod zone_hold {
     pub struct ZoneHoldArgs {
         /// Enablement status of the zone hold.
         #[builder(into)]
-        pub hold: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub hold: pulumi_gestalt_rust::Input<bool>,
         /// The RFC3339 compatible timestamp when to automatically re-enable the zone hold.
         #[builder(into, default)]
-        pub hold_after: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hold_after: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to extend to block any subdomain of the given zone.
         #[builder(into, default)]
-        pub include_subdomains: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_subdomains: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneHoldResult {

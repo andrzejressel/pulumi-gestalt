@@ -33,18 +33,18 @@ pub mod thing_type {
     pub struct ThingTypeArgs {
         /// Whether the thing type is deprecated. If true, no new things could be associated with this type.
         #[builder(into, default)]
-        pub deprecated: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deprecated: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the thing type.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// , Configuration block that can contain the following properties of the thing type:
         #[builder(into, default)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::ThingTypeProperties>,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

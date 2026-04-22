@@ -88,20 +88,20 @@ pub mod language_model {
     pub struct LanguageModelArgs {
         /// Name of reference base model.
         #[builder(into)]
-        pub base_model_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub base_model_name: pulumi_gestalt_rust::Input<String>,
         /// The input data config for the LanguageModel. See Input Data Config for more details.
         #[builder(into)]
-        pub input_data_config: pulumi_gestalt_rust::InputOrOutput<
+        pub input_data_config: pulumi_gestalt_rust::Input<
             super::super::types::transcribe::LanguageModelInputDataConfig,
         >,
         /// The language code you selected for your language model. Refer to the [supported languages](https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html) page for accepted codes.
         #[builder(into)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub language_code: pulumi_gestalt_rust::Input<String>,
         /// The model name.
         #[builder(into)]
-        pub model_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub model_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

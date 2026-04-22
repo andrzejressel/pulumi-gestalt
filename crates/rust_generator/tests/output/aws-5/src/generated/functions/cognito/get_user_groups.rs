@@ -10,7 +10,7 @@ pub mod get_user_groups {
     pub struct GetUserGroupsArgs {
         /// User pool the client belongs to.
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetUserGroupsResult {

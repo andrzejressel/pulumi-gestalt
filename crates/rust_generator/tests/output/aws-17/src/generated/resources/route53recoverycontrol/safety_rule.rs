@@ -55,29 +55,29 @@ pub mod safety_rule {
     pub struct SafetyRuleArgs {
         /// Routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed.
         #[builder(into, default)]
-        pub asserted_controls: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub asserted_controls: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// ARN of the control panel in which this safety rule will reside.
         #[builder(into)]
-        pub control_panel_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub control_panel_arn: pulumi_gestalt_rust::Input<String>,
         /// Gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.
         #[builder(into, default)]
-        pub gating_controls: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub gating_controls: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name describing the safety rule.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for safety rule criteria. See below.
         #[builder(into)]
-        pub rule_config: pulumi_gestalt_rust::InputOrOutput<
+        pub rule_config: pulumi_gestalt_rust::Input<
             super::super::types::route53recoverycontrol::SafetyRuleRuleConfig,
         >,
         /// Routing controls that can only be set or unset if the specified `rule_config` evaluates to true for the specified `gating_controls`.
         #[builder(into, default)]
-        pub target_controls: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub target_controls: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub wait_period_ms: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub wait_period_ms: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct SafetyRuleResult {

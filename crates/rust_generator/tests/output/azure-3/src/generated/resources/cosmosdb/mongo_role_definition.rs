@@ -80,22 +80,20 @@ pub mod mongo_role_definition {
     pub struct MongoRoleDefinitionArgs {
         /// The resource ID of the Mongo DB. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cosmos_mongo_database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cosmos_mongo_database_id: pulumi_gestalt_rust::Input<String>,
         /// A list of Mongo Roles which are inherited to the Mongo Role Definition.
         ///
         /// > **Note:** The role that needs to be inherited should exist in the Mongo DB of `cosmos_mongo_database_id`.
         #[builder(into, default)]
-        pub inherited_role_names: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub inherited_role_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `privilege` block as defined below.
         #[builder(into, default)]
-        pub privileges: pulumi_gestalt_rust::InputOrOutput<
+        pub privileges: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cosmosdb::MongoRoleDefinitionPrivilege>>,
         >,
         /// The user-friendly name for the Mongo Role Definition. It must be unique for the database account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub role_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MongoRoleDefinitionResult {

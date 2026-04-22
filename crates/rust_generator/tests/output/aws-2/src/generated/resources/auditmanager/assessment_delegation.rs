@@ -40,21 +40,21 @@ pub mod assessment_delegation {
     pub struct AssessmentDelegationArgs {
         /// Identifier for the assessment.
         #[builder(into)]
-        pub assessment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub assessment_id: pulumi_gestalt_rust::Input<String>,
         /// Comment describing the delegation request.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Assessment control set name. This value is the control set name used during assessment creation (not the AWS-generated ID). The `_id` suffix on this attribute has been preserved to be consistent with the underlying AWS API.
         #[builder(into)]
-        pub control_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub control_set_id: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the IAM role.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Type of customer persona. For assessment delegation, type must always be `RESOURCE_OWNER`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub role_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AssessmentDelegationResult {

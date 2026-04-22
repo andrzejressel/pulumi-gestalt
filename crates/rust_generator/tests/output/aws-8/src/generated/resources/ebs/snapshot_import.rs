@@ -28,40 +28,40 @@ pub mod snapshot_import {
     pub struct SnapshotImportArgs {
         /// The client-specific data. Detailed below.
         #[builder(into, default)]
-        pub client_data: pulumi_gestalt_rust::InputOrOutput<
+        pub client_data: pulumi_gestalt_rust::Input<
             Option<super::super::types::ebs::SnapshotImportClientData>,
         >,
         /// The description string for the import snapshot task.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information about the disk container. Detailed below.
         #[builder(into)]
-        pub disk_container: pulumi_gestalt_rust::InputOrOutput<
+        pub disk_container: pulumi_gestalt_rust::Input<
             super::super::types::ebs::SnapshotImportDiskContainer,
         >,
         /// Specifies whether the destination snapshot of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using KmsKeyId.
         #[builder(into, default)]
-        pub encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An identifier for the symmetric KMS key to use when creating the encrypted snapshot. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a KmsKeyId is specified, the Encrypted flag must also be set.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether to permanently restore an archived snapshot.
         #[builder(into, default)]
-        pub permanent_restore: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub permanent_restore: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the IAM Role the VM Import/Export service will assume. This role needs certain permissions. See https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-role. Default: `vmimport`
         #[builder(into, default)]
-        pub role_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.
         #[builder(into, default)]
-        pub storage_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the snapshot.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
         #[builder(into, default)]
-        pub temporary_restore_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub temporary_restore_days: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct SnapshotImportResult {

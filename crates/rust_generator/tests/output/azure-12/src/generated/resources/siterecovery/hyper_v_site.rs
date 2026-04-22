@@ -51,10 +51,10 @@ pub mod hyper_v_site {
     pub struct HyperVSiteArgs {
         /// The name which should be used for this Recovery Service. Changing this forces a new Site to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Recovery Services Vault where the Site created. Changing this forces a new Site to be created.
         #[builder(into)]
-        pub recovery_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HyperVSiteResult {

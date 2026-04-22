@@ -45,24 +45,24 @@ pub mod cloud_formation_stack {
     pub struct CloudFormationStackArgs {
         /// The ARN of the application from the Serverless Application Repository.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// A list of capabilities. Valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, or `CAPABILITY_AUTO_EXPAND`
         #[builder(into)]
-        pub capabilities: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub capabilities: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name of the stack to create. The resource deployed in AWS will be prefixed with `serverlessrepo-`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of Parameter structures that specify input parameters for the stack.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The version of the application to deploy. If not supplied, deploys the latest version.
         #[builder(into, default)]
-        pub semantic_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub semantic_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of tags to associate with this stack. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

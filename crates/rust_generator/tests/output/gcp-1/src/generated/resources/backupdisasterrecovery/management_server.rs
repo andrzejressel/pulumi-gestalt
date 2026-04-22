@@ -73,17 +73,17 @@ pub mod management_server {
     pub struct ManagementServerArgs {
         /// The location for the management server (management console)
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of management server (management console)
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network details to create management server (management console).
         /// Structure is documented below.
         #[builder(into, default)]
-        pub networks: pulumi_gestalt_rust::InputOrOutput<
+        pub networks: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::backupdisasterrecovery::ManagementServerNetwork>,
             >,
@@ -91,12 +91,12 @@ pub mod management_server {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of management server (management console).
         /// Default value is `BACKUP_RESTORE`.
         /// Possible values are: `BACKUP_RESTORE`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagementServerResult {

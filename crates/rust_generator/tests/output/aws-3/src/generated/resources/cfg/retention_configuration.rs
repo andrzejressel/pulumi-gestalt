@@ -34,7 +34,7 @@ pub mod retention_configuration {
     pub struct RetentionConfigurationArgs {
         /// The number of days AWS Config stores historical information.
         #[builder(into)]
-        pub retention_period_in_days: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub retention_period_in_days: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct RetentionConfigurationResult {

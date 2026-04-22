@@ -10,15 +10,15 @@ pub mod get_load_balancer_pools {
     pub struct GetLoadBalancerPoolsArgs {
         /// The account identifier to target for the datasource lookups.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// One or more values used to look up Load Balancer pools. If more than one value is given all values must match in order to be included.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::GetLoadBalancerPoolsFilter>,
         >,
         /// A list of Load Balancer Pools details.
         #[builder(into, default)]
-        pub pools: pulumi_gestalt_rust::InputOrOutput<
+        pub pools: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::GetLoadBalancerPoolsPool>>,
         >,
     }

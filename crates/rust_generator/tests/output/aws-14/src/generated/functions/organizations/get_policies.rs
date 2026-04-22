@@ -10,7 +10,7 @@ pub mod get_policies {
     pub struct GetPoliciesArgs {
         /// The type of policies to be returned in the response. Valid values are `AISERVICES_OPT_OUT_POLICY | BACKUP_POLICY | RESOURCE_CONTROL_POLICY | SERVICE_CONTROL_POLICY | TAG_POLICY`
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPoliciesResult {

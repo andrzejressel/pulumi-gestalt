@@ -70,72 +70,72 @@ pub mod workers_script {
     pub struct WorkersScriptArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub analytics_engine_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub analytics_engine_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptAnalyticsEngineBinding>>,
         >,
         /// The date to use for the compatibility flag.
         #[builder(into, default)]
-        pub compatibility_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compatibility_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// Compatibility flags used for Worker Scripts.
         #[builder(into, default)]
-        pub compatibility_flags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub compatibility_flags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The script content.
         #[builder(into)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub d1_database_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub d1_database_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptD1DatabaseBinding>>,
         >,
         /// Name of the Workers for Platforms dispatch namespace.
         #[builder(into, default)]
-        pub dispatch_namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dispatch_namespace: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub hyperdrive_config_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub hyperdrive_config_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptHyperdriveConfigBinding>>,
         >,
         #[builder(into, default)]
-        pub kv_namespace_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub kv_namespace_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptKvNamespaceBinding>>,
         >,
         /// Enabling allows Worker events to be sent to a defined Logpush destination.
         #[builder(into, default)]
-        pub logpush: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub logpush: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to upload Worker as a module.
         #[builder(into, default)]
-        pub module: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub module: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name for the script. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub placements: pulumi_gestalt_rust::InputOrOutput<
+        pub placements: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptPlacement>>,
         >,
         #[builder(into, default)]
-        pub plain_text_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub plain_text_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptPlainTextBinding>>,
         >,
         #[builder(into, default)]
-        pub queue_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub queue_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptQueueBinding>>,
         >,
         #[builder(into, default)]
-        pub r2_bucket_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub r2_bucket_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptR2BucketBinding>>,
         >,
         #[builder(into, default)]
-        pub secret_text_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub secret_text_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptSecretTextBinding>>,
         >,
         #[builder(into, default)]
-        pub service_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub service_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptServiceBinding>>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub webassembly_bindings: pulumi_gestalt_rust::InputOrOutput<
+        pub webassembly_bindings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::WorkersScriptWebassemblyBinding>>,
         >,
     }

@@ -72,15 +72,15 @@ pub mod code_repository {
     pub struct CodeRepositoryArgs {
         /// The name of the Code Repository (must be unique).
         #[builder(into)]
-        pub code_repository_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub code_repository_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies details about the repository. see Git Config details below.
         #[builder(into)]
-        pub git_config: pulumi_gestalt_rust::InputOrOutput<
+        pub git_config: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::CodeRepositoryGitConfig,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

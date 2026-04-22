@@ -42,22 +42,22 @@ pub mod hci_storage_path {
     pub struct HciStoragePathArgs {
         /// The ID of Custom Location where the Azure Stack HCI Storage Path should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub custom_location_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_location_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Azure Stack HCI Storage Path should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Azure Stack HCI Storage Path. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The file path on the disk to create the Storage Path. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub path: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Azure Stack HCI Storage Path should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Azure Stack HCI Storage Path.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

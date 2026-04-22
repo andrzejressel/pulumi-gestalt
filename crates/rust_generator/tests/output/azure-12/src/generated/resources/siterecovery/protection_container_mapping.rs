@@ -23,36 +23,34 @@ pub mod protection_container_mapping {
     pub struct ProtectionContainerMappingArgs {
         /// a `automatic_update` block defined as below.
         #[builder(into, default)]
-        pub automatic_update: pulumi_gestalt_rust::InputOrOutput<
+        pub automatic_update: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::siterecovery::ProtectionContainerMappingAutomaticUpdate,
             >,
         >,
         /// The name of the protection container mapping. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of fabric that should contains the protection container to map. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_fabric_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_fabric_name: pulumi_gestalt_rust::Input<String>,
         /// Id of the policy to use for this mapping. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_replication_policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_replication_policy_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the source protection container to map. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_source_protection_container_name: pulumi_gestalt_rust::InputOrOutput<
+        pub recovery_source_protection_container_name: pulumi_gestalt_rust::Input<
             String,
         >,
         /// Id of target protection container to map to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_target_protection_container_id: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub recovery_target_protection_container_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the vault that should be updated. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource group where the vault that should be updated is located. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProtectionContainerMappingResult {

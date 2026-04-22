@@ -288,10 +288,10 @@ pub mod tls_inspection_configuration {
     pub struct TlsInspectionConfigurationArgs {
         /// Description of the TLS inspection configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Encryption configuration block. Detailed below.
         #[builder(into, default)]
-        pub encryption_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::networkfirewall::TlsInspectionConfigurationEncryptionConfiguration,
@@ -300,13 +300,13 @@ pub mod tls_inspection_configuration {
         >,
         /// Descriptive name of the TLS inspection configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkfirewall::TlsInspectionConfigurationTimeouts,
             >,
@@ -315,7 +315,7 @@ pub mod tls_inspection_configuration {
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub tls_inspection_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub tls_inspection_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkfirewall::TlsInspectionConfigurationTlsInspectionConfiguration,
             >,

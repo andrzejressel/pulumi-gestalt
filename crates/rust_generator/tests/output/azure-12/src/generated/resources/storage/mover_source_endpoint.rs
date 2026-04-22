@@ -55,22 +55,22 @@ pub mod mover_source_endpoint {
     pub struct MoverSourceEndpointArgs {
         /// Specifies a description for the Storage Mover Source Endpoint.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the directory being exported from the server. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub export: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub export: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the host name or IP address of the server exporting the file system. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this Storage Mover Source Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the NFS protocol version. Possible values are `NFSauto`, `NFSv3` and `NFSv4`. Defaults to `NFSauto`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub nfs_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nfs_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Storage Mover for this Storage Mover Source Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_mover_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_mover_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MoverSourceEndpointResult {

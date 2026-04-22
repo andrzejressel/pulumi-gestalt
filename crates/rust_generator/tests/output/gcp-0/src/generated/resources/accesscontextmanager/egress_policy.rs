@@ -32,10 +32,10 @@ pub mod egress_policy {
         ///
         /// - - -
         #[builder(into)]
-        pub egress_policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub egress_policy_name: pulumi_gestalt_rust::Input<String>,
         /// A GCP resource that is inside of the service perimeter.
         #[builder(into)]
-        pub resource: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EgressPolicyResult {

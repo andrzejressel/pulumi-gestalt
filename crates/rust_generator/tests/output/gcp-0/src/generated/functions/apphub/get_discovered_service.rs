@@ -10,13 +10,13 @@ pub mod get_discovered_service {
     pub struct GetDiscoveredServiceArgs {
         /// The location of the discovered service.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The host project of the discovered service.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The uri of the service.
         #[builder(into)]
-        pub service_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_uri: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDiscoveredServiceResult {

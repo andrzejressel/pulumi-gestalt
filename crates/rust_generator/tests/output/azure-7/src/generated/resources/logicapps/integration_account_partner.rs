@@ -60,23 +60,23 @@ pub mod integration_account_partner {
     pub struct IntegrationAccountPartnerArgs {
         /// A `business_identity` block as documented below.
         #[builder(into)]
-        pub business_identities: pulumi_gestalt_rust::InputOrOutput<
+        pub business_identities: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::logicapps::IntegrationAccountPartnerBusinessIdentity,
             >,
         >,
         /// The name of the Logic App Integration Account. Changing this forces a new Logic App Integration Account Partner to be created.
         #[builder(into)]
-        pub integration_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_account_name: pulumi_gestalt_rust::Input<String>,
         /// A JSON mapping of any Metadata for this Logic App Integration Account Partner.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Logic App Integration Account Partner. Changing this forces a new Logic App Integration Account Partner to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Logic App Integration Account Partner should exist. Changing this forces a new Logic App Integration Account Partner to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IntegrationAccountPartnerResult {

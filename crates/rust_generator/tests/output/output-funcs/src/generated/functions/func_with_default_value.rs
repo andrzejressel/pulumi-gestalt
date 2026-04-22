@@ -9,9 +9,9 @@ pub mod func_with_default_value {
     #[allow(dead_code)]
     pub struct FuncWithDefaultValueArgs {
         #[builder(into)]
-        pub a: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub a: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub b: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub b: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FuncWithDefaultValueResult {

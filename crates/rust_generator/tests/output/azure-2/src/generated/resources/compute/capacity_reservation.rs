@@ -58,23 +58,23 @@ pub mod capacity_reservation {
     pub struct CapacityReservationArgs {
         /// The ID of the Capacity Reservation Group where the Capacity Reservation exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub capacity_reservation_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of this Capacity Reservation. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
+        pub sku: pulumi_gestalt_rust::Input<
             super::super::types::compute::CapacityReservationSku,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Availability Zone for this Capacity Reservation. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CapacityReservationResult {

@@ -35,15 +35,15 @@ pub mod tag_option {
     pub struct TagOptionArgs {
         /// Whether tag option is active. Default is `true`.
         #[builder(into, default)]
-        pub active: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub active: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Tag option key.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// Tag option value.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagOptionResult {

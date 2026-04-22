@@ -38,28 +38,28 @@ pub mod dedicated_host {
     pub struct DedicatedHostArgs {
         /// The ID of the Outpost hardware asset on which to allocate the Dedicated Hosts. This parameter is supported only if you specify OutpostArn. If you are allocating the Dedicated Hosts in a Region, omit this parameter.
         #[builder(into, default)]
-        pub asset_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub asset_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. Valid values: `on`, `off`. Default: `on`.
         #[builder(into, default)]
-        pub auto_placement: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_placement: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Availability Zone in which to allocate the Dedicated Host.
         #[builder(into)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub availability_zone: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether to enable or disable host recovery for the Dedicated Host. Valid values: `on`, `off`. Default: `off`.
         #[builder(into, default)]
-        pub host_recovery: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_recovery: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the Dedicated Hosts support multiple instance types within that instance family. Exactly one of `instance_family` or `instance_type` must be specified.
         #[builder(into, default)]
-        pub instance_family: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_family: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the Dedicated Hosts support instances of the specified instance type only. Exactly one of `instance_family` or `instance_type` must be specified.
         #[builder(into, default)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the AWS Outpost on which to allocate the Dedicated Host.
         #[builder(into, default)]
-        pub outpost_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub outpost_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

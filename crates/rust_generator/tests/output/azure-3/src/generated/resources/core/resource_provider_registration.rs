@@ -64,12 +64,12 @@ pub mod resource_provider_registration {
     #[allow(dead_code)]
     pub struct ResourceProviderRegistrationArgs {
         #[builder(into, default)]
-        pub features: pulumi_gestalt_rust::InputOrOutput<
+        pub features: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::core::ResourceProviderRegistrationFeature>>,
         >,
         /// The namespace of the Resource Provider which should be registered. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ResourceProviderRegistrationResult {

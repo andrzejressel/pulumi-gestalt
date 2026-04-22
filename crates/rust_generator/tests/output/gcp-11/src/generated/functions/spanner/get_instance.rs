@@ -9,18 +9,18 @@ pub mod get_instance {
     #[allow(dead_code)]
     pub struct GetInstanceArgs {
         #[builder(into, default)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub config: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the spanner instance.
         ///
         /// - - -
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceResult {

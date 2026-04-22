@@ -41,7 +41,7 @@ pub mod event_sources_config {
     pub struct EventSourcesConfigArgs {
         /// Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service. See `event_sources` below.
         #[builder(into, default)]
-        pub event_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub event_sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::devopsguru::EventSourcesConfigEventSource>>,
         >,
     }

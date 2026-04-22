@@ -52,27 +52,27 @@ pub mod shared_access_policy {
         ///
         /// > **NOTE** At least one of `registry_read`, `registry_write`, `service_connect`, `device_connect` permissions must be set to `true`.
         #[builder(into, default)]
-        pub device_connect: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub device_connect: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the IoTHub to which this Shared Access Policy belongs. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the IotHub Shared Access Policy resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Adds `RegistryRead` permission to this Shared Access Account. It allows read access to the identity registry.
         #[builder(into, default)]
-        pub registry_read: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub registry_read: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Adds `RegistryWrite` permission to this Shared Access Account. It allows write access to the identity registry.
         ///
         /// > **NOTE** When `registry_write` is set to `true`, `registry_read` must also be set to true. This is a limitation of the Azure REST API
         #[builder(into, default)]
-        pub registry_write: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub registry_write: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group under which the IotHub Shared Access Policy resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Adds `ServiceConnect` permission to this Shared Access Account. It allows sending and receiving on the cloud-side endpoints.
         #[builder(into, default)]
-        pub service_connect: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub service_connect: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SharedAccessPolicyResult {

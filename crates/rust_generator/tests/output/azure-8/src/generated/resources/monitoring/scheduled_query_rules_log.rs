@@ -90,35 +90,33 @@ pub mod scheduled_query_rules_log {
     pub struct ScheduledQueryRulesLogArgs {
         /// A list of IDs of Resources referred into query.
         #[builder(into, default)]
-        pub authorized_resource_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub authorized_resource_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `criteria` block as defined below.
         #[builder(into)]
-        pub criteria: pulumi_gestalt_rust::InputOrOutput<
+        pub criteria: pulumi_gestalt_rust::Input<
             super::super::types::monitoring::ScheduledQueryRulesLogCriteria,
         >,
         /// The resource URI over which log search query is to be run. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub data_source_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source_id: pulumi_gestalt_rust::Input<String>,
         /// The description of the scheduled query rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether this scheduled query rule is enabled. Default is `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the Azure Region where the resource should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the scheduled query rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the scheduled query rule instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -230,55 +230,55 @@ pub mod run_command {
     pub struct RunCommandArgs {
         /// An `error_blob_managed_identity` block as defined below. User-assigned managed Identity that has access to errorBlobUri storage blob.
         #[builder(into, default)]
-        pub error_blob_managed_identity: pulumi_gestalt_rust::InputOrOutput<
+        pub error_blob_managed_identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RunCommandErrorBlobManagedIdentity>,
         >,
         /// Specifies the Azure storage blob where script error stream will be uploaded.
         #[builder(into, default)]
-        pub error_blob_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub error_blob_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Virtual Machine Run Command should exist. Changing this forces a new Virtual Machine Run Command to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this Virtual Machine Run Command. Changing this forces a new Virtual Machine Run Command to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `output_blob_managed_identity` block as defined below. User-assigned managed Identity that has access to outputBlobUri storage blob.
         #[builder(into, default)]
-        pub output_blob_managed_identity: pulumi_gestalt_rust::InputOrOutput<
+        pub output_blob_managed_identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RunCommandOutputBlobManagedIdentity>,
         >,
         /// Specifies the Azure storage blob where script output stream will be uploaded. It can be basic blob URI with SAS token.
         #[builder(into, default)]
-        pub output_blob_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub output_blob_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of `parameter` blocks as defined below. The parameters used by the script.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::RunCommandParameter>>,
         >,
         /// A list of `protected_parameter` blocks as defined below. The protected parameters used by the script.
         #[builder(into, default)]
-        pub protected_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub protected_parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::RunCommandProtectedParameter>>,
         >,
         /// Specifies the user account password on the VM when executing the Virtual Machine Run Command.
         #[builder(into, default)]
-        pub run_as_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub run_as_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the user account on the VM when executing the Virtual Machine Run Command.
         #[builder(into, default)]
-        pub run_as_user: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub run_as_user: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `source` block as defined below. The source of the run command script.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             super::super::types::compute::RunCommandSource,
         >,
         /// A mapping of tags which should be assigned to the Virtual Machine Run Command.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Virtual Machine ID within which this Virtual Machine Run Command should exist. Changing this forces a new Virtual Machine Run Command to be created.
         #[builder(into)]
-        pub virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RunCommandResult {

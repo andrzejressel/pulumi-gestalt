@@ -33,7 +33,7 @@ pub mod image_block_public_access {
     pub struct ImageBlockPublicAccessArgs {
         /// The state of block public access for AMIs at the account level in the configured AWS Region. Valid values: `unblocked` and `block-new-sharing`.
         #[builder(into)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub state: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ImageBlockPublicAccessResult {

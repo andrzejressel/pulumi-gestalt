@@ -10,7 +10,7 @@ pub mod get_origin_ca_certificate {
     pub struct GetOriginCaCertificateArgs {
         /// The Origin CA Certificate unique identifier.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOriginCaCertificateResult {

@@ -50,26 +50,26 @@ pub mod hours_of_operation {
     pub struct HoursOfOperationArgs {
         /// One or more config blocks which define the configuration information for the hours of operation: day, start time, and end time . Config blocks are documented below.
         #[builder(into)]
-        pub configs: pulumi_gestalt_rust::InputOrOutput<
+        pub configs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::connect::HoursOfOperationConfig>,
         >,
         /// Specifies the description of the Hours of Operation.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the identifier of the hosting Amazon Connect Instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Hours of Operation.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags to apply to the Hours of Operation. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the time zone of the Hours of Operation.
         #[builder(into)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub time_zone: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HoursOfOperationResult {

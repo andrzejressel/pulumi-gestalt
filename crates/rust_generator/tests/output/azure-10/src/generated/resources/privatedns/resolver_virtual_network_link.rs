@@ -93,18 +93,18 @@ pub mod resolver_virtual_network_link {
     pub struct ResolverVirtualNetworkLinkArgs {
         /// Specifies the ID of the Private DNS Resolver DNS Forwarding Ruleset. Changing this forces a new Private DNS Resolver Virtual Network Link to be created.
         #[builder(into)]
-        pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::Input<String>,
         /// Metadata attached to the Private DNS Resolver Virtual Network Link.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the name which should be used for this Private DNS Resolver Virtual Network Link. Changing this forces a new Private DNS Resolver Virtual Network Link to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Virtual Network that is linked to the Private DNS Resolver Virtual Network Link. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResolverVirtualNetworkLinkResult {

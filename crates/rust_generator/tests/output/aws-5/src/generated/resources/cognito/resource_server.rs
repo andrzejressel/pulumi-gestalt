@@ -72,18 +72,18 @@ pub mod resource_server {
     pub struct ResourceServerArgs {
         /// An identifier for the resource server.
         #[builder(into)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identifier: pulumi_gestalt_rust::Input<String>,
         /// A name for the resource server.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Authorization Scope.
         #[builder(into, default)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<
+        pub scopes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cognito::ResourceServerScope>>,
         >,
         /// User pool the client belongs to.
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourceServerResult {

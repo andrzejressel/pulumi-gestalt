@@ -45,15 +45,15 @@ pub mod ssl_cert {
         /// The common name to be used in the certificate to identify the
         /// client. Constrained to [a-zA-Z.-_ ]+. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub common_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub common_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Cloud SQL instance. Changing this
         /// forces a new resource to be created.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SslCertResult {

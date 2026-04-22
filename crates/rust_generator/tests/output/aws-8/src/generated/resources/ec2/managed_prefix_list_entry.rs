@@ -46,13 +46,13 @@ pub mod managed_prefix_list_entry {
     pub struct ManagedPrefixListEntryArgs {
         /// CIDR block of this entry.
         #[builder(into)]
-        pub cidr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cidr: pulumi_gestalt_rust::Input<String>,
         /// Description of this entry. Please note that due to API limitations, updating only the description of an entry will require recreating the entry.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the prefix list.
         #[builder(into)]
-        pub prefix_list_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub prefix_list_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedPrefixListEntryResult {

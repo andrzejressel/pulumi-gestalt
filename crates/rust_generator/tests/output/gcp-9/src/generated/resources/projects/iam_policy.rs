@@ -383,11 +383,11 @@ pub mod iam_policy {
         /// Deleting this removes all policies from the project, locking out users without
         /// organization-level access.
         #[builder(into)]
-        pub policy_data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_data: pulumi_gestalt_rust::Input<String>,
         /// The project id of the target project. This is not
         /// inferred from the provider.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IAMPolicyResult {

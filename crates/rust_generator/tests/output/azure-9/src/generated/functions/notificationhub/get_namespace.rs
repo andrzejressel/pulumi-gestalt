@@ -10,10 +10,10 @@ pub mod get_namespace {
     pub struct GetNamespaceArgs {
         /// Specifies the Name of the Notification Hub Namespace.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Name of the Resource Group within which the Notification Hub exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNamespaceResult {

@@ -84,21 +84,21 @@ pub mod access_rule {
     pub struct AccessRuleArgs {
         /// The account identifier to target for the resource. Must provide only one of `account_id`, `zone_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rule configuration to apply to a matched request. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             super::types::AccessRuleConfiguration,
         >,
         /// The action to apply to a matched request. Available values: `block`, `challenge`, `whitelist`, `js_challenge`, `managed_challenge`.
         #[builder(into)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mode: pulumi_gestalt_rust::Input<String>,
         /// A personal note about the rule. Typically used as a reminder or explanation for the rule.
         #[builder(into, default)]
-        pub notes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notes: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. Must provide only one of `account_id`, `zone_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccessRuleResult {

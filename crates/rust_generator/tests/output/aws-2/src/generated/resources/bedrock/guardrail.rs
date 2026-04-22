@@ -97,57 +97,57 @@ pub mod guardrail {
     pub struct GuardrailArgs {
         /// Message to return when the guardrail blocks a prompt.
         #[builder(into)]
-        pub blocked_input_messaging: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub blocked_input_messaging: pulumi_gestalt_rust::Input<String>,
         /// Message to return when the guardrail blocks a model response.
         #[builder(into)]
-        pub blocked_outputs_messaging: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub blocked_outputs_messaging: pulumi_gestalt_rust::Input<String>,
         /// Content policy config for a guardrail. See Content Policy Config for more information.
         #[builder(into, default)]
-        pub content_policy_config: pulumi_gestalt_rust::InputOrOutput<
+        pub content_policy_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::GuardrailContentPolicyConfig>,
         >,
         /// Contextual grounding policy config for a guardrail. See Contextual Grounding Policy Config for more information.
         #[builder(into, default)]
-        pub contextual_grounding_policy_config: pulumi_gestalt_rust::InputOrOutput<
+        pub contextual_grounding_policy_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bedrock::GuardrailContextualGroundingPolicyConfig,
             >,
         >,
         /// Description of the guardrail or its version.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The KMS key with which the guardrail was encrypted at rest.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the guardrail.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Sensitive information policy config for a guardrail. See Sensitive Information Policy Config for more information.
         #[builder(into, default)]
-        pub sensitive_information_policy_config: pulumi_gestalt_rust::InputOrOutput<
+        pub sensitive_information_policy_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bedrock::GuardrailSensitiveInformationPolicyConfig,
             >,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::GuardrailTimeouts>,
         >,
         /// Topic policy config for a guardrail. See Topic Policy Config for more information.
         #[builder(into, default)]
-        pub topic_policy_config: pulumi_gestalt_rust::InputOrOutput<
+        pub topic_policy_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::GuardrailTopicPolicyConfig>,
         >,
         /// Word policy config for a guardrail. See Word Policy Config for more information.
         #[builder(into, default)]
-        pub word_policy_config: pulumi_gestalt_rust::InputOrOutput<
+        pub word_policy_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::GuardrailWordPolicyConfig>,
         >,
     }

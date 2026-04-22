@@ -9,17 +9,17 @@ pub mod get_tunnel_dest_group_iam_policy {
     #[allow(dead_code)]
     pub struct GetTunnelDestGroupIamPolicyArgs {
         #[builder(into)]
-        pub dest_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dest_group: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the tunnel group. Must be the same as the network resources in the group.
         /// Used to find the parent resource to bind the IAM policy to. If not specified,
         /// the value will be parsed from the identifier of the parent resource. If no region is provided in the parent identifier and no
         /// region is specified, it is taken from the provider configuration.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetTunnelDestGroupIamPolicyResult {

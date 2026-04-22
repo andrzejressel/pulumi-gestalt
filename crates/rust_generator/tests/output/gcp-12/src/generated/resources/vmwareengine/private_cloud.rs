@@ -120,40 +120,38 @@ pub mod private_cloud {
         /// The number of hours to delay this request. You can set this value to an hour between 0 to 8, where setting it to 0
         /// starts the deletion request immediately. If no value is set, a default value is set at the API Level.
         #[builder(into, default)]
-        pub deletion_delay_hours: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub deletion_delay_hours: pulumi_gestalt_rust::Input<Option<i32>>,
         /// User-provided description for this private cloud.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location where the PrivateCloud should reside.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The management cluster for this private cloud. This used for creating and managing the default cluster.
         /// Structure is documented below.
         #[builder(into)]
-        pub management_cluster: pulumi_gestalt_rust::InputOrOutput<
+        pub management_cluster: pulumi_gestalt_rust::Input<
             super::super::types::vmwareengine::PrivateCloudManagementCluster,
         >,
         /// The ID of the PrivateCloud.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network configuration in the consumer project with which the peering has to be done.
         /// Structure is documented below.
         #[builder(into)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             super::super::types::vmwareengine::PrivateCloudNetworkConfig,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// While set true, deletion_delay_hours value will be sent in the request even for zero value of the field. This field is
         /// only useful for setting 0 value to the deletion_delay_hours field. It can be used both alone and together with
         /// deletion_delay_hours.
         #[builder(into, default)]
-        pub send_deletion_delay_hours_if_zero: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub send_deletion_delay_hours_if_zero: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Initial type of the private cloud. Possible values: ["STANDARD", "TIME_LIMITED", "STRETCHED"]
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PrivateCloudResult {

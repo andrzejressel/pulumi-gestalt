@@ -10,13 +10,13 @@ pub mod get_fabric {
     pub struct GetFabricArgs {
         /// Specifies the name of the Site Recovery Replication Fabric.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Recovery Services Vault that the Site Recovery Replication Fabric is associated witth.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the associated Recovery Services Vault resides.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFabricResult {

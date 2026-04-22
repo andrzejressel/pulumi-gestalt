@@ -16,7 +16,7 @@ pub mod get_sink {
         /// -  `billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_NAME]`
         /// - `folders/[FOLDER_ID]/sinks/[SINK_NAME]`
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSinkResult {

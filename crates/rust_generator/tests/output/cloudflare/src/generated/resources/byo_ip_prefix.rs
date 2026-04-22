@@ -38,16 +38,16 @@ pub mod byo_ip_prefix {
     pub struct ByoIpPrefixArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Whether or not the prefix shall be announced. A prefix can be activated or deactivated once every 15 minutes (attempting more regular updates will trigger rate limiting). Available values: `on`, `off`.
         #[builder(into, default)]
-        pub advertisement: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub advertisement: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the BYO IP prefix.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The assigned Bring-Your-Own-IP prefix ID. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub prefix_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub prefix_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ByoIpPrefixResult {

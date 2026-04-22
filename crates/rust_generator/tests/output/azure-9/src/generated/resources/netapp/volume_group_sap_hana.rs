@@ -221,25 +221,25 @@ pub mod volume_group_sap_hana {
     pub struct VolumeGroupSapHanaArgs {
         /// Name of the account where the application volume group belong to. Changing this forces a new Application Volume Group to be created and data will be lost.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The SAP System ID, maximum 3 characters, e.g. `SH9`. Changing this forces a new Application Volume Group to be created and data will be lost.
         #[builder(into)]
-        pub application_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_identifier: pulumi_gestalt_rust::Input<String>,
         /// Volume group description. Changing this forces a new Application Volume Group to be created and data will be lost.
         #[builder(into)]
-        pub group_description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_description: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Application Volume Group should exist. Changing this forces a new Application Volume Group to be created and data will be lost.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Application Volume Group. Changing this forces a new Application Volume Group to be created and data will be lost.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Application Volume Group should exist. Changing this forces a new Application Volume Group to be created and data will be lost.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `volume` blocks as defined below.
         #[builder(into)]
-        pub volumes: pulumi_gestalt_rust::InputOrOutput<
+        pub volumes: pulumi_gestalt_rust::Input<
             Vec<super::super::types::netapp::VolumeGroupSapHanaVolume>,
         >,
     }

@@ -254,30 +254,30 @@ pub mod managed_zone {
         /// Cloud logging configuration
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloud_logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_logging_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::ManagedZoneCloudLoggingConfig>,
         >,
         /// A textual description field. Defaults to 'Managed by Pulumi'.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The DNS name of this managed zone, for instance "example.com.".
         #[builder(into)]
-        pub dns_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns_name: pulumi_gestalt_rust::Input<String>,
         /// DNSSEC configuration
         /// Structure is documented below.
         #[builder(into, default)]
-        pub dnssec_config: pulumi_gestalt_rust::InputOrOutput<
+        pub dnssec_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::ManagedZoneDnssecConfig>,
         >,
         /// Set this true to delete all records in the zone.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The presence for this field indicates that outbound forwarding is enabled
         /// for this zone. The value of this field contains the set of destinations
         /// to forward to.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub forwarding_config: pulumi_gestalt_rust::InputOrOutput<
+        pub forwarding_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::ManagedZoneForwardingConfig>,
         >,
         /// A set of key/value label pairs to assign to this ManagedZone.
@@ -285,7 +285,7 @@ pub mod managed_zone {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// User assigned name for this resource.
@@ -293,34 +293,34 @@ pub mod managed_zone {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The presence of this field indicates that DNS Peering is enabled for this
         /// zone. The value of this field contains the network to peer with.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub peering_config: pulumi_gestalt_rust::InputOrOutput<
+        pub peering_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::ManagedZonePeeringConfig>,
         >,
         /// For privately visible zones, the set of Virtual Private Cloud
         /// resources that the zone is visible from. At least one of `gke_clusters` or `networks` must be specified.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub private_visibility_config: pulumi_gestalt_rust::InputOrOutput<
+        pub private_visibility_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::ManagedZonePrivateVisibilityConfig>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if this is a managed reverse lookup zone. If true, Cloud DNS will resolve reverse
         /// lookup queries using automatically configured records for VPC resources. This only applies
         /// to networks listed under `private_visibility_config`.
         #[builder(into, default)]
-        pub reverse_lookup: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub reverse_lookup: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The presence of this field indicates that this zone is backed by Service Directory. The value of this field contains information related to the namespace associated with the zone.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub service_directory_config: pulumi_gestalt_rust::InputOrOutput<
+        pub service_directory_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::ManagedZoneServiceDirectoryConfig>,
         >,
         /// The zone's visibility: public zones are exposed to the Internet,
@@ -328,7 +328,7 @@ pub mod managed_zone {
         /// Default value is `public`.
         /// Possible values are: `private`, `public`.
         #[builder(into, default)]
-        pub visibility: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub visibility: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagedZoneResult {

@@ -11,12 +11,12 @@ pub mod get_addon {
         /// Name of the EKS add-on. The name must match one of
         /// the names returned by [list-addon](https://docs.aws.amazon.com/cli/latest/reference/eks/list-addons.html).
         #[builder(into)]
-        pub addon_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub addon_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the EKS Cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

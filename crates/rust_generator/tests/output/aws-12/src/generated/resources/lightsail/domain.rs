@@ -31,7 +31,7 @@ pub mod domain {
     pub struct DomainArgs {
         /// The name of the Lightsail domain to manage
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainResult {

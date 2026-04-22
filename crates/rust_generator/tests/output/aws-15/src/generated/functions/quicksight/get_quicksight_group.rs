@@ -10,15 +10,15 @@ pub mod get_quicksight_group {
     pub struct GetQuicksightGroupArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the group that you want to match.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_name: pulumi_gestalt_rust::Input<String>,
         /// QuickSight namespace. Defaults to `default`.
         #[builder(into, default)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetQuicksightGroupResult {

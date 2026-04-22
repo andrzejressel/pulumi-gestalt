@@ -41,13 +41,13 @@ pub mod cidr_location {
     pub struct CidrLocationArgs {
         /// CIDR blocks for the location.
         #[builder(into)]
-        pub cidr_blocks: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub cidr_blocks: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ID of the CIDR collection to update.
         #[builder(into)]
-        pub cidr_collection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cidr_collection_id: pulumi_gestalt_rust::Input<String>,
         /// Name for the CIDR location.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CidrLocationResult {

@@ -161,16 +161,16 @@ pub mod hosting_release {
         /// The ID of the channel to which the release belongs. If not provided, the release will
         /// belong to the default "live" channel
         #[builder(into, default)]
-        pub channel_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub channel_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The deploy description when the release was created. The value can be up to 512 characters.
         #[builder(into, default)]
-        pub message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. The ID of the site to which the release belongs.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub site_id: pulumi_gestalt_rust::Input<String>,
         /// The type of the release; indicates what happened to the content of the site. There is no need to specify
         /// `DEPLOY` or `ROLLBACK` type if a `version_name` is provided.
         /// DEPLOY: A version was uploaded to Firebase Hosting and released. Output only.
@@ -178,13 +178,13 @@ pub mod hosting_release {
         /// SITE_DISABLE: The release prevents the site from serving content. Firebase Hosting acts as if the site never existed
         /// Possible values are: `DEPLOY`, `ROLLBACK`, `SITE_DISABLE`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique identifier for a version, in the format: sites/SITE_ID/versions/VERSION_ID.
         /// The content of the version specified will be actively displayed on the appropriate URL.
         /// The Version must belong to the same site as in the `site_id`.
         /// This parameter must be empty if the `type` of the release is `SITE_DISABLE`.
         #[builder(into, default)]
-        pub version_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HostingReleaseResult {

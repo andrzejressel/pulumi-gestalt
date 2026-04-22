@@ -56,40 +56,40 @@ pub mod record {
     #[allow(dead_code)]
     pub struct RecordArgs {
         #[builder(into, default)]
-        pub allow_overwrite: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_overwrite: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Comments or notes about the DNS record. This field has no effect on DNS responses.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The content of the record. Must provide only one of `data`, `content`, `value`.
         #[builder(into, default)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of attributes that constitute the record value. Must provide only one of `data`, `content`, `value`.
         #[builder(into, default)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<Option<super::types::RecordData>>,
+        pub data: pulumi_gestalt_rust::Input<Option<super::types::RecordData>>,
         /// The name of the record. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The priority of the record.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether the record gets Cloudflare's origin protection.
         #[builder(into, default)]
-        pub proxied: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub proxied: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Custom tags for the DNS record.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The TTL of the record.
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The type of the record. Available values: `A`, `AAAA`, `CAA`, `CNAME`, `TXT`, `SRV`, `LOC`, `MX`, `NS`, `SPF`, `CERT`, `DNSKEY`, `DS`, `NAPTR`, `SMIMEA`, `SSHFP`, `TLSA`, `URI`, `PTR`, `HTTPS`, `SVCB`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// The value of the record. Must provide only one of `data`, `content`, `value`.
         #[builder(into, default)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub value: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RecordResult {

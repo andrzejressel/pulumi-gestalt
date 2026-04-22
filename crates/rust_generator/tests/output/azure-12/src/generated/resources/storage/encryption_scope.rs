@@ -51,21 +51,19 @@ pub mod encryption_scope {
     pub struct EncryptionScopeArgs {
         /// Is a secondary layer of encryption with Platform Managed Keys for data applied? Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub infrastructure_encryption_required: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub infrastructure_encryption_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Key Vault Key. Required when `source` is `Microsoft.KeyVault`.
         #[builder(into, default)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Storage Encryption Scope. Changing this forces a new Storage Encryption Scope to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source of the Storage Encryption Scope. Possible values are `Microsoft.KeyVault` and `Microsoft.Storage`.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Storage Account where this Storage Encryption Scope is created. Changing this forces a new Storage Encryption Scope to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EncryptionScopeResult {

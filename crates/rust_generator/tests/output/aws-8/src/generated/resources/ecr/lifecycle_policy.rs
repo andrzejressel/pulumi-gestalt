@@ -71,10 +71,10 @@ pub mod lifecycle_policy {
     pub struct LifecyclePolicyArgs {
         /// The policy document. This is a JSON formatted string. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs. Consider using the `aws.ecr.getLifecyclePolicyDocument` data_source to generate/manage the JSON document used for the `policy` argument.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// Name of the repository to apply the policy.
         #[builder(into)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LifecyclePolicyResult {

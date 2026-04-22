@@ -66,13 +66,13 @@ pub mod sql_dedicated_gateway {
     pub struct SqlDedicatedGatewayArgs {
         /// The resource ID of the CosmosDB Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cosmosdb_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cosmosdb_account_id: pulumi_gestalt_rust::Input<String>,
         /// The instance count for the CosmosDB SQL Dedicated Gateway. Possible value is between `1` and `5`.
         #[builder(into)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub instance_count: pulumi_gestalt_rust::Input<i32>,
         /// The instance size for the CosmosDB SQL Dedicated Gateway. Changing this forces a new resource to be created. Possible values are `Cosmos.D4s`, `Cosmos.D8s` and `Cosmos.D16s`.
         #[builder(into)]
-        pub instance_size: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_size: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SqlDedicatedGatewayResult {

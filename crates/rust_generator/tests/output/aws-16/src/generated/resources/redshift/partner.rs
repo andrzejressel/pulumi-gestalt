@@ -32,16 +32,16 @@ pub mod partner {
     pub struct PartnerArgs {
         /// The Amazon Web Services account ID that owns the cluster.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The cluster identifier of the cluster that receives data from the partner.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The name of the database that receives data from the partner.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the partner that is authorized to send data.
         #[builder(into)]
-        pub partner_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partner_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PartnerResult {

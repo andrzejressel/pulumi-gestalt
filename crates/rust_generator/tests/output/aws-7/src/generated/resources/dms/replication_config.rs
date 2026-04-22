@@ -45,41 +45,41 @@ pub mod replication_config {
     pub struct ReplicationConfigArgs {
         /// Configuration block for provisioning an DMS Serverless replication.
         #[builder(into)]
-        pub compute_config: pulumi_gestalt_rust::InputOrOutput<
+        pub compute_config: pulumi_gestalt_rust::Input<
             super::super::types::dms::ReplicationConfigComputeConfig,
         >,
         /// Unique identifier that you want to use to create the config.
         #[builder(into)]
-        pub replication_config_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_config_identifier: pulumi_gestalt_rust::Input<String>,
         /// An escaped JSON string that are used to provision this replication configuration. For example, [Change processing tuning settings](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.ChangeProcessingTuning.html)
         #[builder(into, default)]
-        pub replication_settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub replication_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// The migration type. Can be one of `full-load | cdc | full-load-and-cdc`.
         #[builder(into)]
-        pub replication_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_type: pulumi_gestalt_rust::Input<String>,
         /// Unique value or name that you set for a given resource that can be used to construct an Amazon Resource Name (ARN) for that resource. For more information, see [Fine-grained access control using resource names and tags](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.FineGrainedAccess)
         #[builder(into, default)]
-        pub resource_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) string that uniquely identifies the source endpoint.
         #[builder(into)]
-        pub source_endpoint_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_endpoint_arn: pulumi_gestalt_rust::Input<String>,
         /// Whether to run or stop the serverless replication, default is false.
         #[builder(into, default)]
-        pub start_replication: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_replication: pulumi_gestalt_rust::Input<Option<bool>>,
         /// JSON settings for specifying supplemental data. For more information see [Specifying supplemental data for task settings](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html)
         #[builder(into, default)]
-        pub supplemental_settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub supplemental_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// An escaped JSON string that contains the table mappings. For information on table mapping see [Using Table Mapping with an AWS Database Migration Service Task to Select and Filter Data](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html)
         #[builder(into)]
-        pub table_mappings: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_mappings: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Amazon Resource Name (ARN) string that uniquely identifies the target endpoint.
         #[builder(into)]
-        pub target_endpoint_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_endpoint_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReplicationConfigResult {

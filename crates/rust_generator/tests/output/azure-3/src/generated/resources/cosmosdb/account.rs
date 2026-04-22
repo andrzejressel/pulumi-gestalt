@@ -99,123 +99,111 @@ pub mod account {
     #[allow(dead_code)]
     pub struct AccountArgs {
         #[builder(into, default)]
-        pub access_key_metadata_writes_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub access_key_metadata_writes_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `analytical_storage` block as defined below.
         #[builder(into, default)]
-        pub analytical_storage: pulumi_gestalt_rust::InputOrOutput<
+        pub analytical_storage: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::AccountAnalyticalStorage>,
         >,
         #[builder(into, default)]
-        pub analytical_storage_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub analytical_storage_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub automatic_failover_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub automatic_failover_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub backup: pulumi_gestalt_rust::InputOrOutput<
+        pub backup: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::AccountBackup>,
         >,
         #[builder(into, default)]
-        pub burst_capacity_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub burst_capacity_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub capabilities: pulumi_gestalt_rust::InputOrOutput<
+        pub capabilities: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cosmosdb::AccountCapability>>,
         >,
         /// A `capacity` block as defined below.
         #[builder(into, default)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::AccountCapacity>,
         >,
         #[builder(into)]
-        pub consistency_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub consistency_policy: pulumi_gestalt_rust::Input<
             super::super::types::cosmosdb::AccountConsistencyPolicy,
         >,
         #[builder(into, default)]
-        pub cors_rule: pulumi_gestalt_rust::InputOrOutput<
+        pub cors_rule: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::AccountCorsRule>,
         >,
         /// The creation mode for the CosmosDB Account. Possible values are `Default` and `Restore`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** `create_mode` can only be defined when the `backup.type` is set to `Continuous`.
         #[builder(into, default)]
-        pub create_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub create_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default identity for accessing Key Vault. Possible values are `FirstPartyIdentity`, `SystemAssignedIdentity` or `UserAssignedIdentity`. Defaults to `FirstPartyIdentity`.
         #[builder(into, default)]
-        pub default_identity_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_identity_type: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub free_tier_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub free_tier_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into)]
-        pub geo_locations: pulumi_gestalt_rust::InputOrOutput<
+        pub geo_locations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::cosmosdb::AccountGeoLocation>,
         >,
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::AccountIdentity>,
         >,
         #[builder(into, default)]
-        pub ip_range_filters: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ip_range_filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub is_virtual_network_filter_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub is_virtual_network_filter_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kind: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub local_authentication_disabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub local_authentication_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub managed_hsm_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub managed_hsm_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the minimal TLS version for the CosmosDB account. Possible values are: `Tls`, `Tls11`, and `Tls12`. Defaults to `Tls12`.
         ///
         /// > **Note** Azure Services will require TLS 1.2+ by August 2025, please see this [announcement](https://azure.microsoft.com/en-us/updates/v2/update-retirement-tls1-0-tls1-1-versions-azure-services/) for more details.
         #[builder(into, default)]
-        pub minimal_tls_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub minimal_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub mongo_server_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mongo_server_version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub multiple_write_locations_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub multiple_write_locations_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the CosmosDB Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub network_acl_bypass_for_azure_services: pulumi_gestalt_rust::InputOrOutput<
+        pub network_acl_bypass_for_azure_services: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         #[builder(into, default)]
-        pub network_acl_bypass_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub network_acl_bypass_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the Offer Type to use for this CosmosDB Account; currently, this can only be set to `Standard`.
         #[builder(into)]
-        pub offer_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub offer_type: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub partition_merge_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub partition_merge_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which the CosmosDB Account is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub restore: pulumi_gestalt_rust::InputOrOutput<
+        pub restore: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::AccountRestore>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub virtual_network_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_network_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cosmosdb::AccountVirtualNetworkRule>>,
         >,
     }

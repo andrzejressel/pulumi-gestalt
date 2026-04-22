@@ -111,88 +111,82 @@ pub mod scheduled_query_rules_alert_v_2 {
     pub struct ScheduledQueryRulesAlertV2Args {
         /// An `action` block as defined below.
         #[builder(into, default)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<
+        pub action: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::ScheduledQueryRulesAlertV2Action>,
         >,
         /// Specifies the flag that indicates whether the alert should be automatically resolved or not. Value should be `true` or `false`. The default is `false`.
         #[builder(into, default)]
-        pub auto_mitigation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_mitigation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `criteria` block as defined below.
         #[builder(into)]
-        pub criterias: pulumi_gestalt_rust::InputOrOutput<
+        pub criterias: pulumi_gestalt_rust::Input<
             Vec<super::super::types::monitoring::ScheduledQueryRulesAlertV2Criteria>,
         >,
         /// Specifies the description of the scheduled query rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the display name of the alert rule.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the flag which indicates whether this scheduled query rule is enabled. Value should be `true` or `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// How often the scheduled query rule is evaluated, represented in ISO 8601 duration format. Possible values are `PT1M`, `PT5M`, `PT10M`, `PT15M`, `PT30M`, `PT45M`, `PT1H`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `P1D`.
         ///
         /// > **Note** `evaluation_frequency` cannot be greater than the query look back which is `window_duration`*`number_of_evaluation_periods`.
         ///
         /// > **Note** `evaluation_frequency` cannot be greater than the `mute_actions_after_alert_duration`.
         #[builder(into)]
-        pub evaluation_frequency: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub evaluation_frequency: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::ScheduledQueryRulesAlertV2Identity>,
         >,
         /// Specifies the Azure Region where the Monitor Scheduled Query Rule should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mute actions for the chosen period of time in ISO 8601 duration format after the alert is fired. Possible values are `PT5M`, `PT10M`, `PT15M`, `PT30M`, `PT45M`, `PT1H`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `P1D` and `P2D`.
         ///
         /// > **Note** `auto_mitigation_enabled` and `mute_actions_after_alert_duration` are mutually exclusive and cannot both be set.
         #[builder(into, default)]
-        pub mute_actions_after_alert_duration: pulumi_gestalt_rust::InputOrOutput<
+        pub mute_actions_after_alert_duration: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the name which should be used for this Monitor Scheduled Query Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set this if the alert evaluation period is different from the query time range. If not specified, the value is `window_duration`*`number_of_evaluation_periods`. Possible values are `PT5M`, `PT10M`, `PT15M`, `PT20M`, `PT30M`, `PT45M`, `PT1H`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `P1D` and `P2D`.
         ///
         /// > **Note** `query_time_range_override` cannot be less than the query look back which is `window_duration`*`number_of_evaluation_periods`.
         #[builder(into, default)]
-        pub query_time_range_override: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub query_time_range_override: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Monitor Scheduled Query Rule should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the list of resource IDs that this scheduled query rule is scoped to. Changing this forces a new resource to be created. Currently, the API supports exactly 1 resource ID in the scopes list.
         #[builder(into)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scopes: pulumi_gestalt_rust::Input<String>,
         /// Severity of the alert. Should be an integer between 0 and 4. Value of 0 is severest.
         #[builder(into)]
-        pub severity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub severity: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the flag which indicates whether the provided query should be validated or not. The default is false.
         #[builder(into, default)]
-        pub skip_query_validation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_query_validation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags which should be assigned to the Monitor Scheduled Query Rule.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of resource type of the target resource(s) on which the alert is created/updated. For example if the scope is a resource group and targetResourceTypes is `Microsoft.Compute/virtualMachines`, then a different alert will be fired for each virtual machine in the resource group which meet the alert criteria.
         #[builder(into, default)]
-        pub target_resource_types: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub target_resource_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the period of time in ISO 8601 duration format on which the Scheduled Query Rule will be executed (bin size). If `evaluation_frequency` is `PT1M`, possible values are `PT1M`, `PT5M`, `PT10M`, `PT15M`, `PT30M`, `PT45M`, `PT1H`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, and `PT6H`. Otherwise, possible values are `PT5M`, `PT10M`, `PT15M`, `PT30M`, `PT45M`, `PT1H`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `P1D`, and `P2D`.
         #[builder(into)]
-        pub window_duration: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub window_duration: pulumi_gestalt_rust::Input<String>,
         /// Specifies the flag which indicates whether this scheduled query rule check if storage is configured. Value should be `true` or `false`. The default is `false`.
         #[builder(into, default)]
-        pub workspace_alerts_storage_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub workspace_alerts_storage_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ScheduledQueryRulesAlertV2Result {

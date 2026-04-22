@@ -79,13 +79,13 @@ pub mod environment_ec_2 {
     pub struct EnvironmentEC2Args {
         /// The number of minutes until the running instance is shut down after the environment has last been used.
         #[builder(into, default)]
-        pub automatic_stop_time_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub automatic_stop_time_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The connection type used for connecting to an Amazon EC2 environment. Valid values are `CONNECT_SSH` and `CONNECT_SSM`. For more information please refer [AWS documentation for Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html).
         #[builder(into, default)]
-        pub connection_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the environment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. Valid values are
         /// * `amazonlinux-2-x86_64`
         /// * `amazonlinux-2023-x86_64`
@@ -96,22 +96,22 @@ pub mod environment_ec_2 {
         /// * `resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64`
         /// * `resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64`
         #[builder(into)]
-        pub image_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_id: pulumi_gestalt_rust::Input<String>,
         /// The type of instance to connect to the environment, e.g., `t2.micro`.
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the environment.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the environment owner. This can be ARN of any AWS IAM principal. Defaults to the environment's creator.
         #[builder(into, default)]
-        pub owner_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

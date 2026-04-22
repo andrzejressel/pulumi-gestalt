@@ -54,22 +54,22 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// The name of the automation account in which the Certificate is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// Base64 encoded value of the certificate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub base64: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub base64: pulumi_gestalt_rust::Input<String>,
         /// The description of this Automation Certificate.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The is exportable flag of the certificate.
         #[builder(into, default)]
-        pub exportable: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exportable: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Certificate is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateResult {

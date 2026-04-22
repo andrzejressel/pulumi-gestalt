@@ -70,10 +70,10 @@ pub mod subnet_nat_gateway_association {
     pub struct SubnetNatGatewayAssociationArgs {
         /// The ID of the NAT Gateway which should be associated with the Subnet. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub nat_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub nat_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubnetNatGatewayAssociationResult {

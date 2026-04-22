@@ -10,10 +10,10 @@ pub mod get_hosting_channel {
     pub struct GetHostingChannelArgs {
         /// The ID of the channel. Use `channel_id = "live"` for the default channel of a site.
         #[builder(into)]
-        pub channel_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub channel_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the site this channel belongs to.
         #[builder(into)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub site_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetHostingChannelResult {

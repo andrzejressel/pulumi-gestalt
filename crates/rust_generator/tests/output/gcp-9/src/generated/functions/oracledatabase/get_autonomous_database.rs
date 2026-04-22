@@ -10,16 +10,16 @@ pub mod get_autonomous_database {
     pub struct GetAutonomousDatabaseArgs {
         /// The ID of the AutonomousDatabase.
         #[builder(into)]
-        pub autonomous_database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub autonomous_database_id: pulumi_gestalt_rust::Input<String>,
         /// The location of the resource.
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The project to which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAutonomousDatabaseResult {

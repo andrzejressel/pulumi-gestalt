@@ -39,18 +39,18 @@ pub mod source_api_association {
     pub struct SourceApiAssociationArgs {
         /// Description of the source API being merged.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the merged API. One of `merged_api_arn` or `merged_api_id` must be specified.
         #[builder(into, default)]
-        pub merged_api_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub merged_api_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the merged API. One of `merged_api_arn` or `merged_api_id` must be specified.
         #[builder(into, default)]
-        pub merged_api_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub merged_api_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the source API. One of `source_api_arn` or `source_api_id` must be specified.
         #[builder(into, default)]
-        pub source_api_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_api_arn: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub source_api_association_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub source_api_association_configs: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::appsync::SourceApiAssociationSourceApiAssociationConfig,
@@ -59,9 +59,9 @@ pub mod source_api_association {
         >,
         /// ID of the source API. One of `source_api_arn` or `source_api_id` must be specified.
         #[builder(into, default)]
-        pub source_api_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_api_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::SourceApiAssociationTimeouts>,
         >,
     }

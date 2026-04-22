@@ -10,15 +10,15 @@ pub mod get_grafana {
     pub struct GetGrafanaArgs {
         /// The managed identity of the grafana resource.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::dashboard::GetGrafanaIdentity>,
         >,
         /// Name of the grafana dashboard.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource group where resource belongs to.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGrafanaResult {

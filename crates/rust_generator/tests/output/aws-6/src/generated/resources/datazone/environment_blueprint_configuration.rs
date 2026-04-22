@@ -51,24 +51,24 @@ pub mod environment_blueprint_configuration {
     pub struct EnvironmentBlueprintConfigurationArgs {
         /// ID of the Domain.
         #[builder(into)]
-        pub domain_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_id: pulumi_gestalt_rust::Input<String>,
         /// Regions in which the blueprint is enabled
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub enabled_regions: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub enabled_regions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// ID of the Environment Blueprint
         #[builder(into)]
-        pub environment_blueprint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_blueprint_id: pulumi_gestalt_rust::Input<String>,
         /// ARN of the manage access role with which this blueprint is created.
         #[builder(into, default)]
-        pub manage_access_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub manage_access_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the provisioning role with which this blueprint is created.
         #[builder(into, default)]
-        pub provisioning_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub provisioning_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters for each region in which the blueprint is enabled
         #[builder(into, default)]
-        pub regional_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub regional_parameters: pulumi_gestalt_rust::Input<
             Option<
                 std::collections::HashMap<
                     String,

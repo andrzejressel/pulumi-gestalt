@@ -66,21 +66,21 @@ pub mod managed_private_endpoint {
     pub struct ManagedPrivateEndpointArgs {
         /// The ID of the Data Factory on which to create the Managed Private Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// Fully qualified domain names. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Possible values are listed in [documentation](https://docs.microsoft.com/azure/private-link/private-endpoint-overview#dns-configuration).
         #[builder(into, default)]
-        pub fqdns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub fqdns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the name which should be used for this Managed Private Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the sub resource name which the Data Factory Private Endpoint is able to connect to. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub subresource_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subresource_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Private Link Enabled Remote Resource which this Data Factory Private Endpoint should be connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedPrivateEndpointResult {

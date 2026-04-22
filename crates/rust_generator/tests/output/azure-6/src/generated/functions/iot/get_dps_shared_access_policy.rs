@@ -10,13 +10,13 @@ pub mod get_dps_shared_access_policy {
     pub struct GetDpsSharedAccessPolicyArgs {
         /// Specifies the name of the IoT Hub Device Provisioning service to which the Shared Access Policy belongs.
         #[builder(into)]
-        pub iothub_dps_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_dps_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the IotHub Shared Access Policy.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group under which the IotHub Shared Access Policy resource exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDpsSharedAccessPolicyResult {

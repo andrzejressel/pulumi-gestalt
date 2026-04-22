@@ -69,24 +69,24 @@ pub mod security_partner_provider {
     pub struct SecurityPartnerProviderArgs {
         /// The Azure Region where the Security Partner Provider should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Security Partner Provider. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Security Partner Provider should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The security provider name. Possible values are `ZScaler`, `IBoss` and `Checkpoint` is allowed. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub security_provider_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_provider_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Security Partner Provider.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Virtual Hub within which this Security Partner Provider should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SecurityPartnerProviderResult {

@@ -10,13 +10,13 @@ pub mod get_replication_policy {
     pub struct GetReplicationPolicyArgs {
         /// Specifies the name of the Azure Site Recovery replication policy.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Recovery Services Vault that the Azure Site Recovery replication policy is associated witth.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the associated Azure Site Recovery replication policy resides.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetReplicationPolicyResult {

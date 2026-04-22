@@ -69,42 +69,42 @@ pub mod zone {
     pub struct ZoneArgs {
         /// Optional. Description of the zone.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Specification of the discovery feature applied to data in this zone.
         #[builder(into)]
-        pub discovery_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub discovery_spec: pulumi_gestalt_rust::Input<
             super::super::types::dataplex::ZoneDiscoverySpec,
         >,
         /// Optional. User friendly display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. User defined labels for the zone. **Note**: This field is non-authoritative, and will only manage the labels
         /// present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The lake for the resource
         #[builder(into)]
-        pub lake: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lake: pulumi_gestalt_rust::Input<String>,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the zone.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Immutable. Specification of the resources that are referenced by the assets within this zone.
         #[builder(into)]
-        pub resource_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_spec: pulumi_gestalt_rust::Input<
             super::super::types::dataplex::ZoneResourceSpec,
         >,
         /// Required. Immutable. The type of the zone. Possible values: TYPE_UNSPECIFIED, RAW, CURATED
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneResult {

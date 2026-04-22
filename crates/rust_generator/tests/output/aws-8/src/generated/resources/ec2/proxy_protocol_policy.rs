@@ -45,11 +45,11 @@ pub mod proxy_protocol_policy {
         /// List of instance ports to which the policy
         /// should be applied. This can be specified if the protocol is SSL or TCP.
         #[builder(into)]
-        pub instance_ports: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub instance_ports: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The load balancer to which the policy
         /// should be attached.
         #[builder(into)]
-        pub load_balancer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancer: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProxyProtocolPolicyResult {

@@ -10,7 +10,7 @@ pub mod get_custom_model {
     pub struct GetCustomModelArgs {
         /// Name or ARN of the custom model.
         #[builder(into)]
-        pub model_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub model_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCustomModelResult {

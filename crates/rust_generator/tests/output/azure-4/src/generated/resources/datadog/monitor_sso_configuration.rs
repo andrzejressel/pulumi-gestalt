@@ -55,16 +55,16 @@ pub mod monitor_sso_configuration {
     pub struct MonitorSsoConfigurationArgs {
         /// The Datadog Monitor Id which should be used for this Datadog Monitor SSO Configuration. Changing this forces a new Datadog Monitor SSO Configuration to be created.
         #[builder(into)]
-        pub datadog_monitor_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub datadog_monitor_id: pulumi_gestalt_rust::Input<String>,
         /// The application Id to perform SSO operation.
         #[builder(into)]
-        pub enterprise_application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub enterprise_application_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the SingleSignOn configuration. Defaults to `default`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The state of SingleSignOn configuration. Possible values are `Enable` and `Disable`.
         #[builder(into)]
-        pub single_sign_on_enabled: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub single_sign_on_enabled: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MonitorSsoConfigurationResult {

@@ -53,37 +53,37 @@ pub mod monitor {
     pub struct MonitorArgs {
         /// The kind of managed identity assigned to this resource.  A `identity` block as defined below.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             super::super::types::dynatrace::MonitorIdentity,
         >,
         /// The Azure Region where the Dynatrace monitor should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Flag specifying the Marketplace Subscription Status of the resource. If payment is not made in time, the resource will go in Suspended state. Possible values are `Active` and `Suspended`.
         #[builder(into)]
-        pub marketplace_subscription: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub marketplace_subscription: pulumi_gestalt_rust::Input<String>,
         /// Flag specifying if the resource monitoring is enabled or disabled. Default is `true`.
         #[builder(into, default)]
-        pub monitoring_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub monitoring_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the Dynatrace monitor. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Billing plan information. A `plan` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<
+        pub plan: pulumi_gestalt_rust::Input<
             super::super::types::dynatrace::MonitorPlan,
         >,
         /// The name of the Resource Group where the Dynatrace monitor should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// User's information. A `user` block as defined below. Chainging this forces a new resource to be created.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<
+        pub user: pulumi_gestalt_rust::Input<
             super::super::types::dynatrace::MonitorUser,
         >,
     }

@@ -40,22 +40,22 @@ pub mod log_subscription_filter {
     pub struct LogSubscriptionFilterArgs {
         /// The ARN of the destination to deliver matching log events to. Kinesis stream or Lambda function ARN.
         #[builder(into)]
-        pub destination_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_arn: pulumi_gestalt_rust::Input<String>,
         /// The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. Valid values are "Random" and "ByLogStream".
         #[builder(into, default)]
-        pub distribution: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub distribution: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events. Use empty string `""` to match everything. For more information, see the [Amazon CloudWatch Logs User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
         #[builder(into)]
-        pub filter_pattern: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter_pattern: pulumi_gestalt_rust::Input<String>,
         /// The name of the log group to associate the subscription filter with
         #[builder(into)]
-        pub log_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_group: pulumi_gestalt_rust::Input<String>,
         /// A name for the subscription filter
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination. If you use Lambda as a destination, you should skip this argument and use `aws.lambda.Permission` resource for granting access from CloudWatch logs to the destination Lambda function.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LogSubscriptionFilterResult {

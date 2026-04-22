@@ -73,22 +73,22 @@ pub mod user_workloads_secret {
     pub struct UserWorkloadsSecretArgs {
         /// A map of the secret data.
         #[builder(into, default)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<
+        pub data: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Environment where the Kubernetes Secret will be stored and used.
         #[builder(into)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment: pulumi_gestalt_rust::Input<String>,
         /// Name of the Kubernetes Secret.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location or Compute Engine region for the environment.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct UserWorkloadsSecretResult {

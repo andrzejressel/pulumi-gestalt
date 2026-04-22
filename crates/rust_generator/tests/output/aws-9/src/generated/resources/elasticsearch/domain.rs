@@ -205,78 +205,78 @@ pub mod domain {
     pub struct DomainArgs {
         /// IAM policy document specifying the access policies for the domain.
         #[builder(into, default)]
-        pub access_policies: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_policies: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value string pairs to specify advanced configuration options. Note that the values for these configuration options must be strings (wrapped in quotes) or they may be wrong and cause a perpetual diff, causing the provider to want to recreate your Elasticsearch domain on every apply.
         #[builder(into, default)]
-        pub advanced_options: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_options: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for [fine-grained access control](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/fgac.html). Detailed below.
         #[builder(into, default)]
-        pub advanced_security_options: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_security_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainAdvancedSecurityOptions>,
         >,
         /// Configuration block for the Auto-Tune options of the domain. Detailed below.
         #[builder(into, default)]
-        pub auto_tune_options: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_tune_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainAutoTuneOptions>,
         >,
         /// Configuration block for the cluster of the domain. Detailed below.
         #[builder(into, default)]
-        pub cluster_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cluster_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainClusterConfig>,
         >,
         /// Configuration block for authenticating Kibana with Cognito. Detailed below.
         #[builder(into, default)]
-        pub cognito_options: pulumi_gestalt_rust::InputOrOutput<
+        pub cognito_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainCognitoOptions>,
         >,
         /// Configuration block for domain endpoint HTTP(S) related options. Detailed below.
         #[builder(into, default)]
-        pub domain_endpoint_options: pulumi_gestalt_rust::InputOrOutput<
+        pub domain_endpoint_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainDomainEndpointOptions>,
         >,
         /// Name of the domain.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for EBS related options, may be required based on chosen [instance size](https://aws.amazon.com/elasticsearch-service/pricing/). Detailed below.
         #[builder(into, default)]
-        pub ebs_options: pulumi_gestalt_rust::InputOrOutput<
+        pub ebs_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainEbsOptions>,
         >,
         /// Version of Elasticsearch to deploy. Defaults to `1.5`.
         #[builder(into, default)]
-        pub elasticsearch_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub elasticsearch_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for encrypt at rest options. Only available for [certain instance types](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/aes-supported-instance-types.html). Detailed below.
         #[builder(into, default)]
-        pub encrypt_at_rest: pulumi_gestalt_rust::InputOrOutput<
+        pub encrypt_at_rest: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainEncryptAtRest>,
         >,
         /// Configuration block for publishing slow and application logs to CloudWatch Logs. This block can be declared multiple times, for each log_type, within the same resource. Detailed below.
         #[builder(into, default)]
-        pub log_publishing_options: pulumi_gestalt_rust::InputOrOutput<
+        pub log_publishing_options: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::elasticsearch::DomainLogPublishingOption>>,
         >,
         /// Configuration block for node-to-node encryption options. Detailed below.
         #[builder(into, default)]
-        pub node_to_node_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub node_to_node_encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainNodeToNodeEncryption>,
         >,
         /// Configuration block for snapshot related options. Detailed below. DEPRECATED. For domains running Elasticsearch 5.3 and later, Amazon ES takes hourly automated snapshots, making this setting irrelevant. For domains running earlier versions of Elasticsearch, Amazon ES takes daily automated snapshots.
         #[builder(into, default)]
-        pub snapshot_options: pulumi_gestalt_rust::InputOrOutput<
+        pub snapshot_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainSnapshotOptions>,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for VPC related options. Adding or removing this configuration forces a new resource ([documentation](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-vpc-limitations)). Detailed below.
         #[builder(into, default)]
-        pub vpc_options: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsearch::DomainVpcOptions>,
         >,
     }

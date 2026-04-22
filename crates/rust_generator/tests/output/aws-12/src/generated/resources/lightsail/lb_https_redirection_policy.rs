@@ -52,10 +52,10 @@ pub mod lb_https_redirection_policy {
     pub struct LbHttpsRedirectionPolicyArgs {
         /// The Https Redirection state of the load balancer. `true` to activate http to https redirection or `false` to deactivate http to https redirection.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The name of the load balancer to which you want to enable http to https redirection.
         #[builder(into)]
-        pub lb_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lb_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LbHttpsRedirectionPolicyResult {

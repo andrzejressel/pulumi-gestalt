@@ -10,10 +10,10 @@ pub mod get_stream_key {
     pub struct GetStreamKeyArgs {
         /// ARN of the Channel.
         #[builder(into)]
-        pub channel_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub channel_arn: pulumi_gestalt_rust::Input<String>,
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

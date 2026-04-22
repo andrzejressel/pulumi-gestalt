@@ -122,13 +122,13 @@ pub mod ai_feature_online_store {
         /// Settings for Cloud Bigtable instance that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub bigtable: pulumi_gestalt_rust::InputOrOutput<
+        pub bigtable: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiFeatureOnlineStoreBigtable>,
         >,
         /// The dedicated serving endpoint for this FeatureOnlineStore, which is different from common vertex service endpoint. Only need to be set when you choose Optimized storage type or enable EmbeddingManagement. Will use public endpoint by default.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub dedicated_serving_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub dedicated_serving_endpoint: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiFeatureOnlineStoreDedicatedServingEndpoint,
             >,
@@ -138,17 +138,17 @@ pub mod ai_feature_online_store {
         ///
         /// > **Warning:** `embedding_management` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type
         #[builder(into, default)]
-        pub embedding_management: pulumi_gestalt_rust::InputOrOutput<
+        pub embedding_management: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiFeatureOnlineStoreEmbeddingManagement>,
         >,
         /// If set to true, any FeatureViews and Features for this FeatureOnlineStore will also be deleted.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The labels with user-defined metadata to organize your feature online stores.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The resource name of the Feature Online Store. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
@@ -156,19 +156,19 @@ pub mod ai_feature_online_store {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Settings for the Optimized store that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore
         #[builder(into, default)]
-        pub optimized: pulumi_gestalt_rust::InputOrOutput<
+        pub optimized: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiFeatureOnlineStoreOptimized>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of feature online store. eg us-central1
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiFeatureOnlineStoreResult {

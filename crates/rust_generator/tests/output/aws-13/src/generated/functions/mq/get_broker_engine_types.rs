@@ -10,7 +10,7 @@ pub mod get_broker_engine_types {
     pub struct GetBrokerEngineTypesArgs {
         /// The MQ engine type to return version details for.
         #[builder(into, default)]
-        pub engine_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBrokerEngineTypesResult {

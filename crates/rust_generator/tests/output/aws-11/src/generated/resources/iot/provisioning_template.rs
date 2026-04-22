@@ -88,32 +88,32 @@ pub mod provisioning_template {
     pub struct ProvisioningTemplateArgs {
         /// The description of the fleet provisioning template.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// True to enable the fleet provisioning template, otherwise false.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the fleet provisioning template.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a pre-provisioning hook template. Details below.
         #[builder(into, default)]
-        pub pre_provisioning_hook: pulumi_gestalt_rust::InputOrOutput<
+        pub pre_provisioning_hook: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::ProvisioningTemplatePreProvisioningHook>,
         >,
         /// The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.
         #[builder(into)]
-        pub provisioning_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provisioning_role_arn: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The JSON formatted contents of the fleet provisioning template.
         #[builder(into)]
-        pub template_body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub template_body: pulumi_gestalt_rust::Input<String>,
         /// The type you define in a provisioning template.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProvisioningTemplateResult {

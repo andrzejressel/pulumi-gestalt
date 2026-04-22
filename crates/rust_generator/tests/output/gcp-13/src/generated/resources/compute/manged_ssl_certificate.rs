@@ -126,12 +126,12 @@ pub mod manged_ssl_certificate {
     pub struct MangedSslCertificateArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Properties relevant to a managed certificate.  These will be used if the
         /// certificate is managed (as indicated by a value of `MANAGED` in `type`).
         /// Structure is documented below.
         #[builder(into, default)]
-        pub managed: pulumi_gestalt_rust::InputOrOutput<
+        pub managed: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::MangedSslCertificateManaged>,
         >,
         /// Name of the resource. Provided by the client when the resource is
@@ -143,17 +143,17 @@ pub mod manged_ssl_certificate {
         /// character, which cannot be a dash.
         /// These are in the same namespace as the managed SSL certificates.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enum field whose value is always `MANAGED` - used to signal to the API
         /// which type this is.
         /// Default value is `MANAGED`.
         /// Possible values are: `MANAGED`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MangedSslCertificateResult {

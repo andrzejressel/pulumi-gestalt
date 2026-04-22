@@ -39,13 +39,13 @@ pub mod link_association {
     pub struct LinkAssociationArgs {
         /// The ID of the device.
         #[builder(into)]
-        pub device_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the global network.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the link.
         #[builder(into)]
-        pub link_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub link_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LinkAssociationResult {

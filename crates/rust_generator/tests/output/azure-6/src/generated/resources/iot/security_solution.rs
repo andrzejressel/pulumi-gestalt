@@ -51,59 +51,53 @@ pub mod security_solution {
     pub struct SecuritySolutionArgs {
         /// A `additional_workspace` block as defined below.
         #[builder(into, default)]
-        pub additional_workspaces: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_workspaces: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::SecuritySolutionAdditionalWorkspace>>,
         >,
         /// A list of disabled data sources for the Iot Security Solution. Possible value is `TwinData`.
         #[builder(into, default)]
-        pub disabled_data_sources: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub disabled_data_sources: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the Display Name for this Iot Security Solution.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Is the Iot Security Solution enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of data which is to exported to analytic workspace. Valid values include `RawEvents`.
         #[builder(into, default)]
-        pub events_to_exports: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub events_to_exports: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the IoT Hub resource IDs to which this Iot Security Solution is applied.
         #[builder(into)]
-        pub iothub_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub iothub_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Log Analytics Workspace ID to which the security data will be sent.
         #[builder(into, default)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should IP addressed be unmasked in the log? Defaults to `false`.
         #[builder(into, default)]
-        pub log_unmasked_ips_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub log_unmasked_ips_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Iot Security Solution. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An Azure Resource Graph query used to set the resources monitored.
         #[builder(into, default)]
-        pub query_for_resources: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query_for_resources: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of subscription Ids on which the user defined resources query should be executed.
         #[builder(into, default)]
-        pub query_subscription_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub query_subscription_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `recommendations_enabled` block of options to enable or disable as defined below.
         #[builder(into, default)]
-        pub recommendations_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub recommendations_enabled: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::SecuritySolutionRecommendationsEnabled>,
         >,
         /// Specifies the name of the resource group in which to create the Iot Security Solution. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -96,7 +96,7 @@ pub mod replication_configuration {
     pub struct ReplicationConfigurationArgs {
         /// Replication configuration for a registry. See Replication Configuration.
         #[builder(into, default)]
-        pub replication_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub replication_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ecr::ReplicationConfigurationReplicationConfiguration,
             >,

@@ -10,10 +10,10 @@ pub mod get_definition {
     pub struct GetDefinitionArgs {
         /// The name of the Blueprint.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subscription or Management Group, as the scope at which the blueprint definition is stored.
         #[builder(into)]
-        pub scope_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDefinitionResult {

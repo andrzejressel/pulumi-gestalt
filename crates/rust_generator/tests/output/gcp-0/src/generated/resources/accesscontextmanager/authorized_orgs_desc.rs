@@ -69,7 +69,7 @@ pub mod authorized_orgs_desc {
         /// "ASSET_TYPE_CREDENTIAL_STRENGTH".
         /// Possible values are: `ASSET_TYPE_DEVICE`, `ASSET_TYPE_CREDENTIAL_STRENGTH`.
         #[builder(into, default)]
-        pub asset_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub asset_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The direction of the authorization relationship between this organization
         /// and the organizations listed in the "orgs" field. The valid values for this
         /// field include the following:
@@ -86,11 +86,11 @@ pub mod authorized_orgs_desc {
         /// "AuthorizedOrgsDesc" resource.
         /// Possible values are: `AUTHORIZATION_DIRECTION_TO`, `AUTHORIZATION_DIRECTION_FROM`.
         #[builder(into, default)]
-        pub authorization_direction: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_direction: pulumi_gestalt_rust::Input<Option<String>>,
         /// A granular control type for authorization levels. Valid value is "AUTHORIZATION_TYPE_TRUST".
         /// Possible values are: `AUTHORIZATION_TYPE_TRUST`.
         #[builder(into, default)]
-        pub authorization_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource name for the `AuthorizedOrgsDesc`. Format:
         /// `accessPolicies/{access_policy}/authorizedOrgsDescs/{authorized_orgs_desc}`.
         /// The `authorized_orgs_desc` component must begin with a letter, followed by
@@ -100,15 +100,15 @@ pub mod authorized_orgs_desc {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of organization ids in this AuthorizedOrgsDesc.
         /// Format: `organizations/<org_number>`
         /// Example: `organizations/123456`
         #[builder(into, default)]
-        pub orgs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub orgs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Required. Resource name for the access policy which owns this `AuthorizedOrgsDesc`.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AuthorizedOrgsDescResult {

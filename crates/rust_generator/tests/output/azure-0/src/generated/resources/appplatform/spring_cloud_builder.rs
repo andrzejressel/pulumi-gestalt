@@ -68,18 +68,18 @@ pub mod spring_cloud_builder {
     pub struct SpringCloudBuilderArgs {
         /// One or more `build_pack_group` blocks as defined below.
         #[builder(into)]
-        pub build_pack_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub build_pack_groups: pulumi_gestalt_rust::Input<
             Vec<super::super::types::appplatform::SpringCloudBuilderBuildPackGroup>,
         >,
         /// The name which should be used for this Spring Cloud Builder. Changing this forces a new Spring Cloud Builder to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud Builder to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
         /// A `stack` block as defined below.
         #[builder(into)]
-        pub stack: pulumi_gestalt_rust::InputOrOutput<
+        pub stack: pulumi_gestalt_rust::Input<
             super::super::types::appplatform::SpringCloudBuilderStack,
         >,
     }

@@ -199,56 +199,54 @@ pub mod app_profile {
         ///
         /// - - -
         #[builder(into)]
-        pub app_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_profile_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies that this app profile is intended for read-only usage via the Data Boost feature.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub data_boost_isolation_read_only: pulumi_gestalt_rust::InputOrOutput<
+        pub data_boost_isolation_read_only: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::AppProfileDataBoostIsolationReadOnly>,
         >,
         /// Long form description of the use case for this app profile.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, ignore safety checks when deleting/updating the app profile.
         #[builder(into, default)]
-        pub ignore_warnings: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ignore_warnings: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the instance to create the app profile within.
         #[builder(into, default)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance: pulumi_gestalt_rust::Input<Option<String>>,
         /// The set of clusters to route to. The order is ignored; clusters will be tried in order of distance. If left empty, all
         /// clusters are eligible.
         #[builder(into, default)]
-        pub multi_cluster_routing_cluster_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub multi_cluster_routing_cluster_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// If true, read/write requests are routed to the nearest cluster in the instance, and will fail over to the nearest cluster that is available
         /// in the event of transient errors or delays. Clusters in a region are considered equidistant. Choosing this option sacrifices read-your-writes
         /// consistency to improve availability.
         #[builder(into, default)]
-        pub multi_cluster_routing_use_any: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub multi_cluster_routing_use_any: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Must be used with multi-cluster routing. If true, then this app profile will use row affinity sticky routing. With row
         /// affinity, Bigtable will route single row key requests based on the row key, rather than randomly. Instead, each row key
         /// will be assigned to a cluster by Cloud Bigtable, and will stick to that cluster. Choosing this option improves
         /// read-your-writes consistency for most requests under most circumstances, without sacrificing availability. Consistency
         /// is not guaranteed, as requests may still fail over between clusters in the event of errors or latency.
         #[builder(into, default)]
-        pub row_affinity: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub row_affinity: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Use a single-cluster routing policy.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub single_cluster_routing: pulumi_gestalt_rust::InputOrOutput<
+        pub single_cluster_routing: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::AppProfileSingleClusterRouting>,
         >,
         /// The standard options used for isolating this app profile's traffic from other use cases.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub standard_isolation: pulumi_gestalt_rust::InputOrOutput<
+        pub standard_isolation: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::AppProfileStandardIsolation>,
         >,
     }

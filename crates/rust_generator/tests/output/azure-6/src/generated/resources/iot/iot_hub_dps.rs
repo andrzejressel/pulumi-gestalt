@@ -42,42 +42,38 @@ pub mod iot_hub_dps {
     pub struct IotHubDpsArgs {
         /// The allocation policy of the IoT Device Provisioning Service (`Hashed`, `GeoLatency` or `Static`). Defaults to `Hashed`.
         #[builder(into, default)]
-        pub allocation_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub allocation_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if the IoT Device Provisioning Service has data residency and disaster recovery enabled. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub data_residency_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub data_residency_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `ip_filter_rule` block as defined below.
         #[builder(into, default)]
-        pub ip_filter_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_filter_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::IotHubDpsIpFilterRule>>,
         >,
         /// A `linked_hub` block as defined below.
         #[builder(into, default)]
-        pub linked_hubs: pulumi_gestalt_rust::InputOrOutput<
+        pub linked_hubs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::IotHubDpsLinkedHub>>,
         >,
         /// Specifies the supported Azure location where the resource has to be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Iot Device Provisioning Service resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether requests from Public Network are allowed. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group under which the Iot Device Provisioning Service resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
-            super::super::types::iot::IotHubDpsSku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::iot::IotHubDpsSku>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

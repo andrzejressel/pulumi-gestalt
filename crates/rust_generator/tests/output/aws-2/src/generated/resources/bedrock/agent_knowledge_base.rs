@@ -43,34 +43,34 @@ pub mod agent_knowledge_base {
     pub struct AgentKnowledgeBaseArgs {
         /// Description of the knowledge base.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details about the embeddings configuration of the knowledge base. See `knowledge_base_configuration` block for details.
         #[builder(into, default)]
-        pub knowledge_base_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub knowledge_base_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bedrock::AgentKnowledgeBaseKnowledgeBaseConfiguration,
             >,
         >,
         /// Name of the knowledge base.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the IAM role with permissions to invoke API operations on the knowledge base.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Details about the storage configuration of the knowledge base. See `storage_configuration` block for details.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub storage_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentKnowledgeBaseStorageConfiguration>,
         >,
         /// Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentKnowledgeBaseTimeouts>,
         >,
     }

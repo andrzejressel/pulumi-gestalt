@@ -86,13 +86,13 @@ pub mod permissions_boundary_attachment {
     pub struct PermissionsBoundaryAttachmentArgs {
         /// The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Permission Set.
         #[builder(into)]
-        pub permission_set_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub permission_set_arn: pulumi_gestalt_rust::Input<String>,
         /// The permissions boundary policy. See below.
         #[builder(into)]
-        pub permissions_boundary: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions_boundary: pulumi_gestalt_rust::Input<
             super::super::types::ssoadmin::PermissionsBoundaryAttachmentPermissionsBoundary,
         >,
     }

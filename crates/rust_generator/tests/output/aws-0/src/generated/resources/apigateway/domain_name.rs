@@ -124,58 +124,56 @@ pub mod domain_name {
     pub struct DomainNameArgs {
         /// ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when an edge-optimized domain name is desired. Conflicts with `certificate_name`, `certificate_body`, `certificate_chain`, `certificate_private_key`, `regional_certificate_arn`, and `regional_certificate_name`.
         #[builder(into, default)]
-        pub certificate_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Certificate issued for the domain name being registered, in PEM format. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.
         #[builder(into, default)]
-        pub certificate_body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// Certificate for the CA that issued the certificate, along with any intermediate CA certificates required to create an unbroken chain to a certificate trusted by the intended API clients. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.
         #[builder(into, default)]
-        pub certificate_chain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_chain: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name to use when registering this certificate as an IAM server certificate. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`. Required if `certificate_arn` is not set.
         #[builder(into, default)]
-        pub certificate_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Private key associated with the domain certificate given in `certificate_body`. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`.
         #[builder(into, default)]
-        pub certificate_private_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_private_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Fully-qualified domain name to register.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration block defining API endpoint information including type. See below.
         #[builder(into, default)]
-        pub endpoint_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::DomainNameEndpointConfiguration>,
         >,
         /// Mutual TLS authentication configuration for the domain name. See below.
         #[builder(into, default)]
-        pub mutual_tls_authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub mutual_tls_authentication: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::DomainNameMutualTlsAuthentication>,
         >,
         /// ARN of the AWS-issued certificate used to validate custom domain ownership (when `certificate_arn` is issued via an ACM Private CA or `mutual_tls_authentication` is configured with an ACM-imported certificate.)
         #[builder(into, default)]
-        pub ownership_verification_certificate_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub ownership_verification_certificate_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A stringified JSON policy document that applies to the execute-api service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when a regional domain name is desired. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`.
         ///
         /// When uploading a certificate, the following arguments are supported:
         #[builder(into, default)]
-        pub regional_certificate_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub regional_certificate_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-friendly name of the certificate that will be used by regional endpoint for this domain name. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`.
         #[builder(into, default)]
-        pub regional_certificate_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub regional_certificate_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Transport Layer Security (TLS) version + cipher suite for this DomainName. Valid values are `TLS_1_0` and `TLS_1_2`. Must be configured to perform drift detection.
         #[builder(into, default)]
-        pub security_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         ///
         /// When referencing an AWS-managed certificate, the following arguments are supported:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -112,23 +112,23 @@ pub mod frontdoor_custom_domain {
     pub struct FrontdoorCustomDomainArgs {
         /// The ID of the Front Door Profile. Changing this forces a new Front Door Custom Domain to be created.
         #[builder(into)]
-        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Azure DNS Zone which should be used for this Front Door Custom Domain. If you are using Azure to host your [DNS domains](https://learn.microsoft.com/azure/dns/dns-overview), you must delegate the domain provider's domain name system (DNS) to an Azure DNS Zone. For more information, see [Delegate a domain to Azure DNS](https://learn.microsoft.com/azure/dns/dns-delegate-domain-azure-dns). Otherwise, if you're using your own domain provider to handle your DNS, you must validate the Front Door Custom Domain by creating the DNS TXT records manually.
         ///
         /// <!-- * `pre_validated_cdn_frontdoor_custom_domain_id` - (Optional) The resource ID of the pre-validated Front Door Custom Domain. This domain type is used when you wish to onboard a validated Azure service domain, and then configure the Azure service behind an Azure Front Door.
         ///
         /// ->**NOTE:** Currently `pre_validated_cdn_frontdoor_custom_domain_id` only supports domains validated by Static Web App. -->
         #[builder(into, default)]
-        pub dns_zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dns_zone_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The host name of the domain. The `host_name` field must be the FQDN of your domain(e.g. `contoso.fabrikam.com`). Changing this forces a new Front Door Custom Domain to be created.
         #[builder(into)]
-        pub host_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Front Door Custom Domain. Possible values must be between 2 and 260 characters in length, must begin with a letter or number, end with a letter or number and contain only letters, numbers and hyphens. Changing this forces a new Front Door Custom Domain to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `tls` block as defined below.
         #[builder(into)]
-        pub tls: pulumi_gestalt_rust::InputOrOutput<
+        pub tls: pulumi_gestalt_rust::Input<
             super::super::types::cdn::FrontdoorCustomDomainTls,
         >,
     }

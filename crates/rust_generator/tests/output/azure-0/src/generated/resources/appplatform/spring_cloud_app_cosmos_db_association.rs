@@ -84,44 +84,34 @@ pub mod spring_cloud_app_cosmos_db_association {
     pub struct SpringCloudAppCosmosDBAssociationArgs {
         /// Specifies the API type which should be used when connecting to the CosmosDB Account. Possible values are `cassandra`, `gremlin`, `mongo`, `sql` or `table`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_type: pulumi_gestalt_rust::Input<String>,
         /// Specifies the CosmosDB Account access key.
         #[builder(into)]
-        pub cosmosdb_access_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cosmosdb_access_key: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the CosmosDB Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cosmosdb_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cosmosdb_account_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Cassandra Keyspace which the Spring Cloud App should be associated with. Should only be set when `api_type` is `cassandra`.
         #[builder(into, default)]
-        pub cosmosdb_cassandra_keyspace_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cosmosdb_cassandra_keyspace_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Gremlin Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `gremlin`.
         #[builder(into, default)]
-        pub cosmosdb_gremlin_database_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cosmosdb_gremlin_database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Gremlin Graph which the Spring Cloud App should be associated with. Should only be set when `api_type` is `gremlin`.
         #[builder(into, default)]
-        pub cosmosdb_gremlin_graph_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cosmosdb_gremlin_graph_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Mongo Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `mongo`.
         #[builder(into, default)]
-        pub cosmosdb_mongo_database_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cosmosdb_mongo_database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the SQL Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `sql`.
         #[builder(into, default)]
-        pub cosmosdb_sql_database_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cosmosdb_sql_database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Spring Cloud Application Association. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Spring Cloud Application where this Association is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_app_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudAppCosmosDBAssociationResult {

@@ -61,18 +61,18 @@ pub mod contact_list {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub contact_list_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub contact_list_name: pulumi_gestalt_rust::Input<String>,
         /// Description of what the contact list is about.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags for the contact list. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block(s) with topic for the contact list. Detailed below.
         #[builder(into, default)]
-        pub topics: pulumi_gestalt_rust::InputOrOutput<
+        pub topics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::sesv2::ContactListTopic>>,
         >,
     }

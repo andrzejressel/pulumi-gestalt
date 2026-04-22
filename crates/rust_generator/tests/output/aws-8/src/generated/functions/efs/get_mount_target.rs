@@ -10,13 +10,13 @@ pub mod get_mount_target {
     pub struct GetMountTargetArgs {
         /// ID or ARN of the access point whose mount target that you want to find. It must be included if a `file_system_id` and `mount_target_id` are not included.
         #[builder(into, default)]
-        pub access_point_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_point_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID or ARN of the file system whose mount target that you want to find. It must be included if an `access_point_id` and `mount_target_id` are not included.
         #[builder(into, default)]
-        pub file_system_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_system_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID or ARN of the mount target that you want to find. It must be included in your request if an `access_point_id` and `file_system_id` are not included.
         #[builder(into, default)]
-        pub mount_target_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mount_target_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetMountTargetResult {

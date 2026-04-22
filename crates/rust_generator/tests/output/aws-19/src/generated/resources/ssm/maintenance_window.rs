@@ -38,40 +38,40 @@ pub mod maintenance_window {
     pub struct MaintenanceWindowArgs {
         /// Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.
         #[builder(into, default)]
-        pub allow_unassociated_targets: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_unassociated_targets: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for execution.
         #[builder(into)]
-        pub cutoff: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub cutoff: pulumi_gestalt_rust::Input<i32>,
         /// A description for the maintenance window.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The duration of the Maintenance Window in hours.
         #[builder(into)]
-        pub duration: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub duration: pulumi_gestalt_rust::Input<i32>,
         /// Whether the maintenance window is enabled. Default: `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Timestamp in [ISO-8601 extended format](https://www.iso.org/iso-8601-date-and-time-format.html) when to no longer run the maintenance window.
         #[builder(into, default)]
-        pub end_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the maintenance window.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The schedule of the Maintenance Window in the form of a [cron or rate expression](https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html).
         #[builder(into)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schedule: pulumi_gestalt_rust::Input<String>,
         /// The number of days to wait after the date and time specified by a CRON expression before running the maintenance window.
         #[builder(into, default)]
-        pub schedule_offset: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub schedule_offset: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Timezone for schedule in [Internet Assigned Numbers Authority (IANA) Time Zone Database format](https://www.iana.org/time-zones). For example: `America/Los_Angeles`, `etc/UTC`, or `Asia/Seoul`.
         #[builder(into, default)]
-        pub schedule_timezone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schedule_timezone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Timestamp in [ISO-8601 extended format](https://www.iso.org/iso-8601-date-and-time-format.html) when to begin the maintenance window.
         #[builder(into, default)]
-        pub start_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -79,77 +79,77 @@ pub mod node_group {
     pub struct NodeGroupArgs {
         /// Type of Amazon Machine Image (AMI) associated with the EKS Node Group. See the [AWS documentation](https://docs.aws.amazon.com/eks/latest/APIReference/API_Nodegroup.html#AmazonEKS-Type-Nodegroup-amiType) for valid values. This provider will only perform drift detection if a configuration value is provided.
         #[builder(into, default)]
-        pub ami_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ami_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of capacity associated with the EKS Node Group. Valid values: `ON_DEMAND`, `SPOT`. This provider will only perform drift detection if a configuration value is provided.
         #[builder(into, default)]
-        pub capacity_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub capacity_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the EKS Cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Disk size in GiB for worker nodes. Defaults to `50` for Windows, `20` all other node groups. The provider will only perform drift detection if a configuration value is provided.
         #[builder(into, default)]
-        pub disk_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Force version update if existing pods are unable to be drained due to a pod disruption budget issue.
         #[builder(into, default)]
-        pub force_update_version: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_update_version: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of instance types associated with the EKS Node Group. Defaults to `["t3.medium"]`. The provider will only perform drift detection if a configuration value is provided.
         #[builder(into, default)]
-        pub instance_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub instance_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value map of Kubernetes labels. Only labels that are applied with the EKS API are managed by this argument. Other Kubernetes labels applied to the EKS Node Group will not be managed.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block with Launch Template settings. See `launch_template` below for details. Conflicts with `remote_access`.
         #[builder(into, default)]
-        pub launch_template: pulumi_gestalt_rust::InputOrOutput<
+        pub launch_template: pulumi_gestalt_rust::Input<
             Option<super::super::types::eks::NodeGroupLaunchTemplate>,
         >,
         /// Name of the EKS Node Group. If omitted, the provider will assign a random, unique name. Conflicts with `node_group_name_prefix`. The node group name can't be longer than 63 characters. It must start with a letter or digit, but can also include hyphens and underscores for the remaining characters.
         #[builder(into, default)]
-        pub node_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub node_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `node_group_name`.
         #[builder(into, default)]
-        pub node_group_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub node_group_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Node Group.
         #[builder(into)]
-        pub node_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_role_arn: pulumi_gestalt_rust::Input<String>,
         /// AMI version of the EKS Node Group. Defaults to latest version for Kubernetes version.
         #[builder(into, default)]
-        pub release_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub release_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with remote access settings. See `remote_access` below for details. Conflicts with `launch_template`.
         #[builder(into, default)]
-        pub remote_access: pulumi_gestalt_rust::InputOrOutput<
+        pub remote_access: pulumi_gestalt_rust::Input<
             Option<super::super::types::eks::NodeGroupRemoteAccess>,
         >,
         /// Configuration block with scaling settings. See `scaling_config` below for details.
         #[builder(into)]
-        pub scaling_config: pulumi_gestalt_rust::InputOrOutput<
+        pub scaling_config: pulumi_gestalt_rust::Input<
             super::super::types::eks::NodeGroupScalingConfig,
         >,
         /// Identifiers of EC2 Subnets to associate with the EKS Node Group.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Kubernetes taints to be applied to the nodes in the node group. Maximum of 50 taints per node group. See taint below for details.
         #[builder(into, default)]
-        pub taints: pulumi_gestalt_rust::InputOrOutput<
+        pub taints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::eks::NodeGroupTaint>>,
         >,
         /// Configuration block with update settings. See `update_config` below for details.
         #[builder(into, default)]
-        pub update_config: pulumi_gestalt_rust::InputOrOutput<
+        pub update_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::eks::NodeGroupUpdateConfig>,
         >,
         /// Kubernetes version. Defaults to EKS Cluster Kubernetes version. The provider will only perform drift detection if a configuration value is provided.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NodeGroupResult {

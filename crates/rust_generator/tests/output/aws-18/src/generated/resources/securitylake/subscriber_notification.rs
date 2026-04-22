@@ -63,14 +63,14 @@ pub mod subscriber_notification {
     pub struct SubscriberNotificationArgs {
         /// Specify the configuration using which you want to create the subscriber notification..
         #[builder(into, default)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::securitylake::SubscriberNotificationConfiguration,
             >,
         >,
         /// The subscriber ID for the notification subscription.
         #[builder(into)]
-        pub subscriber_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscriber_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubscriberNotificationResult {

@@ -41,10 +41,10 @@ pub mod access_grants_instance_resource_policy {
     #[allow(dead_code)]
     pub struct AccessGrantsInstanceResourcePolicyArgs {
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The policy document.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessGrantsInstanceResourcePolicyResult {

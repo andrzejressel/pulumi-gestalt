@@ -10,12 +10,12 @@ pub mod get_function {
     pub struct GetFunctionArgs {
         /// Name of the lambda function.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// Alias name or version number of the lambda functionE.g., `$LATEST`, `my-alias`, or `1`. When not included: the data source resolves to the most recent published version; if no published version exists: it resolves to the most recent unpublished version.
         #[builder(into, default)]
-        pub qualifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub qualifier: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

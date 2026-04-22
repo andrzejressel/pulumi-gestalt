@@ -91,39 +91,37 @@ pub mod datastore_blobstorage {
     pub struct DatastoreBlobstorageArgs {
         /// The access key of the Storage Account. Conflicts with `shared_access_signature`.
         #[builder(into, default)]
-        pub account_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Text used to describe the asset. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether this Machines Learning DataStore is the default for the Workspace. Defaults to `false`.
         ///
         /// > **Note:** `is_default` can only be set to `true` on update.
         #[builder(into, default)]
-        pub is_default: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_default: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies which identity to use when retrieving data from the specified source. Defaults to `None`. Possible values are `None`, `WorkspaceSystemAssignedIdentity` and `WorkspaceUserAssignedIdentity`.
         #[builder(into, default)]
-        pub service_data_auth_identity: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub service_data_auth_identity: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Shared Access Signature of the Storage Account. Conflicts with `account_key`.
         ///
         /// > **Note:**  One of `account_key` or `shared_access_signature` must be specified.
         #[builder(into, default)]
-        pub shared_access_signature: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub shared_access_signature: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Account Container. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into)]
-        pub storage_container_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Machine Learning Workspace. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DatastoreBlobstorageResult {

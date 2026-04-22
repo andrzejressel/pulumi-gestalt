@@ -120,10 +120,10 @@ pub mod environment_keyvaluemaps {
         ///
         /// - - -
         #[builder(into)]
-        pub env_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub env_id: pulumi_gestalt_rust::Input<String>,
         /// Required. ID of the key value map.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentKeyvaluemapsResult {

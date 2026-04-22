@@ -149,26 +149,26 @@ pub mod server_tls_policy {
         /// Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if allowOpen and mtlsPolicy are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility.
         /// Consider using it if you wish to upgrade in place your deployment to TLS while having mixed TLS and non-TLS traffic reaching port :80.
         #[builder(into, default)]
-        pub allow_open: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_open: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of label tags associated with the ServerTlsPolicy resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the server tls policy.
         /// The default value is `global`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// This field is required if the policy is used with external HTTPS load balancers. This field can be empty for Traffic Director.
         /// Defines a mechanism to provision peer validation certificates for peer to peer authentication (Mutual TLS - mTLS). If not specified, client certificate will not be requested. The connection is treated as TLS and not mTLS. If allowOpen and mtlsPolicy are set, server allows both plain text and mTLS connections.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub mtls_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub mtls_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::networksecurity::ServerTlsPolicyMtlsPolicy>,
         >,
         /// Name of the ServerTlsPolicy resource.
@@ -176,15 +176,15 @@ pub mod server_tls_policy {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines a mechanism to provision client identity (public and private keys) for peer to peer authentication. The presence of this dictates mTLS.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub server_certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub server_certificate: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networksecurity::ServerTlsPolicyServerCertificate,
             >,

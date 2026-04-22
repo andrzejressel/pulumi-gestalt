@@ -10,10 +10,10 @@ pub mod get_scheduling_policy {
     pub struct GetSchedulingPolicyArgs {
         /// ARN of the scheduling policy.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

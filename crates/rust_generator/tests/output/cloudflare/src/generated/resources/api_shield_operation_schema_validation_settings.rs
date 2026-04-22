@@ -38,13 +38,13 @@ pub mod api_shield_operation_schema_validation_settings {
     pub struct ApiShieldOperationSchemaValidationSettingsArgs {
         /// The mitigation action to apply to this operation.
         #[builder(into, default)]
-        pub mitigation_action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mitigation_action: pulumi_gestalt_rust::Input<Option<String>>,
         /// Operation ID these settings should apply to. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub operation_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub operation_id: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiShieldOperationSchemaValidationSettingsResult {

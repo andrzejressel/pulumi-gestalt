@@ -10,12 +10,12 @@ pub mod get_ami_ids {
     pub struct GetAmiIdsArgs {
         /// Filter used to scope the list e.g., by tags. See [related docs](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_Filter.html).
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::autoscaling::GetAmiIdsFilter>>,
         >,
         /// List of autoscaling group names
         #[builder(into, default)]
-        pub names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetAmiIdsResult {

@@ -13,14 +13,14 @@ pub mod get_network {
         ///
         /// - - -
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Beta A full or partial URL of the network profile to apply to this network.
         #[builder(into, default)]
-        pub network_profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkResult {

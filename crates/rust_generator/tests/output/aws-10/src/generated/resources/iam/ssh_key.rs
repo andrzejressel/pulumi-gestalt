@@ -43,16 +43,16 @@ pub mod ssh_key {
     pub struct SshKeyArgs {
         /// Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use `SSH`. To retrieve the public key in PEM format, use `PEM`.
         #[builder(into)]
-        pub encoding: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub encoding: pulumi_gestalt_rust::Input<String>,
         /// The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
         #[builder(into)]
-        pub public_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub public_key: pulumi_gestalt_rust::Input<String>,
         /// The status to assign to the SSH public key. Active means the key can be used for authentication with an AWS CodeCommit repository. Inactive means the key cannot be used. Default is `active`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the IAM user to associate the SSH public key with.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SshKeyResult {

@@ -87,24 +87,22 @@ pub mod virtual_hub_ip {
     pub struct VirtualHubIpArgs {
         /// The name which should be used for this Virtual Hub IP. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The private IP address of the IP configuration.
         #[builder(into, default)]
-        pub private_ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The private IP address allocation method. Possible values are `Static` and `Dynamic` is allowed. Defaults to `Dynamic`.
         #[builder(into, default)]
-        pub private_ip_allocation_method: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub private_ip_allocation_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Public IP Address. This option is required since September 1st 2021. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub public_ip_address_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub public_ip_address_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet that the IP will reside. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Virtual Hub within which this IP configuration should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualHubIpResult {

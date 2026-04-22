@@ -67,15 +67,15 @@ pub mod field_level_encryption_config {
     pub struct FieldLevelEncryptionConfigArgs {
         /// An optional comment about the Field Level Encryption Config.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Content Type Profile Config specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.
         #[builder(into)]
-        pub content_type_profile_config: pulumi_gestalt_rust::InputOrOutput<
+        pub content_type_profile_config: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::FieldLevelEncryptionConfigContentTypeProfileConfig,
         >,
         /// Query Arg Profile Config that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.
         #[builder(into)]
-        pub query_arg_profile_config: pulumi_gestalt_rust::InputOrOutput<
+        pub query_arg_profile_config: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::FieldLevelEncryptionConfigQueryArgProfileConfig,
         >,
     }

@@ -192,19 +192,19 @@ pub mod network_manager_deployment {
     pub struct NetworkManagerDeploymentArgs {
         /// A list of Network Manager Configuration IDs which should be aligned with `scope_access`.
         #[builder(into)]
-        pub configuration_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub configuration_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the location which the configurations will be deployed to. Changing this forces a new Network Manager Deployment to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Network Manager. Changing this forces a new Network Manager Deployment to be created.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the configuration deployment type. Possible values are `Connectivity` and `SecurityAdmin`. Changing this forces a new Network Manager Deployment to be created.
         #[builder(into)]
-        pub scope_access: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope_access: pulumi_gestalt_rust::Input<String>,
         /// A mapping of key values pairs that can be used to keep the deployment up with the Network Manager configurations and rules.
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

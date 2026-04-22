@@ -22,33 +22,33 @@ pub mod custom_location {
     pub struct CustomLocationArgs {
         /// An `authentication` block as defined below.
         #[builder(into, default)]
-        pub authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication: pulumi_gestalt_rust::Input<
             Option<super::super::types::extendedlocation::CustomLocationAuthentication>,
         >,
         /// Specifies the list of Cluster Extension IDs.
         #[builder(into)]
-        pub cluster_extension_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub cluster_extension_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the display name of the Custom Location.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the host resource ID.
         #[builder(into)]
-        pub host_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_resource_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the host type of the Custom Location. The only possible values is `KubernetesCluster`.
         #[builder(into, default)]
-        pub host_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Azure location where the Custom Location should exist. Changing this forces a new Custom Location to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Custom Location. Changing this forces a new Custom Location to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the namespace of the Custom Location. Changing this forces a new Custom Location to be created.
         #[builder(into)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Resource Group where the Custom Location should exist. Changing this forces a new Custom Location to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomLocationResult {

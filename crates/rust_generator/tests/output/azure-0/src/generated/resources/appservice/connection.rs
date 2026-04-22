@@ -91,28 +91,28 @@ pub mod connection {
     pub struct ConnectionArgs {
         /// The ID of the data source web app. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub app_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_id: pulumi_gestalt_rust::Input<String>,
         /// The authentication info. An `authentication` block as defined below.
         ///
         /// > **Note:** If a Managed Identity is used, this will need to be configured on the App Service.
         #[builder(into)]
-        pub authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication: pulumi_gestalt_rust::Input<
             super::super::types::appservice::ConnectionAuthentication,
         >,
         #[builder(into, default)]
-        pub client_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the service connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub secret_store: pulumi_gestalt_rust::InputOrOutput<
+        pub secret_store: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::ConnectionSecretStore>,
         >,
         /// The ID of the target resource. Changing this forces a new resource to be created. Possible target resources are `Postgres`, `PostgresFlexible`, `Mysql`, `Sql`, `Redis`, `RedisEnterprise`, `CosmosCassandra`, `CosmosGremlin`, `CosmosMongo`, `CosmosSql`, `CosmosTable`, `StorageBlob`, `StorageQueue`, `StorageFile`, `StorageTable`, `AppConfig`, `EventHub`, `ServiceBus`, `SignalR`, `WebPubSub`, `ConfluentKafka`. The integration guide can be found [here](https://learn.microsoft.com/en-us/azure/service-connector/how-to-integrate-postgres).
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub vnet_solution: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vnet_solution: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConnectionResult {

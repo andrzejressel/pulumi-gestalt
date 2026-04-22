@@ -40,15 +40,15 @@ pub mod data_share_authorization {
     pub struct DataShareAuthorizationArgs {
         /// Whether to allow write operations for a datashare.
         #[builder(into, default)]
-        pub allow_writes: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_writes: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID or a keyword, such as `ADX`.
         #[builder(into)]
-        pub consumer_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub consumer_identifier: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub data_share_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_share_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DataShareAuthorizationResult {

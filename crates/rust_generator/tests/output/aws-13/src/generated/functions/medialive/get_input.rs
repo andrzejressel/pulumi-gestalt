@@ -10,7 +10,7 @@ pub mod get_input {
     pub struct GetInputArgs {
         /// The ID of the Input.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetInputResult {

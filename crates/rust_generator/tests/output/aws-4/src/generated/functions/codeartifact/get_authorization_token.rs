@@ -10,13 +10,13 @@ pub mod get_authorization_token {
     pub struct GetAuthorizationTokenArgs {
         /// Name of the domain that is in scope for the generated authorization token.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// Account number of the AWS account that owns the domain.
         #[builder(into, default)]
-        pub domain_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Time, in seconds, that the generated authorization token is valid. Valid values are `0` and between `900` and `43200`.
         #[builder(into, default)]
-        pub duration_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub duration_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct GetAuthorizationTokenResult {

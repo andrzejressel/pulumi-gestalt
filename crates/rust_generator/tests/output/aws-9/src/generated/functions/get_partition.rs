@@ -10,7 +10,7 @@ pub mod get_partition {
     pub struct GetPartitionArgs {
         /// Identifier of the current partition (e.g., `aws` in AWS Commercial, `aws-cn` in AWS China).
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetPartitionResult {

@@ -10,10 +10,10 @@ pub mod get_network_security_group {
     pub struct GetNetworkSecurityGroupArgs {
         /// Specifies the Name of the Network Security Group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Name of the Resource Group within which the Network Security Group exists
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkSecurityGroupResult {

@@ -65,34 +65,34 @@ pub mod network_connection {
     pub struct NetworkConnectionArgs {
         /// The Azure Active Directory Join type. Possible values are `AzureADJoin` and `HybridAzureADJoin`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub domain_join_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_join_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the Azure Active Directory domain.
         #[builder(into, default)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password for the account used to join domain.
         #[builder(into, default)]
-        pub domain_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The username of the Azure Active Directory account (user or service account) that has permissions to create computer objects in Active Directory.
         #[builder(into, default)]
-        pub domain_username: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_username: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Dev Center Network Connection should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this Dev Center Network Connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Active Directory domain Organization Unit (OU).
         #[builder(into, default)]
-        pub organization_unit: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub organization_unit: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group within which this Dev Center Network Connection should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet that is used to attach Virtual Machines.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Dev Center Network Connection.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -15,23 +15,21 @@ pub mod api_token {
     pub struct ApiTokenArgs {
         /// Conditions under which the token should be considered valid.
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::types::ApiTokenCondition>,
         >,
         /// The expiration time on or after which the token MUST NOT be accepted for processing.
         #[builder(into, default)]
-        pub expires_on: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expires_on: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the API Token.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The time before which the token MUST NOT be accepted for processing.
         #[builder(into, default)]
-        pub not_before: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub not_before: pulumi_gestalt_rust::Input<Option<String>>,
         /// Permissions policy. Multiple policy blocks can be defined.
         #[builder(into)]
-        pub policies: pulumi_gestalt_rust::InputOrOutput<
-            Vec<super::types::ApiTokenPolicy>,
-        >,
+        pub policies: pulumi_gestalt_rust::Input<Vec<super::types::ApiTokenPolicy>>,
     }
     #[allow(dead_code)]
     pub struct ApiTokenResult {

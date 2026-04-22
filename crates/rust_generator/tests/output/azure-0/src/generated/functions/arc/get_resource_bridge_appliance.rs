@@ -10,10 +10,10 @@ pub mod get_resource_bridge_appliance {
     pub struct GetResourceBridgeApplianceArgs {
         /// The name of this Arc Resource Bridge Appliance.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Arc Resource Bridge Appliance exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResourceBridgeApplianceResult {

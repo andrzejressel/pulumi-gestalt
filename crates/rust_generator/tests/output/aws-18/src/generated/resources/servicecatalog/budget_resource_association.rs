@@ -40,10 +40,10 @@ pub mod budget_resource_association {
     pub struct BudgetResourceAssociationArgs {
         /// Budget name.
         #[builder(into)]
-        pub budget_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub budget_name: pulumi_gestalt_rust::Input<String>,
         /// Resource identifier.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BudgetResourceAssociationResult {

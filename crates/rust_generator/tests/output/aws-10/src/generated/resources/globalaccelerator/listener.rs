@@ -57,18 +57,18 @@ pub mod listener {
     pub struct ListenerArgs {
         /// The Amazon Resource Name (ARN) of your accelerator.
         #[builder(into)]
-        pub accelerator_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub accelerator_arn: pulumi_gestalt_rust::Input<String>,
         /// Direct all requests from a user to the same endpoint. Valid values are `NONE`, `SOURCE_IP`. Default: `NONE`. If `NONE`, Global Accelerator uses the "five-tuple" properties of source IP address, source port, destination IP address, destination port, and protocol to select the hash value. If `SOURCE_IP`, Global Accelerator uses the "two-tuple" properties of source (client) IP address and destination IP address to select the hash value.
         #[builder(into, default)]
-        pub client_affinity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_affinity: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of port ranges for the connections from clients to the accelerator. Fields documented below.
         #[builder(into)]
-        pub port_ranges: pulumi_gestalt_rust::InputOrOutput<
+        pub port_ranges: pulumi_gestalt_rust::Input<
             Vec<super::super::types::globalaccelerator::ListenerPortRange>,
         >,
         /// The protocol for the connections from clients to the accelerator. Valid values are `TCP`, `UDP`.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ListenerResult {

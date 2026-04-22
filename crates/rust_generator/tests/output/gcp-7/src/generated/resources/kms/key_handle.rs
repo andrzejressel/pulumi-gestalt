@@ -169,18 +169,18 @@ pub mod key_handle {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name for the KeyHandle.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Selector of the resource type where we want to protect resources.
         /// For example, `storage.googleapis.com/Bucket`.
         #[builder(into)]
-        pub resource_type_selector: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type_selector: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct KeyHandleResult {

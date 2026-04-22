@@ -214,49 +214,49 @@ pub mod task {
     pub struct TaskArgs {
         /// User-provided description of the task.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User friendly display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for the cluster
         /// Structure is documented below.
         #[builder(into)]
-        pub execution_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub execution_spec: pulumi_gestalt_rust::Input<
             super::super::types::dataplex::TaskExecutionSpec,
         >,
         /// User-defined labels for the task. **Note**: This field is non-authoritative, and will only manage the labels present in
         /// your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The lake in which the task will be created in.
         #[builder(into, default)]
-        pub lake: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lake: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location in which the task will be created in.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of
         /// its memory over time.
         #[builder(into, default)]
-        pub notebook: pulumi_gestalt_rust::InputOrOutput<
+        pub notebook: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataplex::TaskNotebook>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of
         /// its memory over time.
         #[builder(into, default)]
-        pub spark: pulumi_gestalt_rust::InputOrOutput<
+        pub spark: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataplex::TaskSpark>,
         >,
         /// The task Id of the task.
         #[builder(into, default)]
-        pub task_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub task_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for the cluster
         /// Structure is documented below.
         #[builder(into)]
-        pub trigger_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub trigger_spec: pulumi_gestalt_rust::Input<
             super::super::types::dataplex::TaskTriggerSpec,
         >,
     }

@@ -84,22 +84,22 @@ pub mod cluster_endpoint {
     pub struct ClusterEndpointArgs {
         /// The identifier to use for the new endpoint. This parameter is stored as a lowercase string.
         #[builder(into)]
-        pub cluster_endpoint_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_endpoint_identifier: pulumi_gestalt_rust::Input<String>,
         /// The cluster identifier.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The type of the endpoint. One of: READER , ANY .
         #[builder(into)]
-        pub custom_endpoint_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_endpoint_type: pulumi_gestalt_rust::Input<String>,
         /// List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty. Conflicts with `static_members`.
         #[builder(into, default)]
-        pub excluded_members: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub excluded_members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of DB instance identifiers that are part of the custom endpoint group. Conflicts with `excluded_members`.
         #[builder(into, default)]
-        pub static_members: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub static_members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

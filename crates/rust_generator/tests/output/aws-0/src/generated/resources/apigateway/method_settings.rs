@@ -122,18 +122,18 @@ pub mod method_settings {
     pub struct MethodSettingsArgs {
         /// Method path defined as `{resource_path}/{http_method}` for an individual method override, or `*/*` for overriding all methods in the stage. Ensure to trim any leading forward slashes in the path (e.g., `trimprefix(aws_api_gateway_resource.example.path, "/")`).
         #[builder(into)]
-        pub method_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub method_path: pulumi_gestalt_rust::Input<String>,
         /// ID of the REST API
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
         /// Settings block, see below.
         #[builder(into)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             super::super::types::apigateway::MethodSettingsSettings,
         >,
         /// Name of the stage
         #[builder(into)]
-        pub stage_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stage_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MethodSettingsResult {

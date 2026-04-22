@@ -28,16 +28,16 @@ pub mod instance_metadata_defaults {
     pub struct InstanceMetadataDefaultsArgs {
         /// Whether the metadata service is available. Can be `"enabled"`, `"disabled"`, or `"no-preference"`. Default: `"no-preference"`.
         #[builder(into, default)]
-        pub http_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub http_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         /// The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. Can be an integer from `1` to `64`, or `-1` to indicate no preference. Default: `-1`.
         #[builder(into, default)]
-        pub http_put_response_hop_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub http_put_response_hop_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether the metadata service requires session tokens, also referred to as _Instance Metadata Service Version 2 (IMDSv2)_. Can be `"optional"`, `"required"`, or `"no-preference"`. Default: `"no-preference"`.
         #[builder(into, default)]
-        pub http_tokens: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub http_tokens: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables or disables access to instance tags from the instance metadata service. Can be `"enabled"`, `"disabled"`, or `"no-preference"`. Default: `"no-preference"`.
         #[builder(into, default)]
-        pub instance_metadata_tags: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_metadata_tags: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceMetadataDefaultsResult {

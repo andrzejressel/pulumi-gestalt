@@ -44,43 +44,43 @@ pub mod primary_contact {
     pub struct PrimaryContactArgs {
         /// The ID of the target account when managing member accounts. Will manage current user's account by default if omitted.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The first line of the primary contact address.
         #[builder(into)]
-        pub address_line1: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address_line1: pulumi_gestalt_rust::Input<String>,
         /// The second line of the primary contact address, if any.
         #[builder(into, default)]
-        pub address_line2: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub address_line2: pulumi_gestalt_rust::Input<Option<String>>,
         /// The third line of the primary contact address, if any.
         #[builder(into, default)]
-        pub address_line3: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub address_line3: pulumi_gestalt_rust::Input<Option<String>>,
         /// The city of the primary contact address.
         #[builder(into)]
-        pub city: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub city: pulumi_gestalt_rust::Input<String>,
         /// The name of the company associated with the primary contact information, if any.
         #[builder(into, default)]
-        pub company_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub company_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ISO-3166 two-letter country code for the primary contact address.
         #[builder(into)]
-        pub country_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub country_code: pulumi_gestalt_rust::Input<String>,
         /// The district or county of the primary contact address, if any.
         #[builder(into, default)]
-        pub district_or_county: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub district_or_county: pulumi_gestalt_rust::Input<Option<String>>,
         /// The full name of the primary contact address.
         #[builder(into)]
-        pub full_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub full_name: pulumi_gestalt_rust::Input<String>,
         /// The phone number of the primary contact information. The number will be validated and, in some countries, checked for activation.
         #[builder(into)]
-        pub phone_number: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub phone_number: pulumi_gestalt_rust::Input<String>,
         /// The postal code of the primary contact address.
         #[builder(into)]
-        pub postal_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub postal_code: pulumi_gestalt_rust::Input<String>,
         /// The state or region of the primary contact address. This field is required in selected countries.
         #[builder(into, default)]
-        pub state_or_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state_or_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URL of the website associated with the primary contact information, if any.
         #[builder(into, default)]
-        pub website_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub website_url: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PrimaryContactResult {

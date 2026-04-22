@@ -122,25 +122,25 @@ pub mod client {
         /// Cloud KMS config for AuthModule to encrypt/decrypt credentials.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloud_kms_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_kms_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::applicationintegration::ClientCloudKmsConfig>,
         >,
         /// Indicates if sample integrations should be created along with provisioning.
         #[builder(into, default)]
-        pub create_sample_integrations: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub create_sample_integrations: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Location in which client needs to be provisioned.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// User input run-as service account, if empty, will bring up a new default service account.
         #[builder(into, default)]
-        pub run_as_service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub run_as_service_account: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ClientResult {

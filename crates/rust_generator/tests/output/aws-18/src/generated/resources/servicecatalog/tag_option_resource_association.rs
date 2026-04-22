@@ -40,10 +40,10 @@ pub mod tag_option_resource_association {
     pub struct TagOptionResourceAssociationArgs {
         /// Resource identifier.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// Tag Option identifier.
         #[builder(into)]
-        pub tag_option_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tag_option_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagOptionResourceAssociationResult {

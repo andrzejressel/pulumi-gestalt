@@ -52,24 +52,24 @@ pub mod network_slice {
     pub struct NetworkSliceArgs {
         /// A description for this Mobile Network Slice.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Azure Region where the Mobile Network Slice should exist. Changing this forces a new Mobile Network Slice to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of Mobile Network which the Mobile Network Slice belongs to. Changing this forces a new Mobile Network Slice to be created.
         #[builder(into)]
-        pub mobile_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this Mobile Network Slice. Changing this forces a new Mobile Network Slice to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `single_network_slice_selection_assistance_information` block as defined below. Single-network slice selection assistance information (S-NSSAI). Unique at the scope of a mobile network.
         #[builder(into)]
-        pub single_network_slice_selection_assistance_information: pulumi_gestalt_rust::InputOrOutput<
+        pub single_network_slice_selection_assistance_information: pulumi_gestalt_rust::Input<
             super::super::types::mobile::NetworkSliceSingleNetworkSliceSelectionAssistanceInformation,
         >,
         /// A mapping of tags which should be assigned to the Mobile Network Slice.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -96,11 +96,11 @@ pub mod replication_set {
     #[allow(dead_code)]
     pub struct ReplicationSetArgs {
         #[builder(into)]
-        pub regions: pulumi_gestalt_rust::InputOrOutput<
+        pub regions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::ssmincidents::ReplicationSetRegion>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

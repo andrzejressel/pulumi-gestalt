@@ -89,32 +89,32 @@ pub mod inventory {
     pub struct InventoryArgs {
         /// Name of the source bucket that inventory lists the objects for.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Contains information about where to publish the inventory results (documented below).
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<
+        pub destination: pulumi_gestalt_rust::Input<
             super::super::types::s3::InventoryDestination,
         >,
         /// Specifies whether the inventory is enabled or disabled.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria (documented below).
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::InventoryFilter>,
         >,
         /// Object versions to include in the inventory list. Valid values: `All`, `Current`.
         #[builder(into)]
-        pub included_object_versions: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub included_object_versions: pulumi_gestalt_rust::Input<String>,
         /// Unique identifier of the inventory configuration for the bucket.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of optional fields that are included in the inventory results. Please refer to the S3 [documentation](https://docs.aws.amazon.com/AmazonS3/latest/API/API_InventoryConfiguration.html#AmazonS3-Type-InventoryConfiguration-OptionalFields) for more details.
         #[builder(into, default)]
-        pub optional_fields: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub optional_fields: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the schedule for generating inventory results (documented below).
         #[builder(into)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             super::super::types::s3::InventorySchedule,
         >,
     }

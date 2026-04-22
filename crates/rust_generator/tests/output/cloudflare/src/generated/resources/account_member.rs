@@ -41,16 +41,16 @@ pub mod account_member {
     pub struct AccountMemberArgs {
         /// Account ID to create the account member in.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The email address of the user who you wish to manage. Following creation, this field becomes read only via the API and cannot be updated.
         #[builder(into)]
-        pub email_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_address: pulumi_gestalt_rust::Input<String>,
         /// List of account role IDs that you want to assign to a member.
         #[builder(into)]
-        pub role_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub role_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A member's status in the account. Available values: `accepted`, `pending`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountMemberResult {

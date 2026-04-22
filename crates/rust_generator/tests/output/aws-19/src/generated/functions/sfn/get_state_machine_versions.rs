@@ -10,7 +10,7 @@ pub mod get_state_machine_versions {
     pub struct GetStateMachineVersionsArgs {
         /// ARN of the State Machine.
         #[builder(into)]
-        pub statemachine_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub statemachine_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetStateMachineVersionsResult {

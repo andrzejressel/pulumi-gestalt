@@ -37,13 +37,13 @@ pub mod account {
     pub struct AccountArgs {
         /// Whether 2FA is enforced on the account. Defaults to `false`.
         #[builder(into, default)]
-        pub enforce_twofactor: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enforce_twofactor: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the account that is displayed in the Cloudflare dashboard.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Account type. Available values: `enterprise`, `standard`. Defaults to `standard`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountResult {

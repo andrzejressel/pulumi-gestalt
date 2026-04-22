@@ -13,7 +13,7 @@ pub mod get_local_gateway_route_tables {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::ec2::GetLocalGatewayRouteTablesFilter>,
             >,
@@ -21,7 +21,7 @@ pub mod get_local_gateway_route_tables {
         /// Mapping of tags, each pair of which must exactly match
         /// a pair on the desired local gateway route table.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

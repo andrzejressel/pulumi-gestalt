@@ -10,15 +10,15 @@ pub mod get_portfolio_constraints {
     pub struct GetPortfolioConstraintsArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Portfolio identifier.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub portfolio_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub portfolio_id: pulumi_gestalt_rust::Input<String>,
         /// Product identifier.
         #[builder(into, default)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub product_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetPortfolioConstraintsResult {

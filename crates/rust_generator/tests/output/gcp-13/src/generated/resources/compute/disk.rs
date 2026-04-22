@@ -139,17 +139,17 @@ pub mod disk {
         /// * READ_WRITE_MANY
         /// * READ_ONLY_SINGLE
         #[builder(into, default)]
-        pub access_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub async_primary_disk: pulumi_gestalt_rust::InputOrOutput<
+        pub async_primary_disk: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::DiskAsyncPrimaryDisk>,
         >,
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Encrypts the disk using a customer-supplied encryption key.
         /// After you encrypt a disk with a customer-supplied key, you must
         /// provide the same key if you use the disk later (e.g. to create a disk
@@ -161,20 +161,18 @@ pub mod disk {
         /// you do not need to provide a key to use the disk later.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub disk_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub disk_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::DiskDiskEncryptionKey>,
         >,
         /// Whether this disk is using confidential compute mode.
         /// Note: Only supported on hyperdisk skus, disk_encryption_key is required when setting to true
         #[builder(into, default)]
-        pub enable_confidential_compute: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub enable_confidential_compute: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of features to enable on the guest operating system.
         /// Applicable only for bootable disks.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub guest_os_features: pulumi_gestalt_rust::InputOrOutput<
+        pub guest_os_features: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::DiskGuestOsFeature>>,
         >,
         /// The image from which to initialize this disk. This can be
@@ -187,26 +185,26 @@ pub mod disk {
         /// For instance, the image `centos-6-v20180104` includes its family name `centos-6`.
         /// These images can be referred by family name here.
         #[builder(into, default)]
-        pub image: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI.
         ///
         /// > **Warning:** `interface` is deprecated and will be removed in a future major release. This field is no longer used and can be safely removed from your configurations; disk interfaces are automatically determined on attachment.
         #[builder(into, default)]
-        pub interface: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub interface: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels to apply to this disk.  A list of key->value pairs.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Any applicable license URI.
         #[builder(into, default)]
-        pub licenses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub licenses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Indicates whether or not the disk can be read/write attached to more than one instance.
         #[builder(into, default)]
-        pub multi_writer: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub multi_writer: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -218,28 +216,28 @@ pub mod disk {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Physical block size of the persistent disk, in bytes. If not present
         /// in a request, a default value is used. Currently supported sizes
         /// are 4096 and 16384, other sizes may be added in the future.
         /// If an unsupported value is requested, the error message will list
         /// the supported values for the caller's project.
         #[builder(into, default)]
-        pub physical_block_size_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub physical_block_size_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates how many IOPS must be provisioned for the disk.
         /// Note: Updating currently is only supported by hyperdisk skus without the need to delete and recreate the disk, hyperdisk
         /// allows for an update of IOPS every 4 hours. To update your hyperdisk more frequently, you'll need to manually delete and recreate it
         #[builder(into, default)]
-        pub provisioned_iops: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub provisioned_iops: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Indicates how much Throughput must be provisioned for the disk.
         /// Note: Updating currently is only supported by hyperdisk skus without the need to delete and recreate the disk, hyperdisk
         /// allows for an update of Throughput every 4 hours. To update your hyperdisk more frequently, you'll need to manually delete and recreate it
         #[builder(into, default)]
-        pub provisioned_throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub provisioned_throughput: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Resource policies applied to this disk for automatic snapshot creations.
         /// ~>**NOTE** This value does not support updating the
         /// resource policy, as resource policies can not be updated more than
@@ -247,7 +245,7 @@ pub mod disk {
         /// `gcp.compute.DiskResourcePolicyAttachment`
         /// to allow for updating the resource policy attached to the disk.
         #[builder(into, default)]
-        pub resource_policies: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub resource_policies: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Size of the persistent disk, specified in GB. You can specify this
         /// field when creating a persistent disk using the `image` or
         /// `snapshot` parameter, or specify it alone to create an empty
@@ -260,7 +258,7 @@ pub mod disk {
         /// You can add `lifecycle.prevent_destroy` in the config to prevent destroying
         /// and recreating.
         #[builder(into, default)]
-        pub size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The source snapshot used to create this disk. You can provide this as
         /// a partial or full URL to the resource. If the snapshot is in another
         /// project than this disk, you must supply a full URL. For example, the
@@ -269,7 +267,7 @@ pub mod disk {
         /// * `projects/project/global/snapshots/snapshot`
         /// * `global/snapshots/snapshot`
         #[builder(into, default)]
-        pub snapshot: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source disk used to create this disk. You can provide this as a partial or full URL to the resource.
         /// For example, the following are valid values:
         /// * https://www.googleapis.com/compute/v1/projects/{project}/zones/{zone}/disks/{disk}
@@ -279,12 +277,12 @@ pub mod disk {
         /// * zones/{zone}/disks/{disk}
         /// * regions/{region}/disks/{disk}
         #[builder(into, default)]
-        pub source_disk: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_disk: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer-supplied encryption key of the source image. Required if
         /// the source image is protected by a customer-supplied encryption key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub source_image_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub source_image_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::DiskSourceImageEncryptionKey>,
         >,
         /// The customer-supplied encryption key of the source snapshot. Required
@@ -292,7 +290,7 @@ pub mod disk {
         /// key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub source_snapshot_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub source_snapshot_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::DiskSourceSnapshotEncryptionKey>,
         >,
         /// The URL or the name of the storage pool in which the new disk is created.
@@ -302,14 +300,14 @@ pub mod disk {
         /// * /zones/{zone}/storagePools/{storagePool}
         /// * /{storagePool}
         #[builder(into, default)]
-        pub storage_pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_pool: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the disk type resource describing which disk type to use to
         /// create the disk. Provide this when creating the disk.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the zone where the disk resides.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DiskResult {

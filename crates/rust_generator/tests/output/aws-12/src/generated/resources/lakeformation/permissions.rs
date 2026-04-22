@@ -210,41 +210,41 @@ pub mod permissions {
     pub struct PermissionsArgs {
         /// Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the permissions are to be granted for the Data Catalog. Defaults to `false`.
         #[builder(into, default)]
-        pub catalog_resource: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub catalog_resource: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block for a data cells filter resource. Detailed below.
         #[builder(into, default)]
-        pub data_cells_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub data_cells_filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::PermissionsDataCellsFilter>,
         >,
         /// Configuration block for a data location resource. Detailed below.
         #[builder(into, default)]
-        pub data_location: pulumi_gestalt_rust::InputOrOutput<
+        pub data_location: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::PermissionsDataLocation>,
         >,
         /// Configuration block for a database resource. Detailed below.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<
+        pub database: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::PermissionsDatabase>,
         >,
         /// Configuration block for an LF-tag resource. Detailed below.
         #[builder(into, default)]
-        pub lf_tag: pulumi_gestalt_rust::InputOrOutput<
+        pub lf_tag: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::PermissionsLfTag>,
         >,
         /// Configuration block for an LF-tag policy resource. Detailed below.
         #[builder(into, default)]
-        pub lf_tag_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub lf_tag_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::PermissionsLfTagPolicy>,
         >,
         /// List of permissions granted to the principal. Valid values may include `ALL`, `ALTER`, `ASSOCIATE`, `CREATE_DATABASE`, `CREATE_TABLE`, `DATA_LOCATION_ACCESS`, `DELETE`, `DESCRIBE`, `DROP`, `INSERT`, and `SELECT`. For details on each permission, see [Lake Formation Permissions Reference](https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html).
         #[builder(into)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub permissions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Subset of `permissions` which the principal can pass.
         #[builder(into, default)]
-        pub permissions_with_grant_options: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions_with_grant_options: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Principal to be granted the permissions on the resource. Supported principals include `IAM_ALLOWED_PRINCIPALS` (see Default Behavior and `IAMAllowedPrincipals` above), IAM roles, users, groups, Federated Users, SAML groups and users, QuickSight groups, OUs, and organizations as well as AWS account IDs for cross-account permissions. For more information, see [Lake Formation Permissions Reference](https://docs.aws.amazon.com/lake-formation/latest/dg/lf-permissions-reference.html).
@@ -253,17 +253,17 @@ pub mod permissions {
         ///
         /// One of the following is required:
         #[builder(into)]
-        pub principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for a table resource. Detailed below.
         #[builder(into, default)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<
+        pub table: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::PermissionsTable>,
         >,
         /// Configuration block for a table with columns resource. Detailed below.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub table_with_columns: pulumi_gestalt_rust::InputOrOutput<
+        pub table_with_columns: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::PermissionsTableWithColumns>,
         >,
     }

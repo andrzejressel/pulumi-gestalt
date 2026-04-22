@@ -10,7 +10,7 @@ pub mod get_gateway_categories {
     pub struct GetGatewayCategoriesArgs {
         /// The account ID to fetch Gateway Categories from.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGatewayCategoriesResult {

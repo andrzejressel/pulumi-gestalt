@@ -10,10 +10,10 @@ pub mod get_repository_creation_template {
     pub struct GetRepositoryCreationTemplateArgs {
         /// The repository name prefix that the template matches against.
         #[builder(into)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub prefix: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to any created repositories.
         #[builder(into, default)]
-        pub resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

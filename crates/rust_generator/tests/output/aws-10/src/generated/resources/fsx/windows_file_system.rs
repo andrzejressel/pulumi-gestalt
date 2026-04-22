@@ -76,85 +76,81 @@ pub mod windows_file_system {
     pub struct WindowsFileSystemArgs {
         /// The ID for an existing Microsoft Active Directory instance that the file system should join when it's created. Cannot be specified with `self_managed_active_directory`.
         #[builder(into, default)]
-        pub active_directory_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub active_directory_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An array DNS alias names that you want to associate with the Amazon FSx file system.  For more information, see [Working with DNS Aliases](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html)
         #[builder(into, default)]
-        pub aliases: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub aliases: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. See `audit_log_configuration` Block for details.
         #[builder(into, default)]
-        pub audit_log_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub audit_log_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::WindowsFileSystemAuditLogConfiguration>,
         >,
         /// The number of days to retain automatic backups. Minimum of `0` and maximum of `90`. Defaults to `7`. Set to `0` to disable.
         #[builder(into, default)]
-        pub automatic_backup_retention_days: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the source backup to create the filesystem from.
         #[builder(into, default)]
-        pub backup_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub backup_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean flag indicating whether tags on the file system should be copied to backups. Defaults to `false`.
         #[builder(into, default)]
-        pub copy_tags_to_backups: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_tags_to_backups: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The preferred time (in `HH:MM` format) to take daily automatic backups, in the UTC time zone.
         #[builder(into, default)]
-        pub daily_automatic_backup_start_time: pulumi_gestalt_rust::InputOrOutput<
+        pub daily_automatic_backup_start_time: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the file system deployment type, valid values are `MULTI_AZ_1`, `SINGLE_AZ_1` and `SINGLE_AZ_2`. Default value is `SINGLE_AZ_1`.
         #[builder(into, default)]
-        pub deployment_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deployment_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SSD IOPS configuration for the Amazon FSx for Windows File Server file system. See `disk_iops_configuration` Block for details.
         #[builder(into, default)]
-        pub disk_iops_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub disk_iops_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::WindowsFileSystemDiskIopsConfiguration>,
         >,
         /// A map of tags to apply to the file system's final backup.
         #[builder(into, default)]
-        pub final_backup_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub final_backup_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ARN for the KMS Key to encrypt the file system at rest. Defaults to an AWS managed KMS Key.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the subnet in which you want the preferred file server to be located. Required for when deployment type is `MULTI_AZ_1`.
         #[builder(into, default)]
-        pub preferred_subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. Cannot be specified with `active_directory_id`. See `self_managed_active_directory` Block for details.
         #[builder(into, default)]
-        pub self_managed_active_directory: pulumi_gestalt_rust::InputOrOutput<
+        pub self_managed_active_directory: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::WindowsFileSystemSelfManagedActiveDirectory>,
         >,
         /// When enabled, will skip the default final backup taken when the file system is deleted. This configuration must be applied separately before attempting to delete the resource to have the desired behavior. Defaults to `false`.
         #[builder(into, default)]
-        pub skip_final_backup: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_backup: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Storage capacity (GiB) of the file system. Minimum of 32 and maximum of 65536. If the storage type is set to `HDD` the minimum value is 2000. Required when not creating filesystem for a backup.
         #[builder(into, default)]
-        pub storage_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub storage_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the storage type, Valid values are `SSD` and `HDD`. `HDD` is supported on `SINGLE_AZ_2` and `MULTI_AZ_1` Windows file system deployment types. Default value is `SSD`.
         #[builder(into, default)]
-        pub storage_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IDs for the subnets that the file system will be accessible from. To specify more than a single subnet set `deployment_type` to `MULTI_AZ_1`.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Throughput (megabytes per second) of the file system. For valid values, refer to the [AWS documentation](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/performance.html).
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub throughput_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub throughput_capacity: pulumi_gestalt_rust::Input<i32>,
         /// The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone.
         #[builder(into, default)]
-        pub weekly_maintenance_start_time: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct WindowsFileSystemResult {

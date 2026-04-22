@@ -129,7 +129,7 @@ pub mod secret {
         /// annotations present in your configuration. Please refer to the field 'effective_annotations' for all of the annotations
         /// present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Timestamp in UTC when the Secret is scheduled to expire. This is always provided on output, regardless of what was sent
@@ -137,7 +137,7 @@ pub mod secret {
         /// Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z". Only one of 'expire_time' or 'ttl' can be
         /// provided.
         #[builder(into, default)]
-        pub expire_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expire_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of
         /// maximum 128 bytes, and must conform to the following PCRE regular expression: [\p{Ll}\p{Lo}][\p{Ll}\p{Lo}\p{N}_-]{0,62}
         /// Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to
@@ -146,50 +146,50 @@ pub mod secret {
         /// }. **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please
         /// refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The replication policy of the secret data attached to the Secret. It cannot be changed
         /// after the Secret has been created.
         /// Structure is documented below.
         #[builder(into)]
-        pub replication: pulumi_gestalt_rust::InputOrOutput<
+        pub replication: pulumi_gestalt_rust::Input<
             super::super::types::secretmanager::SecretReplication,
         >,
         /// The rotation time and period for a Secret. At 'next_rotation_time', Secret Manager will send a Pub/Sub notification to
         /// the topics configured on the Secret. 'topics' must be set to configure rotation.
         #[builder(into, default)]
-        pub rotation: pulumi_gestalt_rust::InputOrOutput<
+        pub rotation: pulumi_gestalt_rust::Input<
             Option<super::super::types::secretmanager::SecretRotation>,
         >,
         /// This must be unique within the project.
         #[builder(into)]
-        pub secret_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_id: pulumi_gestalt_rust::Input<String>,
         /// A list of up to 10 Pub/Sub topics to which messages are published when control plane operations are called on the secret
         /// or its versions.
         #[builder(into, default)]
-        pub topics: pulumi_gestalt_rust::InputOrOutput<
+        pub topics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::secretmanager::SecretTopic>>,
         >,
         /// The TTL for the Secret. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
         /// Only one of 'ttl' or 'expire_time' can be provided.
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ttl: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mapping from version alias to version name. A version alias is a string with a maximum length of 63 characters and can
         /// contain uppercase and lowercase letters, numerals, and the hyphen (-) and underscore ('_') characters. An alias string
         /// must start with a letter and cannot be the string 'latest' or 'NEW'. No more than 50 aliases can be assigned to a given
         /// secret. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         #[builder(into, default)]
-        pub version_aliases: pulumi_gestalt_rust::InputOrOutput<
+        pub version_aliases: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Secret Version TTL after destruction request. This is a part of the delayed delete feature on Secret Version. For secret
         /// with versionDestroyTtl>0, version destruction doesn't happen immediately on calling destroy instead the version goes to
         /// a disabled state and the actual destruction happens after this TTL expires.
         #[builder(into, default)]
-        pub version_destroy_ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_destroy_ttl: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SecretResult {

@@ -69,19 +69,19 @@ pub mod database {
     pub struct DatabaseArgs {
         /// The parent catalog.
         #[builder(into)]
-        pub catalog: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub catalog: pulumi_gestalt_rust::Input<String>,
         /// Options of a Hive database.
         /// Structure is documented below.
         #[builder(into)]
-        pub hive_options: pulumi_gestalt_rust::InputOrOutput<
+        pub hive_options: pulumi_gestalt_rust::Input<
             super::super::types::biglake::DatabaseHiveOptions,
         >,
         /// The name of the database.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The database type.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DatabaseResult {

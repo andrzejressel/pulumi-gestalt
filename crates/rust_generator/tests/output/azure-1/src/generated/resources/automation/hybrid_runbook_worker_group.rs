@@ -54,16 +54,16 @@ pub mod hybrid_runbook_worker_group {
     pub struct HybridRunbookWorkerGroupArgs {
         /// The name of the Automation Account in which the Runbook Worker Group is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of resource type `azure.automation.Credential` to use for hybrid worker.
         #[builder(into, default)]
-        pub credential_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub credential_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Automation Account Runbook Worker Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Automation should exist. Changing this forces a new Automation to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HybridRunbookWorkerGroupResult {

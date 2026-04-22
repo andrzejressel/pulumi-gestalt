@@ -10,13 +10,13 @@ pub mod get_document {
     pub struct GetDocumentArgs {
         /// The format of the document. Valid values: `JSON`, `TEXT`, `YAML`.
         #[builder(into, default)]
-        pub document_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub document_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// The document version.
         #[builder(into, default)]
-        pub document_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub document_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the document.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDocumentResult {

@@ -9,9 +9,9 @@ pub mod func_with_list_param {
     #[allow(dead_code)]
     pub struct FuncWithListParamArgs {
         #[builder(into, default)]
-        pub a: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub a: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub b: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub b: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FuncWithListParamResult {

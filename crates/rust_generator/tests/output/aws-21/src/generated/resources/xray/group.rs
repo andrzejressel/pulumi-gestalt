@@ -42,18 +42,18 @@ pub mod group {
     pub struct GroupArgs {
         /// The filter expression defining criteria by which to group traces. more info can be found in official [docs](https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html).
         #[builder(into)]
-        pub filter_expression: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter_expression: pulumi_gestalt_rust::Input<String>,
         /// The name of the group.
         #[builder(into)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration options for enabling insights.
         #[builder(into, default)]
-        pub insights_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub insights_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::xray::GroupInsightsConfiguration>,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -328,31 +328,31 @@ pub mod record_set {
         /// The name of the zone in which this record set will
         /// reside.
         #[builder(into)]
-        pub managed_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_zone: pulumi_gestalt_rust::Input<String>,
         /// The DNS name this record set will apply to.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The configuration for steering traffic based on query.
         /// Now you can specify either Weighted Round Robin(WRR) type or Geolocation(GEO) type.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub routing_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::dns::RecordSetRoutingPolicy>,
         >,
         #[builder(into, default)]
-        pub rrdatas: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub rrdatas: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The time-to-live of this record set (seconds).
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The DNS record set type.
         ///
         /// - - -
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RecordSetResult {

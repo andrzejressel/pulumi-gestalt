@@ -10,26 +10,26 @@ pub mod get_group {
     pub struct GetGroupArgs {
         /// A unique identifier for the group that is not the primary identifier. Conflicts with `group_id` and `filter`. Detailed below.
         #[builder(into, default)]
-        pub alternate_identifier: pulumi_gestalt_rust::InputOrOutput<
+        pub alternate_identifier: pulumi_gestalt_rust::Input<
             Option<
                 super::super::super::types::identitystore::GetGroupAlternateIdentifier,
             >,
         >,
         /// Configuration block for filtering by a unique attribute of the group. Detailed below.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::identitystore::GetGroupFilter>,
         >,
         /// The identifier for a group in the Identity Store.
         ///
         /// > Exactly one of the above arguments must be provided. Passing both `filter` and `group_id` is allowed for backwards compatibility.
         #[builder(into, default)]
-        pub group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identity Store ID associated with the Single Sign-On Instance.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub identity_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_store_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGroupResult {

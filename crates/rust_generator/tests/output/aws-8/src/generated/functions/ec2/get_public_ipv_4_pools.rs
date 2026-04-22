@@ -10,7 +10,7 @@ pub mod get_public_ipv_4_pools {
     pub struct GetPublicIpv4PoolsArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetPublicIpv4PoolsFilter>>,
         >,
         /// Map of tags, each pair of which must exactly match a pair on the desired pools.
@@ -18,7 +18,7 @@ pub mod get_public_ipv_4_pools {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

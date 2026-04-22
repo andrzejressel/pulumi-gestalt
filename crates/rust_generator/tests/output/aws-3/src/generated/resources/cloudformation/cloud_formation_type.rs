@@ -21,21 +21,21 @@ pub mod cloud_formation_type {
     pub struct CloudFormationTypeArgs {
         /// Amazon Resource Name (ARN) of the IAM Role for CloudFormation to assume when invoking the extension. If your extension calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the extension handler, thereby supplying your extension with the appropriate credentials.
         #[builder(into, default)]
-        pub execution_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub execution_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block containing logging configuration.
         #[builder(into, default)]
-        pub logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudformation::CloudFormationTypeLoggingConfig>,
         >,
         /// URL to the S3 bucket containing the extension project package that contains the necessary files for the extension you want to register. Must begin with `s3://` or `https://`. For example, `s3://example-bucket/example-object`.
         #[builder(into)]
-        pub schema_handler_package: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema_handler_package: pulumi_gestalt_rust::Input<String>,
         /// CloudFormation Registry Type. For example, `RESOURCE` or `MODULE`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// CloudFormation Type name. For example, `ExampleCompany::ExampleService::ExampleResource`.
         #[builder(into)]
-        pub type_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CloudFormationTypeResult {

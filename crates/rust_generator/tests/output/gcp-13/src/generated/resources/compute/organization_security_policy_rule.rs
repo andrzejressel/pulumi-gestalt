@@ -78,44 +78,42 @@ pub mod organization_security_policy_rule {
         /// The Action to perform when the client connection triggers the rule. Can currently be either
         /// "allow", "deny" or "goto_next".
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// A description of the rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The direction in which this rule applies. If unspecified an INGRESS rule is created. Possible values: ["INGRESS",
         /// "EGRESS"]
         #[builder(into, default)]
-        pub direction: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub direction: pulumi_gestalt_rust::Input<Option<String>>,
         /// Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured
         /// export destination in Stackdriver.
         #[builder(into, default)]
-        pub enable_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.
         /// Structure is documented below.
         #[builder(into)]
-        pub match_: pulumi_gestalt_rust::InputOrOutput<
+        pub match_: pulumi_gestalt_rust::Input<
             super::super::types::compute::OrganizationSecurityPolicyRuleMatch,
         >,
         /// The ID of the OrganizationSecurityPolicy this rule applies to.
         #[builder(into)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_id: pulumi_gestalt_rust::Input<String>,
         /// If set to true, the specified action is not enforced.
         #[builder(into, default)]
-        pub preview: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub preview: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An integer indicating the priority of a rule in the list. The priority must be a value
         /// between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the
         /// highest priority and 2147483647 is the lowest prority.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// A list of network resource URLs to which this rule applies. This field allows you to control which network's VMs get
         /// this rule. If this field is left blank, all VMs within the organization will receive the rule.
         #[builder(into, default)]
-        pub target_resources: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub target_resources: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of service accounts indicating the sets of instances that are applied with this rule.
         #[builder(into, default)]
-        pub target_service_accounts: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub target_service_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct OrganizationSecurityPolicyRuleResult {

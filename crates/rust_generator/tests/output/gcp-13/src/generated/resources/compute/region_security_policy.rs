@@ -119,33 +119,33 @@ pub mod region_security_policy {
         /// Configuration for Google Cloud Armor DDOS Proctection Config.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ddos_protection_config: pulumi_gestalt_rust::InputOrOutput<
+        pub ddos_protection_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::RegionSecurityPolicyDdosProtectionConfig,
             >,
         >,
         /// An optional description of this resource. Provide this property when you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.
         /// Specifically, the name must be 1-63 characters long and match the regular expression a-z? which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Region in which the created Region Security Policy should reside.
         /// If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The set of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::RegionSecurityPolicyRule>>,
         >,
         /// The type indicates the intended use of the security policy.
@@ -155,13 +155,13 @@ pub mod region_security_policy {
         /// This field can be set only at resource creation time.
         /// Possible values are: `CLOUD_ARMOR`, `CLOUD_ARMOR_EDGE`, `CLOUD_ARMOR_NETWORK`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies.
         /// A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits.
         /// Rules may then specify matching values for these fields.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub user_defined_fields: pulumi_gestalt_rust::InputOrOutput<
+        pub user_defined_fields: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::compute::RegionSecurityPolicyUserDefinedField>,
             >,

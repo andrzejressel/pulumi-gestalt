@@ -10,10 +10,10 @@ pub mod get_restorable_database_accounts {
     pub struct GetRestorableDatabaseAccountsArgs {
         /// The location where the Cosmos DB Database Account.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of this Cosmos DB Database Account.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRestorableDatabaseAccountsResult {

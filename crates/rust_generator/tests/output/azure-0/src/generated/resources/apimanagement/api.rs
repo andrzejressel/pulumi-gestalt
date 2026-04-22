@@ -68,89 +68,89 @@ pub mod api {
     pub struct ApiArgs {
         /// The Name of the API Management Service where this API should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// Type of API. Possible values are `graphql`, `http`, `soap`, and `websocket`. Defaults to `http`.
         #[builder(into, default)]
-        pub api_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `contact` block as documented below.
         #[builder(into, default)]
-        pub contact: pulumi_gestalt_rust::InputOrOutput<
+        pub contact: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiContact>,
         >,
         /// A description of the API Management API, which may include HTML formatting tags.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the API.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `import` block as documented below.
         #[builder(into, default)]
-        pub import: pulumi_gestalt_rust::InputOrOutput<
+        pub import: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiImport>,
         >,
         /// A `license` block as documented below.
         #[builder(into, default)]
-        pub license: pulumi_gestalt_rust::InputOrOutput<
+        pub license: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiLicense>,
         >,
         /// The name of the API Management API. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `oauth2_authorization` block as documented below.
         #[builder(into, default)]
-        pub oauth2_authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub oauth2_authorization: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiOauth2Authorization>,
         >,
         /// An `openid_authentication` block as documented below.
         #[builder(into, default)]
-        pub openid_authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub openid_authentication: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiOpenidAuthentication>,
         >,
         /// The Path for this API Management API, which is a relative URL which uniquely identifies this API and all of its resource paths within the API Management Service.
         #[builder(into, default)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of protocols the operations in this API can be invoked. Possible values are `http`, `https`, `ws`, and `wss`.
         ///
         /// > **NOTE:** `display_name`, `path` and `protocols` are required when `source_api_id` is not set.
         #[builder(into, default)]
-        pub protocols: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub protocols: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Name of the Resource Group where the API Management API exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Revision which used for this API. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub revision: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub revision: pulumi_gestalt_rust::Input<String>,
         /// The description of the API Revision of the API Management API.
         #[builder(into, default)]
-        pub revision_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub revision_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Absolute URL of the backend service implementing this API.
         #[builder(into, default)]
-        pub service_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The API id of the source API, which could be in format `azurerm_api_management_api.example.id` or in format `azurerm_api_management_api.example.id;rev=1`
         #[builder(into, default)]
-        pub source_api_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_api_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `subscription_key_parameter_names` block as documented below.
         #[builder(into, default)]
-        pub subscription_key_parameter_names: pulumi_gestalt_rust::InputOrOutput<
+        pub subscription_key_parameter_names: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiSubscriptionKeyParameterNames>,
         >,
         /// Should this API require a subscription key? Defaults to `true`.
         #[builder(into, default)]
-        pub subscription_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub subscription_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Absolute URL of the Terms of Service for the API.
         #[builder(into, default)]
-        pub terms_of_service_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub terms_of_service_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Version number of this API, if this API is versioned.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the API Version of the API Management API.
         #[builder(into, default)]
-        pub version_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Version Set which this API is associated with.
         ///
         /// > **NOTE:** When `version` is set, `version_set_id` must also be specified
         #[builder(into, default)]
-        pub version_set_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_set_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiResult {

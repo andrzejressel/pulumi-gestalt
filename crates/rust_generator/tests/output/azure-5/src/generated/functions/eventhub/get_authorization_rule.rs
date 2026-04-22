@@ -10,22 +10,22 @@ pub mod get_authorization_rule {
     pub struct GetAuthorizationRuleArgs {
         /// Specifies the name of the EventHub.
         #[builder(into)]
-        pub eventhub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub listen: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub listen: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub manage: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the EventHub Authorization Rule resource. be created.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the grandparent EventHub Namespace.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the EventHub Authorization Rule's grandparent Namespace exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub send: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub send: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetAuthorizationRuleResult {

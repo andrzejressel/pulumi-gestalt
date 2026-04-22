@@ -151,7 +151,7 @@ pub mod addons_config {
         /// Addon configurations of the Apigee organization.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub addons_config: pulumi_gestalt_rust::InputOrOutput<
+        pub addons_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigee::AddonsConfigAddonsConfig>,
         >,
         /// Name of the Apigee organization.
@@ -159,7 +159,7 @@ pub mod addons_config {
         ///
         /// - - -
         #[builder(into)]
-        pub org: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AddonsConfigResult {

@@ -73,20 +73,18 @@ pub mod organization_configuration {
     pub struct OrganizationConfigurationArgs {
         /// *Deprecated:* Use `auto_enable_organization_members` instead. When this setting is enabled, all new accounts that are created in, or added to, the organization are added as a member accounts of the organization’s GuardDuty delegated administrator and GuardDuty is enabled in that AWS Region.
         #[builder(into, default)]
-        pub auto_enable: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_enable: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. Valid values are `ALL`, `NEW`, `NONE`.
         #[builder(into, default)]
-        pub auto_enable_organization_members: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub auto_enable_organization_members: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for the collected datasources.
         #[builder(into, default)]
-        pub datasources: pulumi_gestalt_rust::InputOrOutput<
+        pub datasources: pulumi_gestalt_rust::Input<
             Option<super::super::types::guardduty::OrganizationConfigurationDatasources>,
         >,
         /// The detector ID of the GuardDuty account.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OrganizationConfigurationResult {

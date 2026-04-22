@@ -62,32 +62,32 @@ pub mod resource_policy_assignment {
     pub struct ResourcePolicyAssignmentArgs {
         /// A description which should be used for this Policy Assignment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Display Name for this Policy Assignment.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if this Policy should be enforced or not? Defaults to `true`.
         #[builder(into, default)]
-        pub enforce: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enforce: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         ///
         /// > **Note:** The `location` field must also be specified when `identity` is specified.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::core::ResourcePolicyAssignmentIdentity>,
         >,
         /// The Azure Region where the Policy Assignment should exist. Changing this forces a new Policy Assignment to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A JSON mapping of any Metadata for this Policy.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Policy Assignment. Changing this forces a new Resource Policy Assignment to be created. Cannot exceed 64 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `non_compliance_message` blocks as defined below.
         #[builder(into, default)]
-        pub non_compliance_messages: pulumi_gestalt_rust::InputOrOutput<
+        pub non_compliance_messages: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::core::ResourcePolicyAssignmentNonComplianceMessage,
@@ -96,26 +96,26 @@ pub mod resource_policy_assignment {
         >,
         /// Specifies a list of Resource Scopes (for example a Subscription, or a Resource Group) within this Management Group which are excluded from this Policy.
         #[builder(into, default)]
-        pub not_scopes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub not_scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more `overrides` blocks as defined below. More detail about `overrides` and `resource_selectors` see [policy assignment structure](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/assignment-structure#resource-selectors-preview)
         #[builder(into, default)]
-        pub overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub overrides: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::core::ResourcePolicyAssignmentOverride>>,
         >,
         /// A JSON mapping of any Parameters for this Policy.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameters: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Policy Definition or Policy Definition Set. Changing this forces a new Policy Assignment to be created.
         #[builder(into)]
-        pub policy_definition_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_definition_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Resource (or Resource Scope) where this should be applied. Changing this forces a new Resource Policy Assignment to be created.
         ///
         /// > To create a Policy Assignment at a Management Group use the `azure.management.GroupPolicyAssignment` resource, for a Resource Group use the `azure.core.ResourceGroupPolicyAssignment` and for a Subscription use the `azure.core.SubscriptionPolicyAssignment` resource.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// One or more `resource_selectors` blocks as defined below to filter polices by resource properties.
         #[builder(into, default)]
-        pub resource_selectors: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_selectors: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::core::ResourcePolicyAssignmentResourceSelector>,
             >,

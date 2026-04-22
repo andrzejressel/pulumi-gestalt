@@ -45,19 +45,19 @@ pub mod teams_location {
     pub struct TeamsLocationArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Indicator that this is the default location.
         #[builder(into, default)]
-        pub client_default: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_default: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicator that this location needs to resolve EDNS queries.
         #[builder(into, default)]
-        pub ecs_support: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ecs_support: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the teams location.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The networks CIDRs that comprise the location.
         #[builder(into, default)]
-        pub networks: pulumi_gestalt_rust::InputOrOutput<
+        pub networks: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::TeamsLocationNetwork>>,
         >,
     }

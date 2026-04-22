@@ -10,7 +10,7 @@ pub mod get_db_nodes {
     pub struct GetDbNodesArgs {
         /// The id of the Cloud VM cluster.
         #[builder(into)]
-        pub cloud_vm_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cloud_vm_cluster_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDbNodesResult {

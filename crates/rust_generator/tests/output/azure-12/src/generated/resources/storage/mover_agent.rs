@@ -56,19 +56,19 @@ pub mod mover_agent {
     pub struct MoverAgentArgs {
         /// Specifies the fully qualified ID of the Hybrid Compute resource for the Storage Mover Agent. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub arc_virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arc_virtual_machine_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Hybrid Compute resource's unique SMBIOS ID. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub arc_virtual_machine_uuid: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arc_virtual_machine_uuid: pulumi_gestalt_rust::Input<String>,
         /// Specifies a description for this Storage Mover Agent.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Storage Mover Agent. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Storage Mover that this Agent should be connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_mover_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_mover_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MoverAgentResult {

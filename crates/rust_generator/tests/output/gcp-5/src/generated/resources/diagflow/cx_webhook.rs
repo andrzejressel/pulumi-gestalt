@@ -83,41 +83,41 @@ pub mod cx_webhook {
     pub struct CxWebhookArgs {
         /// Indicates whether the webhook is disabled.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The human-readable name of the webhook, unique within the agent.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Indicates if automatic spell correction is enabled in detect intent requests.
         #[builder(into, default)]
-        pub enable_spell_correction: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_spell_correction: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Determines whether this agent should log conversation queries.
         #[builder(into, default)]
-        pub enable_stackdriver_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_stackdriver_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration for a generic web service.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub generic_web_service: pulumi_gestalt_rust::InputOrOutput<
+        pub generic_web_service: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::CxWebhookGenericWebService>,
         >,
         /// The agent to create a webhook for.
         /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the SecuritySettings reference for the agent. Format: projects/<Project ID>/locations/<Location ID>/securitySettings/<Security Settings ID>.
         #[builder(into, default)]
-        pub security_settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for a Service Directory service.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub service_directory: pulumi_gestalt_rust::InputOrOutput<
+        pub service_directory: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::CxWebhookServiceDirectory>,
         >,
         /// Webhook execution timeout.
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CxWebhookResult {

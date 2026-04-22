@@ -43,13 +43,13 @@ pub mod type_ {
     pub struct TypeArgs {
         /// GraphQL API ID.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// The type definition.
         #[builder(into)]
-        pub definition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub definition: pulumi_gestalt_rust::Input<String>,
         /// The type format: `SDL` or `JSON`.
         #[builder(into)]
-        pub format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub format: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TypeResult {

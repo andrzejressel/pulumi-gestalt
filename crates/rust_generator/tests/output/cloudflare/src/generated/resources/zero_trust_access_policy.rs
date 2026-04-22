@@ -28,64 +28,60 @@ pub mod zero_trust_access_policy {
     pub struct ZeroTrustAccessPolicyArgs {
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the application the policy is associated with. Required when using `precedence`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub application_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub approval_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub approval_groups: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ZeroTrustAccessPolicyApprovalGroup>>,
         >,
         #[builder(into, default)]
-        pub approval_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub approval_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The rules that define how users may connect to the targets secured by your application. Only applicable to Infrastructure Applications, in which case this field is required.
         #[builder(into, default)]
-        pub connection_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_rules: pulumi_gestalt_rust::Input<
             Option<super::types::ZeroTrustAccessPolicyConnectionRules>,
         >,
         /// Defines the action Access will take if the policy matches the user. Available values: `allow`, `deny`, `non_identity`, `bypass`.
         #[builder(into)]
-        pub decision: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub decision: pulumi_gestalt_rust::Input<String>,
         /// A series of access conditions, see Access Groups.
         #[builder(into, default)]
-        pub excludes: pulumi_gestalt_rust::InputOrOutput<
+        pub excludes: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ZeroTrustAccessPolicyExclude>>,
         >,
         /// A series of access conditions, see Access Groups.
         #[builder(into)]
-        pub includes: pulumi_gestalt_rust::InputOrOutput<
+        pub includes: pulumi_gestalt_rust::Input<
             Vec<super::types::ZeroTrustAccessPolicyInclude>,
         >,
         /// Require this application to be served in an isolated browser for users matching this policy.
         #[builder(into, default)]
-        pub isolation_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub isolation_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Friendly name of the Access Policy.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The unique precedence for policies on a single application. Required when using `application_id`.
         #[builder(into, default)]
-        pub precedence: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub precedence: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The prompt to display to the user for a justification for accessing the resource. Required when using `purpose_justification_required`.
         #[builder(into, default)]
-        pub purpose_justification_prompt: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub purpose_justification_prompt: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to prompt the user for a justification for accessing the resource.
         #[builder(into, default)]
-        pub purpose_justification_required: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub purpose_justification_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A series of access conditions, see Access Groups.
         #[builder(into, default)]
-        pub requires: pulumi_gestalt_rust::InputOrOutput<
+        pub requires: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ZeroTrustAccessPolicyRequire>>,
         >,
         /// How often a user will be forced to re-authorise. Must be in the format `48h` or `2h45m`.
         #[builder(into, default)]
-        pub session_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub session_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. Conflicts with `account_id`.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustAccessPolicyResult {

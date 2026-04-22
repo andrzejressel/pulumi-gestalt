@@ -11,21 +11,21 @@ pub mod get_ami {
         /// Limit search to users with *explicit* launch permission on
         /// the image. Valid items are the numeric account ID or `self`.
         #[builder(into, default)]
-        pub executable_users: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub executable_users: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more name/value pairs to filter off of. There are
         /// several valid keys, for a full reference, check out
         /// [describe-images in the AWS CLI reference][1].
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetAmiFilter>>,
         >,
         /// If true, all deprecated AMIs are included in the response. If false, no deprecated AMIs are included in the response. If no value is specified, the default value is false.
         #[builder(into, default)]
-        pub include_deprecated: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_deprecated: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If more than one result is returned, use the most
         /// recent AMI.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Regex string to apply to the AMI list returned
         /// by AWS. This allows more advanced filtering not supported from the AWS API. This
         /// filtering is done locally on what AWS returns, and could have a performance
@@ -37,15 +37,15 @@ pub mod get_ami {
         /// a single AMI ID only, or use `most_recent` to choose the most recent one. If
         /// you want to match multiple AMIs, use the `aws.ec2.getAmiIds` data source instead.
         #[builder(into, default)]
-        pub name_regex: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_regex: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of AMI owners to limit search. Valid values: an AWS account ID, `self` (the current account), or an AWS owner alias (e.g., `amazon`, `aws-marketplace`, `microsoft`).
         #[builder(into, default)]
-        pub owners: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub owners: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Any tags assigned to the image.
         /// * `tags.#.key` - Key name of the tag.
         /// * `tags.#.value` - Value of the tag.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

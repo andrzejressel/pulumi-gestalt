@@ -93,13 +93,13 @@ pub mod access_level_condition {
         ///
         /// - - -
         #[builder(into)]
-        pub access_level: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_level: pulumi_gestalt_rust::Input<String>,
         /// Device specific restrictions, all restrictions must hold for
         /// the Condition to be true. If not specified, all devices are
         /// allowed.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub device_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub device_policy: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::accesscontextmanager::AccessLevelConditionDevicePolicy,
             >,
@@ -115,7 +115,7 @@ pub mod access_level_condition {
         /// listed subnets in order for this Condition to be true.
         /// If empty, all IP addresses are allowed.
         #[builder(into, default)]
-        pub ip_subnetworks: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ip_subnetworks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An allowed list of members (users, service accounts).
         /// Using groups is not supported yet.
         /// The signed-in user originating the request must be a part of one
@@ -124,30 +124,28 @@ pub mod access_level_condition {
         /// groups, etc.).
         /// Formats: `user:{emailid}`, `serviceAccount:{emailid}`
         #[builder(into, default)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to negate the Condition. If true, the Condition becomes
         /// a NAND over its non-empty fields, each field must be false for
         /// the Condition overall to be satisfied. Defaults to false.
         #[builder(into, default)]
-        pub negate: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub negate: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The request must originate from one of the provided
         /// countries/regions.
         /// Format: A valid ISO 3166-1 alpha-2 code.
         #[builder(into, default)]
-        pub regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of other access levels defined in the same Policy,
         /// referenced by resource name. Referencing an AccessLevel which
         /// does not exist is an error. All access levels listed must be
         /// granted for the Condition to be true.
         /// Format: accessPolicies/{policy_id}/accessLevels/{short_name}
         #[builder(into, default)]
-        pub required_access_levels: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub required_access_levels: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The request must originate from one of the provided VPC networks in Google Cloud. Cannot specify this field together with `ip_subnetworks`.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub vpc_network_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_network_sources: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::accesscontextmanager::AccessLevelConditionVpcNetworkSource,

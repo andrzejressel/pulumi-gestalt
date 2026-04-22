@@ -10,7 +10,7 @@ pub mod get_configuration_profiles {
     pub struct GetConfigurationProfilesArgs {
         /// ID of the AppConfig Application.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetConfigurationProfilesResult {

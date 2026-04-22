@@ -92,17 +92,17 @@ pub mod git_repository_link {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Required. Git Clone URI.
         #[builder(into)]
-        pub clone_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub clone_uri: pulumi_gestalt_rust::Input<String>,
         /// Optional. This checksum is computed by the server based on the value of other
         /// fields, and may be sent on update and delete requests to ensure the
         /// client has an up-to-date value before proceeding.
         #[builder(into, default)]
-        pub etag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub etag: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. The ID to use for the repository, which will become the final component of
         /// the repository's resource name. This ID should be unique in the connection.
         /// Allows alphanumeric characters and any of -._~%!$&'()*+,;=@.
@@ -110,24 +110,24 @@ pub mod git_repository_link {
         ///
         /// - - -
         #[builder(into)]
-        pub git_repository_link_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub git_repository_link_id: pulumi_gestalt_rust::Input<String>,
         /// Optional. Labels as key value pairs
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `developerconnect.googleapis.com/GitRepositoryLink`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `developerconnect.googleapis.com/GitRepositoryLink`.
         #[builder(into)]
-        pub parent_connection: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_connection: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GitRepositoryLinkResult {

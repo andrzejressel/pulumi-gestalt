@@ -194,7 +194,7 @@ pub mod service_perimeter {
         /// Description of the ServicePerimeter and its use. Does not affect
         /// behavior.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource name for the ServicePerimeter. The short_name component must
         /// begin with a letter and only include alphanumeric and '_'.
         /// Format: accessPolicies/{policy_id}/servicePerimeters/{short_name}
@@ -202,11 +202,11 @@ pub mod service_perimeter {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The AccessPolicy this ServicePerimeter lives in.
         /// Format: accessPolicies/{policy_id}
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Specifies the type of the Perimeter. There are two types: regular and
         /// bridge. Regular Service Perimeter contains resources, access levels,
         /// and restricted services. Every resource can be in at most
@@ -224,14 +224,14 @@ pub mod service_perimeter {
         /// Default value is `PERIMETER_TYPE_REGULAR`.
         /// Possible values are: `PERIMETER_TYPE_REGULAR`, `PERIMETER_TYPE_BRIDGE`.
         #[builder(into, default)]
-        pub perimeter_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub perimeter_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Proposed (or dry run) ServicePerimeter configuration.
         /// This configuration allows to specify and test ServicePerimeter configuration
         /// without enforcing actual access restrictions. Only allowed to be set when
         /// the `useExplicitDryRunSpec` flag is set.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spec: pulumi_gestalt_rust::InputOrOutput<
+        pub spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::accesscontextmanager::ServicePerimeterSpec>,
         >,
         /// ServicePerimeter configuration. Specifies sets of resources,
@@ -239,12 +239,12 @@ pub mod service_perimeter {
         /// perimeter content and boundaries.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<
+        pub status: pulumi_gestalt_rust::Input<
             Option<super::super::types::accesscontextmanager::ServicePerimeterStatus>,
         >,
         /// Human readable title. Must be unique within the Policy.
         #[builder(into)]
-        pub title: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub title: pulumi_gestalt_rust::Input<String>,
         /// Use explicit dry run spec flag. Ordinarily, a dry-run spec implicitly exists
         /// for all Service Perimeters, and that spec is identical to the status for those
         /// Service Perimeters. When this flag is set, it inhibits the generation of the
@@ -255,7 +255,7 @@ pub mod service_perimeter {
         /// between currently enforced and suggested restrictions. useExplicitDryRunSpec must
         /// bet set to True if any of the fields in the spec are set to non-default values.
         #[builder(into, default)]
-        pub use_explicit_dry_run_spec: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_explicit_dry_run_spec: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ServicePerimeterResult {

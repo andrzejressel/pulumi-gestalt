@@ -64,33 +64,33 @@ pub mod stream_input_iot_hub {
     pub struct StreamInputIotHubArgs {
         /// The IoT Hub endpoint to connect to (ie. messages/events, messages/operationsMonitoringEvents, etc.).
         #[builder(into)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint: pulumi_gestalt_rust::Input<String>,
         /// The name of an Event Hub Consumer Group that should be used to read events from the Event Hub. Specifying distinct consumer group names for multiple inputs allows each of those inputs to receive the same events from the Event Hub.
         #[builder(into)]
-        pub eventhub_consumer_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name or the URI of the IoT Hub.
         #[builder(into)]
-        pub iothub_namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_namespace: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Input IoTHub. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `serialization` block as defined below.
         #[builder(into)]
-        pub serialization: pulumi_gestalt_rust::InputOrOutput<
+        pub serialization: pulumi_gestalt_rust::Input<
             super::super::types::streamanalytics::StreamInputIotHubSerialization,
         >,
         /// The shared access policy key for the specified shared access policy. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub shared_access_policy_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub shared_access_policy_key: pulumi_gestalt_rust::Input<String>,
         /// The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc.
         #[builder(into)]
-        pub shared_access_policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub shared_access_policy_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StreamInputIotHubResult {

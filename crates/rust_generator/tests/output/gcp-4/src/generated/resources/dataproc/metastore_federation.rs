@@ -115,29 +115,29 @@ pub mod metastore_federation {
         /// A map from BackendMetastore rank to BackendMetastores from which the federation service serves metadata at query time. The map key represents the order in which BackendMetastores should be evaluated to resolve database names at query time and should be greater than or equal to zero. A BackendMetastore with a lower number will be evaluated before a BackendMetastore with a higher number.
         /// Structure is documented below.
         #[builder(into)]
-        pub backend_metastores: pulumi_gestalt_rust::InputOrOutput<
+        pub backend_metastores: pulumi_gestalt_rust::Input<
             Vec<super::super::types::dataproc::MetastoreFederationBackendMetastore>,
         >,
         /// The ID of the metastore federation. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
         /// and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between
         /// 3 and 63 characters.
         #[builder(into)]
-        pub federation_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub federation_id: pulumi_gestalt_rust::Input<String>,
         /// User-defined labels for the metastore federation. **Note**: This field is non-authoritative, and will only manage the
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where the metastore federation should reside.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apache Hive metastore version of the federation. All backend metastore versions must be compatible with the federation version.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MetastoreFederationResult {

@@ -10,10 +10,10 @@ pub mod get_experience {
     pub struct GetExperienceArgs {
         /// Identifier of the Experience.
         #[builder(into)]
-        pub experience_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub experience_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the index that contains the Experience.
         #[builder(into)]
-        pub index_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetExperienceResult {

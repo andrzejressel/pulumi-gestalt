@@ -165,7 +165,7 @@ pub mod network_firewall_policy_with_rules {
         /// (Output)
         /// A description of the rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-provided name of the Network firewall policy.
         /// The name should be unique in the project in which the firewall policy is created.
         /// The name must be 1-63 characters long, and comply with RFC1035. Specifically,
@@ -173,13 +173,13 @@ pub mod network_firewall_policy_with_rules {
         /// which means the first character must be a lowercase letter, and all following characters must be a dash,
         /// lowercase letter, or digit, except the last character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of firewall policy rules.
         /// Structure is documented below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::compute::NetworkFirewallPolicyWithRulesRule>,
         >,
     }

@@ -189,13 +189,13 @@ pub mod regional_secret {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The customer-managed encryption configuration of the regional secret.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub customer_managed_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_encryption: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::secretmanager::RegionalSecretCustomerManagedEncryption,
             >,
@@ -205,7 +205,7 @@ pub mod regional_secret {
         /// nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and
         /// "2014-10-02T15:01:23.045123456Z". Only one of `expire_time` or `ttl` can be provided.
         #[builder(into, default)]
-        pub expire_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expire_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The labels assigned to this regional secret.
         /// Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes,
         /// and must conform to the following PCRE regular expression: [\p{Ll}\p{Lo}][\p{Ll}\p{Lo}\p{N}_-]{0,62}
@@ -218,22 +218,22 @@ pub mod regional_secret {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the regional secret. eg us-central1
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The rotation time and period for a regional secret. At `next_rotation_time`, Secret Manager
         /// will send a Pub/Sub notification to the topics configured on the Secret. `topics` must be
         /// set to configure rotation.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub rotation: pulumi_gestalt_rust::InputOrOutput<
+        pub rotation: pulumi_gestalt_rust::Input<
             Option<super::super::types::secretmanager::RegionalSecretRotation>,
         >,
         /// This must be unique within the project.
@@ -241,18 +241,18 @@ pub mod regional_secret {
         ///
         /// - - -
         #[builder(into)]
-        pub secret_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_id: pulumi_gestalt_rust::Input<String>,
         /// A list of up to 10 Pub/Sub topics to which messages are published when control plane
         /// operations are called on the regional secret or its versions.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub topics: pulumi_gestalt_rust::InputOrOutput<
+        pub topics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::secretmanager::RegionalSecretTopic>>,
         >,
         /// The TTL for the regional secret. A duration in seconds with up to nine fractional digits,
         /// terminated by 's'. Example: "3.5s". Only one of `ttl` or `expire_time` can be provided.
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ttl: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mapping from version alias to version name.
         /// A version alias is a string with a maximum length of 63 characters and can contain
         /// uppercase and lowercase letters, numerals, and the hyphen (-) and underscore ('_')
@@ -261,7 +261,7 @@ pub mod regional_secret {
         /// An object containing a list of "key": value pairs. Example:
         /// { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         #[builder(into, default)]
-        pub version_aliases: pulumi_gestalt_rust::InputOrOutput<
+        pub version_aliases: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Secret Version TTL after destruction request.
@@ -270,7 +270,7 @@ pub mod regional_secret {
         /// on calling destroy instead the version goes to a disabled state and
         /// the actual destruction happens after this TTL expires. It must be atleast 24h.
         #[builder(into, default)]
-        pub version_destroy_ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_destroy_ttl: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RegionalSecretResult {

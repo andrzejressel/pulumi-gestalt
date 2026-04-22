@@ -56,21 +56,21 @@ pub mod hyper_v_replication_policy {
     pub struct HyperVReplicationPolicyArgs {
         /// Specifies the frequency at which to create application consistent recovery points.
         #[builder(into)]
-        pub application_consistent_snapshot_frequency_in_hours: pulumi_gestalt_rust::InputOrOutput<
+        pub application_consistent_snapshot_frequency_in_hours: pulumi_gestalt_rust::Input<
             i32,
         >,
         /// The name of the replication policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The duration in hours for which the recovery points need to be stored.
         #[builder(into)]
-        pub recovery_point_retention_in_hours: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub recovery_point_retention_in_hours: pulumi_gestalt_rust::Input<i32>,
         /// The id of the vault that should be updated. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies how frequently data should be synchronized between source and target locations. Possible values are `30` and `300`.
         #[builder(into)]
-        pub replication_interval_in_seconds: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub replication_interval_in_seconds: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct HyperVReplicationPolicyResult {

@@ -43,13 +43,13 @@ pub mod vpc_ipam_scope {
     pub struct VpcIpamScopeArgs {
         /// A description for the scope you're creating.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the IPAM for which you're creating this scope.
         #[builder(into)]
-        pub ipam_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ipam_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

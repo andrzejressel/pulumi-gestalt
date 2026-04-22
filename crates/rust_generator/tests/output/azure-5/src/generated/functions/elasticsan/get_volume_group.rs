@@ -10,10 +10,10 @@ pub mod get_volume_group {
     pub struct GetVolumeGroupArgs {
         /// The Elastic SAN ID within which the Elastic SAN Volume Group exists.
         #[builder(into)]
-        pub elastic_san_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub elastic_san_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Elastic SAN Volume Group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVolumeGroupResult {

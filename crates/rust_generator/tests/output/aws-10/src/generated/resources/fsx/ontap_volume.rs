@@ -70,75 +70,75 @@ pub mod ontap_volume {
     pub struct OntapVolumeArgs {
         /// The Aggregate configuration only applies to `FLEXGROUP` volumes. See [`aggregate_configuration` Block] for details.
         #[builder(into, default)]
-        pub aggregate_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub aggregate_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::OntapVolumeAggregateConfiguration>,
         >,
         /// Setting this to `true` allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. This configuration must be applied separately before attempting to delete the resource to have the desired behavior. Defaults to `false`.
         #[builder(into, default)]
-        pub bypass_snaplock_enterprise_retention: pulumi_gestalt_rust::InputOrOutput<
+        pub bypass_snaplock_enterprise_retention: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to `false`.
         #[builder(into, default)]
-        pub copy_tags_to_backups: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_tags_to_backups: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of tags to apply to the volume's final backup.
         #[builder(into, default)]
-        pub final_backup_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub final_backup_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the location in the storage virtual machine's namespace where the volume is mounted. The junction_path must have a leading forward slash, such as `/vol3`
         #[builder(into, default)]
-        pub junction_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub junction_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Volume. You can use a maximum of 203 alphanumeric characters, plus the underscore (_) special character.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the type of volume, valid values are `RW`, `DP`. Default value is `RW`. These can be set by the ONTAP CLI or API. This setting is used as part of migration and replication [Migrating to Amazon FSx for NetApp ONTAP](https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/migrating-fsx-ontap.html)
         #[builder(into, default)]
-        pub ontap_volume_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ontap_volume_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the volume security style, Valid values are `UNIX`, `NTFS`, and `MIXED`.
         #[builder(into, default)]
-        pub security_style: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_style: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the size of the volume, in megabytes (MB), that you are creating. Can be used for any size but required for volumes over 2 PB. Either size_in_bytes or size_in_megabytes must be specified. Minimum size for `FLEXGROUP` volumes are 100GiB per constituent.
         #[builder(into, default)]
-        pub size_in_bytes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub size_in_bytes: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the size of the volume, in megabytes (MB), that you are creating. Supported when creating volumes under 2 PB. Either size_in_bytes or size_in_megabytes must be specified. Minimum size for `FLEXGROUP` volumes are 100GiB per constituent.
         #[builder(into, default)]
-        pub size_in_megabytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub size_in_megabytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// When enabled, will skip the default final backup taken when the volume is deleted. This configuration must be applied separately before attempting to delete the resource to have the desired behavior. Defaults to `false`.
         #[builder(into, default)]
-        pub skip_final_backup: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_backup: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The SnapLock configuration for an FSx for ONTAP volume. See `snaplock_configuration` Block for details.
         #[builder(into, default)]
-        pub snaplock_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub snaplock_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::OntapVolumeSnaplockConfiguration>,
         >,
         /// Specifies the snapshot policy for the volume. See [snapshot policies](https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies) in the Amazon FSx ONTAP User Guide
         #[builder(into, default)]
-        pub snapshot_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.
         #[builder(into, default)]
-        pub storage_efficiency_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub storage_efficiency_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the storage virtual machine in which to create the volume.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub storage_virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_virtual_machine_id: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the volume. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The data tiering policy for an FSx for ONTAP volume. See `tiering_policy` Block for details.
         #[builder(into, default)]
-        pub tiering_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub tiering_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::OntapVolumeTieringPolicy>,
         >,
         /// Specifies the styles of volume, valid values are `FLEXVOL`, `FLEXGROUP`. Default value is `FLEXVOL`. FLEXGROUPS have a larger minimum and maximum size. See Volume Styles for more details. [Volume Styles](https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html)
         #[builder(into, default)]
-        pub volume_style: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub volume_style: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of volume, currently the only valid value is `ONTAP`.
         #[builder(into, default)]
-        pub volume_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub volume_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OntapVolumeResult {

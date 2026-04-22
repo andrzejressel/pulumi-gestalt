@@ -36,16 +36,16 @@ pub mod endpoint_authorization {
     pub struct EndpointAuthorizationArgs {
         /// The Amazon Web Services account ID to grant access to.
         #[builder(into)]
-        pub account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account: pulumi_gestalt_rust::Input<String>,
         /// The cluster identifier of the cluster to grant access to.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted. Default value is `false`.
         #[builder(into, default)]
-        pub force_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The virtual private cloud (VPC) identifiers to grant access to. If none are specified all VPCs in shared account are allowed.
         #[builder(into, default)]
-        pub vpc_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub vpc_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct EndpointAuthorizationResult {

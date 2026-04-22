@@ -184,12 +184,12 @@ pub mod instance_logging_configuration {
     pub struct InstanceLoggingConfigurationArgs {
         /// A block that specifies the configuration options for Verified Access instances. Detailed below.
         #[builder(into)]
-        pub access_logs: pulumi_gestalt_rust::InputOrOutput<
+        pub access_logs: pulumi_gestalt_rust::Input<
             super::super::types::verifiedaccess::InstanceLoggingConfigurationAccessLogs,
         >,
         /// The ID of the Verified Access instance.
         #[builder(into)]
-        pub verifiedaccess_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub verifiedaccess_instance_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InstanceLoggingConfigurationResult {

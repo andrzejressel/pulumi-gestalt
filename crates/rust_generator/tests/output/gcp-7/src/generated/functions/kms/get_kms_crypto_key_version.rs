@@ -11,10 +11,10 @@ pub mod get_kms_crypto_key_version {
         /// The `id` of the Google Cloud Platform CryptoKey to which the key version belongs. This is also the `id` field of the
         /// `gcp.kms.CryptoKey` resource/datasource.
         #[builder(into)]
-        pub crypto_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub crypto_key: pulumi_gestalt_rust::Input<String>,
         /// The version number for this CryptoKeyVersion. Defaults to `1`.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub version: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct GetKmsCryptoKeyVersionResult {

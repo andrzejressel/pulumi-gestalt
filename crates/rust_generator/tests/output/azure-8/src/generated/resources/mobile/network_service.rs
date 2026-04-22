@@ -81,29 +81,29 @@ pub mod network_service {
     pub struct NetworkServiceArgs {
         /// Specifies the Azure Region where the Mobile Network Service should exist. Changing this forces a new Mobile Network Service to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Mobile Network Service. Changing this forces a new Mobile Network Service to be created.
         #[builder(into)]
-        pub mobile_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this Mobile Network Service. Changing this forces a new Mobile Network Service to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `pcc_rule` block as defined below. The set of PCC Rules that make up this service.
         #[builder(into)]
-        pub pcc_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub pcc_rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::mobile::NetworkServicePccRule>,
         >,
         /// A precedence value that is used to decide between services when identifying the QoS values to use for a particular SIM. A lower value means a higher priority. This value should be unique among all services configured in the mobile network. Must be between `0` and `255`.
         #[builder(into)]
-        pub service_precedence: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub service_precedence: pulumi_gestalt_rust::Input<i32>,
         /// A `service_qos_policy` block as defined below. The QoS policy to use for packets matching this service. This can be overridden for particular flows using the ruleQosPolicy field in a `pcc_rule`. If this field is not specified then the `sim_policy` of User Equipment (UE) will define the QoS settings.
         #[builder(into, default)]
-        pub service_qos_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub service_qos_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::mobile::NetworkServiceServiceQosPolicy>,
         >,
         /// A mapping of tags which should be assigned to the Mobile Network Service.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

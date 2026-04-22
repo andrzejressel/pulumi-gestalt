@@ -60,15 +60,15 @@ pub mod share_directory {
     pub struct ShareDirectoryArgs {
         /// A mapping of metadata to assign to this Directory.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name (or path) of the Directory that should be created within this File Share. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Storage Share ID in which this file will be placed into. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_share_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_share_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ShareDirectoryResult {

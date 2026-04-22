@@ -41,15 +41,15 @@ pub mod archive_rule {
     pub struct ArchiveRuleArgs {
         /// Analyzer name.
         #[builder(into)]
-        pub analyzer_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub analyzer_name: pulumi_gestalt_rust::Input<String>,
         /// Filter criteria for the archive rule. See Filter for more details.
         #[builder(into)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Vec<super::super::types::accessanalyzer::ArchiveRuleFilter>,
         >,
         /// Rule name.
         #[builder(into)]
-        pub rule_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ArchiveRuleResult {

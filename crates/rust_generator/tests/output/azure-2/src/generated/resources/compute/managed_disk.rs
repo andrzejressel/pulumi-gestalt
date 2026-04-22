@@ -87,108 +87,100 @@ pub mod managed_disk {
         /// * `Restore` - Set by Azure Backup or Site Recovery on a restored disk (specified with `source_resource_id`).
         /// * `Upload` - Upload a VHD disk with the help of SAS URL (to be used with `upload_size_bytes`).
         #[builder(into)]
-        pub create_option: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub create_option: pulumi_gestalt_rust::Input<String>,
         /// The ID of the disk access resource for using private endpoints on disks.
         ///
         /// > **Note:** `disk_access_id` is only supported when `network_access_policy` is set to `AllowPrivate`.
         #[builder(into, default)]
-        pub disk_access_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_access_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of a Disk Encryption Set which should be used to encrypt this Managed Disk. Conflicts with `secure_vm_disk_encryption_set_id`.
         ///
         /// > **NOTE:** The Disk Encryption Set must have the `Reader` Role Assignment scoped on the Key Vault - in addition to an Access Policy to the Key Vault
         ///
         /// > **NOTE:** Disk Encryption Sets are in Public Preview in a limited set of regions
         #[builder(into, default)]
-        pub disk_encryption_set_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_encryption_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of IOPS allowed across all VMs mounting the shared disk as read-only; only settable for UltraSSD disks and PremiumV2 disks with shared disk enabled. One operation can transfer between 4k and 256k bytes.
         #[builder(into, default)]
-        pub disk_iops_read_only: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_iops_read_only: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The number of IOPS allowed for this disk; only settable for UltraSSD disks and PremiumV2 disks. One operation can transfer between 4k and 256k bytes.
         #[builder(into, default)]
-        pub disk_iops_read_write: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_iops_read_write: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The bandwidth allowed across all VMs mounting the shared disk as read-only; only settable for UltraSSD disks and PremiumV2 disks with shared disk enabled. MBps means millions of bytes per second.
         #[builder(into, default)]
-        pub disk_mbps_read_only: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_mbps_read_only: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The bandwidth allowed for this disk; only settable for UltraSSD disks and PremiumV2 disks. MBps means millions of bytes per second.
         #[builder(into, default)]
-        pub disk_mbps_read_write: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_mbps_read_write: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub disk_size_gb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_size_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the Edge Zone within the Azure Region where this Managed Disk should exist. Changing this forces a new Managed Disk to be created.
         #[builder(into, default)]
-        pub edge_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edge_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `encryption_settings` block as defined below.
         ///
         /// > **NOTE:** Removing `encryption_settings` forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ManagedDiskEncryptionSettings>,
         >,
         /// ID of a Gallery Image Version to copy when `create_option` is `FromImage`. This field cannot be specified if image_reference_id is specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub gallery_image_reference_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub gallery_image_reference_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The HyperV Generation of the Disk when the source of an `Import` or `Copy` operation targets a source that contains an operating system. Possible values are `V1` and `V2`. For `ImportSecure` it must be set to `V2`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub hyper_v_generation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hyper_v_generation: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of an existing platform/marketplace disk image to copy when `create_option` is `FromImage`. This field cannot be specified if gallery_image_reference_id is specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub image_reference_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_reference_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specified the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Logical Sector Size. Possible values are: `512` and `4096`. Defaults to `4096`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Setting logical sector size is supported only with `UltraSSD_LRS` disks and `PremiumV2_LRS` disks.
         #[builder(into, default)]
-        pub logical_sector_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub logical_sector_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum number of VMs that can attach to the disk at the same time. Value greater than one indicates a disk that can be mounted on multiple VMs at the same time.
         ///
         /// > **Note:** Premium SSD maxShares limit: `P15` and `P20` disks: 2. `P30`,`P40`,`P50` disks: 5. `P60`,`P70`,`P80` disks: 10. For ultra disks the `max_shares` minimum value is 1 and the maximum is 5.
         #[builder(into, default)]
-        pub max_shares: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_shares: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Managed Disk. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy for accessing the disk via network. Allowed values are `AllowAll`, `AllowPrivate`, and `DenyAll`.
         #[builder(into, default)]
-        pub network_access_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_access_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if On-Demand Bursting is enabled for the Managed Disk.
         ///
         /// > **Note:** Credit-Based Bursting is enabled by default on all eligible disks. More information on [Credit-Based and On-Demand Bursting can be found in the documentation](https://docs.microsoft.com/azure/virtual-machines/disk-bursting#disk-level-bursting).
         #[builder(into, default)]
-        pub on_demand_bursting_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub on_demand_bursting_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether this Managed Disk should be optimized for frequent disk attachments (where a disk is attached/detached more than 5 times in a day). Defaults to `false`.
         ///
         /// > **Note:** Setting `optimized_frequent_attach_enabled` to `true` causes the disks to not align with the fault domain of the Virtual Machine, which can have operational implications.
         #[builder(into, default)]
-        pub optimized_frequent_attach_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub optimized_frequent_attach_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specify a value when the source of an `Import`, `ImportSecure` or `Copy` operation targets a source that contains an operating system. Valid values are `Linux` or `Windows`.
         #[builder(into, default)]
-        pub os_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub os_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether Performance Plus is enabled for this Managed Disk. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub performance_plus_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub performance_plus_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether it is allowed to access the disk via public network. Defaults to `true`.
         ///
         /// For more information on managed disks, such as sizing options and pricing, please check out the [Azure Documentation](https://docs.microsoft.com/azure/storage/storage-managed-disks-overview).
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Managed Disk should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Disk Encryption Set which should be used to Encrypt this OS Disk when the Virtual Machine is a Confidential VM. Conflicts with `disk_encryption_set_id`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** `secure_vm_disk_encryption_set_id` can only be specified when `security_type` is set to `ConfidentialVM_DiskEncryptedWithCustomerKey`.
         #[builder(into, default)]
-        pub secure_vm_disk_encryption_set_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub secure_vm_disk_encryption_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Security Type of the Managed Disk when it is used for a Confidential VM. Possible values are `ConfidentialVM_VMGuestStateOnlyEncryptedWithPlatformKey`, `ConfidentialVM_DiskEncryptedWithPlatformKey` and `ConfidentialVM_DiskEncryptedWithCustomerKey`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** When `security_type` is set to `ConfidentialVM_DiskEncryptedWithCustomerKey` the value of `create_option` must be one of `FromImage` or `ImportSecure`.
@@ -198,41 +190,41 @@ pub mod managed_disk {
         ///
         /// > **NOTE:** `secure_vm_disk_encryption_set_id` must be specified when `security_type` is set to `ConfidentialVM_DiskEncryptedWithCustomerKey`.
         #[builder(into, default)]
-        pub security_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of an existing Managed Disk or Snapshot to copy when `create_option` is `Copy` or the recovery point to restore when `create_option` is `Restore`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source_resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// URI to a valid VHD file to be used when `create_option` is `Import` or `ImportSecure`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Account where the `source_uri` is located. Required when `create_option` is set to `Import` or `ImportSecure`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of storage to use for the managed disk. Possible values are `Standard_LRS`, `StandardSSD_ZRS`, `Premium_LRS`, `PremiumV2_LRS`, `Premium_ZRS`, `StandardSSD_LRS` or `UltraSSD_LRS`.
         ///
         /// > **Note:** Azure Ultra Disk Storage is only available in a region that support availability zones and can only enabled on the following VM series: `ESv3`, `DSv3`, `FSv3`, `LSv2`, `M` and `Mv2`. For more information see the `Azure Ultra Disk Storage` [product documentation](https://docs.microsoft.com/azure/virtual-machines/windows/disks-enable-ultra-ssd).
         #[builder(into)]
-        pub storage_account_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_type: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if Trusted Launch is enabled for the Managed Disk. Changing this forces a new resource to be created.
         ///
         /// > **Note:** Trusted Launch can only be enabled when `create_option` is `FromImage` or `Import`.
         #[builder(into, default)]
-        pub trusted_launch_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub trusted_launch_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the size of the managed disk to create in bytes. Required when `create_option` is `Upload`. The value must be equal to the source disk to be copied in bytes. Source disk size could be calculated with `ls -l` or `wc -c`. More information can be found at [Copy a managed disk](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-upload-vhd-to-managed-disk-cli#copy-a-managed-disk). Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub upload_size_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub upload_size_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the Availability Zone in which this Managed Disk should be located. Changing this property forces a new resource to be created.
         ///
         /// > **Note:** Availability Zones are [only supported in select regions at this time](https://docs.microsoft.com/azure/availability-zones/az-overview).
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagedDiskResult {

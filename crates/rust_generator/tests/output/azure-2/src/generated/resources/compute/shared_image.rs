@@ -55,108 +55,100 @@ pub mod shared_image {
     pub struct SharedImageArgs {
         /// Specifies if the Shared Image supports Accelerated Network. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub accelerated_network_support_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub accelerated_network_support_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// CPU architecture supported by an OS. Possible values are `x64` and `Arm64`. Defaults to `x64`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub architecture: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub architecture: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if Confidential Virtual Machines enabled. It will enable all the features of trusted, with higher confidentiality features for isolate machines or encrypted data. Available for Gen2 machines. Changing this forces a new resource to be created.
         ///
         /// > **Note:**: Only one of `trusted_launch_supported`, `trusted_launch_enabled`, `confidential_vm_supported` and `confidential_vm_enabled` can be specified.
         #[builder(into, default)]
-        pub confidential_vm_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub confidential_vm_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies if supports creation of both Confidential virtual machines and Gen2 virtual machines with standard security from a compatible Gen2 OS disk VHD or Gen2 Managed image. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub confidential_vm_supported: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub confidential_vm_supported: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A description of this Shared Image.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if the Shared Image supports NVMe disks. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub disk_controller_type_nvme_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub disk_controller_type_nvme_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more Disk Types not allowed for the Image. Possible values include `Standard_LRS` and `Premium_LRS`.
         #[builder(into, default)]
-        pub disk_types_not_alloweds: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub disk_types_not_alloweds: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The end of life date in RFC3339 format of the Image.
         #[builder(into, default)]
-        pub end_of_life_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_of_life_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// The End User Licence Agreement for the Shared Image. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub eula: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eula: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Shared Image Gallery in which this Shared Image should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub gallery_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gallery_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies if the Shared Image supports hibernation. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub hibernation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub hibernation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The generation of HyperV that the Virtual Machine used to create the Shared Image is based on. Possible values are `V1` and `V2`. Defaults to `V1`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub hyper_v_generation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hyper_v_generation: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identifier` block as defined below.
         #[builder(into)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<
+        pub identifier: pulumi_gestalt_rust::Input<
             super::super::types::compute::SharedImageIdentifier,
         >,
         /// Specifies the supported Azure location where the Shared Image Gallery exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maximum memory in GB recommended for the Image.
         #[builder(into, default)]
-        pub max_recommended_memory_in_gb: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub max_recommended_memory_in_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum count of vCPUs recommended for the Image.
         #[builder(into, default)]
-        pub max_recommended_vcpu_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_recommended_vcpu_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum memory in GB recommended for the Image.
         #[builder(into, default)]
-        pub min_recommended_memory_in_gb: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub min_recommended_memory_in_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum count of vCPUs recommended for the Image.
         #[builder(into, default)]
-        pub min_recommended_vcpu_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_recommended_vcpu_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Shared Image. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of Operating System present in this Shared Image. Possible values are `Linux` and `Windows`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub os_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub os_type: pulumi_gestalt_rust::Input<String>,
         /// The URI containing the Privacy Statement associated with this Shared Image. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub privacy_statement_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub privacy_statement_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `purchase_plan` block as defined below.
         #[builder(into, default)]
-        pub purchase_plan: pulumi_gestalt_rust::InputOrOutput<
+        pub purchase_plan: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SharedImagePurchasePlan>,
         >,
         /// The URI containing the Release Notes associated with this Shared Image.
         #[builder(into, default)]
-        pub release_note_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub release_note_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Shared Image Gallery exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies that the Operating System used inside this Image has not been Generalized (for example, `sysprep` on Windows has not been run). Changing this forces a new resource to be created.
         ///
         /// !> **Note:** It's recommended to Generalize images where possible - Specialized Images reuse the same UUID internally within each Virtual Machine, which can have unintended side-effects.
         #[builder(into, default)]
-        pub specialized: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub specialized: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags to assign to the Shared Image.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies if Trusted Launch has to be enabled for the Virtual Machine created from the Shared Image. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub trusted_launch_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub trusted_launch_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies if supports creation of both Trusted Launch virtual machines and Gen2 virtual machines with standard security created from the Shared Image. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub trusted_launch_supported: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub trusted_launch_supported: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SharedImageResult {

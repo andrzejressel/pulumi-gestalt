@@ -10,15 +10,15 @@ pub mod get_secret {
     pub struct GetSecretArgs {
         /// Specifies the ID of the Key Vault instance to fetch secret names from, available on the `azure.keyvault.KeyVault` Data Source / Resource.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Key Vault Secret.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the version of the Key Vault Secret. Defaults to the current version of the Key Vault Secret.
         ///
         /// **NOTE:** The vault must be in the same subscription as the provider. If the vault is in another subscription, you must create an aliased provider for that subscription.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSecretResult {

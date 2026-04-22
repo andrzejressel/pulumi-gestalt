@@ -36,10 +36,10 @@ pub mod regional_tiered_cache {
     pub struct RegionalTieredCacheArgs {
         /// Value of the Regional Tiered Cache zone setting.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegionalTieredCacheResult {

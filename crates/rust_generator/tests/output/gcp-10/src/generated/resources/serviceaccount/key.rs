@@ -94,7 +94,7 @@ pub mod key {
     pub struct KeyArgs {
         /// Arbitrary map of values that, when changed, will trigger a new key to be generated.
         #[builder(into, default)]
-        pub keepers: pulumi_gestalt_rust::InputOrOutput<
+        pub keepers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The algorithm used to generate the key. KEY_ALG_RSA_2048 is the default algorithm.
@@ -102,16 +102,16 @@ pub mod key {
         /// [ServiceAccountPrivateKeyType](https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts.keys#ServiceAccountKeyAlgorithm)
         /// (only used on create)
         #[builder(into, default)]
-        pub key_algorithm: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_algorithm: pulumi_gestalt_rust::Input<Option<String>>,
         /// The output format of the private key. TYPE_GOOGLE_CREDENTIALS_FILE is the default output format.
         #[builder(into, default)]
-        pub private_key_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_key_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Public key data to create a service account key for given service account. The expected format for this field is a base64 encoded X509_PEM and it conflicts with `public_key_type` and `private_key_type`.
         #[builder(into, default)]
-        pub public_key_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_key_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The output format of the public key requested. TYPE_X509_PEM_FILE is the default output format.
         #[builder(into, default)]
-        pub public_key_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_key_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Service account id of the Key. This can be a string in the format
         /// `{ACCOUNT}` or `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`. If the `{ACCOUNT}`-only syntax is used, either
         /// the **full** email address of the service account or its name can be specified as a value, in which case the project will
@@ -119,7 +119,7 @@ pub mod key {
         /// syntax is used, the `{ACCOUNT}` specified can be the full email address of the service account or the service account's
         /// unique id. Substituting `-` as a wildcard for the `{PROJECT_ID}` will infer the project from the account.
         #[builder(into)]
-        pub service_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct KeyResult {

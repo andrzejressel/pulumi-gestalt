@@ -108,39 +108,39 @@ pub mod backup {
     pub struct BackupArgs {
         /// A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location of the backup.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name of the backup. Needs to be unique per location.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// If specified, backup will be created from the given snapshot. If not specified,
         /// there will be a new snapshot taken to initiate the backup creation.
         /// Format: `projects/{{projectId}}/locations/{{location}}/volumes/{{volumename}}/snapshots/{{snapshotname}}``
         #[builder(into, default)]
-        pub source_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_snapshot: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of volumes this backup belongs to. Format: `projects/{{projects_id}}/locations/{{location}}/volumes/{{name}}``
         #[builder(into, default)]
-        pub source_volume: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_volume: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the backup vault to store the backup in.
         #[builder(into)]
-        pub vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupResult {

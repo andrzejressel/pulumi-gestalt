@@ -95,13 +95,13 @@ pub mod usage_export_bucket {
     pub struct UsageExportBucketArgs {
         /// The bucket to store reports in.
         #[builder(into)]
-        pub bucket_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket_name: pulumi_gestalt_rust::Input<String>,
         /// A prefix for the reports, for instance, the project name.
         #[builder(into, default)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project to set the export bucket on. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct UsageExportBucketResult {

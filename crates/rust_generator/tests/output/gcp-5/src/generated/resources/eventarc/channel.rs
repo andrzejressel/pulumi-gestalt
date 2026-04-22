@@ -79,23 +79,23 @@ pub mod channel {
     pub struct ChannelArgs {
         /// Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
         #[builder(into, default)]
-        pub crypto_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub crypto_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Required. The resource name of the channel. Must be unique within the location on the project.
         ///
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the event provider (e.g. Eventarc SaaS partner) associated with the channel. This provider will be granted permissions to publish events to the channel. Format: `projects/{project}/locations/{location}/providers/{provider_id}`.
         #[builder(into, default)]
-        pub third_party_provider: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub third_party_provider: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ChannelResult {

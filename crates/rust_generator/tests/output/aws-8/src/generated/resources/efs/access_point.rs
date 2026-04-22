@@ -33,20 +33,20 @@ pub mod access_point {
     pub struct AccessPointArgs {
         /// ID of the file system for which the access point is intended.
         #[builder(into)]
-        pub file_system_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file_system_id: pulumi_gestalt_rust::Input<String>,
         /// Operating system user and group applied to all file system requests made using the access point. Detailed below.
         #[builder(into, default)]
-        pub posix_user: pulumi_gestalt_rust::InputOrOutput<
+        pub posix_user: pulumi_gestalt_rust::Input<
             Option<super::super::types::efs::AccessPointPosixUser>,
         >,
         /// Directory on the Amazon EFS file system that the access point provides access to. Detailed below.
         #[builder(into, default)]
-        pub root_directory: pulumi_gestalt_rust::InputOrOutput<
+        pub root_directory: pulumi_gestalt_rust::Input<
             Option<super::super::types::efs::AccessPointRootDirectory>,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

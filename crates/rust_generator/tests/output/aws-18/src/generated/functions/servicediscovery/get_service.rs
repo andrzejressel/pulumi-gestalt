@@ -10,18 +10,18 @@ pub mod get_service {
     pub struct GetServiceArgs {
         /// Name of the service.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// ID of the namespace that the service belongs to.
         #[builder(into)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the service. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// (**Deprecated**) Map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         #[builder(into, default)]
-        pub tags_all: pulumi_gestalt_rust::InputOrOutput<
+        pub tags_all: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

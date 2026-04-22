@@ -43,22 +43,22 @@ pub mod profiling_group {
     pub struct ProfilingGroupArgs {
         /// Specifies whether profiling is enabled or disabled for the created profiling. See Agent Orchestration Config for more details.
         #[builder(into, default)]
-        pub agent_orchestration_config: pulumi_gestalt_rust::InputOrOutput<
+        pub agent_orchestration_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::codeguruprofiler::ProfilingGroupAgentOrchestrationConfig,
             >,
         >,
         /// Compute platform of the profiling group.
         #[builder(into, default)]
-        pub compute_platform: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compute_platform: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the profiling group.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

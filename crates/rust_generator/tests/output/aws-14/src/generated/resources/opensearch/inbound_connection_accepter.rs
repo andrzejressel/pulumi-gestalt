@@ -53,7 +53,7 @@ pub mod inbound_connection_accepter {
     pub struct InboundConnectionAccepterArgs {
         /// Specifies the ID of the connection to accept.
         #[builder(into)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InboundConnectionAccepterResult {

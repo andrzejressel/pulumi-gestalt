@@ -61,49 +61,49 @@ pub mod standard_web_test {
     pub struct StandardWebTestArgs {
         /// The ID of the Application Insights instance on which the WebTest operates. Changing this forces a new Application Insights Standard WebTest to be created.
         #[builder(into)]
-        pub application_insights_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_insights_id: pulumi_gestalt_rust::Input<String>,
         /// Purpose/user defined descriptive test for this WebTest.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the WebTest be enabled?
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Interval in seconds between test runs for this WebTest. Valid options are `300`, `600` and `900`. Defaults to `300`.
         #[builder(into, default)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub frequency: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies a list of where to physically run the tests from to give global coverage for accessibility of your application.
         ///
         /// > **Note:** [Valid options for geo locations are described here](https://docs.microsoft.com/azure/azure-monitor/app/monitor-web-app-availability#location-population-tags)
         #[builder(into)]
-        pub geo_locations: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub geo_locations: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The Azure Region where the Application Insights Standard WebTest should exist. Changing this forces a new Application Insights Standard WebTest to be created. It needs to correlate with location of the parent resource (azurerm_application_insights)
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Application Insights Standard WebTest. Changing this forces a new Application Insights Standard WebTest to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `request` block as defined below.
         #[builder(into)]
-        pub request: pulumi_gestalt_rust::InputOrOutput<
+        pub request: pulumi_gestalt_rust::Input<
             super::super::types::appinsights::StandardWebTestRequest,
         >,
         /// The name of the Resource Group where the Application Insights Standard WebTest should exist. Changing this forces a new Application Insights Standard WebTest to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Should the retry on WebTest failure be enabled?
         #[builder(into, default)]
-        pub retry_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub retry_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags which should be assigned to the Application Insights Standard WebTest.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Seconds until this WebTest will timeout and fail. Default is `30`.
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A `validation_rules` block as defined below.
         #[builder(into, default)]
-        pub validation_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_rules: pulumi_gestalt_rust::Input<
             Option<super::super::types::appinsights::StandardWebTestValidationRules>,
         >,
     }

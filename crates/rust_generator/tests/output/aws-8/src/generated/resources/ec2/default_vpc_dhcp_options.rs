@@ -41,10 +41,10 @@ pub mod default_vpc_dhcp_options {
     pub struct DefaultVpcDhcpOptionsArgs {
         /// The ID of the AWS account that owns the DHCP options set.
         #[builder(into, default)]
-        pub owner_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -35,18 +35,18 @@ pub mod random_pet {
     pub struct RandomPetArgs {
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         #[builder(into, default)]
-        pub keepers: pulumi_gestalt_rust::InputOrOutput<
+        pub keepers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The length (in words) of the pet name. Defaults to 2
         #[builder(into, default)]
-        pub length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A string to prefix the name with.
         #[builder(into, default)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The character to separate words in the pet name. Defaults to "-"
         #[builder(into, default)]
-        pub separator: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub separator: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RandomPetResult {

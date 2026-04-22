@@ -64,36 +64,36 @@ pub mod data_connector_threat_intelligence_taxii {
     pub struct DataConnectorThreatIntelligenceTaxiiArgs {
         /// The API root URI of the TAXII server.
         #[builder(into)]
-        pub api_root_url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_root_url: pulumi_gestalt_rust::Input<String>,
         /// The collection ID of the TAXII server.
         #[builder(into)]
-        pub collection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub collection_id: pulumi_gestalt_rust::Input<String>,
         /// The friendly name which should be used for this Threat Intelligence TAXII Data Connector.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Log Analytics Workspace that this Threat Intelligence TAXII Data Connector resides in. Changing this forces a new Threat Intelligence TAXII Data Connector to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The lookback date for the TAXII server in RFC3339. Defaults to `1970-01-01T00:00:00Z`.
         #[builder(into, default)]
-        pub lookback_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lookback_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Threat Intelligence TAXII Data Connector. Changing this forces a new Threat Intelligence TAXII Data Connector to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password for the TAXII server.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The polling frequency for the TAXII server. Possible values are `OnceAMinute`, `OnceAnHour` and `OnceADay`. Defaults to `OnceAnHour`.
         #[builder(into, default)]
-        pub polling_frequency: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub polling_frequency: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the tenant that this Threat Intelligence TAXII Data Connector connects to. Changing this forces a new Threat Intelligence TAXII Data Connector to be created.
         ///
         /// > **NOTE** Currently, only the same tenant as the running account is allowed. Cross-tenant scenario is not supported yet.
         #[builder(into, default)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user name for the TAXII server.
         #[builder(into, default)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DataConnectorThreatIntelligenceTaxiiResult {

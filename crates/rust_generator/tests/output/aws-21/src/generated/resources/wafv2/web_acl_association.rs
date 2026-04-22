@@ -24,10 +24,10 @@ pub mod web_acl_association {
     pub struct WebAclAssociationArgs {
         /// The Amazon Resource Name (ARN) of the resource to associate with the web ACL. This must be an ARN of an Application Load Balancer, an Amazon API Gateway stage (REST only, HTTP is unsupported), an Amazon Cognito User Pool, an Amazon AppSync GraphQL API, an Amazon App Runner service, or an Amazon Verified Access instance.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
         #[builder(into)]
-        pub web_acl_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_acl_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WebAclAssociationResult {

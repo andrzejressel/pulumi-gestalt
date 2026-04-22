@@ -40,20 +40,20 @@ pub mod distribution_configuration {
     pub struct DistributionConfigurationArgs {
         /// Description of the distribution configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more configuration blocks with distribution settings. Detailed below.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub distributions: pulumi_gestalt_rust::InputOrOutput<
+        pub distributions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::imagebuilder::DistributionConfigurationDistribution>,
         >,
         /// Name of the distribution configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags for the distribution configuration. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

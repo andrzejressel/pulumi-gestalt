@@ -133,39 +133,37 @@ pub mod scale_set_packet_capture {
     pub struct ScaleSetPacketCaptureArgs {
         /// One or more `filter` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::ScaleSetPacketCaptureFilter>>,
         >,
         /// A `machine_scope` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub machine_scope: pulumi_gestalt_rust::InputOrOutput<
+        pub machine_scope: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ScaleSetPacketCaptureMachineScope>,
         >,
         /// The number of bytes captured per packet. The remaining bytes are truncated. Defaults to `0` (Entire Packet Captured). Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub maximum_bytes_per_packet: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub maximum_bytes_per_packet: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum size of the capture in Bytes. Defaults to `1073741824` (1GB). Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub maximum_bytes_per_session: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub maximum_bytes_per_session: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum duration of the capture session in seconds. Defaults to `18000` (5 hours). Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub maximum_capture_duration_in_seconds: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub maximum_capture_duration_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name to use for this Network Packet Capture. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Network Watcher. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_watcher_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_watcher_id: pulumi_gestalt_rust::Input<String>,
         /// A `storage_location` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_location: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_location: pulumi_gestalt_rust::Input<
             super::super::types::compute::ScaleSetPacketCaptureStorageLocation,
         >,
         /// The resource ID of the Virtual Machine Scale Set to capture packets from. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_machine_scale_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_scale_set_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ScaleSetPacketCaptureResult {

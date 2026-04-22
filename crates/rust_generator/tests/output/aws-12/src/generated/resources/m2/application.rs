@@ -45,33 +45,33 @@ pub mod application {
     pub struct ApplicationArgs {
         /// The application definition for this application. You can specify either inline JSON or an S3 bucket location.
         #[builder(into, default)]
-        pub definition: pulumi_gestalt_rust::InputOrOutput<
+        pub definition: pulumi_gestalt_rust::Input<
             Option<super::super::types::m2::ApplicationDefinition>,
         >,
         /// Description of the application.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Engine type must be `microfocus | bluage`.
         #[builder(into)]
-        pub engine_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_type: pulumi_gestalt_rust::Input<String>,
         /// KMS Key to use for the Application.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique identifier of the application.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of role for application to use to access AWS resources.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::m2::ApplicationTimeouts>,
         >,
     }

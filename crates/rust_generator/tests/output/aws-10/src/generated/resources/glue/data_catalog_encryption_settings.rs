@@ -51,10 +51,10 @@ pub mod data_catalog_encryption_settings {
     pub struct DataCatalogEncryptionSettingsArgs {
         /// The ID of the Data Catalog to set the security configuration for. If none is provided, the AWS account ID is used by default.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The security configuration to set. see Data Catalog Encryption Settings.
         #[builder(into)]
-        pub data_catalog_encryption_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub data_catalog_encryption_settings: pulumi_gestalt_rust::Input<
             super::super::types::glue::DataCatalogEncryptionSettingsDataCatalogEncryptionSettings,
         >,
     }

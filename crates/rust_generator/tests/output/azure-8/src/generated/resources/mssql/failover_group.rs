@@ -74,31 +74,31 @@ pub mod failover_group {
     pub struct FailoverGroupArgs {
         /// A set of database names to include in the failover group.
         #[builder(into, default)]
-        pub databases: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub databases: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the Failover Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `partner_server` block as defined below.
         #[builder(into)]
-        pub partner_servers: pulumi_gestalt_rust::InputOrOutput<
+        pub partner_servers: pulumi_gestalt_rust::Input<
             Vec<super::super::types::mssql::FailoverGroupPartnerServer>,
         >,
         /// A `read_write_endpoint_failover_policy` block as defined below.
         #[builder(into)]
-        pub read_write_endpoint_failover_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub read_write_endpoint_failover_policy: pulumi_gestalt_rust::Input<
             super::super::types::mssql::FailoverGroupReadWriteEndpointFailoverPolicy,
         >,
         /// Whether failover is enabled for the readonly endpoint. Defaults to `false`.
         #[builder(into, default)]
-        pub readonly_endpoint_failover_policy_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub readonly_endpoint_failover_policy_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the primary SQL Server on which to create the failover group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

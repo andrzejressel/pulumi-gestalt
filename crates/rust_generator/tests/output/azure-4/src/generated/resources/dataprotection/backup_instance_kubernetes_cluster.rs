@@ -216,29 +216,29 @@ pub mod backup_instance_kubernetes_cluster {
     pub struct BackupInstanceKubernetesClusterArgs {
         /// A `backup_datasource_parameters` block as defined below.
         #[builder(into, default)]
-        pub backup_datasource_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub backup_datasource_parameters: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataprotection::BackupInstanceKubernetesClusterBackupDatasourceParameters,
             >,
         >,
         /// The ID of the Backup Policy. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub backup_policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_policy_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Kubernetes Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub kubernetes_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The location of the Backup Instance Kubernetes Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Backup Instance Kubernetes Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where snapshots are stored. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub snapshot_resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub snapshot_resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Backup Vault within which the Backup Instance Kubernetes Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupInstanceKubernetesClusterResult {

@@ -71,19 +71,19 @@ pub mod ami_launch_permission {
     pub struct AmiLaunchPermissionArgs {
         /// AWS account ID for the launch permission.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the group for the launch permission. Valid values: `"all"`.
         #[builder(into, default)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub group: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the AMI.
         #[builder(into)]
-        pub image_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_id: pulumi_gestalt_rust::Input<String>,
         /// ARN of an organization for the launch permission.
         #[builder(into, default)]
-        pub organization_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub organization_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of an organizational unit for the launch permission.
         #[builder(into, default)]
-        pub organizational_unit_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub organizational_unit_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AmiLaunchPermissionResult {

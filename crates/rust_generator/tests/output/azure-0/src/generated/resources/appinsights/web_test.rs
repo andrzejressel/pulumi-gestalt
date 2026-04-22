@@ -63,47 +63,47 @@ pub mod web_test {
     pub struct WebTestArgs {
         /// The ID of the Application Insights component on which the WebTest operates. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_insights_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_insights_id: pulumi_gestalt_rust::Input<String>,
         /// An XML configuration specification for a WebTest ([see here for more information](https://docs.microsoft.com/rest/api/application-insights/webtests/createorupdate/)).
         #[builder(into)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration: pulumi_gestalt_rust::Input<String>,
         /// Purpose/user defined descriptive test for this WebTest.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the test actively being monitored.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Interval in seconds between test runs for this WebTest. Valid options are `300`, `600` and `900`. Defaults to `300`.
         #[builder(into, default)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub frequency: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A list of where to physically run the tests from to give global coverage for accessibility of your application.
         ///
         /// > **Note:** [Valid options for geo locations are described here](https://docs.microsoft.com/azure/azure-monitor/app/monitor-web-app-availability#location-population-tags)
         #[builder(into)]
-        pub geo_locations: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub geo_locations: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The kind of web test that this web test watches. Choices are `ping` and `multistep`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kind: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created. It needs to correlate with location of parent resource (azurerm_application_insights).
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Application Insights WebTest. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Application Insights WebTest. Changing this forces a new resource
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Allow for retries should this WebTest fail.
         #[builder(into, default)]
-        pub retry_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub retry_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Seconds until this WebTest will timeout and fail. Default is `30`.
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct WebTestResult {

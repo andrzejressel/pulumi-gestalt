@@ -62,10 +62,10 @@ pub mod vault_policy {
     pub struct VaultPolicyArgs {
         /// Name of the backup vault to add policy for.
         #[builder(into)]
-        pub backup_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The backup vault access policy document in JSON format.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VaultPolicyResult {

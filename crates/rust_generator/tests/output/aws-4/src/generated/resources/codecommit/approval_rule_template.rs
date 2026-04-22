@@ -40,13 +40,13 @@ pub mod approval_rule_template {
     pub struct ApprovalRuleTemplateArgs {
         /// The content of the approval rule template. Maximum of 3000 characters.
         #[builder(into)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content: pulumi_gestalt_rust::Input<String>,
         /// The description of the approval rule template. Maximum of 1000 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the approval rule template. Maximum of 100 characters.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApprovalRuleTemplateResult {

@@ -96,31 +96,31 @@ pub mod event_destination {
     pub struct EventDestinationArgs {
         /// CloudWatch destination for the events
         #[builder(into, default)]
-        pub cloudwatch_destinations: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudwatch_destinations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ses::EventDestinationCloudwatchDestination>>,
         >,
         /// The name of the configuration set
         #[builder(into)]
-        pub configuration_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_set_name: pulumi_gestalt_rust::Input<String>,
         /// If true, the event destination will be enabled
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Send the events to a kinesis firehose destination
         #[builder(into, default)]
-        pub kinesis_destination: pulumi_gestalt_rust::InputOrOutput<
+        pub kinesis_destination: pulumi_gestalt_rust::Input<
             Option<super::super::types::ses::EventDestinationKinesisDestination>,
         >,
         /// A list of matching types. May be any of `"send"`, `"reject"`, `"bounce"`, `"complaint"`, `"delivery"`, `"open"`, `"click"`, or `"renderingFailure"`.
         #[builder(into)]
-        pub matching_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub matching_types: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name of the event destination
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Send the events to an SNS Topic destination
         ///
         /// > **NOTE:** You can specify `"cloudwatch_destination"` or `"kinesis_destination"` but not both
         #[builder(into, default)]
-        pub sns_destination: pulumi_gestalt_rust::InputOrOutput<
+        pub sns_destination: pulumi_gestalt_rust::Input<
             Option<super::super::types::ses::EventDestinationSnsDestination>,
         >,
     }

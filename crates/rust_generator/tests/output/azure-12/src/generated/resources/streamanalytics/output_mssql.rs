@@ -73,37 +73,37 @@ pub mod output_mssql {
     pub struct OutputMssqlArgs {
         /// The authentication mode for the Stream Output. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         #[builder(into, default)]
-        pub authentication_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The MS SQL database name where the reference table exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database: pulumi_gestalt_rust::Input<String>,
         /// The max batch count to write to the SQL Database. Defaults to `10000`. Possible values are between `1` and `1073741824`.
         #[builder(into, default)]
-        pub max_batch_count: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub max_batch_count: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The max writer count for the SQL Database. Defaults to `1`. Possible values are `0` which bases the writer count on the query partition and `1` which corresponds to a single writer.
         #[builder(into, default)]
-        pub max_writer_count: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub max_writer_count: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The name of the Stream Output. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Password used together with username, to login to the Microsoft SQL Server. Required if `authentication_mode` is `ConnectionString`.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SQL server url. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
         /// Table in the database that the output points to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table: pulumi_gestalt_rust::Input<String>,
         /// Username used to login to the Microsoft SQL Server. Changing this forces a new resource to be created. Required if `authentication_mode` is `ConnectionString`.
         #[builder(into, default)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OutputMssqlResult {

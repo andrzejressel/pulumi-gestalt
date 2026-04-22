@@ -35,15 +35,15 @@ pub mod recovery_group {
     pub struct RecoveryGroupArgs {
         /// List of cell arns to add as nested fault domains within this recovery group
         #[builder(into, default)]
-        pub cells: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub cells: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A unique name describing the recovery group.
         ///
         /// The following argument are optional:
         #[builder(into)]
-        pub recovery_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_group_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

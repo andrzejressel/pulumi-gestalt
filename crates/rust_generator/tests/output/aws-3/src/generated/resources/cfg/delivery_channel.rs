@@ -82,24 +82,24 @@ pub mod delivery_channel {
     pub struct DeliveryChannelArgs {
         /// The name of the delivery channel. Defaults to `default`. Changing it recreates the resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the S3 bucket used to store the configuration history.
         #[builder(into)]
-        pub s3_bucket_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub s3_bucket_name: pulumi_gestalt_rust::Input<String>,
         /// The prefix for the specified S3 bucket.
         #[builder(into, default)]
-        pub s3_key_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_key_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the AWS KMS key used to encrypt objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
         #[builder(into, default)]
-        pub s3_kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options for how AWS Config delivers configuration snapshots. See below
         #[builder(into, default)]
-        pub snapshot_delivery_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub snapshot_delivery_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::cfg::DeliveryChannelSnapshotDeliveryProperties>,
         >,
         /// The ARN of the SNS topic that AWS Config delivers notifications to.
         #[builder(into, default)]
-        pub sns_topic_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sns_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DeliveryChannelResult {

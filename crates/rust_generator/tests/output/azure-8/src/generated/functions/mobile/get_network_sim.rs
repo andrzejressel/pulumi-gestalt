@@ -10,10 +10,10 @@ pub mod get_network_sim {
     pub struct GetNetworkSimArgs {
         /// The ID of the Mobile Network which the Mobile Network Sim belongs to.
         #[builder(into)]
-        pub mobile_network_sim_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_sim_group_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Mobile Network Sim.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkSimResult {

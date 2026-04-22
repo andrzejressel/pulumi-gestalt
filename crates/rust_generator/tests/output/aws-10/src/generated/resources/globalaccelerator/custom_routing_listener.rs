@@ -56,10 +56,10 @@ pub mod custom_routing_listener {
     pub struct CustomRoutingListenerArgs {
         /// The Amazon Resource Name (ARN) of a custom routing accelerator.
         #[builder(into)]
-        pub accelerator_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub accelerator_arn: pulumi_gestalt_rust::Input<String>,
         /// The list of port ranges for the connections from clients to the accelerator. Fields documented below.
         #[builder(into)]
-        pub port_ranges: pulumi_gestalt_rust::InputOrOutput<
+        pub port_ranges: pulumi_gestalt_rust::Input<
             Vec<super::super::types::globalaccelerator::CustomRoutingListenerPortRange>,
         >,
     }

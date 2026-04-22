@@ -10,7 +10,7 @@ pub mod get_locations {
     pub struct GetLocationsArgs {
         /// The ID of the project.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetLocationsResult {

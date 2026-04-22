@@ -48,68 +48,68 @@ pub mod authorization_server {
     pub struct AuthorizationServerArgs {
         /// The name of the API Management Service in which this Authorization Server should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The OAUTH Authorization Endpoint.
         #[builder(into)]
-        pub authorization_endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authorization_endpoint: pulumi_gestalt_rust::Input<String>,
         /// The HTTP Verbs supported by the Authorization Endpoint. Possible values are `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`.
         ///
         /// > **NOTE:** `GET` must always be present.
         #[builder(into)]
-        pub authorization_methods: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub authorization_methods: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The mechanism by which Access Tokens are passed to the API. Possible values are `authorizationHeader` and `query`.
         #[builder(into, default)]
-        pub bearer_token_sending_methods: pulumi_gestalt_rust::InputOrOutput<
+        pub bearer_token_sending_methods: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The Authentication Methods supported by the Token endpoint of this Authorization Server.. Possible values are `Basic` and `Body`.
         #[builder(into, default)]
-        pub client_authentication_methods: pulumi_gestalt_rust::InputOrOutput<
+        pub client_authentication_methods: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The Client/App ID registered with this Authorization Server.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// The URI of page where Client/App Registration is performed for this Authorization Server.
         #[builder(into)]
-        pub client_registration_endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_registration_endpoint: pulumi_gestalt_rust::Input<String>,
         /// The Client/App Secret registered with this Authorization Server.
         #[builder(into, default)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_secret: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Default Scope used when requesting an Access Token, specified as a string containing space-delimited values.
         #[builder(into, default)]
-        pub default_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description of the Authorization Server, which may contain HTML formatting tags.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user-friendly name of this Authorization Server.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Form of Authorization Grants required when requesting an Access Token. Possible values are `authorizationCode`, `clientCredentials`, `implicit` and `resourceOwnerPassword`.
         #[builder(into)]
-        pub grant_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub grant_types: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name of this Authorization Server. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The password associated with the Resource Owner.
         ///
         /// > **NOTE:** This can only be specified when `grant_type` includes `resourceOwnerPassword`.
         #[builder(into, default)]
-        pub resource_owner_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_owner_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The username associated with the Resource Owner.
         ///
         /// > **NOTE:** This can only be specified when `grant_type` includes `resourceOwnerPassword`.
         #[builder(into, default)]
-        pub resource_owner_username: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_owner_username: pulumi_gestalt_rust::Input<Option<String>>,
         /// Does this Authorization Server support State? If this is set to `true` the client may use the state parameter to raise protocol security.
         #[builder(into, default)]
-        pub support_state: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub support_state: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `token_body_parameter` block as defined below.
         #[builder(into, default)]
-        pub token_body_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub token_body_parameters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::apimanagement::AuthorizationServerTokenBodyParameter,
@@ -118,7 +118,7 @@ pub mod authorization_server {
         >,
         /// The OAUTH Token Endpoint.
         #[builder(into, default)]
-        pub token_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AuthorizationServerResult {

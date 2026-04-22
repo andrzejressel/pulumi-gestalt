@@ -10,13 +10,13 @@ pub mod get_sql_database {
     pub struct GetSqlDatabaseArgs {
         /// The name of the Cosmos DB SQL Database to create the table within.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Cosmos DB SQL Database.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Cosmos DB SQL Database is created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSqlDatabaseResult {

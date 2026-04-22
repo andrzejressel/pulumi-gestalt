@@ -10,10 +10,10 @@ pub mod get_analytics_workspace {
     pub struct GetAnalyticsWorkspaceArgs {
         /// Specifies the name of the Log Analytics Workspace.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Log Analytics workspace is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAnalyticsWorkspaceResult {

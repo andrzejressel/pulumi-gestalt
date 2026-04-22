@@ -112,18 +112,18 @@ pub mod virtual_hub_route_table {
     pub struct VirtualHubRouteTableArgs {
         /// List of labels associated with this route table.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub labels: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name which should be used for Virtual Hub Route Table. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `route` blocks as defined below.
         #[builder(into, default)]
-        pub routes: pulumi_gestalt_rust::InputOrOutput<
+        pub routes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::VirtualHubRouteTableRoute>>,
         >,
         /// The ID of the Virtual Hub within which this route table should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualHubRouteTableResult {

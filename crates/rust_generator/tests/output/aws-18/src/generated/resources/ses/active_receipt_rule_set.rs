@@ -33,7 +33,7 @@ pub mod active_receipt_rule_set {
     pub struct ActiveReceiptRuleSetArgs {
         /// The name of the rule set
         #[builder(into)]
-        pub rule_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_set_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ActiveReceiptRuleSetResult {

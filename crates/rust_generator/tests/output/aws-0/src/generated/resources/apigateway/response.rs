@@ -39,23 +39,23 @@ pub mod response {
     pub struct ResponseArgs {
         /// Map of parameters (paths, query strings and headers) of the Gateway Response.
         #[builder(into, default)]
-        pub response_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub response_parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Map of templates used to transform the response body.
         #[builder(into, default)]
-        pub response_templates: pulumi_gestalt_rust::InputOrOutput<
+        pub response_templates: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Response type of the associated GatewayResponse.
         #[builder(into)]
-        pub response_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub response_type: pulumi_gestalt_rust::Input<String>,
         /// String identifier of the associated REST API.
         #[builder(into)]
-        pub rest_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api_id: pulumi_gestalt_rust::Input<String>,
         /// HTTP status code of the Gateway Response.
         #[builder(into, default)]
-        pub status_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status_code: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ResponseResult {

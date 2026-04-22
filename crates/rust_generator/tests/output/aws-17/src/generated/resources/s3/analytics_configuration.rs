@@ -67,18 +67,18 @@ pub mod analytics_configuration {
     pub struct AnalyticsConfigurationArgs {
         /// Name of the bucket this analytics configuration is associated with.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Object filtering that accepts a prefix, tags, or a logical AND of prefix and tags (documented below).
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::AnalyticsConfigurationFilter>,
         >,
         /// Unique identifier of the analytics configuration for the bucket.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for the analytics data export (documented below).
         #[builder(into, default)]
-        pub storage_class_analysis: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_class_analysis: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::AnalyticsConfigurationStorageClassAnalysis>,
         >,
     }

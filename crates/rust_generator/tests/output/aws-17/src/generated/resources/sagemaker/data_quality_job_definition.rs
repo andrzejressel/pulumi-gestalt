@@ -78,52 +78,52 @@ pub mod data_quality_job_definition {
     pub struct DataQualityJobDefinitionArgs {
         /// Specifies the container that runs the monitoring job. Fields are documented below.
         #[builder(into)]
-        pub data_quality_app_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub data_quality_app_specification: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::DataQualityJobDefinitionDataQualityAppSpecification,
         >,
         /// Configures the constraints and baselines for the monitoring job. Fields are documented below.
         #[builder(into, default)]
-        pub data_quality_baseline_config: pulumi_gestalt_rust::InputOrOutput<
+        pub data_quality_baseline_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::sagemaker::DataQualityJobDefinitionDataQualityBaselineConfig,
             >,
         >,
         /// A list of inputs for the monitoring job. Fields are documented below.
         #[builder(into)]
-        pub data_quality_job_input: pulumi_gestalt_rust::InputOrOutput<
+        pub data_quality_job_input: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInput,
         >,
         /// The output configuration for monitoring jobs. Fields are documented below.
         #[builder(into)]
-        pub data_quality_job_output_config: pulumi_gestalt_rust::InputOrOutput<
+        pub data_quality_job_output_config: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobOutputConfig,
         >,
         /// Identifies the resources to deploy for a monitoring job. Fields are documented below.
         #[builder(into)]
-        pub job_resources: pulumi_gestalt_rust::InputOrOutput<
+        pub job_resources: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::DataQualityJobDefinitionJobResources,
         >,
         /// The name of the data quality job definition. If omitted, the provider will assign a random, unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies networking configuration for the monitoring job. Fields are documented below.
         #[builder(into, default)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::DataQualityJobDefinitionNetworkConfig>,
         >,
         /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A time limit for how long the monitoring job is allowed to run before stopping. Fields are documented below.
         #[builder(into, default)]
-        pub stopping_condition: pulumi_gestalt_rust::InputOrOutput<
+        pub stopping_condition: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::sagemaker::DataQualityJobDefinitionStoppingCondition,
             >,
         >,
         /// A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -106,35 +106,31 @@ pub mod network_sim {
     pub struct NetworkSimArgs {
         /// The Ki value for the SIM.
         #[builder(into)]
-        pub authentication_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_key: pulumi_gestalt_rust::Input<String>,
         /// An optional free-form text field that can be used to record the device type this SIM is associated with, for example `Video camera`. The Azure portal allows SIMs to be grouped and filtered based on this value.
         #[builder(into, default)]
-        pub device_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub device_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The integrated circuit card ID (ICCID) for the SIM. Changing this forces a new Mobile Network Sim to be created.
         #[builder(into)]
-        pub integrated_circuit_card_identifier: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub integrated_circuit_card_identifier: pulumi_gestalt_rust::Input<String>,
         /// The international mobile subscriber identity (IMSI) for the SIM. Changing this forces a new Mobile Network Sim to be created.
         #[builder(into)]
-        pub international_mobile_subscriber_identity: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub international_mobile_subscriber_identity: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Mobile Network which the Mobile Network Sim belongs to. Changing this forces a new Mobile Network Sim to be created.
         #[builder(into)]
-        pub mobile_network_sim_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_sim_group_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Mobile Network Sim. Changing this forces a new Mobile Network Sim to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Opc value for the SIM.
         #[builder(into)]
-        pub operator_key_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub operator_key_code: pulumi_gestalt_rust::Input<String>,
         /// The ID of SIM policy used by this SIM.
         #[builder(into, default)]
-        pub sim_policy_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sim_policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `static_ip_configuration` block as defined below.
         #[builder(into, default)]
-        pub static_ip_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub static_ip_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::mobile::NetworkSimStaticIpConfiguration>>,
         >,
     }

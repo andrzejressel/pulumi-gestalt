@@ -40,29 +40,29 @@ pub mod link {
     pub struct LinkArgs {
         /// The upload speed and download speed in Mbps. Documented below.
         #[builder(into)]
-        pub bandwidth: pulumi_gestalt_rust::InputOrOutput<
+        pub bandwidth: pulumi_gestalt_rust::Input<
             super::super::types::networkmanager::LinkBandwidth,
         >,
         /// A description of the link.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the global network.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// The provider of the link.
         #[builder(into, default)]
-        pub provider_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub provider_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the site.
         #[builder(into)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub site_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the link. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of the link.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LinkResult {

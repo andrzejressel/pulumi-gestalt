@@ -91,18 +91,18 @@ pub mod partition_index {
     pub struct PartitionIndexArgs {
         /// The catalog ID where the table resides.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for a partition index. See `partition_index` below.
         #[builder(into)]
-        pub partition_index: pulumi_gestalt_rust::InputOrOutput<
+        pub partition_index: pulumi_gestalt_rust::Input<
             super::super::types::glue::PartitionIndexPartitionIndex,
         >,
         /// Name of the table. For Hive compatibility, this must be entirely lowercase.
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PartitionIndexResult {

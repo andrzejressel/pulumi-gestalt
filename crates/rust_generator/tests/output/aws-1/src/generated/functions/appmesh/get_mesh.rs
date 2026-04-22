@@ -10,13 +10,13 @@ pub mod get_mesh {
     pub struct GetMeshArgs {
         /// AWS account ID of the service mesh's owner.
         #[builder(into, default)]
-        pub mesh_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mesh_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the service mesh.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

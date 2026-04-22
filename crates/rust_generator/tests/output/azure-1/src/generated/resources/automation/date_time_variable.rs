@@ -55,22 +55,22 @@ pub mod date_time_variable {
     pub struct DateTimeVariableArgs {
         /// The name of the automation account in which the Variable is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The description of the Automation Variable.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if the Automation Variable is encrypted. Defaults to `false`.
         #[builder(into, default)]
-        pub encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Automation Variable. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Automation Variable. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The value of the Automation Variable in the [RFC3339 Section 5.6 Internet Date/Time Format](https://tools.ietf.org/html/rfc3339#section-5.6).
         #[builder(into, default)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub value: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DateTimeVariableResult {

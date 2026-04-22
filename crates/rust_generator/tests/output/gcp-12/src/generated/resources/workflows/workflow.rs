@@ -81,38 +81,38 @@ pub mod workflow {
         /// the execution level takes precedence.
         /// Possible values are: `CALL_LOG_LEVEL_UNSPECIFIED`, `LOG_ALL_CALLS`, `LOG_ERRORS_ONLY`, `LOG_NONE`.
         #[builder(into, default)]
-        pub call_log_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub call_log_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// The KMS key used to encrypt workflow and execution data.
         /// Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
         #[builder(into, default)]
-        pub crypto_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub crypto_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Description of the workflow provided by the user. Must be at most 1000 unicode characters long.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value label pairs to assign to this Workflow.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the Workflow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the
         /// specified prefix. If this and name are unspecified, a random value is chosen for the name.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the workflow.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the service account associated with the latest workflow version. This service
         /// account represents the identity of the workflow and determines what permissions the workflow has.
         /// Format: projects/{project}/serviceAccounts/{account} or {account}.
@@ -121,13 +121,13 @@ pub mod workflow {
         /// If not provided, workflow will use the project's default service account.
         /// Modifying this field for an existing workflow results in a new workflow revision.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// Workflow code to be executed. The size limit is 128KB.
         #[builder(into, default)]
-        pub source_contents: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_contents: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-defined environment variables associated with this workflow revision. This map has a maximum length of 20. Each string can take up to 4KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or “WORKFLOWS".
         #[builder(into, default)]
-        pub user_env_vars: pulumi_gestalt_rust::InputOrOutput<
+        pub user_env_vars: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

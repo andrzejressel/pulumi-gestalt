@@ -144,7 +144,7 @@ pub mod project_custom_module {
         /// The user specified custom configuration for the module.
         /// Structure is documented below.
         #[builder(into)]
-        pub custom_config: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_config: pulumi_gestalt_rust::Input<
             super::super::types::securitycenter::ProjectCustomModuleCustomConfig,
         >,
         /// The display name of the Security Health Analytics custom module. This
@@ -153,13 +153,13 @@ pub mod project_custom_module {
         /// 128 characters, start with a lowercase letter, and contain alphanumeric
         /// characters or underscores only.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The enablement state of the custom module.
         /// Possible values are: `ENABLED`, `DISABLED`.
         #[builder(into)]
-        pub enablement_state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub enablement_state: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProjectCustomModuleResult {

@@ -32,16 +32,16 @@ pub mod resource_share {
     pub struct ResourceShareArgs {
         /// Indicates whether principals outside your organization can be associated with a resource share.
         #[builder(into, default)]
-        pub allow_external_principals: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_external_principals: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource share.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Amazon Resource Names (ARNs) of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.
         #[builder(into, default)]
-        pub permission_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub permission_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the resource share. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

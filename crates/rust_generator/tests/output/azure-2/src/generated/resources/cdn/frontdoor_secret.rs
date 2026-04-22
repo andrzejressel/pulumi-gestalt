@@ -567,13 +567,13 @@ pub mod frontdoor_secret {
     pub struct FrontdoorSecretArgs {
         /// The Resource ID of the Front Door Profile. Changing this forces a new Front Door Secret to be created.
         #[builder(into)]
-        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Front Door Secret. Possible values must start with a letter or a number, only contain letters, numbers and hyphens and have a length of between 2 and 260 characters. Changing this forces a new Front Door Secret to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `secret` block as defined below. Changing this forces a new Front Door Secret to be created.
         #[builder(into)]
-        pub secret: pulumi_gestalt_rust::InputOrOutput<
+        pub secret: pulumi_gestalt_rust::Input<
             super::super::types::cdn::FrontdoorSecretSecret,
         >,
     }

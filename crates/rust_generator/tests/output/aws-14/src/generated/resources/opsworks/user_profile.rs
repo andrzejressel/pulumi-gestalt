@@ -28,16 +28,16 @@ pub mod user_profile {
     pub struct UserProfileArgs {
         /// Whether users can specify their own SSH public key through the My Settings page
         #[builder(into, default)]
-        pub allow_self_management: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_self_management: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The users public key
         #[builder(into, default)]
-        pub ssh_public_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ssh_public_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ssh username, with witch this user wants to log in
         #[builder(into)]
-        pub ssh_username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ssh_username: pulumi_gestalt_rust::Input<String>,
         /// The user's IAM ARN
         #[builder(into)]
-        pub user_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserProfileResult {

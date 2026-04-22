@@ -91,16 +91,16 @@ pub mod listener_policy {
     pub struct ListenerPolicyArgs {
         /// The load balancer to attach the policy to.
         #[builder(into)]
-        pub load_balancer_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancer_name: pulumi_gestalt_rust::Input<String>,
         /// The load balancer listener port to apply the policy to.
         #[builder(into)]
-        pub load_balancer_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub load_balancer_port: pulumi_gestalt_rust::Input<i32>,
         /// List of Policy Names to apply to the backend server.
         #[builder(into, default)]
-        pub policy_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub policy_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Map of arbitrary keys and values that, when changed, will trigger an update.
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

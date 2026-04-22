@@ -39,18 +39,18 @@ pub mod folder_membership {
     pub struct FolderMembershipArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier for the folder.
         #[builder(into)]
-        pub folder_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the asset (the dashboard, analysis, or dataset).
         #[builder(into)]
-        pub member_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member_id: pulumi_gestalt_rust::Input<String>,
         /// Type of the member. Valid values are `ANALYSIS`, `DASHBOARD`, and `DATASET`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub member_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FolderMembershipResult {

@@ -73,23 +73,23 @@ pub mod connection {
     #[allow(dead_code)]
     pub struct ConnectionArgs {
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of VPC network connected with service producers using VPC peering.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// Named IP address range(s) of PEERING type reserved for
         /// this service provider. Note that invoking this method with a different range when connection
         /// is already established will not reallocate already provisioned service producer subnetworks.
         #[builder(into)]
-        pub reserved_peering_ranges: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub reserved_peering_ranges: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Provider peering service that is managing peering connectivity for a
         /// service provider organization. For Google services that support this functionality it is
         /// 'servicenetworking.googleapis.com'.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
         /// When set to true, enforce an update of the reserved peering ranges on the existing service networking connection in case of a new connection creation failure.
         #[builder(into, default)]
-        pub update_on_creation_fail: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub update_on_creation_fail: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ConnectionResult {

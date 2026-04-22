@@ -99,46 +99,46 @@ pub mod registration {
     pub struct RegistrationArgs {
         /// The list of contact notices that the caller acknowledges. Possible value is PUBLIC_CONTACT_DATA_ACKNOWLEDGEMENT
         #[builder(into, default)]
-        pub contact_notices: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub contact_notices: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Required. Settings for contact information linked to the Registration.
         /// Structure is documented below.
         #[builder(into)]
-        pub contact_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub contact_settings: pulumi_gestalt_rust::Input<
             super::super::types::clouddomains::RegistrationContactSettings,
         >,
         /// Settings controlling the DNS configuration of the Registration.
         #[builder(into, default)]
-        pub dns_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddomains::RegistrationDnsSettings>,
         >,
         /// Required. The domain name. Unicode domain names must be expressed in Punycode format.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The list of domain notices that you acknowledge. Possible value is HSTS_PRELOADED
         #[builder(into, default)]
-        pub domain_notices: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub domain_notices: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Set of labels associated with the Registration. **Note**: This field is non-authoritative, and will only manage the
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Settings for management of the Registration, including renewal, billing, and transfer
         #[builder(into, default)]
-        pub management_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub management_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddomains::RegistrationManagementSettings>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Yearly price to register or renew the domain. The value that should be put here can be obtained from
         /// registrations.retrieveRegisterParameters or registrations.searchDomains calls.
         /// Structure is documented below.
         #[builder(into)]
-        pub yearly_price: pulumi_gestalt_rust::InputOrOutput<
+        pub yearly_price: pulumi_gestalt_rust::Input<
             super::super::types::clouddomains::RegistrationYearlyPrice,
         >,
     }

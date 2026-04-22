@@ -56,24 +56,24 @@ pub mod organization_security_policy {
     pub struct OrganizationSecurityPolicyArgs {
         /// A textual description for the organization security policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A textual name of the security policy.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The parent of this OrganizationSecurityPolicy in the Cloud Resource Hierarchy.
         /// Format: organizations/{organization_id} or folders/{folder_id}
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// The type indicates the intended use of the security policy.
         /// For organization security policies, the only supported type
         /// is "FIREWALL".
         /// Default value is `FIREWALL`.
         /// Possible values are: `FIREWALL`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OrganizationSecurityPolicyResult {

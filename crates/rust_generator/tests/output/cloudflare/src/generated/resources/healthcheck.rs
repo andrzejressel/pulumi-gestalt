@@ -80,66 +80,66 @@ pub mod healthcheck {
     pub struct HealthcheckArgs {
         /// The hostname or IP address of the origin server to run health checks on.
         #[builder(into)]
-        pub address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address: pulumi_gestalt_rust::Input<String>,
         /// Do not validate the certificate when the health check uses HTTPS. Defaults to `false`.
         #[builder(into, default)]
-        pub allow_insecure: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_insecure: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of regions from which to run health checks. If not set, Cloudflare will pick a default region. Available values: `WNAM`, `ENAM`, `WEU`, `EEU`, `NSAM`, `SSAM`, `OC`, `ME`, `NAF`, `SAF`, `IN`, `SEAS`, `NEAS`, `ALL_REGIONS`.
         #[builder(into, default)]
-        pub check_regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub check_regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The number of consecutive fails required from a health check before changing the health to unhealthy. Defaults to `1`.
         #[builder(into, default)]
-        pub consecutive_fails: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub consecutive_fails: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The number of consecutive successes required from a health check before changing the health to healthy. Defaults to `1`.
         #[builder(into, default)]
-        pub consecutive_successes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub consecutive_successes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A human-readable description of the health check.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A case-insensitive sub-string to look for in the response body. If this string is not found the origin will be marked as unhealthy.
         #[builder(into, default)]
-        pub expected_body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// The expected HTTP response codes (e.g. '200') or code ranges (e.g. '2xx' for all codes starting with 2) of the health check.
         #[builder(into, default)]
-        pub expected_codes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub expected_codes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Follow redirects if the origin returns a 3xx status code. Defaults to `false`.
         #[builder(into, default)]
-        pub follow_redirects: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub follow_redirects: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden.
         #[builder(into, default)]
-        pub headers: pulumi_gestalt_rust::InputOrOutput<
+        pub headers: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::HealthcheckHeader>>,
         >,
         /// The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase the load on the origin as we check from multiple locations. Defaults to `60`.
         #[builder(into, default)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub interval: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The HTTP method to use for the health check. Available values: `connection_established`, `GET`, `HEAD`.
         #[builder(into, default)]
-        pub method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub method: pulumi_gestalt_rust::Input<Option<String>>,
         /// A short name to identify the health check. Only alphanumeric characters, hyphens, and underscores are allowed.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The endpoint path to health check against. Defaults to `/`.
         #[builder(into, default)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Port number to connect to for the health check. Defaults to `80`.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. Defaults to `2`.
         #[builder(into, default)]
-        pub retries: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retries: pulumi_gestalt_rust::Input<Option<i32>>,
         /// If suspended, no health checks are sent to the origin. Defaults to `false`.
         #[builder(into, default)]
-        pub suspended: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub suspended: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The timeout (in seconds) before marking the health check as failed. Defaults to `5`.
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The protocol to use for the health check. Available values: `TCP`, `HTTP`, `HTTPS`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HealthcheckResult {

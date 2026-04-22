@@ -39,52 +39,48 @@ pub mod teams_channel_configuration {
     pub struct TeamsChannelConfigurationArgs {
         /// ID of the Microsoft Teams channel.
         #[builder(into)]
-        pub channel_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub channel_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Microsoft Teams channel.
         #[builder(into, default)]
-        pub channel_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub channel_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Microsoft Teams channel configuration.
         #[builder(into)]
-        pub configuration_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_name: pulumi_gestalt_rust::Input<String>,
         /// List of IAM policy ARNs that are applied as channel guardrails. The AWS managed `AdministratorAccess` policy is applied by default if this is not set.
         #[builder(into, default)]
-        pub guardrail_policy_arns: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub guardrail_policy_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role.
         #[builder(into)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Logging levels include `ERROR`, `INFO`, or `NONE`.
         #[builder(into, default)]
-        pub logging_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub logging_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARNs of the SNS topics that deliver notifications to AWS Chatbot.
         #[builder(into, default)]
-        pub sns_topic_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub sns_topic_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console.
         #[builder(into)]
-        pub team_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub team_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Microsoft Teams team.
         #[builder(into, default)]
-        pub team_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub team_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the Microsoft Teams tenant.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::chatbot::TeamsChannelConfigurationTimeouts>,
         >,
         /// Enables use of a user role requirement in your chat configuration.
         #[builder(into, default)]
-        pub user_authorization_required: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub user_authorization_required: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct TeamsChannelConfigurationResult {

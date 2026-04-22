@@ -42,16 +42,16 @@ pub mod endpoint_service_private_dns_verification {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vpc::EndpointServicePrivateDnsVerificationTimeouts,
             >,
         >,
         /// Whether to wait until the endpoint service returns a `Verified` status for the configured private DNS name.
         #[builder(into, default)]
-        pub wait_for_verification: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_for_verification: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EndpointServicePrivateDnsVerificationResult {

@@ -146,27 +146,27 @@ pub mod preference_set {
     pub struct PreferenceSetArgs {
         /// A description of the preference set.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-friendly display name. Maximum length is 63 characters.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Part of `parent`. See documentation of `projectsId`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Required. User specified ID for the preference set. It will become the last component of the preference set name. The ID must be unique within the project, must conform with RFC-1034, is restricted to lower-cased letters, and has a maximum length of 63 characters. The ID must match the regular expression `a-z?`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub preference_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub preference_set_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// VirtualMachinePreferences enables you to create sets of assumptions, for example, a geographical location and pricing track, for your migrated virtual machines. The set of preferences influence recommendations for migrating virtual machine assets.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub virtual_machine_preferences: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_machine_preferences: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferences,
             >,

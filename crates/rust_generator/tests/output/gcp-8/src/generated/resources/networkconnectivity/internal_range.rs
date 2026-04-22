@@ -193,57 +193,57 @@ pub mod internal_range {
     pub struct InternalRangeArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IP range that this internal range defines.
         #[builder(into, default)]
-        pub ip_cidr_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_cidr_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-defined labels.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specification for migration with source and target resource names.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub migration: pulumi_gestalt_rust::InputOrOutput<
+        pub migration: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkconnectivity::InternalRangeMigration>,
         >,
         /// The name of the policy based route.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Fully-qualified URL of the network that this route applies to, for example: projects/my-project/global/networks/my-network.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// Optional. Types of resources that are allowed to overlap with the current internal range.
         /// Each value may be one of: `OVERLAP_ROUTE_RANGE`, `OVERLAP_EXISTING_SUBNET_RANGE`.
         #[builder(into, default)]
-        pub overlaps: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub overlaps: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The type of peering set for this internal range.
         /// Possible values are: `FOR_SELF`, `FOR_PEER`, `NOT_SHARED`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub peering: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peering: pulumi_gestalt_rust::Input<String>,
         /// An alternate to ipCidrRange. Can be set when trying to create a reservation that automatically finds a free range of the given size.
         /// If both ipCidrRange and prefixLength are set, there is an error if the range sizes do not match. Can also be used during updates to change the range size.
         #[builder(into, default)]
-        pub prefix_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub prefix_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Can be set to narrow down or pick a different address space while searching for a free range.
         /// If not set, defaults to the "10.0.0.0/8" address space. This can be used to search in other rfc-1918 address spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
         #[builder(into, default)]
-        pub target_cidr_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub target_cidr_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The type of usage set for this InternalRange.
         /// Possible values are: `FOR_VPC`, `EXTERNAL_TO_VPC`, `FOR_MIGRATION`.
         #[builder(into)]
-        pub usage: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub usage: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InternalRangeResult {

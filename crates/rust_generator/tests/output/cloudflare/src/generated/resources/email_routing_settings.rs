@@ -23,13 +23,13 @@ pub mod email_routing_settings {
     pub struct EmailRoutingSettingsArgs {
         /// State of the zone settings for Email Routing. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// Flag to check if the user skipped the configuration wizard.
         #[builder(into, default)]
-        pub skip_wizard: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_wizard: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EmailRoutingSettingsResult {

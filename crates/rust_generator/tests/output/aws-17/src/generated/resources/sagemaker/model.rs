@@ -60,36 +60,36 @@ pub mod model {
     pub struct ModelArgs {
         /// Specifies containers in the inference pipeline. If not specified, the `primary_container` argument is required. Fields are documented below.
         #[builder(into, default)]
-        pub containers: pulumi_gestalt_rust::InputOrOutput<
+        pub containers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::sagemaker::ModelContainer>>,
         >,
         /// Isolates the model container. No inbound or outbound network calls can be made to or from the model container.
         #[builder(into, default)]
-        pub enable_network_isolation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_network_isolation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A role that SageMaker can assume to access model artifacts and docker images for deployment.
         #[builder(into)]
-        pub execution_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub execution_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Specifies details of how containers in a multi-container endpoint are called. see Inference Execution Config.
         #[builder(into, default)]
-        pub inference_execution_config: pulumi_gestalt_rust::InputOrOutput<
+        pub inference_execution_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::ModelInferenceExecutionConfig>,
         >,
         /// The name of the model (must be unique). If omitted, this provider will assign a random, unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The primary docker image containing inference code that is used when the model is deployed for predictions.  If not specified, the `container` argument is required. Fields are documented below.
         #[builder(into, default)]
-        pub primary_container: pulumi_gestalt_rust::InputOrOutput<
+        pub primary_container: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::ModelPrimaryContainer>,
         >,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the VPC that you want your model to connect to. VpcConfig is used in hosting services and in batch transform.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::ModelVpcConfig>,
         >,
     }

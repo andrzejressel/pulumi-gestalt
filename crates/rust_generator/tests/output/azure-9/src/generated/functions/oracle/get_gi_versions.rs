@@ -10,7 +10,7 @@ pub mod get_gi_versions {
     pub struct GetGiVersionsArgs {
         /// The Azure Region to query for the GI Versions in.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGiVersionsResult {

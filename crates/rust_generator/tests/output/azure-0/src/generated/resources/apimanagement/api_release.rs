@@ -75,13 +75,13 @@ pub mod api_release {
     pub struct ApiReleaseArgs {
         /// The ID of the API Management API. Changing this forces a new API Management API Release to be created.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this API Management API Release. Changing this forces a new API Management API Release to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Release Notes.
         #[builder(into, default)]
-        pub notes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notes: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiReleaseResult {

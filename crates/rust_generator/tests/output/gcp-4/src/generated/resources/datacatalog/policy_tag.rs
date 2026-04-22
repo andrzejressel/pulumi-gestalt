@@ -107,23 +107,23 @@ pub mod policy_tag {
         /// encoded in UTF-8. If not set, defaults to an empty description.
         /// If not set, defaults to an empty description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User defined name of this policy tag. It must: be unique within the parent
         /// taxonomy; contain only unicode letters, numbers, underscores, dashes and spaces;
         /// not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Resource name of this policy tag's parent policy tag.
         /// If empty, it means this policy tag is a top level policy tag.
         /// If not set, defaults to an empty string.
         #[builder(into, default)]
-        pub parent_policy_tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent_policy_tag: pulumi_gestalt_rust::Input<Option<String>>,
         /// Taxonomy the policy tag is associated with
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub taxonomy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub taxonomy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyTagResult {

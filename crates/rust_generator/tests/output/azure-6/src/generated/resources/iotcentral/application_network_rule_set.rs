@@ -53,16 +53,16 @@ pub mod application_network_rule_set {
     pub struct ApplicationNetworkRuleSetArgs {
         /// Whether these IP Rules apply for device connectivity to IoT Hub and Device Provisioning Service associated with this IoT Central Application. Possible values are `true`, `false`. Defaults to `true`
         #[builder(into, default)]
-        pub apply_to_device: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub apply_to_device: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the default action for the IoT Central Application Network Rule Set. Possible values are `Allow` and `Deny`. Defaults to `Deny`.
         #[builder(into, default)]
-        pub default_action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_action: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the IoT Central Application. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iotcentral_application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iotcentral_application_id: pulumi_gestalt_rust::Input<String>,
         /// One or more `ip_rule` blocks as defined below.
         #[builder(into, default)]
-        pub ip_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iotcentral::ApplicationNetworkRuleSetIpRule>>,
         >,
     }

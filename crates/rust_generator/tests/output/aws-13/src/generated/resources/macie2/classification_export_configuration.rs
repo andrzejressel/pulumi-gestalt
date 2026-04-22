@@ -42,7 +42,7 @@ pub mod classification_export_configuration {
     pub struct ClassificationExportConfigurationArgs {
         /// Configuration block for a S3 Destination. Defined below
         #[builder(into, default)]
-        pub s3_destination: pulumi_gestalt_rust::InputOrOutput<
+        pub s3_destination: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::macie2::ClassificationExportConfigurationS3Destination,
             >,

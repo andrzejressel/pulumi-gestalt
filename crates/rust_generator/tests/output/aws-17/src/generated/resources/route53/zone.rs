@@ -84,24 +84,24 @@ pub mod zone {
     pub struct ZoneArgs {
         /// A comment for the hosted zone. Defaults to 'Managed by Pulumi'.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the reusable delegation set whose NS records you want to assign to the hosted zone. Conflicts with `vpc` as delegation sets can only be used for public zones.
         #[builder(into, default)]
-        pub delegation_set_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delegation_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to destroy all records (possibly managed outside of this provider) in the zone when destroying the zone.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// This is the name of the hosted zone.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the zone. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block(s) specifying VPC(s) to associate with a private hosted zone. Conflicts with the `delegation_set_id` argument in this resource and any `aws.route53.ZoneAssociation` resource specifying the same zone ID. Detailed below.
         #[builder(into, default)]
-        pub vpcs: pulumi_gestalt_rust::InputOrOutput<
+        pub vpcs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::route53::ZoneVpc>>,
         >,
     }

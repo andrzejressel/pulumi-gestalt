@@ -10,10 +10,10 @@ pub mod get_function {
     pub struct GetFunctionArgs {
         /// Name of the CloudFront function.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Function’s stage, either `DEVELOPMENT` or `LIVE`.
         #[builder(into)]
-        pub stage: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stage: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFunctionResult {

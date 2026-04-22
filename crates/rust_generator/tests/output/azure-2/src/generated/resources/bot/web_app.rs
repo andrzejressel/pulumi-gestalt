@@ -45,49 +45,45 @@ pub mod web_app {
     pub struct WebAppArgs {
         /// The Application Insights API Key to associate with the Web App Bot.
         #[builder(into, default)]
-        pub developer_app_insights_api_key: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub developer_app_insights_api_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Application Insights Application ID to associate with the Web App Bot.
         #[builder(into, default)]
-        pub developer_app_insights_application_id: pulumi_gestalt_rust::InputOrOutput<
+        pub developer_app_insights_application_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Application Insights Key to associate with the Web App Bot.
         #[builder(into, default)]
-        pub developer_app_insights_key: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub developer_app_insights_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Web App Bot will be displayed as. This defaults to `name` if not specified.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Web App Bot endpoint.
         #[builder(into, default)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         /// The supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of LUIS App IDs to associate with the Web App Bot.
         #[builder(into, default)]
-        pub luis_app_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub luis_app_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The LUIS key to associate with the Web App Bot.
         #[builder(into, default)]
-        pub luis_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub luis_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Microsoft Application ID for the Web App Bot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub microsoft_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub microsoft_app_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Web App Bot. Changing this forces a new resource to be created. Must be globally unique.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Web App Bot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU of the Web App Bot. Valid values include `F0` or `S1`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -44,10 +44,10 @@ pub mod vpc_endpoint_subnet_association {
     pub struct VpcEndpointSubnetAssociationArgs {
         /// The ID of the subnet to be associated with the VPC endpoint.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPC endpoint with which the subnet will be associated.
         #[builder(into)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcEndpointSubnetAssociationResult {

@@ -10,7 +10,7 @@ pub mod get_approval_rule_template {
     pub struct GetApprovalRuleTemplateArgs {
         /// Name for the approval rule template. This needs to be less than 100 characters.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetApprovalRuleTemplateResult {

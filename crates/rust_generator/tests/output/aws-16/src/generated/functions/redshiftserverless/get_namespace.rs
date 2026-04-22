@@ -10,7 +10,7 @@ pub mod get_namespace {
     pub struct GetNamespaceArgs {
         /// The name of the namespace.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNamespaceResult {

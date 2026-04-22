@@ -46,54 +46,54 @@ pub mod custom_model {
     pub struct CustomModelArgs {
         /// The Amazon Resource Name (ARN) of the base model.
         #[builder(into)]
-        pub base_model_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub base_model_identifier: pulumi_gestalt_rust::Input<String>,
         /// The custom model is encrypted at rest using this key. Specify the key ARN.
         #[builder(into, default)]
-        pub custom_model_kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_model_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name for the custom model.
         #[builder(into)]
-        pub custom_model_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_model_name: pulumi_gestalt_rust::Input<String>,
         /// The customization type. Valid values: `FINE_TUNING`, `CONTINUED_PRE_TRAINING`.
         #[builder(into, default)]
-        pub customization_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customization_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// [Parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html) related to tuning the model.
         #[builder(into)]
-        pub hyperparameters: pulumi_gestalt_rust::InputOrOutput<
+        pub hyperparameters: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
         /// A name for the customization job.
         #[builder(into)]
-        pub job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub job_name: pulumi_gestalt_rust::Input<String>,
         /// S3 location for the output data.
         #[builder(into, default)]
-        pub output_data_config: pulumi_gestalt_rust::InputOrOutput<
+        pub output_data_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::CustomModelOutputDataConfig>,
         >,
         /// The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the customization job and custom model. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::CustomModelTimeouts>,
         >,
         /// Information about the training dataset.
         #[builder(into, default)]
-        pub training_data_config: pulumi_gestalt_rust::InputOrOutput<
+        pub training_data_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::CustomModelTrainingDataConfig>,
         >,
         /// Information about the validation dataset.
         #[builder(into, default)]
-        pub validation_data_config: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_data_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::CustomModelValidationDataConfig>,
         >,
         /// Configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for this job.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::CustomModelVpcConfig>,
         >,
     }

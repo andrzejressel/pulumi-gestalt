@@ -53,33 +53,33 @@ pub mod policy {
     pub struct PolicyArgs {
         /// A description for the Policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Evaluation Type used for this Policy. Possible values include: 'AllowedValuesPolicy', 'MaxValuePolicy'. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub evaluator_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub evaluator_type: pulumi_gestalt_rust::Input<String>,
         /// The Fact Data for this Policy.
         #[builder(into, default)]
-        pub fact_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fact_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Dev Test Lab in which the Policy should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lab_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lab_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Dev Test Policy. Possible values are `GalleryImage`, `LabPremiumVmCount`, `LabTargetCost`, `LabVmCount`, `LabVmSize`, `UserOwnedLabPremiumVmCount`, `UserOwnedLabVmCount` and `UserOwnedLabVmCountInSubnet`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Policy Set within the Dev Test Lab where this policy should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub policy_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_set_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Dev Test Lab resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Threshold for this Policy.
         #[builder(into)]
-        pub threshold: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub threshold: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyResult {

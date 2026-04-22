@@ -46,7 +46,7 @@ pub mod repository_association {
     pub struct RepositoryAssociationArgs {
         /// An object describing the KMS key to asssociate. Block is documented below.
         #[builder(into, default)]
-        pub kms_key_details: pulumi_gestalt_rust::InputOrOutput<
+        pub kms_key_details: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::codegurureviewer::RepositoryAssociationKmsKeyDetails,
             >,
@@ -55,11 +55,11 @@ pub mod repository_association {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<
+        pub repository: pulumi_gestalt_rust::Input<
             super::super::types::codegurureviewer::RepositoryAssociationRepository,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

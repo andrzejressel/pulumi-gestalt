@@ -48,43 +48,41 @@ pub mod classification_job {
     pub struct ClassificationJobArgs {
         /// The custom data identifiers to use for data analysis and classification.
         #[builder(into, default)]
-        pub custom_data_identifier_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub custom_data_identifier_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A custom description of the job. The description can contain as many as 200 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether to analyze all existing, eligible objects immediately after the job is created.
         #[builder(into, default)]
-        pub initial_run: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub initial_run: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The status for the job. Valid values are: `CANCELLED`, `RUNNING` and `USER_PAUSED`
         #[builder(into, default)]
-        pub job_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub job_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The schedule for running the job. Valid values are: `ONE_TIME` - Run the job only once. If you specify this value, don't specify a value for the `schedule_frequency` property. `SCHEDULED` - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the `schedule_frequency` property to define the recurrence pattern for the job.
         #[builder(into)]
-        pub job_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub job_type: pulumi_gestalt_rust::Input<String>,
         /// A custom name for the job. The name can contain as many as 500 characters. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The S3 buckets that contain the objects to analyze, and the scope of that analysis. (documented below)
         #[builder(into)]
-        pub s3_job_definition: pulumi_gestalt_rust::InputOrOutput<
+        pub s3_job_definition: pulumi_gestalt_rust::Input<
             super::super::types::macie2::ClassificationJobS3JobDefinition,
         >,
         /// The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.
         #[builder(into, default)]
-        pub sampling_percentage: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub sampling_percentage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the `job_type` property to `ONE_TIME`. (documented below)
         #[builder(into, default)]
-        pub schedule_frequency: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule_frequency: pulumi_gestalt_rust::Input<
             Option<super::super::types::macie2::ClassificationJobScheduleFrequency>,
         >,
         /// A map of key-value pairs that specifies the tags to associate with the job. A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

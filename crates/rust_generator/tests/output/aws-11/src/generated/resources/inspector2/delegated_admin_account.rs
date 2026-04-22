@@ -36,7 +36,7 @@ pub mod delegated_admin_account {
     pub struct DelegatedAdminAccountArgs {
         /// Account to enable as delegated admin account.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DelegatedAdminAccountResult {

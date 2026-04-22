@@ -38,10 +38,10 @@ pub mod resolver_query_log_config_association {
     pub struct ResolverQueryLogConfigAssociationArgs {
         /// The ID of the Route 53 Resolver query logging configuration that you want to associate a VPC with.
         #[builder(into)]
-        pub resolver_query_log_config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resolver_query_log_config_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of a VPC that you want this query logging configuration to log queries for.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResolverQueryLogConfigAssociationResult {

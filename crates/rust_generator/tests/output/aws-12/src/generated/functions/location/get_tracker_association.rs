@@ -10,10 +10,10 @@ pub mod get_tracker_association {
     pub struct GetTrackerAssociationArgs {
         /// ARN of the geofence collection associated to tracker resource.
         #[builder(into)]
-        pub consumer_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub consumer_arn: pulumi_gestalt_rust::Input<String>,
         /// Name of the tracker resource associated with a geofence collection.
         #[builder(into)]
-        pub tracker_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tracker_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTrackerAssociationResult {

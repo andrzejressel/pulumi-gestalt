@@ -9,14 +9,14 @@ pub mod get_framework {
     #[allow(dead_code)]
     pub struct GetFrameworkArgs {
         #[builder(into, default)]
-        pub control_sets: pulumi_gestalt_rust::InputOrOutput<
+        pub control_sets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::auditmanager::GetFrameworkControlSet>>,
         >,
         #[builder(into)]
-        pub framework_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub framework_type: pulumi_gestalt_rust::Input<String>,
         /// Name of the framework.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFrameworkResult {

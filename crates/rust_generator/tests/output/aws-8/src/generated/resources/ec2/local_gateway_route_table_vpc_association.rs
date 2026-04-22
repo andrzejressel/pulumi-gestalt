@@ -42,17 +42,17 @@ pub mod local_gateway_route_table_vpc_association {
     pub struct LocalGatewayRouteTableVpcAssociationArgs {
         /// Identifier of EC2 Local Gateway Route Table.
         #[builder(into)]
-        pub local_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub local_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of EC2 VPC.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LocalGatewayRouteTableVpcAssociationResult {

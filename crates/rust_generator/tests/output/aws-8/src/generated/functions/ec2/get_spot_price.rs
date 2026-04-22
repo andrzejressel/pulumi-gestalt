@@ -10,15 +10,15 @@ pub mod get_spot_price {
     pub struct GetSpotPriceArgs {
         /// Availability zone in which to query Spot price information.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotPriceHistory.html) for supported filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetSpotPriceFilter>>,
         >,
         /// Type of instance for which to query Spot Price information.
         #[builder(into, default)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSpotPriceResult {

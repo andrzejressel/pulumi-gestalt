@@ -10,10 +10,10 @@ pub mod get_container_definition {
     pub struct GetContainerDefinitionArgs {
         /// Name of the container definition
         #[builder(into)]
-        pub container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_name: pulumi_gestalt_rust::Input<String>,
         /// ARN of the task definition which contains the container
         #[builder(into)]
-        pub task_definition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub task_definition: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetContainerDefinitionResult {

@@ -44,20 +44,20 @@ pub mod key_ring_import_job {
         ///
         /// - - -
         #[builder(into)]
-        pub import_job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub import_job_id: pulumi_gestalt_rust::Input<String>,
         /// The wrapping method to be used for incoming key material.
         /// Possible values are: `RSA_OAEP_3072_SHA1_AES_256`, `RSA_OAEP_4096_SHA1_AES_256`.
         #[builder(into)]
-        pub import_method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub import_method: pulumi_gestalt_rust::Input<String>,
         /// The KeyRing that this import job belongs to.
         /// Format: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'`.
         #[builder(into)]
-        pub key_ring: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_ring: pulumi_gestalt_rust::Input<String>,
         /// The protection level of the ImportJob. This must match the protectionLevel of the
         /// versionTemplate on the CryptoKey you attempt to import into.
         /// Possible values are: `SOFTWARE`, `HSM`, `EXTERNAL`.
         #[builder(into)]
-        pub protection_level: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protection_level: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct KeyRingImportJobResult {

@@ -49,56 +49,56 @@ pub mod fleet {
     pub struct FleetArgs {
         /// ID of the GameLift Build to be deployed on the fleet.
         #[builder(into, default)]
-        pub build_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub build_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Prompts GameLift to generate a TLS/SSL certificate for the fleet. See certificate_configuration.
         #[builder(into, default)]
-        pub certificate_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::gamelift::FleetCertificateConfiguration>,
         >,
         /// Human-readable description of the fleet.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Range of IP addresses and port settings that permit inbound traffic to access server processes running on the fleet. See below.
         #[builder(into, default)]
-        pub ec2_inbound_permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub ec2_inbound_permissions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::gamelift::FleetEc2InboundPermission>>,
         >,
         /// Name of an EC2 instance typeE.g., `t2.micro`
         #[builder(into)]
-        pub ec2_instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ec2_instance_type: pulumi_gestalt_rust::Input<String>,
         /// Type of fleet. This value must be `ON_DEMAND` or `SPOT`. Defaults to `ON_DEMAND`.
         #[builder(into, default)]
-        pub fleet_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fleet_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of an IAM role that instances in the fleet can assume.
         #[builder(into, default)]
-        pub instance_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of names of metric groups to add this fleet to. A metric group tracks metrics across all fleets in the group. Defaults to `default`.
         #[builder(into, default)]
-        pub metric_groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub metric_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the fleet.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Game session protection policy to apply to all instances in this fleetE.g., `FullProtection`. Defaults to `NoProtection`.
         #[builder(into, default)]
-        pub new_game_session_protection_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub new_game_session_protection_policy: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Policy that limits the number of game sessions an individual player can create over a span of time for this fleet. See below.
         #[builder(into, default)]
-        pub resource_creation_limit_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_creation_limit_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::gamelift::FleetResourceCreationLimitPolicy>,
         >,
         /// Instructions for launching server processes on each instance in the fleet. See below.
         #[builder(into, default)]
-        pub runtime_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub runtime_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::gamelift::FleetRuntimeConfiguration>,
         >,
         /// ID of the GameLift Script to be deployed on the fleet.
         #[builder(into, default)]
-        pub script_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub script_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

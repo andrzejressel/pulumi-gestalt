@@ -68,10 +68,10 @@ pub mod policy {
     pub struct PolicyArgs {
         /// JSON-formatted IAM policy to attach to the specified private CA resource.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// ARN of the private CA to associate with the policy.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyResult {

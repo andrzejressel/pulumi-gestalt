@@ -53,10 +53,10 @@ pub mod gateway_api {
     pub struct GatewayApiArgs {
         /// The Identifier of the API Management API within the API Management Service. Changing this forces a new API Management Gateway API to be created.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// The Identifier for the API Management Gateway. Changing this forces a new API Management Gateway API to be created.
         #[builder(into)]
-        pub gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GatewayApiResult {

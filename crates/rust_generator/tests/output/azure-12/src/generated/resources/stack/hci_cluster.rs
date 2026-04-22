@@ -53,36 +53,34 @@ pub mod hci_cluster {
     pub struct HciClusterArgs {
         /// The ID of the Automanage Configuration assigned to the Azure Stack HCI Cluster.
         #[builder(into, default)]
-        pub automanage_configuration_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub automanage_configuration_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Client ID of the Azure Active Directory Application which is used by the Azure Stack HCI Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::stack::HciClusterIdentity>,
         >,
         /// The Azure Region where the Azure Stack HCI Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Azure Stack HCI Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Azure Stack HCI Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Azure Stack HCI Cluster.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Tenant ID of the Azure Active Directory which is used by the Azure Stack HCI Cluster. Changing this forces a new resource to be created.
         ///
         /// > **NOTE** If unspecified the Tenant ID of the Provider will be used.
         #[builder(into, default)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HciClusterResult {

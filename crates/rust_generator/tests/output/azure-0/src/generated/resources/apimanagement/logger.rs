@@ -71,32 +71,32 @@ pub mod logger {
     pub struct LoggerArgs {
         /// The name of the API Management Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// An `application_insights` block as documented below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub application_insights: pulumi_gestalt_rust::InputOrOutput<
+        pub application_insights: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::LoggerApplicationInsights>,
         >,
         /// Specifies whether records should be buffered in the Logger prior to publishing. Defaults to `true`.
         #[builder(into, default)]
-        pub buffered: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub buffered: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A description of this Logger.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `eventhub` block as documented below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub eventhub: pulumi_gestalt_rust::InputOrOutput<
+        pub eventhub: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::LoggerEventhub>,
         >,
         /// The name of this Logger, which must be unique within the API Management Service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The target resource id which will be linked in the API-Management portal page. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LoggerResult {

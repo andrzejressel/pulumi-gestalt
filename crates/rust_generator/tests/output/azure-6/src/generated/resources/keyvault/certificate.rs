@@ -211,25 +211,25 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// A `certificate` block as defined below, used to Import an existing certificate. Changing this will create a new version of the Key Vault Certificate.
         #[builder(into, default)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyvault::CertificateCertificate>,
         >,
         /// A `certificate_policy` block as defined below. Changing this (except the `lifetime_action` field) will create a new version of the Key Vault Certificate.
         ///
         /// > **NOTE:** When creating a Key Vault Certificate, at least one of `certificate` or `certificate_policy` is required. Provide `certificate` to import an existing certificate, `certificate_policy` to generate a new certificate.
         #[builder(into, default)]
-        pub certificate_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyvault::CertificateCertificatePolicy>,
         >,
         /// The ID of the Key Vault where the Certificate should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Key Vault Certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

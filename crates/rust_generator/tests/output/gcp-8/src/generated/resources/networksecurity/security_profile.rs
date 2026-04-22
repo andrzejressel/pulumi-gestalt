@@ -86,33 +86,33 @@ pub mod security_profile {
     pub struct SecurityProfileArgs {
         /// An optional description of the security profile. The Max length is 512 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of key/value label pairs to assign to the resource.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the security profile.
         /// The default value is `global`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the security profile resource.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the parent this security profile belongs to.
         /// Format: organizations/{organization_id}.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// The threat prevention configuration for the security profile.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub threat_prevention_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub threat_prevention_profile: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networksecurity::SecurityProfileThreatPreventionProfile,
             >,
@@ -120,7 +120,7 @@ pub mod security_profile {
         /// The type of security profile.
         /// Possible values are: `THREAT_PREVENTION`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SecurityProfileResult {

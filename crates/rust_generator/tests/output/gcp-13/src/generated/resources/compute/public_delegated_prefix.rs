@@ -81,16 +81,16 @@ pub mod public_delegated_prefix {
     pub struct PublicDelegatedPrefixArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 address range, in CIDR format, represented by this public advertised prefix.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub ip_cidr_range: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip_cidr_range: pulumi_gestalt_rust::Input<String>,
         /// If true, the prefix will be live migrated.
         #[builder(into, default)]
-        pub is_live_migration: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_live_migration: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the resource. The name must be 1-63 characters long, and
         /// comply with RFC1035. Specifically, the name must be 1-63 characters
         /// long and match the regular expression `a-z?`
@@ -98,17 +98,17 @@ pub mod public_delegated_prefix {
         /// following characters must be a dash, lowercase letter, or digit,
         /// except the last character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
         #[builder(into)]
-        pub parent_prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_prefix: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A region where the prefix will reside.
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PublicDelegatedPrefixResult {

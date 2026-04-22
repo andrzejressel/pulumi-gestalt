@@ -64,10 +64,10 @@ pub mod global_table {
     pub struct GlobalTableArgs {
         /// The name of the global table. Must match underlying DynamoDB Table names in all regions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Underlying DynamoDB Table. At least 1 replica must be defined. See below.
         #[builder(into)]
-        pub replicas: pulumi_gestalt_rust::InputOrOutput<
+        pub replicas: pulumi_gestalt_rust::Input<
             Vec<super::super::types::dynamodb::GlobalTableReplica>,
         >,
     }

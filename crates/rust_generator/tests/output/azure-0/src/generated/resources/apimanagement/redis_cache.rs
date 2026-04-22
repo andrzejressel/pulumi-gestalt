@@ -64,22 +64,22 @@ pub mod redis_cache {
     pub struct RedisCacheArgs {
         /// The resource ID of the API Management Service from which to create this external cache. Changing this forces a new API Management Redis Cache to be created.
         #[builder(into)]
-        pub api_management_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_id: pulumi_gestalt_rust::Input<String>,
         /// The location where to use cache from. Possible values are `default` and valid Azure regions. Defaults to `default`.
         #[builder(into, default)]
-        pub cache_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cache_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The connection string to the Cache for Redis.
         #[builder(into)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_string: pulumi_gestalt_rust::Input<String>,
         /// The description of the API Management Redis Cache.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this API Management Redis Cache. Changing this forces a new API Management Redis Cache to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Cache for Redis.
         #[builder(into, default)]
-        pub redis_cache_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub redis_cache_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RedisCacheResult {

@@ -58,36 +58,34 @@ pub mod restore_testing_selection {
     pub struct RestoreTestingSelectionArgs {
         /// The ARN of the IAM role.
         #[builder(into)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the backup restore testing selection.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARNs for the protected resources.
         #[builder(into, default)]
-        pub protected_resource_arns: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub protected_resource_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The conditions for the protected resource.
         #[builder(into, default)]
-        pub protected_resource_conditions: pulumi_gestalt_rust::InputOrOutput<
+        pub protected_resource_conditions: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::backup::RestoreTestingSelectionProtectedResourceConditions,
             >,
         >,
         /// The type of the protected resource.
         #[builder(into)]
-        pub protected_resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protected_resource_type: pulumi_gestalt_rust::Input<String>,
         /// Override certain restore metadata keys. See the complete list of [restore testing inferred metadata](https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html) .
         #[builder(into, default)]
-        pub restore_metadata_overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub restore_metadata_overrides: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the restore testing plan.
         #[builder(into)]
-        pub restore_testing_plan_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub restore_testing_plan_name: pulumi_gestalt_rust::Input<String>,
         /// The amount of hours available to run a validation script on the data. Valid range is `1` to `168`.
         #[builder(into, default)]
-        pub validation_window_hours: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub validation_window_hours: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct RestoreTestingSelectionResult {

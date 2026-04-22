@@ -162,102 +162,100 @@ pub mod table {
     pub struct TableArgs {
         /// Set of nested attribute definitions. Only required for `hash_key` and `range_key` attributes. See below.
         #[builder(into, default)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dynamodb::TableAttribute>>,
         >,
         /// Controls how you are charged for read and write throughput and how you manage capacity. The valid values are `PROVISIONED` and `PAY_PER_REQUEST`. Defaults to `PROVISIONED`.
         #[builder(into, default)]
-        pub billing_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub billing_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables deletion protection for table. Defaults to `false`.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Describe a GSI for the table; subject to the normal limits on the number of GSIs, projected attributes, etc. See below.
         #[builder(into, default)]
-        pub global_secondary_indexes: pulumi_gestalt_rust::InputOrOutput<
+        pub global_secondary_indexes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dynamodb::TableGlobalSecondaryIndex>>,
         >,
         /// Attribute to use as the hash (partition) key. Must also be defined as an `attribute`. See below.
         #[builder(into, default)]
-        pub hash_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hash_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Import Amazon S3 data into a new table. See below.
         #[builder(into, default)]
-        pub import_table: pulumi_gestalt_rust::InputOrOutput<
+        pub import_table: pulumi_gestalt_rust::Input<
             Option<super::super::types::dynamodb::TableImportTable>,
         >,
         /// Describe an LSI on the table; these can only be allocated _at creation_ so you cannot change this definition after you have created the resource. See below.
         #[builder(into, default)]
-        pub local_secondary_indexes: pulumi_gestalt_rust::InputOrOutput<
+        pub local_secondary_indexes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dynamodb::TableLocalSecondaryIndex>>,
         >,
         /// Unique within a region name of the table.
         ///
         /// Optional arguments:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Sets the maximum number of read and write units for the specified on-demand table. See below.
         #[builder(into, default)]
-        pub on_demand_throughput: pulumi_gestalt_rust::InputOrOutput<
+        pub on_demand_throughput: pulumi_gestalt_rust::Input<
             Option<super::super::types::dynamodb::TableOnDemandThroughput>,
         >,
         /// Enable point-in-time recovery options. See below.
         #[builder(into, default)]
-        pub point_in_time_recovery: pulumi_gestalt_rust::InputOrOutput<
+        pub point_in_time_recovery: pulumi_gestalt_rust::Input<
             Option<super::super::types::dynamodb::TablePointInTimeRecovery>,
         >,
         /// Attribute to use as the range (sort) key. Must also be defined as an `attribute`, see below.
         #[builder(into, default)]
-        pub range_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub range_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of read units for this table. If the `billing_mode` is `PROVISIONED`, this field is required.
         #[builder(into, default)]
-        pub read_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub read_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Configuration block(s) with [DynamoDB Global Tables V2 (version 2019.11.21)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html) replication configurations. See below.
         #[builder(into, default)]
-        pub replicas: pulumi_gestalt_rust::InputOrOutput<
+        pub replicas: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dynamodb::TableReplica>>,
         >,
         /// Time of the point-in-time recovery point to restore.
         #[builder(into, default)]
-        pub restore_date_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub restore_date_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the table to restore. Must match the name of an existing table.
         #[builder(into, default)]
-        pub restore_source_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub restore_source_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the source table to restore. Must be supplied for cross-region restores.
         #[builder(into, default)]
-        pub restore_source_table_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub restore_source_table_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set, restores table to the most recent point-in-time recovery point.
         #[builder(into, default)]
-        pub restore_to_latest_time: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub restore_to_latest_time: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Encryption at rest options. AWS DynamoDB tables are automatically encrypted at rest with an AWS-owned Customer Master Key if this argument isn't specified. Must be supplied for cross-region restores. See below.
         #[builder(into, default)]
-        pub server_side_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub server_side_encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::dynamodb::TableServerSideEncryption>,
         >,
         /// Whether Streams are enabled.
         #[builder(into, default)]
-        pub stream_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub stream_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// When an item in the table is modified, StreamViewType determines what information is written to the table's stream. Valid values are `KEYS_ONLY`, `NEW_IMAGE`, `OLD_IMAGE`, `NEW_AND_OLD_IMAGES`.
         #[builder(into, default)]
-        pub stream_view_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stream_view_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Storage class of the table.
         /// Valid values are `STANDARD` and `STANDARD_INFREQUENT_ACCESS`.
         /// Default value is `STANDARD`.
         #[builder(into, default)]
-        pub table_class: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub table_class: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to populate on the created table. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for TTL. See below.
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<
+        pub ttl: pulumi_gestalt_rust::Input<
             Option<super::super::types::dynamodb::TableTtl>,
         >,
         /// Number of write units for this table. If the `billing_mode` is `PROVISIONED`, this field is required.
         #[builder(into, default)]
-        pub write_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub write_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct TableResult {

@@ -48,18 +48,18 @@ pub mod user_stack_association {
     pub struct UserStackAssociationArgs {
         /// Authentication type for the user.
         #[builder(into)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_type: pulumi_gestalt_rust::Input<String>,
         /// Whether a welcome email is sent to a user after the user is created in the user pool.
         #[builder(into, default)]
-        pub send_email_notification: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub send_email_notification: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the stack that is associated with the user.
         #[builder(into)]
-        pub stack_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_name: pulumi_gestalt_rust::Input<String>,
         /// Email address of the user who is associated with the stack.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserStackAssociationResult {

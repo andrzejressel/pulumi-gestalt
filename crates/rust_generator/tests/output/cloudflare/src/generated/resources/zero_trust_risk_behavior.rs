@@ -11,10 +11,10 @@ pub mod zero_trust_risk_behavior {
     pub struct ZeroTrustRiskBehaviorArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Zero Trust risk behaviors configured on this account
         #[builder(into, default)]
-        pub behaviors: pulumi_gestalt_rust::InputOrOutput<
+        pub behaviors: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ZeroTrustRiskBehaviorBehavior>>,
         >,
     }

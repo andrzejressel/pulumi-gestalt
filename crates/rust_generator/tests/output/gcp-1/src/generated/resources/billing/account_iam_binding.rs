@@ -160,9 +160,9 @@ pub mod account_iam_binding {
         ///
         /// For `gcp.billing.AccountIamMember` or `gcp.billing.AccountIamBinding`:
         #[builder(into)]
-        pub billing_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_account_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::billing::AccountIamBindingCondition>,
         >,
         /// Identities that will be granted the privilege in `role`.
@@ -172,14 +172,14 @@ pub mod account_iam_binding {
         /// * **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.
         /// * **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The role that should be applied. Only one
         /// `gcp.billing.AccountIamBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`. Read more about roles [here](https://cloud.google.com/bigtable/docs/access-control#roles).
         ///
         /// `gcp.billing.AccountIamPolicy` only:
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccountIamBindingResult {

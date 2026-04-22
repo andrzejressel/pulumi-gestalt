@@ -55,10 +55,10 @@ pub mod resource_policy {
     pub struct ResourcePolicyArgs {
         /// Indicates that you are using both methods to grant cross-account. Valid values are `TRUE` and `FALSE`. Note the provider will not perform drift detetction on this field as its not return on read.
         #[builder(into, default)]
-        pub enable_hybrid: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub enable_hybrid: pulumi_gestalt_rust::Input<Option<String>>,
         /// The policy to be applied to the aws glue data catalog.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourcePolicyResult {

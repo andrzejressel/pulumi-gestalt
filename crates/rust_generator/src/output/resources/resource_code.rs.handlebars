@@ -20,7 +20,7 @@ pub struct {{resource.struct_name}}Args {
     {{else}}
     #[builder(into)]
     {{/if}}
-    {{#unless private}}pub {{/unless}}{{arg_name}}: pulumi_gestalt_rust::InputOrOutput<{{&type_}}>,
+    {{#unless private}}pub {{/unless}}{{arg_name}}: pulumi_gestalt_rust::Input<{{&type_}}>,
 {{/each}}
 }
 {{/if}}

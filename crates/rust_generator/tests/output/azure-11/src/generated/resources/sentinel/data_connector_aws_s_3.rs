@@ -64,19 +64,19 @@ pub mod data_connector_aws_s_3 {
     pub struct DataConnectorAwsS3Args {
         /// The ARN of the AWS role, which is connected to this AWS CloudTrail Data Connector. See the [Azure document](https://docs.microsoft.com/azure/sentinel/connect-aws?tabs=s3#create-an-aws-assumed-role-and-grant-access-to-the-aws-sentinel-account) for details.
         #[builder(into)]
-        pub aws_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub aws_role_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the Log Analytics table that will store the ingested data.
         #[builder(into)]
-        pub destination_table: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_table: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Log Analytics Workspace that this AWS S3 Data Connector resides in. Changing this forces a new AWS S3 Data Connector to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this AWS S3 Data Connector. Changing this forces a new AWS S3 Data Connector to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of AWS SQS urls for the AWS S3 Data Connector.
         #[builder(into)]
-        pub sqs_urls: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub sqs_urls: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct DataConnectorAwsS3Result {

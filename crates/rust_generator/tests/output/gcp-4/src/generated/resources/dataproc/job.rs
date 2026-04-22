@@ -67,70 +67,70 @@ pub mod job {
         /// Dataproc. Setting this to true, and calling destroy, will ensure that the
         /// job is first cancelled before issuing the delete.
         #[builder(into, default)]
-        pub force_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The config of Hadoop job
         #[builder(into, default)]
-        pub hadoop_config: pulumi_gestalt_rust::InputOrOutput<
+        pub hadoop_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobHadoopConfig>,
         >,
         /// The config of hive job
         #[builder(into, default)]
-        pub hive_config: pulumi_gestalt_rust::InputOrOutput<
+        pub hive_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobHiveConfig>,
         >,
         /// The list of labels (key/value pairs) to add to the job.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The config of pag job.
         #[builder(into, default)]
-        pub pig_config: pulumi_gestalt_rust::InputOrOutput<
+        pub pig_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobPigConfig>,
         >,
         /// The config of job placement.
         #[builder(into)]
-        pub placement: pulumi_gestalt_rust::InputOrOutput<
+        pub placement: pulumi_gestalt_rust::Input<
             super::super::types::dataproc::JobPlacement,
         >,
         /// The config of presto job
         #[builder(into, default)]
-        pub presto_config: pulumi_gestalt_rust::InputOrOutput<
+        pub presto_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobPrestoConfig>,
         >,
         /// The project in which the `cluster` can be found and jobs
         /// subsequently run against. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The config of pySpark job.
         #[builder(into, default)]
-        pub pyspark_config: pulumi_gestalt_rust::InputOrOutput<
+        pub pyspark_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobPysparkConfig>,
         >,
         /// The reference of the job
         #[builder(into, default)]
-        pub reference: pulumi_gestalt_rust::InputOrOutput<
+        pub reference: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobReference>,
         >,
         /// The Cloud Dataproc region. This essentially determines which clusters are available
         /// for this job to be submitted to. If not specified, defaults to `global`.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Job scheduling configuration.
         #[builder(into, default)]
-        pub scheduling: pulumi_gestalt_rust::InputOrOutput<
+        pub scheduling: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobScheduling>,
         >,
         /// The config of the Spark job.
         #[builder(into, default)]
-        pub spark_config: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobSparkConfig>,
         >,
         /// The config of SparkSql job
         #[builder(into, default)]
-        pub sparksql_config: pulumi_gestalt_rust::InputOrOutput<
+        pub sparksql_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::JobSparksqlConfig>,
         >,
     }

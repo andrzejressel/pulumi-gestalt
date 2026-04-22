@@ -96,46 +96,46 @@ pub mod dashboard {
     pub struct DashboardArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier for the dashboard.
         #[builder(into)]
-        pub dashboard_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dashboard_id: pulumi_gestalt_rust::Input<String>,
         /// Options for publishing the dashboard. See dashboard_publish_options.
         #[builder(into, default)]
-        pub dashboard_publish_options: pulumi_gestalt_rust::InputOrOutput<
+        pub dashboard_publish_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DashboardDashboardPublishOptions>,
         >,
         /// Display name for the dashboard.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. See parameters.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DashboardParameters>,
         >,
         /// A set of resource permissions on the dashboard. Maximum of 64 items. See permissions.
         #[builder(into, default)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::DashboardPermission>>,
         >,
         /// The entity that you are using as a source when you create the dashboard (template). Only one of `definition` or `source_entity` should be configured. See source_entity.
         #[builder(into, default)]
-        pub source_entity: pulumi_gestalt_rust::InputOrOutput<
+        pub source_entity: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DashboardSourceEntity>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. The theme ARN must exist in the same AWS account where you create the dashboard.
         #[builder(into, default)]
-        pub theme_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub theme_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description of the current dashboard version being created/updated.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub version_description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version_description: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DashboardResult {

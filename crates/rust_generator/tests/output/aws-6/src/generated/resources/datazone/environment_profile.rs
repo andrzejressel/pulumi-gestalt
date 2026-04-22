@@ -121,30 +121,30 @@ pub mod environment_profile {
     pub struct EnvironmentProfileArgs {
         /// Id of the AWS account being used.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Desired region for environment profile.
         #[builder(into)]
-        pub aws_account_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub aws_account_region: pulumi_gestalt_rust::Input<String>,
         /// Description of environment profile.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Domain Identifier for environment profile.
         #[builder(into)]
-        pub domain_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_identifier: pulumi_gestalt_rust::Input<String>,
         /// ID of the blueprint which the environment will be created with.
         #[builder(into)]
-        pub environment_blueprint_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_blueprint_identifier: pulumi_gestalt_rust::Input<String>,
         /// Name of the environment profile.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Project identifier for environment profile.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub project_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_identifier: pulumi_gestalt_rust::Input<String>,
         /// Array of user parameters of the environment profile with the following attributes:
         #[builder(into, default)]
-        pub user_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub user_parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datazone::EnvironmentProfileUserParameter>>,
         >,
     }

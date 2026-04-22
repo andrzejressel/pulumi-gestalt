@@ -33,13 +33,13 @@ pub mod pages_domain {
     pub struct PagesDomainArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Custom domain. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// Name of the Pages Project. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub project_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PagesDomainResult {

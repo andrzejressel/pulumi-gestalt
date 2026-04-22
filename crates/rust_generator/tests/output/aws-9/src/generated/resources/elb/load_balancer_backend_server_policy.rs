@@ -61,13 +61,13 @@ pub mod load_balancer_backend_server_policy {
     pub struct LoadBalancerBackendServerPolicyArgs {
         /// The instance port to apply the policy to.
         #[builder(into)]
-        pub instance_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub instance_port: pulumi_gestalt_rust::Input<i32>,
         /// The load balancer to attach the policy to.
         #[builder(into)]
-        pub load_balancer_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancer_name: pulumi_gestalt_rust::Input<String>,
         /// List of Policy Names to apply to the backend server.
         #[builder(into, default)]
-        pub policy_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub policy_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct LoadBalancerBackendServerPolicyResult {

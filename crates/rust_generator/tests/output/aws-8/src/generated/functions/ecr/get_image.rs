@@ -10,19 +10,19 @@ pub mod get_image {
     pub struct GetImageArgs {
         /// Sha256 digest of the image manifest. At least one of `image_digest`, `image_tag`, or `most_recent` must be specified.
         #[builder(into, default)]
-        pub image_digest: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_digest: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tag associated with this image. At least one of `image_digest`, `image_tag`, or `most_recent` must be specified.
         #[builder(into, default)]
-        pub image_tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_tag: pulumi_gestalt_rust::Input<Option<String>>,
         /// Return the most recently pushed image. At least one of `image_digest`, `image_tag`, or `most_recent` must be specified.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the Registry where the repository resides.
         #[builder(into, default)]
-        pub registry_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub registry_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the ECR Repository.
         #[builder(into)]
-        pub repository_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetImageResult {

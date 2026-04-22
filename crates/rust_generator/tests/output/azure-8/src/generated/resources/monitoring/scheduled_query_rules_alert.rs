@@ -22,62 +22,60 @@ pub mod scheduled_query_rules_alert {
     pub struct ScheduledQueryRulesAlertArgs {
         /// An `action` block as defined below.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<
+        pub action: pulumi_gestalt_rust::Input<
             super::super::types::monitoring::ScheduledQueryRulesAlertAction,
         >,
         /// List of Resource IDs referred into query.
         #[builder(into, default)]
-        pub authorized_resource_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub authorized_resource_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Should the alerts in this Metric Alert be auto resolved? Defaults to `false`.
         /// > **NOTE** `auto_mitigation_enabled` and `throttling` are mutually exclusive and cannot both be set.
         #[builder(into, default)]
-        pub auto_mitigation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_mitigation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The resource URI over which log search query is to be run. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub data_source_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source_id: pulumi_gestalt_rust::Input<String>,
         /// The description of the scheduled query rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether this scheduled query rule is enabled. Default is `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Frequency (in minutes) at which rule condition should be evaluated. Values must be between 5 and 1440 (inclusive).
         #[builder(into)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub frequency: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the Azure Region where the resource should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the scheduled query rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Log search query.
         #[builder(into)]
-        pub query: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query: pulumi_gestalt_rust::Input<String>,
         /// The type of query results. Possible values are `ResultCount` and `Number`. Default is `ResultCount`. If set to `ResultCount`, `query` must include an `AggregatedValue` column of a numeric type, for example, `Heartbeat | summarize AggregatedValue = count() by bin(TimeGenerated, 5m)`.
         #[builder(into, default)]
-        pub query_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the scheduled query rule instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Severity of the alert. Possible values include: 0, 1, 2, 3, or 4.
         #[builder(into, default)]
-        pub severity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub severity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Time (in minutes) for which Alerts should be throttled or suppressed. Values must be between 0 and 10000 (inclusive).
         #[builder(into, default)]
-        pub throttling: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub throttling: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Time window for which data needs to be fetched for query (must be greater than or equal to `frequency`). Values must be between 5 and 2880 (inclusive).
         #[builder(into)]
-        pub time_window: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub time_window: pulumi_gestalt_rust::Input<i32>,
         /// A `trigger` block as defined below.
         #[builder(into)]
-        pub trigger: pulumi_gestalt_rust::InputOrOutput<
+        pub trigger: pulumi_gestalt_rust::Input<
             super::super::types::monitoring::ScheduledQueryRulesAlertTrigger,
         >,
     }

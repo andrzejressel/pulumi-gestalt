@@ -91,17 +91,17 @@ pub mod env_group {
     pub struct EnvGroupArgs {
         /// Hostnames of the environment group.
         #[builder(into, default)]
-        pub hostnames: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub hostnames: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The resource ID of the environment group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apigee Organization associated with the Apigee environment group,
         /// in the format `organizations/{{org_name}}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnvGroupResult {

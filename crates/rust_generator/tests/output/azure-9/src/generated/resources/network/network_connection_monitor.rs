@@ -176,39 +176,39 @@ pub mod network_connection_monitor {
     pub struct NetworkConnectionMonitorArgs {
         /// A `endpoint` block as defined below.
         #[builder(into)]
-        pub endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoints: pulumi_gestalt_rust::Input<
             Vec<super::super::types::network::NetworkConnectionMonitorEndpoint>,
         >,
         /// The Azure Region where the Network Connection Monitor should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Network Connection Monitor. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Network Watcher. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_watcher_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_watcher_id: pulumi_gestalt_rust::Input<String>,
         /// The description of the Network Connection Monitor.
         #[builder(into, default)]
-        pub notes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notes: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IDs of the Log Analytics Workspace which will accept the output from the Network Connection Monitor.
         #[builder(into, default)]
-        pub output_workspace_resource_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub output_workspace_resource_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A mapping of tags which should be assigned to the Network Connection Monitor.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `test_configuration` block as defined below.
         #[builder(into)]
-        pub test_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub test_configurations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::network::NetworkConnectionMonitorTestConfiguration>,
         >,
         /// A `test_group` block as defined below.
         #[builder(into)]
-        pub test_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub test_groups: pulumi_gestalt_rust::Input<
             Vec<super::super::types::network::NetworkConnectionMonitorTestGroup>,
         >,
     }

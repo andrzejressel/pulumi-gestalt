@@ -19,18 +19,18 @@ pub mod identity_pool_provider_principal_tag {
     pub struct IdentityPoolProviderPrincipalTagArgs {
         /// An identity pool ID.
         #[builder(into)]
-        pub identity_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the identity provider.
         #[builder(into)]
-        pub identity_provider_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_provider_name: pulumi_gestalt_rust::Input<String>,
         /// String to string map of variables.
         #[builder(into, default)]
-        pub principal_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub principal_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// use default (username and clientID) attribute mappings.
         #[builder(into, default)]
-        pub use_defaults: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_defaults: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct IdentityPoolProviderPrincipalTagResult {

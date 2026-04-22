@@ -81,21 +81,21 @@ pub mod webhook {
     pub struct WebhookArgs {
         /// A regular expression used to determine which branches get built. Default is all branches are built. We recommend using `filter_group` over `branch_filter`.
         #[builder(into, default)]
-        pub branch_filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub branch_filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of build this webhook will trigger. Valid values for this parameter are: `BUILD`, `BUILD_BATCH`.
         #[builder(into, default)]
-        pub build_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub build_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information about the webhook's trigger. Filter group blocks are documented below.
         #[builder(into, default)]
-        pub filter_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub filter_groups: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::codebuild::WebhookFilterGroup>>,
         >,
         /// The name of the build project.
         #[builder(into)]
-        pub project_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_name: pulumi_gestalt_rust::Input<String>,
         /// Scope configuration for global or organization webhooks. Scope configuration blocks are documented below.
         #[builder(into, default)]
-        pub scope_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub scope_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::codebuild::WebhookScopeConfiguration>,
         >,
     }

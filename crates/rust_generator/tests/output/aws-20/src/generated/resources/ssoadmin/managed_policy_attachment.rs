@@ -93,13 +93,13 @@ pub mod managed_policy_attachment {
     pub struct ManagedPolicyAttachmentArgs {
         /// The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// The IAM managed policy Amazon Resource Name (ARN) to be attached to the Permission Set.
         #[builder(into)]
-        pub managed_policy_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_policy_arn: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Permission Set.
         #[builder(into)]
-        pub permission_set_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub permission_set_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedPolicyAttachmentResult {

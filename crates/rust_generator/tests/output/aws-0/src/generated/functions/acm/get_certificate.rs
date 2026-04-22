@@ -10,26 +10,26 @@ pub mod get_certificate {
     pub struct GetCertificateArgs {
         /// Domain of the certificate to look up. If set and no certificate is found with this name, an error will be returned.
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of key algorithms to filter certificates. By default, ACM does not return all certificate types when searching. See the [ACM API Reference](https://docs.aws.amazon.com/acm/latest/APIReference/API_CertificateDetail.html#ACM-Type-CertificateDetail-KeyAlgorithm) for supported key algorithms.
         #[builder(into, default)]
-        pub key_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub key_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// If set to true, it sorts the certificates matched by previous criteria by the NotBefore field, returning only the most recent one. If set to false, it returns an error if more than one certificate is found. Defaults to false.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of statuses on which to filter the returned list. Valid values are `PENDING_VALIDATION`, `ISSUED`,
         /// `INACTIVE`, `EXPIRED`, `VALIDATION_TIMED_OUT`, `REVOKED` and `FAILED`. If no value is specified, only certificates in the `ISSUED` state
         /// are returned.
         #[builder(into, default)]
-        pub statuses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub statuses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A mapping of tags, each pair of which must exactly match a pair on the desired certificates.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of types on which to filter the returned list. Valid values are `AMAZON_ISSUED`, `PRIVATE`, and `IMPORTED`.
         #[builder(into, default)]
-        pub types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetCertificateResult {

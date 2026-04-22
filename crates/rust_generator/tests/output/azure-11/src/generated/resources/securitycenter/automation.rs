@@ -86,37 +86,37 @@ pub mod automation {
     pub struct AutomationArgs {
         /// One or more `action` blocks as defined below. An `action` tells this automation where the data is to be sent to upon being evaluated by the rules in the `source`.
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::securitycenter::AutomationAction>,
         >,
         /// Specifies the description for the Security Center Automation.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean to enable or disable this Security Center Automation. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure Region where the Security Center Automation should exist. Changing this forces a new Security Center Automation to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Security Center Automation. Changing this forces a new Security Center Automation to be created.
         ///
         /// > **NOTE:** For the automation to appear in Azure Portal correctly under Microsoft Defender for Cloud > Environment Settings > Account > Continuous Export, either `ExportToWorkspace` or `ExportToEventHub` must be used.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Security Center Automation should exist. Changing this forces a new Security Center Automation to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A list of scopes on which the automation logic is applied, at least one is required. Supported scopes are a subscription (in this format `/subscriptions/00000000-0000-0000-0000-000000000000`) or a resource group under that subscription (in the format `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/example`). The automation will only apply on defined scopes.
         #[builder(into)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub scopes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// One or more `source` blocks as defined below. A `source` defines what data types will be processed and a set of rules to filter that data.
         #[builder(into)]
-        pub sources: pulumi_gestalt_rust::InputOrOutput<
+        pub sources: pulumi_gestalt_rust::Input<
             Vec<super::super::types::securitycenter::AutomationSource>,
         >,
         /// A mapping of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

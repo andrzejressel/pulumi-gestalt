@@ -41,22 +41,22 @@ pub mod permission_set {
     pub struct PermissionSetArgs {
         /// The description of the Permission Set.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the SSO Instance under which the operation will be executed.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the Permission Set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relay state URL used to redirect users within the application during the federation authentication process.
         #[builder(into, default)]
-        pub relay_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub relay_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// The length of time that the application user sessions are valid in the ISO-8601 standard. Default: `PT1H`.
         #[builder(into, default)]
-        pub session_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub session_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

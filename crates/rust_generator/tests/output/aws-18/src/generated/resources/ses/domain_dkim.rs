@@ -24,7 +24,7 @@ pub mod domain_dkim {
     pub struct DomainDkimArgs {
         /// Verified domain name to generate DKIM tokens for.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainDkimResult {

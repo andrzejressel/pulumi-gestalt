@@ -10,19 +10,19 @@ pub mod get_registry_image {
     pub struct GetRegistryImageArgs {
         /// The image digest to fetch, if any.
         #[builder(into, default)]
-        pub digest: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub digest: pulumi_gestalt_rust::Input<Option<String>>,
         /// The image name.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The project ID that this image is attached to.  If not provider, provider project will be used instead.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The GCR region to use.  As of this writing, one of `asia`, `eu`, and `us`.  See [the documentation](https://cloud.google.com/container-registry/docs/pushing-and-pulling) for additional information.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The tag to fetch, if any.
         #[builder(into, default)]
-        pub tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tag: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegistryImageResult {

@@ -76,12 +76,12 @@ pub mod transfer_agent_pool {
         /// Specifies the bandwidth limit details. If this field is unspecified, the default value is set as 'No Limit'.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub bandwidth_limit: pulumi_gestalt_rust::InputOrOutput<
+        pub bandwidth_limit: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::TransferAgentPoolBandwidthLimit>,
         >,
         /// Specifies the client-specified AgentPool description.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the agent pool to create.
         /// The agentPoolId must meet the following requirements:
         /// * Length of 128 characters or less.
@@ -94,11 +94,11 @@ pub mod transfer_agent_pool {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TransferAgentPoolResult {

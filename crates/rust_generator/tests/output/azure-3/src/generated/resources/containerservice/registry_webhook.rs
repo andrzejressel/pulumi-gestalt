@@ -53,36 +53,36 @@ pub mod registry_webhook {
     pub struct RegistryWebhookArgs {
         /// A list of actions that trigger the Webhook to post notifications. At least one action needs to be specified. Valid values are: `push`, `delete`, `quarantine`, `chart_push`, `chart_delete`
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub actions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Custom headers that will be added to the webhook notifications request.
         #[builder(into, default)]
-        pub custom_headers: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_headers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Container Registry Webhook. Only Alphanumeric characters allowed. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of Container registry this Webhook belongs to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub registry_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub registry_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the Container Registry Webhook. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the scope of repositories that can trigger an event. For example, `foo:*` means events for all tags under repository `foo`. `foo:bar` means events for 'foo:bar' only. `foo` is equivalent to `foo:latest`. Empty means all events. Defaults to `""`.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the service URI for the Webhook to post notifications.
         #[builder(into)]
-        pub service_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_uri: pulumi_gestalt_rust::Input<String>,
         /// Specifies if this Webhook triggers notifications or not. Valid values: `enabled` and `disabled`. Default is `enabled`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -54,18 +54,18 @@ pub mod vm_ware_replication_policy {
     pub struct VMWareReplicationPolicyArgs {
         /// Specifies the frequency at which to create application consistent recovery points. Must between `0` to `720`.
         #[builder(into)]
-        pub application_consistent_snapshot_frequency_in_minutes: pulumi_gestalt_rust::InputOrOutput<
+        pub application_consistent_snapshot_frequency_in_minutes: pulumi_gestalt_rust::Input<
             i32,
         >,
         /// The name which should be used for this Classic Replication Policy. Changing this forces a new Replication Policy to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the period up to which the recovery points will be retained. Must between `0` to `21600`.
         #[builder(into)]
-        pub recovery_point_retention_in_minutes: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub recovery_point_retention_in_minutes: pulumi_gestalt_rust::Input<i32>,
         /// ID of the Recovery Services Vault. Changing this forces a new Replication Policy to be created.
         #[builder(into)]
-        pub recovery_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VMWareReplicationPolicyResult {

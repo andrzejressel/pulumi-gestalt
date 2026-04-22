@@ -99,29 +99,29 @@ pub mod global_vm_shutdown_schedule {
     pub struct GlobalVMShutdownScheduleArgs {
         /// The time each day when the schedule takes effect. Must match the format HHmm where HH is 00-23 and mm is 00-59 (e.g. 0930, 2300, etc.)
         #[builder(into)]
-        pub daily_recurrence_time: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub daily_recurrence_time: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable the schedule. Possible values are `true` and `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The location where the schedule is created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The notification setting of a schedule. A `notification_settings` block as defined below.
         #[builder(into)]
-        pub notification_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_settings: pulumi_gestalt_rust::Input<
             super::super::types::devtest::GlobalVmShutdownScheduleNotificationSettings,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The time zone ID (e.g. Pacific Standard time). Refer to this guide for a [full list of accepted time zone names](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
         #[builder(into)]
-        pub timezone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub timezone: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the target ARM-based Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GlobalVMShutdownScheduleResult {

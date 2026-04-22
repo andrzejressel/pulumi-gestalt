@@ -60,46 +60,44 @@ pub mod network {
     pub struct NetworkArgs {
         /// Enable manual container attachment to the network.
         #[builder(into, default)]
-        pub attachable: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub attachable: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Requests daemon to check for networks with same name.
         #[builder(into, default)]
-        pub check_duplicate: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub check_duplicate: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.
         #[builder(into, default)]
-        pub driver: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub driver: pulumi_gestalt_rust::Input<Option<String>>,
         /// Create swarm routing-mesh network. Defaults to `false`.
         #[builder(into, default)]
-        pub ingress: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ingress: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the network is internal.
         #[builder(into, default)]
-        pub internal: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub internal: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The IPAM configuration options
         #[builder(into, default)]
-        pub ipam_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub ipam_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::NetworkIpamConfig>>,
         >,
         /// Driver used by the custom IP scheme of the network. Defaults to `default`
         #[builder(into, default)]
-        pub ipam_driver: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipam_driver: pulumi_gestalt_rust::Input<Option<String>>,
         /// Provide explicit options to the IPAM driver. Valid options vary with `ipam_driver` and refer to that driver's documentation for more details.
         #[builder(into, default)]
-        pub ipam_options: pulumi_gestalt_rust::InputOrOutput<
+        pub ipam_options: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Enable IPv6 networking. Defaults to `false`.
         #[builder(into, default)]
-        pub ipv6: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ipv6: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User-defined key/value metadata
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<super::types::NetworkLabel>>,
-        >,
+        pub labels: pulumi_gestalt_rust::Input<Option<Vec<super::types::NetworkLabel>>>,
         /// The name of the Docker network.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
         #[builder(into, default)]
-        pub options: pulumi_gestalt_rust::InputOrOutput<
+        pub options: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

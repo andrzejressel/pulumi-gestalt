@@ -65,115 +65,109 @@ pub mod linux_web_app_slot {
     pub struct LinuxWebAppSlotArgs {
         /// The ID of the Linux Web App this Deployment Slot will be part of.
         #[builder(into)]
-        pub app_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_id: pulumi_gestalt_rust::Input<String>,
         /// A map of key-value pairs of App Settings.
         #[builder(into, default)]
-        pub app_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub app_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An `auth_settings` block as defined below.
         #[builder(into, default)]
-        pub auth_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::LinuxWebAppSlotAuthSettings>,
         >,
         /// An `auth_settings_v2` block as defined below.
         #[builder(into, default)]
-        pub auth_settings_v2: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_settings_v2: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::LinuxWebAppSlotAuthSettingsV2>,
         >,
         /// A `backup` block as defined below.
         #[builder(into, default)]
-        pub backup: pulumi_gestalt_rust::InputOrOutput<
+        pub backup: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::LinuxWebAppSlotBackup>,
         >,
         /// Should Client Affinity be enabled?
         #[builder(into, default)]
-        pub client_affinity_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_affinity_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should Client Certificates be enabled?
         #[builder(into, default)]
-        pub client_certificate_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub client_certificate_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Paths to exclude when using client certificates, separated by ;
         #[builder(into, default)]
-        pub client_certificate_exclusion_paths: pulumi_gestalt_rust::InputOrOutput<
+        pub client_certificate_exclusion_paths: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Client Certificate mode. Possible values are `Required`, `Optional`, and `OptionalInteractiveUser`. This property has no effect when `client_cert_enabled` is `false`. Defaults to `Required`.
         #[builder(into, default)]
-        pub client_certificate_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_certificate_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `connection_string` blocks as defined below.
         #[builder(into, default)]
-        pub connection_strings: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_strings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::LinuxWebAppSlotConnectionString>>,
         >,
         /// Should the Linux Web App be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the default FTP Basic Authentication publishing profile be enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub ftp_publish_basic_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub ftp_publish_basic_authentication_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Should the Linux Web App require HTTPS connections. Defaults to `false`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::LinuxWebAppSlotIdentity>,
         >,
         /// The User Assigned Identity ID used for accessing KeyVault secrets. The identity must be assigned to the application in the `identity` block. [For more information see - Access vaults with a user-assigned identity](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#access-vaults-with-a-user-assigned-identity).
         #[builder(into, default)]
-        pub key_vault_reference_identity_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `logs` block as defined below.
         #[builder(into, default)]
-        pub logs: pulumi_gestalt_rust::InputOrOutput<
+        pub logs: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::LinuxWebAppSlotLogs>,
         >,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should public network access be enabled for the Web App. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Service Plan in which to run this slot. If not specified the same Service Plan as the Linux Web App will be used.
         ///
         /// > **Note:** `service_plan_id` should only be specified if it differs from the Service Plan of the associated Linux Web App.
         #[builder(into, default)]
-        pub service_plan_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_plan_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `site_config` block as defined below.
         #[builder(into)]
-        pub site_config: pulumi_gestalt_rust::InputOrOutput<
+        pub site_config: pulumi_gestalt_rust::Input<
             super::super::types::appservice::LinuxWebAppSlotSiteConfig,
         >,
         /// One or more `storage_account` blocks as defined below.
         #[builder(into, default)]
-        pub storage_accounts: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_accounts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::LinuxWebAppSlotStorageAccount>>,
         >,
         /// A mapping of tags that should be assigned to the Linux Web App.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub virtual_network_subnet_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the default WebDeploy Basic Authentication publishing credentials enabled. Defaults to `true`.
         ///
         /// > **NOTE:** Setting this value to true will disable the ability to use `zip_deploy_file` which currently relies on the default publishing profile.
         #[builder(into, default)]
-        pub webdeploy_publish_basic_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub webdeploy_publish_basic_authentication_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The local path and filename of the Zip packaged application to deploy to this Linux Web App.
         ///
         /// > **Note:** Using this value requires `WEBSITE_RUN_FROM_PACKAGE=1` to be set on the App in `app_settings`. Refer to the [Azure docs](https://docs.microsoft.com/en-us/azure/app-service/deploy-run-package) for further details.
         #[builder(into, default)]
-        pub zip_deploy_file: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zip_deploy_file: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LinuxWebAppSlotResult {

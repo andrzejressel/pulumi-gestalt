@@ -37,16 +37,16 @@ pub mod subnet_cidr_reservation {
     pub struct SubnetCidrReservationArgs {
         /// The CIDR block for the reservation.
         #[builder(into)]
-        pub cidr_block: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cidr_block: pulumi_gestalt_rust::Input<String>,
         /// A brief description of the reservation.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of reservation to create. Valid values: `explicit`, `prefix`
         #[builder(into)]
-        pub reservation_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub reservation_type: pulumi_gestalt_rust::Input<String>,
         /// The ID of the subnet to create the reservation for.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubnetCidrReservationResult {

@@ -9,7 +9,7 @@ pub mod get_group_transitive_memberships {
     #[allow(dead_code)]
     pub struct GetGroupTransitiveMembershipsArgs {
         #[builder(into)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGroupTransitiveMembershipsResult {

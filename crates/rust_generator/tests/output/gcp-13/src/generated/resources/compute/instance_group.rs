@@ -81,21 +81,21 @@ pub mod instance_group {
         /// An optional textual description of the instance
         /// group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of instances in the group, in `self_link` format.
         /// When adding instances they must all be in the same network and zone as the instance group.
         #[builder(into, default)]
-        pub instances: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub instances: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the instance group. Must be 1-63
         /// characters long and comply with
         /// [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters
         /// include lowercase letters, numbers, and hyphens.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The named port configuration. See the section below
         /// for details on configuration. Structure is documented below.
         #[builder(into, default)]
-        pub named_ports: pulumi_gestalt_rust::InputOrOutput<
+        pub named_ports: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::InstanceGroupNamedPort>>,
         >,
         /// The URL of the network the instance group is in. If
@@ -103,16 +103,16 @@ pub mod instance_group {
         /// fails. Defaults to the network where the instances are in (if neither
         /// `network` nor `instances` is specified, this field will be blank).
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone that this instance group should be created in.
         ///
         /// - - -
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceGroupResult {

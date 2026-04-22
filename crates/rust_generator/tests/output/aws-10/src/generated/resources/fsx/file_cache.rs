@@ -59,43 +59,43 @@ pub mod file_cache {
     pub struct FileCacheArgs {
         /// A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.
         #[builder(into, default)]
-        pub copy_tags_to_data_repository_associations: pulumi_gestalt_rust::InputOrOutput<
+        pub copy_tags_to_data_repository_associations: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// See the `data_repository_association` configuration block. Max of 8.
         /// A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol. The DRA configurations must meet the following requirements: 1) All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time. 2) An NFS DRA must link to an NFS file system that supports the NFSv3 protocol. DRA automatic import and automatic export is not supported.
         #[builder(into, default)]
-        pub data_repository_associations: pulumi_gestalt_rust::InputOrOutput<
+        pub data_repository_associations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::fsx::FileCacheDataRepositoryAssociation>>,
         >,
         /// The type of cache that you're creating. The only supported value is `LUSTRE`.
         #[builder(into)]
-        pub file_cache_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file_cache_type: pulumi_gestalt_rust::Input<String>,
         /// The version for the type of cache that you're creating. The only supported value is `2.12`.
         #[builder(into)]
-        pub file_cache_type_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file_cache_type_version: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the AWS Key Management Service (AWS KMS) key to use for encrypting data on an Amazon File Cache. If a KmsKeyId isn't specified, the Amazon FSx-managed AWS KMS key for your account is used.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// See the `lustre_configuration` block. Required when `file_cache_type` is `LUSTRE`.
         #[builder(into, default)]
-        pub lustre_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub lustre_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::fsx::FileCacheLustreConfiguration>>,
         >,
         /// A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The storage capacity of the cache in gibibytes (GiB). Valid values are `1200` GiB, `2400` GiB, and increments of `2400` GiB.
         #[builder(into)]
-        pub storage_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub storage_capacity: pulumi_gestalt_rust::Input<i32>,
         /// A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A map of tags to assign to the file cache. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

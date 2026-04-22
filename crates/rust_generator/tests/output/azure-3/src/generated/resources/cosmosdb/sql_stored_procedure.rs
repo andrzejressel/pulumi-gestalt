@@ -61,22 +61,22 @@ pub mod sql_stored_procedure {
     pub struct SqlStoredProcedureArgs {
         /// The name of the Cosmos DB Account to create the stored procedure within. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The body of the stored procedure.
         #[builder(into)]
-        pub body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub body: pulumi_gestalt_rust::Input<String>,
         /// The name of the Cosmos DB SQL Container to create the stored procedure within. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Cosmos DB SQL Database to create the stored procedure within. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Cosmos DB SQL Stored Procedure. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Cosmos DB SQL Database is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SqlStoredProcedureResult {

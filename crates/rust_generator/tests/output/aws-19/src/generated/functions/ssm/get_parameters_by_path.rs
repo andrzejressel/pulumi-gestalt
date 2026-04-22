@@ -10,13 +10,13 @@ pub mod get_parameters_by_path {
     pub struct GetParametersByPathArgs {
         /// The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. The last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. **Note:** If the parameter name (e.g., `/my-app/my-param`) is specified, the data source will not retrieve any value as designed, unless there are other parameters that happen to use the former path in their hierarchy (e.g., `/my-app/my-param/my-actual-param`).
         #[builder(into)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub path: pulumi_gestalt_rust::Input<String>,
         /// Whether to retrieve all parameters within the hirerachy. Defaults to `false`.
         #[builder(into, default)]
-        pub recursive: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub recursive: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to retrieve all parameters in the hierarchy, particularly those of `SecureString` type, with their value decrypted. Defaults to `true`.
         #[builder(into, default)]
-        pub with_decryption: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub with_decryption: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetParametersByPathResult {

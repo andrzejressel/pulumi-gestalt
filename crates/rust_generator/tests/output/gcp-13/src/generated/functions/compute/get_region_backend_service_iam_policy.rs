@@ -10,18 +10,18 @@ pub mod get_region_backend_service_iam_policy {
     pub struct GetRegionBackendServiceIamPolicyArgs {
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Region in which the created backend service should reside.
         /// If it is not provided, the provider region is used.
         /// Used to find the parent resource to bind the IAM policy to. If not specified,
         /// the value will be parsed from the identifier of the parent resource. If no region is provided in the parent identifier and no
         /// region is specified, it is taken from the provider configuration.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegionBackendServiceIamPolicyResult {

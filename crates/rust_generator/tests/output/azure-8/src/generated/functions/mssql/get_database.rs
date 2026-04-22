@@ -10,10 +10,10 @@ pub mod get_database {
     pub struct GetDatabaseArgs {
         /// The name of the MS SQL Database.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The id of the MS SQL Server on which to read the database.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDatabaseResult {

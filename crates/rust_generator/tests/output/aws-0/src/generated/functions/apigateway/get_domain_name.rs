@@ -10,13 +10,13 @@ pub mod get_domain_name {
     pub struct GetDomainNameArgs {
         /// Fully-qualified domain name to look up. If no domain name is found, an error will be returned.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The identifier for the domain name resource. Supported only for private custom domain names.
         #[builder(into, default)]
-        pub domain_name_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of tags for the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

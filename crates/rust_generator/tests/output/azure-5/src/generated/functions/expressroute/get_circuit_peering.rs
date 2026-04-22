@@ -10,13 +10,13 @@ pub mod get_circuit_peering {
     pub struct GetCircuitPeeringArgs {
         /// The name of the ExpressRoute Circuit in which to create the Peering. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub express_route_circuit_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub express_route_circuit_name: pulumi_gestalt_rust::Input<String>,
         /// The type of the ExpressRoute Circuit Peering. Acceptable values include `AzurePrivatePeering`, `AzurePublicPeering` and `MicrosoftPeering`.
         #[builder(into)]
-        pub peering_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peering_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the Express Route Circuit Peering. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCircuitPeeringResult {

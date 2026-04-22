@@ -132,46 +132,46 @@ pub mod maintenance_window_task {
     pub struct MaintenanceWindowTaskArgs {
         /// Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. Valid values are `CONTINUE_TASK` and `CANCEL_TASK`.
         #[builder(into, default)]
-        pub cutoff_behavior: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cutoff_behavior: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the maintenance window task.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of targets this task can be run for in parallel.
         #[builder(into, default)]
-        pub max_concurrency: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub max_concurrency: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of errors allowed before this task stops being scheduled.
         #[builder(into, default)]
-        pub max_errors: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub max_errors: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the maintenance window task.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The role that should be assumed when executing the task. If a role is not provided, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created for you.
         #[builder(into, default)]
-        pub service_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The targets (either instances or window target ids). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target ids are specified using Key=WindowTargetIds,Values=window target id1, window target id2.
         #[builder(into, default)]
-        pub targets: pulumi_gestalt_rust::InputOrOutput<
+        pub targets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ssm::MaintenanceWindowTaskTarget>>,
         >,
         /// The ARN of the task to execute.
         #[builder(into)]
-        pub task_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub task_arn: pulumi_gestalt_rust::Input<String>,
         /// Configuration block with parameters for task execution.
         #[builder(into, default)]
-        pub task_invocation_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub task_invocation_parameters: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParameters,
             >,
         >,
         /// The type of task being registered. Valid values: `AUTOMATION`, `LAMBDA`, `RUN_COMMAND` or `STEP_FUNCTIONS`.
         #[builder(into)]
-        pub task_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub task_type: pulumi_gestalt_rust::Input<String>,
         /// The Id of the maintenance window to register the task with.
         #[builder(into)]
-        pub window_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub window_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MaintenanceWindowTaskResult {

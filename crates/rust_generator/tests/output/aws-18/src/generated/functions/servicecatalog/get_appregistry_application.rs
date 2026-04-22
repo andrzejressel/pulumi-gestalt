@@ -10,7 +10,7 @@ pub mod get_appregistry_application {
     pub struct GetAppregistryApplicationArgs {
         /// Application identifier.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAppregistryApplicationResult {

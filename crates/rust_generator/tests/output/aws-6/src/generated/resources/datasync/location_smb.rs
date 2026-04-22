@@ -41,32 +41,32 @@ pub mod location_smb {
     pub struct LocationSmbArgs {
         /// A list of DataSync Agent ARNs with which this location will be associated.
         #[builder(into)]
-        pub agent_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub agent_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name of the Windows domain the SMB server belongs to.
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block containing mount options used by DataSync to access the SMB Server. Can be `AUTOMATIC`, `SMB2`, or `SMB3`.
         #[builder(into, default)]
-        pub mount_options: pulumi_gestalt_rust::InputOrOutput<
+        pub mount_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::LocationSmbMountOptions>,
         >,
         /// The password of the user who can mount the share and has file permissions in the SMB.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// Specifies the IP address or DNS name of the SMB server. The DataSync Agent(s) use this to mount the SMB share.
         #[builder(into)]
-        pub server_hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_hostname: pulumi_gestalt_rust::Input<String>,
         /// Subdirectory to perform actions as source or destination. Should be exported by the NFS server.
         #[builder(into)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subdirectory: pulumi_gestalt_rust::Input<String>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The user who can mount the share and has file and folder permissions in the SMB share.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LocationSmbResult {

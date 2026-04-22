@@ -10,9 +10,9 @@ pub mod get_certificate {
     pub struct GetCertificateArgs {
         /// A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
         #[builder(into)]
-        pub certificate_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

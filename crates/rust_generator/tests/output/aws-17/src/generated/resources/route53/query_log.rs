@@ -75,10 +75,10 @@ pub mod query_log {
     pub struct QueryLogArgs {
         /// CloudWatch log group ARN to send query logs.
         #[builder(into)]
-        pub cloudwatch_log_group_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cloudwatch_log_group_arn: pulumi_gestalt_rust::Input<String>,
         /// Route53 hosted zone ID to enable query logs.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct QueryLogResult {

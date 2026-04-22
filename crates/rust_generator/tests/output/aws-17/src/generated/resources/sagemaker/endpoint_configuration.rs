@@ -38,35 +38,35 @@ pub mod endpoint_configuration {
     pub struct EndpointConfigurationArgs {
         /// Specifies configuration for how an endpoint performs asynchronous inference.
         #[builder(into, default)]
-        pub async_inference_config: pulumi_gestalt_rust::InputOrOutput<
+        pub async_inference_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::sagemaker::EndpointConfigurationAsyncInferenceConfig,
             >,
         >,
         /// Specifies the parameters to capture input/output of SageMaker models endpoints. Fields are documented below.
         #[builder(into, default)]
-        pub data_capture_config: pulumi_gestalt_rust::InputOrOutput<
+        pub data_capture_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::sagemaker::EndpointConfigurationDataCaptureConfig,
             >,
         >,
         /// Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the endpoint configuration. If omitted, this provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique endpoint configuration name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// An list of ProductionVariant objects, one for each model that you want to host at this endpoint. Fields are documented below.
         #[builder(into)]
-        pub production_variants: pulumi_gestalt_rust::InputOrOutput<
+        pub production_variants: pulumi_gestalt_rust::Input<
             Vec<super::super::types::sagemaker::EndpointConfigurationProductionVariant>,
         >,
         /// Array of ProductionVariant objects. There is one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on ProductionVariants. If you use this field, you can only specify one variant for ProductionVariants and one variant for ShadowProductionVariants. Fields are documented below.
         #[builder(into, default)]
-        pub shadow_production_variants: pulumi_gestalt_rust::InputOrOutput<
+        pub shadow_production_variants: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sagemaker::EndpointConfigurationShadowProductionVariant,
@@ -75,7 +75,7 @@ pub mod endpoint_configuration {
         >,
         /// A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

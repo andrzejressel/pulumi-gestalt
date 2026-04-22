@@ -36,7 +36,7 @@ pub mod service_perimeter_egress_policy {
         /// Defines conditions on the source of a request causing this `EgressPolicy` to apply.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub egress_from: pulumi_gestalt_rust::InputOrOutput<
+        pub egress_from: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::accesscontextmanager::ServicePerimeterEgressPolicyEgressFrom,
             >,
@@ -45,7 +45,7 @@ pub mod service_perimeter_egress_policy {
         /// cause this `EgressPolicy` to apply.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub egress_to: pulumi_gestalt_rust::InputOrOutput<
+        pub egress_to: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::accesscontextmanager::ServicePerimeterEgressPolicyEgressTo,
             >,
@@ -55,7 +55,7 @@ pub mod service_perimeter_egress_policy {
         ///
         /// - - -
         #[builder(into)]
-        pub perimeter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub perimeter: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServicePerimeterEgressPolicyResult {

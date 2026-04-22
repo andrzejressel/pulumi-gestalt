@@ -172,52 +172,52 @@ pub mod attached_cluster {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration related to the cluster RBAC settings.
         #[builder(into, default)]
-        pub authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub authorization: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AttachedClusterAuthorization>,
         >,
         /// Binary Authorization configuration.
         #[builder(into, default)]
-        pub binary_authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub binary_authorization: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AttachedClusterBinaryAuthorization>,
         >,
         /// Policy to determine what flags to send on delete. Possible values: DELETE, DELETE_IGNORE_ERRORS
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A human readable description of this attached cluster. Cannot be longer than 255 UTF-8 encoded bytes.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Kubernetes distribution of the underlying attached cluster. Supported values:
         /// "eks", "aks", "generic". The generic distribution provides the ability to register
         /// or migrate any CNCF conformant cluster.
         #[builder(into)]
-        pub distribution: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub distribution: pulumi_gestalt_rust::Input<String>,
         /// Fleet configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub fleet: pulumi_gestalt_rust::InputOrOutput<
+        pub fleet: pulumi_gestalt_rust::Input<
             super::super::types::container::AttachedClusterFleet,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Logging configuration.
         #[builder(into, default)]
-        pub logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AttachedClusterLoggingConfig>,
         >,
         /// Monitoring configuration.
         #[builder(into, default)]
-        pub monitoring_config: pulumi_gestalt_rust::InputOrOutput<
+        pub monitoring_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AttachedClusterMonitoringConfig>,
         >,
         /// The name of this resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// OIDC discovery information of the target cluster.
         /// Kubernetes Service Account (KSA) tokens are JWT tokens signed by the cluster
         /// API server. This fields indicates how GCP services
@@ -229,22 +229,22 @@ pub mod attached_cluster {
         /// `issuer_url` and `jwks`.
         /// Structure is documented below.
         #[builder(into)]
-        pub oidc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub oidc_config: pulumi_gestalt_rust::Input<
             super::super::types::container::AttachedClusterOidcConfig,
         >,
         /// The platform version for the cluster (e.g. `1.23.0-gke.1`).
         #[builder(into)]
-        pub platform_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub platform_version: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Support for proxy configuration.
         #[builder(into, default)]
-        pub proxy_config: pulumi_gestalt_rust::InputOrOutput<
+        pub proxy_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AttachedClusterProxyConfig>,
         >,
         /// Enable/Disable Security Posture API features for the cluster.
         #[builder(into, default)]
-        pub security_posture_config: pulumi_gestalt_rust::InputOrOutput<
+        pub security_posture_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AttachedClusterSecurityPostureConfig>,
         >,
     }

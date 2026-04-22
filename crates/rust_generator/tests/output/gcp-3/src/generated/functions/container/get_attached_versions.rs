@@ -10,11 +10,11 @@ pub mod get_attached_versions {
     pub struct GetAttachedVersionsArgs {
         /// The location to list versions for.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// ID of the project to list available platform versions for. Should match the project the cluster will be deployed to.
         /// Defaults to the project that the provider is authenticated with.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAttachedVersionsResult {

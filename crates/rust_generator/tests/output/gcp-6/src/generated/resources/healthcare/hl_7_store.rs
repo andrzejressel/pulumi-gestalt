@@ -134,7 +134,7 @@ pub mod hl_7_store {
         ///
         /// - - -
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset: pulumi_gestalt_rust::Input<String>,
         /// User-supplied key-value pairs used to organize HL7v2 stores.
         /// Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must
         /// conform to the following PCRE regular expression: [\p{Ll}\p{Lo}][\p{Ll}\p{Lo}\p{N}_-]{0,62}
@@ -147,20 +147,20 @@ pub mod hl_7_store {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The resource name for the Hl7V2Store.
         /// ** Changing this property may recreate the Hl7v2 store (removing all data) **
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// (Optional, Deprecated)
         /// A nested object resource.
         /// Structure is documented below.
         ///
         /// > **Warning:** `notification_config` is deprecated and will be removed in a future major release. Use `notification_configs` instead.
         #[builder(into, default)]
-        pub notification_config: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::Hl7StoreNotificationConfig>,
         >,
         /// A list of notification configs. Each configuration uses a filter to determine whether to publish a
@@ -168,18 +168,18 @@ pub mod hl_7_store {
         /// is sent as part of the notification. Supplied by the client.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub notification_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::healthcare::Hl7StoreNotificationConfigs>>,
         >,
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub parser_config: pulumi_gestalt_rust::InputOrOutput<
+        pub parser_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::Hl7StoreParserConfig>,
         >,
         /// Determines whether duplicate messages are allowed.
         #[builder(into, default)]
-        pub reject_duplicate_message: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub reject_duplicate_message: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct Hl7StoreResult {

@@ -34,18 +34,16 @@ pub mod cluster_snapshot {
     pub struct ClusterSnapshotArgs {
         /// The cluster identifier for which you want a snapshot.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The number of days that a manual snapshot is retained. If the value is `-1`, the manual snapshot is retained indefinitely. Valid values are -1 and between `1` and `3653`.
         #[builder(into, default)]
-        pub manual_snapshot_retention_period: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.
         #[builder(into)]
-        pub snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub snapshot_identifier: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

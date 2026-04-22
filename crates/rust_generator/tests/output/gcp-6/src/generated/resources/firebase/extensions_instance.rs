@@ -78,15 +78,15 @@ pub mod extensions_instance {
         /// The current Config of the Extension Instance.
         /// Structure is documented below.
         #[builder(into)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             super::super::types::firebase::ExtensionsInstanceConfig,
         >,
         /// The ID to use for the Extension Instance, which will become the final
         /// component of the instance's name.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ExtensionsInstanceResult {

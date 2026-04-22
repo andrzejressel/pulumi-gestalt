@@ -49,10 +49,10 @@ pub mod custom_action_type {
     pub struct CustomActionTypeArgs {
         /// The category of the custom action. Valid values: `Source`, `Build`, `Deploy`, `Test`, `Invoke`, `Approval`
         #[builder(into)]
-        pub category: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub category: pulumi_gestalt_rust::Input<String>,
         /// The configuration properties for the custom action. Max 10 items.
         #[builder(into, default)]
-        pub configuration_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_properties: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::codepipeline::CustomActionTypeConfigurationProperty,
@@ -60,25 +60,25 @@ pub mod custom_action_type {
             >,
         >,
         #[builder(into)]
-        pub input_artifact_details: pulumi_gestalt_rust::InputOrOutput<
+        pub input_artifact_details: pulumi_gestalt_rust::Input<
             super::super::types::codepipeline::CustomActionTypeInputArtifactDetails,
         >,
         #[builder(into)]
-        pub output_artifact_details: pulumi_gestalt_rust::InputOrOutput<
+        pub output_artifact_details: pulumi_gestalt_rust::Input<
             super::super::types::codepipeline::CustomActionTypeOutputArtifactDetails,
         >,
         #[builder(into)]
-        pub provider_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provider_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::codepipeline::CustomActionTypeSettings>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomActionTypeResult {

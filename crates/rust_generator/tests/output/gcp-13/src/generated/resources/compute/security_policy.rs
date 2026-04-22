@@ -156,37 +156,37 @@ pub mod security_policy {
     pub struct SecurityPolicyArgs {
         /// Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
         #[builder(into, default)]
-        pub adaptive_protection_config: pulumi_gestalt_rust::InputOrOutput<
+        pub adaptive_protection_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityPolicyAdaptiveProtectionConfig>,
         >,
         /// [Advanced Configuration Options](https://cloud.google.com/armor/docs/security-policy-overview#json-parsing).
         /// Structure is documented below.
         #[builder(into, default)]
-        pub advanced_options_config: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_options_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityPolicyAdvancedOptionsConfig>,
         >,
         /// An optional description of this security policy. Max size is 2048.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the security policy.
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// [reCAPTCHA Configuration Options](https://cloud.google.com/armor/docs/configure-security-policies?hl=en#use_a_manual_challenge_to_distinguish_between_human_or_automated_clients). Structure is documented below.
         #[builder(into, default)]
-        pub recaptcha_options_config: pulumi_gestalt_rust::InputOrOutput<
+        pub recaptcha_options_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityPolicyRecaptchaOptionsConfig>,
         >,
         /// The set of rules that belong to this policy. There must always be a default
         /// rule (rule with priority 2147483647 and match "\*"). If no rules are provided when creating a
         /// security policy, a default rule with action "allow" will be added. Structure is documented below.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::SecurityPolicyRule>>,
         >,
         /// The type indicates the intended use of the security policy. This field can be set only at resource creation time.
@@ -198,7 +198,7 @@ pub mod security_policy {
         /// * `CLOUD_ARMOR_INTERNAL_SERVICE` - Cloud Armor internal service policies can be configured to filter HTTP requests targeting services
         /// managed by Traffic Director in a service mesh. They filter requests before the request is served from the application.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SecurityPolicyResult {

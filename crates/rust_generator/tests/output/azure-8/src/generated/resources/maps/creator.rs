@@ -50,19 +50,19 @@ pub mod creator {
     pub struct CreatorArgs {
         /// The Azure Region where the Azure Maps Creator should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Azure Maps Creator. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub maps_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub maps_account_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Azure Maps Creator. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The storage units to be allocated. Integer values from 1 to 100, inclusive.
         #[builder(into)]
-        pub storage_units: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub storage_units: pulumi_gestalt_rust::Input<i32>,
         /// A mapping of tags which should be assigned to the Azure Maps Creator.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

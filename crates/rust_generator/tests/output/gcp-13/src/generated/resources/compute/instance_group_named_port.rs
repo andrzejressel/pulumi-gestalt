@@ -119,21 +119,21 @@ pub mod instance_group_named_port {
         ///
         /// - - -
         #[builder(into)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group: pulumi_gestalt_rust::Input<String>,
         /// The name for this named port. The name must be 1-63 characters
         /// long, and comply with RFC1035.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port number, which can be a value between 1 and 65535.
         #[builder(into)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub port: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone of the instance group.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceGroupNamedPortResult {

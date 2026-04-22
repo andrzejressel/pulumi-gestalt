@@ -10,16 +10,16 @@ pub mod get_region_network_endpoint_group {
     pub struct GetRegionNetworkEndpointGroupArgs {
         /// The Network Endpoint Group name. Provide either this or a `self_link`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project to list versions in. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the region where the Serverless REGs Reside. Provide either this or a `self_link`.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Network Endpoint Group self_link.
         #[builder(into, default)]
-        pub self_link: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub self_link: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegionNetworkEndpointGroupResult {

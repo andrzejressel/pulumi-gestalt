@@ -752,30 +752,30 @@ pub mod prevention_job_trigger {
     pub struct PreventionJobTriggerArgs {
         /// A description of the job trigger.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User set display name of the job trigger.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Controls what and how to inspect for findings.
         #[builder(into, default)]
-        pub inspect_job: pulumi_gestalt_rust::InputOrOutput<
+        pub inspect_job: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataloss::PreventionJobTriggerInspectJob>,
         >,
         /// The parent of the trigger, either in the format `projects/{{project}}`
         /// or `projects/{{project}}/locations/{{location}}`
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Whether the trigger is currently active. Default value: "HEALTHY" Possible values: ["PAUSED", "HEALTHY", "CANCELLED"]
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The trigger id can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular
         /// expression: [a-zA-Z\d-_]+. The maximum length is 100 characters. Can be empty to allow the system to generate one.
         #[builder(into, default)]
-        pub trigger_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub trigger_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// What event needs to occur for a new job to be started.
         /// Structure is documented below.
         #[builder(into)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Vec<super::super::types::dataloss::PreventionJobTriggerTrigger>,
         >,
     }

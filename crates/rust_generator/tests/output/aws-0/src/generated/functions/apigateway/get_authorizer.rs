@@ -10,10 +10,10 @@ pub mod get_authorizer {
     pub struct GetAuthorizerArgs {
         /// Authorizer identifier.
         #[builder(into)]
-        pub authorizer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authorizer_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the associated REST API.
         #[builder(into)]
-        pub rest_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAuthorizerResult {

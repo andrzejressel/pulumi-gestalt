@@ -43,23 +43,23 @@ pub mod build {
     pub struct BuildArgs {
         /// Name of the build
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Operating system that the game server binaries are built to run on. Valid values: `WINDOWS_2012`, `AMAZON_LINUX`, `AMAZON_LINUX_2`, `WINDOWS_2016`, `AMAZON_LINUX_2023`.
         #[builder(into)]
-        pub operating_system: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub operating_system: pulumi_gestalt_rust::Input<String>,
         /// Information indicating where your game build files are stored. See below.
         #[builder(into)]
-        pub storage_location: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_location: pulumi_gestalt_rust::Input<
             super::super::types::gamelift::BuildStorageLocation,
         >,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Version that is associated with this build.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BuildResult {

@@ -10,16 +10,16 @@ pub mod get_ontap_storage_virtual_machine {
     pub struct GetOntapStorageVirtualMachineArgs {
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::fsx::GetOntapStorageVirtualMachineFilter>,
             >,
         >,
         /// Identifier of the storage virtual machine (e.g. `svm-12345678`).
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

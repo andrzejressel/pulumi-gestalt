@@ -10,7 +10,7 @@ pub mod get_trigger_schedules {
     pub struct GetTriggerSchedulesArgs {
         /// The ID of the Azure Data Factory to fetch trigger schedules from.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTriggerSchedulesResult {

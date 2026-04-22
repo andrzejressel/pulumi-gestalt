@@ -119,17 +119,17 @@ pub mod game_server_group {
     #[allow(dead_code)]
     pub struct GameServerGroupArgs {
         #[builder(into, default)]
-        pub auto_scaling_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_scaling_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::gamelift::GameServerGroupAutoScalingPolicy>,
         >,
         /// Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances.
         /// Valid values: `SPOT_ONLY`, `SPOT_PREFERRED`, `ON_DEMAND_ONLY`. Defaults to `SPOT_PREFERRED`.
         #[builder(into, default)]
-        pub balancing_strategy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub balancing_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the game server group.
         /// This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group.
         #[builder(into)]
-        pub game_server_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub game_server_group_name: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether instances in the game server group are protected from early termination.
         /// Unprotected instances that have active game servers running might be terminated during a scale-down event,
         /// causing players to be dropped from the game.
@@ -137,37 +137,35 @@ pub mod game_server_group {
         /// of a forced game server group deletion.
         /// Valid values: `NO_PROTECTION`, `FULL_PROTECTION`. Defaults to `NO_PROTECTION`.
         #[builder(into, default)]
-        pub game_server_protection_policy: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub game_server_protection_policy: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub instance_definitions: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_definitions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::gamelift::GameServerGroupInstanceDefinition>,
         >,
         #[builder(into)]
-        pub launch_template: pulumi_gestalt_rust::InputOrOutput<
+        pub launch_template: pulumi_gestalt_rust::Input<
             super::super::types::gamelift::GameServerGroupLaunchTemplate,
         >,
         /// The maximum number of instances allowed in the EC2 Auto Scaling group.
         /// During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
         #[builder(into)]
-        pub max_size: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub max_size: pulumi_gestalt_rust::Input<i32>,
         /// The minimum number of instances allowed in the EC2 Auto Scaling group.
         /// During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum.
         #[builder(into)]
-        pub min_size: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub min_size: pulumi_gestalt_rust::Input<i32>,
         /// ARN for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A list of VPC subnets to use with instances in the game server group.
         /// By default, all GameLift FleetIQ-supported Availability Zones are used.
         #[builder(into, default)]
-        pub vpc_subnets: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub vpc_subnets: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GameServerGroupResult {

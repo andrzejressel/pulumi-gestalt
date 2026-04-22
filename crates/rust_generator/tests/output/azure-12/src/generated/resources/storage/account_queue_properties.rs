@@ -70,29 +70,29 @@ pub mod account_queue_properties {
     pub struct AccountQueuePropertiesArgs {
         /// A `cors_rule` block as defined above.
         #[builder(into, default)]
-        pub cors_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub cors_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::storage::AccountQueuePropertiesCorsRule>>,
         >,
         /// A `hour_metrics` block as defined below.
         ///
         /// > **NOTE:** At least one of `cors_rule`, `logging`, `minute_metrics`, or `hour_metrics` must be specified.
         #[builder(into, default)]
-        pub hour_metrics: pulumi_gestalt_rust::InputOrOutput<
+        pub hour_metrics: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountQueuePropertiesHourMetrics>,
         >,
         /// A `logging` block as defined below.
         #[builder(into, default)]
-        pub logging: pulumi_gestalt_rust::InputOrOutput<
+        pub logging: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountQueuePropertiesLogging>,
         >,
         /// A `minute_metrics` block as defined below.
         #[builder(into, default)]
-        pub minute_metrics: pulumi_gestalt_rust::InputOrOutput<
+        pub minute_metrics: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountQueuePropertiesMinuteMetrics>,
         >,
         /// The ID of the Storage Account to set Queue Properties on. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccountQueuePropertiesResult {

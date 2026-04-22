@@ -38,12 +38,12 @@ pub mod device {
     pub struct DeviceArgs {
         /// The device to register with SageMaker Edge Manager. See Device details below.
         #[builder(into)]
-        pub device: pulumi_gestalt_rust::InputOrOutput<
+        pub device: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::DeviceDevice,
         >,
         /// The name of the Device Fleet.
         #[builder(into)]
-        pub device_fleet_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_fleet_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DeviceResult {

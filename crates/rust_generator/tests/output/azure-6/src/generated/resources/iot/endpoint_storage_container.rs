@@ -72,42 +72,42 @@ pub mod endpoint_storage_container {
     pub struct EndpointStorageContainerArgs {
         /// Type used to authenticate against the storage endpoint. Possible values are `keyBased` and `identityBased`. Defaults to `keyBased`.
         #[builder(into, default)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value is 300 seconds.
         #[builder(into, default)]
-        pub batch_frequency_in_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub batch_frequency_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The connection string for the endpoint. This attribute can only be specified and is mandatory when `authentication_type` is `keyBased`.
         #[builder(into, default)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of storage container in the storage account.
         #[builder(into)]
-        pub container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_name: pulumi_gestalt_rust::Input<String>,
         /// Encoding that is used to serialize messages to blobs. Supported values are `Avro`, `AvroDeflate` and `JSON`. Default value is `Avro`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub encoding: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encoding: pulumi_gestalt_rust::Input<Option<String>>,
         /// URI of the Storage Container endpoint. This corresponds to the `primary_blob_endpoint` of the parent storage account. This attribute can only be specified and is mandatory when `authentication_type` is `identityBased`.
         #[builder(into, default)]
-        pub endpoint_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// File name format for the blob. All parameters are mandatory but can be reordered. Defaults to `{iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}`.
         #[builder(into, default)]
-        pub file_name_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_name_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the User Managed Identity used to authenticate against the storage endpoint.
         ///
         /// > **NOTE:** `identity_id` can only be specified when `authentication_type` is `identityBased`. It must be one of the `identity_ids` of the Iot Hub. If not specified when `authentication_type` is `identityBased`, System Assigned Managed Identity of the Iot Hub will be used.
         #[builder(into, default)]
-        pub identity_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IoTHub ID for the endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_id: pulumi_gestalt_rust::Input<String>,
         /// Maximum number of bytes for each blob written to storage. Value should be between 10485760(10MB) and 524288000(500MB). Default value is 314572800(300MB).
         #[builder(into, default)]
-        pub max_chunk_size_in_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_chunk_size_in_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the endpoint. The name must be unique across endpoint types. The following names are reserved: `events`, `operationsMonitoringEvents`, `fileNotifications` and `$default`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group under which the Storage Container has been created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointStorageContainerResult {

@@ -53,10 +53,10 @@ pub mod bucket_lifecycle_configuration {
     pub struct BucketLifecycleConfigurationArgs {
         /// Amazon Resource Name (ARN) of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Configuration block(s) containing lifecycle rules for the bucket.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::s3control::BucketLifecycleConfigurationRule>,
         >,
     }

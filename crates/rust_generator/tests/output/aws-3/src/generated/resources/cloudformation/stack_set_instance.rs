@@ -127,38 +127,38 @@ pub mod stack_set_instance {
     pub struct StackSetInstanceArgs {
         /// Target AWS Account ID to create a Stack based on the StackSet. Defaults to current account.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid values: `SELF` (default), `DELEGATED_ADMIN`.
         #[builder(into, default)]
-        pub call_as: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub call_as: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS Organizations accounts to which StackSets deploys. StackSets doesn't deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization. Drift detection is not possible for this argument. See deployment_targets below.
         #[builder(into, default)]
-        pub deployment_targets: pulumi_gestalt_rust::InputOrOutput<
+        pub deployment_targets: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudformation::StackSetInstanceDeploymentTargets,
             >,
         >,
         /// Preferences for how AWS CloudFormation performs a stack set operation.
         #[builder(into, default)]
-        pub operation_preferences: pulumi_gestalt_rust::InputOrOutput<
+        pub operation_preferences: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudformation::StackSetInstanceOperationPreferences,
             >,
         >,
         /// Key-value map of input parameters to override from the StackSet for this Instance.
         #[builder(into, default)]
-        pub parameter_overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub parameter_overrides: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Target AWS Region to create a Stack based on the StackSet. Defaults to current region.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// During resource destroy, remove Instance from StackSet while keeping the Stack and its associated resources. Must be enabled in the state _before_ destroy operation to take effect. You cannot reassociate a retained Stack or add an existing, saved Stack to a new StackSet. Defaults to `false`.
         #[builder(into, default)]
-        pub retain_stack: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub retain_stack: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the StackSet.
         #[builder(into)]
-        pub stack_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_set_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StackSetInstanceResult {

@@ -59,13 +59,13 @@ pub mod alias {
     pub struct AliasArgs {
         /// Description of the alias.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name for the alias you are creating.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The StateMachine alias' route configuration settings. Fields documented below
         #[builder(into)]
-        pub routing_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_configurations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::sfn::AliasRoutingConfiguration>,
         >,
     }

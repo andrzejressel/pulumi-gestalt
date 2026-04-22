@@ -210,55 +210,55 @@ pub mod listing {
         /// Shared dataset i.e. BigQuery dataset source.
         /// Structure is documented below.
         #[builder(into)]
-        pub bigquery_dataset: pulumi_gestalt_rust::InputOrOutput<
+        pub bigquery_dataset: pulumi_gestalt_rust::Input<
             super::super::types::bigqueryanalyticshub::ListingBigqueryDataset,
         >,
         /// Categories of the listing. Up to two categories are allowed.
         #[builder(into, default)]
-        pub categories: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub categories: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
         #[builder(into)]
-        pub data_exchange_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_exchange_id: pulumi_gestalt_rust::Input<String>,
         /// Details of the data provider who owns the source data.
         #[builder(into, default)]
-        pub data_provider: pulumi_gestalt_rust::InputOrOutput<
+        pub data_provider: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigqueryanalyticshub::ListingDataProvider>,
         >,
         /// Short description of the listing. The description must not contain Unicode non-characters and C0 and C1 control codes
         /// except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF).
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Human-readable display name of the listing. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Documentation describing the listing.
         #[builder(into, default)]
-        pub documentation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub documentation: pulumi_gestalt_rust::Input<Option<String>>,
         /// Base64 encoded image representing the listing.
         #[builder(into, default)]
-        pub icon: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub icon: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the listing. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
         #[builder(into)]
-        pub listing_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub listing_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the location this data exchange listing.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Email or URL of the primary point of contact of the listing.
         #[builder(into, default)]
-        pub primary_contact: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub primary_contact: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details of the publisher who owns the listing and who can share the source data.
         #[builder(into, default)]
-        pub publisher: pulumi_gestalt_rust::InputOrOutput<
+        pub publisher: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigqueryanalyticshub::ListingPublisher>,
         >,
         /// Email or URL of the request access of the listing. Subscribers can use this reference to request access.
         #[builder(into, default)]
-        pub request_access: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set, restricted export configuration will be propagated and enforced on the linked dataset.
         #[builder(into, default)]
-        pub restricted_export_config: pulumi_gestalt_rust::InputOrOutput<
+        pub restricted_export_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bigqueryanalyticshub::ListingRestrictedExportConfig,
             >,

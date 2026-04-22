@@ -10,12 +10,12 @@ pub mod get_certificates {
     pub struct GetCertificatesArgs {
         /// Specifies whether to include certificates which are not completely provisioned. Defaults to true.
         #[builder(into, default)]
-        pub include_pending: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_pending: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the ID of the Key Vault instance to fetch certificate names from, available on the `azure.keyvault.KeyVault` Data Source / Resource.
         ///
         /// **NOTE:** The vault must be in the same subscription as the provider. If the vault is in another subscription, you must create an aliased provider for that subscription.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCertificatesResult {

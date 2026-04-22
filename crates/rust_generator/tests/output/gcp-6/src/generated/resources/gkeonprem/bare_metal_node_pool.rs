@@ -192,29 +192,29 @@ pub mod bare_metal_node_pool {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The cluster this node pool belongs to.
         #[builder(into)]
-        pub bare_metal_cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bare_metal_cluster: pulumi_gestalt_rust::Input<String>,
         /// The display name for the Bare Metal Node Pool.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The bare metal node pool name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Node pool configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub node_pool_config: pulumi_gestalt_rust::InputOrOutput<
+        pub node_pool_config: pulumi_gestalt_rust::Input<
             super::super::types::gkeonprem::BareMetalNodePoolNodePoolConfig,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BareMetalNodePoolResult {

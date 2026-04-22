@@ -10,10 +10,10 @@ pub mod get_network_manager_connectivity_configuration {
     pub struct GetNetworkManagerConnectivityConfigurationArgs {
         /// The name of this Network Manager Connectivity Configuration.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Network Manager.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkManagerConnectivityConfigurationResult {

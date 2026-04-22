@@ -57,13 +57,13 @@ pub mod sql_function {
     pub struct SqlFunctionArgs {
         /// Body of the User Defined Function.
         #[builder(into)]
-        pub body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub body: pulumi_gestalt_rust::Input<String>,
         /// The id of the Cosmos DB SQL Container to create the SQL User Defined Function within. Changing this forces a new SQL User Defined Function to be created.
         #[builder(into)]
-        pub container_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this SQL User Defined Function. Changing this forces a new SQL User Defined Function to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SqlFunctionResult {

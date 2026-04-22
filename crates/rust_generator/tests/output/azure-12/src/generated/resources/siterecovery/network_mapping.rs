@@ -90,25 +90,25 @@ pub mod network_mapping {
     pub struct NetworkMappingArgs {
         /// The name of the network mapping. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the vault that should be updated. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource group where the vault that should be updated is located. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The id of the primary network. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_network_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ASR fabric where mapping should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source_recovery_fabric_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_recovery_fabric_name: pulumi_gestalt_rust::Input<String>,
         /// The id of the recovery network. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_network_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Site Recovery fabric object corresponding to the recovery Azure region. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_recovery_fabric_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_recovery_fabric_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkMappingResult {

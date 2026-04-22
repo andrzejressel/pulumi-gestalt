@@ -39,15 +39,15 @@ pub mod documentation_part {
     pub struct DocumentationPartArgs {
         /// Location of the targeted API entity of the to-be-created documentation part. See below.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<
+        pub location: pulumi_gestalt_rust::Input<
             super::super::types::apigateway::DocumentationPartLocation,
         >,
         /// Content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., "{ \"description\": \"The API does ...\" }". Only Swagger-compliant key-value pairs can be exported and, hence, published.
         #[builder(into)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub properties: pulumi_gestalt_rust::Input<String>,
         /// ID of the associated Rest API
         #[builder(into)]
-        pub rest_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DocumentationPartResult {

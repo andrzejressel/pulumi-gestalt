@@ -10,18 +10,18 @@ pub mod get_patch_baseline {
     pub struct GetPatchBaselineArgs {
         /// Filters the results against the baselines default_baseline field.
         #[builder(into, default)]
-        pub default_baseline: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub default_baseline: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Filter results by the baseline name prefix.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specified OS for the baseline. Valid values: `AMAZON_LINUX`, `AMAZON_LINUX_2`, `UBUNTU`, `REDHAT_ENTERPRISE_LINUX`, `SUSE`, `CENTOS`, `ORACLE_LINUX`, `DEBIAN`, `MACOS`, `RASPBIAN` and `ROCKY_LINUX`.
         #[builder(into, default)]
-        pub operating_system: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub operating_system: pulumi_gestalt_rust::Input<Option<String>>,
         /// Owner of the baseline. Valid values: `All`, `AWS`, `Self` (the current account).
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub owner: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owner: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPatchBaselineResult {

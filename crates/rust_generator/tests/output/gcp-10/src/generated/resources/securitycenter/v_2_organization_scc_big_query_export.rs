@@ -76,15 +76,15 @@ pub mod v_2_organization_scc_big_query_export {
         ///
         /// - - -
         #[builder(into)]
-        pub big_query_export_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub big_query_export_id: pulumi_gestalt_rust::Input<String>,
         /// The dataset to write findings' updates to.
         /// Its format is "projects/[projectId]/datasets/[bigquery_dataset_id]".
         /// BigQuery Dataset unique ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_).
         #[builder(into, default)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dataset: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the notification config (max of 1024 characters).
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Expression that defines the filter to apply across create/update
         /// events of findings. The
         /// expression is a list of zero or more restrictions combined via
@@ -105,19 +105,19 @@ pub mod v_2_organization_scc_big_query_export {
         /// [Filtering notifications](https://cloud.google.com/security-command-center/docs/how-to-api-filter-notifications)
         /// for information on how to write a filter.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// location Id is provided by organization. If not provided, Use global as default.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of this export, in the format
         /// `organizations/{{organization}}/locations/{{location}}/bigQueryExports/{{big_query_export_id}}`.
         /// This field is provided in responses, and is ignored when provided in create requests.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The organization whose Cloud Security Command Center the Big Query Export
         /// Config lives in.
         #[builder(into)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct V2OrganizationSccBigQueryExportResult {

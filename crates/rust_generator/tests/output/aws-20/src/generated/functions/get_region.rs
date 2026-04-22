@@ -10,12 +10,12 @@ pub mod get_region {
     pub struct GetRegionArgs {
         /// EC2 endpoint of the region to select.
         #[builder(into, default)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Full name of the region to select.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegionResult {

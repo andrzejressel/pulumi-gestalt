@@ -10,10 +10,10 @@ pub mod get_share {
     pub struct GetShareArgs {
         /// The ID of the Data Share account in which the Data Share is created.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The name of this Data Share.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetShareResult {

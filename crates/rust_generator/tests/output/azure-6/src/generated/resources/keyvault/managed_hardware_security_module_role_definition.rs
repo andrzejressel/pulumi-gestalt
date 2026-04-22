@@ -53,15 +53,15 @@ pub mod managed_hardware_security_module_role_definition {
     pub struct ManagedHardwareSecurityModuleRoleDefinitionArgs {
         /// Specifies a text description about this KeyVault Role Definition.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub managed_hsm_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_hsm_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this KeyVault Role Definition. Changing this forces a new KeyVault Role Definition to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `permission` blocks as defined below.
         #[builder(into, default)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::keyvault::ManagedHardwareSecurityModuleRoleDefinitionPermission,
@@ -70,7 +70,7 @@ pub mod managed_hardware_security_module_role_definition {
         >,
         /// Specify a name for this KeyVault Role Definition.
         #[builder(into, default)]
-        pub role_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagedHardwareSecurityModuleRoleDefinitionResult {

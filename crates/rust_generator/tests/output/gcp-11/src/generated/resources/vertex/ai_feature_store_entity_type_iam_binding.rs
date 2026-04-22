@@ -45,17 +45,17 @@ pub mod ai_feature_store_entity_type_iam_binding {
     #[allow(dead_code)]
     pub struct AiFeatureStoreEntityTypeIamBindingArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiFeatureStoreEntityTypeIamBindingCondition,
             >,
         >,
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub entitytype: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub entitytype: pulumi_gestalt_rust::Input<String>,
         /// The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}. Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub featurestore: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub featurestore: pulumi_gestalt_rust::Input<String>,
         /// Identities that will be granted the privilege in `role`.
         /// Each entry can have one of the following values:
         /// * **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.
@@ -68,12 +68,12 @@ pub mod ai_feature_store_entity_type_iam_binding {
         /// * **projectEditor:projectid**: Editors of the given project. For example, "projectEditor:my-example-project"
         /// * **projectViewer:projectid**: Viewers of the given project. For example, "projectViewer:my-example-project"
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The role that should be applied. Only one
         /// `gcp.vertex.AiFeatureStoreEntityTypeIamBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AiFeatureStoreEntityTypeIamBindingResult {

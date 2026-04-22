@@ -40,10 +40,10 @@ pub mod log_stream {
     pub struct LogStreamArgs {
         /// The name of the log group under which the log stream is to be created.
         #[builder(into)]
-        pub log_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the log stream. Must not be longer than 512 characters and must not contain `:`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LogStreamResult {

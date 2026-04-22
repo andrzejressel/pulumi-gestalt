@@ -62,27 +62,27 @@ pub mod authorization_rule {
     pub struct AuthorizationRuleArgs {
         /// Specifies the name of the EventHub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_name: pulumi_gestalt_rust::Input<String>,
         /// Does this Authorization Rule have permissions to Listen to the Event Hub? Defaults to `false`.
         #[builder(into, default)]
-        pub listen: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub listen: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Does this Authorization Rule have permissions to Manage to the Event Hub? When this property is `true` - both `listen` and `send` must be too. Defaults to `false`.
         #[builder(into, default)]
-        pub manage: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the EventHub Authorization Rule resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the grandparent EventHub Namespace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the EventHub Namespace exists. Changing this forces a new resource to be created.
         ///
         /// > **NOTE** At least one of the 3 permissions below needs to be set.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Does this Authorization Rule have permissions to Send to the Event Hub? Defaults to `false`.
         #[builder(into, default)]
-        pub send: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub send: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct AuthorizationRuleResult {

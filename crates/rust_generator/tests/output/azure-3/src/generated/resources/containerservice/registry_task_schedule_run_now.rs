@@ -61,7 +61,7 @@ pub mod registry_task_schedule_run_now {
     pub struct RegistryTaskScheduleRunNowArgs {
         /// The ID of the Container Registry Task that to be scheduled. Changing this forces a new Container Registry Task Schedule to be created.
         #[builder(into)]
-        pub container_registry_task_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_registry_task_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegistryTaskScheduleRunNowResult {

@@ -59,18 +59,18 @@ pub mod storage_lens_configuration {
     pub struct StorageLensConfigurationArgs {
         /// The AWS account ID for the S3 Storage Lens configuration. Defaults to automatically determined account ID of the AWS provider.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the S3 Storage Lens configuration.
         #[builder(into)]
-        pub config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub config_id: pulumi_gestalt_rust::Input<String>,
         /// The S3 Storage Lens configuration. See Storage Lens Configuration below for more details.
         #[builder(into)]
-        pub storage_lens_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_lens_configuration: pulumi_gestalt_rust::Input<
             super::super::types::s3control::StorageLensConfigurationStorageLensConfiguration,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

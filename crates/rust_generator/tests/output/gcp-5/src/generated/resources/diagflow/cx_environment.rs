@@ -96,17 +96,17 @@ pub mod cx_environment {
         /// The human-readable description of the environment. The maximum length is 500 characters. If exceeded, the request is
         /// rejected.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The human-readable name of the environment (unique in an agent). Limit of 64 characters.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The Agent to create an Environment for. Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of configurations for flow versions. You should include version configs for all flows that are reachable from [Start Flow][Agent.start_flow] in the agent. Otherwise, an error will be returned.
         /// Structure is documented below.
         #[builder(into)]
-        pub version_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub version_configs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::diagflow::CxEnvironmentVersionConfig>,
         >,
     }

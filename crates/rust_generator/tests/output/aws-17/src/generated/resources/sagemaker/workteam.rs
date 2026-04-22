@@ -74,33 +74,33 @@ pub mod workteam {
     pub struct WorkteamArgs {
         /// A description of the work team.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// A list of Member Definitions that contains objects that identify the workers that make up the work team. Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use `cognito_member_definition`. For workforces created using your own OIDC identity provider (IdP) use `oidc_member_definition`. Do not provide input for both of these parameters in a single request. see Member Definition details below.
         #[builder(into)]
-        pub member_definitions: pulumi_gestalt_rust::InputOrOutput<
+        pub member_definitions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::sagemaker::WorkteamMemberDefinition>,
         >,
         /// Configures notification of workers regarding available or expiring work items. see Notification Configuration details below.
         #[builder(into, default)]
-        pub notification_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::WorkteamNotificationConfiguration>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL. see Worker Access Configuration details below.
         #[builder(into, default)]
-        pub worker_access_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub worker_access_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::WorkteamWorkerAccessConfiguration>,
         >,
         /// The name of the workforce.
         #[builder(into, default)]
-        pub workforce_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workforce_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Workteam (must be unique).
         #[builder(into)]
-        pub workteam_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workteam_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkteamResult {

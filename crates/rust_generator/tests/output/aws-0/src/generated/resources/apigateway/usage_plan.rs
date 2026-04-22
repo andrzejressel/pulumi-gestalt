@@ -19,30 +19,30 @@ pub mod usage_plan {
     pub struct UsagePlanArgs {
         /// Associated API stages of the usage plan.
         #[builder(into, default)]
-        pub api_stages: pulumi_gestalt_rust::InputOrOutput<
+        pub api_stages: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigateway::UsagePlanApiStage>>,
         >,
         /// Description of a usage plan.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the usage plan.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS Marketplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
         #[builder(into, default)]
-        pub product_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub product_code: pulumi_gestalt_rust::Input<Option<String>>,
         /// Quota of the usage plan.
         #[builder(into, default)]
-        pub quota_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub quota_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::UsagePlanQuotaSettings>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Throttling limits of the usage plan.
         #[builder(into, default)]
-        pub throttle_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub throttle_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::UsagePlanThrottleSettings>,
         >,
     }

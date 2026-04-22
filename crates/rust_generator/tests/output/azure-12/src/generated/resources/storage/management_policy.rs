@@ -90,12 +90,12 @@ pub mod management_policy {
     pub struct ManagementPolicyArgs {
         /// A `rule` block as documented below.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::storage::ManagementPolicyRule>>,
         >,
         /// Specifies the id of the storage account to apply the management policy to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagementPolicyResult {

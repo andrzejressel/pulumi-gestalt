@@ -78,31 +78,31 @@ pub mod hosting_channel {
         ///
         /// - - -
         #[builder(into)]
-        pub channel_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub channel_id: pulumi_gestalt_rust::Input<String>,
         /// The time at which the channel will be automatically deleted. If null, the channel
         /// will not be automatically deleted. This field is present in the output whether it's
         /// set directly or via the `ttl` field.
         #[builder(into, default)]
-        pub expire_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expire_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Text labels used for extra metadata and/or filtering
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The number of previous releases to retain on the channel for rollback or other
         /// purposes. Must be a number between 1-100. Defaults to 10 for new channels.
         #[builder(into, default)]
-        pub retained_release_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retained_release_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Required. The ID of the site in which to create this channel.
         #[builder(into)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub site_id: pulumi_gestalt_rust::Input<String>,
         /// Input only. A time-to-live for this channel. Sets `expire_time` to the provided
         /// duration past the time of the request. A duration in seconds with up to nine fractional
         /// digits, terminated by 's'. Example: "86400s" (one day).
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ttl: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HostingChannelResult {

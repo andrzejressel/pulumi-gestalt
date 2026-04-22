@@ -10,7 +10,7 @@ pub mod get_instance_type {
     pub struct GetInstanceTypeArgs {
         /// Instance
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceTypeResult {

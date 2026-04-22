@@ -10,10 +10,10 @@ pub mod get_network_peering {
     pub struct GetNetworkPeeringArgs {
         /// Name of the peering.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The primary network of the peering.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkPeeringResult {

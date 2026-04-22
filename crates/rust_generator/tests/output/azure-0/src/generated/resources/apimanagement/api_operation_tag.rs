@@ -60,13 +60,13 @@ pub mod api_operation_tag {
     pub struct ApiOperationTagArgs {
         /// The ID of the API Management API Operation. Changing this forces a new API Management API Operation Tag to be created.
         #[builder(into)]
-        pub api_operation_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_operation_id: pulumi_gestalt_rust::Input<String>,
         /// The display name of the API Management API Operation Tag.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this API Management API Operation Tag. Changing this forces a new API Management API Operation Tag to be created. The name must be unique in the API Management Service.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiOperationTagResult {

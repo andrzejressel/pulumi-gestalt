@@ -43,24 +43,24 @@ pub mod device_fleet {
     pub struct DeviceFleetArgs {
         /// A description of the fleet.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Device Fleet (must be unique).
         #[builder(into)]
-        pub device_fleet_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_fleet_name: pulumi_gestalt_rust::Input<String>,
         /// Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
         #[builder(into, default)]
-        pub enable_iot_role_alias: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_iot_role_alias: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies details about the repository. see Output Config details below.
         #[builder(into)]
-        pub output_config: pulumi_gestalt_rust::InputOrOutput<
+        pub output_config: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::DeviceFleetOutputConfig,
         >,
         /// The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -63,19 +63,19 @@ pub mod public_certificate {
     pub struct PublicCertificateArgs {
         /// The name of the App Service. Changing this forces a new App Service Public Certificate to be created.
         #[builder(into)]
-        pub app_service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_name: pulumi_gestalt_rust::Input<String>,
         /// The base64-encoded contents of the certificate. Changing this forces a new App Service Public Certificate to be created.
         #[builder(into)]
-        pub blob: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub blob: pulumi_gestalt_rust::Input<String>,
         /// The location of the certificate. Possible values are `CurrentUserMy`, `LocalMachineMy` and `Unknown`. Changing this forces a new App Service Public Certificate to be created.
         #[builder(into)]
-        pub certificate_location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_location: pulumi_gestalt_rust::Input<String>,
         /// The name of the public certificate. Changing this forces a new App Service Public Certificate to be created.
         #[builder(into)]
-        pub certificate_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the App Service Public Certificate should exist. Changing this forces a new App Service Public Certificate to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PublicCertificateResult {

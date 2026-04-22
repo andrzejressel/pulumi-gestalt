@@ -81,37 +81,37 @@ pub mod trigger {
         /// `projects/{project}/locations/{location}/channels/{channel}` format. You must provide a channel to receive events from
         /// Eventarc SaaS partners.
         #[builder(into, default)]
-        pub channel: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub channel: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Destination specifies where the events should be sent to.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<
+        pub destination: pulumi_gestalt_rust::Input<
             super::super::types::eventarc::TriggerDestination,
         >,
         /// Optional. EventDataContentType specifies the type of payload in MIME format that is expected from the CloudEvent data
         /// field. This is set to `application/json` if the value is not defined.
         #[builder(into, default)]
-        pub event_data_content_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_data_content_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. User labels attached to the triggers that can be used to group resources. **Note**: This field is
         /// non-authoritative, and will only manage the labels present in your configuration. Please refer to the field
         /// `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Required. null The list of filters that applies to event attributes. Only events that match all the provided filters will be sent to the destination.
         #[builder(into)]
-        pub matching_criterias: pulumi_gestalt_rust::InputOrOutput<
+        pub matching_criterias: pulumi_gestalt_rust::Input<
             Vec<super::super::types::eventarc::TriggerMatchingCriteria>,
         >,
         /// Required. The resource name of the trigger. Must be unique within the location on the project.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The IAM service account email associated with the trigger. The service account represents the identity of the
         /// trigger. The principal who calls this API must have `iam.serviceAccounts.actAs` permission in the service account. See
         /// https://cloud.google.com/iam/docs/understanding-service-accounts#sa_common for more information. For Cloud Run
@@ -120,11 +120,11 @@ pub mod trigger {
         /// authenticated Cloud Run services. In order to create Audit Log triggers, the service account should also have
         /// `roles/eventarc.eventReceiver` IAM role.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. In order to deliver messages, Eventarc may use other GCP products as transport intermediary. This field
         /// contains a reference to that transport intermediary. This information can be used for debugging purposes.
         #[builder(into, default)]
-        pub transport: pulumi_gestalt_rust::InputOrOutput<
+        pub transport: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventarc::TriggerTransport>,
         >,
     }

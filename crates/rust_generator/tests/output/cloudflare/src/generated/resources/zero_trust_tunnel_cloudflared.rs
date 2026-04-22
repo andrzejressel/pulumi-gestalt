@@ -38,16 +38,16 @@ pub mod zero_trust_tunnel_cloudflared {
     pub struct ZeroTrustTunnelCloudflaredArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard or using tunnel*config, tunnel*route or tunnel*virtual*network resources. Available values: `local`, `cloudflare`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub config_src: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub config_src: pulumi_gestalt_rust::Input<Option<String>>,
         /// A user-friendly name chosen when the tunnel is created. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// 32 or more bytes, encoded as a base64 string. The Create Argo Tunnel endpoint sets this as the tunnel's password. Anyone wishing to run the tunnel needs this password. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustTunnelCloudflaredResult {

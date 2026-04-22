@@ -28,10 +28,10 @@ pub mod traffic_source_attachment {
     pub struct TrafficSourceAttachmentArgs {
         /// The name of the Auto Scaling group.
         #[builder(into)]
-        pub autoscaling_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub autoscaling_group_name: pulumi_gestalt_rust::Input<String>,
         /// The unique identifiers of a traffic sources.
         #[builder(into, default)]
-        pub traffic_source: pulumi_gestalt_rust::InputOrOutput<
+        pub traffic_source: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::autoscaling::TrafficSourceAttachmentTrafficSource,
             >,

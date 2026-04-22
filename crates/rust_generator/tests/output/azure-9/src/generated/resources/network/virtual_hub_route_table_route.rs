@@ -122,22 +122,22 @@ pub mod virtual_hub_route_table_route {
     pub struct VirtualHubRouteTableRouteArgs {
         /// A list of destination addresses for this route.
         #[builder(into)]
-        pub destinations: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub destinations: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The type of destinations. Possible values are `CIDR`, `ResourceId` and `Service`.
         #[builder(into)]
-        pub destinations_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destinations_type: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this route. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The next hop's resource ID.
         #[builder(into)]
-        pub next_hop: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub next_hop: pulumi_gestalt_rust::Input<String>,
         /// The type of next hop. Currently the only possible value is `ResourceId`. Defaults to `ResourceId`.
         #[builder(into, default)]
-        pub next_hop_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Virtual Hub Route Table to link this route to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualHubRouteTableRouteResult {

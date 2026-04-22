@@ -88,54 +88,54 @@ pub mod data_source {
     pub struct DataSourceArgs {
         /// API ID for the GraphQL API for the data source.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// Description of the data source.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// DynamoDB settings. See `dynamodb_config` Block for details.
         #[builder(into, default)]
-        pub dynamodb_config: pulumi_gestalt_rust::InputOrOutput<
+        pub dynamodb_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::DataSourceDynamodbConfig>,
         >,
         /// Amazon Elasticsearch settings. See `elasticsearch_config` Block for details.
         #[builder(into, default)]
-        pub elasticsearch_config: pulumi_gestalt_rust::InputOrOutput<
+        pub elasticsearch_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::DataSourceElasticsearchConfig>,
         >,
         /// AWS EventBridge settings. See `event_bridge_config` Block for details.
         #[builder(into, default)]
-        pub event_bridge_config: pulumi_gestalt_rust::InputOrOutput<
+        pub event_bridge_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::DataSourceEventBridgeConfig>,
         >,
         /// HTTP settings. See `http_config` Block for details.
         #[builder(into, default)]
-        pub http_config: pulumi_gestalt_rust::InputOrOutput<
+        pub http_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::DataSourceHttpConfig>,
         >,
         /// AWS Lambda settings. See `lambda_config` Block for details.
         #[builder(into, default)]
-        pub lambda_config: pulumi_gestalt_rust::InputOrOutput<
+        pub lambda_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::DataSourceLambdaConfig>,
         >,
         /// User-supplied name for the data source.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon OpenSearch Service settings. See `opensearchservice_config` Block for details.
         #[builder(into, default)]
-        pub opensearchservice_config: pulumi_gestalt_rust::InputOrOutput<
+        pub opensearchservice_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::DataSourceOpensearchserviceConfig>,
         >,
         /// AWS RDS settings. See `relational_database_config` Block for details.
         #[builder(into, default)]
-        pub relational_database_config: pulumi_gestalt_rust::InputOrOutput<
+        pub relational_database_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::DataSourceRelationalDatabaseConfig>,
         >,
         /// IAM service role ARN for the data source. Required if `type` is specified as `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `AMAZON_EVENTBRIDGE`, or `AMAZON_OPENSEARCH_SERVICE`.
         #[builder(into, default)]
-        pub service_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of the Data Source. Valid values: `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `HTTP`, `NONE`, `RELATIONAL_DATABASE`, `AMAZON_EVENTBRIDGE`, `AMAZON_OPENSEARCH_SERVICE`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DataSourceResult {

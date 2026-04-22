@@ -46,19 +46,19 @@ pub mod private_link_scope {
     pub struct PrivateLinkScopeArgs {
         /// The default ingestion access mode for the associated private endpoints in scope. Possible values are `Open` and `PrivateOnly`. Defaults to `Open`.
         #[builder(into, default)]
-        pub ingestion_access_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ingestion_access_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Azure Monitor Private Link Scope. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default query access mode for hte associated private endpoints in scope. Possible values are `Open` and `PrivateOnly`. Defaults to `Open`.
         #[builder(into, default)]
-        pub query_access_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query_access_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Azure Monitor Private Link Scope should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Azure Monitor Private Link Scope.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

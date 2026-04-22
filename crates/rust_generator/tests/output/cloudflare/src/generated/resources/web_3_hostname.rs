@@ -11,19 +11,19 @@ pub mod web_3_hostname {
     pub struct Web3HostnameArgs {
         /// An optional description of the hostname.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// DNSLink value used if the target is ipfs.
         #[builder(into, default)]
-        pub dnslink: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dnslink: pulumi_gestalt_rust::Input<Option<String>>,
         /// The hostname that will point to the target gateway via CNAME.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Target gateway of the hostname.
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct Web3HostnameResult {

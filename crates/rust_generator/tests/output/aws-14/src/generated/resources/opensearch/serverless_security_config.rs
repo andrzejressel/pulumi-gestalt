@@ -21,20 +21,20 @@ pub mod serverless_security_config {
     pub struct ServerlessSecurityConfigArgs {
         /// Description of the security configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for SAML options.
         #[builder(into, default)]
-        pub saml_options: pulumi_gestalt_rust::InputOrOutput<
+        pub saml_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::opensearch::ServerlessSecurityConfigSamlOptions>,
         >,
         /// Type of configuration. Must be `saml`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServerlessSecurityConfigResult {

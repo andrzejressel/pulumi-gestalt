@@ -86,20 +86,18 @@ pub mod backup_policy_mysql_flexible_server {
     pub struct BackupPolicyMysqlFlexibleServerArgs {
         /// Specifies a list of repeating time interval. It supports weekly back. It should follow `ISO 8601` repeating time interval format. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub backup_repeating_time_intervals: pulumi_gestalt_rust::InputOrOutput<
-            Vec<String>,
-        >,
+        pub backup_repeating_time_intervals: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A `default_retention_rule` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub default_retention_rule: pulumi_gestalt_rust::InputOrOutput<
+        pub default_retention_rule: pulumi_gestalt_rust::Input<
             super::super::types::dataprotection::BackupPolicyMysqlFlexibleServerDefaultRetentionRule,
         >,
         /// Specifies the name of the Backup Policy for the MySQL Flexible Server. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `retention_rule` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub retention_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_rules: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::dataprotection::BackupPolicyMysqlFlexibleServerRetentionRule,
@@ -108,10 +106,10 @@ pub mod backup_policy_mysql_flexible_server {
         >,
         /// Specifies the Time Zone which should be used by the backup schedule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Backup Vault where the Backup Policy MySQL Flexible Server should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupPolicyMysqlFlexibleServerResult {

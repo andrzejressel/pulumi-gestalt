@@ -43,16 +43,16 @@ pub mod suppression {
     pub struct SuppressionArgs {
         /// The Name which should be used for this Advisor suppression. Changing this forces a new Advisor suppression to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Advisor recommendation to suppress. Changing this forces a new Advisor suppression to be created.
         #[builder(into)]
-        pub recommendation_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recommendation_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Resource to suppress the Advisor recommendation for. Changing this forces a new Advisor suppression to be created.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// A optional time to live value. If omitted, the suppression will not expire. Changing this forces a new Advisor suppression to be created.
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ttl: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SuppressionResult {

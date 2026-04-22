@@ -10,7 +10,7 @@ pub mod get_origin_access_identity {
     pub struct GetOriginAccessIdentityArgs {
         /// The identifier for the origin access identity. For example: `E1ZAKK699EOLAL`.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOriginAccessIdentityResult {

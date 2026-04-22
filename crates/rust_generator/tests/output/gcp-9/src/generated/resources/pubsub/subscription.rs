@@ -470,13 +470,13 @@ pub mod subscription {
         /// If the subscriber never acknowledges the message, the Pub/Sub system
         /// will eventually redeliver the message.
         #[builder(into, default)]
-        pub ack_deadline_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ack_deadline_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// If delivery to BigQuery is used with this subscription, this field is used to configure it.
         /// Either pushConfig, bigQueryConfig or cloudStorageConfig can be set, but not combined.
         /// If all three are empty, then the subscriber will pull and ack messages using API methods.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub bigquery_config: pulumi_gestalt_rust::InputOrOutput<
+        pub bigquery_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::SubscriptionBigqueryConfig>,
         >,
         /// If delivery to Cloud Storage is used with this subscription, this field is used to configure it.
@@ -484,7 +484,7 @@ pub mod subscription {
         /// If all three are empty, then the subscriber will pull and ack messages using API methods.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloud_storage_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_storage_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::SubscriptionCloudStorageConfig>,
         >,
         /// A policy that specifies the conditions for dead lettering messages in
@@ -496,7 +496,7 @@ pub mod subscription {
         /// permission to Acknowledge() messages on this subscription.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub dead_letter_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub dead_letter_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::SubscriptionDeadLetterPolicy>,
         >,
         /// If `true`, Pub/Sub provides the following guarantees for the delivery
@@ -506,14 +506,12 @@ pub mod subscription {
         /// Note that subscribers may still receive multiple copies of a message when `enable_exactly_once_delivery`
         /// is true if the message was published multiple times by a publisher client. These copies are considered distinct by Pub/Sub and have distinct messageId values
         #[builder(into, default)]
-        pub enable_exactly_once_delivery: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub enable_exactly_once_delivery: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If `true`, messages published with the same orderingKey in PubsubMessage will be delivered to
         /// the subscribers in the order in which they are received by the Pub/Sub system. Otherwise, they
         /// may be delivered in any order.
         #[builder(into, default)]
-        pub enable_message_ordering: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_message_ordering: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A policy that specifies the conditions for this subscription's expiration.
         /// A subscription is considered active as long as any connected subscriber
         /// is successfully consuming messages from the subscription or is issuing
@@ -523,7 +521,7 @@ pub mod subscription {
         /// is 1 day.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub expiration_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub expiration_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::SubscriptionExpirationPolicy>,
         >,
         /// The subscription only delivers the messages that match the filter.
@@ -531,13 +529,13 @@ pub mod subscription {
         /// by their attributes. The maximum length of a filter is 256 bytes. After creating the subscription,
         /// you can't modify the filter.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value label pairs to assign to this Subscription.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// How long to retain unacknowledged messages in the subscription's
@@ -549,22 +547,20 @@ pub mod subscription {
         /// A duration in seconds with up to nine fractional digits, terminated
         /// by 's'. Example: `"600.5s"`.
         #[builder(into, default)]
-        pub message_retention_duration: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub message_retention_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the subscription.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// If push delivery is used with this subscription, this field is used to
         /// configure it. An empty pushConfig signifies that the subscriber will
         /// pull and ack messages using API methods.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub push_config: pulumi_gestalt_rust::InputOrOutput<
+        pub push_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::SubscriptionPushConfig>,
         >,
         /// Indicates whether to retain acknowledged messages. If `true`, then
@@ -572,13 +568,13 @@ pub mod subscription {
         /// they are acknowledged, until they fall out of the
         /// messageRetentionDuration window.
         #[builder(into, default)]
-        pub retain_acked_messages: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub retain_acked_messages: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A policy that specifies how Pub/Sub retries message delivery for this subscription.
         /// If not set, the default retry policy is applied. This generally implies that messages will be retried as soon as possible for healthy subscribers.
         /// RetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded events for a given message
         /// Structure is documented below.
         #[builder(into, default)]
-        pub retry_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub retry_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::SubscriptionRetryPolicy>,
         >,
         /// A reference to a Topic resource, of the form projects/{project}/topics/{{name}}
@@ -588,7 +584,7 @@ pub mod subscription {
         ///
         /// - - -
         #[builder(into)]
-        pub topic: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub topic: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionResult {

@@ -76,16 +76,16 @@ pub mod proxy_target {
         ///
         /// **NOTE:** Either `db_instance_identifier` or `db_cluster_identifier` should be specified and both should not be specified together
         #[builder(into, default)]
-        pub db_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// DB instance identifier.
         #[builder(into, default)]
-        pub db_instance_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_instance_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the DB proxy.
         #[builder(into)]
-        pub db_proxy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_proxy_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the target group.
         #[builder(into)]
-        pub target_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProxyTargetResult {

@@ -67,17 +67,17 @@ pub mod fleet {
         /// The default cluster configurations to apply across the fleet.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub default_cluster_config: pulumi_gestalt_rust::InputOrOutput<
+        pub default_cluster_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkehub::FleetDefaultClusterConfig>,
         >,
         /// A user-assigned display name of the Fleet. When present, it must be between 4 to 30 characters.
         /// Allowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FleetResult {

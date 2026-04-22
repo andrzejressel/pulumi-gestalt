@@ -35,15 +35,15 @@ pub mod source_control_token {
     pub struct SourceControlTokenArgs {
         /// The Access Token.
         #[builder(into)]
-        pub token: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub token: pulumi_gestalt_rust::Input<String>,
         /// The Access Token Secret.
         ///
         /// > **NOTE:** The token used for deploying App Service needs the following permissions: `repo` and `workflow`.
         #[builder(into, default)]
-        pub token_secret: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_secret: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Token type. Possible values include `Bitbucket`, `Dropbox`, `Github`, and `OneDrive`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SourceControlTokenResult {

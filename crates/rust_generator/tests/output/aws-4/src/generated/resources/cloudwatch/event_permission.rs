@@ -58,22 +58,22 @@ pub mod event_permission {
     pub struct EventPermissionArgs {
         /// The action that you are enabling the other account to perform. Defaults to `events:PutEvents`.
         #[builder(into, default)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub action: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block to limit the event bus permissions you are granting to only accounts that fulfill the condition. Specified below.
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventPermissionCondition>,
         >,
         /// The name of the event bus to set the permissions on.
         /// If you omit this, the permissions are set on the `default` event bus.
         #[builder(into, default)]
-        pub event_bus_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_bus_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify `*` to permit any account to put events to your default event bus, optionally limited by `condition`.
         #[builder(into)]
-        pub principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal: pulumi_gestalt_rust::Input<String>,
         /// An identifier string for the external account that you are granting permissions to.
         #[builder(into)]
-        pub statement_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub statement_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EventPermissionResult {

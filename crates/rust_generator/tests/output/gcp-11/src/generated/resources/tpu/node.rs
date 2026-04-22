@@ -117,7 +117,7 @@ pub mod node {
     pub struct NodeArgs {
         /// The type of hardware accelerators associated with this node.
         #[builder(into)]
-        pub accelerator_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub accelerator_type: pulumi_gestalt_rust::Input<String>,
         /// The CIDR block that the TPU node will use when selecting an IP
         /// address. This CIDR block must be a /29 block; the Compute Engine
         /// networks API forbids a smaller block, and using a larger block would
@@ -127,34 +127,34 @@ pub mod node {
         /// subnetworks in the user's provided network, or the provided network
         /// is peered with another network that is using that CIDR block.
         #[builder(into, default)]
-        pub cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user-supplied description of the TPU. Maximum of 512 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource labels to represent user provided metadata.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The immutable name of the TPU.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a network to peer the TPU node to. It must be a
         /// preexisting Compute Engine network inside of the project on which
         /// this API has been activated. If none is provided, "default" will be
         /// used.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Sets the scheduling options for this TPU instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub scheduling_config: pulumi_gestalt_rust::InputOrOutput<
+        pub scheduling_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::tpu::NodeSchedulingConfig>,
         >,
         /// The version of Tensorflow running in the Node.
@@ -162,16 +162,16 @@ pub mod node {
         ///
         /// - - -
         #[builder(into)]
-        pub tensorflow_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tensorflow_version: pulumi_gestalt_rust::Input<String>,
         /// Whether the VPC peering for the node is set up through Service Networking API.
         /// The VPC Peering should be set up before provisioning the node. If this field is set,
         /// cidr_block field should not be specified. If the network that you want to peer the
         /// TPU Node to is a Shared VPC network, the node must be created with this this field enabled.
         #[builder(into, default)]
-        pub use_service_networking: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_service_networking: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The GCP location for the TPU. If it is not provided, the provider zone is used.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NodeResult {

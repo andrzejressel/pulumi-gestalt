@@ -10,10 +10,10 @@ pub mod get_medtech_service {
     pub struct GetMedtechServiceArgs {
         /// The name of the Healthcare Med Tech Service.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The id of the Healthcare Workspace in which the Healthcare Med Tech Service exists.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetMedtechServiceResult {

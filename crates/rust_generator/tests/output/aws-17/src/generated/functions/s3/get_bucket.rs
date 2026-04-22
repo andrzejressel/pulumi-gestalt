@@ -10,7 +10,7 @@ pub mod get_bucket {
     pub struct GetBucketArgs {
         /// Name of the bucket
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBucketResult {

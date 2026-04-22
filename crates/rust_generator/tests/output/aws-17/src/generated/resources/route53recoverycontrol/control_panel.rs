@@ -38,10 +38,10 @@ pub mod control_panel {
     pub struct ControlPanelArgs {
         /// ARN of the cluster in which this control panel will reside.
         #[builder(into)]
-        pub cluster_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_arn: pulumi_gestalt_rust::Input<String>,
         /// Name describing the control panel.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ControlPanelResult {

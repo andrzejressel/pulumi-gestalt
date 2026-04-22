@@ -35,24 +35,24 @@ pub mod hub {
     pub struct HubArgs {
         /// A description of the hub.
         #[builder(into)]
-        pub hub_description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hub_description: pulumi_gestalt_rust::Input<String>,
         /// The display name of the hub.
         #[builder(into, default)]
-        pub hub_display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hub_display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the hub.
         #[builder(into)]
-        pub hub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hub_name: pulumi_gestalt_rust::Input<String>,
         /// The searchable keywords for the hub.
         #[builder(into, default)]
-        pub hub_search_keywords: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub hub_search_keywords: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Amazon S3 storage configuration for the hub. See S3 Storage Config details below.
         #[builder(into, default)]
-        pub s3_storage_config: pulumi_gestalt_rust::InputOrOutput<
+        pub s3_storage_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::HubS3StorageConfig>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

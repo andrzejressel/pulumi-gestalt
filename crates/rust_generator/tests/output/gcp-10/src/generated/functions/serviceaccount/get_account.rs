@@ -18,11 +18,11 @@ pub mod get_account {
         /// * The email address of the service account (e.g.
         /// `my-service@my-project.iam.gserviceaccount.com`)
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project that the service account is present in.
         /// Defaults to the provider project configuration.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAccountResult {

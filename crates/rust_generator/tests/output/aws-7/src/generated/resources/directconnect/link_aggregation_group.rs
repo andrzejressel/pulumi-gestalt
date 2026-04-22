@@ -40,25 +40,25 @@ pub mod link_aggregation_group {
     pub struct LinkAggregationGroupArgs {
         /// The ID of an existing dedicated connection to migrate to the LAG.
         #[builder(into, default)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The bandwidth of the individual physical connections bundled by the LAG. Valid values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, 10Gbps and 100Gbps. Case sensitive.
         #[builder(into)]
-        pub connections_bandwidth: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connections_bandwidth: pulumi_gestalt_rust::Input<String>,
         /// A boolean that indicates all connections associated with the LAG should be deleted so that the LAG can be destroyed without error. These objects are *not* recoverable.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The AWS Direct Connect location in which the LAG should be allocated. See [DescribeLocations](https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html) for the list of AWS Direct Connect locations. Use `locationCode`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the LAG.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the service provider associated with the LAG.
         #[builder(into, default)]
-        pub provider_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub provider_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

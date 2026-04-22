@@ -10,10 +10,10 @@ pub mod get_application_security_group {
     pub struct GetApplicationSecurityGroupArgs {
         /// The name of the Application Security Group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Application Security Group exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetApplicationSecurityGroupResult {

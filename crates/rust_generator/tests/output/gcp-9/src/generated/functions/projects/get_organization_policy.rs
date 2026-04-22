@@ -10,10 +10,10 @@ pub mod get_organization_policy {
     pub struct GetOrganizationPolicyArgs {
         /// (Required) The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints).
         #[builder(into)]
-        pub constraint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub constraint: pulumi_gestalt_rust::Input<String>,
         /// The project ID.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOrganizationPolicyResult {

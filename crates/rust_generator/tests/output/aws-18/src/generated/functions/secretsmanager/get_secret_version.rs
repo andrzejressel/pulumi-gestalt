@@ -10,13 +10,13 @@ pub mod get_secret_version {
     pub struct GetSecretVersionArgs {
         /// Specifies the secret containing the version that you want to retrieve. You can specify either the ARN or the friendly name of the secret.
         #[builder(into)]
-        pub secret_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the unique identifier of the version of the secret that you want to retrieve. Overrides `version_stage`.
         #[builder(into, default)]
-        pub version_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the secret version that you want to retrieve by the staging label attached to the version. Defaults to `AWSCURRENT`.
         #[builder(into, default)]
-        pub version_stage: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_stage: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSecretVersionResult {

@@ -97,29 +97,29 @@ pub mod c_name_record {
     pub struct CNameRecordArgs {
         /// The name of the DNS CNAME Record. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The target of the CNAME.
         #[builder(into, default)]
-        pub record: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub record: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the resource group where the DNS Zone (parent resource) exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         ///
         /// > **Note:** either `record` OR `target_resource_id` must be specified, but not both.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Azure resource id of the target object. Conflicts with `record`.
         #[builder(into, default)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Time To Live (TTL) of the DNS record in seconds.
         #[builder(into)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub ttl: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the DNS Zone where the resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub zone_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CNameRecordResult {

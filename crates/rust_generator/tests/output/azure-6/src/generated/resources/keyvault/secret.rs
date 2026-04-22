@@ -65,29 +65,29 @@ pub mod secret {
     pub struct SecretArgs {
         /// Specifies the content type for the Key Vault Secret.
         #[builder(into, default)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Expiration UTC datetime (Y-m-d'T'H:M:S'Z').
         #[builder(into, default)]
-        pub expiration_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiration_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Key Vault where the Secret should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Key Vault Secret. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key not usable before the provided UTC datetime (Y-m-d'T'H:M:S'Z').
         #[builder(into, default)]
-        pub not_before_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub not_before_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the value of the Key Vault Secret. Changing this will create a new version of the Key Vault Secret.
         ///
         /// > **Note:** Key Vault strips newlines. To preserve newlines in multi-line secrets try replacing them with `\n` or by base 64 encoding them with `replace(file("my_secret_file"), "/\n/", "\n")` or `base64encode(file("my_secret_file"))`, respectively.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SecretResult {

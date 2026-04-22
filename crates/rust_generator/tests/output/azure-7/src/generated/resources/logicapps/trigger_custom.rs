@@ -55,15 +55,15 @@ pub mod trigger_custom {
     pub struct TriggerCustomArgs {
         /// Specifies the JSON Blob defining the Body of this Custom Trigger.
         #[builder(into)]
-        pub body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub body: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub logic_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub logic_app_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the HTTP Trigger to be created within the Logic App Workflow. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** This name must be unique across all Triggers within the Logic App Workflow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TriggerCustomResult {

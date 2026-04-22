@@ -46,57 +46,55 @@ pub mod infrastructure_configuration {
     pub struct InfrastructureConfigurationArgs {
         /// Description for the configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with instance metadata options for the HTTP requests that pipeline builds use to launch EC2 build and test instances. Detailed below.
         #[builder(into, default)]
-        pub instance_metadata_options: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_metadata_options: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::imagebuilder::InfrastructureConfigurationInstanceMetadataOptions,
             >,
         >,
         /// Name of IAM Instance Profile.
         #[builder(into)]
-        pub instance_profile_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_profile_name: pulumi_gestalt_rust::Input<String>,
         /// Set of EC2 Instance Types.
         #[builder(into, default)]
-        pub instance_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub instance_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of EC2 Key Pair.
         #[builder(into, default)]
-        pub key_pair: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_pair: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with logging settings. Detailed below.
         #[builder(into, default)]
-        pub logging: pulumi_gestalt_rust::InputOrOutput<
+        pub logging: pulumi_gestalt_rust::Input<
             Option<super::super::types::imagebuilder::InfrastructureConfigurationLogging>,
         >,
         /// Name for the configuration.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags to assign to infrastructure created by the configuration.
         #[builder(into, default)]
-        pub resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Set of EC2 Security Group identifiers.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Amazon Resource Name (ARN) of SNS Topic.
         #[builder(into, default)]
-        pub sns_topic_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sns_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// EC2 Subnet identifier. Also requires `security_group_ids` argument.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags to assign to the configuration. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Enable if the instance should be terminated when the pipeline fails. Defaults to `false`.
         #[builder(into, default)]
-        pub terminate_instance_on_failure: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub terminate_instance_on_failure: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct InfrastructureConfigurationResult {

@@ -10,13 +10,13 @@ pub mod get_volume_group_sap_hana {
     pub struct GetVolumeGroupSapHanaArgs {
         /// Name of the account where the application volume group belong to.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of this Application Volume Group for SAP HANA application.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Application Volume Group exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVolumeGroupSapHanaResult {

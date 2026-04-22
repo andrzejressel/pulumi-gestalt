@@ -97,40 +97,40 @@ pub mod workforce_pool {
         /// sign-in can be restricted to given set of services or programmatic sign-in can be disabled for pool users.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub access_restrictions: pulumi_gestalt_rust::InputOrOutput<
+        pub access_restrictions: pulumi_gestalt_rust::Input<
             Option<super::super::types::iam::WorkforcePoolAccessRestrictions>,
         >,
         /// A user-specified description of the pool. Cannot exceed 256 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the pool is disabled. You cannot use a disabled pool to exchange tokens,
         /// or use existing tokens to access resources. If the pool is re-enabled, existing tokens grant access again.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A user-specified display name of the pool in Google Cloud Console. Cannot exceed 32 characters.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location for the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Immutable. The resource name of the parent. Format: `organizations/{org-id}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Duration that the Google Cloud access tokens, console sign-in sessions,
         /// and `gcloud` sign-in sessions from this pool are valid.
         /// Must be greater than 15 minutes (900s) and less than 12 hours (43200s).
         /// If `sessionDuration` is not configured, minted credentials have a default duration of one hour (3600s).
         /// A duration in seconds with up to nine fractional digits, ending with '`s`'. Example: "`3.5s`".
         #[builder(into, default)]
-        pub session_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub session_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the pool. The ID must be a globally unique string of 6 to 63 lowercase letters,
         /// digits, or hyphens. It must start with a letter, and cannot have a trailing hyphen.
         /// The prefix `gcp-` is reserved for use by Google, and may not be specified.
         #[builder(into)]
-        pub workforce_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workforce_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkforcePoolResult {

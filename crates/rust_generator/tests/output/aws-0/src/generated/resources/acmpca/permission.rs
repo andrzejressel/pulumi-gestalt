@@ -46,16 +46,16 @@ pub mod permission {
     pub struct PermissionArgs {
         /// Actions that the specified AWS service principal can use. These include `IssueCertificate`, `GetCertificate`, and `ListPermissions`. Note that in order for ACM to automatically rotate certificates issued by a PCA, it must be granted permission on all 3 actions, as per the example above.
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub actions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// ARN of the CA that grants the permissions.
         #[builder(into)]
-        pub certificate_authority_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_authority_arn: pulumi_gestalt_rust::Input<String>,
         /// AWS service or identity that receives the permission. At this time, the only valid principal is `acm.amazonaws.com`.
         #[builder(into)]
-        pub principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal: pulumi_gestalt_rust::Input<String>,
         /// ID of the calling account
         #[builder(into, default)]
-        pub source_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_account: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PermissionResult {

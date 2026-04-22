@@ -31,17 +31,17 @@ pub mod default_route_table_propagation {
     #[allow(dead_code)]
     pub struct DefaultRouteTablePropagationArgs {
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ec2transitgateway::DefaultRouteTablePropagationTimeouts,
             >,
         >,
         /// ID of the Transit Gateway to change the default association route table on.
         #[builder(into)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the Transit Gateway Route Table to be made the default association route table.
         #[builder(into)]
-        pub transit_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DefaultRouteTablePropagationResult {

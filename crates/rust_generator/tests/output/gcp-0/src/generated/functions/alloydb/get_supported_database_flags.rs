@@ -10,10 +10,10 @@ pub mod get_supported_database_flags {
     pub struct GetSupportedDatabaseFlagsArgs {
         /// The canonical id of the location. For example: `us-east1`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSupportedDatabaseFlagsResult {

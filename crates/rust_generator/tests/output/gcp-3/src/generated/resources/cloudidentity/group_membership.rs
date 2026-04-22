@@ -98,22 +98,22 @@ pub mod group_membership {
     pub struct GroupMembershipArgs {
         /// The name of the Group to create this membership in.
         #[builder(into)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group: pulumi_gestalt_rust::Input<String>,
         /// EntityKey of the member.
         #[builder(into, default)]
-        pub member_key: pulumi_gestalt_rust::InputOrOutput<
+        pub member_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudidentity::GroupMembershipMemberKey>,
         >,
         /// EntityKey of the member.
         #[builder(into, default)]
-        pub preferred_member_key: pulumi_gestalt_rust::InputOrOutput<
+        pub preferred_member_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudidentity::GroupMembershipPreferredMemberKey>,
         >,
         /// The MembershipRoles that apply to the Membership.
         /// Must not contain duplicate MembershipRoles with the same name.
         /// Structure is documented below.
         #[builder(into)]
-        pub roles: pulumi_gestalt_rust::InputOrOutput<
+        pub roles: pulumi_gestalt_rust::Input<
             Vec<super::super::types::cloudidentity::GroupMembershipRole>,
         >,
     }

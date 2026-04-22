@@ -40,15 +40,15 @@ pub mod virtual_mfa_device {
     pub struct VirtualMfaDeviceArgs {
         /// The path for the virtual MFA device.
         #[builder(into, default)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of resource tags for the virtual mfa device. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
         #[builder(into)]
-        pub virtual_mfa_device_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_mfa_device_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualMfaDeviceResult {

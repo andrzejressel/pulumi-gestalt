@@ -9,10 +9,10 @@ pub mod get_managed_hardware_security_module_role_definition {
     #[allow(dead_code)]
     pub struct GetManagedHardwareSecurityModuleRoleDefinitionArgs {
         #[builder(into)]
-        pub managed_hsm_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_hsm_id: pulumi_gestalt_rust::Input<String>,
         /// The name in UUID notation of this KeyVault Role Definition.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetManagedHardwareSecurityModuleRoleDefinitionResult {

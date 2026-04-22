@@ -386,47 +386,47 @@ pub mod migration_job {
     pub struct MigrationJobArgs {
         /// The name of the destination connection profile resource in the form of projects/{project}/locations/{location}/connectionProfiles/{destinationConnectionProfile}.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination: pulumi_gestalt_rust::Input<String>,
         /// The migration job display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The initial dump flags.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub dump_flags: pulumi_gestalt_rust::InputOrOutput<
+        pub dump_flags: pulumi_gestalt_rust::Input<
             Option<super::super::types::databasemigrationservice::MigrationJobDumpFlags>,
         >,
         /// The path to the dump file in Google Cloud Storage,
         /// in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
         /// This field and the "dump_flags" field are mutually exclusive.
         #[builder(into, default)]
-        pub dump_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dump_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the data dump. Supported for MySQL to CloudSQL for MySQL
         /// migrations only.
         /// Possible values are: `LOGICAL`, `PHYSICAL`.
         #[builder(into, default)]
-        pub dump_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dump_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource labels for migration job to use to annotate any related underlying resources such as Compute Engine VMs.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where the migration job should reside.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the migration job.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub migration_job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub migration_job_id: pulumi_gestalt_rust::Input<String>,
         /// Data dump parallelism settings used by the migration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub performance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub performance_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::databasemigrationservice::MigrationJobPerformanceConfig,
             >,
@@ -434,24 +434,24 @@ pub mod migration_job {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The details of the VPC network that the source database is located in.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub reverse_ssh_connectivity: pulumi_gestalt_rust::InputOrOutput<
+        pub reverse_ssh_connectivity: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::databasemigrationservice::MigrationJobReverseSshConnectivity,
             >,
         >,
         /// The name of the source connection profile resource in the form of projects/{project}/locations/{location}/connectionProfiles/{sourceConnectionProfile}.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
         /// If set to an empty object (`{}`), the source database will allow incoming
         /// connections from the public IP of the destination database.
         /// You can retrieve the public IP of the Cloud SQL instance from the
         /// Cloud SQL console or using Cloud SQL APIs.
         #[builder(into, default)]
-        pub static_ip_connectivity: pulumi_gestalt_rust::InputOrOutput<
+        pub static_ip_connectivity: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::databasemigrationservice::MigrationJobStaticIpConnectivity,
             >,
@@ -459,11 +459,11 @@ pub mod migration_job {
         /// The type of the migration job.
         /// Possible values are: `ONE_TIME`, `CONTINUOUS`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// The details of the VPC network that the source database is located in.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub vpc_peering_connectivity: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_peering_connectivity: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::databasemigrationservice::MigrationJobVpcPeeringConnectivity,
             >,

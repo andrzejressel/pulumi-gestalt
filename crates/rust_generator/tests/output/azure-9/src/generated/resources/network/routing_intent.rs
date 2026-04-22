@@ -85,15 +85,15 @@ pub mod routing_intent {
     pub struct RoutingIntentArgs {
         /// The name which should be used for this Virtual Hub Routing Intent. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `routing_policy` blocks as defined below.
         #[builder(into)]
-        pub routing_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_policies: pulumi_gestalt_rust::Input<
             Vec<super::super::types::network::RoutingIntentRoutingPolicy>,
         >,
         /// The resource ID of the Virtual Hub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RoutingIntentResult {

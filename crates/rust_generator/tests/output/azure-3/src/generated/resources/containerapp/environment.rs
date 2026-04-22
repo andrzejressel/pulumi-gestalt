@@ -56,62 +56,58 @@ pub mod environment {
     pub struct EnvironmentArgs {
         /// Application Insights connection string used by Dapr to export Service to Service communication telemetry. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub dapr_application_insights_connection_string: pulumi_gestalt_rust::InputOrOutput<
+        pub dapr_application_insights_connection_string: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Name of the platform-managed resource group created for the Managed Environment to host infrastructure resources. Changing this forces a new resource to be created.
         ///
         /// > **Note:** Only valid if a `workload_profile` is specified. If `infrastructure_subnet_id` is specified, this resource group will be created in the same subscription as `infrastructure_subnet_id`.
         #[builder(into, default)]
-        pub infrastructure_resource_group_name: pulumi_gestalt_rust::InputOrOutput<
+        pub infrastructure_resource_group_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The existing Subnet to use for the Container Apps Control Plane. Changing this forces a new resource to be created.
         ///
         /// > **Note:** The Subnet must have a `/21` or larger address space.
         #[builder(into, default)]
-        pub infrastructure_subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub infrastructure_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Container Environment operate in Internal Load Balancing Mode? Defaults to `false`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** can only be set to `true` if `infrastructure_subnet_id` is specified.
         #[builder(into, default)]
-        pub internal_load_balancer_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub internal_load_balancer_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the Container App Environment is to exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID for the Log Analytics Workspace to link this Container Apps Managed Environment to.
         #[builder(into, default)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should mutual transport layer security (mTLS) be enabled? Defaults to `false`.
         ///
         /// > **Note:** This feature is in public preview. Enabling mTLS for your applications may increase response latency and reduce maximum throughput in high-load scenarios.
         #[builder(into, default)]
-        pub mutual_tls_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub mutual_tls_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Container Apps Managed Environment. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Container App Environment is to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The profile of the workload to scope the container app execution. A `workload_profile` block as defined below.
         #[builder(into, default)]
-        pub workload_profiles: pulumi_gestalt_rust::InputOrOutput<
+        pub workload_profiles: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerapp::EnvironmentWorkloadProfile>>,
         >,
         /// Should the Container App Environment be created with Zone Redundancy enabled? Defaults to `false`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** can only be set to `true` if `infrastructure_subnet_id` is specified.
         #[builder(into, default)]
-        pub zone_redundancy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_redundancy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentResult {

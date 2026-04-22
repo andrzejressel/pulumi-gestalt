@@ -76,10 +76,10 @@ pub mod log_resource_policy {
     pub struct LogResourcePolicyArgs {
         /// Details of the resource policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. Maximum length of 5120 characters.
         #[builder(into)]
-        pub policy_document: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_document: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource policy.
         #[builder(into)]
-        pub policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LogResourcePolicyResult {

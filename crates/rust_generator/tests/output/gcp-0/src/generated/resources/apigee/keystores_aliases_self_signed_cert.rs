@@ -149,34 +149,34 @@ pub mod keystores_aliases_self_signed_cert {
         /// This must be provided for all formats except selfsignedcert; self-signed certs may specify the alias in either
         /// this parameter or the JSON body.
         #[builder(into)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alias: pulumi_gestalt_rust::Input<String>,
         /// Validity duration of certificate, in days. Accepts positive non-zero value. Defaults to 365.
         #[builder(into, default)]
-        pub cert_validity_in_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub cert_validity_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Apigee environment name
         #[builder(into)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment: pulumi_gestalt_rust::Input<String>,
         /// Key size. Default and maximum value is 2048 bits.
         #[builder(into, default)]
-        pub key_size: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_size: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apigee keystore name associated in an Apigee environment
         #[builder(into)]
-        pub keystore: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub keystore: pulumi_gestalt_rust::Input<String>,
         /// The Apigee Organization name associated with the Apigee environment
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// Signature algorithm to generate private key. Valid values are SHA512withRSA, SHA384withRSA, and SHA256withRSA
         #[builder(into)]
-        pub sig_alg: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sig_alg: pulumi_gestalt_rust::Input<String>,
         /// Subject details.
         /// Structure is documented below.
         #[builder(into)]
-        pub subject: pulumi_gestalt_rust::InputOrOutput<
+        pub subject: pulumi_gestalt_rust::Input<
             super::super::types::apigee::KeystoresAliasesSelfSignedCertSubject,
         >,
         /// List of alternative host names. Maximum length is 255 characters for each value.
         #[builder(into, default)]
-        pub subject_alternative_dns_names: pulumi_gestalt_rust::InputOrOutput<
+        pub subject_alternative_dns_names: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::apigee::KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames,
             >,

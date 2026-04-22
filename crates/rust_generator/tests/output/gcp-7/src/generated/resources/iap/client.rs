@@ -92,10 +92,10 @@ pub mod client {
         ///
         /// - - -
         #[builder(into)]
-        pub brand: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub brand: pulumi_gestalt_rust::Input<String>,
         /// Human-friendly name given to the OAuth client.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClientResult {

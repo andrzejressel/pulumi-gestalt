@@ -43,7 +43,7 @@ pub mod invitation_accepter {
     pub struct InvitationAccepterArgs {
         /// ARN of the behavior graph that the member account is accepting the invitation for.
         #[builder(into)]
-        pub graph_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub graph_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InvitationAccepterResult {

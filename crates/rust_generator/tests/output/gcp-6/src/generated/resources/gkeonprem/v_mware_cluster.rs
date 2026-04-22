@@ -224,7 +224,7 @@ pub mod v_mware_cluster {
         /// In the future, references to other resource types might be allowed if
         /// admin clusters are modeled as their own resources.
         #[builder(into)]
-        pub admin_cluster_membership: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_cluster_membership: pulumi_gestalt_rust::Input<String>,
         /// Annotations on the VMware User Cluster. This field has the same restrictions as Kubernetes annotations. The total size
         /// of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required),
         /// separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with
@@ -232,84 +232,84 @@ pub mod v_mware_cluster {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// AAGConfig specifies whether to spread VMware User Cluster nodes across at least three physical hosts in the datacenter.
         #[builder(into, default)]
-        pub anti_affinity_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub anti_affinity_groups: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterAntiAffinityGroups>,
         >,
         /// RBAC policy that will be applied and managed by GKE On-Prem.
         #[builder(into, default)]
-        pub authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub authorization: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterAuthorization>,
         >,
         /// Configuration for auto repairing.
         #[builder(into, default)]
-        pub auto_repair_config: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_repair_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterAutoRepairConfig>,
         >,
         /// VMware User Cluster control plane nodes must have either 1 or 3 replicas.
         /// Structure is documented below.
         #[builder(into)]
-        pub control_plane_node: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane_node: pulumi_gestalt_rust::Input<
             super::super::types::gkeonprem::VMwareClusterControlPlaneNode,
         >,
         /// VmwareDataplaneV2Config specifies configuration for Dataplane V2.
         #[builder(into, default)]
-        pub dataplane_v2: pulumi_gestalt_rust::InputOrOutput<
+        pub dataplane_v2: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterDataplaneV2>,
         >,
         /// (Output)
         /// The description of the validation check.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Disable bundled ingress.
         #[builder(into, default)]
-        pub disable_bundled_ingress: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_bundled_ingress: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable control plane V2. Default to false.
         #[builder(into, default)]
-        pub enable_control_plane_v2: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_control_plane_v2: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Load Balancer configuration.
         #[builder(into, default)]
-        pub load_balancer: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancer: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterLoadBalancer>,
         >,
         /// The location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The VMware cluster name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The VMware User Cluster network configuration.
         #[builder(into, default)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterNetworkConfig>,
         >,
         /// The Anthos clusters on the VMware version for your user cluster.
         #[builder(into)]
-        pub on_prem_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub on_prem_version: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Storage configuration.
         #[builder(into, default)]
-        pub storage: pulumi_gestalt_rust::InputOrOutput<
+        pub storage: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterStorage>,
         >,
         /// Specifies upgrade policy for the cluster.
         #[builder(into, default)]
-        pub upgrade_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub upgrade_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterUpgradePolicy>,
         >,
         /// VmwareVCenterConfig specifies vCenter config for the user cluster. Inherited from the admin cluster.
         #[builder(into, default)]
-        pub vcenter: pulumi_gestalt_rust::InputOrOutput<
+        pub vcenter: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareClusterVcenter>,
         >,
         /// Enable VM tracking.
         #[builder(into, default)]
-        pub vm_tracking_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub vm_tracking_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct VMwareClusterResult {

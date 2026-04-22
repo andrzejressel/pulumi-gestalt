@@ -36,14 +36,14 @@ pub mod security_group_vpc_association {
     pub struct SecurityGroupVpcAssociationArgs {
         /// The ID of the security group.
         #[builder(into)]
-        pub security_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_group_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::vpc::SecurityGroupVpcAssociationTimeouts>,
         >,
         /// The ID of the VPC to make the association with.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SecurityGroupVpcAssociationResult {

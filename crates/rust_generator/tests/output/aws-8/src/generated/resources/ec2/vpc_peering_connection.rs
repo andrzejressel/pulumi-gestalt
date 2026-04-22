@@ -137,37 +137,37 @@ pub mod vpc_peering_connection {
         /// An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that accepts
         /// the peering connection (a maximum of one).
         #[builder(into, default)]
-        pub accepter: pulumi_gestalt_rust::InputOrOutput<
+        pub accepter: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::VpcPeeringConnectionAccepter>,
         >,
         /// Accept the peering (both VPCs need to be in the same AWS account and region).
         #[builder(into, default)]
-        pub auto_accept: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_accept: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The AWS account ID of the target peer VPC.
         /// Defaults to the account ID the [AWS provider][1] is currently connected to, so must be managed if connecting cross-account.
         #[builder(into, default)]
-        pub peer_owner_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peer_owner_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the accepter VPC of the VPC Peering Connection. `auto_accept` must be `false`,
         /// and use the `aws.ec2.VpcPeeringConnectionAccepter` to manage the accepter side.
         #[builder(into, default)]
-        pub peer_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peer_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the target VPC with which you are creating the VPC Peering Connection.
         #[builder(into)]
-        pub peer_vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_vpc_id: pulumi_gestalt_rust::Input<String>,
         /// A optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that requests
         /// the peering connection (a maximum of one).
         #[builder(into, default)]
-        pub requester: pulumi_gestalt_rust::InputOrOutput<
+        pub requester: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::VpcPeeringConnectionRequester>,
         >,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the requester VPC.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcPeeringConnectionResult {

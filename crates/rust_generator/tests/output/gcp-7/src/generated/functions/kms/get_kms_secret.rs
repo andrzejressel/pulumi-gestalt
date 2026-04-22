@@ -10,17 +10,15 @@ pub mod get_kms_secret {
     pub struct GetKmsSecretArgs {
         /// The [additional authenticated data](https://cloud.google.com/kms/docs/additional-authenticated-data) used for integrity checks during encryption and decryption.
         #[builder(into, default)]
-        pub additional_authenticated_data: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub additional_authenticated_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ciphertext to be decrypted, encoded in base64
         #[builder(into)]
-        pub ciphertext: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ciphertext: pulumi_gestalt_rust::Input<String>,
         /// The id of the CryptoKey that will be used to
         /// decrypt the provided ciphertext. This is represented by the format
         /// `{projectId}/{location}/{keyRingName}/{cryptoKeyName}`.
         #[builder(into)]
-        pub crypto_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub crypto_key: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetKmsSecretResult {

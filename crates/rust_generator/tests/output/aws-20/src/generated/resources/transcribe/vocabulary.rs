@@ -52,23 +52,23 @@ pub mod vocabulary {
     pub struct VocabularyArgs {
         /// The language code you selected for your vocabulary.
         #[builder(into)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub language_code: pulumi_gestalt_rust::Input<String>,
         /// A list of terms to include in the vocabulary. Conflicts with `vocabulary_file_uri`
         #[builder(into, default)]
-        pub phrases: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub phrases: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the Vocabulary. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Amazon S3 location (URI) of the text file that contains your custom vocabulary. Conflicts wth `phrases`.
         #[builder(into, default)]
-        pub vocabulary_file_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vocabulary_file_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Vocabulary.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vocabulary_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vocabulary_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VocabularyResult {

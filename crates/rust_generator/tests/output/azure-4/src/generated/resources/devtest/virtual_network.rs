@@ -50,24 +50,24 @@ pub mod virtual_network {
     pub struct VirtualNetworkArgs {
         /// A description for the Virtual Network.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Dev Test Lab in which the Virtual Network should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lab_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lab_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Dev Test Virtual Network. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Dev Test Lab resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `subnet` block as defined below.
         #[builder(into, default)]
-        pub subnet: pulumi_gestalt_rust::InputOrOutput<
+        pub subnet: pulumi_gestalt_rust::Input<
             Option<super::super::types::devtest::VirtualNetworkSubnet>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

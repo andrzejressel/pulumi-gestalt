@@ -68,32 +68,32 @@ pub mod hci_network_interface {
     pub struct HciNetworkInterfaceArgs {
         /// The ID of the Custom Location where the Azure Stack HCI Network Interface should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub custom_location_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_location_id: pulumi_gestalt_rust::Input<String>,
         /// A list of IPv4 addresses of DNS servers available to VMs deployed in the Network Interface. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub dns_servers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub dns_servers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An `ip_configuration` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub ip_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_configuration: pulumi_gestalt_rust::Input<
             super::super::types::stack::HciNetworkInterfaceIpConfiguration,
         >,
         /// The Azure Region where the Azure Stack HCI Network Interface should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The MAC address of the Network Interface. Changing this forces a new resource to be created.
         ///
         /// > **Note:** If `mac_address` is not specified, it will be assigned by the server. If you experience a diff you may need to add this to `ignore_changes`.
         #[builder(into, default)]
-        pub mac_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mac_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Azure Stack HCI Network Interface. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Azure Stack HCI Network Interface should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Azure Stack HCI Network Interface.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

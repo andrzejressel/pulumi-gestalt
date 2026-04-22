@@ -74,13 +74,13 @@ pub mod policy_attachment {
     pub struct PolicyAttachmentArgs {
         /// The unique identifier (ID) of the policy that you want to attach to the target.
         #[builder(into)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_id: pulumi_gestalt_rust::Input<String>,
         /// If set to `true`, destroy will **not** detach the policy and instead just remove the resource from state. This can be useful in situations where the attachment must be preserved to meet the AWS minimum requirement of 1 attached policy.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The unique identifier (ID) of the root, organizational unit, or account number that you want to attach the policy to.
         #[builder(into)]
-        pub target_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyAttachmentResult {

@@ -10,10 +10,10 @@ pub mod get_templates {
     pub struct GetTemplatesArgs {
         /// AWS Region to which the quota increases apply.
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
         /// A list of quota increase templates for specified region. See `templates`.
         #[builder(into, default)]
-        pub templates: pulumi_gestalt_rust::InputOrOutput<
+        pub templates: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::servicequotas::GetTemplatesTemplate>>,
         >,
     }

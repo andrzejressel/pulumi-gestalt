@@ -111,19 +111,19 @@ pub mod resource_collection {
     pub struct ResourceCollectionArgs {
         /// A collection of AWS CloudFormation stacks. See `cloudformation` below for additional details.
         #[builder(into, default)]
-        pub cloudformation: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudformation: pulumi_gestalt_rust::Input<
             Option<super::super::types::devopsguru::ResourceCollectionCloudformation>,
         >,
         /// AWS tags used to filter the resources in the resource collection. See `tags` below for additional details.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<super::super::types::devopsguru::ResourceCollectionTags>,
         >,
         /// Type of AWS resource collection to create. Valid values are `AWS_CLOUD_FORMATION`, `AWS_SERVICE`, and `AWS_TAGS`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourceCollectionResult {

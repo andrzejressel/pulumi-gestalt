@@ -10,17 +10,17 @@ pub mod list_configurations {
     pub struct ListConfigurationsArgs {
         /// Holds details about product hierarchy information and filterable property.
         #[builder(into)]
-        pub configuration_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_filters: pulumi_gestalt_rust::Input<
             Vec<super::super::types::ConfigurationFilters>,
         >,
         /// Customer subscription properties. Clients can display available products to unregistered customers by explicitly passing subscription details
         #[builder(into, default)]
-        pub customer_subscription_details: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_subscription_details: pulumi_gestalt_rust::Input<
             Option<super::super::types::CustomerSubscriptionDetails>,
         >,
         /// $skipToken is supported on list of configurations, which provides the next page in the list of configurations.
         #[builder(into, default)]
-        pub skip_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub skip_token: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ListConfigurationsResult {

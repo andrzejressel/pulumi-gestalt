@@ -139,59 +139,59 @@ pub mod node_template {
         /// node template
         /// Structure is documented below.
         #[builder(into, default)]
-        pub accelerators: pulumi_gestalt_rust::InputOrOutput<
+        pub accelerators: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::NodeTemplateAccelerator>>,
         >,
         /// CPU overcommit.
         /// Default value is `NONE`.
         /// Possible values are: `ENABLED`, `NONE`.
         #[builder(into, default)]
-        pub cpu_overcommit_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cpu_overcommit_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional textual description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of the type, size and count of disks attached to the
         /// node template
         /// Structure is documented below.
         #[builder(into, default)]
-        pub disks: pulumi_gestalt_rust::InputOrOutput<
+        pub disks: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::NodeTemplateDisk>>,
         >,
         /// Name of the resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels to use for node affinity, which will be used in
         /// instance scheduling.
         #[builder(into, default)]
-        pub node_affinity_labels: pulumi_gestalt_rust::InputOrOutput<
+        pub node_affinity_labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Node type to use for nodes group that are created from this template.
         /// Only one of nodeTypeFlexibility and nodeType can be specified.
         #[builder(into, default)]
-        pub node_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub node_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Flexible properties for the desired node type. Node groups that
         /// use this node template will create nodes of a type that matches
         /// these properties. Only one of nodeTypeFlexibility and nodeType can
         /// be specified.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub node_type_flexibility: pulumi_gestalt_rust::InputOrOutput<
+        pub node_type_flexibility: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::NodeTemplateNodeTypeFlexibility>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where nodes using the node template will be created.
         /// If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The server binding policy for nodes using this template. Determines
         /// where the nodes should restart following a maintenance event.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub server_binding: pulumi_gestalt_rust::InputOrOutput<
+        pub server_binding: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::NodeTemplateServerBinding>,
         >,
     }

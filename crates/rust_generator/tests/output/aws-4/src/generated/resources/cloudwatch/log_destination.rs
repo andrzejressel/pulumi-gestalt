@@ -37,18 +37,18 @@ pub mod log_destination {
     pub struct LogDestinationArgs {
         /// A name for the log destination.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to put data into the target.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ARN of the target Amazon Kinesis stream resource for the destination.
         #[builder(into)]
-        pub target_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LogDestinationResult {

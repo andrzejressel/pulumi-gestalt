@@ -55,24 +55,24 @@ pub mod share {
     pub struct ShareArgs {
         /// The ID of the Data Share account in which the Data Share is created. Changing this forces a new Data Share to be created.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The Data Share's description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The kind of the Data Share. Possible values are `CopyBased` and `InPlace`. Changing this forces a new Data Share to be created.
         #[builder(into)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kind: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Data Share. Changing this forces a new Data Share to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `snapshot_schedule` block as defined below.
         #[builder(into, default)]
-        pub snapshot_schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub snapshot_schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::datashare::ShareSnapshotSchedule>,
         >,
         /// The terms of the Data Share.
         #[builder(into, default)]
-        pub terms: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub terms: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ShareResult {

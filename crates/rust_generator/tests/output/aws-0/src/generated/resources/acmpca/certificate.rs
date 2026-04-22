@@ -61,23 +61,23 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// Specifies X.509 certificate information to be included in the issued certificate. To use with API Passthrough templates
         #[builder(into, default)]
-        pub api_passthrough: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_passthrough: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the certificate authority.
         #[builder(into)]
-        pub certificate_authority_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_authority_arn: pulumi_gestalt_rust::Input<String>,
         /// Certificate Signing Request in PEM format.
         #[builder(into)]
-        pub certificate_signing_request: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_signing_request: pulumi_gestalt_rust::Input<String>,
         /// Algorithm to use to sign certificate requests. Valid values: `SHA256WITHRSA`, `SHA256WITHECDSA`, `SHA384WITHRSA`, `SHA384WITHECDSA`, `SHA512WITHRSA`, `SHA512WITHECDSA`.
         #[builder(into)]
-        pub signing_algorithm: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signing_algorithm: pulumi_gestalt_rust::Input<String>,
         /// Template to use when issuing a certificate.
         /// See [ACM PCA Documentation](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html) for more information.
         #[builder(into, default)]
-        pub template_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configures end of the validity period for the certificate. See validity block below.
         #[builder(into)]
-        pub validity: pulumi_gestalt_rust::InputOrOutput<
+        pub validity: pulumi_gestalt_rust::Input<
             super::super::types::acmpca::CertificateValidity,
         >,
     }

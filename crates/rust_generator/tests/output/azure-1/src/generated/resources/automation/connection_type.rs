@@ -55,21 +55,21 @@ pub mod connection_type {
     pub struct ConnectionTypeArgs {
         /// The name of the automation account in which the Connection is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `field` blocks as defined below. Changing this forces a new Automation to be created.
         #[builder(into)]
-        pub fields: pulumi_gestalt_rust::InputOrOutput<
+        pub fields: pulumi_gestalt_rust::Input<
             Vec<super::super::types::automation::ConnectionTypeField>,
         >,
         /// Whether the connection type is global. Changing this forces a new Automation to be created.
         #[builder(into, default)]
-        pub is_global: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_global: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Automation Connection Type. Changing this forces a new Automation to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Automation should exist. Changing this forces a new Automation to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConnectionTypeResult {

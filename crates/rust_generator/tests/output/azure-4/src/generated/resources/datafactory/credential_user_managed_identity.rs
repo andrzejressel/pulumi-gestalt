@@ -10,19 +10,19 @@ pub mod credential_user_managed_identity {
     pub struct CredentialUserManagedIdentityArgs {
         /// (Optional) List of string annotations.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The resource ID of the parent Data Factory
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// (Optional) Short text description
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the User Assigned Managed Identity
         #[builder(into)]
-        pub identity_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_id: pulumi_gestalt_rust::Input<String>,
         /// The desired name of the credential resource
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CredentialUserManagedIdentityResult {

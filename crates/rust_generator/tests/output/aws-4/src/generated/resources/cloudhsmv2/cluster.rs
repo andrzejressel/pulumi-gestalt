@@ -28,19 +28,19 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// The type of HSM module in the cluster. Currently, `hsm1.medium` and `hsm2m.medium` are supported.
         #[builder(into)]
-        pub hsm_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hsm_type: pulumi_gestalt_rust::Input<String>,
         /// The mode to use in the cluster. The allowed values are `FIPS` and `NON_FIPS`. This field is required if `hsm_type` is `hsm2m.medium`.
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of Cloud HSM v2 cluster backup to be restored.
         #[builder(into, default)]
-        pub source_backup_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_backup_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IDs of subnets in which cluster will operate.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

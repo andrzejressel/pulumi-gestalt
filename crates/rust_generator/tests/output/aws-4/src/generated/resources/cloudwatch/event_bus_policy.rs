@@ -138,10 +138,10 @@ pub mod event_bus_policy {
         /// The name of the event bus to set the permissions on.
         /// If you omit this, the permissions are set on the `default` event bus.
         #[builder(into, default)]
-        pub event_bus_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_bus_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The text of the policy.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EventBusPolicyResult {

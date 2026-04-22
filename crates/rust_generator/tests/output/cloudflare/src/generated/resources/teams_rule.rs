@@ -46,39 +46,39 @@ pub mod teams_rule {
     pub struct TeamsRuleArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The action executed by matched teams rule. Available values: `allow`, `block`, `safesearch`, `ytrestricted`, `on`, `off`, `scan`, `noscan`, `isolate`, `noisolate`, `override`, `l4_override`, `egress`, `audit_ssh`, `resolve`.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// The description of the teams rule.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// The wirefilter expression to be used for device_posture check matching.
         #[builder(into, default)]
-        pub device_posture: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub device_posture: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicator of rule enablement.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The protocol or layer to evaluate the traffic and identity expressions.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The wirefilter expression to be used for identity matching.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identity: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the teams rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The evaluation precedence of the teams rule.
         #[builder(into)]
-        pub precedence: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub precedence: pulumi_gestalt_rust::Input<i32>,
         /// Additional rule settings.
         #[builder(into, default)]
-        pub rule_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub rule_settings: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsRuleRuleSettings>,
         >,
         /// The wirefilter expression to be used for traffic matching.
         #[builder(into, default)]
-        pub traffic: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub traffic: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TeamsRuleResult {

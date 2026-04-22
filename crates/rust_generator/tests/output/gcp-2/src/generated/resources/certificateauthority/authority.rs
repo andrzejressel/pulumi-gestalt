@@ -160,29 +160,29 @@ pub mod authority {
     pub struct AuthorityArgs {
         /// The user provided Resource ID for this Certificate Authority.
         #[builder(into)]
-        pub certificate_authority_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_authority_id: pulumi_gestalt_rust::Input<String>,
         /// The config used to create a self-signed X.509 certificate or CSR.
         /// Structure is documented below.
         #[builder(into)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             super::super::types::certificateauthority::AuthorityConfig,
         >,
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Desired state of the CertificateAuthority. Set this field to 'STAGED' to create a 'STAGED' root CA. Possible values:
         /// ENABLED, DISABLED, STAGED.
         #[builder(into, default)]
-        pub desired_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub desired_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a Cloud Storage bucket where this CertificateAuthority will publish content, such as the CA certificate and
         /// CRLs. This must be a bucket name, without any prefixes (such as 'gs://') or suffixes (such as '.googleapis.com'). For
         /// example, to use a bucket named my-bucket, you would simply specify 'my-bucket'. If not specified, a managed bucket will
         /// be created.
         #[builder(into, default)]
-        pub gcs_bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gcs_bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// This field allows the CA to be deleted even if the CA has active certs. Active certs include both unrevoked and
         /// unexpired certs. Use with care. Defaults to 'false'.
         #[builder(into, default)]
-        pub ignore_active_certificates_on_deletion: pulumi_gestalt_rust::InputOrOutput<
+        pub ignore_active_certificates_on_deletion: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Used when issuing certificates for this CertificateAuthority. If this CertificateAuthority
@@ -190,48 +190,48 @@ pub mod authority {
         /// certificate. Otherwise, it is used to sign a CSR.
         /// Structure is documented below.
         #[builder(into)]
-        pub key_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub key_spec: pulumi_gestalt_rust::Input<
             super::super::types::certificateauthority::AuthorityKeySpec,
         >,
         /// Labels with user-defined metadata. An object containing a list of "key": value pairs. Example: { "name": "wrench",
         /// "mass": "1.3kg", "count": "3" }. **Note**: This field is non-authoritative, and will only manage the labels present in
         /// your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The desired lifetime of the CA certificate. Used to create the "notBeforeTime" and "notAfterTime" fields inside an X.509
         /// certificate. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub lifetime: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lifetime: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location of the CertificateAuthority. A full list of valid locations can be found by
         /// running `gcloud privateca locations list`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The signed CA certificate issued from the subordinated CA's CSR. This is needed when activating the subordiante CA with
         /// a third party issuer.
         #[builder(into, default)]
-        pub pem_ca_certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pem_ca_certificate: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the CaPool this Certificate Authority belongs to.
         #[builder(into)]
-        pub pool: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pool: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// If this flag is set, the Certificate Authority will be deleted as soon as possible without a 30-day grace period where
         /// undeletion would have been allowed. If you proceed, there will be no way to recover this CA. Use with care. Defaults to
         /// 'false'.
         #[builder(into, default)]
-        pub skip_grace_period: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_grace_period: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If this is a subordinate CertificateAuthority, this field will be set with the subordinate configuration, which
         /// describes its issuers.
         #[builder(into, default)]
-        pub subordinate_config: pulumi_gestalt_rust::InputOrOutput<
+        pub subordinate_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::certificateauthority::AuthoritySubordinateConfig>,
         >,
         /// The Type of this CertificateAuthority. > **Note:** For 'SUBORDINATE' Certificate Authorities, they need to be activated
         /// before they can issue certificates. Default value: "SELF_SIGNED" Possible values: ["SELF_SIGNED", "SUBORDINATE"]
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AuthorityResult {

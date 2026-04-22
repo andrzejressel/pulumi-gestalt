@@ -10,7 +10,7 @@ pub mod graph_ql_api {
     pub struct GraphQLApiArgs {
         /// One or more additional authentication providers for the GraphQL API. See `additional_authentication_provider` Block for details.
         #[builder(into, default)]
-        pub additional_authentication_providers: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_authentication_providers: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::appsync::GraphQlApiAdditionalAuthenticationProvider,
@@ -19,70 +19,68 @@ pub mod graph_ql_api {
         >,
         /// API type. Valid values are `GRAPHQL` or `MERGED`. A `MERGED` type requires `merged_api_execution_role_arn` to be set.
         #[builder(into, default)]
-        pub api_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Authentication type. Valid values: `API_KEY`, `AWS_IAM`, `AMAZON_COGNITO_USER_POOLS`, `OPENID_CONNECT`, `AWS_LAMBDA`
         #[builder(into)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_type: pulumi_gestalt_rust::Input<String>,
         /// Enables and controls the enhanced metrics feature. See `enhanced_metrics_config` Block for details.
         #[builder(into, default)]
-        pub enhanced_metrics_config: pulumi_gestalt_rust::InputOrOutput<
+        pub enhanced_metrics_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::GraphQlApiEnhancedMetricsConfig>,
         >,
         /// Sets the value of the GraphQL API to enable (`ENABLED`) or disable (`DISABLED`) introspection. If no value is provided, the introspection configuration will be set to ENABLED by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled. For more information about introspection, see [GraphQL introspection](https://graphql.org/learn/introspection/).
         #[builder(into, default)]
-        pub introspection_config: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub introspection_config: pulumi_gestalt_rust::Input<Option<String>>,
         /// Nested argument containing Lambda authorizer configuration. See `lambda_authorizer_config` Block for details.
         #[builder(into, default)]
-        pub lambda_authorizer_config: pulumi_gestalt_rust::InputOrOutput<
+        pub lambda_authorizer_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::GraphQlApiLambdaAuthorizerConfig>,
         >,
         /// Nested argument containing logging configuration. See `log_config` Block for details.
         #[builder(into, default)]
-        pub log_config: pulumi_gestalt_rust::InputOrOutput<
+        pub log_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::GraphQlApiLogConfig>,
         >,
         /// ARN of the execution role when `api_type` is set to `MERGED`.
         #[builder(into, default)]
-        pub merged_api_execution_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub merged_api_execution_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-supplied name for the GraphQL API.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Nested argument containing OpenID Connect configuration. See `openid_connect_config` Block for details.
         #[builder(into, default)]
-        pub openid_connect_config: pulumi_gestalt_rust::InputOrOutput<
+        pub openid_connect_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::GraphQlApiOpenidConnectConfig>,
         >,
         /// The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is `0` (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between `1` and `75` nested levels. This field will produce a limit error if the operation falls out of bounds.
         ///
         /// Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.
         #[builder(into, default)]
-        pub query_depth_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub query_depth_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum number of resolvers that can be invoked in a single request. The default value is `0` (or unspecified), which will set the limit to `10000`. When specified, the limit value can be between `1` and `10000`. This field will produce a limit error if the operation falls out of bounds.
         #[builder(into, default)]
-        pub resolver_count_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub resolver_count_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Schema definition, in GraphQL schema language format. This provider cannot perform drift detection of this configuration.
         #[builder(into, default)]
-        pub schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schema: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Amazon Cognito User Pool configuration. See `user_pool_config` Block for details.
         #[builder(into, default)]
-        pub user_pool_config: pulumi_gestalt_rust::InputOrOutput<
+        pub user_pool_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::GraphQlApiUserPoolConfig>,
         >,
         /// Sets the value of the GraphQL API to public (`GLOBAL`) or private (`PRIVATE`). If no value is provided, the visibility will be set to `GLOBAL` by default. This value cannot be changed once the API has been created.
         #[builder(into, default)]
-        pub visibility: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub visibility: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether tracing with X-ray is enabled. Defaults to false.
         #[builder(into, default)]
-        pub xray_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub xray_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GraphQLApiResult {

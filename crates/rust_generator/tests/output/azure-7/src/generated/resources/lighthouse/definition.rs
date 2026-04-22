@@ -43,34 +43,34 @@ pub mod definition {
     pub struct DefinitionArgs {
         /// An `authorization` block as defined below.
         #[builder(into)]
-        pub authorizations: pulumi_gestalt_rust::InputOrOutput<
+        pub authorizations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::lighthouse::DefinitionAuthorization>,
         >,
         /// A description of the Lighthouse Definition.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `eligible_authorization` block as defined below.
         #[builder(into, default)]
-        pub eligible_authorizations: pulumi_gestalt_rust::InputOrOutput<
+        pub eligible_authorizations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lighthouse::DefinitionEligibleAuthorization>>,
         >,
         /// A unique UUID/GUID which identifies this lighthouse definition - one will be generated if not specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub lighthouse_definition_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lighthouse_definition_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the managing tenant. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub managing_tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managing_tenant_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Lighthouse Definition. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `plan` block as defined below.
         #[builder(into, default)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<
+        pub plan: pulumi_gestalt_rust::Input<
             Option<super::super::types::lighthouse::DefinitionPlan>,
         >,
         /// The ID of the managed subscription. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DefinitionResult {

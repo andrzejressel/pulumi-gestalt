@@ -54,10 +54,10 @@ pub mod dashboard {
     pub struct DashboardArgs {
         /// The detailed information about the dashboard, including what widgets are included and their location on the dashboard. You can read more about the body structure in the [documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html).
         #[builder(into)]
-        pub dashboard_body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dashboard_body: pulumi_gestalt_rust::Input<String>,
         /// The name of the dashboard.
         #[builder(into)]
-        pub dashboard_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dashboard_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DashboardResult {

@@ -10,7 +10,7 @@ pub mod get_bucket_iam_policy {
     pub struct GetBucketIamPolicyArgs {
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBucketIamPolicyResult {

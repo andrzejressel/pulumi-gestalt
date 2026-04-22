@@ -48,27 +48,27 @@ pub mod instance_config {
         /// configurations. baseConfig must refer to a configuration of type GOOGLE_MANAGED in the same project as this
         /// configuration.
         #[builder(into, default)]
-        pub base_config: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub base_config: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of this instance configuration as it appears in UIs.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer
         /// to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A unique identifier for the instance configuration. Values are of the
         /// form projects/<project>/instanceConfigs/[a-z][-a-z0-9]*
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The geographic placement of nodes in this instance configuration and their replication properties.
         /// Structure is documented below.
         #[builder(into)]
-        pub replicas: pulumi_gestalt_rust::InputOrOutput<
+        pub replicas: pulumi_gestalt_rust::Input<
             Vec<super::super::types::spanner::InstanceConfigReplica>,
         >,
     }

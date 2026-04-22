@@ -10,15 +10,15 @@ pub mod get_thesaurus {
     pub struct GetThesaurusArgs {
         /// Identifier of the index that contains the Thesaurus.
         #[builder(into)]
-        pub index_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_id: pulumi_gestalt_rust::Input<String>,
         /// Metadata that helps organize the Thesaurus you create.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of the Thesaurus.
         #[builder(into)]
-        pub thesaurus_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub thesaurus_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetThesaurusResult {

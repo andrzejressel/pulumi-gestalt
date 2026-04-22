@@ -74,51 +74,49 @@ pub mod software_update_configuration {
     pub struct SoftwareUpdateConfigurationArgs {
         /// The ID of Automation Account to manage this Source Control. Changing this forces a new Automation Source Control to be created.
         #[builder(into)]
-        pub automation_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_id: pulumi_gestalt_rust::Input<String>,
         /// Maximum time allowed for the software update configuration run. using format `PT[n]H[n]M[n]S` as per ISO8601. Defaults to `PT2H`.
         #[builder(into, default)]
-        pub duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `linux` block as defined below.
         #[builder(into, default)]
-        pub linux: pulumi_gestalt_rust::InputOrOutput<
+        pub linux: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::SoftwareUpdateConfigurationLinux>,
         >,
         /// The name which should be used for this Automation. Changing this forces a new Automation to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of names of non-Azure machines for the software update configuration.
         #[builder(into, default)]
-        pub non_azure_computer_names: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub non_azure_computer_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `post_task` blocks as defined below.
         #[builder(into, default)]
-        pub post_task: pulumi_gestalt_rust::InputOrOutput<
+        pub post_task: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::SoftwareUpdateConfigurationPostTask>,
         >,
         /// A `pre_task` blocks as defined below.
         #[builder(into, default)]
-        pub pre_task: pulumi_gestalt_rust::InputOrOutput<
+        pub pre_task: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::SoftwareUpdateConfigurationPreTask>,
         >,
         /// A `schedule` blocks as defined below.
         #[builder(into)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             super::super::types::automation::SoftwareUpdateConfigurationSchedule,
         >,
         /// A `target` blocks as defined below.
         #[builder(into, default)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<
+        pub target: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::SoftwareUpdateConfigurationTarget>,
         >,
         /// Specifies a list of Azure Resource IDs of azure virtual machines.
         #[builder(into, default)]
-        pub virtual_machine_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub virtual_machine_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `windows` block as defined below.
         ///
         /// > **NOTE:** One of `linux` or `windows` must be specified.
         #[builder(into, default)]
-        pub windows: pulumi_gestalt_rust::InputOrOutput<
+        pub windows: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::SoftwareUpdateConfigurationWindows>,
         >,
     }

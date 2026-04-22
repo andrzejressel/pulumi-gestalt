@@ -10,12 +10,12 @@ pub mod get_broker {
     pub struct GetBrokerArgs {
         /// Unique id of the mq broker.
         #[builder(into, default)]
-        pub broker_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub broker_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name of the mq broker.
         #[builder(into, default)]
-        pub broker_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub broker_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

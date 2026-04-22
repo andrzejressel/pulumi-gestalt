@@ -55,10 +55,10 @@ pub mod server_dns_alias {
     pub struct ServerDnsAliasArgs {
         /// The ID of the mssql server. Changing this forces a new MSSQL Server DNS Alias to be created.
         #[builder(into)]
-        pub mssql_server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mssql_server_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this MSSQL Server DNS Alias. Changing this forces a new MSSQL Server DNS Alias to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ServerDnsAliasResult {

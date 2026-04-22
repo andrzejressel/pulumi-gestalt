@@ -58,17 +58,17 @@ pub mod user_hierarchy_group {
     pub struct UserHierarchyGroupArgs {
         /// Specifies the identifier of the hosting Amazon Connect Instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the user hierarchy group. Must not be more than 100 characters.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.
         #[builder(into, default)]
-        pub parent_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags to apply to the hierarchy group. If configured with a provider
         /// `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

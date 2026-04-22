@@ -55,23 +55,23 @@ pub mod trigger_http_request {
     pub struct TriggerHttpRequestArgs {
         /// Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub logic_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub logic_app_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the HTTP Method which the request be using. Possible values include `DELETE`, `GET`, `PATCH`, `POST` or `PUT`.
         #[builder(into, default)]
-        pub method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub method: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the HTTP Request Trigger to be created within the Logic App Workflow. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** This name must be unique across all Triggers within the Logic App Workflow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Relative Path used for this Request.
         ///
         /// > **NOTE:** When `relative_path` is set a `method` must also be set.
         #[builder(into, default)]
-        pub relative_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub relative_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// A JSON Blob defining the Schema of the incoming request. This needs to be valid JSON.
         #[builder(into)]
-        pub schema: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TriggerHttpRequestResult {

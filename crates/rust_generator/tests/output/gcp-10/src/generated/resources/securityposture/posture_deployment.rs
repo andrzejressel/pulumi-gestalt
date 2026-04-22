@@ -33,32 +33,32 @@ pub mod posture_deployment {
     pub struct PostureDeploymentArgs {
         /// Description of the posture deployment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the resource, eg. global`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// ID of the posture deployment.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub posture_deployment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub posture_deployment_id: pulumi_gestalt_rust::Input<String>,
         /// Relative name of the posture which needs to be deployed. It should be in the format:
         /// organizations/{organization_id}/locations/{location}/postures/{posture_id}
         #[builder(into)]
-        pub posture_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub posture_id: pulumi_gestalt_rust::Input<String>,
         /// Revision_id the posture which needs to be deployed.
         #[builder(into)]
-        pub posture_revision_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub posture_revision_id: pulumi_gestalt_rust::Input<String>,
         /// The resource on which the posture should be deployed. This can be in one of the following formats:
         /// projects/{project_number},
         /// folders/{folder_number},
         /// organizations/{organization_id}
         #[builder(into)]
-        pub target_resource: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PostureDeploymentResult {

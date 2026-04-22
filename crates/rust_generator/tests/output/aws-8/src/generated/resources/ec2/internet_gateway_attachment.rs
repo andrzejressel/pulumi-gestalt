@@ -44,10 +44,10 @@ pub mod internet_gateway_attachment {
     pub struct InternetGatewayAttachmentArgs {
         /// The ID of the internet gateway.
         #[builder(into)]
-        pub internet_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub internet_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPC.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InternetGatewayAttachmentResult {

@@ -57,18 +57,18 @@ pub mod channel_line {
     pub struct ChannelLineArgs {
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `line_channel` blocks as defined below.
         #[builder(into)]
-        pub line_channels: pulumi_gestalt_rust::InputOrOutput<
+        pub line_channels: pulumi_gestalt_rust::Input<
             Vec<super::super::types::bot::ChannelLineLineChannel>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group where the Line Channel should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ChannelLineResult {

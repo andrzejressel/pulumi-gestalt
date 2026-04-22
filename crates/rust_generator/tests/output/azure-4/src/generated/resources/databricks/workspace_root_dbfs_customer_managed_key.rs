@@ -126,13 +126,13 @@ pub mod workspace_root_dbfs_customer_managed_key {
     #[allow(dead_code)]
     pub struct WorkspaceRootDbfsCustomerManagedKeyArgs {
         #[builder(into, default)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Key Vault Key to be used.
         #[builder(into)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the Databricks Workspace.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceRootDbfsCustomerManagedKeyResult {

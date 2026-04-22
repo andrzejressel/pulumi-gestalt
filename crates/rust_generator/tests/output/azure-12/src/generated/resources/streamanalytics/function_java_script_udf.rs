@@ -53,26 +53,26 @@ pub mod function_java_script_udf {
     pub struct FunctionJavaScriptUDFArgs {
         /// One or more `input` blocks as defined below.
         #[builder(into)]
-        pub inputs: pulumi_gestalt_rust::InputOrOutput<
+        pub inputs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::streamanalytics::FunctionJavaScriptUdfInput>,
         >,
         /// The name of the JavaScript UDF Function. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `output` blocks as defined below.
         #[builder(into)]
-        pub output: pulumi_gestalt_rust::InputOrOutput<
+        pub output: pulumi_gestalt_rust::Input<
             super::super::types::streamanalytics::FunctionJavaScriptUdfOutput,
         >,
         /// The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The JavaScript of this UDF Function.
         #[builder(into)]
-        pub script: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub script: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Job where this Function should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FunctionJavaScriptUDFResult {

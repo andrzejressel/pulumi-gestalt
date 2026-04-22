@@ -84,16 +84,16 @@ pub mod network_manager_management_group_connection {
     pub struct NetworkManagerManagementGroupConnectionArgs {
         /// A description of the Network Manager Management Group Connection.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the target Management Group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub management_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub management_group_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this Network Manager Management Group Connection. Changing this forces a new Network Manager Management Group Connection to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Network Manager which the Management Group is connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkManagerManagementGroupConnectionResult {

@@ -48,7 +48,7 @@ pub mod delegation_set {
         /// This is a reference name used in Caller Reference
         /// (helpful for identifying single delegation set amongst others)
         #[builder(into, default)]
-        pub reference_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reference_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DelegationSetResult {

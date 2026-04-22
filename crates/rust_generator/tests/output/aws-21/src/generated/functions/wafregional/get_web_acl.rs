@@ -10,7 +10,7 @@ pub mod get_web_acl {
     pub struct GetWebAclArgs {
         /// Name of the WAF Regional Web ACL.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetWebAclResult {

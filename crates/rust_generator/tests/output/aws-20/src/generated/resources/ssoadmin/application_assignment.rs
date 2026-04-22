@@ -57,13 +57,13 @@ pub mod application_assignment {
     pub struct ApplicationAssignmentArgs {
         /// ARN of the application.
         #[builder(into)]
-        pub application_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_arn: pulumi_gestalt_rust::Input<String>,
         /// An identifier for an object in IAM Identity Center, such as a user or group.
         #[builder(into)]
-        pub principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_id: pulumi_gestalt_rust::Input<String>,
         /// Entity type for which the assignment will be created. Valid values are `USER` or `GROUP`.
         #[builder(into)]
-        pub principal_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApplicationAssignmentResult {

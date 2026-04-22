@@ -10,7 +10,7 @@ pub mod get_secret_rotation {
     pub struct GetSecretRotationArgs {
         /// Specifies the secret containing the version that you want to retrieve. You can specify either the ARN or the friendly name of the secret.
         #[builder(into)]
-        pub secret_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSecretRotationResult {

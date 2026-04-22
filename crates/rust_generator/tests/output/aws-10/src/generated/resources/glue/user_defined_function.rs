@@ -50,25 +50,25 @@ pub mod user_defined_function {
     pub struct UserDefinedFunctionArgs {
         /// ID of the Glue Catalog to create the function in. If omitted, this defaults to the AWS Account ID.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Java class that contains the function code.
         #[builder(into)]
-        pub class_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub class_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Database to create the Function.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the function.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The owner of the function.
         #[builder(into)]
-        pub owner_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owner_name: pulumi_gestalt_rust::Input<String>,
         /// The owner type. can be one of `USER`, `ROLE`, and `GROUP`.
         #[builder(into)]
-        pub owner_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owner_type: pulumi_gestalt_rust::Input<String>,
         /// The configuration block for Resource URIs. See resource uris below for more details.
         #[builder(into, default)]
-        pub resource_uris: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_uris: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::glue::UserDefinedFunctionResourceUri>>,
         >,
     }

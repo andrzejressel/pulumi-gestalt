@@ -99,13 +99,13 @@ pub mod certificate_authority_certificate {
     pub struct CertificateAuthorityCertificateArgs {
         /// PEM-encoded certificate for the Certificate Authority.
         #[builder(into)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate: pulumi_gestalt_rust::Input<String>,
         /// ARN of the Certificate Authority.
         #[builder(into)]
-        pub certificate_authority_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_authority_arn: pulumi_gestalt_rust::Input<String>,
         /// PEM-encoded certificate chain that includes any intermediate certificates and chains up to root CA. Required for subordinate Certificate Authorities. Not allowed for root Certificate Authorities.
         #[builder(into, default)]
-        pub certificate_chain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_chain: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CertificateAuthorityCertificateResult {

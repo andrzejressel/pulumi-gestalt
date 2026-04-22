@@ -12,10 +12,10 @@ pub mod zero_trust_key_access_key_configuration {
     pub struct ZeroTrustKeyAccessKeyConfigurationArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Number of days to trigger a rotation of the keys.
         #[builder(into, default)]
-        pub key_rotation_interval_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub key_rotation_interval_days: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustKeyAccessKeyConfigurationResult {

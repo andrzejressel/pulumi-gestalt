@@ -10,19 +10,19 @@ pub mod get_platform_image {
     pub struct GetPlatformImageArgs {
         /// Specifies the Location to pull information about this Platform Image from.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Offer associated with the Platform Image.
         #[builder(into)]
-        pub offer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub offer: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Publisher associated with the Platform Image.
         #[builder(into)]
-        pub publisher: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub publisher: pulumi_gestalt_rust::Input<String>,
         /// Specifies the SKU of the Platform Image.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// The version of the Platform Image.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetPlatformImageResult {

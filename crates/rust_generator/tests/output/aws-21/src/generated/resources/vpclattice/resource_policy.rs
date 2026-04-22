@@ -58,10 +58,10 @@ pub mod resource_policy {
     pub struct ResourcePolicyArgs {
         /// An IAM policy. The policy string in JSON must not contain newlines or blank lines.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourcePolicyResult {

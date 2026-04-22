@@ -66,31 +66,31 @@ pub mod spring_cloud_dynatrace_application_performance_monitoring {
     pub struct SpringCloudDynatraceApplicationPerformanceMonitoringArgs {
         /// Specifies the API token of the Dynatrace environment.
         #[builder(into, default)]
-        pub api_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the API Url of the Dynatrace environment.
         #[builder(into, default)]
-        pub api_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the endpoint to connect to the Dynatrace environment.
         #[builder(into)]
-        pub connection_point: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_point: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Dynatrace environment ID.
         #[builder(into, default)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub environment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the Spring Cloud Application Performance Monitoring resource for Application Insights is enabled globally. Defaults to `false`.
         #[builder(into, default)]
-        pub globally_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub globally_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Spring Cloud Application Performance Monitoring resource for Dynatrace. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Dynatrace tenant.
         #[builder(into)]
-        pub tenant: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant: pulumi_gestalt_rust::Input<String>,
         /// Specifies the internal token that is used for authentication when OneAgent connects to the Dynatrace cluster to send data.
         #[builder(into)]
-        pub tenant_token: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_token: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudDynatraceApplicationPerformanceMonitoringResult {

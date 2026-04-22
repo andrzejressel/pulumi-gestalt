@@ -54,15 +54,15 @@ pub mod secret_policy {
     pub struct SecretPolicyArgs {
         /// Makes an optional API call to Zelkova to validate the Resource Policy to prevent broad access to your secret.
         #[builder(into, default)]
-        pub block_public_policy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub block_public_policy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Valid JSON document representing a [resource policy](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html). Unlike `aws.secretsmanager.Secret`, where `policy` can be set to `"{}"` to delete the policy, `"{}"` is not a valid policy since `policy` is required.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// Secret ARN.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub secret_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SecretPolicyResult {

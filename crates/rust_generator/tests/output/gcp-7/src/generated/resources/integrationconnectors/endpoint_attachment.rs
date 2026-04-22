@@ -61,34 +61,34 @@ pub mod endpoint_attachment {
     pub struct EndpointAttachmentArgs {
         /// Description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enable global access for endpoint attachment.
         #[builder(into, default)]
-        pub endpoint_global_access: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub endpoint_global_access: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Resource labels to represent user provided metadata.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location in which Endpoint Attachment needs to be created.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of Endpoint Attachment needs to be created.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The path of the service attachment.
         #[builder(into)]
-        pub service_attachment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_attachment: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointAttachmentResult {

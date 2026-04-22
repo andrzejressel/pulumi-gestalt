@@ -10,10 +10,10 @@ pub mod get_certificate {
     pub struct GetCertificateArgs {
         /// The name of the NGINX Certificate.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the NGINX Deployment that the certificate is associated with.
         #[builder(into)]
-        pub nginx_deployment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub nginx_deployment_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCertificateResult {

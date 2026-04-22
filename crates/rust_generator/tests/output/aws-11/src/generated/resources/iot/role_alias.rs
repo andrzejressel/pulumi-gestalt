@@ -47,16 +47,16 @@ pub mod role_alias {
     pub struct RoleAliasArgs {
         /// The name of the role alias.
         #[builder(into)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alias: pulumi_gestalt_rust::Input<String>,
         /// The duration of the credential, in seconds. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 900 seconds (15 minutes) to 43200 seconds (12 hours).
         #[builder(into, default)]
-        pub credential_duration: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub credential_duration: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The identity of the role to which the alias refers.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

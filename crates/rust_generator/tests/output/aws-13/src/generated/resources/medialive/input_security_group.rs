@@ -34,14 +34,14 @@ pub mod input_security_group {
     pub struct InputSecurityGroupArgs {
         /// A map of tags to assign to the InputSecurityGroup. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whitelist rules. See Whitelist Rules for more details.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub whitelist_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub whitelist_rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::medialive::InputSecurityGroupWhitelistRule>,
         >,
     }

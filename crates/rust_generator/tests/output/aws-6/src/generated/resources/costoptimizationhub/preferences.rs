@@ -52,12 +52,12 @@ pub mod preferences {
     pub struct PreferencesArgs {
         /// Customize whether the member accounts can see the "After Discounts" savings estimates. Valid values are `All` and `None`. Default value is `All`.
         #[builder(into, default)]
-        pub member_account_discount_visibility: pulumi_gestalt_rust::InputOrOutput<
+        pub member_account_discount_visibility: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Customize how estimated monthly savings are calculated. Valid values are `BeforeDiscounts` and `AfterDiscounts`. Default value is `BeforeDiscounts`.
         #[builder(into, default)]
-        pub savings_estimation_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub savings_estimation_mode: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PreferencesResult {

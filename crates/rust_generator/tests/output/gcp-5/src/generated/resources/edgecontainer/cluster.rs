@@ -145,26 +145,26 @@ pub mod cluster {
         /// RBAC policy that will be applied and managed by GEC.
         /// Structure is documented below.
         #[builder(into)]
-        pub authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub authorization: pulumi_gestalt_rust::Input<
             super::super::types::edgecontainer::ClusterAuthorization,
         >,
         /// The configuration of the cluster control plane.
         #[builder(into, default)]
-        pub control_plane: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane: pulumi_gestalt_rust::Input<
             Option<super::super::types::edgecontainer::ClusterControlPlane>,
         >,
         /// Remote control plane disk encryption options. This field is only used when enabling CMEK support.
         #[builder(into, default)]
-        pub control_plane_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane_encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::edgecontainer::ClusterControlPlaneEncryption>,
         >,
         /// The default maximum number of pods per node used if a maximum value is not specified explicitly for a node pool in this
         /// cluster. If unspecified, the Kubernetes default value will be used.
         #[builder(into, default)]
-        pub default_max_pods_per_node: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_max_pods_per_node: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Address pools for cluster data plane external load balancing.
         #[builder(into, default)]
-        pub external_load_balancer_ipv4_address_pools: pulumi_gestalt_rust::InputOrOutput<
+        pub external_load_balancer_ipv4_address_pools: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Fleet related configuration.
@@ -173,50 +173,50 @@ pub mod cluster {
         /// consistent policies across your systems.
         /// Structure is documented below.
         #[builder(into)]
-        pub fleet: pulumi_gestalt_rust::InputOrOutput<
+        pub fleet: pulumi_gestalt_rust::Input<
             super::super::types::edgecontainer::ClusterFleet,
         >,
         /// User-defined labels for the edgecloud cluster. **Note**: This field is non-authoritative, and will only manage the
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Cluster-wide maintenance policy configuration.
         #[builder(into, default)]
-        pub maintenance_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::edgecontainer::ClusterMaintenancePolicy>,
         >,
         /// The GDCE cluster name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Fleet related configuration.
         /// Fleets are a Google Cloud concept for logically organizing clusters,
         /// letting you use and manage multi-cluster capabilities and apply
         /// consistent policies across your systems.
         /// Structure is documented below.
         #[builder(into)]
-        pub networking: pulumi_gestalt_rust::InputOrOutput<
+        pub networking: pulumi_gestalt_rust::Input<
             super::super::types::edgecontainer::ClusterNetworking,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The release channel a cluster is subscribed to. Possible values: ["RELEASE_CHANNEL_UNSPECIFIED", "NONE", "REGULAR"]
         #[builder(into, default)]
-        pub release_channel: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub release_channel: pulumi_gestalt_rust::Input<Option<String>>,
         /// Config that customers are allowed to define for GDCE system add-ons.
         #[builder(into, default)]
-        pub system_addons_config: pulumi_gestalt_rust::InputOrOutput<
+        pub system_addons_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::edgecontainer::ClusterSystemAddonsConfig>,
         >,
         /// (Output)
         /// The target version of the cluster.
         #[builder(into, default)]
-        pub target_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

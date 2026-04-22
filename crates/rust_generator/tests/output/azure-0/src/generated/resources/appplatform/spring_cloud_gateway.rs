@@ -94,80 +94,78 @@ pub mod spring_cloud_gateway {
     pub struct SpringCloudGatewayArgs {
         /// A `api_metadata` block as defined below.
         #[builder(into, default)]
-        pub api_metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub api_metadata: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudGatewayApiMetadata>,
         >,
         /// Specifies a list of Spring Cloud Application Performance Monitoring IDs.
         #[builder(into, default)]
-        pub application_performance_monitoring_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub application_performance_monitoring_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Specifies a list of application performance monitoring types used in the Spring Cloud Gateway. The allowed values are `AppDynamics`, `ApplicationInsights`, `Dynatrace`, `ElasticAPM` and `NewRelic`.
         #[builder(into, default)]
-        pub application_performance_monitoring_types: pulumi_gestalt_rust::InputOrOutput<
+        pub application_performance_monitoring_types: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A `client_authorization` block as defined below.
         #[builder(into, default)]
-        pub client_authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub client_authorization: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appplatform::SpringCloudGatewayClientAuthorization,
             >,
         >,
         /// A `cors` block as defined below.
         #[builder(into, default)]
-        pub cors: pulumi_gestalt_rust::InputOrOutput<
+        pub cors: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudGatewayCors>,
         >,
         /// Specifies the environment variables of the Spring Cloud Gateway as a map of key-value pairs.
         #[builder(into, default)]
-        pub environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub environment_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// is only https is allowed?
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the required instance count of the Spring Cloud Gateway. Possible Values are between `1` and `500`. Defaults to `1` if not specified.
         #[builder(into, default)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub instance_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A `local_response_cache_per_instance` block as defined below. Only one of `local_response_cache_per_instance` or `local_response_cache_per_route` can be specified.
         #[builder(into, default)]
-        pub local_response_cache_per_instance: pulumi_gestalt_rust::InputOrOutput<
+        pub local_response_cache_per_instance: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appplatform::SpringCloudGatewayLocalResponseCachePerInstance,
             >,
         >,
         /// A `local_response_cache_per_route` block as defined below. Only one of `local_response_cache_per_instance` or `local_response_cache_per_route` can be specified.
         #[builder(into, default)]
-        pub local_response_cache_per_route: pulumi_gestalt_rust::InputOrOutput<
+        pub local_response_cache_per_route: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appplatform::SpringCloudGatewayLocalResponseCachePerRoute,
             >,
         >,
         /// The name which should be used for this Spring Cloud Gateway. Changing this forces a new Spring Cloud Gateway to be created. The only possible value is `default`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether the Spring Cloud Gateway exposes endpoint.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `quota` block as defined below.
         #[builder(into, default)]
-        pub quota: pulumi_gestalt_rust::InputOrOutput<
+        pub quota: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudGatewayQuota>,
         >,
         /// Specifies the sensitive environment variables of the Spring Cloud Gateway as a map of key-value pairs.
         #[builder(into, default)]
-        pub sensitive_environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub sensitive_environment_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud Gateway to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
         /// A `sso` block as defined below.
         #[builder(into, default)]
-        pub sso: pulumi_gestalt_rust::InputOrOutput<
+        pub sso: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudGatewaySso>,
         >,
     }

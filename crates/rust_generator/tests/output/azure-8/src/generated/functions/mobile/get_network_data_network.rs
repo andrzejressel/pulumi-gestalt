@@ -10,10 +10,10 @@ pub mod get_network_data_network {
     pub struct GetNetworkDataNetworkArgs {
         /// Specifies the ID of the Mobile Network.
         #[builder(into)]
-        pub mobile_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name which should be used for this Mobile Network Data Network.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkDataNetworkResult {

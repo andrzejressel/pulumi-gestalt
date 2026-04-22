@@ -108,7 +108,7 @@ pub mod dataset {
         /// A nested object resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub encryption_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::DatasetEncryptionSpec>,
         >,
         /// The location for the Dataset.
@@ -116,19 +116,19 @@ pub mod dataset {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name for the Dataset.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default timezone used by this dataset. Must be a either a valid IANA time zone name such as
         /// "America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources
         /// (e.g., HL7 messages) where no explicit timezone is specified.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DatasetResult {

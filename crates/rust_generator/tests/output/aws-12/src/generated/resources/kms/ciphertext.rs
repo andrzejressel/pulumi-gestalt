@@ -37,15 +37,15 @@ pub mod ciphertext {
     pub struct CiphertextArgs {
         /// An optional mapping that makes up the encryption context.
         #[builder(into, default)]
-        pub context: pulumi_gestalt_rust::InputOrOutput<
+        pub context: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Globally unique key ID for the customer master key.
         #[builder(into)]
-        pub key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_id: pulumi_gestalt_rust::Input<String>,
         /// Data to be encrypted. Note that this may show up in logs, and it will be stored in the state file.
         #[builder(into)]
-        pub plaintext: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plaintext: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CiphertextResult {

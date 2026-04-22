@@ -56,38 +56,34 @@ pub mod cluster_snapshot_copy {
     pub struct ClusterSnapshotCopyArgs {
         /// Whether to copy existing tags. Defaults to `false`.
         #[builder(into, default)]
-        pub copy_tags: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_tags: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Destination region to place snapshot copy.
         #[builder(into, default)]
-        pub destination_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// KMS key ID.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL that contains a Signature Version 4 signed request.
         #[builder(into, default)]
-        pub presigned_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub presigned_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of AWS Account IDs to share the snapshot with. Use `all` to make the snapshot public.
         #[builder(into, default)]
-        pub shared_accounts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub shared_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Identifier of the source snapshot.
         #[builder(into)]
-        pub source_db_cluster_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub source_db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier for the snapshot.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target_db_cluster_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub target_db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::ClusterSnapshotCopyTimeouts>,
         >,
     }

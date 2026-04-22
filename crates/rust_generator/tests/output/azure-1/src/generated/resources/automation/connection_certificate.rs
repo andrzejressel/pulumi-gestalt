@@ -67,22 +67,22 @@ pub mod connection_certificate {
     pub struct ConnectionCertificateArgs {
         /// The name of the automation account in which the Connection is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the automation certificate.
         #[builder(into)]
-        pub automation_certificate_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_certificate_name: pulumi_gestalt_rust::Input<String>,
         /// A description for this Connection.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Connection is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The id of subscription where the automation certificate exists.
         #[builder(into)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConnectionCertificateResult {

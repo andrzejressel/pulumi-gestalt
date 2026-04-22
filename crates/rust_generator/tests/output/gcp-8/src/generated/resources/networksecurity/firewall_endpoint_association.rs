@@ -45,16 +45,16 @@ pub mod firewall_endpoint_association {
         /// > **Note:** The API will reject the request if this value is set to true when creating the resource,
         /// otherwise on an update the association can be disabled.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The URL of the firewall endpoint that is being associated.
         #[builder(into)]
-        pub firewall_endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_endpoint: pulumi_gestalt_rust::Input<String>,
         /// A map of key/value label pairs to assign to the resource.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location (zone) of the firewall endpoint association.
@@ -62,20 +62,20 @@ pub mod firewall_endpoint_association {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the firewall endpoint association resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URL of the network that is being associated.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The name of the parent this firewall endpoint association belongs to.
         /// Format: projects/{project_id}.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URL of the TlsInspectionPolicy that is being associated.
         #[builder(into, default)]
-        pub tls_inspection_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tls_inspection_policy: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FirewallEndpointAssociationResult {

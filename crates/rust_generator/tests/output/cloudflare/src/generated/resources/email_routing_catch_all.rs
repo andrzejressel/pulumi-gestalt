@@ -40,23 +40,23 @@ pub mod email_routing_catch_all {
     pub struct EmailRoutingCatchAllArgs {
         /// List actions patterns.
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Vec<super::types::EmailRoutingCatchAllAction>,
         >,
         /// Routing rule status.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Matching patterns to forward to your actions.
         #[builder(into)]
-        pub matchers: pulumi_gestalt_rust::InputOrOutput<
+        pub matchers: pulumi_gestalt_rust::Input<
             Vec<super::types::EmailRoutingCatchAllMatcher>,
         >,
         /// Routing rule name.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EmailRoutingCatchAllResult {

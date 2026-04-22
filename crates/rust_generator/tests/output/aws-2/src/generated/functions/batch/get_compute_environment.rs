@@ -10,10 +10,10 @@ pub mod get_compute_environment {
     pub struct GetComputeEnvironmentArgs {
         /// Name of the Batch Compute Environment
         #[builder(into)]
-        pub compute_environment_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub compute_environment_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

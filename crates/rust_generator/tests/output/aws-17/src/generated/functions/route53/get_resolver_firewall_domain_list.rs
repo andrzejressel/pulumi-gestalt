@@ -12,7 +12,7 @@ pub mod get_resolver_firewall_domain_list {
         ///
         /// The following attribute is additionally exported:
         #[builder(into)]
-        pub firewall_domain_list_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_domain_list_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResolverFirewallDomainListResult {

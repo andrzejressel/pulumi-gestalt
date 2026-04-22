@@ -48,13 +48,13 @@ pub mod account_static_website {
     pub struct AccountStaticWebsiteArgs {
         /// The absolute path to a custom webpage that should be used when a request is made which does not correspond to an existing file.
         #[builder(into, default)]
-        pub error404_document: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub error404_document: pulumi_gestalt_rust::Input<Option<String>>,
         /// The webpage that Azure Storage serves for requests to the root of a website or any subfolder. For example, index.html.
         #[builder(into, default)]
-        pub index_document: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub index_document: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Account to set Static Website on. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccountStaticWebsiteResult {

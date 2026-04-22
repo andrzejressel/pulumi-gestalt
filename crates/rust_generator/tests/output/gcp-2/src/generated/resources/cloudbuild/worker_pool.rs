@@ -124,37 +124,37 @@ pub mod worker_pool {
         /// limitations. **Note**: This field is non-authoritative, and will only manage the annotations present in your
         /// configuration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A user-specified, human-readable name for the `WorkerPool`. If provided, this value must be 1-63 characters.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// User-defined name of the `WorkerPool`.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network configuration for the `WorkerPool`. Structure is documented below.
         #[builder(into, default)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudbuild::WorkerPoolNetworkConfig>,
         >,
         /// Private Service Connect configuration for the pool.
         #[builder(into, default)]
-        pub private_service_connect: pulumi_gestalt_rust::InputOrOutput<
+        pub private_service_connect: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudbuild::WorkerPoolPrivateServiceConnect>,
         >,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration to be used for a creating workers in the `WorkerPool`. Structure is documented below.
         #[builder(into, default)]
-        pub worker_config: pulumi_gestalt_rust::InputOrOutput<
+        pub worker_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudbuild::WorkerPoolWorkerConfig>,
         >,
     }

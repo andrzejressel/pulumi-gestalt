@@ -49,21 +49,21 @@ pub mod fsx_open_zfs_file_system {
     pub struct FsxOpenZfsFileSystemArgs {
         /// The Amazon Resource Name (ARN) for the FSx for OpenZfs file system.
         #[builder(into)]
-        pub fsx_filesystem_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub fsx_filesystem_arn: pulumi_gestalt_rust::Input<String>,
         /// The type of protocol that DataSync uses to access your file system. See below.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<
+        pub protocol: pulumi_gestalt_rust::Input<
             super::super::types::datasync::FsxOpenZfsFileSystemProtocol,
         >,
         /// The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for openzfs file system.
         #[builder(into)]
-        pub security_group_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub security_group_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Subdirectory to perform actions as source or destination. Must start with `/fsx`.
         #[builder(into, default)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subdirectory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

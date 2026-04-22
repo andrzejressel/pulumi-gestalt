@@ -10,10 +10,10 @@ pub mod get_managed_disk {
     pub struct GetManagedDiskArgs {
         /// Specifies the name of the Managed Disk.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Resource Group where this Managed Disk exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetManagedDiskResult {

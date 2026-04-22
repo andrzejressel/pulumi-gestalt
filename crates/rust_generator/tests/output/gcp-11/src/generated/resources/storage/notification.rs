@@ -82,21 +82,21 @@ pub mod notification {
     pub struct NotificationArgs {
         /// The name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription
         #[builder(into, default)]
-        pub custom_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_attributes: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `"OBJECT_FINALIZE"`, `"OBJECT_METADATA_UPDATE"`, `"OBJECT_DELETE"`, `"OBJECT_ARCHIVE"`
         #[builder(into, default)]
-        pub event_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub event_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies a prefix path filter for this notification config. Cloud Storage will only send notifications for objects in this bucket whose names begin with the specified prefix.
         #[builder(into, default)]
-        pub object_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub object_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The desired content of the Payload. One of `"JSON_API_V1"` or `"NONE"`.
         #[builder(into)]
-        pub payload_format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub payload_format: pulumi_gestalt_rust::Input<String>,
         /// The Cloud PubSub topic to which this subscription publishes. Expects either the
         /// topic name, assumed to belong to the default GCP provider project, or the project-level name,
         /// i.e. `projects/my-gcp-project/topics/my-topic` or `my-topic`. If the project is not set in the provider,
@@ -104,7 +104,7 @@ pub mod notification {
         ///
         /// - - -
         #[builder(into)]
-        pub topic: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub topic: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NotificationResult {

@@ -10,13 +10,13 @@ pub mod get_published_version {
     pub struct GetPublishedVersionArgs {
         /// The name of the Blueprint Definition
         #[builder(into)]
-        pub blueprint_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub blueprint_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Management Group / Subscription where this Blueprint Definition is stored.
         #[builder(into)]
-        pub scope_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope_id: pulumi_gestalt_rust::Input<String>,
         /// The Version name of the Published Version of the Blueprint Definition
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPublishedVersionResult {

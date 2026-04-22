@@ -95,67 +95,67 @@ pub mod job {
     pub struct JobArgs {
         /// The ID of the Container App Environment in which to create the Container App Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_app_environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_app_environment_id: pulumi_gestalt_rust::Input<String>,
         /// A `event_trigger_config` block as defined below.
         #[builder(into, default)]
-        pub event_trigger_config: pulumi_gestalt_rust::InputOrOutput<
+        pub event_trigger_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerapp::JobEventTriggerConfig>,
         >,
         /// A `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerapp::JobIdentity>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `manual_trigger_config` block as defined below.
         #[builder(into, default)]
-        pub manual_trigger_config: pulumi_gestalt_rust::InputOrOutput<
+        pub manual_trigger_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerapp::JobManualTriggerConfig>,
         >,
         /// Specifies the name of the Container App Job resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `registry` blocks as defined below.
         #[builder(into, default)]
-        pub registries: pulumi_gestalt_rust::InputOrOutput<
+        pub registries: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerapp::JobRegistry>>,
         >,
         /// The maximum number of times a replica is allowed to retry.
         #[builder(into, default)]
-        pub replica_retry_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub replica_retry_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum number of seconds a replica is allowed to run.
         #[builder(into)]
-        pub replica_timeout_in_seconds: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub replica_timeout_in_seconds: pulumi_gestalt_rust::Input<i32>,
         /// The name of the resource group in which to create the Container App Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `schedule_trigger_config` block as defined below.
         ///
         /// > ** NOTE **: Only one of `manual_trigger_config`, `event_trigger_config` or `schedule_trigger_config` can be specified.
         #[builder(into, default)]
-        pub schedule_trigger_config: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule_trigger_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerapp::JobScheduleTriggerConfig>,
         >,
         /// One or more `secret` blocks as defined below.
         #[builder(into, default)]
-        pub secrets: pulumi_gestalt_rust::InputOrOutput<
+        pub secrets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerapp::JobSecret>>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `template` block as defined below.
         #[builder(into)]
-        pub template: pulumi_gestalt_rust::InputOrOutput<
+        pub template: pulumi_gestalt_rust::Input<
             super::super::types::containerapp::JobTemplate,
         >,
         /// The name of the workload profile to use for the Container App Job.
         #[builder(into, default)]
-        pub workload_profile_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workload_profile_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct JobResult {

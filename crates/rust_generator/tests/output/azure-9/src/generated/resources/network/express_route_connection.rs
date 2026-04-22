@@ -115,37 +115,35 @@ pub mod express_route_connection {
     pub struct ExpressRouteConnectionArgs {
         /// The authorization key to establish the Express Route Connection.
         #[builder(into, default)]
-        pub authorization_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is Internet security enabled for this Express Route Connection?
         #[builder(into, default)]
-        pub enable_internet_security: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_internet_security: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Express Route Circuit Peering that this Express Route Connection connects with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub express_route_circuit_peering_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub express_route_circuit_peering_id: pulumi_gestalt_rust::Input<String>,
         /// Specified whether Fast Path is enabled for Virtual Wan Firewall Hub. Defaults to `false`.
         #[builder(into, default)]
-        pub express_route_gateway_bypass_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub express_route_gateway_bypass_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The ID of the Express Route Gateway that this Express Route Connection connects with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub express_route_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub express_route_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Express Route Connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Bypass the Express Route gateway when accessing private-links. When enabled `express_route_gateway_bypass_enabled` must be set to `true`.
         #[builder(into, default)]
-        pub private_link_fast_path_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub private_link_fast_path_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `routing` block as defined below.
         #[builder(into, default)]
-        pub routing: pulumi_gestalt_rust::InputOrOutput<
+        pub routing: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::ExpressRouteConnectionRouting>,
         >,
         /// The routing weight associated to the Express Route Connection. Possible value is between `0` and `32000`. Defaults to `0`.
         #[builder(into, default)]
-        pub routing_weight: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub routing_weight: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct ExpressRouteConnectionResult {

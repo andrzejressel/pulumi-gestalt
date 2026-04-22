@@ -33,42 +33,38 @@ pub mod internet_monitor {
     pub struct InternetMonitorArgs {
         /// Health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users. See Health Events Config below.
         #[builder(into, default)]
-        pub health_events_config: pulumi_gestalt_rust::InputOrOutput<
+        pub health_events_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::InternetMonitorHealthEventsConfig>,
         >,
         /// Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.
         #[builder(into, default)]
-        pub internet_measurements_log_delivery: pulumi_gestalt_rust::InputOrOutput<
+        pub internet_measurements_log_delivery: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudwatch::InternetMonitorInternetMeasurementsLogDelivery,
             >,
         >,
         /// The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.
         #[builder(into, default)]
-        pub max_city_networks_to_monitor: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub max_city_networks_to_monitor: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the monitor.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub monitor_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub monitor_name: pulumi_gestalt_rust::Input<String>,
         /// The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).
         #[builder(into, default)]
-        pub resources: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub resources: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The status for a monitor. The accepted values for Status with the UpdateMonitor API call are the following: `ACTIVE` and `INACTIVE`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
         #[builder(into, default)]
-        pub traffic_percentage_to_monitor: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub traffic_percentage_to_monitor: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct InternetMonitorResult {

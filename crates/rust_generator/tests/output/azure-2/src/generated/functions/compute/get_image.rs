@@ -10,16 +10,16 @@ pub mod get_image {
     pub struct GetImageArgs {
         /// The name of the Image.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Regex pattern of the image to match.
         #[builder(into, default)]
-        pub name_regex: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_regex: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of the Resource Group where this Image exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// By default when matching by regex, images are sorted by name in ascending order and the first match is chosen, to sort descending, set this flag.
         #[builder(into, default)]
-        pub sort_descending: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sort_descending: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetImageResult {

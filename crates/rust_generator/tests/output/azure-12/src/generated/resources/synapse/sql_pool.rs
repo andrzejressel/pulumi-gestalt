@@ -68,39 +68,39 @@ pub mod sql_pool {
     pub struct SqlPoolArgs {
         /// The name of the collation to use with this pool, only applicable when `create_mode` is set to `Default`. Azure default is `SQL_LATIN1_GENERAL_CP1_CI_AS`. Changing this forces a new Synapse SQL Pool to be created.
         #[builder(into, default)]
-        pub collation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub collation: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies how to create the SQL Pool. Valid values are: `Default`, `Recovery` or `PointInTimeRestore`. Must be `Default` to create a new database. Defaults to `Default`. Changing this forces a new Synapse SQL Pool to be created.
         #[builder(into, default)]
-        pub create_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub create_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is transparent data encryption enabled?
         #[builder(into, default)]
-        pub data_encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub data_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is geo-backup policy enabled? Possible values include `true` or `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub geo_backup_policy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub geo_backup_policy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Synapse SQL Pool. Changing this forces a new Synapse SQL Pool to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Synapse SQL Pool or SQL Database which is to back up, only applicable when `create_mode` is set to `Recovery`. Changing this forces a new Synapse SQL Pool to be created.
         #[builder(into, default)]
-        pub recovery_database_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub recovery_database_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `restore` block as defined below. Only applicable when `create_mode` is set to `PointInTimeRestore`. Changing this forces a new Synapse SQL Pool to be created.
         #[builder(into, default)]
-        pub restore: pulumi_gestalt_rust::InputOrOutput<
+        pub restore: pulumi_gestalt_rust::Input<
             Option<super::super::types::synapse::SqlPoolRestore>,
         >,
         /// Specifies the SKU Name for this Synapse SQL Pool. Possible values are `DW100c`, `DW200c`, `DW300c`, `DW400c`, `DW500c`, `DW1000c`, `DW1500c`, `DW2000c`, `DW2500c`, `DW3000c`, `DW5000c`, `DW6000c`, `DW7500c`, `DW10000c`, `DW15000c` or `DW30000c`.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// The storage account type that will be used to store backups for this Synapse SQL Pool. Possible values are `LRS` or `GRS`. Changing this forces a new Synapse SQL Pool to be created. Defaults to `GRS`.
         #[builder(into)]
-        pub storage_account_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_type: pulumi_gestalt_rust::Input<String>,
         /// The ID of Synapse Workspace within which this SQL Pool should be created. Changing this forces a new Synapse SQL Pool to be created.
         #[builder(into)]
-        pub synapse_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub synapse_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Synapse SQL Pool.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

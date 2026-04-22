@@ -96,27 +96,27 @@ pub mod application {
     pub struct ApplicationArgs {
         /// Required. The Application identifier.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// Consumer provided attributes.
         #[builder(into, default)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Option<super::super::types::apphub::ApplicationAttributes>,
         >,
         /// Optional. User-defined description of an Application.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. User-defined name for the Application.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Part of `parent`. See documentation of `projectsId`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Scope of an application.
         /// Structure is documented below.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<
+        pub scope: pulumi_gestalt_rust::Input<
             super::super::types::apphub::ApplicationScope,
         >,
     }

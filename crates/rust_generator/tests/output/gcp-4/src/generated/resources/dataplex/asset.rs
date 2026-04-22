@@ -90,40 +90,40 @@ pub mod asset {
     pub struct AssetArgs {
         /// The zone for the resource
         #[builder(into)]
-        pub dataplex_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataplex_zone: pulumi_gestalt_rust::Input<String>,
         /// Optional. Description of the asset.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Specification of the discovery feature applied to data referenced by this asset. When this spec is left unset, the asset will use the spec set on the parent zone.
         #[builder(into)]
-        pub discovery_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub discovery_spec: pulumi_gestalt_rust::Input<
             super::super::types::dataplex::AssetDiscoverySpec,
         >,
         /// Optional. User friendly display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. User defined labels for the asset. **Note**: This field is non-authoritative, and will only manage the labels
         /// present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The lake for the resource
         #[builder(into)]
-        pub lake: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lake: pulumi_gestalt_rust::Input<String>,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the asset.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Immutable. Specification of the resource that is referenced by this asset.
         #[builder(into)]
-        pub resource_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_spec: pulumi_gestalt_rust::Input<
             super::super::types::dataplex::AssetResourceSpec,
         >,
     }

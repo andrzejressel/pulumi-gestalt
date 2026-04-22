@@ -48,16 +48,16 @@ pub mod key_pair {
     pub struct KeyPairArgs {
         /// The name for the key pair. If neither `key_name` nor `key_name_prefix` is provided, the provider will create a unique key name.
         #[builder(into, default)]
-        pub key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `key_name`. If neither `key_name` nor `key_name_prefix` is provided, the provider will create a unique key name.
         #[builder(into, default)]
-        pub key_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The public key material.
         #[builder(into)]
-        pub public_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub public_key: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

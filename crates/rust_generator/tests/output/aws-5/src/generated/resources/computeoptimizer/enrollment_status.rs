@@ -33,12 +33,12 @@ pub mod enrollment_status {
     pub struct EnrollmentStatusArgs {
         /// Whether to enroll member accounts of the organization if the account is the management account of an organization. Default is `false`.
         #[builder(into, default)]
-        pub include_member_accounts: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_member_accounts: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The enrollment status of the account. Valid values: `Active`, `Inactive`.
         #[builder(into)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub status: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::computeoptimizer::EnrollmentStatusTimeouts>,
         >,
     }

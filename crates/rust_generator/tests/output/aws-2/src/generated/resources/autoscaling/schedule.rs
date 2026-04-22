@@ -54,35 +54,35 @@ pub mod schedule {
     pub struct ScheduleArgs {
         /// The name of the Auto Scaling group.
         #[builder(into)]
-        pub autoscaling_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub autoscaling_group_name: pulumi_gestalt_rust::Input<String>,
         /// The initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain. Set to `-1` if you don't want to change the desired capacity at the scheduled time. Defaults to `0`.
         #[builder(into, default)]
-        pub desired_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub desired_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The date and time for the recurring schedule to end, in UTC with the format `"YYYY-MM-DDThh:mm:ssZ"` (e.g. `"2021-06-01T00:00:00Z"`).
         #[builder(into, default)]
-        pub end_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum size of the Auto Scaling group. Set to `-1` if you don't want to change the maximum size at the scheduled time. Defaults to `0`.
         #[builder(into, default)]
-        pub max_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The minimum size of the Auto Scaling group. Set to `-1` if you don't want to change the minimum size at the scheduled time. Defaults to `0`.
         #[builder(into, default)]
-        pub min_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The recurring schedule for this action specified using the Unix cron syntax format.
         #[builder(into, default)]
-        pub recurrence: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub recurrence: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of this scaling action.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub scheduled_action_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scheduled_action_name: pulumi_gestalt_rust::Input<String>,
         /// The date and time for the recurring schedule to start, in UTC with the format `"YYYY-MM-DDThh:mm:ssZ"` (e.g. `"2021-06-01T00:00:00Z"`).
         #[builder(into, default)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the time zone for a cron expression. Valid values are the canonical names of the IANA time zones (such as `Etc/GMT+9` or `Pacific/Tahiti`).
         ///
         /// > **NOTE:** When `start_time` and `end_time` are specified with `recurrence` , they form the boundaries of when the recurring action will start and stop.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ScheduleResult {

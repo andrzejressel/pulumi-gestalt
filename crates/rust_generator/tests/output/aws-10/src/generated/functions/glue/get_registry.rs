@@ -10,7 +10,7 @@ pub mod get_registry {
     pub struct GetRegistryArgs {
         /// Name of the Glue Registry.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRegistryResult {

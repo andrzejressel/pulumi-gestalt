@@ -62,11 +62,11 @@ pub mod crypto_key_version {
         ///
         /// - - -
         #[builder(into)]
-        pub crypto_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub crypto_key: pulumi_gestalt_rust::Input<String>,
         /// ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub external_protection_level_options: pulumi_gestalt_rust::InputOrOutput<
+        pub external_protection_level_options: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kms::CryptoKeyVersionExternalProtectionLevelOptions,
             >,
@@ -74,7 +74,7 @@ pub mod crypto_key_version {
         /// The current state of the CryptoKeyVersion.
         /// Possible values are: `PENDING_GENERATION`, `ENABLED`, `DISABLED`, `DESTROYED`, `DESTROY_SCHEDULED`, `PENDING_IMPORT`, `IMPORT_FAILED`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CryptoKeyVersionResult {

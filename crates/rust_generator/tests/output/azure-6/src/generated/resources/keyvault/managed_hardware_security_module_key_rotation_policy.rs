@@ -48,16 +48,16 @@ pub mod managed_hardware_security_module_key_rotation_policy {
     pub struct ManagedHardwareSecurityModuleKeyRotationPolicyArgs {
         /// Specify the expiration duration on a newly rotated key as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `P28D`.
         #[builder(into)]
-        pub expire_after: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub expire_after: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Managed HSM Key. Changing this forces a new Managed HSM Key rotation policy to be created.
         #[builder(into)]
-        pub managed_hsm_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_hsm_key_id: pulumi_gestalt_rust::Input<String>,
         /// Rotate automatically at a duration after key creation as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). Exactly one of `time_after_creation` or `time_before_expiry` should be specified.
         #[builder(into, default)]
-        pub time_after_creation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_after_creation: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rotate automatically at a duration before key expiry as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). Exactly one of `time_after_creation` or `time_before_expiry` should be specified.
         #[builder(into, default)]
-        pub time_before_expiry: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_before_expiry: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagedHardwareSecurityModuleKeyRotationPolicyResult {

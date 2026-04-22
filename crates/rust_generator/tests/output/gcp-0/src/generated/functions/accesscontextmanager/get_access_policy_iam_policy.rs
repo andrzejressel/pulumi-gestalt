@@ -10,7 +10,7 @@ pub mod get_access_policy_iam_policy {
     pub struct GetAccessPolicyIamPolicyArgs {
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccessPolicyIamPolicyResult {

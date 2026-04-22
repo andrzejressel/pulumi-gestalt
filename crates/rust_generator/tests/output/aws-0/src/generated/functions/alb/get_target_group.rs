@@ -10,19 +10,19 @@ pub mod get_target_group {
     pub struct GetTargetGroupArgs {
         /// Full ARN of the target group.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub load_balancing_anomaly_mitigation: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancing_anomaly_mitigation: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Unique name of the target group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mapping of tags, each pair of which must exactly match a pair on the desired target group.
         ///
         /// > **NOTE:** When both `arn` and `name` are specified, `arn` takes precedence. `tags` has the lowest precedence.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -106,25 +106,25 @@ pub mod voice_connector_streaming {
     pub struct VoiceConnectorStreamingArgs {
         /// The retention period, in hours, for the Amazon Kinesis data.
         #[builder(into)]
-        pub data_retention: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub data_retention: pulumi_gestalt_rust::Input<i32>,
         /// When true, media streaming to Amazon Kinesis is turned off. Default: `false`
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The media insights configuration. See `media_insights_configuration`.
         #[builder(into, default)]
-        pub media_insights_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub media_insights_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::chime::VoiceConnectorStreamingMediaInsightsConfiguration,
             >,
         >,
         /// The streaming notification targets. Valid Values: `EventBridge | SNS | SQS`
         #[builder(into, default)]
-        pub streaming_notification_targets: pulumi_gestalt_rust::InputOrOutput<
+        pub streaming_notification_targets: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The Amazon Chime Voice Connector ID.
         #[builder(into)]
-        pub voice_connector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub voice_connector_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VoiceConnectorStreamingResult {

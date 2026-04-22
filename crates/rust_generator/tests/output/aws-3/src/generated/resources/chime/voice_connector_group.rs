@@ -61,12 +61,12 @@ pub mod voice_connector_group {
     pub struct VoiceConnectorGroupArgs {
         /// The Amazon Chime Voice Connectors to route inbound calls to.
         #[builder(into, default)]
-        pub connectors: pulumi_gestalt_rust::InputOrOutput<
+        pub connectors: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::chime::VoiceConnectorGroupConnector>>,
         >,
         /// The name of the Amazon Chime Voice Connector group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VoiceConnectorGroupResult {

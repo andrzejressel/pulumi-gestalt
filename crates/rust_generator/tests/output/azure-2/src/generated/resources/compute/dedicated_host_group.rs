@@ -46,29 +46,27 @@ pub mod dedicated_host_group {
     pub struct DedicatedHostGroupArgs {
         /// Would virtual machines or virtual machine scale sets be placed automatically on this Dedicated Host Group? Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub automatic_placement_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub automatic_placement_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure location where the Dedicated Host Group exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Dedicated Host Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of fault domains that the Dedicated Host Group spans. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub platform_fault_domain_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub platform_fault_domain_count: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the name of the resource group the Dedicated Host Group is located in. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Availability Zone in which this Dedicated Host Group should be located. Changing this forces a new Dedicated Host Group to be created.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DedicatedHostGroupResult {

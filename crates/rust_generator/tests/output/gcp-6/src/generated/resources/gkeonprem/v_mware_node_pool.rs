@@ -169,34 +169,34 @@ pub mod v_mware_node_pool {
         /// only manage the annotations present in your configuration. Please refer to the field 'effective_annotations' for all of
         /// the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The node configuration of the node pool.
         /// Structure is documented below.
         #[builder(into)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             super::super::types::gkeonprem::VMwareNodePoolConfig,
         >,
         /// The display name for the node pool.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The vmware node pool name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Node Pool autoscaling config for the node pool.
         #[builder(into, default)]
-        pub node_pool_autoscaling: pulumi_gestalt_rust::InputOrOutput<
+        pub node_pool_autoscaling: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::VMwareNodePoolNodePoolAutoscaling>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The cluster this node pool belongs to.
         #[builder(into)]
-        pub vmware_cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vmware_cluster: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VMwareNodePoolResult {

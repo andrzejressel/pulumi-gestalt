@@ -10,48 +10,48 @@ pub mod get_vpc_peering_connection {
     pub struct GetVpcPeeringConnectionArgs {
         /// Primary CIDR block of the requester VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetVpcPeeringConnectionFilter>>,
         >,
         /// ID of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS account ID of the owner of the requester VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub owner_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Primary CIDR block of the accepter VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub peer_cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peer_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS account ID of the owner of the accepter VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub peer_owner_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peer_owner_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region of the accepter VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub peer_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peer_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the accepter VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub peer_vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peer_vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region of the requester VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Status of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match
         /// a pair on the desired VPC Peering Connection.
         ///
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the requester VPC of the specific VPC Peering Connection to retrieve.
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetVpcPeeringConnectionResult {

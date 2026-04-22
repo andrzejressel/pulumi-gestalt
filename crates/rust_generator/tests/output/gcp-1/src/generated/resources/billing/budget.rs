@@ -262,34 +262,34 @@ pub mod budget {
         /// Defines notifications that are sent on every update to the billing account's spend, regardless of the thresholds defined
         /// using threshold rules.
         #[builder(into, default)]
-        pub all_updates_rule: pulumi_gestalt_rust::InputOrOutput<
+        pub all_updates_rule: pulumi_gestalt_rust::Input<
             Option<super::super::types::billing::BudgetAllUpdatesRule>,
         >,
         /// The budgeted amount for each usage period.
         /// Structure is documented below.
         #[builder(into)]
-        pub amount: pulumi_gestalt_rust::InputOrOutput<
+        pub amount: pulumi_gestalt_rust::Input<
             super::super::types::billing::BudgetAmount,
         >,
         /// ID of the billing account to set a budget on.
         #[builder(into)]
-        pub billing_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_account: pulumi_gestalt_rust::Input<String>,
         /// Filters that define which resources are used to compute the actual spend against the budget.
         #[builder(into, default)]
-        pub budget_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub budget_filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::billing::BudgetBudgetFilter>,
         >,
         /// User data for display name in UI. Must be <= 60 chars.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ownership scope of the budget. The ownership scope and users' IAM permissions determine who has full access to the
         /// budget's data. Possible values: ["OWNERSHIP_SCOPE_UNSPECIFIED", "ALL_USERS", "BILLING_ACCOUNT"]
         #[builder(into, default)]
-        pub ownership_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ownership_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of
         /// the budget.
         #[builder(into, default)]
-        pub threshold_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub threshold_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::billing::BudgetThresholdRule>>,
         >,
     }

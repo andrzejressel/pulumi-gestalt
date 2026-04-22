@@ -10,7 +10,7 @@ pub mod get_controls {
     pub struct GetControlsArgs {
         /// The ARN of the organizational unit.
         #[builder(into)]
-        pub target_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_identifier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetControlsResult {

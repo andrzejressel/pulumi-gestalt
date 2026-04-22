@@ -95,62 +95,62 @@ pub mod environment {
         /// Name of the application that contains the version
         /// to be deployed
         #[builder(into)]
-        pub application: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application: pulumi_gestalt_rust::Input<String>,
         /// Prefix to use for the fully qualified DNS name of
         /// the Environment.
         #[builder(into, default)]
-        pub cname_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cname_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Short description of the Environment
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique name for this Environment. This name is used
         /// in the application URL
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the Elastic Beanstalk [Platform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-platformarn)
         /// to use in deployment
         #[builder(into, default)]
-        pub platform_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The time between polling the AWS API to
         /// check if changes have been applied. Use this to adjust the rate of API calls
         /// for any `create` or `update` action. Minimum `10s`, maximum `180s`. Omit this to
         /// use the default behavior, which is an exponential backoff
         #[builder(into, default)]
-        pub poll_interval: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub poll_interval: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option settings to configure the new Environment. These
         /// override specific values that are set as defaults. The format is detailed
         /// below in Option Settings
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::elasticbeanstalk::EnvironmentSetting>>,
         >,
         /// A solution stack to base your environment
         /// off of. Example stacks can be found in the [Amazon API documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html)
         #[builder(into, default)]
-        pub solution_stack_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub solution_stack_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of tags to apply to the Environment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the Elastic Beanstalk Configuration
         /// template to use in deployment
         #[builder(into, default)]
-        pub template_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Elastic Beanstalk Environment tier. Valid values are `Worker`
         /// or `WebServer`. If tier is left blank `WebServer` will be used.
         #[builder(into, default)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Elastic Beanstalk Application Version
         /// to use in deployment.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum
         /// [duration](https://golang.org/pkg/time/#ParseDuration) that this provider should
         /// wait for an Elastic Beanstalk Environment to be in a ready state before timing
         /// out.
         #[builder(into, default)]
-        pub wait_for_ready_timeout: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub wait_for_ready_timeout: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentResult {

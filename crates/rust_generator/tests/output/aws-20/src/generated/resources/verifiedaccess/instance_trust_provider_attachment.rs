@@ -48,10 +48,10 @@ pub mod instance_trust_provider_attachment {
     pub struct InstanceTrustProviderAttachmentArgs {
         /// The ID of the Verified Access instance to attach the Trust Provider to.
         #[builder(into)]
-        pub verifiedaccess_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub verifiedaccess_instance_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Verified Access trust provider.
         #[builder(into)]
-        pub verifiedaccess_trust_provider_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub verifiedaccess_trust_provider_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InstanceTrustProviderAttachmentResult {

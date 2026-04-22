@@ -99,19 +99,19 @@ pub mod vpc_ipam_pool_cidr_allocation {
     pub struct VpcIpamPoolCidrAllocationArgs {
         /// The CIDR you want to assign to the pool.
         #[builder(into, default)]
-        pub cidr: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description for the allocation.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Exclude a particular CIDR range from being returned by the pool.
         #[builder(into, default)]
-        pub disallowed_cidrs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub disallowed_cidrs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the pool to which you want to assign a CIDR.
         #[builder(into)]
-        pub ipam_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ipam_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The netmask length of the CIDR you would like to allocate to the IPAM pool. Valid Values: `0-128`.
         #[builder(into, default)]
-        pub netmask_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub netmask_length: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct VpcIpamPoolCidrAllocationResult {

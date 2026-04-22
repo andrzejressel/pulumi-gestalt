@@ -42,45 +42,43 @@ pub mod component {
     pub struct ComponentArgs {
         /// Change description of the component.
         #[builder(into, default)]
-        pub change_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub change_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Inline YAML string with data of the component. Exactly one of `data` and `uri` can be specified. the provider will only perform drift detection of its value when present in a configuration.
         #[builder(into, default)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the component.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the Key Management Service (KMS) Key used to encrypt the component.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the component.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Platform of the component.
         #[builder(into)]
-        pub platform: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub platform: pulumi_gestalt_rust::Input<String>,
         /// Whether to retain the old version when the resource is destroyed or replacement is necessary. Defaults to `false`.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Set of Operating Systems (OS) supported by the component.
         #[builder(into, default)]
-        pub supported_os_versions: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub supported_os_versions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value map of resource tags for the component. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// S3 URI with data of the component. Exactly one of `data` and `uri` can be specified.
         ///
         /// > **NOTE:** Updating `data` or `uri` requires specifying a new `version`. This causes replacement of the resource. The `skip_destroy` argument can be used to retain the old version.
         #[builder(into, default)]
-        pub uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of the component.
         ///
         /// The following attributes are optional:
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ComponentResult {

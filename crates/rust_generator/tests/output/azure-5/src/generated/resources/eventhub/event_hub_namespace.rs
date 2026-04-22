@@ -42,56 +42,52 @@ pub mod event_hub_namespace {
     pub struct EventHubNamespaceArgs {
         /// Is Auto Inflate enabled for the EventHub Namespace?
         #[builder(into, default)]
-        pub auto_inflate_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_inflate_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the Capacity / Throughput Units for a `Standard` SKU namespace. Default capacity has a maximum of `2`, but can be increased in blocks of 2 on a committed purchase basis. Defaults to `1`.
         #[builder(into, default)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the ID of the EventHub Dedicated Cluster where this Namespace should created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub dedicated_cluster_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dedicated_cluster_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventHubNamespaceIdentity>,
         >,
         /// Is SAS authentication enabled for the EventHub Namespace? Defaults to `true`.
         #[builder(into, default)]
-        pub local_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub local_authentication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the maximum number of throughput units when Auto Inflate is Enabled. Valid values range from `1` - `20`.
         #[builder(into, default)]
-        pub maximum_throughput_units: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub maximum_throughput_units: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The minimum supported TLS version for this EventHub Namespace. Valid values are: `1.0`, `1.1` and `1.2`. Defaults to `1.2`.
         ///
         /// > **Note** Azure Services will require TLS 1.2+ by August 2025, please see this [announcement](https://azure.microsoft.com/en-us/updates/v2/update-retirement-tls1-0-tls1-1-versions-azure-services/) for more.
         #[builder(into, default)]
-        pub minimum_tls_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub minimum_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the EventHub Namespace resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_rulesets` block as defined below.
         #[builder(into, default)]
-        pub network_rulesets: pulumi_gestalt_rust::InputOrOutput<
+        pub network_rulesets: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventHubNamespaceNetworkRulesets>,
         >,
         /// Is public network access enabled for the EventHub Namespace? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Defines which tier to use. Valid options are `Basic`, `Standard`, and `Premium`. Please note that setting this field to `Premium` will force the creation of a new resource.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

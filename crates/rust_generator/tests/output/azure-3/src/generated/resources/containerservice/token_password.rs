@@ -68,15 +68,15 @@ pub mod token_password {
     pub struct TokenPasswordArgs {
         /// The ID of the Container Registry Token that this Container Registry Token Password resides in. Changing this forces a new Container Registry Token Password to be created.
         #[builder(into)]
-        pub container_registry_token_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_registry_token_id: pulumi_gestalt_rust::Input<String>,
         /// One `password` block as defined below.
         #[builder(into)]
-        pub password1: pulumi_gestalt_rust::InputOrOutput<
+        pub password1: pulumi_gestalt_rust::Input<
             super::super::types::containerservice::TokenPasswordPassword1,
         >,
         /// One `password` block as defined below.
         #[builder(into, default)]
-        pub password2: pulumi_gestalt_rust::InputOrOutput<
+        pub password2: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::TokenPasswordPassword2>,
         >,
     }

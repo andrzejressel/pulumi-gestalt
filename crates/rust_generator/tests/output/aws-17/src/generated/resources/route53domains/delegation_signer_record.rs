@@ -100,16 +100,16 @@ pub mod delegation_signer_record {
     pub struct DelegationSignerRecordArgs {
         /// The name of the domain that will have its parent DNS zone updated with the Delegation Signer record.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The information about a key, including the algorithm, public key-value, and flags.
         #[builder(into, default)]
-        pub signing_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub signing_attributes: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::route53domains::DelegationSignerRecordSigningAttributes,
             >,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::route53domains::DelegationSignerRecordTimeouts>,
         >,
     }

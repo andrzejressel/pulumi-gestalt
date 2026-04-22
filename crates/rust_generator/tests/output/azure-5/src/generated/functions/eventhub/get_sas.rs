@@ -10,10 +10,10 @@ pub mod get_sas {
     pub struct GetSasArgs {
         /// The connection string for the Event Hub to which this SAS applies.
         #[builder(into)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_string: pulumi_gestalt_rust::Input<String>,
         /// The expiration time and date of this SAS. Must be a valid ISO-8601 format time/date string.
         #[builder(into)]
-        pub expiry: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub expiry: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSasResult {

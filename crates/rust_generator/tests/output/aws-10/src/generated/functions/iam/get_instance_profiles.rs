@@ -10,7 +10,7 @@ pub mod get_instance_profiles {
     pub struct GetInstanceProfilesArgs {
         /// IAM role name.
         #[builder(into)]
-        pub role_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceProfilesResult {

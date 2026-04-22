@@ -46,10 +46,10 @@ pub mod vpn_gateway_attachment {
     pub struct VpnGatewayAttachmentArgs {
         /// The ID of the VPC.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Virtual Private Gateway.
         #[builder(into)]
-        pub vpn_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpn_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpnGatewayAttachmentResult {

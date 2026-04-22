@@ -77,39 +77,37 @@ pub mod event_data_store {
     pub struct EventDataStoreArgs {
         /// The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see [Log events by using advanced event selectors](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced) in the CloudTrail User Guide.
         #[builder(into, default)]
-        pub advanced_event_selectors: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_event_selectors: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::cloudtrail::EventDataStoreAdvancedEventSelector>,
             >,
         >,
         /// The billing mode for the event data store. The valid values are `EXTENDABLE_RETENTION_PRICING` and `FIXED_RETENTION_PRICING`. Defaults to `EXTENDABLE_RETENTION_PRICING`.
         #[builder(into, default)]
-        pub billing_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub billing_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the AWS KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by alias/, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created. Default: `true`.
         #[builder(into, default)]
-        pub multi_region_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub multi_region_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the event data store.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether an event data store collects events logged for an organization in AWS Organizations. Default: `false`.
         #[builder(into, default)]
-        pub organization_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub organization_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years. Default: `2555`.
         #[builder(into, default)]
-        pub retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled. Default: `true`.
         #[builder(into, default)]
-        pub termination_protection_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub termination_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EventDataStoreResult {

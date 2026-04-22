@@ -39,15 +39,15 @@ pub mod traffic_policy {
     pub struct TrafficPolicyArgs {
         /// Comment for the traffic policy.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy document. This is a JSON formatted string. For more information about building Route53 traffic policy documents, see the [AWS Route53 Traffic Policy document format](https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html)
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub document: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub document: pulumi_gestalt_rust::Input<String>,
         /// Name of the traffic policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TrafficPolicyResult {

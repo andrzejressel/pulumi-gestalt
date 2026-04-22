@@ -43,13 +43,13 @@ pub mod instance_group {
     pub struct InstanceGroupArgs {
         /// The autoscaling policy document. This is a JSON formatted string. See [EMR Auto Scaling](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html)
         #[builder(into, default)]
-        pub autoscaling_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub autoscaling_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set, the bid price for each EC2 instance in the instance group, expressed in USD. By setting this attribute, the instance group is being declared as a Spot Instance, and will implicitly create a Spot request. Leave this blank to use On-Demand Instances.
         #[builder(into, default)]
-        pub bid_price: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bid_price: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the EMR Cluster to attach to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// A JSON string for supplying list of configurations specific to the EMR instance group. Note that this can only be changed when using EMR release 5.21 or later.
         ///
         /// ```ignore
@@ -68,24 +68,24 @@ pub mod instance_group {
         /// }
         /// ```
         #[builder(into, default)]
-        pub configurations_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub configurations_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `ebs_config` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub ebs_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub ebs_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::emr::InstanceGroupEbsConfig>>,
         >,
         /// Indicates whether an Amazon EBS volume is EBS-optimized. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub ebs_optimized: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ebs_optimized: pulumi_gestalt_rust::Input<Option<bool>>,
         /// target number of instances for the instance group. defaults to 0.
         #[builder(into, default)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub instance_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The EC2 instance type for all instances in the instance group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// Human friendly name given to the instance group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceGroupResult {

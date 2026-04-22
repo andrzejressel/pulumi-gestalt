@@ -71,11 +71,11 @@ pub mod project_info {
         ///
         /// - - -
         #[builder(into)]
-        pub billing_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_account: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProjectInfoResult {

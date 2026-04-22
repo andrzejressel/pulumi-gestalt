@@ -10,10 +10,10 @@ pub mod get_enterprise_database {
     pub struct GetEnterpriseDatabaseArgs {
         /// The resource ID of Redis Enterprise Cluster which hosts the Redis Enterprise Database instance.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Redis Enterprise Database.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEnterpriseDatabaseResult {

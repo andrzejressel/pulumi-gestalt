@@ -10,12 +10,12 @@ pub mod get_security_group_rule {
     pub struct GetSecurityGroupRuleArgs {
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::vpc::GetSecurityGroupRuleFilter>>,
         >,
         /// ID of the security group rule to select.
         #[builder(into, default)]
-        pub security_group_rule_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_group_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSecurityGroupRuleResult {

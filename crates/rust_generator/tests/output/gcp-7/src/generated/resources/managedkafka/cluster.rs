@@ -118,16 +118,16 @@ pub mod cluster {
         /// A capacity configuration of a Kafka cluster.
         /// Structure is documented below.
         #[builder(into)]
-        pub capacity_config: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_config: pulumi_gestalt_rust::Input<
             super::super::types::managedkafka::ClusterCapacityConfig,
         >,
         /// The ID to use for the cluster, which will become the final component of the cluster's name. The ID must be 1-63 characters long, and match the regular expression `a-z?` to comply with RFC 1035. This value is structured like: `my-cluster-id`.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration properties for a Kafka cluster deployed to Google Cloud Platform.
         /// Structure is documented below.
         #[builder(into)]
-        pub gcp_config: pulumi_gestalt_rust::InputOrOutput<
+        pub gcp_config: pulumi_gestalt_rust::Input<
             super::super::types::managedkafka::ClusterGcpConfig,
         >,
         /// List of label KEY=VALUE pairs to add. Keys must start with a lowercase character and contain only hyphens (-),
@@ -135,17 +135,17 @@ pub mod cluster {
         /// characters, and numbers. **Note**: This field is non-authoritative, and will only manage the labels present in your
         /// configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the location of the Kafka resource. See https://cloud.google.com/managed-kafka/docs/locations for a list of supported locations.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines rebalancing behavior of a Kafka cluster.
         #[builder(into, default)]
-        pub rebalance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub rebalance_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::managedkafka::ClusterRebalanceConfig>,
         >,
     }

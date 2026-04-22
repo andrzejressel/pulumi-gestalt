@@ -55,7 +55,7 @@ pub mod s_quota_preference {
         /// account for the email address must have quota update permission for the project, folder or organization this quota
         /// preference is for.
         #[builder(into, default)]
-        pub contact_email: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub contact_email: pulumi_gestalt_rust::Input<Option<String>>,
         /// The dimensions that this quota preference applies to. The key of the map entry is the name of a dimension, such as
         /// "region", "zone", "network_id", and the value of the map entry is the dimension value. If a dimension is missing from
         /// the map of dimensions, the quota preference applies to all the dimension values except for those that have other quota
@@ -63,35 +63,35 @@ pub mod s_quota_preference {
         /// and "resource" dimension. Do not set values for "user" or "resource" in the dimension map. Example: '{"provider": "Foo
         /// Inc"}' where "provider" is a service specific dimension.
         #[builder(into, default)]
-        pub dimensions: pulumi_gestalt_rust::InputOrOutput<
+        pub dimensions: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The list of quota safety checks to be ignored. Default value: "QUOTA_SAFETY_CHECK_UNSPECIFIED" Possible values:
         /// ["QUOTA_SAFETY_CHECK_UNSPECIFIED", "QUOTA_DECREASE_BELOW_USAGE", "QUOTA_DECREASE_PERCENTAGE_TOO_HIGH"]
         #[builder(into, default)]
-        pub ignore_safety_checks: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ignore_safety_checks: pulumi_gestalt_rust::Input<Option<String>>,
         /// The reason / justification for this quota preference.
         #[builder(into, default)]
-        pub justification: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub justification: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of the quota preference. Required except in the CREATE requests.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parent of the quota preference. Allowed parents are "projects/[project-id / number]" or "folders/[folder-id / number]" or "organizations/[org-id / number]".
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// The preferred quota configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub quota_config: pulumi_gestalt_rust::InputOrOutput<
+        pub quota_config: pulumi_gestalt_rust::Input<
             super::super::types::cloudquota::SQuotaPreferenceQuotaConfig,
         >,
         /// The id of the quota to which the quota preference is applied. A quota id is unique in the service.
         /// Example: `CPUS-per-project-region`.
         #[builder(into, default)]
-        pub quota_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub quota_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the service to which the quota preference is applied.
         #[builder(into, default)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SQuotaPreferenceResult {

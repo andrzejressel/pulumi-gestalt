@@ -89,14 +89,14 @@ pub mod app_check_debug_token {
         ///
         /// - - -
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// A human readable display name used to identify this debug token.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The secret token itself. Must be provided during creation, and must be a UUID4,
         /// case insensitive. You may use a method of your choice such as random/random_uuid
         /// to generate the token.
@@ -105,7 +105,7 @@ pub mod app_check_debug_token {
         /// For security reasons, this field will never be populated in any response.
         /// **Note**: This property is sensitive and will not be displayed in the plan.
         #[builder(into)]
-        pub token: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub token: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AppCheckDebugTokenResult {

@@ -131,23 +131,23 @@ pub mod registry {
     pub struct RegistryArgs {
         /// Specifies whether the admin user is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub admin_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub admin_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether allows anonymous (unauthenticated) pull access to this Container Registry? This is only supported on resources with the `Standard` or `Premium` SKU.
         #[builder(into, default)]
-        pub anonymous_pull_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub anonymous_pull_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to enable dedicated data endpoints for this Container Registry? This is only supported on resources with the `Premium` SKU.
         #[builder(into, default)]
-        pub data_endpoint_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub data_endpoint_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `encryption` block as documented below.
         #[builder(into, default)]
-        pub encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryEncryption>,
         >,
         /// Boolean value that indicates whether export policy is enabled. Defaults to `true`. In order to set it to `false`, make sure the `public_network_access_enabled` is also set to `false`.
         ///
         /// > **NOTE:** `quarantine_policy_enabled`, `retention_policy_in_days`, `trust_policy_enabled`, `export_policy_enabled` and `zone_redundancy_enabled` are only supported on resources with the `Premium` SKU.
         #[builder(into, default)]
-        pub export_policy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub export_policy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `georeplications` blocks as documented below.
         ///
         /// > **NOTE:** The `georeplications` is only supported on new resources with the `Premium` SKU.
@@ -156,58 +156,54 @@ pub mod registry {
         ///
         /// > **NOTE:** If more than one `georeplications` block is specified, they are expected to follow the alphabetic order on the `location` property.
         #[builder(into, default)]
-        pub georeplications: pulumi_gestalt_rust::InputOrOutput<
+        pub georeplications: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerservice::RegistryGeoreplication>>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryIdentity>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Container Registry. Only Alphanumeric characters allowed. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to allow trusted Azure services to access a network restricted Container Registry? Possible values are `None` and `AzureServices`. Defaults to `AzureServices`.
         #[builder(into, default)]
-        pub network_rule_bypass_option: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub network_rule_bypass_option: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_rule_set` block as documented below.
         #[builder(into, default)]
-        pub network_rule_set: pulumi_gestalt_rust::InputOrOutput<
+        pub network_rule_set: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerservice::RegistryNetworkRuleSet>,
         >,
         /// Whether public network access is allowed for the container registry. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean value that indicates whether quarantine policy is enabled.
         #[builder(into, default)]
-        pub quarantine_policy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub quarantine_policy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Container Registry. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The number of days to retain and untagged manifest after which it gets purged. Defaults to `7`.
         #[builder(into, default)]
-        pub retention_policy_in_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_policy_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The SKU name of the container registry. Possible values are `Basic`, `Standard` and `Premium`.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Boolean value that indicated whether trust policy is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub trust_policy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub trust_policy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether zone redundancy is enabled for this Container Registry? Changing this forces a new resource to be created. Defaults to `false`.
         #[builder(into, default)]
-        pub zone_redundancy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_redundancy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct RegistryResult {

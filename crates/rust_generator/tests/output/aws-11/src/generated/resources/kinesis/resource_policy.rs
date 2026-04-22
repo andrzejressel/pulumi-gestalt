@@ -39,10 +39,10 @@ pub mod resource_policy {
     pub struct ResourcePolicyArgs {
         /// The policy document.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the data stream or consumer.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourcePolicyResult {

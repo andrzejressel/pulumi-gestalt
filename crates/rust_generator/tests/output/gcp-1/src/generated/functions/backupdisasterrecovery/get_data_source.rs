@@ -9,13 +9,13 @@ pub mod get_data_source {
     #[allow(dead_code)]
     pub struct GetDataSourceArgs {
         #[builder(into)]
-        pub backup_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_vault_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub data_source_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDataSourceResult {

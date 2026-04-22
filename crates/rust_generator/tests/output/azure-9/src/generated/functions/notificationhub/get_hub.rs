@@ -10,13 +10,13 @@ pub mod get_hub {
     pub struct GetHubArgs {
         /// Specifies the Name of the Notification Hub.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Name of the Notification Hub Namespace which contains the Notification Hub.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Name of the Resource Group within which the Notification Hub exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetHubResult {

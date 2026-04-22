@@ -10,14 +10,14 @@ pub mod get_queue {
     pub struct GetQueueArgs {
         /// The name of this Service Bus Queue.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the ServiceBus Namespace where the Service Bus Queue exists.
         #[builder(into, default)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetQueueResult {

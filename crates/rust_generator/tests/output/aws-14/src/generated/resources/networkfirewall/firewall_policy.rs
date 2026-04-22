@@ -101,25 +101,25 @@ pub mod firewall_policy {
     pub struct FirewallPolicyArgs {
         /// A friendly description of the firewall policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// KMS encryption configuration settings. See Encryption Configuration below for details.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkfirewall::FirewallPolicyEncryptionConfiguration,
             >,
         >,
         /// A configuration block describing the rule groups and policy actions to use in the firewall policy. See Firewall Policy below for details.
         #[builder(into)]
-        pub firewall_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub firewall_policy: pulumi_gestalt_rust::Input<
             super::super::types::networkfirewall::FirewallPolicyFirewallPolicy,
         >,
         /// A friendly name of the firewall policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of resource tags to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -61,34 +61,34 @@ pub mod share_file {
     pub struct ShareFileArgs {
         /// Sets the file’s Content-Disposition header.
         #[builder(into, default)]
-        pub content_disposition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_disposition: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies which content encodings have been applied to the file.
         #[builder(into, default)]
-        pub content_encoding: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_encoding: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub content_md5: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_md5: pulumi_gestalt_rust::Input<Option<String>>,
         /// The content type of the share file. Defaults to `application/octet-stream`.
         #[builder(into, default)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of metadata to assign to this file.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name (or path) of the File that should be created within this File Share. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The storage share directory that you would like the file placed into. Changing this forces a new resource to be created. Defaults to `""`.
         #[builder(into, default)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path: pulumi_gestalt_rust::Input<Option<String>>,
         /// An absolute path to a file on the local system. Changing this forces a new resource to be created.
         ///
         /// > **Note** The file specified with `source` can not be empty.
         #[builder(into, default)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Storage Share ID in which this file will be placed into. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_share_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_share_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ShareFileResult {

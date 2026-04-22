@@ -66,32 +66,32 @@ pub mod application {
     pub struct ApplicationArgs {
         /// ARN of the application provider.
         #[builder(into)]
-        pub application_provider_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_provider_arn: pulumi_gestalt_rust::Input<String>,
         /// A unique, case-sensitive ID that you provide to ensure the idempotency of the request. AWS generates a random value when not provided.
         #[builder(into, default)]
-        pub client_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the application.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the instance of IAM Identity Center.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// Name of the application.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options for the portal associated with an application. See `portal_options` below.
         #[builder(into, default)]
-        pub portal_options: pulumi_gestalt_rust::InputOrOutput<
+        pub portal_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ssoadmin::ApplicationPortalOptions>,
         >,
         /// Status of the application. Valid values are `ENABLED` and `DISABLED`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

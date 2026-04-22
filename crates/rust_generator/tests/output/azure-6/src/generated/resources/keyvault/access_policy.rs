@@ -91,30 +91,28 @@ pub mod access_policy {
     pub struct AccessPolicyArgs {
         /// The object ID of an Application in Azure Active Directory. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub application_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of certificate permissions, must be one or more from the following: `Backup`, `Create`, `Delete`, `DeleteIssuers`, `Get`, `GetIssuers`, `Import`, `List`, `ListIssuers`, `ManageContacts`, `ManageIssuers`, `Purge`, `Recover`, `Restore`, `SetIssuers` and `Update`.
         #[builder(into, default)]
-        pub certificate_permissions: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub certificate_permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of key permissions, must be one or more from the following: `Backup`, `Create`, `Decrypt`, `Delete`, `Encrypt`, `Get`, `Import`, `List`, `Purge`, `Recover`, `Restore`, `Sign`, `UnwrapKey`, `Update`, `Verify`, `WrapKey`, `Release`, `Rotate`, `GetRotationPolicy` and `SetRotationPolicy`.
         #[builder(into, default)]
-        pub key_permissions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub key_permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the id of the Key Vault resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID of a service principal can be fetched from `azuread_service_principal.object_id`. The object ID must be unique for the list of access policies. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub object_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_id: pulumi_gestalt_rust::Input<String>,
         /// List of secret permissions, must be one or more from the following: `Backup`, `Delete`, `Get`, `List`, `Purge`, `Recover`, `Restore` and `Set`.
         #[builder(into, default)]
-        pub secret_permissions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub secret_permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of storage permissions, must be one or more from the following: `Backup`, `Delete`, `DeleteSAS`, `Get`, `GetSAS`, `List`, `ListSAS`, `Purge`, `Recover`, `RegenerateKey`, `Restore`, `Set`, `SetSAS` and `Update`.
         #[builder(into, default)]
-        pub storage_permissions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub storage_permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessPolicyResult {

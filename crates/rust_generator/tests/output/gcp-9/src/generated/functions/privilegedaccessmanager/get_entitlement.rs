@@ -10,13 +10,13 @@ pub mod get_entitlement {
     pub struct GetEntitlementArgs {
         /// ID of the Entitlement resource. This is the last part of the Entitlement's full name which is of the format `{parent}/locations/{location}/entitlements/{entitlement_id}`.
         #[builder(into, default)]
-        pub entitlement_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub entitlement_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the Entitlement resource.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project or folder or organization that contains the resource. Format: projects/{project-id|project-number} or folders/{folder-number}  or organizations/{organization-number}
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetEntitlementResult {

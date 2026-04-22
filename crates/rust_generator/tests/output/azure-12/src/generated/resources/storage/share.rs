@@ -70,40 +70,40 @@ pub mod share {
         ///
         /// ~>**NOTE:** The `FileStorage` `account_kind` of the `azure.storage.Account` requires `Premium` `access_tier`.
         #[builder(into, default)]
-        pub access_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `acl` blocks as defined below.
         #[builder(into, default)]
-        pub acls: pulumi_gestalt_rust::InputOrOutput<
+        pub acls: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::storage::ShareAcl>>,
         >,
         /// The protocol used for the share. Possible values are `SMB` and `NFS`. The `SMB` indicates the share can be accessed by SMBv3.0, SMBv2.1 and REST. The `NFS` indicates the share can be accessed by NFSv4.1. Defaults to `SMB`. Changing this forces a new resource to be created.
         ///
         /// ~>**NOTE:** The `FileStorage` `account_kind` of the `azure.storage.Account` is required for the `NFS` protocol.
         #[builder(into, default)]
-        pub enabled_protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub enabled_protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of MetaData for this File Share.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the share. Must be unique within the storage account where the share is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum size of the share, in gigabytes.
         ///
         /// ~>**NOTE:** For Standard storage accounts, by default this must be `1` GB (or higher) and at most `5120` GB (`5` TB). This can be set to a value larger than `5120` GB if `large_file_share_enabled` is set to `true` in the parent `azure.storage.Account`.
         ///
         /// ~>**NOTE:** For Premium FileStorage storage accounts, this must be greater than `100` GB and at most `102400` GB (`100` TB).
         #[builder(into)]
-        pub quota: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub quota: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the storage account in which to create the share. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** One of `storage_account_name` or `storage_account_id` must be specified. When specifying `storage_account_id` the resource will use the Resource Manager API, rather than the Data Plane API.
         #[builder(into, default)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the storage account in which to create the share. Changing this forces a new resource to be created. This property is deprecated in favour of `storage_account_id`.
         #[builder(into, default)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ShareResult {

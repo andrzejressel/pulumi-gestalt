@@ -105,19 +105,19 @@ pub mod function_app_hybrid_connection {
     pub struct FunctionAppHybridConnectionArgs {
         /// The ID of the Function App for this Hybrid Connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub function_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_app_id: pulumi_gestalt_rust::Input<String>,
         /// The hostname of the endpoint.
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// The port to use for the endpoint
         #[builder(into)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub port: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the Relay Hybrid Connection to use. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub relay_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub relay_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Relay key with `Send` permission to use. Defaults to `RootManageSharedAccessKey`
         #[builder(into, default)]
-        pub send_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub send_key_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FunctionAppHybridConnectionResult {

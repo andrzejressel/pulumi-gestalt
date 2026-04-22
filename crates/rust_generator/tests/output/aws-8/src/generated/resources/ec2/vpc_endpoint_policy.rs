@@ -58,10 +58,10 @@ pub mod vpc_endpoint_policy {
     pub struct VpcEndpointPolicyArgs {
         /// A policy to attach to the endpoint that controls access to the service. Defaults to full access. All `Gateway` and some `Interface` endpoints support policies - see the [relevant AWS documentation](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html) for more details.
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The VPC Endpoint ID.
         #[builder(into)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcEndpointPolicyResult {

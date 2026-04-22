@@ -122,7 +122,7 @@ pub mod cluster {
         /// Configuration of the autoscaling applied to this cluster
         /// Structure is documented below.
         #[builder(into, default)]
-        pub autoscaling_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscaling_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::vmwareengine::ClusterAutoscalingSettings>,
         >,
         /// The ID of the Cluster.
@@ -130,19 +130,19 @@ pub mod cluster {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The map of cluster node types in this cluster,
         /// where the key is canonical identifier of the node type (corresponds to the NodeType).
         /// Structure is documented below.
         #[builder(into, default)]
-        pub node_type_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub node_type_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::vmwareengine::ClusterNodeTypeConfig>>,
         >,
         /// The resource name of the private cloud to create a new cluster in.
         /// Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
         /// For example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

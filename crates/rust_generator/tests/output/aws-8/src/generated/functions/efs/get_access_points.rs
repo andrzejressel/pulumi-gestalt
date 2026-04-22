@@ -10,7 +10,7 @@ pub mod get_access_points {
     pub struct GetAccessPointsArgs {
         /// EFS File System identifier.
         #[builder(into)]
-        pub file_system_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file_system_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccessPointsResult {

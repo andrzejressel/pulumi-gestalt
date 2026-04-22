@@ -10,7 +10,7 @@ pub mod get_authorization_token {
     pub struct GetAuthorizationTokenArgs {
         /// AWS account ID of the ECR Repository. If not specified the default account is assumed.
         #[builder(into, default)]
-        pub registry_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub registry_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAuthorizationTokenResult {

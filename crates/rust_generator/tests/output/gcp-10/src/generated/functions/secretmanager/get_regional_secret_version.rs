@@ -11,23 +11,23 @@ pub mod get_regional_secret_version {
         /// If set to 'true', the secret data is
         /// expected to be base64-encoded string.
         #[builder(into, default)]
-        pub is_secret_data_base64: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_secret_data_base64: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Location of Secret Manager regional secret resource.
         /// It must be provided when the `secret` field provided consists of only the name of the regional secret.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project to get the secret version for. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The regional secret to get the secret version for.
         /// This can be either the reference of the regional secret as in `projects/{{project}}/locations/{{location}}/secrets/{{secret_id}}` or only the name of the regional secret as in `{{secret_id}}`. If only the name of the regional secret is provided, the location must also be provided.
         #[builder(into)]
-        pub secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret: pulumi_gestalt_rust::Input<String>,
         /// The version of the regional secret to get. If it
         /// is not provided, the latest version is retrieved.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegionalSecretVersionResult {

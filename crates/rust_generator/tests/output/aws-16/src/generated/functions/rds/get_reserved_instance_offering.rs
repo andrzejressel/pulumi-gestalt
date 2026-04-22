@@ -10,19 +10,19 @@ pub mod get_reserved_instance_offering {
     pub struct GetReservedInstanceOfferingArgs {
         /// DB instance class for the reserved DB instance.
         #[builder(into)]
-        pub db_instance_class: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_instance_class: pulumi_gestalt_rust::Input<String>,
         /// Duration of the reservation in years or seconds. Valid values are `1`, `3`, `31536000`, `94608000`
         #[builder(into)]
-        pub duration: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub duration: pulumi_gestalt_rust::Input<i32>,
         /// Whether the reservation applies to Multi-AZ deployments.
         #[builder(into)]
-        pub multi_az: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub multi_az: pulumi_gestalt_rust::Input<bool>,
         /// Offering type of this reserved DB instance. Valid values are `No Upfront`, `Partial Upfront`, `All Upfront`.
         #[builder(into)]
-        pub offering_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub offering_type: pulumi_gestalt_rust::Input<String>,
         /// Description of the reserved DB instance.
         #[builder(into)]
-        pub product_description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_description: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetReservedInstanceOfferingResult {

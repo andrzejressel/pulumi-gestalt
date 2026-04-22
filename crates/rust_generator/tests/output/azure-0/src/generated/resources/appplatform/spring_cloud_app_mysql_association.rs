@@ -86,22 +86,22 @@ pub mod spring_cloud_app_mysql_association {
     pub struct SpringCloudAppMysqlAssociationArgs {
         /// Specifies the name of the MySQL Database which the Spring Cloud App should be associated with.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the MySQL Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub mysql_server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mysql_server_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Spring Cloud Application Association. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the password which should be used when connecting to the MySQL Database from the Spring Cloud App.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the Spring Cloud Application where this Association is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_app_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the username which should be used when connecting to the MySQL Database from the Spring Cloud App.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudAppMysqlAssociationResult {

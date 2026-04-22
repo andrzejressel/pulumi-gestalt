@@ -10,14 +10,14 @@ pub mod get_db_servers {
     pub struct GetDbServersArgs {
         /// The Exadata Infrastructure id.
         #[builder(into)]
-        pub cloud_exadata_infrastructure: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cloud_exadata_infrastructure: pulumi_gestalt_rust::Input<String>,
         /// The location of resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The project to which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDbServersResult {

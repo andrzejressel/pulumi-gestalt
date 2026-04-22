@@ -83,23 +83,23 @@ pub mod endpoint_custom_domain {
     pub struct EndpointCustomDomainArgs {
         /// The ID of the CDN Endpoint. Changing this forces a new CDN Endpoint Custom Domain to be created.
         #[builder(into)]
-        pub cdn_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cdn_endpoint_id: pulumi_gestalt_rust::Input<String>,
         /// A `cdn_managed_https` block as defined below.
         #[builder(into, default)]
-        pub cdn_managed_https: pulumi_gestalt_rust::InputOrOutput<
+        pub cdn_managed_https: pulumi_gestalt_rust::Input<
             Option<super::super::types::cdn::EndpointCustomDomainCdnManagedHttps>,
         >,
         /// The host name of the custom domain. Changing this forces a new CDN Endpoint Custom Domain to be created.
         #[builder(into)]
-        pub host_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this CDN Endpoint Custom Domain. Changing this forces a new CDN Endpoint Custom Domain to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `user_managed_https` block as defined below.
         ///
         /// > **NOTE** Only one of `cdn_managed_https` and `user_managed_https` can be specified.
         #[builder(into, default)]
-        pub user_managed_https: pulumi_gestalt_rust::InputOrOutput<
+        pub user_managed_https: pulumi_gestalt_rust::Input<
             Option<super::super::types::cdn::EndpointCustomDomainUserManagedHttps>,
         >,
     }

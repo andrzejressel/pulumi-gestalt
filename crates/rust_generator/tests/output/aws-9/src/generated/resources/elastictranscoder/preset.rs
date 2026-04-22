@@ -75,43 +75,43 @@ pub mod preset {
     pub struct PresetArgs {
         /// Audio parameters object (documented below).
         #[builder(into, default)]
-        pub audio: pulumi_gestalt_rust::InputOrOutput<
+        pub audio: pulumi_gestalt_rust::Input<
             Option<super::super::types::elastictranscoder::PresetAudio>,
         >,
         /// Codec options for the audio parameters (documented below)
         #[builder(into, default)]
-        pub audio_codec_options: pulumi_gestalt_rust::InputOrOutput<
+        pub audio_codec_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::elastictranscoder::PresetAudioCodecOptions>,
         >,
         /// The container type for the output file. Valid values are `flac`, `flv`, `fmp4`, `gif`, `mp3`, `mp4`, `mpg`, `mxf`, `oga`, `ogg`, `ts`, and `webm`.
         #[builder(into)]
-        pub container: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container: pulumi_gestalt_rust::Input<String>,
         /// A description of the preset (maximum 255 characters)
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the preset. (maximum 40 characters)
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Thumbnail parameters object (documented below)
         #[builder(into, default)]
-        pub thumbnails: pulumi_gestalt_rust::InputOrOutput<
+        pub thumbnails: pulumi_gestalt_rust::Input<
             Option<super::super::types::elastictranscoder::PresetThumbnails>,
         >,
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// Video parameters object (documented below)
         #[builder(into, default)]
-        pub video: pulumi_gestalt_rust::InputOrOutput<
+        pub video: pulumi_gestalt_rust::Input<
             Option<super::super::types::elastictranscoder::PresetVideo>,
         >,
         /// Codec options for the video parameters
         #[builder(into, default)]
-        pub video_codec_options: pulumi_gestalt_rust::InputOrOutput<
+        pub video_codec_options: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Watermark parameters for the video parameters (documented below)
         #[builder(into, default)]
-        pub video_watermarks: pulumi_gestalt_rust::InputOrOutput<
+        pub video_watermarks: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::elastictranscoder::PresetVideoWatermark>>,
         >,
     }

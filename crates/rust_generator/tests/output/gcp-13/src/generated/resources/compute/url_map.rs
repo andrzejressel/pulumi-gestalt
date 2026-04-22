@@ -728,7 +728,7 @@ pub mod url_map {
         /// defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub default_custom_error_response_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub default_custom_error_response_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::UrlMapDefaultCustomErrorResponsePolicy>,
         >,
         /// defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions
@@ -738,36 +738,36 @@ pub mod url_map {
         /// Only one of defaultRouteAction or defaultUrlRedirect must be set.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub default_route_action: pulumi_gestalt_rust::InputOrOutput<
+        pub default_route_action: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::UrlMapDefaultRouteAction>,
         >,
         /// The backend service or backend bucket to use when none of the given rules match.
         #[builder(into, default)]
-        pub default_service: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_service: pulumi_gestalt_rust::Input<Option<String>>,
         /// When none of the specified hostRules match, the request is redirected to a URL specified
         /// by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
         /// defaultRouteAction must not be set.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub default_url_redirect: pulumi_gestalt_rust::InputOrOutput<
+        pub default_url_redirect: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::UrlMapDefaultUrlRedirect>,
         >,
         /// An optional description of this resource. Provide this property when you create
         /// the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies changes to request and response headers that need to take effect for
         /// the selected backendService. The headerAction specified here take effect after
         /// headerAction specified under pathMatcher.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub header_action: pulumi_gestalt_rust::InputOrOutput<
+        pub header_action: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::UrlMapHeaderAction>,
         >,
         /// The list of HostRules to use against the URL.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub host_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub host_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::UrlMapHostRule>>,
         >,
         /// Name of the resource. Provided by the client when the resource is created. The
@@ -780,23 +780,23 @@ pub mod url_map {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of named PathMatchers to use against the URL.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub path_matchers: pulumi_gestalt_rust::InputOrOutput<
+        pub path_matchers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::UrlMapPathMatcher>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of expected URL mapping tests. Request to update this UrlMap will
         /// succeed only if all of the test cases pass. You can specify a maximum of 100
         /// tests per UrlMap.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub tests: pulumi_gestalt_rust::InputOrOutput<
+        pub tests: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::UrlMapTest>>,
         >,
     }

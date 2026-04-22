@@ -95,36 +95,36 @@ pub mod virtual_network_gateway_nat_rule {
     pub struct VirtualNetworkGatewayNatRuleArgs {
         /// One or more `external_mapping` blocks as documented below.
         #[builder(into)]
-        pub external_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub external_mappings: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::network::VirtualNetworkGatewayNatRuleExternalMapping,
             >,
         >,
         /// One or more `internal_mapping` blocks as documented below.
         #[builder(into)]
-        pub internal_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub internal_mappings: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::network::VirtualNetworkGatewayNatRuleInternalMapping,
             >,
         >,
         /// The ID of the IP Configuration this Virtual Network Gateway Nat Rule applies to.
         #[builder(into, default)]
-        pub ip_configuration_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_configuration_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source Nat direction of the Virtual Network Gateway Nat. Possible values are `EgressSnat` and `IngressSnat`. Defaults to `EgressSnat`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Virtual Network Gateway Nat Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of the Resource Group in which this Virtual Network Gateway Nat Rule should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The type of the Virtual Network Gateway Nat Rule. Possible values are `Dynamic` and `Static`. Defaults to `Static`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Virtual Network Gateway that this Virtual Network Gateway Nat Rule belongs to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_network_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_network_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkGatewayNatRuleResult {

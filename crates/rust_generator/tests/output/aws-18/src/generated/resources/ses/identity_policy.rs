@@ -52,13 +52,13 @@ pub mod identity_policy {
     pub struct IdentityPolicyArgs {
         /// Name or Amazon Resource Name (ARN) of the SES Identity.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity: pulumi_gestalt_rust::Input<String>,
         /// Name of the policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// JSON string of the policy.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IdentityPolicyResult {

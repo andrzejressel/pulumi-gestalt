@@ -52,15 +52,15 @@ pub mod export {
     pub struct ExportArgs {
         /// The details of the export, including data query, name, description, and destination configuration.  See the `export` argument reference below.
         #[builder(into, default)]
-        pub export: pulumi_gestalt_rust::InputOrOutput<
+        pub export: pulumi_gestalt_rust::Input<
             Option<super::super::types::bcmdata::ExportExport>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bcmdata::ExportTimeouts>,
         >,
     }

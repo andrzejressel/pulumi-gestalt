@@ -306,11 +306,11 @@ pub mod batch {
         /// The ID to use for the batch, which will become the final component of the batch's resource name.
         /// This value must be 4-63 characters. Valid characters are /[a-z][0-9]-/.
         #[builder(into, default)]
-        pub batch_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub batch_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Environment configuration for the batch execution.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub environment_config: pulumi_gestalt_rust::InputOrOutput<
+        pub environment_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::BatchEnvironmentConfig>,
         >,
         /// The labels to associate with this batch.
@@ -318,44 +318,44 @@ pub mod batch {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location in which the batch will be created in.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// PySpark batch config.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub pyspark_batch: pulumi_gestalt_rust::InputOrOutput<
+        pub pyspark_batch: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::BatchPysparkBatch>,
         >,
         /// Runtime configuration for the batch execution.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub runtime_config: pulumi_gestalt_rust::InputOrOutput<
+        pub runtime_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::BatchRuntimeConfig>,
         >,
         /// Spark batch config.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark_batch: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_batch: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::BatchSparkBatch>,
         >,
         /// SparkR batch config.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark_r_batch: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_r_batch: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::BatchSparkRBatch>,
         >,
         /// Spark SQL batch config.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark_sql_batch: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_sql_batch: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::BatchSparkSqlBatch>,
         >,
     }

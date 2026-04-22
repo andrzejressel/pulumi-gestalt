@@ -36,13 +36,13 @@ pub mod lf_tag {
     pub struct LfTagArgs {
         /// ID of the Data Catalog to create the tag in. If omitted, this defaults to the AWS Account ID.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-name for the tag.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// List of possible values an attribute can take.
         #[builder(into)]
-        pub values: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub values: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct LfTagResult {

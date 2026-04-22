@@ -109,28 +109,28 @@ pub mod web_acl {
     pub struct WebAclArgs {
         /// The action that you want AWS WAF Regional to take when a request doesn't match the criteria in any of the rules that are associated with the web ACL.
         #[builder(into)]
-        pub default_action: pulumi_gestalt_rust::InputOrOutput<
+        pub default_action: pulumi_gestalt_rust::Input<
             super::super::types::wafregional::WebAclDefaultAction,
         >,
         /// Configuration block to enable WAF logging. Detailed below.
         #[builder(into, default)]
-        pub logging_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::wafregional::WebAclLoggingConfiguration>,
         >,
         /// The name or description for the Amazon CloudWatch metric of this web ACL.
         #[builder(into)]
-        pub metric_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub metric_name: pulumi_gestalt_rust::Input<String>,
         /// The name or description of the web ACL.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of configuration blocks containing rules for the web ACL. Detailed below.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafregional::WebAclRule>>,
         >,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

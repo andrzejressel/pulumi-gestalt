@@ -50,18 +50,18 @@ pub mod profiles_resource_association {
     pub struct ProfilesResourceAssociationArgs {
         /// Name of the Profile Resource Association.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the profile associated with the VPC.
         #[builder(into)]
-        pub profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub profile_id: pulumi_gestalt_rust::Input<String>,
         /// Resource ID of the resource to be associated with the profile.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
         /// Resource properties for the resource to be associated with the profile.
         #[builder(into, default)]
-        pub resource_properties: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_properties: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::route53::ProfilesResourceAssociationTimeouts>,
         >,
     }

@@ -15,19 +15,19 @@ pub mod get_istio_canonical_service {
         ///
         /// Other optional fields include:
         #[builder(into)]
-        pub canonical_service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub canonical_service: pulumi_gestalt_rust::Input<String>,
         /// The namespace of the canonical service underlying this service.
         /// Corresponds to the destination_canonical_service_namespace metric label in Istio metrics.
         #[builder(into)]
-        pub canonical_service_namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub canonical_service_namespace: pulumi_gestalt_rust::Input<String>,
         /// Identifier for the mesh in which this Istio service is defined.
         /// Corresponds to the meshUid metric label in Istio metrics.
         #[builder(into)]
-        pub mesh_uid: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mesh_uid: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetIstioCanonicalServiceResult {

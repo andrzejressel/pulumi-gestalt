@@ -10,14 +10,14 @@ pub mod get_gateway_host_name_configuration {
     pub struct GetGatewayHostNameConfigurationArgs {
         /// The ID of the API Management Service.
         #[builder(into)]
-        pub api_management_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Management Gateway.
         /// *
         #[builder(into)]
-        pub gateway_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Management Gateway Host Name Configuration.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGatewayHostNameConfigurationResult {

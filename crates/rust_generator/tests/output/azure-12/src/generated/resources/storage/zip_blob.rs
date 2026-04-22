@@ -9,37 +9,37 @@ pub mod zip_blob {
     #[allow(dead_code)]
     pub struct ZipBlobArgs {
         #[builder(into, default)]
-        pub access_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_tier: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub cache_control: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cache_control: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub content_md5: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_md5: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_type: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub encryption_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encryption_scope: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub parallelism: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub parallelism: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub size: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub source_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_content: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub source_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_uri: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub storage_container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZipBlobResult {

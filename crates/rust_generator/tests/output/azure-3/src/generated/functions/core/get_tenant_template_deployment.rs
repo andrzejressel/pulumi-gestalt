@@ -10,7 +10,7 @@ pub mod get_tenant_template_deployment {
     pub struct GetTenantTemplateDeploymentArgs {
         /// The name of this Tenant Template Deployment.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTenantTemplateDeploymentResult {

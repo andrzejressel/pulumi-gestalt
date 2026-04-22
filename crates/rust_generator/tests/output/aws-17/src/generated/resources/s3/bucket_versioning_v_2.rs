@@ -127,16 +127,16 @@ pub mod bucket_versioning_v_2 {
     pub struct BucketVersioningV2Args {
         /// Name of the S3 bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Account ID of the expected bucket owner.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
         #[builder(into, default)]
-        pub mfa: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mfa: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the versioning parameters. See below.
         #[builder(into)]
-        pub versioning_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub versioning_configuration: pulumi_gestalt_rust::Input<
             super::super::types::s3::BucketVersioningV2VersioningConfiguration,
         >,
     }

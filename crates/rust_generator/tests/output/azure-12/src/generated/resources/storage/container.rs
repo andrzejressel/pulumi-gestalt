@@ -51,31 +51,29 @@ pub mod container {
         ///
         /// > **Note** When updating `container_access_type` for an existing storage container resource, Shared Key authentication will always be used, as AzureAD authentication is not supported.
         #[builder(into, default)]
-        pub container_access_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub container_access_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default encryption scope to use for blobs uploaded to this container. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub default_encryption_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_encryption_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to allow blobs to override the default encryption scope for this container. Can only be set when specifying `default_encryption_scope`. Defaults to `true`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_scope_override_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub encryption_scope_override_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of MetaData for this Container. All metadata keys should be lowercase.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the Container which should be created within the Storage Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Storage Account where the Container should be created. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** One of `storage_account_name` or `storage_account_id` must be specified. When specifying `storage_account_id` the resource will use the Resource Manager API, rather than the Data Plane API.
         #[builder(into, default)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Storage Account where the Container should be created. Changing this forces a new resource to be created. This property is deprecated in favour of `storage_account_id`.
         #[builder(into, default)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ContainerResult {

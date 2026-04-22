@@ -56,25 +56,25 @@ pub mod network_acl {
     pub struct NetworkAclArgs {
         /// Specifies an egress rule. Parameters defined below.
         #[builder(into, default)]
-        pub egress: pulumi_gestalt_rust::InputOrOutput<
+        pub egress: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::NetworkAclEgress>>,
         >,
         /// Specifies an ingress rule. Parameters defined below.
         #[builder(into, default)]
-        pub ingress: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::NetworkAclIngress>>,
         >,
         /// A list of Subnet IDs to apply the ACL to
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the associated VPC.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkAclResult {

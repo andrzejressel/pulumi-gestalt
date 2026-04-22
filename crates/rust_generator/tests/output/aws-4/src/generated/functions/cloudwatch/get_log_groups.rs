@@ -10,7 +10,7 @@ pub mod get_log_groups {
     pub struct GetLogGroupsArgs {
         /// Group prefix of the Cloudwatch log groups to list
         #[builder(into, default)]
-        pub log_group_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub log_group_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetLogGroupsResult {

@@ -52,20 +52,20 @@ pub mod medical_vocabulary {
     pub struct MedicalVocabularyArgs {
         /// The language code you selected for your medical vocabulary. US English (en-US) is the only language supported with Amazon Transcribe Medical.
         #[builder(into)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub language_code: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the MedicalVocabulary. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary.
         #[builder(into)]
-        pub vocabulary_file_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vocabulary_file_uri: pulumi_gestalt_rust::Input<String>,
         /// The name of the Medical Vocabulary.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vocabulary_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vocabulary_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MedicalVocabularyResult {

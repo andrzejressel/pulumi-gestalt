@@ -44,10 +44,10 @@ pub mod stream_consumer {
     pub struct StreamConsumerArgs {
         /// Name of the stream consumer.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the data stream the consumer is registered with.
         #[builder(into)]
-        pub stream_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StreamConsumerResult {

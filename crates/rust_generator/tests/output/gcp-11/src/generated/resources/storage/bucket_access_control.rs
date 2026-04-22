@@ -71,7 +71,7 @@ pub mod bucket_access_control {
     pub struct BucketAccessControlArgs {
         /// The name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// The entity holding the permission, in one of the following forms:
         /// user-userId
         /// user-email
@@ -91,11 +91,11 @@ pub mod bucket_access_control {
         ///
         /// - - -
         #[builder(into)]
-        pub entity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub entity: pulumi_gestalt_rust::Input<String>,
         /// The access permission for the entity.
         /// Possible values are: `OWNER`, `READER`, `WRITER`.
         #[builder(into, default)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BucketAccessControlResult {

@@ -40,57 +40,55 @@ pub mod domain {
     pub struct DomainArgs {
         /// Whether to create the domain topic when the first event subscription at the scope of the domain topic is created. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_create_topic_with_first_subscription: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_create_topic_with_first_subscription: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Whether to delete the domain topic when the last event subscription at the scope of the domain topic is deleted. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_delete_topic_with_last_subscription: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_delete_topic_with_last_subscription: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventgrid::DomainIdentity>,
         >,
         /// One or more `inbound_ip_rule` blocks as defined below.
         #[builder(into, default)]
-        pub inbound_ip_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub inbound_ip_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::eventgrid::DomainInboundIpRule>>,
         >,
         /// A `input_mapping_default_values` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub input_mapping_default_values: pulumi_gestalt_rust::InputOrOutput<
+        pub input_mapping_default_values: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventgrid::DomainInputMappingDefaultValues>,
         >,
         /// A `input_mapping_fields` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub input_mapping_fields: pulumi_gestalt_rust::InputOrOutput<
+        pub input_mapping_fields: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventgrid::DomainInputMappingFields>,
         >,
         /// Specifies the schema in which incoming events will be published to this domain. Allowed values are `CloudEventSchemaV1_0`, `CustomEventSchema`, or `EventGridSchema`. Defaults to `EventGridSchema`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub input_schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub input_schema: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether local authentication methods is enabled for the EventGrid Domain. Defaults to `true`.
         #[builder(into, default)]
-        pub local_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the EventGrid Domain resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not public network access is allowed for this server. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which the EventGrid Domain exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

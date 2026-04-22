@@ -66,68 +66,66 @@ pub mod host_pool {
     pub struct HostPoolArgs {
         /// A valid custom RDP properties string for the Virtual Desktop Host Pool, available properties can be [found in this article](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files).
         #[builder(into, default)]
-        pub custom_rdp_properties: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_rdp_properties: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description for the Virtual Desktop Host Pool.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A friendly name for the Virtual Desktop Host Pool.
         #[builder(into, default)]
-        pub friendly_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub friendly_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// `BreadthFirst` load balancing distributes new user sessions across all available session hosts in the host pool. Possible values are `BreadthFirst`, `DepthFirst` and `Persistent`.
         /// `DepthFirst` load balancing distributes new user sessions to an available session host with the highest number of connections but has not reached its maximum session limit threshold.
         /// `Persistent` should be used if the host pool type is `Personal`
         #[builder(into)]
-        pub load_balancer_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancer_type: pulumi_gestalt_rust::Input<String>,
         /// The location/region where the Virtual Desktop Host Pool is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valid integer value from 0 to 999999 for the maximum number of users that have concurrent sessions on a session host.
         /// Should only be set if the `type` of your Virtual Desktop Host Pool is `Pooled`.
         #[builder(into, default)]
-        pub maximum_sessions_allowed: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub maximum_sessions_allowed: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the Virtual Desktop Host Pool. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// `Automatic` assignment – The service will select an available host and assign it to an user. Possible values are `Automatic` and `Direct`. `Direct` Assignment – Admin selects a specific host to assign to an user. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** `personal_desktop_assignment_type` is required if the `type` of your Virtual Desktop Host Pool is `Personal`
         #[builder(into, default)]
-        pub personal_desktop_assignment_type: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub personal_desktop_assignment_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to specify the preferred Application Group type for the Virtual Desktop Host Pool. Valid options are `None`, `Desktop` or `RailApplications`. Default is `Desktop`.
         #[builder(into, default)]
-        pub preferred_app_group_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_app_group_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is allowed for the Virtual Desktop Host Pool. Possible values are `Enabled`, `Disabled`, `EnabledForClientsOnly` and `EnabledForSessionHostsOnly`. Defaults to `Enabled`.
         #[builder(into, default)]
-        pub public_network_access: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_network_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Virtual Desktop Host Pool. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `scheduled_agent_updates` block as defined below. This enables control of when Agent Updates will be applied to Session Hosts.
         #[builder(into, default)]
-        pub scheduled_agent_updates: pulumi_gestalt_rust::InputOrOutput<
+        pub scheduled_agent_updates: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::desktopvirtualization::HostPoolScheduledAgentUpdates,
             >,
         >,
         /// Enables or disables the Start VM on Connection Feature. Defaults to `false`.
         #[builder(into, default)]
-        pub start_vm_on_connect: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_vm_on_connect: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of the Virtual Desktop Host Pool. Valid options are `Personal` or `Pooled`. Changing the type forces a new resource to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Allows you to test service changes before they are deployed to production. Defaults to `false`.
         #[builder(into, default)]
-        pub validate_environment: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub validate_environment: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A VM template for session hosts configuration within hostpool. This is a JSON string.
         #[builder(into, default)]
-        pub vm_template: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vm_template: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HostPoolResult {

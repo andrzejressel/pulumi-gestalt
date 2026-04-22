@@ -37,13 +37,13 @@ pub mod conditional_forwader {
     pub struct ConditionalForwaderArgs {
         /// ID of directory.
         #[builder(into)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// A list of forwarder IP addresses.
         #[builder(into)]
-        pub dns_ips: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub dns_ips: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The fully qualified domain name of the remote domain for which forwarders will be used.
         #[builder(into)]
-        pub remote_domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub remote_domain_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConditionalForwaderResult {

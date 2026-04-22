@@ -60,50 +60,50 @@ pub mod linked_service_sftp {
         ///
         /// The following supported arguments are specific to SFTP Linked Service:
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The type of authentication used to connect to the web table source. Valid options are `Anonymous`, `Basic` and `ClientCertificate`.
         #[builder(into)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_type: pulumi_gestalt_rust::Input<String>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Linked Service.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SFTP server hostname.
         #[builder(into)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host: pulumi_gestalt_rust::Input<String>,
         /// The host key fingerprint of the SFTP server.
         #[builder(into, default)]
-        pub host_key_fingerprint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_key_fingerprint: pulumi_gestalt_rust::Input<Option<String>>,
         /// The integration runtime reference to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub integration_runtime_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_runtime_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Data Factory Linked Service. Changing this forces a new resource to be created. Must be unique within a data factory. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Password to logon to the SFTP Server for Basic Authentication.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The TCP port number that the SFTP server uses to listen for client connection. Default value is 22.
         #[builder(into)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub port: pulumi_gestalt_rust::Input<i32>,
         /// Whether to validate host key fingerprint while connecting. If set to `false`, `host_key_fingerprint` must also be set.
         #[builder(into, default)]
-        pub skip_host_key_validation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_host_key_validation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The username used to log on to the SFTP server.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LinkedServiceSftpResult {

@@ -173,12 +173,12 @@ pub mod ha_vpn_gateway {
     pub struct HaVpnGatewayArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
         /// Default value is `IPV4`.
         /// Possible values are: `IPV4`, `IPV6`.
         #[builder(into, default)]
-        pub gateway_ip_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gateway_ip_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035.  Specifically, the name must be 1-63 characters long and
@@ -187,30 +187,30 @@ pub mod ha_vpn_gateway {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network this VPN gateway is accepting traffic for.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region this gateway should sit in.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The stack type for this VPN gateway to identify the IP protocols that are enabled.
         /// If not specified, IPV4_ONLY will be used.
         /// Default value is `IPV4_ONLY`.
         /// Possible values are: `IPV4_ONLY`, `IPV4_IPV6`, `IPV6_ONLY`.
         #[builder(into, default)]
-        pub stack_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stack_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of interfaces on this VPN gateway.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub vpn_interfaces: pulumi_gestalt_rust::InputOrOutput<
+        pub vpn_interfaces: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::HaVpnGatewayVpnInterface>>,
         >,
     }

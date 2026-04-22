@@ -262,25 +262,25 @@ pub mod slo {
         /// `basic_sli`, `request_based_sli`, `windows_based_sli`
         /// Structure is documented below.
         #[builder(into, default)]
-        pub basic_sli: pulumi_gestalt_rust::InputOrOutput<
+        pub basic_sli: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::SloBasicSli>,
         >,
         /// A calendar period, semantically "since the start of the current
         /// <calendarPeriod>".
         /// Possible values are: `DAY`, `WEEK`, `FORTNIGHT`, `MONTH`.
         #[builder(into, default)]
-        pub calendar_period: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub calendar_period: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name used for UI elements listing this SLO.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The fraction of service that must be good in order for this objective
         /// to be met. 0 < goal <= 0.999
         #[builder(into)]
-        pub goal: pulumi_gestalt_rust::InputOrOutput<f64>,
+        pub goal: pulumi_gestalt_rust::Input<f64>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A request-based SLI defines a SLI for which atomic units of
         /// service are counted directly.
         /// A SLI describes a good service.
@@ -290,29 +290,29 @@ pub mod slo {
         /// `basic_sli`, `request_based_sli`, `windows_based_sli`
         /// Structure is documented below.
         #[builder(into, default)]
-        pub request_based_sli: pulumi_gestalt_rust::InputOrOutput<
+        pub request_based_sli: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::SloRequestBasedSli>,
         >,
         /// A rolling time period, semantically "in the past X days".
         /// Must be between 1 to 30 days, inclusive.
         #[builder(into, default)]
-        pub rolling_period_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub rolling_period_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// ID of the service to which this SLO belongs.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
         /// The id to use for this ServiceLevelObjective. If omitted, an id will be generated instead.
         #[builder(into, default)]
-        pub slo_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub slo_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// This field is intended to be used for organizing and identifying the AlertPolicy
         /// objects.The field can contain up to 64 entries. Each key and value is limited
         /// to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values
         /// can contain only lowercase letters, numerals, underscores, and dashes. Keys
         /// must begin with a letter.
         #[builder(into, default)]
-        pub user_labels: pulumi_gestalt_rust::InputOrOutput<
+        pub user_labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A windows-based SLI defines the criteria for time windows.
@@ -325,7 +325,7 @@ pub mod slo {
         /// `basic_sli`, `request_based_sli`, `windows_based_sli`
         /// Structure is documented below.
         #[builder(into, default)]
-        pub windows_based_sli: pulumi_gestalt_rust::InputOrOutput<
+        pub windows_based_sli: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::SloWindowsBasedSli>,
         >,
     }

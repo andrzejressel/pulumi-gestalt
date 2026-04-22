@@ -10,10 +10,10 @@ pub mod get_bot_association {
     pub struct GetBotAssociationArgs {
         /// Identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration information of an Amazon Lex (V1) bot. Detailed below.
         #[builder(into)]
-        pub lex_bot: pulumi_gestalt_rust::InputOrOutput<
+        pub lex_bot: pulumi_gestalt_rust::Input<
             super::super::super::types::connect::GetBotAssociationLexBot,
         >,
     }

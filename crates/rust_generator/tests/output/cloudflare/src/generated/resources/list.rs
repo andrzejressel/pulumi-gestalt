@@ -18,21 +18,19 @@ pub mod list {
     pub struct ListArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// An optional description of the list.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The items in the list.
         #[builder(into, default)]
-        pub items: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<super::types::ListItem>>,
-        >,
+        pub items: pulumi_gestalt_rust::Input<Option<Vec<super::types::ListItem>>>,
         /// The type of items the list will contain. Must provide only one of: `ip`, `redirect`, `hostname`, `asn`..
         #[builder(into)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kind: pulumi_gestalt_rust::Input<String>,
         /// The name of the list.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ListResult {

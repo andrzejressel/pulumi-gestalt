@@ -10,10 +10,10 @@ pub mod get_spatial_anchors_account {
     pub struct GetSpatialAnchorsAccountArgs {
         /// Specifies the name of the Spatial Anchors Account. Changing this forces a new resource to be created. Must be globally unique.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the Spatial Anchors Account.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSpatialAnchorsAccountResult {

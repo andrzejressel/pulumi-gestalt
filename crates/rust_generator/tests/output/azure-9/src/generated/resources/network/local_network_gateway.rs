@@ -47,32 +47,32 @@ pub mod local_network_gateway {
     pub struct LocalNetworkGatewayArgs {
         /// The list of string CIDRs representing the address spaces the gateway exposes.
         #[builder(into, default)]
-        pub address_spaces: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub address_spaces: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `bgp_settings` block as defined below containing the Local Network Gateway's BGP speaker settings.
         #[builder(into, default)]
-        pub bgp_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub bgp_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::LocalNetworkGatewayBgpSettings>,
         >,
         /// The gateway IP address to connect with.
         #[builder(into, default)]
-        pub gateway_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gateway_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The gateway FQDN to connect with.
         ///
         /// > **NOTE:** Either `gateway_address` or `gateway_fqdn` should be specified.
         #[builder(into, default)]
-        pub gateway_fqdn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gateway_fqdn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location/region where the local network gateway is created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the local network gateway. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the local network gateway. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

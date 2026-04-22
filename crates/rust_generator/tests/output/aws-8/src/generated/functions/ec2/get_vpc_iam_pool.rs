@@ -10,23 +10,23 @@ pub mod get_vpc_iam_pool {
     pub struct GetVpcIamPoolArgs {
         /// Tags that are required to create resources in using this pool.
         #[builder(into, default)]
-        pub allocation_resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub allocation_resource_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetVpcIamPoolFilter>>,
         >,
         /// ID of the IPAM pool.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the IPAM pool you would like information on.
         #[builder(into, default)]
-        pub ipam_pool_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipam_pool_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

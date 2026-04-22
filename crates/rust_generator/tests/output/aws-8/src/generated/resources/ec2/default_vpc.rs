@@ -41,32 +41,30 @@ pub mod default_vpc {
     #[allow(dead_code)]
     pub struct DefaultVpcArgs {
         #[builder(into, default)]
-        pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub enable_dns_hostnames: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_dns_hostnames: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub enable_dns_support: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_dns_support: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub enable_network_address_usage_metrics: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_network_address_usage_metrics: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Whether destroying the resource deletes the default VPC. Default: `false`
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub ipv6_cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub ipv6_cidr_block_network_border_group: pulumi_gestalt_rust::InputOrOutput<
+        pub ipv6_cidr_block_network_border_group: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         #[builder(into, default)]
-        pub ipv6_ipam_pool_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv6_ipam_pool_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub ipv6_netmask_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ipv6_netmask_length: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

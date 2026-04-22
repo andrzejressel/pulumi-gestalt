@@ -43,22 +43,22 @@ pub mod dx_gateway_attachment {
     pub struct DxGatewayAttachmentArgs {
         /// ID of the Cloud WAN core network to which the Direct Connect gateway attachment should be attached.
         #[builder(into)]
-        pub core_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub core_network_id: pulumi_gestalt_rust::Input<String>,
         /// ARN of the Direct Connect gateway attachment.
         #[builder(into)]
-        pub direct_connect_gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub direct_connect_gateway_arn: pulumi_gestalt_rust::Input<String>,
         /// One or more core network edge locations to associate with the Direct Connect gateway attachment.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub edge_locations: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub edge_locations: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Key-value tags for the attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkmanager::DxGatewayAttachmentTimeouts>,
         >,
     }

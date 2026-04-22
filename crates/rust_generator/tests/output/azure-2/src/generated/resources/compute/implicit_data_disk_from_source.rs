@@ -122,28 +122,28 @@ pub mod implicit_data_disk_from_source {
     pub struct ImplicitDataDiskFromSourceArgs {
         /// Specifies the caching requirements for this Data Disk. Possible values are `ReadOnly` and `ReadWrite`.
         #[builder(into, default)]
-        pub caching: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub caching: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Create Option of the Data Disk. The only possible value is `Copy`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub create_option: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub create_option: pulumi_gestalt_rust::Input<String>,
         /// Specifies the size of the Data Disk in gigabytes. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub disk_size_gb: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub disk_size_gb: pulumi_gestalt_rust::Input<i32>,
         /// The Logical Unit Number of the Data Disk, which needs to be unique within the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lun: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub lun: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the name of this Data Disk. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the source resource which this Data Disk was created from. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_resource_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Virtual Machine to which the Data Disk should be attached. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies if Write Accelerator is enabled on the disk. This can only be enabled on `Premium_LRS` managed disks with no caching and [M-Series VMs](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/how-to-enable-write-accelerator). Defaults to `false`.
         #[builder(into, default)]
-        pub write_accelerator_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub write_accelerator_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ImplicitDataDiskFromSourceResult {

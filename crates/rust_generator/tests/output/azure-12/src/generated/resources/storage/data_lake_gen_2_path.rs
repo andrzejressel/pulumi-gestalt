@@ -58,27 +58,27 @@ pub mod data_lake_gen_2_path {
     pub struct DataLakeGen2PathArgs {
         /// One or more `ace` blocks as defined below to specify the entries for the ACL for the path.
         #[builder(into, default)]
-        pub aces: pulumi_gestalt_rust::InputOrOutput<
+        pub aces: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::storage::DataLakeGen2PathAce>>,
         >,
         /// The name of the Data Lake Gen2 File System which should be created within the Storage Account. Must be unique within the storage account the queue is located. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub filesystem_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filesystem_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Object ID of the Azure Active Directory Group to make the owning group. Possible values also include `$superuser`.
         #[builder(into, default)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub group: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Object ID of the Azure Active Directory User to make the owning user. Possible values also include `$superuser`.
         #[builder(into, default)]
-        pub owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// The path which should be created within the Data Lake Gen2 File System in the Storage Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub path: pulumi_gestalt_rust::Input<String>,
         /// Specifies the type for path to create. Currently only `directory` is supported. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the Storage Account in which the Data Lake Gen2 File System should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DataLakeGen2PathResult {

@@ -66,73 +66,71 @@ pub mod local_rulestack_rule {
     pub struct LocalRulestackRuleArgs {
         /// The action to take on the rule being triggered. Possible values are `Allow`, `DenyResetBoth`, `DenyResetServer` and `DenySilent`.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of Applications.
         #[builder(into)]
-        pub applications: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub applications: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The comment for Audit purposes.
         #[builder(into, default)]
-        pub audit_comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub audit_comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `category` block as defined below.
         #[builder(into, default)]
-        pub category: pulumi_gestalt_rust::InputOrOutput<
+        pub category: pulumi_gestalt_rust::Input<
             Option<super::super::types::paloalto::LocalRulestackRuleCategory>,
         >,
         /// The type of Decryption to perform on the rule. Possible values include `SSLInboundInspection`, `SSLOutboundInspection`, and `None`. Defaults to `None`.
         #[builder(into, default)]
-        pub decryption_rule_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub decryption_rule_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description for the rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `destination` blocks as defined below.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<
+        pub destination: pulumi_gestalt_rust::Input<
             super::super::types::paloalto::LocalRulestackRuleDestination,
         >,
         /// Should this Rule be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the certificate for inbound inspection. Only valid when `decryption_rule_type` is set to `SSLInboundInspection`.
         #[builder(into, default)]
-        pub inspection_certificate_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub inspection_certificate_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should Logging be enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub logging_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub logging_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Palo Alto Local Rulestack Rule.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the inverse of the Destination configuration be used. Defaults to `false`.
         #[builder(into, default)]
-        pub negate_destination: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub negate_destination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the inverse of the Source configuration be used. Defaults to `false`.
         #[builder(into, default)]
-        pub negate_source: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub negate_source: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Priority of this rule. Rules are executed in numerical order. Changing this forces a new Palo Alto Local Rulestack Rule to be created.
         ///
         /// > **NOTE:** This is the primary identifier of a rule, as such it is not possible to change the Priority of a rule once created.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// The Protocol and port to use in the form `[protocol]:[port_number]` e.g. `TCP:8080` or `UDP:53`. Conflicts with `protocol_ports`. Defaults to `application-default`.
         ///
         /// > **NOTE** In 4.0 or later versions, the default of `protocol` will no longer be set by provider, exactly one of `protocol` and `protocol_ports` must be specified. You need to explicitly specify `protocol="application-default"` to keep the the current default of the `protocol`.
         #[builder(into, default)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Protocol:Port entries. E.g. `[ "TCP:80", "UDP:5431" ]`. Conflicts with `protocol`.
         #[builder(into, default)]
-        pub protocol_ports: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub protocol_ports: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the Local Rulestack in which to create this Rule. Changing this forces a new Palo Alto Local Rulestack Rule to be created.
         #[builder(into)]
-        pub rulestack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rulestack_id: pulumi_gestalt_rust::Input<String>,
         /// One or more `source` blocks as defined below.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             super::super::types::paloalto::LocalRulestackRuleSource,
         >,
         /// A mapping of tags which should be assigned to the Palo Alto Local Rulestack Rule.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

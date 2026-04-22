@@ -10,13 +10,13 @@ pub mod get_registry_scope_map {
     pub struct GetRegistryScopeMapArgs {
         /// The Name of the Container Registry where the token exists.
         #[builder(into)]
-        pub container_registry_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_registry_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Container Registry token.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where this Container Registry token exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRegistryScopeMapResult {

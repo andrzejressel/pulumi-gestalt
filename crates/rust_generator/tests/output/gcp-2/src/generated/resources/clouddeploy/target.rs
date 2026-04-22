@@ -121,40 +121,40 @@ pub mod target {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Information specifying an Anthos Cluster.
         #[builder(into, default)]
-        pub anthos_cluster: pulumi_gestalt_rust::InputOrOutput<
+        pub anthos_cluster: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddeploy::TargetAnthosCluster>,
         >,
         /// Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?$`.
         #[builder(into, default)]
-        pub associated_entities: pulumi_gestalt_rust::InputOrOutput<
+        pub associated_entities: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::clouddeploy::TargetAssociatedEntity>>,
         >,
         /// Optional. Information specifying a Custom Target.
         #[builder(into, default)]
-        pub custom_target: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddeploy::TargetCustomTarget>,
         >,
         /// Optional. The deploy parameters to use for this target.
         #[builder(into, default)]
-        pub deploy_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub deploy_parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Optional. Description of the `Target`. Max length is 255 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configurations for all execution that relates to this `Target`. Each `ExecutionEnvironmentUsage` value may only be used in a single configuration; using the same value multiple times is an error. When one or more configurations are specified, they must include the `RENDER` and `DEPLOY` `ExecutionEnvironmentUsage` values. When no configurations are specified, execution will use the default specified in `DefaultPool`.
         #[builder(into, default)]
-        pub execution_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub execution_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::clouddeploy::TargetExecutionConfig>>,
         >,
         /// Information specifying a GKE Cluster.
         #[builder(into, default)]
-        pub gke: pulumi_gestalt_rust::InputOrOutput<
+        pub gke: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddeploy::TargetGke>,
         >,
         /// Optional. Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
@@ -162,15 +162,15 @@ pub mod target {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Information specifying a multiTarget.
         #[builder(into, default)]
-        pub multi_target: pulumi_gestalt_rust::InputOrOutput<
+        pub multi_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddeploy::TargetMultiTarget>,
         >,
         /// Name of the `Target`. Format is `a-z?`.
@@ -179,16 +179,16 @@ pub mod target {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Whether or not the `Target` requires approval.
         #[builder(into, default)]
-        pub require_approval: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub require_approval: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Information specifying a Cloud Run deployment target.
         #[builder(into, default)]
-        pub run: pulumi_gestalt_rust::InputOrOutput<
+        pub run: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddeploy::TargetRun>,
         >,
     }

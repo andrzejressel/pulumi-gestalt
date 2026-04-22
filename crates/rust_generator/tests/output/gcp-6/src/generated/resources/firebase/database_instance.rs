@@ -136,22 +136,22 @@ pub mod database_instance {
     pub struct DatabaseInstanceArgs {
         /// The intended database state. Possible values: ACTIVE, DISABLED.
         #[builder(into, default)]
-        pub desired_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub desired_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// The globally unique identifier of the Firebase Realtime Database instance.
         /// Instance IDs cannot be reused after deletion.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the region where the Firebase Realtime database resides.
         /// Check all [available regions](https://firebase.google.com/docs/projects/locations#rtdb-locations)
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
         /// The database type.
         /// Each project can create one default Firebase Realtime Database, which cannot be deleted once created.
         /// Creating user Databases is only available for projects on the Blaze plan.
@@ -159,7 +159,7 @@ pub mod database_instance {
         /// Default value is `USER_DATABASE`.
         /// Possible values are: `DEFAULT_DATABASE`, `USER_DATABASE`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DatabaseInstanceResult {

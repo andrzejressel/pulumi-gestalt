@@ -10,15 +10,15 @@ pub mod get_kms_secret_asymmetric {
     pub struct GetKmsSecretAsymmetricArgs {
         /// The ciphertext to be decrypted, encoded in base64
         #[builder(into)]
-        pub ciphertext: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ciphertext: pulumi_gestalt_rust::Input<String>,
         /// The crc32 checksum of the `ciphertext` in hexadecimal notation. If not specified, it will be computed.
         #[builder(into, default)]
-        pub crc32: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub crc32: pulumi_gestalt_rust::Input<Option<String>>,
         /// The id of the CryptoKey version that will be used to
         /// decrypt the provided ciphertext. This is represented by the format
         /// `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}/cryptoKeyVersions/{version}`.
         #[builder(into)]
-        pub crypto_key_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub crypto_key_version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetKmsSecretAsymmetricResult {

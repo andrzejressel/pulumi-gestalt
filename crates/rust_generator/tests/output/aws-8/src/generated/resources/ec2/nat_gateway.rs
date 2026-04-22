@@ -91,34 +91,30 @@ pub mod nat_gateway {
     pub struct NatGatewayArgs {
         /// The Allocation ID of the Elastic IP address for the NAT Gateway. Required for `connectivity_type` of `public`.
         #[builder(into, default)]
-        pub allocation_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub allocation_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Connectivity type for the NAT Gateway. Valid values are `private` and `public`. Defaults to `public`.
         #[builder(into, default)]
-        pub connectivity_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connectivity_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The private IPv4 address to assign to the NAT Gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.
         #[builder(into, default)]
-        pub private_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of secondary allocation EIP IDs for this NAT Gateway.
         #[builder(into, default)]
-        pub secondary_allocation_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub secondary_allocation_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// [Private NAT Gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT Gateway.
         #[builder(into, default)]
-        pub secondary_private_ip_address_count: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub secondary_private_ip_address_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A list of secondary private IPv4 addresses to assign to the NAT Gateway.
         #[builder(into, default)]
-        pub secondary_private_ip_addresses: pulumi_gestalt_rust::InputOrOutput<
+        pub secondary_private_ip_addresses: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The Subnet ID of the subnet in which to place the NAT Gateway.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

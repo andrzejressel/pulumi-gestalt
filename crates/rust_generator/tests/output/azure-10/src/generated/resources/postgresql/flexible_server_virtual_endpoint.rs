@@ -80,16 +80,16 @@ pub mod flexible_server_virtual_endpoint {
     pub struct FlexibleServerVirtualEndpointArgs {
         /// The name of the Virtual Endpoint
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Resource ID of the *Replica* Postgres Flexible Server this should be associated with
         #[builder(into)]
-        pub replica_server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replica_server_id: pulumi_gestalt_rust::Input<String>,
         /// The Resource ID of the *Source* Postgres Flexible Server this should be associated with.
         #[builder(into)]
-        pub source_server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_server_id: pulumi_gestalt_rust::Input<String>,
         /// The type of Virtual Endpoint. Currently only `ReadWrite` is supported.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FlexibleServerVirtualEndpointResult {

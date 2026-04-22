@@ -125,26 +125,26 @@ pub mod experiment {
     pub struct ExperimentArgs {
         /// A `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::chaosstudio::ExperimentIdentity>,
         >,
         /// The Azure Region where the Chaos Studio Experiment should exist. Changing this forces a new Chaos Studio Experiment to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Chaos Studio Experiment. Changing this forces a new Chaos Studio Experiment to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Chaos Studio Experiment should exist. Changing this forces a new Chaos Studio Experiment to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `selectors` blocks as defined below.
         #[builder(into)]
-        pub selectors: pulumi_gestalt_rust::InputOrOutput<
+        pub selectors: pulumi_gestalt_rust::Input<
             Vec<super::super::types::chaosstudio::ExperimentSelector>,
         >,
         /// One or more `steps` blocks as defined below.
         #[builder(into)]
-        pub steps: pulumi_gestalt_rust::InputOrOutput<
+        pub steps: pulumi_gestalt_rust::Input<
             Vec<super::super::types::chaosstudio::ExperimentStep>,
         >,
     }

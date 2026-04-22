@@ -10,12 +10,12 @@ pub mod get_trust_store {
     pub struct GetTrustStoreArgs {
         /// Full ARN of the trust store.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name of the trust store.
         ///
         /// > **NOTE:** When both `arn` and `name` are specified, `arn` takes precedence.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetTrustStoreResult {

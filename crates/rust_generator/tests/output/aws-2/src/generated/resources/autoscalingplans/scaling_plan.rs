@@ -26,15 +26,15 @@ pub mod scaling_plan {
     pub struct ScalingPlanArgs {
         /// CloudFormation stack or set of tags. You can create one scaling plan per application source.
         #[builder(into)]
-        pub application_source: pulumi_gestalt_rust::InputOrOutput<
+        pub application_source: pulumi_gestalt_rust::Input<
             super::super::types::autoscalingplans::ScalingPlanApplicationSource,
         >,
         /// Name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Scaling instructions. More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html).
         #[builder(into)]
-        pub scaling_instructions: pulumi_gestalt_rust::InputOrOutput<
+        pub scaling_instructions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::autoscalingplans::ScalingPlanScalingInstruction>,
         >,
     }

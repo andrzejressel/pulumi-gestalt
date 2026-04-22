@@ -49,16 +49,16 @@ pub mod prepared_statement {
     pub struct PreparedStatementArgs {
         /// Brief explanation of prepared statement. Maximum length of 1024.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the prepared statement. Maximum length of 256.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The query string for the prepared statement.
         #[builder(into)]
-        pub query_statement: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query_statement: pulumi_gestalt_rust::Input<String>,
         /// The name of the workgroup to which the prepared statement belongs.
         #[builder(into)]
-        pub workgroup: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workgroup: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PreparedStatementResult {

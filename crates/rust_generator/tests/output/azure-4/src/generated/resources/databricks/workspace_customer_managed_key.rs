@@ -19,10 +19,10 @@ pub mod workspace_customer_managed_key {
     #[allow(dead_code)]
     pub struct WorkspaceCustomerManagedKeyArgs {
         #[builder(into)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<String>,
         /// The unique identifier of the databricks workspace in Databricks control plane.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceCustomerManagedKeyResult {

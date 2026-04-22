@@ -85,47 +85,45 @@ pub mod environment_v_3 {
     pub struct EnvironmentV3Args {
         /// Should new Private Endpoint Connections be allowed. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_new_private_endpoint_connections: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_new_private_endpoint_connections: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Zero or more `cluster_setting` blocks as defined below.
         #[builder(into, default)]
-        pub cluster_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub cluster_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::EnvironmentV3ClusterSetting>>,
         >,
         /// This ASEv3 should use dedicated Hosts. Possible values are `2`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub dedicated_host_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub dedicated_host_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values are `None` (for an External VIP Type), and `"Web, Publishing"` (for an Internal VIP Type). Defaults to `None`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub internal_load_balancing_mode: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub internal_load_balancing_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the App Service Environment. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable remote debug. Defaults to `false`.
         #[builder(into, default)]
-        pub remote_debugging_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub remote_debugging_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the App Service Environment exists. Defaults to the Resource Group of the Subnet (specified by `subnet_id`). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subnet which the App Service Environment should be connected to. Changing this forces a new resource to be created.
         ///
         /// > **NOTE** a /24 or larger CIDR is required. Once associated with an ASE, this size cannot be changed.
         ///
         /// > **NOTE:** This Subnet requires a delegation to `Microsoft.Web/hostingEnvironments` as detailed in the example above.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Set to `true` to deploy the ASEv3 with availability zones supported. Zonal ASEs can be deployed in some regions, you can refer to [Availability Zone support for App Service Environments](https://docs.microsoft.com/azure/app-service/environment/zone-redundancy). You can only set either `dedicated_host_count` or `zone_redundant` but not both. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Setting this value will provision 2 Physical Hosts for your App Service Environment V3, this is done at additional cost, please be aware of the pricing commitment in the [General Availability Notes](https://techcommunity.microsoft.com/t5/apps-on-azure/announcing-app-service-environment-v3-ga/ba-p/2517990)
         #[builder(into, default)]
-        pub zone_redundant: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_redundant: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentV3Result {

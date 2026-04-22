@@ -108,46 +108,46 @@ pub mod gallery_application_version {
     pub struct GalleryApplicationVersionArgs {
         /// Specifies the name of the config file on the VM. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub config_file: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub config_file: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Gallery Application reports health. Defaults to `false`.
         #[builder(into, default)]
-        pub enable_health_check: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_health_check: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The end of life date in RFC3339 format of the Gallery Application Version.
         #[builder(into, default)]
-        pub end_of_life_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_of_life_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Gallery Application Version be excluded from the `latest` filter? If set to `true` this Gallery Application Version won't be returned for the `latest` version. Defaults to `false`.
         #[builder(into, default)]
-        pub exclude_from_latest: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exclude_from_latest: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Gallery Application. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub gallery_application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gallery_application_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Gallery Application Version exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `manage_action` block as defined below.
         #[builder(into)]
-        pub manage_action: pulumi_gestalt_rust::InputOrOutput<
+        pub manage_action: pulumi_gestalt_rust::Input<
             super::super::types::compute::GalleryApplicationVersionManageAction,
         >,
         /// The version name of the Gallery Application Version, such as `1.0.0`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the package file on the VM. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub package_file: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub package_file: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `source` block as defined below.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             super::super::types::compute::GalleryApplicationVersionSource,
         >,
         /// A mapping of tags to assign to the Gallery Application Version.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// One or more `target_region` blocks as defined below.
         #[builder(into)]
-        pub target_regions: pulumi_gestalt_rust::InputOrOutput<
+        pub target_regions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::compute::GalleryApplicationVersionTargetRegion>,
         >,
     }

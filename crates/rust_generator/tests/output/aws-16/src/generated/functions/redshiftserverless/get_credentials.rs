@@ -10,13 +10,13 @@ pub mod get_credentials {
     pub struct GetCredentialsArgs {
         /// The name of the database to get temporary authorization to log on to.
         #[builder(into, default)]
-        pub db_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.
         #[builder(into, default)]
-        pub duration_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub duration_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the workgroup associated with the database.
         #[builder(into)]
-        pub workgroup_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workgroup_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCredentialsResult {

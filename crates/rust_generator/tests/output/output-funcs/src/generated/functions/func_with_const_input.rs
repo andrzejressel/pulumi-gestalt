@@ -9,7 +9,7 @@ pub mod func_with_const_input {
     #[allow(dead_code)]
     pub struct FuncWithConstInputArgs {
         #[builder(into, default)]
-        pub plain_input: pulumi_gestalt_rust::InputOrOutput<
+        pub plain_input: pulumi_gestalt_rust::Input<
             Option<super::super::constants::ConstStringFixed>,
         >,
     }

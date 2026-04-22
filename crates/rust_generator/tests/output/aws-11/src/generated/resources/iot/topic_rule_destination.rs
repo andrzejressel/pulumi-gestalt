@@ -20,10 +20,10 @@ pub mod topic_rule_destination {
     pub struct TopicRuleDestinationArgs {
         /// Whether or not to enable the destination. Default: `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration of the virtual private cloud (VPC) connection. For more info, see the [AWS documentation](https://docs.aws.amazon.com/iot/latest/developerguide/vpc-rule-action.html).
         #[builder(into)]
-        pub vpc_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_configuration: pulumi_gestalt_rust::Input<
             super::super::types::iot::TopicRuleDestinationVpcConfiguration,
         >,
     }

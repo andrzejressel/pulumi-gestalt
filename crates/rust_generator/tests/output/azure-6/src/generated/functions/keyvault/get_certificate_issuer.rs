@@ -10,10 +10,10 @@ pub mod get_certificate_issuer {
     pub struct GetCertificateIssuerArgs {
         /// The ID of the Key Vault in which to locate the Certificate Issuer.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Key Vault Certificate Issuer.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCertificateIssuerResult {

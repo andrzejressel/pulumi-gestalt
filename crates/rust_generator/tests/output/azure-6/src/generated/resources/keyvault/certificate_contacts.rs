@@ -77,12 +77,12 @@ pub mod certificate_contacts {
         /// One or more `contact` blocks as defined below.
         /// -->
         #[builder(into, default)]
-        pub contacts: pulumi_gestalt_rust::InputOrOutput<
+        pub contacts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::keyvault::CertificateContactsContact>>,
         >,
         /// The ID of the Key Vault. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateContactsResult {

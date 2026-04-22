@@ -44,7 +44,7 @@ pub mod organizations_features {
     pub struct OrganizationsFeaturesArgs {
         /// List of IAM features to enable. Valid values are `RootCredentialsManagement` and `RootSessions`.
         #[builder(into)]
-        pub enabled_features: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub enabled_features: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct OrganizationsFeaturesResult {

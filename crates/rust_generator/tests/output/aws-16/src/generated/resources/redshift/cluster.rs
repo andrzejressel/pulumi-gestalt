@@ -66,175 +66,157 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// If true , major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. Default is `true`.
         #[builder(into, default)]
-        pub allow_version_upgrade: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. Default is `false`.
         #[builder(into, default)]
-        pub apply_immediately: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored.
         /// No longer supported by the AWS API.
         /// Always returns `auto`.
         #[builder(into, default)]
-        pub aqua_configuration_status: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub aqua_configuration_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with create-cluster-snapshot. Default is 1.
         #[builder(into, default)]
-        pub automated_snapshot_retention_period: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub automated_snapshot_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency. Can only be changed if `availability_zone_relocation_enabled` is `true`.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, the cluster can be relocated to another availabity zone, either automatically by AWS or when requested. Default is `false`. Available for use on clusters from the RA3 instance family.
         #[builder(into, default)]
-        pub availability_zone_relocation_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub availability_zone_relocation_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The Cluster Identifier. Must be a lower case string.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The name of the parameter group to be associated with this cluster.
         #[builder(into, default)]
-        pub cluster_parameter_group_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cluster_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The public key for the cluster
         #[builder(into, default)]
-        pub cluster_public_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_public_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The specific revision number of the database in the cluster
         #[builder(into, default)]
-        pub cluster_revision_number: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_revision_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a cluster subnet group to be associated with this cluster. If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).
         #[builder(into, default)]
-        pub cluster_subnet_group_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cluster_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The cluster type to use. Either `single-node` or `multi-node`.
         #[builder(into, default)]
-        pub cluster_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version of the Amazon Redshift engine software that you want to deploy on the cluster.
         /// The version selected runs on all the nodes in the cluster.
         #[builder(into, default)]
-        pub cluster_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the first database to be created when the cluster is created.
         /// If you do not provide a name, Amazon Redshift will create a default database called `dev`.
         #[builder(into, default)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created.
         #[builder(into, default)]
-        pub default_iam_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Elastic IP (EIP) address for the cluster.
         #[builder(into, default)]
-        pub elastic_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub elastic_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true , the data in the cluster is encrypted at rest.
         #[builder(into, default)]
-        pub encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The connection endpoint
         #[builder(into, default)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true , enhanced VPC routing is enabled.
         #[builder(into, default)]
-        pub enhanced_vpc_routing: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enhanced_vpc_routing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, `skip_final_snapshot` must be false.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IAM Role ARNs to associate with the cluster. A Maximum of 10 can be associated to the cluster at any time.
         #[builder(into, default)]
-        pub iam_roles: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub iam_roles: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ARN for the KMS encryption key. When specifying `kms_key_id`, `encrypted` needs to be set to true.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Logging, documented below.
         #[builder(into, default)]
-        pub logging: pulumi_gestalt_rust::InputOrOutput<
+        pub logging: pulumi_gestalt_rust::Input<
             Option<super::super::types::redshift::ClusterLogging>,
         >,
         /// The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the MaintenanceTrack value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of  a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks. Default value is `current`.
         #[builder(into, default)]
-        pub maintenance_track_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub maintenance_track_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to use AWS SecretsManager to manage the cluster admin credentials.
         /// Conflicts with `master_password`.
         /// One of `master_password` or `manage_master_password` is required unless `snapshot_identifier` is provided.
         #[builder(into, default)]
-        pub manage_master_password: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage_master_password: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots. Valid values are between `-1` and `3653`. Default value is `-1`.
         #[builder(into, default)]
-        pub manual_snapshot_retention_period: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Password for the master DB user.
         /// Conflicts with `manage_master_password`.
         /// One of `master_password` or `manage_master_password` is required unless `snapshot_identifier` is provided.
         /// Note that this may show up in logs, and it will be stored in the state file.
         /// Password must contain at least 8 characters and contain at least one uppercase letter, one lowercase letter, and one number.
         #[builder(into, default)]
-        pub master_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub master_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the KMS key used to encrypt the cluster admin credentials secret.
         #[builder(into, default)]
-        pub master_password_secret_kms_key_id: pulumi_gestalt_rust::InputOrOutput<
+        pub master_password_secret_kms_key_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Username for the master DB user.
         #[builder(into, default)]
-        pub master_username: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub master_username: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if the Redshift cluster is multi-AZ.
         #[builder(into, default)]
-        pub multi_az: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub multi_az: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The node type to be provisioned for the cluster.
         #[builder(into)]
-        pub node_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_type: pulumi_gestalt_rust::Input<String>,
         /// The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node. Default is 1.
         #[builder(into, default)]
-        pub number_of_nodes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub number_of_nodes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.
         #[builder(into, default)]
-        pub owner_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port number on which the cluster accepts incoming connections. Valid values are between `1115` and `65535`.
         /// The cluster is accessible only via the JDBC and ODBC connection strings.
         /// Part of the connection string requires the port on which the cluster will listen for incoming connections.
         /// Default port is `5439`.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The weekly time range (in UTC) during which automated cluster maintenance can occur.
         /// Format: ddd:hh24:mi-ddd:hh24:mi
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, the cluster can be accessed from a public network. Default is `true`.
         #[builder(into, default)]
-        pub publicly_accessible: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If true , a final cluster snapshot is not created. If false , a final cluster snapshot is created before the cluster is deleted. Default is false.
         #[builder(into, default)]
-        pub skip_final_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN of the snapshot from which to create the new cluster. Conflicts with `snapshot_identifier`.
         #[builder(into, default)]
-        pub snapshot_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the cluster the source snapshot was created from.
         #[builder(into, default)]
-        pub snapshot_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub snapshot_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration of automatic copy of snapshots from one region to another. Documented below.
         #[builder(into, default)]
-        pub snapshot_copy: pulumi_gestalt_rust::InputOrOutput<
+        pub snapshot_copy: pulumi_gestalt_rust::Input<
             Option<super::super::types::redshift::ClusterSnapshotCopy>,
         >,
         /// The name of the snapshot from which to create the new cluster.  Conflicts with `snapshot_arn`.
         #[builder(into, default)]
-        pub snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

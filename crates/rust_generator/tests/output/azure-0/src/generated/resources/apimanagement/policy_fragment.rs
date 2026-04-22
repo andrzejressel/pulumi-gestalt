@@ -54,23 +54,23 @@ pub mod policy_fragment {
     pub struct PolicyFragmentArgs {
         /// The id of the API Management Service. Changing this forces a new Api Management Policy Fragment to be created.
         #[builder(into)]
-        pub api_management_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Policy Fragment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The format of the Policy Fragment. Possible values are `xml` or `rawxml`. Default is `xml`.
         ///
         /// > **NOTE:** The `value` property will be updated to reflect the corresponding format when `format` is updated.
         #[builder(into, default)]
-        pub format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub format: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Api Management Policy Fragment. Changing this forces a new Api Management Policy Fragment to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The value of the Policy Fragment.
         ///
         /// > **NOTE:** Be aware of the two format possibilities. If the `value` is not applied and continues to cause a diff the format could be wrong.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyFragmentResult {

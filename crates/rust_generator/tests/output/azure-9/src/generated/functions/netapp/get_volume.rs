@@ -10,19 +10,19 @@ pub mod get_volume {
     pub struct GetVolumeArgs {
         /// The name of the NetApp account where the NetApp pool exists.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the NetApp Volume.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the NetApp pool where the NetApp volume exists.
         #[builder(into)]
-        pub pool_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pool_name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the NetApp Volume exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Volume security style
         #[builder(into, default)]
-        pub security_style: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_style: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetVolumeResult {

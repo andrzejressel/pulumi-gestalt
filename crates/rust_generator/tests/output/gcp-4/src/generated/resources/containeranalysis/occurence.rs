@@ -117,24 +117,24 @@ pub mod occurence {
         /// which authority this attestation was intended to sign.
         /// Structure is documented below.
         #[builder(into)]
-        pub attestation: pulumi_gestalt_rust::InputOrOutput<
+        pub attestation: pulumi_gestalt_rust::Input<
             super::super::types::containeranalysis::OccurenceAttestation,
         >,
         /// The analysis note associated with this occurrence, in the form of
         /// projects/[PROJECT]/notes/[NOTE_ID]. This field can be used as a
         /// filter in list requests.
         #[builder(into)]
-        pub note_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub note_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description of actions that can be taken to remedy the note.
         #[builder(into, default)]
-        pub remediation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub remediation: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Immutable. A URI that represents the resource for which
         /// the occurrence applies. For example,
         /// https://gcr.io/project/image@sha256:123abc for a Docker image.
         #[builder(into)]
-        pub resource_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_uri: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OccurenceResult {

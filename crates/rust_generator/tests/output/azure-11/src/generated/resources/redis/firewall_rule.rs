@@ -61,19 +61,19 @@ pub mod firewall_rule {
     pub struct FirewallRuleArgs {
         /// The highest IP address included in the range.
         #[builder(into)]
-        pub end_ip: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub end_ip: pulumi_gestalt_rust::Input<String>,
         /// The name of the Firewall Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Redis Cache. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub redis_cache_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub redis_cache_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which this Redis Cache exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The lowest IP address included in the range
         #[builder(into)]
-        pub start_ip: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_ip: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FirewallRuleResult {

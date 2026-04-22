@@ -56,41 +56,41 @@ pub mod subscription {
     pub struct SubscriptionArgs {
         /// Determines whether tracing can be enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_tracing: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_tracing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the API which should be assigned to this Subscription. Changing this forces a new resource to be created.
         ///
         /// > **Info:** Only one of `product_id` and `api_id` can be set. If both are missing `/apis` scope is used for the subscription and all apis are accessible.
         #[builder(into, default)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the API Management Service where this Subscription should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The display name of this Subscription.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The primary subscription key to use for the subscription.
         #[builder(into, default)]
-        pub primary_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub primary_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Product which should be assigned to this Subscription. Changing this forces a new resource to be created.
         ///
         /// > **Info:** Only one of `product_id` and `api_id` can be set. If both are missing `all_apis` scope is used for the subscription.
         #[builder(into, default)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub product_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The secondary subscription key to use for the subscription.
         #[builder(into, default)]
-        pub secondary_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub secondary_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The state of this Subscription. Possible values are `active`, `cancelled`, `expired`, `rejected`, `submitted` and `suspended`. Defaults to `submitted`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// An Identifier which should used as the ID of this Subscription. If not specified a new Subscription ID will be generated. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subscription_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the User which should be assigned to this Subscription. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub user_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionResult {

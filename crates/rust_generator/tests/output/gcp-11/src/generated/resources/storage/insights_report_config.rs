@@ -104,30 +104,30 @@ pub mod insights_report_config {
         /// Options for configuring the format of the inventory report CSV file.
         /// Structure is documented below.
         #[builder(into)]
-        pub csv_options: pulumi_gestalt_rust::InputOrOutput<
+        pub csv_options: pulumi_gestalt_rust::Input<
             super::super::types::storage::InsightsReportConfigCsvOptions,
         >,
         /// The editable display name of the inventory report configuration. Has a limit of 256 characters. Can be empty.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options for configuring how inventory reports are generated.
         #[builder(into, default)]
-        pub frequency_options: pulumi_gestalt_rust::InputOrOutput<
+        pub frequency_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::InsightsReportConfigFrequencyOptions>,
         >,
         /// The location of the ReportConfig. The source and destination buckets specified in the ReportConfig
         /// must be in the same location.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Options for including metadata in an inventory report.
         #[builder(into, default)]
-        pub object_metadata_report_options: pulumi_gestalt_rust::InputOrOutput<
+        pub object_metadata_report_options: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::storage::InsightsReportConfigObjectMetadataReportOptions,
             >,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InsightsReportConfigResult {

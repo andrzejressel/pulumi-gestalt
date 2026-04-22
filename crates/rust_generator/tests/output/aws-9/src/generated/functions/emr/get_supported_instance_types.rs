@@ -10,10 +10,10 @@ pub mod get_supported_instance_types {
     pub struct GetSupportedInstanceTypesArgs {
         /// Amazon EMR release label. For more information about Amazon EMR releases and their included application versions and features, see the [Amazon EMR Release Guide](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html).
         #[builder(into)]
-        pub release_label: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub release_label: pulumi_gestalt_rust::Input<String>,
         /// List of supported instance types. See `supported_instance_types` below.
         #[builder(into, default)]
-        pub supported_instance_types: pulumi_gestalt_rust::InputOrOutput<
+        pub supported_instance_types: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::emr::GetSupportedInstanceTypesSupportedInstanceType,

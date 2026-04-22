@@ -13,7 +13,7 @@ pub mod get_dicom_store_iam_policy {
         /// `{location_name}/{dataset_name}/{dicom_store_name}`. In the second form, the provider's
         /// project setting will be used as a fallback.
         #[builder(into)]
-        pub dicom_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dicom_store_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDicomStoreIamPolicyResult {

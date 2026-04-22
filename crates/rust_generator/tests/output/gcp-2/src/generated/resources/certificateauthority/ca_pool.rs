@@ -159,7 +159,7 @@ pub mod ca_pool {
         /// The IssuancePolicy to control how Certificates will be issued from this CaPool.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub issuance_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub issuance_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::certificateauthority::CaPoolIssuancePolicy>,
         >,
         /// Labels with user-defined metadata.
@@ -169,7 +169,7 @@ pub mod ca_pool {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location of the CaPool. A full list of valid locations can be found by
@@ -178,24 +178,24 @@ pub mod ca_pool {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name for this CaPool.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The PublishingOptions to follow when issuing Certificates from any CertificateAuthority in this CaPool.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub publishing_options: pulumi_gestalt_rust::InputOrOutput<
+        pub publishing_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::certificateauthority::CaPoolPublishingOptions>,
         >,
         /// The Tier of this CaPool.
         /// Possible values are: `ENTERPRISE`, `DEVOPS`.
         #[builder(into)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CaPoolResult {

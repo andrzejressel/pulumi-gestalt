@@ -10,13 +10,13 @@ pub mod get_account {
     pub struct GetAccountArgs {
         /// The minimum supported TLS version for this storage account.
         #[builder(into, default)]
-        pub min_tls_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub min_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Storage Account
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group the Storage Account is located in.
         #[builder(into, default)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAccountResult {

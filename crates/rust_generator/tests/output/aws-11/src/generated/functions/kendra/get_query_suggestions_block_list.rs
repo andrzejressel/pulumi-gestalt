@@ -10,13 +10,13 @@ pub mod get_query_suggestions_block_list {
     pub struct GetQuerySuggestionsBlockListArgs {
         /// Identifier of the index that contains the block list.
         #[builder(into)]
-        pub index_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the block list.
         #[builder(into)]
-        pub query_suggestions_block_list_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query_suggestions_block_list_id: pulumi_gestalt_rust::Input<String>,
         /// Metadata that helps organize the block list you create.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

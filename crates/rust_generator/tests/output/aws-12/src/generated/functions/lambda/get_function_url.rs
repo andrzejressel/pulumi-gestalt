@@ -10,10 +10,10 @@ pub mod get_function_url {
     pub struct GetFunctionUrlArgs {
         /// The name (or ARN) of the Lambda function.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// Alias name or `"$LATEST"`.
         #[builder(into, default)]
-        pub qualifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub qualifier: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetFunctionUrlResult {

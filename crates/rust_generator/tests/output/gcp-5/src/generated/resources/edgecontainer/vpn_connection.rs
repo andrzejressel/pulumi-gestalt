@@ -99,15 +99,15 @@ pub mod vpn_connection {
     pub struct VpnConnectionArgs {
         /// The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.
         #[builder(into, default)]
-        pub enable_high_availability: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_high_availability: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Labels associated with this resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Google Cloud Platform location.
@@ -115,28 +115,28 @@ pub mod vpn_connection {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name of VPN connection
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// NAT gateway IP, or WAN IP address. If a customer has multiple NAT IPs, the customer needs to configure NAT such that only one external IP maps to the GMEC Anthos cluster.
         /// This is empty if NAT is not used.
         #[builder(into, default)]
-        pub nat_gateway_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nat_gateway_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The VPN connection Cloud Router name.
         #[builder(into, default)]
-        pub router: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub router: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network ID of VPC to connect to.
         #[builder(into, default)]
-        pub vpc: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc: pulumi_gestalt_rust::Input<Option<String>>,
         /// Project detail of the VPC network. Required if VPC is in a different project than the cluster project.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub vpc_project: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_project: pulumi_gestalt_rust::Input<
             Option<super::super::types::edgecontainer::VpnConnectionVpcProject>,
         >,
     }

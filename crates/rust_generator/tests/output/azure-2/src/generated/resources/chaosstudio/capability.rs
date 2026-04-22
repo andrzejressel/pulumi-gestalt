@@ -64,10 +64,10 @@ pub mod capability {
     pub struct CapabilityArgs {
         /// The capability that should be applied to the Chaos Studio Target. For supported values please see this Chaos Studio [Fault Library](https://learn.microsoft.com/azure/chaos-studio/chaos-studio-fault-library). Changing this forces a new Chaos Studio Capability to be created.
         #[builder(into)]
-        pub capability_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub capability_type: pulumi_gestalt_rust::Input<String>,
         /// The Chaos Studio Target that the capability should be applied to. Changing this forces a new Chaos Studio Capability to be created.
         #[builder(into)]
-        pub chaos_studio_target_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub chaos_studio_target_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CapabilityResult {

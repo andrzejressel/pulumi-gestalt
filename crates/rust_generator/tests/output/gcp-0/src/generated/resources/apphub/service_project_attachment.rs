@@ -101,18 +101,18 @@ pub mod service_project_attachment {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// "Immutable. Service project name in the format: \"projects/abc\"
         /// or \"projects/123\". As input, project name with either project id or number
         /// are accepted. As output, this field will contain project number."
         #[builder(into, default)]
-        pub service_project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. The service project attachment identifier must contain the project_id of the service project specified in the service_project_attachment.service_project field. Hint: "projects/{project_id}"
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub service_project_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_project_attachment_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceProjectAttachmentResult {

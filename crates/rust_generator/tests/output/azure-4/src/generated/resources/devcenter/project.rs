@@ -56,25 +56,25 @@ pub mod project {
     pub struct ProjectArgs {
         /// Description of the project. Changing this forces a new Dev Center Project to be created.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource Id of an associated DevCenter. Changing this forces a new Dev Center Project to be created.
         #[builder(into)]
-        pub dev_center_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Dev Center Project should exist. Changing this forces a new Dev Center Project to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// When specified, limits the maximum number of Dev Boxes a single user can create across all pools in the project.
         #[builder(into, default)]
-        pub maximum_dev_boxes_per_user: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub maximum_dev_boxes_per_user: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of this Dev Center Project. Changing this forces a new Dev Center Project to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group within which this Dev Center Project should exist. Changing this forces a new Dev Center Project to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Dev Center Project.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -46,41 +46,37 @@ pub mod bot_management {
     pub struct BotManagementArgs {
         /// Enable rule to block AI Scrapers and Crawlers.
         #[builder(into, default)]
-        pub ai_bots_protection: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ai_bots_protection: pulumi_gestalt_rust::Input<Option<String>>,
         /// Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes).
         #[builder(into, default)]
-        pub auto_update_model: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_update_model: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).
         #[builder(into, default)]
-        pub enable_js: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_js: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to enable Bot Fight Mode.
         #[builder(into, default)]
-        pub fight_mode: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub fight_mode: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to optimize Super Bot Fight Mode protections for Wordpress.
         #[builder(into, default)]
-        pub optimize_wordpress: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub optimize_wordpress: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Super Bot Fight Mode (SBFM) action to take on definitely automated requests.
         #[builder(into, default)]
-        pub sbfm_definitely_automated: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub sbfm_definitely_automated: pulumi_gestalt_rust::Input<Option<String>>,
         /// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
         #[builder(into, default)]
-        pub sbfm_likely_automated: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sbfm_likely_automated: pulumi_gestalt_rust::Input<Option<String>>,
         /// Super Bot Fight Mode (SBFM) to enable static resource protection. Enable if static resources on your application need bot protection. Note: Static resource protection can also result in legitimate traffic being blocked.
         #[builder(into, default)]
-        pub sbfm_static_resource_protection: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub sbfm_static_resource_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Super Bot Fight Mode (SBFM) action to take on verified bots requests.
         #[builder(into, default)]
-        pub sbfm_verified_bots: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sbfm_verified_bots: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to disable tracking the highest bot score for a session in the Bot Management cookie.
         #[builder(into, default)]
-        pub suppress_session_score: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub suppress_session_score: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BotManagementResult {

@@ -56,28 +56,28 @@ pub mod dsc_configuration {
     pub struct DscConfigurationArgs {
         /// The name of the automation account in which the DSC Configuration is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The PowerShell DSC Configuration script.
         #[builder(into)]
-        pub content_embedded: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content_embedded: pulumi_gestalt_rust::Input<String>,
         /// Description to go with DSC Configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Must be the same location as the Automation Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Verbose log option.
         #[builder(into, default)]
-        pub log_verbose: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub log_verbose: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the DSC Configuration. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the DSC Configuration is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -55,22 +55,22 @@ pub mod backup_policy_blob_storage {
     pub struct BackupPolicyBlobStorageArgs {
         /// Specifies a list of repeating time interval. It should follow `ISO 8601` repeating time interval. Changing this forces a new Backup Policy Blob Storage to be created.
         #[builder(into, default)]
-        pub backup_repeating_time_intervals: pulumi_gestalt_rust::InputOrOutput<
+        pub backup_repeating_time_intervals: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The name which should be used for this Backup Policy Blob Storage. Changing this forces a new Backup Policy Blob Storage to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The duration of operational default retention rule. It should follow `ISO 8601` duration format. Changing this forces a new Backup Policy Blob Storage to be created.
         #[builder(into, default)]
-        pub operational_default_retention_duration: pulumi_gestalt_rust::InputOrOutput<
+        pub operational_default_retention_duration: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// One or more `retention_rule` blocks as defined below. Changing this forces a new Backup Policy Blob Storage to be created.
         ///
         /// > **Note:** Setting `retention_rule` also requires setting `vault_default_retention_duration`.
         #[builder(into, default)]
-        pub retention_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_rules: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::dataprotection::BackupPolicyBlobStorageRetentionRule,
@@ -79,17 +79,15 @@ pub mod backup_policy_blob_storage {
         >,
         /// Specifies the Time Zone which should be used by the backup schedule. Changing this forces a new Backup Policy Blob Storage to be created.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The duration of vault default retention rule. It should follow `ISO 8601` duration format. Changing this forces a new Backup Policy Blob Storage to be created.
         ///
         /// > **Note:** Setting `vault_default_retention_duration` also requires setting `backup_repeating_time_intervals`. At least one of `operational_default_retention_duration` or `vault_default_retention_duration` must be specified.
         #[builder(into, default)]
-        pub vault_default_retention_duration: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub vault_default_retention_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Backup Vault within which the Backup Policy Blob Storage should exist. Changing this forces a new Backup Policy Blob Storage to be created.
         #[builder(into)]
-        pub vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupPolicyBlobStorageResult {

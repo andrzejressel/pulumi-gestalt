@@ -70,41 +70,41 @@ pub mod smart_detector_alert_rule {
     pub struct SmartDetectorAlertRuleArgs {
         /// An `action_group` block as defined below.
         #[builder(into)]
-        pub action_group: pulumi_gestalt_rust::InputOrOutput<
+        pub action_group: pulumi_gestalt_rust::Input<
             super::super::types::monitoring::SmartDetectorAlertRuleActionGroup,
         >,
         /// Specifies a description for the Smart Detector Alert Rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Built-In Smart Detector type that this alert rule will use. Currently the only possible values are `FailureAnomaliesDetector`, `RequestPerformanceDegradationDetector`, `DependencyPerformanceDegradationDetector`, `ExceptionVolumeChangedDetector`, `TraceSeverityDetector`, `MemoryLeakDetector`.
         #[builder(into)]
-        pub detector_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_type: pulumi_gestalt_rust::Input<String>,
         /// Is the Smart Detector Alert Rule enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the frequency of this Smart Detector Alert Rule in ISO8601 format.
         #[builder(into)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frequency: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Monitor Smart Detector Alert Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the resource group in which the Monitor Smart Detector Alert Rule should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the scopes of this Smart Detector Alert Rule.
         #[builder(into)]
-        pub scope_resource_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub scope_resource_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the severity of this Smart Detector Alert Rule. Possible values are `Sev0`, `Sev1`, `Sev2`, `Sev3` or `Sev4`.
         #[builder(into)]
-        pub severity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub severity: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the duration (in ISO8601 format) to wait before notifying on the alert rule again.
         #[builder(into, default)]
-        pub throttling_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub throttling_duration: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SmartDetectorAlertRuleResult {

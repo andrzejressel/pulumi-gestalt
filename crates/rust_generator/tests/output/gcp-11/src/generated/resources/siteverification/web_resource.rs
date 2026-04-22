@@ -83,14 +83,14 @@ pub mod web_resource {
         /// Container for the address and type of a site for which a verification token will be verified.
         /// Structure is documented below.
         #[builder(into)]
-        pub site: pulumi_gestalt_rust::InputOrOutput<
+        pub site: pulumi_gestalt_rust::Input<
             super::super::types::siteverification::WebResourceSite,
         >,
         /// The verification method for the Site Verification system to use to verify
         /// this site or domain.
         /// Possible values are: `ANALYTICS`, `DNS_CNAME`, `DNS_TXT`, `FILE`, `META`, `TAG_MANAGER`.
         #[builder(into)]
-        pub verification_method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub verification_method: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WebResourceResult {

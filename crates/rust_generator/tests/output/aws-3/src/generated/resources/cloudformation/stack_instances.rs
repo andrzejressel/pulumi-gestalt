@@ -114,38 +114,38 @@ pub mod stack_instances {
     pub struct StackInstancesArgs {
         /// Accounts where you want to create stack instances in the specified `regions`. You can specify either `accounts` or `deployment_targets`, but not both.
         #[builder(into, default)]
-        pub accounts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid values: `SELF` (default), `DELEGATED_ADMIN`.
         #[builder(into, default)]
-        pub call_as: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub call_as: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS Organizations accounts for which to create stack instances in the `regions`. stack sets doesn't deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization. Drift detection is not possible for most of this argument. See deployment_targets below.
         #[builder(into, default)]
-        pub deployment_targets: pulumi_gestalt_rust::InputOrOutput<
+        pub deployment_targets: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudformation::StackInstancesDeploymentTargets>,
         >,
         /// Preferences for how AWS CloudFormation performs a stack set operation. See operation_preferences below.
         #[builder(into, default)]
-        pub operation_preferences: pulumi_gestalt_rust::InputOrOutput<
+        pub operation_preferences: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudformation::StackInstancesOperationPreferences,
             >,
         >,
         /// Key-value map of input parameters to override from the stack set for these instances. This argument's drift detection is limited to the first account and region since each instance can have unique parameters.
         #[builder(into, default)]
-        pub parameter_overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub parameter_overrides: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Regions where you want to create stack instances in the specified `accounts`.
         #[builder(into, default)]
-        pub regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to remove the stack instances from the stack set, but not delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set. To retain the stack, ensure `retain_stacks = true` has been successfully applied _before_ an apply that would destroy the resource. Defaults to `false`.
         #[builder(into, default)]
-        pub retain_stacks: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub retain_stacks: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the stack set.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub stack_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_set_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StackInstancesResult {

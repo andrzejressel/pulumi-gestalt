@@ -45,59 +45,57 @@ pub mod workflow {
     pub struct WorkflowArgs {
         /// A `access_control` block as defined below.
         #[builder(into, default)]
-        pub access_control: pulumi_gestalt_rust::InputOrOutput<
+        pub access_control: pulumi_gestalt_rust::Input<
             Option<super::super::types::logicapps::WorkflowAccessControl>,
         >,
         /// Is the Logic App Workflow enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::logicapps::WorkflowIdentity>,
         >,
         /// The ID of the Integration Service Environment to which this Logic App Workflow belongs. Changing this forces a new Logic App Workflow to be created.
         #[builder(into, default)]
-        pub integration_service_environment_id: pulumi_gestalt_rust::InputOrOutput<
+        pub integration_service_environment_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Specifies the supported Azure location where the Logic App Workflow exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the integration account linked by this Logic App Workflow.
         #[builder(into, default)]
-        pub logic_app_integration_account_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub logic_app_integration_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Logic App Workflow. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of Key-Value pairs.
         ///
         /// > **NOTE:** Any parameters specified must exist in the Schema defined in `workflow_parameters`.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the Resource Group in which the Logic App Workflow should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies a map of Key-Value pairs of the Parameter Definitions to use for this Logic App Workflow. The key is the parameter name, and the value is a JSON encoded string of the parameter definition (see: <https://docs.microsoft.com/azure/logic-apps/logic-apps-workflow-definition-language#parameters>).
         #[builder(into, default)]
-        pub workflow_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub workflow_parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Schema to use for this Logic App Workflow. Defaults to `https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub workflow_schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workflow_schema: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the version of the Schema used for this Logic App Workflow. Defaults to `1.0.0.0`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub workflow_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workflow_version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct WorkflowResult {

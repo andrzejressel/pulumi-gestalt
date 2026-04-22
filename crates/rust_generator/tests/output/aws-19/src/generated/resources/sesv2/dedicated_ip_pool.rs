@@ -54,13 +54,13 @@ pub mod dedicated_ip_pool {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub pool_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pool_name: pulumi_gestalt_rust::Input<String>,
         /// IP pool scaling mode. Valid values: `STANDARD`, `MANAGED`. If omitted, the AWS API will default to a standard pool.
         #[builder(into, default)]
-        pub scaling_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scaling_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the pool. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

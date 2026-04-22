@@ -10,10 +10,10 @@ pub mod get_mpa_account_scope {
     pub struct GetMpaAccountScopeArgs {
         /// The Billing Account Name of the MPA account.
         #[builder(into)]
-        pub billing_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_account_name: pulumi_gestalt_rust::Input<String>,
         /// The Customer Name in the above Billing Account.
         #[builder(into)]
-        pub customer_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub customer_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetMpaAccountScopeResult {

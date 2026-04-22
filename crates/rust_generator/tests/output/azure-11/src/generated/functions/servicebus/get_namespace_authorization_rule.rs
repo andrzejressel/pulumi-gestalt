@@ -10,14 +10,14 @@ pub mod get_namespace_authorization_rule {
     pub struct GetNamespaceAuthorizationRuleArgs {
         /// Specifies the name of the ServiceBus Namespace Authorization Rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the ServiceBus Namespace where the Service Bus Namespace Authorization Rule exists.
         #[builder(into, default)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetNamespaceAuthorizationRuleResult {

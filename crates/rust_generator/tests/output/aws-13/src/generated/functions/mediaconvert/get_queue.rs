@@ -10,10 +10,10 @@ pub mod get_queue {
     pub struct GetQueueArgs {
         /// Unique identifier of the queue. The same as `name`.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

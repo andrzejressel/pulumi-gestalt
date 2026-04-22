@@ -31,12 +31,12 @@ pub mod peering_attachment_accepter {
     pub struct PeeringAttachmentAccepterArgs {
         /// Key-value tags for the EC2 Transit Gateway Peering Attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the EC2 Transit Gateway Peering Attachment to manage.
         #[builder(into)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PeeringAttachmentAccepterResult {

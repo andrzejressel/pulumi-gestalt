@@ -110,39 +110,39 @@ pub mod ai_feature_store {
         /// If set, both of the online and offline data storage will be secured by this key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub encryption_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiFeatureStoreEncryptionSpec>,
         >,
         /// If set to true, any EntityTypes and Features for this Featurestore will also be deleted
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A set of key/value label pairs to assign to this Featurestore.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the Featurestore. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Config for online serving resources.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub online_serving_config: pulumi_gestalt_rust::InputOrOutput<
+        pub online_serving_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiFeatureStoreOnlineServingConfig>,
         >,
         /// TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than onlineStorageTtlDays since the feature generation time. Note that onlineStorageTtlDays should be less than or equal to offlineStorageTtlDays for each EntityType under a featurestore. If not set, default to 4000 days
         #[builder(into, default)]
-        pub online_storage_ttl_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub online_storage_ttl_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the dataset. eg us-central1
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiFeatureStoreResult {

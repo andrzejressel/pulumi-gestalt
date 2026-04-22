@@ -48,10 +48,10 @@ pub mod key_alias {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub alias_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alias_name: pulumi_gestalt_rust::Input<String>,
         /// ARN of the key.
         #[builder(into, default)]
-        pub key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct KeyAliasResult {

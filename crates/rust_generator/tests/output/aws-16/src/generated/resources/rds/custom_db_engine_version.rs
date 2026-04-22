@@ -121,44 +121,44 @@ pub mod custom_db_engine_version {
     pub struct CustomDbEngineVersionArgs {
         /// The name of the Amazon S3 bucket that contains the database installation files.
         #[builder(into, default)]
-        pub database_installation_files_s3_bucket_name: pulumi_gestalt_rust::InputOrOutput<
+        pub database_installation_files_s3_bucket_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The prefix for the Amazon S3 bucket that contains the database installation files.
         #[builder(into, default)]
-        pub database_installation_files_s3_prefix: pulumi_gestalt_rust::InputOrOutput<
+        pub database_installation_files_s3_prefix: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The description of the CEV.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the database engine. Valid values are `custom-oracle*`, `custom-sqlserver*`.
         #[builder(into)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine: pulumi_gestalt_rust::Input<String>,
         /// The version of the database engine.
         #[builder(into)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_version: pulumi_gestalt_rust::Input<String>,
         /// The name of the manifest file within the local filesystem. Conflicts with `manifest`.
         #[builder(into, default)]
-        pub filename: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filename: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the AWS KMS key that is used to encrypt the database installation files. Required for RDS Custom for Oracle.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The manifest file, in JSON format, that contains the list of database installation files. Conflicts with `filename`.
         #[builder(into, default)]
-        pub manifest: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub manifest: pulumi_gestalt_rust::Input<Option<String>>,
         /// Used to trigger updates. Must be set to a base64-encoded SHA256 hash of the manifest source specified with `filename`. The usual way to set this is filebase64sha256("manifest.json") where "manifest.json" is the local filename of the manifest source.
         #[builder(into, default)]
-        pub manifest_hash: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub manifest_hash: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the AMI to create the CEV from. Required for RDS Custom for SQL Server. For RDS Custom for Oracle, you can specify an AMI ID that was used in a different Oracle CEV.
         #[builder(into, default)]
-        pub source_image_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_image_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The status of the CEV. Valid values are `available`, `inactive`, `inactive-except-restore`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

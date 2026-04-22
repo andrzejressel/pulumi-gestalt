@@ -49,20 +49,20 @@ pub mod user_group {
     pub struct UserGroupArgs {
         /// The current supported value is `REDIS`.
         #[builder(into)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the user group.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub user_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_group_id: pulumi_gestalt_rust::Input<String>,
         /// The list of user IDs that belong to the user group.
         #[builder(into, default)]
-        pub user_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub user_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct UserGroupResult {

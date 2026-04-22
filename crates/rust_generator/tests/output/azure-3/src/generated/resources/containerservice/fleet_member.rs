@@ -71,16 +71,16 @@ pub mod fleet_member {
     pub struct FleetMemberArgs {
         /// The group this member belongs to for multi-cluster update management.
         #[builder(into, default)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub group: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARM resource ID of the cluster that joins the Fleet. Changing this forces a new Kubernetes Fleet Member to be created.
         #[builder(into)]
-        pub kubernetes_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Kubernetes Fleet Id within which this Kubernetes Fleet Member should exist. Changing this forces a new Kubernetes Fleet Member to be created.
         #[builder(into)]
-        pub kubernetes_fleet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_fleet_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of this Kubernetes Fleet Member. Changing this forces a new Kubernetes Fleet Member to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FleetMemberResult {

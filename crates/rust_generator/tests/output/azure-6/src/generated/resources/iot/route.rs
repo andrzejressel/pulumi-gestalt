@@ -85,25 +85,25 @@ pub mod route {
     pub struct RouteArgs {
         /// The condition that is evaluated to apply the routing rule. For grammar, see: <https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language>. Defaults to `true`.
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub condition: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether a route is enabled.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is allowed.
         #[builder(into)]
-        pub endpoint_names: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_names: pulumi_gestalt_rust::Input<String>,
         /// The name of the IoTHub to which this Route belongs. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the route. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group under which the IotHub Route resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The source that the routing rule is to be applied to. Possible values include: `DeviceConnectionStateEvents`, `DeviceJobLifecycleEvents`, `DeviceLifecycleEvents`, `DeviceMessages`, `DigitalTwinChangeEvents`, `Invalid`, `TwinChangeEvents`.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteResult {

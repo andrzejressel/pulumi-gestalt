@@ -40,13 +40,13 @@ pub mod cluster_role_association {
     pub struct ClusterRoleAssociationArgs {
         /// DB Cluster Identifier to associate with the IAM Role.
         #[builder(into)]
-        pub db_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// Name of the feature for association. This can be found in the AWS documentation relevant to the integration or a full list is available in the `SupportedFeatureNames` list returned by [AWS CLI rds describe-db-engine-versions](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-engine-versions.html).
         #[builder(into)]
-        pub feature_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub feature_name: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the IAM Role to associate with the DB Cluster.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterRoleAssociationResult {

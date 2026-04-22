@@ -148,10 +148,10 @@ pub mod function_app_active_slot {
     pub struct FunctionAppActiveSlotArgs {
         /// The swap action should overwrite the Production slot's network configuration with the configuration from this slot. Defaults to `true`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub overwrite_network_config: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub overwrite_network_config: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Slot to swap with `Production`.
         #[builder(into)]
-        pub slot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub slot_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FunctionAppActiveSlotResult {

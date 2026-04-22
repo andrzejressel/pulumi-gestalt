@@ -10,7 +10,7 @@ pub mod get_user_hierarchy_structure {
     pub struct GetUserHierarchyStructureArgs {
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetUserHierarchyStructureResult {

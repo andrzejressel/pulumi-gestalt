@@ -41,32 +41,32 @@ pub mod pipeline {
     pub struct PipelineArgs {
         /// This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default. see Parallelism Configuration details below.
         #[builder(into, default)]
-        pub parallelism_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub parallelism_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::PipelineParallelismConfiguration>,
         >,
         /// The [JSON pipeline definition](https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/) of the pipeline.
         #[builder(into, default)]
-        pub pipeline_definition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pipeline_definition: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location. see Pipeline Definition S3 Location details below.
         #[builder(into, default)]
-        pub pipeline_definition_s3_location: pulumi_gestalt_rust::InputOrOutput<
+        pub pipeline_definition_s3_location: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::PipelinePipelineDefinitionS3Location>,
         >,
         /// A description of the pipeline.
         #[builder(into, default)]
-        pub pipeline_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pipeline_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the pipeline.
         #[builder(into)]
-        pub pipeline_display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pipeline_display_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the pipeline.
         #[builder(into)]
-        pub pipeline_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pipeline_name: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the IAM role the pipeline will execute as.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

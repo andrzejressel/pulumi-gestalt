@@ -64,29 +64,29 @@ pub mod spring_cloud_java_deployment {
     pub struct SpringCloudJavaDeploymentArgs {
         /// Specifies the environment variables of the Spring Cloud Deployment as a map of key-value pairs.
         #[builder(into, default)]
-        pub environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub environment_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the required instance count of the Spring Cloud Deployment. Possible Values are between `1` and `500`. Defaults to `1` if not specified.
         #[builder(into, default)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub instance_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the jvm option of the Spring Cloud Deployment.
         #[builder(into, default)]
-        pub jvm_options: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub jvm_options: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Spring Cloud Deployment. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `quota` block as defined below.
         #[builder(into, default)]
-        pub quota: pulumi_gestalt_rust::InputOrOutput<
+        pub quota: pulumi_gestalt_rust::Input<
             Option<super::super::types::appplatform::SpringCloudJavaDeploymentQuota>,
         >,
         /// Specifies the runtime version of the Spring Cloud Deployment. Possible Values are `Java_8`, `Java_11` and `Java_17`. Defaults to `Java_8`.
         #[builder(into, default)]
-        pub runtime_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub runtime_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the id of the Spring Cloud Application in which to create the Deployment. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_app_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudJavaDeploymentResult {

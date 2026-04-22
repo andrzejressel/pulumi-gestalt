@@ -10,9 +10,9 @@ pub mod get_endpoint {
     pub struct GetEndpointArgs {
         /// Database endpoint identifier. Identifiers must contain from 1 to 255 alphanumeric characters or hyphens, begin with a letter, contain only ASCII letters, digits, and hyphens, not end with a hyphen, and not contain two consecutive hyphens.
         #[builder(into)]
-        pub endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

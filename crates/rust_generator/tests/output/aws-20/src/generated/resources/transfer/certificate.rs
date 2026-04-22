@@ -21,24 +21,24 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// The valid certificate file required for the transfer.
         #[builder(into)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate: pulumi_gestalt_rust::Input<String>,
         /// The optional list of certificate that make up the chain for the certificate that is being imported.
         #[builder(into, default)]
-        pub certificate_chain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_chain: pulumi_gestalt_rust::Input<Option<String>>,
         /// A short description that helps identify the certificate.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The private key associated with the certificate being imported.
         #[builder(into, default)]
-        pub private_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies if a certificate is being used for signing or encryption. The valid values are SIGNING and ENCRYPTION.
         #[builder(into)]
-        pub usage: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub usage: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateResult {

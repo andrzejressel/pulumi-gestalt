@@ -13,7 +13,7 @@ pub mod get_key_ring_iam_policy {
         /// `{location_name}/{key_ring_name}`. In the second form, the provider's
         /// project setting will be used as a fallback.
         #[builder(into)]
-        pub key_ring_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_ring_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetKeyRingIamPolicyResult {

@@ -36,7 +36,7 @@ pub mod environment {
     pub struct EnvironmentArgs {
         /// Configuration parameters for this environment.
         #[builder(into, default)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             Option<super::super::types::composer::EnvironmentConfig>,
         >,
         /// User-defined labels for this environment. The labels map can contain no more than 64 entries. Entries of the labels map
@@ -47,21 +47,21 @@ pub mod environment {
         /// present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the environment.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location or Compute Engine region for the environment.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration options for storage used by Composer environment.
         #[builder(into, default)]
-        pub storage_config: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::composer::EnvironmentStorageConfig>,
         >,
     }

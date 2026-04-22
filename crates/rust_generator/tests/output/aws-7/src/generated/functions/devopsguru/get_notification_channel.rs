@@ -10,17 +10,17 @@ pub mod get_notification_channel {
     pub struct GetNotificationChannelArgs {
         /// Filter configurations for the Amazon SNS notification topic. See the `filters` attribute reference below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::devopsguru::GetNotificationChannelFilter>,
             >,
         >,
         /// Unique identifier for the notification channel.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
         /// SNS noficiation channel configurations. See the `sns` attribute reference below.
         #[builder(into, default)]
-        pub sns: pulumi_gestalt_rust::InputOrOutput<
+        pub sns: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::devopsguru::GetNotificationChannelSn>>,
         >,
     }

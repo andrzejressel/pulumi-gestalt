@@ -43,20 +43,20 @@ pub mod service_action {
     pub struct ServiceActionArgs {
         /// Language code. Valid values are `en` (English), `jp` (Japanese), and `zh` (Chinese). Default is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Self-service action definition configuration block. Detailed below.
         #[builder(into)]
-        pub definition: pulumi_gestalt_rust::InputOrOutput<
+        pub definition: pulumi_gestalt_rust::Input<
             super::super::types::servicecatalog::ServiceActionDefinition,
         >,
         /// Self-service action description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Self-service action name.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ServiceActionResult {

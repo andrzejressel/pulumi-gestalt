@@ -10,7 +10,7 @@ pub mod get_task_execution {
     pub struct GetTaskExecutionArgs {
         /// Set of capacity provider strategies to use for the cluster. See below.
         #[builder(into, default)]
-        pub capacity_provider_strategies: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_provider_strategies: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ecs::GetTaskExecutionCapacityProviderStrategy,
@@ -19,71 +19,71 @@ pub mod get_task_execution {
         >,
         /// An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive. Up to 64 characters are allowed. The valid characters are characters in the range of 33-126, inclusive. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html).
         #[builder(into, default)]
-        pub client_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// Short name or full Amazon Resource Name (ARN) of the cluster to run the task on.
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// Number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.
         #[builder(into, default)]
-        pub desired_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub desired_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies whether to enable Amazon ECS managed tags for the tasks within the service.
         #[builder(into, default)]
-        pub enable_ecs_managed_tags: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_ecs_managed_tags: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether to enable Amazon ECS Exec for the tasks within the service.
         #[builder(into, default)]
-        pub enable_execute_command: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_execute_command: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the task group to associate with the task. The default value is the family name of the task definition.
         #[builder(into, default)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub group: pulumi_gestalt_rust::Input<Option<String>>,
         /// Launch type on which to run your service. Valid values are `EC2`, `FARGATE`, and `EXTERNAL`.
         #[builder(into, default)]
-        pub launch_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub launch_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network configuration for the service. This parameter is required for task definitions that use the `awsvpc` network mode to receive their own Elastic Network Interface, and it is not supported for other network modes. See below.
         #[builder(into, default)]
-        pub network_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub network_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::ecs::GetTaskExecutionNetworkConfiguration>,
         >,
         /// A list of container overrides that specify the name of a container in the specified task definition and the overrides it should receive.
         #[builder(into, default)]
-        pub overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub overrides: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::ecs::GetTaskExecutionOverrides>,
         >,
         /// An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task. See below.
         #[builder(into, default)]
-        pub placement_constraints: pulumi_gestalt_rust::InputOrOutput<
+        pub placement_constraints: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::ecs::GetTaskExecutionPlacementConstraint>,
             >,
         >,
         /// The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task. See below.
         #[builder(into, default)]
-        pub placement_strategies: pulumi_gestalt_rust::InputOrOutput<
+        pub placement_strategies: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::ecs::GetTaskExecutionPlacementStrategy>,
             >,
         >,
         /// The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the `LATEST` platform version is used.
         #[builder(into, default)]
-        pub platform_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. An error will be received if you specify the `SERVICE` option when running a task. Valid values are `TASK_DEFINITION` or `NONE`.
         #[builder(into, default)]
-        pub propagate_tags: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub propagate_tags: pulumi_gestalt_rust::Input<Option<String>>,
         /// The reference ID to use for the task.
         #[builder(into, default)]
-        pub reference_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reference_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional tag specified when a task is started.
         #[builder(into, default)]
-        pub started_by: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub started_by: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The `family` and `revision` (`family:revision`) or full ARN of the task definition to run. If a revision isn't specified, the latest `ACTIVE` revision is used.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub task_definition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub task_definition: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTaskExecutionResult {

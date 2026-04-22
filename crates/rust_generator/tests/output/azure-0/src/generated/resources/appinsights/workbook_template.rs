@@ -84,35 +84,35 @@ pub mod workbook_template {
     pub struct WorkbookTemplateArgs {
         /// Information about the author of the workbook template.
         #[builder(into, default)]
-        pub author: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub author: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `galleries` block as defined below.
         #[builder(into)]
-        pub galleries: pulumi_gestalt_rust::InputOrOutput<
+        pub galleries: pulumi_gestalt_rust::Input<
             Vec<super::super::types::appinsights::WorkbookTemplateGallery>,
         >,
         /// Key value pairs of localized gallery. Each key is the locale code of languages supported by the Azure portal.
         #[builder(into, default)]
-        pub localized: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub localized: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Azure Region where the Application Insights Workbook Template should exist. Changing this forces a new Application Insights Workbook Template to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Application Insights Workbook Template. Changing this forces a new Application Insights Workbook Template to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Priority of the template. Determines which template to open when a workbook gallery is opened in viewer mode. Defaults to `0`.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Resource Group where the Application Insights Workbook Template should exist. Changing this forces a new Application Insights Workbook Template to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Application Insights Workbook Template.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Valid JSON object containing workbook template payload.
         #[builder(into)]
-        pub template_data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub template_data: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkbookTemplateResult {

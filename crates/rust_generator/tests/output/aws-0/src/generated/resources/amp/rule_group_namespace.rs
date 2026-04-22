@@ -40,13 +40,13 @@ pub mod rule_group_namespace {
     pub struct RuleGroupNamespaceArgs {
         /// the rule group namespace data that you want to be applied. See more [in AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-Ruler.html).
         #[builder(into)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data: pulumi_gestalt_rust::Input<String>,
         /// The name of the rule group namespace
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the prometheus workspace the rule group namespace should be linked to
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RuleGroupNamespaceResult {

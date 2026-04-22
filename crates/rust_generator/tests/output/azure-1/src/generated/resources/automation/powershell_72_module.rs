@@ -60,18 +60,18 @@ pub mod powershell_72_module {
     pub struct Powershell72ModuleArgs {
         /// The ID of Automation Account to manage this Watcher. Changing this forces a new Watcher to be created.
         #[builder(into)]
-        pub automation_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_id: pulumi_gestalt_rust::Input<String>,
         /// A `module_link` block as defined below.
         #[builder(into)]
-        pub module_link: pulumi_gestalt_rust::InputOrOutput<
+        pub module_link: pulumi_gestalt_rust::Input<
             super::super::types::automation::Powershell72ModuleModuleLink,
         >,
         /// Specifies the name of the Module. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -59,21 +59,21 @@ pub mod data_share_consumer_association {
     pub struct DataShareConsumerAssociationArgs {
         /// Whether to allow write operations for a datashare.
         #[builder(into, default)]
-        pub allow_writes: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_writes: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the datashare is associated with the entire account. Conflicts with `consumer_arn` and `consumer_region`.
         #[builder(into, default)]
-        pub associate_entire_account: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub associate_entire_account: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Amazon Resource Name (ARN) of the consumer that is associated with the datashare. Conflicts with `associate_entire_account` and `consumer_region`.
         #[builder(into, default)]
-        pub consumer_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub consumer_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified AWS Region. Conflicts with `associate_entire_account` and `consumer_arn`.
         #[builder(into, default)]
-        pub consumer_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub consumer_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub data_share_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_share_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DataShareConsumerAssociationResult {

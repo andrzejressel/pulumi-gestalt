@@ -57,18 +57,18 @@ pub mod hosted_private_virtual_interface_accepter {
     pub struct HostedPrivateVirtualInterfaceAccepterArgs {
         /// The ID of the Direct Connect gateway to which to connect the virtual interface.
         #[builder(into, default)]
-        pub dx_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dx_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Direct Connect virtual interface to accept.
         #[builder(into)]
-        pub virtual_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_interface_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the virtual private gateway to which to connect the virtual interface.
         #[builder(into, default)]
-        pub vpn_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpn_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HostedPrivateVirtualInterfaceAccepterResult {

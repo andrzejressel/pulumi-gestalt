@@ -55,40 +55,40 @@ pub mod cluster_extension {
     pub struct ClusterExtensionArgs {
         /// Specifies the Cluster ID. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration settings that are sensitive, as name-value pairs for configuring this extension.
         #[builder(into, default)]
-        pub configuration_protected_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_protected_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration settings, as name-value pairs for configuring this extension.
         #[builder(into, default)]
-        pub configuration_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the type of extension. It must be one of the extension types registered with Microsoft.KubernetesConfiguration by the Extension publisher. For more information, please refer to [Available Extensions for Arc-enabled Kubernetes clusters](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/extensions-release). Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         #[builder(into)]
-        pub extension_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub extension_type: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             super::super::types::arckubernetes::ClusterExtensionIdentity,
         >,
         /// Specifies the name which should be used for this Arc Kubernetes Cluster Extension. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Namespace where the extension release must be placed for a cluster scoped extension. If this namespace does not exist, it will be created. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         #[builder(into, default)]
-        pub release_namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub release_namespace: pulumi_gestalt_rust::Input<Option<String>>,
         /// The release train used by this extension. Possible values include but are not limited to `Stable`, `Preview`. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         #[builder(into, default)]
-        pub release_train: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub release_train: pulumi_gestalt_rust::Input<Option<String>>,
         /// Namespace where the extension will be created for a namespace scoped extension. If this namespace does not exist, it will be created. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         #[builder(into, default)]
-        pub target_namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_namespace: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-specified version that the extension should pin to. If it is not set, Azure will use the latest version and auto upgrade it. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ClusterExtensionResult {

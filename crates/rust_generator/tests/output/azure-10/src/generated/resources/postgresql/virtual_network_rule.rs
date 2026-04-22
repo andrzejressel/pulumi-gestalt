@@ -83,7 +83,7 @@ pub mod virtual_network_rule {
     pub struct VirtualNetworkRuleArgs {
         /// Should the Virtual Network Rule be created before the Subnet has the Virtual Network Service Endpoint enabled?
         #[builder(into, default)]
-        pub ignore_missing_vnet_service_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub ignore_missing_vnet_service_endpoint: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the PostgreSQL virtual network rule. Cannot be empty and must only contain alphanumeric characters and hyphens. Cannot start with a number, and cannot start or end with a hyphen. Changing this forces a new resource to be created.
@@ -94,16 +94,16 @@ pub mod virtual_network_rule {
         /// 2. Cannot start with a number or hyphen
         /// 3. Cannot end with a hyphen
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group where the PostgreSQL server resides. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the SQL Server to which this PostgreSQL virtual network rule will be applied to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the subnet that the PostgreSQL server will be connected to.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkRuleResult {

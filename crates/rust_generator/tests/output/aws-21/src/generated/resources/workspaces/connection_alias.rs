@@ -37,14 +37,14 @@ pub mod connection_alias {
     pub struct ConnectionAliasArgs {
         /// The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as www.example.com.
         #[builder(into)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_string: pulumi_gestalt_rust::Input<String>,
         /// A map of tags assigned to the WorkSpaces Connection Alias. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::workspaces::ConnectionAliasTimeouts>,
         >,
     }

@@ -39,18 +39,18 @@ pub mod framework_share {
     pub struct FrameworkShareArgs {
         /// Comment from the sender about the share request.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Web Services account of the recipient.
         #[builder(into)]
-        pub destination_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_account: pulumi_gestalt_rust::Input<String>,
         /// Amazon Web Services region of the recipient.
         #[builder(into)]
-        pub destination_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_region: pulumi_gestalt_rust::Input<String>,
         /// Unique identifier for the shared custom framework.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub framework_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub framework_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FrameworkShareResult {

@@ -27,25 +27,25 @@ pub mod connect_attachment {
     pub struct ConnectAttachmentArgs {
         /// The ID of a core network where you want to create the attachment.
         #[builder(into)]
-        pub core_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub core_network_id: pulumi_gestalt_rust::Input<String>,
         /// The Region where the edge is located.
         #[builder(into)]
-        pub edge_location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub edge_location: pulumi_gestalt_rust::Input<String>,
         /// Options block. See options for more information.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub options: pulumi_gestalt_rust::InputOrOutput<
+        pub options: pulumi_gestalt_rust::Input<
             super::super::types::networkmanager::ConnectAttachmentOptions,
         >,
         /// Key-value tags for the attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the attachment between the two connections.
         #[builder(into)]
-        pub transport_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transport_attachment_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConnectAttachmentResult {

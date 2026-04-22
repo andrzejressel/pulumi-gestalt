@@ -106,7 +106,7 @@ pub mod entitlement {
     pub struct entitlementArgs {
         /// AdditionalNotificationTargets includes email addresses to be notified.
         #[builder(into, default)]
-        pub additional_notification_targets: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_notification_targets: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::privilegedaccessmanager::EntitlementAdditionalNotificationTargets,
             >,
@@ -114,7 +114,7 @@ pub mod entitlement {
         /// The approvals needed before access will be granted to a requester. No approvals will be needed if this field is null.
         /// Different types of approval workflows that can be used to gate privileged access granting.
         #[builder(into, default)]
-        pub approval_workflow: pulumi_gestalt_rust::InputOrOutput<
+        pub approval_workflow: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::privilegedaccessmanager::EntitlementApprovalWorkflow,
             >,
@@ -122,35 +122,35 @@ pub mod entitlement {
         /// Who can create Grants using Entitlement. This list should contain at most one entry
         /// Structure is documented below.
         #[builder(into)]
-        pub eligible_users: pulumi_gestalt_rust::InputOrOutput<
+        pub eligible_users: pulumi_gestalt_rust::Input<
             Vec<super::super::types::privilegedaccessmanager::EntitlementEligibleUser>,
         >,
         /// The ID to use for this Entitlement. This will become the last part of the resource name.
         /// This value should be 4-63 characters, and valid characters are "[a-z]", "[0-9]", and "-". The first character should be from [a-z].
         /// This value should be unique among all other Entitlements under the specified `parent`.
         #[builder(into)]
-        pub entitlement_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub entitlement_id: pulumi_gestalt_rust::Input<String>,
         /// The region of the Entitlement resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The maximum amount of time for which access would be granted for a request.
         /// A requester can choose to ask for access for less than this duration but never more.
         /// Format: calculate the time in seconds and concatenate it with 's' i.e. 2 hours = "7200s", 45 minutes = "2700s"
         #[builder(into)]
-        pub max_request_duration: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub max_request_duration: pulumi_gestalt_rust::Input<String>,
         /// Format: projects/{project-id|project-number} or organizations/{organization-number} or folders/{folder-number}
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Privileged access that this service can be used to gate.
         /// Structure is documented below.
         #[builder(into)]
-        pub privileged_access: pulumi_gestalt_rust::InputOrOutput<
+        pub privileged_access: pulumi_gestalt_rust::Input<
             super::super::types::privilegedaccessmanager::EntitlementPrivilegedAccess,
         >,
         /// Defines the ways in which a requester should provide the justification while requesting for access.
         /// Structure is documented below.
         #[builder(into)]
-        pub requester_justification_config: pulumi_gestalt_rust::InputOrOutput<
+        pub requester_justification_config: pulumi_gestalt_rust::Input<
             super::super::types::privilegedaccessmanager::EntitlementRequesterJustificationConfig,
         >,
     }

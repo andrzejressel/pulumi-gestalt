@@ -25,21 +25,21 @@ pub mod replication_policy {
         ///
         /// > **Note:** The value of `application_consistent_snapshot_frequency_in_minutes` must be less than or equal to the value of `recovery_point_retention_in_minutes`.
         #[builder(into)]
-        pub application_consistent_snapshot_frequency_in_minutes: pulumi_gestalt_rust::InputOrOutput<
+        pub application_consistent_snapshot_frequency_in_minutes: pulumi_gestalt_rust::Input<
             i32,
         >,
         /// The name of the replication policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The duration in minutes for which the recovery points need to be stored.
         #[builder(into)]
-        pub recovery_point_retention_in_minutes: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub recovery_point_retention_in_minutes: pulumi_gestalt_rust::Input<i32>,
         /// The name of the vault that should be updated. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource group where the vault that should be updated is located. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReplicationPolicyResult {

@@ -38,13 +38,13 @@ pub mod project {
     pub struct ProjectArgs {
         /// Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.
         #[builder(into, default)]
-        pub default_job_timeout_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_job_timeout_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the project
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -42,10 +42,10 @@ pub mod bucket_policy {
     pub struct BucketPolicyArgs {
         /// Amazon Resource Name (ARN) of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// JSON string of the resource policy.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BucketPolicyResult {

@@ -64,19 +64,19 @@ pub mod event_archive {
     pub struct EventArchiveArgs {
         /// The description of the new event archive.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instructs the new event archive to only capture events matched by this pattern. By default, it attempts to archive every event received in the `event_source_arn`.
         #[builder(into, default)]
-        pub event_pattern: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_pattern: pulumi_gestalt_rust::Input<Option<String>>,
         /// Event bus source ARN from where these events should be archived.
         #[builder(into)]
-        pub event_source_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub event_source_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the new event archive. The archive name cannot exceed 48 characters.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of days to retain events in the new event archive. By default, it archives indefinitely.
         #[builder(into, default)]
-        pub retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct EventArchiveResult {

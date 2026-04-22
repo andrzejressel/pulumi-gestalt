@@ -58,10 +58,10 @@ pub mod domain_service_access_policy {
     pub struct DomainServiceAccessPolicyArgs {
         /// The access rules you want to configure. These rules replace any existing rules. See the [AWS documentation](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html) for details.
         #[builder(into)]
-        pub access_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_policy: pulumi_gestalt_rust::Input<String>,
         /// The CloudSearch domain name the policy applies to.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainServiceAccessPolicyResult {

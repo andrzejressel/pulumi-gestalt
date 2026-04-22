@@ -10,10 +10,10 @@ pub mod get_managed_api {
     pub struct GetManagedApiArgs {
         /// The Azure location for this Managed API.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Managed API.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetManagedApiResult {

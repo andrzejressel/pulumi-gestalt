@@ -91,19 +91,19 @@ pub mod attached_disk {
         /// to this disk, in the form persistent-disks-x, where x is a number
         /// assigned by Google Compute Engine.
         #[builder(into, default)]
-        pub device_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub device_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// `name` or `self_link` of the disk that will be attached.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub disk: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub disk: pulumi_gestalt_rust::Input<String>,
         /// `name` or `self_link` of the compute instance that the disk will be attached to.
         /// If the `self_link` is provided then `zone` and `project` are extracted from the
         /// self link. If only the name is used then `zone` and `project` must be defined
         /// as properties on the resource or provider.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The disk interface used for attaching this disk.
         ///
         /// This field is only used for specific cases, please don't specify
@@ -114,7 +114,7 @@ pub mod attached_disk {
         /// "SCSI"
         /// "NVME"
         #[builder(into, default)]
-        pub interface: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub interface: pulumi_gestalt_rust::Input<Option<String>>,
         /// The mode in which to attach this disk, either READ_WRITE or
         /// READ_ONLY. If not specified, the default is to attach the disk in
         /// READ_WRITE mode.
@@ -123,15 +123,15 @@ pub mod attached_disk {
         /// "READ_ONLY"
         /// "READ_WRITE"
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project that the referenced compute instance is a part of. If `instance` is referenced by its
         /// `self_link` the project defined in the link will take precedence.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone that the referenced compute instance is located within. If `instance` is referenced by its
         /// `self_link` the zone defined in the link will take precedence.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AttachedDiskResult {

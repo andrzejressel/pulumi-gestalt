@@ -35,7 +35,7 @@ pub mod servicecatalog_portfolio_status {
     pub struct ServicecatalogPortfolioStatusArgs {
         /// Whether Service Catalog is enabled or disabled in SageMaker. Valid values are `Enabled` and `Disabled`.
         #[builder(into)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub status: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServicecatalogPortfolioStatusResult {

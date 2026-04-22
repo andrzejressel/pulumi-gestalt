@@ -96,21 +96,21 @@ pub mod vpn_gateway_connection {
     pub struct VpnGatewayConnectionArgs {
         /// Whether Internet Security is enabled for this VPN Connection. Defaults to `false`.
         #[builder(into, default)]
-        pub internet_security_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub internet_security_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this VPN Gateway Connection. Changing this forces a new VPN Gateway Connection to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the remote VPN Site, which will connect to the VPN Gateway. Changing this forces a new VPN Gateway Connection to be created.
         #[builder(into)]
-        pub remote_vpn_site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub remote_vpn_site_id: pulumi_gestalt_rust::Input<String>,
         /// A `routing` block as defined below. If this is not specified, there will be a default route table created implicitly.
         #[builder(into, default)]
-        pub routing: pulumi_gestalt_rust::InputOrOutput<
+        pub routing: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::VpnGatewayConnectionRouting>,
         >,
         /// One or more `traffic_selector_policy` blocks as defined below.
         #[builder(into, default)]
-        pub traffic_selector_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub traffic_selector_policies: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::VpnGatewayConnectionTrafficSelectorPolicy,
@@ -119,10 +119,10 @@ pub mod vpn_gateway_connection {
         >,
         /// The ID of the VPN Gateway that this VPN Gateway Connection belongs to. Changing this forces a new VPN Gateway Connection to be created.
         #[builder(into)]
-        pub vpn_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpn_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// One or more `vpn_link` blocks as defined below.
         #[builder(into)]
-        pub vpn_links: pulumi_gestalt_rust::InputOrOutput<
+        pub vpn_links: pulumi_gestalt_rust::Input<
             Vec<super::super::types::network::VpnGatewayConnectionVpnLink>,
         >,
     }

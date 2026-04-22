@@ -117,25 +117,25 @@ pub mod router_route_policy {
     pub struct RouterRoutePolicyArgs {
         /// Name of the route policy. This policy's name, which must be a resource ID segment and unique within all policies owned by the Router
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where the router and NAT reside.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Cloud Router in which this route policy will be configured.
         #[builder(into)]
-        pub router: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub router: pulumi_gestalt_rust::Input<String>,
         /// List of terms (the order in the list is not important, they are evaluated in order of priority).
         /// Structure is documented below.
         #[builder(into)]
-        pub terms: pulumi_gestalt_rust::InputOrOutput<
+        pub terms: pulumi_gestalt_rust::Input<
             Vec<super::super::types::compute::RouterRoutePolicyTerm>,
         >,
         /// This is policy's type, which is one of IMPORT or EXPORT Possible values: ["ROUTE_POLICY_TYPE_IMPORT",
         /// "ROUTE_POLICY_TYPE_EXPORT"]
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RouterRoutePolicyResult {

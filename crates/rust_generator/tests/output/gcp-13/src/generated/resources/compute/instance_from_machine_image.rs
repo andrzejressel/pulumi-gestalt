@@ -34,39 +34,39 @@ pub mod instance_from_machine_image {
     pub struct InstanceFromMachineImageArgs {
         /// Controls for advanced machine-related behavior features.
         #[builder(into, default)]
-        pub advanced_machine_features: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_machine_features: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::InstanceFromMachineImageAdvancedMachineFeatures,
             >,
         >,
         #[builder(into, default)]
-        pub allow_stopping_for_update: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_stopping_for_update: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether sending and receiving of packets with non-matching source or destination IPs is allowed.
         #[builder(into, default)]
-        pub can_ip_forward: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub can_ip_forward: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Confidential VM config being used by the instance. on_host_maintenance has to be set to TERMINATE or this will fail
         /// to create.
         #[builder(into, default)]
-        pub confidential_instance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub confidential_instance_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::InstanceFromMachineImageConfidentialInstanceConfig,
             >,
         >,
         /// Whether deletion protection is enabled on this instance.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A brief description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Desired status of the instance. Either "RUNNING", "SUSPENDED" or "TERMINATED".
         #[builder(into, default)]
-        pub desired_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub desired_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the instance has virtual displays enabled.
         #[builder(into, default)]
-        pub enable_display: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_display: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of the type and count of accelerator cards attached to the instance.
         #[builder(into, default)]
-        pub guest_accelerators: pulumi_gestalt_rust::InputOrOutput<
+        pub guest_accelerators: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::compute::InstanceFromMachineImageGuestAccelerator,
@@ -77,41 +77,39 @@ pub mod instance_from_machine_image {
         /// labels 1-63 characters long matching the regular expression a-z, concatenated with periods. The entire hostname must not
         /// exceed 253 characters. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hostname: pulumi_gestalt_rust::Input<Option<String>>,
         /// Action to be taken when a customer's encryption key is revoked. Supports "STOP" and "NONE", with "NONE" being the
         /// default.
         #[builder(into, default)]
-        pub key_revocation_action_type: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub key_revocation_action_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value label pairs assigned to the instance. **Note**: This field is non-authoritative, and will only manage
         /// the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on
         /// the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The machine type to create.
         #[builder(into, default)]
-        pub machine_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub machine_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Metadata key/value pairs made available within the instance.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Metadata startup scripts made available within the instance.
         #[builder(into, default)]
-        pub metadata_startup_script: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata_startup_script: pulumi_gestalt_rust::Input<Option<String>>,
         /// The minimum CPU platform specified for the VM instance.
         #[builder(into, default)]
-        pub min_cpu_platform: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub min_cpu_platform: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique name for the resource, required by GCE.
         /// Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The networks attached to the instance.
         #[builder(into, default)]
-        pub network_interfaces: pulumi_gestalt_rust::InputOrOutput<
+        pub network_interfaces: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::compute::InstanceFromMachineImageNetworkInterface,
@@ -121,48 +119,48 @@ pub mod instance_from_machine_image {
         /// Configures network performance settings for the instance. If not specified, the instance will be created with its
         /// default network performance configuration.
         #[builder(into, default)]
-        pub network_performance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_performance_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::InstanceFromMachineImageNetworkPerformanceConfig,
             >,
         >,
         /// Stores additional params passed with the request, but not persisted as part of resource payload.
         #[builder(into, default)]
-        pub params: pulumi_gestalt_rust::InputOrOutput<
+        pub params: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceFromMachineImageParams>,
         >,
         /// Partner Metadata Map made available within the instance.
         #[builder(into, default)]
-        pub partner_metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub partner_metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs. If self_link is provided, this value is ignored. If neither
         /// self_link nor project are provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the reservations that this instance can consume from.
         #[builder(into, default)]
-        pub reservation_affinity: pulumi_gestalt_rust::InputOrOutput<
+        pub reservation_affinity: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::InstanceFromMachineImageReservationAffinity,
             >,
         >,
         /// A list of self_links of resource policies to attach to the instance. Currently a max of 1 resource policy is supported.
         #[builder(into, default)]
-        pub resource_policies: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_policies: pulumi_gestalt_rust::Input<Option<String>>,
         /// The scheduling strategy being used by the instance.
         #[builder(into, default)]
-        pub scheduling: pulumi_gestalt_rust::InputOrOutput<
+        pub scheduling: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceFromMachineImageScheduling>,
         >,
         /// The service account to attach to the instance.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<
+        pub service_account: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::InstanceFromMachineImageServiceAccount>,
         >,
         /// The shielded vm config being used by the instance.
         #[builder(into, default)]
-        pub shielded_instance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub shielded_instance_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::InstanceFromMachineImageShieldedInstanceConfig,
             >,
@@ -172,10 +170,10 @@ pub mod instance_from_machine_image {
         ///
         /// - - -
         #[builder(into)]
-        pub source_machine_image: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_machine_image: pulumi_gestalt_rust::Input<String>,
         /// The list of tags attached to the instance.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The zone that the machine should be created in. If not
         /// set, the provider zone is used.
         ///
@@ -185,7 +183,7 @@ pub mod instance_from_machine_image {
         ///
         /// > **Warning:** *Due to API limitations, disk overrides are currently disabled. This includes the "boot_disk", "attached_disk", and "scratch_disk" fields.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceFromMachineImageResult {

@@ -10,7 +10,7 @@ pub mod get_endpoint {
     pub struct GetEndpointArgs {
         /// Endpoint type. Valid values: `iot:CredentialProvider`, `iot:Data`, `iot:Data-ATS`, `iot:Jobs`.
         #[builder(into, default)]
-        pub endpoint_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetEndpointResult {

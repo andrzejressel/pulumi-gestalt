@@ -38,22 +38,22 @@ pub mod ip_set {
     pub struct IpSetArgs {
         /// Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for `/0`.
         #[builder(into, default)]
-        pub addresses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub addresses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A friendly description of the IP set.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify IPV4 or IPV6. Valid values are `IPV4` or `IPV6`.
         #[builder(into)]
-        pub ip_address_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip_address_version: pulumi_gestalt_rust::Input<String>,
         /// A friendly name of the IP set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether this is for an AWS CloudFront distribution or for a regional application. Valid values are `CLOUDFRONT` or `REGIONAL`. To work with CloudFront, you must also specify the Region US East (N. Virginia).
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
         /// An array of key:value pairs to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

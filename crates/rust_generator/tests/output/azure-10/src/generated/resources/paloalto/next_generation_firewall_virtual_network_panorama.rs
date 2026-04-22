@@ -113,7 +113,7 @@ pub mod next_generation_firewall_virtual_network_panorama {
     pub struct NextGenerationFirewallVirtualNetworkPanoramaArgs {
         /// One or more `destination_nat` blocks as defined below.
         #[builder(into, default)]
-        pub destination_nats: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_nats: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNat,
@@ -122,31 +122,31 @@ pub mod next_generation_firewall_virtual_network_panorama {
         >,
         /// A `dns_settings` block as defined below.
         #[builder(into, default)]
-        pub dns_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_settings: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDnsSettings,
             >,
         >,
         /// The Azure Region where the Palo Alto Next Generation Firewall Virtual Network Panorama should exist. Changing this forces a new Palo Alto Next Generation Firewall Virtual Network Panorama to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Palo Alto Next Generation Firewall Virtual Network Panorama. Changing this forces a new Palo Alto Next Generation Firewall Virtual Network Panorama to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_profile` block as defined below.
         #[builder(into)]
-        pub network_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub network_profile: pulumi_gestalt_rust::Input<
             super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaNetworkProfile,
         >,
         /// The base64 encoded configuration registration string as defined by your Panorama Server for your Cloud Device Group.
         #[builder(into)]
-        pub panorama_base64_config: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub panorama_base64_config: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Palo Alto Next Generation Firewall Virtual Network Panorama should exist. Changing this forces a new Palo Alto Next Generation Firewall Virtual Network Panorama to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Palo Alto Next Generation Firewall Virtual Network Panorama.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

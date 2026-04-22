@@ -111,18 +111,16 @@ pub mod cluster {
         /// Allows you to configure various aspects of the cluster.
         /// Structure defined below.
         #[builder(into, default)]
-        pub cluster_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cluster_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::ClusterClusterConfig>,
         >,
         #[builder(into, default)]
-        pub graceful_decommission_timeout: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub graceful_decommission_timeout: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of the labels (key/value pairs) configured on the resource and to be applied to instances in the cluster.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer
         /// to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the cluster, unique within the project and
@@ -130,19 +128,19 @@ pub mod cluster {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the `cluster` will exist. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region in which the cluster and associated nodes will be created in.
         /// Defaults to `global`.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Allows you to configure a virtual Dataproc on GKE cluster.
         /// Structure defined below.
         #[builder(into, default)]
-        pub virtual_cluster_config: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_cluster_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::ClusterVirtualClusterConfig>,
         >,
     }

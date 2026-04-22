@@ -45,55 +45,51 @@ pub mod factory {
     pub struct FactoryArgs {
         /// Specifies the Azure Key Vault Key ID to be used as the Customer Managed Key (CMK) for double encryption. Required with user assigned identity.
         #[builder(into, default)]
-        pub customer_managed_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_managed_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the user assigned identity associated with the Customer Managed Key. Must be supplied if `customer_managed_key_id` is set.
         #[builder(into, default)]
-        pub customer_managed_key_identity_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub customer_managed_key_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `github_configuration` block as defined below.
         #[builder(into, default)]
-        pub github_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub github_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafactory::FactoryGithubConfiguration>,
         >,
         /// A list of `global_parameter` blocks as defined above.
         #[builder(into, default)]
-        pub global_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub global_parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datafactory::FactoryGlobalParameter>>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafactory::FactoryIdentity>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is Managed Virtual Network enabled?
         #[builder(into, default)]
-        pub managed_virtual_network_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub managed_virtual_network_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Data Factory. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the Data Factory visible to the public network? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub public_network_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the ID of the purview account resource associated with the Data Factory.
         #[builder(into, default)]
-        pub purview_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub purview_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Data Factory. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `vsts_configuration` block as defined below.
         #[builder(into, default)]
-        pub vsts_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub vsts_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafactory::FactoryVstsConfiguration>,
         >,
     }

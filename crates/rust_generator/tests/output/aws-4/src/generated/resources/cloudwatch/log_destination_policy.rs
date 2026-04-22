@@ -53,13 +53,13 @@ pub mod log_destination_policy {
     pub struct LogDestinationPolicyArgs {
         /// The policy document. This is a JSON formatted string.
         #[builder(into)]
-        pub access_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_policy: pulumi_gestalt_rust::Input<String>,
         /// A name for the subscription filter
         #[builder(into)]
-        pub destination_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_name: pulumi_gestalt_rust::Input<String>,
         /// Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual AWS accounts.
         #[builder(into, default)]
-        pub force_update: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_update: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct LogDestinationPolicyResult {

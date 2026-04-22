@@ -359,23 +359,23 @@ pub mod bucket_notification {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable Amazon EventBridge notifications. Defaults to `false`.
         #[builder(into, default)]
-        pub eventbridge: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub eventbridge: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Used to configure notifications to a Lambda Function. See below.
         #[builder(into, default)]
-        pub lambda_functions: pulumi_gestalt_rust::InputOrOutput<
+        pub lambda_functions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketNotificationLambdaFunction>>,
         >,
         /// Notification configuration to SQS Queue. See below.
         #[builder(into, default)]
-        pub queues: pulumi_gestalt_rust::InputOrOutput<
+        pub queues: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketNotificationQueue>>,
         >,
         /// Notification configuration to SNS Topic. See below.
         #[builder(into, default)]
-        pub topics: pulumi_gestalt_rust::InputOrOutput<
+        pub topics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketNotificationTopic>>,
         >,
     }

@@ -75,13 +75,13 @@ pub mod user_pool_domain {
     pub struct UserPoolDomainArgs {
         /// The ARN of an ISSUED ACM certificate in us-east-1 for a custom domain.
         #[builder(into, default)]
-        pub certificate_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// For custom domains, this is the fully-qualified domain name, such as auth.example.com. For Amazon Cognito prefix domains, this is the prefix alone, such as auth.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// The user pool ID.
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserPoolDomainResult {

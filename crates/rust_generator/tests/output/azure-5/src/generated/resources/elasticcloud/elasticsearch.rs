@@ -47,34 +47,34 @@ pub mod elasticsearch {
     pub struct ElasticsearchArgs {
         /// Specifies the Email Address which should be associated with this Elasticsearch account. Changing this forces a new Elasticsearch to be created.
         #[builder(into)]
-        pub elastic_cloud_email_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub elastic_cloud_email_address: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Elasticsearch resource should exist. Changing this forces a new Elasticsearch to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `logs` block as defined below.
         #[builder(into, default)]
-        pub logs: pulumi_gestalt_rust::InputOrOutput<
+        pub logs: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticcloud::ElasticsearchLogs>,
         >,
         /// Specifies if the Elasticsearch should have monitoring configured? Defaults to `true`. Changing this forces a new Elasticsearch to be created.
         #[builder(into, default)]
-        pub monitoring_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub monitoring_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Elasticsearch resource. Changing this forces a new Elasticsearch to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Elasticsearch resource should exist. Changing this forces a new Elasticsearch to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the SKU for this Elasticsearch. Changing this forces a new Elasticsearch to be created.
         ///
         /// > **NOTE:** The SKU depends on the Elasticsearch Plans available for your account and is a combination of PlanID_Term.
         /// Ex: If the plan ID is "planXYZ" and term is "Yearly", the SKU will be "planXYZ_Yearly".
         /// You may find your eligible plans [here](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/elastic.ec-azure-pp) or in the online documentation [here](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/elastic.ec-azure-pp?tab=PlansAndPrice) for more details or in case of any issues with the SKU.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Elasticsearch resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

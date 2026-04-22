@@ -141,20 +141,20 @@ pub mod firewall_policy_with_rules {
         /// (Output)
         /// A description of the rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parent of this FirewallPolicy in the Cloud Resource Hierarchy.
         /// Format: organizations/{organization_id} or folders/{folder_id}
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// A list of firewall policy rules.
         /// Structure is documented below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::compute::FirewallPolicyWithRulesRule>,
         >,
         /// A textual name of the security policy.
         #[builder(into)]
-        pub short_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub short_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FirewallPolicyWithRulesResult {

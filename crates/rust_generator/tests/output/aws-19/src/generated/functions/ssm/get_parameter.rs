@@ -10,12 +10,12 @@ pub mod get_parameter {
     pub struct GetParameterArgs {
         /// Name of the parameter.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Whether to return decrypted `SecureString` value. Defaults to `true`.
         ///
         /// In addition to all arguments above, the following attributes are exported:
         #[builder(into, default)]
-        pub with_decryption: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub with_decryption: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetParameterResult {

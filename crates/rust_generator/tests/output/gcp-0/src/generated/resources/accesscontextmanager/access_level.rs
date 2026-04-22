@@ -69,19 +69,19 @@ pub mod access_level {
         /// A set of predefined conditions for the access level and a combining function.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub basic: pulumi_gestalt_rust::InputOrOutput<
+        pub basic: pulumi_gestalt_rust::Input<
             Option<super::super::types::accesscontextmanager::AccessLevelBasic>,
         >,
         /// Custom access level conditions are set using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request.
         /// See CEL spec at: https://github.com/google/cel-spec.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub custom: pulumi_gestalt_rust::InputOrOutput<
+        pub custom: pulumi_gestalt_rust::Input<
             Option<super::super::types::accesscontextmanager::AccessLevelCustom>,
         >,
         /// Description of the AccessLevel and its use. Does not affect behavior.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource name for the Access Level. The short_name component must begin
         /// with a letter and only include alphanumeric and '_'.
         /// Format: accessPolicies/{policy_id}/accessLevels/{short_name}
@@ -89,14 +89,14 @@ pub mod access_level {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The AccessPolicy this AccessLevel lives in.
         /// Format: accessPolicies/{policy_id}
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Human readable title. Must be unique within the Policy.
         #[builder(into)]
-        pub title: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub title: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessLevelResult {

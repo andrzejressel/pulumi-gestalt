@@ -37,10 +37,10 @@ pub mod domain_policy {
     pub struct DomainPolicyArgs {
         /// IAM policy document specifying the access policies for the domain
         #[builder(into)]
-        pub access_policies: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_policies: pulumi_gestalt_rust::Input<String>,
         /// Name of the domain.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainPolicyResult {

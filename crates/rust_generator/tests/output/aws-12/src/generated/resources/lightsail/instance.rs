@@ -86,42 +86,42 @@ pub mod instance {
     pub struct InstanceArgs {
         /// The add on configuration for the instance. Detailed below.
         #[builder(into, default)]
-        pub add_on: pulumi_gestalt_rust::InputOrOutput<
+        pub add_on: pulumi_gestalt_rust::Input<
             Option<super::super::types::lightsail::InstanceAddOn>,
         >,
         /// The Availability Zone in which to create your instance. A
         /// list of available zones can be obtained using the AWS CLI command:
         /// [`aws lightsail get-regions --include-availability-zones`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-regions.html).
         #[builder(into)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub availability_zone: pulumi_gestalt_rust::Input<String>,
         /// The ID for a virtual private server image. A list of available
         /// blueprint IDs can be obtained using the AWS CLI command:
         /// [`aws lightsail get-blueprints`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-blueprints.html).
         #[builder(into)]
-        pub blueprint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub blueprint_id: pulumi_gestalt_rust::Input<String>,
         /// The bundle of specification information. A list of available
         /// bundle IDs can be obtained using the AWS CLI command:
         /// [`aws lightsail get-bundles`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lightsail/get-bundles.html).
         #[builder(into)]
-        pub bundle_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bundle_id: pulumi_gestalt_rust::Input<String>,
         /// The IP address type of the Lightsail Instance. Valid Values: `dualstack` | `ipv4`.
         #[builder(into, default)]
-        pub ip_address_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of your key pair. Created in the
         /// Lightsail console (cannot use `aws.ec2.KeyPair` at this time)
         #[builder(into, default)]
-        pub key_pair_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_pair_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Lightsail Instance. Names must be unique within each AWS Region in your Lightsail account.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Single lined launch script as a string to configure server with additional user data
         #[builder(into, default)]
-        pub user_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_data: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

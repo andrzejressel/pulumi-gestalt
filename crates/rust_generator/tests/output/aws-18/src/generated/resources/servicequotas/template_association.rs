@@ -36,7 +36,7 @@ pub mod template_association {
     #[allow(dead_code)]
     pub struct TemplateAssociationArgs {
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct TemplateAssociationResult {

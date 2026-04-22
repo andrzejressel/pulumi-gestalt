@@ -54,17 +54,17 @@ pub mod mute_config {
     pub struct MuteConfigArgs {
         /// A description of the mute config.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// An expression that defines the filter to apply across create/update
         /// events of findings. While creating a filter string, be mindful of
         /// the scope in which the mute configuration is being created. E.g.,
         /// If a filter contains project = X but is created under the
         /// project = Y scope, it might not match any findings.
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter: pulumi_gestalt_rust::Input<String>,
         /// Unique identifier provided by the client within the parent scope.
         #[builder(into)]
-        pub mute_config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mute_config_id: pulumi_gestalt_rust::Input<String>,
         /// Resource name of the new mute configs's parent. Its format is
         /// "organizations/[organization_id]", "folders/[folder_id]", or
         /// "projects/[project_id]".
@@ -72,7 +72,7 @@ pub mod mute_config {
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MuteConfigResult {

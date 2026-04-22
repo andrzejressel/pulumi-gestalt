@@ -69,10 +69,10 @@ pub mod monitored_project {
         ///
         /// - - -
         #[builder(into)]
-        pub metrics_scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub metrics_scope: pulumi_gestalt_rust::Input<String>,
         /// Immutable. The resource name of the `MonitoredProject`. On input, the resource name includes the scoping project ID and monitored project ID. On output, it contains the equivalent project numbers. Example: `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MonitoredProjectResult {

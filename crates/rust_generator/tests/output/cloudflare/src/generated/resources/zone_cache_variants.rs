@@ -38,40 +38,40 @@ pub mod zone_cache_variants {
     pub struct ZoneCacheVariantsArgs {
         /// List of strings with the MIME types of all the variants that should be served for avif.
         #[builder(into, default)]
-        pub avifs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub avifs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for bmp.
         #[builder(into, default)]
-        pub bmps: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub bmps: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for gif.
         #[builder(into, default)]
-        pub gifs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub gifs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for jp2.
         #[builder(into, default)]
-        pub jp2s: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub jp2s: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for jpeg.
         #[builder(into, default)]
-        pub jpegs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub jpegs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for jpg2.
         #[builder(into, default)]
-        pub jpg2s: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub jpg2s: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for jpg.
         #[builder(into, default)]
-        pub jpgs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub jpgs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for png.
         #[builder(into, default)]
-        pub pngs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub pngs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for tiff.
         #[builder(into, default)]
-        pub tiffs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tiffs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for tif.
         #[builder(into, default)]
-        pub tifs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tifs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for webp.
         #[builder(into, default)]
-        pub webps: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub webps: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneCacheVariantsResult {

@@ -44,44 +44,44 @@ pub mod image_recipe {
     pub struct ImageRecipeArgs {
         /// Configuration block(s) with block device mappings for the image recipe. Detailed below.
         #[builder(into, default)]
-        pub block_device_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub block_device_mappings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::imagebuilder::ImageRecipeBlockDeviceMapping>>,
         >,
         /// Ordered configuration block(s) with components for the image recipe. Detailed below.
         #[builder(into)]
-        pub components: pulumi_gestalt_rust::InputOrOutput<
+        pub components: pulumi_gestalt_rust::Input<
             Vec<super::super::types::imagebuilder::ImageRecipeComponent>,
         >,
         /// Description of the image recipe.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the image recipe.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The image recipe uses this image as a base from which to build your customized image. The value can be the base image ARN or an AMI ID.
         #[builder(into)]
-        pub parent_image: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_image: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for the Systems Manager Agent installed by default by Image Builder. Detailed below.
         #[builder(into, default)]
-        pub systems_manager_agent: pulumi_gestalt_rust::InputOrOutput<
+        pub systems_manager_agent: pulumi_gestalt_rust::Input<
             Option<super::super::types::imagebuilder::ImageRecipeSystemsManagerAgent>,
         >,
         /// Key-value map of resource tags for the image recipe. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Base64 encoded user data. Use this to provide commands or a command script to run when you launch your build instance.
         #[builder(into, default)]
-        pub user_data_base64: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_data_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// The semantic version of the image recipe, which specifies the version in the following format, with numeric values in each position to indicate a specific version: major.minor.patch. For example: 1.0.0.
         ///
         /// The following attributes are optional:
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
         /// The working directory to be used during build and test workflows.
         #[builder(into, default)]
-        pub working_directory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub working_directory: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ImageRecipeResult {

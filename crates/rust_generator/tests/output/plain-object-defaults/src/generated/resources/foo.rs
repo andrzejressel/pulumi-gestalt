@@ -10,22 +10,20 @@ pub mod foo {
     #[allow(dead_code)]
     pub struct FooArgs {
         #[builder(into, default)]
-        pub argument: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub argument: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options for tuning the Kubernetes client used by a Provider.
         #[builder(into)]
-        pub backup_kube_client_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub backup_kube_client_settings: pulumi_gestalt_rust::Input<
             super::types::KubeClientSettings,
         >,
         /// Options for tuning the Kubernetes client used by a Provider.
         #[builder(into, default)]
-        pub kube_client_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub kube_client_settings: pulumi_gestalt_rust::Input<
             Option<super::types::KubeClientSettings>,
         >,
         /// describing things
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
-            Option<super::types::LayeredType>,
-        >,
+        pub settings: pulumi_gestalt_rust::Input<Option<super::types::LayeredType>>,
     }
     #[allow(dead_code)]
     pub struct FooResult {

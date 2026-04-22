@@ -10,19 +10,19 @@ pub mod get_image {
     pub struct GetImageArgs {
         /// Arn of the image being searched for. Cannot be used with name_regex or name.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean that if it is set to true and there are multiple images returned the most recent will be returned. If it is set to false and there are multiple images return the datasource will error.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the image being searched for. Cannot be used with name_regex or arn.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Regular expression name of the image being searched for. Cannot be used with arn or name.
         #[builder(into, default)]
-        pub name_regex: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_regex: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of image which must be (PUBLIC, PRIVATE, or SHARED).
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetImageResult {

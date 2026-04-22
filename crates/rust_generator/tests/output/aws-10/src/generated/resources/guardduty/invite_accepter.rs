@@ -50,10 +50,10 @@ pub mod invite_accepter {
     pub struct InviteAccepterArgs {
         /// The detector ID of the member GuardDuty account.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
         /// AWS account ID for primary account.
         #[builder(into)]
-        pub master_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub master_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InviteAccepterResult {

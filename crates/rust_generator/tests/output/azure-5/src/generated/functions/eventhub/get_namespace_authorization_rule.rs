@@ -10,13 +10,13 @@ pub mod get_namespace_authorization_rule {
     pub struct GetNamespaceAuthorizationRuleArgs {
         /// The name of the EventHub Authorization Rule resource.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the EventHub Namespace.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the EventHub Namespace exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNamespaceAuthorizationRuleResult {

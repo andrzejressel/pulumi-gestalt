@@ -54,57 +54,53 @@ pub mod policy {
     pub struct PolicyArgs {
         /// If true, the request will also perform a clean-up process. Defaults to `true`. More information can be found here [AWS Firewall Manager delete policy](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html)
         #[builder(into, default)]
-        pub delete_all_policy_resources: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub delete_all_policy_resources: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true, Firewall Manager will automatically remove protections from resources that leave the policy scope. Defaults to `false`. More information can be found here [AWS Firewall Manager policy contents](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html)
         #[builder(into, default)]
-        pub delete_unused_fm_managed_resources: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub delete_unused_fm_managed_resources: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The description of the AWS Network Firewall firewall policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of lists of accounts and OU's to exclude from the policy.
         #[builder(into, default)]
-        pub exclude_map: pulumi_gestalt_rust::InputOrOutput<
+        pub exclude_map: pulumi_gestalt_rust::Input<
             Option<super::super::types::fms::PolicyExcludeMap>,
         >,
         /// A boolean value, if true the tags that are specified in the `resource_tags` are not protected by this policy. If set to false and resource_tags are populated, resources that contain tags will be protected by this policy.
         #[builder(into)]
-        pub exclude_resource_tags: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub exclude_resource_tags: pulumi_gestalt_rust::Input<bool>,
         /// A map of lists of accounts and OU's to include in the policy.
         #[builder(into, default)]
-        pub include_map: pulumi_gestalt_rust::InputOrOutput<
+        pub include_map: pulumi_gestalt_rust::Input<
             Option<super::super::types::fms::PolicyIncludeMap>,
         >,
         /// The friendly name of the AWS Firewall Manager Policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean value, indicates if the policy should automatically applied to resources that already exist in the account.
         #[builder(into, default)]
-        pub remediation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub remediation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub resource_set_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub resource_set_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of resource tags, that if present will filter protections on resources based on the exclude_resource_tags.
         #[builder(into, default)]
-        pub resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A resource type to protect. Conflicts with `resource_type_list`. See the [FMS API Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html#fms-Type-Policy-ResourceType) for more information about supported values.
         #[builder(into, default)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of resource types to protect. Conflicts with `resource_type`. See the [FMS API Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html#fms-Type-Policy-ResourceType) for more information about supported values. Lists with only one element are not supported, instead use `resource_type`.
         #[builder(into, default)]
-        pub resource_type_lists: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub resource_type_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The objects to include in Security Service Policy Data. Documented below.
         #[builder(into)]
-        pub security_service_policy_data: pulumi_gestalt_rust::InputOrOutput<
+        pub security_service_policy_data: pulumi_gestalt_rust::Input<
             super::super::types::fms::PolicySecurityServicePolicyData,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

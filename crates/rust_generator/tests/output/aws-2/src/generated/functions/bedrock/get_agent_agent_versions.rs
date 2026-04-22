@@ -10,10 +10,10 @@ pub mod get_agent_agent_versions {
     pub struct GetAgentAgentVersionsArgs {
         /// Unique identifier of the agent.
         #[builder(into)]
-        pub agent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agent_id: pulumi_gestalt_rust::Input<String>,
         /// List of objects, each of which contains information about a version of the agent. See Agent Version Summaries
         #[builder(into, default)]
-        pub agent_version_summaries: pulumi_gestalt_rust::InputOrOutput<
+        pub agent_version_summaries: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::bedrock::GetAgentAgentVersionsAgentVersionSummary,

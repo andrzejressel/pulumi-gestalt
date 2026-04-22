@@ -46,56 +46,56 @@ pub mod user {
     pub struct UserArgs {
         /// Details about the user's address. At most 1 address is allowed. Detailed below.
         #[builder(into, default)]
-        pub addresses: pulumi_gestalt_rust::InputOrOutput<
+        pub addresses: pulumi_gestalt_rust::Input<
             Option<super::super::types::identitystore::UserAddresses>,
         >,
         /// The name that is typically displayed when the user is referenced.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Details about the user's email. At most 1 email is allowed. Detailed below.
         #[builder(into, default)]
-        pub emails: pulumi_gestalt_rust::InputOrOutput<
+        pub emails: pulumi_gestalt_rust::Input<
             Option<super::super::types::identitystore::UserEmails>,
         >,
         /// The globally unique identifier for the identity store that this user is in.
         #[builder(into)]
-        pub identity_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_store_id: pulumi_gestalt_rust::Input<String>,
         /// The user's geographical region or location.
         #[builder(into, default)]
-        pub locale: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub locale: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details about the user's full name. Detailed below.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<
+        pub name: pulumi_gestalt_rust::Input<
             Option<super::super::types::identitystore::UserName>,
         >,
         /// An alternate name for the user.
         #[builder(into, default)]
-        pub nickname: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nickname: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details about the user's phone number. At most 1 phone number is allowed. Detailed below.
         #[builder(into, default)]
-        pub phone_numbers: pulumi_gestalt_rust::InputOrOutput<
+        pub phone_numbers: pulumi_gestalt_rust::Input<
             Option<super::super::types::identitystore::UserPhoneNumbers>,
         >,
         /// The preferred language of the user.
         #[builder(into, default)]
-        pub preferred_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// An URL that may be associated with the user.
         #[builder(into, default)]
-        pub profile_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub profile_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user's time zone.
         #[builder(into, default)]
-        pub timezone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub timezone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user's title.
         #[builder(into, default)]
-        pub title: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub title: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique string used to identify the user. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. The limit is 128 characters.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
         /// The user type.
         #[builder(into, default)]
-        pub user_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct UserResult {

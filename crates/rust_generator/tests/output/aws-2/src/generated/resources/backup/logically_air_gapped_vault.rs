@@ -39,20 +39,20 @@ pub mod logically_air_gapped_vault {
     pub struct LogicallyAirGappedVaultArgs {
         /// Maximum retention period that the Logically Air Gapped Backup Vault retains recovery points.
         #[builder(into)]
-        pub max_retention_days: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub max_retention_days: pulumi_gestalt_rust::Input<i32>,
         /// Minimum retention period that the Logically Air Gapped Backup Vault retains recovery points.
         #[builder(into)]
-        pub min_retention_days: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub min_retention_days: pulumi_gestalt_rust::Input<i32>,
         /// Name of the Logically Air Gapped Backup Vault to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Metadata that you can assign to help organize the resources that you create. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::LogicallyAirGappedVaultTimeouts>,
         >,
     }

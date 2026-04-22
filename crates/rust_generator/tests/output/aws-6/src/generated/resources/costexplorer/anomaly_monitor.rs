@@ -64,19 +64,19 @@ pub mod anomaly_monitor {
     pub struct AnomalyMonitorArgs {
         /// The dimensions to evaluate. Valid values: `SERVICE`.
         #[builder(into, default)]
-        pub monitor_dimension: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub monitor_dimension: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valid JSON representation for the [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html) object.
         #[builder(into, default)]
-        pub monitor_specification: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub monitor_specification: pulumi_gestalt_rust::Input<Option<String>>,
         /// The possible type values. Valid values: `DIMENSIONAL` | `CUSTOM`.
         #[builder(into)]
-        pub monitor_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub monitor_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the monitor.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

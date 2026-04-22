@@ -75,21 +75,21 @@ pub mod backend_address_pool_address {
         ///
         /// > **Note:** For cross-region load balancer, please append the name of the load balancers, virtual machines, and other resources in each region with a -R1 and -R2.
         #[builder(into, default)]
-        pub backend_address_ip_configuration_id: pulumi_gestalt_rust::InputOrOutput<
+        pub backend_address_ip_configuration_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the Backend Address Pool. Changing this forces a new Backend Address Pool Address to be created.
         #[builder(into)]
-        pub backend_address_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backend_address_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The Static IP Address which should be allocated to this Backend Address Pool.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Backend Address Pool Address. Changing this forces a new Backend Address Pool Address to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Virtual Network within which the Backend Address Pool should exist.
         #[builder(into, default)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BackendAddressPoolAddressResult {
