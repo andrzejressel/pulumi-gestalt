@@ -1,2 +1,5 @@
 name: Pulumi_Gestalt_Examples_Native
-runtime: gestalt
+runtime: 
+  name: rust
+  options:
+    binary: ../../target/debug/pulumi_gestalt_example_native

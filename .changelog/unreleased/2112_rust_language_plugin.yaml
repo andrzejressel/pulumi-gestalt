@@ -1,0 +1,8 @@
+type: Announcement
+title: "Rust language plugin"
+description: |
+  In addition to Gestalt language plugin that uses Just to invoke code, native `pulumi-language-rust` plugin is now available.
+  This plugin does not require Just and instead uses `cargo` to build and run Rust code. Installation instructions and documentation
+  for users were updated to reflect this change. 
+  Currently includes very experimental support for [`package gen-sdk`](https://www.pulumi.com/docs/iac/cli/commands/pulumi_package_gen-sdk/) 
+  and [`convert`](https://www.pulumi.com/docs/iac/cli/commands/pulumi_convert/) that will be improved in next releases.

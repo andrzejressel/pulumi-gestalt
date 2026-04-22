@@ -2,9 +2,6 @@ test_name := "stash"
 
 set windows-shell := ["pwsh.exe", "-c"]
 
-run:
-    ../../target/debug/pulumi_gestalt_example_{{test_name}}
-
 [windows]
 local-test:
     #!pwsh

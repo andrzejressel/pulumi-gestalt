@@ -4,6 +4,51 @@
     Before processing, feel free to do [Rust tutorial](../languages/rust/index.md), open code in your IDE, walk through it
     and check abstractions behind `Output` and generated provider.
 
+## Pulumi Gestalt Language plugin
+
+Pulumi Gestalt Language plugin is made to support any language. Due to that abstractions over running code must be as small as possible -
+actual program is run using `just` recipes.
+
+### Just
+
+[Just](https://github.com/casey/just) is `Make` alternative used by Pulumi Gestalt to invoke programs in cross-platform
+and very generic way.
+
+Currently, there are two recipes that are used by Pulumi Gestalt:
+
+- `run`: used to run program
+- `plugins TEMP_DIRECTORY` (optional): used to get list of used plugins. File with a JSON serialized list of plugins is expected in TEMP_DIRECTORY. Can be safely omitted.
+
+Example recipes:
+
+#### Rust (Wasm)
+
+```just title="Justfile"
+binary := "pulumi_gestalt_wasm_runner" # Runner described in Rust language section
+wasm := "../target/wasm32-wasip2/debug/pulumi_gestalt_example_wasm.wasm"
+
+run:
+    cargo build --target wasm32-wasip2
+    {{binary}} run --debug "{{wasm}}"
+```
+
+#### C++
+
+```just title="Justfile"
+set windows-shell := ["pwsh.exe", "-c"]
+
+[windows]
+run:
+    New-Item -ItemType Directory -Path build -Force
+    cd build && cmake .. && cmake --build .
+    .\build\Debug\executable.exe
+
+[unix]
+run:
+    mkdir -p build
+    cd build && cmake .. && cmake --build .
+    ./build/executable
+```
 
 ## Abstractions
 
