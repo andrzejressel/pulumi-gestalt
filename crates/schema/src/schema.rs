@@ -692,7 +692,7 @@ mod test {
     fn object_without_additionalproperties_fails() -> Result<()> {
         let json = json!({
             "name": "test",
-            "version": "0.0.0-DEV",
+            "version": "0.0.0",
             "resources": {
                 "test:index:test_resource": {
                     "description": "test resource",
@@ -728,7 +728,7 @@ mod test {
     fn array_without_items_fails() -> Result<()> {
         let json = json!({
             "name": "test",
-            "version": "0.0.0-DEV",
+            "version": "0.0.0",
             "resources": {
                 "test:index:test_resource": {
                     "description": "test resource",
@@ -764,7 +764,7 @@ mod test {
     fn provider_is_mapped_to_model() -> Result<()> {
         let json = json!({
             "name": "aws",
-            "version": "0.0.0-DEV",
+            "version": "0.0.0",
             "provider": {
                 "description": "provider",
                 "inputProperties": {
@@ -797,7 +797,7 @@ mod test {
     fn provider_is_created_even_if_not_in_schema() -> Result<()> {
         let json = json!({
             "name": "aws",
-            "version": "0.0.0-DEV",
+            "version": "0.0.0",
         });
 
         let package = to_model(&serde_json::from_value(json)?)?;
@@ -818,7 +818,7 @@ mod test {
     fn provider_is_not_filtered_out() -> Result<()> {
         let json = json!({
             "name": "aws",
-            "version": "0.0.0-DEV",
+            "version": "0.0.0",
             "resources": {
                 "aws:s3/bucket:Bucket": {
                     "properties": {},
@@ -849,7 +849,7 @@ mod test {
     fn provider_types_are_kept() -> Result<()> {
         let json = json!({
             "name": "aws",
-            "version": "0.0.0-DEV",
+            "version": "0.0.0",
             "provider": {
                 "inputProperties": {
                     "some_type": {

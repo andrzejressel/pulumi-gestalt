@@ -128,7 +128,7 @@
 - Remove devenv related files ([#1854](https://github.com/andrzejressel/pulumi-gestalt/pull/1854)) [5da90df](https://github.com/andrzejressel/pulumi-gestalt/commit/5da90dfc540ec4b06d4468214e5fcf255998e9ac)
 - Include unknown type string in schema error messages ([#1856](https://github.com/andrzejressel/pulumi-gestalt/pull/1856)) [59d4de1](https://github.com/andrzejressel/pulumi-gestalt/commit/59d4de1d0fc93c525784bbac87414bc02a6f448b)
 - Fixing formatting ([#1865](https://github.com/andrzejressel/pulumi-gestalt/pull/1865)) [db69a10](https://github.com/andrzejressel/pulumi-gestalt/commit/db69a10814dc3931ff6fe131f3825e5f03a4daf0)
-- Restore version to 0.0.0-DEV [f7f71a1](https://github.com/andrzejressel/pulumi-gestalt/commit/f7f71a1a634a12a9495bb87920a923db526ace79)
+- Restore version to 0.0.0 [f7f71a1](https://github.com/andrzejressel/pulumi-gestalt/commit/f7f71a1a634a12a9495bb87920a923db526ace79)
 </details>
 
 ## [0.0.7](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.5...v0.0.7)
@@ -289,7 +289,7 @@ from new provider.
 - Move protoc to mise ([#1733](https://github.com/andrzejressel/pulumi-gestalt/pull/1733)) [e40b0a9](https://github.com/andrzejressel/pulumi-gestalt/commit/e40b0a97b7856145b943ff88851d81c6e63e419e)
 - Add description to domain crate ([#1660](https://github.com/andrzejressel/pulumi-gestalt/pull/1660)) [09717b1](https://github.com/andrzejressel/pulumi-gestalt/commit/09717b14ffc346b9920c61c951d8074561ea7a1a)
 - Add mise ([#1662](https://github.com/andrzejressel/pulumi-gestalt/pull/1662)) [655eb82](https://github.com/andrzejressel/pulumi-gestalt/commit/655eb82b4a5106f830edf3a315531b4cd74a72f7)
-- Restore version to 0.0.0-DEV [39739a9](https://github.com/andrzejressel/pulumi-gestalt/commit/39739a95bac4ef4aeb2cb8b764e16fcf02d0b672)
+- Restore version to 0.0.0 [39739a9](https://github.com/andrzejressel/pulumi-gestalt/commit/39739a95bac4ef4aeb2cb8b764e16fcf02d0b672)
 </details>
 
 ## [0.0.5](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.4...v0.0.5)
@@ -521,7 +521,7 @@ from new provider.
 - Replace deprecated peel_to_commit_in_place with peel_to_commit ([#1429](https://github.com/andrzejressel/pulumi-gestalt/pull/1429)) [2a035c6](https://github.com/andrzejressel/pulumi-gestalt/commit/2a035c646d9d766ef2df28cf4bba8b11f25ef13e)
 - Update Wasm libraries ([#1415](https://github.com/andrzejressel/pulumi-gestalt/pull/1415)) [1f7d8ca](https://github.com/andrzejressel/pulumi-gestalt/commit/1f7d8ca54d7c237a3dd6db8c3786373fe9903eff)
 - Fix deployment ([#1360](https://github.com/andrzejressel/pulumi-gestalt/pull/1360)) [6abe3f5](https://github.com/andrzejressel/pulumi-gestalt/commit/6abe3f56b8c7f79025d608738f6314643d8ad3f7)
-- Restore version to 0.0.0-DEV [37c468d](https://github.com/andrzejressel/pulumi-gestalt/commit/37c468da3fecf202aa800bf7627c6c5e2707cd06)
+- Restore version to 0.0.0 [37c468d](https://github.com/andrzejressel/pulumi-gestalt/commit/37c468da3fecf202aa800bf7627c6c5e2707cd06)
 </details>
 
 ## [0.0.4](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.3...v0.0.4)
@@ -704,7 +704,7 @@ from new provider.
 - docs: Implement hierarchical AGENTS.md structure ([#1301](https://github.com/andrzejressel/pulumi-gestalt/pull/1301)) [660e160](https://github.com/andrzejressel/pulumi-gestalt/commit/660e160b5d9b944981e03835ca48c3ed460c4ce9)
 - Fixing lints ([#1296](https://github.com/andrzejressel/pulumi-gestalt/pull/1296)) [e4fd823](https://github.com/andrzejressel/pulumi-gestalt/commit/e4fd823ae66d29633a6d0b0e7853e3757ae20025)
 - Add minimumReleaseAge and internalChecksFilter to renovate.json ([#1295](https://github.com/andrzejressel/pulumi-gestalt/pull/1295)) [2e94113](https://github.com/andrzejressel/pulumi-gestalt/commit/2e941132d8017882db9bbf1cae048f397b9bf055)
-- Restore version to 0.0.0-DEV [fcad38b](https://github.com/andrzejressel/pulumi-gestalt/commit/fcad38b0ec5ba8492e1677d8825da6f57541ff09)
+- Restore version to 0.0.0 [fcad38b](https://github.com/andrzejressel/pulumi-gestalt/commit/fcad38b0ec5ba8492e1677d8825da6f57541ff09)
 </details>
 
 ## [0.0.3](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.2...v0.0.3)
@@ -851,7 +851,7 @@ from new provider.
 - Setup temporary changelog ([#1028](https://github.com/andrzejressel/pulumi-gestalt/pull/1028)) [da2caa2](https://github.com/andrzejressel/pulumi-gestalt/commit/da2caa207413afc03b14118a05b4aa076111fd3a)
 - Fix changelog generation ([#1026](https://github.com/andrzejressel/pulumi-gestalt/pull/1026)) [b7ad189](https://github.com/andrzejressel/pulumi-gestalt/commit/b7ad189575b42fdf42765a868e46446c5d00cade)
 - Fix publish recipe ([#1022](https://github.com/andrzejressel/pulumi-gestalt/pull/1022)) [8a3e941](https://github.com/andrzejressel/pulumi-gestalt/commit/8a3e941ae3a5f5c3d66f0f317ed4deade5213017)
-- Restore version to 0.0.0-DEV [d1101b1](https://github.com/andrzejressel/pulumi-gestalt/commit/d1101b15e42bb49018920426a1ef4e018ec8ecb2)
+- Restore version to 0.0.0 [d1101b1](https://github.com/andrzejressel/pulumi-gestalt/commit/d1101b15e42bb49018920426a1ef4e018ec8ecb2)
 </details>
 
 ## [0.0.2](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.1...v0.0.2)
@@ -940,7 +940,7 @@ from new provider.
 - Add link to C++ example ([#946](https://github.com/andrzejressel/pulumi-gestalt/pull/946)) [c8dc358](https://github.com/andrzejressel/pulumi-gestalt/commit/c8dc358bded51d0f969bf28e1242578fefeb9a44)
 - Update rust integration docs ([#945](https://github.com/andrzejressel/pulumi-gestalt/pull/945)) [8c05a76](https://github.com/andrzejressel/pulumi-gestalt/commit/8c05a769f82fad331b1969d7929ad9aeffed72db)
 - Set resolver to 3 ([#944](https://github.com/andrzejressel/pulumi-gestalt/pull/944)) [576f12c](https://github.com/andrzejressel/pulumi-gestalt/commit/576f12c8d7361a80a5e6efe76b684261cb27a4a5)
-- Restore version to 0.0.0-DEV [e43c80a](https://github.com/andrzejressel/pulumi-gestalt/commit/e43c80abe0e43a1b970a3b1d2d8711db0d910c26)
+- Restore version to 0.0.0 [e43c80a](https://github.com/andrzejressel/pulumi-gestalt/commit/e43c80abe0e43a1b970a3b1d2d8711db0d910c26)
 </details>
 
 ## 0.0.1
@@ -1013,7 +1013,7 @@ from new provider.
 - Add pr and commit for changelog elements ([#871](https://github.com/andrzejressel/pulumi-gestalt/pull/871)) [89c7c3c](https://github.com/andrzejressel/pulumi-gestalt/commit/89c7c3c67927702c06b2112206bd8f563c68078d)
 - Convert hashes in commit name to links ([#870](https://github.com/andrzejressel/pulumi-gestalt/pull/870)) [043ea20](https://github.com/andrzejressel/pulumi-gestalt/commit/043ea20b1c3a3961d93dbff7bddb4e89b49b49fd)
 - Add ReadTheDocs status badge ([#868](https://github.com/andrzejressel/pulumi-gestalt/pull/868)) [75ecc78](https://github.com/andrzejressel/pulumi-gestalt/commit/75ecc78e3c02f4186ffd613db72216c20b4e8c24)
-- Restore version to 0.0.0-DEV [5ecc4e0](https://github.com/andrzejressel/pulumi-gestalt/commit/5ecc4e06a2a9f2c270e2d7419434165cb4f4681f)
+- Restore version to 0.0.0 [5ecc4e0](https://github.com/andrzejressel/pulumi-gestalt/commit/5ecc4e06a2a9f2c270e2d7419434165cb4f4681f)
 - Release v0.0.1 [db600a7](https://github.com/andrzejressel/pulumi-gestalt/commit/db600a7eecd47b6fcd0e15afd1e296c11f93225f)
 - Update changelog for version 0.0.1 [f589fa6](https://github.com/andrzejressel/pulumi-gestalt/commit/f589fa6b2bdc2ab18a6b0388127a7986e0e78664)
 - Update version to 0.0.1 [6280c1c](https://github.com/andrzejressel/pulumi-gestalt/commit/6280c1cdefc2342b1d7e853ac521c43504c03c2f)

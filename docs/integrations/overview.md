@@ -35,7 +35,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface context {
             resource context {
@@ -102,7 +102,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface output-interface {
             resource output {
@@ -226,7 +226,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface context {
             resource context {
@@ -307,7 +307,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface context {
             resource context {
@@ -435,7 +435,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface context {
             resource context {
@@ -558,7 +558,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface types {
             variant config-value {
@@ -689,7 +689,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface output-interface {
             resource output {
@@ -778,7 +778,7 @@ This function does exist in WIT, but it has [a completely different signature an
     
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
     
         interface output-interface {
             resource output {
@@ -813,7 +813,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface output-interface {
             resource output {
@@ -891,7 +891,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface output-interface {
             resource output {
@@ -948,7 +948,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface output-interface {
             resource output {
@@ -1019,7 +1019,7 @@ This function does exist in WIT, but it has [a completely different signature an
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface output-interface {
             resource output {
@@ -1095,7 +1095,7 @@ of which can be accessed individually.
 
         **🛠️ Signature:**
         ```wit
-        package component:pulumi-gestalt@0.0.0-DEV;
+        package component:pulumi-gestalt@0.0.0;
 
         interface output-interface {
             resource composite-output {
