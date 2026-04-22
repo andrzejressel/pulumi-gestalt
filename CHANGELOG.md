@@ -1,3 +1,136 @@
+## [0.0.9](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.8...v0.0.9)
+### Rust language plugin
+In addition to Gestalt language plugin that uses Just to invoke code, native `pulumi-language-rust` plugin is now available.
+This plugin does not require Just and instead uses `cargo` to build and run Rust code. Installation instructions and documentation
+for users were updated to reflect this change. 
+Currently includes very experimental support for [`package gen-sdk`](https://www.pulumi.com/docs/iac/cli/commands/pulumi_package_gen-sdk/) 
+and [`convert`](https://www.pulumi.com/docs/iac/cli/commands/pulumi_convert/) that will be improved in next releases.
+
+### Added
+- Add Stash API ([#2008](https://github.com/andrzejressel/pulumi-gestalt/pull/2008)) [3adb4db](https://github.com/andrzejressel/pulumi-gestalt/commit/3adb4dbb45383e17cbf7953bf0247eacb48006bb)
+
+    Adds `pulumi_gestalt_rust::resources::stash` as an abstraction over [Pulumi Stash](https://www.pulumi.com/docs/iac/concepts/stash/)
+
+- Add Output secret and unsecret methods across integrations ([#2017](https://github.com/andrzejressel/pulumi-gestalt/pull/2017)) [057897e](https://github.com/andrzejressel/pulumi-gestalt/commit/057897ef2f9e843e666452be7d4a0e97bc95a211)
+
+    Added `secret` and `unsecret` methods to `Output` APIs across Rust,
+rust_integration, C FFI, and Wasm integrations to explicitly control
+whether an output value is treated as secret.
+
+- Add `get_root_directory` method to `Context` ([#2020](https://github.com/andrzejressel/pulumi-gestalt/pull/2020)) [4a6e6e7](https://github.com/andrzejressel/pulumi-gestalt/commit/4a6e6e707cd6b561b5c6eed25eb9618890f653ba)
+- Add `Context::require_config_secret_deserialize` in Rust native API ([#2042](https://github.com/andrzejressel/pulumi-gestalt/pull/2042)) [51b38b0](https://github.com/andrzejressel/pulumi-gestalt/commit/51b38b0093d3359b34e76b78298e2d4a6eddbd1c)
+
+    Adds `require_config_secret_deserialize<T>` - it's `require_config_secret` that deserializes value to `T`.
+
+
+### Changed
+- Update `Context::require_config_deserialize` to use `Deserialize<'de>` instead of `DeserializeOwned` ([#1983](https://github.com/andrzejressel/pulumi-gestalt/pull/1983)) [932a36d](https://github.com/andrzejressel/pulumi-gestalt/commit/932a36de33a2fdb2099d657809c785ce5f60c343)
+
+### Removed
+- Remove Pulumi Gestalt protobuf schema surface ([#1984](https://github.com/andrzejressel/pulumi-gestalt/pull/1984)) [82b40e4](https://github.com/andrzejressel/pulumi-gestalt/commit/82b40e4051e282547b62f5fa9f9627ed073802a5)
+
+    Removed proto/pulumi_gestalt.proto, the pulumi_gestalt_schema_protobuf crate and related C FFI/schema documentation and release artifacts.
+
+
+<details>
+<summary><h3>🤖 Dependency Update Commits</h3></summary>
+
+- Update Rust crate clap to v4.6.1 ([#2113](https://github.com/andrzejressel/pulumi-gestalt/pull/2113)) [22186f0](https://github.com/andrzejressel/pulumi-gestalt/commit/22186f03a26bdbf36cfc5dbb1f3bf4182d0010ee)
+- Update github/codeql-action action to v4.35.2 ([#2111](https://github.com/andrzejressel/pulumi-gestalt/pull/2111)) [f3d4d09](https://github.com/andrzejressel/pulumi-gestalt/commit/f3d4d0910bc3a015ea5bf61699bab9de334b8a65)
+- Update Rust crate tokio to v1.52.0 ([#2107](https://github.com/andrzejressel/pulumi-gestalt/pull/2107)) [6f82332](https://github.com/andrzejressel/pulumi-gestalt/commit/6f82332df1fdea89b32e70eb5f965520bd4cd02c)
+- Update Rust crate wit-bindgen to 0.56.0 ([#2108](https://github.com/andrzejressel/pulumi-gestalt/pull/2108)) [929f239](https://github.com/andrzejressel/pulumi-gestalt/commit/929f239e0f0a5d31d9fbe0ecf6d7048c45923256)
+- Update actions/cache action to v5.0.5 ([#2104](https://github.com/andrzejressel/pulumi-gestalt/pull/2104)) [e3e72fe](https://github.com/andrzejressel/pulumi-gestalt/commit/e3e72fe23d816dae735dfc6641a081d39cadd9f8)
+- Bump github.com/go-git/go-git/v5 from 5.17.2 to 5.18.0 in /pulumi-language-rust ([#2103](https://github.com/andrzejressel/pulumi-gestalt/pull/2103)) [b4dfa9b](https://github.com/andrzejressel/pulumi-gestalt/commit/b4dfa9b672817ae02bef1de13ab37c52df2b3401)
+- Update Rust crate libc to v0.2.185 ([#2102](https://github.com/andrzejressel/pulumi-gestalt/pull/2102)) [be05965](https://github.com/andrzejressel/pulumi-gestalt/commit/be0596532ad2ae262dae95de8019684c94aa463a)
+- Bump github.com/go-git/go-git/v5 from 5.17.2 to 5.18.0 in /pulumi-language-gestalt ([#2096](https://github.com/andrzejressel/pulumi-gestalt/pull/2096)) [fe896e9](https://github.com/andrzejressel/pulumi-gestalt/commit/fe896e9c103da8003e9a6fb0d4dbdd39d529f75b)
+- Update softprops/action-gh-release action to v3 ([#2095](https://github.com/andrzejressel/pulumi-gestalt/pull/2095)) [9274050](https://github.com/andrzejressel/pulumi-gestalt/commit/9274050c99055a9bd04a3e4e73047623927d31ae)
+- Update softprops/action-gh-release action to v2.6.2 ([#2094](https://github.com/andrzejressel/pulumi-gestalt/pull/2094)) [ff3c0c0](https://github.com/andrzejressel/pulumi-gestalt/commit/ff3c0c069d3a56d1d47e26e50d2747fc36c869f3)
+- Update actions/create-github-app-token action to v3.1.1 ([#2091](https://github.com/andrzejressel/pulumi-gestalt/pull/2091)) [c18ca39](https://github.com/andrzejressel/pulumi-gestalt/commit/c18ca39a07f301b26ad555259f3d245089d8bab1)
+- Update actions/create-github-app-token action to v3.1.0 ([#2090](https://github.com/andrzejressel/pulumi-gestalt/pull/2090)) [62a4f50](https://github.com/andrzejressel/pulumi-gestalt/commit/62a4f506430e5d77f2db52bd8d09a2cd6eb3f132)
+- Bump github.com/go-git/go-git/v5 from 5.17.1 to 5.18.0 in /pulumi-test ([#2088](https://github.com/andrzejressel/pulumi-gestalt/pull/2088)) [7240ba2](https://github.com/andrzejressel/pulumi-gestalt/commit/7240ba265e670c4a83e5bb691c59ff134a261018)
+- Update dependency go to v1.26.2 ([#2087](https://github.com/andrzejressel/pulumi-gestalt/pull/2087)) [2303511](https://github.com/andrzejressel/pulumi-gestalt/commit/230351162ed934ea5175642a8ba12f71a9711b3e)
+- Update Rust crate sha2 to 0.11.0 ([#2085](https://github.com/andrzejressel/pulumi-gestalt/pull/2085)) [4e12734](https://github.com/andrzejressel/pulumi-gestalt/commit/4e12734e8cd7193987091ac6396b8d3396c28268)
+- Update module github.com/pulumi/pulumi/pkg/v3 to v3.230.0 ([#2079](https://github.com/andrzejressel/pulumi-gestalt/pull/2079)) [f3d3d17](https://github.com/andrzejressel/pulumi-gestalt/commit/f3d3d17396c7f948b13732559cab3f4fe7fae32f)
+- Update dependency pulumi to v3.230.0 ([#2076](https://github.com/andrzejressel/pulumi-gestalt/pull/2076)) [2cdb701](https://github.com/andrzejressel/pulumi-gestalt/commit/2cdb701a39485dc4475b87a30417830482c08572)
+- Update module github.com/pulumi/pulumi/sdk/v3 to v3.230.0 ([#2075](https://github.com/andrzejressel/pulumi-gestalt/pull/2075)) [8a62af2](https://github.com/andrzejressel/pulumi-gestalt/commit/8a62af256f045777f91e3032ed4e0de5bc24de94)
+- Update Rust crate tokio to v1.51.1 ([#2074](https://github.com/andrzejressel/pulumi-gestalt/pull/2074)) [4219f90](https://github.com/andrzejressel/pulumi-gestalt/commit/4219f90e076aad09cee5447e3b2d9686247d369c)
+- Update dependency go to v1.26.2 ([#2060](https://github.com/andrzejressel/pulumi-gestalt/pull/2060)) [06321ac](https://github.com/andrzejressel/pulumi-gestalt/commit/06321aca31fd1ce4a4fd2f289e7e488e74350cde)
+- Bump github.com/go-git/go-git/v5 from 5.16.5 to 5.17.1 in /pulumi-test ([#2053](https://github.com/andrzejressel/pulumi-gestalt/pull/2053)) [c573571](https://github.com/andrzejressel/pulumi-gestalt/commit/c573571bb6705aee70ece9f7014773460fdee619)
+- Update dependency just to v1.49.0 ([#2044](https://github.com/andrzejressel/pulumi-gestalt/pull/2044)) [18b63c3](https://github.com/andrzejressel/pulumi-gestalt/commit/18b63c3095fb3125783f0bf53be2e6f6927675f7)
+- Update Rust crate wit-bindgen to 0.55.0 ([#2026](https://github.com/andrzejressel/pulumi-gestalt/pull/2026)) [59e4b58](https://github.com/andrzejressel/pulumi-gestalt/commit/59e4b581aa8f7f72c9529c61bc968ce9acf7f874)
+- Update Rust crate wat to v1.246.2 ([#2025](https://github.com/andrzejressel/pulumi-gestalt/pull/2025)) [4b852e1](https://github.com/andrzejressel/pulumi-gestalt/commit/4b852e13de3611a8d013a04d6da56cb817b1fec0)
+- Update Rust crate sha1 to 0.11.0 ([#2014](https://github.com/andrzejressel/pulumi-gestalt/pull/2014)) [1e16a64](https://github.com/andrzejressel/pulumi-gestalt/commit/1e16a64889468fe2473a14b4755c9337bff342f2)
+- Update Rust crate tokio to v1.51.0 ([#2015](https://github.com/andrzejressel/pulumi-gestalt/pull/2015)) [fe45943](https://github.com/andrzejressel/pulumi-gestalt/commit/fe45943b447362cd734c3c8f96384f761b421bb1)
+- Update module github.com/pulumi/pulumi/pkg/v3 to v3.229.0 ([#2005](https://github.com/andrzejressel/pulumi-gestalt/pull/2005)) [04bb215](https://github.com/andrzejressel/pulumi-gestalt/commit/04bb215b4bcff881ccf26f959a00214ecf1b8209)
+- Update dependency pulumi to v3.229.0 ([#2004](https://github.com/andrzejressel/pulumi-gestalt/pull/2004)) [a7ef967](https://github.com/andrzejressel/pulumi-gestalt/commit/a7ef9678aee2755b30e9cd0ba15471b3d384e109)
+- Update module github.com/pulumi/pulumi/sdk/v3 to v3.229.0 ([#2003](https://github.com/andrzejressel/pulumi-gestalt/pull/2003)) [011ca97](https://github.com/andrzejressel/pulumi-gestalt/commit/011ca9714ec6c84ea210cc4a6f2adef7f784d778)
+- Bump go.opentelemetry.io/otel/sdk from 1.41.0 to 1.43.0 in /pulumi-language-gestalt ([#2000](https://github.com/andrzejressel/pulumi-gestalt/pull/2000)) [cee1ecc](https://github.com/andrzejressel/pulumi-gestalt/commit/cee1ecc928a46af745da2f12b3d8a06f5020a08d)
+- Bump go.opentelemetry.io/otel/sdk from 1.42.0 to 1.43.0 in /pulumi-language-rust ([#1999](https://github.com/andrzejressel/pulumi-gestalt/pull/1999)) [f0ffb96](https://github.com/andrzejressel/pulumi-gestalt/commit/f0ffb962593f072dfa17aec5ead243b5600f7807)
+- Bump go.opentelemetry.io/otel/sdk from 1.42.0 to 1.43.0 in /pulumi-test ([#1998](https://github.com/andrzejressel/pulumi-gestalt/pull/1998)) [11b9131](https://github.com/andrzejressel/pulumi-gestalt/commit/11b913121c2b55cf77ec413ba6d44b731d6c8508)
+- Update Rust crate libc to v0.2.184 ([#1997](https://github.com/andrzejressel/pulumi-gestalt/pull/1997)) [7c38c3f](https://github.com/andrzejressel/pulumi-gestalt/commit/7c38c3f226ecb973c5d23d2513068a020927686c)
+- fix(deps): update module google.golang.org/grpc to v1.80.0 ([#1996](https://github.com/andrzejressel/pulumi-gestalt/pull/1996)) [8065466](https://github.com/andrzejressel/pulumi-gestalt/commit/80654661a193eaf4bcdce03647f011feca8a919e)
+- Bump github.com/aws/aws-sdk-go-v2/service/s3 from 1.53.1 to 1.97.3 in /pulumi-language-rust ([#1995](https://github.com/andrzejressel/pulumi-gestalt/pull/1995)) [85206fa](https://github.com/andrzejressel/pulumi-gestalt/commit/85206fa15b4c1b12828656c2c279334a6695d061)
+- Bump github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream from 1.6.2 to 1.7.8 in /pulumi-language-rust ([#1994](https://github.com/andrzejressel/pulumi-gestalt/pull/1994)) [8d3e286](https://github.com/andrzejressel/pulumi-gestalt/commit/8d3e286ddacf8da1159604bc4e86d25d4f7b6c79)
+- chore(deps): update rust crate wat to v1.246.1 ([#1991](https://github.com/andrzejressel/pulumi-gestalt/pull/1991)) [1ac3ebb](https://github.com/andrzejressel/pulumi-gestalt/commit/1ac3ebbfa4238eb7f55c82b7525237a21a72d5f1)
+- chore(deps): update rust crate wat to v1.246.0 ([#1990](https://github.com/andrzejressel/pulumi-gestalt/pull/1990)) [b8bafa1](https://github.com/andrzejressel/pulumi-gestalt/commit/b8bafa173d3075ce224f80ad360e7fa94392f64f)
+- chore(deps): update rust crate wasmparser to 0.246.0 ([#1989](https://github.com/andrzejressel/pulumi-gestalt/pull/1989)) [bfa11a8](https://github.com/andrzejressel/pulumi-gestalt/commit/bfa11a8b4758a7068dcd75587cfc6d0dc0a7499e)
+- fix(deps): update module github.com/zclconf/go-cty to v1.18.0 ([#1988](https://github.com/andrzejressel/pulumi-gestalt/pull/1988)) [dd27ae8](https://github.com/andrzejressel/pulumi-gestalt/commit/dd27ae8dd6dad3294909e2abe87a517dfedd2b67)
+- Bump github.com/go-git/go-git/v5 from 5.16.5 to 5.17.1 in /pulumi-language-rust ([#1987](https://github.com/andrzejressel/pulumi-gestalt/pull/1987)) [dd1896c](https://github.com/andrzejressel/pulumi-gestalt/commit/dd1896c7c27e3445c06334587f0a8f17154e403c)
+</details>
+
+<details>
+<summary><h3>📝 Other Commits</h3></summary>
+
+- Update version to 0.0.9 [41313c5](https://github.com/andrzejressel/pulumi-gestalt/commit/41313c5e836e2105b31a60281e02c5bc3e74b3a1)
+- Document Rust language plugin ([#2112](https://github.com/andrzejressel/pulumi-gestalt/pull/2112)) [dadeec5](https://github.com/andrzejressel/pulumi-gestalt/commit/dadeec5f65cf227e97e93f5b848bca951e1522d2)
+- l1-builtin-stash ([#2109](https://github.com/andrzejressel/pulumi-gestalt/pull/2109)) [dc0b938](https://github.com/andrzejressel/pulumi-gestalt/commit/dc0b938aefa49c0612d65ee90649f4e90008de21)
+- l1-elide-index ([#2105](https://github.com/andrzejressel/pulumi-gestalt/pull/2105)) [256e144](https://github.com/andrzejressel/pulumi-gestalt/commit/256e1446ccfa3bceca292f147a5f8b67b9cdfe14)
+- Fix pulumi packageName ([#2100](https://github.com/andrzejressel/pulumi-gestalt/pull/2100)) [5efc9dc](https://github.com/andrzejressel/pulumi-gestalt/commit/5efc9dcdd4c945dab91e308636909daae9688b15)
+- Support rest of types ([#2099](https://github.com/andrzejressel/pulumi-gestalt/pull/2099)) [b32e03e](https://github.com/andrzejressel/pulumi-gestalt/commit/b32e03e9b393c0df25d83800383161533bd21c50)
+- Group Pulumi dependencies in renovate.json ([#2098](https://github.com/andrzejressel/pulumi-gestalt/pull/2098)) [55ef18e](https://github.com/andrzejressel/pulumi-gestalt/commit/55ef18e5ca9fbbc37f5ed8bd9f3efb8d809254d4)
+- l1-output-null ([#2093](https://github.com/andrzejressel/pulumi-gestalt/pull/2093)) [3f4d316](https://github.com/andrzejressel/pulumi-gestalt/commit/3f4d31657d55a8153110a4251926735cb512fff4)
+- Remove turbofish_method_call hack - add explicit type_params to MethodCall ([#2092](https://github.com/andrzejressel/pulumi-gestalt/pull/2092)) [bfb9c6e](https://github.com/andrzejressel/pulumi-gestalt/commit/bfb9c6ebc5bcd9dfe27f2a87d4bb51070afcdc31)
+- Code generator abstractions ([#2089](https://github.com/andrzejressel/pulumi-gestalt/pull/2089)) [9df03d7](https://github.com/andrzejressel/pulumi-gestalt/commit/9df03d70584f13416ccee27cd90a970019bdacd4)
+- l1-output-map ([#2080](https://github.com/andrzejressel/pulumi-gestalt/pull/2080)) [e33884d](https://github.com/andrzejressel/pulumi-gestalt/commit/e33884dc03bba1ef1d9ce049b289884df66df5ca)
+- Uncomment l1-builtin-file ([#2086](https://github.com/andrzejressel/pulumi-gestalt/pull/2086)) [43d207c](https://github.com/andrzejressel/pulumi-gestalt/commit/43d207cab6f93083745a94c9e631211542cf9628)
+- l1-builtin-file ([#2083](https://github.com/andrzejressel/pulumi-gestalt/pull/2083)) [f351f8c](https://github.com/andrzejressel/pulumi-gestalt/commit/f351f8c30440be74ab238e500688b8ab24d55c40)
+- Add more types to protobuf ([#2073](https://github.com/andrzejressel/pulumi-gestalt/pull/2073)) [bef00d7](https://github.com/andrzejressel/pulumi-gestalt/commit/bef00d7dd1eee218b88231eccdaf118c44841ec6)
+- l1-config-secret ([#2072](https://github.com/andrzejressel/pulumi-gestalt/pull/2072)) [9207179](https://github.com/andrzejressel/pulumi-gestalt/commit/92071795745d1c82e9eeaeb7c00c0c8fd0cc460d)
+- Move require_pulumi_version deeper into the stack ([#2071](https://github.com/andrzejressel/pulumi-gestalt/pull/2071)) [5cea0e2](https://github.com/andrzejressel/pulumi-gestalt/commit/5cea0e2f92d6038d07c6d2122a7bc1766d6189ca)
+- l1-builtin-require-pulumi-version ([#2069](https://github.com/andrzejressel/pulumi-gestalt/pull/2069)) [22eae98](https://github.com/andrzejressel/pulumi-gestalt/commit/22eae98271ba9e7ef5e3a38e6e1944a7d8768683)
+- Update external/pulumi ([#2070](https://github.com/andrzejressel/pulumi-gestalt/pull/2070)) [784c17a](https://github.com/andrzejressel/pulumi-gestalt/commit/784c17a79c8947e080a125723243bba209d07420)
+- Link l1 ignored tests to GitHub issues ([#2068](https://github.com/andrzejressel/pulumi-gestalt/pull/2068)) [2cf6ec1](https://github.com/andrzejressel/pulumi-gestalt/commit/2cf6ec10723852a22ef52dadf6539b08897b10e5)
+- l1-output-number ([#2059](https://github.com/andrzejressel/pulumi-gestalt/pull/2059)) [5406188](https://github.com/andrzejressel/pulumi-gestalt/commit/5406188f1835a315333e40ebac885f3efc8b947d)
+- Increase max checks retries to 10 ([#2057](https://github.com/andrzejressel/pulumi-gestalt/pull/2057)) [f521d21](https://github.com/andrzejressel/pulumi-gestalt/commit/f521d217526aa4754a0d97800c0ae8c48a25512e)
+- l1-config-types-primitive ([#2056](https://github.com/andrzejressel/pulumi-gestalt/pull/2056)) [6f67c9f](https://github.com/andrzejressel/pulumi-gestalt/commit/6f67c9f6676665fa2c1b09a053e370f0d361fca3)
+- Rename 'context' to 'ctx' for type Context ([#2052](https://github.com/andrzejressel/pulumi-gestalt/pull/2052)) [41bc2e7](https://github.com/andrzejressel/pulumi-gestalt/commit/41bc2e73cd15140720dc2ea1a11afa06db2bc2f5)
+- Create repository labels with Pulumi ([#2046](https://github.com/andrzejressel/pulumi-gestalt/pull/2046)) [f3565ef](https://github.com/andrzejressel/pulumi-gestalt/commit/f3565efdb4fe5ef102d75616f82911f1656d8dbd)
+- Use `&[FunctionCallArgument]` instead of `&Vec<FunctionCallArgument>` ([#2045](https://github.com/andrzejressel/pulumi-gestalt/pull/2045)) [6f6789f](https://github.com/andrzejressel/pulumi-gestalt/commit/6f6789f356b2c2ab063f0b2b8d3e132066dee398)
+- l1-builtin-secret ([#2042](https://github.com/andrzejressel/pulumi-gestalt/pull/2042)) [51b38b0](https://github.com/andrzejressel/pulumi-gestalt/commit/51b38b0093d3359b34e76b78298e2d4a6eddbd1c)
+- Fix windows deployment ([#2039](https://github.com/andrzejressel/pulumi-gestalt/pull/2039)) [d98fec3](https://github.com/andrzejressel/pulumi-gestalt/commit/d98fec307b80c1a95908a6b0ee7d368a4c6b9f66)
+- Update wasmtime to 43.0.1 ([#2038](https://github.com/andrzejressel/pulumi-gestalt/pull/2038)) [fdbcc44](https://github.com/andrzejressel/pulumi-gestalt/commit/fdbcc44d43fa16e7137ef71637e1a33acefcf6c9)
+- l1-output-array ([#2031](https://github.com/andrzejressel/pulumi-gestalt/pull/2031)) [7269614](https://github.com/andrzejressel/pulumi-gestalt/commit/726961427e8cce84dab871208b5f001daebaddb2)
+- l1-output-string ([#2032](https://github.com/andrzejressel/pulumi-gestalt/pull/2032)) [794e7af](https://github.com/andrzejressel/pulumi-gestalt/commit/794e7af67d96e0819c91914c28874464781b8c4e)
+- Separate language rust tests ([#2033](https://github.com/andrzejressel/pulumi-gestalt/pull/2033)) [2e8c775](https://github.com/andrzejressel/pulumi-gestalt/commit/2e8c7757c681f94fc200c6b8b42f46fd95b23eb9)
+- Revert "Enable pulumi-language-rust tests on macOS" ([#2030](https://github.com/andrzejressel/pulumi-gestalt/pull/2030)) [fa00608](https://github.com/andrzejressel/pulumi-gestalt/commit/fa00608cc42bc8f07c723852aef7986f81920723)
+- l1-output-bool ([#2028](https://github.com/andrzejressel/pulumi-gestalt/pull/2028)) [584bba7](https://github.com/andrzejressel/pulumi-gestalt/commit/584bba7685c8741a1f898597bcb94c6411f4fdb4)
+- l1-builtin-project-root-main ([#2024](https://github.com/andrzejressel/pulumi-gestalt/pull/2024)) [3473a3c](https://github.com/andrzejressel/pulumi-gestalt/commit/3473a3cb18a2d65daaae034039c45a514ad186bd)
+- l1-builtin-project-root ([#2023](https://github.com/andrzejressel/pulumi-gestalt/pull/2023)) [e25d9d6](https://github.com/andrzejressel/pulumi-gestalt/commit/e25d9d6cbe4b8c5ba548c6745e8af70f084d5858)
+- Rename add_stash_resource.yaml to 2008_add_stash_resource.yaml ([#2021](https://github.com/andrzejressel/pulumi-gestalt/pull/2021)) [a8c300f](https://github.com/andrzejressel/pulumi-gestalt/commit/a8c300f6195244f3fbadcb2e4915fd1bfb18d83b)
+- Add get_root_directory method ([#2020](https://github.com/andrzejressel/pulumi-gestalt/pull/2020)) [4a6e6e7](https://github.com/andrzejressel/pulumi-gestalt/commit/4a6e6e707cd6b561b5c6eed25eb9618890f653ba)
+- Add secret and unsecret methods ([#2017](https://github.com/andrzejressel/pulumi-gestalt/pull/2017)) [057897e](https://github.com/andrzejressel/pulumi-gestalt/commit/057897ef2f9e843e666452be7d4a0e97bc95a211)
+- l1-builtin-sha1 ([#2012](https://github.com/andrzejressel/pulumi-gestalt/pull/2012)) [2bfead5](https://github.com/andrzejressel/pulumi-gestalt/commit/2bfead59c89c197120642f24e8acd755993789f2)
+- Stash ([#2008](https://github.com/andrzejressel/pulumi-gestalt/pull/2008)) [3adb4db](https://github.com/andrzejressel/pulumi-gestalt/commit/3adb4dbb45383e17cbf7953bf0247eacb48006bb)
+- Sort expectedFailures ([#2007](https://github.com/andrzejressel/pulumi-gestalt/pull/2007)) [0759f52](https://github.com/andrzejressel/pulumi-gestalt/commit/0759f521afeebec5a373ae6c3c72361fdf11ce6d)
+- Enable pulumi-language-rust tests on macOS ([#2006](https://github.com/andrzejressel/pulumi-gestalt/pull/2006)) [223153e](https://github.com/andrzejressel/pulumi-gestalt/commit/223153eac2705d1c3a29ae370e08f86eb1ff1f11)
+- Test pulumi-language-rust ([#1992](https://github.com/andrzejressel/pulumi-gestalt/pull/1992)) [af63a45](https://github.com/andrzejressel/pulumi-gestalt/commit/af63a45de54d414b846242b43d9f4eceda8bd181)
+- Migrate pulumi-rust's go lib ([#1986](https://github.com/andrzejressel/pulumi-gestalt/pull/1986)) [31a2c03](https://github.com/andrzejressel/pulumi-gestalt/commit/31a2c035f68553cf8bc42d802fae45962e61eb8c)
+- Migrate pulumi-rust's rust lib ([#1985](https://github.com/andrzejressel/pulumi-gestalt/pull/1985)) [24db6e7](https://github.com/andrzejressel/pulumi-gestalt/commit/24db6e7ec9663d28ed07996b6b96bfe3538a0ffc)
+- Remove Pulumi Gestalt protobuf schema surface ([#1984](https://github.com/andrzejressel/pulumi-gestalt/pull/1984)) [82b40e4](https://github.com/andrzejressel/pulumi-gestalt/commit/82b40e4051e282547b62f5fa9f9627ed073802a5)
+- Update require_config_deserialize to use Deserialize instead of DeserializeOwned ([#1983](https://github.com/andrzejressel/pulumi-gestalt/pull/1983)) [932a36d](https://github.com/andrzejressel/pulumi-gestalt/commit/932a36de33a2fdb2099d657809c785ce5f60c343)
+- Restore version to 0.0.0-DEV [ea59961](https://github.com/andrzejressel/pulumi-gestalt/commit/ea59961e7be147bdf897d7100227651da184a54d)
+</details>
+
 ## [0.0.8](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.7...v0.0.8)
 ### Added
 - Add `pulumi_gestalt_rust::stdlib::to_base64` and `pulumi_gestalt_rust::stdlib::from_base64` ([#1900](https://github.com/andrzejressel/pulumi-gestalt/pull/1900)) ([#1932](https://github.com/andrzejressel/pulumi-gestalt/pull/1932)) [5cb8944](https://github.com/andrzejressel/pulumi-gestalt/commit/5cb8944d8b886632e0bcf09116cfaaaf2fa7e343)
@@ -108,6 +241,8 @@
 <details>
 <summary><h3>📝 Other Commits</h3></summary>
 
+- Release v0.0.8 [277c647](https://github.com/andrzejressel/pulumi-gestalt/commit/277c647ce5b924d2c558b71f81ab806c1728a1b9)
+- Update changelog for version 0.0.8 [30e6a45](https://github.com/andrzejressel/pulumi-gestalt/commit/30e6a45da9d4fd908b08aacc233dd311c0eeaed6)
 - Update version to 0.0.8 [9bac22c](https://github.com/andrzejressel/pulumi-gestalt/commit/9bac22c0cb62ae9a29137234362b179f2a9fc47e)
 - Add entries and lookup stdlib functions ([#1982](https://github.com/andrzejressel/pulumi-gestalt/pull/1982)) [4649a75](https://github.com/andrzejressel/pulumi-gestalt/commit/4649a7527cad16af5961598e3d935bb626e1a166)
 - List functions ([#1966](https://github.com/andrzejressel/pulumi-gestalt/pull/1966)) [2b2df9d](https://github.com/andrzejressel/pulumi-gestalt/commit/2b2df9dbed125456a9280d57d0121bdb56959e24)
