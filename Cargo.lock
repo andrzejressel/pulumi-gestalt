@@ -502,7 +502,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "changelog"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "changelog_lib",
@@ -511,7 +511,7 @@ dependencies = [
 
 [[package]]
 name = "changelog_lib"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "bon",
@@ -3424,7 +3424,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_build"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_generator",
@@ -3434,7 +3434,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_core"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "futures",
@@ -3448,7 +3448,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_deploy_repository"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "bon",
@@ -3461,7 +3461,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_domain"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -3472,7 +3472,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_c"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3480,7 +3480,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_dependencies"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3490,7 +3490,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_docker"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3500,7 +3500,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_failure"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3509,7 +3509,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_multiple_providers"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3520,7 +3520,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_native"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3530,7 +3530,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_plugins"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -3540,7 +3540,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_raw_rust"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3551,7 +3551,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_secret"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3561,7 +3561,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_simple"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3571,7 +3571,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_stash"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3580,7 +3580,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_test"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3590,7 +3590,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_typesystem"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "pulumi_gestalt_providers_typesystem",
  "pulumi_gestalt_rust",
@@ -3599,7 +3599,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_example_wasm"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
@@ -3608,7 +3608,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_examples_common"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -3617,7 +3617,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_generator"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "askama",
@@ -3639,7 +3639,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_grpc_connection"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -3657,7 +3657,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_proto"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "prost",
  "prost-types",
@@ -3667,7 +3667,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_aws_mini"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "bon",
  "pulumi_gestalt_build",
@@ -3678,7 +3678,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_azure_mini"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "bon",
  "pulumi_gestalt_build",
@@ -3689,7 +3689,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_cloudflare"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "bon",
  "pulumi_gestalt_build",
@@ -3700,7 +3700,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_docker"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "bon",
  "pulumi_gestalt_build",
@@ -3711,7 +3711,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_gcp_mini"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "bon",
  "pulumi_gestalt_build",
@@ -3722,7 +3722,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_random"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "bon",
  "pulumi_gestalt_build",
@@ -3733,7 +3733,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_test"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "bon",
  "pulumi_gestalt_build",
@@ -3744,7 +3744,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_typesystem"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "bon",
  "pulumi_gestalt_build",
@@ -3755,7 +3755,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_rust"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "base64",
@@ -3774,7 +3774,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_rust_integration"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "bon",
@@ -3792,7 +3792,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_rust_language_server"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "prettyplease",
  "prost",
@@ -3808,7 +3808,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_schema"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "convert_case",
@@ -3822,7 +3822,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_serde_constant_string"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "serde",
  "serde_json",
@@ -3830,7 +3830,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_wasm_runner"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "clap",
@@ -3851,7 +3851,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_wit"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "pulumi_gestalt_rust_integration",
  "wasmtime",
@@ -3860,7 +3860,7 @@ dependencies = [
 
 [[package]]
 name = "pulumi_native_c"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "cbindgen",
@@ -4030,7 +4030,7 @@ dependencies = [
 
 [[package]]
 name = "regenerator"
-version = "0.0.9"
+version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "itertools",
