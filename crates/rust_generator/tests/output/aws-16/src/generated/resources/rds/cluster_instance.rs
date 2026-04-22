@@ -82,9 +82,7 @@ pub mod cluster_instance {
         pub copy_tags_to_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.
         #[builder(into, default)]
-        pub custom_iam_instance_profile: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub custom_iam_instance_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the DB parameter group to associate with this instance.
         #[builder(into, default)]
         pub db_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -118,14 +116,10 @@ pub mod cluster_instance {
         pub monitoring_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether Performance Insights is enabled or not.
         #[builder(into, default)]
-        pub performance_insights_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub performance_insights_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ARN for the KMS key to encrypt Performance Insights data. When specifying `performance_insights_kms_key_id`, `performance_insights_enabled` needs to be set to true.
         #[builder(into, default)]
-        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time in days to retain Performance Insights data. Valid values are `7`, `731` (2 years) or a multiple of `31`. When specifying `performance_insights_retention_period`, `performance_insights_enabled` needs to be set to true. Defaults to '7'.
         #[builder(into, default)]
         pub performance_insights_retention_period: pulumi_gestalt_rust::Input<
@@ -136,9 +130,7 @@ pub mod cluster_instance {
         pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Window to perform maintenance in. Syntax: "ddd:hh24:mi-ddd:hh24:mi". Eg: "Mon:00:00-Mon:03:00".
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Default 0. Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoted to writer.
         #[builder(into, default)]
         pub promotion_tier: pulumi_gestalt_rust::Input<Option<i32>>,

@@ -184,14 +184,10 @@ pub mod frontdoor_route {
         pub cdn_frontdoor_origin_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A directory path on the Front Door Origin that can be used to retrieve content (e.g. `contoso.cloudapp.net/originpath`).
         #[builder(into, default)]
-        pub cdn_frontdoor_origin_path: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cdn_frontdoor_origin_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of the Front Door Rule Set IDs which should be assigned to this Front Door Route.
         #[builder(into, default)]
-        pub cdn_frontdoor_rule_set_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub cdn_frontdoor_rule_set_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Is this Front Door Route enabled? Possible values are `true` or `false`. Defaults to `true`.
         #[builder(into, default)]
         pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,

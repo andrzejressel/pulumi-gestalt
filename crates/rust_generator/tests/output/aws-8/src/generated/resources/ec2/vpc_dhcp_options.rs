@@ -77,9 +77,7 @@ pub mod vpc_dhcp_options {
         >,
         /// List of NETBIOS name servers.
         #[builder(into, default)]
-        pub netbios_name_servers: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub netbios_name_servers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The NetBIOS node type (1, 2, 4, or 8). AWS recommends to specify 2 since broadcast and multicast are not supported in their network. For more information about these node types, see [RFC 2132](http://www.ietf.org/rfc/rfc2132.txt).
         #[builder(into, default)]
         pub netbios_node_type: pulumi_gestalt_rust::Input<Option<String>>,

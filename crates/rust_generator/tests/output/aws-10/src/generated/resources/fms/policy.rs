@@ -54,14 +54,10 @@ pub mod policy {
     pub struct PolicyArgs {
         /// If true, the request will also perform a clean-up process. Defaults to `true`. More information can be found here [AWS Firewall Manager delete policy](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html)
         #[builder(into, default)]
-        pub delete_all_policy_resources: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub delete_all_policy_resources: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true, Firewall Manager will automatically remove protections from resources that leave the policy scope. Defaults to `false`. More information can be found here [AWS Firewall Manager policy contents](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html)
         #[builder(into, default)]
-        pub delete_unused_fm_managed_resources: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub delete_unused_fm_managed_resources: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The description of the AWS Network Firewall firewall policy.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,

@@ -134,9 +134,7 @@ pub mod virtual_network_peering {
         pub allow_gateway_transit: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Controls if the traffic from the local virtual network can reach the remote virtual network. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_virtual_network_access: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_virtual_network_access: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of local Subnet names that are Subnet peered with remote Virtual Network.
         #[builder(into, default)]
         pub local_subnet_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

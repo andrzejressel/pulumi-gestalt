@@ -78,9 +78,7 @@ pub mod instance {
     pub struct InstanceArgs {
         /// Specifies whether auto resolve best voices is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_resolve_best_voices_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub auto_resolve_best_voices_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether contact flow logs are enabled. Defaults to `false`.
         #[builder(into, default)]
         pub contact_flow_logs_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -104,9 +102,7 @@ pub mod instance {
         pub instance_alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether multi-party calls/conference is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub multi_party_conference_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub multi_party_conference_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether outbound calls are enabled.
         #[builder(into)]
         pub outbound_calls_enabled: pulumi_gestalt_rust::Input<bool>,

@@ -135,9 +135,7 @@ pub mod global_replication_group {
         >,
         /// The suffix name of a Global Datastore. If `global_replication_group_id_suffix` is changed, creates a new resource.
         #[builder(into)]
-        pub global_replication_group_id_suffix: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub global_replication_group_id_suffix: pulumi_gestalt_rust::Input<String>,
         /// The number of node groups (shards) on the global replication group.
         #[builder(into, default)]
         pub num_node_groups: pulumi_gestalt_rust::Input<Option<i32>>,

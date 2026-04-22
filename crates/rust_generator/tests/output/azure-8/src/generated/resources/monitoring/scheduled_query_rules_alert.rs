@@ -27,9 +27,7 @@ pub mod scheduled_query_rules_alert {
         >,
         /// List of Resource IDs referred into query.
         #[builder(into, default)]
-        pub authorized_resource_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub authorized_resource_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Should the alerts in this Metric Alert be auto resolved? Defaults to `false`.
         /// > **NOTE** `auto_mitigation_enabled` and `throttling` are mutually exclusive and cannot both be set.
         #[builder(into, default)]

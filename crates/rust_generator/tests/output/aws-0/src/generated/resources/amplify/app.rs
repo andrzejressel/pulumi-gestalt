@@ -210,9 +210,7 @@ pub mod app {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables automated branch creation for an Amplify app.
         #[builder(into, default)]
-        pub enable_auto_branch_creation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_auto_branch_creation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app.
         #[builder(into, default)]
         pub enable_basic_auth: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -221,9 +219,7 @@ pub mod app {
         pub enable_branch_auto_build: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
         #[builder(into, default)]
-        pub enable_branch_auto_deletion: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_branch_auto_deletion: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Environment variables map for an Amplify app.
         #[builder(into, default)]
         pub environment_variables: pulumi_gestalt_rust::Input<

@@ -181,14 +181,10 @@ pub mod network_attachment {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Projects that are allowed to connect to this network attachment. The project can be specified using its id or number.
         #[builder(into, default)]
-        pub producer_accept_lists: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub producer_accept_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Projects that are not allowed to connect to this network attachment. The project can be specified using its id or number.
         #[builder(into, default)]
-        pub producer_reject_lists: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub producer_reject_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]

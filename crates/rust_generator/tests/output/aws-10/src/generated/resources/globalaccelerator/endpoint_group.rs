@@ -53,9 +53,7 @@ pub mod endpoint_group {
         pub endpoint_group_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
         #[builder(into, default)]
-        pub health_check_interval_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub health_check_interval_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (`/`). the provider will only perform drift detection of its value when present in a configuration.
         #[builder(into, default)]
         pub health_check_path: pulumi_gestalt_rust::Input<Option<String>>,

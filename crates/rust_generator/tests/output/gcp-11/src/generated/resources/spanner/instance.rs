@@ -131,9 +131,7 @@ pub mod instance {
         /// if unset or NONE, no default backup schedule will be created for new databases within the instance.
         /// Possible values are: `NONE`, `AUTOMATIC`.
         #[builder(into, default)]
-        pub default_backup_schedule_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_backup_schedule_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The descriptive name for this instance as it appears in UIs. Must be
         /// unique per project and between 4 and 30 characters in length.
         ///

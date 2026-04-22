@@ -164,9 +164,7 @@ pub mod function {
         /// * `SECURE_ALWAYS` Requests for a URL that match this handler that do not use HTTPS are automatically redirected to the HTTPS URL with the same path. Query parameters are reserved for the redirect.
         /// * `SECURE_OPTIONAL` Both HTTP and HTTPS requests with URLs that match the handler succeed without redirects. The application can examine the request to determine which protocol was used and respond accordingly.
         #[builder(into, default)]
-        pub https_trigger_security_level: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub https_trigger_security_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL which triggers function execution. Returned only if `trigger_http` is used.
         #[builder(into, default)]
         pub https_trigger_url: pulumi_gestalt_rust::Input<Option<String>>,
@@ -246,9 +244,7 @@ pub mod function {
         pub vpc_connector: pulumi_gestalt_rust::Input<Option<String>>,
         /// The egress settings for the connector, controlling what traffic is diverted through it. Allowed values are `ALL_TRAFFIC` and `PRIVATE_RANGES_ONLY`. Defaults to `PRIVATE_RANGES_ONLY`. If unset, this field preserves the previously set value.
         #[builder(into, default)]
-        pub vpc_connector_egress_settings: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub vpc_connector_egress_settings: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FunctionResult {

@@ -97,9 +97,7 @@ pub mod pipeline {
         pub folder: pulumi_gestalt_rust::Input<Option<String>>,
         /// The TimeSpan value after which an Azure Monitoring Metric is fired.
         #[builder(into, default)]
-        pub moniter_metrics_after_duration: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub moniter_metrics_after_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Data Factory Pipeline. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

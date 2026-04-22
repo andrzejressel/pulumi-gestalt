@@ -18,9 +18,7 @@ pub mod get_instance_type_offering {
         pub location_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred EC2 Instance Types. The first match in this list will be returned. If no preferred matches are found and the original search returned more than one result, an error is returned.
         #[builder(into, default)]
-        pub preferred_instance_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_instance_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceTypeOfferingResult {

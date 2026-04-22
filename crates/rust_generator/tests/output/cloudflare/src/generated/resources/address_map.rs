@@ -65,9 +65,7 @@ pub mod address_map {
         pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The set of IPs on the Address Map.
         #[builder(into, default)]
-        pub ips: pulumi_gestalt_rust::Input<
-            Option<Vec<super::types::AddressMapIp>>,
-        >,
+        pub ips: pulumi_gestalt_rust::Input<Option<Vec<super::types::AddressMapIp>>>,
         /// Zones and Accounts which will be assigned IPs on this Address Map.
         #[builder(into, default)]
         pub memberships: pulumi_gestalt_rust::Input<

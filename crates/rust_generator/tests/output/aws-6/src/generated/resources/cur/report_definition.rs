@@ -44,9 +44,7 @@ pub mod report_definition {
     pub struct ReportDefinitionArgs {
         /// A list of additional artifacts. Valid values are: `REDSHIFT`, `QUICKSIGHT`, `ATHENA`. When ATHENA exists within additional_artifacts, no other artifact type can be declared and report_versioning must be `OVERWRITE_REPORT`.
         #[builder(into, default)]
-        pub additional_artifacts: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub additional_artifacts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of schema elements. Valid values are: `RESOURCES`, `SPLIT_COST_ALLOCATION_DATA`.
         #[builder(into)]
         pub additional_schema_elements: pulumi_gestalt_rust::Input<Vec<String>>,

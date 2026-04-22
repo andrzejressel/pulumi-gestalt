@@ -184,9 +184,7 @@ pub mod agent_agent_action_group {
         >,
         /// To allow your agent to request the user for additional information when trying to complete a task, set this argument to `AMAZON.UserInput`. You must leave the `description`, `api_schema`, and `action_group_executor` arguments blank for this action group. Valid values: `AMAZON.UserInput`.
         #[builder(into, default)]
-        pub parent_action_group_signature: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub parent_action_group_signature: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not to prepare the agent after creation or modification. Defaults to `true`.
         #[builder(into, default)]
         pub prepare_agent: pulumi_gestalt_rust::Input<Option<bool>>,

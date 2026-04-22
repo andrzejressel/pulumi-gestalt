@@ -56,9 +56,7 @@ pub mod hybrid_connection {
         pub relay_namespace_name: pulumi_gestalt_rust::Input<String>,
         /// Specify if client authorization is needed for this hybrid connection. Changing this forces a new resource to be created. Defaults to `true`.
         #[builder(into, default)]
-        pub requires_client_authorization: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub requires_client_authorization: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

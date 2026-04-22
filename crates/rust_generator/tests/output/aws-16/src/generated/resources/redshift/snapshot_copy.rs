@@ -46,9 +46,7 @@ pub mod snapshot_copy {
         pub destination_region: pulumi_gestalt_rust::Input<String>,
         /// Number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the source AWS Region. If the value is `-1`, the manual snapshot is retained indefinitely.
         #[builder(into, default)]
-        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Number of days to retain automated snapshots in the destination region after they are copied from the source region.
         #[builder(into, default)]
         pub retention_period: pulumi_gestalt_rust::Input<Option<i32>>,

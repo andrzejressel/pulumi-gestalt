@@ -43,9 +43,7 @@ pub mod integration_response {
         pub api_id: pulumi_gestalt_rust::Input<String>,
         /// How to handle response payload content type conversions. Valid values: `CONVERT_TO_BINARY`, `CONVERT_TO_TEXT`.
         #[builder(into, default)]
-        pub content_handling_strategy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub content_handling_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the `aws.apigatewayv2.Integration`.
         #[builder(into)]
         pub integration_id: pulumi_gestalt_rust::Input<String>,
@@ -59,9 +57,7 @@ pub mod integration_response {
         >,
         /// The [template selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-template-selection-expressions) for the integration response.
         #[builder(into, default)]
-        pub template_selection_expression: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub template_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IntegrationResponseResult {

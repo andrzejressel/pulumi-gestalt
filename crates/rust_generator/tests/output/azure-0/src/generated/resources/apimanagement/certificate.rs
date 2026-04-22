@@ -145,9 +145,7 @@ pub mod certificate {
         ///
         /// > **NOTE:** If not specified, will use System Assigned identity of the API Management Service.
         #[builder(into, default)]
-        pub key_vault_identity_client_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub key_vault_identity_client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Key Vault Secret containing the SSL Certificate, which must be of the type `application/x-pkcs12`.
         ///
         /// > **NOTE:** Setting this field requires the `identity` block to be specified in API Management Service, since this identity is used to retrieve the Key Vault Certificate. Possible values are versioned or versionless secret ID. Auto-updating the Certificate from the Key Vault requires that Secret version isn't specified.

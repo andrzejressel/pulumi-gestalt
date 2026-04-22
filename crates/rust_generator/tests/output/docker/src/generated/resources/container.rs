@@ -140,9 +140,7 @@ pub mod container {
         pub hostname: pulumi_gestalt_rust::Input<Option<String>>,
         /// Hostname to add
         #[builder(into, default)]
-        pub hosts: pulumi_gestalt_rust::Input<
-            Option<Vec<super::types::ContainerHost>>,
-        >,
+        pub hosts: pulumi_gestalt_rust::Input<Option<Vec<super::types::ContainerHost>>>,
         /// The ID of the image to back this container. The easiest way to get this value is to use the `docker.RemoteImage` resource as is shown in the example.
         #[builder(into)]
         pub image: pulumi_gestalt_rust::Input<String>,
@@ -202,9 +200,7 @@ pub mod container {
         pub pid_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Publish a container's port(s) to the host.
         #[builder(into, default)]
-        pub ports: pulumi_gestalt_rust::Input<
-            Option<Vec<super::types::ContainerPort>>,
-        >,
+        pub ports: pulumi_gestalt_rust::Input<Option<Vec<super::types::ContainerPort>>>,
         /// If `true`, the container runs in privileged mode.
         #[builder(into, default)]
         pub privileged: pulumi_gestalt_rust::Input<Option<bool>>,

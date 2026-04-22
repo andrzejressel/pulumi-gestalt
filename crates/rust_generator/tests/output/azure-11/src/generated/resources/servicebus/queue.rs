@@ -86,9 +86,7 @@ pub mod queue {
         pub max_delivery_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Integer value which controls the maximum size of a message allowed on the queue for Premium SKU. For supported values see the "Large messages support" section of [this document](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-premium-messaging#large-messages-support-preview).
         #[builder(into, default)]
-        pub max_message_size_in_kilobytes: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub max_message_size_in_kilobytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Integer value which controls the size of memory allocated for the queue. For supported values see the "Queue or topic size" section of [Service Bus Quotas](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quotas).
         #[builder(into, default)]
         pub max_size_in_megabytes: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -105,9 +103,7 @@ pub mod queue {
         pub partitioning_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag which controls whether the Queue requires duplicate detection. Changing this forces a new resource to be created. Defaults to `false`.
         #[builder(into, default)]
-        pub requires_duplicate_detection: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub requires_duplicate_detection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag which controls whether the Queue requires sessions. This will allow ordered handling of unbounded sequences of related messages. With sessions enabled a queue can guarantee first-in-first-out delivery of messages. Changing this forces a new resource to be created. Defaults to `false`.
         #[builder(into, default)]
         pub requires_session: pulumi_gestalt_rust::Input<Option<bool>>,

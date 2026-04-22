@@ -38,9 +38,7 @@ pub mod default_subnet {
     #[allow(dead_code)]
     pub struct DefaultSubnetArgs {
         #[builder(into, default)]
-        pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// is required
         /// * The `availability_zone_id`, `cidr_block` and `vpc_id` arguments become computed attributes
         /// * The default value for `map_public_ip_on_launch` is `true`
@@ -68,9 +66,7 @@ pub mod default_subnet {
         #[builder(into, default)]
         pub ipv6_native: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub map_customer_owned_ip_on_launch: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub map_customer_owned_ip_on_launch: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub map_public_ip_on_launch: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]

@@ -222,9 +222,7 @@ pub mod data_transfer_config {
         /// Pub/Sub topic where notifications will be sent after transfer runs
         /// associated with this transfer config finish.
         #[builder(into, default)]
-        pub notification_pubsub_topic: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub notification_pubsub_topic: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters specific to each data source. For more information see the bq tab in the 'Setting up a data transfer'
         /// section for each data source. For example the parameters for Cloud Storage transfers are listed here:
         /// https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq

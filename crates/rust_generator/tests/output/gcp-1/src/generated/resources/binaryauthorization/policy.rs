@@ -182,9 +182,7 @@ pub mod policy {
         /// Controls the evaluation of a Google-maintained global admission policy for common system-level images. Images not
         /// covered by the global policy will be subject to the project admission policy. Possible values: ["ENABLE", "DISABLE"]
         #[builder(into, default)]
-        pub global_policy_evaluation_mode: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub global_policy_evaluation_mode: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }

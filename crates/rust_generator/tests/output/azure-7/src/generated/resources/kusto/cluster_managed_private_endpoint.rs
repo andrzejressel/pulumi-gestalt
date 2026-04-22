@@ -78,9 +78,7 @@ pub mod cluster_managed_private_endpoint {
         pub private_link_resource_id: pulumi_gestalt_rust::Input<String>,
         /// The region of the resource to which the managed private endpoint is created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub private_link_resource_region: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub private_link_resource_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user request message.
         #[builder(into, default)]
         pub request_message: pulumi_gestalt_rust::Input<Option<String>>,

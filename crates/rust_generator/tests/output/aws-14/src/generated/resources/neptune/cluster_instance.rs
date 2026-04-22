@@ -83,14 +83,10 @@ pub mod cluster_instance {
         pub instance_class: pulumi_gestalt_rust::Input<String>,
         /// The name of the neptune parameter group to associate with this instance.
         #[builder(into, default)]
-        pub neptune_parameter_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub neptune_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A subnet group to associate with this neptune instance. **NOTE:** This must match the `neptune_subnet_group_name` of the attached `aws.neptune.Cluster`.
         #[builder(into, default)]
-        pub neptune_subnet_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub neptune_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port on which the DB accepts connections. Defaults to `8182`.
         #[builder(into, default)]
         pub port: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -100,9 +96,7 @@ pub mod cluster_instance {
         /// The window to perform maintenance in.
         /// Syntax: "ddd:hh24:mi-ddd:hh24:mi". Eg: "Mon:00:00-Mon:03:00".
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Default 0. Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoter to writer.
         #[builder(into, default)]
         pub promotion_tier: pulumi_gestalt_rust::Input<Option<i32>>,

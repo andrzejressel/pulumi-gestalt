@@ -203,9 +203,7 @@ pub mod broker {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub users: pulumi_gestalt_rust::Input<
-            Vec<super::super::types::mq::BrokerUser>,
-        >,
+        pub users: pulumi_gestalt_rust::Input<Vec<super::super::types::mq::BrokerUser>>,
     }
     #[allow(dead_code)]
     pub struct BrokerResult {

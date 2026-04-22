@@ -80,9 +80,7 @@ pub mod replication_subnet_group {
     pub struct ReplicationSubnetGroupArgs {
         /// Description for the subnet group.
         #[builder(into)]
-        pub replication_subnet_group_description: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub replication_subnet_group_description: pulumi_gestalt_rust::Input<String>,
         /// Name for the replication subnet group. This value is stored as a lowercase string. It must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens and cannot be `default`.
         #[builder(into)]
         pub replication_subnet_group_id: pulumi_gestalt_rust::Input<String>,

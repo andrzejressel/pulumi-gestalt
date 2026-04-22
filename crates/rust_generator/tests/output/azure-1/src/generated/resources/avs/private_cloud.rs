@@ -56,9 +56,7 @@ pub mod private_cloud {
         /// Is the Azure VMware Solution Private Cloud connected to the internet? This field can not be updated with `management_cluster[0].size` together.
         /// > **NOTE :** `internet_connection_enabled` and `management_cluster[0].size` cannot be updated at the same time.
         #[builder(into, default)]
-        pub internet_connection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub internet_connection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure Region where the Azure VMware Solution Private Cloud should exist. Changing this forces a new Azure VMware Solution Private Cloud to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

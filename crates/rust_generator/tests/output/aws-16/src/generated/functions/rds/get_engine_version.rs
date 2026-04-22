@@ -38,14 +38,10 @@ pub mod get_engine_version {
         pub parameter_group_family: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred major version upgrade targets. The engine version will be the first match in the list unless the `latest` parameter is set to `true`. The engine version will be the default version if you don't include any criteria, such as `preferred_major_targets`.
         #[builder(into, default)]
-        pub preferred_major_targets: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_major_targets: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Ordered list of preferred version upgrade targets. The engine version will be the first match in this list unless the `latest` parameter is set to `true`. The engine version will be the default version if you don't include any criteria, such as `preferred_upgrade_targets`.
         #[builder(into, default)]
-        pub preferred_upgrade_targets: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_upgrade_targets: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Ordered list of preferred versions. The engine version will be the first match in this list unless the `latest` parameter is set to `true`. The engine version will be the default version if you don't include any criteria, such as `preferred_versions`.
         #[builder(into, default)]
         pub preferred_versions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

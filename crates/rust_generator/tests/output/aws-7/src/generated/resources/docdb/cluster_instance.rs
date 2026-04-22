@@ -72,9 +72,7 @@ pub mod cluster_instance {
         pub copy_tags_to_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A value that indicates whether to enable Performance Insights for the DB Instance. Default `false`. See [docs] (https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html) about the details.
         #[builder(into, default)]
-        pub enable_performance_insights: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_performance_insights: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the database engine to be used for the DocumentDB instance. Defaults to `docdb`. Valid Values: `docdb`.
         #[builder(into, default)]
         pub engine: pulumi_gestalt_rust::Input<Option<String>>,
@@ -112,15 +110,11 @@ pub mod cluster_instance {
         pub instance_class: pulumi_gestalt_rust::Input<String>,
         /// The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
         #[builder(into, default)]
-        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The window to perform maintenance in.
         /// Syntax: "ddd:hh24:mi-ddd:hh24:mi". Eg: "Mon:00:00-Mon:03:00".
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Default 0. Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoter to writer.
         #[builder(into, default)]
         pub promotion_tier: pulumi_gestalt_rust::Input<Option<i32>>,

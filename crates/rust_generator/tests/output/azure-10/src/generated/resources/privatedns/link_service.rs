@@ -133,9 +133,7 @@ pub mod link_service {
         ///
         /// > **NOTE:** If no Subscription IDs are specified then Azure allows every Subscription to see this Private Link Service.
         #[builder(into, default)]
-        pub visibility_subscription_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub visibility_subscription_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct LinkServiceResult {

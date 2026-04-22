@@ -78,9 +78,7 @@ pub mod alert_rule_ms_security_incident {
         >,
         /// Only create incidents when the alert display name contain text from this list, leave empty to apply no filter.
         #[builder(into, default)]
-        pub display_name_filters: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub display_name_filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Should this Sentinel MS Security Incident Alert Rule be enabled? Defaults to `true`.
         #[builder(into, default)]
         pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,

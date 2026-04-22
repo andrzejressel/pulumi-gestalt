@@ -118,9 +118,7 @@ pub mod resource_deployment_script_power_shell {
         >,
         /// Supporting files for the external script. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub supporting_script_uris: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub supporting_script_uris: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A mapping of tags which should be assigned to the Resource Deployment Script.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

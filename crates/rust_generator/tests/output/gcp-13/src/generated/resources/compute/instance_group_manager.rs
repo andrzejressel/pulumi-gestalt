@@ -177,9 +177,7 @@ pub mod instance_group_manager {
         /// response. If `PAGINATED`, pagination is enabled, `maxResults` and `pageToken` query parameters are
         /// respected.
         #[builder(into, default)]
-        pub list_managed_instances_results: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub list_managed_instances_results: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the instance group manager. Must be 1-63
         /// characters long and comply with
         /// [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters
@@ -264,9 +262,7 @@ pub mod instance_group_manager {
         /// set, it will wait for the version target to be reached and any per instance configs to be effective as well as all
         /// instances to be stable before returning. The possible values are `STABLE` and `UPDATED`
         #[builder(into, default)]
-        pub wait_for_instances_status: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub wait_for_instances_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone that instances in this group should be created
         /// in.
         ///

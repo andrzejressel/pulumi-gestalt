@@ -115,16 +115,12 @@ pub mod virtual_machine {
         ///
         /// > **Note:** This setting works when instance is deleted via the provider only and don't forget to delete disks manually if you deleted VM manually. It can increase spending.
         #[builder(into, default)]
-        pub delete_data_disks_on_termination: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub delete_data_disks_on_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the OS Disk (either the Managed Disk / VHD Blob) be deleted when the Virtual Machine is destroyed? Defaults to `false`.
         ///
         /// > **Note:** This setting works when instance is deleted via the provider only and don't forget to delete disks manually if you deleted VM manually. It can increase spending.
         #[builder(into, default)]
-        pub delete_os_disk_on_termination: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub delete_os_disk_on_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
         pub identity: pulumi_gestalt_rust::Input<
@@ -169,14 +165,10 @@ pub mod virtual_machine {
         >,
         /// The ID of the Network Interface (which must be attached to the Virtual Machine) which should be the Primary Network Interface for this Virtual Machine.
         #[builder(into, default)]
-        pub primary_network_interface_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub primary_network_interface_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Proximity Placement Group to which this Virtual Machine should be assigned. Changing this forces a new resource to be created
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group in which the Virtual Machine should exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

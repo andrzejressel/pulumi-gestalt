@@ -83,9 +83,7 @@ pub mod security_profile_group {
         pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// Reference to a SecurityProfile with the threat prevention configuration for the SecurityProfileGroup.
         #[builder(into, default)]
-        pub threat_prevention_profile: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub threat_prevention_profile: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SecurityProfileGroupResult {

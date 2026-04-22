@@ -10,14 +10,10 @@ pub mod get_recommendations {
     pub struct GetRecommendationsArgs {
         /// Specifies a list of categories in which the Advisor Recommendations will be listed. Possible values are `HighAvailability`, `Security`, `Performance`, `Cost` and `OperationalExcellence`.
         #[builder(into, default)]
-        pub filter_by_categories: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub filter_by_categories: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies a list of resource groups about which the Advisor Recommendations will be listed.
         #[builder(into, default)]
-        pub filter_by_resource_groups: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub filter_by_resource_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetRecommendationsResult {

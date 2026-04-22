@@ -67,9 +67,7 @@ pub mod image {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Virtual Machine ID from which to create the image.
         #[builder(into, default)]
-        pub source_virtual_machine_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub source_virtual_machine_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

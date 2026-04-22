@@ -81,9 +81,7 @@ pub mod api_tag_description {
         >,
         /// The URL of external documentation resources describing the tag.
         #[builder(into, default)]
-        pub external_documentation_url: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub external_documentation_url: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiTagDescriptionResult {

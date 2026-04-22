@@ -79,9 +79,7 @@ pub mod recommendation_preferences {
     pub struct RecommendationPreferencesArgs {
         /// The status of the enhanced infrastructure metrics recommendation preference. Valid values: `Active`, `Inactive`.
         #[builder(into, default)]
-        pub enhanced_infrastructure_metrics: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub enhanced_infrastructure_metrics: pulumi_gestalt_rust::Input<Option<String>>,
         /// The provider of the external metrics recommendation preference. See External Metrics Preference below.
         #[builder(into, default)]
         pub external_metrics_preference: pulumi_gestalt_rust::Input<

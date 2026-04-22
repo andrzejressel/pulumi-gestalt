@@ -184,9 +184,7 @@ pub mod backend_bucket {
         pub compression_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Headers that the HTTP/S load balancer should add to proxied responses.
         #[builder(into, default)]
-        pub custom_response_headers: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_response_headers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An optional textual description of the resource; provided by the
         /// client when the resource is created.
         #[builder(into, default)]

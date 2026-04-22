@@ -193,14 +193,10 @@ pub mod server_microsoft_support_auditing_policy {
         pub server_id: pulumi_gestalt_rust::Input<String>,
         /// The access key to use for the auditing storage account.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Subscription containing the Storage Account.
         #[builder(into, default)]
-        pub storage_account_subscription_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_subscription_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ServerMicrosoftSupportAuditingPolicyResult {

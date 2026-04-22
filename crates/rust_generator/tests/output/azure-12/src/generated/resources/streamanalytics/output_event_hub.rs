@@ -99,9 +99,7 @@ pub mod output_event_hub {
         pub shared_access_policy_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc. Required when `authentication_mode` is set to `ConnectionString`.
         #[builder(into, default)]
-        pub shared_access_policy_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub shared_access_policy_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
         pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,

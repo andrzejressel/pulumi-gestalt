@@ -99,9 +99,7 @@ pub mod ontap_file_system {
     pub struct OntapFileSystemArgs {
         /// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days.
         #[builder(into, default)]
-        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A recurring daily time, in the format HH:MM. HH is the zero-padded hour of the day (0-23), and MM is the zero-padded minute of the hour. For example, 05:00 specifies 5 AM daily. Requires `automatic_backup_retention_days` to be set.
         #[builder(into, default)]
         pub daily_automatic_backup_start_time: pulumi_gestalt_rust::Input<
@@ -117,9 +115,7 @@ pub mod ontap_file_system {
         >,
         /// Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
         #[builder(into, default)]
-        pub endpoint_ip_address_range: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub endpoint_ip_address_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ONTAP administrative password for the fsxadmin user that you can use to administer your file system using the ONTAP CLI and REST API.
         #[builder(into, default)]
         pub fsx_admin_password: pulumi_gestalt_rust::Input<Option<String>>,
@@ -157,14 +153,10 @@ pub mod ontap_file_system {
         pub throughput_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Sets the per-HA-pair throughput capacity (in MBps) for the file system that you're creating, as opposed to `throughput_capacity` which specifies the total throughput capacity for the file system. Valid value for `MULTI_AZ_1` and `SINGLE_AZ_1` are `128`, `256`, `512`, `1024`, `2048`, and `4096`. Valid values for deployment type `MULTI_AZ_2` and `SINGLE_AZ_2` are `384`,`768`,`1536`,`3072`,`6144` where `ha_pairs` is `1`. Valid values for deployment type `SINGLE_AZ_2` are `1536`, `3072`, and `6144` where `ha_pairs` is greater than 1. This parameter is only supported when specifying the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
         #[builder(into, default)]
-        pub throughput_capacity_per_ha_pair: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub throughput_capacity_per_ha_pair: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone.
         #[builder(into, default)]
-        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OntapFileSystemResult {

@@ -102,14 +102,10 @@ pub mod event_subscription {
         pub expiration_time_utc: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the id where the Hybrid Connection is located.
         #[builder(into, default)]
-        pub hybrid_connection_endpoint_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub hybrid_connection_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of applicable event types that need to be part of the event subscription.
         #[builder(into, default)]
-        pub included_event_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub included_event_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of labels to assign to the event subscription.
         #[builder(into, default)]
         pub labels: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
@@ -126,14 +122,10 @@ pub mod event_subscription {
         pub scope: pulumi_gestalt_rust::Input<String>,
         /// Specifies the id where the Service Bus Queue is located.
         #[builder(into, default)]
-        pub service_bus_queue_endpoint_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub service_bus_queue_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the id where the Service Bus Topic is located.
         #[builder(into, default)]
-        pub service_bus_topic_endpoint_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub service_bus_topic_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `storage_blob_dead_letter_destination` block as defined below.
         #[builder(into, default)]
         pub storage_blob_dead_letter_destination: pulumi_gestalt_rust::Input<

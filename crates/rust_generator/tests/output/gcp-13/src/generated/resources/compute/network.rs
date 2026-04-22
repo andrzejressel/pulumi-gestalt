@@ -168,9 +168,7 @@ pub mod network {
         /// The BGP best selection algorithm to be employed. MODE can be LEGACY or STANDARD.
         /// Possible values are: `LEGACY`, `STANDARD`.
         #[builder(into, default)]
-        pub bgp_best_path_selection_mode: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub bgp_best_path_selection_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Choice of the behavior of inter-regional cost and MED in the BPS algorithm.
         /// Possible values are: `DEFAULT`, `ADD_COST_TO_MED`.
         #[builder(into, default)]
@@ -178,9 +176,7 @@ pub mod network {
         /// If set to `true`, default routes (`0.0.0.0/0`) will be deleted
         /// immediately after network creation. Defaults to `false`.
         #[builder(into, default)]
-        pub delete_default_routes_on_create: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub delete_default_routes_on_create: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An optional description of this resource. The resource must be
         /// recreated to modify this field.
         #[builder(into, default)]

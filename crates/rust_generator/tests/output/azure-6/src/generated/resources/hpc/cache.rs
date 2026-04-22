@@ -100,9 +100,7 @@ pub mod cache {
         >,
         /// A `dns` block as defined below.
         #[builder(into, default)]
-        pub dns: pulumi_gestalt_rust::Input<
-            Option<super::super::types::hpc::CacheDns>,
-        >,
+        pub dns: pulumi_gestalt_rust::Input<Option<super::super::types::hpc::CacheDns>>,
         /// An `identity` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub identity: pulumi_gestalt_rust::Input<

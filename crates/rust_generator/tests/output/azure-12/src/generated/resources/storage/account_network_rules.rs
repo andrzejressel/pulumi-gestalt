@@ -111,9 +111,7 @@ pub mod account_network_rules {
         ///
         /// > **NOTE** User has to explicitly set `virtual_network_subnet_ids` to empty slice (`[]`) to remove it.
         #[builder(into, default)]
-        pub virtual_network_subnet_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub virtual_network_subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct AccountNetworkRulesResult {

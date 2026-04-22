@@ -478,9 +478,7 @@ pub mod router_peer {
         /// You can choose a value from 0 to 65335. If you don't provide a value,
         /// Google Cloud assigns a priority of 100 to the ranges.
         #[builder(into, default)]
-        pub custom_learned_route_priority: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub custom_learned_route_priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The status of the BGP peer connection. If set to false, any active session
         /// with the peer is terminated and all associated routing information is removed.
         /// If set to true, the peer connection can be established with routing information.
@@ -541,17 +539,13 @@ pub mod router_peer {
         pub peer_ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// IPv4 address of the BGP interface outside Google Cloud Platform.
         #[builder(into, default)]
-        pub peer_ipv4_nexthop_address: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub peer_ipv4_nexthop_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// IPv6 address of the BGP interface outside Google Cloud Platform.
         /// The address must be in the range 2600:2d00:0:2::/64 or 2600:2d00:0:3::/64.
         /// If you do not specify the next hop addresses, Google Cloud automatically
         /// assigns unused addresses from the 2600:2d00:0:2::/64 or 2600:2d00:0:3::/64 range for you.
         #[builder(into, default)]
-        pub peer_ipv6_nexthop_address: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub peer_ipv6_nexthop_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
@@ -571,9 +565,7 @@ pub mod router_peer {
         /// The VM instance must be located in zones contained in the same region as
         /// this Cloud Router. The VM instance is the peer side of the BGP session.
         #[builder(into, default)]
-        pub router_appliance_instance: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub router_appliance_instance: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RouterPeerResult {

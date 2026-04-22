@@ -77,9 +77,7 @@ pub mod kubernetes_cluster {
         ///
         /// > **Note:** Cluster Auto-Upgrade only updates to GA versions of Kubernetes and will not update to Preview versions.
         #[builder(into, default)]
-        pub automatic_upgrade_channel: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub automatic_upgrade_channel: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `azure_active_directory_role_based_access_control` block as defined below.
         #[builder(into, default)]
         pub azure_active_directory_role_based_access_control: pulumi_gestalt_rust::Input<
@@ -117,9 +115,7 @@ pub mod kubernetes_cluster {
         ///
         /// In addition, one of either `identity` or `service_principal` blocks must be specified.
         #[builder(into, default)]
-        pub dns_prefix_private_cluster: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub dns_prefix_private_cluster: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Extended Zone (formerly called Edge Zone) within the Azure Region where this Managed Kubernetes Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub edge_zone: pulumi_gestalt_rust::Input<Option<String>>,
@@ -127,9 +123,7 @@ pub mod kubernetes_cluster {
         ///
         /// > **Note:** At this time HTTP Application Routing is not supported in Azure China or Azure US Government.
         #[builder(into, default)]
-        pub http_application_routing_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub http_application_routing_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `http_proxy_config` block as defined below.
         #[builder(into, default)]
         pub http_proxy_config: pulumi_gestalt_rust::Input<
@@ -149,9 +143,7 @@ pub mod kubernetes_cluster {
         pub image_cleaner_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the interval in hours when images should be cleaned up. Defaults to `0`.
         #[builder(into, default)]
-        pub image_cleaner_interval_hours: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub image_cleaner_interval_hours: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A `ingress_application_gateway` block as defined below.
         ///
         /// > **Note:** Since the Application Gateway is deployed inside a Virtual Network, users (and Service Principals) that are operating the Application Gateway must have the `Microsoft.Network/virtualNetworks/subnets/join/action` permission on the Virtual Network or Subnet. For more details, please visit [Virtual Network Permission](https://learn.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure#virtual-network-permission).
@@ -337,9 +329,7 @@ pub mod kubernetes_cluster {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Whether Role Based Access Control for the Kubernetes Cluster should be enabled. Defaults to `true`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub role_based_access_control_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub role_based_access_control_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to enable run command for the cluster or not. Defaults to `true`.
         #[builder(into, default)]
         pub run_command_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

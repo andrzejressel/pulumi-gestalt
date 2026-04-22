@@ -242,9 +242,7 @@ pub mod topic {
         /// The rotation period has the format of a decimal number, followed by the
         /// letter `s` (seconds). Cannot be more than 31 days or less than 10 minutes.
         #[builder(into, default)]
-        pub message_retention_duration: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub message_retention_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy constraining the set of Google Cloud Platform regions where
         /// messages published to the topic may be stored. If not present, then no
         /// constraints are in effect.

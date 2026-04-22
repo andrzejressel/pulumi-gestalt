@@ -49,9 +49,7 @@ pub mod endpoint_access {
         pub subnet_group_name: pulumi_gestalt_rust::Input<String>,
         /// The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct EndpointAccessResult {

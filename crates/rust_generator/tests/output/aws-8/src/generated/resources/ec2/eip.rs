@@ -135,9 +135,7 @@ pub mod eip {
         pub address: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-specified primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.
         #[builder(into, default)]
-        pub associate_with_private_ip: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub associate_with_private_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID  of a customer-owned address pool. For more on customer owned IP addressed check out [Customer-owned IP addresses guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing).
         #[builder(into, default)]
         pub customer_owned_ipv4_pool: pulumi_gestalt_rust::Input<Option<String>>,

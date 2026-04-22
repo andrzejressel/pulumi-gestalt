@@ -60,9 +60,7 @@ pub mod cache {
     pub struct CacheArgs {
         /// Whether access key authentication is enabled? Defaults to `true`. `active_directory_authentication_enabled` must be set to `true` to disable access key authentication.
         #[builder(into, default)]
-        pub access_keys_authentication_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub access_keys_authentication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The size of the Redis cache to deploy. Valid values for a SKU `family` of C (Basic/Standard) are `0, 1, 2, 3, 4, 5, 6`, and for P (Premium) `family` are `1, 2, 3, 4, 5`.
         #[builder(into)]
         pub capacity: pulumi_gestalt_rust::Input<i32>,
@@ -93,14 +91,10 @@ pub mod cache {
         >,
         /// The Static IP Address to assign to the Redis Cache when hosted inside the Virtual Network. This argument implies the use of `subnet_id`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub private_static_ip_address: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub private_static_ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not public network access is allowed for this Redis Cache. `true` means this resource could be accessed by both public and private endpoint. `false` means only private endpoint access is allowed. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `redis_configuration` block as defined below - with some limitations by SKU - defaults/details are shown below.
         #[builder(into, default)]
         pub redis_configuration: pulumi_gestalt_rust::Input<

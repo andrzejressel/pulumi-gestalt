@@ -115,9 +115,7 @@ pub mod extension {
         ///
         /// > **NOTE:** Operational failures such as not connecting to the VM will not be suppressed regardless of the `failure_suppression_enabled` value.
         #[builder(into, default)]
-        pub failure_suppression_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub failure_suppression_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the virtual machine extension peering. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -135,9 +133,7 @@ pub mod extension {
         >,
         /// Specifies the collection of extension names after which this extension needs to be provisioned.
         #[builder(into, default)]
-        pub provision_after_extensions: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub provision_after_extensions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The publisher of the extension, available publishers can be found by using the Azure CLI. Changing this forces a new resource to be created.
         #[builder(into)]
         pub publisher: pulumi_gestalt_rust::Input<String>,

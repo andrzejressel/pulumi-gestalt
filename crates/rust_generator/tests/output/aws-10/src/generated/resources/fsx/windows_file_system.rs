@@ -87,9 +87,7 @@ pub mod windows_file_system {
         >,
         /// The number of days to retain automatic backups. Minimum of `0` and maximum of `90`. Defaults to `7`. Set to `0` to disable.
         #[builder(into, default)]
-        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the source backup to create the filesystem from.
         #[builder(into, default)]
         pub backup_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -152,9 +150,7 @@ pub mod windows_file_system {
         pub throughput_capacity: pulumi_gestalt_rust::Input<i32>,
         /// The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone.
         #[builder(into, default)]
-        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct WindowsFileSystemResult {

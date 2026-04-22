@@ -36,9 +36,7 @@ pub mod three_tier_virtual_instance {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the managed Resource Group for the SAP Three Tier Virtual Instance. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub managed_resource_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub managed_resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this SAP Three Tier Virtual Instance. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

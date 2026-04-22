@@ -152,9 +152,7 @@ pub mod windows_virtual_machine {
         ///
         /// > **NOTE:** `capacity_reservation_group_id` cannot be used with `availability_set_id` or `proximity_placement_group_id`
         #[builder(into, default)]
-        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Hostname which should be used for this Virtual Machine. If unspecified this defaults to the value for the `name` field. If the value of the `name` field is not a valid `computer_name`, then you must specify `computer_name`. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub computer_name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -265,9 +263,7 @@ pub mod windows_virtual_machine {
         pub provision_vm_agent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Proximity Placement Group which the Virtual Machine should be assigned to.
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the reboot setting for platform scheduled patching. Possible values are `Always`, `IfRequired` and `Never`.
         ///
         /// > **NOTE:** `reboot_setting` can only be set when `patch_mode` is set to `AutomaticByPlatform`.
@@ -327,14 +323,10 @@ pub mod windows_virtual_machine {
         ///
         /// > **NOTE:** To attach an existing VM to a Virtual Machine Scale Set, the scale set must have `single_placement_group` set to `false`, see [the documentation](https://learn.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-attach-detach-vm?tabs=portal-1%2Cportal-2%2Cportal-3#limitations-for-attaching-an-existing-vm-to-a-scale-set) for more information.
         #[builder(into, default)]
-        pub virtual_machine_scale_set_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub virtual_machine_scale_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether VMAgent Platform Updates is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub vm_agent_platform_updates_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub vm_agent_platform_updates_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies if vTPM (virtual Trusted Platform Module) and Trusted Launch is enabled for the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub vtpm_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

@@ -103,9 +103,7 @@ pub mod faq {
         pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// The S3 location of the FAQ input data. Detailed below.
         #[builder(into)]
-        pub s3_path: pulumi_gestalt_rust::Input<
-            super::super::types::kendra::FaqS3Path,
-        >,
+        pub s3_path: pulumi_gestalt_rust::Input<super::super::types::kendra::FaqS3Path>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,

@@ -61,9 +61,7 @@ pub mod workspace {
         pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether the data stored on the root volume is encrypted.
         #[builder(into, default)]
-        pub root_volume_encryption_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub root_volume_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The tags for the WorkSpace. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
@@ -74,9 +72,7 @@ pub mod workspace {
         pub user_name: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether the data stored on the user volume is encrypted.
         #[builder(into, default)]
-        pub user_volume_encryption_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub user_volume_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN of a symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.
         #[builder(into, default)]
         pub volume_encryption_key: pulumi_gestalt_rust::Input<Option<String>>,

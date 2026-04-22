@@ -109,9 +109,7 @@ pub mod contact_profile {
         pub minimum_elevation_degrees: pulumi_gestalt_rust::Input<Option<f64>>,
         /// Minimum viable contact duration in ISO 8601 format. Used for listing the available contacts with a spacecraft at a given ground station.
         #[builder(into)]
-        pub minimum_variable_contact_duration: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub minimum_variable_contact_duration: pulumi_gestalt_rust::Input<String>,
         /// The name of the contact profile. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

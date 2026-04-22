@@ -250,9 +250,7 @@ pub mod job_definition {
         >,
         /// Platform capabilities required by the job definition. If no value is specified, it defaults to `EC2`. To run the job on Fargate resources, specify `FARGATE`.
         #[builder(into, default)]
-        pub platform_capabilities: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub platform_capabilities: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to propagate the tags from the job definition to the corresponding Amazon ECS task. Default is `false`.
         #[builder(into, default)]
         pub propagate_tags: pulumi_gestalt_rust::Input<Option<bool>>,

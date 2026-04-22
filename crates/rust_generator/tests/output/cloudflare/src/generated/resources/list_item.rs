@@ -118,9 +118,7 @@ pub mod list_item {
         pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Hostname to store in the list. Must provide only one of: `ip`, `asn`, `redirect`, `hostname`.
         #[builder(into, default)]
-        pub hostname: pulumi_gestalt_rust::Input<
-            Option<super::types::ListItemHostname>,
-        >,
+        pub hostname: pulumi_gestalt_rust::Input<Option<super::types::ListItemHostname>>,
         /// IP address to include in the list. Must provide only one of: `ip`, `asn`, `redirect`, `hostname`.
         #[builder(into, default)]
         pub ip: pulumi_gestalt_rust::Input<Option<String>>,
@@ -129,9 +127,7 @@ pub mod list_item {
         pub list_id: pulumi_gestalt_rust::Input<String>,
         /// Redirect configuration to store in the list. Must provide only one of: `ip`, `asn`, `redirect`, `hostname`.
         #[builder(into, default)]
-        pub redirect: pulumi_gestalt_rust::Input<
-            Option<super::types::ListItemRedirect>,
-        >,
+        pub redirect: pulumi_gestalt_rust::Input<Option<super::types::ListItemRedirect>>,
     }
     #[allow(dead_code)]
     pub struct ListItemResult {

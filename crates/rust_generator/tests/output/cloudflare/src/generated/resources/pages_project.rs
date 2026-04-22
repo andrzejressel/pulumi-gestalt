@@ -43,9 +43,7 @@ pub mod pages_project {
         pub production_branch: pulumi_gestalt_rust::Input<String>,
         /// Configuration for the project source. Read more about the source configuration in the [developer documentation](https://developers.cloudflare.com/pages/platform/branch-build-controls/).
         #[builder(into, default)]
-        pub source: pulumi_gestalt_rust::Input<
-            Option<super::types::PagesProjectSource>,
-        >,
+        pub source: pulumi_gestalt_rust::Input<Option<super::types::PagesProjectSource>>,
     }
     #[allow(dead_code)]
     pub struct PagesProjectResult {

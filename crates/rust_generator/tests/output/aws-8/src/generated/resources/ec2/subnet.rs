@@ -65,9 +65,7 @@ pub mod subnet {
         /// that network interfaces created in the specified subnet should be
         /// assigned an IPv6 address. Default is `false`
         #[builder(into, default)]
-        pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// AZ for the subnet.
         #[builder(into, default)]
         pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
@@ -105,9 +103,7 @@ pub mod subnet {
         pub ipv6_native: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specify `true` to indicate that network interfaces created in the subnet should be assigned a customer owned IP address. The `customer_owned_ipv4_pool` and `outpost_arn` arguments must be specified when set to `true`. Default is `false`.
         #[builder(into, default)]
-        pub map_customer_owned_ip_on_launch: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub map_customer_owned_ip_on_launch: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specify true to indicate
         /// that instances launched into the subnet should be assigned
         /// a public IP address. Default is `false`.

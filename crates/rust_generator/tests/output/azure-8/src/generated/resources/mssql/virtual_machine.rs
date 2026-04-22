@@ -79,14 +79,10 @@ pub mod virtual_machine {
         pub sql_connectivity_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SQL Server sysadmin login password.
         #[builder(into, default)]
-        pub sql_connectivity_update_password: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub sql_connectivity_update_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SQL Server sysadmin login to create.
         #[builder(into, default)]
-        pub sql_connectivity_update_username: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub sql_connectivity_update_username: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `sql_instance` block as defined below.
         #[builder(into, default)]
         pub sql_instance: pulumi_gestalt_rust::Input<
@@ -97,9 +93,7 @@ pub mod virtual_machine {
         pub sql_license_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the SQL Virtual Machine Group that the SQL Virtual Machine belongs to.
         #[builder(into, default)]
-        pub sql_virtual_machine_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub sql_virtual_machine_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `storage_configuration` block as defined below.
         #[builder(into, default)]
         pub storage_configuration: pulumi_gestalt_rust::Input<

@@ -259,9 +259,7 @@ pub mod cluster {
         pub allocated_storage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Enable to allow major engine version upgrades when changing engine versions. Defaults to `false`.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. Default is `false`. See [Amazon RDS Documentation for more information.](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html)
         #[builder(into, default)]
         pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -279,17 +277,13 @@ pub mod cluster {
         pub backup_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The CA certificate identifier to use for the DB cluster's server certificate.
         #[builder(into, default)]
-        pub ca_certificate_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub ca_certificate_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The cluster identifier. If omitted, this provider will assign a random, unique identifier.
         #[builder(into, default)]
         pub cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifier`.
         #[builder(into, default)]
-        pub cluster_identifier_prefix: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cluster_identifier_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of RDS Instances that are a part of this cluster
         #[builder(into, default)]
         pub cluster_members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
@@ -301,19 +295,13 @@ pub mod cluster {
         pub database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example `db.m6g.xlarge`. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes and availability for your engine, see [DB instance class](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html) in the Amazon RDS User Guide.
         #[builder(into, default)]
-        pub db_cluster_instance_class: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub db_cluster_instance_class: pulumi_gestalt_rust::Input<Option<String>>,
         /// A cluster parameter group to associate with the cluster.
         #[builder(into, default)]
-        pub db_cluster_parameter_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub db_cluster_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instance parameter group to associate with all instances of the DB cluster. The `db_instance_parameter_group_name` parameter is only valid in combination with the `allow_major_version_upgrade` parameter.
         #[builder(into, default)]
-        pub db_instance_parameter_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub db_instance_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// DB subnet group to associate with this DB cluster.
         /// **NOTE:** This must match the `db_subnet_group_name` specified on every `aws.rds.ClusterInstance` in the cluster.
         #[builder(into, default)]
@@ -337,17 +325,13 @@ pub mod cluster {
         pub domain_iam_role_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether cluster should forward writes to an associated global cluster. Applied to secondary clusters to enable them to forward writes to an `aws.rds.GlobalCluster`'s primary cluster. See the [User Guide for Aurora](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-write-forwarding.html) for more information.
         #[builder(into, default)]
-        pub enable_global_write_forwarding: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_global_write_forwarding: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable HTTP endpoint (data API). Only valid for some combinations of `engine_mode`, `engine` and `engine_version` and only available in some regions. See the [Region and version availability](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html#data-api.regions) section of the documentation. This option also does not work with any of these options specified: `snapshot_identifier`, `replication_source_identifier`, `s3_import`.
         #[builder(into, default)]
         pub enable_http_endpoint: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.. See the [User Guide for Aurora](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-write-forwarding.html) for more information. **NOTE:** Local write forwarding requires Aurora MySQL version 3.04 or higher.
         #[builder(into, default)]
-        pub enable_local_write_forwarding: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_local_write_forwarding: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Set of log types to export to cloudwatch. If omitted, no logs will be exported. The following log types are supported: `audit`, `error`, `general`, `slowquery`, `postgresql` (PostgreSQL).
         #[builder(into, default)]
         pub enabled_cloudwatch_logs_exports: pulumi_gestalt_rust::Input<
@@ -367,14 +351,10 @@ pub mod cluster {
         pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of your final DB snapshot when this DB cluster is deleted. If omitted, no final snapshot will be made.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Global cluster identifier specified on `aws.rds.GlobalCluster`.
         #[builder(into, default)]
-        pub global_cluster_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub global_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether or not mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled. Please see [AWS Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html) for availability and limitations.
         #[builder(into, default)]
         pub iam_database_authentication_enabled: pulumi_gestalt_rust::Input<
@@ -391,17 +371,13 @@ pub mod cluster {
         pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to true to allow RDS to manage the master user password in Secrets Manager. Cannot be set if `master_password` is provided.
         #[builder(into, default)]
-        pub manage_master_user_password: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub manage_master_user_password: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Password for the master DB user. Note that this may show up in logs, and it will be stored in the state file. Please refer to the [RDS Naming Constraints](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.Constraints). Cannot be set if `manage_master_user_password` is set to `true`.
         #[builder(into, default)]
         pub master_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN. If not specified, the default KMS key for your Amazon Web Services account is used.
         #[builder(into, default)]
-        pub master_user_secret_kms_key_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub master_user_secret_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Username for the master DB user. Please refer to the [RDS Naming Constraints](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.Constraints). This argument does not support in-place updates and cannot be changed during a restore from snapshot.
         #[builder(into, default)]
         pub master_username: pulumi_gestalt_rust::Input<Option<String>>,
@@ -410,14 +386,10 @@ pub mod cluster {
         pub network_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables Performance Insights for the RDS Cluster
         #[builder(into, default)]
-        pub performance_insights_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub performance_insights_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the KMS Key ID to encrypt Performance Insights data. If not specified, the default RDS KMS key will be used (`aws/rds`).
         #[builder(into, default)]
-        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the amount of time to retain performance insights data for. Defaults to 7 days if Performance Insights are enabled. Valid values are `7`, `month * 31` (where month is a number of months from 1-23), and `731`. See [here](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Overview.cost.html) for more information on retention periods.
         #[builder(into, default)]
         pub performance_insights_retention_period: pulumi_gestalt_rust::Input<
@@ -431,14 +403,10 @@ pub mod cluster {
         pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Weekly time range during which system maintenance can occur, in (UTC) e.g., `wed:04:00-wed:04:30`
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of a source DB cluster or DB instance if this DB cluster is to be created as a Read Replica. **Note:** Removing this attribute after creation will promote the read replica to a standalone cluster. If DB Cluster is part of a Global Cluster, use the `ignoreChanges` resource option to prevent Pulumi from showing differences for this argument instead of configuring this value.
         #[builder(into, default)]
-        pub replication_source_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub replication_source_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Nested attribute for [point in time restore](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-pitr.html). More details below.
         #[builder(into, default)]
         pub restore_to_point_in_time: pulumi_gestalt_rust::Input<
@@ -480,9 +448,7 @@ pub mod cluster {
         >,
         /// List of VPC security groups to associate with the Cluster
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

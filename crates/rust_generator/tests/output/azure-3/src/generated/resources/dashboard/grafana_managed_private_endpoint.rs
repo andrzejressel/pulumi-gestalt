@@ -78,9 +78,7 @@ pub mod grafana_managed_private_endpoint {
         pub private_link_resource_id: pulumi_gestalt_rust::Input<String>,
         /// The region in which to create the private link. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
         #[builder(into, default)]
-        pub private_link_resource_region: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub private_link_resource_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// A message to provide in the request which will be seen by approvers.
         #[builder(into, default)]
         pub request_message: pulumi_gestalt_rust::Input<Option<String>>,

@@ -230,9 +230,7 @@ pub mod record {
         >,
         /// Set to `true` to indicate a multivalue answer routing policy. Conflicts with any other routing policy.
         #[builder(into, default)]
-        pub multivalue_answer_routing_policy: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub multivalue_answer_routing_policy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the record.
         #[builder(into)]
         pub name: pulumi_gestalt_rust::Input<String>,

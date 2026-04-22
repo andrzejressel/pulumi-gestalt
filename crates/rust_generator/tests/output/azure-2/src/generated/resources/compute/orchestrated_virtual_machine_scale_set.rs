@@ -80,9 +80,7 @@ pub mod orchestrated_virtual_machine_scale_set {
         ///
         /// > **Note:** If `capacity_reservation_group_id` is specified the `single_placement_group` must be set to `false`.
         #[builder(into, default)]
-        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `data_disk` blocks as defined below.
         #[builder(into, default)]
         pub data_disks: pulumi_gestalt_rust::Input<
@@ -102,9 +100,7 @@ pub mod orchestrated_virtual_machine_scale_set {
         ///
         /// > **Note:** `extension_operations_enabled` may only be set to `false` if there are no extensions defined in the `extension` field.
         #[builder(into, default)]
-        pub extension_operations_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub extension_operations_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `extension` blocks as defined below
         #[builder(into, default)]
         pub extensions: pulumi_gestalt_rust::Input<
@@ -184,9 +180,7 @@ pub mod orchestrated_virtual_machine_scale_set {
         >,
         /// The ID of the Proximity Placement Group which the Virtual Machine should be assigned to. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the Virtual Machine Scale Set should exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

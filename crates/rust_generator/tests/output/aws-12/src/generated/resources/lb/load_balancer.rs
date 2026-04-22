@@ -98,17 +98,13 @@ pub mod load_balancer {
         pub desync_mitigation_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// How traffic is distributed among the load balancer Availability Zones. Possible values are `any_availability_zone` (default), `availability_zone_affinity`, or `partial_availability_zone_affinity`. See   [Availability Zone DNS affinity](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#zonal-dns-affinity) for additional details. Only valid for `network` type load balancers.
         #[builder(into, default)]
-        pub dns_record_client_routing_policy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub dns_record_client_routing_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether HTTP headers with header fields that are not valid are removed by the load balancer (true) or routed to targets (false). The default is false. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens. Only valid for Load Balancers of type `application`.
         #[builder(into, default)]
         pub drop_invalid_header_fields: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true, cross-zone load balancing of the load balancer will be enabled. For `network` and `gateway` type load balancers, this feature is disabled by default (`false`). For `application` load balancer this feature is always enabled (`true`) and cannot be disabled. Defaults to `false`.
         #[builder(into, default)]
-        pub enable_cross_zone_load_balancing: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_cross_zone_load_balancing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true, deletion of the load balancer will be disabled via the AWS API. This will prevent this provider from deleting the load balancer. Defaults to `false`.
         #[builder(into, default)]
         pub enable_deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -173,9 +169,7 @@ pub mod load_balancer {
         >,
         /// Determines how the load balancer modifies the `X-Forwarded-For` header in the HTTP request before sending the request to the target. The possible values are `append`, `preserve`, and `remove`. Only valid for Load Balancers of type `application`. The default is `append`.
         #[builder(into, default)]
-        pub xff_header_processing_mode: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub xff_header_processing_mode: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LoadBalancerResult {

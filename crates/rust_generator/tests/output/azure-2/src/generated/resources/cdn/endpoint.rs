@@ -63,9 +63,7 @@ pub mod endpoint {
     pub struct EndpointArgs {
         /// An array of strings that indicates a content types on which compression will be applied. The value for the elements should be MIME types.
         #[builder(into, default)]
-        pub content_types_to_compresses: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub content_types_to_compresses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Rules for the rules engine. An endpoint can contain up until 4 of those rules that consist of conditions and actions. A `delivery_rule` blocks as defined below.
         #[builder(into, default)]
         pub delivery_rules: pulumi_gestalt_rust::Input<
@@ -120,9 +118,7 @@ pub mod endpoint {
         pub profile_name: pulumi_gestalt_rust::Input<String>,
         /// Sets query string caching behavior. Allowed values are `IgnoreQueryString`, `BypassCaching` and `UseQueryString`. `NotSet` value can be used for `Premium Verizon` CDN profile. Defaults to `IgnoreQueryString`.
         #[builder(into, default)]
-        pub querystring_caching_behaviour: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub querystring_caching_behaviour: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the CDN Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

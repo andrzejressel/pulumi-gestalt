@@ -63,9 +63,7 @@ pub mod elastic_cluster {
         pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Weekly time range during which system maintenance can occur in UTC. Format: `ddd:hh24:mi-ddd:hh24:mi`. If not specified, AWS will choose a random 30-minute window on a random day of the week.
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64
         #[builder(into)]
         pub shard_capacity: pulumi_gestalt_rust::Input<i32>,
@@ -88,9 +86,7 @@ pub mod elastic_cluster {
         >,
         /// List of VPC security groups to associate with the Elastic DocumentDB Cluster
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ElasticClusterResult {

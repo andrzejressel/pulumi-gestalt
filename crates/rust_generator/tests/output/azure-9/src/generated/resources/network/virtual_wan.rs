@@ -45,9 +45,7 @@ pub mod virtual_wan {
     pub struct VirtualWanArgs {
         /// Boolean flag to specify whether branch to branch traffic is allowed. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_branch_to_branch_traffic: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_branch_to_branch_traffic: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag to specify whether VPN encryption is disabled. Defaults to `false`.
         #[builder(into, default)]
         pub disable_vpn_encryption: pulumi_gestalt_rust::Input<Option<bool>>,

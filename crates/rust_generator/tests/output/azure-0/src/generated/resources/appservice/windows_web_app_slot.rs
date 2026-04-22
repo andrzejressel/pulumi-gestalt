@@ -125,9 +125,7 @@ pub mod windows_web_app_slot {
         >,
         /// The User Assigned Identity ID used for accessing KeyVault secrets. The identity must be assigned to the application in the `identity` block. [For more information see - Access vaults with a user-assigned identity](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#access-vaults-with-a-user-assigned-identity)
         #[builder(into, default)]
-        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `logs` block as defined below.
         #[builder(into, default)]
         pub logs: pulumi_gestalt_rust::Input<
@@ -137,9 +135,7 @@ pub mod windows_web_app_slot {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should public network access be enabled for the Web App. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Service Plan in which to run this slot. If not specified the same Service Plan as the Windows Web App will be used.
         ///
         /// > **Note:** `service_plan_id` should only be specified if it differs from the Service Plan of the associated Windows Web App.
@@ -163,9 +159,7 @@ pub mod windows_web_app_slot {
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the default WebDeploy Basic Authentication publishing credentials enabled. Defaults to `true`.
         ///
         /// > **NOTE:** Setting this value to true will disable the ability to use `zip_deploy_file` which currently relies on the default publishing profile.

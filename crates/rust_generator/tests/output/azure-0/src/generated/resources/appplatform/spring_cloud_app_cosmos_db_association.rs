@@ -93,29 +93,19 @@ pub mod spring_cloud_app_cosmos_db_association {
         pub cosmosdb_account_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Cassandra Keyspace which the Spring Cloud App should be associated with. Should only be set when `api_type` is `cassandra`.
         #[builder(into, default)]
-        pub cosmosdb_cassandra_keyspace_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cosmosdb_cassandra_keyspace_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Gremlin Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `gremlin`.
         #[builder(into, default)]
-        pub cosmosdb_gremlin_database_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cosmosdb_gremlin_database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Gremlin Graph which the Spring Cloud App should be associated with. Should only be set when `api_type` is `gremlin`.
         #[builder(into, default)]
-        pub cosmosdb_gremlin_graph_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cosmosdb_gremlin_graph_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Mongo Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `mongo`.
         #[builder(into, default)]
-        pub cosmosdb_mongo_database_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cosmosdb_mongo_database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the SQL Database which the Spring Cloud App should be associated with. Should only be set when `api_type` is `sql`.
         #[builder(into, default)]
-        pub cosmosdb_sql_database_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cosmosdb_sql_database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Spring Cloud Application Association. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

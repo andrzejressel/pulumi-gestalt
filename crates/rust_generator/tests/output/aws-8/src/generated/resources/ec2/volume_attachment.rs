@@ -69,9 +69,7 @@ pub mod volume_attachment {
         /// Set this to true to ensure that the target instance is stopped
         /// before trying to detach the volume. Stops the instance, if it is not already stopped.
         #[builder(into, default)]
-        pub stop_instance_before_detaching: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub stop_instance_before_detaching: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the Volume to be attached
         #[builder(into)]
         pub volume_id: pulumi_gestalt_rust::Input<String>,

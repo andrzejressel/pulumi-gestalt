@@ -89,14 +89,10 @@ pub mod network_packet_core_control_plane {
         >,
         /// The IPv4 subnet for the control plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub control_plane_access_ipv4_subnet: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub control_plane_access_ipv4_subnet: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the logical name for this interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub control_plane_access_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub control_plane_access_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The core network technology generation. Possible values are `5GC` and `EPC`.
         #[builder(into, default)]
         pub core_network_technology: pulumi_gestalt_rust::Input<Option<String>>,
@@ -107,9 +103,7 @@ pub mod network_packet_core_control_plane {
         >,
         /// Settings in JSON format to allow interoperability with third party components e.g. RANs and UEs.
         #[builder(into, default)]
-        pub interoperability_settings_json: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub interoperability_settings_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `local_diagnostics_access` blocks as defined below. Specifies the Kubernetes ingress configuration that controls access to the packet core diagnostics through local APIs.
         #[builder(into)]
         pub local_diagnostics_access: pulumi_gestalt_rust::Input<

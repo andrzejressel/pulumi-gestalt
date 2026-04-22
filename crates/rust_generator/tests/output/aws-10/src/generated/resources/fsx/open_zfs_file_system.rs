@@ -41,9 +41,7 @@ pub mod open_zfs_file_system {
     pub struct OpenZfsFileSystemArgs {
         /// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days.
         #[builder(into, default)]
-        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the source backup to create the filesystem from.
         #[builder(into, default)]
         pub backup_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -71,9 +69,7 @@ pub mod open_zfs_file_system {
         >,
         /// (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
         #[builder(into, default)]
-        pub endpoint_ip_address_range: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub endpoint_ip_address_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to apply to the file system's final backup.
         #[builder(into, default)]
         pub final_backup_tags: pulumi_gestalt_rust::Input<
@@ -120,9 +116,7 @@ pub mod open_zfs_file_system {
         pub throughput_capacity: pulumi_gestalt_rust::Input<i32>,
         /// The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone.
         #[builder(into, default)]
-        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OpenZfsFileSystemResult {

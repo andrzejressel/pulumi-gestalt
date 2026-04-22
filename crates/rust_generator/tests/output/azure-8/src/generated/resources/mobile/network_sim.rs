@@ -112,14 +112,10 @@ pub mod network_sim {
         pub device_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The integrated circuit card ID (ICCID) for the SIM. Changing this forces a new Mobile Network Sim to be created.
         #[builder(into)]
-        pub integrated_circuit_card_identifier: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub integrated_circuit_card_identifier: pulumi_gestalt_rust::Input<String>,
         /// The international mobile subscriber identity (IMSI) for the SIM. Changing this forces a new Mobile Network Sim to be created.
         #[builder(into)]
-        pub international_mobile_subscriber_identity: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub international_mobile_subscriber_identity: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Mobile Network which the Mobile Network Sim belongs to. Changing this forces a new Mobile Network Sim to be created.
         #[builder(into)]
         pub mobile_network_sim_group_id: pulumi_gestalt_rust::Input<String>,

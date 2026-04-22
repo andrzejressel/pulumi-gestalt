@@ -57,9 +57,7 @@ pub mod container {
         pub default_encryption_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to allow blobs to override the default encryption scope for this container. Can only be set when specifying `default_encryption_scope`. Defaults to `true`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_scope_override_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub encryption_scope_override_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of MetaData for this Container. All metadata keys should be lowercase.
         #[builder(into, default)]
         pub metadata: pulumi_gestalt_rust::Input<

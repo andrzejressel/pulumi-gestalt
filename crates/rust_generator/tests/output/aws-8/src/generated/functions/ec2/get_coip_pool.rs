@@ -14,9 +14,7 @@ pub mod get_coip_pool {
         >,
         /// Local Gateway Route Table Id assigned to desired COIP Pool
         #[builder(into, default)]
-        pub local_gateway_route_table_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub local_gateway_route_table_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the specific COIP Pool to retrieve.
         #[builder(into, default)]
         pub pool_id: pulumi_gestalt_rust::Input<Option<String>>,

@@ -94,9 +94,7 @@ pub mod services_communications_gateway {
         pub e911_type: pulumi_gestalt_rust::Input<String>,
         /// A list of dial strings used for emergency calling.
         #[builder(into, default)]
-        pub emergency_dial_strings: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub emergency_dial_strings: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the Azure Region where the Voice Services Communications Gateways should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

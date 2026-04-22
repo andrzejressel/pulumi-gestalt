@@ -94,9 +94,7 @@ pub mod local_rulestack_rule {
         pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the certificate for inbound inspection. Only valid when `decryption_rule_type` is set to `SSLInboundInspection`.
         #[builder(into, default)]
-        pub inspection_certificate_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub inspection_certificate_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should Logging be enabled? Defaults to `false`.
         #[builder(into, default)]
         pub logging_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

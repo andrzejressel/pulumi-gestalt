@@ -366,9 +366,7 @@ pub mod edge_cache_service {
         /// URLs to sslCertificate resources that are used to authenticate connections between users and the EdgeCacheService. Note
         /// that only "global" certificates with a "scope" of "EDGE_CACHE" can be attached to an EdgeCacheService.
         #[builder(into, default)]
-        pub edge_ssl_certificates: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub edge_ssl_certificates: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Set of label tags associated with the EdgeCache resource. **Note**: This field is non-authoritative, and will only
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.

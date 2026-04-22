@@ -57,9 +57,7 @@ pub mod provisioning_artifact {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether AWS Service Catalog stops validating the specified provisioning artifact template even if it is invalid.
         #[builder(into, default)]
-        pub disable_template_validation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub disable_template_validation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Information set by the administrator to provide guidance to end users about which provisioning artifacts to use. Valid values are `DEFAULT` and `DEPRECATED`. The default is `DEFAULT`. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.
         #[builder(into, default)]
         pub guidance: pulumi_gestalt_rust::Input<Option<String>>,

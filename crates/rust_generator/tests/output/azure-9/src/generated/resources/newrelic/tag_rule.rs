@@ -83,9 +83,7 @@ pub mod tag_rule {
         pub activity_log_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether Azure Active Directory logs should be sent for the Monitor resource. Defaults to `false`.
         #[builder(into, default)]
-        pub azure_active_directory_log_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub azure_active_directory_log_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `log_tag_filter` block as defined below.
         #[builder(into, default)]
         pub log_tag_filters: pulumi_gestalt_rust::Input<

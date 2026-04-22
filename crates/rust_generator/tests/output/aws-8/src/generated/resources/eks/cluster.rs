@@ -289,23 +289,17 @@ pub mod cluster {
         >,
         /// Install default unmanaged add-ons, such as `aws-cni`, `kube-proxy`, and CoreDNS during cluster creation. If `false`, you must manually install desired add-ons. Changing this value will force a new cluster to be created. Defaults to `true`.
         #[builder(into, default)]
-        pub bootstrap_self_managed_addons: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub bootstrap_self_managed_addons: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block with compute configuration for EKS Auto Mode. Detailed below.
         #[builder(into, default)]
         pub compute_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::eks::ClusterComputeConfig>,
         >,
         #[builder(into, default)]
-        pub default_addons_to_removes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub default_addons_to_removes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of the desired control plane logging to enable. For more information, see [Amazon EKS Control Plane Logging](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).
         #[builder(into, default)]
-        pub enabled_cluster_log_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub enabled_cluster_log_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block with encryption configuration for the cluster. Detailed below.
         #[builder(into, default)]
         pub encryption_config: pulumi_gestalt_rust::Input<

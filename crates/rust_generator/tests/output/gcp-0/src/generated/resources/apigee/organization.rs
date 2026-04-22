@@ -229,9 +229,7 @@ pub mod organization {
         /// Apigee stores some control plane data only in single region.
         /// This field determines which single region Apigee should use.
         #[builder(into, default)]
-        pub api_consumer_data_location: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub api_consumer_data_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Compute Engine network used for Service Networking to be peered with Apigee runtime instances.
         /// See [Getting started with the Service Networking API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started).
         /// Valid only when `RuntimeType` is set to CLOUD. The value can be updated only when there are no runtime instances. For example: "default".

@@ -278,9 +278,7 @@ pub mod assignment {
         ///
         /// > **NOTE:** If it is not a `Service Principal` identity it will cause the role assignment to fail.
         #[builder(into, default)]
-        pub skip_service_principal_aad_check: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub skip_service_principal_aad_check: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct AssignmentResult {

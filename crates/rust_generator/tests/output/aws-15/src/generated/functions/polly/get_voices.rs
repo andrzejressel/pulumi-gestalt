@@ -13,9 +13,7 @@ pub mod get_voices {
         pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to return any bilingual voices that use the specified language as an additional language.
         #[builder(into, default)]
-        pub include_additional_language_codes: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub include_additional_language_codes: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Language identification tag for filtering the list of voices returned. If not specified, all available voices are returned.
         #[builder(into, default)]
         pub language_code: pulumi_gestalt_rust::Input<Option<String>>,

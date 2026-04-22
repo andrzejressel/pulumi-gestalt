@@ -132,9 +132,7 @@ pub mod v_2_models_slot_type {
         /// When you define a parent slot type, the new slot type has the configuration of the parent slot type.
         /// Only `AMAZON.AlphaNumeric` is supported.
         #[builder(into, default)]
-        pub parent_slot_type_signature: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub parent_slot_type_signature: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of SlotTypeValue objects that defines the values that the slot type can take.
         /// Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.
         /// See `slot_type_values` argument reference below.

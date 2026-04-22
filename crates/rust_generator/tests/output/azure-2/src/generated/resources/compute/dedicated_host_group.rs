@@ -46,9 +46,7 @@ pub mod dedicated_host_group {
     pub struct DedicatedHostGroupArgs {
         /// Would virtual machines or virtual machine scale sets be placed automatically on this Dedicated Host Group? Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub automatic_placement_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub automatic_placement_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure location where the Dedicated Host Group exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

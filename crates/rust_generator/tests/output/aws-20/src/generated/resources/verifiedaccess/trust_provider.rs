@@ -45,9 +45,7 @@ pub mod trust_provider {
         >,
         /// The type of device-based trust provider.
         #[builder(into, default)]
-        pub device_trust_provider_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub device_trust_provider_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The OpenID Connect details for an oidc-type, user-identity based trust provider.
         #[builder(into, default)]
         pub oidc_options: pulumi_gestalt_rust::Input<

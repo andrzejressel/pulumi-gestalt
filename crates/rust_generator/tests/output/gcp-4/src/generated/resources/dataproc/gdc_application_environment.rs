@@ -90,9 +90,7 @@ pub mod gdc_application_environment {
         >,
         /// The id of the application environment
         #[builder(into, default)]
-        pub application_environment_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub application_environment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-provided human-readable name to be used in user interfaces.
         #[builder(into, default)]
         pub display_name: pulumi_gestalt_rust::Input<Option<String>>,

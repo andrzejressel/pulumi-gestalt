@@ -119,9 +119,7 @@ pub mod data_store {
         /// data store is not configured as site search (GENERIC vertical and
         /// PUBLIC_WEBSITE contentConfig), this flag will be ignored.
         #[builder(into, default)]
-        pub create_advanced_site_search: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub create_advanced_site_search: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The unique id of the data store.
         ///
         ///
@@ -160,9 +158,7 @@ pub mod data_store {
         /// This flag cannot be specified if `data_store.starting_schema` is
         /// specified.
         #[builder(into, default)]
-        pub skip_default_schema_creation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub skip_default_schema_creation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The solutions that the data store enrolls.
         /// Each value may be one of: `SOLUTION_TYPE_RECOMMENDATION`, `SOLUTION_TYPE_SEARCH`, `SOLUTION_TYPE_CHAT`, `SOLUTION_TYPE_GENERATIVE_CHAT`.
         #[builder(into, default)]

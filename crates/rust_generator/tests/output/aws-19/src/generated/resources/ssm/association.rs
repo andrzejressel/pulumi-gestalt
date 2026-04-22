@@ -116,17 +116,13 @@ pub mod association {
     pub struct AssociationArgs {
         /// By default, when you create a new or update associations, the system runs it immediately and then according to the schedule you specified. Enable this option if you do not want an association to run immediately after you create or update it. This parameter is not supported for rate expressions. Default: `false`.
         #[builder(into, default)]
-        pub apply_only_at_cron_interval: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub apply_only_at_cron_interval: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The descriptive name for the association.
         #[builder(into, default)]
         pub association_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the target for the association. This target is required for associations that use an `Automation` document and target resources by using rate controls. This should be set to the SSM document `parameter` that will define how your automation will branch out.
         #[builder(into, default)]
-        pub automation_target_parameter_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub automation_target_parameter_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The compliance severity for the association. Can be one of the following: `UNSPECIFIED`, `LOW`, `MEDIUM`, `HIGH` or `CRITICAL`
         #[builder(into, default)]
         pub compliance_severity: pulumi_gestalt_rust::Input<Option<String>>,
@@ -175,9 +171,7 @@ pub mod association {
         ///
         /// Output Location (`output_location`) is an S3 bucket where you want to store the results of this association:
         #[builder(into, default)]
-        pub wait_for_success_timeout_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub wait_for_success_timeout_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct AssociationResult {

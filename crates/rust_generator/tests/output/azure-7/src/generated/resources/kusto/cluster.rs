@@ -81,17 +81,13 @@ pub mod cluster {
         >,
         /// Whether to restrict outbound network access. Value is optional but if passed in, must be `true` or `false`, default is `false`.
         #[builder(into, default)]
-        pub outbound_network_access_restricted: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub outbound_network_access_restricted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6). Defaults to `IPv4`.
         #[builder(into, default)]
         pub public_ip_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the public network access enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies if the purge operations are enabled.
         #[builder(into, default)]
         pub purge_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -100,14 +96,10 @@ pub mod cluster {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::Input<
-            super::super::types::kusto::ClusterSku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::kusto::ClusterSku>,
         /// Specifies if the streaming ingest is enabled.
         #[builder(into, default)]
-        pub streaming_ingestion_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub streaming_ingestion_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
@@ -117,9 +109,7 @@ pub mod cluster {
         ///
         /// > **NOTE:** In v3.0 of `azurerm` a new or updated Kusto Cluster will only allow your own tenant by default. Explicit configuration of this setting will change from `trusted_external_tenants = ["MyTenantOnly"]` to `trusted_external_tenants = []`.
         #[builder(into, default)]
-        pub trusted_external_tenants: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub trusted_external_tenants: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `virtual_network_configuration` block as defined below.
         ///
         /// > **NOTE:** Currently removing `virtual_network_configuration` sets the `virtual_network_configuration` to `Disabled` state. But any changes to `virtual_network_configuration` in `Disabled` state forces a new resource to be created.

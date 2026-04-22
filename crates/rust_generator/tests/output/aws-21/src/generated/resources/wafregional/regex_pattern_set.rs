@@ -39,9 +39,7 @@ pub mod regex_pattern_set {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of regular expression (regex) patterns that you want AWS WAF to search for, such as `B[a@]dB[o0]t`.
         #[builder(into, default)]
-        pub regex_pattern_strings: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub regex_pattern_strings: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct RegexPatternSetResult {

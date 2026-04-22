@@ -55,9 +55,7 @@ pub mod data_collection_endpoint {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether network access from public internet to the Data Collection Endpoint are allowed. Possible values are `true` and `false`. Default to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Data Collection Endpoint should exist. Changing this forces a new Data Collection Endpoint to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

@@ -217,9 +217,7 @@ pub mod integration {
     pub struct IntegrationArgs {
         /// List of cache key parameters for the integration.
         #[builder(into, default)]
-        pub cache_key_parameters: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub cache_key_parameters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Integration's cache namespace.
         #[builder(into, default)]
         pub cache_namespace: pulumi_gestalt_rust::Input<Option<String>>,

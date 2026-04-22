@@ -92,9 +92,7 @@ pub mod hub {
         /// Is anonymous connections are allowed for this hub? Defaults to `false`.
         /// Possible values are `true`, `false`.
         #[builder(into, default)]
-        pub anonymous_connections_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub anonymous_connections_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `event_handler` block as defined below.
         ///
         /// > **NOTE:** User can change the order of `event_handler` to change the priority accordingly.

@@ -39,9 +39,7 @@ pub mod slack_channel_configuration {
         pub configuration_name: pulumi_gestalt_rust::Input<String>,
         /// List of IAM policy ARNs that are applied as channel guardrails. The AWS managed `AdministratorAccess` policy is applied by default if this is not set.
         #[builder(into, default)]
-        pub guardrail_policy_arns: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub guardrail_policy_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// User-defined role that AWS Chatbot assumes. This is not the service-linked role.
         #[builder(into)]
         pub iam_role_arn: pulumi_gestalt_rust::Input<String>,
@@ -70,9 +68,7 @@ pub mod slack_channel_configuration {
         >,
         /// Enables use of a user role requirement in your chat configuration.
         #[builder(into, default)]
-        pub user_authorization_required: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub user_authorization_required: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SlackChannelConfigurationResult {

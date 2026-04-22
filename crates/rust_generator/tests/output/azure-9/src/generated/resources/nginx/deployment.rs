@@ -88,9 +88,7 @@ pub mod deployment {
         >,
         /// Specify the automatic upgrade channel for the NGINX deployment. Defaults to `stable`. The possible values are `stable` and `preview`.
         #[builder(into, default)]
-        pub automatic_upgrade_channel: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub automatic_upgrade_channel: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the number of NGINX capacity units for this NGINX deployment.
         ///
         /// > **Note** For more information on NGINX capacity units, please refer to the [NGINX scaling guidance documentation](https://docs.nginx.com/nginxaas/azure/quickstart/scaling/)

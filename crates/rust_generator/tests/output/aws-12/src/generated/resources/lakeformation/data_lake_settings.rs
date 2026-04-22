@@ -111,9 +111,7 @@ pub mod data_lake_settings {
         pub admins: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to allow Amazon EMR clusters to access data managed by Lake Formation.
         #[builder(into, default)]
-        pub allow_external_data_filtering: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_external_data_filtering: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to allow a third-party query engine to get data access credentials without session tags when a caller has full data access permissions.
         #[builder(into, default)]
         pub allow_full_table_external_data_access: pulumi_gestalt_rust::Input<
@@ -162,9 +160,7 @@ pub mod data_lake_settings {
         ///
         /// > **NOTE:** Although optional, not including `admins`, `create_database_default_permissions`, `create_table_default_permissions`, `parameters`, and/or `trusted_resource_owners` results in the setting being cleared.
         #[builder(into, default)]
-        pub trusted_resource_owners: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub trusted_resource_owners: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct DataLakeSettingsResult {

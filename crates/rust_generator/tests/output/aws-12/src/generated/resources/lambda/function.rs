@@ -325,9 +325,7 @@ pub mod function {
         /// By default, the security groups will be replaced with the `default` security group in the function's configured VPC.
         /// Set the `replacement_security_group_ids` attribute to use a custom list of security groups for replacement.
         #[builder(into, default)]
-        pub replace_security_groups_on_destroy: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub replace_security_groups_on_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of security group IDs to assign to the function's VPC configuration prior to destruction.
         /// `replace_security_groups_on_destroy` must be set to `true` to use this attribute.
         #[builder(into, default)]
@@ -336,9 +334,7 @@ pub mod function {
         >,
         /// Amount of reserved concurrent executions for this lambda function. A value of `0` disables lambda from being triggered and `-1` removes any concurrency limitations. Defaults to Unreserved Concurrency Limits `-1`. See [Managing Concurrency](https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html)
         #[builder(into, default)]
-        pub reserved_concurrent_executions: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub reserved_concurrent_executions: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Amazon Resource Name (ARN) of the function's execution role. The role provides the function's identity and access to AWS services and resources.
         ///
         /// The following arguments are optional:

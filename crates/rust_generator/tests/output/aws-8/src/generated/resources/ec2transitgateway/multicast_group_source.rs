@@ -38,9 +38,7 @@ pub mod multicast_group_source {
         pub network_interface_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the transit gateway multicast domain.
         #[builder(into)]
-        pub transit_gateway_multicast_domain_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub transit_gateway_multicast_domain_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MulticastGroupSourceResult {

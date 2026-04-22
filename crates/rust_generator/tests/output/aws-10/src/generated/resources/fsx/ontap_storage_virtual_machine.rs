@@ -86,9 +86,7 @@ pub mod ontap_storage_virtual_machine {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the root volume security style, Valid values are `UNIX`, `NTFS`, and `MIXED`. All volumes created under this SVM will inherit the root security style unless the security style is specified on the volume. Default value is `UNIX`.
         #[builder(into, default)]
-        pub root_volume_security_style: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub root_volume_security_style: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the password to use when logging on to the SVM using a secure shell (SSH) connection to the SVM's management endpoint. Doing so enables you to manage the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's fsxadmin user to manage the SVM.
         #[builder(into, default)]
         pub svm_admin_password: pulumi_gestalt_rust::Input<Option<String>>,

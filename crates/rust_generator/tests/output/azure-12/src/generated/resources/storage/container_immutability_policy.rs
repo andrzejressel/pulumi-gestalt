@@ -70,14 +70,10 @@ pub mod container_immutability_policy {
         >,
         /// Whether to allow protected append writes to append blobs to the container. Defaults to `false`. Cannot be set with `protected_append_writes_all_enabled`.
         #[builder(into, default)]
-        pub protected_append_writes_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub protected_append_writes_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Resource Manager ID of the Storage Container where this Immutability Policy should be applied. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_container_resource_manager_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub storage_container_resource_manager_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ContainerImmutabilityPolicyResult {

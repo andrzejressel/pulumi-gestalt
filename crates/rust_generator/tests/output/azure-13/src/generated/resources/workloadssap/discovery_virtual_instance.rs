@@ -48,9 +48,7 @@ pub mod discovery_virtual_instance {
     pub struct DiscoveryVirtualInstanceArgs {
         /// The ID of the Virtual Machine of the Central Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub central_server_virtual_machine_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub central_server_virtual_machine_id: pulumi_gestalt_rust::Input<String>,
         /// The environment type for the SAP Discovery Virtual Instance. Possible values are `NonProd` and `Prod`. Changing this forces a new resource to be created.
         #[builder(into)]
         pub environment: pulumi_gestalt_rust::Input<String>,
@@ -64,14 +62,10 @@ pub mod discovery_virtual_instance {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the managed Resource Group for the SAP Discovery Virtual Instance. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub managed_resource_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub managed_resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the custom Storage Account created by the service in the managed Resource Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub managed_storage_account_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub managed_storage_account_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the SAP Discovery Virtual Instance. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

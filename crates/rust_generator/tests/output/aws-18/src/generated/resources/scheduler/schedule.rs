@@ -101,9 +101,7 @@ pub mod schedule {
         pub schedule_expression: pulumi_gestalt_rust::Input<String>,
         /// Timezone in which the scheduling expression is evaluated. Defaults to `UTC`. Example: `Australia/Sydney`.
         #[builder(into, default)]
-        pub schedule_expression_timezone: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub schedule_expression_timezone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the start date you specify. EventBridge Scheduler ignores the start date for one-time schedules. Example: `2030-01-01T01:00:00Z`.
         #[builder(into, default)]
         pub start_date: pulumi_gestalt_rust::Input<Option<String>>,

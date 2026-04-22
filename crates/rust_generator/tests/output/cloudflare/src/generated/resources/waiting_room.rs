@@ -63,9 +63,7 @@ pub mod waiting_room {
         pub custom_page_html: pulumi_gestalt_rust::Input<Option<String>>,
         /// The language to use for the default waiting room page. Available values: `de-DE`, `es-ES`, `en-US`, `fr-FR`, `id-ID`, `it-IT`, `ja-JP`, `ko-KR`, `nl-NL`, `pl-PL`, `pt-BR`, `tr-TR`, `zh-CN`, `zh-TW`, `ru-RU`, `fa-IR`, `bg-BG`, `hr-HR`, `cs-CZ`, `da-DK`, `fi-FI`, `lt-LT`, `ms-MY`, `nb-NO`, `ro-RO`, `el-GR`, `he-IL`, `hi-IN`, `hu-HU`, `sr-BA`, `sk-SK`, `sl-SI`, `sv-SE`, `tl-PH`, `th-TH`, `uk-UA`, `vi-VN`. Defaults to `en-US`.
         #[builder(into, default)]
-        pub default_template_language: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_template_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description to add more details about the waiting room.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
@@ -74,9 +72,7 @@ pub mod waiting_room {
         pub disable_session_renewal: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The list of enabled origin commands for the waiting room. Available values: `revoke`.
         #[builder(into, default)]
-        pub enabled_origin_commands: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub enabled_origin_commands: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Host name for which the waiting room will be applied (no wildcards).
         #[builder(into)]
         pub host: pulumi_gestalt_rust::Input<String>,

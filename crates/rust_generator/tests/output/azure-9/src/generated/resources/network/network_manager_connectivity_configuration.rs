@@ -98,9 +98,7 @@ pub mod network_manager_connectivity_configuration {
         pub connectivity_topology: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether to remove current existing Virtual Network Peering in the Connectivity Configuration affected scope. Possible values are `true` and `false`.
         #[builder(into, default)]
-        pub delete_existing_peering_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub delete_existing_peering_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A description of the Connectivity Configuration.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,

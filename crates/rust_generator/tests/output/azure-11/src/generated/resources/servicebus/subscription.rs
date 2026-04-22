@@ -68,9 +68,7 @@ pub mod subscription {
         ///
         /// > **NOTE:** Client Scoped Subscription can only be used for JMS subscription (Java Message Service).
         #[builder(into, default)]
-        pub client_scoped_subscription_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub client_scoped_subscription_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag which controls whether the Subscription has dead letter support on filter evaluation exceptions. Defaults to `true`.
         #[builder(into, default)]
         pub dead_lettering_on_filter_evaluation_error: pulumi_gestalt_rust::Input<

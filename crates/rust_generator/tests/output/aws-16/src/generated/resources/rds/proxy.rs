@@ -19,9 +19,7 @@ pub mod proxy {
     pub struct ProxyArgs {
         /// Configuration block(s) with authorization mechanisms to connect to the associated instances or clusters. Described below.
         #[builder(into)]
-        pub auths: pulumi_gestalt_rust::Input<
-            Vec<super::super::types::rds::ProxyAuth>,
-        >,
+        pub auths: pulumi_gestalt_rust::Input<Vec<super::super::types::rds::ProxyAuth>>,
         /// Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.
         #[builder(into, default)]
         pub debug_logging: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -47,9 +45,7 @@ pub mod proxy {
         >,
         /// One or more VPC security group IDs to associate with the new proxy.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more VPC subnet IDs to associate with the new proxy.
         #[builder(into)]
         pub vpc_subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,

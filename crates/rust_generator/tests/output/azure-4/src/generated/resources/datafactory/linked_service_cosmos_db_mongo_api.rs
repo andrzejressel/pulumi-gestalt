@@ -91,9 +91,7 @@ pub mod linked_service_cosmos_db_mongo_api {
         >,
         /// Whether API server version is 3.2 or higher. Defaults to `false`.
         #[builder(into, default)]
-        pub server_version_is32_or_higher: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub server_version_is32_or_higher: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct LinkedServiceCosmosDbMongoApiResult {

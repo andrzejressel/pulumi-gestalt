@@ -56,9 +56,7 @@ pub mod account {
         >,
         /// Is local authentication enabled for this Azure Maps Account? When `false`, all authentication to the Azure Maps data-plane REST API is disabled, except Azure AD authentication. Defaults to `true`.
         #[builder(into, default)]
-        pub local_authentication_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub local_authentication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Location in which the Azure Maps Account should be provisioned. Changing this forces a new resource to be created. Defaults to `global`.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

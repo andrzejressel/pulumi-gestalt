@@ -320,9 +320,7 @@ pub mod instance {
         /// upgrades are allowed. Changing this parameter does not result in an outage and
         /// the change is asynchronously applied as soon as possible.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether any database modifications
         /// are applied immediately, or during the next maintenance window. Default is
         /// `false`. See [Amazon RDS Documentation for more
@@ -373,9 +371,7 @@ pub mod instance {
         pub copy_tags_to_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.
         #[builder(into, default)]
-        pub custom_iam_instance_profile: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub custom_iam_instance_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance. See [CoIP for RDS on Outposts](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html#rds-on-outposts.coip) for more information.
         ///
         /// > **NOTE:** Removing the `replicate_source_db` attribute from an existing RDS
@@ -439,9 +435,7 @@ pub mod instance {
         /// when this DB instance is deleted. Must be provided if `skip_final_snapshot` is
         /// set to `false`. The value must begin with a letter, only contain alphanumeric characters and hyphens, and not end with a hyphen or contain two consecutive hyphens. Must not be provided when deleting a read replica.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether mappings of AWS Identity and Access Management (IAM) accounts to database
         /// accounts is enabled.
         #[builder(into, default)]
@@ -484,14 +478,10 @@ pub mod instance {
         pub maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to true to allow RDS to manage the master user password in Secrets Manager. Cannot be set if `password` is provided.
         #[builder(into, default)]
-        pub manage_master_user_password: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub manage_master_user_password: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN. If not specified, the default KMS key for your Amazon Web Services account is used.
         #[builder(into, default)]
-        pub master_user_secret_kms_key_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub master_user_secret_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance. Configuring this will automatically ignore differences to `allocated_storage`. Must be greater than or equal to `allocated_storage` or `0` to disable Storage Autoscaling.
         #[builder(into, default)]
         pub max_allocated_storage: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -533,14 +523,10 @@ pub mod instance {
         pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether Performance Insights are enabled. Defaults to false.
         #[builder(into, default)]
-        pub performance_insights_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub performance_insights_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN for the KMS key to encrypt Performance Insights data. When specifying `performance_insights_kms_key_id`, `performance_insights_enabled` needs to be set to true. Once KMS key is set, it can never be changed.
         #[builder(into, default)]
-        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time in days to retain Performance Insights data. Valid values are `7`, `731` (2 years) or a multiple of `31`. When specifying `performance_insights_retention_period`, `performance_insights_enabled` needs to be set to true. Defaults to '7'.
         #[builder(into, default)]
         pub performance_insights_retention_period: pulumi_gestalt_rust::Input<
@@ -626,9 +612,7 @@ pub mod instance {
         /// List of VPC security groups to
         /// associate.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

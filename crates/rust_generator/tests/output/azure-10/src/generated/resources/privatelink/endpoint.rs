@@ -237,9 +237,7 @@ pub mod endpoint {
     pub struct EndpointArgs {
         /// The custom name of the network interface attached to the private endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub custom_network_interface_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub custom_network_interface_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `ip_configuration` blocks as defined below. This allows a static IP address to be set for this Private Endpoint, otherwise an address is dynamically allocated from the Subnet.
         #[builder(into, default)]
         pub ip_configurations: pulumi_gestalt_rust::Input<

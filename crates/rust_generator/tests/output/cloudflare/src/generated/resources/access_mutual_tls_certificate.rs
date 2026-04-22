@@ -58,9 +58,7 @@ pub mod access_mutual_tls_certificate {
         pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The hostnames that will be prompted for this certificate.
         #[builder(into, default)]
-        pub associated_hostnames: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub associated_hostnames: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Root CA for your certificates.
         #[builder(into, default)]
         pub certificate: pulumi_gestalt_rust::Input<Option<String>>,

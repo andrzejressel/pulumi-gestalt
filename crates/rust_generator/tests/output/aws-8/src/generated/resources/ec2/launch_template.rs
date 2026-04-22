@@ -161,9 +161,7 @@ pub mod launch_template {
         /// A list of security group names to associate with. If you are creating Instances in a VPC, use
         /// `vpc_security_group_ids` instead.
         #[builder(into, default)]
-        pub security_group_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub security_group_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The tags to apply to the resources during launch. See Tag Specifications below for more details. Default tags are currently not propagated to ASG created resources so you may wish to inject your default tags into this variable against the relevant child resource types created.
         #[builder(into, default)]
         pub tag_specifications: pulumi_gestalt_rust::Input<
@@ -182,9 +180,7 @@ pub mod launch_template {
         pub user_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of security group IDs to associate with. Conflicts with `network_interfaces.security_groups`
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct LaunchTemplateResult {

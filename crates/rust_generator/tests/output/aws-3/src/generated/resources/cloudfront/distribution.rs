@@ -231,9 +231,7 @@ pub mod distribution {
         #[builder(into, default)]
         pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub continuous_deployment_policy_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub continuous_deployment_policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub custom_error_responses: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudfront::DistributionCustomErrorResponse>>,

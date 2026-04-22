@@ -45,9 +45,7 @@ pub mod endpoint_access {
         pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// An array of security group IDs to associate with the workgroup.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the workgroup.
         #[builder(into)]
         pub workgroup_name: pulumi_gestalt_rust::Input<String>,

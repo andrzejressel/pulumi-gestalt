@@ -56,9 +56,7 @@ pub mod smart_detection_rule {
         ///
         /// > **Note:** At least one read or write permission must be defined.
         #[builder(into, default)]
-        pub additional_email_recipients: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub additional_email_recipients: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the Application Insights component on which the Smart Detection Rule operates. Changing this forces a new resource to be created.
         #[builder(into)]
         pub application_insights_id: pulumi_gestalt_rust::Input<String>,
@@ -70,9 +68,7 @@ pub mod smart_detection_rule {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Do emails get sent to subscription owners? Defaults to `true`.
         #[builder(into, default)]
-        pub send_emails_to_subscription_owners: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub send_emails_to_subscription_owners: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SmartDetectionRuleResult {

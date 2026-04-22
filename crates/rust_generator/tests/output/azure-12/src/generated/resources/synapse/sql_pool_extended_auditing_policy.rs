@@ -94,9 +94,7 @@ pub mod sql_pool_extended_auditing_policy {
         pub sql_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The access key to use for the auditing storage account.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is `storage_account_access_key` value the storage's secondary key?
         #[builder(into, default)]
         pub storage_account_access_key_is_secondary: pulumi_gestalt_rust::Input<

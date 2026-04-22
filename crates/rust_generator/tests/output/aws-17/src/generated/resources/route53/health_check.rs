@@ -123,9 +123,7 @@ pub mod health_check {
         pub fqdn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The status of the health check when CloudWatch has insufficient data about the state of associated alarm. Valid values are `Healthy` , `Unhealthy` and `LastKnownStatus`.
         #[builder(into, default)]
-        pub insufficient_data_health_status: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub insufficient_data_health_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean value that indicates whether the status of health check should be inverted. For example, if a health check is healthy but Inverted is True , then Route 53 considers the health check to be unhealthy.
         #[builder(into, default)]
         pub invert_healthcheck: pulumi_gestalt_rust::Input<Option<bool>>,

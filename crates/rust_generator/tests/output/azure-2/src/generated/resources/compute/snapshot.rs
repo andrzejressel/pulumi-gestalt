@@ -80,9 +80,7 @@ pub mod snapshot {
         pub network_access_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy for controlling export on the disk. Possible values are `true` or `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Snapshot. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

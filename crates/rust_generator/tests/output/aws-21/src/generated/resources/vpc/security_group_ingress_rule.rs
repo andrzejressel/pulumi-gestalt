@@ -66,9 +66,7 @@ pub mod security_group_ingress_rule {
         pub prefix_list_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source security group that is referenced in the rule.
         #[builder(into, default)]
-        pub referenced_security_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub referenced_security_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the security group.
         #[builder(into)]
         pub security_group_id: pulumi_gestalt_rust::Input<String>,

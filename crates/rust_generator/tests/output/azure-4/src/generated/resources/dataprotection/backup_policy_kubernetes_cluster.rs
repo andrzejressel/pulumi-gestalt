@@ -63,9 +63,7 @@ pub mod backup_policy_kubernetes_cluster {
     pub struct BackupPolicyKubernetesClusterArgs {
         /// Specifies a list of repeating time interval. It supports weekly back. It should follow `ISO 8601` repeating time interval. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub backup_repeating_time_intervals: pulumi_gestalt_rust::Input<
-            Vec<String>,
-        >,
+        pub backup_repeating_time_intervals: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A `default_retention_rule` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
         pub default_retention_rule: pulumi_gestalt_rust::Input<

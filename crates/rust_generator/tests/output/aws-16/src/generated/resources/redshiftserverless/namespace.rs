@@ -33,9 +33,7 @@ pub mod namespace {
     pub struct NamespaceArgs {
         /// ID of the KMS key used to encrypt the namespace's admin credentials secret.
         #[builder(into, default)]
-        pub admin_password_secret_kms_key_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub admin_password_secret_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password of the administrator for the first database created in the namespace.
         /// Conflicts with `manage_admin_password`.
         #[builder(into, default)]

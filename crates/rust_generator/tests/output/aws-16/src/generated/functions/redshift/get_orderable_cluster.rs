@@ -19,9 +19,7 @@ pub mod get_orderable_cluster {
         pub node_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred Redshift Cluster node types. The first match in this list will be returned. If no preferred matches are found and the original search returned more than one result, an error is returned.
         #[builder(into, default)]
-        pub preferred_node_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_node_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetOrderableClusterResult {

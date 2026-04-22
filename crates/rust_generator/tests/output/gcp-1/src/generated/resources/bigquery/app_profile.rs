@@ -225,9 +225,7 @@ pub mod app_profile {
         /// in the event of transient errors or delays. Clusters in a region are considered equidistant. Choosing this option sacrifices read-your-writes
         /// consistency to improve availability.
         #[builder(into, default)]
-        pub multi_cluster_routing_use_any: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub multi_cluster_routing_use_any: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]

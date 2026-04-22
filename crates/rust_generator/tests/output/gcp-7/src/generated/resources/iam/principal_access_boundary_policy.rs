@@ -81,9 +81,7 @@ pub mod principal_access_boundary_policy {
         ///
         /// - - -
         #[builder(into)]
-        pub principal_access_boundary_policy_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub principal_access_boundary_policy_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PrincipalAccessBoundaryPolicyResult {

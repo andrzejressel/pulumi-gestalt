@@ -130,9 +130,7 @@ pub mod job {
     pub struct JobArgs {
         /// The command of the job. Defined below.
         #[builder(into)]
-        pub command: pulumi_gestalt_rust::Input<
-            super::super::types::glue::JobCommand,
-        >,
+        pub command: pulumi_gestalt_rust::Input<super::super::types::glue::JobCommand>,
         /// The list of connections used for this job.
         #[builder(into, default)]
         pub connections: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

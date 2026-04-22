@@ -58,9 +58,7 @@ pub mod express_route_gateway {
     pub struct ExpressRouteGatewayArgs {
         /// Specified whether this gateway accept traffic from non-Virtual WAN networks. Defaults to `false`.
         #[builder(into, default)]
-        pub allow_non_virtual_wan_traffic: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_non_virtual_wan_traffic: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

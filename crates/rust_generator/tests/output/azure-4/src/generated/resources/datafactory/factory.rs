@@ -48,9 +48,7 @@ pub mod factory {
         pub customer_managed_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the user assigned identity associated with the Customer Managed Key. Must be supplied if `customer_managed_key_id` is set.
         #[builder(into, default)]
-        pub customer_managed_key_identity_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub customer_managed_key_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `github_configuration` block as defined below.
         #[builder(into, default)]
         pub github_configuration: pulumi_gestalt_rust::Input<
@@ -71,9 +69,7 @@ pub mod factory {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is Managed Virtual Network enabled?
         #[builder(into, default)]
-        pub managed_virtual_network_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub managed_virtual_network_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Data Factory. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

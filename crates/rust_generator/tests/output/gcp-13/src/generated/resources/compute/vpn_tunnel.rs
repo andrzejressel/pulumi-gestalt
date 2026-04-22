@@ -142,9 +142,7 @@ pub mod vpn_tunnel {
         /// for example `192.168.0.0/16`. The ranges should be disjoint.
         /// Only IPv4 is supported.
         #[builder(into, default)]
-        pub local_traffic_selectors: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub local_traffic_selectors: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the resource. The name must be 1-63 characters long, and
         /// comply with RFC1035. Specifically, the name must be 1-63
         /// characters long and match the regular expression
@@ -159,9 +157,7 @@ pub mod vpn_tunnel {
         pub peer_external_gateway: pulumi_gestalt_rust::Input<Option<String>>,
         /// The interface ID of the external VPN gateway to which this VPN tunnel is connected.
         #[builder(into, default)]
-        pub peer_external_gateway_interface: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub peer_external_gateway_interface: pulumi_gestalt_rust::Input<Option<i32>>,
         /// URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected.
         /// If provided, the VPN tunnel will automatically use the same vpn_gateway_interface
         /// ID in the peer GCP VPN gateway.
@@ -183,9 +179,7 @@ pub mod vpn_tunnel {
         /// for example `192.168.0.0/16`. The ranges should be disjoint.
         /// Only IPv4 is supported.
         #[builder(into, default)]
-        pub remote_traffic_selectors: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub remote_traffic_selectors: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// URL of router resource to be used for dynamic routing.
         #[builder(into, default)]
         pub router: pulumi_gestalt_rust::Input<Option<String>>,

@@ -47,9 +47,7 @@ pub struct ProviderArgs {
     #[builder(into, default)]
     pub environment: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub features: pulumi_gestalt_rust::Input<
-        Option<super::types::ProviderFeatures>,
-    >,
+    pub features: pulumi_gestalt_rust::Input<Option<super::types::ProviderFeatures>>,
     /// The Hostname which should be used for the Azure Metadata Service.
     #[builder(into, default)]
     pub metadata_host: pulumi_gestalt_rust::Input<Option<String>>,
@@ -76,15 +74,11 @@ pub struct ProviderArgs {
     pub partner_id: pulumi_gestalt_rust::Input<Option<String>>,
     /// The set of Resource Providers which should be automatically registered for the subscription.
     #[builder(into, default)]
-    pub resource_provider_registrations: pulumi_gestalt_rust::Input<
-        Option<String>,
-    >,
+    pub resource_provider_registrations: pulumi_gestalt_rust::Input<Option<String>>,
     /// A list of Resource Providers to explicitly register for the subscription, in addition to those specified by the
     /// `resource_provider_registrations` property.
     #[builder(into, default)]
-    pub resource_providers_to_registers: pulumi_gestalt_rust::Input<
-        Option<Vec<String>>,
-    >,
+    pub resource_providers_to_registers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     /// Should the AzureRM Provider skip registering all of the Resource Providers that it supports, if they're not already
     /// registered?
     #[builder(into, default)]

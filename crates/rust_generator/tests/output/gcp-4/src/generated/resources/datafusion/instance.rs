@@ -306,9 +306,7 @@ pub mod instance {
         pub enable_stackdriver_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Option to enable Stackdriver Monitoring.
         #[builder(into, default)]
-        pub enable_stackdriver_monitoring: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_stackdriver_monitoring: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Option to enable and pass metadata for event publishing.
         /// Structure is documented below.
         #[builder(into, default)]

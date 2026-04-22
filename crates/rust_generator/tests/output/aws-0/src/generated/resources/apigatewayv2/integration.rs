@@ -123,9 +123,7 @@ pub mod integration {
         pub connection_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// How to handle response payload content type conversions. Valid values: `CONVERT_TO_BINARY`, `CONVERT_TO_TEXT`. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub content_handling_strategy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub content_handling_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Credentials required for the integration, if any.
         #[builder(into, default)]
         pub credentials_arn: pulumi_gestalt_rust::Input<Option<String>>,
@@ -173,9 +171,7 @@ pub mod integration {
         >,
         /// The [template selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-template-selection-expressions) for the integration.
         #[builder(into, default)]
-        pub template_selection_expression: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub template_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs.
         /// The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
         /// this provider will only perform drift detection of its value when present in a configuration.

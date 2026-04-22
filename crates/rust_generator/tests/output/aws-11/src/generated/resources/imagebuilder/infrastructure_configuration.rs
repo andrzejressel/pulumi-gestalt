@@ -94,9 +94,7 @@ pub mod infrastructure_configuration {
         >,
         /// Enable if the instance should be terminated when the pipeline fails. Defaults to `false`.
         #[builder(into, default)]
-        pub terminate_instance_on_failure: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub terminate_instance_on_failure: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct InfrastructureConfigurationResult {

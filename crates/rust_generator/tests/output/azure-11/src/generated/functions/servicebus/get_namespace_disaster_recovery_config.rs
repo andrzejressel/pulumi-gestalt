@@ -9,9 +9,7 @@ pub mod get_namespace_disaster_recovery_config {
     #[allow(dead_code)]
     pub struct GetNamespaceDisasterRecoveryConfigArgs {
         #[builder(into, default)]
-        pub alias_authorization_rule_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub alias_authorization_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
         pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]

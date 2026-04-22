@@ -20,9 +20,7 @@ pub mod get_connect {
         >,
         /// Identifier of the EC2 Transit Gateway Connect.
         #[builder(into, default)]
-        pub transit_gateway_connect_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub transit_gateway_connect_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetConnectResult {

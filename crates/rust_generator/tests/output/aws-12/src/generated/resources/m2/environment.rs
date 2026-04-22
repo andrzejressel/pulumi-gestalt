@@ -129,9 +129,7 @@ pub mod environment {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format `ddd:hh24:mi-ddd:hh24:mi` and must be less than 24 hours. If not provided a random value will be used.
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Allow applications deployed to this environment to be publicly accessible.
         #[builder(into, default)]
         pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,

@@ -68,9 +68,7 @@ pub mod account_subscription {
         pub first_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for the IAM Identity Center instance.
         #[builder(into, default)]
-        pub iam_identity_center_instance_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub iam_identity_center_instance_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Last name of the author of the Amazon QuickSight account to use for future communications. This field is required if `ENTERPPRISE_AND_Q` is the selected edition of the new Amazon QuickSight account.
         #[builder(into, default)]
         pub last_name: pulumi_gestalt_rust::Input<Option<String>>,

@@ -27,9 +27,7 @@ pub mod role_assignment {
         #[builder(into, default)]
         pub role_definition_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub skip_service_principal_aad_check: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub skip_service_principal_aad_check: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct RoleAssignmentResult {

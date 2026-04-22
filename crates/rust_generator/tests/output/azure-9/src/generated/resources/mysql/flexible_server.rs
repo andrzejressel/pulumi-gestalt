@@ -121,9 +121,7 @@ pub mod flexible_server {
         pub delegated_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should geo redundant backup enabled? Defaults to `false`. Changing this forces a new MySQL Flexible Server to be created.
         #[builder(into, default)]
-        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `high_availability` block as defined below.
         #[builder(into, default)]
         pub high_availability: pulumi_gestalt_rust::Input<

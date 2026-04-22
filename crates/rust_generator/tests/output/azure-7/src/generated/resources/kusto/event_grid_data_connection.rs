@@ -158,9 +158,7 @@ pub mod event_grid_data_connection {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Empty for non-managed identity based data connection. For system assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
         #[builder(into, default)]
-        pub managed_identity_resource_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub managed_identity_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the mapping rule used for the message ingestion. Mapping rule must exist before resource is created.
         #[builder(into, default)]
         pub mapping_rule_name: pulumi_gestalt_rust::Input<Option<String>>,

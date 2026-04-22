@@ -40,38 +40,24 @@ pub mod ganglia_layer {
             Option<super::super::types::opsworks::GangliaLayerCloudwatchConfiguration>,
         >,
         #[builder(into, default)]
-        pub custom_configure_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_configure_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub custom_deploy_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_deploy_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ARN of an IAM profile that will be used for the layer's instances.
         #[builder(into, default)]
-        pub custom_instance_profile_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub custom_instance_profile_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom JSON attributes to apply to the layer.
         #[builder(into, default)]
         pub custom_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ids for a set of security groups to apply to the layer's instances.
         #[builder(into, default)]
-        pub custom_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub custom_setup_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_setup_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub custom_shutdown_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_shutdown_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub custom_undeploy_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_undeploy_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to enable Elastic Load Balancing connection draining.
         #[builder(into, default)]
         pub drain_elb_on_shutdown: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -119,9 +105,7 @@ pub mod ganglia_layer {
         pub url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to use EBS-optimized instances.
         #[builder(into, default)]
-        pub use_ebs_optimized_instances: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub use_ebs_optimized_instances: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The username to use for Ganglia. Defaults to "opsworks".
         #[builder(into, default)]
         pub username: pulumi_gestalt_rust::Input<Option<String>>,

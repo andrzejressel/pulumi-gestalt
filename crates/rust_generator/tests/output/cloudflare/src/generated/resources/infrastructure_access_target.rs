@@ -74,9 +74,7 @@ pub mod infrastructure_access_target {
         pub hostname: pulumi_gestalt_rust::Input<String>,
         /// The IPv4/IPv6 address that identifies where to reach a target.
         #[builder(into)]
-        pub ip: pulumi_gestalt_rust::Input<
-            super::types::InfrastructureAccessTargetIp,
-        >,
+        pub ip: pulumi_gestalt_rust::Input<super::types::InfrastructureAccessTargetIp>,
     }
     #[allow(dead_code)]
     pub struct InfrastructureAccessTargetResult {

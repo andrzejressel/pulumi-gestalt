@@ -66,9 +66,7 @@ pub mod workflow {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the integration account linked by this Logic App Workflow.
         #[builder(into, default)]
-        pub logic_app_integration_account_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub logic_app_integration_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Logic App Workflow. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

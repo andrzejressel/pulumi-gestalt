@@ -266,9 +266,7 @@ pub mod flexible_app_version {
         pub runtime_channel: pulumi_gestalt_rust::Input<Option<String>>,
         /// The path or name of the app's main executable.
         #[builder(into, default)]
-        pub runtime_main_executable_path: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub runtime_main_executable_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// AppEngine service resource. Can contain numbers, letters, and hyphens.
         #[builder(into)]
         pub service: pulumi_gestalt_rust::Input<String>,

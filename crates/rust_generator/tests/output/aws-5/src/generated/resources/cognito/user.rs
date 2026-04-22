@@ -85,9 +85,7 @@ pub mod user {
         >,
         /// A list of mediums to the welcome message will be sent through. Allowed values are `EMAIL` and `SMS`. If it's provided, make sure you have also specified `email` attribute for the `EMAIL` medium and `phone_number` for the `SMS`. More than one value can be specified. Amazon Cognito does not store the `desired_delivery_mediums` value. Defaults to `["SMS"]`.
         #[builder(into, default)]
-        pub desired_delivery_mediums: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub desired_delivery_mediums: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies whether the user should be enabled after creation. The welcome message will be sent regardless of the `enabled` value. The behavior can be changed with `message_action` argument. Defaults to `true`.
         #[builder(into, default)]
         pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,

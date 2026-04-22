@@ -70,9 +70,7 @@ pub mod data_repository_association {
     pub struct DataRepositoryAssociationArgs {
         /// Set to true to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Defaults to `false`.
         #[builder(into, default)]
-        pub batch_import_meta_data_on_create: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub batch_import_meta_data_on_create: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The path to the Amazon S3 data repository that will be linked to the file system. The path must be an S3 bucket s3://myBucket/myPrefix/. This path specifies where in the S3 data repository files will be imported from or exported to. The same S3 bucket cannot be linked more than once to the same file system.
         #[builder(into)]
         pub data_repository_path: pulumi_gestalt_rust::Input<String>,

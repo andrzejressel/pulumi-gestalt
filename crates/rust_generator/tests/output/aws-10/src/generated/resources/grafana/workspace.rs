@@ -98,17 +98,13 @@ pub mod workspace {
         >,
         /// The notification destinations. If a data source is specified here, Amazon Managed Grafana will create IAM roles and permissions needed to use these destinations. Must be set to `SNS`.
         #[builder(into, default)]
-        pub notification_destinations: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub notification_destinations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The role name that the workspace uses to access resources through Amazon Organizations.
         #[builder(into, default)]
         pub organization_role_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Organizations organizational units that the workspace is authorized to use data sources from.
         #[builder(into, default)]
-        pub organizational_units: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub organizational_units: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The permission type of the workspace. If `SERVICE_MANAGED` is specified, the IAM roles and IAM policy attachments are generated automatically. If `CUSTOMER_MANAGED` is specified, the IAM roles and IAM policy attachments will not be created.
         ///
         /// The following arguments are optional:

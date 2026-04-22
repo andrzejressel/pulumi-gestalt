@@ -29,9 +29,7 @@ pub mod api_shield_schema_validation_settings {
     pub struct ApiShieldSchemaValidationSettingsArgs {
         /// The default mitigation action used when there is no mitigation action defined on the operation.
         #[builder(into)]
-        pub validation_default_mitigation_action: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub validation_default_mitigation_action: pulumi_gestalt_rust::Input<String>,
         /// When set, this overrides both zone level and operation level mitigation actions.
         #[builder(into, default)]
         pub validation_override_mitigation_action: pulumi_gestalt_rust::Input<

@@ -208,9 +208,7 @@ pub mod flow_log {
     pub struct FlowLogArgs {
         /// ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts.
         #[builder(into, default)]
-        pub deliver_cross_account_role: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub deliver_cross_account_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// Describes the destination options for a flow log. More details below.
         #[builder(into, default)]
         pub destination_options: pulumi_gestalt_rust::Input<
@@ -253,9 +251,7 @@ pub mod flow_log {
         pub traffic_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Transit Gateway Attachment ID to attach to
         #[builder(into, default)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Transit Gateway ID to attach to
         #[builder(into, default)]
         pub transit_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,

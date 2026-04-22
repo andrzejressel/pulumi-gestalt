@@ -508,9 +508,7 @@ pub mod region_backend_service {
         /// Time for which instance will be drained (not accept new
         /// connections, but still work to finish started).
         #[builder(into, default)]
-        pub connection_draining_timeout_sec: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub connection_draining_timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Connection Tracking configuration for this BackendService.
         /// This is available only for Layer 4 Internal Load Balancing and
         /// Network Load Balancing.
@@ -560,9 +558,7 @@ pub mod region_backend_service {
         /// Specifies preference of traffic to the backend (from the proxy and from the client for proxyless gRPC).
         /// Possible values are: `IPV4_ONLY`, `PREFER_IPV6`, `IPV6_ONLY`.
         #[builder(into, default)]
-        pub ip_address_selection_policy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub ip_address_selection_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates what kind of load balancing this regional backend service
         /// will be used for. A backend service created for one type of load
         /// balancing cannot be used with the other(s). For more information, refer to

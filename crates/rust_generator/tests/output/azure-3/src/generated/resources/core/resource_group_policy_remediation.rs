@@ -84,9 +84,7 @@ pub mod resource_group_policy_remediation {
         pub policy_assignment_id: pulumi_gestalt_rust::Input<String>,
         /// The unique ID for the policy definition reference within the policy set definition that should be remediated. Required when the policy assignment being remediated assigns a policy set definition.
         #[builder(into, default)]
-        pub policy_definition_reference_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub policy_definition_reference_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Determines the max number of resources that can be remediated by the remediation job. If not provided, the default resource count is used.
         #[builder(into, default)]
         pub resource_count: pulumi_gestalt_rust::Input<Option<i32>>,

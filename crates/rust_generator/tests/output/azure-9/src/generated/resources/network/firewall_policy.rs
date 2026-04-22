@@ -45,9 +45,7 @@ pub mod firewall_policy {
     pub struct FirewallPolicyArgs {
         /// Whether enable auto learn private ip range.
         #[builder(into, default)]
-        pub auto_learn_private_ranges_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub auto_learn_private_ranges_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the base Firewall Policy.
         #[builder(into, default)]
         pub base_policy_id: pulumi_gestalt_rust::Input<Option<String>>,

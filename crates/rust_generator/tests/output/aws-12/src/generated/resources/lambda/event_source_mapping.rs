@@ -208,9 +208,7 @@ pub mod event_source_mapping {
         pub batch_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// - (Optional) If the function returns an error, split the batch in two and retry. Only available for stream sources (DynamoDB and Kinesis). Defaults to `false`.
         #[builder(into, default)]
-        pub bisect_batch_on_function_error: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub bisect_batch_on_function_error: pulumi_gestalt_rust::Input<Option<bool>>,
         /// - (Optional) An Amazon SQS queue, Amazon SNS topic or Amazon S3 bucket (only available for Kafka sources) destination for failed records. Only available for stream sources (DynamoDB and Kinesis) and Kafka sources (Amazon MSK and Self-managed Apache Kafka). Detailed below.
         #[builder(into, default)]
         pub destination_config: pulumi_gestalt_rust::Input<
@@ -239,22 +237,16 @@ pub mod event_source_mapping {
         pub function_name: pulumi_gestalt_rust::Input<String>,
         /// A list of current response type enums applied to the event source mapping for [AWS Lambda checkpointing](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-batchfailurereporting). Only available for SQS and stream sources (DynamoDB and Kinesis). Valid values: `ReportBatchItemFailures`.
         #[builder(into, default)]
-        pub function_response_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub function_response_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ARN of the Key Management Service (KMS) customer managed key that Lambda uses to encrypt your function's filter criteria.
         #[builder(into, default)]
         pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum amount of time to gather records before invoking the function, in seconds (between 0 and 300). Records will continue to buffer (or accumulate in the case of an SQS queue event source) until either `maximum_batching_window_in_seconds` expires or `batch_size` has been met. For streaming event sources, defaults to as soon as records are available in the stream. If the batch it reads from the stream/queue only has one record in it, Lambda only sends one record to the function. Only available for stream sources (DynamoDB and Kinesis) and SQS standard queues.
         #[builder(into, default)]
-        pub maximum_batching_window_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub maximum_batching_window_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// - (Optional) The maximum age of a record that Lambda sends to a function for processing. Only available for stream sources (DynamoDB and Kinesis). Must be either -1 (forever, and the default value) or between 60 and 604800 (inclusive).
         #[builder(into, default)]
-        pub maximum_record_age_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub maximum_record_age_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// - (Optional) The maximum number of times to retry when the function returns an error. Only available for stream sources (DynamoDB and Kinesis). Minimum and default of -1 (forever), maximum of 10000.
         #[builder(into, default)]
         pub maximum_retry_attempts: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -307,9 +299,7 @@ pub mod event_source_mapping {
         pub starting_position: pulumi_gestalt_rust::Input<Option<String>>,
         /// A timestamp in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) of the data record which to start reading when using `starting_position` set to `AT_TIMESTAMP`. If a record with this exact timestamp does not exist, the next later record is chosen. If the timestamp is older than the current trim horizon, the oldest available record is chosen.
         #[builder(into, default)]
-        pub starting_position_timestamp: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub starting_position_timestamp: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the object. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

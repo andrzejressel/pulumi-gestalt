@@ -64,9 +64,7 @@ pub mod dev_endpoint {
         pub extra_jars_s3_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Path(s) to one or more Python libraries in an S3 bucket that should be loaded in this endpoint. Multiple values must be complete paths separated by a comma.
         #[builder(into, default)]
-        pub extra_python_libs_s3_path: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub extra_python_libs_s3_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the versions of Python and Apache Spark to use. Defaults to AWS Glue version 0.9.
         #[builder(into, default)]
         pub glue_version: pulumi_gestalt_rust::Input<Option<String>>,

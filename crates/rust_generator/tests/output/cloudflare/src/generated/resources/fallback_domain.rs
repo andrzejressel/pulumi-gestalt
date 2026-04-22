@@ -25,9 +25,7 @@ pub mod fallback_domain {
         #[builder(into)]
         pub account_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub domains: pulumi_gestalt_rust::Input<
-            Vec<super::types::FallbackDomainDomain>,
-        >,
+        pub domains: pulumi_gestalt_rust::Input<Vec<super::types::FallbackDomainDomain>>,
         /// The settings policy for which to configure this fallback domain policy.
         #[builder(into, default)]
         pub policy_id: pulumi_gestalt_rust::Input<Option<String>>,

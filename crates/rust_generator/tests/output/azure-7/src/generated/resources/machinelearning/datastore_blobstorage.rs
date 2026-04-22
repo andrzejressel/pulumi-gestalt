@@ -105,9 +105,7 @@ pub mod datastore_blobstorage {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies which identity to use when retrieving data from the specified source. Defaults to `None`. Possible values are `None`, `WorkspaceSystemAssignedIdentity` and `WorkspaceUserAssignedIdentity`.
         #[builder(into, default)]
-        pub service_data_auth_identity: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub service_data_auth_identity: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Shared Access Signature of the Storage Account. Conflicts with `account_key`.
         ///
         /// > **Note:**  One of `account_key` or `shared_access_signature` must be specified.

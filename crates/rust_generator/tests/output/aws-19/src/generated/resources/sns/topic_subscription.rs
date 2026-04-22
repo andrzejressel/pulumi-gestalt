@@ -181,9 +181,7 @@ pub mod topic_subscription {
     pub struct TopicSubscriptionArgs {
         /// Integer indicating number of minutes to wait in retrying mode for fetching subscription arn before marking it as failure. Only applicable for http and https protocols. Default is `1`.
         #[builder(into, default)]
-        pub confirmation_timeout_in_minutes: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub confirmation_timeout_in_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// JSON String with the delivery policy (retries, backoff, etc.) that will be used in the subscription - this only applies to HTTP/S subscriptions. Refer to the [SNS docs](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for more details.
         #[builder(into, default)]
         pub delivery_policy: pulumi_gestalt_rust::Input<Option<String>>,

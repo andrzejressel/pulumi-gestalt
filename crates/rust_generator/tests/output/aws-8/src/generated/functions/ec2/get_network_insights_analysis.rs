@@ -17,9 +17,7 @@ pub mod get_network_insights_analysis {
         >,
         /// ID of the Network Insights Analysis to select.
         #[builder(into, default)]
-        pub network_insights_analysis_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub network_insights_analysis_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,

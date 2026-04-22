@@ -50,9 +50,7 @@ pub mod firewall {
         pub firewall_policy_arn: pulumi_gestalt_rust::Input<String>,
         /// A flag indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. Defaults to `false`.
         #[builder(into, default)]
-        pub firewall_policy_change_protection: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub firewall_policy_change_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A friendly name of the firewall.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

@@ -88,9 +88,7 @@ pub mod server_security_alert_policy {
         ///
         /// > **NOTE:**  Please note that storage accounts configured with `shared_access_key_enabled = false` cannot be used to configure `azure.mssql.ServerSecurityAlertPolicy` with `storage_endpoint` for now.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the blob storage endpoint (e.g. <https://example.blob.core.windows.net>). This blob storage will hold all Threat Detection audit logs.
         #[builder(into, default)]
         pub storage_endpoint: pulumi_gestalt_rust::Input<Option<String>>,

@@ -61,9 +61,7 @@ pub mod apns_voip_channel {
         ///
         /// If you choose to use __Certificate credentials__ you will have to provide:
         #[builder(into, default)]
-        pub default_authentication_method: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_authentication_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the channel is enabled or disabled. Defaults to `true`.
         #[builder(into, default)]
         pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,

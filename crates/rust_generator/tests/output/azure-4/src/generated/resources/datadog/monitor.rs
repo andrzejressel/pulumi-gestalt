@@ -105,9 +105,7 @@ pub mod monitor {
         >,
         /// A `user` block as defined below.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::Input<
-            super::super::types::datadog::MonitorUser,
-        >,
+        pub user: pulumi_gestalt_rust::Input<super::super::types::datadog::MonitorUser>,
     }
     #[allow(dead_code)]
     pub struct MonitorResult {

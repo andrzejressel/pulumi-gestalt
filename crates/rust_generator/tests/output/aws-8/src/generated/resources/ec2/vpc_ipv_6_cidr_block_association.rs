@@ -42,9 +42,7 @@ pub mod vpc_ipv_6_cidr_block_association {
     pub struct VpcIpv6CidrBlockAssociationArgs {
         /// Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR block. Default is `false`. Conflicts with `ipv6_pam_pool_id`, `ipv6_pool`, `ipv6_cidr_block` and `ipv6_netmask_length`.
         #[builder(into, default)]
-        pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The IPv6 CIDR block for the VPC. CIDR can be explicitly set or it can be derived from IPAM using `ipv6_netmask_length`. This parameter is required if `ipv6_netmask_length` is not set and the IPAM pool does not have `allocation_default_netmask` set. Conflicts with `assign_generated_ipv6_cidr_block`.
         #[builder(into, default)]
         pub ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,

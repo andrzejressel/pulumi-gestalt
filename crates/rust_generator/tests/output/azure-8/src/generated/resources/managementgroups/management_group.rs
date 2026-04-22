@@ -54,9 +54,7 @@ pub mod management_group {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Parent Management Group.
         #[builder(into, default)]
-        pub parent_management_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub parent_management_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Subscription GUIDs which should be assigned to the Management Group.
         ///
         /// > **Note:** To clear all Subscriptions from the Management Group set `subscription_ids` to an empty list

@@ -56,9 +56,7 @@ pub mod security_solution {
         >,
         /// A list of disabled data sources for the Iot Security Solution. Possible value is `TwinData`.
         #[builder(into, default)]
-        pub disabled_data_sources: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub disabled_data_sources: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the Display Name for this Iot Security Solution.
         #[builder(into)]
         pub display_name: pulumi_gestalt_rust::Input<String>,
@@ -76,9 +74,7 @@ pub mod security_solution {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Log Analytics Workspace ID to which the security data will be sent.
         #[builder(into, default)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should IP addressed be unmasked in the log? Defaults to `false`.
         #[builder(into, default)]
         pub log_unmasked_ips_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -90,9 +86,7 @@ pub mod security_solution {
         pub query_for_resources: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of subscription Ids on which the user defined resources query should be executed.
         #[builder(into, default)]
-        pub query_subscription_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub query_subscription_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `recommendations_enabled` block of options to enable or disable as defined below.
         #[builder(into, default)]
         pub recommendations_enabled: pulumi_gestalt_rust::Input<

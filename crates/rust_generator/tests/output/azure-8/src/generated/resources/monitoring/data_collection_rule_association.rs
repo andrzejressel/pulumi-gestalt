@@ -146,9 +146,7 @@ pub mod data_collection_rule_association {
     pub struct DataCollectionRuleAssociationArgs {
         /// The ID of the Data Collection Endpoint which will be associated to the target resource.
         #[builder(into, default)]
-        pub data_collection_endpoint_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub data_collection_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Data Collection Rule which will be associated to the target resource.
         ///
         /// > **NOTE** Exactly one of `data_collection_endpoint_id` and `data_collection_rule_id` blocks must be specified.

@@ -81,9 +81,7 @@ pub mod flux_configuration {
         pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Whether the configuration will keep its reconciliation of its kustomizations and sources with the repository. Defaults to `true`.
         #[builder(into, default)]
-        pub continuous_reconciliation_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub continuous_reconciliation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `git_repository` block as defined below.
         #[builder(into, default)]
         pub git_repository: pulumi_gestalt_rust::Input<

@@ -109,9 +109,7 @@ pub mod consent_store {
         pub default_consent_ttl: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, [consents.patch] [google.cloud.healthcare.v1.consent.UpdateConsent] creates the consent if it does not already exist.
         #[builder(into, default)]
-        pub enable_consent_create_on_update: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_consent_create_on_update: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User-supplied key-value pairs used to organize Consent stores.
         /// Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must
         /// conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}][\p{Ll}\p{Lo}\p{N}_-]{0,62}`

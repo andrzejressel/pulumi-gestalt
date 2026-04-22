@@ -74,9 +74,7 @@ pub mod repository {
     pub struct RepositoryArgs {
         /// If set to true, skip repository creation if a repository with the same name already exists.
         #[builder(into, default)]
-        pub create_ignore_already_exists: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub create_ignore_already_exists: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Resource name of the repository, of the form `{{repo}}`.
         /// The repo name may contain slashes. eg, `name/with/slash`
         ///

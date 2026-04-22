@@ -84,9 +84,7 @@ pub mod stream_input_event_hub_v_2 {
         pub authentication_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of an Event Hub Consumer Group that should be used to read events from the Event Hub. Specifying distinct consumer group names for multiple inputs allows each of those inputs to receive the same events from the Event Hub. If not set the input will use the Event Hub's default consumer group.
         #[builder(into, default)]
-        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Event Hub.
         #[builder(into)]
         pub eventhub_name: pulumi_gestalt_rust::Input<String>,
@@ -109,9 +107,7 @@ pub mod stream_input_event_hub_v_2 {
         pub shared_access_policy_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc.
         #[builder(into, default)]
-        pub shared_access_policy_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub shared_access_policy_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
         pub stream_analytics_job_id: pulumi_gestalt_rust::Input<String>,

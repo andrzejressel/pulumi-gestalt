@@ -65,9 +65,7 @@ pub mod endpoint {
         pub engine_name: pulumi_gestalt_rust::Input<String>,
         /// Additional attributes associated with the connection. For available attributes for a `source` Endpoint, see [Sources for data migration](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.html). For available attributes for a `target` Endpoint, see [Targets for data migration](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.html).
         #[builder(into, default)]
-        pub extra_connection_attributes: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub extra_connection_attributes: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for Kafka settings. See below.
         #[builder(into, default)]
         pub kafka_settings: pulumi_gestalt_rust::Input<
@@ -119,9 +117,7 @@ pub mod endpoint {
         ///
         /// > **Note:** You can specify one of two sets of values for these permissions. You can specify the values for this setting and `secrets_manager_arn`. Or you can specify clear-text values for `username`, `password` , `server_name`, and `port`. You can't specify both.
         #[builder(into, default)]
-        pub secrets_manager_access_role_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub secrets_manager_access_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Full ARN, partial ARN, or friendly name of the Secrets Manager secret that contains the endpoint connection details. Supported only when `engine_name` is `aurora`, `aurora-postgresql`, `mariadb`, `mongodb`, `mysql`, `oracle`, `postgres`, `redshift`, or `sqlserver`.
         #[builder(into, default)]
         pub secrets_manager_arn: pulumi_gestalt_rust::Input<Option<String>>,

@@ -292,9 +292,7 @@ pub mod key {
         /// For more information, refer to the scenario in the [Default Key Policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam) section in the _AWS Key Management Service Developer Guide_.
         /// The default value is `false`.
         #[builder(into, default)]
-        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the KMS [Custom Key Store](https://docs.aws.amazon.com/kms/latest/developerguide/create-cmk-keystore.html) where the key will be stored instead of KMS (eg CloudHSM).
         #[builder(into, default)]
         pub custom_key_store_id: pulumi_gestalt_rust::Input<Option<String>>,

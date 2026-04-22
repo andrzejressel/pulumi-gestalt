@@ -22,9 +22,7 @@ pub mod get_orderable_db_instance {
         pub license_model: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred DocumentDB DB instance classes. The first match in this list will be returned. If no preferred matches are found and the original search returned more than one result, an error is returned. (Conflicts with `instance_class`.)
         #[builder(into, default)]
-        pub preferred_instance_classes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_instance_classes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Enable to show only VPC.
         #[builder(into, default)]
         pub vpc: pulumi_gestalt_rust::Input<Option<bool>>,

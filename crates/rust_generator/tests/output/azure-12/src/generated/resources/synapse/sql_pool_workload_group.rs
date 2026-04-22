@@ -85,25 +85,19 @@ pub mod sql_pool_workload_group {
         pub max_resource_percent: pulumi_gestalt_rust::Input<i32>,
         /// The workload group request maximum grant percentage. Defaults to `3`.
         #[builder(into, default)]
-        pub max_resource_percent_per_request: pulumi_gestalt_rust::Input<
-            Option<f64>,
-        >,
+        pub max_resource_percent_per_request: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The workload group minimum percentage resource.
         #[builder(into)]
         pub min_resource_percent: pulumi_gestalt_rust::Input<i32>,
         /// The workload group request minimum grant percentage.
         #[builder(into, default)]
-        pub min_resource_percent_per_request: pulumi_gestalt_rust::Input<
-            Option<f64>,
-        >,
+        pub min_resource_percent_per_request: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The name which should be used for this Synapse SQL Pool Workload Group. Changing this forces a new Synapse SQL Pool Workload Group to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The workload group query execution timeout.
         #[builder(into, default)]
-        pub query_execution_timeout_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub query_execution_timeout_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Synapse SQL Pool. Changing this forces a new Synapse SQL Pool Workload Group to be created.
         #[builder(into)]
         pub sql_pool_id: pulumi_gestalt_rust::Input<String>,

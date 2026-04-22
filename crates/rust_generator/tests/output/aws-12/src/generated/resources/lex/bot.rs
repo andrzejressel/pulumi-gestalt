@@ -111,9 +111,7 @@ pub mod bot {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Determines the threshold where Amazon Lex will insert the AMAZON.FallbackIntent, AMAZON.KendraSearchIntent, or both when returning alternative intents in a PostContent or PostText response. AMAZON.FallbackIntent and AMAZON.KendraSearchIntent are only inserted if they are configured for the bot. For more information see [Amazon Lex Bot PutBot API Docs](https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-nluIntentConfidenceThreshold) This value requires `enable_model_improvements` to be set to `true` and the default is `0`. Must be a float between 0 and 1.
         #[builder(into, default)]
-        pub nlu_intent_confidence_threshold: pulumi_gestalt_rust::Input<
-            Option<f64>,
-        >,
+        pub nlu_intent_confidence_threshold: pulumi_gestalt_rust::Input<Option<f64>>,
         /// If you set the `process_behavior` element to `BUILD`, Amazon Lex builds the bot so that it can be run. If you set the element to `SAVE` Amazon Lex saves the bot, but doesn't build it. Default is `SAVE`.
         #[builder(into, default)]
         pub process_behavior: pulumi_gestalt_rust::Input<Option<String>>,

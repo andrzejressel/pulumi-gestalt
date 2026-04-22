@@ -178,9 +178,7 @@ pub mod zero_trust_gateway_settings {
         pub tls_decrypt_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Safely browse websites in Browser Isolation through a URL. Defaults to `false`.
         #[builder(into, default)]
-        pub url_browser_isolation_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub url_browser_isolation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustGatewaySettingsResult {

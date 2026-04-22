@@ -17,9 +17,7 @@ pub mod get_instances {
         >,
         /// List of instance states that should be applicable to the desired instances. The permitted values are: `pending, running, shutting-down, stopped, stopping, terminated`. The default value is `running`.
         #[builder(into, default)]
-        pub instance_state_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub instance_state_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Map of tags, each pair of which must
         /// exactly match a pair on desired instances.
         #[builder(into, default)]

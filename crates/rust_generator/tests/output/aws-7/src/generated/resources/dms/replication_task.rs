@@ -56,9 +56,7 @@ pub mod replication_task {
         pub replication_task_id: pulumi_gestalt_rust::Input<String>,
         /// Escaped JSON string that contains the task settings. For a complete list of task settings, see [Task Settings for AWS Database Migration Service Tasks](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html). Note that `Logging.CloudWatchLogGroup` and `Logging.CloudWatchLogStream` are read only and should not be defined, even as `null`, in the configuration since AWS provides a value for these settings.
         #[builder(into, default)]
-        pub replication_task_settings: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub replication_task_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// A friendly name for the resource identifier at the end of the EndpointArn response parameter that is returned in the created Endpoint object.
         #[builder(into, default)]
         pub resource_identifier: pulumi_gestalt_rust::Input<Option<String>>,

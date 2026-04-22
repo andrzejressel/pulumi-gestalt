@@ -64,17 +64,13 @@ pub mod iot_hub_dps {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether requests from Public Network are allowed. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group under which the Iot Device Provisioning Service resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::Input<
-            super::super::types::iot::IotHubDpsSku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::iot::IotHubDpsSku>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

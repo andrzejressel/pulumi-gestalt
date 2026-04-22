@@ -54,9 +54,7 @@ pub mod recording_configuration {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together.
         #[builder(into, default)]
-        pub recording_reconnect_window_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub recording_reconnect_window_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

@@ -57,9 +57,7 @@ pub mod api {
         /// Valid values: `$context.authorizer.usageIdentifierKey`, `$request.header.x-api-key`. Defaults to `$request.header.x-api-key`.
         /// Applicable for WebSocket APIs.
         #[builder(into, default)]
-        pub api_key_selection_expression: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub api_key_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// An OpenAPI specification that defines the set of routes and integrations to create as part of the HTTP APIs. Supported only for HTTP APIs.
         #[builder(into, default)]
         pub body: pulumi_gestalt_rust::Input<Option<String>>,
@@ -78,9 +76,7 @@ pub mod api {
         /// By default, clients can invoke the API with the default `{api_id}.execute-api.{region}.amazonaws.com endpoint`.
         /// To require that clients use a custom domain name to invoke the API, disable the default endpoint.
         #[builder(into, default)]
-        pub disable_execute_api_endpoint: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub disable_execute_api_endpoint: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether warnings should return an error while API Gateway is creating or updating the resource using an OpenAPI specification. Defaults to `false`. Applicable for HTTP APIs.
         #[builder(into, default)]
         pub fail_on_warnings: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -96,9 +92,7 @@ pub mod api {
         /// The [route selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-route-selection-expressions) for the API.
         /// Defaults to `$request.method $request.path`.
         #[builder(into, default)]
-        pub route_selection_expression: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub route_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the API. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

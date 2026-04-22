@@ -59,9 +59,7 @@ pub mod workspace {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is allowed for this Virtual Desktop Workspace. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Virtual Desktop Workspace. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

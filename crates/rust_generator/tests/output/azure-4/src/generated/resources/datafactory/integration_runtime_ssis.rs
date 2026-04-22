@@ -107,9 +107,7 @@ pub mod integration_runtime_ssis {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the maximum parallel executions per node. Defaults to `1`. Max is `1`.
         #[builder(into, default)]
-        pub max_parallel_executions_per_node: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub max_parallel_executions_per_node: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Azure-SSIS Integration Runtime. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

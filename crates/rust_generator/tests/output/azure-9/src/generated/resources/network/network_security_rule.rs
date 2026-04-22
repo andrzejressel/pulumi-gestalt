@@ -71,9 +71,7 @@ pub mod network_security_rule {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// CIDR or destination IP range or * to match any IP. Tags such as `VirtualNetwork`, `AzureLoadBalancer` and `Internet` can also be used. Besides, it also supports all available Service Tags like ‘Sql.WestEurope‘, ‘Storage.EastUS‘, etc. You can list the available service tags with the CLI: ```shell az network list-service-tags --location westcentralus```. For further information please see [Azure CLI - az network list-service-tags](https://docs.microsoft.com/cli/azure/network?view=azure-cli-latest#az-network-list-service-tags). This is required if `destination_address_prefixes` is not specified.
         #[builder(into, default)]
-        pub destination_address_prefix: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub destination_address_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of destination address prefixes. Tags may not be used. This is required if `destination_address_prefix` is not specified.
         #[builder(into, default)]
         pub destination_address_prefixes: pulumi_gestalt_rust::Input<
@@ -89,9 +87,7 @@ pub mod network_security_rule {
         pub destination_port_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of destination ports or port ranges. This is required if `destination_port_range` is not specified.
         #[builder(into, default)]
-        pub destination_port_ranges: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub destination_port_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The direction specifies if rule will be evaluated on incoming or outgoing traffic. Possible values are `Inbound` and `Outbound`.
         #[builder(into)]
         pub direction: pulumi_gestalt_rust::Input<String>,
@@ -115,9 +111,7 @@ pub mod network_security_rule {
         pub source_address_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of source address prefixes. Tags may not be used. This is required if `source_address_prefix` is not specified.
         #[builder(into, default)]
-        pub source_address_prefixes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub source_address_prefixes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A List of source Application Security Group IDs
         #[builder(into, default)]
         pub source_application_security_group_ids: pulumi_gestalt_rust::Input<

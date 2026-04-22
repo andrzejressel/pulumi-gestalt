@@ -30,9 +30,7 @@ pub mod split_tunnel {
         pub policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The value of the tunnel attributes.
         #[builder(into)]
-        pub tunnels: pulumi_gestalt_rust::Input<
-            Vec<super::types::SplitTunnelTunnel>,
-        >,
+        pub tunnels: pulumi_gestalt_rust::Input<Vec<super::types::SplitTunnelTunnel>>,
     }
     #[allow(dead_code)]
     pub struct SplitTunnelResult {

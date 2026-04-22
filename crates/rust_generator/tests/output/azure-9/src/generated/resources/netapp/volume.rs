@@ -25,14 +25,10 @@ pub mod volume {
         pub account_name: pulumi_gestalt_rust::Input<String>,
         /// Is the NetApp Volume enabled for Azure VMware Solution (AVS) datastore purpose. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub azure_vmware_data_store_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub azure_vmware_data_store_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Creates volume from snapshot. Following properties must be the same as the original volume where the snapshot was taken from: `protocols`, `subnet_id`, `location`, `service_level`, `resource_group_name`, `account_name` and `pool_name`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub create_from_snapshot_resource_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub create_from_snapshot_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `data_protection_backup_policy` block as defined below.
         #[builder(into, default)]
         pub data_protection_backup_policy: pulumi_gestalt_rust::Input<
@@ -62,9 +58,7 @@ pub mod volume {
         pub kerberos_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Private Endpoint ID for Key Vault, which is required when using customer-managed keys. This is required with `encryption_key_source`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub key_vault_private_endpoint_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub key_vault_private_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -91,9 +85,7 @@ pub mod volume {
         pub service_level: pulumi_gestalt_rust::Input<String>,
         /// Enable SMB encryption.
         #[builder(into, default)]
-        pub smb3_protocol_encryption_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub smb3_protocol_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Limits enumeration of files and folders (that is, listing the contents) in SMB only to users with allowed access on the share. For instance, if a user doesn't have access to read a file or folder in a share with access-based enumeration enabled, then the file or folder doesn't show up in directory listings. Defaults to `false`. For more information, please refer to [Understand NAS share permissions in Azure NetApp Files](https://learn.microsoft.com/en-us/azure/azure-netapp-files/network-attached-storage-permissions#:~:text=security%20for%20administrators.-,Access%2Dbased%20enumeration,in%20an%20Azure%20NetApp%20Files%20SMB%20volume.%20Only%20contosoadmin%20has%20access.,-In%20the%20below)
         #[builder(into, default)]
         pub smb_access_based_enumeration_enabled: pulumi_gestalt_rust::Input<

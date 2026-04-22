@@ -135,9 +135,7 @@ pub mod express_route_connection {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Bypass the Express Route gateway when accessing private-links. When enabled `express_route_gateway_bypass_enabled` must be set to `true`.
         #[builder(into, default)]
-        pub private_link_fast_path_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub private_link_fast_path_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `routing` block as defined below.
         #[builder(into, default)]
         pub routing: pulumi_gestalt_rust::Input<

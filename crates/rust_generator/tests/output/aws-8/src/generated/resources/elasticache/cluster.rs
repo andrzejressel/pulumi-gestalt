@@ -187,9 +187,7 @@ pub mod cluster {
         /// Only supported for engine type `"redis"` and if the engine version is 6 or higher.
         /// Defaults to `true`.
         #[builder(into, default)]
-        pub auto_minor_version_upgrade: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub auto_minor_version_upgrade: pulumi_gestalt_rust::Input<Option<String>>,
         /// Availability Zone for the cache cluster. If you want to create cache nodes in multi-az, use `preferred_availability_zones` instead. Default: System chosen Availability Zone. Changing this value will re-create the resource.
         #[builder(into, default)]
         pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
@@ -214,9 +212,7 @@ pub mod cluster {
         pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of your final cluster snapshot. If omitted, no final snapshot will be made.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IP version to advertise in the discovery protocol. Valid values are `ipv4` or `ipv6`.
         #[builder(into, default)]
         pub ip_discovery: pulumi_gestalt_rust::Input<Option<String>>,

@@ -55,9 +55,7 @@ pub mod restore_testing_plan {
         pub schedule_expression: pulumi_gestalt_rust::Input<String>,
         /// The timezone for the schedule expression. If not provided, the state value will be used.
         #[builder(into, default)]
-        pub schedule_expression_timezone: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub schedule_expression_timezone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of hours in the start window for the restore testing plan. Must be between 1 and 168.
         #[builder(into, default)]
         pub start_window_hours: pulumi_gestalt_rust::Input<Option<i32>>,

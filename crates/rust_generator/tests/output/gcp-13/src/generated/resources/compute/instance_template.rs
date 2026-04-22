@@ -341,9 +341,7 @@ pub mod instance_template {
         pub instance_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Action to be taken when a customer's encryption key is revoked. Supports `STOP` and `NONE`, with `NONE` being the default.
         #[builder(into, default)]
-        pub key_revocation_action_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub key_revocation_action_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value label pairs to assign to instances
         /// created from this template.
         ///

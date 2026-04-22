@@ -57,9 +57,7 @@ pub mod ai_services {
         >,
         /// Whether local authentication is enabled for the AI Services Account. Defaults to `true`.
         #[builder(into, default)]
-        pub local_authentication_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub local_authentication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -73,9 +71,7 @@ pub mod ai_services {
         >,
         /// Whether outbound network access is restricted for the AI Services Account. Defaults to `false`.
         #[builder(into, default)]
-        pub outbound_network_access_restricted: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub outbound_network_access_restricted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether public network access is allowed for the AI Services Account. Possible values are `Enabled` and `Disabled`. Defaults to `Enabled`.
         #[builder(into, default)]
         pub public_network_access: pulumi_gestalt_rust::Input<Option<String>>,

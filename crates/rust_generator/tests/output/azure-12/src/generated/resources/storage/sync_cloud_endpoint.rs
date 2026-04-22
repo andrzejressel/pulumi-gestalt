@@ -97,9 +97,7 @@ pub mod sync_cloud_endpoint {
         pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// The Tenant ID of the Storage Account where the Storage Share exists. Changing this forces a new Storage Sync Cloud Endpoint to be created. Defaults to the current tenant id.
         #[builder(into, default)]
-        pub storage_account_tenant_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Sync Group where this Cloud Endpoint should be created. Changing this forces a new Storage Sync Cloud Endpoint to be created.
         #[builder(into)]
         pub storage_sync_group_id: pulumi_gestalt_rust::Input<String>,

@@ -130,9 +130,7 @@ pub mod vmware_replicated_vm {
         ///
         /// > **Note:** When `default_log_storage_account_id` co-exist with `managed_disk`, the value of `default_log_storage_account_id` must be as same as `log_storage_account_id` of every `managed_disk` or it forces a new resource to be created.
         #[builder(into, default)]
-        pub default_log_storage_account_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_log_storage_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of storage account that should be used for recovery disks when a failover is done. Possible values are `Premium_LRS`, `Standard_LRS` and `StandardSSD_LRS`.
         ///
         /// > **Note:** Only one of `default_recovery_disk_type` or `managed_disk` must be specified.
@@ -141,9 +139,7 @@ pub mod vmware_replicated_vm {
         ///
         /// > **Note:** When `default_recovery_disk_type` co-exist with `managed_disk`, the value of `default_recovery_disk_type` must be as same as `target_disk_type` of every `managed_disk` or it forces a new resource to be created.
         #[builder(into, default)]
-        pub default_recovery_disk_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_recovery_disk_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the default Disk Encryption Set that should be used for the disks when a failover is done.
         ///
         /// > **Note:** Changing `default_target_disk_encryption_set_id` forces a new resource to be created. But removing it does not.
@@ -192,9 +188,7 @@ pub mod vmware_replicated_vm {
         pub source_vm_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of availability set that the new VM should belong to when a failover is done.
         #[builder(into, default)]
-        pub target_availability_set_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub target_availability_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the storage account that should be used for boot diagnostics when a failover is done.
         #[builder(into, default)]
         pub target_boot_diagnostics_storage_account_id: pulumi_gestalt_rust::Input<

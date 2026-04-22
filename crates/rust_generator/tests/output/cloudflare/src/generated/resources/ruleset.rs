@@ -47,9 +47,7 @@ pub mod ruleset {
         pub phase: pulumi_gestalt_rust::Input<String>,
         /// List of rules to apply to the ruleset.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::Input<
-            Option<Vec<super::types::RulesetRule>>,
-        >,
+        pub rules: pulumi_gestalt_rust::Input<Option<Vec<super::types::RulesetRule>>>,
         /// The zone identifier to target for the resource.
         #[builder(into, default)]
         pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,

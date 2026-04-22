@@ -58,9 +58,7 @@ pub mod studio {
         pub idp_auth_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name that your identity provider (IdP) uses for its RelayState parameter. For example, RelayState or TargetSource. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The RelayState parameter differs by IdP.
         #[builder(into, default)]
-        pub idp_relay_state_parameter_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub idp_relay_state_parameter_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A descriptive name for the Amazon EMR Studio.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

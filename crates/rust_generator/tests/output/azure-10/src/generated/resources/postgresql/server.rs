@@ -59,9 +59,7 @@ pub mod server {
         pub administrator_login: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Password associated with the `administrator_login` for the PostgreSQL Server. Required when `create_mode` is `Default`.
         #[builder(into, default)]
-        pub administrator_login_password: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub administrator_login_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only. If storage auto grow is enabled, the storage automatically grows without impacting the workload. Defaults to `true`.
         #[builder(into, default)]
         pub auto_grow_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -73,14 +71,10 @@ pub mod server {
         pub create_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// For creation modes other than `Default`, the source server ID to use.
         #[builder(into, default)]
-        pub creation_source_server_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub creation_source_server_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Turn Geo-redundant server backups on/off. This allows you to choose between locally redundant or geo-redundant backup storage in the General Purpose and Memory Optimized tiers. When the backups are stored in geo-redundant backup storage, they are not only stored within the region in which your server is hosted, but are also replicated to a paired data center. This provides better protection and ability to restore your server in a different region in the event of a disaster. This is not support for the Basic tier. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
         pub identity: pulumi_gestalt_rust::Input<
@@ -90,9 +84,7 @@ pub mod server {
         ///
         /// > **NOTE:** This property is currently still in development and not supported by Microsoft. If the `infrastructure_encryption_enabled` attribute is set to `true` the PostgreSQL instance will incur a substantial performance degradation due to a second encryption pass on top of the existing default encryption that is already provided by Azure Storage. It is strongly suggested to leave this value `false` as not doing so can lead to unclear error messages.
         #[builder(into, default)]
-        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -101,9 +93,7 @@ pub mod server {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not public network access is allowed for this server. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the PostgreSQL Server. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -122,9 +112,7 @@ pub mod server {
         pub ssl_enforcement_enabled: pulumi_gestalt_rust::Input<bool>,
         /// The minimum TLS version to support on the sever. Possible values are `TLSEnforcementDisabled`, `TLS1_0`, `TLS1_1`, and `TLS1_2`. Defaults to `TLS1_2`.
         #[builder(into, default)]
-        pub ssl_minimal_tls_version_enforced: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub ssl_minimal_tls_version_enforced: pulumi_gestalt_rust::Input<Option<String>>,
         /// Max storage allowed for a server. Possible values are between `5120` MB(5GB) and `1048576` MB(1TB) for the Basic SKU and between `5120` MB(5GB) and `16777216` MB(16TB) for General Purpose/Memory Optimized SKUs. For more information see the [product documentation](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers#storage).
         #[builder(into, default)]
         pub storage_mb: pulumi_gestalt_rust::Input<Option<i32>>,

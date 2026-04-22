@@ -35,9 +35,7 @@ pub mod hsm_client_certificate {
     pub struct HsmClientCertificateArgs {
         /// The identifier of the HSM client certificate.
         #[builder(into)]
-        pub hsm_client_certificate_identifier: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub hsm_client_certificate_identifier: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

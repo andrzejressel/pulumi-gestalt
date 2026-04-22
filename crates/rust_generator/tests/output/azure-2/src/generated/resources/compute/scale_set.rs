@@ -344,9 +344,7 @@ pub mod scale_set {
         pub priority: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Proximity Placement Group to which this Virtual Machine should be assigned. Changing this forces a new resource to be created
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the virtual machine scale set. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -360,9 +358,7 @@ pub mod scale_set {
         pub single_placement_group: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `sku` block as documented below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::Input<
-            super::super::types::compute::ScaleSetSku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::compute::ScaleSetSku>,
         /// A `storage_profile_data_disk` block as documented below.
         #[builder(into, default)]
         pub storage_profile_data_disks: pulumi_gestalt_rust::Input<

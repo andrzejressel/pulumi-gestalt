@@ -141,9 +141,7 @@ pub mod express_route_circuit_peering {
         pub peering_type: pulumi_gestalt_rust::Input<String>,
         /// A subnet for the primary link.
         #[builder(into, default)]
-        pub primary_peer_address_prefix: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub primary_peer_address_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Express Route Circuit Peering. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -154,9 +152,7 @@ pub mod express_route_circuit_peering {
         pub route_filter_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A subnet for the secondary link.
         #[builder(into, default)]
-        pub secondary_peer_address_prefix: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub secondary_peer_address_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The shared key. Can be a maximum of 25 characters.
         #[builder(into, default)]
         pub shared_key: pulumi_gestalt_rust::Input<Option<String>>,

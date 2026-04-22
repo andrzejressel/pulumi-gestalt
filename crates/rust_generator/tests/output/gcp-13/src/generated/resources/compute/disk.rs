@@ -167,9 +167,7 @@ pub mod disk {
         /// Whether this disk is using confidential compute mode.
         /// Note: Only supported on hyperdisk skus, disk_encryption_key is required when setting to true
         #[builder(into, default)]
-        pub enable_confidential_compute: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_confidential_compute: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of features to enable on the guest operating system.
         /// Applicable only for bootable disks.
         /// Structure is documented below.

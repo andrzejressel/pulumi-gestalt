@@ -44,9 +44,7 @@ pub mod protection_container_mapping {
         >,
         /// Id of target protection container to map to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_target_protection_container_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub recovery_target_protection_container_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the vault that should be updated. Changing this forces a new resource to be created.
         #[builder(into)]
         pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,

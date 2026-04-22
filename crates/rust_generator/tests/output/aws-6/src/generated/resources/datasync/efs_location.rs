@@ -54,9 +54,7 @@ pub mod efs_location {
         pub efs_file_system_arn: pulumi_gestalt_rust::Input<String>,
         /// Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.
         #[builder(into, default)]
-        pub file_system_access_role_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub file_system_access_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether you want DataSync to use TLS encryption when transferring data to or from your Amazon EFS file system. Valid values are `NONE` and `TLS1_2`.
         #[builder(into, default)]
         pub in_transit_encryption: pulumi_gestalt_rust::Input<Option<String>>,

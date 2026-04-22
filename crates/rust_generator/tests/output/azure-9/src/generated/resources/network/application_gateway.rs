@@ -147,9 +147,7 @@ pub mod application_gateway {
         pub firewall_policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the Firewall Policy associated with the Application Gateway?
         #[builder(into, default)]
-        pub force_firewall_policy_association: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub force_firewall_policy_association: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `frontend_ip_configuration` blocks as defined below.
         #[builder(into)]
         pub frontend_ip_configurations: pulumi_gestalt_rust::Input<

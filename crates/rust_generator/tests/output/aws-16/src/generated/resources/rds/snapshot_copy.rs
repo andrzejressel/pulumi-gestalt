@@ -84,9 +84,7 @@ pub mod snapshot_copy {
         >,
         /// The external custom Availability Zone.
         #[builder(into, default)]
-        pub target_custom_availability_zone: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub target_custom_availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Identifier for the snapshot.
         #[builder(into)]
         pub target_db_snapshot_identifier: pulumi_gestalt_rust::Input<String>,

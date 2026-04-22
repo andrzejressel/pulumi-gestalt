@@ -69,9 +69,7 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
         pub auto_app_naming_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether enable the component-based transaction naming. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_transaction_naming_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub auto_transaction_naming_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether enable all instrumentation using an `@Trace` annotation. Disabling this causes `@Trace` annotations to be ignored. Defaults to `true`.
         #[builder(into, default)]
         pub custom_tracing_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

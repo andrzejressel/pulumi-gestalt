@@ -71,9 +71,7 @@ pub mod route_server {
     pub struct RouteServerArgs {
         /// Whether to enable route exchange between Azure Route Server and the gateway(s)
         #[builder(into, default)]
-        pub branch_to_branch_traffic_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub branch_to_branch_traffic_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the Route Server should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

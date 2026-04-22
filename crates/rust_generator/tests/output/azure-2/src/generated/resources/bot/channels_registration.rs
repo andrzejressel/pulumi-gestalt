@@ -57,9 +57,7 @@ pub mod channels_registration {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Application Insights API Key to associate with the Bot Channels Registration.
         #[builder(into, default)]
-        pub developer_app_insights_api_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub developer_app_insights_api_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Application Insights Application ID to associate with the Bot Channels Registration.
         #[builder(into, default)]
         pub developer_app_insights_application_id: pulumi_gestalt_rust::Input<
@@ -67,9 +65,7 @@ pub mod channels_registration {
         >,
         /// The Application Insights Key to associate with the Bot Channels Registration.
         #[builder(into, default)]
-        pub developer_app_insights_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub developer_app_insights_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Bot Channels Registration will be displayed as. This defaults to `name` if not specified.
         #[builder(into, default)]
         pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -90,9 +86,7 @@ pub mod channels_registration {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the Bot Channels Registration in an isolated network?
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Bot Channels Registration. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

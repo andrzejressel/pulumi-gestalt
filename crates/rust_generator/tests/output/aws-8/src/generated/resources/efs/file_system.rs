@@ -83,9 +83,7 @@ pub mod file_system {
         >,
         /// The throughput, measured in MiB/s, that you want to provision for the file system. Only applicable with `throughput_mode` set to `provisioned`.
         #[builder(into, default)]
-        pub provisioned_throughput_in_mibps: pulumi_gestalt_rust::Input<
-            Option<f64>,
-        >,
+        pub provisioned_throughput_in_mibps: pulumi_gestalt_rust::Input<Option<f64>>,
         /// A map of tags to assign to the file system. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

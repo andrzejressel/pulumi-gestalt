@@ -434,9 +434,7 @@ pub mod workload_identity_pool_provider {
         ///
         /// - - -
         #[builder(into)]
-        pub workload_identity_pool_provider_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub workload_identity_pool_provider_id: pulumi_gestalt_rust::Input<String>,
         /// An X.509-type identity provider represents a CA. It is trusted to assert a
         /// client identity if the client has a certificate that chains up to this CA.
         /// Structure is documented below.

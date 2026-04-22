@@ -67,9 +67,7 @@ pub mod topic {
         pub express_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Integer value which controls the maximum size of a message allowed on the topic for Premium SKU. For supported values see the "Large messages support" section of [this document](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-premium-messaging#large-messages-support-preview). Defaults to `256`.
         #[builder(into, default)]
-        pub max_message_size_in_kilobytes: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub max_message_size_in_kilobytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Integer value which controls the size of memory allocated for the topic. For supported values see the "Queue/topic size" section of [this document](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quotas). Defaults to `5120`.
         #[builder(into, default)]
         pub max_size_in_megabytes: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -86,9 +84,7 @@ pub mod topic {
         pub partitioning_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag which controls whether the Topic requires duplicate detection. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub requires_duplicate_detection: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub requires_duplicate_detection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Status of the Service Bus Topic. Acceptable values are `Active` or `Disabled`. Defaults to `Active`.
         #[builder(into, default)]
         pub status: pulumi_gestalt_rust::Input<Option<String>>,

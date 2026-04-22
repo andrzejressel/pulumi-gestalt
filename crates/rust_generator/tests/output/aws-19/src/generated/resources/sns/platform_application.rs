@@ -85,29 +85,19 @@ pub mod platform_application {
         pub apple_platform_team_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS Topic triggered when a delivery to any of the platform endpoints associated with your platform application encounters a permanent failure.
         #[builder(into, default)]
-        pub event_delivery_failure_topic_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub event_delivery_failure_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS Topic triggered when a new platform endpoint is added to your platform application.
         #[builder(into, default)]
-        pub event_endpoint_created_topic_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub event_endpoint_created_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS Topic triggered when an existing platform endpoint is deleted from your platform application.
         #[builder(into, default)]
-        pub event_endpoint_deleted_topic_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub event_endpoint_deleted_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS Topic triggered when an existing platform endpoint is changed from your platform application.
         #[builder(into, default)]
-        pub event_endpoint_updated_topic_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub event_endpoint_updated_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role ARN permitted to receive failure feedback for this application and give SNS write access to use CloudWatch logs on your behalf.
         #[builder(into, default)]
-        pub failure_feedback_role_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub failure_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The friendly name for the SNS platform application
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -122,16 +112,12 @@ pub mod platform_application {
         pub platform_principal: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role ARN permitted to receive success feedback for this application and give SNS write access to use CloudWatch logs on your behalf.
         #[builder(into, default)]
-        pub success_feedback_role_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub success_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The sample rate percentage (0-100) of successfully delivered messages.
         ///
         /// The following attributes are needed only when using APNS token credentials:
         #[builder(into, default)]
-        pub success_feedback_sample_rate: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub success_feedback_sample_rate: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PlatformApplicationResult {

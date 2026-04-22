@@ -263,9 +263,7 @@ pub mod task_definition {
         >,
         /// Set of launch types required by the task. The valid values are `EC2` and `FARGATE`.
         #[builder(into, default)]
-        pub requires_compatibilities: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub requires_compatibilities: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block for runtime_platform that containers in your task may use.
         #[builder(into, default)]
         pub runtime_platform: pulumi_gestalt_rust::Input<

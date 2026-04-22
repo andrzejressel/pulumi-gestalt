@@ -38,9 +38,7 @@ pub mod smsvoicev_2_phone_number {
     pub struct Smsvoicev2PhoneNumberArgs {
         /// By default this is set to `false`. When set to true the phone number can’t be deleted.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.
         #[builder(into)]
         pub iso_country_code: pulumi_gestalt_rust::Input<String>,
@@ -61,9 +59,7 @@ pub mod smsvoicev_2_phone_number {
         pub registration_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// When set to `false` an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the opt-out list. When set to true you’re responsible for responding to HELP and STOP requests. You’re also responsible for tracking and honoring opt-out request.
         #[builder(into, default)]
-        pub self_managed_opt_outs_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub self_managed_opt_outs_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,

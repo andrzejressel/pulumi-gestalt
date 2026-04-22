@@ -78,9 +78,7 @@ pub mod channel_direct_line_speech {
         pub custom_speech_model_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The custom voice deployment id for the Direct Line Speech Channel.
         #[builder(into, default)]
-        pub custom_voice_deployment_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub custom_voice_deployment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

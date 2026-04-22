@@ -27,14 +27,10 @@ pub mod image_pipeline {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the Image Builder Distribution Configuration.
         #[builder(into, default)]
-        pub distribution_configuration_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub distribution_configuration_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether additional information about the image being created is collected. Defaults to `true`.
         #[builder(into, default)]
-        pub enhanced_image_metadata_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enhanced_image_metadata_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Amazon Resource Name (ARN) of the service-linked role to be used by Image Builder to [execute workflows](https://docs.aws.amazon.com/imagebuilder/latest/userguide/manage-image-workflows.html).
         #[builder(into, default)]
         pub execution_role: pulumi_gestalt_rust::Input<Option<String>>,

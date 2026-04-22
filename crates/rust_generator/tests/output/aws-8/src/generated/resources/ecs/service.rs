@@ -154,9 +154,7 @@ pub mod service {
         >,
         /// ECS automatically redistributes tasks within a service across Availability Zones (AZs) to mitigate the risk of impaired application availability due to underlying infrastructure failures and task lifecycle activities. The valid values are `ENABLED` and `DISABLED`. Defaults to `DISABLED`.
         #[builder(into, default)]
-        pub availability_zone_rebalancing: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub availability_zone_rebalancing: pulumi_gestalt_rust::Input<Option<String>>,
         /// Capacity provider strategies to use for the service. Can be one or more. These can be updated without destroying and recreating the service only if `force_new_deployment = true` and not changing from 0 `capacity_provider_strategy` blocks to greater than 0, or vice versa. See below. Conflicts with `launch_type`.
         #[builder(into, default)]
         pub capacity_provider_strategies: pulumi_gestalt_rust::Input<
@@ -180,9 +178,7 @@ pub mod service {
         pub deployment_maximum_percent: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Lower limit (as a percentage of the service's desiredCount) of the number of running tasks that must remain running and healthy in a service during a deployment.
         #[builder(into, default)]
-        pub deployment_minimum_healthy_percent: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub deployment_minimum_healthy_percent: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Number of instances of the task definition to place and keep running. Defaults to 0. Do not specify if using the `DAEMON` scheduling strategy.
         #[builder(into, default)]
         pub desired_count: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -201,9 +197,7 @@ pub mod service {
         pub force_new_deployment: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown, up to 2147483647. Only valid for services configured to use load balancers.
         #[builder(into, default)]
-        pub health_check_grace_period_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub health_check_grace_period_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// ARN of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is required if you are using a load balancer with your service, but only if your task definition does not use the `awsvpc` network mode. If using `awsvpc` network mode, do not specify this role. If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here.
         #[builder(into, default)]
         pub iam_role: pulumi_gestalt_rust::Input<Option<String>>,

@@ -108,9 +108,7 @@ pub mod insights {
         pub internet_query_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Disable Non-Azure AD based Auth. Defaults to `false`.
         #[builder(into, default)]
-        pub local_authentication_disabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub local_authentication_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

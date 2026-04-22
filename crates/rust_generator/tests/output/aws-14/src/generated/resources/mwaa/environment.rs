@@ -85,17 +85,13 @@ pub mod environment {
         >,
         /// The plugins.zip file version you want to use.
         #[builder(into, default)]
-        pub plugins_s3_object_version: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub plugins_s3_object_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative path to the plugins.zip file on your Amazon S3 storage bucket. For example, plugins.zip. If a relative path is provided in the request, then plugins_s3_object_version is required. For more information, see [Importing DAGs on Amazon MWAA](https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import.html).
         #[builder(into, default)]
         pub plugins_s3_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The requirements.txt file version you want to use.
         #[builder(into, default)]
-        pub requirements_s3_object_version: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub requirements_s3_object_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative path to the requirements.txt file on your Amazon S3 storage bucket. For example, requirements.txt. If a relative path is provided in the request, then requirements_s3_object_version is required. For more information, see [Importing DAGs on Amazon MWAA](https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import.html).
         #[builder(into, default)]
         pub requirements_s3_path: pulumi_gestalt_rust::Input<Option<String>>,
@@ -107,9 +103,7 @@ pub mod environment {
         pub source_bucket_arn: pulumi_gestalt_rust::Input<String>,
         /// The version of the startup shell script you want to use. You must specify the version ID that Amazon S3 assigns to the file every time you update the script.
         #[builder(into, default)]
-        pub startup_script_s3_object_version: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub startup_script_s3_object_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative path to the script hosted in your bucket. The script runs as your environment starts before starting the Apache Airflow process. Use this script to install dependencies, modify configuration options, and set environment variables. See [Using a startup script](https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html). Supported for environment versions 2.x and later.
         #[builder(into, default)]
         pub startup_script_s3_path: pulumi_gestalt_rust::Input<Option<String>>,
@@ -123,9 +117,7 @@ pub mod environment {
         pub webserver_access_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the start date for the weekly maintenance window.
         #[builder(into, default)]
-        pub weekly_maintenance_window_start: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub weekly_maintenance_window_start: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentResult {

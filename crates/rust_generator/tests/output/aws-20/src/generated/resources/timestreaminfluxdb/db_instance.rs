@@ -193,9 +193,7 @@ pub mod db_instance {
         pub db_instance_type: pulumi_gestalt_rust::Input<String>,
         /// ID of the DB parameter group assigned to your DB instance. If added to an existing Timestream for InfluxDB instance or given a new value, will cause an in-place update to the instance. However, if an instance already has a value for `db_parameter_group_identifier`, removing `db_parameter_group_identifier` will cause the instance to be destroyed and recreated.
         #[builder(into, default)]
-        pub db_parameter_group_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub db_parameter_group_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Timestream for InfluxDB DB storage type to read and write InfluxDB data. You can choose between 3 different types of provisioned Influx IOPS included storage according to your workloads requirements: Influx IO Included 3000 IOPS, Influx IO Included 12000 IOPS, Influx IO Included 16000 IOPS. Valid options are: `"InfluxIOIncludedT1"`, `"InfluxIOIncludedT2"`, and `"InfluxIOIncludedT1"`. If you use `"InfluxIOIncludedT2" or "InfluxIOIncludedT3", the minimum value for `allocated_storage` is 400.
         #[builder(into, default)]
         pub db_storage_type: pulumi_gestalt_rust::Input<Option<String>>,

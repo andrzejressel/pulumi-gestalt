@@ -188,9 +188,7 @@ pub mod compute_environment {
         pub compute_environment_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique compute environment name beginning with the specified prefix. Conflicts with `compute_environment_name`.
         #[builder(into, default)]
-        pub compute_environment_name_prefix: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub compute_environment_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details of the compute resources managed by the compute environment. This parameter is required for managed compute environments. See details below.
         #[builder(into, default)]
         pub compute_resources: pulumi_gestalt_rust::Input<

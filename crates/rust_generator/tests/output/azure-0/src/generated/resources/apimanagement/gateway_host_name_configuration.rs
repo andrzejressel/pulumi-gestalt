@@ -97,9 +97,7 @@ pub mod gateway_host_name_configuration {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the API Management Gateway requests a client certificate.
         #[builder(into, default)]
-        pub request_client_certificate_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub request_client_certificate_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether TLS 1.0 is supported.
         #[builder(into, default)]
         pub tls10_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

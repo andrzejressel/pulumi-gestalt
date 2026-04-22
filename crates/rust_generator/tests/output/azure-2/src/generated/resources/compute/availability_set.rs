@@ -56,14 +56,10 @@ pub mod availability_set {
         ///
         /// > **NOTE:** The number of Update Domains varies depending on which Azure Region you're using. More information about update and fault domains and how they work can be found [here](https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview).
         #[builder(into, default)]
-        pub platform_update_domain_count: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub platform_update_domain_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Proximity Placement Group to which this Virtual Machine should be assigned. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the availability set. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

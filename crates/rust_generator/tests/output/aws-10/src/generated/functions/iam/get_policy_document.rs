@@ -12,9 +12,7 @@ pub mod get_policy_document {
         pub override_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of IAM policy documents that are merged together into the exported document. In merging, statements with non-blank `sid`s will override statements with the same `sid` from earlier documents in the list. Statements with non-blank `sid`s will also override statements with the same `sid` from `source_policy_documents`.  Non-overriding statements will be added to the exported document.
         #[builder(into, default)]
-        pub override_policy_documents: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub override_policy_documents: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// ID for the policy document.
         #[builder(into, default)]
         pub policy_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -22,9 +20,7 @@ pub mod get_policy_document {
         pub source_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of IAM policy documents that are merged together into the exported document. Statements defined in `source_policy_documents` must have unique `sid`s. Statements with the same `sid` from `override_policy_documents` will override source statements.
         #[builder(into, default)]
-        pub source_policy_documents: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub source_policy_documents: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block for a policy statement. Detailed below.
         #[builder(into, default)]
         pub statements: pulumi_gestalt_rust::Input<

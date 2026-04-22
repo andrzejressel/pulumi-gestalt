@@ -149,9 +149,7 @@ pub mod spring_cloud_gateway {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether the Spring Cloud Gateway exposes endpoint.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `quota` block as defined below.
         #[builder(into, default)]
         pub quota: pulumi_gestalt_rust::Input<

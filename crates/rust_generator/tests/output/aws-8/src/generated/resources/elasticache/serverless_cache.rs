@@ -59,9 +59,7 @@ pub mod serverless_cache {
         pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The list of ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.
         #[builder(into, default)]
-        pub snapshot_arns_to_restores: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub snapshot_arns_to_restores: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.
         #[builder(into, default)]
         pub snapshot_retention_limit: pulumi_gestalt_rust::Input<Option<i32>>,

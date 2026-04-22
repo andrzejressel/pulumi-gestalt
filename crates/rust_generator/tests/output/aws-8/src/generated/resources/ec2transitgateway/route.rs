@@ -69,9 +69,7 @@ pub mod route {
         pub destination_cidr_block: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Transit Gateway Attachment (required if `blackhole` is set to false).
         #[builder(into, default)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of EC2 Transit Gateway Route Table.
         #[builder(into)]
         pub transit_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,

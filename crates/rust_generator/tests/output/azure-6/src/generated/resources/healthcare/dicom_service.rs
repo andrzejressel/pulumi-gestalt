@@ -54,9 +54,7 @@ pub mod dicom_service {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enabled public networks when data plane traffic coming from public networks while private endpoint is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags to assign to the Healthcare DICOM Service.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

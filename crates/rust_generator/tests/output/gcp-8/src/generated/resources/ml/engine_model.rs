@@ -106,9 +106,7 @@ pub mod engine_model {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, online prediction nodes send stderr and stdout streams to Stackdriver Logging
         #[builder(into, default)]
-        pub online_prediction_console_logging: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub online_prediction_console_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true, online prediction access logs are sent to StackDriver Logging.
         #[builder(into, default)]
         pub online_prediction_logging: pulumi_gestalt_rust::Input<Option<bool>>,

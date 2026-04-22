@@ -141,9 +141,7 @@ pub mod access_level_condition {
         /// granted for the Condition to be true.
         /// Format: accessPolicies/{policy_id}/accessLevels/{short_name}
         #[builder(into, default)]
-        pub required_access_levels: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub required_access_levels: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The request must originate from one of the provided VPC networks in Google Cloud. Cannot specify this field together with `ip_subnetworks`.
         /// Structure is documented below.
         #[builder(into, default)]

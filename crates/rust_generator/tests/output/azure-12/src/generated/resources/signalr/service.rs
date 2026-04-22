@@ -104,9 +104,7 @@ pub mod service {
         ///
         /// > **Note:** `public_network_access_enabled` cannot be set to `false` in `Free` sku tier.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the SignalR service. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -120,9 +118,7 @@ pub mod service {
         pub service_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `sku` block as documented below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::Input<
-            super::super::types::signalr::ServiceSku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::signalr::ServiceSku>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

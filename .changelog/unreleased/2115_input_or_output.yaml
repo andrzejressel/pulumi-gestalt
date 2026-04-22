@@ -1,0 +1,2 @@
+type: Changed
+title: Renamed `pulumi_gestalt_rust::InputOrOutput` to `pulumi_gestalt_rust::Input`

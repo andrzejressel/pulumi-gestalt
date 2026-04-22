@@ -74,9 +74,7 @@ pub mod subnet {
         pub address_prefixes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Enable default outbound access to the internet for the subnet. Defaults to `true`.
         #[builder(into, default)]
-        pub default_outbound_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub default_outbound_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `delegation` blocks as defined below.
         #[builder(into, default)]
         pub delegations: pulumi_gestalt_rust::Input<
@@ -108,9 +106,7 @@ pub mod subnet {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The list of IDs of Service Endpoint Policies to associate with the subnet.
         #[builder(into, default)]
-        pub service_endpoint_policy_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub service_endpoint_policy_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The list of Service endpoints to associate with the subnet. Possible values include: `Microsoft.AzureActiveDirectory`, `Microsoft.AzureCosmosDB`, `Microsoft.ContainerRegistry`, `Microsoft.EventHub`, `Microsoft.KeyVault`, `Microsoft.ServiceBus`, `Microsoft.Sql`, `Microsoft.Storage`, `Microsoft.Storage.Global` and `Microsoft.Web`.
         ///
         /// > **NOTE:** In order to use `Microsoft.Storage.Global` service endpoint (which allows access to virtual networks in other regions), you must enable the `AllowGlobalTagsForStorage` feature in your subscription. This is currently a preview feature, please see the [official documentation](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?tabs=azure-cli#enabling-access-to-virtual-networks-in-other-regions-preview) for more information.

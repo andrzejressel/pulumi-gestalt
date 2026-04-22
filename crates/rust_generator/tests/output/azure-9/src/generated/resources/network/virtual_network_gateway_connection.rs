@@ -280,14 +280,10 @@ pub mod virtual_network_gateway_connection {
         pub express_route_circuit_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// If `true`, data packets will bypass ExpressRoute Gateway for data forwarding This is only valid for ExpressRoute connections.
         #[builder(into, default)]
-        pub express_route_gateway_bypass: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub express_route_gateway_bypass: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of the ingress NAT Rule Ids.
         #[builder(into, default)]
-        pub ingress_nat_rule_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub ingress_nat_rule_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `ipsec_policy` block which is documented below.
         /// Only a single policy can be defined for a connection. For details on
         /// custom policies refer to [the relevant section in the Azure documentation](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell).
@@ -299,9 +295,7 @@ pub mod virtual_network_gateway_connection {
         >,
         /// Use private local Azure IP for the connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub local_azure_ip_address_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub local_azure_ip_address_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the local network gateway when creating Site-to-Site connection (i.e. when `type` is `IPsec`).
         #[builder(into, default)]
         pub local_network_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -313,14 +307,10 @@ pub mod virtual_network_gateway_connection {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the peer virtual network gateway when creating a VNet-to-VNet connection (i.e. when `type` is `Vnet2Vnet`). The peer Virtual Network Gateway can be in the same or in a different subscription. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub peer_virtual_network_gateway_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub peer_virtual_network_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Bypass the Express Route gateway when accessing private-links. When enabled `express_route_gateway_bypass` must be set to `true`. Defaults to `false`.
         #[builder(into, default)]
-        pub private_link_fast_path_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub private_link_fast_path_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the connection Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -349,9 +339,7 @@ pub mod virtual_network_gateway_connection {
         pub type_: pulumi_gestalt_rust::Input<String>,
         /// If `true`, policy-based traffic selectors are enabled for this connection. Enabling policy-based traffic selectors requires an `ipsec_policy` block. Defaults to `false`.
         #[builder(into, default)]
-        pub use_policy_based_traffic_selectors: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub use_policy_based_traffic_selectors: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Virtual Network Gateway in which the connection will be created. Changing this forces a new resource to be created.
         #[builder(into)]
         pub virtual_network_gateway_id: pulumi_gestalt_rust::Input<String>,

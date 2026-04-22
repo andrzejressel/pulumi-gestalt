@@ -139,14 +139,10 @@ pub mod certificate_authority {
         pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Cryptographic key management compliance standard used for handling CA keys. Defaults to `FIPS_140_2_LEVEL_3_OR_HIGHER`. Valid values: `FIPS_140_2_LEVEL_3_OR_HIGHER` and `FIPS_140_2_LEVEL_2_OR_HIGHER`. Supported standard for each region can be found in the [Storage and security compliance of AWS Private CA private keys Documentation](https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys).
         #[builder(into, default)]
-        pub key_storage_security_standard: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub key_storage_security_standard: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of days to make a CA restorable after it has been deleted, must be between 7 to 30 days, with default to 30 days.
         #[builder(into, default)]
-        pub permanent_deletion_time_in_days: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub permanent_deletion_time_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Nested argument containing revocation configuration. Defined below.
         #[builder(into, default)]
         pub revocation_configuration: pulumi_gestalt_rust::Input<

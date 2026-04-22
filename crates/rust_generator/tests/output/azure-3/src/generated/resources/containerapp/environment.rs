@@ -75,17 +75,13 @@ pub mod environment {
         ///
         /// > **Note:** can only be set to `true` if `infrastructure_subnet_id` is specified.
         #[builder(into, default)]
-        pub internal_load_balancer_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub internal_load_balancer_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the Container App Environment is to exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID for the Log Analytics Workspace to link this Container Apps Managed Environment to.
         #[builder(into, default)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should mutual transport layer security (mTLS) be enabled? Defaults to `false`.
         ///
         /// > **Note:** This feature is in public preview. Enabling mTLS for your applications may increase response latency and reduce maximum throughput in high-load scenarios.

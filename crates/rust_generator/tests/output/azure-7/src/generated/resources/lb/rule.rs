@@ -76,9 +76,7 @@ pub mod rule {
         ///
         /// > **NOTE:** In most cases users can only set one Backend Address Pool ID in the `backend_address_pool_ids`. Especially, when the sku of the LB is `Gateway`, users can set up to two IDs in the `backend_address_pool_ids`.
         #[builder(into, default)]
-        pub backend_address_pool_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub backend_address_pool_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The port used for internal connections on the endpoint. Possible values range between 0 and 65535, inclusive. A port of `0` means "Any Port".
         #[builder(into)]
         pub backend_port: pulumi_gestalt_rust::Input<i32>,

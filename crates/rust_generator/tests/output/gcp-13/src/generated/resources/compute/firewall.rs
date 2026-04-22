@@ -209,9 +209,7 @@ pub mod firewall {
         /// used at the same time as sourceTags or targetTags. For INGRESS traffic,
         /// one of `source_ranges`, `source_tags` or `source_service_accounts` is required.
         #[builder(into, default)]
-        pub source_service_accounts: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub source_service_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// If source tags are specified, the firewall will apply only to traffic
         /// with source IP that belongs to a tag listed in source tags. Source
         /// tags cannot be used to control traffic to an instance's external IP
@@ -231,9 +229,7 @@ pub mod firewall {
         /// specified, the firewall rule applies to all instances on the specified
         /// network.
         #[builder(into, default)]
-        pub target_service_accounts: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub target_service_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of instance tags indicating sets of instances located in the
         /// network that may make network connections as specified in allowed[].
         /// If no targetTags are specified, the firewall rule applies to all

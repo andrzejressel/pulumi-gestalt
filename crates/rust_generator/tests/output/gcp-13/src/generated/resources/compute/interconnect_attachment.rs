@@ -180,9 +180,7 @@ pub mod interconnect_attachment {
         /// interconnect attachment, the HA VPN gateway's IP address will be
         /// allocated from regional external IP address pool.
         #[builder(into, default)]
-        pub ipsec_internal_addresses: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub ipsec_internal_addresses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Maximum Transmission Unit (MTU), in bytes, of packets passing through
         /// this interconnect attachment. Currently, only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
         #[builder(into, default)]

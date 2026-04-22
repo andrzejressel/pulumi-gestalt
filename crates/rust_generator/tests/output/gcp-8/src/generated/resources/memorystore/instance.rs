@@ -215,9 +215,7 @@ pub mod instance {
         pub authorization_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. If set to true deletion of the instance will fail.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Required. Immutable. User inputs for the auto-created PSC connections.
         #[builder(into)]
         pub desired_psc_auto_connections: pulumi_gestalt_rust::Input<

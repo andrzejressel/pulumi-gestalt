@@ -122,9 +122,7 @@ pub mod network_sim_policy {
         >,
         /// Interval for the user equipment periodic registration update procedure. Defaults to `3240`.
         #[builder(into, default)]
-        pub registration_timer_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub registration_timer_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An array of `slice` block as defined below. The allowed slices and the settings to use for them. The list must not contain duplicate items and must contain at least one item.
         #[builder(into)]
         pub slices: pulumi_gestalt_rust::Input<

@@ -93,19 +93,13 @@ pub mod network_packet_core_data_plane {
         >,
         /// The IPv4 address for the user plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_address: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_plane_access_ipv4_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default IPv4 gateway for the user plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_gateway: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_plane_access_ipv4_gateway: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 subnet for the user plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_subnet: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_plane_access_ipv4_subnet: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the logical name for thie user plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
         pub user_plane_access_name: pulumi_gestalt_rust::Input<Option<String>>,

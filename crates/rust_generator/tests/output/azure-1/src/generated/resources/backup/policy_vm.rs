@@ -92,9 +92,7 @@ pub mod policy_vm {
         ///
         /// > **NOTE:** `instant_restore_retention_days` **must** be set to `5` if the backup frequency is set to `Weekly`.
         #[builder(into, default)]
-        pub instant_restore_retention_days: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub instant_restore_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Backup Policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

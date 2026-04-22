@@ -95,9 +95,7 @@ pub mod dlp_profile {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of entries to apply to the profile.
         #[builder(into)]
-        pub entries: pulumi_gestalt_rust::Input<
-            Vec<super::types::DlpProfileEntry>,
-        >,
+        pub entries: pulumi_gestalt_rust::Input<Vec<super::types::DlpProfileEntry>>,
         /// Name of the profile. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
         pub name: pulumi_gestalt_rust::Input<String>,

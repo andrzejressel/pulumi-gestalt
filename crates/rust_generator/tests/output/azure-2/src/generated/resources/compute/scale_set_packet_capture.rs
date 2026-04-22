@@ -149,9 +149,7 @@ pub mod scale_set_packet_capture {
         pub maximum_bytes_per_session: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum duration of the capture session in seconds. Defaults to `18000` (5 hours). Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub maximum_capture_duration_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub maximum_capture_duration_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name to use for this Network Packet Capture. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

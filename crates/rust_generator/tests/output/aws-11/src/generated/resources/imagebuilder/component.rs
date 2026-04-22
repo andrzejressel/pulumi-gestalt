@@ -63,9 +63,7 @@ pub mod component {
         pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Set of Operating Systems (OS) supported by the component.
         #[builder(into, default)]
-        pub supported_os_versions: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub supported_os_versions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value map of resource tags for the component. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

@@ -50,9 +50,7 @@ pub mod account {
         ///
         /// > **Note:** `managed_resource_group_name` must be a new Resource Group
         #[builder(into, default)]
-        pub managed_resource_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub managed_resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Purview Account. Changing this forces a new Purview Account to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

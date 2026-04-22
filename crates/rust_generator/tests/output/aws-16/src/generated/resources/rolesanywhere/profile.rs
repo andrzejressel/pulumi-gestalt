@@ -61,9 +61,7 @@ pub mod profile {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether instance properties are required in [CreateSession](https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html) requests with this profile.
         #[builder(into, default)]
-        pub require_instance_properties: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub require_instance_properties: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of IAM roles that this profile can assume
         #[builder(into, default)]
         pub role_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

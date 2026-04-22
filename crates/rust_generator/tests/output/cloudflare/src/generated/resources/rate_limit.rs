@@ -96,9 +96,7 @@ pub mod rate_limit {
         pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Determines which traffic the rate limit counts towards the threshold. By default matches all traffic in the zone.
         #[builder(into, default)]
-        pub match_: pulumi_gestalt_rust::Input<
-            Option<super::types::RateLimitMatch>,
-        >,
+        pub match_: pulumi_gestalt_rust::Input<Option<super::types::RateLimitMatch>>,
         /// The time in seconds to count matching traffic. If the count exceeds threshold within this period the action will be performed.
         #[builder(into)]
         pub period: pulumi_gestalt_rust::Input<i32>,

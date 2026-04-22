@@ -25,9 +25,7 @@ pub mod gcm_channel {
         #[builder(into)]
         pub application_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub default_authentication_method: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_authentication_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the channel is enabled or disabled. Defaults to `true`.
         #[builder(into, default)]
         pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,

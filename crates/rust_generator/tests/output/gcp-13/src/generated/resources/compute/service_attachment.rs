@@ -429,9 +429,7 @@ pub mod service_attachment {
         /// An array of projects that are not allowed to connect to this service
         /// attachment.
         #[builder(into, default)]
-        pub consumer_reject_lists: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub consumer_reject_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An optional description of this resource.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,

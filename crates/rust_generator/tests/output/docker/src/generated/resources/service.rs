@@ -84,9 +84,7 @@ pub mod service {
         >,
         /// User-defined key/value metadata
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::Input<
-            Option<Vec<super::types::ServiceLabel>>,
-        >,
+        pub labels: pulumi_gestalt_rust::Input<Option<Vec<super::types::ServiceLabel>>>,
         /// Scheduling mode for the service
         #[builder(into, default)]
         pub mode: pulumi_gestalt_rust::Input<Option<super::types::ServiceMode>>,

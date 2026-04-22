@@ -156,15 +156,11 @@ pub mod region_instance_group_manager {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The shape to which the group converges either proactively or on resize events (depending on the value set in update_policy.0.instance_redistribution_type). For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/regional-mig-distribution-shape).
         #[builder(into, default)]
-        pub distribution_policy_target_shape: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub distribution_policy_target_shape: pulumi_gestalt_rust::Input<Option<String>>,
         /// The distribution policy for this managed instance
         /// group. You can specify one or more values. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/distributing-instances-with-regional-instance-groups#selectingzones).
         #[builder(into, default)]
-        pub distribution_policy_zones: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub distribution_policy_zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The flexibility policy for managed instance group. Instance flexibility allows managed instance group to create VMs from multiple types of machines. Instance flexibility configuration on managed instance group overrides instance template configuration. Structure is documented below.
         /// - - -
         #[builder(into, default)]
@@ -187,9 +183,7 @@ pub mod region_instance_group_manager {
         /// response. If `PAGINATED`, pagination is enabled, `maxResults` and `pageToken` query parameters are
         /// respected.
         #[builder(into, default)]
-        pub list_managed_instances_results: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub list_managed_instances_results: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the instance group manager. Must be 1-63
         /// characters long and comply with
         /// [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters
@@ -285,9 +279,7 @@ pub mod region_instance_group_manager {
         /// set, it will wait for the version target to be reached and any per instance configs to be effective as well as all
         /// instances to be stable before returning. The possible values are `STABLE` and `UPDATED`
         #[builder(into, default)]
-        pub wait_for_instances_status: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub wait_for_instances_status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RegionInstanceGroupManagerResult {

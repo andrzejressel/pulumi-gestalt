@@ -54,9 +54,7 @@ pub mod spot_instance_request {
         pub ami: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to associate a public IP address with an instance in a VPC.
         #[builder(into, default)]
-        pub associate_public_ip_address: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub associate_public_ip_address: pulumi_gestalt_rust::Input<Option<bool>>,
         /// AZ to start the instance in.
         #[builder(into, default)]
         pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
@@ -141,9 +139,7 @@ pub mod spot_instance_request {
         >,
         /// Indicates Spot instance behavior when it is interrupted. Valid values are `terminate`, `stop`, or `hibernate`. Default value is `terminate`.
         #[builder(into, default)]
-        pub instance_interruption_behavior: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub instance_interruption_behavior: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instance type to use for the instance. Required unless `launch_template` is specified and the Launch Template specifies an instance type. If an instance type is specified in the Launch Template, setting `instance_type` will override the instance type specified in the Launch Template. Updates to this field will trigger a stop/start of the EC2 instance.
         #[builder(into, default)]
         pub instance_type: pulumi_gestalt_rust::Input<Option<String>>,
@@ -204,9 +200,7 @@ pub mod spot_instance_request {
         >,
         /// List of secondary private IPv4 addresses to assign to the instance's primary network interface (eth0) in a VPC. Can only be assigned to the primary network interface (eth0) attached at instance creation, not a pre-existing network interface i.e., referenced in a `network_interface` block. Refer to the [Elastic network interfaces documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI) to see the maximum number of private IP addresses allowed per instance type.
         #[builder(into, default)]
-        pub secondary_private_ips: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub secondary_private_ips: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of security group names to associate with.
         ///
         /// > **NOTE:** If you are creating Instances in a VPC, use `vpc_security_group_ids` instead.
@@ -241,9 +235,7 @@ pub mod spot_instance_request {
         pub user_data_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// When used in combination with `user_data` or `user_data_base64` will trigger a destroy and recreate of the EC2 instance when set to `true`. Defaults to `false` if not set.
         #[builder(into, default)]
-        pub user_data_replace_on_change: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub user_data_replace_on_change: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The start date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). The default is to start fulfilling the request immediately.
         #[builder(into, default)]
         pub valid_from: pulumi_gestalt_rust::Input<Option<String>>,
@@ -259,9 +251,7 @@ pub mod spot_instance_request {
         >,
         /// List of security group IDs to associate with.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// If set, this provider will
         /// wait for the Spot Request to be fulfilled, and will throw an error if the
         /// timeout of 10m is reached.

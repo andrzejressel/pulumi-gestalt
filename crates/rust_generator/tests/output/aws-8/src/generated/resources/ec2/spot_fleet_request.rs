@@ -199,9 +199,7 @@ pub mod spot_fleet_request {
         /// instance stops or terminates when it is interrupted. Default is
         /// `terminate`.
         #[builder(into, default)]
-        pub instance_interruption_behaviour: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub instance_interruption_behaviour: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of Spot pools across which to allocate your target Spot capacity.
         /// Valid only when `allocation_strategy` is set to `lowestPrice`. Spot Fleet selects
         /// the cheapest Spot pools and evenly allocates your target Spot capacity across
@@ -231,22 +229,16 @@ pub mod spot_fleet_request {
         pub load_balancers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The order of the launch template overrides to use in fulfilling On-Demand capacity. the possible values are: `lowestPrice` and `prioritized`. the default is `lowestPrice`.
         #[builder(into, default)]
-        pub on_demand_allocation_strategy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub on_demand_allocation_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum amount per hour for On-Demand Instances that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.
         #[builder(into, default)]
-        pub on_demand_max_total_price: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub on_demand_max_total_price: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of On-Demand units to request. If the request type is `maintain`, you can specify a target capacity of 0 and add capacity later.
         #[builder(into, default)]
         pub on_demand_target_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Indicates whether Spot fleet should replace unhealthy instances. Default `false`.
         #[builder(into, default)]
-        pub replace_unhealthy_instances: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub replace_unhealthy_instances: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Nested argument containing maintenance strategies for managing your Spot Instances that are at an elevated risk of being interrupted. Defined below.
         #[builder(into, default)]
         pub spot_maintenance_strategies: pulumi_gestalt_rust::Input<
@@ -267,9 +259,7 @@ pub mod spot_fleet_request {
         pub target_capacity: pulumi_gestalt_rust::Input<i32>,
         /// The unit for the target capacity. This can only be done with `instance_requirements` defined
         #[builder(into, default)]
-        pub target_capacity_unit_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub target_capacity_unit_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of `aws.alb.TargetGroup` ARNs, for use with Application Load Balancing.
         #[builder(into, default)]
         pub target_group_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
@@ -277,9 +267,7 @@ pub mod spot_fleet_request {
         /// instances should be terminated when the resource is deleted (and the Spot fleet request cancelled).
         /// If no value is specified, the value of the `terminate_instances_with_expiration` argument is used.
         #[builder(into, default)]
-        pub terminate_instances_on_delete: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub terminate_instances_on_delete: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether running Spot
         /// instances should be terminated when the Spot fleet request expires.
         #[builder(into, default)]

@@ -88,26 +88,18 @@ pub mod account {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure AD Client ID (Application ID). This attribute is only set when kind is `MetricsAdvisor`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub metrics_advisor_aad_client_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub metrics_advisor_aad_client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure AD Tenant ID. This attribute is only set when kind is `MetricsAdvisor`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub metrics_advisor_aad_tenant_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub metrics_advisor_aad_tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The super user of Metrics Advisor. This attribute is only set when kind is `MetricsAdvisor`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub metrics_advisor_super_user_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub metrics_advisor_super_user_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The website name of Metrics Advisor. This attribute is only set when kind is `MetricsAdvisor`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** This URL is mandatory if the `kind` is set to `QnAMaker`.
         #[builder(into, default)]
-        pub metrics_advisor_website_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub metrics_advisor_website_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Cognitive Service Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -118,14 +110,10 @@ pub mod account {
         >,
         /// Whether outbound network access is restricted for the Cognitive Account. Defaults to `false`.
         #[builder(into, default)]
-        pub outbound_network_access_restricted: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub outbound_network_access_restricted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether public network access is allowed for the Cognitive Account. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A URL to link a QnAMaker cognitive account to a QnA runtime.
         #[builder(into, default)]
         pub qna_runtime_endpoint: pulumi_gestalt_rust::Input<Option<String>>,

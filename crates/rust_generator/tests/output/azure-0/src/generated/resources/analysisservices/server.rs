@@ -52,9 +52,7 @@ pub mod server {
         pub admin_users: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// URI and SAS token for a blob container to store backups.
         #[builder(into, default)]
-        pub backup_blob_container_uri: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub backup_blob_container_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `ipv4_firewall_rule` block(s) as defined below.
         #[builder(into, default)]
         pub ipv4_firewall_rules: pulumi_gestalt_rust::Input<
@@ -71,9 +69,7 @@ pub mod server {
         pub power_bi_service_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Controls how the read-write server is used in the query pool. If this value is set to `All` then read-write servers are also used for queries. Otherwise with `ReadOnly` these servers do not participate in query operations. Defaults to `All`.
         #[builder(into, default)]
-        pub querypool_connection_mode: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub querypool_connection_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the Analysis Services Server should be exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

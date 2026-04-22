@@ -165,9 +165,7 @@ pub mod domain_name {
         pub regional_certificate_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-friendly name of the certificate that will be used by regional endpoint for this domain name. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`.
         #[builder(into, default)]
-        pub regional_certificate_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub regional_certificate_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Transport Layer Security (TLS) version + cipher suite for this DomainName. Valid values are `TLS_1_0` and `TLS_1_2`. Must be configured to perform drift detection.
         #[builder(into, default)]
         pub security_policy: pulumi_gestalt_rust::Input<Option<String>>,

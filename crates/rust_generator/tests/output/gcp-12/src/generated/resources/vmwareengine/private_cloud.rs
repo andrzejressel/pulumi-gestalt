@@ -148,9 +148,7 @@ pub mod private_cloud {
         /// only useful for setting 0 value to the deletion_delay_hours field. It can be used both alone and together with
         /// deletion_delay_hours.
         #[builder(into, default)]
-        pub send_deletion_delay_hours_if_zero: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub send_deletion_delay_hours_if_zero: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Initial type of the private cloud. Possible values: ["STANDARD", "TIME_LIMITED", "STRETCHED"]
         #[builder(into, default)]
         pub type_: pulumi_gestalt_rust::Input<Option<String>>,

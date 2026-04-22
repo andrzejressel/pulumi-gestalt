@@ -82,9 +82,7 @@ pub mod application_group {
     pub struct ApplicationGroupArgs {
         /// Option to set the display name for the default sessionDesktop desktop when `type` is set to `Desktop`. A value here is mandatory for connections to the desktop using the Windows 365 portal. Without it the connection will hang at 'Loading Client'.
         #[builder(into, default)]
-        pub default_desktop_display_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_desktop_display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to set a description for the Virtual Desktop Application Group.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,

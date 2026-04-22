@@ -203,9 +203,7 @@ pub mod pool {
         >,
         /// Whether to stop if there is a pending resize operation on this pool.
         #[builder(into, default)]
-        pub stop_pending_resize_operation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub stop_pending_resize_operation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `storage_image_reference` block for the virtual machines that will compose the Batch pool as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
         pub storage_image_reference: pulumi_gestalt_rust::Input<
@@ -213,9 +211,7 @@ pub mod pool {
         >,
         /// The desired node communication mode for the pool. Possible values are `Classic`, `Default` and `Simplified`.
         #[builder(into, default)]
-        pub target_node_communication_mode: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub target_node_communication_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `task_scheduling_policy` block that describes how tasks are distributed across compute nodes in a pool as defined below. If not specified, the default is spread as defined below.
         #[builder(into, default)]
         pub task_scheduling_policies: pulumi_gestalt_rust::Input<

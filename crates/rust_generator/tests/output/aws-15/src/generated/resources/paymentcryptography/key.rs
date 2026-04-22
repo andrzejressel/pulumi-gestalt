@@ -55,9 +55,7 @@ pub mod key {
         >,
         /// Algorithm that AWS Payment Cryptography uses to calculate the key check value (KCV).
         #[builder(into, default)]
-        pub key_check_value_algorithm: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub key_check_value_algorithm: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the WorkSpaces Connection Alias. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

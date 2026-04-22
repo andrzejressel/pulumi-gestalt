@@ -22,9 +22,7 @@ pub mod get_attachment {
         >,
         /// ID of the attachment.
         #[builder(into, default)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAttachmentResult {

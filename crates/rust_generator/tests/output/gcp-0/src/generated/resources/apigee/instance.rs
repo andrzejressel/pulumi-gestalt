@@ -277,9 +277,7 @@ pub mod instance {
         /// which the customers can provide during the instance creation. By default, the customer
         /// project associated with the Apigee organization will be included to the list.
         #[builder(into, default)]
-        pub consumer_accept_lists: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub consumer_accept_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Description of the instance.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,

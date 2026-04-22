@@ -87,19 +87,13 @@ pub mod vpc_ipam_pool {
         pub address_family: pulumi_gestalt_rust::Input<String>,
         /// A default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16 (unless you provide a different netmask value when you create the new allocation).
         #[builder(into, default)]
-        pub allocation_default_netmask_length: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub allocation_default_netmask_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum netmask length that will be required for CIDR allocations in this pool.
         #[builder(into, default)]
-        pub allocation_max_netmask_length: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub allocation_max_netmask_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The minimum netmask length that will be required for CIDR allocations in this pool.
         #[builder(into, default)]
-        pub allocation_min_netmask_length: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub allocation_min_netmask_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.
         #[builder(into, default)]
         pub allocation_resource_tags: pulumi_gestalt_rust::Input<

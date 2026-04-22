@@ -69,9 +69,7 @@ pub mod linked_service_azure_blob_storage {
         ///
         /// > **Note:** `connection_string` uses the Azure [SecureString](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.management.datafactory.models.securestring) to encrypt the contents within the REST payload sent to Azure whilst the `connection_string_insecure` is sent as a regular string. Both properties are still sent using SSL/HTTPS. At this time the portal will not decrypt Secure Strings so the `connection_string` property in the portal will show as `******` whilst `connection_string_insecure` will be viewable in the portal.
         #[builder(into, default)]
-        pub connection_string_insecure: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub connection_string_insecure: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
         pub data_factory_id: pulumi_gestalt_rust::Input<String>,

@@ -119,9 +119,7 @@ pub mod router {
         /// Indicates if a router is dedicated for use with encrypted VLAN
         /// attachments (interconnectAttachments).
         #[builder(into, default)]
-        pub encrypted_interconnect_router: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub encrypted_interconnect_router: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the resource. The name must be 1-63 characters long, and
         /// comply with RFC1035. Specifically, the name must be 1-63 characters
         /// long and match the regular expression `a-z?`

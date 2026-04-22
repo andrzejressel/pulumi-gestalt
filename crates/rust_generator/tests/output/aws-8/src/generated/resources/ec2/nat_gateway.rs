@@ -100,14 +100,10 @@ pub mod nat_gateway {
         pub private_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of secondary allocation EIP IDs for this NAT Gateway.
         #[builder(into, default)]
-        pub secondary_allocation_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub secondary_allocation_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// [Private NAT Gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT Gateway.
         #[builder(into, default)]
-        pub secondary_private_ip_address_count: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub secondary_private_ip_address_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A list of secondary private IPv4 addresses to assign to the NAT Gateway.
         #[builder(into, default)]
         pub secondary_private_ip_addresses: pulumi_gestalt_rust::Input<

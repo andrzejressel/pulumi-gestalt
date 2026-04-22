@@ -138,9 +138,7 @@ pub mod plan {
         ///
         /// > **NOTE:** Attaching to an App Service Environment requires the App Service Plan use a `Premium` SKU (when using an ASEv1) and the `Isolated` SKU (for an ASEv2).
         #[builder(into, default)]
-        pub app_service_environment_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub app_service_environment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to create a xenon App Service Plan.
         #[builder(into, default)]
         pub is_xenon: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -154,9 +152,7 @@ pub mod plan {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
         #[builder(into, default)]
-        pub maximum_elastic_worker_count: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub maximum_elastic_worker_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the App Service Plan component. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -171,9 +167,7 @@ pub mod plan {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as documented below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::Input<
-            super::super::types::appservice::PlanSku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::appservice::PlanSku>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

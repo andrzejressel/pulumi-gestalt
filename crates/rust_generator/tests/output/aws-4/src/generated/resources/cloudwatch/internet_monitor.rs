@@ -45,9 +45,7 @@ pub mod internet_monitor {
         >,
         /// The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.
         #[builder(into, default)]
-        pub max_city_networks_to_monitor: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub max_city_networks_to_monitor: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the monitor.
         ///
         /// The following arguments are optional:
@@ -66,9 +64,7 @@ pub mod internet_monitor {
         >,
         /// The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.
         #[builder(into, default)]
-        pub traffic_percentage_to_monitor: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub traffic_percentage_to_monitor: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct InternetMonitorResult {

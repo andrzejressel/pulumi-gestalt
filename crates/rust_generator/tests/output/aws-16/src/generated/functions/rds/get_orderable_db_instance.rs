@@ -28,14 +28,10 @@ pub mod get_orderable_db_instance {
         pub license_model: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred RDS DB instance engine versions. When `engine_latest_version` is not set, the data source will return the first match in this list that matches any other criteria. If the data source finds no preferred matches or multiple matches without `engine_latest_version`, it returns an error. **CAUTION:** We don't recommend using `preferred_engine_versions` without `preferred_instance_classes` since the data source returns an arbitrary `instance_class` based on the first one AWS returns that matches the engine version and any other criteria.
         #[builder(into, default)]
-        pub preferred_engine_versions: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_engine_versions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Ordered list of preferred RDS DB instance classes. The data source will return the first match in this list that matches any other criteria. If the data source finds no preferred matches or multiple matches without `engine_latest_version`, it returns an error. If you use `preferred_instance_classes` without `preferred_engine_versions` or `engine_latest_version`, the data source returns an arbitrary `engine_version` based on the first one AWS returns matching the instance class and any other criteria.
         #[builder(into, default)]
-        pub preferred_instance_classes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_instance_classes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether a DB instance can have a read replica.
         #[builder(into, default)]
         pub read_replica_capable: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -44,22 +40,16 @@ pub mod get_orderable_db_instance {
         pub storage_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use to limit results to engine modes such as `provisioned`.
         #[builder(into, default)]
-        pub supported_engine_modes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub supported_engine_modes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Use to limit results to network types `IPV4` or `DUAL`.
         #[builder(into, default)]
-        pub supported_network_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub supported_network_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to limit results to instances that support clusters.
         #[builder(into, default)]
         pub supports_clusters: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable this to ensure a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.
         #[builder(into, default)]
-        pub supports_enhanced_monitoring: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub supports_enhanced_monitoring: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable this to ensure a DB instance supports Aurora global databases with a specific combination of other DB engine attributes.
         #[builder(into, default)]
         pub supports_global_databases: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -73,27 +63,19 @@ pub mod get_orderable_db_instance {
         pub supports_iops: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable this to ensure a DB instance supports Kerberos Authentication.
         #[builder(into, default)]
-        pub supports_kerberos_authentication: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub supports_kerberos_authentication: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to limit results to instances that are multi-AZ capable.
         #[builder(into, default)]
         pub supports_multi_az: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable this to ensure a DB instance supports Performance Insights.
         #[builder(into, default)]
-        pub supports_performance_insights: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub supports_performance_insights: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable this to ensure Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.
         #[builder(into, default)]
-        pub supports_storage_autoscaling: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub supports_storage_autoscaling: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable this to ensure a DB instance supports encrypted storage.
         #[builder(into, default)]
-        pub supports_storage_encryption: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub supports_storage_encryption: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean that indicates whether to show only VPC or non-VPC offerings.
         #[builder(into, default)]
         pub vpc: pulumi_gestalt_rust::Input<Option<bool>>,

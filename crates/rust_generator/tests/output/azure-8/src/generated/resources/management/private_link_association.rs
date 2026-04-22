@@ -89,9 +89,7 @@ pub mod private_link_association {
         pub public_network_access_enabled: pulumi_gestalt_rust::Input<bool>,
         /// The Resource ID of Resource Management Private Link. Changing this forces a new Private Link Association to be created.
         #[builder(into)]
-        pub resource_management_private_link_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub resource_management_private_link_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PrivateLinkAssociationResult {

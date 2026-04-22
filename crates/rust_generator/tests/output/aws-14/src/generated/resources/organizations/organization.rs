@@ -47,9 +47,7 @@ pub mod organization {
         >,
         /// List of Organizations policy types to enable in the Organization Root. Organization must have `feature_set` set to `ALL`. For additional information about valid policy types (e.g., `AISERVICES_OPT_OUT_POLICY`, `BACKUP_POLICY`, `RESOURCE_CONTROL_POLICY`, `SERVICE_CONTROL_POLICY`, and `TAG_POLICY`), see the [AWS Organizations API Reference](https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnablePolicyType.html).
         #[builder(into, default)]
-        pub enabled_policy_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub enabled_policy_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specify "ALL" (default) or "CONSOLIDATED_BILLING".
         #[builder(into, default)]
         pub feature_set: pulumi_gestalt_rust::Input<Option<String>>,

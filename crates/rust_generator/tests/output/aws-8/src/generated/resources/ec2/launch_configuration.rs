@@ -51,9 +51,7 @@ pub mod launch_configuration {
     pub struct LaunchConfigurationArgs {
         /// Associate a public ip address with an instance in a VPC.
         #[builder(into, default)]
-        pub associate_public_ip_address: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub associate_public_ip_address: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Additional EBS block devices to attach to the instance. See Block Devices below for details.
         #[builder(into, default)]
         pub ebs_block_devices: pulumi_gestalt_rust::Input<

@@ -54,9 +54,7 @@ pub mod input {
         >,
         /// List of input security groups.
         #[builder(into, default)]
-        pub input_security_groups: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub input_security_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of the MediaConnect Flows. See Media Connect Flows for more details.
         #[builder(into, default)]
         pub media_connect_flows: pulumi_gestalt_rust::Input<

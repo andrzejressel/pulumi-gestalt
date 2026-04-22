@@ -258,9 +258,7 @@ pub mod managed_instance {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Public Maintenance Configuration window to apply to the SQL Managed Instance. Valid values include `SQL_Default` or an Azure Location in the format `SQL_{Location}_MI_{Size}`(for example `SQL_EastUS_MI_1`). Defaults to `SQL_Default`.
         #[builder(into, default)]
-        pub maintenance_configuration_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub maintenance_configuration_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Minimum TLS Version. Default value is `1.2` Valid values include `1.0`, `1.1`, `1.2`.
         #[builder(into, default)]
         pub minimum_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
@@ -272,9 +270,7 @@ pub mod managed_instance {
         pub proxy_override: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the public data endpoint enabled? Default value is `false`.
         #[builder(into, default)]
-        pub public_data_endpoint_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_data_endpoint_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the SQL Managed Instance. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

@@ -36,9 +36,7 @@ pub mod proxy_endpoint {
         pub target_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more VPC security group IDs to associate with the new proxy.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more VPC subnet IDs to associate with the new proxy.
         #[builder(into)]
         pub vpc_subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,

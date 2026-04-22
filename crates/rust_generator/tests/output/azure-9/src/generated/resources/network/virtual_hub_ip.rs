@@ -93,9 +93,7 @@ pub mod virtual_hub_ip {
         pub private_ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The private IP address allocation method. Possible values are `Static` and `Dynamic` is allowed. Defaults to `Dynamic`.
         #[builder(into, default)]
-        pub private_ip_allocation_method: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub private_ip_allocation_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Public IP Address. This option is required since September 1st 2021. Changing this forces a new resource to be created.
         #[builder(into)]
         pub public_ip_address_id: pulumi_gestalt_rust::Input<String>,

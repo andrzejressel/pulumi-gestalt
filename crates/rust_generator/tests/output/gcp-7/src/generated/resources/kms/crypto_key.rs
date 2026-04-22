@@ -89,9 +89,7 @@ pub mod crypto_key {
         /// The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.
         /// If not specified at creation time, the default duration is 30 days.
         #[builder(into, default)]
-        pub destroy_scheduled_duration: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub destroy_scheduled_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether this key may contain imported versions only.
         #[builder(into, default)]
         pub import_only: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -142,9 +140,7 @@ pub mod crypto_key {
         /// You must use the `gcp.kms.CryptoKeyVersion` resource to create a new CryptoKeyVersion
         /// or `gcp.kms.KeyRingImportJob` resource to import the CryptoKeyVersion.
         #[builder(into, default)]
-        pub skip_initial_version_creation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub skip_initial_version_creation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A template describing settings for new crypto key versions.
         /// Structure is documented below.
         #[builder(into, default)]

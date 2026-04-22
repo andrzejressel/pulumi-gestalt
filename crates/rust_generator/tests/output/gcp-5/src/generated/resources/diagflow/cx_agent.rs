@@ -168,9 +168,7 @@ pub mod cx_agent {
         >,
         /// The list of all languages supported by this agent (except for the default_language_code).
         #[builder(into, default)]
-        pub supported_language_codes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub supported_language_codes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Settings related to speech synthesizing.
         /// Structure is documented below.
         #[builder(into, default)]

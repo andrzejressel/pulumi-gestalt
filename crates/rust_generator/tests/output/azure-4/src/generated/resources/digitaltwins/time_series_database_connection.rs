@@ -131,9 +131,7 @@ pub mod time_series_database_connection {
         pub digital_twins_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Event Hub Consumer Group. Changing this forces a new resource to be created. Defaults to `$Default`.
         #[builder(into, default)]
-        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub eventhub_consumer_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Event Hub. Changing this forces a new resource to be created.
         #[builder(into)]
         pub eventhub_name: pulumi_gestalt_rust::Input<String>,

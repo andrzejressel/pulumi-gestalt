@@ -91,9 +91,7 @@ pub mod network {
         pub ipv6: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User-defined key/value metadata
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::Input<
-            Option<Vec<super::types::NetworkLabel>>,
-        >,
+        pub labels: pulumi_gestalt_rust::Input<Option<Vec<super::types::NetworkLabel>>>,
         /// The name of the Docker network.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

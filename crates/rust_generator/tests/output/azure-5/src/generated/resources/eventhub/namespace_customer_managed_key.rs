@@ -230,9 +230,7 @@ pub mod namespace_customer_managed_key {
         pub eventhub_namespace_id: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable Infrastructure Encryption (Double Encryption). Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The list of keys of Key Vault.
         #[builder(into)]
         pub key_vault_key_ids: pulumi_gestalt_rust::Input<Vec<String>>,
@@ -242,9 +240,7 @@ pub mod namespace_customer_managed_key {
         ///
         /// > **Note:** If using `user_assigned_identity_id`, make sure to assign the identity the appropriate permissions to access the Key Vault key. Failure to grant `Get, UnwrapKey, and WrapKey` will cause this resource to fail to apply.
         #[builder(into, default)]
-        pub user_assigned_identity_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_assigned_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NamespaceCustomerManagedKeyResult {

@@ -140,9 +140,7 @@ pub mod queue {
     pub struct QueueArgs {
         /// Enables content-based deduplication for FIFO queues. For more information, see the [related documentation](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing)
         #[builder(into, default)]
-        pub content_based_deduplication: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub content_based_deduplication: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether message deduplication occurs at the message group or queue level. Valid values are `messageGroup` and `queue` (default).
         #[builder(into, default)]
         pub deduplication_scope: pulumi_gestalt_rust::Input<Option<String>>,
@@ -157,9 +155,7 @@ pub mod queue {
         pub fifo_throughput_limit: pulumi_gestalt_rust::Input<Option<String>>,
         /// The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). The default is 300 (5 minutes).
         #[builder(into, default)]
-        pub kms_data_key_reuse_period_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub kms_data_key_reuse_period_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see [Key Terms](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms).
         #[builder(into, default)]
         pub kms_master_key_id: pulumi_gestalt_rust::Input<Option<String>>,

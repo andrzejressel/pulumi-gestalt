@@ -59,9 +59,7 @@ pub mod image_builder {
         >,
         /// Enables or disables default internet access for the image builder.
         #[builder(into, default)]
-        pub enable_default_internet_access: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_default_internet_access: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ARN of the IAM role to apply to the image builder.
         #[builder(into, default)]
         pub iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,

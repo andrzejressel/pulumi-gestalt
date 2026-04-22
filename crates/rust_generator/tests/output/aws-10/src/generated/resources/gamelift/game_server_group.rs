@@ -137,9 +137,7 @@ pub mod game_server_group {
         /// of a forced game server group deletion.
         /// Valid values: `NO_PROTECTION`, `FULL_PROTECTION`. Defaults to `NO_PROTECTION`.
         #[builder(into, default)]
-        pub game_server_protection_policy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub game_server_protection_policy: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
         pub instance_definitions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::gamelift::GameServerGroupInstanceDefinition>,

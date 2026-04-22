@@ -50,9 +50,7 @@ pub mod capacity {
     pub struct CapacityArgs {
         /// An array of administrator user identities. The member must be an Entra member user or a service principal.
         #[builder(into, default)]
-        pub administration_members: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub administration_members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The supported Azure location where the Fabric Capacity exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -64,9 +62,7 @@ pub mod capacity {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::Input<
-            super::super::types::fabric::CapacitySku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::fabric::CapacitySku>,
         /// A mapping of tags to assign to the Fabric Capacity.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

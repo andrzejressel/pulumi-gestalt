@@ -23,9 +23,7 @@ pub mod foo {
         >,
         /// describing things
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::Input<
-            Option<super::types::LayeredType>,
-        >,
+        pub settings: pulumi_gestalt_rust::Input<Option<super::types::LayeredType>>,
     }
     #[allow(dead_code)]
     pub struct FooResult {

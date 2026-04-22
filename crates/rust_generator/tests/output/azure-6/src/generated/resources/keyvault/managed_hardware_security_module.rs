@@ -69,9 +69,7 @@ pub mod managed_hardware_security_module {
         >,
         /// Whether traffic from public networks is permitted. Defaults to `true`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Purge Protection enabled for this Key Vault Managed Hardware Security Module? Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub purge_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

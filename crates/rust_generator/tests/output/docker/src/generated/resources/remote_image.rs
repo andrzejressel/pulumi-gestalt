@@ -79,9 +79,7 @@ pub mod remote_image {
     pub struct RemoteImageArgs {
         /// Configuration to build an image. Please see [docker build command reference](https://docs.docker.com/engine/reference/commandline/build/#options) too.
         #[builder(into, default)]
-        pub build: pulumi_gestalt_rust::Input<
-            Option<super::types::RemoteImageBuild>,
-        >,
+        pub build: pulumi_gestalt_rust::Input<Option<super::types::RemoteImageBuild>>,
         /// Always remove intermediate containers
         #[builder(into, default)]
         pub force_remove: pulumi_gestalt_rust::Input<Option<bool>>,

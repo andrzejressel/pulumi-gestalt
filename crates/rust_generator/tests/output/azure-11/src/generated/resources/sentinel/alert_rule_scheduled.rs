@@ -78,9 +78,7 @@ pub mod alert_rule_scheduled {
         pub alert_rule_template_guid: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version of the alert rule template which is used for this Sentinel Scheduled Alert Rule.
         #[builder(into, default)]
-        pub alert_rule_template_version: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub alert_rule_template_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of string key-value pairs of columns to be attached to this Sentinel Scheduled Alert Rule. The key will appear as the field name in alerts and the value is the event parameter you wish to surface in the alerts.
         #[builder(into, default)]
         pub custom_details: pulumi_gestalt_rust::Input<

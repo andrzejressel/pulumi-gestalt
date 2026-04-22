@@ -101,9 +101,7 @@ pub mod restore_point {
     pub struct RestorePointArgs {
         /// Is Crash Consistent the Consistency Mode of the Virtual Machine Restore Point. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub crash_consistency_mode_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub crash_consistency_mode_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of disks that will be excluded from the Virtual Machine Restore Point. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub excluded_disks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

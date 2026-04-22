@@ -49,14 +49,10 @@ pub mod stack {
         pub color: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the configuration manager to use. Defaults to "Chef".
         #[builder(into, default)]
-        pub configuration_manager_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub configuration_manager_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of the configuration manager to use. Defaults to "11.4".
         #[builder(into, default)]
-        pub configuration_manager_version: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub configuration_manager_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// When `use_custom_cookbooks` is set, provide this sub-object as described below.
         #[builder(into, default)]
         pub custom_cookbooks_sources: pulumi_gestalt_rust::Input<
@@ -68,9 +64,7 @@ pub mod stack {
         /// Name of the availability zone where instances will be created by default.
         /// Cannot be set when `vpc_id` is set.
         #[builder(into, default)]
-        pub default_availability_zone: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of an IAM Instance Profile that created instances will have by default.
         #[builder(into)]
         pub default_instance_profile_arn: pulumi_gestalt_rust::Input<String>,
@@ -113,9 +107,7 @@ pub mod stack {
         pub use_custom_cookbooks: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean value controlling whether the standard OpsWorks security groups apply to created instances.
         #[builder(into, default)]
-        pub use_opsworks_security_groups: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub use_opsworks_security_groups: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the VPC that this stack belongs to.
         /// Defaults to the region's default VPC.
         #[builder(into, default)]

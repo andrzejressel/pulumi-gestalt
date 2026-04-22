@@ -77,9 +77,7 @@ pub mod group {
         pub dns_name_label: pulumi_gestalt_rust::Input<Option<String>>,
         /// The value representing the security enum. `Noreuse`, `ResourceGroupReuse`, `SubscriptionReuse`, `TenantReuse` or `Unsecure`. Defaults to `Unsecure`.
         #[builder(into, default)]
-        pub dns_name_label_reuse_policy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub dns_name_label_reuse_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Zero or more `exposed_port` blocks as defined below. Changing this forces a new resource to be created.
         ///
         /// > **Note:** The `exposed_port` can only contain ports that are also exposed on one or more containers in the group.

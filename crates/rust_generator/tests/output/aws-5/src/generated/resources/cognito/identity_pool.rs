@@ -58,9 +58,7 @@ pub mod identity_pool {
         pub allow_classic_flow: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the identity pool supports unauthenticated logins or not.
         #[builder(into, default)]
-        pub allow_unauthenticated_identities: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_unauthenticated_identities: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An array of Amazon Cognito Identity user pools and their client IDs.
         #[builder(into, default)]
         pub cognito_identity_providers: pulumi_gestalt_rust::Input<

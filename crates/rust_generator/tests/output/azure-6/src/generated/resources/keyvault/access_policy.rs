@@ -94,9 +94,7 @@ pub mod access_policy {
         pub application_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of certificate permissions, must be one or more from the following: `Backup`, `Create`, `Delete`, `DeleteIssuers`, `Get`, `GetIssuers`, `Import`, `List`, `ListIssuers`, `ManageContacts`, `ManageIssuers`, `Purge`, `Recover`, `Restore`, `SetIssuers` and `Update`.
         #[builder(into, default)]
-        pub certificate_permissions: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub certificate_permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of key permissions, must be one or more from the following: `Backup`, `Create`, `Decrypt`, `Delete`, `Encrypt`, `Get`, `Import`, `List`, `Purge`, `Recover`, `Restore`, `Sign`, `UnwrapKey`, `Update`, `Verify`, `WrapKey`, `Release`, `Rotate`, `GetRotationPolicy` and `SetRotationPolicy`.
         #[builder(into, default)]
         pub key_permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

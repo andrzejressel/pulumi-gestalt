@@ -195,14 +195,10 @@ pub mod instance {
     pub struct InstanceArgs {
         /// Indicates whether the instance is protected against deletion.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The reason for enabling deletion protection.
         #[builder(into, default)]
-        pub deletion_protection_reason: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub deletion_protection_reason: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description of the instance.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,

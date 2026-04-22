@@ -185,14 +185,10 @@ pub mod addon {
         pub resolve_conflicts: pulumi_gestalt_rust::Input<Option<String>>,
         /// How to resolve field value conflicts when migrating a self-managed add-on to an Amazon EKS add-on. Valid values are `NONE` and `OVERWRITE`. For more details see the [CreateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAddon.html) API Docs.
         #[builder(into, default)]
-        pub resolve_conflicts_on_create: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub resolve_conflicts_on_create: pulumi_gestalt_rust::Input<Option<String>>,
         /// How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Valid values are `NONE`, `OVERWRITE`, and `PRESERVE`. For more details see the [UpdateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html) API Docs.
         #[builder(into, default)]
-        pub resolve_conflicts_on_update: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub resolve_conflicts_on_update: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of an
         /// existing IAM role to bind to the add-on's service account. The role must be
         /// assigned the IAM permissions required by the add-on. If you don't specify

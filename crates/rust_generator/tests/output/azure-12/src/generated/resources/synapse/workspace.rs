@@ -186,9 +186,7 @@ pub mod workspace {
         >,
         /// Is Azure Active Directory Authentication the only way to authenticate with resources inside this synapse Workspace. Defaults to `false`.
         #[builder(into, default)]
-        pub azuread_authentication_only: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub azuread_authentication_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Subnet ID used for computes in workspace Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub compute_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -222,22 +220,16 @@ pub mod workspace {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Workspace managed resource group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub managed_resource_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub managed_resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is Virtual Network enabled for all computes in this workspace? Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub managed_virtual_network_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub managed_virtual_network_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name which should be used for this synapse Workspace. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is allowed for the Cognitive Account. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of purview account.
         #[builder(into, default)]
         pub purview_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -249,19 +241,13 @@ pub mod workspace {
         pub sql_administrator_login: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Password associated with the `sql_administrator_login` for the SQL administrator. If this is not provided `customer_managed_key` must be provided.
         #[builder(into, default)]
-        pub sql_administrator_login_password: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub sql_administrator_login_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// Are pipelines (running as workspace's system assigned identity) allowed to access SQL pools?
         #[builder(into, default)]
-        pub sql_identity_control_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub sql_identity_control_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the ID of storage data lake gen2 filesystem resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_data_lake_gen2_filesystem_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub storage_data_lake_gen2_filesystem_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Synapse Workspace.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

@@ -506,9 +506,7 @@ pub mod subscription {
         /// Note that subscribers may still receive multiple copies of a message when `enable_exactly_once_delivery`
         /// is true if the message was published multiple times by a publisher client. These copies are considered distinct by Pub/Sub and have distinct messageId values
         #[builder(into, default)]
-        pub enable_exactly_once_delivery: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_exactly_once_delivery: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If `true`, messages published with the same orderingKey in PubsubMessage will be delivered to
         /// the subscribers in the order in which they are received by the Pub/Sub system. Otherwise, they
         /// may be delivered in any order.
@@ -549,9 +547,7 @@ pub mod subscription {
         /// A duration in seconds with up to nine fractional digits, terminated
         /// by 's'. Example: `"600.5s"`.
         #[builder(into, default)]
-        pub message_retention_duration: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub message_retention_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the subscription.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

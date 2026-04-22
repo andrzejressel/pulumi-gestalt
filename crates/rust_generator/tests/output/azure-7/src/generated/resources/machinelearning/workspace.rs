@@ -392,16 +392,12 @@ pub mod workspace {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user assigned identity id that represents the workspace identity.
         #[builder(into, default)]
-        pub primary_user_assigned_identity: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub primary_user_assigned_identity: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enable public access when this Machine Learning Workspace is behind VNet. Defaults to `true`.
         ///
         /// > **NOTE:** `public_access_behind_virtual_network_enabled` is deprecated and will be removed in favour of the property `public_network_access_enabled`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Resource Group in which the Machine Learning Workspace should exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

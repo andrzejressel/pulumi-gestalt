@@ -221,9 +221,7 @@ pub mod bucket {
         pub storage_class: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables [Uniform bucket-level access](https://cloud.google.com/storage/docs/uniform-bucket-level-access) access to a bucket.
         #[builder(into, default)]
-        pub uniform_bucket_level_access: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub uniform_bucket_level_access: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The bucket's [Versioning](https://cloud.google.com/storage/docs/object-versioning) configuration.  Structure is documented below.
         #[builder(into, default)]
         pub versioning: pulumi_gestalt_rust::Input<

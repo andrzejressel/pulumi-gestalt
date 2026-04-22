@@ -55,9 +55,7 @@ pub mod static_web_app {
         >,
         /// Should changes to the configuration file be permitted. Defaults to `true`.
         #[builder(into, default)]
-        pub configuration_file_changes_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub configuration_file_changes_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
         pub identity: pulumi_gestalt_rust::Input<
@@ -71,14 +69,10 @@ pub mod static_web_app {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Are Preview (Staging) environments enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub preview_environments_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub preview_environments_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should public network access be enabled for the Static Web App. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Static Web App should exist. Changing this forces a new Static Web App to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

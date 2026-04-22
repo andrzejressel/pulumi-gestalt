@@ -152,9 +152,7 @@ pub mod service {
     pub struct ServiceArgs {
         /// The configuration type of this Active Directory Domain. Possible values are `FullySynced` and `ResourceTrusting`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub domain_configuration_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub domain_configuration_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Active Directory domain to use. See [official documentation](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance#create-a-managed-domain) for constraints and recommendations. Changing this forces a new resource to be created.
         #[builder(into)]
         pub domain_name: pulumi_gestalt_rust::Input<String>,

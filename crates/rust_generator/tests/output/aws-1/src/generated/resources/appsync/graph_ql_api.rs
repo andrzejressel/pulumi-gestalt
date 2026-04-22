@@ -43,9 +43,7 @@ pub mod graph_ql_api {
         >,
         /// ARN of the execution role when `api_type` is set to `MERGED`.
         #[builder(into, default)]
-        pub merged_api_execution_role_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub merged_api_execution_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-supplied name for the GraphQL API.
         ///
         /// The following arguments are optional:

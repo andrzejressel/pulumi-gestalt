@@ -78,9 +78,7 @@ pub mod registry_agent_pool {
         pub tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Virtual Network Subnet Resource where the agent machines will be running. Changing this forces a new Azure Container Registry Agent Pool to be created.
         #[builder(into, default)]
-        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RegistryAgentPoolResult {

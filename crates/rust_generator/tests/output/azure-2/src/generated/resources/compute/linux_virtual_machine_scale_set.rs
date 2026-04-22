@@ -138,9 +138,7 @@ pub mod linux_virtual_machine_scale_set {
         ///
         /// > **Note:** `single_placement_group` must be set to `false` when `capacity_reservation_group_id` is specified.
         #[builder(into, default)]
-        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The prefix which should be used for the name of the Virtual Machines in this Scale Set. If unspecified this defaults to the value for the `name` field. If the value of the `name` field is not a valid `computer_name_prefix`, then you must specify `computer_name_prefix`. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub computer_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
@@ -162,9 +160,7 @@ pub mod linux_virtual_machine_scale_set {
         ///
         /// > **Note:** When a `admin_password` is specified `disable_password_authentication` must be set to `false`.
         #[builder(into, default)]
-        pub disable_password_authentication: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub disable_password_authentication: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should Virtual Machine Extensions be run on Overprovisioned Virtual Machines in the Scale Set? Defaults to `false`.
         #[builder(into, default)]
         pub do_not_run_extensions_on_overprovisioned_machines: pulumi_gestalt_rust::Input<
@@ -185,9 +181,7 @@ pub mod linux_virtual_machine_scale_set {
         ///
         /// > **Note:** `extension_operations_enabled` may only be set to `false` if there are no extensions defined in the `extension` field.
         #[builder(into, default)]
-        pub extension_operations_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub extension_operations_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `extension` blocks as defined below
         #[builder(into, default)]
         pub extensions: pulumi_gestalt_rust::Input<
@@ -269,9 +263,7 @@ pub mod linux_virtual_machine_scale_set {
         pub provision_vm_agent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Proximity Placement Group in which the Virtual Machine Scale Set should be assigned to. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the Linux Virtual Machine Scale Set should be exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

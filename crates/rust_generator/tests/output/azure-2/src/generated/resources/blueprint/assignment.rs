@@ -118,14 +118,10 @@ pub mod assignment {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// a list of up to 200 actions that are permitted to bypass the locks applied by the Blueprint.
         #[builder(into, default)]
-        pub lock_exclude_actions: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub lock_exclude_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// a list of up to 5 Principal IDs that are permitted to bypass the locks applied by the Blueprint.
         #[builder(into, default)]
-        pub lock_exclude_principals: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub lock_exclude_principals: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The locking mode of the Blueprint Assignment. One of `None` (Default), `AllResourcesReadOnly`, or `AllResourcesDoNotDelete`. Defaults to `None`.
         #[builder(into, default)]
         pub lock_mode: pulumi_gestalt_rust::Input<Option<String>>,

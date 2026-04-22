@@ -237,9 +237,7 @@ pub mod database {
         /// The App Engine integration mode to use for this database.
         /// Possible values are: `ENABLED`, `DISABLED`.
         #[builder(into, default)]
-        pub app_engine_integration_mode: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub app_engine_integration_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The CMEK (Customer Managed Encryption Key) configuration for a Firestore
         /// database. If not present, the database is secured by the default Google
         /// encryption key.

@@ -160,9 +160,7 @@ pub mod scheduled_query_rules_alert_v_2 {
         ///
         /// > **Note** `query_time_range_override` cannot be less than the query look back which is `window_duration`*`number_of_evaluation_periods`.
         #[builder(into, default)]
-        pub query_time_range_override: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub query_time_range_override: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Monitor Scheduled Query Rule should exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -182,17 +180,13 @@ pub mod scheduled_query_rules_alert_v_2 {
         >,
         /// List of resource type of the target resource(s) on which the alert is created/updated. For example if the scope is a resource group and targetResourceTypes is `Microsoft.Compute/virtualMachines`, then a different alert will be fired for each virtual machine in the resource group which meet the alert criteria.
         #[builder(into, default)]
-        pub target_resource_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub target_resource_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the period of time in ISO 8601 duration format on which the Scheduled Query Rule will be executed (bin size). If `evaluation_frequency` is `PT1M`, possible values are `PT1M`, `PT5M`, `PT10M`, `PT15M`, `PT30M`, `PT45M`, `PT1H`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, and `PT6H`. Otherwise, possible values are `PT5M`, `PT10M`, `PT15M`, `PT30M`, `PT45M`, `PT1H`, `PT2H`, `PT3H`, `PT4H`, `PT5H`, `PT6H`, `P1D`, and `P2D`.
         #[builder(into)]
         pub window_duration: pulumi_gestalt_rust::Input<String>,
         /// Specifies the flag which indicates whether this scheduled query rule check if storage is configured. Value should be `true` or `false`. The default is `false`.
         #[builder(into, default)]
-        pub workspace_alerts_storage_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub workspace_alerts_storage_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ScheduledQueryRulesAlertV2Result {

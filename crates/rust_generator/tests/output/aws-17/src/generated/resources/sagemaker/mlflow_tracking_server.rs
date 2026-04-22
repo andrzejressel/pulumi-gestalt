@@ -42,9 +42,7 @@ pub mod mlflow_tracking_server {
         pub artifact_store_uri: pulumi_gestalt_rust::Input<String>,
         /// A list of Member Definitions that contains objects that identify the workers that make up the work team.
         #[builder(into, default)]
-        pub automatic_model_registration: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub automatic_model_registration: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The version of MLflow that the tracking server uses. To see which MLflow versions are available to use, see [How it works](https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow.html#mlflow-create-tracking-server-how-it-works).
         #[builder(into, default)]
         pub mlflow_version: pulumi_gestalt_rust::Input<Option<String>>,
@@ -64,9 +62,7 @@ pub mod mlflow_tracking_server {
         pub tracking_server_size: pulumi_gestalt_rust::Input<Option<String>>,
         /// The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: TUE:03:30.
         #[builder(into, default)]
-        pub weekly_maintenance_window_start: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub weekly_maintenance_window_start: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MlflowTrackingServerResult {

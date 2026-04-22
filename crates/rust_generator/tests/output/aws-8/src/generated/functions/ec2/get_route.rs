@@ -19,14 +19,10 @@ pub mod get_route {
         pub destination_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// IPv6 CIDR block of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub destination_ipv6_cidr_block: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub destination_ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of a managed prefix list destination of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub destination_prefix_list_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub destination_prefix_list_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Egress Only Gateway ID of the Route belonging to the Route Table.
         #[builder(into, default)]
         pub egress_only_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -55,9 +51,7 @@ pub mod get_route {
         pub transit_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// VPC Peering Connection ID of the Route belonging to the Route Table.
         #[builder(into, default)]
-        pub vpc_peering_connection_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub vpc_peering_connection_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRouteResult {

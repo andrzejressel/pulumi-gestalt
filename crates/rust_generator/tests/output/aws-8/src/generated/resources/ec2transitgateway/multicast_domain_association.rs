@@ -51,9 +51,7 @@ pub mod multicast_domain_association {
         pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the transit gateway multicast domain.
         #[builder(into)]
-        pub transit_gateway_multicast_domain_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub transit_gateway_multicast_domain_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MulticastDomainAssociationResult {

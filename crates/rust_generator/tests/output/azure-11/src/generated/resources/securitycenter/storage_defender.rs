@@ -58,9 +58,7 @@ pub mod storage_defender {
         >,
         /// Whether On Upload malware scanning should be enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub malware_scanning_on_upload_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub malware_scanning_on_upload_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the settings defined for this storage account should override the settings defined for the subscription. Defaults to `false`.
         #[builder(into, default)]
         pub override_subscription_settings_enabled: pulumi_gestalt_rust::Input<
@@ -68,14 +66,10 @@ pub mod storage_defender {
         >,
         /// The Event Grid Topic where every scan result will be sent to. When you set an Event Grid custom topic, you must set `override_subscription_settings_enabled` to `true` to override the subscription-level settings.
         #[builder(into, default)]
-        pub scan_results_event_grid_topic_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub scan_results_event_grid_topic_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether Sensitive Data Discovery should be enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub sensitive_data_discovery_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub sensitive_data_discovery_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the storage account the defender applied to. Changing this forces a new resource to be created.
         #[builder(into)]
         pub storage_account_id: pulumi_gestalt_rust::Input<String>,

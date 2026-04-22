@@ -115,9 +115,7 @@ pub mod job {
     pub struct JobArgs {
         /// List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
         #[builder(into, default)]
-        pub additional_experiments: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub additional_experiments: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3.
         #[builder(into, default)]
         pub enable_streaming_engine: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -167,9 +165,7 @@ pub mod job {
         pub service_account_email: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set to `true`, Pulumi will treat `DRAINING` and `CANCELLING` as terminal states when deleting the resource, and will remove the resource from Pulumi state and move on.  See above note.
         #[builder(into, default)]
-        pub skip_wait_on_job_termination: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub skip_wait_on_job_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK". If the [subnetwork is located in a Shared VPC network](https://cloud.google.com/dataflow/docs/guides/specifying-networks#shared), you must use the complete URL. For example `"googleapis.com/compute/v1/projects/PROJECT_ID/regions/REGION/subnetworks/SUBNET_NAME"`
         #[builder(into, default)]
         pub subnetwork: pulumi_gestalt_rust::Input<Option<String>>,

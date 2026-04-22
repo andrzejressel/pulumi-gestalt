@@ -55,9 +55,7 @@ pub mod custom_hostname {
         >,
         /// Whether to wait for a custom hostname SSL sub-object to reach status `pending_validation` during creation. Defaults to `false`.
         #[builder(into, default)]
-        pub wait_for_ssl_pending_validation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub wait_for_ssl_pending_validation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
         pub zone_id: pulumi_gestalt_rust::Input<String>,

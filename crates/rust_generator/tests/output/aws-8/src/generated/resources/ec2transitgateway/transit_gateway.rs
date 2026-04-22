@@ -38,19 +38,13 @@ pub mod transit_gateway {
         pub amazon_side_asn: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether resource attachment requests are automatically accepted. Valid values: `disable`, `enable`. Default value: `disable`.
         #[builder(into, default)]
-        pub auto_accept_shared_attachments: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub auto_accept_shared_attachments: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether resource attachments are automatically associated with the default association route table. Valid values: `disable`, `enable`. Default value: `enable`.
         #[builder(into, default)]
-        pub default_route_table_association: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_route_table_association: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether resource attachments automatically propagate routes to the default propagation route table. Valid values: `disable`, `enable`. Default value: `enable`.
         #[builder(into, default)]
-        pub default_route_table_propagation: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_route_table_propagation: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the EC2 Transit Gateway.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
@@ -72,9 +66,7 @@ pub mod transit_gateway {
         >,
         /// One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.
         #[builder(into, default)]
-        pub transit_gateway_cidr_blocks: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub transit_gateway_cidr_blocks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether VPN Equal Cost Multipath Protocol support is enabled. Valid values: `disable`, `enable`. Default value: `enable`.
         #[builder(into, default)]
         pub vpn_ecmp_support: pulumi_gestalt_rust::Input<Option<String>>,

@@ -78,9 +78,7 @@ pub mod diagnostic_setting {
         ///
         /// > **NOTE:** At least one of `eventhub_authorization_rule_id`, `log_analytics_workspace_id`, `partner_solution_id` and `storage_account_id` must be specified.
         #[builder(into, default)]
-        pub eventhub_authorization_rule_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub eventhub_authorization_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Event Hub where Diagnostics Data should be sent.
         ///
         /// > **NOTE:** If this isn't specified then the default Event Hub will be used.
@@ -90,16 +88,12 @@ pub mod diagnostic_setting {
         ///
         /// > **NOTE:** This setting will only have an effect if a `log_analytics_workspace_id` is provided. For some target resource type (e.g., Key Vault), this field is unconfigurable. Please see [resource types](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/azurediagnostics#resource-types) for services that use each method. Please [see the documentation](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-stream-log-store#azure-diagnostics-vs-resource-specific) for details on the differences between destination types.
         #[builder(into, default)]
-        pub log_analytics_destination_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub log_analytics_destination_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of a Log Analytics Workspace where Diagnostics Data should be sent.
         ///
         /// > **NOTE:** At least one of `eventhub_authorization_rule_id`, `log_analytics_workspace_id`, `partner_solution_id` and `storage_account_id` must be specified.
         #[builder(into, default)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `metric` blocks as defined below.
         ///
         /// > **NOTE:** At least one `enabled_log` or `metric` block must be specified.

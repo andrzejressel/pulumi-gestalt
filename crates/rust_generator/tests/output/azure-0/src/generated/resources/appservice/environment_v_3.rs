@@ -98,9 +98,7 @@ pub mod environment_v_3 {
         pub dedicated_host_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment. Possible values are `None` (for an External VIP Type), and `"Web, Publishing"` (for an Internal VIP Type). Defaults to `None`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub internal_load_balancing_mode: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub internal_load_balancing_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the App Service Environment. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

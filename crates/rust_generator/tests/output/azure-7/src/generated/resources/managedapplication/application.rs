@@ -23,9 +23,7 @@ pub mod application {
     pub struct ApplicationArgs {
         /// The application definition ID to deploy.
         #[builder(into, default)]
-        pub application_definition_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub application_definition_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The kind of the managed application to deploy. Possible values are `MarketPlace` and `ServiceCatalog`. Changing this forces a new resource to be created.
         #[builder(into)]
         pub kind: pulumi_gestalt_rust::Input<String>,

@@ -48,9 +48,7 @@ pub mod classification_job {
     pub struct ClassificationJobArgs {
         /// The custom data identifiers to use for data analysis and classification.
         #[builder(into, default)]
-        pub custom_data_identifier_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_data_identifier_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A custom description of the job. The description can contain as many as 200 characters.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,

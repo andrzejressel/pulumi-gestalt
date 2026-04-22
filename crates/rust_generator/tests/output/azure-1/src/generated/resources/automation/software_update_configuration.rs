@@ -88,9 +88,7 @@ pub mod software_update_configuration {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of names of non-Azure machines for the software update configuration.
         #[builder(into, default)]
-        pub non_azure_computer_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub non_azure_computer_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `post_task` blocks as defined below.
         #[builder(into, default)]
         pub post_task: pulumi_gestalt_rust::Input<

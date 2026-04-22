@@ -45,9 +45,7 @@ pub mod local_gateway_route {
         pub local_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Local Gateway Virtual Interface Group.
         #[builder(into)]
-        pub local_gateway_virtual_interface_group_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub local_gateway_virtual_interface_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LocalGatewayRouteResult {

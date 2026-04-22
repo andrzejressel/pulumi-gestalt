@@ -37,9 +37,7 @@ pub mod cluster_snapshot {
         pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The number of days that a manual snapshot is retained. If the value is `-1`, the manual snapshot is retained indefinitely. Valid values are -1 and between `1` and `3653`.
         #[builder(into, default)]
-        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.
         #[builder(into)]
         pub snapshot_identifier: pulumi_gestalt_rust::Input<String>,

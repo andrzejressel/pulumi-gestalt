@@ -120,9 +120,7 @@ pub mod eventhub_data_connection {
         pub database_routing_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of system properties for the Event Hub.
         #[builder(into, default)]
-        pub event_system_properties: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub event_system_properties: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the resource id of the EventHub this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
         pub eventhub_id: pulumi_gestalt_rust::Input<String>,

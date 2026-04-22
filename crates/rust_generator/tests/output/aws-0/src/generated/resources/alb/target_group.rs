@@ -138,14 +138,10 @@ pub mod target_group {
         pub ip_address_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the request and response headers exchanged between the load balancer and the Lambda function include arrays of values or strings. Only applies when `target_type` is `lambda`. Default is `false`.
         #[builder(into, default)]
-        pub lambda_multi_value_headers_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub lambda_multi_value_headers_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Determines how the load balancer selects targets when routing requests. Only applicable for Application Load Balancer Target Groups. The value is `round_robin`, `least_outstanding_requests`, or `weighted_random`. The default is `round_robin`.
         #[builder(into, default)]
-        pub load_balancing_algorithm_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub load_balancing_algorithm_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Determines whether to enable target anomaly mitigation.  Target anomaly mitigation is only supported by the `weighted_random` load balancing algorithm type.  See [doc](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#automatic-target-weights) for more information.  The value is `"on"` or `"off"`. The default is `"off"`.
         #[builder(into, default)]
         pub load_balancing_anomaly_mitigation: pulumi_gestalt_rust::Input<

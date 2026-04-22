@@ -176,9 +176,7 @@ pub mod standard {
         #[builder(into)]
         pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub storage_account_share_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_share_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
@@ -193,9 +191,7 @@ pub mod standard {
         #[builder(into, default)]
         pub version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StandardResult {

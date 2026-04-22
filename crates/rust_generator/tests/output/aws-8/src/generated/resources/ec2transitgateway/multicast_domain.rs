@@ -151,9 +151,7 @@ pub mod multicast_domain {
     pub struct MulticastDomainArgs {
         /// Whether to automatically accept cross-account subnet associations that are associated with the EC2 Transit Gateway Multicast Domain. Valid values: `disable`, `enable`. Default value: `disable`.
         #[builder(into, default)]
-        pub auto_accept_shared_associations: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub auto_accept_shared_associations: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable Internet Group Management Protocol (IGMP) version 2 for the EC2 Transit Gateway Multicast Domain. Valid values: `disable`, `enable`. Default value: `disable`.
         #[builder(into, default)]
         pub igmpv2_support: pulumi_gestalt_rust::Input<Option<String>>,

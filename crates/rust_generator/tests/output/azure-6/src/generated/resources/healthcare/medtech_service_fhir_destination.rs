@@ -124,9 +124,7 @@ pub mod medtech_service_fhir_destination {
         pub destination_fhir_service_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the destination identity resolution type where the Healthcare Med Tech Service Fhir Destination should be created. Possible values are `Create`, `Lookup`.
         #[builder(into)]
-        pub destination_identity_resolution_type: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub destination_identity_resolution_type: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Azure Region where the Healthcare Med Tech Service Fhir Destination should be created. Changing this forces a new Healthcare Med Tech Service Fhir Destination to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

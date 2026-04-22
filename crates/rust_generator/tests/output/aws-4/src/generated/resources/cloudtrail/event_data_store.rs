@@ -107,9 +107,7 @@ pub mod event_data_store {
         >,
         /// Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled. Default: `true`.
         #[builder(into, default)]
-        pub termination_protection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub termination_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EventDataStoreResult {

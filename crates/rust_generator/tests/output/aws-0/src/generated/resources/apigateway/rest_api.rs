@@ -39,9 +39,7 @@ pub mod rest_api {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint. Defaults to `false`. If importing an OpenAPI specification via the `body` argument, this corresponds to the [`x-amazon-apigateway-endpoint-configuration` extension `disableExecuteApiEndpoint` property](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-endpoint-configuration.html). If the argument value is `true` and is different than the OpenAPI value, the argument value will override the OpenAPI value.
         #[builder(into, default)]
-        pub disable_execute_api_endpoint: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub disable_execute_api_endpoint: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block defining API endpoint configuration including endpoint type. Defined below.
         #[builder(into, default)]
         pub endpoint_configuration: pulumi_gestalt_rust::Input<

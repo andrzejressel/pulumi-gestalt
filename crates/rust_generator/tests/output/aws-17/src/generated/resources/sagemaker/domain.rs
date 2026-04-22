@@ -100,9 +100,7 @@ pub mod domain {
         pub app_network_access_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The entity that creates and manages the required security groups for inter-app communication in `VPCOnly` mode. Valid values are `Service` and `Customer`.
         #[builder(into, default)]
-        pub app_security_group_management: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub app_security_group_management: pulumi_gestalt_rust::Input<Option<String>>,
         /// The mode of authentication that members use to access the domain. Valid values are `IAM` and `SSO`.
         #[builder(into)]
         pub auth_mode: pulumi_gestalt_rust::Input<String>,

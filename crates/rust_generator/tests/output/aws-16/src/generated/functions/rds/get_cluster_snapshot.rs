@@ -13,9 +13,7 @@ pub mod get_cluster_snapshot {
         pub db_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Returns information on a specific snapshot_id.
         #[builder(into, default)]
-        pub db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set this value to true to include manual DB Cluster Snapshots that are public and can be
         /// copied or restored by any AWS account, otherwise set this value to false. The default is `false`.
         #[builder(into, default)]

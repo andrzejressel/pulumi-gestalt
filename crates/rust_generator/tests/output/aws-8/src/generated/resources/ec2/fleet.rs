@@ -68,9 +68,7 @@ pub mod fleet {
         pub fulfilled_capacity: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The number of units fulfilled by this request compared to the set target On-Demand capacity.
         #[builder(into, default)]
-        pub fulfilled_on_demand_capacity: pulumi_gestalt_rust::Input<
-            Option<f64>,
-        >,
+        pub fulfilled_on_demand_capacity: pulumi_gestalt_rust::Input<Option<f64>>,
         /// Nested argument containing EC2 Launch Template configurations. Defined below.
         #[builder(into)]
         pub launch_template_configs: pulumi_gestalt_rust::Input<
@@ -83,9 +81,7 @@ pub mod fleet {
         >,
         /// Whether EC2 Fleet should replace unhealthy instances. Defaults to `false`. Supported only for fleets of type `maintain`.
         #[builder(into, default)]
-        pub replace_unhealthy_instances: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub replace_unhealthy_instances: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Nested argument containing Spot configurations. Defined below.
         #[builder(into, default)]
         pub spot_options: pulumi_gestalt_rust::Input<

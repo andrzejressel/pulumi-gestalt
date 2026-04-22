@@ -69,9 +69,7 @@ pub mod backup_policy_disk {
     pub struct BackupPolicyDiskArgs {
         /// Specifies a list of repeating time interval. It should follow `ISO 8601` repeating time interval . Changing this forces a new Backup Policy Disk to be created.
         #[builder(into)]
-        pub backup_repeating_time_intervals: pulumi_gestalt_rust::Input<
-            Vec<String>,
-        >,
+        pub backup_repeating_time_intervals: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The duration of default retention rule. It should follow `ISO 8601` duration format. Changing this forces a new Backup Policy Disk to be created.
         #[builder(into)]
         pub default_retention_duration: pulumi_gestalt_rust::Input<String>,

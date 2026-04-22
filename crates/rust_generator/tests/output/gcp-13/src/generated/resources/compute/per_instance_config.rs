@@ -139,9 +139,7 @@ pub mod per_instance_config {
         /// * REFRESH
         /// * NONE
         #[builder(into, default)]
-        pub most_disruptive_allowed_action: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub most_disruptive_allowed_action: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for this per-instance config and its corresponding instance.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -163,9 +161,7 @@ pub mod per_instance_config {
         /// When false, deleting this config will *not* immediately remove any state from the underlying instance.
         /// State will be removed on the next instance recreation or update.
         #[builder(into, default)]
-        pub remove_instance_state_on_destroy: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub remove_instance_state_on_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Zone where the containing instance group manager is located
         #[builder(into, default)]
         pub zone: pulumi_gestalt_rust::Input<Option<String>>,

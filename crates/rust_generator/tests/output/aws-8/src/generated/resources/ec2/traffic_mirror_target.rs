@@ -64,9 +64,7 @@ pub mod traffic_mirror_target {
         pub network_interface_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.
         #[builder(into, default)]
-        pub network_load_balancer_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub network_load_balancer_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         ///
         /// **NOTE:** Either `network_interface_id` or `network_load_balancer_arn` should be specified and both should not be specified together

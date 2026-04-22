@@ -68,22 +68,16 @@ pub mod vpc_endpoint_service {
         pub allowed_principals: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Amazon Resource Names (ARNs) of one or more Gateway Load Balancers for the endpoint service.
         #[builder(into, default)]
-        pub gateway_load_balancer_arns: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub gateway_load_balancer_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Amazon Resource Names (ARNs) of one or more Network Load Balancers for the endpoint service.
         #[builder(into, default)]
-        pub network_load_balancer_arns: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub network_load_balancer_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The private DNS name for the service.
         #[builder(into, default)]
         pub private_dns_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The supported IP address types. The possible values are `ipv4` and `ipv6`.
         #[builder(into, default)]
-        pub supported_ip_address_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub supported_ip_address_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The set of regions from which service consumers can access the service.
         #[builder(into, default)]
         pub supported_regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

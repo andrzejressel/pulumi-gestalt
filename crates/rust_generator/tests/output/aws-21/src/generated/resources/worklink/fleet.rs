@@ -84,9 +84,7 @@ pub mod fleet {
         ///
         /// > **NOTE:** `network` is cannot removed without force recreating.
         #[builder(into, default)]
-        pub optimize_for_end_user_location: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub optimize_for_end_user_location: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct FleetResult {

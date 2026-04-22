@@ -66,9 +66,7 @@ pub mod namespace_disaster_recovery_config {
     pub struct NamespaceDisasterRecoveryConfigArgs {
         /// The Shared access policies used to access the connection string for the alias.
         #[builder(into, default)]
-        pub alias_authorization_rule_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub alias_authorization_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Disaster Recovery Config. This is the alias DNS name that will be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

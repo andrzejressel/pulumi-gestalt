@@ -83,9 +83,7 @@ pub mod route {
         pub api_key_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Authorization scopes supported by this route. The scopes are used with a JWT authorizer to authorize the method invocation.
         #[builder(into, default)]
-        pub authorization_scopes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub authorization_scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Authorization type for the route.
         /// For WebSocket APIs, valid values are `NONE` for open access, `AWS_IAM` for using AWS IAM permissions, and `CUSTOM` for using a Lambda authorizer.
         /// For HTTP APIs, valid values are `NONE` for open access, `JWT` for using JSON Web Tokens, `AWS_IAM` for using AWS IAM permissions, and `CUSTOM` for using a Lambda authorizer.
@@ -97,9 +95,7 @@ pub mod route {
         pub authorizer_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [model selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions) for the route. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub model_selection_expression: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub model_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// Operation name for the route. Must be between 1 and 64 characters in length.
         #[builder(into, default)]
         pub operation_name: pulumi_gestalt_rust::Input<Option<String>>,

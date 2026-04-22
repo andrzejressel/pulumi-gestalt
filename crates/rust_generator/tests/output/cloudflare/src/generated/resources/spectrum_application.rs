@@ -45,9 +45,7 @@ pub mod spectrum_application {
         pub argo_smart_routing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name and type of DNS record for the Spectrum application.
         #[builder(into)]
-        pub dns: pulumi_gestalt_rust::Input<
-            super::types::SpectrumApplicationDns,
-        >,
+        pub dns: pulumi_gestalt_rust::Input<super::types::SpectrumApplicationDns>,
         /// The anycast edge IP configuration for the hostname of this application.
         #[builder(into, default)]
         pub edge_ips: pulumi_gestalt_rust::Input<

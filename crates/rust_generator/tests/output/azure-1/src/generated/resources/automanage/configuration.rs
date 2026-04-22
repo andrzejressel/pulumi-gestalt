@@ -108,9 +108,7 @@ pub mod configuration {
         pub defender_for_cloud_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the guest configuration is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub guest_configuration_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub guest_configuration_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure Region where the Automanage Configuration should exist. Changing this forces a new Automanage Configuration to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -125,9 +123,7 @@ pub mod configuration {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Whether the status change alert is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub status_change_alert_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub status_change_alert_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,

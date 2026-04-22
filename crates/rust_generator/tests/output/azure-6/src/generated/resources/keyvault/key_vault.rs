@@ -85,14 +85,10 @@ pub mod key_vault {
         pub enabled_for_deployment: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.
         #[builder(into, default)]
-        pub enabled_for_disk_encryption: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enabled_for_disk_encryption: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
         #[builder(into, default)]
-        pub enabled_for_template_deployment: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enabled_for_template_deployment: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -106,9 +102,7 @@ pub mod key_vault {
         >,
         /// Whether public network access is allowed for this Key Vault. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Purge Protection enabled for this Key Vault?
         ///
         /// !> **Note:** Once Purge Protection has been Enabled it's not possible to Disable it. Support for [disabling purge protection is being tracked in this Azure API issue](https://github.com/Azure/azure-rest-api-specs/issues/8075). Deleting the Key Vault with Purge Protection Enabled will schedule the Key Vault to be deleted (which will happen by Azure in the configured number of days, currently 90 days).

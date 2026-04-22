@@ -115,9 +115,7 @@ pub mod cluster {
             Option<super::super::types::dataproc::ClusterClusterConfig>,
         >,
         #[builder(into, default)]
-        pub graceful_decommission_timeout: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub graceful_decommission_timeout: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of the labels (key/value pairs) configured on the resource and to be applied to instances in the cluster.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer
         /// to the field 'effective_labels' for all of the labels present on the resource.

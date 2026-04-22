@@ -13,9 +13,7 @@ pub mod resource_2 {
             Option<super::super::types::common::CommonType>,
         >,
         #[builder(into, default)]
-        pub type2: pulumi_gestalt_rust::Input<
-            Option<super::super::types::ns2::Type2>,
-        >,
+        pub type2: pulumi_gestalt_rust::Input<Option<super::super::types::ns2::Type2>>,
     }
     #[allow(dead_code)]
     pub struct Resource2Result {

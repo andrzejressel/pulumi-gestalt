@@ -45,9 +45,7 @@ pub mod web_app {
     pub struct WebAppArgs {
         /// The Application Insights API Key to associate with the Web App Bot.
         #[builder(into, default)]
-        pub developer_app_insights_api_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub developer_app_insights_api_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Application Insights Application ID to associate with the Web App Bot.
         #[builder(into, default)]
         pub developer_app_insights_application_id: pulumi_gestalt_rust::Input<
@@ -55,9 +53,7 @@ pub mod web_app {
         >,
         /// The Application Insights Key to associate with the Web App Bot.
         #[builder(into, default)]
-        pub developer_app_insights_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub developer_app_insights_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Web App Bot will be displayed as. This defaults to `name` if not specified.
         #[builder(into, default)]
         pub display_name: pulumi_gestalt_rust::Input<Option<String>>,

@@ -36,15 +36,11 @@ pub struct ProviderArgs {
     /// Address of the EC2 metadata service endpoint to use. Can also be configured using the
     /// `AWS_EC2_METADATA_SERVICE_ENDPOINT` environment variable.
     #[builder(into, default)]
-    pub ec2_metadata_service_endpoint: pulumi_gestalt_rust::Input<
-        Option<String>,
-    >,
+    pub ec2_metadata_service_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     /// Protocol to use with EC2 metadata service endpoint.Valid values are `IPv4` and `IPv6`. Can also be configured using the
     /// `AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE` environment variable.
     #[builder(into, default)]
-    pub ec2_metadata_service_endpoint_mode: pulumi_gestalt_rust::Input<
-        Option<String>,
-    >,
+    pub ec2_metadata_service_endpoint_mode: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
     pub endpoints: pulumi_gestalt_rust::Input<
         Option<Vec<super::types::ProviderEndpoint>>,
@@ -88,9 +84,7 @@ pub struct ProviderArgs {
     /// values are `legacy` or `regional`. Can also be configured using the `AWS_S3_US_EAST_1_REGIONAL_ENDPOINT` environment
     /// variable or the `s3_us_east_1_regional_endpoint` shared config file parameter
     #[builder(into, default)]
-    pub s3_us_east1_regional_endpoint: pulumi_gestalt_rust::Input<
-        Option<String>,
-    >,
+    pub s3_us_east1_regional_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     /// Set this to true to enable the request to use path-style addressing, i.e., https://s3.amazonaws.com/BUCKET/KEY. By
     /// default, the S3 client will use virtual hosted bucket addressing when possible (https://BUCKET.s3.amazonaws.com/KEY).
     /// Specific to the Amazon S3 service.
@@ -104,9 +98,7 @@ pub struct ProviderArgs {
     pub shared_config_files: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     /// List of paths to shared credentials files. If not set, defaults to [~/.aws/credentials].
     #[builder(into, default)]
-    pub shared_credentials_files: pulumi_gestalt_rust::Input<
-        Option<Vec<String>>,
-    >,
+    pub shared_credentials_files: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     /// Skip the credentials validation via STS API. Used for AWS API implementations that do not have STS
     /// available/implemented.
     #[builder(into, default)]
@@ -129,9 +121,7 @@ pub struct ProviderArgs {
     pub token: pulumi_gestalt_rust::Input<Option<String>>,
     /// The capacity of the AWS SDK's token bucket rate limiter.
     #[builder(into, default)]
-    pub token_bucket_rate_limiter_capacity: pulumi_gestalt_rust::Input<
-        Option<i32>,
-    >,
+    pub token_bucket_rate_limiter_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
     /// Resolve an endpoint with DualStack capability
     #[builder(into, default)]
     pub use_dualstack_endpoint: pulumi_gestalt_rust::Input<Option<bool>>,

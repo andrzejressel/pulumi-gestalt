@@ -106,9 +106,7 @@ pub mod bgp_connection {
         pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of virtual network connection.
         #[builder(into, default)]
-        pub virtual_network_connection_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub virtual_network_connection_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BgpConnectionResult {

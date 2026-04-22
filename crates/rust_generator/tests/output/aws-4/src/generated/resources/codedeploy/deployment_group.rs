@@ -290,9 +290,7 @@ pub mod deployment_group {
         >,
         /// Configuration block of Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision. Valid values are `UPDATE` and `IGNORE`. Defaults to `UPDATE`.
         #[builder(into, default)]
-        pub outdated_instances_strategy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub outdated_instances_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service role ARN that allows deployments.
         #[builder(into)]
         pub service_role_arn: pulumi_gestalt_rust::Input<String>,

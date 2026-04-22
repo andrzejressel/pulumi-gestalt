@@ -61,17 +61,13 @@ pub mod bot_management {
         pub optimize_wordpress: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Super Bot Fight Mode (SBFM) action to take on definitely automated requests.
         #[builder(into, default)]
-        pub sbfm_definitely_automated: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub sbfm_definitely_automated: pulumi_gestalt_rust::Input<Option<String>>,
         /// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
         #[builder(into, default)]
         pub sbfm_likely_automated: pulumi_gestalt_rust::Input<Option<String>>,
         /// Super Bot Fight Mode (SBFM) to enable static resource protection. Enable if static resources on your application need bot protection. Note: Static resource protection can also result in legitimate traffic being blocked.
         #[builder(into, default)]
-        pub sbfm_static_resource_protection: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub sbfm_static_resource_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Super Bot Fight Mode (SBFM) action to take on verified bots requests.
         #[builder(into, default)]
         pub sbfm_verified_bots: pulumi_gestalt_rust::Input<Option<String>>,

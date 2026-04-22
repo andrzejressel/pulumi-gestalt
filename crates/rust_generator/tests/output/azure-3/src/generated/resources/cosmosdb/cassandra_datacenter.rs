@@ -96,14 +96,10 @@ pub mod cassandra_datacenter {
         pub availability_zones_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The key URI of the customer key to use for the encryption of the backup Storage Account.
         #[builder(into, default)]
-        pub backup_storage_customer_key_uri: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub backup_storage_customer_key_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The fragment of the cassandra.yaml configuration file to be included in the cassandra.yaml for all nodes in this Cassandra Datacenter. The fragment should be Base64 encoded and only a subset of keys is allowed.
         #[builder(into, default)]
-        pub base64_encoded_yaml_fragment: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub base64_encoded_yaml_fragment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Cassandra Cluster. Changing this forces a new Cassandra Datacenter to be created.
         #[builder(into)]
         pub cassandra_cluster_id: pulumi_gestalt_rust::Input<String>,
@@ -121,9 +117,7 @@ pub mod cassandra_datacenter {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The key URI of the customer key to use for the encryption of the Managed Disk.
         #[builder(into, default)]
-        pub managed_disk_customer_key_uri: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub managed_disk_customer_key_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Cassandra Datacenter. Changing this forces a new Cassandra Datacenter to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

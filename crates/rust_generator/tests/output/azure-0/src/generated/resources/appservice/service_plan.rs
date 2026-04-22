@@ -49,17 +49,13 @@ pub mod service_plan {
         ///
         /// > **NOTE:** Requires an Isolated SKU. Use one of `I1`, `I2`, `I3` for `azurerm_app_service_environment`, or `I1v2`, `I2v2`, `I3v2` for `azure.appservice.EnvironmentV3`
         #[builder(into, default)]
-        pub app_service_environment_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub app_service_environment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Service Plan should exist. Changing this forces a new Service Plan to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of workers to use in an Elastic SKU Plan. Cannot be set unless using an Elastic SKU.
         #[builder(into, default)]
-        pub maximum_elastic_worker_count: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub maximum_elastic_worker_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name which should be used for this Service Plan. Changing this forces a new Service Plan to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

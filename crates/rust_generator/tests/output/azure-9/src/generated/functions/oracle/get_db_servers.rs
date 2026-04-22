@@ -10,9 +10,7 @@ pub mod get_db_servers {
     pub struct GetDbServersArgs {
         /// The name of the Cloud Exadata Infrastructure.
         #[builder(into)]
-        pub cloud_exadata_infrastructure_name: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub cloud_exadata_infrastructure_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the DB Server exists.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

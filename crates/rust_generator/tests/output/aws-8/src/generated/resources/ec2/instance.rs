@@ -208,9 +208,7 @@ pub mod instance {
         pub ami: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to associate a public IP address with an instance in a VPC.
         #[builder(into, default)]
-        pub associate_public_ip_address: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub associate_public_ip_address: pulumi_gestalt_rust::Input<Option<bool>>,
         /// AZ to start the instance in.
         #[builder(into, default)]
         pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
@@ -345,9 +343,7 @@ pub mod instance {
         >,
         /// List of secondary private IPv4 addresses to assign to the instance's primary network interface (eth0) in a VPC. Can only be assigned to the primary network interface (eth0) attached at instance creation, not a pre-existing network interface i.e., referenced in a `network_interface` block. Refer to the [Elastic network interfaces documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI) to see the maximum number of private IP addresses allowed per instance type.
         #[builder(into, default)]
-        pub secondary_private_ips: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub secondary_private_ips: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of security group names to associate with.
         ///
         /// > **NOTE:** If you are creating Instances in a VPC, use `vpc_security_group_ids` instead.
@@ -375,9 +371,7 @@ pub mod instance {
         pub user_data_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// When used in combination with `user_data` or `user_data_base64` will trigger a destroy and recreate of the EC2 instance when set to `true`. Defaults to `false` if not set.
         #[builder(into, default)]
-        pub user_data_replace_on_change: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub user_data_replace_on_change: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Map of tags to assign, at instance-creation time, to root and EBS volumes.
         ///
         /// > **NOTE:** Do not use `volume_tags` if you plan to manage block device tags outside the `aws.ec2.Instance` configuration, such as using `tags` in an `aws.ebs.Volume` resource attached via `aws.ec2.VolumeAttachment`. Doing so will result in resource cycling and inconsistent behavior.
@@ -387,9 +381,7 @@ pub mod instance {
         >,
         /// List of security group IDs to associate with.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

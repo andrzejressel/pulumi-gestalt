@@ -104,9 +104,7 @@ pub mod method {
         pub authorization: pulumi_gestalt_rust::Input<String>,
         /// Authorization scopes used when the authorization is `COGNITO_USER_POOLS`
         #[builder(into, default)]
-        pub authorization_scopes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub authorization_scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Authorizer id to be used when the authorization is `CUSTOM` or `COGNITO_USER_POOLS`
         #[builder(into, default)]
         pub authorizer_id: pulumi_gestalt_rust::Input<Option<String>>,

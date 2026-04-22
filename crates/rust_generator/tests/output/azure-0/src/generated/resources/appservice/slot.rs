@@ -174,9 +174,7 @@ pub mod slot {
         >,
         /// The User Assigned Identity Id used for looking up KeyVault secrets. The identity must be assigned to the application. See [Access vaults with a user-assigned identity](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#access-vaults-with-a-user-assigned-identity) for more information.
         #[builder(into, default)]
-        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

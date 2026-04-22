@@ -111,9 +111,7 @@ pub mod iot_hub_data_connection {
         pub database_routing_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the System Properties that each IoT Hub message should contain. Changing this forces a new resource to be created. Possible values are `message-id`, `sequence-number`, `to`, `absolute-expiry-time`, `iothub-enqueuedtime`, `correlation-id`, `user-id`, `iothub-ack`, `iothub-connection-device-id`, `iothub-connection-auth-generation-id` and `iothub-connection-auth-method`.
         #[builder(into, default)]
-        pub event_system_properties: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub event_system_properties: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the resource id of the IotHub this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
         pub iothub_id: pulumi_gestalt_rust::Input<String>,

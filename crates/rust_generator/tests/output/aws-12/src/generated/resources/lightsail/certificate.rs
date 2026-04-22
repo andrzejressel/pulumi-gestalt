@@ -43,9 +43,7 @@ pub mod certificate {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of domains that should be SANs in the issued certificate. `domain_name` attribute is automatically added as a Subject Alternative Name.
         #[builder(into, default)]
-        pub subject_alternative_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub subject_alternative_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

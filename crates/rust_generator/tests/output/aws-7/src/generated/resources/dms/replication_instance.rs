@@ -103,9 +103,7 @@ pub mod replication_instance {
         pub allocated_storage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Indicates that major version upgrades are allowed.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates whether the changes should be applied immediately or during the next maintenance window. Only used when updating an existing resource.
         #[builder(into, default)]
         pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -134,9 +132,7 @@ pub mod replication_instance {
         /// - Valid Days: `mon, tue, wed, thu, fri, sat, sun`
         /// - Constraints: Minimum 30-minute window.
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the accessibility options for the replication instance. A value of true represents an instance with a public IP address. A value of false represents an instance with a private IP address.
         #[builder(into, default)]
         pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -153,9 +149,7 @@ pub mod replication_instance {
         pub replication_instance_id: pulumi_gestalt_rust::Input<String>,
         /// A subnet group to associate with the replication instance.
         #[builder(into, default)]
-        pub replication_subnet_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub replication_subnet_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
@@ -163,9 +157,7 @@ pub mod replication_instance {
         >,
         /// A list of VPC security group IDs to be used with the replication instance. The VPC security groups must work with the VPC containing the replication instance.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ReplicationInstanceResult {

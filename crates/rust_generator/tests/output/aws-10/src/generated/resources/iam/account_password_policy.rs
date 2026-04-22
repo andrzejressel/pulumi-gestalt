@@ -44,9 +44,7 @@ pub mod account_password_policy {
     pub struct AccountPasswordPolicyArgs {
         /// Whether to allow users to change their own password
         #[builder(into, default)]
-        pub allow_users_to_change_password: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_users_to_change_password: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether users are prevented from setting a new password after their password has expired (i.e., require administrator reset)
         #[builder(into, default)]
         pub hard_expiry: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -61,9 +59,7 @@ pub mod account_password_policy {
         pub password_reuse_prevention: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether to require lowercase characters for user passwords.
         #[builder(into, default)]
-        pub require_lowercase_characters: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub require_lowercase_characters: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to require numbers for user passwords.
         #[builder(into, default)]
         pub require_numbers: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -72,9 +68,7 @@ pub mod account_password_policy {
         pub require_symbols: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to require uppercase characters for user passwords.
         #[builder(into, default)]
-        pub require_uppercase_characters: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub require_uppercase_characters: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct AccountPasswordPolicyResult {

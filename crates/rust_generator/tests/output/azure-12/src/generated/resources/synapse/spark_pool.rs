@@ -124,9 +124,7 @@ pub mod spark_pool {
         #[builder(into)]
         pub node_size_family: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub session_level_packages_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub session_level_packages_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub spark_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::synapse::SparkPoolSparkConfig>,

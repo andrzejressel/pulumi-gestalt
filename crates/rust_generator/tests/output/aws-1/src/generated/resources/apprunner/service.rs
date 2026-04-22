@@ -100,9 +100,7 @@ pub mod service {
     pub struct ServiceArgs {
         /// ARN of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.
         #[builder(into, default)]
-        pub auto_scaling_configuration_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub auto_scaling_configuration_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an AWS managed CMK. See Encryption Configuration below for more details.
         #[builder(into, default)]
         pub encryption_configuration: pulumi_gestalt_rust::Input<

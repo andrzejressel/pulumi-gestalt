@@ -37,9 +37,7 @@ pub mod model_package_group {
     pub struct ModelPackageGroupArgs {
         /// A description for the model group.
         #[builder(into, default)]
-        pub model_package_group_description: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub model_package_group_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the model group.
         #[builder(into)]
         pub model_package_group_name: pulumi_gestalt_rust::Input<String>,

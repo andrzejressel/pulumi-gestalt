@@ -92,9 +92,7 @@ pub mod host_pool {
         ///
         /// > **NOTE:** `personal_desktop_assignment_type` is required if the `type` of your Virtual Desktop Host Pool is `Personal`
         #[builder(into, default)]
-        pub personal_desktop_assignment_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub personal_desktop_assignment_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to specify the preferred Application Group type for the Virtual Desktop Host Pool. Valid options are `None`, `Desktop` or `RailApplications`. Default is `Desktop`.
         #[builder(into, default)]
         pub preferred_app_group_type: pulumi_gestalt_rust::Input<Option<String>>,

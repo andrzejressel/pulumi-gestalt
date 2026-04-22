@@ -280,9 +280,7 @@ pub mod dataset {
         /// creating or updating a partitioned table, that value takes precedence
         /// over the default partition expiration time indicated by this property.
         #[builder(into, default)]
-        pub default_partition_expiration_ms: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub default_partition_expiration_ms: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The default lifetime of all tables in the dataset, in milliseconds.
         /// The minimum value is 3600000 milliseconds (one hour).
         /// Once this property is set, all newly-created tables in the dataset

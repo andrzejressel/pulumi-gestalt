@@ -53,9 +53,7 @@ pub mod hci_cluster {
     pub struct HciClusterArgs {
         /// The ID of the Automanage Configuration assigned to the Azure Stack HCI Cluster.
         #[builder(into, default)]
-        pub automanage_configuration_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub automanage_configuration_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Client ID of the Azure Active Directory Application which is used by the Azure Stack HCI Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub client_id: pulumi_gestalt_rust::Input<Option<String>>,

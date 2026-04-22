@@ -133,9 +133,7 @@ pub mod interactive_query_cluster {
         >,
         /// Whether encryption in transit is enabled for this Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_in_transit_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub encryption_in_transit_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `extension` block as defined below.
         #[builder(into, default)]
         pub extension: pulumi_gestalt_rust::Input<

@@ -76,9 +76,7 @@ pub mod organization_configuration {
         pub auto_enable: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. Valid values are `ALL`, `NEW`, `NONE`.
         #[builder(into, default)]
-        pub auto_enable_organization_members: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub auto_enable_organization_members: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for the collected datasources.
         #[builder(into, default)]
         pub datasources: pulumi_gestalt_rust::Input<

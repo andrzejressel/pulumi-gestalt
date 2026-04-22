@@ -49,9 +49,7 @@ pub mod route_response {
         pub api_id: pulumi_gestalt_rust::Input<String>,
         /// The [model selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions) for the route response.
         #[builder(into, default)]
-        pub model_selection_expression: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub model_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// Response models for the route response.
         #[builder(into, default)]
         pub response_models: pulumi_gestalt_rust::Input<

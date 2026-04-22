@@ -46,9 +46,7 @@ pub mod vocabulary_filter {
         >,
         /// The Amazon S3 location (URI) of the text file that contains your custom VocabularyFilter. Conflicts with `words` argument.
         #[builder(into, default)]
-        pub vocabulary_filter_file_uri: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub vocabulary_filter_file_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the VocabularyFilter.
         ///
         /// The following arguments are optional:

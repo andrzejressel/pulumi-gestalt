@@ -84,9 +84,7 @@ pub mod backup_policy_blob_storage {
         ///
         /// > **Note:** Setting `vault_default_retention_duration` also requires setting `backup_repeating_time_intervals`. At least one of `operational_default_retention_duration` or `vault_default_retention_duration` must be specified.
         #[builder(into, default)]
-        pub vault_default_retention_duration: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub vault_default_retention_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Backup Vault within which the Backup Policy Blob Storage should exist. Changing this forces a new Backup Policy Blob Storage to be created.
         #[builder(into)]
         pub vault_id: pulumi_gestalt_rust::Input<String>,

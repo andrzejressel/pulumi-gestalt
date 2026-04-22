@@ -155,9 +155,7 @@ pub mod instance {
         /// Contains the name of allocated IP address ranges associated with the private service access connection for example,
         /// "test-default" associated with IP range 10.0.0.0/29.
         #[builder(into, default)]
-        pub reserved_ip_range_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub reserved_ip_range_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Zones where memcache nodes should be provisioned. If not provided, all zones will be used.
         #[builder(into, default)]
         pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

@@ -59,9 +59,7 @@ pub mod replicated_vm {
         pub source_vm_id: pulumi_gestalt_rust::Input<String>,
         /// Id of availability set that the new VM should belong to when a failover is done.
         #[builder(into, default)]
-        pub target_availability_set_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub target_availability_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Id of the storage account which the new VM should used for boot diagnostic when a failover is done.
         #[builder(into, default)]
         pub target_boot_diagnostic_storage_account_id: pulumi_gestalt_rust::Input<
@@ -88,9 +86,7 @@ pub mod replicated_vm {
         pub target_recovery_fabric_id: pulumi_gestalt_rust::Input<String>,
         /// Id of protection container where the VM replication should be created when a failover is done. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_recovery_protection_container_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub target_recovery_protection_container_id: pulumi_gestalt_rust::Input<String>,
         /// Id of resource group where the VM should be created when a failover is done. Changing this forces a new resource to be created.
         #[builder(into)]
         pub target_resource_group_id: pulumi_gestalt_rust::Input<String>,
@@ -101,9 +97,7 @@ pub mod replicated_vm {
         >,
         /// Specifies the size the Virtual Machine should have.
         #[builder(into, default)]
-        pub target_virtual_machine_size: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub target_virtual_machine_size: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Availability Zone where the Failover VM should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub target_zone: pulumi_gestalt_rust::Input<Option<String>>,

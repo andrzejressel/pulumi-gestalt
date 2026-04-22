@@ -59,9 +59,7 @@ pub mod account {
         pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set to true, skip service account creation if a service account with the same email already exists.
         #[builder(into, default)]
-        pub create_ignore_already_exists: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub create_ignore_already_exists: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A text description of the service account.
         /// Must be less than or equal to 256 UTF-8 bytes.
         #[builder(into, default)]

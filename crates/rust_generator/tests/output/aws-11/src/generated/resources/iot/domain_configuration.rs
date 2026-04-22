@@ -49,9 +49,7 @@ pub mod domain_configuration {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains. When using a custom `domain_name`, the cert must include it.
         #[builder(into, default)]
-        pub server_certificate_arns: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub server_certificate_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The type of service delivered by the endpoint. Note: Amazon Web Services IoT Core currently supports only the `DATA` service type.
         #[builder(into, default)]
         pub service_type: pulumi_gestalt_rust::Input<Option<String>>,
@@ -70,9 +68,7 @@ pub mod domain_configuration {
         >,
         /// The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.
         #[builder(into, default)]
-        pub validation_certificate_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub validation_certificate_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DomainConfigurationResult {

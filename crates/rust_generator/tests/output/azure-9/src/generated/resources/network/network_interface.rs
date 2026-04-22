@@ -74,9 +74,7 @@ pub mod network_interface {
         ///
         /// > **Note:** To use Accelerated Networking in an Availability Set, the Availability Set must be deployed onto an Accelerated Networking enabled cluster.
         #[builder(into, default)]
-        pub accelerated_networking_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub accelerated_networking_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the auxiliary mode used to enable network high-performance feature on Network Virtual Appliances (NVAs). This feature offers competitive performance in Connections Per Second (CPS) optimization, along with improvements to handling large amounts of simultaneous connections. Possible values are `AcceleratedConnections`, `Floating`, `MaxConnections` and `None`.
         ///
         /// > **Note:** `auxiliary_mode` is in **Preview** and requires that the preview is enabled - [more information can be found in the Azure documentation](https://learn.microsoft.com/azure/networking/nva-accelerated-connections#prerequisites).

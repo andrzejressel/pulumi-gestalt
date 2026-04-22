@@ -18,9 +18,7 @@ pub mod get_outpost_instance_type {
         pub instance_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred instance types. The first match in this list will be returned. If no preferred matches are found and the original search returned more than one result, an error is returned. Conflicts with `instance_type`.
         #[builder(into, default)]
-        pub preferred_instance_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_instance_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetOutpostInstanceTypeResult {

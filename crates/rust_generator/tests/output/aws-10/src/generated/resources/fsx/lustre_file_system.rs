@@ -44,9 +44,7 @@ pub mod lustre_file_system {
         pub auto_import_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days. only valid for `PERSISTENT_1` and `PERSISTENT_2` deployment_type.
         #[builder(into, default)]
-        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the source backup to create the filesystem from.
         #[builder(into, default)]
         pub backup_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -136,9 +134,7 @@ pub mod lustre_file_system {
         >,
         /// The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone.
         #[builder(into, default)]
-        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LustreFileSystemResult {

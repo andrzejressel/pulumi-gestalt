@@ -53,9 +53,7 @@ pub mod fleet {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time that a streaming session remains active after users disconnect.
         #[builder(into, default)]
-        pub disconnect_timeout_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub disconnect_timeout_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Human-readable friendly name for the AppStream fleet.
         #[builder(into, default)]
         pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -66,9 +64,7 @@ pub mod fleet {
         >,
         /// Enables or disables default internet access for the fleet.
         #[builder(into, default)]
-        pub enable_default_internet_access: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_default_internet_access: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Fleet type. Valid values are: `ON_DEMAND`, `ALWAYS_ON`
         #[builder(into, default)]
         pub fleet_type: pulumi_gestalt_rust::Input<Option<String>>,
@@ -77,9 +73,7 @@ pub mod fleet {
         pub iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the `disconnect_timeout_in_seconds` time interval begins. Defaults to `0`. Valid value is between `60` and `3600 `seconds.
         #[builder(into, default)]
-        pub idle_disconnect_timeout_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub idle_disconnect_timeout_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// ARN of the public, private, or shared image to use.
         #[builder(into, default)]
         pub image_arn: pulumi_gestalt_rust::Input<Option<String>>,
@@ -94,9 +88,7 @@ pub mod fleet {
         pub max_sessions_per_instance: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum amount of time that a streaming session can remain active, in seconds.
         #[builder(into, default)]
-        pub max_user_duration_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub max_user_duration_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Unique name for the fleet.
         ///
         /// The following arguments are optional:

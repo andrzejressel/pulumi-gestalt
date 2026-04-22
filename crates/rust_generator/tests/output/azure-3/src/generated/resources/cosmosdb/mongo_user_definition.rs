@@ -86,9 +86,7 @@ pub mod mongo_user_definition {
         ///
         /// > **Note:** The role that needs to be inherited should exist in the Mongo DB of `cosmos_mongo_database_id`.
         #[builder(into, default)]
-        pub inherited_role_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub inherited_role_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The password for the Mongo User Definition.
         #[builder(into)]
         pub password: pulumi_gestalt_rust::Input<String>,

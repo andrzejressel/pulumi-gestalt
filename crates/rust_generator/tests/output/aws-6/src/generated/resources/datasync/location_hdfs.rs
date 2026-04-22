@@ -92,9 +92,7 @@ pub mod location_hdfs {
         pub kerberos_krb5_conf: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use instead of `kerberos_krb5_conf` to pass base64-encoded binary data directly. If `KERBEROS` is specified for `authentication_type`, this parameter (or `kerberos_krb5_conf`) is required.
         #[builder(into, default)]
-        pub kerberos_krb5_conf_base64: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub kerberos_krb5_conf_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Kerberos principal with access to the files and folders on the HDFS cluster. If `KERBEROS` is specified for `authentication_type`, this parameter is required.
         #[builder(into, default)]
         pub kerberos_principal: pulumi_gestalt_rust::Input<Option<String>>,

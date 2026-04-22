@@ -23,9 +23,7 @@ pub mod get_snapshot {
         pub owners: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more AWS accounts IDs that can create volumes from the snapshot.
         #[builder(into, default)]
-        pub restorable_by_user_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub restorable_by_user_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Returns information on a specific snapshot_id.
         #[builder(into, default)]
         pub snapshot_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

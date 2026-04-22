@@ -213,17 +213,13 @@ pub mod bucket_object {
         >,
         /// [Legal hold](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-legal-holds) status that you want to apply to the specified object. Valid values are `ON` and `OFF`.
         #[builder(into, default)]
-        pub object_lock_legal_hold_status: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub object_lock_legal_hold_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object lock [retention mode](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes) that you want to apply to this object. Valid values are `GOVERNANCE` and `COMPLIANCE`.
         #[builder(into, default)]
         pub object_lock_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Date and time, in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8), when this object's object lock will [expire](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-periods).
         #[builder(into, default)]
-        pub object_lock_retain_until_date: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub object_lock_retain_until_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// Server-side encryption of the object in S3. Valid values are "`AES256`" and "`aws:kms`".
         #[builder(into, default)]
         pub server_side_encryption: pulumi_gestalt_rust::Input<Option<String>>,

@@ -50,9 +50,7 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// A value that indicates whether major version upgrades are allowed. Constraints: You must allow major version upgrades when specifying a value for the EngineVersion parameter that is a different major version than the DB cluster's current version.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether any cluster modifications
         /// are applied immediately, or during the next maintenance window. Default is
         /// `false`.
@@ -70,17 +68,13 @@ pub mod cluster {
         pub cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifier`.
         #[builder(into, default)]
-        pub cluster_identifier_prefix: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cluster_identifier_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of DocumentDB Instances that are a part of this cluster
         #[builder(into, default)]
         pub cluster_members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A cluster parameter group to associate with the cluster.
         #[builder(into, default)]
-        pub db_cluster_parameter_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub db_cluster_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A DB subnet group to associate with this DB instance.
         #[builder(into, default)]
         pub db_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -103,14 +97,10 @@ pub mod cluster {
         /// when this DB cluster is deleted. If omitted, no final snapshot will be
         /// made.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The global cluster identifier specified on `aws.docdb.GlobalCluster`.
         #[builder(into, default)]
-        pub global_cluster_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub global_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN for the KMS encryption key. When specifying `kms_key_id`, `storage_encrypted` needs to be set to true.
         #[builder(into, default)]
         pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -130,9 +120,7 @@ pub mod cluster {
         pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The weekly time range during which system maintenance can occur, in (UTC) e.g., wed:04:00-wed:04:30
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration block for restoring a DB instance to an arbitrary point in time. Requires the `identifier` argument to be set with the name of the new DB instance to be created. See Restore To Point In Time below for details.
         #[builder(into, default)]
         pub restore_to_point_in_time: pulumi_gestalt_rust::Input<
@@ -158,9 +146,7 @@ pub mod cluster {
         /// List of VPC security groups to associate
         /// with the Cluster
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

@@ -36,9 +36,7 @@ pub mod sms_preferences {
         pub default_sms_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs.
         #[builder(into, default)]
-        pub delivery_status_iam_role_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub delivery_status_iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value must be between 0 and 100.
         #[builder(into, default)]
         pub delivery_status_success_sampling_rate: pulumi_gestalt_rust::Input<

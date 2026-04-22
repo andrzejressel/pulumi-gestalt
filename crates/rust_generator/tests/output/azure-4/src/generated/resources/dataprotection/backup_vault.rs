@@ -49,9 +49,7 @@ pub mod backup_vault {
         ///
         /// > **Note:** The `cross_region_restore_enabled` can only be specified when `redundancy` is specified for `GeoRedundant`. Once `cross_region_restore_enabled` is enabled, it cannot be disabled.
         #[builder(into, default)]
-        pub cross_region_restore_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub cross_region_restore_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the type of the data store. Possible values are `ArchiveStore`, `OperationalStore`, `SnapshotStore` and `VaultStore`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** The `SnapshotStore` will be removed in version 4.0 as it has been replaced by `OperationalStore`.

@@ -50,9 +50,7 @@ pub mod matchmaking_configuration {
         pub game_session_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARNs of the GameLift game session queue resources.
         #[builder(into, default)]
-        pub game_session_queue_arns: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub game_session_queue_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the matchmaking configuration
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

@@ -49,9 +49,7 @@ pub mod postgresql_cluster {
     pub struct PostgresqlClusterArgs {
         /// The password of the administrator login. This is required when `source_resource_id` is not set.
         #[builder(into, default)]
-        pub administrator_login_password: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub administrator_login_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The citus extension version on the Azure Cosmos DB for PostgreSQL Cluster. Possible values are `8.3`, `9.0`, `9.1`, `9.2`, `9.3`, `9.4`, `9.5`, `10.0`, `10.1`, `10.2`, `11.0`, `11.1`, `11.2`, `11.3` and `12.1`.
         #[builder(into, default)]
         pub citus_version: pulumi_gestalt_rust::Input<Option<String>>,
@@ -62,16 +60,12 @@ pub mod postgresql_cluster {
         >,
         /// The edition of the coordinator server. Possible values are `BurstableGeneralPurpose`, `BurstableMemoryOptimized`, `GeneralPurpose` and `MemoryOptimized`. Defaults to `GeneralPurpose`.
         #[builder(into, default)]
-        pub coordinator_server_edition: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub coordinator_server_edition: pulumi_gestalt_rust::Input<Option<String>>,
         /// The coordinator storage allowed for the Azure Cosmos DB for PostgreSQL Cluster. Possible values are `32768`, `65536`, `131072`, `262144`, `524288`, `1048576`, `2097152`, `4194304`, `8388608`, `16777216`, and `33554432`.
         ///
         /// > **NOTE:** More information on [the types of compute resources available for CosmosDB can be found in the product documentation](https://learn.microsoft.com/azure/cosmos-db/postgresql/resources-compute)
         #[builder(into, default)]
-        pub coordinator_storage_quota_in_mb: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub coordinator_storage_quota_in_mb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The coordinator vCore count for the Azure Cosmos DB for PostgreSQL Cluster. Possible values are `1`, `2`, `4`, `8`, `16`, `32`, `64` and `96`.
         #[builder(into, default)]
         pub coordinator_vcore_count: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -94,9 +88,7 @@ pub mod postgresql_cluster {
         pub node_count: pulumi_gestalt_rust::Input<i32>,
         /// Is public access enabled on worker nodes. Defaults to `false`.
         #[builder(into, default)]
-        pub node_public_ip_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub node_public_ip_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The edition of the node server. Possible values are `BurstableGeneralPurpose`, `BurstableMemoryOptimized`, `GeneralPurpose` and `MemoryOptimized`. Defaults to `MemoryOptimized`.
         #[builder(into, default)]
         pub node_server_edition: pulumi_gestalt_rust::Input<Option<String>>,
@@ -117,9 +109,7 @@ pub mod postgresql_cluster {
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Is shards on coordinator enabled for the Azure Cosmos DB for PostgreSQL cluster.
         #[builder(into, default)]
-        pub shards_on_coordinator_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub shards_on_coordinator_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure region of the source Azure Cosmos DB for PostgreSQL cluster for read replica clusters. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub source_location: pulumi_gestalt_rust::Input<Option<String>>,

@@ -242,9 +242,7 @@ pub mod replication_group {
         pub auth_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// Strategy to use when updating the `auth_token`. Valid values are `SET`, `ROTATE`, and `DELETE`. Defaults to `ROTATE`.
         #[builder(into, default)]
-        pub auth_token_update_strategy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub auth_token_update_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether minor version engine upgrades will be applied automatically to the underlying Cache Cluster instances during the maintenance window.
         /// Only supported for engine types `"redis"` and `"valkey"` and if the engine version is 6 or higher.
         /// Defaults to `true`.
@@ -277,14 +275,10 @@ pub mod replication_group {
         pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of your final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster. If omitted, no final snapshot will be made.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the global replication group to which this replication group should belong. If this parameter is specified, the replication group is added to the specified global replication group as a secondary replication group; otherwise, the replication group is not part of any global replication group. If `global_replication_group_id` is set, the `num_node_groups` parameter cannot be set.
         #[builder(into, default)]
-        pub global_replication_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub global_replication_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IP version to advertise in the discovery protocol. Valid values are `ipv4` or `ipv6`.
         #[builder(into, default)]
         pub ip_discovery: pulumi_gestalt_rust::Input<Option<String>>,
@@ -340,9 +334,7 @@ pub mod replication_group {
         pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// List of EC2 availability zones in which the replication group's cache clusters will be created. The order of the availability zones in the list is considered. The first item in the list will be the primary node. Ignored when updating.
         #[builder(into, default)]
-        pub preferred_cache_cluster_azs: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preferred_cache_cluster_azs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Number of replica nodes in each node group.
         /// Changing this number will trigger a resizing operation before other settings modifications.
         /// Valid values are 0 to 5.
@@ -360,9 +352,7 @@ pub mod replication_group {
         pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Names of one or more Amazon VPC security groups associated with this replication group. Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud.
         #[builder(into, default)]
-        pub security_group_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub security_group_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of ARNs that identify Redis RDB snapshot files stored in Amazon S3. The names object names cannot contain any commas.
         #[builder(into, default)]
         pub snapshot_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

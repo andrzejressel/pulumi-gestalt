@@ -120,9 +120,7 @@ pub mod network_attached_data_network {
         pub mobile_network_data_network_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the `azure.mobile.NetworkPacketCoreDataPlane` which the Mobile Network Attached Data Network belongs to. Changing this forces a new Mobile Network Attached Data Network to be created.
         #[builder(into)]
-        pub mobile_network_packet_core_data_plane_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub mobile_network_packet_core_data_plane_id: pulumi_gestalt_rust::Input<String>,
         /// A `network_address_port_translation` block as defined below.
         #[builder(into, default)]
         pub network_address_port_translation: pulumi_gestalt_rust::Input<
@@ -149,19 +147,13 @@ pub mod network_attached_data_network {
         >,
         /// The IPv4 address for the user data plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_address: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_plane_access_ipv4_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default IPv4 gateway for the user data plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_gateway: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_plane_access_ipv4_gateway: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 subnet for the user data plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
-        pub user_plane_access_ipv4_subnet: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_plane_access_ipv4_subnet: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the logical name for the user data plane interface. This should match one of the interfaces configured on your Azure Stack Edge device.
         #[builder(into, default)]
         pub user_plane_access_name: pulumi_gestalt_rust::Input<Option<String>>,

@@ -47,9 +47,7 @@ pub mod request_validator {
         pub validate_request_body: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean whether to validate request parameters. Defaults to `false`.
         #[builder(into, default)]
-        pub validate_request_parameters: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub validate_request_parameters: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct RequestValidatorResult {

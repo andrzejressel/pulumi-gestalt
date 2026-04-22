@@ -47,9 +47,7 @@ pub mod room {
         /// Maximum number of messages per
         /// second that can be sent to the room (by all clients).
         #[builder(into, default)]
-        pub maximum_message_rate_per_second: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub maximum_message_rate_per_second: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Configuration information for optional
         /// review of messages.
         #[builder(into, default)]

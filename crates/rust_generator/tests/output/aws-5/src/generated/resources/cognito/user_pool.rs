@@ -105,9 +105,7 @@ pub mod user_pool {
         pub alias_attributes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Attributes to be auto-verified. Valid values: `email`, `phone_number`.
         #[builder(into, default)]
-        pub auto_verified_attributes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub auto_verified_attributes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// When active, DeletionProtection prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature. Valid values are `ACTIVE` and `INACTIVE`, Default value is `INACTIVE`.
         #[builder(into, default)]
         pub deletion_protection: pulumi_gestalt_rust::Input<Option<String>>,
@@ -123,14 +121,10 @@ pub mod user_pool {
         >,
         /// String representing the email verification message. Conflicts with `verification_message_template` configuration block `email_message` argument.
         #[builder(into, default)]
-        pub email_verification_message: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub email_verification_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// String representing the email verification subject. Conflicts with `verification_message_template` configuration block `email_subject` argument.
         #[builder(into, default)]
-        pub email_verification_subject: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub email_verification_subject: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the AWS Lambda triggers associated with the user pool. Detailed below.
         #[builder(into, default)]
         pub lambda_config: pulumi_gestalt_rust::Input<
@@ -156,9 +150,7 @@ pub mod user_pool {
         >,
         /// String representing the SMS authentication message. The Message must contain the `{####}` placeholder, which will be replaced with the code.
         #[builder(into, default)]
-        pub sms_authentication_message: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub sms_authentication_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for Short Message Service (SMS) settings. Detailed below. These settings apply to SMS user verification and SMS Multi-Factor Authentication (MFA). Due to Cognito API restrictions, the SMS configuration cannot be removed without recreating the Cognito User Pool. For user data safety, this resource will ignore the removal of this configuration by disabling drift detection. To force resource recreation after this configuration has been applied, see the `taint` command.
         #[builder(into, default)]
         pub sms_configuration: pulumi_gestalt_rust::Input<

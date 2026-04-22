@@ -73,14 +73,10 @@ pub mod namespace {
         ///
         /// > **Note:** It's not possible to change the partitioning option on any existing namespace. The number of partitions can only be set during namespace creation. Please check the doc https://learn.microsoft.com/en-us/azure/service-bus-messaging/enable-partitions-premium for more feature restrictions.
         #[builder(into, default)]
-        pub premium_messaging_partitions: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub premium_messaging_partitions: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Is public network access enabled for the Service Bus Namespace? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to Changing this forces a new resource to be created.
         /// create the namespace.
         #[builder(into)]

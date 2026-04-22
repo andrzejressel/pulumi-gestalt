@@ -183,9 +183,7 @@ pub mod server_extended_auditing_policy {
     pub struct ServerExtendedAuditingPolicyArgs {
         /// A list of Actions-Groups and Actions to audit.
         #[builder(into, default)]
-        pub audit_actions_and_groups: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub audit_actions_and_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to enable the extended auditing policy. Possible values are `true` and `false`. Defaults to `true`.
         ///
         /// ->**NOTE:**  If `enabled` is `true`, `storage_endpoint` or `log_monitoring_enabled` are required.
@@ -205,9 +203,7 @@ pub mod server_extended_auditing_policy {
         pub server_id: pulumi_gestalt_rust::Input<String>,
         /// The access key to use for the auditing storage account.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is `storage_account_access_key` value the storage's secondary key?
         #[builder(into, default)]
         pub storage_account_access_key_is_secondary: pulumi_gestalt_rust::Input<
@@ -215,9 +211,7 @@ pub mod server_extended_auditing_policy {
         >,
         /// The ID of the Subscription containing the Storage Account.
         #[builder(into, default)]
-        pub storage_account_subscription_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_subscription_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The blob storage endpoint (e.g. <https://example.blob.core.windows.net>). This blob storage will hold all extended auditing logs.
         #[builder(into, default)]
         pub storage_endpoint: pulumi_gestalt_rust::Input<Option<String>>,

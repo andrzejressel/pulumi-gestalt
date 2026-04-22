@@ -74,14 +74,10 @@ pub mod cluster {
         /// No longer supported by the AWS API.
         /// Always returns `auto`.
         #[builder(into, default)]
-        pub aqua_configuration_status: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub aqua_configuration_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with create-cluster-snapshot. Default is 1.
         #[builder(into, default)]
-        pub automated_snapshot_retention_period: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub automated_snapshot_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency. Can only be changed if `availability_zone_relocation_enabled` is `true`.
         #[builder(into, default)]
         pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
@@ -95,9 +91,7 @@ pub mod cluster {
         pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The name of the parameter group to be associated with this cluster.
         #[builder(into, default)]
-        pub cluster_parameter_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cluster_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The public key for the cluster
         #[builder(into, default)]
         pub cluster_public_key: pulumi_gestalt_rust::Input<Option<String>>,
@@ -106,9 +100,7 @@ pub mod cluster {
         pub cluster_revision_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a cluster subnet group to be associated with this cluster. If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).
         #[builder(into, default)]
-        pub cluster_subnet_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cluster_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The cluster type to use. Either `single-node` or `multi-node`.
         #[builder(into, default)]
         pub cluster_type: pulumi_gestalt_rust::Input<Option<String>>,
@@ -137,9 +129,7 @@ pub mod cluster {
         pub enhanced_vpc_routing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, `skip_final_snapshot` must be false.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IAM Role ARNs to associate with the cluster. A Maximum of 10 can be associated to the cluster at any time.
         #[builder(into, default)]
         pub iam_roles: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
@@ -161,9 +151,7 @@ pub mod cluster {
         pub manage_master_password: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots. Valid values are between `-1` and `3653`. Default value is `-1`.
         #[builder(into, default)]
-        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub manual_snapshot_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Password for the master DB user.
         /// Conflicts with `manage_master_password`.
         /// One of `master_password` or `manage_master_password` is required unless `snapshot_identifier` is provided.
@@ -200,9 +188,7 @@ pub mod cluster {
         /// The weekly time range (in UTC) during which automated cluster maintenance can occur.
         /// Format: ddd:hh24:mi-ddd:hh24:mi
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, the cluster can be accessed from a public network. Default is `true`.
         #[builder(into, default)]
         pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -214,9 +200,7 @@ pub mod cluster {
         pub snapshot_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the cluster the source snapshot was created from.
         #[builder(into, default)]
-        pub snapshot_cluster_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub snapshot_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration of automatic copy of snapshots from one region to another. Documented below.
         #[builder(into, default)]
         pub snapshot_copy: pulumi_gestalt_rust::Input<
@@ -232,9 +216,7 @@ pub mod cluster {
         >,
         /// A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

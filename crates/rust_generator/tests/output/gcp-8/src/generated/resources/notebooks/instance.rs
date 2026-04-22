@@ -322,9 +322,7 @@ pub mod instance {
         /// - https://www.googleapis.com/auth/cloud-platform
         /// - https://www.googleapis.com/auth/userinfo.email
         #[builder(into, default)]
-        pub service_account_scopes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub service_account_scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A set of Shielded Instance options. Check [Images using supported Shielded VM features]
         /// Not all combinations are valid
         /// Structure is documented below.

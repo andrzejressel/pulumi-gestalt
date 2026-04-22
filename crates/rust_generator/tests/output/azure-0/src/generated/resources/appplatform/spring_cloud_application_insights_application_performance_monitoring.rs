@@ -88,9 +88,7 @@ pub mod spring_cloud_application_insights_application_performance_monitoring {
         pub sampling_percentage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the number of requests per second for the rate-limited sampling.
         #[builder(into, default)]
-        pub sampling_requests_per_second: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub sampling_requests_per_second: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Spring Cloud Service. Changing this forces a new resource to be created.
         #[builder(into)]
         pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,

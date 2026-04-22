@@ -86,9 +86,7 @@ pub mod object_copy {
         pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Account id of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
         #[builder(into, default)]
-        pub expected_source_bucket_owner: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub expected_source_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Date and time at which the object is no longer cacheable, in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).
         #[builder(into, default)]
         pub expires: pulumi_gestalt_rust::Input<Option<String>>,
@@ -119,17 +117,13 @@ pub mod object_copy {
         pub metadata_directive: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [legal hold](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-legal-holds) status that you want to apply to the specified object. Valid values are `ON` and `OFF`.
         #[builder(into, default)]
-        pub object_lock_legal_hold_status: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub object_lock_legal_hold_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object lock [retention mode](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes) that you want to apply to this object. Valid values are `GOVERNANCE` and `COMPLIANCE`.
         #[builder(into, default)]
         pub object_lock_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Date and time, in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8), when this object's object lock will [expire](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-periods).
         #[builder(into, default)]
-        pub object_lock_retain_until_date: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub object_lock_retain_until_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see Downloading Objects in Requestor Pays Buckets (https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html) in the Amazon S3 Developer Guide. If included, the only valid value is `requester`.
         #[builder(into, default)]
         pub request_payer: pulumi_gestalt_rust::Input<Option<String>>,
@@ -143,9 +137,7 @@ pub mod object_copy {
         pub source: pulumi_gestalt_rust::Input<String>,
         /// Specifies the algorithm to use when decrypting the source object (for example, AES256).
         #[builder(into, default)]
-        pub source_customer_algorithm: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub source_customer_algorithm: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.
         #[builder(into, default)]
         pub source_customer_key: pulumi_gestalt_rust::Input<Option<String>>,

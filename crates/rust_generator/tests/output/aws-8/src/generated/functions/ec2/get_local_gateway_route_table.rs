@@ -17,9 +17,7 @@ pub mod get_local_gateway_route_table {
         pub local_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Local Gateway Route Table Id assigned to desired local gateway route table
         #[builder(into, default)]
-        pub local_gateway_route_table_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub local_gateway_route_table_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the Outpost the local gateway route table is associated with.
         #[builder(into, default)]
         pub outpost_arn: pulumi_gestalt_rust::Input<Option<String>>,

@@ -357,9 +357,7 @@ pub mod cx_flow {
         /// They are inherited by every page's [transition route groups][Page.transition_route_groups]. Transition route groups defined in the page have higher priority than those defined in the flow.
         /// Format:projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>.
         #[builder(into, default)]
-        pub transition_route_groups: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub transition_route_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A flow's transition routes serve two purposes:
         /// They are responsible for matching the user's first utterances in the flow.
         /// They are inherited by every page's [transition routes][Page.transition_routes] and can support use cases such as the user saying "help" or "can I talk to a human?", which can be handled in a common way regardless of the current page. Transition routes defined in the page have higher priority than those defined in the flow.

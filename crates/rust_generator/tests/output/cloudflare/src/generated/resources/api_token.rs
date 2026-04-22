@@ -29,9 +29,7 @@ pub mod api_token {
         pub not_before: pulumi_gestalt_rust::Input<Option<String>>,
         /// Permissions policy. Multiple policy blocks can be defined.
         #[builder(into)]
-        pub policies: pulumi_gestalt_rust::Input<
-            Vec<super::types::ApiTokenPolicy>,
-        >,
+        pub policies: pulumi_gestalt_rust::Input<Vec<super::types::ApiTokenPolicy>>,
     }
     #[allow(dead_code)]
     pub struct ApiTokenResult {

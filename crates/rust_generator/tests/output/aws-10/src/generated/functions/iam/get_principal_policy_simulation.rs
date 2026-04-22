@@ -15,9 +15,7 @@ pub mod get_principal_policy_simulation {
         pub action_names: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A set of additional principal policy documents to include in the simulation. The simulator will behave as if each of these policies were associated with the object specified in `policy_source_arn`, allowing you to test the effect of hypothetical policies not yet created.
         #[builder(into, default)]
-        pub additional_policies_jsons: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub additional_policies_jsons: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ARN of an user that will appear as the "caller" of the simulated requests. If you do not specify `caller_arn` then the simulation will use the `policy_source_arn` instead, if it contains a user ARN.
         #[builder(into, default)]
         pub caller_arn: pulumi_gestalt_rust::Input<Option<String>>,
@@ -54,9 +52,7 @@ pub mod get_principal_policy_simulation {
         pub resource_handling_option: pulumi_gestalt_rust::Input<Option<String>>,
         /// An AWS account ID to use for any resource ARN in `resource_arns` that doesn't include its own AWS account ID. If unspecified, the simulator will use the account ID from the `caller_arn` argument as a placeholder.
         #[builder(into, default)]
-        pub resource_owner_account_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub resource_owner_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An IAM policy document representing the resource-level policy of all of the resources specified in `resource_arns`.
         ///
         /// The policy simulator cannot automatically load policies that are associated with individual resources, as described in the documentation for `resource_arns` above.

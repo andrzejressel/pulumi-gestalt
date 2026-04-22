@@ -54,9 +54,7 @@ pub mod event_api_destination {
         pub invocation_endpoint: pulumi_gestalt_rust::Input<String>,
         /// Enter the maximum number of invocations per second to allow for this destination. Enter a value greater than 0 (default 300).
         #[builder(into, default)]
-        pub invocation_rate_limit_per_second: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub invocation_rate_limit_per_second: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the new API Destination. The name must be unique for your account. Maximum of 64 characters consisting of numbers, lower/upper case letters, .,-,_.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

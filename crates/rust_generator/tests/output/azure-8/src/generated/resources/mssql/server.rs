@@ -139,9 +139,7 @@ pub mod server {
         pub administrator_login: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx). Required unless `azuread_authentication_only` in the `azuread_administrator` block is `true`.
         #[builder(into, default)]
-        pub administrator_login_password: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub administrator_login_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `azuread_administrator` block as defined below.
         #[builder(into, default)]
         pub azuread_administrator: pulumi_gestalt_rust::Input<
@@ -180,9 +178,7 @@ pub mod server {
         >,
         /// Whether public network access is allowed for this server. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Microsoft SQL Server. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

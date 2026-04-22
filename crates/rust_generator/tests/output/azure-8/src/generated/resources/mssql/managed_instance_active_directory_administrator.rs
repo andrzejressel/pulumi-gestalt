@@ -95,9 +95,7 @@ pub mod managed_instance_active_directory_administrator {
     pub struct ManagedInstanceActiveDirectoryAdministratorArgs {
         /// When `true`, only permit logins from AAD users and administrators. When `false`, also allow local database users.
         #[builder(into, default)]
-        pub azuread_authentication_only: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub azuread_authentication_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The login name of the principal to set as the Managed Instance Administrator.
         #[builder(into)]
         pub login_username: pulumi_gestalt_rust::Input<String>,

@@ -74,14 +74,10 @@ pub mod shared_image {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if the Shared Image supports NVMe disks. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub disk_controller_type_nvme_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub disk_controller_type_nvme_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more Disk Types not allowed for the Image. Possible values include `Standard_LRS` and `Premium_LRS`.
         #[builder(into, default)]
-        pub disk_types_not_alloweds: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub disk_types_not_alloweds: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The end of life date in RFC3339 format of the Image.
         #[builder(into, default)]
         pub end_of_life_date: pulumi_gestalt_rust::Input<Option<String>>,
@@ -107,17 +103,13 @@ pub mod shared_image {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maximum memory in GB recommended for the Image.
         #[builder(into, default)]
-        pub max_recommended_memory_in_gb: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub max_recommended_memory_in_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum count of vCPUs recommended for the Image.
         #[builder(into, default)]
         pub max_recommended_vcpu_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum memory in GB recommended for the Image.
         #[builder(into, default)]
-        pub min_recommended_memory_in_gb: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub min_recommended_memory_in_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum count of vCPUs recommended for the Image.
         #[builder(into, default)]
         pub min_recommended_vcpu_count: pulumi_gestalt_rust::Input<Option<i32>>,

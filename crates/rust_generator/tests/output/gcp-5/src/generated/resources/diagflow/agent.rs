@@ -111,9 +111,7 @@ pub mod agent {
         pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of all languages supported by this agent (except for the defaultLanguageCode).
         #[builder(into, default)]
-        pub supported_language_codes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub supported_language_codes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The agent tier. If not specified, TIER_STANDARD is assumed.
         /// * TIER_STANDARD: Standard tier.
         /// * TIER_ENTERPRISE: Enterprise tier (Essentials).

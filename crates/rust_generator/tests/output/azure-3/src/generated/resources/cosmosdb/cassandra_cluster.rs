@@ -84,9 +84,7 @@ pub mod cassandra_cluster {
         pub authentication_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of TLS certificates that is used to authorize client connecting to the Cassandra Cluster.
         #[builder(into, default)]
-        pub client_certificate_pems: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub client_certificate_pems: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The initial admin password for this Cassandra Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
         pub default_admin_password: pulumi_gestalt_rust::Input<String>,

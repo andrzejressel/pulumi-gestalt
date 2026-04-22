@@ -44,9 +44,7 @@ pub mod cluster {
         /// cluster's endpoint should support. Valid values are: `NONE` and `TLS`.
         /// Default value is `NONE`.
         #[builder(into, default)]
-        pub cluster_endpoint_encryption_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cluster_endpoint_encryption_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Group identifier. DAX converts this name to
         /// lowercase
         #[builder(into)]

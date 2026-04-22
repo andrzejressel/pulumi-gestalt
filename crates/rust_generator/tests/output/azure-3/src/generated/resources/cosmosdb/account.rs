@@ -99,9 +99,7 @@ pub mod account {
     #[allow(dead_code)]
     pub struct AccountArgs {
         #[builder(into, default)]
-        pub access_key_metadata_writes_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub access_key_metadata_writes_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `analytical_storage` block as defined below.
         #[builder(into, default)]
         pub analytical_storage: pulumi_gestalt_rust::Input<
@@ -155,17 +153,13 @@ pub mod account {
         #[builder(into, default)]
         pub ip_range_filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub is_virtual_network_filter_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub is_virtual_network_filter_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub key_vault_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
         pub kind: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub local_authentication_disabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub local_authentication_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -179,9 +173,7 @@ pub mod account {
         #[builder(into, default)]
         pub mongo_server_version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub multiple_write_locations_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub multiple_write_locations_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the CosmosDB Account. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -190,18 +182,14 @@ pub mod account {
             Option<bool>,
         >,
         #[builder(into, default)]
-        pub network_acl_bypass_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub network_acl_bypass_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the Offer Type to use for this CosmosDB Account; currently, this can only be set to `Standard`.
         #[builder(into)]
         pub offer_type: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub partition_merge_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which the CosmosDB Account is created. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

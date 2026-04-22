@@ -54,9 +54,7 @@ pub mod taxonomy {
         /// defaults to an empty list.
         /// Each value may be one of: `POLICY_TYPE_UNSPECIFIED`, `FINE_GRAINED_ACCESS_CONTROL`.
         #[builder(into, default)]
-        pub activated_policy_types: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub activated_policy_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Description of this taxonomy. It must: contain only unicode characters,
         /// tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
         /// long when encoded in UTF-8. If not set, defaults to an empty description.

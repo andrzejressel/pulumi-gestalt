@@ -51,9 +51,7 @@ pub mod encryption_scope {
     pub struct EncryptionScopeArgs {
         /// Is a secondary layer of encryption with Platform Managed Keys for data applied? Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub infrastructure_encryption_required: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub infrastructure_encryption_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Key Vault Key. Required when `source` is `Microsoft.KeyVault`.
         #[builder(into, default)]
         pub key_vault_key_id: pulumi_gestalt_rust::Input<Option<String>>,

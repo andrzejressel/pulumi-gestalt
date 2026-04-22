@@ -41,9 +41,7 @@ pub mod default_vpc {
     #[allow(dead_code)]
     pub struct DefaultVpcArgs {
         #[builder(into, default)]
-        pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
         pub enable_dns_hostnames: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]

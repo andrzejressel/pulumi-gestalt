@@ -356,9 +356,7 @@ pub mod cluster {
         >,
         /// Switch on/off run cluster with no steps or when all steps are complete (default is on)
         #[builder(into, default)]
-        pub keep_job_flow_alive_when_no_steps: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub keep_job_flow_alive_when_no_steps: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Kerberos configuration for the cluster. See below.
         #[builder(into, default)]
         pub kerberos_attributes: pulumi_gestalt_rust::Input<
@@ -369,9 +367,7 @@ pub mod cluster {
         pub list_steps_states: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// AWS KMS customer master key (CMK) key ID or arn used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.
         #[builder(into, default)]
-        pub log_encryption_kms_key_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub log_encryption_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// S3 bucket to write the log files of the job flow. If a value is not provided, logs are not created.
         #[builder(into, default)]
         pub log_uri: pulumi_gestalt_rust::Input<Option<String>>,

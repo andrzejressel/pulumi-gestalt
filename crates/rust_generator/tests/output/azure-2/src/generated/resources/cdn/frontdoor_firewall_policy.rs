@@ -110,14 +110,10 @@ pub mod frontdoor_firewall_policy {
     pub struct FrontdoorFirewallPolicyArgs {
         /// If a `custom_rule` block's action type is `block`, this is the response body. The body must be specified in base64 encoding.
         #[builder(into, default)]
-        pub custom_block_response_body: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub custom_block_response_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// If a `custom_rule` block's action type is `block`, this is the response status code. Possible values are `200`, `403`, `405`, `406`, or `429`.
         #[builder(into, default)]
-        pub custom_block_response_status_code: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub custom_block_response_status_code: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more `custom_rule` blocks as defined below.
         #[builder(into, default)]
         pub custom_rules: pulumi_gestalt_rust::Input<

@@ -444,9 +444,7 @@ pub mod cx_page {
         /// If multiple transition route groups within a page contain the same intent, then the first group in the ordered list takes precedence.
         /// Format:projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>.
         #[builder(into, default)]
-        pub transition_route_groups: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub transition_route_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of transitions for the transition rules of this page. They route the conversation to another page in the same flow, or another flow.
         /// When we are in a certain page, the TransitionRoutes are evalauted in the following order:
         /// TransitionRoutes defined in the page with intent specified.

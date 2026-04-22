@@ -71,9 +71,7 @@ pub mod cluster_snapshot_copy {
         pub shared_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Identifier of the source snapshot.
         #[builder(into)]
-        pub source_db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub source_db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
@@ -83,9 +81,7 @@ pub mod cluster_snapshot_copy {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target_db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub target_db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
         pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::ClusterSnapshotCopyTimeouts>,

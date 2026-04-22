@@ -63,9 +63,7 @@ pub mod kubernetes_cluster_node_pool {
         pub auto_scaling_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the ID of the Capacity Reservation Group where this Node Pool should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub capacity_reservation_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Eviction Policy which should be used for Virtual Machines within the Virtual Machine Scale Set powering this Node Pool. Possible values are `Deallocate` and `Delete`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** An Eviction Policy can only be configured when `priority` is set to `Spot` and will default to `Delete` unless otherwise specified.
@@ -174,9 +172,7 @@ pub mod kubernetes_cluster_node_pool {
         ///
         /// > **Note:** When setting `priority` to Spot - you must configure an `eviction_policy`, `spot_max_price` and add the applicable `node_labels` and `node_taints` [as per the Azure Documentation](https://docs.microsoft.com/azure/aks/spot-node-pool).
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies how the node pool should deal with scaled-down nodes. Allowed values are `Delete` and `Deallocate`. Defaults to `Delete`.
         #[builder(into, default)]
         pub scale_down_mode: pulumi_gestalt_rust::Input<Option<String>>,

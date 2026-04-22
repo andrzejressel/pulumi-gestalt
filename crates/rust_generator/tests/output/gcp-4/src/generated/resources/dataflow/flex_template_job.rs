@@ -83,9 +83,7 @@ pub mod flex_template_job {
     pub struct FlexTemplateJobArgs {
         /// List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
         #[builder(into, default)]
-        pub additional_experiments: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub additional_experiments: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The algorithm to use for autoscaling.
         #[builder(into, default)]
         pub autoscaling_algorithm: pulumi_gestalt_rust::Input<Option<String>>,
@@ -158,9 +156,7 @@ pub mod flex_template_job {
         #[builder(into, default)]
         pub service_account_email: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub skip_wait_on_job_termination: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub skip_wait_on_job_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Cloud Storage path to use for staging files. Must be a valid Cloud Storage URL, beginning with gs://.
         #[builder(into, default)]
         pub staging_location: pulumi_gestalt_rust::Input<Option<String>>,

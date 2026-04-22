@@ -103,9 +103,7 @@ pub mod network_manager_admin_rule {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of string specifies the destination port ranges. Specify one or more single port number or port ranges such as `1024-65535`. Use `*` to specify any port.
         #[builder(into, default)]
-        pub destination_port_ranges: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub destination_port_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more `destination` blocks as defined below.
         #[builder(into, default)]
         pub destinations: pulumi_gestalt_rust::Input<

@@ -87,9 +87,7 @@ pub mod spring_cloud_service {
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the log stream in vnet injection instance could be accessed from Internet?
         #[builder(into, default)]
-        pub log_stream_public_endpoint_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub log_stream_public_endpoint_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The resource Id of the Managed Environment that the Spring Apps instance builds on. Can only be specified when `sku_tier` is set to `StandardGen2`.
         #[builder(into, default)]
         pub managed_environment_id: pulumi_gestalt_rust::Input<Option<String>>,

@@ -59,9 +59,7 @@ pub mod workspace_saml_configuration {
         pub admin_role_values: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The allowed organizations.
         #[builder(into, default)]
-        pub allowed_organizations: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub allowed_organizations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The editor role values.
         #[builder(into)]
         pub editor_role_values: pulumi_gestalt_rust::Input<Vec<String>>,

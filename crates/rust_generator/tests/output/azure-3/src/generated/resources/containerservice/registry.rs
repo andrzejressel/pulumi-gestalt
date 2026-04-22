@@ -172,9 +172,7 @@ pub mod registry {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to allow trusted Azure services to access a network restricted Container Registry? Possible values are `None` and `AzureServices`. Defaults to `AzureServices`.
         #[builder(into, default)]
-        pub network_rule_bypass_option: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub network_rule_bypass_option: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_rule_set` block as documented below.
         #[builder(into, default)]
         pub network_rule_set: pulumi_gestalt_rust::Input<
@@ -182,9 +180,7 @@ pub mod registry {
         >,
         /// Whether public network access is allowed for the container registry. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean value that indicates whether quarantine policy is enabled.
         #[builder(into, default)]
         pub quarantine_policy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

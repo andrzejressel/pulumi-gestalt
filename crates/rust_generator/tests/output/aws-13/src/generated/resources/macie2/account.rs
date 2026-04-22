@@ -36,9 +36,7 @@ pub mod account {
     pub struct AccountArgs {
         /// Specifies how often to publish updates to policy findings for the account. This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). Valid values are `FIFTEEN_MINUTES`, `ONE_HOUR` or `SIX_HOURS`.
         #[builder(into, default)]
-        pub finding_publishing_frequency: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub finding_publishing_frequency: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to `ENABLED`. Valid values are `ENABLED` or `PAUSED`.
         #[builder(into, default)]
         pub status: pulumi_gestalt_rust::Input<Option<String>>,

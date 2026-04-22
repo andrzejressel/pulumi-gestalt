@@ -55,9 +55,7 @@ pub mod document_ai_warehouse_location {
         /// The default role for the person who create a document.
         /// Possible values are: `DOCUMENT_ADMIN`, `DOCUMENT_EDITOR`, `DOCUMENT_VIEWER`.
         #[builder(into, default)]
-        pub document_creator_default_role: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub document_creator_default_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// The KMS key used for CMEK encryption. It is required that
         /// the kms key is in the same region as the endpoint. The
         /// same key will be used for all provisioned resources, if

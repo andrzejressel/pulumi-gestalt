@@ -126,9 +126,7 @@ pub mod managed_disk {
         >,
         /// ID of a Gallery Image Version to copy when `create_option` is `FromImage`. This field cannot be specified if image_reference_id is specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub gallery_image_reference_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub gallery_image_reference_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The HyperV Generation of the Disk when the source of an `Import` or `Copy` operation targets a source that contains an operating system. Possible values are `V1` and `V2`. For `ImportSecure` it must be set to `V2`. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub hyper_v_generation: pulumi_gestalt_rust::Input<Option<String>>,
@@ -163,9 +161,7 @@ pub mod managed_disk {
         ///
         /// > **Note:** Setting `optimized_frequent_attach_enabled` to `true` causes the disks to not align with the fault domain of the Virtual Machine, which can have operational implications.
         #[builder(into, default)]
-        pub optimized_frequent_attach_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub optimized_frequent_attach_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specify a value when the source of an `Import`, `ImportSecure` or `Copy` operation targets a source that contains an operating system. Valid values are `Linux` or `Windows`.
         #[builder(into, default)]
         pub os_type: pulumi_gestalt_rust::Input<Option<String>>,
@@ -176,9 +172,7 @@ pub mod managed_disk {
         ///
         /// For more information on managed disks, such as sizing options and pricing, please check out the [Azure Documentation](https://docs.microsoft.com/azure/storage/storage-managed-disks-overview).
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Managed Disk should exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -186,9 +180,7 @@ pub mod managed_disk {
         ///
         /// > **NOTE:** `secure_vm_disk_encryption_set_id` can only be specified when `security_type` is set to `ConfidentialVM_DiskEncryptedWithCustomerKey`.
         #[builder(into, default)]
-        pub secure_vm_disk_encryption_set_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub secure_vm_disk_encryption_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Security Type of the Managed Disk when it is used for a Confidential VM. Possible values are `ConfidentialVM_VMGuestStateOnlyEncryptedWithPlatformKey`, `ConfidentialVM_DiskEncryptedWithPlatformKey` and `ConfidentialVM_DiskEncryptedWithCustomerKey`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** When `security_type` is set to `ConfidentialVM_DiskEncryptedWithCustomerKey` the value of `create_option` must be one of `FromImage` or `ImportSecure`.

@@ -22,9 +22,7 @@ pub mod get_query_log_config {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the Route53 Resolver Query Logging Configuration.
         #[builder(into, default)]
-        pub resolver_query_log_config_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub resolver_query_log_config_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the service.
         ///
         /// [1]: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_Filter.html

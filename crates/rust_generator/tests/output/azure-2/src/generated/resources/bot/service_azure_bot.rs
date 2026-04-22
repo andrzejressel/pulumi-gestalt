@@ -75,9 +75,7 @@ pub mod service_azure_bot {
         pub cmk_key_vault_key_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Application Insights API Key to associate with this Azure Bot Service.
         #[builder(into, default)]
-        pub developer_app_insights_api_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub developer_app_insights_api_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Application Insights instance to associate with this Azure Bot Service.
         #[builder(into, default)]
         pub developer_app_insights_application_id: pulumi_gestalt_rust::Input<
@@ -85,9 +83,7 @@ pub mod service_azure_bot {
         >,
         /// The Application Insight Key to associate with this Azure Bot Service.
         #[builder(into, default)]
-        pub developer_app_insights_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub developer_app_insights_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name that the Azure Bot Service will be displayed as. This defaults to the value set for `name` if not specified.
         #[builder(into, default)]
         pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -99,9 +95,7 @@ pub mod service_azure_bot {
         pub icon_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is local authentication enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub local_authentication_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub local_authentication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The supported Azure location where the Azure Bot Service should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -128,9 +122,7 @@ pub mod service_azure_bot {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Azure Bot Service should exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

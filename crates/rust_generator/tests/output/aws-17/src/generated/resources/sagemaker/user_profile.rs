@@ -41,14 +41,10 @@ pub mod user_profile {
         pub domain_id: pulumi_gestalt_rust::Input<String>,
         /// A specifier for the type of value specified in `single_sign_on_user_value`. Currently, the only supported value is `UserName`. If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified.
         #[builder(into, default)]
-        pub single_sign_on_user_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub single_sign_on_user_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The username of the associated AWS Single Sign-On User for this User Profile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified.
         #[builder(into, default)]
-        pub single_sign_on_user_value: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub single_sign_on_user_value: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

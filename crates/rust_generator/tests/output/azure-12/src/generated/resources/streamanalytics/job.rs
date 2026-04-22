@@ -73,9 +73,7 @@ pub mod job {
         >,
         /// Specifies the policy which should be applied to events which arrive out of order in the input event stream. Possible values are `Adjust` and `Drop`. Default is `Adjust`.
         #[builder(into, default)]
-        pub events_out_of_order_policy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub events_out_of_order_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
         pub identity: pulumi_gestalt_rust::Input<
@@ -103,9 +101,7 @@ pub mod job {
         pub sku_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of an existing Stream Analytics Cluster where the Stream Analytics Job should run.
         #[builder(into, default)]
-        pub stream_analytics_cluster_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub stream_analytics_cluster_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the number of streaming units that the streaming job uses. Supported values are `1`, `3`, `6` and multiples of `6` up to `120`. A conversion table for V2 streaming units can be found [here](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-streaming-unit-consumption#understand-streaming-unit-conversions-and-where-they-apply)
         ///
         /// > **NOTE:** `streaming_units` must be set when `type` is `Cloud`.

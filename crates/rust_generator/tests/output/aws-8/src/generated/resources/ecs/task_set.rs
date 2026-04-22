@@ -120,9 +120,7 @@ pub mod task_set {
         pub wait_until_stable: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Wait timeout for task set to reach `STEADY_STATE`. Valid time units include `ns`, `us` (or `µs`), `ms`, `s`, `m`, and `h`. Default `10m`.
         #[builder(into, default)]
-        pub wait_until_stable_timeout: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub wait_until_stable_timeout: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TaskSetResult {

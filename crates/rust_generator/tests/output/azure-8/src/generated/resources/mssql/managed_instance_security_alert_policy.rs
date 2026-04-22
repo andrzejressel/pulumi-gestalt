@@ -249,9 +249,7 @@ pub mod managed_instance_security_alert_policy {
         pub disabled_alerts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Boolean flag which specifies if the alert is sent to the account administrators or not. Defaults to `false`.
         #[builder(into, default)]
-        pub email_account_admins_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub email_account_admins_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies an array of email addresses to which the alert is sent.
         #[builder(into, default)]
         pub email_addresses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
@@ -271,9 +269,7 @@ pub mod managed_instance_security_alert_policy {
         ///
         /// > **NOTE:**  Please note that storage accounts configured with `shared_access_key_enabled = false` cannot be used to configure `azure.mssql.ManagedInstanceSecurityAlertPolicy` with `storage_endpoint` for now.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the blob storage endpoint (e.g. https://example.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
         #[builder(into, default)]
         pub storage_endpoint: pulumi_gestalt_rust::Input<Option<String>>,

@@ -65,9 +65,7 @@ pub mod contact {
         pub language_tag: pulumi_gestalt_rust::Input<String>,
         /// The categories of notifications that the contact will receive communications for.
         #[builder(into)]
-        pub notification_category_subscriptions: pulumi_gestalt_rust::Input<
-            Vec<String>,
-        >,
+        pub notification_category_subscriptions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The resource to save this contact for. Format: organizations/{organization_id}, folders/{folder_id} or projects/{project_id}
         ///
         ///

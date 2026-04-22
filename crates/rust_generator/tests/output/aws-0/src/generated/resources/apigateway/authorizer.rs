@@ -108,9 +108,7 @@ pub mod authorizer {
         pub authorizer_credentials: pulumi_gestalt_rust::Input<Option<String>>,
         /// TTL of cached authorizer results in seconds. Defaults to `300`.
         #[builder(into, default)]
-        pub authorizer_result_ttl_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub authorizer_result_ttl_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Authorizer's Uniform Resource Identifier (URI). This must be a well-formed Lambda function URI in the form of `arn:aws:apigateway:{region}:lambda:path/{service_api}`,
         /// e.g., `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:012345678912:function:my-function/invocations`
         #[builder(into, default)]
@@ -120,9 +118,7 @@ pub mod authorizer {
         pub identity_source: pulumi_gestalt_rust::Input<Option<String>>,
         /// Validation expression for the incoming identity. For `TOKEN` type, this value should be a regular expression. The incoming token from the client is matched against this expression, and will proceed if the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.
         #[builder(into, default)]
-        pub identity_validation_expression: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub identity_validation_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the authorizer
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

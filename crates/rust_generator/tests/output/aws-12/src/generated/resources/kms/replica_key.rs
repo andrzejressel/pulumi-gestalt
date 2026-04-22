@@ -48,9 +48,7 @@ pub mod replica_key {
         /// For more information, refer to the scenario in the [Default Key Policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam) section in the _AWS Key Management Service Developer Guide_.
         /// The default value is `false`.
         #[builder(into, default)]
-        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The waiting period, specified in number of days. After the waiting period ends, AWS KMS deletes the KMS key.
         /// If you specify a value, it must be between `7` and `30`, inclusive. If you do not specify a value, it defaults to `30`.
         #[builder(into, default)]

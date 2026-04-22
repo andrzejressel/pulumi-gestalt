@@ -32,9 +32,7 @@ pub mod access_group {
             Option<Vec<super::types::AccessGroupExclude>>,
         >,
         #[builder(into)]
-        pub includes: pulumi_gestalt_rust::Input<
-            Vec<super::types::AccessGroupInclude>,
-        >,
+        pub includes: pulumi_gestalt_rust::Input<Vec<super::types::AccessGroupInclude>>,
         #[builder(into)]
         pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]

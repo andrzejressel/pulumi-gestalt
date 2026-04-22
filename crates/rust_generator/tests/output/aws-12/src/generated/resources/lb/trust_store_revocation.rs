@@ -53,9 +53,7 @@ pub mod trust_store_revocation {
         pub revocations_s3_key: pulumi_gestalt_rust::Input<String>,
         /// Version Id of CA bundle S3 bucket object, if versioned, defaults to latest if omitted.
         #[builder(into, default)]
-        pub revocations_s3_object_version: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub revocations_s3_object_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Trust Store ARN.
         #[builder(into)]
         pub trust_store_arn: pulumi_gestalt_rust::Input<String>,

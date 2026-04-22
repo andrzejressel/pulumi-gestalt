@@ -112,9 +112,7 @@ pub mod function {
         pub request_mapping_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// Function response mapping template.
         #[builder(into, default)]
-        pub response_mapping_template: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub response_mapping_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// Describes a runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
         #[builder(into, default)]
         pub runtime: pulumi_gestalt_rust::Input<

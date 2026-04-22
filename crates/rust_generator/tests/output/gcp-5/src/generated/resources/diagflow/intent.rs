@@ -131,9 +131,7 @@ pub mod intent {
         /// (i.e. default platform).
         /// Each value may be one of: `FACEBOOK`, `SLACK`, `TELEGRAM`, `KIK`, `SKYPE`, `LINE`, `VIBER`, `ACTIONS_ON_GOOGLE`, `GOOGLE_HANGOUTS`.
         #[builder(into, default)]
-        pub default_response_platforms: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub default_response_platforms: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of this intent to be displayed on the console.
         ///
         ///
@@ -160,9 +158,7 @@ pub mod intent {
         /// The unique identifier of the parent intent in the chain of followup intents.
         /// Format: projects/<Project ID>/agent/intents/<Intent ID>.
         #[builder(into, default)]
-        pub parent_followup_intent_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub parent_followup_intent_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The priority of this intent. Higher numbers represent higher priorities.
         /// - If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds
         /// to the Normal priority in the console.

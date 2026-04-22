@@ -57,9 +57,7 @@ pub mod file_system_policy {
     pub struct FileSystemPolicyArgs {
         /// A flag to indicate whether to bypass the `aws.efs.FileSystemPolicy` lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future `PutFileSystemPolicy` requests on the file system. Set `bypass_policy_lockout_safety_check` to `true` only when you intend to prevent the principal that is making the request from making a subsequent `PutFileSystemPolicy` request on the file system. The default value is `false`.
         #[builder(into, default)]
-        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the EFS file system.
         #[builder(into)]
         pub file_system_id: pulumi_gestalt_rust::Input<String>,

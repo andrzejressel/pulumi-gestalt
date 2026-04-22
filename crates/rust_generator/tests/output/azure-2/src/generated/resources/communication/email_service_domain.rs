@@ -67,9 +67,7 @@ pub mod email_service_domain {
         >,
         /// Describes user engagement tracking is enabled or disabled. Defaults to `false`.
         #[builder(into, default)]
-        pub user_engagement_tracking_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub user_engagement_tracking_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EmailServiceDomainResult {

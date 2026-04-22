@@ -75,9 +75,7 @@ pub mod virtual_machine_scale_set_extension {
         ///
         /// > **NOTE:** Operational failures such as not connecting to the VM will not be suppressed regardless of the `failure_suppression_enabled` value.
         #[builder(into, default)]
-        pub failure_suppression_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub failure_suppression_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A value which, when different to the previous value can be used to force-run the Extension even if the Extension Configuration hasn't changed.
         #[builder(into, default)]
         pub force_update_tag: pulumi_gestalt_rust::Input<Option<String>>,
@@ -100,9 +98,7 @@ pub mod virtual_machine_scale_set_extension {
         >,
         /// An ordered list of Extension names which this should be provisioned after.
         #[builder(into, default)]
-        pub provision_after_extensions: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub provision_after_extensions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the Publisher of the Extension. Changing this forces a new resource to be created.
         #[builder(into)]
         pub publisher: pulumi_gestalt_rust::Input<String>,

@@ -10,9 +10,7 @@ pub mod get_resources {
     pub struct GetResourcesArgs {
         /// Specifies whether to exclude resources that are compliant with the tag policy. You can use this parameter only if the `include_compliance_details` argument is also set to `true`.
         #[builder(into, default)]
-        pub exclude_compliant_resources: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub exclude_compliant_resources: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether to include details regarding the compliance with the effective tag policy.
         #[builder(into, default)]
         pub include_compliance_details: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -21,9 +19,7 @@ pub mod get_resources {
         pub resource_arn_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Constraints on the resources that you want returned. The format of each resource type is `service:resourceType`. For example, specifying a resource type of `ec2` returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of `ec2:instance` returns only EC2 instances.
         #[builder(into, default)]
-        pub resource_type_filters: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub resource_type_filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies a list of Tag Filters (keys and values) to restrict the output to only those resources that have the specified tag and, if included, the specified value. See Tag Filter below. Conflicts with `resource_arn_list`.
         #[builder(into, default)]
         pub tag_filters: pulumi_gestalt_rust::Input<

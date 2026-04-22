@@ -29,9 +29,7 @@ pub mod zero_trust_access_application {
         pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// When set to true, users can authenticate to this application using their WARP session. When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
         #[builder(into, default)]
-        pub allow_authenticate_via_warp: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_authenticate_via_warp: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The identity providers selected for the application.
         #[builder(into, default)]
         pub allowed_idps: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
@@ -60,9 +58,7 @@ pub mod zero_trust_access_application {
         pub custom_deny_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option that redirects to a custom URL when a user is denied access to the application via non identity rules.
         #[builder(into, default)]
-        pub custom_non_identity_deny_url: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub custom_non_identity_deny_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The custom pages selected for the application.
         #[builder(into, default)]
         pub custom_pages: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
@@ -107,9 +103,7 @@ pub mod zero_trust_access_application {
         >,
         /// Defines the same-site cookie setting for access tokens. Available values: `none`, `lax`, `strict`.
         #[builder(into, default)]
-        pub same_site_cookie_attribute: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub same_site_cookie_attribute: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for provisioning to this application via SCIM. This is currently in closed beta.
         #[builder(into, default)]
         pub scim_config: pulumi_gestalt_rust::Input<
@@ -126,9 +120,7 @@ pub mod zero_trust_access_application {
         pub session_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to skip the App Launcher landing page. Defaults to `false`.
         #[builder(into, default)]
-        pub skip_app_launcher_login_page: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub skip_app_launcher_login_page: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Option to skip the authorization interstitial when using the CLI. Defaults to `false`.
         #[builder(into, default)]
         pub skip_interstitial: pulumi_gestalt_rust::Input<Option<bool>>,

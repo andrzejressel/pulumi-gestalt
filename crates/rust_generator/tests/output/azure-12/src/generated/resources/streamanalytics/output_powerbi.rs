@@ -69,9 +69,7 @@ pub mod output_powerbi {
         pub token_user_display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user principal name (UPN) of the user that was used to obtain the refresh token.
         #[builder(into, default)]
-        pub token_user_principal_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub token_user_principal_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OutputPowerbiResult {

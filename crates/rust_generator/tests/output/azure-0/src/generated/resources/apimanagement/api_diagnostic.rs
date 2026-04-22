@@ -161,9 +161,7 @@ pub mod api_diagnostic {
         >,
         /// The HTTP Correlation Protocol to use. Possible values are `None`, `Legacy` or `W3C`.
         #[builder(into, default)]
-        pub http_correlation_protocol: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub http_correlation_protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the Diagnostics Logs. Possible values are `applicationinsights` and `azuremonitor`. Changing this forces a new API Management Service API Diagnostics Logs to be created.
         #[builder(into)]
         pub identifier: pulumi_gestalt_rust::Input<String>,

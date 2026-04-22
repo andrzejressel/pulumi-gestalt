@@ -84,9 +84,7 @@ pub mod endpoint_servicebus {
     pub struct EndpointServicebusArgs {
         /// The storage secret of the dead-lettering, whose format is `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`. When an endpoint can't deliver an event within a certain time period or after trying to deliver the event a certain number of times, it can send the undelivered event to a storage account.
         #[builder(into, default)]
-        pub dead_letter_storage_secret: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub dead_letter_storage_secret: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Digital Twins Instance. Changing this forces a new Digital Twins Service Bus Endpoint to be created.
         #[builder(into)]
         pub digital_twins_id: pulumi_gestalt_rust::Input<String>,
@@ -95,14 +93,10 @@ pub mod endpoint_servicebus {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The primary connection string of the Service Bus Topic Authorization Rule with a minimum of `send` permission. .
         #[builder(into)]
-        pub servicebus_primary_connection_string: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub servicebus_primary_connection_string: pulumi_gestalt_rust::Input<String>,
         /// The secondary connection string of the Service Bus Topic Authorization Rule with a minimum of `send` permission.
         #[builder(into)]
-        pub servicebus_secondary_connection_string: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub servicebus_secondary_connection_string: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointServicebusResult {

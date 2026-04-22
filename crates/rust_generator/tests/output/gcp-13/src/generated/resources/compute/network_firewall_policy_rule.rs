@@ -175,9 +175,7 @@ pub mod network_firewall_policy_rule {
         >,
         /// A list of service accounts indicating the sets of instances that are applied with this rule.
         #[builder(into, default)]
-        pub target_service_accounts: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub target_service_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Boolean flag indicating if the traffic should be TLS decrypted. Can be set only if action =
         /// 'apply_security_profile_group' and cannot be set for other actions.
         #[builder(into, default)]

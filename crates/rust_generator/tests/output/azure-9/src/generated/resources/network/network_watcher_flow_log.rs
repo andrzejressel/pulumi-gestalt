@@ -92,9 +92,7 @@ pub mod network_watcher_flow_log {
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub network_security_group_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub network_security_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Network Watcher. Changing this forces a new resource to be created.
         #[builder(into)]
         pub network_watcher_name: pulumi_gestalt_rust::Input<String>,

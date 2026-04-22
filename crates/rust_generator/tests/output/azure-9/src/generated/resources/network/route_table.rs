@@ -47,9 +47,7 @@ pub mod route_table {
     pub struct RouteTableArgs {
         /// Boolean flag which controls propagation of routes learned by BGP on that route table. Defaults to `true`.
         #[builder(into, default)]
-        pub bgp_route_propagation_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub bgp_route_propagation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,

@@ -75,17 +75,13 @@ pub mod aad_diagnostic_setting {
         ///
         /// > **NOTE:** This can be sourced from the `azure.eventhub.EventHubNamespaceAuthorizationRule` resource and is different from a `azure.eventhub.AuthorizationRule` resource.
         #[builder(into, default)]
-        pub eventhub_authorization_rule_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub eventhub_authorization_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Event Hub where Diagnostics Data should be sent. If not specified, the default Event Hub will be used. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub eventhub_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of a Log Analytics Workspace where Diagnostics Data should be sent.
         #[builder(into, default)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Monitor Azure Active Directory Diagnostic Setting. Changing this forces a new Monitor Azure Active Directory Diagnostic Setting to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

@@ -65,9 +65,7 @@ pub mod services_communications_gateway_test_line {
         >,
         /// Specifies the ID of the Voice Services Communications Gateway. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub voice_services_communications_gateway_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub voice_services_communications_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServicesCommunicationsGatewayTestLineResult {

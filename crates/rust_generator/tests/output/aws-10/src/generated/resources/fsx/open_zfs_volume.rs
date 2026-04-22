@@ -71,9 +71,7 @@ pub mod open_zfs_volume {
         pub storage_capacity_quota_gib: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The amount of storage in gibibytes (GiB) to reserve from the parent volume.
         #[builder(into, default)]
-        pub storage_capacity_reservation_gib: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub storage_capacity_reservation_gib: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

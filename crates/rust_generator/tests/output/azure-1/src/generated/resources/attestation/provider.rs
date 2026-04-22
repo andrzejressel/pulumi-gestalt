@@ -50,16 +50,12 @@ pub mod provider {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the base64 URI Encoded RFC 7519 JWT that should be used for the Attestation Policy.
         #[builder(into, default)]
-        pub open_enclave_policy_base64: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub open_enclave_policy_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valid X.509 certificate (Section 4 of [RFC4648](https://tools.ietf.org/html/rfc4648)). Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** If the `policy_signing_certificate_data` argument contains more than one valid X.509 certificate only the first certificate will be used.
         #[builder(into, default)]
-        pub policy_signing_certificate_data: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub policy_signing_certificate_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the attestation provider should exist. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -70,9 +66,7 @@ pub mod provider {
         pub sev_snp_policy_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the base64 URI Encoded RFC 7519 JWT that should be used for the Attestation Policy.
         #[builder(into, default)]
-        pub sgx_enclave_policy_base64: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub sgx_enclave_policy_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Attestation Provider.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

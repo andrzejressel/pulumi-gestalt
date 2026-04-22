@@ -103,17 +103,13 @@ pub mod monitor {
         pub organization_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `plan` block as defined below. Changing this forces a new Azure Native New Relic Monitor to be created.
         #[builder(into)]
-        pub plan: pulumi_gestalt_rust::Input<
-            super::super::types::newrelic::MonitorPlan,
-        >,
+        pub plan: pulumi_gestalt_rust::Input<super::super::types::newrelic::MonitorPlan>,
         /// Specifies the name of the Resource Group where the Azure Native New Relic Monitor should exist. Changing this forces a new Azure Native New Relic Monitor to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `user` block as defined below. Changing this forces a new Azure Native New Relic Monitor to be created.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::Input<
-            super::super::types::newrelic::MonitorUser,
-        >,
+        pub user: pulumi_gestalt_rust::Input<super::super::types::newrelic::MonitorUser>,
         /// Specifies the user id. Changing this forces a new Azure Native New Relic Monitor to be created.
         #[builder(into, default)]
         pub user_id: pulumi_gestalt_rust::Input<Option<String>>,

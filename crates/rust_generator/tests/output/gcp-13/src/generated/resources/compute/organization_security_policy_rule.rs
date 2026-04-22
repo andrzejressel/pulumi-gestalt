@@ -113,9 +113,7 @@ pub mod organization_security_policy_rule {
         pub target_resources: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of service accounts indicating the sets of instances that are applied with this rule.
         #[builder(into, default)]
-        pub target_service_accounts: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub target_service_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct OrganizationSecurityPolicyRuleResult {

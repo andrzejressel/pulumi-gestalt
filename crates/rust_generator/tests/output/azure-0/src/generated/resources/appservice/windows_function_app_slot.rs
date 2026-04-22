@@ -120,9 +120,7 @@ pub mod windows_function_app_slot {
         >,
         /// Force disable the content share settings.
         #[builder(into, default)]
-        pub content_share_force_disabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub content_share_force_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps in Consumption Plans. Defaults to `0`.
         #[builder(into, default)]
         pub daily_memory_time_quota: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -139,9 +137,7 @@ pub mod windows_function_app_slot {
         pub function_app_id: pulumi_gestalt_rust::Input<String>,
         /// The runtime version associated with the Function App Slot. Defaults to `~4`.
         #[builder(into, default)]
-        pub functions_extension_version: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub functions_extension_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Can the Function App Slot only be accessed via HTTPS?. Defaults to `false`.
         #[builder(into, default)]
         pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -152,17 +148,13 @@ pub mod windows_function_app_slot {
         >,
         /// The User Assigned Identity ID used for accessing KeyVault secrets. The identity must be assigned to the application in the `identity` block. [For more information see - Access vaults with a user-assigned identity](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#access-vaults-with-a-user-assigned-identity)
         #[builder(into, default)]
-        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub key_vault_reference_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Windows Function App Slot. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should public network access be enabled for the Function App. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Service Plan in which to run this slot. If not specified the same Service Plan as the Windows Function App will be used.
         #[builder(into, default)]
         pub service_plan_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -173,9 +165,7 @@ pub mod windows_function_app_slot {
         >,
         /// The access key which will be used to access the storage account for the Function App Slot.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The backend storage account name which will be used by this Function App Slot.
         #[builder(into, default)]
         pub storage_account_name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -194,25 +184,19 @@ pub mod windows_function_app_slot {
         ///
         /// > **NOTE:** `storage_key_vault_secret_id` used without a version will use the latest version of the secret, however, the service can take up to 24h to pick up a rotation of the latest version. See the [official docs](https://docs.microsoft.com/azure/app-service/app-service-key-vault-references#rotation) for more information.
         #[builder(into, default)]
-        pub storage_key_vault_secret_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub storage_key_vault_secret_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Function App Slot use its Managed Identity to access storage.
         ///
         /// > **NOTE:** One of `storage_account_access_key` or `storage_uses_managed_identity` must be specified when using `storage_account_name`.
         #[builder(into, default)]
-        pub storage_uses_managed_identity: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub storage_uses_managed_identity: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags which should be assigned to the Windows Function App Slot.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub virtual_network_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is container image pull over virtual network enabled? Defaults to `false`.
         #[builder(into, default)]
         pub vnet_image_pull_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

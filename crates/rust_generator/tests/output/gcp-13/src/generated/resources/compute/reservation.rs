@@ -113,9 +113,7 @@ pub mod reservation {
         /// When set to true, only VMs that target this reservation by name can consume this reservation. Otherwise, it can be
         /// consumed by VMs with affinity for any reservation. Defaults to false.
         #[builder(into, default)]
-        pub specific_reservation_required: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub specific_reservation_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The zone where the reservation is made.
         #[builder(into)]
         pub zone: pulumi_gestalt_rust::Input<String>,

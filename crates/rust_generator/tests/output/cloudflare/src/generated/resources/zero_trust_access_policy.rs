@@ -67,14 +67,10 @@ pub mod zero_trust_access_policy {
         pub precedence: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The prompt to display to the user for a justification for accessing the resource. Required when using `purpose_justification_required`.
         #[builder(into, default)]
-        pub purpose_justification_prompt: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub purpose_justification_prompt: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to prompt the user for a justification for accessing the resource.
         #[builder(into, default)]
-        pub purpose_justification_required: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub purpose_justification_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A series of access conditions, see Access Groups.
         #[builder(into, default)]
         pub requires: pulumi_gestalt_rust::Input<

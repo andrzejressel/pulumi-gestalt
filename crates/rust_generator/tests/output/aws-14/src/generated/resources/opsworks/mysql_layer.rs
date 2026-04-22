@@ -37,38 +37,24 @@ pub mod mysql_layer {
             Option<super::super::types::opsworks::MysqlLayerCloudwatchConfiguration>,
         >,
         #[builder(into, default)]
-        pub custom_configure_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_configure_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub custom_deploy_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_deploy_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ARN of an IAM profile that will be used for the layer's instances.
         #[builder(into, default)]
-        pub custom_instance_profile_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub custom_instance_profile_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom JSON attributes to apply to the layer.
         #[builder(into, default)]
         pub custom_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ids for a set of security groups to apply to the layer's instances.
         #[builder(into, default)]
-        pub custom_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub custom_setup_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_setup_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub custom_shutdown_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_shutdown_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub custom_undeploy_recipes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_undeploy_recipes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to enable Elastic Load Balancing connection draining.
         #[builder(into, default)]
         pub drain_elb_on_shutdown: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -98,9 +84,7 @@ pub mod mysql_layer {
         pub root_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to set the root user password to all instances in the stack so they can access the instances in this layer.
         #[builder(into, default)]
-        pub root_password_on_all_instances: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub root_password_on_all_instances: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the stack the layer will belong to.
         #[builder(into)]
         pub stack_id: pulumi_gestalt_rust::Input<String>,
@@ -118,9 +102,7 @@ pub mod mysql_layer {
         >,
         /// Whether to use EBS-optimized instances.
         #[builder(into, default)]
-        pub use_ebs_optimized_instances: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub use_ebs_optimized_instances: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct MysqlLayerResult {

@@ -61,9 +61,7 @@ pub mod composite_alarm {
         pub alarm_rule: pulumi_gestalt_rust::Input<String>,
         /// The set of actions to execute when this alarm transitions to the `INSUFFICIENT_DATA` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.
         #[builder(into, default)]
-        pub insufficient_data_actions: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub insufficient_data_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The set of actions to execute when this alarm transitions to an `OK` state from any other state. Each action is specified as an ARN. Up to 5 actions are allowed.
         #[builder(into, default)]
         pub ok_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

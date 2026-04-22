@@ -165,9 +165,7 @@ pub mod database {
         ///
         /// > **NOTE:** When configuring a secondary database, please be aware of the constraints for the `sku_name` property, as noted below, for both the primary and secondary databases. The `sku_name` of the secondary database may be inadvertently changed to match that of the primary when an incompatible combination of SKUs is detected by the provider.
         #[builder(into, default)]
-        pub creation_source_database_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub creation_source_database_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the elastic pool containing this database.
         #[builder(into, default)]
         pub elastic_pool_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -210,9 +208,7 @@ pub mod database {
         ///
         /// > **NOTE:** `maintenance_configuration_name` is only applicable if `elastic_pool_id` is not set.
         #[builder(into, default)]
-        pub maintenance_configuration_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub maintenance_configuration_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The max size of the database in gigabytes.
         ///
         /// > **NOTE:** This value should not be configured when the `create_mode` is `Secondary` or `OnlineSecondary`, as the sizing of the primary is then used as per [Azure documentation](https://docs.microsoft.com/azure/azure-sql/database/single-database-scale#geo-replicated-database).
@@ -238,9 +234,7 @@ pub mod database {
         pub recovery_point_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the database to be restored. This property is only applicable when the `create_mode` is `Restore`.
         #[builder(into, default)]
-        pub restore_dropped_database_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub restore_dropped_database_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the long term retention backup to be restored. This property is only applicable when the `create_mode` is `RestoreLongTermRetentionBackup`.
         #[builder(into, default)]
         pub restore_long_term_retention_backup_id: pulumi_gestalt_rust::Input<

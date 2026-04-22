@@ -166,9 +166,7 @@ pub mod rule {
         pub input_parameters: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum frequency with which AWS Config runs evaluations for a rule.
         #[builder(into, default)]
-        pub maximum_execution_frequency: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub maximum_execution_frequency: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the rule
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
@@ -179,9 +177,7 @@ pub mod rule {
         >,
         /// Source specifies the rule owner, the rule identifier, and the notifications that cause the function to evaluate your AWS resources. See Source Below.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::Input<
-            super::super::types::cfg::RuleSource,
-        >,
+        pub source: pulumi_gestalt_rust::Input<super::super::types::cfg::RuleSource>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

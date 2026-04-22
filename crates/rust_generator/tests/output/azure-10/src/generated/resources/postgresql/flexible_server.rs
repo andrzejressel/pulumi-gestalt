@@ -156,9 +156,7 @@ pub mod flexible_server {
         pub delegated_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is Geo-Redundant backup enabled on the PostgreSQL Flexible Server. Defaults to `false`. Changing this forces a new PostgreSQL Flexible Server to be created.
         #[builder(into, default)]
-        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub geo_redundant_backup_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `high_availability` block as defined below.
         #[builder(into, default)]
         pub high_availability: pulumi_gestalt_rust::Input<
@@ -196,9 +194,7 @@ pub mod flexible_server {
         ///
         /// > **Note:** `public_network_access_enabled` must be set to `false` when `delegated_subnet_id` and `private_dns_zone_id` have a value.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The replication role for the PostgreSQL Flexible Server. Possible value is `None`.
         ///
         /// > **Note:** The `replication_role` cannot be set while creating and only can be updated to `None` for replica server.

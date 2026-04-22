@@ -47,9 +47,7 @@ pub mod key_policy {
         /// Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately. If this value is set, and the resource is destroyed, a warning will be shown, and the resource will be removed from state.
         /// For more information, refer to the scenario in the [Default Key Policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam) section in the _AWS Key Management Service Developer Guide_.
         #[builder(into, default)]
-        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the KMS Key to attach the policy.
         #[builder(into)]
         pub key_id: pulumi_gestalt_rust::Input<String>,

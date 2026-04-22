@@ -36,9 +36,7 @@ pub mod security_group_association {
     pub struct SecurityGroupAssociationArgs {
         /// Whether this association should replace the association with the VPC's default security group that is created when no security groups are specified during VPC endpoint creation. At most 1 association per-VPC endpoint should be configured with `replace_default_association = true`.
         #[builder(into, default)]
-        pub replace_default_association: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub replace_default_association: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the security group to be associated with the VPC endpoint.
         #[builder(into)]
         pub security_group_id: pulumi_gestalt_rust::Input<String>,

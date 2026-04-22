@@ -119,9 +119,7 @@ pub mod account_encryption {
         >,
         /// The ID of the User Assigned Managed Identity. Conflicts with `system_assigned_identity_principal_id`.
         #[builder(into, default)]
-        pub user_assigned_identity_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_assigned_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountEncryptionResult {

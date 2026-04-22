@@ -162,9 +162,7 @@ pub mod managed_storage_account {
         ///
         /// > **NOTE:** Azure Key Vault application needs to have access to Storage Account for auto regeneration to work. Example can be found above.
         #[builder(into, default)]
-        pub regenerate_key_automatically: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub regenerate_key_automatically: pulumi_gestalt_rust::Input<Option<bool>>,
         /// How often Storage Account access key should be regenerated. Value needs to be in [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601#Durations).
         #[builder(into, default)]
         pub regeneration_period: pulumi_gestalt_rust::Input<Option<String>>,

@@ -129,9 +129,7 @@ pub mod metadata {
         pub preview_images: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies a list of preview image file names used for dark theme. These will be taken from solution artifacts.
         #[builder(into, default)]
-        pub preview_images_darks: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub preview_images_darks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies a list of providers for the solution content item.
         #[builder(into, default)]
         pub providers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
@@ -147,14 +145,10 @@ pub mod metadata {
         >,
         /// Specifies a list of tactics the resource covers. Possible values are `Reconnaissance`, `ResourceDevelopment`, `InitialAccess`, `Execution`, `Persistence`, `PrivilegeEscalation`, `DefenseEvasion`, `CredentialAccess`, `Discovery`, `LateralMovement`, `Collection`, `CommandAndControl`, `Exfiltration`, `Impact`, `ImpairProcessControl` and `InhibitResponseFunction`.
         #[builder(into, default)]
-        pub threat_analysis_tactics: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub threat_analysis_tactics: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies a list of techniques the resource covers.
         #[builder(into, default)]
-        pub threat_analysis_techniques: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub threat_analysis_techniques: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Version of the content.
         #[builder(into, default)]
         pub version: pulumi_gestalt_rust::Input<Option<String>>,

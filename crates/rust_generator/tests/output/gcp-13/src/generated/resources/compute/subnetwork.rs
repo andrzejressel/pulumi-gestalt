@@ -289,9 +289,7 @@ pub mod subnetwork {
         /// Setting this field to true will allow these packets to match dynamic routes injected
         /// via BGP even if their destinations match existing subnet ranges.
         #[builder(into, default)]
-        pub allow_subnet_cidr_routes_overlap: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_subnet_cidr_routes_overlap: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An optional description of this resource. Provide this property when
         /// you create the resource. This field can be set only at resource
         /// creation time.
@@ -344,9 +342,7 @@ pub mod subnetwork {
         pub private_ip_google_access: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The private IPv6 google access type for the VMs in this subnet.
         #[builder(into, default)]
-        pub private_ipv6_google_access: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub private_ipv6_google_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
@@ -391,9 +387,7 @@ pub mod subnetwork {
         /// empty list of secondary IP ranges to the API.
         /// Defaults to false.
         #[builder(into, default)]
-        pub send_secondary_ip_range_if_empty: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub send_secondary_ip_range_if_empty: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The stack type for this subnet to identify whether the IPv6 feature is enabled or not.
         /// If not specified IPV4_ONLY will be used.
         /// Possible values are: `IPV4_ONLY`, `IPV4_IPV6`.

@@ -67,9 +67,7 @@ pub mod authorizer {
         /// Required credentials as an IAM role for API Gateway to invoke the authorizer.
         /// Supported only for `REQUEST` authorizers.
         #[builder(into, default)]
-        pub authorizer_credentials_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub authorizer_credentials_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers.
         /// Valid values: `1.0`, `2.0`.
         #[builder(into, default)]
@@ -80,9 +78,7 @@ pub mod authorizer {
         /// If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Defaults to `300`.
         /// Supported only for HTTP API Lambda authorizers.
         #[builder(into, default)]
-        pub authorizer_result_ttl_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub authorizer_result_ttl_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Authorizer type. Valid values: `JWT`, `REQUEST`.
         /// Specify `REQUEST` for a Lambda function using incoming request parameters.
         /// For HTTP APIs, specify `JWT` to use JSON Web Tokens.

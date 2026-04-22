@@ -134,9 +134,7 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// ARN of an ACM PCA
         #[builder(into, default)]
-        pub certificate_authority_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub certificate_authority_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Certificate's PEM-formatted public key
         #[builder(into, default)]
         pub certificate_body: pulumi_gestalt_rust::Input<Option<String>>,
@@ -168,9 +166,7 @@ pub mod certificate {
         /// Set of domains that should be SANs in the issued certificate.
         /// To remove all elements of a previously configured list, set this value equal to an empty list (`[]`)
         #[builder(into, default)]
-        pub subject_alternative_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub subject_alternative_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

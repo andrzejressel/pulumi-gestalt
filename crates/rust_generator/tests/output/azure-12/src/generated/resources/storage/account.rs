@@ -110,9 +110,7 @@ pub mod account {
         ///
         /// > **Note:** At this time `allow_nested_items_to_be_public` is only supported in the Public Cloud, China Cloud, and US Government Cloud.
         #[builder(into, default)]
-        pub allow_nested_items_to_be_public: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_nested_items_to_be_public: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet. Possible values are `AAD` and `PrivateLink`.
         #[builder(into, default)]
         pub allowed_copy_scope: pulumi_gestalt_rust::Input<Option<String>>,
@@ -128,9 +126,7 @@ pub mod account {
         >,
         /// Should cross Tenant replication be enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub cross_tenant_replication_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub cross_tenant_replication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `custom_domain` block as documented below.
         #[builder(into, default)]
         pub custom_domain: pulumi_gestalt_rust::Input<
@@ -145,9 +141,7 @@ pub mod account {
         >,
         /// Default to Azure Active Directory authorization in the Azure portal when accessing the Storage Account. The default value is `false`
         #[builder(into, default)]
-        pub default_to_oauth_authentication: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub default_to_oauth_authentication: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies which DNS endpoint type to use. Possible values are `Standard` and `AzureDnsZone`. Defaults to `Standard`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** Azure DNS zone support requires `PartitionedDns` feature to be enabled. To enable this feature for your subscription, use the following command: `az feature register --namespace "Microsoft.Storage" --name "PartitionedDns"`.
@@ -173,9 +167,7 @@ pub mod account {
         ///
         /// > **Note:** This can only be `true` when `account_kind` is `StorageV2` or when `account_tier` is `Premium` *and* `account_kind` is one of `BlockBlobStorage` or `FileStorage`.
         #[builder(into, default)]
-        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Hierarchical Namespace enabled? This can be used with Azure Data Lake Storage Gen 2 ([see here for more information](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-account/)). Changing this forces a new resource to be created.
         ///
         /// > **Note:** This can only be `true` when `account_tier` is `Standard` or when `account_tier` is `Premium` *and* `account_kind` is `BlockBlobStorage`
@@ -212,14 +204,10 @@ pub mod account {
         pub nfsv3_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the public network access is enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The encryption type of the queue service. Possible values are `Service` and `Account`. Changing this forces a new resource to be created. Default value is `Service`.
         #[builder(into, default)]
-        pub queue_encryption_key_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub queue_encryption_key_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `queue_properties` block as defined below.
         ///
         /// > **Note:** `queue_properties` can only be configured when `account_tier` is set to `Standard` and `account_kind` is set to either `Storage` or `StorageV2`.
@@ -267,9 +255,7 @@ pub mod account {
         ///
         /// > **Note:** `queue_encryption_key_type` and `table_encryption_key_type` cannot be set to `Account` when `account_kind` is set `Storage`
         #[builder(into, default)]
-        pub table_encryption_key_type: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub table_encryption_key_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

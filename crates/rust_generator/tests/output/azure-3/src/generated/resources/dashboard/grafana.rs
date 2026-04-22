@@ -63,9 +63,7 @@ pub mod grafana {
         >,
         /// Whether to enable the Grafana instance to use deterministic outbound IPs. Defaults to `false`.
         #[builder(into, default)]
-        pub deterministic_outbound_ip_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub deterministic_outbound_ip_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Which major version of Grafana to deploy. Possible values are `9`, `10`. Changing this forces a new resource to be created.
         #[builder(into)]
         pub grafana_major_version: pulumi_gestalt_rust::Input<String>,
@@ -82,9 +80,7 @@ pub mod grafana {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable traffic over the public interface. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Resource Group where the Dashboard Grafana should exist. Changing this forces a new Dashboard Grafana to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

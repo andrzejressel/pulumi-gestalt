@@ -52,9 +52,7 @@ pub mod table_replica {
     pub struct TableReplicaArgs {
         /// Whether deletion protection is enabled (true) or disabled (false) on the table replica.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ARN of the _main_ or global table which this resource will replicate.
         ///
         /// Optional arguments:

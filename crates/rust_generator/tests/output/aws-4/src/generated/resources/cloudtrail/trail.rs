@@ -310,14 +310,10 @@ pub mod trail {
         >,
         /// Log group name using an ARN that represents the log group to which CloudTrail logs will be delivered. Note that CloudTrail requires the Log Stream wildcard.
         #[builder(into, default)]
-        pub cloud_watch_logs_group_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cloud_watch_logs_group_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Role for the CloudWatch Logs endpoint to assume to write to a user’s log group.
         #[builder(into, default)]
-        pub cloud_watch_logs_role_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cloud_watch_logs_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether log file integrity validation is enabled. Defaults to `false`.
         #[builder(into, default)]
         pub enable_log_file_validation: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -331,9 +327,7 @@ pub mod trail {
         >,
         /// Whether the trail is publishing events from global services such as IAM to the log files. Defaults to `true`.
         #[builder(into, default)]
-        pub include_global_service_events: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub include_global_service_events: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block for identifying unusual operational activity. See details below.
         #[builder(into, default)]
         pub insight_selectors: pulumi_gestalt_rust::Input<

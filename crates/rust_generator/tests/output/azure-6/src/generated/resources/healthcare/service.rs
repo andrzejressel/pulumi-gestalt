@@ -61,9 +61,7 @@ pub mod service {
     #[allow(dead_code)]
     pub struct ServiceArgs {
         #[builder(into, default)]
-        pub access_policy_object_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub access_policy_object_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An `authentication_configuration` block as defined below.
         #[builder(into, default)]
         pub authentication_configuration: pulumi_gestalt_rust::Input<
@@ -107,9 +105,7 @@ pub mod service {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is enabled or disabled for this service instance. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group in which to create the Service. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

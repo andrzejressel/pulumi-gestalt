@@ -86,9 +86,7 @@ pub mod vpc {
     pub struct VpcArgs {
         /// Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block. Default is `false`. Conflicts with `ipv6_ipam_pool_id`
         #[builder(into, default)]
-        pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The IPv4 CIDR block for the VPC. CIDR can be explicitly set or it can be derived from IPAM using `ipv4_netmask_length`.
         #[builder(into, default)]
         pub cidr_block: pulumi_gestalt_rust::Input<Option<String>>,

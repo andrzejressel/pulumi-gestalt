@@ -52,9 +52,7 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// Specifies whether upgrades between different major versions are allowed. You must set it to `true` when providing an `engine_version` parameter that uses a different major version than the DB cluster's current version. Default is `false`.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. Default is `false`.
         #[builder(into, default)]
         pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -69,9 +67,7 @@ pub mod cluster {
         pub cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifier`.
         #[builder(into, default)]
-        pub cluster_identifier_prefix: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub cluster_identifier_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set to true, tags are copied to any snapshot of the DB cluster that is created.
         #[builder(into, default)]
         pub copy_tags_to_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -91,14 +87,10 @@ pub mod cluster {
         pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of your final Neptune snapshot when this Neptune cluster is deleted. If omitted, no final snapshot will be made.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The global cluster identifier specified on `aws.neptune.GlobalCluster`.
         #[builder(into, default)]
-        pub global_cluster_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub global_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether or not mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
         #[builder(into, default)]
         pub iam_database_authentication_enabled: pulumi_gestalt_rust::Input<
@@ -122,9 +114,7 @@ pub mod cluster {
         >,
         /// A Neptune subnet group to associate with this Neptune instance.
         #[builder(into, default)]
-        pub neptune_subnet_group_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub neptune_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port on which the Neptune accepts connections. Default is `8182`.
         #[builder(into, default)]
         pub port: pulumi_gestalt_rust::Input<Option<i32>>,
@@ -133,14 +123,10 @@ pub mod cluster {
         pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The weekly time range during which system maintenance can occur, in (UTC) e.g., wed:04:00-wed:04:30
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of a source Neptune cluster or Neptune instance if this Neptune cluster is to be created as a Read Replica.
         #[builder(into, default)]
-        pub replication_source_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub replication_source_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set, create the Neptune cluster as a serverless one. See Serverless for example block attributes.
         #[builder(into, default)]
         pub serverless_v2_scaling_configuration: pulumi_gestalt_rust::Input<
@@ -165,9 +151,7 @@ pub mod cluster {
         >,
         /// List of VPC security groups to associate with the Cluster
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

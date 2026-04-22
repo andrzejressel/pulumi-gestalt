@@ -242,9 +242,7 @@ pub mod global_cluster {
         pub global_cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) to use as the primary DB Cluster of the Global Cluster on creation. The provider cannot perform drift detection of this value.
         #[builder(into, default)]
-        pub source_db_cluster_identifier: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub source_db_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the DB cluster is encrypted. The default is `false` unless `source_db_cluster_identifier` is specified and encrypted. The provider will only perform drift detection if a configuration value is provided.
         #[builder(into, default)]
         pub storage_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,

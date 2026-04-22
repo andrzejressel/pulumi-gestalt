@@ -109,9 +109,7 @@ pub mod s_3_endpoint {
         pub add_column_name: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to add padding. Default is `false`. (Ignored for source endpoints.)
         #[builder(into, default)]
-        pub add_trailing_padding_character: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub add_trailing_padding_character: pulumi_gestalt_rust::Input<Option<bool>>,
         /// S3 object prefix.
         #[builder(into, default)]
         pub bucket_folder: pulumi_gestalt_rust::Input<Option<String>>,
@@ -200,9 +198,7 @@ pub mod s_3_endpoint {
         pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// JSON document that describes how AWS DMS should interpret the data.
         #[builder(into, default)]
-        pub external_table_definition: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub external_table_definition: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to integrate AWS Glue Data Catalog with an Amazon S3 target. See [Using AWS Glue Data Catalog with an Amazon S3 target for AWS DMS](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.GlueCatalog) for more information. Default is `false`.
         #[builder(into, default)]
         pub glue_catalog_generation: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -220,9 +216,7 @@ pub mod s_3_endpoint {
         pub max_file_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the precision of any TIMESTAMP column values written to an S3 object file in .parquet format. Default is `false`. (Ignored for source endpoints.)
         #[builder(into, default)]
-        pub parquet_timestamp_in_millisecond: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub parquet_timestamp_in_millisecond: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Version of the .parquet file format. Valid values are `parquet-1-0` and `parquet-2-0`. (AWS default is `parquet-1-0`.) (Ignored for source endpoints.)
         #[builder(into, default)]
         pub parquet_version: pulumi_gestalt_rust::Input<Option<String>>,

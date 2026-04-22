@@ -112,9 +112,7 @@ pub mod service {
         ///
         /// > **NOTE:** `authentication_failure_mode` can only be configured when using `local_authentication_enabled` is set to `true` - which when set together specifies that both API Keys and AzureAD Authentication should be supported.
         #[builder(into, default)]
-        pub authentication_failure_mode: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub authentication_failure_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the Search Service should enforce that non-customer resources are encrypted. Defaults to `false`.
         #[builder(into, default)]
         pub customer_managed_key_enforcement_enabled: pulumi_gestalt_rust::Input<
@@ -132,9 +130,7 @@ pub mod service {
         >,
         /// Specifies whether the Search Service allows authenticating using API Keys? Defaults to `true`.
         #[builder(into, default)]
-        pub local_authentication_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub local_authentication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure Region where the Search Service should exist. Changing this forces a new Search Service to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -143,9 +139,7 @@ pub mod service {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to allow trusted Azure services to access a network restricted Container Registry? Possible values are `None` and `AzureServices`. Defaults to `None`.
         #[builder(into, default)]
-        pub network_rule_bypass_option: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub network_rule_bypass_option: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the number of partitions which should be created. This field cannot be set when using a `free` sku ([see the Microsoft documentation](https://learn.microsoft.com/azure/search/search-sku-tier)). Possible values include `1`, `2`, `3`, `4`, `6`, or `12`. Defaults to `1`.
         ///
         /// > **NOTE:** when `hosting_mode` is set to `highDensity` the maximum number of partitions allowed is `3`.
@@ -153,9 +147,7 @@ pub mod service {
         pub partition_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies whether Public Network Access is allowed for this resource. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the number of Replica's which should be created for this Search Service. This field cannot be set when using a `free` sku ([see the Microsoft documentation](https://learn.microsoft.com/azure/search/search-sku-tier)).
         #[builder(into, default)]
         pub replica_count: pulumi_gestalt_rust::Input<Option<i32>>,

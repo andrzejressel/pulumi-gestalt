@@ -49,9 +49,7 @@ pub mod origin_access_control {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of origin that this Origin Access Control is for. Valid values are `lambda`, `mediapackagev2`, `mediastore`, and `s3`.
         #[builder(into)]
-        pub origin_access_control_origin_type: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub origin_access_control_origin_type: pulumi_gestalt_rust::Input<String>,
         /// Specifies which requests CloudFront signs. Specify `always` for the most common use case. Allowed values: `always`, `never`, and `no-override`.
         #[builder(into)]
         pub signing_behavior: pulumi_gestalt_rust::Input<String>,

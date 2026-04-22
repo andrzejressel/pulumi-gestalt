@@ -54,9 +54,7 @@ pub mod hci_extension {
         pub arc_setting_id: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true. Changing this forces a new resource to be created. Possible values are `true` and `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_upgrade_minor_version_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub auto_upgrade_minor_version_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates whether the extension should be automatically upgraded by the platform if there is a newer version available. Possible values are `true` and `false`. Defaults to `true`.
         #[builder(into, default)]
         pub automatic_upgrade_enabled: pulumi_gestalt_rust::Input<Option<bool>>,

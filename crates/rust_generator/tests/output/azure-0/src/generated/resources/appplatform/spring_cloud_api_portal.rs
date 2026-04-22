@@ -90,9 +90,7 @@ pub mod spring_cloud_api_portal {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the public network access enabled?
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud API Portal to be created.
         #[builder(into)]
         pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,

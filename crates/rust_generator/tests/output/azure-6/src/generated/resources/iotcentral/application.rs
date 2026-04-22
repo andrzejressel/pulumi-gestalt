@@ -60,9 +60,7 @@ pub mod application {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is allowed for the IoT Central Application. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group under which the IotHub resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

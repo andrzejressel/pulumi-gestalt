@@ -163,9 +163,7 @@ pub mod linked_service_azure_databricks {
         >,
         /// Authenticate to ADB via managed service identity.
         #[builder(into, default)]
-        pub msi_work_space_resource_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub msi_work_space_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Data Factory Linked Service. Changing this forces a new resource to be created. Must be unique within a data factory. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

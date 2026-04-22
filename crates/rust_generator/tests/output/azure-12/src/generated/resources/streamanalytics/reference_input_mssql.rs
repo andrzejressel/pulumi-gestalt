@@ -87,9 +87,7 @@ pub mod reference_input_mssql {
         pub password: pulumi_gestalt_rust::Input<String>,
         /// The frequency in `hh:mm:ss` with which the reference data should be retrieved from the MS SQL database e.g. `00:20:00` for every 20 minutes. Must be set when `refresh_type` is `RefreshPeriodicallyWithFull` or `RefreshPeriodicallyWithDelta`.
         #[builder(into, default)]
-        pub refresh_interval_duration: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub refresh_interval_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines whether and how the reference data should be refreshed. Accepted values are `Static`, `RefreshPeriodicallyWithFull` and `RefreshPeriodicallyWithDelta`.
         #[builder(into)]
         pub refresh_type: pulumi_gestalt_rust::Input<String>,

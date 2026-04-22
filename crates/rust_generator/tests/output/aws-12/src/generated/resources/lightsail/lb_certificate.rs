@@ -49,9 +49,7 @@ pub mod lb_certificate {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of domains that should be SANs in the issued certificate. `domain_name` attribute is automatically added as a Subject Alternative Name.
         #[builder(into, default)]
-        pub subject_alternative_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub subject_alternative_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct LbCertificateResult {

@@ -52,9 +52,7 @@ pub mod layer_version {
         pub code: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of [Architectures](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-CompatibleArchitectures) this layer is compatible with. Currently `x86_64` and `arm64` can be specified.
         #[builder(into, default)]
-        pub compatible_architectures: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub compatible_architectures: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of [Runtimes](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-CompatibleRuntimes) this layer is compatible with. Up to 15 runtimes can be specified.
         #[builder(into, default)]
         pub compatible_runtimes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

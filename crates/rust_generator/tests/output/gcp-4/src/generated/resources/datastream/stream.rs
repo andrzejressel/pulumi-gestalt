@@ -996,9 +996,7 @@ pub mod stream {
         /// A reference to a KMS encryption key. If provided, it will be used to encrypt the data. If left blank, data will be
         /// encrypted using an internal Stream-specific encryption key provisioned through KMS.
         #[builder(into, default)]
-        pub customer_managed_encryption_key: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub customer_managed_encryption_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Desired state of the Stream. Set this field to 'RUNNING' to start the stream, 'NOT_STARTED' to create the stream without
         /// starting and 'PAUSED' to pause the stream from a 'RUNNING' state. Possible values: NOT_STARTED, RUNNING, PAUSED.
         /// Default: NOT_STARTED

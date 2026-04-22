@@ -522,9 +522,7 @@ pub mod backend_service {
         /// Time for which instance will be drained (not accept new
         /// connections, but still work to finish started).
         #[builder(into, default)]
-        pub connection_draining_timeout_sec: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub connection_draining_timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Consistent Hash-based load balancing can be used to provide soft session
         /// affinity based on HTTP headers, cookies or other properties. This load balancing
         /// policy is applicable only for HTTP connections. The affinity to a particular
@@ -541,15 +539,11 @@ pub mod backend_service {
         /// Headers that the HTTP/S load balancer should add to proxied
         /// requests.
         #[builder(into, default)]
-        pub custom_request_headers: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_request_headers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Headers that the HTTP/S load balancer should add to proxied
         /// responses.
         #[builder(into, default)]
-        pub custom_response_headers: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub custom_response_headers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An optional description of this resource.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
@@ -576,9 +570,7 @@ pub mod backend_service {
         /// Specifies preference of traffic to the backend (from the proxy and from the client for proxyless gRPC).
         /// Possible values are: `IPV4_ONLY`, `PREFER_IPV6`, `IPV6_ONLY`.
         #[builder(into, default)]
-        pub ip_address_selection_policy: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub ip_address_selection_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether the backend service will be used with internal or
         /// external load balancing. A backend service created for one type of
         /// load balancing cannot be used with the other. For more information, refer to

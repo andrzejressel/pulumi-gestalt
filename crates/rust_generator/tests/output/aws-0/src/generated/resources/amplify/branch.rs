@@ -179,9 +179,7 @@ pub mod branch {
         pub enable_performance_mode: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables pull request previews for this branch.
         #[builder(into, default)]
-        pub enable_pull_request_preview: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_pull_request_preview: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Environment variables for the branch.
         #[builder(into, default)]
         pub environment_variables: pulumi_gestalt_rust::Input<
@@ -192,9 +190,7 @@ pub mod branch {
         pub framework: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amplify environment name for the pull request.
         #[builder(into, default)]
-        pub pull_request_environment_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub pull_request_environment_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Describes the current stage for the branch. Valid values: `PRODUCTION`, `BETA`, `DEVELOPMENT`, `EXPERIMENTAL`, `PULL_REQUEST`.
         #[builder(into, default)]
         pub stage: pulumi_gestalt_rust::Input<Option<String>>,

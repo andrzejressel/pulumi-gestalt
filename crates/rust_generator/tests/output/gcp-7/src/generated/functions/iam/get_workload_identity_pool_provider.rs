@@ -21,9 +21,7 @@ pub mod get_workload_identity_pool_provider {
         ///
         /// - - -
         #[builder(into)]
-        pub workload_identity_pool_provider_id: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub workload_identity_pool_provider_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetWorkloadIdentityPoolProviderResult {

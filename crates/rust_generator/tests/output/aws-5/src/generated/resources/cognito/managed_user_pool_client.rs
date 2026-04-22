@@ -109,9 +109,7 @@ pub mod managed_user_pool_client {
         >,
         /// List of allowed OAuth scopes, including `phone`, `email`, `openid`, `profile`, and `aws.cognito.signin.user.admin`. `allowed_oauth_flows_user_pool_client` must be set to `true` before you can configure this option.
         #[builder(into, default)]
-        pub allowed_oauth_scopes: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub allowed_oauth_scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block for Amazon Pinpoint analytics that collects metrics for this user pool. See details below.
         #[builder(into, default)]
         pub analytics_configuration: pulumi_gestalt_rust::Input<
@@ -155,9 +153,7 @@ pub mod managed_user_pool_client {
         pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Setting determines the errors and responses returned by Cognito APIs when a user does not exist in the user pool during authentication, account confirmation, and password recovery.
         #[builder(into, default)]
-        pub prevent_user_existence_errors: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub prevent_user_existence_errors: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of user pool attributes that the application client can read from.
         #[builder(into, default)]
         pub read_attributes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,

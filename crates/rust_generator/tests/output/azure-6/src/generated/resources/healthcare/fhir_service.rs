@@ -74,9 +74,7 @@ pub mod fhir_service {
     pub struct FhirServiceArgs {
         /// A list of the access policies of the service instance.
         #[builder(into, default)]
-        pub access_policy_object_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub access_policy_object_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An `authentication` block as defined below.
         #[builder(into)]
         pub authentication: pulumi_gestalt_rust::Input<

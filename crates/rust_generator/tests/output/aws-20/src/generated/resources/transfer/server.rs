@@ -217,14 +217,10 @@ pub mod server {
         pub logging_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify a string to display when users connect to a server. This string is displayed after the user authenticates. The SFTP protocol does not support post-authentication display banners.
         #[builder(into, default)]
-        pub post_authentication_login_banner: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub post_authentication_login_banner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify a string to display when users connect to a server. This string is displayed before the user authenticates.
         #[builder(into, default)]
-        pub pre_authentication_login_banner: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub pre_authentication_login_banner: pulumi_gestalt_rust::Input<Option<String>>,
         /// The protocol settings that are configured for your server. See `protocol_details` Block below for details.
         #[builder(into, default)]
         pub protocol_details: pulumi_gestalt_rust::Input<
@@ -263,14 +259,10 @@ pub mod server {
         pub security_policy_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// For SFTP-enabled servers, and for custom identity providers only. Valid values are `PASSWORD`, `PUBLIC_KEY`, `PUBLIC_KEY_OR_PASSWORD` and `PUBLIC_KEY_AND_PASSWORD`. Default value is: `PUBLIC_KEY_OR_PASSWORD`.
         #[builder(into, default)]
-        pub sftp_authentication_methods: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub sftp_authentication_methods: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of ARNs of destinations that will receive structured logs from the transfer server such as CloudWatch Log Group ARNs. If provided this enables the transfer server to emit structured logs to the specified locations.
         #[builder(into, default)]
-        pub structured_log_destinations: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub structured_log_destinations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
         pub tags: pulumi_gestalt_rust::Input<

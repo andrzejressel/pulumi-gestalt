@@ -97,16 +97,12 @@ pub mod route {
         pub destination_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// The destination IPv6 CIDR block.
         #[builder(into, default)]
-        pub destination_ipv6_cidr_block: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub destination_ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of a managed prefix list destination.
         ///
         /// One of the following target arguments must be supplied:
         #[builder(into, default)]
-        pub destination_prefix_list_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub destination_prefix_list_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of a VPC Egress Only Internet Gateway.
         #[builder(into, default)]
         pub egress_only_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
@@ -137,9 +133,7 @@ pub mod route {
         ///
         /// Note that the default route, mapping the VPC's CIDR block to "local", is created implicitly and cannot be specified.
         #[builder(into, default)]
-        pub vpc_peering_connection_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub vpc_peering_connection_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RouteResult {

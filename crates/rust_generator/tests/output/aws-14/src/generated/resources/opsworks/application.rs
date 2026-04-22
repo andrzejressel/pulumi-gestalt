@@ -75,9 +75,7 @@ pub mod application {
         pub data_source_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The database name.
         #[builder(into, default)]
-        pub data_source_database_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub data_source_database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The data source's type one of `AutoSelectOpsworksMysqlInstance`, `OpsworksMysqlInstance`, or `RdsDbInstance`.
         #[builder(into, default)]
         pub data_source_type: pulumi_gestalt_rust::Input<Option<String>>,

@@ -121,9 +121,7 @@ pub mod customer_managed_key {
     pub struct CustomerManagedKeyArgs {
         /// The Client ID of the multi-tenant application to be used in conjunction with the user-assigned identity for cross-tenant customer-managed-keys server-side encryption on the storage account.
         #[builder(into, default)]
-        pub federated_identity_client_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub federated_identity_client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of Key Vault Key.
         #[builder(into)]
         pub key_name: pulumi_gestalt_rust::Input<String>,
@@ -143,9 +141,7 @@ pub mod customer_managed_key {
         pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of a user assigned identity.
         #[builder(into, default)]
-        pub user_assigned_identity_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub user_assigned_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CustomerManagedKeyResult {

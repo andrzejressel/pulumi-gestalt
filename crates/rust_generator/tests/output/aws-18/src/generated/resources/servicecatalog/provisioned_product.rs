@@ -75,9 +75,7 @@ pub mod provisioned_product {
         pub provisioning_artifact_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the provisioning artifact. You must provide the `provisioning_artifact_id` or `provisioning_artifact_name`, but not both.
         #[builder(into, default)]
-        pub provisioning_artifact_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub provisioning_artifact_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with parameters specified by the administrator that are required for provisioning the product. See `provisioning_parameters` Block for details.
         #[builder(into, default)]
         pub provisioning_parameters: pulumi_gestalt_rust::Input<

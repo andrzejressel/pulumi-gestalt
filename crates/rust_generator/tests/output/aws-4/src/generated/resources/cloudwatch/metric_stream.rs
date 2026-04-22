@@ -184,9 +184,7 @@ pub mod metric_stream {
         >,
         /// If you are creating a metric stream in a monitoring account, specify true to include metrics from source accounts that are linked to this monitoring account, in the metric stream. The default is false. For more information about linking accounts, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
         #[builder(into, default)]
-        pub include_linked_accounts_metrics: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub include_linked_accounts_metrics: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Friendly name of the metric stream. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

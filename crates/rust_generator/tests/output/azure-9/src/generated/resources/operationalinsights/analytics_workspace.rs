@@ -47,9 +47,7 @@ pub mod analytics_workspace {
     pub struct AnalyticsWorkspaceArgs {
         /// Specifies if the log Analytics Workspace allow users accessing to data associated with resources they have permission to view, without permission to workspace. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_resource_only_permissions: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub allow_resource_only_permissions: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Customer Managed Storage mandatory for query management?
         #[builder(into, default)]
         pub cmk_for_query_forced: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -79,9 +77,7 @@ pub mod analytics_workspace {
         pub internet_query_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies if the log Analytics workspace should enforce authentication using Azure AD. Defaults to `false`.
         #[builder(into, default)]
-        pub local_authentication_disabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub local_authentication_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -92,9 +88,7 @@ pub mod analytics_workspace {
         ///
         /// > **NOTE:** `reservation_capacity_in_gb_per_day` can only be used when the `sku` is set to `CapacityReservation`.
         #[builder(into, default)]
-        pub reservation_capacity_in_gb_per_day: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub reservation_capacity_in_gb_per_day: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the resource group in which the Log Analytics workspace is created. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,

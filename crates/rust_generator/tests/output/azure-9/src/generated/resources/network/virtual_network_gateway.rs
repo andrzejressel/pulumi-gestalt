@@ -123,9 +123,7 @@ pub mod virtual_network_gateway {
         >,
         /// The ID of the local network gateway through which outbound Internet traffic from the virtual network in which the gateway is created will be routed (*forced tunnelling*). Refer to the [Azure documentation on forced tunnelling](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm). If not specified, forced tunnelling is disabled.
         #[builder(into, default)]
-        pub default_local_network_gateway_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub default_local_network_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is DNS forwarding enabled?
         #[builder(into, default)]
         pub dns_forwarding_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
@@ -150,9 +148,7 @@ pub mod virtual_network_gateway {
         >,
         /// Is IP Sec Replay Protection enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub ip_sec_replay_protection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub ip_sec_replay_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The location/region where the Virtual Network Gateway is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
         pub location: pulumi_gestalt_rust::Input<Option<String>>,
@@ -169,9 +165,7 @@ pub mod virtual_network_gateway {
         pub private_ip_address_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is remote vnet traffic that is used to configure this gateway to accept traffic from other Azure Virtual Networks enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub remote_vnet_traffic_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub remote_vnet_traffic_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Virtual Network Gateway. Changing this forces a new resource to be created.
         #[builder(into)]
         pub resource_group_name: pulumi_gestalt_rust::Input<String>,
@@ -192,9 +186,7 @@ pub mod virtual_network_gateway {
         pub type_: pulumi_gestalt_rust::Input<String>,
         /// Is remote vnet traffic that is used to configure this gateway to accept traffic from remote Virtual WAN networks enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub virtual_wan_traffic_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub virtual_wan_traffic_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `vpn_client_configuration` block which is documented below. In this block the Virtual Network Gateway can be configured to accept IPSec point-to-site connections.
         #[builder(into, default)]
         pub vpn_client_configuration: pulumi_gestalt_rust::Input<

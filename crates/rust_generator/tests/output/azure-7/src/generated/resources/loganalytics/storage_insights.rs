@@ -67,9 +67,7 @@ pub mod storage_insights {
     pub struct StorageInsightsArgs {
         /// The names of the blob containers that the workspace should read.
         #[builder(into, default)]
-        pub blob_container_names: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub blob_container_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name which should be used for this Log Analytics Storage Insights. Changing this forces a new Log Analytics Storage Insights to be created.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

@@ -56,9 +56,7 @@ pub mod hyperdrive_config {
         pub name: pulumi_gestalt_rust::Input<String>,
         /// The origin details for the Hyperdrive configuration.
         #[builder(into)]
-        pub origin: pulumi_gestalt_rust::Input<
-            super::types::HyperdriveConfigOrigin,
-        >,
+        pub origin: pulumi_gestalt_rust::Input<super::types::HyperdriveConfigOrigin>,
         /// The identifier of this resource. This is the hyperdrive config value.
         #[builder(into, default)]
         pub resource_id: pulumi_gestalt_rust::Input<Option<String>>,

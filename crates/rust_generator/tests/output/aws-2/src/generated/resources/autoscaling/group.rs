@@ -549,9 +549,7 @@ pub mod group {
         pub health_check_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to ignore failed [Auto Scaling scaling activities](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html) while waiting for capacity. The default is `false` -- failed scaling activities cause errors to be returned.
         #[builder(into, default)]
-        pub ignore_failed_scaling_activities: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub ignore_failed_scaling_activities: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more
         /// [Lifecycle Hooks](http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html)
         /// to attach to the Auto Scaling Group **before** instances are launched. The
@@ -645,9 +643,7 @@ pub mod group {
         pub target_group_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of policies to decide how the instances in the Auto Scaling Group should be terminated. The allowed values are `OldestInstance`, `NewestInstance`, `OldestLaunchConfiguration`, `ClosestToNextInstanceHour`, `OldestLaunchTemplate`, `AllocationStrategy`, `Default`. Additionally, the ARN of a Lambda function can be specified for custom termination policies.
         #[builder(into, default)]
-        pub termination_policies: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub termination_policies: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Attaches one or more traffic sources to the specified Auto Scaling group.
         #[builder(into, default)]
         pub traffic_sources: pulumi_gestalt_rust::Input<
@@ -655,18 +651,14 @@ pub mod group {
         >,
         /// List of subnet IDs to launch resources in. Subnets automatically determine which availability zones the group will reside. Conflicts with `availability_zones`.
         #[builder(into, default)]
-        pub vpc_zone_identifiers: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub vpc_zone_identifiers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Maximum
         /// [duration](https://golang.org/pkg/time/#ParseDuration) that the provider should
         /// wait for ASG instances to be healthy before timing out. (See also Waiting
         /// for Capacity below.) Setting this to "0" causes
         /// the provider to skip all Capacity Waiting behavior.
         #[builder(into, default)]
-        pub wait_for_capacity_timeout: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub wait_for_capacity_timeout: pulumi_gestalt_rust::Input<Option<String>>,
         /// Setting this will cause Pulumi to wait
         /// for exactly this number of healthy instances from this Auto Scaling Group in
         /// all attached load balancers on both create and update operations. (Takes

@@ -47,9 +47,7 @@ pub mod cache_blob_nfs_target {
         pub usage_model: pulumi_gestalt_rust::Input<String>,
         /// The amount of time the cache waits before it checks the back-end storage for file updates. Possible values are between `1` and `31536000`.
         #[builder(into, default)]
-        pub verification_timer_in_seconds: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub verification_timer_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The amount of time the cache waits after the last file change before it copies the changed file to back-end storage. Possible values are between `1` and `31536000`.
         #[builder(into, default)]
         pub write_back_timer_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,

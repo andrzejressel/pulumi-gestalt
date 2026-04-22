@@ -139,9 +139,7 @@ pub mod teams_account {
         >,
         /// Configure compliance with Federal Information Processing Standards.
         #[builder(into, default)]
-        pub fips: pulumi_gestalt_rust::Input<
-            Option<super::types::TeamsAccountFips>,
-        >,
+        pub fips: pulumi_gestalt_rust::Input<Option<super::types::TeamsAccountFips>>,
         #[builder(into, default)]
         pub logging: pulumi_gestalt_rust::Input<
             Option<super::types::TeamsAccountLogging>,
@@ -161,9 +159,7 @@ pub mod teams_account {
         pub protocol_detection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block for specifying which protocols are proxied.
         #[builder(into, default)]
-        pub proxy: pulumi_gestalt_rust::Input<
-            Option<super::types::TeamsAccountProxy>,
-        >,
+        pub proxy: pulumi_gestalt_rust::Input<Option<super::types::TeamsAccountProxy>>,
         /// Configuration for SSH Session Logging.
         #[builder(into, default)]
         pub ssh_session_log: pulumi_gestalt_rust::Input<
@@ -174,9 +170,7 @@ pub mod teams_account {
         pub tls_decrypt_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Safely browse websites in Browser Isolation through a URL. Defaults to `false`.
         #[builder(into, default)]
-        pub url_browser_isolation_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub url_browser_isolation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct TeamsAccountResult {

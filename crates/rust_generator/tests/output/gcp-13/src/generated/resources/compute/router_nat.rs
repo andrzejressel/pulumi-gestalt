@@ -282,9 +282,7 @@ pub mod router_nat {
         /// If maxPortsPerVm is not set, a maximum of 65536 ports will be allocated to a VM from this NAT config.
         /// Mutually exclusive with enableEndpointIndependentMapping.
         #[builder(into, default)]
-        pub enable_dynamic_port_allocation: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_dynamic_port_allocation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable endpoint independent mapping.
         /// For more information see the [official documentation](https://cloud.google.com/nat/docs/overview#specs-rfcs).
         #[builder(into, default)]
@@ -365,9 +363,7 @@ pub mod router_nat {
         /// other RouterNat section in any Router for this network in this region.
         /// Possible values are: `ALL_SUBNETWORKS_ALL_IP_RANGES`, `ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES`, `LIST_OF_SUBNETWORKS`.
         #[builder(into)]
-        pub source_subnetwork_ip_ranges_to_nat: pulumi_gestalt_rust::Input<
-            String,
-        >,
+        pub source_subnetwork_ip_ranges_to_nat: pulumi_gestalt_rust::Input<String>,
         /// One or more subnetwork NAT configurations. Only used if
         /// `source_subnetwork_ip_ranges_to_nat` is set to `LIST_OF_SUBNETWORKS`
         /// Structure is documented below.
@@ -378,9 +374,7 @@ pub mod router_nat {
         /// Timeout (in seconds) for TCP established connections.
         /// Defaults to 1200s if not set.
         #[builder(into, default)]
-        pub tcp_established_idle_timeout_sec: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub tcp_established_idle_timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Timeout (in seconds) for TCP connections that are in TIME_WAIT state.
         /// Defaults to 120s if not set.
         #[builder(into, default)]
@@ -388,9 +382,7 @@ pub mod router_nat {
         /// Timeout (in seconds) for TCP transitory connections.
         /// Defaults to 30s if not set.
         #[builder(into, default)]
-        pub tcp_transitory_idle_timeout_sec: pulumi_gestalt_rust::Input<
-            Option<i32>,
-        >,
+        pub tcp_transitory_idle_timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Indicates whether this NAT is used for public or private IP translation.
         /// If unspecified, it defaults to PUBLIC.
         /// If `PUBLIC` NAT used for public IP translation.

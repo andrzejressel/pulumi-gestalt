@@ -64,9 +64,7 @@ pub mod restore_testing_selection {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARNs for the protected resources.
         #[builder(into, default)]
-        pub protected_resource_arns: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub protected_resource_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The conditions for the protected resource.
         #[builder(into, default)]
         pub protected_resource_conditions: pulumi_gestalt_rust::Input<

@@ -263,9 +263,7 @@ pub mod cluster {
         pub enable_fqdn_network_policy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
         #[builder(into, default)]
-        pub enable_intranode_visibility: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub enable_intranode_visibility: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration for Kubernetes Beta APIs.
         /// Structure is documented below.
         #[builder(into, default)]
@@ -509,9 +507,7 @@ pub mod cluster {
         >,
         /// The desired state of IPv6 connectivity to Google Services. By default, no private IPv6 access to or from Google Services (all access will be via IPv4).
         #[builder(into, default)]
-        pub private_ipv6_google_access: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub private_ipv6_google_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]

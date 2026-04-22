@@ -69,9 +69,7 @@ pub mod prefix_list_reference {
         pub prefix_list_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Transit Gateway Attachment.
         #[builder(into, default)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of EC2 Transit Gateway Route Table.
         ///
         /// The following arguments are optional:

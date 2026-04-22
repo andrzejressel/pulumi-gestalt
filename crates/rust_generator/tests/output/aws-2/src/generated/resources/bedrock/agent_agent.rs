@@ -97,9 +97,7 @@ pub mod agent_agent {
         pub agent_resource_role_arn: pulumi_gestalt_rust::Input<String>,
         /// ARN of the AWS KMS key that encrypts the agent.
         #[builder(into, default)]
-        pub customer_encryption_key_arn: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub customer_encryption_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the agent.
         #[builder(into, default)]
         pub description: pulumi_gestalt_rust::Input<Option<String>>,

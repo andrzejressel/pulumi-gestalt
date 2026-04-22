@@ -59,9 +59,7 @@ pub mod local_rulestack_fqdn_list {
         pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Fully Qualified Domain Names.
         #[builder(into)]
-        pub fully_qualified_domain_names: pulumi_gestalt_rust::Input<
-            Vec<String>,
-        >,
+        pub fully_qualified_domain_names: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name which should be used for this Palo Alto Local Rulestack FQDN List.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

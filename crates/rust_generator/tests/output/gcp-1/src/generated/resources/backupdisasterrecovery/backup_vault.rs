@@ -113,15 +113,11 @@ pub mod backup_vault {
         /// If set, the following restrictions against deletion of the backup vault instance can be overridden:
         /// * deletion of a backup vault instance that is being referenced by an active backup plan.
         #[builder(into, default)]
-        pub ignore_backup_plan_references: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub ignore_backup_plan_references: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If set, the following restrictions against deletion of the backup vault instance can be overridden:
         /// * deletion of a backup vault instance containing no backups, but still containing empty datasources.
         #[builder(into, default)]
-        pub ignore_inactive_datasources: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub ignore_inactive_datasources: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Optional. Resource labels to represent user provided metadata.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.

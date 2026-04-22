@@ -86,9 +86,7 @@ pub mod service {
         pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Email address from which the notification will be sent.
         #[builder(into, default)]
-        pub notification_sender_email: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub notification_sender_email: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `protocols` block as defined below.
         #[builder(into, default)]
         pub protocols: pulumi_gestalt_rust::Input<
@@ -103,9 +101,7 @@ pub mod service {
         ///
         /// > **NOTE:** This option is applicable only to the Management plane, not the API gateway or Developer portal. It is required to be `true` on the creation.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The email of publisher/company.
         #[builder(into)]
         pub publisher_email: pulumi_gestalt_rust::Input<String>,

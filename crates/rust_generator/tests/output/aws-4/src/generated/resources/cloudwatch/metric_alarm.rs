@@ -206,9 +206,7 @@ pub mod metric_alarm {
         pub extended_statistic: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of actions to execute when this alarm transitions into an INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         #[builder(into, default)]
-        pub insufficient_data_actions: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub insufficient_data_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name for the alarm's associated metric.
         /// See docs for [supported metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html).
         #[builder(into, default)]

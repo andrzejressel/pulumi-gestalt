@@ -72,9 +72,7 @@ pub mod cluster {
         pub maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The multi region cluster identifier specified on `aws.memorydb.MultiRegionCluster`.
         #[builder(into, default)]
-        pub multi_region_cluster_name: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub multi_region_cluster_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the cluster. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
         pub name: pulumi_gestalt_rust::Input<Option<String>>,

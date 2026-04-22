@@ -155,14 +155,10 @@ pub mod workload {
         >,
         /// Optional. Input only. Billing account necessary for purchasing services from Sovereign Partners. This field is required for creating SIA/PSN/CNTXT partner workloads. The caller should have 'billing.resourceAssociations.create' IAM permission on this billing-account. The format of this string is billingAccounts/AAAAAA-BBBBBB-CCCCCC.
         #[builder(into, default)]
-        pub partner_services_billing_account: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub partner_services_billing_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}
         #[builder(into, default)]
-        pub provisioned_resources_parent: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub provisioned_resources_parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional.
         #[builder(into, default)]
         pub resource_settings: pulumi_gestalt_rust::Input<
@@ -170,9 +166,7 @@ pub mod workload {
         >,
         /// Optional. Indicates whether the e-mail notification for a violation is enabled for a workload. This value will be by default True, and if not present will be considered as true. This should only be updated via updateWorkload call. Any Changes to this field during the createWorkload call will not be honored. This will always be true while creating the workload.
         #[builder(into, default)]
-        pub violation_notifications_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub violation_notifications_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Optional. Used to specify certain options for a workload during workload creation - currently only supporting KAT Optionality for Regional Controls workloads.
         #[builder(into, default)]
         pub workload_options: pulumi_gestalt_rust::Input<

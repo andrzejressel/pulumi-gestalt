@@ -170,9 +170,7 @@ pub mod table {
         pub billing_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables deletion protection for table. Defaults to `false`.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Describe a GSI for the table; subject to the normal limits on the number of GSIs, projected attributes, etc. See below.
         #[builder(into, default)]
         pub global_secondary_indexes: pulumi_gestalt_rust::Input<

@@ -90,9 +90,7 @@ pub mod scheduled_query_rules_log {
     pub struct ScheduledQueryRulesLogArgs {
         /// A list of IDs of Resources referred into query.
         #[builder(into, default)]
-        pub authorized_resource_ids: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub authorized_resource_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A `criteria` block as defined below.
         #[builder(into)]
         pub criteria: pulumi_gestalt_rust::Input<

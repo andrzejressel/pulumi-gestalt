@@ -25,9 +25,7 @@ pub mod grant {
         >,
         /// A list of grant tokens to be used when creating the grant. See [Grant Tokens](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token) for more information about grant tokens.
         #[builder(into, default)]
-        pub grant_creation_tokens: pulumi_gestalt_rust::Input<
-            Option<Vec<String>>,
-        >,
+        pub grant_creation_tokens: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The principal that is given permission to perform the operations that the grant permits in ARN format. Note that due to eventual consistency issues around IAM principals, the providers's state may not always be refreshed to reflect what is true in AWS.
         #[builder(into)]
         pub grantee_principal: pulumi_gestalt_rust::Input<String>,

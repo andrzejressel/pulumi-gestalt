@@ -420,9 +420,7 @@ pub mod cluster {
         /// Optional. Indicates if the cluster is deletion protected or not. If the value if set to true, any delete cluster
         /// operation will fail. Default value is true.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Maintenance policy for a cluster
         #[builder(into, default)]
         pub maintenance_policy: pulumi_gestalt_rust::Input<

@@ -20,9 +20,7 @@ pub mod data_collection_rule {
     pub struct DataCollectionRuleArgs {
         /// The resource ID of the Data Collection Endpoint that this rule can be used with.
         #[builder(into, default)]
-        pub data_collection_endpoint_id: pulumi_gestalt_rust::Input<
-            Option<String>,
-        >,
+        pub data_collection_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `data_flow` blocks as defined below.
         #[builder(into)]
         pub data_flows: pulumi_gestalt_rust::Input<
