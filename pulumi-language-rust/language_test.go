@@ -166,7 +166,6 @@ var expectedFailures = map[string]string{
 	"l1-config-types-object":                       "https://github.com/andrzejressel/pulumi-gestalt/issues/2037",
 	"l1-keyword-overlap":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2063",
 	"l1-proxy-index":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2066",
-	"l1-stack-reference":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2067",
 	"l2-builtin-object":                            "sdk snapshot validation for output: walk expected dir: lstat testdata/sdks/output-23.0.0: no such file or directory",
 	"l2-camel-names":                               "sdk snapshot validation for camelNames: walk expected dir: lstat testdata/sdks/camelNames-19.0.0: no such file or directory",
 	"l2-component-call-simple":                     "sdk snapshot validation for component: walk expected dir: lstat testdata/sdks/component-13.3.7: no such file or directory",

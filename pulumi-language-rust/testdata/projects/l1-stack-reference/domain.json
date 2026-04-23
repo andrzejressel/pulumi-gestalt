@@ -1,0 +1,49 @@
+{
+  "statements": [
+    {
+      "Resource": {
+        "name": "ref_",
+        "logical_name": "ref",
+        "token": "pulumi:pulumi:StackReference",
+        "inputs": [
+          [
+            "name",
+            {
+              "String": "organization/other/dev"
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "Export": {
+        "name": "plain",
+        "value": {
+          "GetStackOutput": {
+            "resource": {
+              "Variable": "ref_"
+            },
+            "key": {
+              "String": "plain"
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "secret",
+        "value": {
+          "GetStackOutput": {
+            "resource": {
+              "Variable": "ref_"
+            },
+            "key": {
+              "String": "secret"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

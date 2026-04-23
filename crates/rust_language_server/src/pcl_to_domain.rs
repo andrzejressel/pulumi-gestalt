@@ -114,11 +114,27 @@ fn lower_resource(resource: &Resource) -> Result<Statement> {
         .collect::<Result<Vec<_>>>()
         .context("Failed to lower resource inputs")?;
     Ok(Statement::Resource {
-        name: resource.name.clone(),
+        name: escape_rust_keyword(&resource.name),
         logical_name: resource.logical_name.clone(),
         token,
         inputs,
     })
+}
+
+/// Appends `_` to names that are Rust keywords so they can be used as variable names.
+fn escape_rust_keyword(name: &str) -> String {
+    // Strict keywords that cannot be used as identifiers
+    const RUST_KEYWORDS: &[&str] = &[
+        "as", "break", "const", "continue", "crate", "else", "enum", "extern", "false", "fn",
+        "for", "if", "impl", "in", "let", "loop", "match", "mod", "move", "mut", "pub", "ref",
+        "return", "self", "Self", "static", "struct", "super", "trait", "true", "type", "unsafe",
+        "use", "where", "while", "async", "await", "dyn",
+    ];
+    if RUST_KEYWORDS.contains(&name) {
+        format!("{}_", name)
+    } else {
+        name.to_string()
+    }
 }
 
 /// Normalises a Pulumi type token to the canonical 3-part form.
@@ -189,7 +205,7 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
             bail!("RelativeTraversalExpression not yet supported")
         }
         expression::Value::ScopeTraversalExpression(scope) => {
-            let mut expr = Expr::Variable(scope.root_name.clone());
+            let mut expr = Expr::Variable(escape_rust_keyword(&scope.root_name));
             for traverser in &scope.traversal.each {
                 match &traverser.value {
                     traverser::Value::TraverseAttr(attr) => {
@@ -509,6 +525,17 @@ fn lower_function_call(call: &FunctionCallExpression) -> Result<Expr> {
             Ok(Expr::StdlibCall {
                 func: StdlibFn::Lookup,
                 args: args_lowered()?,
+            })
+        }
+        "getOutput" => {
+            ensure_arity(&call.name, arg_count, 2)?;
+            let resource = lower_expression(&call.args[0].value)
+                .context("Failed to lower getOutput resource argument")?;
+            let key = lower_expression(&call.args[1].value)
+                .context("Failed to lower getOutput key argument")?;
+            Ok(Expr::GetStackOutput {
+                resource: Box::new(resource),
+                key: Box::new(key),
             })
         }
         _ => bail!("Unsupported stdlib function: {}", call.name),

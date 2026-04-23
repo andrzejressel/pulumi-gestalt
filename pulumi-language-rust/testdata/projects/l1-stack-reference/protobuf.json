@@ -1,0 +1,269 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "ref",
+        "logicalName": "ref",
+        "token": "pulumi:pulumi:StackReference",
+        "inputs": [
+          {
+            "name": "name",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "organization/other/dev"
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              },
+              "type": {
+                "stringType": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "plain",
+        "logicalName": "plain",
+        "value": {
+          "functionCallExpression": {
+            "name": "getOutput",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "ref",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "ref"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "objectType": {
+                      "properties": {
+                        "id": {
+                          "outputType": {
+                            "stringType": {}
+                          }
+                        },
+                        "name": {
+                          "outputType": {
+                            "unionType": {
+                              "element_types": [
+                                {
+                                  "noneType": {}
+                                },
+                                {
+                                  "stringType": {}
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "outputs": {
+                          "outputType": {
+                            "mapType": {
+                              "dynamicType": {}
+                            }
+                          }
+                        },
+                        "secretOutputNames": {
+                          "outputType": {
+                            "unionType": {
+                              "element_types": [
+                                {
+                                  "mapType": {
+                                    "stringType": {}
+                                  }
+                                },
+                                {
+                                  "noneType": {}
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "urn": {
+                          "outputType": {
+                            "stringType": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "plain"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "outputType": {
+              "dynamicType": {}
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "secret",
+        "logicalName": "secret",
+        "value": {
+          "functionCallExpression": {
+            "name": "getOutput",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "ref",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "ref"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "objectType": {
+                      "properties": {
+                        "id": {
+                          "outputType": {
+                            "stringType": {}
+                          }
+                        },
+                        "name": {
+                          "outputType": {
+                            "unionType": {
+                              "element_types": [
+                                {
+                                  "noneType": {}
+                                },
+                                {
+                                  "stringType": {}
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "outputs": {
+                          "outputType": {
+                            "mapType": {
+                              "dynamicType": {}
+                            }
+                          }
+                        },
+                        "secretOutputNames": {
+                          "outputType": {
+                            "unionType": {
+                              "element_types": [
+                                {
+                                  "mapType": {
+                                    "stringType": {}
+                                  }
+                                },
+                                {
+                                  "noneType": {}
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "urn": {
+                          "outputType": {
+                            "stringType": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "secret"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "outputType": {
+              "dynamicType": {}
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "pulumi",
+      "version": "3.0.0"
+    }
+  ]
+}

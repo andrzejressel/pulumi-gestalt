@@ -314,7 +314,7 @@ jobs:
       matrix:
         os: [ubuntu-24.04, macos-15]
         # DO NOT EDIT - LANGUAGE TEST START
-        test: [l1-builtin-base64, l1-builtin-cwd, l1-builtin-file, l1-builtin-info, l1-builtin-list, l1-builtin-object, l1-builtin-project-root, l1-builtin-project-root-main, l1-builtin-require-pulumi-version, l1-builtin-secret, l1-builtin-sha1, l1-builtin-stash, l1-config-secret, l1-config-types-primitive, l1-elide-index, l1-empty, l1-main, l1-output-array, l1-output-bool, l1-output-map, l1-output-null, l1-output-number, l1-output-string]
+        test: [l1-builtin-base64, l1-builtin-cwd, l1-builtin-file, l1-builtin-info, l1-builtin-list, l1-builtin-object, l1-builtin-project-root, l1-builtin-project-root-main, l1-builtin-require-pulumi-version, l1-builtin-secret, l1-builtin-sha1, l1-builtin-stash, l1-config-secret, l1-config-types-primitive, l1-elide-index, l1-empty, l1-main, l1-output-array, l1-output-bool, l1-output-map, l1-output-null, l1-output-number, l1-output-string, l1-stack-reference]
 # DO NOT EDIT - LANGUAGE TEST END
 
     steps:
