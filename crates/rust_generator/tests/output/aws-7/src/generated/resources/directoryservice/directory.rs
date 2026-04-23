@@ -141,49 +141,49 @@ pub mod directory {
     pub struct DirectoryArgs {
         /// The alias for the directory (must be unique amongst all aliases in AWS). Required for `enable_sso`.
         #[builder(into, default)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// Connector related information about the directory. Fields documented below.
         #[builder(into, default)]
-        pub connect_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub connect_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::directoryservice::DirectoryConnectSettings>,
         >,
         /// A textual description for the directory.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of domain controllers desired in the directory. Minimum value of `2`. Scaling of domain controllers is only supported for `MicrosoftAD` directories.
         #[builder(into, default)]
-        pub desired_number_of_domain_controllers: pulumi_gestalt_rust::InputOrOutput<
+        pub desired_number_of_domain_controllers: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The MicrosoftAD edition (`Standard` or `Enterprise`). Defaults to `Enterprise`.
         #[builder(into, default)]
-        pub edition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edition: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable single-sign on for the directory. Requires `alias`. Defaults to `false`.
         #[builder(into, default)]
-        pub enable_sso: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_sso: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The fully qualified name for the directory, such as `corp.example.com`
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The password for the directory administrator or connector user.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The short name of the directory, such as `CORP`.
         #[builder(into, default)]
-        pub short_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub short_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// (For `SimpleAD` and `ADConnector` types) The size of the directory (`Small` or `Large` are accepted values). `Large` by default.
         #[builder(into, default)]
-        pub size: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub size: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The directory type (`SimpleAD`, `ADConnector` or `MicrosoftAD` are accepted values). Defaults to `SimpleAD`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// VPC related information about the directory. Fields documented below.
         #[builder(into, default)]
-        pub vpc_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::directoryservice::DirectoryVpcSettings>,
         >,
     }

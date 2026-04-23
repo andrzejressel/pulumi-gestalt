@@ -44,16 +44,16 @@ pub mod user_login_profile {
     pub struct UserLoginProfileArgs {
         /// The length of the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument. Default value is `20`.
         #[builder(into, default)]
-        pub password_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub password_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether the user should be forced to reset the generated password on resource creation. Only applies on resource creation.
         #[builder(into, default)]
-        pub password_reset_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub password_reset_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:username`. Only applies on resource creation. Drift detection is not possible with this argument.
         #[builder(into, default)]
-        pub pgp_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pgp_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM user's name.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserLoginProfileResult {

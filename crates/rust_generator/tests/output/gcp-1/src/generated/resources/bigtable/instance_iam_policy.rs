@@ -162,11 +162,11 @@ pub mod instance_iam_policy {
         ///
         /// For `gcp.bigtable.InstanceIamMember` or `gcp.bigtable.InstanceIamBinding`:
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub policy_data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_data: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceIamPolicyResult {

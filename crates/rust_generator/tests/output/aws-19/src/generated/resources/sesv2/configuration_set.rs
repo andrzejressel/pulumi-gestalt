@@ -64,40 +64,40 @@ pub mod configuration_set {
     pub struct ConfigurationSetArgs {
         /// The name of the configuration set.
         #[builder(into)]
-        pub configuration_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_set_name: pulumi_gestalt_rust::Input<String>,
         /// An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set. See `delivery_options` Block for details.
         #[builder(into, default)]
-        pub delivery_options: pulumi_gestalt_rust::InputOrOutput<
+        pub delivery_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::ConfigurationSetDeliveryOptions>,
         >,
         /// An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set. See `reputation_options` Block for details.
         #[builder(into, default)]
-        pub reputation_options: pulumi_gestalt_rust::InputOrOutput<
+        pub reputation_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::ConfigurationSetReputationOptions>,
         >,
         /// An object that defines whether or not Amazon SES can send email that you send using the configuration set. See `sending_options` Block for details.
         #[builder(into, default)]
-        pub sending_options: pulumi_gestalt_rust::InputOrOutput<
+        pub sending_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::ConfigurationSetSendingOptions>,
         >,
         /// An object that contains information about the suppression list preferences for your account. See `suppression_options` Block for details.
         #[builder(into, default)]
-        pub suppression_options: pulumi_gestalt_rust::InputOrOutput<
+        pub suppression_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::ConfigurationSetSuppressionOptions>,
         >,
         /// A map of tags to assign to the service. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An object that defines the open and click tracking options for emails that you send using the configuration set. See `tracking_options` Block for details.
         #[builder(into, default)]
-        pub tracking_options: pulumi_gestalt_rust::InputOrOutput<
+        pub tracking_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::ConfigurationSetTrackingOptions>,
         >,
         /// An object that defines the VDM settings that apply to emails that you send using the configuration set. See `vdm_options` Block for details.
         #[builder(into, default)]
-        pub vdm_options: pulumi_gestalt_rust::InputOrOutput<
+        pub vdm_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::ConfigurationSetVdmOptions>,
         >,
     }

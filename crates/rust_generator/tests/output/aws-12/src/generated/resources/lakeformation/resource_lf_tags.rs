@@ -102,29 +102,29 @@ pub mod resource_lf_tags {
     pub struct ResourceLfTagsArgs {
         /// Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for a database resource. See below.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<
+        pub database: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::ResourceLfTagsDatabase>,
         >,
         /// Set of LF-tags to attach to the resource. See below.
         ///
         /// Exactly one of the following is required:
         #[builder(into)]
-        pub lf_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub lf_tags: pulumi_gestalt_rust::Input<
             Vec<super::super::types::lakeformation::ResourceLfTagsLfTag>,
         >,
         /// Configuration block for a table resource. See below.
         #[builder(into, default)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<
+        pub table: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::ResourceLfTagsTable>,
         >,
         /// Configuration block for a table with columns resource. See below.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub table_with_columns: pulumi_gestalt_rust::InputOrOutput<
+        pub table_with_columns: pulumi_gestalt_rust::Input<
             Option<super::super::types::lakeformation::ResourceLfTagsTableWithColumns>,
         >,
     }

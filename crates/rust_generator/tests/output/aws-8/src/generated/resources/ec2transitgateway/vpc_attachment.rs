@@ -37,42 +37,42 @@ pub mod vpc_attachment {
     pub struct VpcAttachmentArgs {
         /// Whether Appliance Mode support is enabled. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. Valid values: `disable`, `enable`. Default value: `disable`.
         #[builder(into, default)]
-        pub appliance_mode_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub appliance_mode_support: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether DNS support is enabled. Valid values: `disable`, `enable`. Default value: `enable`.
         #[builder(into, default)]
-        pub dns_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dns_support: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether IPv6 support is enabled. Valid values: `disable`, `enable`. Default value: `disable`.
         #[builder(into, default)]
-        pub ipv6_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv6_support: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether Security Group Referencing Support is enabled. Valid values: `disable`, `enable`.
         #[builder(into, default)]
-        pub security_group_referencing_support: pulumi_gestalt_rust::InputOrOutput<
+        pub security_group_referencing_support: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Identifiers of EC2 Subnets.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Key-value tags for the EC2 Transit Gateway VPC Attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Boolean whether the VPC Attachment should be associated with the EC2 Transit Gateway association default route table. This cannot be configured or perform drift detection with Resource Access Manager shared EC2 Transit Gateways. Default value: `true`.
         #[builder(into, default)]
-        pub transit_gateway_default_route_table_association: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_default_route_table_association: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Boolean whether the VPC Attachment should propagate routes with the EC2 Transit Gateway propagation default route table. This cannot be configured or perform drift detection with Resource Access Manager shared EC2 Transit Gateways. Default value: `true`.
         #[builder(into, default)]
-        pub transit_gateway_default_route_table_propagation: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_default_route_table_propagation: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Identifier of EC2 Transit Gateway.
         #[builder(into)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 VPC.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcAttachmentResult {

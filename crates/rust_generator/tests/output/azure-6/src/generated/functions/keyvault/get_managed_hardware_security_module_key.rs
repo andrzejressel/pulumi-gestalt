@@ -12,10 +12,10 @@ pub mod get_managed_hardware_security_module_key {
         ///
         /// **NOTE:** The Managed Hardware Security Module must be in the same subscription as the provider. If the Managed Hardware Security Module is in another subscription, you must create an aliased provider for that subscription.
         #[builder(into)]
-        pub managed_hsm_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_hsm_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Managed Hardware Security Module Key.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetManagedHardwareSecurityModuleKeyResult {

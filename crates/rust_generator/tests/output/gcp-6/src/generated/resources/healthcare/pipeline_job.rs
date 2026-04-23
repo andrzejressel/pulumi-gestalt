@@ -294,7 +294,7 @@ pub mod pipeline_job {
         /// Specifies the backfill configuration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub backfill_pipeline_job: pulumi_gestalt_rust::InputOrOutput<
+        pub backfill_pipeline_job: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::PipelineJobBackfillPipelineJob>,
         >,
         /// Healthcare Dataset under which the Pipeline Job is to run
@@ -302,10 +302,10 @@ pub mod pipeline_job {
         ///
         /// - - -
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset: pulumi_gestalt_rust::Input<String>,
         /// If true, disables writing lineage for the pipeline.
         #[builder(into, default)]
-        pub disable_lineage: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_lineage: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User-supplied key-value pairs used to organize Pipeline Jobs.
         /// Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of
         /// maximum 128 bytes, and must conform to the following PCRE regular expression:
@@ -320,25 +320,25 @@ pub mod pipeline_job {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location where the Pipeline Job is to run
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Specifies mapping configuration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub mapping_pipeline_job: pulumi_gestalt_rust::InputOrOutput<
+        pub mapping_pipeline_job: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::PipelineJobMappingPipelineJob>,
         >,
         /// Specifies the name of the pipeline job. This field is user-assigned.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies reconciliation configuration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub reconciliation_pipeline_job: pulumi_gestalt_rust::InputOrOutput<
+        pub reconciliation_pipeline_job: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::PipelineJobReconciliationPipelineJob>,
         >,
     }

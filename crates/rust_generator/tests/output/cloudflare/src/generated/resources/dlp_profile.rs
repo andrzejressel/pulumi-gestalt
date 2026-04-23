@@ -81,32 +81,30 @@ pub mod dlp_profile {
     pub struct DlpProfileArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Related DLP policies will trigger when the match count exceeds the number set.
         #[builder(into)]
-        pub allowed_match_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub allowed_match_count: pulumi_gestalt_rust::Input<i32>,
         /// Scan the context of predefined entries to only return matches surrounded by keywords.
         #[builder(into, default)]
-        pub context_awareness: pulumi_gestalt_rust::InputOrOutput<
+        pub context_awareness: pulumi_gestalt_rust::Input<
             Option<super::types::DlpProfileContextAwareness>,
         >,
         /// Brief summary of the profile and its intended use.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of entries to apply to the profile.
         #[builder(into)]
-        pub entries: pulumi_gestalt_rust::InputOrOutput<
-            Vec<super::types::DlpProfileEntry>,
-        >,
+        pub entries: pulumi_gestalt_rust::Input<Vec<super::types::DlpProfileEntry>>,
         /// Name of the profile. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// If true, scan images via OCR to determine if any text present matches filters.
         #[builder(into, default)]
-        pub ocr_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ocr_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The type of the profile. Available values: `custom`, `predefined`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DlpProfileResult {

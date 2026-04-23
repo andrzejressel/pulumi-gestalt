@@ -50,20 +50,20 @@ pub mod iam_binding {
     #[allow(dead_code)]
     pub struct IAMBindingArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::organizations::IamBindingCondition>,
         >,
         /// A list of users that the role should apply to. For more details on format and restrictions see https://cloud.google.com/billing/reference/rest/v1/Policy#Binding
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The numeric ID of the organization in which you want to create a custom role.
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// The role that should be applied. Only one
         /// `gcp.organizations.IAMBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IAMBindingResult {

@@ -10,10 +10,10 @@ pub mod get_resource {
     pub struct GetResourceArgs {
         /// Full path of the resource.  If no path is found, an error will be returned.
         #[builder(into)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub path: pulumi_gestalt_rust::Input<String>,
         /// REST API id that owns the resource. If no REST API is found, an error will be returned.
         #[builder(into)]
-        pub rest_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResourceResult {

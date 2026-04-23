@@ -97,36 +97,36 @@ pub mod alert_prometheus_rule_group {
     pub struct AlertPrometheusRuleGroupArgs {
         /// Specifies the name of the Managed Kubernetes Cluster.
         #[builder(into, default)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the Alert Management Prometheus Rule Group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the interval in which to run the Alert Management Prometheus Rule Group represented in ISO 8601 duration format. Possible values are between `PT1M` and `PT15M`.
         #[builder(into, default)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub interval: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Azure Region where the Alert Management Prometheus Rule Group should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Alert Management Prometheus Rule Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Alert Management Prometheus Rule Group should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Is this Alert Management Prometheus Rule Group enabled? Possible values are `true` and `false`.
         #[builder(into, default)]
-        pub rule_group_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub rule_group_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `rule` blocks as defined below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::monitoring::AlertPrometheusRuleGroupRule>,
         >,
         /// Specifies the resource ID of the Azure Monitor Workspace.
         #[builder(into)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub scopes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A mapping of tags to assign to the Alert Management Prometheus Rule Group.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

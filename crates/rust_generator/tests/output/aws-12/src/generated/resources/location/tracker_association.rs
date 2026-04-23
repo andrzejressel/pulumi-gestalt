@@ -44,10 +44,10 @@ pub mod tracker_association {
     pub struct TrackerAssociationArgs {
         /// The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all AWS.
         #[builder(into)]
-        pub consumer_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub consumer_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the tracker resource to be associated with a geofence collection.
         #[builder(into)]
-        pub tracker_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tracker_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TrackerAssociationResult {

@@ -10,10 +10,10 @@ pub mod get_availability_set {
     pub struct GetAvailabilitySetArgs {
         /// The name of the Availability Set.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Availability Set exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAvailabilitySetResult {

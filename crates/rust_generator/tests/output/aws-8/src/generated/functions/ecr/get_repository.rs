@@ -10,13 +10,13 @@ pub mod get_repository {
     pub struct GetRepositoryArgs {
         /// Name of the ECR Repository.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Registry ID where the repository was created.
         #[builder(into, default)]
-        pub registry_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub registry_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

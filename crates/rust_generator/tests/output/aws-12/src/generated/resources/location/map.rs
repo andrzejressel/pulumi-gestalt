@@ -38,20 +38,20 @@ pub mod map {
     pub struct MapArgs {
         /// Configuration block with the map style selected from an available data provider. Detailed below.
         #[builder(into)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             super::super::types::location::MapConfiguration,
         >,
         /// An optional description for the map resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the map resource.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub map_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub map_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the map. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

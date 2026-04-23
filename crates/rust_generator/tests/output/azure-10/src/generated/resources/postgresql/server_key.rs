@@ -121,10 +121,10 @@ pub mod server_key {
     pub struct ServerKeyArgs {
         /// The URL to a Key Vault Key.
         #[builder(into)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the PostgreSQL Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServerKeyResult {

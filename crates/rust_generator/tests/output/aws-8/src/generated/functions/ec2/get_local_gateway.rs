@@ -10,23 +10,23 @@ pub mod get_local_gateway {
     pub struct GetLocalGatewayArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetLocalGatewayFilter>>,
         >,
         /// Id of the specific Local Gateway to retrieve.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Current state of the desired Local Gateway.
         /// Can be either `"pending"` or `"available"`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mapping of tags, each pair of which must exactly match
         /// a pair on the desired Local Gateway.
         ///
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

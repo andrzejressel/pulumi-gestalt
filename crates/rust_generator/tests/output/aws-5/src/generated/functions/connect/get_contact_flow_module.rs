@@ -10,16 +10,16 @@ pub mod get_contact_flow_module {
     pub struct GetContactFlowModuleArgs {
         /// Returns information on a specific Contact Flow Module by contact flow module id
         #[builder(into, default)]
-        pub contact_flow_module_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub contact_flow_module_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Returns information on a specific Contact Flow Module by name
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the Contact Flow Module.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

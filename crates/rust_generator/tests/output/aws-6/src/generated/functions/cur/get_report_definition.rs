@@ -10,10 +10,10 @@ pub mod get_report_definition {
     pub struct GetReportDefinitionArgs {
         /// Name of the report definition to match.
         #[builder(into)]
-        pub report_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub report_name: pulumi_gestalt_rust::Input<String>,
         /// Map of key-value pairs assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

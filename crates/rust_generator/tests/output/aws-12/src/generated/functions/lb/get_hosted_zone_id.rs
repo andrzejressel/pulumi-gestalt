@@ -10,11 +10,11 @@ pub mod get_hosted_zone_id {
     pub struct GetHostedZoneIdArgs {
         /// Type of load balancer to create. Possible values are `application` or `network`. The default value is `application`.
         #[builder(into, default)]
-        pub load_balancer_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub load_balancer_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the region whose AWS ELB HostedZoneId is desired.
         /// Defaults to the region from the AWS provider configuration.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetHostedZoneIdResult {

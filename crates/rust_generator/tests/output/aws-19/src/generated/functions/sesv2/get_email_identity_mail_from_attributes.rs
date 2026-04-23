@@ -10,7 +10,7 @@ pub mod get_email_identity_mail_from_attributes {
     pub struct GetEmailIdentityMailFromAttributesArgs {
         /// The name of the email identity.
         #[builder(into)]
-        pub email_identity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_identity: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEmailIdentityMailFromAttributesResult {

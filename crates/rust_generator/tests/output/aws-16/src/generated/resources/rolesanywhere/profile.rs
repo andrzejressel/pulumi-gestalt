@@ -49,30 +49,28 @@ pub mod profile {
     pub struct ProfileArgs {
         /// The number of seconds the vended session credentials are valid for. Defaults to 3600.
         #[builder(into, default)]
-        pub duration_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub duration_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether or not the Profile is enabled.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of managed policy ARNs that apply to the vended session credentials.
         #[builder(into, default)]
-        pub managed_policy_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub managed_policy_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the Profile.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether instance properties are required in [CreateSession](https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html) requests with this profile.
         #[builder(into, default)]
-        pub require_instance_properties: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub require_instance_properties: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of IAM roles that this profile can assume
         #[builder(into, default)]
-        pub role_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub role_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A session policy that applies to the trust boundary of the vended session credentials.
         #[builder(into, default)]
-        pub session_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub session_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

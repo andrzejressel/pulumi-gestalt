@@ -22,21 +22,21 @@ pub mod portal_dashboard {
     pub struct PortalDashboardArgs {
         /// JSON data representing dashboard body. See above for details on how to obtain this from the Portal.
         #[builder(into)]
-        pub dashboard_properties: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dashboard_properties: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Shared Dashboard. Changing this forces a new resource to be created.
         ///
         /// > **Note**: You can specify a tag with the key `hidden-title` to set a more user-friendly title for this Dashboard.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the dashboard. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

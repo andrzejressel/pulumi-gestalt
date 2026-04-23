@@ -56,55 +56,53 @@ pub mod dev_endpoint {
     pub struct DevEndpointArgs {
         /// A map of arguments used to configure the endpoint.
         #[builder(into, default)]
-        pub arguments: pulumi_gestalt_rust::InputOrOutput<
+        pub arguments: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Path to one or more Java Jars in an S3 bucket that should be loaded in this endpoint.
         #[builder(into, default)]
-        pub extra_jars_s3_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub extra_jars_s3_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Path(s) to one or more Python libraries in an S3 bucket that should be loaded in this endpoint. Multiple values must be complete paths separated by a comma.
         #[builder(into, default)]
-        pub extra_python_libs_s3_path: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub extra_python_libs_s3_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the versions of Python and Apache Spark to use. Defaults to AWS Glue version 0.9.
         #[builder(into, default)]
-        pub glue_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub glue_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of this endpoint. It must be unique in your account.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of AWS Glue Data Processing Units (DPUs) to allocate to this endpoint. Conflicts with `worker_type`.
         #[builder(into, default)]
-        pub number_of_nodes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub number_of_nodes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The number of workers of a defined worker type that are allocated to this endpoint. This field is available only when you choose worker type G.1X or G.2X.
         #[builder(into, default)]
-        pub number_of_workers: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub number_of_workers: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The public key to be used by this endpoint for authentication.
         #[builder(into, default)]
-        pub public_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of public keys to be used by this endpoint for authentication.
         #[builder(into, default)]
-        pub public_keys: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub public_keys: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The IAM role for this endpoint.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the Security Configuration structure to be used with this endpoint.
         #[builder(into, default)]
-        pub security_configuration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_configuration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Security group IDs for the security groups to be used by this endpoint.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The subnet ID for the new endpoint to use.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of predefined worker that is allocated to this endpoint. Accepts a value of Standard, G.1X, or G.2X.
         #[builder(into, default)]
-        pub worker_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub worker_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DevEndpointResult {

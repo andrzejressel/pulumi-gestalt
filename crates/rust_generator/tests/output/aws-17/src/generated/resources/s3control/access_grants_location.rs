@@ -42,17 +42,17 @@ pub mod access_grants_location {
     #[allow(dead_code)]
     pub struct AccessGrantsLocationArgs {
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the IAM role that S3 Access Grants should use when fulfilling runtime access
         /// requests to the location.
         #[builder(into)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<String>,
         /// The default S3 URI `s3://` or the URI to a custom location, a specific bucket or prefix.
         #[builder(into)]
-        pub location_scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location_scope: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

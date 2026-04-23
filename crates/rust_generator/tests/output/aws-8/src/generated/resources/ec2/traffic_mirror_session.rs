@@ -55,30 +55,30 @@ pub mod traffic_mirror_session {
     pub struct TrafficMirrorSessionArgs {
         /// A description of the traffic mirror session.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the source network interface. Not all network interfaces are eligible as mirror sources. On EC2 instances only nitro based instances support mirroring.
         #[builder(into)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<String>,
         /// The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror.
         #[builder(into, default)]
-        pub packet_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub packet_length: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.
         #[builder(into)]
-        pub session_number: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub session_number: pulumi_gestalt_rust::Input<i32>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the traffic mirror filter to be used
         #[builder(into)]
-        pub traffic_mirror_filter_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub traffic_mirror_filter_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the traffic mirror target to be used
         #[builder(into)]
-        pub traffic_mirror_target_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub traffic_mirror_target_id: pulumi_gestalt_rust::Input<String>,
         /// The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, see RFC 7348. If you do not specify a VirtualNetworkId, an account-wide unique id is chosen at random.
         #[builder(into, default)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct TrafficMirrorSessionResult {

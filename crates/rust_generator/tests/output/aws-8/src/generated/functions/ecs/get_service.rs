@@ -10,13 +10,13 @@ pub mod get_service {
     pub struct GetServiceArgs {
         /// ARN of the ECS Cluster
         #[builder(into)]
-        pub cluster_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_arn: pulumi_gestalt_rust::Input<String>,
         /// Name of the ECS Service
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
         /// Resource tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

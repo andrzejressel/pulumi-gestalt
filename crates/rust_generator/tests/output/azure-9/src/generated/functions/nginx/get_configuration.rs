@@ -10,7 +10,7 @@ pub mod get_configuration {
     pub struct GetConfigurationArgs {
         /// The ID of the Nginx Deployment.
         #[builder(into)]
-        pub nginx_deployment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub nginx_deployment_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetConfigurationResult {

@@ -67,21 +67,21 @@ pub mod bucket_intelligent_tiering_configuration {
     pub struct BucketIntelligentTieringConfigurationArgs {
         /// Name of the bucket this intelligent tiering configuration is associated with.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Bucket filter. The configuration only includes objects that meet the filter's criteria (documented below).
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketIntelligentTieringConfigurationFilter>,
         >,
         /// Unique name used to identify the S3 Intelligent-Tiering configuration for the bucket.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the status of the configuration. Valid values: `Enabled`, `Disabled`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// S3 Intelligent-Tiering storage class tiers of the configuration (documented below).
         #[builder(into)]
-        pub tierings: pulumi_gestalt_rust::InputOrOutput<
+        pub tierings: pulumi_gestalt_rust::Input<
             Vec<super::super::types::s3::BucketIntelligentTieringConfigurationTiering>,
         >,
     }

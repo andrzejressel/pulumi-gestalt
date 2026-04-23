@@ -143,22 +143,22 @@ pub mod cx_test_case {
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Additional freeform notes about the test case. Limit of 400 characters.
         #[builder(into, default)]
-        pub notes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notes: pulumi_gestalt_rust::Input<Option<String>>,
         /// The agent to create the test case for.
         /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags are short descriptions that users may apply to test cases for organizational and filtering purposes.
         /// Each tag should start with "#" and has a limit of 30 characters
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The conversation turns uttered when the test case was created, in chronological order. These include the canonical set of agent utterances that should occur when the agent is working properly.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub test_case_conversation_turns: pulumi_gestalt_rust::InputOrOutput<
+        pub test_case_conversation_turns: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::diagflow::CxTestCaseTestCaseConversationTurn>,
             >,
@@ -166,7 +166,7 @@ pub mod cx_test_case {
         /// Config for the test case.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub test_config: pulumi_gestalt_rust::InputOrOutput<
+        pub test_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::CxTestCaseTestConfig>,
         >,
     }

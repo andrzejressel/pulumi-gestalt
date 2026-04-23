@@ -34,26 +34,26 @@ pub mod v_2_models_bot_version {
     pub struct V2modelsBotVersionArgs {
         /// Idientifier of the bot to create the version for.
         #[builder(into)]
-        pub bot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_id: pulumi_gestalt_rust::Input<String>,
         /// Version number assigned to the version.
         #[builder(into, default)]
-        pub bot_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bot_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description of the version. Use the description to help identify the version in lists.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the locales that Amazon Lex adds to this version. You can choose the draft version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.
         ///
         /// The attribute value is a map with one or more entries, each of which has a locale name as the key and an object with the following attribute as the value:
         /// * `sourceBotVersion` - (Required) The version of a bot used for a bot locale. Valid values: `DRAFT`, a numeric version.
         #[builder(into)]
-        pub locale_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub locale_specification: pulumi_gestalt_rust::Input<
             std::collections::HashMap<
                 String,
                 super::super::types::lex::V2ModelsBotVersionLocaleSpecification,
             >,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsBotVersionTimeouts>,
         >,
     }

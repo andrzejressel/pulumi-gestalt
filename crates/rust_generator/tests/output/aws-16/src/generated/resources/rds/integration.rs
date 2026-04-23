@@ -107,30 +107,30 @@ pub mod integration {
     pub struct IntegrationArgs {
         /// Set of non-secret key–value pairs that contains additional contextual information about the data. For more information, see the [User Guide](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context). You can only include this parameter if you specify the `kms_key_id` parameter.
         #[builder(into, default)]
-        pub additional_encryption_context: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_encryption_context: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the integration.
         #[builder(into)]
-        pub integration_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_name: pulumi_gestalt_rust::Input<String>,
         /// KMS key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default AWS owned key. If you use the default AWS owned key, you should ignore `kms_key_id` parameter by using `lifecycle` parameter to avoid unintended change after the first creation.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the database to use as the source for replication.
         #[builder(into)]
-        pub source_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ARN of the Redshift data warehouse to use as the target for replication.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_arn: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::IntegrationTimeouts>,
         >,
     }

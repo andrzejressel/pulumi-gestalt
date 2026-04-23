@@ -75,19 +75,19 @@ pub mod folder_settings {
     pub struct FolderSettingsArgs {
         /// If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.
         #[builder(into, default)]
-        pub disable_default_sink: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_default_sink: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The folder for which to retrieve settings.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
         /// The resource name for the configured Cloud KMS key.
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The storage location that Cloud Logging will use to create new resources when a location is needed but not explicitly provided.
         #[builder(into, default)]
-        pub storage_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_location: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FolderSettingsResult {

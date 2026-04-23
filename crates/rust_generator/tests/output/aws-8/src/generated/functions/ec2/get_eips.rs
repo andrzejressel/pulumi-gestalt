@@ -10,12 +10,12 @@ pub mod get_eips {
     pub struct GetEipsArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetEipsFilter>>,
         >,
         /// Map of tags, each pair of which must exactly match a pair on the desired Elastic IPs.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

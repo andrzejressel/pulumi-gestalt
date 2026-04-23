@@ -10,10 +10,10 @@ pub mod get_sites {
     pub struct GetSitesArgs {
         /// ID of the Global Network of the sites to retrieve.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// Restricts the list to the sites with these tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

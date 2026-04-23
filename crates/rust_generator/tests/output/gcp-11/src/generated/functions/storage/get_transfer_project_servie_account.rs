@@ -10,7 +10,7 @@ pub mod get_transfer_project_servie_account {
     pub struct GetTransferProjectServieAccountArgs {
         /// The project ID. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetTransferProjectServieAccountResult {

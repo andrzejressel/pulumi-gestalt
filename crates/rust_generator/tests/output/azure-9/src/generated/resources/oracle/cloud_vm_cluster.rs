@@ -23,92 +23,92 @@ pub mod cloud_vm_cluster {
     pub struct CloudVmClusterArgs {
         /// The backup subnet CIDR of the Virtual Network associated with the Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub backup_subnet_cidr: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub backup_subnet_cidr: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub cloud_exadata_infrastructure_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cloud_exadata_infrastructure_id: pulumi_gestalt_rust::Input<String>,
         /// The cluster name for Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of CPU cores enabled on the Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub cpu_core_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub cpu_core_count: pulumi_gestalt_rust::Input<i32>,
         /// A `data_collection_options` block as defined below. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub data_collection_options: pulumi_gestalt_rust::InputOrOutput<
+        pub data_collection_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::oracle::CloudVmClusterDataCollectionOptions>,
         >,
         /// The percentage assigned to DATA storage (user data and database files). Changing this forces a new Cloud VM Cluster to be created. The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are `35`, `40`, `60` and `80`.
         #[builder(into, default)]
-        pub data_storage_percentage: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub data_storage_percentage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The data disk group size to be allocated in TBs. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub data_storage_size_in_tbs: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub data_storage_size_in_tbs: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The local node storage to be allocated in GBs. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub db_node_storage_size_in_gbs: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub db_node_storage_size_in_gbs: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The list of DB servers. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub db_servers: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub db_servers: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The user-friendly name for the Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created. The name does not need to be unique.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the OCI Private DNS Zone to be associated with the Cloud VM Cluster. This is required for specifying your own private domain name. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valid Oracle Grid Infrastructure (GI) software version. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub gi_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gi_version: pulumi_gestalt_rust::Input<String>,
         /// The hostname for the Cloud VM Cluster without suffix. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// The Oracle license model that applies to the Cloud VM Cluster, either `BringYourOwnLicense` or `LicenseIncluded`. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub license_model: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub license_model: pulumi_gestalt_rust::Input<String>,
         /// If true, database backup on local Exadata storage is configured for the Cloud VM Cluster. If `false`, database backup on local Exadata storage is not available in the Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub local_backup_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_backup_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure Region where the Cloud VM Cluster should exist. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The memory to be allocated in GBs. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub memory_size_in_gbs: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub memory_size_in_gbs: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name which should be used for this Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Cloud VM Cluster should exist. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The TCP Single Client Access Name (SCAN) port. The default port to 1521. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub scan_listener_port_tcp: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub scan_listener_port_tcp: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The TCPS Single Client Access Name (SCAN) port. The default port to 2484. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub scan_listener_port_tcp_ssl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub scan_listener_port_tcp_ssl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// If true, the sparse disk group is configured for the Cloud VM Cluster. If `false`, the sparse disk group is not created. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub sparse_diskgroup_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sparse_diskgroup_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The public key portion of one or more key pairs used for SSH access to the Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub ssh_public_keys: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub ssh_public_keys: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ID of the subnet associated with the Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Cloud VM Cluster.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The time zone of the Cloud VM Cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Virtual Network associated with the Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<String>,
         /// The OCID of the OCI Private DNS Zone to be associated with the Cloud VM Cluster. This is required for specifying your own private domain name. Changing this forces a new Cloud VM Cluster to be created.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CloudVmClusterResult {

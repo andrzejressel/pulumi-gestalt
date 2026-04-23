@@ -138,52 +138,46 @@ pub mod plan {
         ///
         /// > **NOTE:** Attaching to an App Service Environment requires the App Service Plan use a `Premium` SKU (when using an ASEv1) and the `Isolated` SKU (for an ASEv2).
         #[builder(into, default)]
-        pub app_service_environment_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub app_service_environment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to create a xenon App Service Plan.
         #[builder(into, default)]
-        pub is_xenon: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_xenon: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The kind of the App Service Plan to create. Possible values are `Windows` (also available as `App`), `Linux`, `elastic` (for Premium Consumption), `xenon` and `FunctionApp` (for a Consumption Plan). Defaults to `Windows`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** When creating a `Linux` App Service Plan, the `reserved` field must be set to `true`, and when creating a `Windows`/`app` App Service Plan the `reserved` field must be set to `false`.
         #[builder(into, default)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
         #[builder(into, default)]
-        pub maximum_elastic_worker_count: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub maximum_elastic_worker_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the App Service Plan component. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Can Apps assigned to this App Service Plan be scaled independently? If set to `false` apps assigned to this plan will scale to all instances of the plan.
         #[builder(into, default)]
-        pub per_site_scaling: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub per_site_scaling: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is this App Service Plan `Reserved`.
         #[builder(into, default)]
-        pub reserved: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub reserved: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the App Service Plan component. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as documented below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
-            super::super::types::appservice::PlanSku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::appservice::PlanSku>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies if the App Service Plan should be Zone Redundant. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Requires either `PremiumV2` or `PremiumV3` SKU and that at least 3 instances. For more information, please see the [App Service Team Blog](https://azure.github.io/AppService/2021/08/25/App-service-support-for-availability-zones.html).
         #[builder(into, default)]
-        pub zone_redundant: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_redundant: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct PlanResult {

@@ -10,26 +10,26 @@ pub mod get_shared_image_version {
     pub struct GetSharedImageVersionArgs {
         /// The name of the Shared Image Gallery in which the Shared Image exists.
         #[builder(into)]
-        pub gallery_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gallery_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Shared Image in which this Version exists.
         #[builder(into)]
-        pub image_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Image Version.
         ///
         /// > **Note:** You may specify `latest` to obtain the latest version or `recent` to obtain the most recently updated version.
         ///
         /// > **Note:** In 3.0, `latest` may return an image version with `exclude_from_latest` set to `true`. Starting from 4.0 onwards `latest` will not return image versions with `exlude_from_latest` set to `true`.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Shared Image Gallery exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Sort available versions taking SemVer versioning scheme into account. Defaults to `false`.
         #[builder(into, default)]
-        pub sort_versions_by_semver: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sort_versions_by_semver: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags assigned to the Shared Image.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

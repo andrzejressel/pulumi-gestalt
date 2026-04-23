@@ -129,40 +129,40 @@ pub mod scaling_plan {
     pub struct ScalingPlanArgs {
         /// A description of the Scaling Plan.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the tag associated with the VMs you want to exclude from autoscaling.
         #[builder(into, default)]
-        pub exclusion_tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub exclusion_tag: pulumi_gestalt_rust::Input<Option<String>>,
         /// Friendly name of the Scaling Plan.
         #[builder(into, default)]
-        pub friendly_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub friendly_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `host_pool` blocks as defined below.
         #[builder(into, default)]
-        pub host_pools: pulumi_gestalt_rust::InputOrOutput<
+        pub host_pools: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::desktopvirtualization::ScalingPlanHostPool>>,
         >,
         /// The Azure Region where the Virtual Desktop Scaling Plan should exist. Changing this forces a new Virtual Desktop Scaling Plan to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Virtual Desktop Scaling Plan . Changing this forces a new Virtual Desktop Scaling Plan to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Virtual Desktop Scaling Plan should exist. Changing this forces a new Virtual Desktop Scaling Plan to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `schedule` blocks as defined below.
         #[builder(into)]
-        pub schedules: pulumi_gestalt_rust::InputOrOutput<
+        pub schedules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::desktopvirtualization::ScalingPlanSchedule>,
         >,
         /// A mapping of tags which should be assigned to the Virtual Desktop Scaling Plan .
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Time Zone which should be used by the Scaling Plan for time based events, [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
         #[builder(into)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub time_zone: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ScalingPlanResult {

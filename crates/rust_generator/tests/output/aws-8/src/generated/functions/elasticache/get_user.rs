@@ -10,25 +10,25 @@ pub mod get_user {
     pub struct GetUserArgs {
         /// String for what access a user possesses within the associated ElastiCache replication groups or clusters.
         #[builder(into, default)]
-        pub access_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_string: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub authentication_modes: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication_modes: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::elasticache::GetUserAuthenticationMode>,
             >,
         >,
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub no_password_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub no_password_required: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub passwords: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub passwords: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Identifier for the user.
         #[builder(into)]
-        pub user_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_id: pulumi_gestalt_rust::Input<String>,
         /// User name of the user.
         #[builder(into, default)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetUserResult {

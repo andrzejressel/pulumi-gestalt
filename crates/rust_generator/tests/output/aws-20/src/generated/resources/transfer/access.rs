@@ -64,32 +64,32 @@ pub mod access {
     pub struct AccessArgs {
         /// The SID of a group in the directory connected to the Transfer Server (e.g., `S-1-1-12-1234567890-123456789-1234567890-1234`)
         #[builder(into)]
-        pub external_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub external_id: pulumi_gestalt_rust::Input<String>,
         /// The landing directory (folder) for a user when they log in to the server using their SFTP client.  It should begin with a `/`.  The first item in the path is the name of the home bucket (accessible as `${Transfer:HomeBucket}` in the policy) and the rest is the home directory (accessible as `${Transfer:HomeDirectory}` in the policy). For example, `/example-bucket-1234/username` would set the home bucket to `example-bucket-1234` and the home directory to `username`.
         #[builder(into, default)]
-        pub home_directory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub home_directory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See Home Directory Mappings below.
         #[builder(into, default)]
-        pub home_directory_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub home_directory_mappings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::transfer::AccessHomeDirectoryMapping>>,
         >,
         /// The type of landing directory (folder) you mapped for your users' home directory. Valid values are `PATH` and `LOGICAL`.
         #[builder(into, default)]
-        pub home_directory_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub home_directory_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// An IAM JSON policy document that scopes down user access to portions of their Amazon S3 bucket. IAM variables you can use inside this policy include `${Transfer:UserName}`, `${Transfer:HomeDirectory}`, and `${Transfer:HomeBucket}`. These are evaluated on-the-fly when navigating the bucket.
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the full POSIX identity, including user ID (Uid), group ID (Gid), and any secondary groups IDs (SecondaryGids), that controls your users' access to your Amazon EFS file systems. See Posix Profile below.
         #[builder(into, default)]
-        pub posix_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub posix_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::transfer::AccessPosixProfile>,
         >,
         /// Amazon Resource Name (ARN) of an IAM role that allows the service to controls your user’s access to your Amazon S3 bucket.
         #[builder(into, default)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Server ID of the Transfer Server (e.g., `s-12345678`)
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessResult {

@@ -65,26 +65,26 @@ pub mod fulfillment {
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Whether fulfillment is enabled.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The field defines whether the fulfillment is enabled for certain features.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub features: pulumi_gestalt_rust::InputOrOutput<
+        pub features: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::diagflow::FulfillmentFeature>>,
         >,
         /// Represents configuration for a generic web service. Dialogflow supports two mechanisms for authentications: - Basic authentication with username and password. - Authentication with additional authentication headers.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub generic_web_service: pulumi_gestalt_rust::InputOrOutput<
+        pub generic_web_service: pulumi_gestalt_rust::Input<
             Option<super::super::types::diagflow::FulfillmentGenericWebService>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FulfillmentResult {

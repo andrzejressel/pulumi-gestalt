@@ -57,11 +57,11 @@ pub mod ip_group_cidr {
     #[allow(dead_code)]
     pub struct IPGroupCIDRArgs {
         #[builder(into)]
-        pub cidr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cidr: pulumi_gestalt_rust::Input<String>,
         /// The ID of the destination IP Group.
         /// Changing this forces a new IP Group CIDR to be created.
         #[builder(into)]
-        pub ip_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IPGroupCIDRResult {

@@ -38,10 +38,10 @@ pub mod setting {
     pub struct SettingArgs {
         /// Boolean flag to enable/disable data access.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The setting to manage. Possible values are `MCAS` , `WDATP`, `WDATP_EXCLUDE_LINUX_PUBLIC_PREVIEW`, `WDATP_UNIFIED_SOLUTION` and `Sentinel`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub setting_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub setting_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SettingResult {

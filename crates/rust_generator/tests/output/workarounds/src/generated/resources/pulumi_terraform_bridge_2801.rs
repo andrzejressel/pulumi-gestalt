@@ -12,7 +12,7 @@ pub mod pulumi_terraform_bridge_2801 {
         ///
         /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PulumiTerraformBridge2801Result {

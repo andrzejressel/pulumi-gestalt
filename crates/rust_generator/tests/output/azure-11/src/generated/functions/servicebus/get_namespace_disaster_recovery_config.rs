@@ -9,17 +9,15 @@ pub mod get_namespace_disaster_recovery_config {
     #[allow(dead_code)]
     pub struct GetNamespaceDisasterRecoveryConfigArgs {
         #[builder(into, default)]
-        pub alias_authorization_rule_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub alias_authorization_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetNamespaceDisasterRecoveryConfigResult {

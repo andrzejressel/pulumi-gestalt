@@ -53,7 +53,7 @@ pub mod resource_share_accepter {
     pub struct ResourceShareAccepterArgs {
         /// The ARN of the resource share.
         #[builder(into)]
-        pub share_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub share_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourceShareAccepterResult {

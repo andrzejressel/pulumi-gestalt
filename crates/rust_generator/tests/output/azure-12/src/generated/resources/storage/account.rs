@@ -92,187 +92,173 @@ pub mod account {
     pub struct AccountArgs {
         /// Defines the access tier for `BlobStorage`, `FileStorage` and `StorageV2` accounts. Valid options are `Hot` and `Cool`, defaults to `Hot`.
         #[builder(into, default)]
-        pub access_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the Kind of account. Valid options are `BlobStorage`, `BlockBlobStorage`, `FileStorage`, `Storage` and `StorageV2`. Defaults to `StorageV2`.
         ///
         /// > **Note:** Changing the `account_kind` value from `Storage` to `StorageV2` will not trigger a force new on the storage account, it will only upgrade the existing storage account from `Storage` to `StorageV2` keeping the existing storage account in place.
         #[builder(into, default)]
-        pub account_kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the type of replication to use for this storage account. Valid options are `LRS`, `GRS`, `RAGRS`, `ZRS`, `GZRS` and `RAGZRS`. Changing this forces a new resource to be created when types `LRS`, `GRS` and `RAGRS` are changed to `ZRS`, `GZRS` or `RAGZRS` and vice versa.
         #[builder(into)]
-        pub account_replication_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_replication_type: pulumi_gestalt_rust::Input<String>,
         /// Defines the Tier to use for this storage account. Valid options are `Standard` and `Premium`. For `BlockBlobStorage` and `FileStorage` accounts only `Premium` is valid. Changing this forces a new resource to be created.
         ///
         /// > **Note:** Blobs with a tier of `Premium` are of account kind `StorageV2`.
         #[builder(into)]
-        pub account_tier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_tier: pulumi_gestalt_rust::Input<String>,
         /// Allow or disallow nested items within this Account to opt into being public. Defaults to `true`.
         ///
         /// > **Note:** At this time `allow_nested_items_to_be_public` is only supported in the Public Cloud, China Cloud, and US Government Cloud.
         #[builder(into, default)]
-        pub allow_nested_items_to_be_public: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub allow_nested_items_to_be_public: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet. Possible values are `AAD` and `PrivateLink`.
         #[builder(into, default)]
-        pub allowed_copy_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub allowed_copy_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `azure_files_authentication` block as defined below.
         #[builder(into, default)]
-        pub azure_files_authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_files_authentication: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountAzureFilesAuthentication>,
         >,
         /// A `blob_properties` block as defined below.
         #[builder(into, default)]
-        pub blob_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub blob_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountBlobProperties>,
         >,
         /// Should cross Tenant replication be enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub cross_tenant_replication_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub cross_tenant_replication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `custom_domain` block as documented below.
         #[builder(into, default)]
-        pub custom_domain: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_domain: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountCustomDomain>,
         >,
         /// A `customer_managed_key` block as documented below.
         ///
         /// > **Note:** It's possible to define a Customer Managed Key both within either the `customer_managed_key` block or by using the `azure.storage.CustomerManagedKey` resource. However, it's not possible to use both methods to manage a Customer Managed Key for a Storage Account, since these will conflict. When using the `azure.storage.CustomerManagedKey` resource, you will need to use `ignore_changes` on the `customer_managed_key` block.
         #[builder(into, default)]
-        pub customer_managed_key: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountCustomerManagedKey>,
         >,
         /// Default to Azure Active Directory authorization in the Azure portal when accessing the Storage Account. The default value is `false`
         #[builder(into, default)]
-        pub default_to_oauth_authentication: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub default_to_oauth_authentication: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies which DNS endpoint type to use. Possible values are `Standard` and `AzureDnsZone`. Defaults to `Standard`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** Azure DNS zone support requires `PartitionedDns` feature to be enabled. To enable this feature for your subscription, use the following command: `az feature register --namespace "Microsoft.Storage" --name "PartitionedDns"`.
         #[builder(into, default)]
-        pub dns_endpoint_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dns_endpoint_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Edge Zone within the Azure Region where this Storage Account should exist. Changing this forces a new Storage Account to be created.
         #[builder(into, default)]
-        pub edge_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edge_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean flag which forces HTTPS if enabled, see [here](https://docs.microsoft.com/azure/storage/storage-require-secure-transfer/) for more information. Defaults to `true`.
         #[builder(into, default)]
-        pub https_traffic_only_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_traffic_only_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountIdentity>,
         >,
         /// An `immutability_policy` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub immutability_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub immutability_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountImmutabilityPolicy>,
         >,
         /// Is infrastructure encryption enabled? Changing this forces a new resource to be created. Defaults to `false`.
         ///
         /// > **Note:** This can only be `true` when `account_kind` is `StorageV2` or when `account_tier` is `Premium` *and* `account_kind` is one of `BlockBlobStorage` or `FileStorage`.
         #[builder(into, default)]
-        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub infrastructure_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Hierarchical Namespace enabled? This can be used with Azure Data Lake Storage Gen 2 ([see here for more information](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-account/)). Changing this forces a new resource to be created.
         ///
         /// > **Note:** This can only be `true` when `account_tier` is `Standard` or when `account_tier` is `Premium` *and* `account_kind` is `BlockBlobStorage`
         #[builder(into, default)]
-        pub is_hns_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_hns_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Are Large File Shares Enabled? Defaults to `false`.
         ///
         /// > **Note:** Large File Shares are enabled by default when using an `account_kind` of `FileStorage`.
         #[builder(into, default)]
-        pub large_file_share_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub large_file_share_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Local User Enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub local_user_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_user_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The minimum supported TLS version for the storage account. Possible values are `TLS1_0`, `TLS1_1`, and `TLS1_2`. Defaults to `TLS1_2` for new storage accounts.
         ///
         /// > **Note:** At this time `min_tls_version` is only supported in the Public Cloud, China Cloud, and US Government Cloud.
         #[builder(into, default)]
-        pub min_tls_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub min_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the storage account. Only lowercase Alphanumeric characters allowed. Changing this forces a new resource to be created. This must be unique across the entire Azure service, not just within the resource group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_rules` block as documented below.
         #[builder(into, default)]
-        pub network_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub network_rules: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountNetworkRules>,
         >,
         /// Is NFSv3 protocol enabled? Changing this forces a new resource to be created. Defaults to `false`.
         ///
         /// > **Note:** This can only be `true` when `account_tier` is `Standard` and `account_kind` is `StorageV2`, or `account_tier` is `Premium` and `account_kind` is `BlockBlobStorage`. Additionally, the `is_hns_enabled` is `true` and `account_replication_type` must be `LRS` or `RAGRS`.
         #[builder(into, default)]
-        pub nfsv3_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub nfsv3_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the public network access is enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The encryption type of the queue service. Possible values are `Service` and `Account`. Changing this forces a new resource to be created. Default value is `Service`.
         #[builder(into, default)]
-        pub queue_encryption_key_type: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub queue_encryption_key_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `queue_properties` block as defined below.
         ///
         /// > **Note:** `queue_properties` can only be configured when `account_tier` is set to `Standard` and `account_kind` is set to either `Storage` or `StorageV2`.
         #[builder(into, default)]
-        pub queue_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub queue_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountQueueProperties>,
         >,
         /// The name of the resource group in which to create the storage account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `routing` block as defined below.
         #[builder(into, default)]
-        pub routing: pulumi_gestalt_rust::InputOrOutput<
+        pub routing: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountRouting>,
         >,
         /// A `sas_policy` block as defined below.
         #[builder(into, default)]
-        pub sas_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub sas_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountSasPolicy>,
         >,
         /// Boolean, enable SFTP for the storage account
         ///
         /// > **Note:** SFTP support requires `is_hns_enabled` set to `true`. [More information on SFTP support can be found here](https://learn.microsoft.com/azure/storage/blobs/secure-file-transfer-protocol-support). Defaults to `false`
         #[builder(into, default)]
-        pub sftp_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sftp_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `share_properties` block as defined below.
         ///
         /// > **Note:** `share_properties` can only be configured when either `account_tier` is `Standard` and `account_kind` is either `Storage` or `StorageV2` - or when `account_tier` is `Premium` and `account_kind` is `FileStorage`.
         #[builder(into, default)]
-        pub share_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub share_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountShareProperties>,
         >,
         #[builder(into, default)]
-        pub shared_access_key_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub shared_access_key_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `static_website` block as defined below.
         ///
         /// > **Note:** `static_website` can only be set when the `account_kind` is set to `StorageV2` or `BlockBlobStorage`.
         ///
         /// > **Note:** If `static_website` is specified, the service will automatically create a `azure.storage.Container` named `$web`.
         #[builder(into, default)]
-        pub static_website: pulumi_gestalt_rust::InputOrOutput<
+        pub static_website: pulumi_gestalt_rust::Input<
             Option<super::super::types::storage::AccountStaticWebsite>,
         >,
         /// The encryption type of the table service. Possible values are `Service` and `Account`. Changing this forces a new resource to be created. Default value is `Service`.
         ///
         /// > **Note:** `queue_encryption_key_type` and `table_encryption_key_type` cannot be set to `Account` when `account_kind` is set `Storage`
         #[builder(into, default)]
-        pub table_encryption_key_type: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub table_encryption_key_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

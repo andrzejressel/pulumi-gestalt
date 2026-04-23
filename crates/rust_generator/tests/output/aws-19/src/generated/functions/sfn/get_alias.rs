@@ -10,13 +10,13 @@ pub mod get_alias {
     pub struct GetAliasArgs {
         /// Description of state machine alias.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the State Machine alias.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// ARN of the State Machine.
         #[builder(into)]
-        pub statemachine_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub statemachine_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAliasResult {

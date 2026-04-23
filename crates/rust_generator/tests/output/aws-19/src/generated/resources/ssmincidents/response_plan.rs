@@ -90,28 +90,28 @@ pub mod response_plan {
     #[allow(dead_code)]
     pub struct ResponsePlanArgs {
         #[builder(into, default)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<
+        pub action: pulumi_gestalt_rust::Input<
             Option<super::super::types::ssmincidents::ResponsePlanAction>,
         >,
         #[builder(into, default)]
-        pub chat_channels: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub chat_channels: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub engagements: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub engagements: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into)]
-        pub incident_template: pulumi_gestalt_rust::InputOrOutput<
+        pub incident_template: pulumi_gestalt_rust::Input<
             super::super::types::ssmincidents::ResponsePlanIncidentTemplate,
         >,
         #[builder(into, default)]
-        pub integration: pulumi_gestalt_rust::InputOrOutput<
+        pub integration: pulumi_gestalt_rust::Input<
             Option<super::super::types::ssmincidents::ResponsePlanIntegration>,
         >,
         /// The name of the response plan.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

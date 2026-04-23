@@ -36,13 +36,13 @@ pub mod resolver_rule_association {
     pub struct ResolverRuleAssociationArgs {
         /// A name for the association that you're creating between a resolver rule and a VPC.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the resolver rule that you want to associate with the VPC.
         #[builder(into)]
-        pub resolver_rule_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resolver_rule_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPC that you want to associate the resolver rule with.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResolverRuleAssociationResult {

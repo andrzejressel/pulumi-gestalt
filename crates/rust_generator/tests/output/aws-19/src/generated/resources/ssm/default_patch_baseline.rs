@@ -63,7 +63,7 @@ pub mod default_patch_baseline {
         /// Can be an ID or an ARN.
         /// When specifying an AWS-provided patch baseline, must be the ARN.
         #[builder(into)]
-        pub baseline_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub baseline_id: pulumi_gestalt_rust::Input<String>,
         /// The operating system the patch baseline applies to.
         /// Valid values are
         /// `AMAZON_LINUX`,
@@ -80,7 +80,7 @@ pub mod default_patch_baseline {
         /// `UBUNTU`, and
         /// `WINDOWS`.
         #[builder(into)]
-        pub operating_system: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub operating_system: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DefaultPatchBaselineResult {

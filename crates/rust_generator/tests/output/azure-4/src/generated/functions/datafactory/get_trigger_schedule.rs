@@ -10,10 +10,10 @@ pub mod get_trigger_schedule {
     pub struct GetTriggerScheduleArgs {
         /// The ID of the Azure Data Factory to fetch trigger schedule from.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the trigger schedule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTriggerScheduleResult {

@@ -77,21 +77,21 @@ pub mod fleet_update_run {
     pub struct FleetUpdateRunArgs {
         /// The ID of the Fleet Update Strategy. Only one of `fleet_update_strategy_id` or `stage` can be specified.
         #[builder(into, default)]
-        pub fleet_update_strategy_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fleet_update_strategy_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Fleet Manager. Changing this forces a new Kubernetes Fleet Update Run to be created.
         #[builder(into)]
-        pub kubernetes_fleet_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_fleet_manager_id: pulumi_gestalt_rust::Input<String>,
         /// A `managed_cluster_update` block as defined below.
         #[builder(into)]
-        pub managed_cluster_update: pulumi_gestalt_rust::InputOrOutput<
+        pub managed_cluster_update: pulumi_gestalt_rust::Input<
             super::super::types::containerservice::FleetUpdateRunManagedClusterUpdate,
         >,
         /// The name which should be used for this Kubernetes Fleet Update Run. Changing this forces a new Kubernetes Fleet Update Run to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `stage` blocks as defined below. Only one of `stage` or `fleet_update_strategy_id` can be specified.
         #[builder(into, default)]
-        pub stages: pulumi_gestalt_rust::InputOrOutput<
+        pub stages: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerservice::FleetUpdateRunStage>>,
         >,
     }

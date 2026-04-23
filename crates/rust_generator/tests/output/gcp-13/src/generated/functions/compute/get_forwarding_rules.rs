@@ -10,12 +10,12 @@ pub mod get_forwarding_rules {
     pub struct GetForwardingRulesArgs {
         /// The name of the project.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region you want to get the forwarding rules from.
         ///
         /// These arguments must be set in either the provider or the resource in order for the information to be queried.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetForwardingRulesResult {

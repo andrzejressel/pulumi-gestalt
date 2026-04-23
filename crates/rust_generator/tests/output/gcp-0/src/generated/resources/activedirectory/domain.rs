@@ -61,39 +61,39 @@ pub mod domain {
         /// The name of delegated administrator account used to perform Active Directory operations.
         /// If not specified, setupadmin will be used.
         #[builder(into, default)]
-        pub admin: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub admin: pulumi_gestalt_rust::Input<Option<String>>,
         /// The full names of the Google Compute Engine networks the domain instance is connected to. The domain is only available on networks listed in authorizedNetworks.
         /// If CIDR subnets overlap between networks, domain creation will fail.
         #[builder(into, default)]
-        pub authorized_networks: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub authorized_networks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The fully qualified domain name. e.g. mydomain.myorganization.com, with the restrictions
         /// of https://cloud.google.com/managed-microsoft-ad/reference/rest/v1/projects.locations.global.domains.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Resource labels that can contain user-provided metadata
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Locations where domain needs to be provisioned. [regions][compute/docs/regions-zones/]
         /// e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each location will use a /26 block.
         #[builder(into)]
-        pub locations: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub locations: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger.
         /// Ranges must be unique and non-overlapping with existing subnets in authorizedNetworks
         #[builder(into)]
-        pub reserved_ip_range: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub reserved_ip_range: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainResult {

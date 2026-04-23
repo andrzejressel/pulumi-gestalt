@@ -54,33 +54,33 @@ pub mod definition {
     pub struct DefinitionArgs {
         /// The description of the policy definition.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the policy definition.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The id of the Management Group where this policy should be defined. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub management_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub management_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The metadata for the policy definition. This is a JSON string representing additional metadata that should be stored with the policy definition.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata: pulumi_gestalt_rust::Input<Option<String>>,
         /// The policy resource manager mode that allows you to specify which resource types will be evaluated. Possible values are `All`, `Indexed`, `Microsoft.ContainerService.Data`, `Microsoft.CustomerLockbox.Data`, `Microsoft.DataCatalog.Data`, `Microsoft.KeyVault.Data`, `Microsoft.Kubernetes.Data`, `Microsoft.MachineLearningServices.Data`, `Microsoft.Network.Data` and `Microsoft.Synapse.Data`.
         ///
         /// > **Note:** Other resource provider modes only support built-in policy definitions but may later become available in custom definitions, these include; `Microsoft.ContainerService.Data`, `Microsoft.CustomerLockbox.Data`, `Microsoft.DataCatalog.Data`, `Microsoft.KeyVault.Data`, `Microsoft.Kubernetes.Data`, `Microsoft.MachineLearningServices.Data`, `Microsoft.Network.Data` and `Microsoft.Synapse.Data`. [See here](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure#resource-provider-modes) for more details.
         #[builder(into)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mode: pulumi_gestalt_rust::Input<String>,
         /// The name of the policy definition. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters for the policy definition. This field is a JSON string that allows you to parameterize your policy definition.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameters: pulumi_gestalt_rust::Input<Option<String>>,
         /// The policy rule for the policy definition. This is a JSON string representing the rule that contains an if and a then block.
         #[builder(into, default)]
-        pub policy_rule: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_rule: pulumi_gestalt_rust::Input<Option<String>>,
         /// The policy type. Possible values are `BuiltIn`, `Custom`, `NotSpecified` and `Static`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub policy_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DefinitionResult {

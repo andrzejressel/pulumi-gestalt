@@ -192,12 +192,12 @@ pub mod delivery_pipeline {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Description of the `DeliveryPipeline`. Max length is 255 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the
         /// following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and
         /// dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a
@@ -206,26 +206,26 @@ pub mod delivery_pipeline {
         /// labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the `DeliveryPipeline`. Format is `a-z?`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// SerialPipeline defines a sequential set of stages for a `DeliveryPipeline`.
         #[builder(into, default)]
-        pub serial_pipeline: pulumi_gestalt_rust::InputOrOutput<
+        pub serial_pipeline: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipeline>,
         >,
         /// When suspended, no new releases or rollouts can be created, but in-progress ones will complete.
         #[builder(into, default)]
-        pub suspended: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub suspended: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct DeliveryPipelineResult {

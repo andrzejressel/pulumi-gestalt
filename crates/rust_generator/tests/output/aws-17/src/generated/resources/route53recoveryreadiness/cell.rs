@@ -35,13 +35,13 @@ pub mod cell {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub cell_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cell_name: pulumi_gestalt_rust::Input<String>,
         /// List of cell arns to add as nested fault domains within this cell.
         #[builder(into, default)]
-        pub cells: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub cells: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

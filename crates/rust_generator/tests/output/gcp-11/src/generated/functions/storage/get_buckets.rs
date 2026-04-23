@@ -10,10 +10,10 @@ pub mod get_buckets {
     pub struct GetBucketsArgs {
         /// Filter results to buckets whose names begin with this prefix.
         #[builder(into, default)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBucketsResult {

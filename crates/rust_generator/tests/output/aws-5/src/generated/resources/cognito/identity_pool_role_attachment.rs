@@ -19,19 +19,17 @@ pub mod identity_pool_role_attachment {
     pub struct IdentityPoolRoleAttachmentArgs {
         /// An identity pool ID in the format `REGION_GUID`.
         #[builder(into)]
-        pub identity_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_pool_id: pulumi_gestalt_rust::Input<String>,
         /// A List of Role Mapping.
         #[builder(into, default)]
-        pub role_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub role_mappings: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::cognito::IdentityPoolRoleAttachmentRoleMapping>,
             >,
         >,
         /// The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.
         #[builder(into)]
-        pub roles: pulumi_gestalt_rust::InputOrOutput<
-            std::collections::HashMap<String, String>,
-        >,
+        pub roles: pulumi_gestalt_rust::Input<std::collections::HashMap<String, String>>,
     }
     #[allow(dead_code)]
     pub struct IdentityPoolRoleAttachmentResult {

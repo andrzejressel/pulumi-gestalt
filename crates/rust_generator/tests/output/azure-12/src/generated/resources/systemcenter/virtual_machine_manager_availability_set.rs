@@ -63,24 +63,24 @@ pub mod virtual_machine_manager_availability_set {
     pub struct VirtualMachineManagerAvailabilitySetArgs {
         /// The ID of the Custom Location for the System Center Virtual Machine Manager Availability Set. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub custom_location_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_location_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the System Center Virtual Machine Manager Availability Set should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the System Center Virtual Machine Manager Availability Set. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the System Center Virtual Machine Availability Set should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the System Center Virtual Machine Manager Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub system_center_virtual_machine_manager_server_id: pulumi_gestalt_rust::InputOrOutput<
+        pub system_center_virtual_machine_manager_server_id: pulumi_gestalt_rust::Input<
             String,
         >,
         /// A mapping of tags which should be assigned to the System Center Virtual Machine Manager Availability Set.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

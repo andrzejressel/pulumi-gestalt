@@ -45,10 +45,10 @@ pub mod vpn_connection_route {
     pub struct VpnConnectionRouteArgs {
         /// The CIDR block associated with the local subnet of the customer network.
         #[builder(into)]
-        pub destination_cidr_block: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_cidr_block: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPN connection.
         #[builder(into)]
-        pub vpn_connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpn_connection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpnConnectionRouteResult {

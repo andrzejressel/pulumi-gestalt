@@ -10,52 +10,52 @@ pub mod get_permissions {
     pub struct GetPermissionsArgs {
         /// Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the permissions are to be granted for the Data Catalog. Defaults to `false`.
         #[builder(into, default)]
-        pub catalog_resource: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub catalog_resource: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block for a data cells filter resource. Detailed below.
         #[builder(into, default)]
-        pub data_cells_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub data_cells_filter: pulumi_gestalt_rust::Input<
             Option<
                 super::super::super::types::lakeformation::GetPermissionsDataCellsFilter,
             >,
         >,
         /// Configuration block for a data location resource. Detailed below.
         #[builder(into, default)]
-        pub data_location: pulumi_gestalt_rust::InputOrOutput<
+        pub data_location: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::lakeformation::GetPermissionsDataLocation>,
         >,
         /// Configuration block for a database resource. Detailed below.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<
+        pub database: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::lakeformation::GetPermissionsDatabase>,
         >,
         /// Configuration block for an LF-tag resource. Detailed below.
         #[builder(into, default)]
-        pub lf_tag: pulumi_gestalt_rust::InputOrOutput<
+        pub lf_tag: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::lakeformation::GetPermissionsLfTag>,
         >,
         /// Configuration block for an LF-tag policy resource. Detailed below.
         #[builder(into, default)]
-        pub lf_tag_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub lf_tag_policy: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::lakeformation::GetPermissionsLfTagPolicy>,
         >,
         /// Principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles.
         ///
         /// One of the following is required:
         #[builder(into)]
-        pub principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for a table resource. Detailed below.
         #[builder(into, default)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<
+        pub table: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::lakeformation::GetPermissionsTable>,
         >,
         /// Configuration block for a table with columns resource. Detailed below.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub table_with_columns: pulumi_gestalt_rust::InputOrOutput<
+        pub table_with_columns: pulumi_gestalt_rust::Input<
             Option<
                 super::super::super::types::lakeformation::GetPermissionsTableWithColumns,
             >,

@@ -48,10 +48,10 @@ pub mod advanced_threat_protection {
     pub struct AdvancedThreatProtectionArgs {
         /// Should Advanced Threat Protection be enabled on this resource?
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The ID of the Azure Resource which to enable Advanced Threat Protection on. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AdvancedThreatProtectionResult {

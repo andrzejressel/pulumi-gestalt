@@ -11,19 +11,19 @@ pub mod get_task_iam_policy {
         /// The lake in which the task will be created in.
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub lake: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lake: pulumi_gestalt_rust::Input<String>,
         /// The location in which the task will be created in.
         /// Used to find the parent resource to bind the IAM policy to. If not specified,
         /// the value will be parsed from the identifier of the parent resource. If no location is provided in the parent identifier and no
         /// location is specified, it is taken from the provider configuration.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub task_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub task_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTaskIamPolicyResult {

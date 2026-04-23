@@ -72,22 +72,22 @@ pub mod email_channel {
     pub struct EmailChannelArgs {
         /// The application ID.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the Amazon SES configuration set that you want to apply to messages that you send through the channel.
         #[builder(into, default)]
-        pub configuration_set: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub configuration_set: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the channel is enabled or disabled. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The email address used to send emails from. You can use email only (`user@example.com`) or friendly address (`User <user@example.com>`). This field comply with [RFC 5322](https://www.ietf.org/rfc/rfc5322.txt).
         #[builder(into)]
-        pub from_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub from_address: pulumi_gestalt_rust::Input<String>,
         /// The ARN of an identity verified with SES.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity: pulumi_gestalt_rust::Input<String>,
         /// *Deprecated* The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EmailChannelResult {

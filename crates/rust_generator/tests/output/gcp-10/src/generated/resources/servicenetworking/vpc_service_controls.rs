@@ -117,13 +117,13 @@ pub mod vpc_service_controls {
         /// Desired VPC Service Controls state service producer VPC network, as
         /// described at the top of this page.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The network that the consumer is using to connect with services.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The id of the Google Cloud project containing the consumer network.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service that is managing peering connectivity for a service
         /// producer's organization. For Google services that support this
         /// functionality, this value is `servicenetworking.googleapis.com`.
@@ -131,7 +131,7 @@ pub mod vpc_service_controls {
         ///
         /// - - -
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcServiceControlsResult {

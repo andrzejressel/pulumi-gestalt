@@ -102,48 +102,46 @@ pub mod eventhub_data_connection {
     pub struct EventhubDataConnectionArgs {
         /// Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies compression type for the connection. Allowed values: `GZip` and `None`. Defaults to `None`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub compression: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compression: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the EventHub consumer group this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub consumer_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub consumer_group: pulumi_gestalt_rust::Input<String>,
         /// Specifies the data format of the EventHub messages. Allowed values: `APACHEAVRO`, `AVRO`, `CSV`, `JSON`, `MULTIJSON`, `ORC`, `PARQUET`, `PSV`, `RAW`, `SCSV`, `SINGLEJSON`, `SOHSV`, `TSVE`, `TSV`, `TXT`, and `W3CLOGFILE`.
         #[builder(into, default)]
-        pub data_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Kusto Database this data connection will be added to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Indication for database routing information from the data connection, by default only database routing information is allowed. Allowed values: `Single`, `Multi`. Changing this forces a new resource to be created. Defaults to `Single`.
         #[builder(into, default)]
-        pub database_routing_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database_routing_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of system properties for the Event Hub.
         #[builder(into, default)]
-        pub event_system_properties: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub event_system_properties: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the resource id of the EventHub this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_id: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of a managed identity (system or user assigned) to be used to authenticate with event hub.
         #[builder(into, default)]
-        pub identity_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location where the Kusto Database should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the mapping rule used for the message ingestion. Mapping rule must exist before resource is created.
         #[builder(into, default)]
-        pub mapping_rule_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mapping_rule_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Kusto EventHub Data Connection to create. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Resource Group where the Kusto Database should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the target table name used for the message ingestion. Table must exist before resource is created.
         #[builder(into, default)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub table_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EventhubDataConnectionResult {

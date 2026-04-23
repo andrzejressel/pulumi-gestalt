@@ -46,42 +46,42 @@ pub mod random_string {
     pub struct RandomStringArgs {
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         #[builder(into, default)]
-        pub keepers: pulumi_gestalt_rust::InputOrOutput<
+        pub keepers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The length of the string desired. The minimum value for length is 1 and, length must also be >= (`min_upper` + `min_lower` + `min_numeric` + `min_special`).
         #[builder(into)]
-        pub length: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub length: pulumi_gestalt_rust::Input<i32>,
         /// Include lowercase alphabet characters in the result. Default value is `true`.
         #[builder(into, default)]
-        pub lower: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub lower: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Minimum number of lowercase alphabet characters in the result. Default value is `0`.
         #[builder(into, default)]
-        pub min_lower: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_lower: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum number of numeric characters in the result. Default value is `0`.
         #[builder(into, default)]
-        pub min_numeric: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_numeric: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum number of special characters in the result. Default value is `0`.
         #[builder(into, default)]
-        pub min_special: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_special: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum number of uppercase alphabet characters in the result. Default value is `0`.
         #[builder(into, default)]
-        pub min_upper: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_upper: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Include numeric characters in the result. Default value is `true`. **NOTE**: This is deprecated, use `numeric` instead.
         #[builder(into, default)]
-        pub number: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub number: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Include numeric characters in the result. Default value is `true`.
         #[builder(into, default)]
-        pub numeric: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub numeric: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Supply your own list of special characters to use for string generation.  This overrides the default character list in the special argument.  The `special` argument must still be set to true for any overwritten characters to be used in generation.
         #[builder(into, default)]
-        pub override_special: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub override_special: pulumi_gestalt_rust::Input<Option<String>>,
         /// Include special characters in the result. These are `!@#$%&*()-_=+[]{}<>:?`. Default value is `true`.
         #[builder(into, default)]
-        pub special: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub special: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Include uppercase alphabet characters in the result. Default value is `true`.
         #[builder(into, default)]
-        pub upper: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub upper: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct RandomStringResult {

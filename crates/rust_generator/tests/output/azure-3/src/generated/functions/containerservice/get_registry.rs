@@ -10,10 +10,10 @@ pub mod get_registry {
     pub struct GetRegistryArgs {
         /// The name of the Container Registry.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where this Container Registry exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRegistryResult {

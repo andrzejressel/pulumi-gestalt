@@ -73,37 +73,37 @@ pub mod vpn_gateway {
     pub struct VpnGatewayArgs {
         /// Is BGP route translation for NAT on this VPN Gateway enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub bgp_route_translation_for_nat_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub bgp_route_translation_for_nat_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A `bgp_settings` block as defined below.
         #[builder(into, default)]
-        pub bgp_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub bgp_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::VpnGatewayBgpSettings>,
         >,
         /// The Azure location where this VPN Gateway should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name which should be used for this VPN Gateway. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of the Resource Group in which this VPN Gateway should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Azure routing preference lets you to choose how your traffic routes between Azure and the internet. You can choose to route traffic either via the Microsoft network (default value, `Microsoft Network`), or via the ISP network (public internet, set to `Internet`). More context of the configuration can be found in the [Microsoft Docs](https://docs.microsoft.com/azure/virtual-wan/virtual-wan-site-to-site-portal#gateway) to create a VPN Gateway. Defaults to `Microsoft Network`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub routing_preference: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub routing_preference: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Scale Unit for this VPN Gateway. Defaults to `1`.
         #[builder(into, default)]
-        pub scale_unit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub scale_unit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A mapping of tags to assign to the VPN Gateway.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Virtual Hub within which this VPN Gateway should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpnGatewayResult {

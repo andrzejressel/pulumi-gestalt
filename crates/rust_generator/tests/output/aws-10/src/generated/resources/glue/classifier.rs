@@ -112,25 +112,25 @@ pub mod classifier {
     pub struct ClassifierArgs {
         /// A classifier for CSV content. Defined below.
         #[builder(into, default)]
-        pub csv_classifier: pulumi_gestalt_rust::InputOrOutput<
+        pub csv_classifier: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::ClassifierCsvClassifier>,
         >,
         /// A classifier that uses grok patterns. Defined below.
         #[builder(into, default)]
-        pub grok_classifier: pulumi_gestalt_rust::InputOrOutput<
+        pub grok_classifier: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::ClassifierGrokClassifier>,
         >,
         /// A classifier for JSON content. Defined below.
         #[builder(into, default)]
-        pub json_classifier: pulumi_gestalt_rust::InputOrOutput<
+        pub json_classifier: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::ClassifierJsonClassifier>,
         >,
         /// The name of the classifier.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A classifier for XML content. Defined below.
         #[builder(into, default)]
-        pub xml_classifier: pulumi_gestalt_rust::InputOrOutput<
+        pub xml_classifier: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::ClassifierXmlClassifier>,
         >,
     }

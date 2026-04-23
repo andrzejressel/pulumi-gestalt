@@ -10,10 +10,10 @@ pub mod get_selection {
     pub struct GetSelectionArgs {
         /// Backup plan ID associated with the selection of resources.
         #[builder(into)]
-        pub plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plan_id: pulumi_gestalt_rust::Input<String>,
         /// Backup selection ID.
         #[builder(into)]
-        pub selection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub selection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSelectionResult {

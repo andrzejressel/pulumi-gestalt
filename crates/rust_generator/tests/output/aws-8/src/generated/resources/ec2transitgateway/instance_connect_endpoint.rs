@@ -35,20 +35,20 @@ pub mod instance_connect_endpoint {
     pub struct InstanceConnectEndpointArgs {
         /// Indicates whether your client's IP address is preserved as the source. Default: `true`.
         #[builder(into, default)]
-        pub preserve_client_ip: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub preserve_client_ip: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for the VPC will be associated with the endpoint.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the subnet in which to create the EC2 Instance Connect Endpoint.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ec2transitgateway::InstanceConnectEndpointTimeouts,
             >,

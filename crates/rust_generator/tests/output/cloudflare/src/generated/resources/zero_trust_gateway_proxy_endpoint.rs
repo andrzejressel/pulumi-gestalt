@@ -38,13 +38,13 @@ pub mod zero_trust_gateway_proxy_endpoint {
     pub struct ZeroTrustGatewayProxyEndpointArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The networks CIDRs that will be allowed to initiate proxy connections.
         #[builder(into)]
-        pub ips: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub ips: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Name of the teams proxy endpoint.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustGatewayProxyEndpointResult {

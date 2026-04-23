@@ -10,21 +10,19 @@ pub mod get_connect_peer {
     pub struct GetConnectPeerArgs {
         /// One or more configuration blocks containing name-values filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::ec2transitgateway::GetConnectPeerFilter>,
             >,
         >,
         /// Key-value tags for the EC2 Transit Gateway Connect Peer
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of the EC2 Transit Gateway Connect Peer.
         #[builder(into, default)]
-        pub transit_gateway_connect_peer_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub transit_gateway_connect_peer_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetConnectPeerResult {

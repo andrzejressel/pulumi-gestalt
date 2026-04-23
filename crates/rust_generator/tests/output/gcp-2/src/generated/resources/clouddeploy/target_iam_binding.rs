@@ -9,19 +9,19 @@ pub mod target_iam_binding {
     #[allow(dead_code)]
     pub struct TargetIamBindingArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::clouddeploy::TargetIamBindingCondition>,
         >,
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TargetIamBindingResult {

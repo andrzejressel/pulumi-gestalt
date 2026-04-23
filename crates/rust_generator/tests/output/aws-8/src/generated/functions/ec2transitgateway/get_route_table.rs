@@ -10,17 +10,17 @@ pub mod get_route_table {
     pub struct GetRouteTableArgs {
         /// One or more configuration blocks containing name-values filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::ec2transitgateway::GetRouteTableFilter>,
             >,
         >,
         /// Identifier of the EC2 Transit Gateway Route Table.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value tags for the EC2 Transit Gateway Route Table
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

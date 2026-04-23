@@ -88,57 +88,55 @@ pub mod agent_agent {
     pub struct AgentAgentArgs {
         /// Agents collaboration role. Valid values: `SUPERVISOR`, `SUPERVISOR_ROUTER`, `DISABLED`.
         #[builder(into, default)]
-        pub agent_collaboration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub agent_collaboration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the agent.
         #[builder(into)]
-        pub agent_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agent_name: pulumi_gestalt_rust::Input<String>,
         /// ARN of the IAM role with permissions to invoke API operations on the agent.
         #[builder(into)]
-        pub agent_resource_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agent_resource_role_arn: pulumi_gestalt_rust::Input<String>,
         /// ARN of the AWS KMS key that encrypts the agent.
         #[builder(into, default)]
-        pub customer_encryption_key_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub customer_encryption_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the agent.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Foundation model used for orchestration by the agent.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub foundation_model: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub foundation_model: pulumi_gestalt_rust::Input<String>,
         /// Details about the guardrail associated with the agent. See `guardrail_configuration` Block for details.
         #[builder(into, default)]
-        pub guardrail_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub guardrail_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::bedrock::AgentAgentGuardrailConfiguration>>,
         >,
         /// Number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent. A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.
         #[builder(into, default)]
-        pub idle_session_ttl_in_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub idle_session_ttl_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Instructions that tell the agent what it should do and how it should interact with users. The valid range is 40 - 8000 characters.
         #[builder(into, default)]
-        pub instruction: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instruction: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to prepare the agent after creation or modification. Defaults to `true`.
         #[builder(into, default)]
-        pub prepare_agent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub prepare_agent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configurations to override prompt templates in different parts of an agent sequence. For more information, see [Advanced prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html). See `prompt_override_configuration` Block for details.
         #[builder(into, default)]
-        pub prompt_override_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub prompt_override_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::bedrock::AgentAgentPromptOverrideConfiguration>,
             >,
         >,
         /// Whether the in-use check is skipped when deleting the agent.
         #[builder(into, default)]
-        pub skip_resource_in_use_check: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_resource_in_use_check: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentAgentTimeouts>,
         >,
     }

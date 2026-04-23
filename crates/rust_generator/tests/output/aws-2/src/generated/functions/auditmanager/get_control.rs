@@ -9,7 +9,7 @@ pub mod get_control {
     #[allow(dead_code)]
     pub struct GetControlArgs {
         #[builder(into, default)]
-        pub control_mapping_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub control_mapping_sources: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::auditmanager::GetControlControlMappingSource,
@@ -18,10 +18,10 @@ pub mod get_control {
         >,
         /// Name of the control.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Type of control. Valid values are `Custom` and `Standard`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetControlResult {

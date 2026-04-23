@@ -250,54 +250,54 @@ pub mod aws_cluster {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration related to the cluster RBAC settings.
         #[builder(into)]
-        pub authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub authorization: pulumi_gestalt_rust::Input<
             super::super::types::container::AwsClusterAuthorization,
         >,
         /// The AWS region where the cluster runs. Each Google Cloud region supports a subset of nearby AWS regions. You can call to list all supported AWS regions within a given Google Cloud region.
         #[builder(into)]
-        pub aws_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub aws_region: pulumi_gestalt_rust::Input<String>,
         /// Configuration options for the Binary Authorization feature.
         #[builder(into, default)]
-        pub binary_authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub binary_authorization: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AwsClusterBinaryAuthorization>,
         >,
         /// Configuration related to the cluster control plane.
         #[builder(into)]
-        pub control_plane: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane: pulumi_gestalt_rust::Input<
             super::super::types::container::AwsClusterControlPlane,
         >,
         /// Optional. A human readable description of this cluster. Cannot be longer than 255 UTF-8 encoded bytes.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Fleet configuration.
         #[builder(into)]
-        pub fleet: pulumi_gestalt_rust::InputOrOutput<
+        pub fleet: pulumi_gestalt_rust::Input<
             super::super::types::container::AwsClusterFleet,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Logging configuration.
         #[builder(into, default)]
-        pub logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AwsClusterLoggingConfig>,
         >,
         /// The name of this resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Cluster-wide networking configuration.
         #[builder(into)]
-        pub networking: pulumi_gestalt_rust::InputOrOutput<
+        pub networking: pulumi_gestalt_rust::Input<
             super::super::types::container::AwsClusterNetworking,
         >,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AwsClusterResult {

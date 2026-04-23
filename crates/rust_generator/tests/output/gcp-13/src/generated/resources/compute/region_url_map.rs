@@ -639,7 +639,7 @@ pub mod region_url_map {
         /// defaultRouteAction has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub default_route_action: pulumi_gestalt_rust::InputOrOutput<
+        pub default_route_action: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionUrlMapDefaultRouteAction>,
         >,
         /// The full or partial URL of the defaultService resource to which traffic is directed if
@@ -650,23 +650,23 @@ pub mod region_url_map {
         /// weightedBackendServices, service must not be specified.  Only one of defaultService,
         /// defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set.
         #[builder(into, default)]
-        pub default_service: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_service: pulumi_gestalt_rust::Input<Option<String>>,
         /// When none of the specified hostRules match, the request is redirected to a URL specified
         /// by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
         /// defaultRouteAction must not be set.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub default_url_redirect: pulumi_gestalt_rust::InputOrOutput<
+        pub default_url_redirect: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionUrlMapDefaultUrlRedirect>,
         >,
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of HostRules to use against the URL.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub host_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub host_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::RegionUrlMapHostRule>>,
         >,
         /// Name of the resource. Provided by the client when the resource is
@@ -680,26 +680,26 @@ pub mod region_url_map {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of named PathMatchers to use against the URL.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub path_matchers: pulumi_gestalt_rust::InputOrOutput<
+        pub path_matchers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::RegionUrlMapPathMatcher>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Region in which the url map should reside.
         /// If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The list of expected URL mappings. Requests to update this UrlMap will
         /// succeed only if all of the test cases pass.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub tests: pulumi_gestalt_rust::InputOrOutput<
+        pub tests: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::RegionUrlMapTest>>,
         >,
     }

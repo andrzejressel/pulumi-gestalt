@@ -74,13 +74,13 @@ pub mod attached_network {
     pub struct AttachedNetworkArgs {
         /// The ID of the associated Dev Center. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub dev_center_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of this Dev Center Attached Network. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Dev Center Network Connection you want to attach. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_connection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AttachedNetworkResult {

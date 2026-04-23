@@ -10,7 +10,7 @@ pub mod get_caller_identity {
     pub struct GetCallerIdentityArgs {
         /// Account ID number of the account that owns or contains the calling entity.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetCallerIdentityResult {

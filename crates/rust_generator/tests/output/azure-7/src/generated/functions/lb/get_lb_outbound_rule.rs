@@ -10,10 +10,10 @@ pub mod get_lb_outbound_rule {
     pub struct GetLbOutboundRuleArgs {
         /// The ID of the Load Balancer in which the Outbound Rule exists.
         #[builder(into)]
-        pub loadbalancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub loadbalancer_id: pulumi_gestalt_rust::Input<String>,
         /// The name of this Load Balancer Outbound Rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetLbOutboundRuleResult {

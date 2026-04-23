@@ -10,10 +10,10 @@ pub mod get_s_quota_infos {
     pub struct GetSQuotaInfosArgs {
         /// Parent value of QuotaInfo resources. Listing across different resource containers (such as 'projects/-') is not allowed. Allowed parents are "projects/[project-id / number]" or "folders/[folder-id / number]" or "organizations/[org-id / number].
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// The name of the service in which the quotas are defined.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSQuotaInfosResult {

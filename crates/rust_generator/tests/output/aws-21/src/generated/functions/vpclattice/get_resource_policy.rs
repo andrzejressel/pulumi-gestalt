@@ -10,7 +10,7 @@ pub mod get_resource_policy {
     pub struct GetResourcePolicyArgs {
         /// Resource ARN of the resource for which a policy is retrieved.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResourcePolicyResult {

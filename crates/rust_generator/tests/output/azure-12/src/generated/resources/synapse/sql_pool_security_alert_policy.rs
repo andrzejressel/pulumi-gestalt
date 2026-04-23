@@ -95,32 +95,28 @@ pub mod sql_pool_security_alert_policy {
     pub struct SqlPoolSecurityAlertPolicyArgs {
         /// Specifies an array of alerts that are disabled. Allowed values are: `Sql_Injection`, `Sql_Injection_Vulnerability`, `Access_Anomaly`, `Data_Exfiltration`, `Unsafe_Action`.
         #[builder(into, default)]
-        pub disabled_alerts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub disabled_alerts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Boolean flag which specifies if the alert is sent to the account administrators or not. Defaults to `false`.
         #[builder(into, default)]
-        pub email_account_admins_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub email_account_admins_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies an array of email addresses to which the alert is sent.
         #[builder(into, default)]
-        pub email_addresses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub email_addresses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the state of the policy, whether it is enabled or disabled or a policy has not been applied yet on the specific SQL pool. Possible values are `Disabled`, `Enabled` and `New`.
         #[builder(into)]
-        pub policy_state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_state: pulumi_gestalt_rust::Input<String>,
         /// Specifies the number of days to keep in the Threat Detection audit logs. Defaults to `0`.
         #[builder(into, default)]
-        pub retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the ID of the Synapse SQL Pool. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sql_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql_pool_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the identifier key of the Threat Detection audit storage account.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the blob storage endpoint (e.g. <https://example.blob.core.windows.net>). This blob storage will hold all Threat Detection audit logs.
         #[builder(into, default)]
-        pub storage_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SqlPoolSecurityAlertPolicyResult {

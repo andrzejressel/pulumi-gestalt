@@ -30,17 +30,17 @@ pub mod app_authorization_connection {
     pub struct AppAuthorizationConnectionArgs {
         /// The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
         #[builder(into)]
-        pub app_authorization_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_authorization_arn: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the app bundle to use for the request.
         #[builder(into)]
-        pub app_bundle_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_bundle_arn: pulumi_gestalt_rust::Input<String>,
         /// Contains OAuth2 authorization information.This is required if the app authorization for the request is configured with an OAuth2 (oauth2) authorization type.
         #[builder(into, default)]
-        pub auth_request: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_request: pulumi_gestalt_rust::Input<
             Option<super::super::types::appfabric::AppAuthorizationConnectionAuthRequest>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::appfabric::AppAuthorizationConnectionTimeouts>,
         >,
     }

@@ -83,15 +83,15 @@ pub mod mail_from {
     pub struct MailFromArgs {
         /// The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. Defaults to `UseDefaultValue`. See the [SES API documentation](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityMailFromDomain.html) for more information.
         #[builder(into, default)]
-        pub behavior_on_mx_failure: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub behavior_on_mx_failure: pulumi_gestalt_rust::Input<Option<String>>,
         /// Verified domain name or email identity to generate DKIM tokens for.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// Subdomain (of above domain) which is to be used as MAIL FROM address (Required for DMARC validation)
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub mail_from_domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mail_from_domain: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MailFromResult {

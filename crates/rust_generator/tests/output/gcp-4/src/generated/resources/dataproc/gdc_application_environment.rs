@@ -85,44 +85,42 @@ pub mod gdc_application_environment {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The id of the application environment
         #[builder(into, default)]
-        pub application_environment_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub application_environment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-provided human-readable name to be used in user interfaces.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The labels to associate with this application environment. Labels may be used for filtering and billing tracking.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the application environment
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the namespace in which to create this ApplicationEnvironment. This namespace must already exist in the cluster
         #[builder(into, default)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The id of the service instance to which this application environment belongs.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub serviceinstance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub serviceinstance: pulumi_gestalt_rust::Input<String>,
         /// Represents the SparkApplicationEnvironmentConfig.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark_application_environment_config: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_application_environment_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataproc::GdcApplicationEnvironmentSparkApplicationEnvironmentConfig,
             >,

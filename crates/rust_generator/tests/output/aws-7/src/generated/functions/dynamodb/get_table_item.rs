@@ -9,7 +9,7 @@ pub mod get_table_item {
     #[allow(dead_code)]
     pub struct GetTableItemArgs {
         #[builder(into, default)]
-        pub expression_attribute_names: pulumi_gestalt_rust::InputOrOutput<
+        pub expression_attribute_names: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A map of attribute names to AttributeValue objects, representing the primary key of the item to retrieve.
@@ -17,14 +17,14 @@ pub mod get_table_item {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.
         /// If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.
         #[builder(into, default)]
-        pub projection_expression: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub projection_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the table containing the requested item.
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTableItemResult {

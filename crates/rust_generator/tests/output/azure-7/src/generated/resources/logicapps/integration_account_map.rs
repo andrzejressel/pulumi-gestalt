@@ -53,24 +53,24 @@ pub mod integration_account_map {
     pub struct IntegrationAccountMapArgs {
         /// The content of the Logic App Integration Account Map.
         #[builder(into)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content: pulumi_gestalt_rust::Input<String>,
         /// The name of the Logic App Integration Account. Changing this forces a new Logic App Integration Account Map to be created.
         #[builder(into)]
-        pub integration_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_account_name: pulumi_gestalt_rust::Input<String>,
         /// The type of the Logic App Integration Account Map. Possible values are `Liquid`, `NotSpecified`, `Xslt`, `Xslt30` and `Xslt20`.
         #[builder(into)]
-        pub map_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub map_type: pulumi_gestalt_rust::Input<String>,
         /// The metadata of the Logic App Integration Account Map.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Map. Changing this forces a new Logic App Integration Account Map to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Logic App Integration Account Map should exist. Changing this forces a new Logic App Integration Account Map to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IntegrationAccountMapResult {

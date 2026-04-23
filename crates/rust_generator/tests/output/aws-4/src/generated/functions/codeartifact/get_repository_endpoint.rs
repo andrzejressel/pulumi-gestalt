@@ -10,16 +10,16 @@ pub mod get_repository_endpoint {
     pub struct GetRepositoryEndpointArgs {
         /// Name of the domain that contains the repository.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// Account number of the AWS account that owns the domain.
         #[builder(into, default)]
-        pub domain_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Which endpoint of a repository to return. A repository has one endpoint for each package format: `npm`, `pypi`, `maven`, and `nuget`.
         #[builder(into)]
-        pub format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub format: pulumi_gestalt_rust::Input<String>,
         /// Name of the repository.
         #[builder(into)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRepositoryEndpointResult {

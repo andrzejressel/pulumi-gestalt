@@ -145,30 +145,30 @@ pub mod target {
     pub struct TargetArgs {
         /// Max capacity of the scalable target.
         #[builder(into)]
-        pub max_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub max_capacity: pulumi_gestalt_rust::Input<i32>,
         /// Min capacity of the scalable target.
         #[builder(into)]
-        pub min_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub min_capacity: pulumi_gestalt_rust::Input<i32>,
         /// Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the `ResourceId` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// ARN of the IAM role that allows Application AutoScaling to modify your scalable target on your behalf. This defaults to an IAM Service-Linked Role for most services and custom IAM Roles are ignored by the API for those namespaces. See the [AWS Application Auto Scaling documentation](https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles) for more information about how this service interacts with IAM.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Scalable dimension of the scalable target. Documentation can be found in the `ScalableDimension` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)
         #[builder(into)]
-        pub scalable_dimension: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scalable_dimension: pulumi_gestalt_rust::Input<String>,
         /// AWS service namespace of the scalable target. Documentation can be found in the `ServiceNamespace` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)
         #[builder(into)]
-        pub service_namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_namespace: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether the scaling activities for a scalable target are in a suspended state.
         #[builder(into, default)]
-        pub suspended_state: pulumi_gestalt_rust::InputOrOutput<
+        pub suspended_state: pulumi_gestalt_rust::Input<
             Option<super::super::types::appautoscaling::TargetSuspendedState>,
         >,
         /// Map of tags to assign to the scalable target. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

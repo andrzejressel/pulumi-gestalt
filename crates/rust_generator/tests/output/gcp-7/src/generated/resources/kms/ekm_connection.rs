@@ -68,27 +68,27 @@ pub mod ekm_connection {
         /// Optional. Identifies the EKM Crypto Space that this EkmConnection maps to. Note: This field is required if
         /// KeyManagementMode is CLOUD_KMS.
         #[builder(into, default)]
-        pub crypto_space_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub crypto_space_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Etag of the currently stored EkmConnection.
         #[builder(into, default)]
-        pub etag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub etag: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Describes who can perform control plane operations on the EKM. If unset, this defaults to MANUAL Default
         /// value: "MANUAL" Possible values: ["MANUAL", "CLOUD_KMS"]
         #[builder(into, default)]
-        pub key_management_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_management_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location for the EkmConnection.
         /// A full list of valid locations can be found by running `gcloud kms locations list`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name for the EkmConnection.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of ServiceResolvers where the EKM can be reached. There should be one ServiceResolver per EKM replica. Currently, only a single ServiceResolver is supported
         /// Structure is documented below.
         #[builder(into)]
-        pub service_resolvers: pulumi_gestalt_rust::InputOrOutput<
+        pub service_resolvers: pulumi_gestalt_rust::Input<
             Vec<super::super::types::kms::EkmConnectionServiceResolver>,
         >,
     }

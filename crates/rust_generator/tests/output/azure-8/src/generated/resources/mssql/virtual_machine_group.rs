@@ -53,27 +53,27 @@ pub mod virtual_machine_group {
     pub struct VirtualMachineGroupArgs {
         /// The Azure Region where the Microsoft SQL Virtual Machine Group should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for the Microsoft SQL Virtual Machine Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Microsoft SQL Virtual Machine Group should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The offer type of the marketplace image cluster to be used by the SQL Virtual Machine Group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sql_image_offer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql_image_offer: pulumi_gestalt_rust::Input<String>,
         /// The sku type of the marketplace image cluster to be used by the SQL Virtual Machine Group. Possible values are `Developer` and `Enterprise`.
         #[builder(into)]
-        pub sql_image_sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql_image_sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Microsoft SQL Virtual Machine Group.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `wsfc_domain_profile` block as defined below.
         #[builder(into)]
-        pub wsfc_domain_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub wsfc_domain_profile: pulumi_gestalt_rust::Input<
             super::super::types::mssql::VirtualMachineGroupWsfcDomainProfile,
         >,
     }

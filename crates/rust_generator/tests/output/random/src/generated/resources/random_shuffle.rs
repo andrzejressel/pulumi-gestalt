@@ -32,18 +32,18 @@ pub mod random_shuffle {
     pub struct RandomShuffleArgs {
         /// The list of strings to shuffle.
         #[builder(into)]
-        pub inputs: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub inputs: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         #[builder(into, default)]
-        pub keepers: pulumi_gestalt_rust::InputOrOutput<
+        pub keepers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The number of results to return. Defaults to the number of items in the `input` list. If fewer items are requested, some elements will be excluded from the result. If more items are requested, items will be repeated in the result but not more frequently than the number of items in the input list.
         #[builder(into, default)]
-        pub result_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub result_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Arbitrary string with which to seed the random number generator, in order to produce less-volatile permutations of the list.
         #[builder(into, default)]
-        pub seed: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub seed: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RandomShuffleResult {

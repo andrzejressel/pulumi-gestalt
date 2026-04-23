@@ -41,44 +41,42 @@ pub mod replication_task {
     pub struct ReplicationTaskArgs {
         /// Indicates when you want a change data capture (CDC) operation to start. The value can be a RFC3339 formatted date, a checkpoint, or a LSN/SCN format depending on the source engine. For more information see [Determining a CDC native start point](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native).
         #[builder(into, default)]
-        pub cdc_start_position: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cdc_start_position: pulumi_gestalt_rust::Input<Option<String>>,
         /// RFC3339 formatted date string or UNIX timestamp for the start of the Change Data Capture (CDC) operation.
         #[builder(into, default)]
-        pub cdc_start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cdc_start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Migration type. Can be one of `full-load | cdc | full-load-and-cdc`.
         #[builder(into)]
-        pub migration_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub migration_type: pulumi_gestalt_rust::Input<String>,
         /// ARN of the replication instance.
         #[builder(into)]
-        pub replication_instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_instance_arn: pulumi_gestalt_rust::Input<String>,
         /// Replication task identifier which must contain from 1 to 255 alphanumeric characters or hyphens, first character must be a letter, cannot end with a hyphen, and cannot contain two consecutive hyphens.
         #[builder(into)]
-        pub replication_task_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_task_id: pulumi_gestalt_rust::Input<String>,
         /// Escaped JSON string that contains the task settings. For a complete list of task settings, see [Task Settings for AWS Database Migration Service Tasks](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html). Note that `Logging.CloudWatchLogGroup` and `Logging.CloudWatchLogStream` are read only and should not be defined, even as `null`, in the configuration since AWS provides a value for these settings.
         #[builder(into, default)]
-        pub replication_task_settings: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub replication_task_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// A friendly name for the resource identifier at the end of the EndpointArn response parameter that is returned in the created Endpoint object.
         #[builder(into, default)]
-        pub resource_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN that uniquely identifies the source endpoint.
         #[builder(into)]
-        pub source_endpoint_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_endpoint_arn: pulumi_gestalt_rust::Input<String>,
         /// Whether to run or stop the replication task.
         #[builder(into, default)]
-        pub start_replication_task: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_replication_task: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Escaped JSON string that contains the table mappings. For information on table mapping see [Using Table Mapping with an AWS Database Migration Service Task to Select and Filter Data](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html)
         #[builder(into)]
-        pub table_mappings: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_mappings: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ARN that uniquely identifies the target endpoint.
         #[builder(into)]
-        pub target_endpoint_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_endpoint_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReplicationTaskResult {

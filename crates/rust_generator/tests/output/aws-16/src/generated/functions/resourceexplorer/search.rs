@@ -12,10 +12,10 @@ pub mod search {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub query_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query_string: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Amazon resource name (ARN) of the view to use for the query. If you don't specify a value for this parameter, then the operation automatically uses the default view for the AWS Region in which you called this operation. If the Region either doesn't have a default view or if you don't have permission to use the default view, then the operation fails with a `401 Unauthorized` exception.
         #[builder(into, default)]
-        pub view_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub view_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SearchResult {

@@ -36,7 +36,7 @@ pub mod organization_delegated_admin_account {
     pub struct OrganizationDelegatedAdminAccountArgs {
         /// An organization member account ID that you want to designate as a delegated administrator.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OrganizationDelegatedAdminAccountResult {

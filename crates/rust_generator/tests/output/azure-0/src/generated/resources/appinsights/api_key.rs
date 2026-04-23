@@ -86,18 +86,18 @@ pub mod api_key {
     pub struct ApiKeyArgs {
         /// The ID of the Application Insights component on which the API key operates. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_insights_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_insights_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Application Insights API key. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the list of read permissions granted to the API key. Valid values are `agentconfig`, `aggregate`, `api`, `draft`, `extendqueries`, `search`. Please note these values are case sensitive. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub read_permissions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub read_permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the list of write permissions granted to the API key. Valid values are `annotations`. Please note these values are case sensitive. Changing this forces a new resource to be created.
         ///
         /// > **Note:** At least one read or write permission must be defined.
         #[builder(into, default)]
-        pub write_permissions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub write_permissions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ApiKeyResult {

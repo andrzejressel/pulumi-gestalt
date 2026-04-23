@@ -28,7 +28,7 @@ pub mod get_netblock_ip_ranges {
         ///
         /// * `legacy-health-checkers` - Corresponds to the IP addresses used for legacy style health checkers (used by Network Load Balancing). [ More details.](https://cloud.google.com/load-balancing/docs/health-checks)
         #[builder(into, default)]
-        pub range_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub range_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetNetblockIpRangesResult {

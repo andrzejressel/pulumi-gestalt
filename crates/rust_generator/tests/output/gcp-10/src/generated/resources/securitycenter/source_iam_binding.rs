@@ -60,22 +60,22 @@ pub mod source_iam_binding {
     #[allow(dead_code)]
     pub struct SourceIamBindingArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::securitycenter::SourceIamBindingCondition>,
         >,
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The organization whose Cloud Security Command Center the Source
         /// lives in.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SourceIamBindingResult {

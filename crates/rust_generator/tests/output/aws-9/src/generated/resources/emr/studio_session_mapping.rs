@@ -38,19 +38,19 @@ pub mod studio_session_mapping {
     pub struct StudioSessionMappingArgs {
         /// The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.
         #[builder(into, default)]
-        pub identity_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the user or group from the Amazon Web Services SSO Identity Store.
         #[builder(into, default)]
-        pub identity_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identity_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the identity to map to the Amazon EMR Studio is a `USER` or a `GROUP`.
         #[builder(into)]
-        pub identity_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_type: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role.
         #[builder(into)]
-        pub session_policy_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub session_policy_arn: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Amazon EMR Studio to which the user or group will be mapped.
         #[builder(into)]
-        pub studio_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub studio_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StudioSessionMappingResult {

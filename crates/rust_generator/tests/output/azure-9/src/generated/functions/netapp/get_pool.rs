@@ -10,13 +10,13 @@ pub mod get_pool {
     pub struct GetPoolArgs {
         /// The name of the NetApp account where the NetApp pool exists.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the NetApp Pool.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the NetApp Pool exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPoolResult {

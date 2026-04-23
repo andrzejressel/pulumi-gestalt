@@ -41,17 +41,17 @@ pub mod managed_headers {
     pub struct ManagedHeadersArgs {
         /// The list of managed request headers.
         #[builder(into, default)]
-        pub managed_request_headers: pulumi_gestalt_rust::InputOrOutput<
+        pub managed_request_headers: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ManagedHeadersManagedRequestHeader>>,
         >,
         /// The list of managed response headers.
         #[builder(into, default)]
-        pub managed_response_headers: pulumi_gestalt_rust::InputOrOutput<
+        pub managed_response_headers: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ManagedHeadersManagedResponseHeader>>,
         >,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedHeadersResult {

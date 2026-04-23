@@ -49,40 +49,36 @@ pub mod server {
     pub struct ServerArgs {
         /// List of email addresses of admin users.
         #[builder(into, default)]
-        pub admin_users: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub admin_users: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// URI and SAS token for a blob container to store backups.
         #[builder(into, default)]
-        pub backup_blob_container_uri: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub backup_blob_container_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `ipv4_firewall_rule` block(s) as defined below.
         #[builder(into, default)]
-        pub ipv4_firewall_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub ipv4_firewall_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::analysisservices::ServerIpv4FirewallRule>>,
         >,
         /// The Azure location where the Analysis Services Server exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Analysis Services Server. Only lowercase Alphanumeric characters allowed, starting with a letter. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates if the Power BI service is allowed to access or not.
         #[builder(into, default)]
-        pub power_bi_service_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub power_bi_service_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Controls how the read-write server is used in the query pool. If this value is set to `All` then read-write servers are also used for queries. Otherwise with `ReadOnly` these servers do not participate in query operations. Defaults to `All`.
         #[builder(into, default)]
-        pub querypool_connection_mode: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub querypool_connection_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the Analysis Services Server should be exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// SKU for the Analysis Services Server. Possible values are: `D1`, `B1`, `B2`, `S0`, `S1`, `S2`, `S4`, `S8`, `S9`, `S8v2` and `S9v2`.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -262,46 +262,46 @@ pub mod datascan {
         /// The data source for DataScan.
         /// Structure is documented below.
         #[builder(into)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<
+        pub data: pulumi_gestalt_rust::Input<
             super::super::types::dataplex::DatascanData,
         >,
         /// DataProfileScan related setting.
         #[builder(into, default)]
-        pub data_profile_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub data_profile_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataplex::DatascanDataProfileSpec>,
         >,
         /// DataQualityScan related setting.
         #[builder(into, default)]
-        pub data_quality_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub data_quality_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataplex::DatascanDataQualitySpec>,
         >,
         /// DataScan identifier. Must contain only lowercase letters, numbers and hyphens. Must start with a letter. Must end with a number or a letter.
         #[builder(into)]
-        pub data_scan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_scan_id: pulumi_gestalt_rust::Input<String>,
         /// Description of the scan.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User friendly display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// DataScan execution settings.
         /// Structure is documented below.
         #[builder(into)]
-        pub execution_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub execution_spec: pulumi_gestalt_rust::Input<
             super::super::types::dataplex::DatascanExecutionSpec,
         >,
         /// User-defined labels for the scan. A list of key->value pairs. **Note**: This field is non-authoritative, and will only
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where the data scan should reside.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DatascanResult {

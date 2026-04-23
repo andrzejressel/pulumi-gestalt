@@ -94,30 +94,30 @@ pub mod contact_flow {
     pub struct ContactFlowArgs {
         /// Specifies the content of the Contact Flow, provided as a JSON string, written in Amazon Connect Contact Flow Language. If defined, the `filename` argument cannot be used.
         #[builder(into, default)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content: pulumi_gestalt_rust::Input<Option<String>>,
         /// Used to trigger updates. Must be set to a base64-encoded SHA256 hash of the Contact Flow source specified with `filename`.
         #[builder(into, default)]
-        pub content_hash: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_hash: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the description of the Contact Flow.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The path to the Contact Flow source within the local filesystem. Conflicts with `content`.
         #[builder(into, default)]
-        pub filename: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filename: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the identifier of the hosting Amazon Connect Instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Contact Flow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags to apply to the Contact Flow. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the type of the Contact Flow. Defaults to `CONTACT_FLOW`. Allowed Values are: `CONTACT_FLOW`, `CUSTOMER_QUEUE`, `CUSTOMER_HOLD`, `CUSTOMER_WHISPER`, `AGENT_HOLD`, `AGENT_WHISPER`, `OUTBOUND_WHISPER`, `AGENT_TRANSFER`, `QUEUE_TRANSFER`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ContactFlowResult {

@@ -233,11 +233,11 @@ pub mod resource_policy {
     pub struct ResourcePolicyArgs {
         /// An optional description of this resource. Provide this property when you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Replication consistency group for asynchronous disk replication.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub disk_consistency_group_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub disk_consistency_group_policy: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::compute::ResourcePolicyDiskConsistencyGroupPolicy,
             >,
@@ -245,13 +245,13 @@ pub mod resource_policy {
         /// Resource policy for instances used for placement configuration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub group_placement_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub group_placement_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ResourcePolicyGroupPlacementPolicy>,
         >,
         /// Resource policy for scheduling instance operations.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub instance_schedule_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_schedule_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ResourcePolicyInstanceSchedulePolicy>,
         >,
         /// The name of the resource, provided by the client when initially creating
@@ -265,18 +265,18 @@ pub mod resource_policy {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where resource policy resides.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy for creating snapshots of persistent disks.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub snapshot_schedule_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub snapshot_schedule_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ResourcePolicySnapshotSchedulePolicy>,
         >,
     }

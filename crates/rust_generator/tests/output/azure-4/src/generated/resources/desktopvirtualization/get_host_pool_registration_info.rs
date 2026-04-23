@@ -55,10 +55,10 @@ pub mod get_host_pool_registration_info {
     pub struct getHostPoolRegistrationInfoArgs {
         /// A valid `RFC3339Time` for the expiration of the token..
         #[builder(into)]
-        pub expiration_date: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub expiration_date: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Virtual Desktop Host Pool to link the Registration Info to. Changing this forces a new Registration Info resource to be created. Only a single virtual_desktop_host_pool_registration_info resource should be associated with a given hostpool. Assigning multiple resources will produce inconsistent results.
         #[builder(into)]
-        pub hostpool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostpool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct getHostPoolRegistrationInfoResult {

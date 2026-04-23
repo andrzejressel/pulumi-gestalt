@@ -12,14 +12,14 @@ pub mod get_account_key {
         /// `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{KEYID}`, where `{ACCOUNT}`
         /// is the email address or unique id of the service account.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project that the service account is present in.
         /// Defaults to the provider project configuration.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The output format of the public key requested. TYPE_X509_PEM_FILE is the default output format.
         #[builder(into, default)]
-        pub public_key_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_key_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAccountKeyResult {

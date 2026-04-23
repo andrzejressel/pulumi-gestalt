@@ -59,16 +59,16 @@ pub mod firewall_rule {
         ///
         /// > **NOTE:** The Azure feature `Allow access to Azure services` can be enabled by setting `start_ip_address` and `end_ip_address` to `0.0.0.0` which ([is documented in the Azure API Docs](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate)).
         #[builder(into)]
-        pub end_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub end_ip_address: pulumi_gestalt_rust::Input<String>,
         /// The name of the firewall rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the SQL Server on which to create the Firewall Rule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         /// The starting IP address to allow through the firewall for this rule.
         #[builder(into)]
-        pub start_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_ip_address: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FirewallRuleResult {

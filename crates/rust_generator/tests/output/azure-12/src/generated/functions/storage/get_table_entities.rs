@@ -10,13 +10,13 @@ pub mod get_table_entities {
     pub struct GetTableEntitiesArgs {
         /// The filter used to retrieve the entities.
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter: pulumi_gestalt_rust::Input<String>,
         /// A list of properties to select from the returned Storage Table Entities.
         #[builder(into, default)]
-        pub selects: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub selects: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Storage Table ID where the entities exist.
         #[builder(into)]
-        pub storage_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTableEntitiesResult {

@@ -55,34 +55,30 @@ pub mod workspace {
     pub struct WorkspaceArgs {
         /// The ID of the bundle for the WorkSpace.
         #[builder(into)]
-        pub bundle_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bundle_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the directory for the WorkSpace.
         #[builder(into)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether the data stored on the root volume is encrypted.
         #[builder(into, default)]
-        pub root_volume_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub root_volume_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The tags for the WorkSpace. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The user name of the user for the WorkSpace. This user name must exist in the directory for the WorkSpace.
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether the data stored on the user volume is encrypted.
         #[builder(into, default)]
-        pub user_volume_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub user_volume_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN of a symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.
         #[builder(into, default)]
-        pub volume_encryption_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub volume_encryption_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The WorkSpace properties.
         #[builder(into, default)]
-        pub workspace_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub workspace_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::workspaces::WorkspaceWorkspaceProperties>,
         >,
     }

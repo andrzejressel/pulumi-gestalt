@@ -79,24 +79,24 @@ pub mod default_security_group {
     pub struct DefaultSecurityGroupArgs {
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub egress: pulumi_gestalt_rust::InputOrOutput<
+        pub egress: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::DefaultSecurityGroupEgress>>,
         >,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub ingress: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::DefaultSecurityGroupIngress>>,
         >,
         #[builder(into, default)]
-        pub revoke_rules_on_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub revoke_rules_on_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// VPC ID. **Note that changing the `vpc_id` will _not_ restore any default security group rules that were modified, added, or removed.** It will be left in its current state.
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DefaultSecurityGroupResult {

@@ -10,13 +10,13 @@ pub mod get_instance_type_offerings {
     pub struct GetInstanceTypeOfferingsArgs {
         /// Filter response by engine type.
         #[builder(into, default)]
-        pub engine_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Filter response by host instance type.
         #[builder(into, default)]
-        pub host_instance_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_instance_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Filter response by storage type.
         #[builder(into, default)]
-        pub storage_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceTypeOfferingsResult {

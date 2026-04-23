@@ -39,16 +39,16 @@ pub mod host {
     pub struct HostArgs {
         /// The name of the host to be created. The name must be unique in the calling AWS account.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The endpoint of the infrastructure to be represented by the host after it is created.
         #[builder(into)]
-        pub provider_endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provider_endpoint: pulumi_gestalt_rust::Input<String>,
         /// The name of the external provider where your third-party code repository is configured.
         #[builder(into)]
-        pub provider_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provider_type: pulumi_gestalt_rust::Input<String>,
         /// The VPC configuration to be provisioned for the host. A VPC must be configured, and the infrastructure to be represented by the host must already be connected to the VPC.
         #[builder(into, default)]
-        pub vpc_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::codestarconnections::HostVpcConfiguration>,
         >,
     }

@@ -43,20 +43,20 @@ pub mod network_insights_analysis {
     pub struct NetworkInsightsAnalysisArgs {
         /// A list of ARNs for resources the path must traverse.
         #[builder(into, default)]
-        pub filter_in_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub filter_in_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// ID of the Network Insights Path to run an analysis on.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub network_insights_path_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_insights_path_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// If enabled, the resource will wait for the Network Insights Analysis status to change to `succeeded` or `failed`. Setting this to `false` will skip the process. Default: `true`.
         #[builder(into, default)]
-        pub wait_for_completion: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_for_completion: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct NetworkInsightsAnalysisResult {

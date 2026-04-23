@@ -46,10 +46,10 @@ pub mod lb_certificate_attachment {
     pub struct LbCertificateAttachmentArgs {
         /// The name of your SSL/TLS certificate.
         #[builder(into)]
-        pub certificate_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the load balancer to which you want to associate the SSL/TLS certificate.
         #[builder(into)]
-        pub lb_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lb_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LbCertificateAttachmentResult {

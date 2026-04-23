@@ -76,33 +76,33 @@ pub mod deployment {
         /// updating this field does not actually affect the deployment, just how it is updated. Default value: "CREATE_OR_ACQUIRE"
         /// Possible values: ["ACQUIRE", "CREATE_OR_ACQUIRE"]
         #[builder(into, default)]
-        pub create_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub create_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set the policy to use for deleting new resources on update/delete. Valid values are 'DELETE' (default) or 'ABANDON'. If
         /// 'DELETE', resource is deleted after removal from Deployment Manager. If 'ABANDON', the resource is only removed from
         /// Deployment Manager and is not actually deleted. Note that updating this field does not actually change the deployment,
         /// just how it is updated. Default value: "DELETE" Possible values: ["ABANDON", "DELETE"]
         #[builder(into, default)]
-        pub delete_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delete_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional user-provided description of deployment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value pairs to apply to this labels.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::deploymentmanager::DeploymentLabel>>,
         >,
         /// Unique name for the deployment
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub preview: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub preview: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters that define your deployment, including the deployment
         /// configuration and relevant templates.
         /// Structure is documented below.
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<
+        pub target: pulumi_gestalt_rust::Input<
             super::super::types::deploymentmanager::DeploymentTarget,
         >,
     }

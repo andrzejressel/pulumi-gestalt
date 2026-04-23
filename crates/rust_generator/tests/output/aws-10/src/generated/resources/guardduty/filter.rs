@@ -56,27 +56,27 @@ pub mod filter {
     pub struct FilterArgs {
         /// Specifies the action that is to be applied to the findings that match the filter. Can be one of `ARCHIVE` or `NOOP`.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// Description of the filter.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of a GuardDuty detector, attached to your account.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
         /// Represents the criteria to be used in the filter for querying findings. Contains one or more `criterion` blocks, documented below.
         #[builder(into)]
-        pub finding_criteria: pulumi_gestalt_rust::InputOrOutput<
+        pub finding_criteria: pulumi_gestalt_rust::Input<
             super::super::types::guardduty::FilterFindingCriteria,
         >,
         /// The name of your filter.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
         #[builder(into)]
-        pub rank: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub rank: pulumi_gestalt_rust::Input<i32>,
         /// The tags that you want to add to the Filter resource. A tag consists of a key and a value. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

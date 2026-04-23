@@ -142,22 +142,22 @@ pub mod custom_domain {
     pub struct CustomDomainArgs {
         /// The Binding type. Possible values include `Disabled` and `SniEnabled`.
         #[builder(into, default)]
-        pub certificate_binding_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_binding_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Container App Environment Certificate to use. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Omit this value if you wish to use an Azure Managed certificate. You must create the relevant DNS verification steps before this process will be successful.
         #[builder(into, default)]
-        pub container_app_environment_certificate_id: pulumi_gestalt_rust::InputOrOutput<
+        pub container_app_environment_certificate_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the Container App to which this Custom Domain should be bound. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_app_id: pulumi_gestalt_rust::Input<String>,
         /// The fully qualified name of the Custom Domain. Must be the CN or a named SAN in the certificate specified by the `container_app_environment_certificate_id`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** The Custom Domain verification TXT record requires a prefix of `asuid.`, however, this must be trimmed from the `name` property here. See the [official docs](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-certificates) for more information.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CustomDomainResult {

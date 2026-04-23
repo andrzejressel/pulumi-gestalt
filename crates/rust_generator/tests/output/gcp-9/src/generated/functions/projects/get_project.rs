@@ -10,7 +10,7 @@ pub mod get_project {
     pub struct GetProjectArgs {
         /// A string filter as defined in the [REST API](https://cloud.google.com/resource-manager/reference/rest/v1/projects/list#query-parameters).
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetProjectResult {

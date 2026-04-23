@@ -10,7 +10,7 @@ pub mod get_policy {
     pub struct GetPolicyArgs {
         /// Specifies the id of the storage account to retrieve the management policy for.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPolicyResult {

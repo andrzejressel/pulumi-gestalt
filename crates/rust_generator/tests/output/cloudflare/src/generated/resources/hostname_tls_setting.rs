@@ -37,16 +37,16 @@ pub mod hostname_tls_setting {
     pub struct HostnameTlsSettingArgs {
         /// Hostname that belongs to this zone name. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// TLS setting name. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub setting: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub setting: pulumi_gestalt_rust::Input<String>,
         /// TLS setting value.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HostnameTlsSettingResult {

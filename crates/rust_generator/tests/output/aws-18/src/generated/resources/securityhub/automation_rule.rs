@@ -50,31 +50,31 @@ pub mod automation_rule {
     pub struct AutomationRuleArgs {
         /// A block that specifies one or more actions to update finding fields if a finding matches the conditions specified in `Criteria`. Documented below.
         #[builder(into, default)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::securityhub::AutomationRuleAction>>,
         >,
         /// A block that specifies a set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. Documented below.
         #[builder(into, default)]
-        pub criteria: pulumi_gestalt_rust::InputOrOutput<
+        pub criteria: pulumi_gestalt_rust::Input<
             Option<super::super::types::securityhub::AutomationRuleCriteria>,
         >,
         /// The description of the rule.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. Defaults to `false`.
         #[builder(into, default)]
-        pub is_terminal: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_terminal: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the rule.
         #[builder(into)]
-        pub rule_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_name: pulumi_gestalt_rust::Input<String>,
         /// An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first.
         #[builder(into)]
-        pub rule_order: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub rule_order: pulumi_gestalt_rust::Input<i32>,
         /// Whether the rule is active after it is created.
         #[builder(into, default)]
-        pub rule_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rule_status: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

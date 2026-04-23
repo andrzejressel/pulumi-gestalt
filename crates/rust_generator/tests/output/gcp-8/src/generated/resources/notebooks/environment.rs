@@ -69,37 +69,37 @@ pub mod environment {
         /// Use a container image to start the notebook instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub container_image: pulumi_gestalt_rust::InputOrOutput<
+        pub container_image: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::EnvironmentContainerImage>,
         >,
         /// A brief description of this environment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Display name of this environment for the UI.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the zone where the machine resides.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name specified for the Environment instance.
         /// Format: projects/{project_id}/locations/{location}/environments/{environmentId}
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Path to a Bash script that automatically runs after a notebook instance fully boots up.
         /// The path must be a URL or Cloud Storage path. Example: "gs://path-to-file/file-name"
         #[builder(into, default)]
-        pub post_startup_script: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub post_startup_script: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use a Compute Engine VM image to start the notebook instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub vm_image: pulumi_gestalt_rust::InputOrOutput<
+        pub vm_image: pulumi_gestalt_rust::Input<
             Option<super::super::types::notebooks::EnvironmentVmImage>,
         >,
     }

@@ -661,7 +661,7 @@ pub mod job {
         /// The configuration for this template.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             Option<super::super::types::transcoder::JobConfig>,
         >,
         /// The labels associated with this job. You can use these to organize and group your jobs.
@@ -669,7 +669,7 @@ pub mod job {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the transcoding job resource.
@@ -677,15 +677,15 @@ pub mod job {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the templateId to use for populating Job.config.
         /// The default is preset/web-hd, which is the only supported preset.
         #[builder(into, default)]
-        pub template_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct JobResult {

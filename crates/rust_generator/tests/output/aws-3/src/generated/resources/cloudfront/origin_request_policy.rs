@@ -66,23 +66,23 @@ pub mod origin_request_policy {
     pub struct OriginRequestPolicyArgs {
         /// Comment to describe the origin request policy.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the origin request key and automatically included in requests that CloudFront sends to the origin. See Cookies Config for more information.
         #[builder(into)]
-        pub cookies_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cookies_config: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::OriginRequestPolicyCookiesConfig,
         >,
         /// Object that determines whether any HTTP headers (and if so, which headers) are included in the origin request key and automatically included in requests that CloudFront sends to the origin. See Headers Config for more information.
         #[builder(into)]
-        pub headers_config: pulumi_gestalt_rust::InputOrOutput<
+        pub headers_config: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::OriginRequestPolicyHeadersConfig,
         >,
         /// Unique name to identify the origin request policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the origin request key and automatically included in requests that CloudFront sends to the origin. See Query String Config for more information.
         #[builder(into)]
-        pub query_strings_config: pulumi_gestalt_rust::InputOrOutput<
+        pub query_strings_config: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::OriginRequestPolicyQueryStringsConfig,
         >,
     }

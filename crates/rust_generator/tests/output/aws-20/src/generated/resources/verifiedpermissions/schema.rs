@@ -36,12 +36,12 @@ pub mod schema {
     pub struct SchemaArgs {
         /// The definition of the schema.
         #[builder(into, default)]
-        pub definition: pulumi_gestalt_rust::InputOrOutput<
+        pub definition: pulumi_gestalt_rust::Input<
             Option<super::super::types::verifiedpermissions::SchemaDefinition>,
         >,
         /// The ID of the Policy Store.
         #[builder(into)]
-        pub policy_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_store_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SchemaResult {

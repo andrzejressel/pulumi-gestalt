@@ -10,13 +10,13 @@ pub mod get_discovered_workload {
     pub struct GetDiscoveredWorkloadArgs {
         /// The location of the discovered workload.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The host project of the discovered workload.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The uri of the workload (instance group managed by the Instance Group Manager). Example: "//compute.googleapis.com/projects/1/regions/us-east1/instanceGroups/id1"
         #[builder(into)]
-        pub workload_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workload_uri: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDiscoveredWorkloadResult {

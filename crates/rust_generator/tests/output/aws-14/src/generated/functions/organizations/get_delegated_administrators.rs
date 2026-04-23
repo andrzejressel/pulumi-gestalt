@@ -10,7 +10,7 @@ pub mod get_delegated_administrators {
     pub struct GetDelegatedAdministratorsArgs {
         /// Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service. If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.
         #[builder(into, default)]
-        pub service_principal: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_principal: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDelegatedAdministratorsResult {

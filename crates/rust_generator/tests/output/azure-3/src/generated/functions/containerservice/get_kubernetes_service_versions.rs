@@ -10,13 +10,13 @@ pub mod get_kubernetes_service_versions {
     pub struct GetKubernetesServiceVersionsArgs {
         /// Should Preview versions of Kubernetes in AKS be included? Defaults to `true`
         #[builder(into, default)]
-        pub include_preview: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_preview: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the location in which to query for versions.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// A prefix filter for the versions of Kubernetes which should be returned; for example `1.` will return `1.9` to `1.14`, whereas `1.12` will return `1.12.2`.
         #[builder(into, default)]
-        pub version_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetKubernetesServiceVersionsResult {

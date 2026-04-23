@@ -10,10 +10,10 @@ pub mod get_organizational_unit {
     pub struct GetOrganizationalUnitArgs {
         /// Name of the organizational unit
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Parent ID of the organizational unit.
         #[builder(into)]
-        pub parent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOrganizationalUnitResult {

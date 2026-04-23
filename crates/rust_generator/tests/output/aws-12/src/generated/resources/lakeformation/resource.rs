@@ -35,20 +35,20 @@ pub mod resource {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Flag to enable AWS LakeFormation hybrid access permission mode.
         ///
         /// > **NOTE:** AWS does not support registering an S3 location with an IAM role and subsequently updating the S3 location registration to a service-linked role.
         #[builder(into, default)]
-        pub hybrid_access_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub hybrid_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Role that has read/write access to the resource.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Designates an AWS Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog.
         #[builder(into, default)]
-        pub use_service_linked_role: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_service_linked_role: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub with_federation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub with_federation: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ResourceResult {

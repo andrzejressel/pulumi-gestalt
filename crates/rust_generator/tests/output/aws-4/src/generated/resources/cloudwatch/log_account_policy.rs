@@ -84,19 +84,19 @@ pub mod log_account_policy {
     pub struct LogAccountPolicyArgs {
         /// Text of the account policy. Refer to the [AWS docs](https://docs.aws.amazon.com/cli/latest/reference/logs/put-account-policy.html) for more information.
         #[builder(into)]
-        pub policy_document: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_document: pulumi_gestalt_rust::Input<String>,
         /// Name of the account policy.
         #[builder(into)]
-        pub policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_name: pulumi_gestalt_rust::Input<String>,
         /// Type of account policy. One of `DATA_PROTECTION_POLICY`, `SUBSCRIPTION_FILTER_POLICY`, `FIELD_INDEX_POLICY` or `TRANSFORMER_POLICY`. You can have one account policy per type in an account.
         #[builder(into)]
-        pub policy_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_type: pulumi_gestalt_rust::Input<String>,
         /// Currently defaults to and only accepts the value: `ALL`.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Criteria for applying a subscription filter policy to a selection of log groups. The only allowable criteria selector is `LogGroupName NOT IN []`.
         #[builder(into, default)]
-        pub selection_criteria: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub selection_criteria: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LogAccountPolicyResult {

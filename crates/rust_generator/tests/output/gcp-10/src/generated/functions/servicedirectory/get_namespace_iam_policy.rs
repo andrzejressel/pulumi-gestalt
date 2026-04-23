@@ -10,7 +10,7 @@ pub mod get_namespace_iam_policy {
     pub struct GetNamespaceIamPolicyArgs {
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNamespaceIamPolicyResult {

@@ -83,27 +83,25 @@ pub mod flex_template_job {
     pub struct FlexTemplateJobArgs {
         /// List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
         #[builder(into, default)]
-        pub additional_experiments: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub additional_experiments: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The algorithm to use for autoscaling.
         #[builder(into, default)]
-        pub autoscaling_algorithm: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub autoscaling_algorithm: pulumi_gestalt_rust::Input<Option<String>>,
         /// The GCS path to the Dataflow job Flex
         /// Template.
         ///
         /// - - -
         #[builder(into)]
-        pub container_spec_gcs_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_spec_gcs_path: pulumi_gestalt_rust::Input<String>,
         /// Immutable. Indicates if the job should use the streaming engine feature.
         #[builder(into, default)]
-        pub enable_streaming_engine: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_streaming_engine: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The configuration for VM IPs.  Options are `"WORKER_IP_PUBLIC"` or `"WORKER_IP_PRIVATE"`.
         #[builder(into, default)]
-        pub ip_configuration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_configuration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the Cloud KMS key for the job. Key format is: `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// User labels to be specified for the job. Keys and values
         /// should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
         /// page. **Note**: This field is marked as deprecated as the API does not currently
@@ -112,67 +110,65 @@ pub mod flex_template_job {
         /// that begin with `goog-dataflow-provided`. Unless explicitly set in config, these
         /// labels will be ignored to prevent diffs on re-apply.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The machine type to use for launching the job. The default is n1-standard-1.
         #[builder(into, default)]
-        pub launcher_machine_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub launcher_machine_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The machine type to use for the job.
         #[builder(into, default)]
-        pub machine_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub machine_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.
         #[builder(into, default)]
-        pub max_workers: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_workers: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Immutable. A unique name for the resource, required by Dataflow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network to which VMs will be assigned. If it is not provided, "default" will be used.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. The initial number of Google Compute Engine instances for the job.
         #[builder(into, default)]
-        pub num_workers: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub num_workers: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One of "drain" or "cancel". Specifies behavior of
         /// deletion during `pulumi destroy`.  See above note.
         #[builder(into, default)]
-        pub on_delete: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub on_delete: pulumi_gestalt_rust::Input<Option<String>>,
         /// **Template specific** Key/Value pairs to be forwarded to the pipeline's options; keys are
         /// case-sensitive based on the language on which the pipeline is coded, mostly Java.
         /// **Note**: do not configure Dataflow options here in parameters.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The project in which the resource belongs. If it is not
         /// provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. The region in which the created job should run.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Docker registry location of container image to use for the 'worker harness. Default is the container for the version of the SDK. Note this field is only valid for portable pipelines.
         #[builder(into, default)]
-        pub sdk_container_image: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sdk_container_image: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service account email to run the workers as. This should be just an email e.g. `myserviceaccount@myproject.iam.gserviceaccount.com`. Do not include any `serviceAccount:` or other prefix.
         #[builder(into, default)]
-        pub service_account_email: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account_email: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub skip_wait_on_job_termination: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub skip_wait_on_job_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Cloud Storage path to use for staging files. Must be a valid Cloud Storage URL, beginning with gs://.
         #[builder(into, default)]
-        pub staging_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub staging_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK".
         #[builder(into, default)]
-        pub subnetwork: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnetwork: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with gs://.
         #[builder(into, default)]
-        pub temp_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub temp_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job.Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job.
         #[builder(into, default)]
-        pub transform_name_mapping: pulumi_gestalt_rust::InputOrOutput<
+        pub transform_name_mapping: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

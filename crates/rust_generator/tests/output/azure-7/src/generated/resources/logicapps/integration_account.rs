@@ -41,24 +41,24 @@ pub mod integration_account {
     pub struct IntegrationAccountArgs {
         /// The resource ID of the Integration Service Environment. Changing this forces a new Logic App Integration Account to be created.
         #[builder(into, default)]
-        pub integration_service_environment_id: pulumi_gestalt_rust::InputOrOutput<
+        pub integration_service_environment_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Azure Region where the Logic App Integration Account should exist. Changing this forces a new Logic App Integration Account to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Logic App Integration Account. Changing this forces a new Logic App Integration Account to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Logic App Integration Account should exist. Changing this forces a new Logic App Integration Account to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU name of the Logic App Integration Account. Possible Values are `Basic`, `Free` and `Standard`.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Logic App Integration Account.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

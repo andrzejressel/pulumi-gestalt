@@ -40,33 +40,33 @@ pub mod kx_volume {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub availability_zones: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub availability_zones: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The number of availability zones you want to assign per volume. Currently, Finspace only support SINGLE for volumes.
         /// * `SINGLE` - Assigns one availability zone per volume.
         #[builder(into)]
-        pub az_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub az_mode: pulumi_gestalt_rust::Input<String>,
         /// Description of the volume.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique identifier for the kdb environment, whose clusters can attach to the volume.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// Unique name for the volumr that you want to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the configuration for the Network attached storage (`NAS_1`) file system volume. This parameter is required when `volume_type` is `NAS_1`. See `nas1_configuration` Argument Reference below.
         #[builder(into, default)]
-        pub nas1_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub nas1_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::finspace::KxVolumeNas1Configuration>>,
         >,
         /// A list of key-value pairs to label the volume. You can add up to 50 tags to a volume
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of file system volume. Currently, FinSpace only supports the `NAS_1` volume type. When you select the `NAS_1` volume type, you must also provide `nas1_configuration`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct KxVolumeResult {

@@ -10,21 +10,21 @@ pub mod get_links {
     pub struct GetLinksArgs {
         /// ID of the Global Network of the links to retrieve.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// Link provider to retrieve.
         #[builder(into, default)]
-        pub provider_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub provider_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the site of the links to retrieve.
         #[builder(into, default)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub site_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Restricts the list to the links with these tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Link type to retrieve.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetLinksResult {

@@ -10,7 +10,7 @@ pub mod get_data_shares {
     pub struct GetDataSharesArgs {
         /// An array of all data shares in the current region. See `data_shares` below.
         #[builder(into, default)]
-        pub data_shares: pulumi_gestalt_rust::InputOrOutput<
+        pub data_shares: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::redshift::GetDataSharesDataShare>>,
         >,
     }

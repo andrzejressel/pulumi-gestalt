@@ -64,39 +64,39 @@ pub mod gdc_service_instance {
     pub struct GdcServiceInstanceArgs {
         /// User-provided human-readable name to be used in user interfaces.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Gdce cluster information.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub gdce_cluster: pulumi_gestalt_rust::InputOrOutput<
+        pub gdce_cluster: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::GdcServiceInstanceGdceCluster>,
         >,
         /// The labels to associate with this service instance. Labels may be used for filtering and billing tracking.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Requested service account to associate with ServiceInstance.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// Id of the service instance.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub service_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_instance_id: pulumi_gestalt_rust::Input<String>,
         /// Spark-specific service instance configuration.
         #[builder(into, default)]
-        pub spark_service_instance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_service_instance_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataproc::GdcServiceInstanceSparkServiceInstanceConfig,
             >,

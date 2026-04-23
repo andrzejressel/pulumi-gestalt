@@ -38,10 +38,10 @@ pub mod resource_association {
     pub struct ResourceAssociationArgs {
         /// Amazon Resource Name (ARN) of the resource to associate with the RAM Resource Share.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the RAM Resource Share.
         #[builder(into)]
-        pub resource_share_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_share_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourceAssociationResult {

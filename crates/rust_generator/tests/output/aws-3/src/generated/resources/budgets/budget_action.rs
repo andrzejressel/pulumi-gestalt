@@ -98,40 +98,40 @@ pub mod budget_action {
     pub struct BudgetActionArgs {
         /// The ID of the target account for budget. Will use current user's account_id by default if omitted.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The trigger threshold of the action. See Action Threshold.
         #[builder(into)]
-        pub action_threshold: pulumi_gestalt_rust::InputOrOutput<
+        pub action_threshold: pulumi_gestalt_rust::Input<
             super::super::types::budgets::BudgetActionActionThreshold,
         >,
         /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. Valid values are `APPLY_IAM_POLICY`, `APPLY_SCP_POLICY`, and `RUN_SSM_DOCUMENTS`.
         #[builder(into)]
-        pub action_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action_type: pulumi_gestalt_rust::Input<String>,
         /// This specifies if the action needs manual or automatic approval. Valid values are `AUTOMATIC` and `MANUAL`.
         #[builder(into)]
-        pub approval_model: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub approval_model: pulumi_gestalt_rust::Input<String>,
         /// The name of a budget.
         #[builder(into)]
-        pub budget_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub budget_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies all of the type-specific parameters. See Definition.
         #[builder(into)]
-        pub definition: pulumi_gestalt_rust::InputOrOutput<
+        pub definition: pulumi_gestalt_rust::Input<
             super::super::types::budgets::BudgetActionDefinition,
         >,
         /// The role passed for action execution and reversion. Roles and actions must be in the same account.
         #[builder(into)]
-        pub execution_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub execution_role_arn: pulumi_gestalt_rust::Input<String>,
         /// The type of a notification. Valid values are `ACTUAL` or `FORECASTED`.
         #[builder(into)]
-        pub notification_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub notification_type: pulumi_gestalt_rust::Input<String>,
         /// A list of subscribers. See Subscriber.
         #[builder(into)]
-        pub subscribers: pulumi_gestalt_rust::InputOrOutput<
+        pub subscribers: pulumi_gestalt_rust::Input<
             Vec<super::super::types::budgets::BudgetActionSubscriber>,
         >,
         /// Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

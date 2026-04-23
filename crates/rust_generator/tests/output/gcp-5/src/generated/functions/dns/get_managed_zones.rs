@@ -10,7 +10,7 @@ pub mod get_managed_zones {
     pub struct GetManagedZonesArgs {
         /// The ID of the project containing Google Cloud DNS zones. If this is not provided the default project will be used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetManagedZonesResult {

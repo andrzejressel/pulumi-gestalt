@@ -10,7 +10,7 @@ pub mod get_cluster_parameter_group {
     pub struct GetClusterParameterGroupArgs {
         /// DB cluster parameter group name.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetClusterParameterGroupResult {

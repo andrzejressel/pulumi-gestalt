@@ -43,13 +43,13 @@ pub mod email_identity_mail_from_attributes {
     pub struct EmailIdentityMailFromAttributesArgs {
         /// The action to take if the required MX record isn't found when you send an email. Valid values: `USE_DEFAULT_VALUE`, `REJECT_MESSAGE`.
         #[builder(into, default)]
-        pub behavior_on_mx_failure: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub behavior_on_mx_failure: pulumi_gestalt_rust::Input<Option<String>>,
         /// The verified email identity.
         #[builder(into)]
-        pub email_identity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_identity: pulumi_gestalt_rust::Input<String>,
         /// The custom MAIL FROM domain that you want the verified identity to use. Required if `behavior_on_mx_failure` is `REJECT_MESSAGE`.
         #[builder(into, default)]
-        pub mail_from_domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mail_from_domain: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EmailIdentityMailFromAttributesResult {

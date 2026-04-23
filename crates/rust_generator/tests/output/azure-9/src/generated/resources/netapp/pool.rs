@@ -56,35 +56,35 @@ pub mod pool {
     pub struct PoolArgs {
         /// The name of the NetApp account in which the NetApp Pool should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The encryption type of the pool. Valid values include `Single`, and `Double`. Defaults to `Single`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub encryption_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encryption_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the NetApp Pool. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// QoS Type of the pool. Valid values include `Auto` or `Manual`. Defaults to `Auto`.
         #[builder(into, default)]
-        pub qos_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub qos_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group where the NetApp Pool should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The service level of the file system. Valid values include `Premium`, `Standard`, and `Ultra`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub service_level: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_level: pulumi_gestalt_rust::Input<String>,
         /// Provisioned size of the pool in TB. Value must be between `1` and `2048`.
         ///
         /// > **NOTE** `2` TB capacity pool sizing is currently in preview. You can only take advantage of the `2` TB minimum if all the volumes in the capacity pool are using `Standard` network features. If any volume is using `Basic` network features, the minimum size is `4` TB. Please see the product [documentation](https://learn.microsoft.com/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool) for more information.
         ///
         /// > **NOTE** The maximum `size_in_tb` is goverened by regional quotas. You may request additional capacity from Azure, currently up to `2048`.
         #[builder(into)]
-        pub size_in_tb: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub size_in_tb: pulumi_gestalt_rust::Input<i32>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

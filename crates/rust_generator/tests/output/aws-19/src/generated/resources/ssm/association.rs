@@ -116,68 +116,62 @@ pub mod association {
     pub struct AssociationArgs {
         /// By default, when you create a new or update associations, the system runs it immediately and then according to the schedule you specified. Enable this option if you do not want an association to run immediately after you create or update it. This parameter is not supported for rate expressions. Default: `false`.
         #[builder(into, default)]
-        pub apply_only_at_cron_interval: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub apply_only_at_cron_interval: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The descriptive name for the association.
         #[builder(into, default)]
-        pub association_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub association_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the target for the association. This target is required for associations that use an `Automation` document and target resources by using rate controls. This should be set to the SSM document `parameter` that will define how your automation will branch out.
         #[builder(into, default)]
-        pub automation_target_parameter_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub automation_target_parameter_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The compliance severity for the association. Can be one of the following: `UNSPECIFIED`, `LOW`, `MEDIUM`, `HIGH` or `CRITICAL`
         #[builder(into, default)]
-        pub compliance_severity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compliance_severity: pulumi_gestalt_rust::Input<Option<String>>,
         /// The document version you want to associate with the target(s). Can be a specific version or the default version.
         #[builder(into, default)]
-        pub document_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub document_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The instance ID to apply an SSM document to. Use `targets` with key `InstanceIds` for document schema versions 2.0 and above. Use the `targets` attribute instead.
         #[builder(into, default)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%.
         #[builder(into, default)]
-        pub max_concurrency: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub max_concurrency: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify a number, for example 10, or a percentage of the target set, for example 10%. If you specify a threshold of 3, the stop command is sent when the fourth error is returned. If you specify a threshold of 10% for 50 associations, the stop command is sent when the sixth error is returned.
         #[builder(into, default)]
-        pub max_errors: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub max_errors: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the SSM document to apply.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An output location block. Output Location is documented below.
         #[builder(into, default)]
-        pub output_location: pulumi_gestalt_rust::InputOrOutput<
+        pub output_location: pulumi_gestalt_rust::Input<
             Option<super::super::types::ssm::AssociationOutputLocation>,
         >,
         /// A block of arbitrary string parameters to pass to the SSM document.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A [cron or rate expression](https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html) that specifies when the association runs.
         #[builder(into, default)]
-        pub schedule_expression: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schedule_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// The mode for generating association compliance. You can specify `AUTO` or `MANUAL`.
         #[builder(into, default)]
-        pub sync_compliance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sync_compliance: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the object. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A block containing the targets of the SSM association. Targets are documented below. AWS currently supports a maximum of 5 targets.
         #[builder(into, default)]
-        pub targets: pulumi_gestalt_rust::InputOrOutput<
+        pub targets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ssm::AssociationTarget>>,
         >,
         /// The number of seconds to wait for the association status to be `Success`. If `Success` status is not reached within the given time, create opration will fail.
         ///
         /// Output Location (`output_location`) is an S3 bucket where you want to store the results of this association:
         #[builder(into, default)]
-        pub wait_for_success_timeout_seconds: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub wait_for_success_timeout_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct AssociationResult {

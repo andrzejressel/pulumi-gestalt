@@ -195,52 +195,52 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// Configuration block for the broker nodes of the Kafka cluster.
         #[builder(into)]
-        pub broker_node_group_info: pulumi_gestalt_rust::InputOrOutput<
+        pub broker_node_group_info: pulumi_gestalt_rust::Input<
             super::super::types::msk::ClusterBrokerNodeGroupInfo,
         >,
         /// Configuration block for specifying a client authentication. See below.
         #[builder(into, default)]
-        pub client_authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub client_authentication: pulumi_gestalt_rust::Input<
             Option<super::super::types::msk::ClusterClientAuthentication>,
         >,
         /// Name of the MSK cluster.
         #[builder(into, default)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for specifying a MSK Configuration to attach to Kafka brokers. See below.
         #[builder(into, default)]
-        pub configuration_info: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::msk::ClusterConfigurationInfo>,
         >,
         /// Configuration block for specifying encryption. See below.
         #[builder(into, default)]
-        pub encryption_info: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::msk::ClusterEncryptionInfo>,
         >,
         /// Specify the desired enhanced MSK CloudWatch monitoring level. See [Monitoring Amazon MSK with Amazon CloudWatch](https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html)
         #[builder(into, default)]
-        pub enhanced_monitoring: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub enhanced_monitoring: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the desired Kafka software version.
         #[builder(into)]
-        pub kafka_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kafka_version: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for streaming broker logs to Cloudwatch/S3/Kinesis Firehose. See below.
         #[builder(into, default)]
-        pub logging_info: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::msk::ClusterLoggingInfo>,
         >,
         /// The desired total number of broker nodes in the kafka cluster.  It must be a multiple of the number of specified client subnets.
         #[builder(into)]
-        pub number_of_broker_nodes: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub number_of_broker_nodes: pulumi_gestalt_rust::Input<i32>,
         /// Configuration block for JMX and Node monitoring for the MSK cluster. See below.
         #[builder(into, default)]
-        pub open_monitoring: pulumi_gestalt_rust::InputOrOutput<
+        pub open_monitoring: pulumi_gestalt_rust::Input<
             Option<super::super::types::msk::ClusterOpenMonitoring>,
         >,
         /// Controls storage mode for supported storage tiers. Valid values are: `LOCAL` or `TIERED`.
         #[builder(into, default)]
-        pub storage_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

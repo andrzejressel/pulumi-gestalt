@@ -90,25 +90,25 @@ pub mod workforce {
     pub struct WorkforceArgs {
         /// Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single Amazon Cognito user pool. Conflicts with `oidc_config`. see Cognito Config details below.
         #[builder(into, default)]
-        pub cognito_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cognito_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::WorkforceCognitoConfig>,
         >,
         /// Use this parameter to configure a private workforce using your own OIDC Identity Provider. Conflicts with `cognito_config`. see OIDC Config details below.
         #[builder(into, default)]
-        pub oidc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub oidc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::WorkforceOidcConfig>,
         >,
         /// A list of IP address ranges Used to create an allow list of IP addresses for a private workforce. By default, a workforce isn't restricted to specific IP addresses. see Source Ip Config details below.
         #[builder(into, default)]
-        pub source_ip_config: pulumi_gestalt_rust::InputOrOutput<
+        pub source_ip_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::WorkforceSourceIpConfig>,
         >,
         /// The name of the Workforce (must be unique).
         #[builder(into)]
-        pub workforce_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workforce_name: pulumi_gestalt_rust::Input<String>,
         /// configure a workforce using VPC. see Workforce VPC Config details below.
         #[builder(into, default)]
-        pub workforce_vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub workforce_vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::WorkforceWorkforceVpcConfig>,
         >,
     }

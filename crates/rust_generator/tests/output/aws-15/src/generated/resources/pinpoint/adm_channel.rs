@@ -40,16 +40,16 @@ pub mod adm_channel {
     pub struct AdmChannelArgs {
         /// The application ID.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// Client ID (part of OAuth Credentials) obtained via Amazon Developer Account.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// Client Secret (part of OAuth Credentials) obtained via Amazon Developer Account.
         #[builder(into)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_secret: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether to enable the channel. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct AdmChannelResult {

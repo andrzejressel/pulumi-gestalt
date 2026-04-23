@@ -48,19 +48,19 @@ pub mod peered_dns_domain {
     pub struct PeeredDnsDomainArgs {
         /// The DNS domain suffix of the peered DNS domain. Make sure to suffix with a `.` (dot).
         #[builder(into)]
-        pub dns_suffix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns_suffix: pulumi_gestalt_rust::Input<String>,
         /// Internal name used for the peered DNS domain.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network in the consumer project.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The producer project number. If not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Private service connection between service and consumer network, defaults to `servicenetworking.googleapis.com`
         #[builder(into, default)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PeeredDnsDomainResult {

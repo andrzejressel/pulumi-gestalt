@@ -45,15 +45,15 @@ pub mod monitoring_schedule {
     pub struct MonitoringScheduleArgs {
         /// The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.
         #[builder(into)]
-        pub monitoring_schedule_config: pulumi_gestalt_rust::InputOrOutput<
+        pub monitoring_schedule_config: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::MonitoringScheduleMonitoringScheduleConfig,
         >,
         /// The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account. If omitted, the provider will assign a random, unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

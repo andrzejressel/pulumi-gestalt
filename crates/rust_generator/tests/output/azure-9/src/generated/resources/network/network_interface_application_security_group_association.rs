@@ -85,10 +85,10 @@ pub mod network_interface_application_security_group_association {
     pub struct NetworkInterfaceApplicationSecurityGroupAssociationArgs {
         /// The ID of the Application Security Group which this Network Interface which should be connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_security_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_security_group_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Network Interface. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkInterfaceApplicationSecurityGroupAssociationResult {

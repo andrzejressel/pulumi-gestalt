@@ -10,7 +10,7 @@ pub mod func_with_empty_outputs {
     pub struct FuncWithEmptyOutputsArgs {
         /// The Name of the FeatureGroup.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     ///
     /// Registers a new resource with the given unique name and arguments

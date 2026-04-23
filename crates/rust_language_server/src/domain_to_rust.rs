@@ -117,7 +117,7 @@ fn lower_resource(
 /// Wraps a plain value expression in `pulumi_gestalt_rust::pulumi_any!(...)`.
 ///
 /// Plain literals (`"test"`, `42`, `true`, `null`) cannot be passed directly to
-/// resource input fields typed as `InputOrOutput<PulumiAny>`.  They must be
+/// resource input fields typed as `Input<PulumiAny>`.  They must be
 /// wrapped.  Expressions that already produce an `Output` or are already a
 /// `pulumi_any!` invocation are passed through unchanged.
 fn wrap_as_pulumi_any(expr: RustExpr) -> RustExpr {

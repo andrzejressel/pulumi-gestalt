@@ -115,30 +115,30 @@ pub mod network_endpoint {
         /// This is required for network endpoints of type GCE_VM_IP_PORT.
         /// The instance must be in the same zone of network endpoint group.
         #[builder(into, default)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance: pulumi_gestalt_rust::Input<Option<String>>,
         /// IPv4 address of network endpoint. The IP address must belong
         /// to a VM in GCE (either the primary IP or as part of an aliased IP
         /// range).
         #[builder(into)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip_address: pulumi_gestalt_rust::Input<String>,
         /// The network endpoint group this endpoint is part of.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub network_endpoint_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_endpoint_group: pulumi_gestalt_rust::Input<String>,
         /// Port number of network endpoint.
         /// **Note** `port` is required unless the Network Endpoint Group is created
         /// with the type of `GCE_VM_IP`
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Zone where the containing network endpoint group is located.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NetworkEndpointResult {

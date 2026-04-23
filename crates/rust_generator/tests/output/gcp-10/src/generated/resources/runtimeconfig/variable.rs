@@ -75,15 +75,15 @@ pub mod variable {
         /// The name of the variable to manage. Note that variable
         /// names can be hierarchical using slashes (e.g. "prod-variables/hostname").
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the RuntimeConfig resource containing this
         /// variable.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// or `value` - (Required) The content to associate with the variable.
         /// Exactly one of `text` or `variable` must be specified. If `text` is specified,
         /// it must be a valid UTF-8 string and less than 4096 bytes in length. If `value`
@@ -91,9 +91,9 @@ pub mod variable {
         ///
         /// - - -
         #[builder(into, default)]
-        pub text: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub text: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub value: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VariableResult {

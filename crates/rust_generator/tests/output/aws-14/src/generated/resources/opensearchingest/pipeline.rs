@@ -85,47 +85,47 @@ pub mod pipeline {
     pub struct PipelineArgs {
         /// Key-value pairs to configure persistent buffering for the pipeline. See `buffer_options` below.
         #[builder(into, default)]
-        pub buffer_options: pulumi_gestalt_rust::InputOrOutput<
+        pub buffer_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::opensearchingest::PipelineBufferOptions>,
         >,
         /// Key-value pairs to configure encryption for data that is written to a persistent buffer. See `encryption_at_rest_options` below.
         #[builder(into, default)]
-        pub encryption_at_rest_options: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_at_rest_options: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::opensearchingest::PipelineEncryptionAtRestOptions,
             >,
         >,
         /// Key-value pairs to configure log publishing. See `log_publishing_options` below.
         #[builder(into, default)]
-        pub log_publishing_options: pulumi_gestalt_rust::InputOrOutput<
+        pub log_publishing_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::opensearchingest::PipelineLogPublishingOptions>,
         >,
         /// The maximum pipeline capacity, in Ingestion Compute Units (ICUs).
         #[builder(into)]
-        pub max_units: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub max_units: pulumi_gestalt_rust::Input<i32>,
         /// The minimum pipeline capacity, in Ingestion Compute Units (ICUs).
         #[builder(into)]
-        pub min_units: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub min_units: pulumi_gestalt_rust::Input<i32>,
         /// The pipeline configuration in YAML format. This argument accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \n.
         #[builder(into)]
-        pub pipeline_configuration_body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pipeline_configuration_body: pulumi_gestalt_rust::Input<String>,
         /// The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an AWS Region.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub pipeline_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pipeline_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the pipeline. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::opensearchingest::PipelineTimeouts>,
         >,
         /// Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint. See `vpc_options` below.
         #[builder(into, default)]
-        pub vpc_options: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::opensearchingest::PipelineVpcOptions>,
         >,
     }

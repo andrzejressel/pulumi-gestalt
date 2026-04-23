@@ -10,10 +10,10 @@ pub mod get_asset {
     pub struct GetAssetArgs {
         /// Outpost ARN.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// ID of the asset.
         #[builder(into)]
-        pub asset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub asset_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAssetResult {

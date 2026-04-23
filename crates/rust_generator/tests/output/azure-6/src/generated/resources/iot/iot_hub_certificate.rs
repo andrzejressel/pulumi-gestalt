@@ -54,19 +54,19 @@ pub mod iot_hub_certificate {
     pub struct IotHubCertificateArgs {
         /// The Base-64 representation of the X509 leaf certificate .cer file or just a .pem file content.
         #[builder(into)]
-        pub certificate_content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_content: pulumi_gestalt_rust::Input<String>,
         /// The name of the IoT Device Provisioning Service that this certificate will be attached to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iot_dps_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iot_dps_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies if the certificate is created in verified state. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub is_verified: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_verified: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Iot Device Provisioning Service Certificate resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group under which the Iot Device Provisioning Service Certificate resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IotHubCertificateResult {

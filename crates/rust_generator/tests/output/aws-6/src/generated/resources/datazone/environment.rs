@@ -55,39 +55,39 @@ pub mod environment {
     pub struct EnvironmentArgs {
         /// The ID of the Amazon Web Services account where the environment exists
         #[builder(into, default)]
-        pub account_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Web Services region where the environment exists.
         #[builder(into, default)]
-        pub account_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The blueprint with which the environment is created.
         #[builder(into, default)]
-        pub blueprint_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub blueprint_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the domain where the environment exists.
         #[builder(into)]
-        pub domain_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_identifier: pulumi_gestalt_rust::Input<String>,
         /// The business glossary terms that can be used in this environment.
         #[builder(into, default)]
-        pub glossary_terms: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub glossary_terms: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the environment.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the profile with which the environment is created.
         #[builder(into)]
-        pub profile_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub profile_identifier: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project where the environment exists.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub project_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_identifier: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::EnvironmentTimeouts>,
         >,
         /// The user parameters that are used in the environment. See User Parameters for more information.
         #[builder(into, default)]
-        pub user_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub user_parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datazone::EnvironmentUserParameter>>,
         >,
     }

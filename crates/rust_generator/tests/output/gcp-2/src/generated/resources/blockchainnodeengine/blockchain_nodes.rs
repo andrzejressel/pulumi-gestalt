@@ -103,15 +103,15 @@ pub mod blockchain_nodes {
         ///
         /// - - -
         #[builder(into)]
-        pub blockchain_node_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub blockchain_node_id: pulumi_gestalt_rust::Input<String>,
         /// User-provided key-value pairs
         /// Possible values are: `ETHEREUM`.
         #[builder(into, default)]
-        pub blockchain_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub blockchain_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-provided key-value pairs
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ethereum_details: pulumi_gestalt_rust::InputOrOutput<
+        pub ethereum_details: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::blockchainnodeengine::BlockchainNodesEthereumDetails,
             >,
@@ -121,16 +121,16 @@ pub mod blockchain_nodes {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Location of Blockchain Node being created.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BlockchainNodesResult {

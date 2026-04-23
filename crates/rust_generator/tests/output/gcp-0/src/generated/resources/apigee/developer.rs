@@ -172,28 +172,28 @@ pub mod developer {
         /// Developer attributes (name/value pairs). The custom attribute limit is 18.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigee::DeveloperAttribute>>,
         >,
         /// Email address of the developer. This value is used to uniquely identify the developer in Apigee hybrid. Note that the email address has to be in lowercase only..
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
         /// First name of the developer.
         #[builder(into)]
-        pub first_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub first_name: pulumi_gestalt_rust::Input<String>,
         /// Last name of the developer.
         #[builder(into)]
-        pub last_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub last_name: pulumi_gestalt_rust::Input<String>,
         /// The Apigee Organization associated with the Apigee instance,
         /// in the format `organizations/{{org_name}}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// User name of the developer. Not used by Apigee hybrid.
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DeveloperResult {

@@ -10,11 +10,11 @@ pub mod get_job_iam_policy {
     pub struct GetJobIamPolicyArgs {
         /// The name or relative resource id of the job to manage IAM policies for.
         #[builder(into)]
-        pub job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub job_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetJobIamPolicyResult {

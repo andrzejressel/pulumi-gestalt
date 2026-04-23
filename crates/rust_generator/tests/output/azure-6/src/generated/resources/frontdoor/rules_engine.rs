@@ -113,19 +113,19 @@ pub mod rules_engine {
     pub struct RulesEngineArgs {
         /// Whether this Rules engine configuration is enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Front Door instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub frontdoor_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frontdoor_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Rules engine configuration. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `rule` block as defined below.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::frontdoor::RulesEngineRule>>,
         >,
     }

@@ -33,28 +33,28 @@ pub mod customer_gateway {
     pub struct CustomerGatewayArgs {
         /// The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN). Valid values are from  `1` to `2147483647`. Conflicts with `bgp_asn_extended`.
         #[builder(into, default)]
-        pub bgp_asn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bgp_asn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN). Valid values are from  `2147483648` to `4294967295` Conflicts with `bgp_asn`.
         #[builder(into, default)]
-        pub bgp_asn_extended: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bgp_asn_extended: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for the customer gateway certificate.
         #[builder(into, default)]
-        pub certificate_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A name for the customer gateway device.
         #[builder(into, default)]
-        pub device_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub device_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 address for the customer gateway device's outside interface.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags to apply to the gateway. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of customer gateway. The only type AWS
         /// supports at this time is "ipsec.1".
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomerGatewayResult {

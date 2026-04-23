@@ -42,25 +42,25 @@ pub mod agreement {
     pub struct AgreementArgs {
         /// The IAM Role which provides read and write access to the parent directory of the file location mentioned in the StartFileTransfer request.
         #[builder(into)]
-        pub access_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_role: pulumi_gestalt_rust::Input<String>,
         /// The landing directory for the files transferred by using the AS2 protocol.
         #[builder(into)]
-        pub base_directory: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub base_directory: pulumi_gestalt_rust::Input<String>,
         /// The Optional description of the transdfer.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique identifier for the AS2 local profile.
         #[builder(into)]
-        pub local_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub local_profile_id: pulumi_gestalt_rust::Input<String>,
         /// The unique identifier for the AS2 partner profile.
         #[builder(into)]
-        pub partner_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partner_profile_id: pulumi_gestalt_rust::Input<String>,
         /// The unique server identifier for the server instance. This is the specific server the agreement uses.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

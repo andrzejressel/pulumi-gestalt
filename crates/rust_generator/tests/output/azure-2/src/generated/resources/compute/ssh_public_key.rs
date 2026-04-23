@@ -38,19 +38,19 @@ pub mod ssh_public_key {
     pub struct SshPublicKeyArgs {
         /// The Azure Region where the SSH Public Key should exist. Changing this forces a new SSH Public Key to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this SSH Public Key. Changing this forces a new SSH Public Key to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// SSH public key used to authenticate to a virtual machine through ssh. the provided public key needs to be at least 2048-bit and in ssh-rsa format.
         #[builder(into)]
-        pub public_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub public_key: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the SSH Public Key should exist. Changing this forces a new SSH Public Key to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the SSH Public Key.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

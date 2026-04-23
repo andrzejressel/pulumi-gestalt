@@ -38,10 +38,10 @@ pub mod approval_rule_template_association {
     pub struct ApprovalRuleTemplateAssociationArgs {
         /// The name for the approval rule template.
         #[builder(into)]
-        pub approval_rule_template_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub approval_rule_template_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the repository that you want to associate with the template.
         #[builder(into)]
-        pub repository_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApprovalRuleTemplateAssociationResult {

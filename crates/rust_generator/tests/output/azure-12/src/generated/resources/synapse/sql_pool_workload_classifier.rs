@@ -91,28 +91,28 @@ pub mod sql_pool_workload_classifier {
     pub struct SqlPoolWorkloadClassifierArgs {
         /// Specifies the session context value that a request can be classified against.
         #[builder(into, default)]
-        pub context: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub context: pulumi_gestalt_rust::Input<Option<String>>,
         /// The workload classifier end time for classification. It's of the `HH:MM` format in UTC time zone.
         #[builder(into, default)]
-        pub end_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The workload classifier importance. The allowed values are `low`, `below_normal`, `normal`, `above_normal` and `high`.
         #[builder(into, default)]
-        pub importance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub importance: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the label value that a request can be classified against.
         #[builder(into, default)]
-        pub label: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub label: pulumi_gestalt_rust::Input<Option<String>>,
         /// The workload classifier member name used to classified against.
         #[builder(into)]
-        pub member_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Synapse SQL Pool Workload Classifier. Changing this forces a new Synapse SQL Pool Workload Classifier to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The workload classifier start time for classification. It's of the `HH:MM` format in UTC time zone.
         #[builder(into, default)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Synapse SQL Pool Workload Group. Changing this forces a new Synapse SQL Pool Workload Classifier to be created.
         #[builder(into)]
-        pub workload_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workload_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SqlPoolWorkloadClassifierResult {

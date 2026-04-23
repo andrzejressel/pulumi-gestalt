@@ -27,18 +27,18 @@ pub mod access_service_token {
     pub struct AccessServiceTokenArgs {
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Length of time the service token is valid for. Available values: `8760h`, `17520h`, `43800h`, `87600h`, `forever`.
         #[builder(into, default)]
-        pub duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub duration: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub min_days_for_renewal: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_days_for_renewal: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Friendly name of the token's intent.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. Conflicts with `account_id`.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccessServiceTokenResult {

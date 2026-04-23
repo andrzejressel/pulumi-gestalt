@@ -10,10 +10,10 @@ pub mod get_plan {
     pub struct GetPlanArgs {
         /// Backup plan ID.
         #[builder(into)]
-        pub plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plan_id: pulumi_gestalt_rust::Input<String>,
         /// Metadata that you can assign to help organize the plans you create.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -41,25 +41,25 @@ pub mod signing_profile {
     #[allow(dead_code)]
     pub struct SigningProfileArgs {
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the platform that is used by the target signing profile.
         #[builder(into)]
-        pub platform_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub platform_id: pulumi_gestalt_rust::Input<String>,
         /// The validity period for a signing job. See `signature_validity_period` Block below for details.
         #[builder(into, default)]
-        pub signature_validity_period: pulumi_gestalt_rust::InputOrOutput<
+        pub signature_validity_period: pulumi_gestalt_rust::Input<
             Option<super::super::types::signer::SigningProfileSignatureValidityPeriod>,
         >,
         /// The AWS Certificate Manager certificate that will be used to sign code with the new signing profile. See `signing_material` Block below for details.
         #[builder(into, default)]
-        pub signing_material: pulumi_gestalt_rust::InputOrOutput<
+        pub signing_material: pulumi_gestalt_rust::Input<
             Option<super::super::types::signer::SigningProfileSigningMaterial>,
         >,
         /// A list of tags associated with the signing profile. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

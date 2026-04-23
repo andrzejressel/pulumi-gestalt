@@ -38,16 +38,16 @@ pub mod studio_lifecycle_config {
     pub struct StudioLifecycleConfigArgs {
         /// The App type that the Lifecycle Configuration is attached to. Valid values are `JupyterServer`, `JupyterLab`, `CodeEditor` and `KernelGateway`.
         #[builder(into)]
-        pub studio_lifecycle_config_app_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub studio_lifecycle_config_app_type: pulumi_gestalt_rust::Input<String>,
         /// The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
         #[builder(into)]
-        pub studio_lifecycle_config_content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub studio_lifecycle_config_content: pulumi_gestalt_rust::Input<String>,
         /// The name of the Studio Lifecycle Configuration to create.
         #[builder(into)]
-        pub studio_lifecycle_config_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub studio_lifecycle_config_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

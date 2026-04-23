@@ -10,22 +10,22 @@ pub mod get_database_instances {
     pub struct GetDatabaseInstancesArgs {
         /// To filter out the Cloud SQL instances which are of the specified database version.
         #[builder(into, default)]
-        pub database_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resources belong. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// To filter out the Cloud SQL instances which are located in the specified region.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// To filter out the Cloud SQL instances based on the current serving state of the database instance. Supported values include `SQL_INSTANCE_STATE_UNSPECIFIED`, `RUNNABLE`, `SUSPENDED`, `PENDING_DELETE`, `PENDING_CREATE`, `MAINTENANCE`, `FAILED`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// To filter out the Cloud SQL instances based on the tier(or machine type) of the database instances.
         #[builder(into, default)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// To filter out the Cloud SQL instances which are located in the specified zone. This zone refers to the Compute Engine zone that the instance is currently serving from.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDatabaseInstancesResult {

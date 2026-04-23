@@ -38,15 +38,15 @@ pub mod transit_gateway_route_table_attachment {
     pub struct TransitGatewayRouteTableAttachmentArgs {
         /// The ID of the peer for the attachment.
         #[builder(into)]
-        pub peering_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peering_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ARN of the transit gateway route table for the attachment.
         #[builder(into)]
-        pub transit_gateway_route_table_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_route_table_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TransitGatewayRouteTableAttachmentResult {

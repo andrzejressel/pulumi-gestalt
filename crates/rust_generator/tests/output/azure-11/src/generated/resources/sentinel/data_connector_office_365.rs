@@ -61,26 +61,26 @@ pub mod data_connector_office_365 {
     pub struct DataConnectorOffice365Args {
         /// Should the Exchange data connector be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub exchange_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exchange_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Log Analytics Workspace that this Office 365 Data Connector resides in. Changing this forces a new Office 365 Data Connector to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Office 365 Data Connector. Changing this forces a new Office 365 Data Connector to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the SharePoint data connector be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub sharepoint_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sharepoint_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the Microsoft Teams data connector be enabled? Defaults to `true`.
         ///
         /// > **NOTE:** At least one of `exchange_enabled`, `sharedpoint_enabled` and `teams_enabled` has to be specified.
         #[builder(into, default)]
-        pub teams_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub teams_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Tenant that this Office 365 Data Connector connects to. Changing this forces a new Office 365 Data Connector to be created.
         ///
         /// > **NOTE** Currently, only the same tenant as the running account is allowed. Cross-tenant scenario is not supported yet.
         #[builder(into, default)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DataConnectorOffice365Result {

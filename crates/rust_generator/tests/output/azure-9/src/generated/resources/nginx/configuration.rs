@@ -121,23 +121,23 @@ pub mod configuration {
     pub struct ConfigurationArgs {
         /// One or more `config_file` blocks as defined below.
         #[builder(into, default)]
-        pub config_files: pulumi_gestalt_rust::InputOrOutput<
+        pub config_files: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::nginx::ConfigurationConfigFile>>,
         >,
         /// The ID of the Nginx Deployment. Changing this forces a new Nginx Configuration to be created.
         #[builder(into)]
-        pub nginx_deployment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub nginx_deployment_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the package data for this configuration.
         #[builder(into, default)]
-        pub package_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub package_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `protected_file` blocks with sensitive information as defined below. If specified `config_file` must also be specified.
         #[builder(into, default)]
-        pub protected_files: pulumi_gestalt_rust::InputOrOutput<
+        pub protected_files: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::nginx::ConfigurationProtectedFile>>,
         >,
         /// Specifies the root file path of this Nginx Configuration.
         #[builder(into)]
-        pub root_file: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub root_file: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConfigurationResult {

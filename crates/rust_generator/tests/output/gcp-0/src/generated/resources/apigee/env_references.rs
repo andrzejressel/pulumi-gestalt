@@ -37,23 +37,23 @@ pub mod env_references {
     pub struct EnvReferencesArgs {
         /// Optional. A human-readable description of this reference.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apigee environment group associated with the Apigee environment,
         /// in the format `organizations/{{org_name}}/environments/{{env_name}}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub env_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub env_id: pulumi_gestalt_rust::Input<String>,
         /// Required. The resource id of this reference. Values must match the regular expression [\w\s-.]+.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. The id of the resource to which this reference refers. Must be the id of a resource that exists in the parent environment and is of the given resourceType.
         #[builder(into)]
-        pub refers: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub refers: pulumi_gestalt_rust::Input<String>,
         /// The type of resource referred to by this reference. Valid values are 'KeyStore' or 'TrustStore'.
         #[builder(into)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnvReferencesResult {

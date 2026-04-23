@@ -79,59 +79,45 @@ pub mod platform_application {
     pub struct PlatformApplicationArgs {
         /// The bundle identifier that's assigned to your iOS app. May only include alphanumeric characters, hyphens (-), and periods (.).
         #[builder(into, default)]
-        pub apple_platform_bundle_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub apple_platform_bundle_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier that's assigned to your Apple developer account team. Must be 10 alphanumeric characters.
         #[builder(into, default)]
-        pub apple_platform_team_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub apple_platform_team_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS Topic triggered when a delivery to any of the platform endpoints associated with your platform application encounters a permanent failure.
         #[builder(into, default)]
-        pub event_delivery_failure_topic_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub event_delivery_failure_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS Topic triggered when a new platform endpoint is added to your platform application.
         #[builder(into, default)]
-        pub event_endpoint_created_topic_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub event_endpoint_created_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS Topic triggered when an existing platform endpoint is deleted from your platform application.
         #[builder(into, default)]
-        pub event_endpoint_deleted_topic_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub event_endpoint_deleted_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS Topic triggered when an existing platform endpoint is changed from your platform application.
         #[builder(into, default)]
-        pub event_endpoint_updated_topic_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub event_endpoint_updated_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role ARN permitted to receive failure feedback for this application and give SNS write access to use CloudWatch logs on your behalf.
         #[builder(into, default)]
-        pub failure_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub failure_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The friendly name for the SNS platform application
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The platform that the app is registered with. See [Platform](http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-register.html) for supported platforms.
         #[builder(into)]
-        pub platform: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub platform: pulumi_gestalt_rust::Input<String>,
         /// Application Platform credential. See [Credential](http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-register.html) for type of credential required for platform. The value of this attribute when stored into the state is only a hash of the real value, so therefore it is not practical to use this as an attribute for other resources.
         #[builder(into)]
-        pub platform_credential: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub platform_credential: pulumi_gestalt_rust::Input<String>,
         /// Application Platform principal. See [Principal](http://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformApplication.html) for type of principal required for platform. The value of this attribute when stored into the state is only a hash of the real value, so therefore it is not practical to use this as an attribute for other resources.
         #[builder(into, default)]
-        pub platform_principal: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform_principal: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role ARN permitted to receive success feedback for this application and give SNS write access to use CloudWatch logs on your behalf.
         #[builder(into, default)]
-        pub success_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub success_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The sample rate percentage (0-100) of successfully delivered messages.
         ///
         /// The following attributes are needed only when using APNS token credentials:
         #[builder(into, default)]
-        pub success_feedback_sample_rate: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub success_feedback_sample_rate: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PlatformApplicationResult {

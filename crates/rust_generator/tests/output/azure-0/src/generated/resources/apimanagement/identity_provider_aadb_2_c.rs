@@ -68,40 +68,40 @@ pub mod identity_provider_aadb_2_c {
     pub struct IdentityProviderAadb2cArgs {
         /// The allowed AAD tenant, usually your B2C tenant domain.
         #[builder(into)]
-        pub allowed_tenant: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub allowed_tenant: pulumi_gestalt_rust::Input<String>,
         /// The Name of the API Management Service where this AAD Identity Provider should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// OpenID Connect discovery endpoint hostname, usually your b2clogin.com domain.
         #[builder(into)]
-        pub authority: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authority: pulumi_gestalt_rust::Input<String>,
         /// Client ID of the Application in your B2C tenant.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// The client library to be used in the Azure AD B2C Identity Provider.
         #[builder(into, default)]
-        pub client_library: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_library: pulumi_gestalt_rust::Input<Option<String>>,
         /// Client secret of the Application in your B2C tenant.
         #[builder(into)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_secret: pulumi_gestalt_rust::Input<String>,
         /// Password reset Policy Name.
         #[builder(into, default)]
-        pub password_reset_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password_reset_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Profile editing Policy Name.
         #[builder(into, default)]
-        pub profile_editing_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub profile_editing_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Signin Policy Name.
         #[builder(into)]
-        pub signin_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signin_policy: pulumi_gestalt_rust::Input<String>,
         /// The tenant to use instead of Common when logging into Active Directory, usually your B2C tenant domain.
         #[builder(into)]
-        pub signin_tenant: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signin_tenant: pulumi_gestalt_rust::Input<String>,
         /// Signup Policy Name.
         #[builder(into)]
-        pub signup_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signup_policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IdentityProviderAadb2cResult {

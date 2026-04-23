@@ -10,12 +10,10 @@ pub mod get_network_attached_data_network {
     pub struct GetNetworkAttachedDataNetworkArgs {
         /// The Name of the `azure.mobile.NetworkDataNetwork` this resource belongs to.
         #[builder(into)]
-        pub mobile_network_data_network_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mobile_network_data_network_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the `azure.mobile.NetworkPacketCoreDataPlane` which the Mobile Network Attached Data Network belongs to.
         #[builder(into)]
-        pub mobile_network_packet_core_data_plane_id: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub mobile_network_packet_core_data_plane_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkAttachedDataNetworkResult {

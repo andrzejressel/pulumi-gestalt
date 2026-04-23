@@ -10,10 +10,10 @@ pub mod get_access_point {
     pub struct GetAccessPointArgs {
         /// ID that identifies the file system.
         #[builder(into)]
-        pub access_point_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_point_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

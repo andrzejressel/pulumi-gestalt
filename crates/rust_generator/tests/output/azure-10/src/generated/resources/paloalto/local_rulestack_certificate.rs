@@ -53,24 +53,24 @@ pub mod local_rulestack_certificate {
     pub struct LocalRulestackCertificateArgs {
         /// The comment for Audit purposes.
         #[builder(into, default)]
-        pub audit_comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub audit_comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description for the Certificate.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The `versionles_id` of the Key Vault Certificate to use. Changing this forces a new Palo Alto Networks Rulestack Certificate to be created.
         #[builder(into, default)]
-        pub key_vault_certificate_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_certificate_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Palo Alto Networks Rulestack Certificate.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the TODO. Changing this forces a new Palo Alto Networks Rulestack Certificate to be created.
         #[builder(into)]
-        pub rulestack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rulestack_id: pulumi_gestalt_rust::Input<String>,
         /// Should a Self Signed Certificate be used. Defaults to `false`. Changing this forces a new Palo Alto Networks Rulestack Certificate to be created.
         ///
         /// > **Note:** One and only one of `self_signed` or `key_vault_certificate_id` must be specified.
         #[builder(into, default)]
-        pub self_signed: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub self_signed: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct LocalRulestackCertificateResult {

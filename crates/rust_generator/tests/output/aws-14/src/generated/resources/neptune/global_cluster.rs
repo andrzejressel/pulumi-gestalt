@@ -103,25 +103,23 @@ pub mod global_cluster {
     pub struct GlobalClusterArgs {
         /// If the Global Cluster should have deletion protection enabled. The database can't be deleted when this value is set to `true`. The default is `false`.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the database engine to be used for this DB cluster. The provider will only perform drift detection if a configuration value is provided. Current Valid values: `neptune`. Conflicts with `source_db_cluster_identifier`.
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// Engine version of the global database. Upgrading the engine version will result in all cluster members being immediately updated and will.
         /// * **NOTE:** Upgrading major versions is not supported.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The global cluster identifier.
         #[builder(into)]
-        pub global_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) to use as the primary DB Cluster of the Global Cluster on creation. The provider cannot perform drift detection of this value.
         #[builder(into, default)]
-        pub source_db_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub source_db_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the DB cluster is encrypted. The default is `false` unless `source_db_cluster_identifier` is specified and encrypted. The provider will only perform drift detection if a configuration value is provided.
         #[builder(into, default)]
-        pub storage_encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub storage_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GlobalClusterResult {

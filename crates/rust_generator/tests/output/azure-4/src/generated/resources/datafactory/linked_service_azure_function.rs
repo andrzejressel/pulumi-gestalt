@@ -57,42 +57,42 @@ pub mod linked_service_azure_function {
         ///
         /// The following supported arguments are specific to Azure Function Linked Service:
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Linked Service.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Linked Service.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The integration runtime reference to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub integration_runtime_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_runtime_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The system key of the Azure Function. Exactly one of either `key` or `key_vault_key` is required
         #[builder(into, default)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `key_vault_key` block as defined below. Use this Argument to store the system key of the Azure Function in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `key` or `key_vault_key` is required.
         #[builder(into, default)]
-        pub key_vault_key: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_key: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::LinkedServiceAzureFunctionKeyVaultKey,
             >,
         >,
         /// Specifies the name of the Data Factory Linked Service. Changing this forces a new resource to be created. Must be unique within a data factory. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Linked Service.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The url of the Azure Function.
         #[builder(into)]
-        pub url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub url: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LinkedServiceAzureFunctionResult {

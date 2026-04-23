@@ -42,49 +42,47 @@ pub mod event_grid_topic {
     pub struct EventGridTopicArgs {
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventGridTopicIdentity>,
         >,
         /// One or more `inbound_ip_rule` blocks as defined below.
         #[builder(into, default)]
-        pub inbound_ip_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub inbound_ip_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::eventhub::EventGridTopicInboundIpRule>>,
         >,
         /// A `input_mapping_default_values` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub input_mapping_default_values: pulumi_gestalt_rust::InputOrOutput<
+        pub input_mapping_default_values: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::eventhub::EventGridTopicInputMappingDefaultValues,
             >,
         >,
         /// A `input_mapping_fields` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub input_mapping_fields: pulumi_gestalt_rust::InputOrOutput<
+        pub input_mapping_fields: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventGridTopicInputMappingFields>,
         >,
         /// Specifies the schema in which incoming events will be published to this domain. Allowed values are `CloudEventSchemaV1_0`, `CustomEventSchema`, or `EventGridSchema`. Defaults to `EventGridSchema`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub input_schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub input_schema: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether local authentication methods is enabled for the EventGrid Topic. Defaults to `true`.
         #[builder(into, default)]
-        pub local_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the EventGrid Topic resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not public network access is allowed for this server. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which the EventGrid Topic exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

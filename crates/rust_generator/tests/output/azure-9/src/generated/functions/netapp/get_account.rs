@@ -9,15 +9,15 @@ pub mod get_account {
     #[allow(dead_code)]
     pub struct GetAccountArgs {
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::netapp::GetAccountIdentity>,
         >,
         /// The name of the NetApp Account.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the NetApp Account exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccountResult {

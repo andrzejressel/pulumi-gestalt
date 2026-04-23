@@ -56,13 +56,13 @@ pub mod network_manager_network_group {
     pub struct NetworkManagerNetworkGroupArgs {
         /// A description of the Network Manager Network Group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Network Manager Network Group. Changing this forces a new Network Manager Network Group to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Network Manager. Changing this forces a new Network Manager Network Group to be created.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkManagerNetworkGroupResult {

@@ -10,13 +10,13 @@ pub mod get_mongo_database {
     pub struct GetMongoDatabaseArgs {
         /// The name of the Cosmos DB Account where the Mongo Database exists.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of this Cosmos DB Mongo Database.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Cosmos DB Mongo Database exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetMongoDatabaseResult {

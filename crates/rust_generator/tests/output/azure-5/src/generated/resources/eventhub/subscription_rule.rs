@@ -113,24 +113,24 @@ pub mod subscription_rule {
     pub struct SubscriptionRuleArgs {
         /// Represents set of actions written in SQL language-based syntax that is performed against a BrokeredMessage.
         #[builder(into, default)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub action: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `correlation_filter` block as documented below to be evaluated against a BrokeredMessage. Required when `filter_type` is set to `CorrelationFilter`.
         #[builder(into, default)]
-        pub correlation_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub correlation_filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::SubscriptionRuleCorrelationFilter>,
         >,
         /// Type of filter to be applied to a BrokeredMessage. Possible values are `SqlFilter` and `CorrelationFilter`.
         #[builder(into)]
-        pub filter_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter_type: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the ServiceBus Subscription Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Represents a filter written in SQL language-based syntax that to be evaluated against a BrokeredMessage. Required when `filter_type` is set to `SqlFilter`.
         #[builder(into, default)]
-        pub sql_filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sql_filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the ServiceBus Subscription in which this Rule should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionRuleResult {

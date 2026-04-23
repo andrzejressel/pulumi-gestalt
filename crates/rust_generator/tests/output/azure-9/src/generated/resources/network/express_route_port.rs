@@ -48,43 +48,43 @@ pub mod express_route_port {
     pub struct ExpressRoutePortArgs {
         /// Bandwidth of the Express Route Port in Gbps. Changing this forces a new Express Route Port to be created.
         #[builder(into)]
-        pub bandwidth_in_gbps: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub bandwidth_in_gbps: pulumi_gestalt_rust::Input<i32>,
         /// The billing type of the Express Route Port. Possible values are `MeteredData` and `UnlimitedData`. Defaults to `MeteredData`.
         #[builder(into, default)]
-        pub billing_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub billing_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The encapsulation method used for the Express Route Port. Changing this forces a new Express Route Port to be created. Possible values are: `Dot1Q`, `QinQ`.
         #[builder(into)]
-        pub encapsulation: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub encapsulation: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::ExpressRoutePortIdentity>,
         >,
         /// A list of `link` blocks as defined below.
         #[builder(into, default)]
-        pub link1: pulumi_gestalt_rust::InputOrOutput<
+        pub link1: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::ExpressRoutePortLink1>,
         >,
         /// A list of `link` blocks as defined below.
         #[builder(into, default)]
-        pub link2: pulumi_gestalt_rust::InputOrOutput<
+        pub link2: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::ExpressRoutePortLink2>,
         >,
         /// The Azure Region where the Express Route Port should exist. Changing this forces a new Express Route Port to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Express Route Port. Changing this forces a new Express Route Port to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the peering location that this Express Route Port is physically mapped to. Changing this forces a new Express Route Port to be created.
         #[builder(into)]
-        pub peering_location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peering_location: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Express Route Port should exist. Changing this forces a new Express Route Port to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Express Route Port.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

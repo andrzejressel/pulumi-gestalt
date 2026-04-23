@@ -30,56 +30,54 @@ pub mod serverless_cache {
     pub struct ServerlessCacheArgs {
         /// Sets the cache usage limits for storage and ElastiCache Processing Units for the cache. See `cache_usage_limits` Block for details.
         #[builder(into, default)]
-        pub cache_usage_limits: pulumi_gestalt_rust::InputOrOutput<
+        pub cache_usage_limits: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticache::ServerlessCacheCacheUsageLimits>,
         >,
         /// The daily time that snapshots will be created from the new serverless cache. Only supported for engine types `"redis"` or `"valkey"`. Defaults to `0`.
         #[builder(into, default)]
-        pub daily_snapshot_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub daily_snapshot_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-provided description for the serverless cache. The default is NULL.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the cache engine to be used for this cache cluster. Valid values are `memcached`, `redis` or `valkey`.
         #[builder(into)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine: pulumi_gestalt_rust::Input<String>,
         /// ARN of the customer managed key for encrypting the data at rest. If no KMS key is provided, a default service key is used.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version of the cache engine that will be used to create the serverless cache.
         /// See [Describe Cache Engine Versions](https://docs.aws.amazon.com/cli/latest/reference/elasticache/describe-cache-engine-versions.html) in the AWS Documentation for supported versions.
         #[builder(into, default)]
-        pub major_engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub major_engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Cluster name which serves as a unique identifier to the serverless cache
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The list of ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.
         #[builder(into, default)]
-        pub snapshot_arns_to_restores: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub snapshot_arns_to_restores: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.
         #[builder(into, default)]
-        pub snapshot_retention_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub snapshot_retention_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticache::ServerlessCacheTimeouts>,
         >,
         /// The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.
         #[builder(into, default)]
-        pub user_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_group_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ServerlessCacheResult {

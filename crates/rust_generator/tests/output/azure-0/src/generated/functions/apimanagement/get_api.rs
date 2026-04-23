@@ -10,16 +10,16 @@ pub mod get_api {
     pub struct GetApiArgs {
         /// The name of the API Management Service in which the API Management API exists.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Management API.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group in which the API Management Service exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Revision of the API Management API.
         #[builder(into)]
-        pub revision: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub revision: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetApiResult {

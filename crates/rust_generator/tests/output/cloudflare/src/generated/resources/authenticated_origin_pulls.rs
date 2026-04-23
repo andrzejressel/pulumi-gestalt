@@ -86,18 +86,18 @@ pub mod authenticated_origin_pulls {
     pub struct AuthenticatedOriginPullsArgs {
         /// The ID of an uploaded Authenticated Origin Pulls certificate. If no hostname is provided, this certificate will be used zone wide as Per-Zone Authenticated Origin Pulls.
         #[builder(into, default)]
-        pub authenticated_origin_pulls_certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub authenticated_origin_pulls_certificate: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Whether to enable Authenticated Origin Pulls on the given zone or hostname.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// Specify a hostname to enable Per-Hostname Authenticated Origin Pulls on, using the provided certificate.
         #[builder(into, default)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hostname: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AuthenticatedOriginPullsResult {

@@ -155,27 +155,27 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// Execute command configuration for the cluster. See `configuration` Block for details.
         #[builder(into, default)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecs::ClusterConfiguration>,
         >,
         /// Name of the cluster (up to 255 letters, numbers, hyphens, and underscores)
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Default Service Connect namespace. See `service_connect_defaults` Block for details.
         #[builder(into, default)]
-        pub service_connect_defaults: pulumi_gestalt_rust::InputOrOutput<
+        pub service_connect_defaults: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecs::ClusterServiceConnectDefaults>,
         >,
         /// Configuration block(s) with cluster settings. For example, this can be used to enable CloudWatch Container Insights for a cluster. See `setting` Block for details.
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ecs::ClusterSetting>>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

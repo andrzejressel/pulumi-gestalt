@@ -67,10 +67,10 @@ pub mod repository_policy {
     pub struct RepositoryPolicyArgs {
         /// The policy document. This is a JSON formatted string.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// Name of the repository to apply the policy.
         #[builder(into)]
-        pub repository_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RepositoryPolicyResult {

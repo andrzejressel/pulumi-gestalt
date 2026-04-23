@@ -47,27 +47,25 @@ pub mod workspace {
     pub struct WorkspaceArgs {
         /// A description for the Virtual Desktop Workspace.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A friendly name for the Virtual Desktop Workspace.
         #[builder(into, default)]
-        pub friendly_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub friendly_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location/region where the Virtual Desktop Workspace is located. Changing the location/region forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Virtual Desktop Workspace. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is allowed for this Virtual Desktop Workspace. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Virtual Desktop Workspace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

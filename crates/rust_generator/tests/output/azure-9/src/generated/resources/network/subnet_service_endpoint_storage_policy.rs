@@ -69,7 +69,7 @@ pub mod subnet_service_endpoint_storage_policy {
     pub struct SubnetServiceEndpointStoragePolicyArgs {
         /// A `definition` block as defined below
         #[builder(into, default)]
-        pub definitions: pulumi_gestalt_rust::InputOrOutput<
+        pub definitions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::SubnetServiceEndpointStoragePolicyDefinition,
@@ -78,16 +78,16 @@ pub mod subnet_service_endpoint_storage_policy {
         >,
         /// The Azure Region where the Subnet Service Endpoint Storage Policy should exist. Changing this forces a new Subnet Service Endpoint Storage Policy to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Subnet Service Endpoint Storage Policy. Changing this forces a new Subnet Service Endpoint Storage Policy to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Subnet Service Endpoint Storage Policy should exist. Changing this forces a new Subnet Service Endpoint Storage Policy to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Subnet Service Endpoint Storage Policy.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

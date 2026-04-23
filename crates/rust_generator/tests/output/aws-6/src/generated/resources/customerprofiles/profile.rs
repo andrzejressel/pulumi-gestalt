@@ -38,80 +38,80 @@ pub mod profile {
     pub struct ProfileArgs {
         /// A unique account number that you have given to the customer.
         #[builder(into, default)]
-        pub account_number: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// Any additional information relevant to the customer’s profile.
         #[builder(into, default)]
-        pub additional_information: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub additional_information: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block that specifies a generic address associated with the customer that is not mailing, shipping, or billing. Documented below.
         #[builder(into, default)]
-        pub address: pulumi_gestalt_rust::InputOrOutput<
+        pub address: pulumi_gestalt_rust::Input<
             Option<super::super::types::customerprofiles::ProfileAddress>,
         >,
         /// A key value pair of attributes of a customer profile.
         #[builder(into, default)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A block that specifies the customer’s billing address. Documented below.
         #[builder(into, default)]
-        pub billing_address: pulumi_gestalt_rust::InputOrOutput<
+        pub billing_address: pulumi_gestalt_rust::Input<
             Option<super::super::types::customerprofiles::ProfileBillingAddress>,
         >,
         /// The customer’s birth date.
         #[builder(into, default)]
-        pub birth_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub birth_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer’s business email address.
         #[builder(into, default)]
-        pub business_email_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub business_email_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the customer’s business.
         #[builder(into, default)]
-        pub business_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub business_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer’s business phone number.
         #[builder(into, default)]
-        pub business_phone_number: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub business_phone_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of your Customer Profile domain. It must be unique for your AWS account.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The customer’s email address, which has not been specified as a personal or business address.
         #[builder(into, default)]
-        pub email_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub email_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer’s first name.
         #[builder(into, default)]
-        pub first_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub first_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The gender with which the customer identifies.
         #[builder(into, default)]
-        pub gender_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gender_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer’s home phone number.
         #[builder(into, default)]
-        pub home_phone_number: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub home_phone_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer’s last name.
         #[builder(into, default)]
-        pub last_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub last_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block that specifies the customer’s mailing address. Documented below.
         #[builder(into, default)]
-        pub mailing_address: pulumi_gestalt_rust::InputOrOutput<
+        pub mailing_address: pulumi_gestalt_rust::Input<
             Option<super::super::types::customerprofiles::ProfileMailingAddress>,
         >,
         /// The customer’s middle name.
         #[builder(into, default)]
-        pub middle_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub middle_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer’s mobile phone number.
         #[builder(into, default)]
-        pub mobile_phone_number: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mobile_phone_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of profile used to describe the customer.
         #[builder(into, default)]
-        pub party_type_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub party_type_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer’s personal email address.
         #[builder(into, default)]
-        pub personal_email_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub personal_email_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The customer’s phone number, which has not been specified as a mobile, home, or business number.
         #[builder(into, default)]
-        pub phone_number: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub phone_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block that specifies the customer’s shipping address. Documented below.
         #[builder(into, default)]
-        pub shipping_address: pulumi_gestalt_rust::InputOrOutput<
+        pub shipping_address: pulumi_gestalt_rust::Input<
             Option<super::super::types::customerprofiles::ProfileShippingAddress>,
         >,
     }

@@ -36,21 +36,19 @@ pub mod endpoint_access {
     pub struct EndpointAccessArgs {
         /// The name of the endpoint.
         #[builder(into)]
-        pub endpoint_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_name: pulumi_gestalt_rust::Input<String>,
         /// The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
         #[builder(into, default)]
-        pub owner_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// An array of VPC subnet IDs to associate with the endpoint.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// An array of security group IDs to associate with the workgroup.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the workgroup.
         #[builder(into)]
-        pub workgroup_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workgroup_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointAccessResult {

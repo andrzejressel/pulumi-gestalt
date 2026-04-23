@@ -89,45 +89,45 @@ pub mod network_policy {
     pub struct NetworkPolicyArgs {
         /// User-provided description for this network policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// IP address range in CIDR notation used to create internet access and external IP access.
         /// An RFC 1918 CIDR block, with a "/26" prefix, is required. The range cannot overlap with any
         /// prefixes either in the consumer VPC network or in use by the private clouds attached to that VPC network.
         #[builder(into)]
-        pub edge_services_cidr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub edge_services_cidr: pulumi_gestalt_rust::Input<String>,
         /// Network service that allows External IP addresses to be assigned to VMware workloads.
         /// This service can only be enabled when internetAccess is also enabled.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub external_ip: pulumi_gestalt_rust::InputOrOutput<
+        pub external_ip: pulumi_gestalt_rust::Input<
             Option<super::super::types::vmwareengine::NetworkPolicyExternalIp>,
         >,
         /// Network service that allows VMware workloads to access the internet.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub internet_access: pulumi_gestalt_rust::InputOrOutput<
+        pub internet_access: pulumi_gestalt_rust::Input<
             Option<super::super::types::vmwareengine::NetworkPolicyInternetAccess>,
         >,
         /// The resource name of the location (region) to create the new network policy in.
         /// Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
         /// For example: projects/my-project/locations/us-central1
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Network Policy.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative resource name of the VMware Engine network. Specify the name in the following form:
         /// projects/{project}/locations/{location}/vmwareEngineNetworks/{vmwareEngineNetworkId} where {project}
         /// can either be a project number or a project ID.
         #[builder(into)]
-        pub vmware_engine_network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vmware_engine_network: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkPolicyResult {

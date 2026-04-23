@@ -57,11 +57,11 @@ pub mod document_ai_processor_default_version {
         ///
         /// - - -
         #[builder(into)]
-        pub processor: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub processor: pulumi_gestalt_rust::Input<String>,
         /// The version to set. Using `stable` or `rc` will cause the API to return the latest version in that release channel.
         /// Apply `lifecycle.ignore_changes` to the `version` field to suppress this diff.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DocumentAiProcessorDefaultVersionResult {

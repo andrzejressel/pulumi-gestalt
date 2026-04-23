@@ -194,7 +194,7 @@ pub mod target_http_proxy {
     pub struct TargetHttpProxyArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies how long to keep a connection open, after completing a response,
         /// while there is no matching traffic (in seconds). If an HTTP keepalive is
         /// not specified, a default value will be used. For Global
@@ -205,7 +205,7 @@ pub mod target_http_proxy {
         /// maximum allowed value is 600 seconds. For Global external HTTP(S) load
         /// balancer (classic), this option is not available publicly.
         #[builder(into, default)]
-        pub http_keep_alive_timeout_sec: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub http_keep_alive_timeout_sec: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -214,22 +214,22 @@ pub mod target_http_proxy {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// This field only applies when the forwarding rule that references
         /// this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
         #[builder(into, default)]
-        pub proxy_bind: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub proxy_bind: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A reference to the UrlMap resource that defines the mapping from URL
         /// to the BackendService.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub url_map: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub url_map: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TargetHttpProxyResult {

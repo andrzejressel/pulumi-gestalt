@@ -35,7 +35,7 @@ pub mod random_uuid {
     pub struct RandomUuidArgs {
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         #[builder(into, default)]
-        pub keepers: pulumi_gestalt_rust::InputOrOutput<
+        pub keepers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -35,12 +35,12 @@ pub mod route_table {
     pub struct RouteTableArgs {
         /// Key-value tags for the EC2 Transit Gateway Route Table. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of EC2 Transit Gateway.
         #[builder(into)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteTableResult {

@@ -9,9 +9,9 @@ pub mod get_local_rulestack {
     #[allow(dead_code)]
     pub struct GetLocalRulestackArgs {
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetLocalRulestackResult {

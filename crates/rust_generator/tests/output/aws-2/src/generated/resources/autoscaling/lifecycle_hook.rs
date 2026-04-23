@@ -64,28 +64,28 @@ pub mod lifecycle_hook {
     pub struct LifecycleHookArgs {
         /// Name of the Auto Scaling group to which you want to assign the lifecycle hook
         #[builder(into)]
-        pub autoscaling_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub autoscaling_group_name: pulumi_gestalt_rust::Input<String>,
         /// Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The value for this parameter can be either CONTINUE or ABANDON. The default value for this parameter is ABANDON.
         #[builder(into, default)]
-        pub default_result: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_result: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle hook times out, Auto Scaling performs the action defined in the DefaultResult parameter
         #[builder(into, default)]
-        pub heartbeat_timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub heartbeat_timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Instance state to which you want to attach the lifecycle hook. For a list of lifecycle hook types, see [describe-lifecycle-hook-types](https://docs.aws.amazon.com/cli/latest/reference/autoscaling/describe-lifecycle-hook-types.html#examples)
         #[builder(into)]
-        pub lifecycle_transition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lifecycle_transition: pulumi_gestalt_rust::Input<String>,
         /// Name of the lifecycle hook.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Contains additional information that you want to include any time Auto Scaling sends a message to the notification target.
         #[builder(into, default)]
-        pub notification_metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notification_metadata: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic.
         #[builder(into, default)]
-        pub notification_target_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notification_target_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LifecycleHookResult {

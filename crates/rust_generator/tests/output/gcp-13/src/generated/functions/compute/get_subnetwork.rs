@@ -11,19 +11,19 @@ pub mod get_subnetwork {
         /// The name of the subnetwork. One of `name` or `self_link`
         /// must be specified.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region this subnetwork has been created in. If
         /// unspecified, this defaults to the region configured in the provider.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The self link of the subnetwork. If `self_link` is
         /// specified, `name`, `project`, and `region` are ignored.
         #[builder(into, default)]
-        pub self_link: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub self_link: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSubnetworkResult {

@@ -115,44 +115,44 @@ pub mod subnet {
     pub struct SubnetArgs {
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ranges of ipv4 addresses that are owned by this subnetwork, in CIDR format.
         #[builder(into, default)]
-        pub ipv4_cidrs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ipv4_cidrs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ranges of ipv6 addresses that are owned by this subnetwork, in CIDR format.
         #[builder(into, default)]
-        pub ipv6_cidrs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ipv6_cidrs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Labels associated with this resource.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Google Cloud region to which the target Distributed Cloud Edge zone belongs.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the network to which this router belongs.
         /// Must be of the form: `projects/{{project}}/locations/{{location}}/zones/{{zone}}/networks/{{network_id}}`
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique ID that identifies this subnet.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// VLAN ID for this subnetwork. If not specified, one is assigned automatically.
         #[builder(into, default)]
-        pub vlan_id: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub vlan_id: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the target Distributed Cloud Edge zone.
         #[builder(into)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubnetResult {

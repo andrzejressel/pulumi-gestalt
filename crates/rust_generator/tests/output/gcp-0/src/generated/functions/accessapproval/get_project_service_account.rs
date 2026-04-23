@@ -10,7 +10,7 @@ pub mod get_project_service_account {
     pub struct GetProjectServiceAccountArgs {
         /// The project ID the service account was created for.
         #[builder(into)]
-        pub project_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetProjectServiceAccountResult {

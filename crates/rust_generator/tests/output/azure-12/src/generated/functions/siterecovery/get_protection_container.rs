@@ -10,16 +10,16 @@ pub mod get_protection_container {
     pub struct GetProtectionContainerArgs {
         /// Specifies the name of the protection container.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the fabric that contains the protection container.
         #[builder(into)]
-        pub recovery_fabric_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_fabric_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Recovery Services Vault that the protection container is associated witth.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the associated protection container resides.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetProtectionContainerResult {

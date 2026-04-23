@@ -138,7 +138,7 @@ pub mod hl_7_store_iam_member {
     #[allow(dead_code)]
     pub struct Hl7StoreIamMemberArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::Hl7StoreIamMemberCondition>,
         >,
         /// The HL7v2 store ID, in the form
@@ -146,7 +146,7 @@ pub mod hl_7_store_iam_member {
         /// `{location_name}/{dataset_name}/{hl7_v2_store_name}`. In the second form, the provider's
         /// project setting will be used as a fallback.
         #[builder(into)]
-        pub hl7_v2_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hl7_v2_store_id: pulumi_gestalt_rust::Input<String>,
         /// Identities that will be granted the privilege in `role`.
         /// Each entry can have one of the following values:
         /// * **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account.
@@ -156,12 +156,12 @@ pub mod hl_7_store_iam_member {
         /// * **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.
         /// * **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
         #[builder(into)]
-        pub member: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub member: pulumi_gestalt_rust::Input<String>,
         /// The role that should be applied. Only one
         /// `gcp.healthcare.Hl7StoreIamBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct Hl7StoreIamMemberResult {

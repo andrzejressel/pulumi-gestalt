@@ -10,13 +10,13 @@ pub mod get_testable_permissions {
     pub struct GetTestablePermissionsArgs {
         /// The level of support for custom roles. Can be one of `"NOT_SUPPORTED"`, `"SUPPORTED"`, `"TESTING"`. Default is `"SUPPORTED"`
         #[builder(into, default)]
-        pub custom_support_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_support_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// See [full resource name documentation](https://cloud.google.com/apis/design/resource_names#full_resource_name) for more detail.
         #[builder(into)]
-        pub full_resource_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub full_resource_name: pulumi_gestalt_rust::Input<String>,
         /// The acceptable release stages of the permission in the output. Note that `BETA` does not include permissions in `GA`, but you can specify both with `["GA", "BETA"]` for example. Can be a list of `"ALPHA"`, `"BETA"`, `"GA"`, `"DEPRECATED"`. Default is `["GA"]`.
         #[builder(into, default)]
-        pub stages: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub stages: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetTestablePermissionsResult {

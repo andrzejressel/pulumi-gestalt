@@ -10,13 +10,13 @@ pub mod get_local_disk {
     pub struct GetLocalDiskArgs {
         /// Device node of the local disk to retrieve. For example, `/dev/sdb`.
         #[builder(into, default)]
-        pub disk_node: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_node: pulumi_gestalt_rust::Input<Option<String>>,
         /// Device path of the local disk to retrieve. For example, `/dev/xvdb` or `/dev/nvme1n1`.
         #[builder(into, default)]
-        pub disk_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the gateway.
         #[builder(into)]
-        pub gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetLocalDiskResult {

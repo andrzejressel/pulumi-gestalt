@@ -10,7 +10,7 @@ pub mod get_origin_access_control {
     pub struct GetOriginAccessControlArgs {
         /// The identifier for the origin access control settings. For example: `E2T5VTFBZJ3BJB`.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOriginAccessControlResult {

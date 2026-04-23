@@ -10,10 +10,10 @@ pub mod get_workspace_private_endpoint_connection {
     pub struct GetWorkspacePrivateEndpointConnectionArgs {
         /// The resource ID of the Private Endpoint.
         #[builder(into)]
-        pub private_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_endpoint_id: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the Databricks Workspace.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetWorkspacePrivateEndpointConnectionResult {

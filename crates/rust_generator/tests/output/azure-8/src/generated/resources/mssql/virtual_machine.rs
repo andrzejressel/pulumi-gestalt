@@ -50,72 +50,66 @@ pub mod virtual_machine {
     pub struct VirtualMachineArgs {
         /// An `assessment` block as defined below.
         #[builder(into, default)]
-        pub assessment: pulumi_gestalt_rust::InputOrOutput<
+        pub assessment: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::VirtualMachineAssessment>,
         >,
         /// An `auto_backup` block as defined below. This block can be added to an existing resource, but removing this block forces a new resource to be created.
         #[builder(into, default)]
-        pub auto_backup: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_backup: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::VirtualMachineAutoBackup>,
         >,
         /// An `auto_patching` block as defined below.
         #[builder(into, default)]
-        pub auto_patching: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_patching: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::VirtualMachineAutoPatching>,
         >,
         /// An `key_vault_credential` block as defined below.
         #[builder(into, default)]
-        pub key_vault_credential: pulumi_gestalt_rust::InputOrOutput<
+        pub key_vault_credential: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::VirtualMachineKeyVaultCredential>,
         >,
         /// Should R Services be enabled?
         #[builder(into, default)]
-        pub r_services_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub r_services_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The SQL Server port. Defaults to `1433`.
         #[builder(into, default)]
-        pub sql_connectivity_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub sql_connectivity_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The connectivity type used for this SQL Server. Possible values are `LOCAL`, `PRIVATE` and `PUBLIC`. Defaults to `PRIVATE`.
         #[builder(into, default)]
-        pub sql_connectivity_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sql_connectivity_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SQL Server sysadmin login password.
         #[builder(into, default)]
-        pub sql_connectivity_update_password: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub sql_connectivity_update_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SQL Server sysadmin login to create.
         #[builder(into, default)]
-        pub sql_connectivity_update_username: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub sql_connectivity_update_username: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `sql_instance` block as defined below.
         #[builder(into, default)]
-        pub sql_instance: pulumi_gestalt_rust::InputOrOutput<
+        pub sql_instance: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::VirtualMachineSqlInstance>,
         >,
         /// The SQL Server license type. Possible values are `AHUB` (Azure Hybrid Benefit), `DR` (Disaster Recovery), and `PAYG` (Pay-As-You-Go). Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sql_license_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sql_license_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the SQL Virtual Machine Group that the SQL Virtual Machine belongs to.
         #[builder(into, default)]
-        pub sql_virtual_machine_group_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub sql_virtual_machine_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `storage_configuration` block as defined below.
         #[builder(into, default)]
-        pub storage_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::VirtualMachineStorageConfiguration>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_id: pulumi_gestalt_rust::Input<String>,
         /// A `wsfc_domain_credential` block as defined below
         #[builder(into, default)]
-        pub wsfc_domain_credential: pulumi_gestalt_rust::InputOrOutput<
+        pub wsfc_domain_credential: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::VirtualMachineWsfcDomainCredential>,
         >,
     }

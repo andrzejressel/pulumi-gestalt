@@ -84,29 +84,29 @@ pub mod access_point {
     pub struct AccessPointArgs {
         /// AWS account ID for the owner of the bucket for which you want to create an access point. Defaults to automatically determined account ID of the AWS provider.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of an AWS Partition S3 General Purpose Bucket or the ARN of S3 on Outposts Bucket that you want to associate this access point with.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// AWS account ID associated with the S3 bucket associated with this access point.
         #[builder(into, default)]
-        pub bucket_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bucket_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name you want to assign to this access point. See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html?icmpid=docs_amazons3_console#access-points-names) for naming conditions.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Valid JSON document that specifies the policy that you want to apply to this access point. Removing `policy` from your configuration or setting `policy` to null or an empty string (i.e., `policy = ""`) _will not_ delete the policy since it could have been set by `aws.s3control.AccessPointPolicy`. To remove the `policy`, set it to `"{}"` (an empty JSON document).
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block to manage the `PublicAccessBlock` configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. Detailed below.
         #[builder(into, default)]
-        pub public_access_block_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub public_access_block_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::AccessPointPublicAccessBlockConfiguration>,
         >,
         /// Configuration block to restrict access to this access point to requests from the specified Virtual Private Cloud (VPC). Required for S3 on Outposts. Detailed below.
         #[builder(into, default)]
-        pub vpc_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::AccessPointVpcConfiguration>,
         >,
     }

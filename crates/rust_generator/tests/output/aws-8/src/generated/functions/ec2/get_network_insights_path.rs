@@ -10,15 +10,15 @@ pub mod get_network_insights_path {
     pub struct GetNetworkInsightsPathArgs {
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetNetworkInsightsPathFilter>>,
         >,
         /// ID of the Network Insights Path to select.
         #[builder(into, default)]
-        pub network_insights_path_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_insights_path_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

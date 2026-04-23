@@ -10,13 +10,13 @@ pub mod get_mca_account_scope {
     pub struct GetMcaAccountScopeArgs {
         /// The Billing Account Name of the MCA account.
         #[builder(into)]
-        pub billing_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_account_name: pulumi_gestalt_rust::Input<String>,
         /// The Billing Profile Name in the above Billing Account.
         #[builder(into)]
-        pub billing_profile_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_profile_name: pulumi_gestalt_rust::Input<String>,
         /// The Invoice Section Name in the above Billing Profile.
         #[builder(into)]
-        pub invoice_section_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub invoice_section_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetMcaAccountScopeResult {

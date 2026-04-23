@@ -10,10 +10,10 @@ pub mod get_serverless_lifecycle_policy {
     pub struct GetServerlessLifecyclePolicyArgs {
         /// Name of the policy
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Type of lifecycle policy. Must be `retention`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServerlessLifecyclePolicyResult {

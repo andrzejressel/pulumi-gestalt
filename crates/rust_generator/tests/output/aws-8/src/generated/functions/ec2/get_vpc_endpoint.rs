@@ -10,22 +10,22 @@ pub mod get_vpc_endpoint {
     pub struct GetVpcEndpointArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetVpcEndpointFilter>>,
         >,
         /// ID of the specific VPC Endpoint to retrieve.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service name of the specific VPC Endpoint to retrieve. For AWS services the service name is usually in the form `com.amazonaws.<region>.<service>` (the SageMaker Notebook service is an exception to this rule, the service name is in the form `aws.sagemaker.<region>.notebook`).
         #[builder(into, default)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// State of the specific VPC Endpoint to retrieve.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match
         /// a pair on the specific VPC Endpoint to retrieve.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the VPC in which the specific VPC Endpoint is used.
@@ -33,7 +33,7 @@ pub mod get_vpc_endpoint {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetVpcEndpointResult {

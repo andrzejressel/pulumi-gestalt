@@ -45,26 +45,26 @@ pub mod identity_provider {
     pub struct IdentityProviderArgs {
         /// The map of attribute mapping of user pool attributes. [AttributeMapping in AWS API documentation](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html#CognitoUserPools-CreateIdentityProvider-request-AttributeMapping)
         #[builder(into, default)]
-        pub attribute_mapping: pulumi_gestalt_rust::InputOrOutput<
+        pub attribute_mapping: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The list of identity providers.
         #[builder(into, default)]
-        pub idp_identifiers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub idp_identifiers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The map of identity details, such as access token
         #[builder(into)]
-        pub provider_details: pulumi_gestalt_rust::InputOrOutput<
+        pub provider_details: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
         /// The provider name
         #[builder(into)]
-        pub provider_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provider_name: pulumi_gestalt_rust::Input<String>,
         /// The provider type.  [See AWS API for valid values](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html#CognitoUserPools-CreateIdentityProvider-request-ProviderType)
         #[builder(into)]
-        pub provider_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provider_type: pulumi_gestalt_rust::Input<String>,
         /// The user pool id
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IdentityProviderResult {

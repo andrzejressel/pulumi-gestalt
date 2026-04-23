@@ -72,20 +72,20 @@ pub mod document_ai_warehouse_document_schema {
     pub struct DocumentAiWarehouseDocumentSchemaArgs {
         /// Name of the schema given by the user.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Tells whether the document is a folder or a typical document.
         #[builder(into, default)]
-        pub document_is_folder: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub document_is_folder: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The unique identifier of the project.
         #[builder(into)]
-        pub project_number: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_number: pulumi_gestalt_rust::Input<String>,
         /// Defines the metadata for a schema property.
         /// Structure is documented below.
         #[builder(into)]
-        pub property_definitions: pulumi_gestalt_rust::InputOrOutput<
+        pub property_definitions: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinition,
             >,

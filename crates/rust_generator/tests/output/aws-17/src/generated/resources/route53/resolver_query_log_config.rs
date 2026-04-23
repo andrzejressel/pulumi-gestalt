@@ -33,13 +33,13 @@ pub mod resolver_query_log_config {
         /// The ARN of the resource that you want Route 53 Resolver to send query logs.
         /// You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.
         #[builder(into)]
-        pub destination_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the Route 53 Resolver query logging configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

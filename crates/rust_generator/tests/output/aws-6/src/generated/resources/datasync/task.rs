@@ -93,44 +93,44 @@ pub mod task {
     pub struct TaskArgs {
         /// Amazon Resource Name (ARN) of the CloudWatch Log Group that is used to monitor and log events in the sync task.
         #[builder(into, default)]
-        pub cloudwatch_log_group_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cloudwatch_log_group_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of destination DataSync Location.
         #[builder(into)]
-        pub destination_location_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_location_arn: pulumi_gestalt_rust::Input<String>,
         /// Filter rules that determines which files to exclude from a task.
         #[builder(into, default)]
-        pub excludes: pulumi_gestalt_rust::InputOrOutput<
+        pub excludes: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::TaskExcludes>,
         >,
         /// Filter rules that determines which files to include in a task.
         #[builder(into, default)]
-        pub includes: pulumi_gestalt_rust::InputOrOutput<
+        pub includes: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::TaskIncludes>,
         >,
         /// Name of the DataSync Task.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block containing option that controls the default behavior when you start an execution of this DataSync Task. For each individual task execution, you can override these options by specifying an overriding configuration in those executions.
         #[builder(into, default)]
-        pub options: pulumi_gestalt_rust::InputOrOutput<
+        pub options: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::TaskOptions>,
         >,
         /// Specifies a schedule used to periodically transfer files from a source to a destination location.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::TaskSchedule>,
         >,
         /// Amazon Resource Name (ARN) of source DataSync Location.
         #[builder(into)]
-        pub source_location_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_location_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value pairs of resource tags to assign to the DataSync Task. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block containing the configuration of a DataSync Task Report. See `task_report_config` below.
         #[builder(into, default)]
-        pub task_report_config: pulumi_gestalt_rust::InputOrOutput<
+        pub task_report_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::TaskTaskReportConfig>,
         >,
     }

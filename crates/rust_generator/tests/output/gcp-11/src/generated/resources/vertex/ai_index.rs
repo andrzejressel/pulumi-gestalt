@@ -132,38 +132,38 @@ pub mod ai_index {
     pub struct AiIndexArgs {
         /// The description of the Index.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the Index. The name can be up to 128 characters long and can consist of any UTF-8 characters.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The update method to use with this Index. The value must be the followings. If not set, BATCH_UPDATE will be used by default.
         /// * BATCH_UPDATE: user can call indexes.patch with files on Cloud Storage of datapoints to update.
         /// * STREAM_UPDATE: user can call indexes.upsertDatapoints/DeleteDatapoints to update the Index and the updates will be applied in corresponding DeployedIndexes in nearly real-time.
         #[builder(into, default)]
-        pub index_update_method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub index_update_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// The labels with user-defined metadata to organize your Indexes.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An additional information about the Index
         /// Structure is documented below.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiIndexMetadata>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the index. eg us-central1
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiIndexResult {

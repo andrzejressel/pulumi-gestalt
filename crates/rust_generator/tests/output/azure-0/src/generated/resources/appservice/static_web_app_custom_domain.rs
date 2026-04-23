@@ -112,12 +112,12 @@ pub mod static_web_app_custom_domain {
     pub struct StaticWebAppCustomDomainArgs {
         /// The Domain Name which should be associated with this Static Site. Changing this forces a new Static Site Custom Domain to be created.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Static Site. Changing this forces a new Static Site Custom Domain to be created.
         #[builder(into)]
-        pub static_web_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub static_web_app_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub validation_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub validation_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StaticWebAppCustomDomainResult {

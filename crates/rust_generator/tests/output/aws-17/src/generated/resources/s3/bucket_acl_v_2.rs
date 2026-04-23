@@ -167,18 +167,18 @@ pub mod bucket_acl_v_2 {
     pub struct BucketAclV2Args {
         /// Configuration block that sets the ACL permissions for an object per grantee. See below.
         #[builder(into, default)]
-        pub access_control_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub access_control_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketAclV2AccessControlPolicy>,
         >,
         /// Specifies the Canned ACL to apply to the bucket. Valid values: `private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`. Full details are available on the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl).
         #[builder(into, default)]
-        pub acl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub acl: pulumi_gestalt_rust::Input<Option<String>>,
         /// Bucket to which to apply the ACL.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Account ID of the expected bucket owner.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BucketAclV2Result {

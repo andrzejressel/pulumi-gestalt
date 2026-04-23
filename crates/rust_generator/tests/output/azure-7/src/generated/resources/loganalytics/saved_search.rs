@@ -57,28 +57,28 @@ pub mod saved_search {
     pub struct SavedSearchArgs {
         /// The category that the Saved Search will be listed under. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub category: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub category: pulumi_gestalt_rust::Input<String>,
         /// The name that Saved Search will be displayed as. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The function alias if the query serves as a function. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub function_alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub function_alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// The function parameters if the query serves as a function. Changing this forces a new resource to be created. For more examples and proper syntax please refer to [this document](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/functions/user-defined-functions).
         #[builder(into, default)]
-        pub function_parameters: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub function_parameters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the ID of the Log Analytics Workspace that the Saved Search will be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Log Analytics Saved Search. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The query expression for the saved search. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub query: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Logs Analytics Saved Search. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -64,61 +64,61 @@ pub mod connector {
     pub struct ConnectorArgs {
         /// Information about the capacity allocated to the connector. See `capacity` Block for details.
         #[builder(into)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity: pulumi_gestalt_rust::Input<
             super::super::types::mskconnect::ConnectorCapacity,
         >,
         /// A map of keys to values that represent the configuration for the connector.
         #[builder(into)]
-        pub connector_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub connector_configuration: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
         /// A summary description of the connector.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies which Apache Kafka cluster to connect to. See `kafka_cluster` Block for details.
         #[builder(into)]
-        pub kafka_cluster: pulumi_gestalt_rust::InputOrOutput<
+        pub kafka_cluster: pulumi_gestalt_rust::Input<
             super::super::types::mskconnect::ConnectorKafkaCluster,
         >,
         /// Details of the client authentication used by the Apache Kafka cluster. See `kafka_cluster_client_authentication` Block for details.
         #[builder(into)]
-        pub kafka_cluster_client_authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub kafka_cluster_client_authentication: pulumi_gestalt_rust::Input<
             super::super::types::mskconnect::ConnectorKafkaClusterClientAuthentication,
         >,
         /// Details of encryption in transit to the Apache Kafka cluster. See `kafka_cluster_encryption_in_transit` Block for details.
         #[builder(into)]
-        pub kafka_cluster_encryption_in_transit: pulumi_gestalt_rust::InputOrOutput<
+        pub kafka_cluster_encryption_in_transit: pulumi_gestalt_rust::Input<
             super::super::types::mskconnect::ConnectorKafkaClusterEncryptionInTransit,
         >,
         /// The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.
         #[builder(into)]
-        pub kafkaconnect_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kafkaconnect_version: pulumi_gestalt_rust::Input<String>,
         /// Details about log delivery. See `log_delivery` Block for details.
         #[builder(into, default)]
-        pub log_delivery: pulumi_gestalt_rust::InputOrOutput<
+        pub log_delivery: pulumi_gestalt_rust::Input<
             Option<super::super::types::mskconnect::ConnectorLogDelivery>,
         >,
         /// The name of the connector.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies which plugins to use for the connector. See `plugin` Block for details.
         #[builder(into)]
-        pub plugins: pulumi_gestalt_rust::InputOrOutput<
+        pub plugins: pulumi_gestalt_rust::Input<
             Vec<super::super::types::mskconnect::ConnectorPlugin>,
         >,
         /// The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub service_execution_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_execution_role_arn: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies which worker configuration to use with the connector. See `worker_configuration` Block for details.
         #[builder(into, default)]
-        pub worker_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub worker_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::mskconnect::ConnectorWorkerConfiguration>,
         >,
     }

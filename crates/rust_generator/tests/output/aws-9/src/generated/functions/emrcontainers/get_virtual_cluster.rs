@@ -10,12 +10,12 @@ pub mod get_virtual_cluster {
     pub struct GetVirtualClusterArgs {
         /// Key-value mapping of resource tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the cluster.
         #[builder(into)]
-        pub virtual_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_cluster_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVirtualClusterResult {

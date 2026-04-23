@@ -159,13 +159,13 @@ pub mod bitbucket_server_config {
         /// Immutable. API Key that will be attached to webhook. Once this field has been set, it cannot be changed.
         /// Changing this field will result in deleting/ recreating the resource.
         #[builder(into)]
-        pub api_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_key: pulumi_gestalt_rust::Input<String>,
         /// The ID to use for the BitbucketServerConfig, which will become the final component of the BitbucketServerConfig's resource name.
         #[builder(into)]
-        pub config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub config_id: pulumi_gestalt_rust::Input<String>,
         /// Connected Bitbucket Server repositories for this config.
         #[builder(into, default)]
-        pub connected_repositories: pulumi_gestalt_rust::InputOrOutput<
+        pub connected_repositories: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::cloudbuild::BitbucketServerConfigConnectedRepository,
@@ -175,32 +175,32 @@ pub mod bitbucket_server_config {
         /// Immutable. The URI of the Bitbucket Server host. Once this field has been set, it cannot be changed.
         /// If you need to change it, please create another BitbucketServerConfig.
         #[builder(into)]
-        pub host_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_uri: pulumi_gestalt_rust::Input<String>,
         /// The location of this bitbucket server config.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The network to be used when reaching out to the Bitbucket Server instance. The VPC network must be enabled for private
         /// service connection. This should be set if the Bitbucket Server instance is hosted on-premises and not reachable by
         /// public internet. If this field is left empty, no network peering will occur and calls to the Bitbucket Server instance
         /// will be made over the public internet. Must be in the format projects/{project}/global/networks/{network}, where
         /// {project} is a project number or id and {network} is the name of a VPC network in the project.
         #[builder(into, default)]
-        pub peered_network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peered_network: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Secret Manager secrets needed by the config.
         /// Structure is documented below.
         #[builder(into)]
-        pub secrets: pulumi_gestalt_rust::InputOrOutput<
+        pub secrets: pulumi_gestalt_rust::Input<
             super::super::types::cloudbuild::BitbucketServerConfigSecrets,
         >,
         /// SSL certificate to use for requests to Bitbucket Server. The format should be PEM format but the extension can be one of
         /// .pem, .cer, or .crt.
         #[builder(into, default)]
-        pub ssl_ca: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ssl_ca: pulumi_gestalt_rust::Input<Option<String>>,
         /// Username of the account Cloud Build will use on Bitbucket Server.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BitbucketServerConfigResult {

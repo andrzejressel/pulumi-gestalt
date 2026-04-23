@@ -72,12 +72,12 @@ pub mod blob_inventory_policy {
     pub struct BlobInventoryPolicyArgs {
         /// One or more `rules` blocks as defined below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::storage::BlobInventoryPolicyRule>,
         >,
         /// The ID of the storage account to apply this Blob Inventory Policy to. Changing this forces a new Storage Blob Inventory Policy to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BlobInventoryPolicyResult {

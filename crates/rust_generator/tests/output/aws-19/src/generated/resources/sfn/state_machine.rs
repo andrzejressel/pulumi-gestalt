@@ -144,42 +144,42 @@ pub mod state_machine {
     pub struct StateMachineArgs {
         /// The [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html) definition of the state machine.
         #[builder(into)]
-        pub definition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub definition: pulumi_gestalt_rust::Input<String>,
         /// Defines what encryption configuration is used to encrypt data in the State Machine. For more information see [TBD] in the AWS Step Functions User Guide.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::sfn::StateMachineEncryptionConfiguration>,
         >,
         /// Defines what execution history events are logged and where they are logged. The `logging_configuration` parameter is valid when `type` is set to `STANDARD` or `EXPRESS`. Defaults to `OFF`. For more information see [Logging Express Workflows](https://docs.aws.amazon.com/step-functions/latest/dg/cw-logs.html), [Log Levels](https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html) and [Logging Configuration](https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html) in the AWS Step Functions User Guide.
         #[builder(into, default)]
-        pub logging_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::sfn::StateMachineLoggingConfiguration>,
         >,
         /// The name of the state machine. The name should only contain `0`-`9`, `A`-`Z`, `a`-`z`, `-` and `_`. If omitted, the provider will assign a random, unique name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to true to publish a version of the state machine during creation. Default: false.
         #[builder(into, default)]
-        pub publish: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publish: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Resource Name (ARN) of the IAM role to use for this state machine.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Selects whether AWS X-Ray tracing is enabled.
         #[builder(into, default)]
-        pub tracing_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub tracing_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::sfn::StateMachineTracingConfiguration>,
         >,
         /// Determines whether a Standard or Express state machine is created. The default is `STANDARD`. You cannot update the type of a state machine once it has been created. Valid values: `STANDARD`, `EXPRESS`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StateMachineResult {

@@ -94,13 +94,13 @@ pub mod core_network {
     pub struct CoreNetworkArgs {
         /// Sets the base policy document for the core network. Refer to the [Core network policies documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policy-change-sets.html) for more information.
         #[builder(into, default)]
-        pub base_policy_document: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub base_policy_document: pulumi_gestalt_rust::Input<Option<String>>,
         /// The base policy created by setting the `create_base_policy` argument to `true` requires a region to be set in the `edge-locations`, `location` key. If `base_policy_region` is not specified, the region used in the base policy defaults to the region specified in the `provider` block.
         #[builder(into, default)]
-        pub base_policy_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub base_policy_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of regions to add to the base policy. The base policy created by setting the `create_base_policy` argument to `true` requires one or more regions to be set in the `edge-locations`, `location` key. If `base_policy_regions` is not specified, the region used in the base policy defaults to the region specified in the `provider` block.
         #[builder(into, default)]
-        pub base_policy_regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub base_policy_regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies whether to create a base policy when a core network is created or updated. A base policy is created and set to `LIVE` to allow attachments to the core network (e.g. VPC Attachments) before applying a policy document provided using the `aws.networkmanager.CoreNetworkPolicyAttachment` resource. This base policy is needed if your core network does not have any `LIVE` policies and your policy document has static routes pointing to VPC attachments and you want to attach your VPCs to the core network before applying the desired policy document. Valid values are `true` or `false`. An example of this Pulumi snippet can be found above for VPC Attachment in a single region and for VPC Attachment multi-region. An example base policy is shown below. This base policy is overridden with the policy that you specify in the `aws.networkmanager.CoreNetworkPolicyAttachment` resource.
         ///
         /// ```json
@@ -128,16 +128,16 @@ pub mod core_network {
         /// }
         /// ```
         #[builder(into, default)]
-        pub create_base_policy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub create_base_policy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Description of the Core Network.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the global network that a core network will be a part of.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the Core Network. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

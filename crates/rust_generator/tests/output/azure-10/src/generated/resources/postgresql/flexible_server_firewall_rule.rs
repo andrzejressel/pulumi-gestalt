@@ -59,16 +59,16 @@ pub mod flexible_server_firewall_rule {
     pub struct FlexibleServerFirewallRuleArgs {
         /// The End IP Address associated with this PostgreSQL Flexible Server Firewall Rule.
         #[builder(into)]
-        pub end_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub end_ip_address: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this PostgreSQL Flexible Server Firewall Rule. Changing this forces a new PostgreSQL Flexible Server Firewall Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the PostgreSQL Flexible Server from which to create this PostgreSQL Flexible Server Firewall Rule. Changing this forces a new PostgreSQL Flexible Server Firewall Rule to be created.
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         /// The Start IP Address associated with this PostgreSQL Flexible Server Firewall Rule.
         #[builder(into)]
-        pub start_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_ip_address: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FlexibleServerFirewallRuleResult {

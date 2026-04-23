@@ -69,43 +69,43 @@ pub mod authomation_rule {
     pub struct AuthomationRuleArgs {
         /// One or more `action_incident` blocks as defined below.
         #[builder(into, default)]
-        pub action_incidents: pulumi_gestalt_rust::InputOrOutput<
+        pub action_incidents: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::sentinel::AuthomationRuleActionIncident>>,
         >,
         /// One or more `action_playbook` blocks as defined below.
         ///
         /// > **Note:** Either one `action_incident` block or `action_playbook` block has to be specified.
         #[builder(into, default)]
-        pub action_playbooks: pulumi_gestalt_rust::InputOrOutput<
+        pub action_playbooks: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::sentinel::AuthomationRuleActionPlaybook>>,
         >,
         /// A JSON array of one or more condition JSON objects as is defined [here](https://learn.microsoft.com/en-us/rest/api/securityinsights/preview/automation-rules/create-or-update?tabs=HTTP#automationruletriggeringlogic).
         #[builder(into, default)]
-        pub condition_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub condition_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name which should be used for this Sentinel Automation Rule.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Whether this Sentinel Automation Rule is enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The time in RFC3339 format of kind `UTC` that determines when this Automation Rule should expire and be disabled.
         #[builder(into, default)]
-        pub expiration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Log Analytics Workspace where this Sentinel applies to. Changing this forces a new Sentinel Automation Rule to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The UUID which should be used for this Sentinel Automation Rule. Changing this forces a new Sentinel Automation Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The order of this Sentinel Automation Rule. Possible values varies between `1` and `1000`.
         #[builder(into)]
-        pub order: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub order: pulumi_gestalt_rust::Input<i32>,
         /// Specifies what triggers this automation rule. Possible values are `Alerts` and `Incidents`. Defaults to `Incidents`.
         #[builder(into, default)]
-        pub triggers_on: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub triggers_on: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies when will this automation rule be triggered. Possible values are `Created` and `Updated`. Defaults to `Created`.
         #[builder(into, default)]
-        pub triggers_when: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub triggers_when: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AuthomationRuleResult {

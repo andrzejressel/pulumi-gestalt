@@ -48,13 +48,13 @@ pub mod environment_membership {
     pub struct EnvironmentMembershipArgs {
         /// The ID of the environment that contains the environment member you want to add.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// The type of environment member permissions you want to associate with this environment member. Allowed values are `read-only` and `read-write` .
         #[builder(into)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub permissions: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the environment member you want to add.
         #[builder(into)]
-        pub user_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentMembershipResult {

@@ -89,25 +89,19 @@ pub mod endpoint_event_hub {
     pub struct EndpointEventHubArgs {
         /// The storage secret of the dead-lettering, whose format is `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`. When an endpoint can't deliver an event within a certain time period or after trying to deliver the event a certain number of times, it can send the undelivered event to a storage account.
         #[builder(into, default)]
-        pub dead_letter_storage_secret: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub dead_letter_storage_secret: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Digital Twins Instance. Changing this forces a new Digital Twins Event Hub Endpoint to be created.
         #[builder(into)]
-        pub digital_twins_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub digital_twins_id: pulumi_gestalt_rust::Input<String>,
         /// The primary connection string of the Event Hub Authorization Rule with a minimum of `send` permission.
         #[builder(into)]
-        pub eventhub_primary_connection_string: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub eventhub_primary_connection_string: pulumi_gestalt_rust::Input<String>,
         /// The secondary connection string of the Event Hub Authorization Rule with a minimum of `send` permission.
         #[builder(into)]
-        pub eventhub_secondary_connection_string: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub eventhub_secondary_connection_string: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Digital Twins Event Hub Endpoint. Changing this forces a new Digital Twins Event Hub Endpoint to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EndpointEventHubResult {

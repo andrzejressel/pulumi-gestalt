@@ -214,53 +214,53 @@ pub mod pipe {
     pub struct PipeArgs {
         /// A description of the pipe. At most 512 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The state the pipe should be in. One of: `RUNNING`, `STOPPED`.
         #[builder(into, default)]
-        pub desired_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub desired_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enrichment resource of the pipe (typically an ARN). Read more about enrichment in the [User Guide](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-enrichment).
         #[builder(into, default)]
-        pub enrichment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub enrichment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters to configure enrichment for your pipe. Detailed below.
         #[builder(into, default)]
-        pub enrichment_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub enrichment_parameters: pulumi_gestalt_rust::Input<
             Option<super::super::types::pipes::PipeEnrichmentParameters>,
         >,
         /// Logging configuration settings for the pipe. Detailed below.
         #[builder(into, default)]
-        pub log_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub log_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::pipes::PipeLogConfiguration>,
         >,
         /// Name of the pipe. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the role that allows the pipe to send data to the target.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Source resource of the pipe. This field typically requires an ARN (Amazon Resource Name). However, when using a self-managed Kafka cluster, you should use a different format. Instead of an ARN, use 'smk://' followed by the bootstrap server's address.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
         /// Parameters to configure a source for the pipe. Detailed below.
         #[builder(into, default)]
-        pub source_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub source_parameters: pulumi_gestalt_rust::Input<
             Option<super::super::types::pipes::PipeSourceParameters>,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Target resource of the pipe (typically an ARN).
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target: pulumi_gestalt_rust::Input<String>,
         /// Parameters to configure a target for your pipe. Detailed below.
         #[builder(into, default)]
-        pub target_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub target_parameters: pulumi_gestalt_rust::Input<
             Option<super::super::types::pipes::PipeTargetParameters>,
         >,
     }

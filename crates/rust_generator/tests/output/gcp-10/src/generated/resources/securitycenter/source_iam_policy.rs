@@ -65,11 +65,11 @@ pub mod source_iam_policy {
         ///
         /// - - -
         #[builder(into)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub policy_data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_data: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SourceIamPolicyResult {

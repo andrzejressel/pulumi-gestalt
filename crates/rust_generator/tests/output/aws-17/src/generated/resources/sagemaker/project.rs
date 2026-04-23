@@ -42,18 +42,18 @@ pub mod project {
     pub struct ProjectArgs {
         /// A description for the project.
         #[builder(into, default)]
-        pub project_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Project.
         #[builder(into)]
-        pub project_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_name: pulumi_gestalt_rust::Input<String>,
         /// The product ID and provisioning artifact ID to provision a service catalog. See Service Catalog Provisioning Details below.
         #[builder(into)]
-        pub service_catalog_provisioning_details: pulumi_gestalt_rust::InputOrOutput<
+        pub service_catalog_provisioning_details: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::ProjectServiceCatalogProvisioningDetails,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

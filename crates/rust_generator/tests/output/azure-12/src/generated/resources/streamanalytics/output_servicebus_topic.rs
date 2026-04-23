@@ -71,45 +71,43 @@ pub mod output_servicebus_topic {
     pub struct OutputServicebusTopicArgs {
         /// The authentication mode for the Stream Output. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         #[builder(into, default)]
-        pub authentication_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Stream Output. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of property columns to add to the Service Bus Topic output.
         #[builder(into, default)]
-        pub property_columns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub property_columns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `serialization` block as defined below.
         #[builder(into)]
-        pub serialization: pulumi_gestalt_rust::InputOrOutput<
+        pub serialization: pulumi_gestalt_rust::Input<
             super::super::types::streamanalytics::OutputServicebusTopicSerialization,
         >,
         /// The namespace that is associated with the desired Event Hub, Service Bus Topic, Service Bus Topic, etc.
         #[builder(into)]
-        pub servicebus_namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub servicebus_namespace: pulumi_gestalt_rust::Input<String>,
         /// The shared access policy key for the specified shared access policy. Required if `authentication_mode` is `ConnectionString`.
         #[builder(into, default)]
-        pub shared_access_policy_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub shared_access_policy_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc. Required if `authentication_mode` is `ConnectionString`.
         #[builder(into, default)]
-        pub shared_access_policy_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub shared_access_policy_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
         /// A key-value pair of system property columns that will be attached to the outgoing messages for the Service Bus Topic Output.
         ///
         /// > **NOTE:** The acceptable keys are `ContentType`, `CorrelationId`, `Label`, `MessageId`, `PartitionKey`, `ReplyTo`, `ReplyToSessionId`, `ScheduledEnqueueTimeUtc`, `SessionId`, `TimeToLive` and `To`.
         #[builder(into, default)]
-        pub system_property_columns: pulumi_gestalt_rust::InputOrOutput<
+        pub system_property_columns: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the Service Bus Topic.
         #[builder(into)]
-        pub topic_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub topic_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OutputServicebusTopicResult {

@@ -10,19 +10,19 @@ pub mod get_snapshot {
     pub struct GetSnapshotArgs {
         /// The name of the NetApp Account where the NetApp Pool exists.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the NetApp Snapshot.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the NetApp Pool where the NetApp Volume exists.
         #[builder(into)]
-        pub pool_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pool_name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the NetApp Snapshot exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the NetApp Volume where the NetApp Snapshot exists.
         #[builder(into)]
-        pub volume_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSnapshotResult {

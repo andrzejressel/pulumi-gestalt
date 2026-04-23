@@ -12,16 +12,16 @@ pub mod access_tag {
     pub struct AccessTagArgs {
         /// The account identifier to target for the resource. Conflicts with `zone_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of apps associated with the tag.
         #[builder(into, default)]
-        pub app_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub app_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Friendly name of the Access Tag.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. Conflicts with `account_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccessTagResult {

@@ -67,23 +67,23 @@ pub mod global_network_endpoint {
         /// Fully qualified domain name of network endpoint.
         /// This can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.
         #[builder(into, default)]
-        pub fqdn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fqdn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The global network endpoint group this endpoint is part of.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub global_network_endpoint_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_endpoint_group: pulumi_gestalt_rust::Input<String>,
         /// IPv4 address external endpoint.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// Port number of the external endpoint.
         #[builder(into)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub port: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GlobalNetworkEndpointResult {

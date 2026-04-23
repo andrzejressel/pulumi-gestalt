@@ -10,38 +10,38 @@ pub mod get_subnet {
     pub struct GetSubnetArgs {
         /// Availability zone where the subnet must reside.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the Availability Zone for the subnet. This argument is not supported in all regions or partitions. If necessary, use `availability_zone` instead.
         #[builder(into, default)]
-        pub availability_zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// CIDR block of the desired subnet.
         #[builder(into, default)]
-        pub cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the desired subnet must be the default subnet for its associated availability zone.
         #[builder(into, default)]
-        pub default_for_az: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub default_for_az: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetSubnetFilter>>,
         >,
         /// ID of the specific subnet to retrieve.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// IPv6 CIDR block of the desired subnet.
         #[builder(into, default)]
-        pub ipv6_cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// State that the desired subnet must have.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match a pair on the desired subnet.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the VPC that the desired subnet belongs to.
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSubnetResult {

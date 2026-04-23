@@ -35,12 +35,12 @@ pub mod target_group_attachment {
     pub struct TargetGroupAttachmentArgs {
         /// The target.
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<
+        pub target: pulumi_gestalt_rust::Input<
             super::super::types::vpclattice::TargetGroupAttachmentTarget,
         >,
         /// The ID or Amazon Resource Name (ARN) of the target group.
         #[builder(into)]
-        pub target_group_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_group_identifier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TargetGroupAttachmentResult {

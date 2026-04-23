@@ -10,10 +10,10 @@ pub mod get_pipeline {
     pub struct GetPipelineArgs {
         /// ID of the pipeline.
         #[builder(into)]
-        pub pipeline_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pipeline_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -11,32 +11,32 @@ pub mod get_ami_ids {
         /// Limit search to users with *explicit* launch
         /// permission on  the image. Valid items are the numeric account ID or `self`.
         #[builder(into, default)]
-        pub executable_users: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub executable_users: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more name/value pairs to filter off of. There
         /// are several valid keys, for a full reference, check out
         /// [describe-images in the AWS CLI reference][1].
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetAmiIdsFilter>>,
         >,
         /// If true, all deprecated AMIs are included in the response.
         /// If false, no deprecated AMIs are included in the response. If no value is specified, the default value is `false`.
         #[builder(into, default)]
-        pub include_deprecated: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_deprecated: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Regex string to apply to the AMI list returned
         /// by AWS. This allows more advanced filtering not supported from the AWS API.
         /// This filtering is done locally on what AWS returns, and could have a performance
         /// impact if the result is large. Combine this with other
         /// options to narrow down the list AWS returns.
         #[builder(into, default)]
-        pub name_regex: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_regex: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of AMI owners to limit search. At least 1 value must be specified. Valid values: an AWS account ID, `self` (the current account), or an AWS owner alias (e.g., `amazon`, `aws-marketplace`, `microsoft`).
         #[builder(into)]
-        pub owners: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub owners: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Used to sort AMIs by creation time.
         /// If no value is specified, the default value is `false`.
         #[builder(into, default)]
-        pub sort_ascending: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sort_ascending: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetAmiIdsResult {

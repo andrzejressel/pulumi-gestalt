@@ -10,14 +10,14 @@ pub mod get_invocation {
     pub struct GetInvocationArgs {
         /// Name of the lambda function.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// String in JSON format that is passed as payload to the lambda function.
         #[builder(into)]
-        pub input: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub input: pulumi_gestalt_rust::Input<String>,
         /// Qualifier (a.k.a version) of the lambda function. Defaults
         /// to `$LATEST`.
         #[builder(into, default)]
-        pub qualifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub qualifier: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInvocationResult {

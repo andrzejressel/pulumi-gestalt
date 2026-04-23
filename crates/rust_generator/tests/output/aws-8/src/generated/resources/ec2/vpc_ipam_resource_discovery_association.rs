@@ -36,13 +36,13 @@ pub mod vpc_ipam_resource_discovery_association {
     pub struct VpcIpamResourceDiscoveryAssociationArgs {
         /// The ID of the IPAM to associate.
         #[builder(into)]
-        pub ipam_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ipam_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Resource Discovery to associate.
         #[builder(into)]
-        pub ipam_resource_discovery_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ipam_resource_discovery_id: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to add to the IPAM resource discovery association resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

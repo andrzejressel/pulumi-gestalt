@@ -105,22 +105,22 @@ pub mod schema {
         /// error indicating that the limit has been reached require manually
         /// [deleting old revisions](https://cloud.google.com/pubsub/docs/delete-schema-revision).
         #[builder(into, default)]
-        pub definition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub definition: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID to use for the schema, which will become the final component of the schema's resource name.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the schema definition
         /// Default value is `TYPE_UNSPECIFIED`.
         /// Possible values are: `TYPE_UNSPECIFIED`, `PROTOCOL_BUFFER`, `AVRO`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SchemaResult {

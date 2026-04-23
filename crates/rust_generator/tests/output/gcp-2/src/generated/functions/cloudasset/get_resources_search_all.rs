@@ -10,13 +10,13 @@ pub mod get_resources_search_all {
     pub struct GetResourcesSearchAllArgs {
         /// A list of asset types that this request searches for. If empty, it will search all the [supported asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
         #[builder(into, default)]
-        pub asset_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub asset_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The query statement. See [how to construct a query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query) for more information. If not specified or empty, it will search all the resources within the specified `scope` and `asset_types`.
         #[builder(into, default)]
-        pub query: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query: pulumi_gestalt_rust::Input<Option<String>>,
         /// A scope can be a project, a folder, or an organization. The allowed value must be: organization number (such as "organizations/123"), folder number (such as "folders/1234"), project number (such as "projects/12345") or project id (such as "projects/abc")
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResourcesSearchAllResult {

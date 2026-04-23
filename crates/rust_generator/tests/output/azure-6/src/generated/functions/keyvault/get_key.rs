@@ -12,10 +12,10 @@ pub mod get_key {
         ///
         /// **NOTE:** The vault must be in the same subscription as the provider. If the vault is in another subscription, you must create an aliased provider for that subscription.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Key Vault Key.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetKeyResult {

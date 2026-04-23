@@ -10,13 +10,13 @@ pub mod get_table {
     pub struct GetTableArgs {
         /// Name of the DynamoDB table.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub server_side_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub server_side_encryption: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::dynamodb::GetTableServerSideEncryption>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

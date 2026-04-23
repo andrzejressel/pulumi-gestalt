@@ -49,14 +49,14 @@ pub mod zero_trust_access_mtls_hostname_settings {
     pub struct ZeroTrustAccessMtlsHostnameSettingsArgs {
         /// The account identifier to target for the resource.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ZeroTrustAccessMtlsHostnameSettingsSetting>>,
         >,
         /// The zone identifier to target for the resource.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustAccessMtlsHostnameSettingsResult {

@@ -37,18 +37,18 @@ pub mod voice_connector {
     pub struct VoiceConnectorArgs {
         /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value: `us-east-1`
         #[builder(into, default)]
-        pub aws_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Amazon Chime Voice Connector.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// When enabled, requires encryption for the Amazon Chime Voice Connector.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub require_encryption: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub require_encryption: pulumi_gestalt_rust::Input<bool>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

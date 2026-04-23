@@ -59,22 +59,22 @@ pub mod spring_cloud_elastic_application_performance_monitoring {
     pub struct SpringCloudElasticApplicationPerformanceMonitoringArgs {
         /// Specifies a list of the packages which should be used to determine whether a stack trace frame is an in-app frame or a library frame. This is a comma separated list of package names.
         #[builder(into)]
-        pub application_packages: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub application_packages: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies whether the Spring Cloud Application Performance Monitoring resource for Application Insights is enabled globally. Defaults to `false`.
         #[builder(into, default)]
-        pub globally_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub globally_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Spring Cloud Application Performance Monitoring resource for Elastic. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the server URL. The URL must be fully qualified, including protocol (http or https) and port.
         #[builder(into)]
-        pub server_url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_url: pulumi_gestalt_rust::Input<String>,
         /// Specifies the service name which is used to keep all the errors and transactions of your service together and is the primary filter in the Elastic APM user interface.
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Spring Cloud Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudElasticApplicationPerformanceMonitoringResult {

@@ -10,13 +10,13 @@ pub mod get_shared_image {
     pub struct GetSharedImageArgs {
         /// The name of the Shared Image Gallery in which the Shared Image exists.
         #[builder(into)]
-        pub gallery_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gallery_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Shared Image.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Shared Image Gallery exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSharedImageResult {

@@ -181,15 +181,15 @@ pub mod configuration_set_event_destination {
     pub struct ConfigurationSetEventDestinationArgs {
         /// The name of the configuration set.
         #[builder(into)]
-        pub configuration_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_set_name: pulumi_gestalt_rust::Input<String>,
         /// A name that identifies the event destination within the configuration set.
         #[builder(into)]
-        pub event_destination: pulumi_gestalt_rust::InputOrOutput<
+        pub event_destination: pulumi_gestalt_rust::Input<
             super::super::types::sesv2::ConfigurationSetEventDestinationEventDestination,
         >,
         /// An object that defines the event destination. See `event_destination` Block for details.
         #[builder(into)]
-        pub event_destination_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub event_destination_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConfigurationSetEventDestinationResult {

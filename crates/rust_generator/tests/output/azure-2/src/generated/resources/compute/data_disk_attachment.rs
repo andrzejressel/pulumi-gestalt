@@ -112,22 +112,22 @@ pub mod data_disk_attachment {
     pub struct DataDiskAttachmentArgs {
         /// Specifies the caching requirements for this Data Disk. Possible values include `None`, `ReadOnly` and `ReadWrite`.
         #[builder(into)]
-        pub caching: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub caching: pulumi_gestalt_rust::Input<String>,
         /// The Create Option of the Data Disk, such as `Empty` or `Attach`. Defaults to `Attach`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub create_option: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub create_option: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Logical Unit Number of the Data Disk, which needs to be unique within the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lun: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub lun: pulumi_gestalt_rust::Input<i32>,
         /// The ID of an existing Managed Disk which should be attached. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub managed_disk_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_disk_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Virtual Machine to which the Data Disk should be attached. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies if Write Accelerator is enabled on the disk. This can only be enabled on `Premium_LRS` managed disks with no caching and [M-Series VMs](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/how-to-enable-write-accelerator). Defaults to `false`.
         #[builder(into, default)]
-        pub write_accelerator_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub write_accelerator_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct DataDiskAttachmentResult {

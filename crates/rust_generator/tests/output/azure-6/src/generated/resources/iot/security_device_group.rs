@@ -68,18 +68,18 @@ pub mod security_device_group {
     pub struct SecurityDeviceGroupArgs {
         /// an `allow_rule` blocks as defined below.
         #[builder(into, default)]
-        pub allow_rule: pulumi_gestalt_rust::InputOrOutput<
+        pub allow_rule: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::SecurityDeviceGroupAllowRule>,
         >,
         /// The ID of the IoT Hub which to link the Security Device Group to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Device Security Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `range_rule` blocks as defined below.
         #[builder(into, default)]
-        pub range_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub range_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iot::SecurityDeviceGroupRangeRule>>,
         >,
     }

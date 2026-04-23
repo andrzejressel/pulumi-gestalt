@@ -37,16 +37,16 @@ pub mod vpc_link {
     pub struct VpcLinkArgs {
         /// Name of the VPC Link. Must be between 1 and 128 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Security group IDs for the VPC Link.
         #[builder(into)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Subnet IDs for the VPC Link.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Map of tags to assign to the VPC Link. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -78,102 +78,102 @@ pub mod instance {
     pub struct InstanceArgs {
         /// OpsWorks agent to install. Default is `INHERIT`.
         #[builder(into, default)]
-        pub agent_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub agent_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// AMI to use for the instance.  If an AMI is specified, `os` must be `Custom`.
         #[builder(into, default)]
-        pub ami_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ami_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Machine architecture for created instances.  Valid values are `x86_64` or `i386`. The default is `x86_64`.
         #[builder(into, default)]
-        pub architecture: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub architecture: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates load-based or time-based instances.  Valid values are `load`, `timer`.
         #[builder(into, default)]
-        pub auto_scaling_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_scaling_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the availability zone where instances will be created by default.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Time that the instance was created.
         #[builder(into, default)]
-        pub created_at: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub created_at: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to delete EBS volume on deletion. Default is `true`.
         #[builder(into, default)]
-        pub delete_ebs: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub delete_ebs: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to delete the Elastic IP on deletion.
         #[builder(into, default)]
-        pub delete_eip: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub delete_eip: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block for additional EBS block devices to attach to the instance. See Block Devices below.
         #[builder(into, default)]
-        pub ebs_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub ebs_block_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::opsworks::InstanceEbsBlockDevice>>,
         >,
         /// Whether the launched EC2 instance will be EBS-optimized.
         #[builder(into, default)]
-        pub ebs_optimized: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ebs_optimized: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ECS cluster's ARN for container instances.
         #[builder(into, default)]
-        pub ecs_cluster_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ecs_cluster_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instance Elastic IP address.
         #[builder(into, default)]
-        pub elastic_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub elastic_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for ephemeral (also known as "Instance Store") volumes on the instance. See Block Devices below.
         #[builder(into, default)]
-        pub ephemeral_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub ephemeral_block_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::opsworks::InstanceEphemeralBlockDevice>>,
         >,
         /// Instance's host name.
         #[builder(into, default)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hostname: pulumi_gestalt_rust::Input<Option<String>>,
         /// For registered instances, infrastructure class: ec2 or on-premises.
         #[builder(into, default)]
-        pub infrastructure_class: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub infrastructure_class: pulumi_gestalt_rust::Input<Option<String>>,
         /// Controls where to install OS and package updates when the instance boots.  Default is `true`.
         #[builder(into, default)]
-        pub install_updates_on_boot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub install_updates_on_boot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ARN of the instance's IAM profile.
         #[builder(into, default)]
-        pub instance_profile_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_profile_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of instance to start.
         #[builder(into, default)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of the layers the instance will belong to.
         #[builder(into)]
-        pub layer_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub layer_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Name of operating system that will be installed.
         #[builder(into, default)]
-        pub os: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub os: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the root block device of the instance. See Block Devices below.
         #[builder(into, default)]
-        pub root_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub root_block_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::opsworks::InstanceRootBlockDevice>>,
         >,
         /// Name of the type of root device instances will have by default. Valid values are `ebs` or `instance-store`.
         #[builder(into, default)]
-        pub root_device_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub root_device_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Associated security groups.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the SSH keypair that instances will have by default.
         #[builder(into, default)]
-        pub ssh_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ssh_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the stack the instance will belong to.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub stack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_id: pulumi_gestalt_rust::Input<String>,
         /// Desired state of the instance. Valid values are `running` or `stopped`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instance status. Will be one of `booting`, `connection_lost`, `online`, `pending`, `rebooting`, `requested`, `running_setup`, `setup_failed`, `shutting_down`, `start_failed`, `stop_failed`, `stopped`, `stopping`, `terminated`, or `terminating`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Subnet ID to attach to.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Instance tenancy to use. Valid values are `default`, `dedicated` or `host`.
         #[builder(into, default)]
-        pub tenancy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenancy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Keyword to choose what virtualization mode created instances will use. Valid values are `paravirtual` or `hvm`.
         #[builder(into, default)]
-        pub virtualization_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtualization_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

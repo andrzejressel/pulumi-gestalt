@@ -540,36 +540,36 @@ pub mod instance {
         ///
         /// - - -
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*.
         #[builder(into, default)]
-        pub kms_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels as key value pairs.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the Instance.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Private settings for private instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub private_config: pulumi_gestalt_rust::InputOrOutput<
+        pub private_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::securesourcemanager::InstancePrivateConfig>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for Workforce Identity Federation to support third party identity provider.
         /// If unset, defaults to the Google OIDC IdP.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub workforce_identity_federation_config: pulumi_gestalt_rust::InputOrOutput<
+        pub workforce_identity_federation_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::securesourcemanager::InstanceWorkforceIdentityFederationConfig,
             >,

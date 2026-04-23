@@ -83,29 +83,29 @@ pub mod vnp_gateway_nat_rule {
     pub struct VnpGatewayNatRuleArgs {
         /// One of more `external_mapping` blocks as defined below.
         #[builder(into, default)]
-        pub external_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub external_mappings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::VnpGatewayNatRuleExternalMapping>>,
         >,
         /// One of more `internal_mapping` blocks as defined below.
         #[builder(into, default)]
-        pub internal_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub internal_mappings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::network::VnpGatewayNatRuleInternalMapping>>,
         >,
         /// The ID of the IP Configuration this VPN Gateway NAT Rule applies to. Possible values are `Instance0` and `Instance1`.
         #[builder(into, default)]
-        pub ip_configuration_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_configuration_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source NAT direction of the VPN NAT. Possible values are `EgressSnat` and `IngressSnat`. Defaults to `EgressSnat`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this VPN Gateway NAT Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the VPN Gateway NAT Rule. Possible values are `Dynamic` and `Static`. Defaults to `Static`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the VPN Gateway that this VPN Gateway NAT Rule belongs to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub vpn_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpn_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VnpGatewayNatRuleResult {

@@ -11,7 +11,7 @@ pub mod get_solution_stack {
         /// If more than one result is returned, use the most
         /// recent solution stack.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Regex string to apply to the solution stack list returned
         /// by AWS. See [Elastic Beanstalk Supported Platforms][beanstalk-platforms] from
         /// AWS documentation for reference solution stack names.
@@ -20,7 +20,7 @@ pub mod get_solution_stack {
         /// this call will fail. Ensure that your search is specific enough to return
         /// a single solution stack, or use `most_recent` to choose the most recent one.
         #[builder(into)]
-        pub name_regex: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name_regex: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSolutionStackResult {

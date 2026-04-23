@@ -182,13 +182,13 @@ pub mod queue {
         /// to App Engine tasks in this queue
         /// Structure is documented below.
         #[builder(into, default)]
-        pub app_engine_routing_override: pulumi_gestalt_rust::InputOrOutput<
+        pub app_engine_routing_override: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudtasks::QueueAppEngineRoutingOverride>,
         >,
         /// Modifies HTTP target for HTTP tasks.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub http_target: pulumi_gestalt_rust::InputOrOutput<
+        pub http_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudtasks::QueueHttpTarget>,
         >,
         /// The location of the queue
@@ -196,14 +196,14 @@ pub mod queue {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The queue name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rate limits for task dispatches.
         /// The queue's actual dispatch rate is the result of:
         /// * Number of tasks in the queue
@@ -213,19 +213,19 @@ pub mod queue {
         /// smooth sudden large traffic spikes.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub rate_limits: pulumi_gestalt_rust::InputOrOutput<
+        pub rate_limits: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudtasks::QueueRateLimits>,
         >,
         /// Settings that determine the retry behavior.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub retry_config: pulumi_gestalt_rust::InputOrOutput<
+        pub retry_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudtasks::QueueRetryConfig>,
         >,
         /// Configuration options for writing logs to Stackdriver Logging.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub stackdriver_logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub stackdriver_logging_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudtasks::QueueStackdriverLoggingConfig>,
         >,
     }

@@ -54,13 +54,13 @@ pub mod signing_certificate {
     pub struct SigningCertificateArgs {
         /// The contents of the signing certificate in PEM-encoded format.
         #[builder(into)]
-        pub certificate_body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_body: pulumi_gestalt_rust::Input<String>,
         /// The status you want to assign to the certificate. `Active` means that the certificate can be used for programmatic calls to Amazon Web Services `Inactive` means that the certificate cannot be used.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the user the signing certificate is for.
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SigningCertificateResult {

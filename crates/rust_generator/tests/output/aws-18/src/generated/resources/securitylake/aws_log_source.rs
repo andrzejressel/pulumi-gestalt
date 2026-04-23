@@ -47,7 +47,7 @@ pub mod aws_log_source {
     pub struct AwsLogSourceArgs {
         /// Specify the natively-supported AWS service to add as a source in Security Lake.
         #[builder(into, default)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             Option<super::super::types::securitylake::AwsLogSourceSource>,
         >,
     }

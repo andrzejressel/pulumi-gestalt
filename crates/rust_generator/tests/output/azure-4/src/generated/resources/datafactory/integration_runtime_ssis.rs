@@ -54,12 +54,12 @@ pub mod integration_runtime_ssis {
     pub struct IntegrationRuntimeSsisArgs {
         /// A `catalog_info` block as defined below.
         #[builder(into, default)]
-        pub catalog_info: pulumi_gestalt_rust::InputOrOutput<
+        pub catalog_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafactory::IntegrationRuntimeSsisCatalogInfo>,
         >,
         /// One `copy_compute_scale` block as defined below.
         #[builder(into, default)]
-        pub copy_compute_scale: pulumi_gestalt_rust::InputOrOutput<
+        pub copy_compute_scale: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::IntegrationRuntimeSsisCopyComputeScale,
             >,
@@ -68,79 +68,77 @@ pub mod integration_runtime_ssis {
         ///
         /// > **NOTE** If `credential_name` is omitted, the integration runtime will use the Data Factory assigned identity.
         #[builder(into, default)]
-        pub credential_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub credential_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `custom_setup_script` block as defined below.
         #[builder(into, default)]
-        pub custom_setup_script: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_setup_script: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::IntegrationRuntimeSsisCustomSetupScript,
             >,
         >,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// Integration runtime description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure-SSIS Integration Runtime edition. Valid values are `Standard` and `Enterprise`. Defaults to `Standard`.
         #[builder(into, default)]
-        pub edition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edition: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `express_custom_setup` block as defined below.
         #[builder(into, default)]
-        pub express_custom_setup: pulumi_gestalt_rust::InputOrOutput<
+        pub express_custom_setup: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetup,
             >,
         >,
         /// A `express_vnet_integration` block as defined below.
         #[builder(into, default)]
-        pub express_vnet_integration: pulumi_gestalt_rust::InputOrOutput<
+        pub express_vnet_integration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::IntegrationRuntimeSsisExpressVnetIntegration,
             >,
         >,
         /// The type of the license that is used. Valid values are `LicenseIncluded` and `BasePrice`. Defaults to `LicenseIncluded`.
         #[builder(into, default)]
-        pub license_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub license_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the maximum parallel executions per node. Defaults to `1`. Max is `1`.
         #[builder(into, default)]
-        pub max_parallel_executions_per_node: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub max_parallel_executions_per_node: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Azure-SSIS Integration Runtime. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The size of the nodes on which the Azure-SSIS Integration Runtime runs. Valid values are: `Standard_D2_v3`, `Standard_D4_v3`, `Standard_D8_v3`, `Standard_D16_v3`, `Standard_D32_v3`, `Standard_D64_v3`, `Standard_E2_v3`, `Standard_E4_v3`, `Standard_E8_v3`, `Standard_E16_v3`, `Standard_E32_v3`, `Standard_E64_v3`, `Standard_D1_v2`, `Standard_D2_v2`, `Standard_D3_v2`, `Standard_D4_v2`, `Standard_A4_v2` and `Standard_A8_v2`
         #[builder(into)]
-        pub node_size: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_size: pulumi_gestalt_rust::Input<String>,
         /// Number of nodes for the Azure-SSIS Integration Runtime. Max is `10`. Defaults to `1`.
         #[builder(into, default)]
-        pub number_of_nodes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub number_of_nodes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more `package_store` block as defined below.
         #[builder(into, default)]
-        pub package_stores: pulumi_gestalt_rust::InputOrOutput<
+        pub package_stores: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::datafactory::IntegrationRuntimeSsisPackageStore>,
             >,
         >,
         /// One `pipeline_external_compute_scale` block as defined below.
         #[builder(into, default)]
-        pub pipeline_external_compute_scale: pulumi_gestalt_rust::InputOrOutput<
+        pub pipeline_external_compute_scale: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::IntegrationRuntimeSsisPipelineExternalComputeScale,
             >,
         >,
         /// A `proxy` block as defined below.
         #[builder(into, default)]
-        pub proxy: pulumi_gestalt_rust::InputOrOutput<
+        pub proxy: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafactory::IntegrationRuntimeSsisProxy>,
         >,
         /// A `vnet_integration` block as defined below.
         #[builder(into, default)]
-        pub vnet_integration: pulumi_gestalt_rust::InputOrOutput<
+        pub vnet_integration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::IntegrationRuntimeSsisVnetIntegration,
             >,

@@ -10,7 +10,7 @@ pub mod get_image {
     pub struct GetImageArgs {
         /// ID of the image.
         #[builder(into)]
-        pub image_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetImageResult {

@@ -60,92 +60,86 @@ pub mod cache {
     pub struct CacheArgs {
         /// Whether access key authentication is enabled? Defaults to `true`. `active_directory_authentication_enabled` must be set to `true` to disable access key authentication.
         #[builder(into, default)]
-        pub access_keys_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub access_keys_authentication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The size of the Redis cache to deploy. Valid values for a SKU `family` of C (Basic/Standard) are `0, 1, 2, 3, 4, 5, 6`, and for P (Premium) `family` are `1, 2, 3, 4, 5`.
         #[builder(into)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub capacity: pulumi_gestalt_rust::Input<i32>,
         /// The SKU family/pricing group to use. Valid values are `C` (for Basic/Standard SKU family) and `P` (for `Premium`)
         #[builder(into)]
-        pub family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub family: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::redis::CacheIdentity>,
         >,
         /// The location of the resource group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The minimum TLS version. Possible values are `1.0`, `1.1` and `1.2`. Defaults to `1.0`.
         #[builder(into, default)]
-        pub minimum_tls_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub minimum_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Redis instance. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enable the non-SSL port (6379) - disabled by default.
         #[builder(into, default)]
-        pub non_ssl_port_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub non_ssl_port_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of `patch_schedule` blocks as defined below.
         #[builder(into, default)]
-        pub patch_schedules: pulumi_gestalt_rust::InputOrOutput<
+        pub patch_schedules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::redis::CachePatchSchedule>>,
         >,
         /// The Static IP Address to assign to the Redis Cache when hosted inside the Virtual Network. This argument implies the use of `subnet_id`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub private_static_ip_address: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub private_static_ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not public network access is allowed for this Redis Cache. `true` means this resource could be accessed by both public and private endpoint. `false` means only private endpoint access is allowed. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `redis_configuration` block as defined below - with some limitations by SKU - defaults/details are shown below.
         #[builder(into, default)]
-        pub redis_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub redis_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::redis::CacheRedisConfiguration>,
         >,
         /// Redis version. Only major version needed. Possible values are `4` and `6`. Defaults to `6`.
         #[builder(into, default)]
-        pub redis_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub redis_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of replicas to create per master for this Redis Cache.
         ///
         /// > **Note:** Configuring the number of replicas per master is only available when using the Premium SKU and cannot be used in conjunction with shards.
         #[builder(into, default)]
-        pub replicas_per_master: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub replicas_per_master: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Amount of replicas to create per primary for this Redis Cache. If both `replicas_per_primary` and `replicas_per_master` are set, they need to be equal.
         #[builder(into, default)]
-        pub replicas_per_primary: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub replicas_per_primary: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the resource group in which to create the Redis instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// *Only available when using the Premium SKU* The number of Shards to create on the Redis Cluster.
         #[builder(into, default)]
-        pub shard_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub shard_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The SKU of Redis to use. Possible values are `Basic`, `Standard` and `Premium`.
         ///
         /// > **Note** Downgrading the SKU will force a new resource to be created.
         #[builder(into)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku_name: pulumi_gestalt_rust::Input<String>,
         /// *Only available when using the Premium SKU* The ID of the Subnet within which the Redis Cache should be deployed. This Subnet must only contain Azure Cache for Redis instances without any other type of resources. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A mapping of tenant settings to assign to the resource.
         #[builder(into, default)]
-        pub tenant_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub tenant_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies a list of Availability Zones in which this Redis Cache should be located. Changing this forces a new Redis Cache to be created.
         ///
         /// > **Please Note**: Availability Zones are [in Preview and only supported in several regions at this time](https://docs.microsoft.com/azure/availability-zones/az-overview) - as such you must be opted into the Preview to use this functionality. You can [opt into the Availability Zones Preview in the Azure Portal](https://aka.ms/azenroll).
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct CacheResult {

@@ -46,7 +46,7 @@ pub mod portal_tenant_configuration {
         ///
         /// > **Note:** When `private_markdown_storage_enforced` is set to `true`, only external storage configuration (URI) is allowed for Markdown tiles. Inline content configuration will be prohibited.
         #[builder(into)]
-        pub private_markdown_storage_enforced: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub private_markdown_storage_enforced: pulumi_gestalt_rust::Input<bool>,
     }
     #[allow(dead_code)]
     pub struct PortalTenantConfigurationResult {

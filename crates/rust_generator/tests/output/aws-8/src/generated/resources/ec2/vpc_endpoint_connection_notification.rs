@@ -64,16 +64,16 @@ pub mod vpc_endpoint_connection_notification {
         ///
         /// > **NOTE:** One of `vpc_endpoint_service_id` or `vpc_endpoint_id` must be specified.
         #[builder(into)]
-        pub connection_events: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub connection_events: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ARN of the SNS topic for the notifications.
         #[builder(into)]
-        pub connection_notification_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_notification_arn: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPC Endpoint to receive notifications for.
         #[builder(into, default)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the VPC Endpoint Service to receive notifications for.
         #[builder(into, default)]
-        pub vpc_endpoint_service_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_endpoint_service_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VpcEndpointConnectionNotificationResult {

@@ -10,12 +10,12 @@ pub mod get_appregistry_attribute_group_associations {
     pub struct GetAppregistryAttributeGroupAssociationsArgs {
         /// ID of the application to which attribute groups are associated.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the application to which attribute groups are associated.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAppregistryAttributeGroupAssociationsResult {

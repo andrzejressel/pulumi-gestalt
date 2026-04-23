@@ -100,24 +100,24 @@ pub mod active_role_assignment {
     pub struct ActiveRoleAssignmentArgs {
         /// The justification for the role assignment. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub justification: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub justification: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object ID of the principal for this role assignment. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_id: pulumi_gestalt_rust::Input<String>,
         /// The role definition ID for this role assignment. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub role_definition_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_definition_id: pulumi_gestalt_rust::Input<String>,
         /// A `schedule` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::pim::ActiveRoleAssignmentSchedule>,
         >,
         /// The scope for this role assignment, should be a valid resource ID. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
         /// A `ticket` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub ticket: pulumi_gestalt_rust::InputOrOutput<
+        pub ticket: pulumi_gestalt_rust::Input<
             Option<super::super::types::pim::ActiveRoleAssignmentTicket>,
         >,
     }

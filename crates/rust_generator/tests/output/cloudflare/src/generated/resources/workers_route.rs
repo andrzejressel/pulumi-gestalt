@@ -40,13 +40,13 @@ pub mod workers_route {
     pub struct WorkersRouteArgs {
         /// The [route pattern](https://developers.cloudflare.com/workers/about/routes/) to associate the Worker with.
         #[builder(into)]
-        pub pattern: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pattern: pulumi_gestalt_rust::Input<String>,
         /// Worker script name to invoke for requests that match the route pattern.
         #[builder(into, default)]
-        pub script_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub script_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkersRouteResult {

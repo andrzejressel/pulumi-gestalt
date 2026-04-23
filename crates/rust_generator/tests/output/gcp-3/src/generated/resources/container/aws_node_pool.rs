@@ -377,57 +377,57 @@ pub mod aws_node_pool {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Autoscaler configuration for this node pool.
         #[builder(into)]
-        pub autoscaling: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscaling: pulumi_gestalt_rust::Input<
             super::super::types::container::AwsNodePoolAutoscaling,
         >,
         /// The awsCluster for the resource
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// The configuration of the node pool.
         #[builder(into)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             super::super::types::container::AwsNodePoolConfig,
         >,
         /// The kubelet configuration for the node pool.
         #[builder(into, default)]
-        pub kubelet_config: pulumi_gestalt_rust::InputOrOutput<
+        pub kubelet_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AwsNodePoolKubeletConfig>,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The Management configuration for this node pool.
         #[builder(into, default)]
-        pub management: pulumi_gestalt_rust::InputOrOutput<
+        pub management: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AwsNodePoolManagement>,
         >,
         /// The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.
         #[builder(into)]
-        pub max_pods_constraint: pulumi_gestalt_rust::InputOrOutput<
+        pub max_pods_constraint: pulumi_gestalt_rust::Input<
             super::super::types::container::AwsNodePoolMaxPodsConstraint,
         >,
         /// The name of this resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The subnet where the node pool node run.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// Optional. Update settings control the speed and disruption of the node pool update.
         #[builder(into, default)]
-        pub update_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub update_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AwsNodePoolUpdateSettings>,
         >,
         /// The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`). You can list all supported versions on a given Google Cloud region by calling GetAwsServerConfig.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AwsNodePoolResult {

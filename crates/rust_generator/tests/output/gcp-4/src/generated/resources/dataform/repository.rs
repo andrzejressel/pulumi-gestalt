@@ -101,24 +101,24 @@ pub mod repository {
     pub struct RepositoryArgs {
         /// Optional. The repository's user-friendly name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. If set, configures this repository to be linked to a Git remote.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub git_remote_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub git_remote_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataform::RepositoryGitRemoteSettings>,
         >,
         /// Optional. The reference to a KMS encryption key. If provided, it will be used to encrypt user data in the repository and all child resources.
         /// It is not possible to add or update the encryption key after the repository is created. Example projects/[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Repository user labels.
         /// An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The repository's name.
@@ -126,26 +126,26 @@ pub mod repository {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format projects/*/secrets/*/versions/*. The file itself must be in a JSON format.
         #[builder(into, default)]
-        pub npmrc_environment_variables_secret_version: pulumi_gestalt_rust::InputOrOutput<
+        pub npmrc_environment_variables_secret_version: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the region
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service account to run workflow invocations under.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub workspace_compilation_overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub workspace_compilation_overrides: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataform::RepositoryWorkspaceCompilationOverrides,
             >,

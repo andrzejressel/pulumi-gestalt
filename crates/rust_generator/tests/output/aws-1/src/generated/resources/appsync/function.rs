@@ -88,41 +88,39 @@ pub mod function {
     pub struct FunctionArgs {
         /// ID of the associated AppSync API.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// The function code that contains the request and response functions. When code is used, the runtime is required. The runtime value must be APPSYNC_JS.
         #[builder(into, default)]
-        pub code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub code: pulumi_gestalt_rust::Input<Option<String>>,
         /// Function data source name.
         #[builder(into)]
-        pub data_source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source: pulumi_gestalt_rust::Input<String>,
         /// Function description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of the request mapping template. Currently the supported value is `2018-05-29`. Does not apply when specifying `code`.
         #[builder(into, default)]
-        pub function_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub function_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maximum batching size for a resolver. Valid values are between `0` and `2000`.
         #[builder(into, default)]
-        pub max_batch_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_batch_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Function name. The function name does not have to be unique.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Function request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
         #[builder(into, default)]
-        pub request_mapping_template: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_mapping_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// Function response mapping template.
         #[builder(into, default)]
-        pub response_mapping_template: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub response_mapping_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// Describes a runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
         #[builder(into, default)]
-        pub runtime: pulumi_gestalt_rust::InputOrOutput<
+        pub runtime: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::FunctionRuntime>,
         >,
         /// Describes a Sync configuration for a resolver. See `sync_config` Block for details.
         #[builder(into, default)]
-        pub sync_config: pulumi_gestalt_rust::InputOrOutput<
+        pub sync_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appsync::FunctionSyncConfig>,
         >,
     }

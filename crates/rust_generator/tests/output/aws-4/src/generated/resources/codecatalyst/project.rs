@@ -39,15 +39,15 @@ pub mod project {
     pub struct ProjectArgs {
         /// The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The friendly name of the project that will be displayed to users.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the space.
         #[builder(into)]
-        pub space_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub space_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProjectResult {

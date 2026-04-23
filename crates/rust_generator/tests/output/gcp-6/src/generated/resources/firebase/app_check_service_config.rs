@@ -122,11 +122,11 @@ pub mod app_check_service_config {
     #[allow(dead_code)]
     pub struct AppCheckServiceConfigArgs {
         #[builder(into, default)]
-        pub enforcement_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub enforcement_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier of the service to configure enforcement. Currently, the following service IDs are supported:
         /// firebasestorage.googleapis.com (Cloud Storage for Firebase)
         /// firebasedatabase.googleapis.com (Firebase Realtime Database)
@@ -136,7 +136,7 @@ pub mod app_check_service_config {
         ///
         /// - - -
         #[builder(into)]
-        pub service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AppCheckServiceConfigResult {

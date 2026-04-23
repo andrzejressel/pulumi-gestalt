@@ -900,29 +900,29 @@ pub mod function {
         /// from the given source.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub build_config: pulumi_gestalt_rust::InputOrOutput<
+        pub build_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfunctionsv2::FunctionBuildConfig>,
         >,
         /// User-provided description of a function.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// An Eventarc trigger managed by Google Cloud Functions that fires events in
         /// response to a condition in another service.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub event_trigger: pulumi_gestalt_rust::InputOrOutput<
+        pub event_trigger: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfunctionsv2::FunctionEventTrigger>,
         >,
         /// Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function resources.
         /// It must match the pattern projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}.
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value label pairs associated with this Cloud Function.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of this cloud function.
@@ -930,19 +930,19 @@ pub mod function {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// A user-defined name of the function. Function names must
         /// be unique globally and match pattern `projects/*/locations/*/functions/*`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Describes the Service being deployed.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub service_config: pulumi_gestalt_rust::InputOrOutput<
+        pub service_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfunctionsv2::FunctionServiceConfig>,
         >,
     }

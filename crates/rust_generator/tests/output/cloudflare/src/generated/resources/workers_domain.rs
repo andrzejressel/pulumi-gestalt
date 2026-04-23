@@ -37,19 +37,19 @@ pub mod workers_domain {
     pub struct WorkersDomainArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Worker environment. Defaults to `production`.
         #[builder(into, default)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub environment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Hostname of the Worker Domain.
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// Name of worker script to attach the domain to.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkersDomainResult {

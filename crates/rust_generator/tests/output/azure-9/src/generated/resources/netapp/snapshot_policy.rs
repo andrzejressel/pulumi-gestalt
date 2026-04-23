@@ -84,42 +84,42 @@ pub mod snapshot_policy {
     pub struct SnapshotPolicyArgs {
         /// The name of the NetApp Account in which the NetApp Snapshot Policy should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// Sets a daily snapshot schedule. A `daily_schedule` block as defined below.
         #[builder(into, default)]
-        pub daily_schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub daily_schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::SnapshotPolicyDailySchedule>,
         >,
         /// Defines that the NetApp Snapshot Policy is enabled or not.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// Sets an hourly snapshot schedule. A `hourly_schedule` block as defined below.
         #[builder(into, default)]
-        pub hourly_schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub hourly_schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::SnapshotPolicyHourlySchedule>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Sets a monthly snapshot schedule. A `monthly_schedule` block as defined below.
         #[builder(into, default)]
-        pub monthly_schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub monthly_schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::SnapshotPolicyMonthlySchedule>,
         >,
         /// The name of the NetApp Snapshot Policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group where the NetApp Snapshot Policy should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Sets a weekly snapshot schedule. A `weekly_schedule` block as defined below.
         #[builder(into, default)]
-        pub weekly_schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub weekly_schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::SnapshotPolicyWeeklySchedule>,
         >,
     }

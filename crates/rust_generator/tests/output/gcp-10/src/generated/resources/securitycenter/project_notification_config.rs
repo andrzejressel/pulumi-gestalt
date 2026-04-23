@@ -70,20 +70,20 @@ pub mod project_notification_config {
     pub struct ProjectNotificationConfigArgs {
         /// This must be unique within the organization.
         #[builder(into)]
-        pub config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub config_id: pulumi_gestalt_rust::Input<String>,
         /// The description of the notification config (max of 1024 characters).
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Pub/Sub topic to send notifications to. Its format is
         /// "projects/[project_id]/topics/[topic]".
         #[builder(into)]
-        pub pubsub_topic: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pubsub_topic: pulumi_gestalt_rust::Input<String>,
         /// The config for triggering streaming-based notifications.
         /// Structure is documented below.
         #[builder(into)]
-        pub streaming_config: pulumi_gestalt_rust::InputOrOutput<
+        pub streaming_config: pulumi_gestalt_rust::Input<
             super::super::types::securitycenter::ProjectNotificationConfigStreamingConfig,
         >,
     }

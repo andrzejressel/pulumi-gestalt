@@ -36,13 +36,13 @@ pub mod snapshot {
     pub struct SnapshotArgs {
         /// The namespace to create a snapshot for.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// How long to retain the created snapshot. Default value is `-1`.
         #[builder(into, default)]
-        pub retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the snapshot.
         #[builder(into)]
-        pub snapshot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub snapshot_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SnapshotResult {

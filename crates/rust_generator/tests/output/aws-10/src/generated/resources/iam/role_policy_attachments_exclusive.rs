@@ -65,10 +65,10 @@ pub mod role_policy_attachments_exclusive {
     pub struct RolePolicyAttachmentsExclusiveArgs {
         /// A list of managed IAM policy ARNs to be attached to the role. Policies attached to this role but not configured in this argument will be removed.
         #[builder(into)]
-        pub policy_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub policy_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// IAM role name.
         #[builder(into)]
-        pub role_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RolePolicyAttachmentsExclusiveResult {

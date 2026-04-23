@@ -54,45 +54,45 @@ pub mod hci_virtual_hard_disk {
     pub struct HciVirtualHardDiskArgs {
         /// The block size of the disk in bytes. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into, default)]
-        pub block_size_in_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub block_size_in_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Custom Location where the Azure Stack HCI Virtual Hard Disk should exist. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into)]
-        pub custom_location_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_location_id: pulumi_gestalt_rust::Input<String>,
         /// The format of the disk file. Possible values are `vhdx` and `vhd`. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into, default)]
-        pub disk_file_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_file_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// The size of the disk in GB. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into)]
-        pub disk_size_in_gb: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub disk_size_in_gb: pulumi_gestalt_rust::Input<i32>,
         /// Whether to enable dynamic sizing for the Azure Stack HCI Virtual Hard Disk. Defaults to `false`. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into, default)]
-        pub dynamic_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub dynamic_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The hypervisor generation of the Azure Stack HCI Virtual Hard Disk. Possible values are `V1` and `V2`. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into, default)]
-        pub hyperv_generation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hyperv_generation: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Azure Stack HCI Virtual Hard Disk should exist. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The logical sector size of the disk in bytes. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into, default)]
-        pub logical_sector_in_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub logical_sector_in_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name which should be used for this Azure Stack HCI Virtual Hard Disk. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The physical sector size of the disk in bytes. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into, default)]
-        pub physical_sector_in_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub physical_sector_in_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the Resource Group where the Azure Stack HCI Virtual Hard Disk should exist. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Azure Stack HCI Storage Path used for this Virtual Hard Disk. Changing this forces a new Azure Stack HCI Virtual Hard Disk to be created.
         ///
         /// > **Note:** If `storage_path_id` is not specified, the Virtual Hard Disk will be placed in a high availability Storage Path. If you experience a diff you may need to add this to `ignore_changes`.
         #[builder(into, default)]
-        pub storage_path_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_path_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Azure Stack HCI Virtual Hard Disk.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

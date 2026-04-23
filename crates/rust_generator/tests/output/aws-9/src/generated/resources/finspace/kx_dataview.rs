@@ -49,46 +49,46 @@ pub mod kx_dataview {
     pub struct KxDataviewArgs {
         /// The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.
         #[builder(into)]
-        pub auto_update: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub auto_update: pulumi_gestalt_rust::Input<bool>,
         /// The identifier of the availability zones. If attaching a volume, the volume must be in the same availability zone as the dataview that you are attaching to.
         #[builder(into, default)]
-        pub availability_zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of availability zones you want to assign per cluster. This can be one of the following:
         /// * `SINGLE` - Assigns one availability zone per cluster.
         /// * `MULTI` - Assigns all the availability zones per cluster.
         #[builder(into)]
-        pub az_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub az_mode: pulumi_gestalt_rust::Input<String>,
         /// A unique identifier of the changeset of the database that you want to use to ingest data.
         #[builder(into, default)]
-        pub changeset_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub changeset_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the database where you want to create a dataview.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// A description for the dataview.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique identifier for the KX environment.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// A unique identifier for the dataview.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The option to specify whether you want to make the dataview writable to perform database maintenance. The following are some considerations related to writable dataviews.
         /// * You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire database path. You cannot perform updates on a writeable dataview. Hence, `auto_update` must be set as `false` if `read_write` is `true` for a dataview.
         /// * You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already in use by another dataview, the dataview creation fails.
         /// * Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the `read_write` parameter later.
         #[builder(into, default)]
-        pub read_write: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub read_write: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. See segment_configurations below.
         #[builder(into, default)]
-        pub segment_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub segment_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::finspace::KxDataviewSegmentConfiguration>>,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

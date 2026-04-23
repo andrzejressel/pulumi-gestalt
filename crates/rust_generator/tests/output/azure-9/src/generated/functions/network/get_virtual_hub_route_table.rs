@@ -10,13 +10,13 @@ pub mod get_virtual_hub_route_table {
     pub struct GetVirtualHubRouteTableArgs {
         /// The name of the Virtual Hub Route Table.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the Virtual Hub Route Table exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for Virtual Hub Route Table.
         #[builder(into)]
-        pub virtual_hub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVirtualHubRouteTableResult {

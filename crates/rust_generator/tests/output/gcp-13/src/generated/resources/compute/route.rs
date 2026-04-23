@@ -227,11 +227,11 @@ pub mod route {
         /// An optional description of this resource. Provide this property
         /// when you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The destination range of outgoing packets that this route applies to.
         /// Only IPv4 is supported.
         #[builder(into)]
-        pub dest_range: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dest_range: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035.  Specifically, the name must be 1-63 characters long and
@@ -240,13 +240,13 @@ pub mod route {
         /// characters must be a dash, lowercase letter, or digit, except the
         /// last character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network that this route applies to.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// URL to a gateway that should handle matching packets.
         /// Currently, you can only specify the internet gateway, using a full or
         /// partial valid URL:
@@ -255,7 +255,7 @@ pub mod route {
         /// * `global/gateways/default-internet-gateway`
         /// * The string `default-internet-gateway`.
         #[builder(into, default)]
-        pub next_hop_gateway: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_gateway: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IP address or URL to a forwarding rule of type
         /// loadBalancingScheme=INTERNAL that should handle matching
         /// packets.
@@ -270,7 +270,7 @@ pub mod route {
         /// Note that this can only be used when the destinationRange is
         /// a public (non-RFC 1918) IP CIDR range.
         #[builder(into, default)]
-        pub next_hop_ilb: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_ilb: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL to an instance that should handle matching packets.
         /// You can specify this as a full or partial URL. For example:
         /// * `https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance`
@@ -278,33 +278,33 @@ pub mod route {
         /// * `zones/zone/instances/instance`
         /// * Just the instance name, with the zone in `next_hop_instance_zone`.
         #[builder(into, default)]
-        pub next_hop_instance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_instance: pulumi_gestalt_rust::Input<Option<String>>,
         /// (Optional when `next_hop_instance` is
         /// specified)  The zone of the instance specified in
         /// `next_hop_instance`.  Omit if `next_hop_instance` is specified as
         /// a URL.
         #[builder(into, default)]
-        pub next_hop_instance_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_instance_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network IP address of an instance that should handle matching packets.
         #[builder(into, default)]
-        pub next_hop_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL to a VpnTunnel that should handle matching packets.
         #[builder(into, default)]
-        pub next_hop_vpn_tunnel: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_vpn_tunnel: pulumi_gestalt_rust::Input<Option<String>>,
         /// The priority of this route. Priority is used to break ties in cases
         /// where there is more than one matching route of equal prefix length.
         /// In the case of two routes with equal prefix length, the one with the
         /// lowest-numbered priority value wins.
         /// Default value is 1000. Valid range is 0 through 65535.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of instance tags to which this route applies.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct RouteResult {

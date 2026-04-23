@@ -45,21 +45,21 @@ pub mod trusted_token_issuer {
     pub struct TrustedTokenIssuerArgs {
         /// A unique, case-sensitive ID that you provide to ensure the idempotency of the request. AWS generates a random value when not provided.
         #[builder(into, default)]
-        pub client_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the instance of IAM Identity Center.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// Name of the trusted token issuer.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A block that specifies settings that apply to the trusted token issuer, these change depending on the type you specify in `trusted_token_issuer_type`. Documented below.
         #[builder(into, default)]
-        pub trusted_token_issuer_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub trusted_token_issuer_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ssoadmin::TrustedTokenIssuerTrustedTokenIssuerConfiguration,
             >,
@@ -68,7 +68,7 @@ pub mod trusted_token_issuer {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub trusted_token_issuer_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trusted_token_issuer_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TrustedTokenIssuerResult {

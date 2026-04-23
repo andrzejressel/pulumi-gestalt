@@ -40,31 +40,29 @@ pub mod account {
     pub struct AccountArgs {
         /// An `identity` block as defined below.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             super::super::types::purview::AccountIdentity,
         >,
         /// The Azure Region where the Purview Account should exist. Changing this forces a new Purview Account to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for the new Resource Group where Purview Account creates the managed resources. Changing this forces a new Purview Account to be created.
         ///
         /// > **Note:** `managed_resource_group_name` must be a new Resource Group
         #[builder(into, default)]
-        pub managed_resource_group_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub managed_resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Purview Account. Changing this forces a new Purview Account to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Purview Account be visible to the public network? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub public_network_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Purview Account should exist. Changing this forces a new Purview Account to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Purview Account.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

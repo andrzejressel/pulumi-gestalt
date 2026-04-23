@@ -87,46 +87,46 @@ pub mod endpoint_cosmosdb_account {
     pub struct EndpointCosmosdbAccountArgs {
         /// The type used to authenticate against the Cosmos DB Account endpoint. Possible values are `keyBased` and `identityBased`. Defaults to `keyBased`.
         #[builder(into, default)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Cosmos DB Container in the Cosmos DB Database. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Cosmos DB Database in the Cosmos DB Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// The URI of the Cosmos DB Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub endpoint_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_uri: pulumi_gestalt_rust::Input<String>,
         /// The ID of the User Managed Identity used to authenticate against the Cosmos DB Account endpoint.
         ///
         /// > **NOTE:** `identity_id` can only be specified when `authentication_type` is `identityBased`. It must be one of the `identity_ids` of the Iot Hub. If not specified when `authentication_type` is `identityBased`, System Assigned Managed Identity of the Iot Hub will be used.
         #[builder(into, default)]
-        pub identity_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the IoT Hub to create the endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the endpoint. The name must be unique across endpoint types. The following names are reserved: `events`, `operationsMonitoringEvents`, `fileNotifications` and `$default`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the partition key associated with the Cosmos DB Container.
         #[builder(into, default)]
-        pub partition_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub partition_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The template for generating a synthetic partition key value for use within the Cosmos DB Container.
         #[builder(into, default)]
-        pub partition_key_template: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub partition_key_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// The primary key of the Cosmos DB Account.
         ///
         /// > **NOTE:** `primary_key` must and can only be specified when `authentication_type` is `keyBased`.
         #[builder(into, default)]
-        pub primary_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub primary_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group under which the Cosmos DB Account has been created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The secondary key of the Cosmos DB Account.
         ///
         /// > **NOTE:** `secondary_key` must and can only be specified when `authentication_type` is `keyBased`.
         #[builder(into, default)]
-        pub secondary_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub secondary_key: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EndpointCosmosdbAccountResult {

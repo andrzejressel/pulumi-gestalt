@@ -12,14 +12,14 @@ pub mod get_backup_vault {
         ///
         /// - - -
         #[builder(into)]
-        pub backup_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_vault_id: pulumi_gestalt_rust::Input<String>,
         /// The location in which the Backup Vault resource belongs.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBackupVaultResult {

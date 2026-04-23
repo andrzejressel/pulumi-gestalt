@@ -23,65 +23,65 @@ pub mod replication_configuration_template {
     pub struct ReplicationConfigurationTemplateArgs {
         /// Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.
         #[builder(into)]
-        pub associate_default_security_group: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub associate_default_security_group: pulumi_gestalt_rust::Input<bool>,
         /// Whether to allow the AWS replication agent to automatically replicate newly added disks.
         #[builder(into, default)]
-        pub auto_replicate_new_disks: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_replicate_new_disks: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.
         #[builder(into)]
-        pub bandwidth_throttling: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub bandwidth_throttling: pulumi_gestalt_rust::Input<i32>,
         /// Whether to create a Public IP for the Recovery Instance by default.
         #[builder(into)]
-        pub create_public_ip: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub create_public_ip: pulumi_gestalt_rust::Input<bool>,
         /// Data plane routing mechanism that will be used for replication. Valid values are `PUBLIC_IP` and `PRIVATE_IP`.
         #[builder(into)]
-        pub data_plane_routing: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_plane_routing: pulumi_gestalt_rust::Input<String>,
         /// Staging Disk EBS volume type to be used during replication. Valid values are `GP2`, `GP3`, `ST1`, or `AUTO`.
         #[builder(into)]
-        pub default_large_staging_disk_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_large_staging_disk_type: pulumi_gestalt_rust::Input<String>,
         /// Type of EBS encryption to be used during replication. Valid values are `DEFAULT` and `CUSTOM`.
         #[builder(into)]
-        pub ebs_encryption: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ebs_encryption: pulumi_gestalt_rust::Input<String>,
         /// ARN of the EBS encryption key to be used during replication.
         #[builder(into, default)]
-        pub ebs_encryption_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ebs_encryption_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for Point in time (PIT) policy to manage snapshots taken during replication. See below.
         #[builder(into, default)]
-        pub pit_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub pit_policies: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::drs::ReplicationConfigurationTemplatePitPolicy>,
             >,
         >,
         /// Instance type to be used for the replication server.
         #[builder(into)]
-        pub replication_server_instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_server_instance_type: pulumi_gestalt_rust::Input<String>,
         /// Security group IDs that will be used by the replication server.
         #[builder(into)]
-        pub replication_servers_security_groups_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub replication_servers_security_groups_ids: pulumi_gestalt_rust::Input<
             Vec<String>,
         >,
         /// Subnet to be used by the replication staging area.
         #[builder(into)]
-        pub staging_area_subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub staging_area_subnet_id: pulumi_gestalt_rust::Input<String>,
         /// Set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
         #[builder(into)]
-        pub staging_area_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub staging_area_tags: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
         /// Set of tags to be associated with the Replication Configuration Template resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::drs::ReplicationConfigurationTemplateTimeouts>,
         >,
         /// Whether to use a dedicated Replication Server in the replication staging area.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub use_dedicated_replication_server: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub use_dedicated_replication_server: pulumi_gestalt_rust::Input<bool>,
     }
     #[allow(dead_code)]
     pub struct ReplicationConfigurationTemplateResult {

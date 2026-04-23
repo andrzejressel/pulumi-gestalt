@@ -87,20 +87,20 @@ pub mod service_network_acl {
     pub struct ServiceNetworkAclArgs {
         /// The default action to control the network access when no other rule matches. Possible values are `Allow` and `Deny`.
         #[builder(into)]
-        pub default_action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_action: pulumi_gestalt_rust::Input<String>,
         /// A `private_endpoint` block as defined below.
         #[builder(into, default)]
-        pub private_endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub private_endpoints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::signalr::ServiceNetworkAclPrivateEndpoint>>,
         >,
         /// A `public_network` block as defined below.
         #[builder(into)]
-        pub public_network: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network: pulumi_gestalt_rust::Input<
             super::super::types::signalr::ServiceNetworkAclPublicNetwork,
         >,
         /// The ID of the SignalR service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub signalr_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub signalr_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceNetworkAclResult {

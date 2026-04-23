@@ -283,22 +283,22 @@ pub mod connection_profile {
     pub struct ConnectionProfileArgs {
         /// BigQuery warehouse profile.
         #[builder(into, default)]
-        pub bigquery_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub bigquery_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::ConnectionProfileBigqueryProfile>,
         >,
         /// The connection profile identifier.
         #[builder(into)]
-        pub connection_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_profile_id: pulumi_gestalt_rust::Input<String>,
         /// Create the connection profile without validating it.
         #[builder(into, default)]
-        pub create_without_validation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub create_without_validation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Display name.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Forward SSH tunnel connectivity.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub forward_ssh_connectivity: pulumi_gestalt_rust::InputOrOutput<
+        pub forward_ssh_connectivity: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datastream::ConnectionProfileForwardSshConnectivity,
             >,
@@ -306,14 +306,14 @@ pub mod connection_profile {
         /// Cloud Storage bucket profile.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub gcs_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub gcs_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::ConnectionProfileGcsProfile>,
         >,
         /// Labels.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the location this connection profile is located in.
@@ -321,39 +321,39 @@ pub mod connection_profile {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// MySQL database profile.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub mysql_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub mysql_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::ConnectionProfileMysqlProfile>,
         >,
         /// Oracle database profile.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub oracle_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub oracle_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::ConnectionProfileOracleProfile>,
         >,
         /// PostgreSQL database profile.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub postgresql_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub postgresql_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::ConnectionProfilePostgresqlProfile>,
         >,
         /// Private connectivity.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub private_connectivity: pulumi_gestalt_rust::InputOrOutput<
+        pub private_connectivity: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::ConnectionProfilePrivateConnectivity>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// SQL Server database profile.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub sql_server_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub sql_server_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::datastream::ConnectionProfileSqlServerProfile>,
         >,
     }

@@ -149,13 +149,13 @@ pub mod consumer_quota_override {
     pub struct ConsumerQuotaOverrideArgs {
         /// If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit.
         #[builder(into, default)]
-        pub dimensions: pulumi_gestalt_rust::InputOrOutput<
+        pub dimensions: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// If the new quota would decrease the existing quota by more than 10%, the request is rejected.
         /// If `force` is `true`, that safety check is ignored.
         #[builder(into, default)]
-        pub force: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The limit on the metric, e.g. `/project/region`.
         /// > Make sure that `limit` is in a format that doesn't start with `1/` or contain curly braces.
         /// E.g. use `/project/user` instead of `1/{project}/{user}`.
@@ -163,20 +163,20 @@ pub mod consumer_quota_override {
         ///
         /// - - -
         #[builder(into)]
-        pub limit: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub limit: pulumi_gestalt_rust::Input<String>,
         /// The metric that should be limited, e.g. `compute.googleapis.com/cpus`.
         #[builder(into)]
-        pub metric: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub metric: pulumi_gestalt_rust::Input<String>,
         /// The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota).
         #[builder(into)]
-        pub override_value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub override_value: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service that the metrics belong to, e.g. `compute.googleapis.com`.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConsumerQuotaOverrideResult {

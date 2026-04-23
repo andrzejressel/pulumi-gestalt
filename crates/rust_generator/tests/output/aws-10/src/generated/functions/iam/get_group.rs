@@ -10,7 +10,7 @@ pub mod get_group {
     pub struct GetGroupArgs {
         /// Friendly IAM group name to match.
         #[builder(into)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGroupResult {

@@ -75,41 +75,41 @@ pub mod trigger_custom_event {
     pub struct TriggerCustomEventArgs {
         /// Specifies if the Data Factory Custom Event Trigger is activated. Defaults to `true`.
         #[builder(into, default)]
-        pub activated: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub activated: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of additional properties to associate with the Data Factory Custom Event Trigger.
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Custom Event Trigger.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of Data Factory in which to associate the Trigger with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Custom Event Trigger.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of Event Grid Topic in which event will be listened. Changing this forces a new resource.
         #[builder(into)]
-        pub eventgrid_topic_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventgrid_topic_id: pulumi_gestalt_rust::Input<String>,
         /// List of events that will fire this trigger. At least one event must be specified.
         #[builder(into)]
-        pub events: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub events: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the name of the Data Factory Custom Event Trigger. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `pipeline` blocks as defined below.
         #[builder(into)]
-        pub pipelines: pulumi_gestalt_rust::InputOrOutput<
+        pub pipelines: pulumi_gestalt_rust::Input<
             Vec<super::super::types::datafactory::TriggerCustomEventPipeline>,
         >,
         /// The pattern that event subject starts with for trigger to fire.
         #[builder(into, default)]
-        pub subject_begins_with: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subject_begins_with: pulumi_gestalt_rust::Input<Option<String>>,
         /// The pattern that event subject ends with for trigger to fire.
         #[builder(into, default)]
-        pub subject_ends_with: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subject_ends_with: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TriggerCustomEventResult {

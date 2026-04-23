@@ -102,7 +102,7 @@ pub mod origin_access_identity {
     pub struct OriginAccessIdentityArgs {
         /// An optional comment for the origin access identity.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OriginAccessIdentityResult {

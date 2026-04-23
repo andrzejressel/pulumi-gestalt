@@ -356,58 +356,58 @@ pub mod bucket {
     pub struct BucketArgs {
         /// Sets the accelerate configuration of an existing bucket. Can be `Enabled` or `Suspended`.
         #[builder(into, default)]
-        pub acceleration_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub acceleration_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) to apply. Valid values are `private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, and `log-delivery-write`. Defaults to `private`.  Conflicts with `grant`.
         #[builder(into, default)]
-        pub acl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub acl: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the bucket. Will be of format `arn:aws:s3:::bucketname`.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the bucket. If omitted, this provider will assign a random, unique name. Must be lowercase and less than or equal to 63 characters in length. A full list of bucket naming rules [may be found here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
         #[builder(into, default)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique bucket name beginning with the specified prefix. Conflicts with `bucket`. Must be lowercase and less than or equal to 37 characters in length. A full list of bucket naming rules [may be found here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html).
         #[builder(into, default)]
-        pub bucket_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bucket_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// A rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) (documented below).
         #[builder(into, default)]
-        pub cors_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub cors_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketCorsRule>>,
         >,
         /// A boolean that indicates all objects (including any [locked objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html)) should be deleted from the bucket so that the bucket can be destroyed without error. These objects are *not* recoverable.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl) (documented below). Conflicts with `acl`.
         #[builder(into, default)]
-        pub grants: pulumi_gestalt_rust::InputOrOutput<
+        pub grants: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketGrant>>,
         >,
         /// The [Route 53 Hosted Zone ID](https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints) for this bucket's region.
         #[builder(into, default)]
-        pub hosted_zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hosted_zone_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html) (documented below).
         #[builder(into, default)]
-        pub lifecycle_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub lifecycle_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketLifecycleRule>>,
         >,
         /// A settings of [bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) (documented below).
         #[builder(into, default)]
-        pub loggings: pulumi_gestalt_rust::InputOrOutput<
+        pub loggings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketLogging>>,
         >,
         /// A configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html) (documented below)
         ///
         /// > **NOTE:** You cannot use `acceleration_status` in `cn-north-1` or `us-gov-west-1`
         #[builder(into, default)]
-        pub object_lock_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub object_lock_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketObjectLockConfiguration>,
         >,
         /// A valid [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) JSON document. Note that if the policy document is not specific enough (but still valid), this provider may view the policy as constantly changing in a `pulumi preview`. In this case, please make sure you use the verbose/specific version of the policy.
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html) (documented below).
         #[builder(into, default)]
-        pub replication_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub replication_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketReplicationConfiguration>,
         >,
         /// Specifies who should bear the cost of Amazon S3 data transfer.
@@ -415,33 +415,33 @@ pub mod bucket {
         /// the costs of any data transfer. See [Requester Pays Buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html)
         /// developer guide for more information.
         #[builder(into, default)]
-        pub request_payer: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_payer: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html) (documented below)
         #[builder(into, default)]
-        pub server_side_encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub server_side_encryption_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketServerSideEncryptionConfiguration>,
         >,
         /// A map of tags to assign to the bucket. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A state of [versioning](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html) (documented below)
         #[builder(into, default)]
-        pub versioning: pulumi_gestalt_rust::InputOrOutput<
+        pub versioning: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketVersioning>,
         >,
         /// A website object (documented below).
         #[builder(into, default)]
-        pub website: pulumi_gestalt_rust::InputOrOutput<
+        pub website: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketWebsite>,
         >,
         /// The domain of the website endpoint, if the bucket is configured with a website. If not, this will be an empty string. This is used to create Route 53 alias records.
         #[builder(into, default)]
-        pub website_domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub website_domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// The website endpoint, if the bucket is configured with a website. If not, this will be an empty string.
         #[builder(into, default)]
-        pub website_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub website_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BucketResult {

@@ -67,34 +67,34 @@ pub mod event_rule {
     pub struct EventRuleArgs {
         /// The description of the rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name or ARN of the event bus to associate with this rule.
         /// If you omit this, the `default` event bus is used.
         #[builder(into, default)]
-        pub event_bus_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_bus_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The event pattern described a JSON object. At least one of `schedule_expression` or `event_pattern` is required. See full documentation of [Events and Event Patterns in EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html) for details. **Note**: The event pattern size is 2048 by default but it is adjustable up to 4096 characters by submitting a service quota increase request. See [Amazon EventBridge quotas](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-quota.html) for details.
         #[builder(into, default)]
-        pub event_pattern: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_pattern: pulumi_gestalt_rust::Input<Option<String>>,
         /// Used to delete managed rules created by AWS. Defaults to `false`.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the rule should be enabled.
         /// Defaults to `true`.
         /// Conflicts with `state`.
         #[builder(into, default)]
-        pub is_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the rule. If omitted, this provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`. **Note**: Due to the length of the generated suffix, must be 38 characters or less.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The scheduling expression. For example, `cron(0 20 * * ? *)` or `rate(5 minutes)`. At least one of `schedule_expression` or `event_pattern` is required. Can only be used on the default event bus. For more information, refer to the AWS documentation [Schedule Expressions for Rules](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html).
         #[builder(into, default)]
-        pub schedule_expression: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schedule_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// State of the rule.
         /// Valid values are `DISABLED`, `ENABLED`, and `ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS`.
         /// When state is `ENABLED`, the rule is enabled for all events except those delivered by CloudTrail.
@@ -104,10 +104,10 @@ pub mod event_rule {
         ///
         /// **NOTE:** The rule state  `ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS` cannot be used in conjunction with the `schedule_expression` argument.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

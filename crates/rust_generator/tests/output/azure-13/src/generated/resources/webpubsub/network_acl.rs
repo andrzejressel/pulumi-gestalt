@@ -90,20 +90,20 @@ pub mod network_acl {
     pub struct NetworkAclArgs {
         /// The default action to control the network access when no other rule matches. Possible values are `Allow` and `Deny`. Defaults to `Deny`.
         #[builder(into, default)]
-        pub default_action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_action: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `private_endpoint` block as defined below.
         #[builder(into, default)]
-        pub private_endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub private_endpoints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::webpubsub::NetworkAclPrivateEndpoint>>,
         >,
         /// A `public_network` block as defined below.
         #[builder(into)]
-        pub public_network: pulumi_gestalt_rust::InputOrOutput<
+        pub public_network: pulumi_gestalt_rust::Input<
             super::super::types::webpubsub::NetworkAclPublicNetwork,
         >,
         /// The ID of the Web Pubsub service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub web_pubsub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_pubsub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkAclResult {

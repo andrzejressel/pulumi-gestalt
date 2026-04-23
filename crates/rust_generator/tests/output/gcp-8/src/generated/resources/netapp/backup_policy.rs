@@ -67,41 +67,41 @@ pub mod backup_policy {
     pub struct BackupPolicyArgs {
         /// Number of daily backups to keep. Note that the minimum daily backup limit is 2.
         #[builder(into)]
-        pub daily_backup_limit: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub daily_backup_limit: pulumi_gestalt_rust::Input<i32>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// If enabled, make backups automatically according to the schedules.
         /// This will be applied to all volumes that have this policy attached and enforced on volume level.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the region for the policy to apply to.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Number of monthly backups to keep. Note that the sum of daily, weekly and monthly backups should be greater than 1.
         #[builder(into)]
-        pub monthly_backup_limit: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub monthly_backup_limit: pulumi_gestalt_rust::Input<i32>,
         /// The name of the backup policy. Needs to be unique per location.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of weekly backups to keep. Note that the sum of daily, weekly and monthly backups should be greater than 1.
         #[builder(into)]
-        pub weekly_backup_limit: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub weekly_backup_limit: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct BackupPolicyResult {

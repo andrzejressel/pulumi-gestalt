@@ -133,38 +133,38 @@ pub mod data_flow {
     pub struct DataFlowArgs {
         /// List of tags that can be used for describing the Data Factory Data Flow.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of Data Factory in which to associate the Data Flow with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Data Flow.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The folder that this Data Flow is in. If not specified, the Data Flow will appear at the root level.
         #[builder(into, default)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Data Factory Data Flow. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The script for the Data Factory Data Flow.
         #[builder(into, default)]
-        pub script: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub script: pulumi_gestalt_rust::Input<Option<String>>,
         /// The script lines for the Data Factory Data Flow.
         #[builder(into, default)]
-        pub script_lines: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub script_lines: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more `sink` blocks as defined below.
         #[builder(into)]
-        pub sinks: pulumi_gestalt_rust::InputOrOutput<
+        pub sinks: pulumi_gestalt_rust::Input<
             Vec<super::super::types::datafactory::DataFlowSink>,
         >,
         /// One or more `source` blocks as defined below.
         #[builder(into)]
-        pub sources: pulumi_gestalt_rust::InputOrOutput<
+        pub sources: pulumi_gestalt_rust::Input<
             Vec<super::super::types::datafactory::DataFlowSource>,
         >,
         /// One or more `transformation` blocks as defined below.
         #[builder(into, default)]
-        pub transformations: pulumi_gestalt_rust::InputOrOutput<
+        pub transformations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datafactory::DataFlowTransformation>>,
         >,
     }

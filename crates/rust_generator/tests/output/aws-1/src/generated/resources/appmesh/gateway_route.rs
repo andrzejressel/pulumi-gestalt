@@ -41,26 +41,26 @@ pub mod gateway_route {
     pub struct GatewayRouteArgs {
         /// Name of the service mesh in which to create the gateway route. Must be between 1 and 255 characters in length.
         #[builder(into)]
-        pub mesh_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mesh_name: pulumi_gestalt_rust::Input<String>,
         /// AWS account ID of the service mesh's owner. Defaults to the account ID the AWS provider is currently connected to.
         #[builder(into, default)]
-        pub mesh_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mesh_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name to use for the gateway route. Must be between 1 and 255 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Gateway route specification to apply.
         #[builder(into)]
-        pub spec: pulumi_gestalt_rust::InputOrOutput<
+        pub spec: pulumi_gestalt_rust::Input<
             super::super::types::appmesh::GatewayRouteSpec,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the virtual gateway to associate the gateway route with. Must be between 1 and 255 characters in length.
         #[builder(into)]
-        pub virtual_gateway_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_gateway_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GatewayRouteResult {

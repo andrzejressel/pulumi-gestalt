@@ -52,122 +52,106 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// Specifies whether upgrades between different major versions are allowed. You must set it to `true` when providing an `engine_version` parameter that uses a different major version than the DB cluster's current version. Default is `false`.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. Default is `false`.
         #[builder(into, default)]
-        pub apply_immediately: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of EC2 Availability Zones that instances in the Neptune cluster can be created in.
         #[builder(into, default)]
-        pub availability_zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub availability_zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The days to retain backups for. Default `1`
         #[builder(into, default)]
-        pub backup_retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub backup_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The cluster identifier. If omitted, this provider will assign a random, unique identifier.
         #[builder(into, default)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifier`.
         #[builder(into, default)]
-        pub cluster_identifier_prefix: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cluster_identifier_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set to true, tags are copied to any snapshot of the DB cluster that is created.
         #[builder(into, default)]
-        pub copy_tags_to_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_tags_to_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A value that indicates whether the DB cluster has deletion protection enabled.The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of the log types this DB cluster is configured to export to Cloudwatch Logs. Currently only supports `audit` and `slowquery`.
         #[builder(into, default)]
-        pub enable_cloudwatch_logs_exports: pulumi_gestalt_rust::InputOrOutput<
+        pub enable_cloudwatch_logs_exports: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The name of the database engine to be used for this Neptune cluster. Defaults to `neptune`.
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// The database engine version.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of your final Neptune snapshot when this Neptune cluster is deleted. If omitted, no final snapshot will be made.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The global cluster identifier specified on `aws.neptune.GlobalCluster`.
         #[builder(into, default)]
-        pub global_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub global_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether or not mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
         #[builder(into, default)]
-        pub iam_database_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub iam_database_authentication_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A List of ARNs for the IAM roles to associate to the Neptune Cluster.
         #[builder(into, default)]
-        pub iam_roles: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub iam_roles: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ARN for the KMS encryption key. When specifying `kms_key_arn`, `storage_encrypted` needs to be set to true.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A cluster parameter group to associate with the cluster.
         #[builder(into, default)]
-        pub neptune_cluster_parameter_group_name: pulumi_gestalt_rust::InputOrOutput<
+        pub neptune_cluster_parameter_group_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of the DB parameter group to apply to all instances of the DB cluster.
         #[builder(into, default)]
-        pub neptune_instance_parameter_group_name: pulumi_gestalt_rust::InputOrOutput<
+        pub neptune_instance_parameter_group_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A Neptune subnet group to associate with this Neptune instance.
         #[builder(into, default)]
-        pub neptune_subnet_group_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub neptune_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port on which the Neptune accepts connections. Default is `8182`.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter. Time in UTC. Default: A 30-minute window selected at random from an 8-hour block of time per regionE.g., 04:00-09:00
         #[builder(into, default)]
-        pub preferred_backup_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The weekly time range during which system maintenance can occur, in (UTC) e.g., wed:04:00-wed:04:30
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of a source Neptune cluster or Neptune instance if this Neptune cluster is to be created as a Read Replica.
         #[builder(into, default)]
-        pub replication_source_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub replication_source_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set, create the Neptune cluster as a serverless one. See Serverless for example block attributes.
         #[builder(into, default)]
-        pub serverless_v2_scaling_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub serverless_v2_scaling_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::neptune::ClusterServerlessV2ScalingConfiguration>,
         >,
         /// Determines whether a final Neptune snapshot is created before the Neptune cluster is deleted. If true is specified, no Neptune snapshot is created. If false is specified, a Neptune snapshot is created before the Neptune cluster is deleted, using the value from `final_snapshot_identifier`. Default is `false`.
         #[builder(into, default)]
-        pub skip_final_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether or not to create this cluster from a snapshot. You can use either the name or ARN when specifying a Neptune cluster snapshot, or the ARN when specifying a Neptune snapshot. Automated snapshots **should not** be used for this attribute, unless from a different cluster. Automated snapshots are deleted as part of cluster destruction when the resource is replaced.
         #[builder(into, default)]
-        pub snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the Neptune cluster is encrypted. The default is `false` if not specified.
         #[builder(into, default)]
-        pub storage_encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub storage_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Storage type associated with the cluster `standard/iopt1`. Default: `standard`
         #[builder(into, default)]
-        pub storage_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the Neptune cluster. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of VPC security groups to associate with the Cluster
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

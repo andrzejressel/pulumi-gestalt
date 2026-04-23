@@ -125,38 +125,38 @@ pub mod function {
     pub struct FunctionArgs {
         /// Memory (in MB), available to the function. Default value is `256`. Possible values include `128`, `256`, `512`, `1024`, etc.
         #[builder(into, default)]
-        pub available_memory_mb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub available_memory_mb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A set of key/value environment variable pairs available during build time.
         #[builder(into, default)]
-        pub build_environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub build_environment_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// If provided, the self-provided service account to use to build the function. The format of this field is `projects/{project}/serviceAccounts/{serviceAccountEmail}`
         #[builder(into, default)]
-        pub build_service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub build_service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Cloud Build Custom Worker Pool that should be used to build the function.
         #[builder(into, default)]
-        pub build_worker_pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub build_worker_pool: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the function.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Docker Registry to use for storing the function's Docker images. Allowed values are ARTIFACT_REGISTRY (default) and CONTAINER_REGISTRY.
         #[builder(into, default)]
-        pub docker_registry: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub docker_registry: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-managed repository created in Artifact Registry to which the function's Docker image will be pushed after it is built by Cloud Build. May optionally be encrypted with a customer-managed encryption key (CMEK). If unspecified and `docker_registry` is not explicitly set to `CONTAINER_REGISTRY`, GCF will create and use a default Artifact Registry repository named 'gcf-artifacts' in the region.
         #[builder(into, default)]
-        pub docker_repository: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub docker_repository: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the function that will be executed when the Google Cloud Function is triggered.
         #[builder(into, default)]
-        pub entry_point: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub entry_point: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value environment variable pairs to assign to the function.
         #[builder(into, default)]
-        pub environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub environment_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A source that fires events in response to a condition in another service. Structure is documented below. Cannot be used with `trigger_http`.
         #[builder(into, default)]
-        pub event_trigger: pulumi_gestalt_rust::InputOrOutput<
+        pub event_trigger: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfunctions::FunctionEventTrigger>,
         >,
         /// The security level for the function. The following options are available:
@@ -164,51 +164,49 @@ pub mod function {
         /// * `SECURE_ALWAYS` Requests for a URL that match this handler that do not use HTTPS are automatically redirected to the HTTPS URL with the same path. Query parameters are reserved for the redirect.
         /// * `SECURE_OPTIONAL` Both HTTP and HTTPS requests with URLs that match the handler succeed without redirects. The application can examine the request to determine which protocol was used and respond accordingly.
         #[builder(into, default)]
-        pub https_trigger_security_level: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub https_trigger_security_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL which triggers function execution. Returned only if `trigger_http` is used.
         #[builder(into, default)]
-        pub https_trigger_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub https_trigger_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// String value that controls what traffic can reach the function. Allowed values are `ALLOW_ALL`, `ALLOW_INTERNAL_AND_GCLB` and `ALLOW_INTERNAL_ONLY`. Check [ingress documentation](https://cloud.google.com/functions/docs/networking/network-settings#ingress_settings) to see the impact of each settings value. Changes to this field will recreate the cloud function.
         #[builder(into, default)]
-        pub ingress_settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ingress_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function resources. It must match the pattern `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
         /// If specified, you must also provide an artifact registry repository using the `docker_repository` field that was created with the same KMS crypto key. Before deploying, please complete all pre-requisites described in https://cloud.google.com/functions/docs/securing/cmek#granting_service_accounts_access_to_the_key
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value label pairs to assign to the function. Label keys must follow the requirements at https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The limit on the maximum number of function instances that may coexist at a given time.
         #[builder(into, default)]
-        pub max_instances: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_instances: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The limit on the minimum number of function instances that may coexist at a given time.
         #[builder(into, default)]
-        pub min_instances: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_instances: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A user-defined name of the function. Function names must be unique globally.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Project of the function. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region of function. If it is not provided, the provider region is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The runtime in which the function is going to run.
         /// Eg. `"nodejs16"`, `"python39"`, `"dotnet3"`, `"go116"`, `"java11"`, `"ruby30"`, `"php74"`, etc. Check the [official doc](https://cloud.google.com/functions/docs/concepts/exec#runtimes) for the up-to-date list.
         ///
         /// - - -
         #[builder(into)]
-        pub runtime: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub runtime: pulumi_gestalt_rust::Input<String>,
         /// Secret environment variables configuration. Structure is documented below.
         #[builder(into, default)]
-        pub secret_environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub secret_environment_variables: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::cloudfunctions::FunctionSecretEnvironmentVariable,
@@ -217,38 +215,36 @@ pub mod function {
         >,
         /// Secret volumes configuration. Structure is documented below.
         #[builder(into, default)]
-        pub secret_volumes: pulumi_gestalt_rust::InputOrOutput<
+        pub secret_volumes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudfunctions::FunctionSecretVolume>>,
         >,
         /// If provided, the self-provided service account to run the function with.
         #[builder(into, default)]
-        pub service_account_email: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account_email: pulumi_gestalt_rust::Input<Option<String>>,
         /// The GCS bucket containing the zip archive which contains the function.
         #[builder(into, default)]
-        pub source_archive_bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_archive_bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source archive object (file) in archive bucket.
         #[builder(into, default)]
-        pub source_archive_object: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_archive_object: pulumi_gestalt_rust::Input<Option<String>>,
         /// Represents parameters related to source repository where a function is hosted.
         /// Cannot be set alongside `source_archive_bucket` or `source_archive_object`. Structure is documented below. It must match the pattern `projects/{project}/locations/{location}/repositories/{repository}`.*
         #[builder(into, default)]
-        pub source_repository: pulumi_gestalt_rust::InputOrOutput<
+        pub source_repository: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfunctions::FunctionSourceRepository>,
         >,
         /// Timeout (in seconds) for the function. Default value is 60 seconds. Cannot be more than 540 seconds.
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Boolean variable. Any HTTP request (of a supported type) to the endpoint will trigger function execution. Supported HTTP request types are: POST, PUT, GET, DELETE, and OPTIONS. Endpoint is returned as `https_trigger_url`. Cannot be used with `event_trigger`.
         #[builder(into, default)]
-        pub trigger_http: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub trigger_http: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The VPC Network Connector that this cloud function can connect to. It should be set up as fully-qualified URI. The format of this field is `projects/*/locations/*/connectors/*`.
         #[builder(into, default)]
-        pub vpc_connector: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_connector: pulumi_gestalt_rust::Input<Option<String>>,
         /// The egress settings for the connector, controlling what traffic is diverted through it. Allowed values are `ALL_TRAFFIC` and `PRIVATE_RANGES_ONLY`. Defaults to `PRIVATE_RANGES_ONLY`. If unset, this field preserves the previously set value.
         #[builder(into, default)]
-        pub vpc_connector_egress_settings: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub vpc_connector_egress_settings: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FunctionResult {

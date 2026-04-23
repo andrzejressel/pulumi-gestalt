@@ -57,29 +57,29 @@ pub mod analytics_solution {
     pub struct AnalyticsSolutionArgs {
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `plan` block as documented below.
         #[builder(into)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<
+        pub plan: pulumi_gestalt_rust::Input<
             super::super::types::operationalinsights::AnalyticsSolutionPlan,
         >,
         /// The name of the resource group in which the Log Analytics solution is created. Changing this forces a new resource to be created. Note: The solution and its related workspace can only exist in the same resource group.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the solution to be deployed. See [here for options](https://docs.microsoft.com/azure/log-analytics/log-analytics-add-solutions).Changing this forces a new resource to be created.
         #[builder(into)]
-        pub solution_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub solution_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The full name of the Log Analytics workspace with which the solution will be linked. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub workspace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_name: pulumi_gestalt_rust::Input<String>,
         /// The full resource ID of the Log Analytics workspace with which the solution will be linked. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub workspace_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AnalyticsSolutionResult {

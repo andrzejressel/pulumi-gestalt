@@ -124,13 +124,13 @@ pub mod frontdoor_security_policy {
     pub struct FrontdoorSecurityPolicyArgs {
         /// The Front Door Profile Resource Id that is linked to this Front Door Security Policy. Changing this forces a new Front Door Security Policy to be created.
         #[builder(into)]
-        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Front Door Security Policy. Possible values must not be an empty string. Changing this forces a new Front Door Security Policy to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `security_policies` block as defined below. Changing this forces a new Front Door Security Policy to be created.
         #[builder(into)]
-        pub security_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub security_policies: pulumi_gestalt_rust::Input<
             super::super::types::cdn::FrontdoorSecurityPolicySecurityPolicies,
         >,
     }

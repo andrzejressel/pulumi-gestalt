@@ -759,32 +759,32 @@ pub mod restore_plan {
         /// A reference to the BackupPlan from which Backups may be used
         /// as the source for Restores created via this RestorePlan.
         #[builder(into)]
-        pub backup_plan: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_plan: pulumi_gestalt_rust::Input<String>,
         /// The source cluster from which Restores will be created via this RestorePlan.
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// User specified descriptive string for this RestorePlan.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description: A set of custom labels supplied by the user. A list of key->value pairs. Example: { "name": "wrench",
         /// "mass": "1.3kg", "count": "3" }. **Note**: This field is non-authoritative, and will only manage the labels present in
         /// your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The region of the Restore Plan.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The full name of the BackupPlan Resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the configuration of Restores created via this RestorePlan.
         /// Structure is documented below.
         #[builder(into)]
-        pub restore_config: pulumi_gestalt_rust::InputOrOutput<
+        pub restore_config: pulumi_gestalt_rust::Input<
             super::super::types::gkebackup::RestorePlanRestoreConfig,
         >,
     }

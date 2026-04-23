@@ -41,10 +41,10 @@ pub mod main_route_table_association {
         /// The ID of the Route Table to set as the new
         /// main route table for the target VPC
         #[builder(into)]
-        pub route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_table_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VPC whose main route table should be set
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MainRouteTableAssociationResult {

@@ -160,36 +160,36 @@ pub mod directory {
     pub struct DirectoryArgs {
         /// The directory identifier for registration in WorkSpaces service.
         #[builder(into)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// The identifiers of the IP access control groups associated with the directory.
         #[builder(into, default)]
-        pub ip_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ip_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration of SAML authentication integration. Defined below.
         #[builder(into, default)]
-        pub saml_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub saml_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::workspaces::DirectorySamlProperties>,
         >,
         /// Permissions to enable or disable self-service capabilities. Defined below.
         #[builder(into, default)]
-        pub self_service_permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub self_service_permissions: pulumi_gestalt_rust::Input<
             Option<super::super::types::workspaces::DirectorySelfServicePermissions>,
         >,
         /// The identifiers of the subnets where the directory resides.
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags assigned to the WorkSpaces directory. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies which devices and operating systems users can use to access their WorkSpaces. Defined below.
         #[builder(into, default)]
-        pub workspace_access_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub workspace_access_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::workspaces::DirectoryWorkspaceAccessProperties>,
         >,
         /// Default properties that are used for creating WorkSpaces. Defined below.
         #[builder(into, default)]
-        pub workspace_creation_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub workspace_creation_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::workspaces::DirectoryWorkspaceCreationProperties>,
         >,
     }

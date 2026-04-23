@@ -148,22 +148,22 @@ pub mod image {
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Size of the image when restored onto a persistent disk (in GB).
         #[builder(into, default)]
-        pub disk_size_gb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_size_gb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the image family to which this image belongs. You can
         /// create disks by specifying an image family instead of a specific
         /// image name. The image family always returns its latest image that is
         /// not deprecated. The name of the image family must comply with
         /// RFC1035.
         #[builder(into, default)]
-        pub family: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub family: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of features to enable on the guest operating system.
         /// Applicable only for bootable images.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub guest_os_features: pulumi_gestalt_rust::InputOrOutput<
+        pub guest_os_features: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::ImageGuestOsFeature>>,
         >,
         /// Encrypts the image using a customer-supplied encryption key.
@@ -172,19 +172,19 @@ pub mod image {
         /// disk from the image)
         /// Structure is documented below.
         #[builder(into, default)]
-        pub image_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub image_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ImageImageEncryptionKey>,
         >,
         /// Labels to apply to this Image.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Any applicable license URI.
         #[builder(into, default)]
-        pub licenses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub licenses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the resource; provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and
@@ -196,22 +196,22 @@ pub mod image {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parameters of the raw disk image.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub raw_disk: pulumi_gestalt_rust::InputOrOutput<
+        pub raw_disk: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ImageRawDisk>,
         >,
         /// The source disk to create this image based on.
         /// You must provide either this property or the
         /// rawDisk.source property but not both to create an image.
         #[builder(into, default)]
-        pub source_disk: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_disk: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the source image used to create this image. In order to create an image, you must provide the full or partial
         /// URL of one of the following:
         /// * The selfLink URL
@@ -219,7 +219,7 @@ pub mod image {
         /// * The rawDisk.source URL
         /// * The sourceDisk URL
         #[builder(into, default)]
-        pub source_image: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_image: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the source snapshot used to create this image.
         /// In order to create an image, you must provide the full or partial URL of one of the following:
         /// * The selfLink URL
@@ -228,12 +228,12 @@ pub mod image {
         /// * The rawDisk.source URL
         /// * The sourceDisk URL
         #[builder(into, default)]
-        pub source_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_snapshot: pulumi_gestalt_rust::Input<Option<String>>,
         /// Cloud Storage bucket storage location of the image
         /// (regional or multi-regional).
         /// Reference link: https://cloud.google.com/compute/docs/reference/rest/v1/images
         #[builder(into, default)]
-        pub storage_locations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub storage_locations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ImageResult {

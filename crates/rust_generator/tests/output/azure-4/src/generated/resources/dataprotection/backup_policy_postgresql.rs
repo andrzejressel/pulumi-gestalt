@@ -77,21 +77,19 @@ pub mod backup_policy_postgresql {
     pub struct BackupPolicyPostgresqlArgs {
         /// Specifies a list of repeating time interval. It supports weekly back. It should follow `ISO 8601` repeating time interval. Changing this forces a new Backup Policy PostgreSQL to be created.
         #[builder(into)]
-        pub backup_repeating_time_intervals: pulumi_gestalt_rust::InputOrOutput<
-            Vec<String>,
-        >,
+        pub backup_repeating_time_intervals: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The duration of default retention rule. It should follow `ISO 8601` duration format. Changing this forces a new Backup Policy PostgreSQL to be created.
         #[builder(into)]
-        pub default_retention_duration: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_retention_duration: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Backup Policy PostgreSQL. Changing this forces a new Backup Policy PostgreSQL to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Backup Policy PostgreSQL should exist. Changing this forces a new Backup Policy PostgreSQL to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `retention_rule` blocks as defined below. Changing this forces a new Backup Policy PostgreSQL to be created.
         #[builder(into, default)]
-        pub retention_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_rules: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::dataprotection::BackupPolicyPostgresqlRetentionRule,
@@ -100,10 +98,10 @@ pub mod backup_policy_postgresql {
         >,
         /// Specifies the Time Zone which should be used by the backup schedule. Changing this forces a new Backup Policy PostgreSQL to be created.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Backup Vault where the Backup Policy PostgreSQL should exist. Changing this forces a new Backup Policy PostgreSQL to be created.
         #[builder(into)]
-        pub vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupPolicyPostgresqlResult {

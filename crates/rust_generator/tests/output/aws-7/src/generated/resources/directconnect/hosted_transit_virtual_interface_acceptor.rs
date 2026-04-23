@@ -61,15 +61,15 @@ pub mod hosted_transit_virtual_interface_acceptor {
     pub struct HostedTransitVirtualInterfaceAcceptorArgs {
         /// The ID of the Direct Connect gateway to which to connect the virtual interface.
         #[builder(into)]
-        pub dx_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dx_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Direct Connect virtual interface to accept.
         #[builder(into)]
-        pub virtual_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_interface_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HostedTransitVirtualInterfaceAcceptorResult {

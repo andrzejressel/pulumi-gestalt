@@ -10,7 +10,7 @@ pub mod get_diagnostic_categories {
     pub struct GetDiagnosticCategoriesArgs {
         /// The ID of an existing Resource which Monitor Diagnostics Categories should be retrieved for.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDiagnosticCategoriesResult {

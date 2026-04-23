@@ -47,21 +47,21 @@ pub mod configuration_template {
     pub struct ConfigurationTemplateArgs {
         /// name of the application to associate with this configuration template
         #[builder(into)]
-        pub application: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application: pulumi_gestalt_rust::Input<String>,
         /// Short description of the Template
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the environment used with this configuration template
         #[builder(into, default)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub environment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique name for this Template.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option settings to configure the new Environment. These
         /// override specific values that are set as defaults. The format is detailed
         /// below in Option Settings
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::elasticbeanstalk::ConfigurationTemplateSetting>,
             >,
@@ -69,7 +69,7 @@ pub mod configuration_template {
         /// A solution stack to base your Template
         /// off of. Example stacks can be found in the [Amazon API documentation][1]
         #[builder(into, default)]
-        pub solution_stack_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub solution_stack_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConfigurationTemplateResult {

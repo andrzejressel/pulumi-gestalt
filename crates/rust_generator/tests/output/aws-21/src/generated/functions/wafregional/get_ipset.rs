@@ -10,7 +10,7 @@ pub mod get_ipset {
     pub struct GetIpsetArgs {
         /// Name of the WAF Regional IP set.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetIpsetResult {

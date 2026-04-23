@@ -9,7 +9,7 @@ pub mod type_ {
     #[allow(dead_code)]
     pub struct TypeArgs {
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<
+        pub type_: pulumi_gestalt_rust::Input<
             Option<super::super::super::super::super::types::impl_::let_::loop_::Type>,
         >,
     }

@@ -10,10 +10,10 @@ pub mod get_serverless_collection {
     pub struct GetServerlessCollectionArgs {
         /// ID of the collection. Either `id` or `name` must be provided.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the collection. Either `name` or `id` must be provided.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetServerlessCollectionResult {

@@ -134,19 +134,19 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// Specify the path to the certificate file of this certificate.
         #[builder(into)]
-        pub certificate_virtual_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_virtual_path: pulumi_gestalt_rust::Input<String>,
         /// Specify the ID of the Key Vault Secret for this certificate.
         #[builder(into)]
-        pub key_vault_secret_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_secret_id: pulumi_gestalt_rust::Input<String>,
         /// Specify the path to the key file of this certificate.
         #[builder(into)]
-        pub key_virtual_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_virtual_path: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this NGINX Certificate. Changing this forces a new NGINX Certificate to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the NGINX Deployment that this Certificate should be associated with. Changing this forces a new NGINX Certificate to be created.
         #[builder(into)]
-        pub nginx_deployment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub nginx_deployment_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateResult {

@@ -48,19 +48,19 @@ pub mod log_metric_filter {
     pub struct LogMetricFilterArgs {
         /// The name of the log group to associate the metric filter with.
         #[builder(into)]
-        pub log_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_group_name: pulumi_gestalt_rust::Input<String>,
         /// A block defining collection of information needed to define how metric data gets emitted. See below.
         #[builder(into)]
-        pub metric_transformation: pulumi_gestalt_rust::InputOrOutput<
+        pub metric_transformation: pulumi_gestalt_rust::Input<
             super::super::types::cloudwatch::LogMetricFilterMetricTransformation,
         >,
         /// A name for the metric filter.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valid [CloudWatch Logs filter pattern](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/FilterAndPatternSyntax.html)
         /// for extracting metric data out of ingested log events.
         #[builder(into)]
-        pub pattern: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pattern: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LogMetricFilterResult {

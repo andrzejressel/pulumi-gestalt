@@ -92,23 +92,23 @@ pub mod link {
     pub struct LinkArgs {
         /// Human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.
         #[builder(into)]
-        pub label_template: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub label_template: pulumi_gestalt_rust::Input<String>,
         /// Configuration for creating filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account. See `link_configuration` Block for details.
         #[builder(into, default)]
-        pub link_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub link_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::oam::LinkLinkConfiguration>,
         >,
         /// Types of data that the source account shares with the monitoring account.
         #[builder(into)]
-        pub resource_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub resource_types: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Identifier of the sink to use to create this link.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub sink_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sink_identifier: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

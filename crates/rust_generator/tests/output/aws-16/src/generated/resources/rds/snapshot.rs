@@ -51,16 +51,16 @@ pub mod snapshot {
     pub struct SnapshotArgs {
         /// The DB Instance Identifier from which to take the snapshot.
         #[builder(into)]
-        pub db_instance_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_instance_identifier: pulumi_gestalt_rust::Input<String>,
         /// The Identifier for the snapshot.
         #[builder(into)]
-        pub db_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_snapshot_identifier: pulumi_gestalt_rust::Input<String>,
         /// List of AWS Account IDs to share the snapshot with. Use `all` to make the snapshot public.
         #[builder(into, default)]
-        pub shared_accounts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub shared_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

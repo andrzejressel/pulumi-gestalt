@@ -50,10 +50,10 @@ pub mod service_config {
     pub struct ServiceConfigArgs {
         /// Base64-url-safe-encoded config data
         #[builder(into)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data: pulumi_gestalt_rust::Input<String>,
         /// User-defined name of the config
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ServiceConfigResult {

@@ -10,10 +10,10 @@ pub mod get_system_topic {
     pub struct GetSystemTopicArgs {
         /// The name of the EventGrid System Topic resource.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the EventGrid System Topic exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSystemTopicResult {

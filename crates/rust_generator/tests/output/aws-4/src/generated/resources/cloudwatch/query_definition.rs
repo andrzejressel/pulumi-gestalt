@@ -39,13 +39,13 @@ pub mod query_definition {
     pub struct QueryDefinitionArgs {
         /// Specific log groups to use with the query.
         #[builder(into, default)]
-        pub log_group_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub log_group_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the query.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The query to save. You can read more about CloudWatch Logs Query Syntax in the [documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
         #[builder(into)]
-        pub query_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query_string: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct QueryDefinitionResult {

@@ -50,44 +50,44 @@ pub mod definition {
     pub struct DefinitionArgs {
         /// One or more `authorization` block defined below.
         #[builder(into, default)]
-        pub authorizations: pulumi_gestalt_rust::InputOrOutput<
+        pub authorizations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::managedapplication::DefinitionAuthorization>>,
         >,
         /// Specifies the `createUiDefinition` JSON for the backing template with `Microsoft.Solutions/applications` resource.
         #[builder(into, default)]
-        pub create_ui_definition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub create_ui_definition: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the managed application definition description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the managed application definition display name.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the managed application lock level. Valid values include `CanNotDelete`, `None`, `ReadOnly`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lock_level: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lock_level: pulumi_gestalt_rust::Input<String>,
         /// Specifies the inline main template JSON which has resources to be provisioned.
         #[builder(into, default)]
-        pub main_template: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub main_template: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Managed Application Definition. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the package enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub package_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub package_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the managed application definition package file Uri.
         #[builder(into, default)]
-        pub package_file_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub package_file_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Managed Application Definition should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         ///
         /// > **NOTE:** If either `create_ui_definition` or `main_template` is set they both must be set.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

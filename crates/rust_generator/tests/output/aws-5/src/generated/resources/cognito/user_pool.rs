@@ -92,112 +92,104 @@ pub mod user_pool {
     pub struct UserPoolArgs {
         /// Configuration block to define which verified available method a user can use to recover their forgotten password. Detailed below.
         #[builder(into, default)]
-        pub account_recovery_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub account_recovery_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolAccountRecoverySetting>,
         >,
         /// Configuration block for creating a new user profile. Detailed below.
         #[builder(into, default)]
-        pub admin_create_user_config: pulumi_gestalt_rust::InputOrOutput<
+        pub admin_create_user_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolAdminCreateUserConfig>,
         >,
         /// Attributes supported as an alias for this user pool. Valid values: `phone_number`, `email`, or `preferred_username`. Conflicts with `username_attributes`.
         #[builder(into, default)]
-        pub alias_attributes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub alias_attributes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Attributes to be auto-verified. Valid values: `email`, `phone_number`.
         #[builder(into, default)]
-        pub auto_verified_attributes: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub auto_verified_attributes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// When active, DeletionProtection prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature. Valid values are `ACTIVE` and `INACTIVE`, Default value is `INACTIVE`.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the user pool's device tracking. Detailed below.
         #[builder(into, default)]
-        pub device_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub device_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolDeviceConfiguration>,
         >,
         /// Configuration block for configuring email. Detailed below.
         #[builder(into, default)]
-        pub email_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub email_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolEmailConfiguration>,
         >,
         /// String representing the email verification message. Conflicts with `verification_message_template` configuration block `email_message` argument.
         #[builder(into, default)]
-        pub email_verification_message: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub email_verification_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// String representing the email verification subject. Conflicts with `verification_message_template` configuration block `email_subject` argument.
         #[builder(into, default)]
-        pub email_verification_subject: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub email_verification_subject: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the AWS Lambda triggers associated with the user pool. Detailed below.
         #[builder(into, default)]
-        pub lambda_config: pulumi_gestalt_rust::InputOrOutput<
+        pub lambda_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolLambdaConfig>,
         >,
         /// Multi-Factor Authentication (MFA) configuration for the User Pool. Defaults of `OFF`. Valid values are `OFF` (MFA Tokens are not required), `ON` (MFA is required for all users to sign in; requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured), or `OPTIONAL` (MFA Will be required only for individual users who have MFA Enabled; requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured).
         #[builder(into, default)]
-        pub mfa_configuration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mfa_configuration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the user pool.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for information about the user pool password policy. Detailed below.
         #[builder(into, default)]
-        pub password_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub password_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolPasswordPolicy>,
         >,
         /// Configuration block for the schema attributes of a user pool. Detailed below. Schema attributes from the [standard attribute set](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#cognito-user-pools-standard-attributes) only need to be specified if they are different from the default configuration. Attributes can be added, but not modified or removed. Maximum of 50 attributes.
         #[builder(into, default)]
-        pub schemas: pulumi_gestalt_rust::InputOrOutput<
+        pub schemas: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cognito::UserPoolSchema>>,
         >,
         /// String representing the SMS authentication message. The Message must contain the `{####}` placeholder, which will be replaced with the code.
         #[builder(into, default)]
-        pub sms_authentication_message: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub sms_authentication_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for Short Message Service (SMS) settings. Detailed below. These settings apply to SMS user verification and SMS Multi-Factor Authentication (MFA). Due to Cognito API restrictions, the SMS configuration cannot be removed without recreating the Cognito User Pool. For user data safety, this resource will ignore the removal of this configuration by disabling drift detection. To force resource recreation after this configuration has been applied, see the `taint` command.
         #[builder(into, default)]
-        pub sms_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub sms_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolSmsConfiguration>,
         >,
         /// String representing the SMS verification message. Conflicts with `verification_message_template` configuration block `sms_message` argument.
         #[builder(into, default)]
-        pub sms_verification_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sms_verification_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for software token Mult-Factor Authentication (MFA) settings. Detailed below.
         #[builder(into, default)]
-        pub software_token_mfa_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub software_token_mfa_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolSoftwareTokenMfaConfiguration>,
         >,
         /// Map of tags to assign to the User Pool. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for user attribute update settings. Detailed below.
         #[builder(into, default)]
-        pub user_attribute_update_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub user_attribute_update_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolUserAttributeUpdateSettings>,
         >,
         /// Configuration block for user pool add-ons to enable user pool advanced security mode features. Detailed below.
         #[builder(into, default)]
-        pub user_pool_add_ons: pulumi_gestalt_rust::InputOrOutput<
+        pub user_pool_add_ons: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolUserPoolAddOns>,
         >,
         /// Whether email addresses or phone numbers can be specified as usernames when a user signs up. Conflicts with `alias_attributes`.
         #[builder(into, default)]
-        pub username_attributes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub username_attributes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block for username configuration. Detailed below.
         #[builder(into, default)]
-        pub username_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub username_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolUsernameConfiguration>,
         >,
         /// Configuration block for verification message templates. Detailed below.
         #[builder(into, default)]
-        pub verification_message_template: pulumi_gestalt_rust::InputOrOutput<
+        pub verification_message_template: pulumi_gestalt_rust::Input<
             Option<super::super::types::cognito::UserPoolVerificationMessageTemplate>,
         >,
     }

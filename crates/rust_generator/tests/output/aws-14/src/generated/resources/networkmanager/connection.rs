@@ -38,25 +38,25 @@ pub mod connection {
     pub struct ConnectionArgs {
         /// The ID of the second device in the connection.
         #[builder(into)]
-        pub connected_device_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connected_device_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the link for the second device.
         #[builder(into, default)]
-        pub connected_link_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connected_link_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description of the connection.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the first device in the connection.
         #[builder(into)]
-        pub device_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the global network.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the link for the first device.
         #[builder(into, default)]
-        pub link_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub link_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value tags for the connection. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

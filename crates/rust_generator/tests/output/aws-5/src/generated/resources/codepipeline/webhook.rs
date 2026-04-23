@@ -90,31 +90,31 @@ pub mod webhook {
     pub struct WebhookArgs {
         /// The type of authentication  to use. One of `IP`, `GITHUB_HMAC`, or `UNAUTHENTICATED`.
         #[builder(into)]
-        pub authentication: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication: pulumi_gestalt_rust::Input<String>,
         /// An `auth` block. Required for `IP` and `GITHUB_HMAC`. Auth blocks are documented below.
         #[builder(into, default)]
-        pub authentication_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::codepipeline::WebhookAuthenticationConfiguration>,
         >,
         /// One or more `filter` blocks. Filter blocks are documented below.
         #[builder(into)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Vec<super::super::types::codepipeline::WebhookFilter>,
         >,
         /// The name of the webhook.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.
         #[builder(into)]
-        pub target_action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_action: pulumi_gestalt_rust::Input<String>,
         /// The name of the pipeline.
         #[builder(into)]
-        pub target_pipeline: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_pipeline: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WebhookResult {

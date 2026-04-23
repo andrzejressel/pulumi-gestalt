@@ -10,13 +10,13 @@ pub mod list_storage_account_keys {
     pub struct ListStorageAccountKeysArgs {
         /// The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies type of the key to be listed. Possible value is kerb.
         #[builder(into, default)]
-        pub expand: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expand: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group within the user's subscription. The name is case insensitive.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ListStorageAccountKeysResult {

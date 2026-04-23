@@ -40,40 +40,40 @@ pub mod namespace {
     pub struct NamespaceArgs {
         /// Specifies the Capacity / Throughput Units for an Eventgrid Namespace. Valid values can be between `1` and `40`.
         #[builder(into, default)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventgrid::NamespaceIdentity>,
         >,
         /// One or more `inbound_ip_rule` blocks as defined below.
         #[builder(into, default)]
-        pub inbound_ip_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub inbound_ip_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::eventgrid::NamespaceInboundIpRule>>,
         >,
         /// Specifies the supported Azure location where the resource should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Event Grid Namespace resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not public network access is allowed for this server. Defaults to `Enabled`.
         #[builder(into, default)]
-        pub public_network_access: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_network_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Event Grid Namespace should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Defines which tier to use. The only possible value is `Standard`. Defaults to `Standard`.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `topic_spaces_configuration` block as defined below.
         #[builder(into, default)]
-        pub topic_spaces_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub topic_spaces_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::eventgrid::NamespaceTopicSpacesConfiguration>,
             >,

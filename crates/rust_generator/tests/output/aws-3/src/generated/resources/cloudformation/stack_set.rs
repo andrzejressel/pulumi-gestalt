@@ -97,56 +97,56 @@ pub mod stack_set {
     pub struct StackSetArgs {
         /// Amazon Resource Number (ARN) of the IAM Role in the administrator account. This must be defined when using the `SELF_MANAGED` permission model.
         #[builder(into, default)]
-        pub administration_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub administration_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block containing the auto-deployment model for your StackSet. This can only be defined when using the `SERVICE_MANAGED` permission model.
         #[builder(into, default)]
-        pub auto_deployment: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_deployment: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudformation::StackSetAutoDeployment>,
         >,
         /// Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid values: `SELF` (default), `DELEGATED_ADMIN`.
         #[builder(into, default)]
-        pub call_as: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub call_as: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of capabilities. Valid values: `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_AUTO_EXPAND`.
         #[builder(into, default)]
-        pub capabilities: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub capabilities: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Description of the StackSet.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the IAM Role in all target accounts for StackSet operations. Defaults to `AWSCloudFormationStackSetExecutionRole` when using the `SELF_MANAGED` permission model. This should not be defined when using the `SERVICE_MANAGED` permission model.
         #[builder(into, default)]
-        pub execution_role_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub execution_role_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block to allow StackSets to perform non-conflicting operations concurrently and queues conflicting operations.
         #[builder(into, default)]
-        pub managed_execution: pulumi_gestalt_rust::InputOrOutput<
+        pub managed_execution: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudformation::StackSetManagedExecution>,
         >,
         /// Name of the StackSet. The name must be unique in the region where you create your StackSet. The name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and cannot be longer than 128 characters.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Preferences for how AWS CloudFormation performs a stack set update.
         #[builder(into, default)]
-        pub operation_preferences: pulumi_gestalt_rust::InputOrOutput<
+        pub operation_preferences: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudformation::StackSetOperationPreferences>,
         >,
         /// Key-value map of input parameters for the StackSet template. All template parameters, including those with a `Default`, must be configured or ignored with `lifecycle` configuration block `ignore_changes` argument. All `NoEcho` template parameters must be ignored with the `lifecycle` configuration block `ignore_changes` argument.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Describes how the IAM roles required for your StackSet are created. Valid values: `SELF_MANAGED` (default), `SERVICE_MANAGED`.
         #[builder(into, default)]
-        pub permission_model: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub permission_model: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of tags to associate with this StackSet and the Stacks created from it. AWS CloudFormation also propagates these tags to supported resources that are created in the Stacks. A maximum number of 50 tags can be specified. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// String containing the CloudFormation template body. Maximum size: 51,200 bytes. Conflicts with `template_url`.
         #[builder(into, default)]
-        pub template_body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// String containing the location of a file containing the CloudFormation template body. The URL must point to a template that is located in an Amazon S3 bucket. Maximum location file size: 460,800 bytes. Conflicts with `template_body`.
         #[builder(into, default)]
-        pub template_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_url: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StackSetResult {

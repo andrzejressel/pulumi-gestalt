@@ -26,24 +26,24 @@ pub mod zero_trust_access_group {
     pub struct ZeroTrustAccessGroupArgs {
         /// The account identifier to target for the resource. Conflicts with `zone_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub excludes: pulumi_gestalt_rust::InputOrOutput<
+        pub excludes: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ZeroTrustAccessGroupExclude>>,
         >,
         #[builder(into)]
-        pub includes: pulumi_gestalt_rust::InputOrOutput<
+        pub includes: pulumi_gestalt_rust::Input<
             Vec<super::types::ZeroTrustAccessGroupInclude>,
         >,
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub requires: pulumi_gestalt_rust::InputOrOutput<
+        pub requires: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ZeroTrustAccessGroupRequire>>,
         >,
         /// The zone identifier to target for the resource. Conflicts with `account_id`.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustAccessGroupResult {

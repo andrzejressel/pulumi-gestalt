@@ -12,104 +12,98 @@
 #[allow(dead_code)]
 pub struct ProviderArgs {
     #[builder(into, default)]
-    pub auxiliary_tenant_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+    pub auxiliary_tenant_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     /// Base64 encoded PKCS#12 certificate bundle to use when authenticating as a Service Principal using a Client Certificate
     #[builder(into, default)]
-    pub client_certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub client_certificate: pulumi_gestalt_rust::Input<Option<String>>,
     /// The password associated with the Client Certificate. For use when authenticating as a Service Principal using a Client
     /// Certificate
     #[builder(into, default)]
-    pub client_certificate_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub client_certificate_password: pulumi_gestalt_rust::Input<Option<String>>,
     /// The path to the Client Certificate associated with the Service Principal for use when authenticating as a Service
     /// Principal using a Client Certificate.
     #[builder(into, default)]
-    pub client_certificate_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub client_certificate_path: pulumi_gestalt_rust::Input<Option<String>>,
     /// The Client ID which should be used.
     #[builder(into, default)]
-    pub client_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub client_id: pulumi_gestalt_rust::Input<Option<String>>,
     /// The path to a file containing the Client ID which should be used.
     #[builder(into, default)]
-    pub client_id_file_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub client_id_file_path: pulumi_gestalt_rust::Input<Option<String>>,
     /// The Client Secret which should be used. For use When authenticating as a Service Principal using a Client Secret.
     #[builder(into, default)]
-    pub client_secret: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub client_secret: pulumi_gestalt_rust::Input<Option<String>>,
     /// The path to a file containing the Client Secret which should be used. For use When authenticating as a Service Principal
     /// using a Client Secret.
     #[builder(into, default)]
-    pub client_secret_file_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub client_secret_file_path: pulumi_gestalt_rust::Input<Option<String>>,
     /// This will disable the x-ms-correlation-request-id header.
     #[builder(into, default)]
-    pub disable_correlation_request_id: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub disable_correlation_request_id: pulumi_gestalt_rust::Input<Option<bool>>,
     #[builder(into, default)]
-    pub disable_terraform_partner_id: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub disable_terraform_partner_id: pulumi_gestalt_rust::Input<Option<bool>>,
     /// The Cloud Environment which should be used. Possible values are public, usgovernment, and china. Defaults to public. Not
     /// used and should not be specified when `metadata_host` is specified.
     #[builder(into, default)]
-    pub environment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub environment: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub features: pulumi_gestalt_rust::InputOrOutput<
-        Option<super::types::ProviderFeatures>,
-    >,
+    pub features: pulumi_gestalt_rust::Input<Option<super::types::ProviderFeatures>>,
     /// The Hostname which should be used for the Azure Metadata Service.
     #[builder(into, default)]
-    pub metadata_host: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub metadata_host: pulumi_gestalt_rust::Input<Option<String>>,
     /// The path to a custom endpoint for Managed Service Identity - in most circumstances this should be detected
     /// automatically.
     #[builder(into, default)]
-    pub msi_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub msi_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     /// The bearer token for the request to the OIDC provider. For use when authenticating as a Service Principal using OpenID
     /// Connect.
     #[builder(into, default)]
-    pub oidc_request_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub oidc_request_token: pulumi_gestalt_rust::Input<Option<String>>,
     /// The URL for the OIDC provider from which to request an ID token. For use when authenticating as a Service Principal
     /// using OpenID Connect.
     #[builder(into, default)]
-    pub oidc_request_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub oidc_request_url: pulumi_gestalt_rust::Input<Option<String>>,
     /// The OIDC ID token for use when authenticating as a Service Principal using OpenID Connect.
     #[builder(into, default)]
-    pub oidc_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub oidc_token: pulumi_gestalt_rust::Input<Option<String>>,
     /// The path to a file containing an OIDC ID token for use when authenticating as a Service Principal using OpenID Connect.
     #[builder(into, default)]
-    pub oidc_token_file_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub oidc_token_file_path: pulumi_gestalt_rust::Input<Option<String>>,
     /// A GUID/UUID that is registered with Microsoft to facilitate partner resource usage attribution.
     #[builder(into, default)]
-    pub partner_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub partner_id: pulumi_gestalt_rust::Input<Option<String>>,
     /// The set of Resource Providers which should be automatically registered for the subscription.
     #[builder(into, default)]
-    pub resource_provider_registrations: pulumi_gestalt_rust::InputOrOutput<
-        Option<String>,
-    >,
+    pub resource_provider_registrations: pulumi_gestalt_rust::Input<Option<String>>,
     /// A list of Resource Providers to explicitly register for the subscription, in addition to those specified by the
     /// `resource_provider_registrations` property.
     #[builder(into, default)]
-    pub resource_providers_to_registers: pulumi_gestalt_rust::InputOrOutput<
-        Option<Vec<String>>,
-    >,
+    pub resource_providers_to_registers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     /// Should the AzureRM Provider skip registering all of the Resource Providers that it supports, if they're not already
     /// registered?
     #[builder(into, default)]
-    pub skip_provider_registration: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub skip_provider_registration: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Should the AzureRM Provider use Azure AD Authentication when accessing the Storage Data Plane APIs?
     #[builder(into, default)]
-    pub storage_use_azuread: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub storage_use_azuread: pulumi_gestalt_rust::Input<Option<bool>>,
     /// The Subscription ID which should be used.
     #[builder(into, default)]
-    pub subscription_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub subscription_id: pulumi_gestalt_rust::Input<Option<String>>,
     /// The Tenant ID which should be used.
     #[builder(into, default)]
-    pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
     /// Allow Azure AKS Workload Identity to be used for Authentication.
     #[builder(into, default)]
-    pub use_aks_workload_identity: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub use_aks_workload_identity: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Allow Azure CLI to be used for Authentication.
     #[builder(into, default)]
-    pub use_cli: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub use_cli: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Allow Managed Service Identity to be used for Authentication.
     #[builder(into, default)]
-    pub use_msi: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub use_msi: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Allow OpenID Connect to be used for authentication
     #[builder(into, default)]
-    pub use_oidc: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub use_oidc: pulumi_gestalt_rust::Input<Option<bool>>,
 }
 #[allow(dead_code)]
 pub struct ProviderResult {

@@ -12,10 +12,10 @@ pub mod get_kms_secret_ciphertext {
         /// encrypt the provided plaintext. This is represented by the format
         /// `{projectId}/{location}/{keyRingName}/{cryptoKeyName}`.
         #[builder(into)]
-        pub crypto_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub crypto_key: pulumi_gestalt_rust::Input<String>,
         /// The plaintext to be encrypted
         #[builder(into)]
-        pub plaintext: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plaintext: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetKmsSecretCiphertextResult {

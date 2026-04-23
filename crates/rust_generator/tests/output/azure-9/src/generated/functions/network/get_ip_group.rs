@@ -10,10 +10,10 @@ pub mod get_ip_group {
     pub struct GetIpGroupArgs {
         /// Specifies the Name of the IP Group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Name of the Resource Group within which the IP Group exists
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetIpGroupResult {

@@ -58,17 +58,17 @@ pub mod firewall_policy_association {
     pub struct FirewallPolicyAssociationArgs {
         /// The target that the firewall policy is attached to.
         #[builder(into)]
-        pub attachment_target: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub attachment_target: pulumi_gestalt_rust::Input<String>,
         /// The firewall policy ID of the association.
         #[builder(into)]
-        pub firewall_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_policy: pulumi_gestalt_rust::Input<String>,
         /// The name for an association.
         ///
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FirewallPolicyAssociationResult {

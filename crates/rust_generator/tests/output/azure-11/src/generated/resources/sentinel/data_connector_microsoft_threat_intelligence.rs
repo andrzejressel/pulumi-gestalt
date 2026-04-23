@@ -62,20 +62,20 @@ pub mod data_connector_microsoft_threat_intelligence {
     pub struct DataConnectorMicrosoftThreatIntelligenceArgs {
         /// The ID of the Log Analytics Workspace. Changing this forces a new Data Connector to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The lookback date for the Microsoft Emerging Threat Feed in RFC3339. Changing this forces a new Data Connector to be created.
         #[builder(into)]
-        pub microsoft_emerging_threat_feed_lookback_date: pulumi_gestalt_rust::InputOrOutput<
+        pub microsoft_emerging_threat_feed_lookback_date: pulumi_gestalt_rust::Input<
             String,
         >,
         /// The name which should be used for this Microsoft Threat Intelligence Data Connector. Changing this forces a new Microsoft Threat Intelligence Data Connector to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the tenant that this Microsoft Threat Intelligence Data Connector connects to. Changing this forces a new Microsoft Threat Intelligence Data Connector to be created.
         ///
         /// > **NOTE** Currently, only the same tenant as the running account is allowed. Cross-tenant scenario is not supported yet.
         #[builder(into, default)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DataConnectorMicrosoftThreatIntelligenceResult {

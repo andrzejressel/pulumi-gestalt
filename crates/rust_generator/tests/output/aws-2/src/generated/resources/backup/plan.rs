@@ -39,20 +39,20 @@ pub mod plan {
     pub struct PlanArgs {
         /// An object that specifies backup options for each resource type.
         #[builder(into, default)]
-        pub advanced_backup_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_backup_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::backup::PlanAdvancedBackupSetting>>,
         >,
         /// The display name of a backup plan.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A rule object that specifies a scheduled task that is used to back up a selection of resources.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::backup::PlanRule>,
         >,
         /// Metadata that you can assign to help organize the plans you create. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

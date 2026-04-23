@@ -216,42 +216,42 @@ pub mod authz_policy {
         /// 4. Else the request is denied by default if none of the configured AuthzPolicies with ALLOW action match the request.
         /// Possible values are: `ALLOW`, `DENY`, `CUSTOM`.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// Required if the action is CUSTOM. Allows delegating authorization decisions to Cloud IAP or to Service Extensions. One
         /// of cloudIap or authzExtension must be specified.
         #[builder(into, default)]
-        pub custom_provider: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_provider: pulumi_gestalt_rust::Input<
             Option<super::super::types::networksecurity::AuthzPolicyCustomProvider>,
         >,
         /// A human-readable description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of authorization HTTP rules to match against the incoming request.A policy match occurs when at least one HTTP
         /// rule matches the request or when no HTTP rules are specified in the policy. At least one HTTP Rule is required for Allow
         /// or Deny Action. Limited to 5 rules.
         #[builder(into, default)]
-        pub http_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub http_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::networksecurity::AuthzPolicyHttpRule>>,
         >,
         /// Set of labels associated with the AuthzExtension resource. **Note**: This field is non-authoritative, and will only
         /// manage the labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels
         /// present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Identifier. Name of the AuthzPolicy resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the set of resources to which this policy should be applied to.
         /// Structure is documented below.
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<
+        pub target: pulumi_gestalt_rust::Input<
             super::super::types::networksecurity::AuthzPolicyTarget,
         >,
     }

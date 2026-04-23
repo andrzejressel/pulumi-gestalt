@@ -42,23 +42,23 @@ pub mod script {
     pub struct ScriptArgs {
         /// Name of the script
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information indicating where your game script files are stored. See below.
         #[builder(into, default)]
-        pub storage_location: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_location: pulumi_gestalt_rust::Input<
             Option<super::super::types::gamelift::ScriptStorageLocation>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Version that is associated with this script.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A data object containing your Realtime scripts and dependencies as a zip  file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.
         #[builder(into, default)]
-        pub zip_file: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zip_file: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ScriptResult {

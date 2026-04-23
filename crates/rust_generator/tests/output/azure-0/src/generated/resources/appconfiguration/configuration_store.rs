@@ -160,54 +160,54 @@ pub mod configuration_store {
     pub struct ConfigurationStoreArgs {
         /// An `encryption` block as defined below.
         #[builder(into, default)]
-        pub encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::appconfiguration::ConfigurationStoreEncryption>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appconfiguration::ConfigurationStoreIdentity>,
         >,
         /// Whether local authentication methods is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub local_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the App Configuration. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Public Network Access setting of the App Configuration. Possible values are `Enabled` and `Disabled`.
         ///
         /// > **Note:** If `public_network_access` is not specified, the App Configuration will be created as  `Automatic`. However, once a different value is defined, can not be set again as automatic.
         #[builder(into, default)]
-        pub public_network_access: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub public_network_access: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether Purge Protection is enabled. This field only works for `standard` sku. Defaults to `false`.
         ///
         /// !> **Note:** Once Purge Protection has been enabled it's not possible to disable it. Deleting the App Configuration with Purge Protection enabled will schedule the App Configuration to be deleted (which will happen by Azure in the configured number of days).
         #[builder(into, default)]
-        pub purge_protection_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub purge_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `replica` blocks as defined below.
         #[builder(into, default)]
-        pub replicas: pulumi_gestalt_rust::InputOrOutput<
+        pub replicas: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appconfiguration::ConfigurationStoreReplica>>,
         >,
         /// The name of the resource group in which to create the App Configuration. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU name of the App Configuration. Possible values are `free`, `standard` and `premium`. Defaults to `free`.
         ///
         /// > **Note:** Azure does not support downgrading `sku`. Downgrading from `premium` tier to `standard` or `free`, or from `standard` to `free`, forces a new resource to be created.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of days that items should be retained for once soft-deleted. This field only works for `standard` sku. This value can be between `1` and `7` days. Defaults to `7`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** If Purge Protection is enabled, this field can only be configured one time and cannot be updated.
         #[builder(into, default)]
-        pub soft_delete_retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub soft_delete_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

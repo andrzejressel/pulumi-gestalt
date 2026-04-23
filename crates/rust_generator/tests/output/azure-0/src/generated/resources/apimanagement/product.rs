@@ -60,38 +60,38 @@ pub mod product {
     pub struct ProductArgs {
         /// The name of the API Management Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// Do subscribers need to be approved prior to being able to use the Product?
         ///
         /// > **NOTE:** `approval_required` can only be set when `subscription_required` is set to `true`.
         #[builder(into, default)]
-        pub approval_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub approval_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A description of this Product, which may include HTML formatting tags.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Display Name for this API Management Product.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The Identifier for this Product, which must be unique within the API Management Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_id: pulumi_gestalt_rust::Input<String>,
         /// Is this Product Published?
         #[builder(into)]
-        pub published: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub published: pulumi_gestalt_rust::Input<bool>,
         /// The name of the Resource Group in which the API Management Service should be exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Is a Subscription required to access API's included in this Product? Defaults to `true`.
         #[builder(into, default)]
-        pub subscription_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub subscription_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The number of subscriptions a user can have to this Product at the same time.
         ///
         /// > **NOTE:** `subscriptions_limit` can only be set when `subscription_required` is set to `true`.
         #[builder(into, default)]
-        pub subscriptions_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub subscriptions_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Terms and Conditions for this Product, which must be accepted by Developers before they can begin the Subscription process.
         #[builder(into, default)]
-        pub terms: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub terms: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProductResult {

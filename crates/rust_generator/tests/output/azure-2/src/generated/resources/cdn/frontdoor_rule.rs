@@ -273,28 +273,28 @@ pub mod frontdoor_rule {
     pub struct FrontdoorRuleArgs {
         /// An `actions` block as defined below.
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             super::super::types::cdn::FrontdoorRuleActions,
         >,
         /// If this rule is a match should the rules engine continue processing the remaining rules or stop? Possible values are `Continue` and `Stop`. Defaults to `Continue`.
         #[builder(into, default)]
-        pub behavior_on_match: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub behavior_on_match: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Front Door Rule Set for this Front Door Rule. Changing this forces a new Front Door Rule to be created.
         #[builder(into)]
-        pub cdn_frontdoor_rule_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cdn_frontdoor_rule_set_id: pulumi_gestalt_rust::Input<String>,
         /// A `conditions` block as defined below.
         #[builder(into, default)]
-        pub conditions: pulumi_gestalt_rust::InputOrOutput<
+        pub conditions: pulumi_gestalt_rust::Input<
             Option<super::super::types::cdn::FrontdoorRuleConditions>,
         >,
         /// The name which should be used for this Front Door Rule. Possible values must be between 1 and 260 characters in length, begin with a letter and may contain only letters and numbers. Changing this forces a new Front Door Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The order in which the rules will be applied for the Front Door Endpoint. The order value should be sequential and begin at `1`(e.g. `1`, `2`, `3`...). A Front Door Rule with a lesser order value will be applied before a rule with a greater order value.
         ///
         /// ->**NOTE:** If the Front Door Rule has an order value of `0` they do not require any conditions and the actions will always be applied.
         #[builder(into)]
-        pub order: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub order: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct FrontdoorRuleResult {

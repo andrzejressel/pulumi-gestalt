@@ -119,16 +119,16 @@ pub mod cluster_trusted_access_role_binding {
     pub struct ClusterTrustedAccessRoleBindingArgs {
         /// Specifies the Kubernetes Cluster Id within which this Kubernetes Cluster Trusted Access Role Binding should exist. Changing this forces a new Kubernetes Cluster Trusted Access Role Binding to be created.
         #[builder(into)]
-        pub kubernetes_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of this Kubernetes Cluster Trusted Access Role Binding. Changing this forces a new Kubernetes Cluster Trusted Access Role Binding to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of roles to bind, each item is a resource type qualified role name.
         #[builder(into)]
-        pub roles: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub roles: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ARM resource ID of source resource that trusted access is configured for. Changing this forces a new Kubernetes Cluster Trusted Access Role Binding to be created.
         #[builder(into)]
-        pub source_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterTrustedAccessRoleBindingResult {

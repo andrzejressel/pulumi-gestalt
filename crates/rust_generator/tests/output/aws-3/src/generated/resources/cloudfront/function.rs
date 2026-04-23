@@ -25,26 +25,26 @@ pub mod function {
     pub struct FunctionArgs {
         /// Source code of the function
         #[builder(into)]
-        pub code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub code: pulumi_gestalt_rust::Input<String>,
         /// Comment.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of `aws.cloudfront.KeyValueStore` ARNs to be associated to the function. AWS limits associations to on key value store per function.
         #[builder(into, default)]
-        pub key_value_store_associations: pulumi_gestalt_rust::InputOrOutput<
+        pub key_value_store_associations: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Unique name for your CloudFront Function.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to publish creation/change as Live CloudFront Function Version. Defaults to `true`.
         #[builder(into, default)]
-        pub publish: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publish: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Identifier of the function's runtime. Valid values are `cloudfront-js-1.0` and `cloudfront-js-2.0`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub runtime: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub runtime: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FunctionResult {

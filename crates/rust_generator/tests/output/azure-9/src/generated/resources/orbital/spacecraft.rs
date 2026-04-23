@@ -53,32 +53,32 @@ pub mod spacecraft {
     pub struct SpacecraftArgs {
         /// A `links` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub links: pulumi_gestalt_rust::InputOrOutput<
+        pub links: pulumi_gestalt_rust::Input<
             Vec<super::super::types::orbital::SpacecraftLink>,
         >,
         /// The location where the Spacecraft exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Spacecraft. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// NORAD ID of the Spacecraft.
         #[builder(into)]
-        pub norad_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub norad_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Spacecraft exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Title of the two line elements (TLE).
         #[builder(into)]
-        pub title_line: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub title_line: pulumi_gestalt_rust::Input<String>,
         /// A list of the two line elements (TLE), the first string being the first of the TLE, the second string being the second line of the TLE. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub two_line_elements: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub two_line_elements: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct SpacecraftResult {

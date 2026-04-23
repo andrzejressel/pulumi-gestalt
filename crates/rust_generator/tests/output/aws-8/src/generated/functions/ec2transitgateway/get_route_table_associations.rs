@@ -13,7 +13,7 @@ pub mod get_route_table_associations {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ec2transitgateway::GetRouteTableAssociationsFilter,
@@ -24,7 +24,7 @@ pub mod get_route_table_associations {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub transit_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRouteTableAssociationsResult {

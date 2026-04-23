@@ -10,10 +10,10 @@ pub mod get_subscriptions {
     pub struct GetSubscriptionsArgs {
         /// A case-insensitive value which must be contained within the `display_name` field, used to filter the results
         #[builder(into, default)]
-        pub display_name_contains: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name_contains: pulumi_gestalt_rust::Input<Option<String>>,
         /// A case-insensitive prefix which can be used to filter on the `display_name` field
         #[builder(into, default)]
-        pub display_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSubscriptionsResult {

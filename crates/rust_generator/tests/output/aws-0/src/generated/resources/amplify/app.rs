@@ -175,78 +175,74 @@ pub mod app {
     pub struct AppArgs {
         /// Personal access token for a third-party source control system for an Amplify app. This token must have write access to the relevant repo to create a webhook and a read-only deploy key for the Amplify project. The token is not stored, so after applying this attribute can be removed and the setup token deleted.
         #[builder(into, default)]
-        pub access_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// Automated branch creation configuration for an Amplify app. See `auto_branch_creation_config` Block for details.
         #[builder(into, default)]
-        pub auto_branch_creation_config: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_branch_creation_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::amplify::AppAutoBranchCreationConfig>,
         >,
         /// Automated branch creation glob patterns for an Amplify app.
         #[builder(into, default)]
-        pub auto_branch_creation_patterns: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_branch_creation_patterns: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Credentials for basic authorization for an Amplify app.
         #[builder(into, default)]
-        pub basic_auth_credentials: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub basic_auth_credentials: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [build specification](https://docs.aws.amazon.com/amplify/latest/userguide/build-settings.html) (build spec) for an Amplify app.
         #[builder(into, default)]
-        pub build_spec: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub build_spec: pulumi_gestalt_rust::Input<Option<String>>,
         /// Cache configuration for the Amplify app. See `cache_config` Block for details.
         #[builder(into, default)]
-        pub cache_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cache_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::amplify::AppCacheConfig>,
         >,
         /// The [custom HTTP headers](https://docs.aws.amazon.com/amplify/latest/userguide/custom-headers.html) for an Amplify app.
         #[builder(into, default)]
-        pub custom_headers: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_headers: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom rewrite and redirect rules for an Amplify app. See `custom_rule` Block for details.
         #[builder(into, default)]
-        pub custom_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::amplify::AppCustomRule>>,
         >,
         /// Description for an Amplify app.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables automated branch creation for an Amplify app.
         #[builder(into, default)]
-        pub enable_auto_branch_creation: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub enable_auto_branch_creation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app.
         #[builder(into, default)]
-        pub enable_basic_auth: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_basic_auth: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enables auto-building of branches for the Amplify App.
         #[builder(into, default)]
-        pub enable_branch_auto_build: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_branch_auto_build: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
         #[builder(into, default)]
-        pub enable_branch_auto_deletion: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub enable_branch_auto_deletion: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Environment variables map for an Amplify app.
         #[builder(into, default)]
-        pub environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub environment_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// AWS Identity and Access Management (IAM) service role for an Amplify app.
         #[builder(into, default)]
-        pub iam_service_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub iam_service_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name for an Amplify app.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
         #[builder(into, default)]
-        pub oauth_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub oauth_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// Platform or framework for an Amplify app. Valid values: `WEB`, `WEB_COMPUTE`. Default value: `WEB`.
         #[builder(into, default)]
-        pub platform: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform: pulumi_gestalt_rust::Input<Option<String>>,
         /// Repository for an Amplify app.
         #[builder(into, default)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub repository: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

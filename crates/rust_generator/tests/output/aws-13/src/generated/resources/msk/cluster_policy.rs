@@ -54,10 +54,10 @@ pub mod cluster_policy {
     pub struct ClusterPolicyArgs {
         /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
         #[builder(into)]
-        pub cluster_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_arn: pulumi_gestalt_rust::Input<String>,
         /// Resource policy for cluster.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterPolicyResult {

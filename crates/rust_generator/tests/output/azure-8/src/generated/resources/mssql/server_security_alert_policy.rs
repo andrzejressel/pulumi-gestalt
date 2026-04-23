@@ -65,35 +65,33 @@ pub mod server_security_alert_policy {
     pub struct ServerSecurityAlertPolicyArgs {
         /// Specifies an array of alerts that are disabled. Allowed values are: `Sql_Injection`, `Sql_Injection_Vulnerability`, `Access_Anomaly`, `Data_Exfiltration`, `Unsafe_Action`.
         #[builder(into, default)]
-        pub disabled_alerts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub disabled_alerts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Boolean flag which specifies if the alert is sent to the account administrators or not. Defaults to `false`.
         #[builder(into, default)]
-        pub email_account_admins: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub email_account_admins: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies an array of email addresses to which the alert is sent.
         #[builder(into, default)]
-        pub email_addresses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub email_addresses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the resource group that contains the MS SQL Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the number of days to keep in the Threat Detection audit logs. Defaults to `0`.
         #[builder(into, default)]
-        pub retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the MS SQL Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the state of the policy, whether it is enabled or disabled or a policy has not been applied yet on the specific database server. Possible values are `Disabled`, `Enabled` and `New`.
         #[builder(into)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub state: pulumi_gestalt_rust::Input<String>,
         /// Specifies the identifier key of the Threat Detection audit storage account. This is mandatory when you use `storage_endpoint` to specify a storage account blob endpoint.
         ///
         /// > **NOTE:**  Please note that storage accounts configured with `shared_access_key_enabled = false` cannot be used to configure `azure.mssql.ServerSecurityAlertPolicy` with `storage_endpoint` for now.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the blob storage endpoint (e.g. <https://example.blob.core.windows.net>). This blob storage will hold all Threat Detection audit logs.
         #[builder(into, default)]
-        pub storage_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ServerSecurityAlertPolicyResult {

@@ -36,7 +36,7 @@ pub mod organization_admin_account {
     pub struct OrganizationAdminAccountArgs {
         /// The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.
         #[builder(into)]
-        pub admin_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OrganizationAdminAccountResult {

@@ -10,10 +10,10 @@ pub mod get_network_manager_network_group {
     pub struct GetNetworkManagerNetworkGroupArgs {
         /// Specifies the name of the Network Manager Network Group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the Network Manager.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetNetworkManagerNetworkGroupResult {

@@ -53,21 +53,21 @@ pub mod container_service_deployment_version {
     pub struct ContainerServiceDeploymentVersionArgs {
         /// A set of configuration blocks that describe the settings of the containers that will be launched on the container service. Maximum of 53. Detailed below.
         #[builder(into)]
-        pub containers: pulumi_gestalt_rust::InputOrOutput<
+        pub containers: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::lightsail::ContainerServiceDeploymentVersionContainer,
             >,
         >,
         /// A configuration block that describes the settings of the public endpoint for the container service. Detailed below.
         #[builder(into, default)]
-        pub public_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub public_endpoint: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::lightsail::ContainerServiceDeploymentVersionPublicEndpoint,
             >,
         >,
         /// The name for the container service.
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ContainerServiceDeploymentVersionResult {

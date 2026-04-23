@@ -10,10 +10,10 @@ pub mod get_service_endpoint_connections {
     pub struct GetServiceEndpointConnectionsArgs {
         /// The name of the resource group in which the private link service resides.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the private link service.
         #[builder(into)]
-        pub service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServiceEndpointConnectionsResult {

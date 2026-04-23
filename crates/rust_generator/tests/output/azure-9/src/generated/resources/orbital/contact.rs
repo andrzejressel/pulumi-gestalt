@@ -113,22 +113,22 @@ pub mod contact {
     pub struct ContactArgs {
         /// ID of the orbital contact profile. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub contact_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub contact_profile_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Azure ground station. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub ground_station_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ground_station_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Contact. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Reservation end time of the Contact. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub reservation_end_time: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub reservation_end_time: pulumi_gestalt_rust::Input<String>,
         /// Reservation start time of the Contact. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub reservation_start_time: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub reservation_start_time: pulumi_gestalt_rust::Input<String>,
         /// The ID of the spacecraft which the contact will be made to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spacecraft_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spacecraft_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ContactResult {

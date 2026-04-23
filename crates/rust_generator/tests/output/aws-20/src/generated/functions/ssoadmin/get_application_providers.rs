@@ -10,7 +10,7 @@ pub mod get_application_providers {
     pub struct GetApplicationProvidersArgs {
         /// A list of application providers available in the current region. See `application_providers` below.
         #[builder(into, default)]
-        pub application_providers: pulumi_gestalt_rust::InputOrOutput<
+        pub application_providers: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ssoadmin::GetApplicationProvidersApplicationProvider,

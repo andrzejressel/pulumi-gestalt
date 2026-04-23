@@ -10,13 +10,13 @@ pub mod get_shared_access_policy {
     pub struct GetSharedAccessPolicyArgs {
         /// The name of the IoTHub to which this Shared Access Policy belongs.
         #[builder(into)]
-        pub iothub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the IotHub Shared Access Policy resource.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group under which the IotHub Shared Access Policy resource has to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSharedAccessPolicyResult {

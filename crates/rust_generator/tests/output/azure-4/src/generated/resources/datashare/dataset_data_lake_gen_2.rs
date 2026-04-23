@@ -89,22 +89,22 @@ pub mod dataset_data_lake_gen_2 {
     pub struct DatasetDataLakeGen2Args {
         /// The path of the file in the data lake file system to be shared with the receiver. Conflicts with `folder_path` Changing this forces a new Data Share Data Lake Gen2 Dataset to be created.
         #[builder(into, default)]
-        pub file_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the data lake file system to be shared with the receiver. Changing this forces a new Data Share Data Lake Gen2 Dataset to be created.
         #[builder(into)]
-        pub file_system_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file_system_name: pulumi_gestalt_rust::Input<String>,
         /// The folder path in the data lake file system to be shared with the receiver. Conflicts with `file_path` Changing this forces a new Data Share Data Lake Gen2 Dataset to be created.
         #[builder(into, default)]
-        pub folder_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Data Share Data Lake Gen2 Dataset. Changing this forces a new Data Share Data Lake Gen2 Dataset to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Data Share where this Data Share Data Lake Gen2 Dataset should be created. Changing this forces a new Data Share Data Lake Gen2 Dataset to be created.
         #[builder(into)]
-        pub share_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub share_id: pulumi_gestalt_rust::Input<String>,
         /// The resource id of the storage account of the data lake file system to be shared with the receiver. Changing this forces a new Data Share Data Lake Gen2 Dataset to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DatasetDataLakeGen2Result {

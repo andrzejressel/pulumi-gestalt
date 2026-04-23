@@ -10,16 +10,16 @@ pub mod azurerm_portal_dashboard {
     pub struct AzurermPortalDashboardArgs {
         /// JSON data representing dashboard body.
         #[builder(into, default)]
-        pub dashboard_properties: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dashboard_properties: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the display name of the shared Azure Portal Dashboard.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the shared Azure Portal Dashboard.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the resource group the shared Azure Portal Dashboard is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AzurermPortalDashboardResult {

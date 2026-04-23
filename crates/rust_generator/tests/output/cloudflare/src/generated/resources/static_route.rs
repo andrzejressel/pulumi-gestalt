@@ -43,28 +43,28 @@ pub mod static_route {
     pub struct StaticRouteArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of Cloudflare colocation regions for this static route.
         #[builder(into, default)]
-        pub colo_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub colo_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of Cloudflare colocation names for this static route.
         #[builder(into, default)]
-        pub colo_regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub colo_regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Description of the static route.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The nexthop IP address where traffic will be routed to.
         #[builder(into)]
-        pub nexthop: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub nexthop: pulumi_gestalt_rust::Input<String>,
         /// Your network prefix using CIDR notation.
         #[builder(into)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub prefix: pulumi_gestalt_rust::Input<String>,
         /// The priority for the static route.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// The optional weight for ECMP routes. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub weight: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub weight: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct StaticRouteResult {

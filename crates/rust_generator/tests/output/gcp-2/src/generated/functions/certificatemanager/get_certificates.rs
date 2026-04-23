@@ -10,10 +10,10 @@ pub mod get_certificates {
     pub struct GetCertificatesArgs {
         /// Filter expression to restrict the certificates returned.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region in which the resource belongs. If it is not provided, `GLOBAL` is used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetCertificatesResult {

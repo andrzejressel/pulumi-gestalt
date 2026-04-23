@@ -10,15 +10,15 @@ pub mod get_prefix_list {
     pub struct GetPrefixListArgs {
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetPrefixListFilter>>,
         >,
         /// Name of the prefix list to select.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the prefix list to select.
         #[builder(into, default)]
-        pub prefix_list_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix_list_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetPrefixListResult {

@@ -6,13 +6,13 @@ mod native;
 #[path = "private/mod.rs"]
 pub mod __private;
 pub mod any_export;
-mod input_or_output;
+mod input;
 mod oneof;
 mod pulumi_any;
 pub mod resources;
 pub mod stdlib;
 
-pub use input_or_output::InputOrOutput;
+pub use input::Input;
 pub use pulumi_any::{PulumiAny, ToPulumiAny};
 
 pub use oneof::OneOf2;

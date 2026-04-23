@@ -91,23 +91,23 @@ pub mod deployment_config {
     pub struct DeploymentConfigArgs {
         /// The compute platform can be `Server`, `Lambda`, or `ECS`. Default is `Server`.
         #[builder(into, default)]
-        pub compute_platform: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compute_platform: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the deployment config.
         #[builder(into, default)]
-        pub deployment_config_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deployment_config_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A minimum_healthy_hosts block. Required for `Server` compute platform. Minimum Healthy Hosts are documented below.
         #[builder(into, default)]
-        pub minimum_healthy_hosts: pulumi_gestalt_rust::InputOrOutput<
+        pub minimum_healthy_hosts: pulumi_gestalt_rust::Input<
             Option<super::super::types::codedeploy::DeploymentConfigMinimumHealthyHosts>,
         >,
         /// A traffic_routing_config block. Traffic Routing Config is documented below.
         #[builder(into, default)]
-        pub traffic_routing_config: pulumi_gestalt_rust::InputOrOutput<
+        pub traffic_routing_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::codedeploy::DeploymentConfigTrafficRoutingConfig>,
         >,
         /// A zonal_config block. Zonal Config is documented below.
         #[builder(into, default)]
-        pub zonal_config: pulumi_gestalt_rust::InputOrOutput<
+        pub zonal_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::codedeploy::DeploymentConfigZonalConfig>,
         >,
     }

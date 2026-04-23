@@ -41,12 +41,12 @@ pub mod eip_domain_name {
     pub struct EipDomainNameArgs {
         /// The allocation ID.
         #[builder(into)]
-        pub allocation_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub allocation_id: pulumi_gestalt_rust::Input<String>,
         /// The domain name to modify for the IP address.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::EipDomainNameTimeouts>,
         >,
     }

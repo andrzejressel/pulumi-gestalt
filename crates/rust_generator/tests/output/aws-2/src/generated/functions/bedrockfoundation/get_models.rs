@@ -10,16 +10,16 @@ pub mod get_models {
     pub struct GetModelsArgs {
         /// Customization type to filter on. Valid values are `FINE_TUNING`.
         #[builder(into, default)]
-        pub by_customization_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub by_customization_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Inference type to filter on. Valid values are `ON_DEMAND` and `PROVISIONED`.
         #[builder(into, default)]
-        pub by_inference_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub by_inference_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Output modality to filter on. Valid values are `TEXT`, `IMAGE`, and `EMBEDDING`.
         #[builder(into, default)]
-        pub by_output_modality: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub by_output_modality: pulumi_gestalt_rust::Input<Option<String>>,
         /// Model provider to filter on.
         #[builder(into, default)]
-        pub by_provider: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub by_provider: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetModelsResult {

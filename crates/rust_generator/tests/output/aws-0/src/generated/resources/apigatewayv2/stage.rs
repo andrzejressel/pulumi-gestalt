@@ -42,48 +42,48 @@ pub mod stage {
         /// Settings for logging access in this stage.
         /// Use the `aws.apigateway.Account` resource to configure [permissions for CloudWatch Logging](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-permissions).
         #[builder(into, default)]
-        pub access_log_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub access_log_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigatewayv2::StageAccessLogSettings>,
         >,
         /// API identifier.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// Whether updates to an API automatically trigger a new deployment. Defaults to `false`. Applicable for HTTP APIs.
         #[builder(into, default)]
-        pub auto_deploy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_deploy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Identifier of a client certificate for the stage. Use the `aws.apigateway.ClientCertificate` resource to configure a client certificate.
         /// Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub client_certificate_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_certificate_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Default route settings for the stage.
         #[builder(into, default)]
-        pub default_route_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub default_route_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigatewayv2::StageDefaultRouteSettings>,
         >,
         /// Deployment identifier of the stage. Use the `aws.apigatewayv2.Deployment` resource to configure a deployment.
         #[builder(into, default)]
-        pub deployment_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deployment_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description for the stage. Must be less than or equal to 1024 characters in length.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the stage. Must be between 1 and 128 characters in length.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Route settings for the stage.
         #[builder(into, default)]
-        pub route_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub route_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigatewayv2::StageRouteSetting>>,
         >,
         /// Map that defines the stage variables for the stage.
         #[builder(into, default)]
-        pub stage_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub stage_variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Map of tags to assign to the stage. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

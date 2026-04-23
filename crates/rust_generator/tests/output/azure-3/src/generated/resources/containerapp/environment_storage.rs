@@ -85,22 +85,22 @@ pub mod environment_storage {
     pub struct EnvironmentStorageArgs {
         /// The Storage Account Access Key.
         #[builder(into)]
-        pub access_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_key: pulumi_gestalt_rust::Input<String>,
         /// The access mode to connect this storage to the Container App. Possible values include `ReadOnly` and `ReadWrite`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub access_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_mode: pulumi_gestalt_rust::Input<String>,
         /// The Azure Storage Account in which the Share to be used is located. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Container App Environment to which this storage belongs. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_app_environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_app_environment_id: pulumi_gestalt_rust::Input<String>,
         /// The name for this Container App Environment Storage. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Azure Storage Share to use. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub share_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub share_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentStorageResult {

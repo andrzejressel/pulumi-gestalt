@@ -35,10 +35,10 @@ pub mod workers_kv_namespace {
     pub struct WorkersKvNamespaceArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Title value of the Worker KV Namespace.
         #[builder(into)]
-        pub title: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub title: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkersKvNamespaceResult {

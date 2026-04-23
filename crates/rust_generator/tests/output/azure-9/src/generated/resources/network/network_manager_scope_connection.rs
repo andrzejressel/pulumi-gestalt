@@ -66,19 +66,19 @@ pub mod network_manager_scope_connection {
     pub struct NetworkManagerScopeConnectionArgs {
         /// A description of the Network Manager Scope Connection.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Network Manager Scope Connection. Changing this forces a new Network Manager Scope Connection to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Network Manager Scope Connection. Changing this forces a new Network Manager Scope Connection to be created.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Resource ID of the target scope which the Network Manager is connected to. It should be either Subscription ID or Management Group ID.
         #[builder(into)]
-        pub target_scope_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_scope_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Tenant ID of the Resource which the Network Manager is connected to.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkManagerScopeConnectionResult {

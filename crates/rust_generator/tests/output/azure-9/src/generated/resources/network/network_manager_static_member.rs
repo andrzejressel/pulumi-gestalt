@@ -73,13 +73,13 @@ pub mod network_manager_static_member {
     pub struct NetworkManagerStaticMemberArgs {
         /// Specifies the name which should be used for this Network Manager Static Member. Changing this forces a new Network Manager Static Member to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Network Manager Group. Changing this forces a new Network Manager Static Member to be created.
         #[builder(into)]
-        pub network_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_group_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Resource ID of the Virtual Network using as the Static Member. Changing this forces a new Network Manager Static Member to be created.
         #[builder(into)]
-        pub target_virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_virtual_network_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkManagerStaticMemberResult {

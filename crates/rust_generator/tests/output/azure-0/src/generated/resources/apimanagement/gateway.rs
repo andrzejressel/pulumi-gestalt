@@ -64,18 +64,18 @@ pub mod gateway {
     pub struct GatewayArgs {
         /// The ID of the API Management Resource in which the gateway will be created. Changing this forces a new API Management Gateway resource to be created.
         #[builder(into)]
-        pub api_management_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_id: pulumi_gestalt_rust::Input<String>,
         /// The description of the API Management Gateway.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `location_data` block as documented below.
         #[builder(into)]
-        pub location_data: pulumi_gestalt_rust::InputOrOutput<
+        pub location_data: pulumi_gestalt_rust::Input<
             super::super::types::apimanagement::GatewayLocationData,
         >,
         /// The name which should be used for the API Management Gateway. Changing this forces a new API Management Gateway to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GatewayResult {

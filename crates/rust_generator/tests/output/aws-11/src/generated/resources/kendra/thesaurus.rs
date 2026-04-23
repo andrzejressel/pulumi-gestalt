@@ -35,23 +35,23 @@ pub mod thesaurus {
     #[allow(dead_code)]
     pub struct ThesaurusArgs {
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier of the index for a thesaurus.
         #[builder(into)]
-        pub index_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_id: pulumi_gestalt_rust::Input<String>,
         /// The name for the thesaurus.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM (Identity and Access Management) role used to access the thesaurus file in S3.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// The S3 path where your thesaurus file sits in S3. Detailed below.
         #[builder(into)]
-        pub source_s3_path: pulumi_gestalt_rust::InputOrOutput<
+        pub source_s3_path: pulumi_gestalt_rust::Input<
             super::super::types::kendra::ThesaurusSourceS3Path,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

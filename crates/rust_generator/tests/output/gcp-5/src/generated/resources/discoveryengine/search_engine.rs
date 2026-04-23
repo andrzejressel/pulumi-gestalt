@@ -81,35 +81,35 @@ pub mod search_engine {
     pub struct SearchEngineArgs {
         /// The collection ID.
         #[builder(into)]
-        pub collection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub collection_id: pulumi_gestalt_rust::Input<String>,
         /// Common config spec that specifies the metadata of the engine.
         #[builder(into, default)]
-        pub common_config: pulumi_gestalt_rust::InputOrOutput<
+        pub common_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::discoveryengine::SearchEngineCommonConfig>,
         >,
         /// The data stores associated with this engine. For SOLUTION_TYPE_SEARCH type of engines, they can only associate with at most one data store.
         #[builder(into)]
-        pub data_store_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub data_store_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Required. The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Unique ID to use for Search Engine App.
         #[builder(into)]
-        pub engine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_id: pulumi_gestalt_rust::Input<String>,
         /// The industry vertical that the engine registers. The restriction of the Engine industry vertical is based on DataStore:
         /// If unspecified, default to GENERIC. Vertical on Engine has to match vertical of the DataStore liniked to the engine.
         /// Default value: "GENERIC" Possible values: ["GENERIC", "MEDIA", "HEALTHCARE_FHIR"]
         #[builder(into, default)]
-        pub industry_vertical: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub industry_vertical: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configurations for a Search Engine.
         /// Structure is documented below.
         #[builder(into)]
-        pub search_engine_config: pulumi_gestalt_rust::InputOrOutput<
+        pub search_engine_config: pulumi_gestalt_rust::Input<
             super::super::types::discoveryengine::SearchEngineSearchEngineConfig,
         >,
     }

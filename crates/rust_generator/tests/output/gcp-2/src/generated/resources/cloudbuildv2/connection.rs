@@ -182,42 +182,42 @@ pub mod connection {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration for connections to Bitbucket Cloud.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub bitbucket_cloud_config: pulumi_gestalt_rust::InputOrOutput<
+        pub bitbucket_cloud_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudbuildv2::ConnectionBitbucketCloudConfig>,
         >,
         /// Configuration for connections to Bitbucket Data Center.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub bitbucket_data_center_config: pulumi_gestalt_rust::InputOrOutput<
+        pub bitbucket_data_center_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudbuildv2::ConnectionBitbucketDataCenterConfig,
             >,
         >,
         /// If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration for connections to github.com.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub github_config: pulumi_gestalt_rust::InputOrOutput<
+        pub github_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudbuildv2::ConnectionGithubConfig>,
         >,
         /// Configuration for connections to an instance of GitHub Enterprise.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub github_enterprise_config: pulumi_gestalt_rust::InputOrOutput<
+        pub github_enterprise_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudbuildv2::ConnectionGithubEnterpriseConfig>,
         >,
         /// Configuration for connections to gitlab.com or an instance of GitLab Enterprise.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub gitlab_config: pulumi_gestalt_rust::InputOrOutput<
+        pub gitlab_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudbuildv2::ConnectionGitlabConfig>,
         >,
         /// The location for the resource
@@ -225,14 +225,14 @@ pub mod connection {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Immutable. The resource name of the connection.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConnectionResult {

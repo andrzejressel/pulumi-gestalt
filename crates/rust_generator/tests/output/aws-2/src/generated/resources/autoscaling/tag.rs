@@ -23,12 +23,10 @@ pub mod tag {
     pub struct TagArgs {
         /// Name of the Autoscaling Group to apply the tag to.
         #[builder(into)]
-        pub autoscaling_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub autoscaling_group_name: pulumi_gestalt_rust::Input<String>,
         /// Tag to create. The `tag` block is documented below.
         #[builder(into)]
-        pub tag: pulumi_gestalt_rust::InputOrOutput<
-            super::super::types::autoscaling::TagTag,
-        >,
+        pub tag: pulumi_gestalt_rust::Input<super::super::types::autoscaling::TagTag>,
     }
     #[allow(dead_code)]
     pub struct TagResult {

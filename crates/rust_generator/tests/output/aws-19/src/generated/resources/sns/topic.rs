@@ -91,119 +91,99 @@ pub mod topic {
     pub struct TopicArgs {
         /// IAM role for failure feedback
         #[builder(into, default)]
-        pub application_failure_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub application_failure_feedback_role_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The IAM role permitted to receive success feedback for this topic
         #[builder(into, default)]
-        pub application_success_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub application_success_feedback_role_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Percentage of success to sample
         #[builder(into, default)]
-        pub application_success_feedback_sample_rate: pulumi_gestalt_rust::InputOrOutput<
+        pub application_success_feedback_sample_rate: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The message archive policy for FIFO topics. More details in the [AWS documentation](https://docs.aws.amazon.com/sns/latest/dg/message-archiving-and-replay-topic-owner.html).
         #[builder(into, default)]
-        pub archive_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub archive_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables content-based deduplication for FIFO topics. For more information, see the [related documentation](https://docs.aws.amazon.com/sns/latest/dg/fifo-message-dedup.html)
         #[builder(into, default)]
-        pub content_based_deduplication: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub content_based_deduplication: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The SNS delivery policy. More details in the [AWS documentation](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html).
         #[builder(into, default)]
-        pub delivery_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delivery_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name for the topic
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean indicating whether or not to create a FIFO (first-in-first-out) topic. FIFO topics can't deliver messages to customer managed endpoints, such as email addresses, mobile apps, SMS, or HTTP(S) endpoints. These endpoint types aren't guaranteed to preserve strict message ordering. Default is `false`.
         #[builder(into, default)]
-        pub fifo_topic: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub fifo_topic: pulumi_gestalt_rust::Input<Option<bool>>,
         /// IAM role for failure feedback
         #[builder(into, default)]
-        pub firehose_failure_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub firehose_failure_feedback_role_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The IAM role permitted to receive success feedback for this topic
         #[builder(into, default)]
-        pub firehose_success_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
+        pub firehose_success_feedback_role_arn: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Percentage of success to sample
         #[builder(into, default)]
-        pub firehose_success_feedback_sample_rate: pulumi_gestalt_rust::InputOrOutput<
+        pub firehose_success_feedback_sample_rate: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// IAM role for failure feedback
         #[builder(into, default)]
-        pub http_failure_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub http_failure_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role permitted to receive success feedback for this topic
         #[builder(into, default)]
-        pub http_success_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub http_success_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Percentage of success to sample
         #[builder(into, default)]
-        pub http_success_feedback_sample_rate: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub http_success_feedback_sample_rate: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see [Key Terms](https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms)
         #[builder(into, default)]
-        pub kms_master_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_master_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// IAM role for failure feedback
         #[builder(into, default)]
-        pub lambda_failure_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub lambda_failure_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role permitted to receive success feedback for this topic
         #[builder(into, default)]
-        pub lambda_success_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub lambda_success_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Percentage of success to sample
         #[builder(into, default)]
-        pub lambda_success_feedback_sample_rate: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub lambda_success_feedback_sample_rate: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the topic. Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. For a FIFO (first-in-first-out) topic, the name must end with the `.fifo` suffix. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The fully-formed AWS policy as JSON.
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// If `SignatureVersion` should be [1 (SHA1) or 2 (SHA256)](https://docs.aws.amazon.com/sns/latest/dg/sns-verify-signature-of-message.html). The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS.
         #[builder(into, default)]
-        pub signature_version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub signature_version: pulumi_gestalt_rust::Input<Option<i32>>,
         /// IAM role for failure feedback
         #[builder(into, default)]
-        pub sqs_failure_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub sqs_failure_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role permitted to receive success feedback for this topic
         #[builder(into, default)]
-        pub sqs_success_feedback_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub sqs_success_feedback_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Percentage of success to sample
         #[builder(into, default)]
-        pub sqs_success_feedback_sample_rate: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub sqs_success_feedback_sample_rate: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Tracing mode of an Amazon SNS topic. Valid values: `"PassThrough"`, `"Active"`.
         #[builder(into, default)]
-        pub tracing_config: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tracing_config: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TopicResult {

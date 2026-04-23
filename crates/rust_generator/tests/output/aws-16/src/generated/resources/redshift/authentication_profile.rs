@@ -34,10 +34,10 @@ pub mod authentication_profile {
     pub struct AuthenticationProfileArgs {
         /// The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.
         #[builder(into)]
-        pub authentication_profile_content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_profile_content: pulumi_gestalt_rust::Input<String>,
         /// The name of the authentication profile.
         #[builder(into)]
-        pub authentication_profile_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_profile_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AuthenticationProfileResult {

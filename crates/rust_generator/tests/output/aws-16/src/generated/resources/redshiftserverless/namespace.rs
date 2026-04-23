@@ -33,41 +33,39 @@ pub mod namespace {
     pub struct NamespaceArgs {
         /// ID of the KMS key used to encrypt the namespace's admin credentials secret.
         #[builder(into, default)]
-        pub admin_password_secret_kms_key_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub admin_password_secret_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password of the administrator for the first database created in the namespace.
         /// Conflicts with `manage_admin_password`.
         #[builder(into, default)]
-        pub admin_user_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub admin_user_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The username of the administrator for the first database created in the namespace.
         #[builder(into, default)]
-        pub admin_username: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub admin_username: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the first database created in the namespace.
         #[builder(into, default)]
-        pub db_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. When specifying `default_iam_role_arn`, it also must be part of `iam_roles`.
         #[builder(into, default)]
-        pub default_iam_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IAM roles to associate with the namespace.
         #[builder(into, default)]
-        pub iam_roles: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub iam_roles: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ARN of the Amazon Web Services Key Management Service key used to encrypt your data.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The types of logs the namespace can export. Available export types are `userlog`, `connectionlog`, and `useractivitylog`.
         #[builder(into, default)]
-        pub log_exports: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub log_exports: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to use AWS SecretManager to manage namespace's admin credentials.
         /// Conflicts with `admin_user_password`.
         #[builder(into, default)]
-        pub manage_admin_password: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage_admin_password: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the namespace.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

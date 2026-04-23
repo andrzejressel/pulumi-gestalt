@@ -10,10 +10,10 @@ pub mod get_kafka_version {
     pub struct GetKafkaVersionArgs {
         /// Ordered list of preferred Kafka versions. The first match in this list will be returned. Either `preferred_versions` or `version` must be set.
         #[builder(into, default)]
-        pub preferred_versions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub preferred_versions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Version of MSK Kafka. For example 2.4.1.1 or "2.2.1" etc. Either `preferred_versions` or `version` must be set.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetKafkaVersionResult {

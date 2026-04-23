@@ -11,10 +11,10 @@ pub mod tag {
     pub struct TagArgs {
         /// Name of the source image.
         #[builder(into)]
-        pub source_image: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_image: pulumi_gestalt_rust::Input<String>,
         /// Name of the target image.
         #[builder(into)]
-        pub target_image: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_image: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagResult {

@@ -97,31 +97,31 @@ pub mod a_record {
     pub struct ARecordArgs {
         /// The name of the DNS A Record. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of IPv4 Addresses. Conflicts with `target_resource_id`.
         #[builder(into, default)]
-        pub records: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub records: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the resource group where the DNS Zone (parent resource) exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         ///
         /// > **Note:** either `records` OR `target_resource_id` must be specified, but not both.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Azure resource id of the target object. Conflicts with `records`.
         #[builder(into, default)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Time To Live (TTL) of the DNS record in seconds.
         #[builder(into)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub ttl: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the DNS Zone where the resource exists. Changing this forces a new resource to be created.
         ///
         /// > **Note:** The `zone_name` should be the name of resource `azure.dns.Zone` instead of `azure.privatedns.Zone`.
         #[builder(into)]
-        pub zone_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ARecordResult {

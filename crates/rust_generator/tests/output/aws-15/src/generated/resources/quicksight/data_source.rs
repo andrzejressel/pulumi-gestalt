@@ -51,46 +51,46 @@ pub mod data_source {
     pub struct DataSourceArgs {
         /// The ID for the AWS account that the data source is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The credentials Amazon QuickSight uses to connect to your underlying source. See Credentials below for more details.
         #[builder(into, default)]
-        pub credentials: pulumi_gestalt_rust::InputOrOutput<
+        pub credentials: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DataSourceCredentials>,
         >,
         /// An identifier for the data source.
         #[builder(into)]
-        pub data_source_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source_id: pulumi_gestalt_rust::Input<String>,
         /// A name for the data source, maximum of 128 characters.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parameters used to connect to this data source (exactly one).
         #[builder(into)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             super::super::types::quicksight::DataSourceParameters,
         >,
         /// A set of resource permissions on the data source. Maximum of 64 items. See Permission below for more details.
         #[builder(into, default)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::DataSourcePermission>>,
         >,
         /// Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source. See SSL Properties below for more details.
         #[builder(into, default)]
-        pub ssl_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub ssl_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DataSourceSslProperties>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of the data source. See the [AWS Documentation](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDataSource.html#QS-CreateDataSource-request-Type) for the complete list of valid values.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source. See VPC Connection Properties below for more details.
         #[builder(into, default)]
-        pub vpc_connection_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_connection_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::DataSourceVpcConnectionProperties>,
         >,
     }

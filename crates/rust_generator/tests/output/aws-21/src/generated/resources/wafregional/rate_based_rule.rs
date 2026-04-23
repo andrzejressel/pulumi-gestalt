@@ -56,24 +56,24 @@ pub mod rate_based_rule {
     pub struct RateBasedRuleArgs {
         /// The name or description for the Amazon CloudWatch metric of this rule.
         #[builder(into)]
-        pub metric_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub metric_name: pulumi_gestalt_rust::Input<String>,
         /// The name or description of the rule.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The objects to include in a rule (documented below).
         #[builder(into, default)]
-        pub predicates: pulumi_gestalt_rust::InputOrOutput<
+        pub predicates: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafregional::RateBasedRulePredicate>>,
         >,
         /// Valid value is IP.
         #[builder(into)]
-        pub rate_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rate_key: pulumi_gestalt_rust::Input<String>,
         /// The maximum number of requests, which have an identical value in the field specified by the RateKey, allowed in a five-minute period. Minimum value is 100.
         #[builder(into)]
-        pub rate_limit: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub rate_limit: pulumi_gestalt_rust::Input<i32>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

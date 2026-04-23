@@ -52,15 +52,15 @@ pub mod activity {
     pub struct ActivityArgs {
         /// Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encyption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::sfn::ActivityEncryptionConfiguration>,
         >,
         /// The name of the activity to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

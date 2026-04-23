@@ -39,18 +39,18 @@ pub mod ingestion {
     pub struct IngestionArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the dataset used in the ingestion.
         #[builder(into)]
-        pub data_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_set_id: pulumi_gestalt_rust::Input<String>,
         /// ID for the ingestion.
         #[builder(into)]
-        pub ingestion_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ingestion_id: pulumi_gestalt_rust::Input<String>,
         /// Type of ingestion to be created. Valid values are `INCREMENTAL_REFRESH` and `FULL_REFRESH`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub ingestion_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ingestion_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IngestionResult {

@@ -92,20 +92,20 @@ pub mod instance_group_membership {
     pub struct InstanceGroupMembershipArgs {
         /// An instance being added to the InstanceGroup
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// Represents an Instance Group resource name that the instance belongs to.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub instance_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_group: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the zone where the instance group resides.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceGroupMembershipResult {

@@ -22,26 +22,24 @@ pub mod proxy_endpoint {
     pub struct ProxyEndpointArgs {
         /// The identifier for the proxy endpoint. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
         #[builder(into)]
-        pub db_proxy_endpoint_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_proxy_endpoint_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the DB proxy associated with the DB proxy endpoint that you create.
         #[builder(into)]
-        pub db_proxy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_proxy_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is `READ_WRITE`. Valid values are `READ_WRITE` and `READ_ONLY`.
         #[builder(into, default)]
-        pub target_role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more VPC security group IDs to associate with the new proxy.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more VPC subnet IDs to associate with the new proxy.
         #[builder(into)]
-        pub vpc_subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub vpc_subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct ProxyEndpointResult {

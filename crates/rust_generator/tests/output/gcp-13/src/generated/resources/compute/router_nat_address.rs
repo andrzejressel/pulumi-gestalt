@@ -56,27 +56,27 @@ pub mod router_nat_address {
         /// A list of URLs of the IP resources to be drained. These IPs must be
         /// valid static external IPs that have been assigned to the NAT.
         #[builder(into, default)]
-        pub drain_nat_ips: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub drain_nat_ips: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Self-links of NAT IPs to be used in a Nat service. Only valid if the referenced RouterNat
         /// natIpAllocateOption is set to MANUAL_ONLY.
         #[builder(into)]
-        pub nat_ips: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub nat_ips: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where the NAT service reside.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Cloud Router in which the referenced NAT service is configured.
         #[builder(into)]
-        pub router: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub router: pulumi_gestalt_rust::Input<String>,
         /// The name of the Nat service in which this address will be configured.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub router_nat: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub router_nat: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouterNatAddressResult {

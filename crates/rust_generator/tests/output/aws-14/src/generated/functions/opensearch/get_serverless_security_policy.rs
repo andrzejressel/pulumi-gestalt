@@ -10,10 +10,10 @@ pub mod get_serverless_security_policy {
     pub struct GetServerlessSecurityPolicyArgs {
         /// Name of the policy
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Type of security policy. One of `encryption` or `network`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServerlessSecurityPolicyResult {

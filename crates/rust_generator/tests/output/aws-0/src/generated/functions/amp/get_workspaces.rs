@@ -10,7 +10,7 @@ pub mod get_workspaces {
     pub struct GetWorkspacesArgs {
         /// Limits results to workspaces with aliases that begin with this value.
         #[builder(into, default)]
-        pub alias_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alias_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetWorkspacesResult {

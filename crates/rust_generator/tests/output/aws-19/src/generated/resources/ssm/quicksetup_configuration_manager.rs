@@ -24,26 +24,26 @@ pub mod quicksetup_configuration_manager {
     pub struct QuicksetupConfigurationManagerArgs {
         /// Definition of the Quick Setup configuration that the configuration manager deploys. See `configuration_definition` below.
         #[builder(into, default)]
-        pub configuration_definition: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_definition: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::ssm::QuicksetupConfigurationManagerConfigurationDefinition,
             >,
         >,
         /// Description of the configuration manager.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration manager name.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::ssm::QuicksetupConfigurationManagerTimeouts>,
         >,
     }

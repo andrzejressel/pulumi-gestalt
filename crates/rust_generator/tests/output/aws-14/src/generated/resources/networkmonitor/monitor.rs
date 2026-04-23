@@ -38,15 +38,15 @@ pub mod monitor {
     pub struct MonitorArgs {
         /// The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either 30 or 60.
         #[builder(into, default)]
-        pub aggregation_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub aggregation_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the monitor.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub monitor_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub monitor_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the monitor. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -58,21 +58,21 @@ pub mod user_agent_blocking_rule {
     pub struct UserAgentBlockingRuleArgs {
         /// The configuration object for the current rule.
         #[builder(into)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             super::types::UserAgentBlockingRuleConfiguration,
         >,
         /// An informative summary of the rule.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// The action to apply to a matched request. Available values: `block`, `challenge`, `js_challenge`, `managed_challenge`.
         #[builder(into)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mode: pulumi_gestalt_rust::Input<String>,
         /// When true, indicates that the rule is currently paused.
         #[builder(into)]
-        pub paused: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub paused: pulumi_gestalt_rust::Input<bool>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserAgentBlockingRuleResult {

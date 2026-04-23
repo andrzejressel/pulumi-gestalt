@@ -121,41 +121,41 @@ pub mod flow {
     pub struct FlowArgs {
         /// Description of the flow you want to create.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A Destination Flow Config that controls how Amazon AppFlow places data in the destination connector.
         #[builder(into)]
-        pub destination_flow_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_flow_configs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::appflow::FlowDestinationFlowConfig>,
         >,
         /// ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
         #[builder(into, default)]
-        pub kms_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A Catalog that determines the configuration that Amazon AppFlow uses when it catalogs the data that’s transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
         #[builder(into, default)]
-        pub metadata_catalog_config: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata_catalog_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appflow::FlowMetadataCatalogConfig>,
         >,
         /// Name of the flow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Source Flow Config that controls how Amazon AppFlow retrieves data from the source connector.
         #[builder(into)]
-        pub source_flow_config: pulumi_gestalt_rust::InputOrOutput<
+        pub source_flow_config: pulumi_gestalt_rust::Input<
             super::super::types::appflow::FlowSourceFlowConfig,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A Task that Amazon AppFlow performs while transferring the data in the flow run.
         #[builder(into)]
-        pub tasks: pulumi_gestalt_rust::InputOrOutput<
+        pub tasks: pulumi_gestalt_rust::Input<
             Vec<super::super::types::appflow::FlowTask>,
         >,
         /// A Trigger that determine how and when the flow runs.
         #[builder(into)]
-        pub trigger_config: pulumi_gestalt_rust::InputOrOutput<
+        pub trigger_config: pulumi_gestalt_rust::Input<
             super::super::types::appflow::FlowTriggerConfig,
         >,
     }

@@ -10,7 +10,7 @@ pub mod get_organizational_unit_child_accounts {
     pub struct GetOrganizationalUnitChildAccountsArgs {
         /// The parent ID of the accounts.
         #[builder(into)]
-        pub parent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOrganizationalUnitChildAccountsResult {

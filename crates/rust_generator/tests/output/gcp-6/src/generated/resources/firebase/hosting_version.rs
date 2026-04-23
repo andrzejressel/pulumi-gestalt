@@ -289,7 +289,7 @@ pub mod hosting_version {
         /// The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             Option<super::super::types::firebase::HostingVersionConfig>,
         >,
         /// Required. The ID of the site in which to create this Version.
@@ -297,7 +297,7 @@ pub mod hosting_version {
         ///
         /// - - -
         #[builder(into)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub site_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HostingVersionResult {

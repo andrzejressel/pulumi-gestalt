@@ -82,10 +82,10 @@ pub mod hosted_zone_dns_sec {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub hosted_zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hosted_zone_id: pulumi_gestalt_rust::Input<String>,
         /// Hosted Zone signing status. Valid values: `SIGNING`, `NOT_SIGNING`. Defaults to `SIGNING`.
         #[builder(into, default)]
-        pub signing_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub signing_status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HostedZoneDnsSecResult {

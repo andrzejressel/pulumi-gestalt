@@ -66,22 +66,22 @@ pub mod application {
     pub struct ApplicationArgs {
         /// The name of the Batch account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// A value indicating whether packages within the application may be overwritten using the same version string. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_updates: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_updates: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The package to use if a client requests the application but does not specify a version. This property can only be set to the name of an existing package.
         #[builder(into, default)]
-        pub default_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name for the application.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the application. This must be unique within the account. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group that contains the Batch account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {

@@ -36,27 +36,27 @@ pub mod repository_group {
     pub struct RepositoryGroupArgs {
         /// Required. Id of the Code Repository Index.
         #[builder(into)]
-        pub code_repository_index: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub code_repository_index: pulumi_gestalt_rust::Input<String>,
         /// Optional. Labels as key value pairs **Note**: This field is non-authoritative, and will only manage the labels present
         /// in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the Code Repository Index, for example `us-central1`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. List of repositories to group
         /// Structure is documented below.
         #[builder(into)]
-        pub repositories: pulumi_gestalt_rust::InputOrOutput<
+        pub repositories: pulumi_gestalt_rust::Input<
             Vec<super::super::types::gemini::RepositoryGroupRepository>,
         >,
         /// Required. Id of the Repository Group.
         #[builder(into)]
-        pub repository_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RepositoryGroupResult {

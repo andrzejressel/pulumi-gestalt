@@ -183,44 +183,44 @@ pub mod distribution {
     pub struct DistributionArgs {
         /// Bundle ID to use for the distribution.
         #[builder(into)]
-        pub bundle_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bundle_id: pulumi_gestalt_rust::Input<String>,
         /// An object that describes the cache behavior settings of the distribution. Detailed below
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub cache_behavior_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub cache_behavior_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::lightsail::DistributionCacheBehaviorSettings>,
         >,
         /// A set of configuration blocks that describe the per-path cache behavior of the distribution. Detailed below
         #[builder(into, default)]
-        pub cache_behaviors: pulumi_gestalt_rust::InputOrOutput<
+        pub cache_behaviors: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lightsail::DistributionCacheBehavior>>,
         >,
         /// The name of the SSL/TLS certificate attached to the distribution, if any.
         #[builder(into, default)]
-        pub certificate_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object that describes the default cache behavior of the distribution. Detailed below
         #[builder(into)]
-        pub default_cache_behavior: pulumi_gestalt_rust::InputOrOutput<
+        pub default_cache_behavior: pulumi_gestalt_rust::Input<
             super::super::types::lightsail::DistributionDefaultCacheBehavior,
         >,
         /// The IP address type of the distribution. Default: `dualstack`.
         #[builder(into, default)]
-        pub ip_address_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether the distribution is enabled. Default: `true`.
         #[builder(into, default)]
-        pub is_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the distribution.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer. Detailed below
         #[builder(into)]
-        pub origin: pulumi_gestalt_rust::InputOrOutput<
+        pub origin: pulumi_gestalt_rust::Input<
             super::super::types::lightsail::DistributionOrigin,
         >,
         /// Map of tags for the Lightsail Distribution. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

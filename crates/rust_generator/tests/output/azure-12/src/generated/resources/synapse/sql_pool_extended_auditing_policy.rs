@@ -85,26 +85,24 @@ pub mod sql_pool_extended_auditing_policy {
     pub struct SqlPoolExtendedAuditingPolicyArgs {
         /// Enable audit events to Azure Monitor? To enable server audit events to Azure Monitor, please enable its master database audit events to Azure Monitor. Defaults to `true`.
         #[builder(into, default)]
-        pub log_monitoring_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub log_monitoring_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The number of days to retain logs for in the storage account. Defaults to `0`.
         #[builder(into, default)]
-        pub retention_in_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Synapse SQL pool to set the extended auditing policy. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sql_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sql_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The access key to use for the auditing storage account.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is `storage_account_access_key` value the storage's secondary key?
         #[builder(into, default)]
-        pub storage_account_access_key_is_secondary: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_access_key_is_secondary: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The blob storage endpoint (e.g. <https://example.blob.core.windows.net>). This blob storage will hold all extended auditing logs.
         #[builder(into, default)]
-        pub storage_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SqlPoolExtendedAuditingPolicyResult {

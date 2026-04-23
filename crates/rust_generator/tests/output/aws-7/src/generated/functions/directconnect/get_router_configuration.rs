@@ -27,10 +27,10 @@ pub mod get_router_configuration {
         /// }
         /// ```
         #[builder(into)]
-        pub router_type_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub router_type_identifier: pulumi_gestalt_rust::Input<String>,
         /// ID of the Direct Connect Virtual Interface
         #[builder(into)]
-        pub virtual_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_interface_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRouterConfigurationResult {

@@ -52,16 +52,16 @@ pub mod integration_runtime_self_hosted {
     pub struct IntegrationRuntimeSelfHostedArgs {
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// Integration runtime description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Data Factory. Changing this forces a new Data Factory Self-hosted Integration Runtime to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `rbac_authorization` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub rbac_authorizations: pulumi_gestalt_rust::InputOrOutput<
+        pub rbac_authorizations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::datafactory::IntegrationRuntimeSelfHostedRbacAuthorization,
@@ -70,7 +70,7 @@ pub mod integration_runtime_self_hosted {
         >,
         /// Specifies whether enable interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.
         #[builder(into, default)]
-        pub self_contained_interactive_authoring_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub self_contained_interactive_authoring_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

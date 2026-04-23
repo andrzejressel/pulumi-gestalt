@@ -70,64 +70,64 @@ pub mod windows_virtual_machine {
     pub struct WindowsVirtualMachineArgs {
         /// Can this Virtual Machine be claimed by users? Defaults to `true`.
         #[builder(into, default)]
-        pub allow_claim: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_claim: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the Virtual Machine be created without a Public IP Address? Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub disallow_public_ip_address: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disallow_public_ip_address: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `gallery_image_reference` block as defined below.
         #[builder(into)]
-        pub gallery_image_reference: pulumi_gestalt_rust::InputOrOutput<
+        pub gallery_image_reference: pulumi_gestalt_rust::Input<
             super::super::types::devtest::WindowsVirtualMachineGalleryImageReference,
         >,
         /// One or more `inbound_nat_rule` blocks as defined below. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** If any `inbound_nat_rule` blocks are specified then `disallow_public_ip_address` must be set to `true`.
         #[builder(into, default)]
-        pub inbound_nat_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub inbound_nat_rules: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::devtest::WindowsVirtualMachineInboundNatRule>,
             >,
         >,
         /// Specifies the name of the Dev Test Lab in which the Virtual Machine should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lab_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lab_name: pulumi_gestalt_rust::Input<String>,
         /// The name of a Subnet within the Dev Test Virtual Network where this machine should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lab_subnet_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lab_subnet_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Dev Test Virtual Network where this Virtual Machine should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lab_virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lab_virtual_network_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the Dev Test Lab exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Dev Test Machine. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The validation requirements for the Name change based on the `os_type` used in this Virtual Machine. For a Linux VM the name must be between 1-62 characters, and for a Windows VM the name must be between 1-15 characters. It must begin and end with a letter or number, and cannot be all numbers.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Any notes about the Virtual Machine.
         #[builder(into, default)]
-        pub notes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notes: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Password associated with the `username` used to login to this Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Dev Test Lab resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Machine Size to use for this Virtual Machine, such as `Standard_F2`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub size: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub size: pulumi_gestalt_rust::Input<String>,
         /// The type of Storage to use on this Virtual Machine. Possible values are `Standard` and `Premium`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_type: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Username associated with the local administrator on this Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub username: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WindowsVirtualMachineResult {

@@ -10,10 +10,10 @@ pub mod get_volume_snapshot {
     pub struct GetVolumeSnapshotArgs {
         /// The name of the Elastic SAN Volume Snapshot.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Elastic SAN Volume Group ID within which the Elastic SAN Volume Snapshot exists.
         #[builder(into)]
-        pub volume_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVolumeSnapshotResult {

@@ -10,7 +10,7 @@ pub mod get_tag_key_iam_policy {
     pub struct GetTagKeyIamPolicyArgs {
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub tag_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tag_key: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTagKeyIamPolicyResult {

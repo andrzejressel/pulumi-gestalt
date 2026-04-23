@@ -52,34 +52,34 @@ pub mod dps_shared_access_policy {
         ///
         /// > **NOTE** When `enrollment_read` is set to `true`, `registration_read` must also be set to true. This is a limitation of the Azure REST API
         #[builder(into, default)]
-        pub enrollment_read: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enrollment_read: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Adds `EnrollmentWrite` permission to this Shared Access Account. It allows write access to enrollment data.
         ///
         /// > **NOTE** When `registration_write` is set to `true`, `enrollment_read`, `registration_read`, and `registration_write` must also be set to true. This is a requirement of the Azure API.
         #[builder(into, default)]
-        pub enrollment_write: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enrollment_write: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the IoT Hub Device Provisioning service to which this Shared Access Policy belongs. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_dps_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_dps_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the IotHub Shared Access Policy resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Adds `RegistrationStatusRead` permission to this Shared Access Account. It allows read access to device registrations.
         #[builder(into, default)]
-        pub registration_read: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub registration_read: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Adds `RegistrationStatusWrite` permission to this Shared Access Account. It allows write access to device registrations.
         ///
         /// > **NOTE** When `registration_write` is set to `true`, `registration_read` must also be set to true. This is a requirement of the Azure API.
         #[builder(into, default)]
-        pub registration_write: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub registration_write: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group under which the IotHub Shared Access Policy resource has to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Adds `ServiceConfig` permission to this Shared Access Account. It allows configuration of the Device Provisioning Service.
         ///
         /// > **NOTE** At least one of `registration_read`, `registration_write`, `service_config`, `enrollment_read`, `enrollment_write` permissions must be set to `true`.
         #[builder(into, default)]
-        pub service_config: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub service_config: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct DpsSharedAccessPolicyResult {

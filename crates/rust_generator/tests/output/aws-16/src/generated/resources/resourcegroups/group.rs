@@ -42,23 +42,23 @@ pub mod group {
     pub struct GroupArgs {
         /// A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. See below for details.
         #[builder(into, default)]
-        pub configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::resourcegroups::GroupConfiguration>>,
         >,
         /// A description of the resource group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource group's name. A resource group name can have a maximum of 127 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with `AWS` or `aws`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `resource_query` block. Resource queries are documented below.
         #[builder(into, default)]
-        pub resource_query: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_query: pulumi_gestalt_rust::Input<
             Option<super::super::types::resourcegroups::GroupResourceQuery>,
         >,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

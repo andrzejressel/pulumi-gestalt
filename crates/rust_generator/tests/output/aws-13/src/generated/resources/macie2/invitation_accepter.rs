@@ -46,7 +46,7 @@ pub mod invitation_accepter {
     pub struct InvitationAccepterArgs {
         /// The AWS account ID for the account that sent the invitation.
         #[builder(into)]
-        pub administrator_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub administrator_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InvitationAccepterResult {

@@ -387,34 +387,34 @@ pub mod feature_membership {
     pub struct FeatureMembershipArgs {
         /// Config Management-specific spec. Structure is documented below.
         #[builder(into, default)]
-        pub configmanagement: pulumi_gestalt_rust::InputOrOutput<
+        pub configmanagement: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkehub::FeatureMembershipConfigmanagement>,
         >,
         /// The name of the feature
         #[builder(into)]
-        pub feature: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub feature: pulumi_gestalt_rust::Input<String>,
         /// The location of the feature
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the membership
         #[builder(into)]
-        pub membership: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub membership: pulumi_gestalt_rust::Input<String>,
         /// The location of the membership, for example, "us-central1". Default is "global".
         #[builder(into, default)]
-        pub membership_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub membership_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service mesh specific spec. Structure is documented below.
         #[builder(into, default)]
-        pub mesh: pulumi_gestalt_rust::InputOrOutput<
+        pub mesh: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkehub::FeatureMembershipMesh>,
         >,
         /// Policy Controller-specific spec. Structure is documented below.
         #[builder(into, default)]
-        pub policycontroller: pulumi_gestalt_rust::InputOrOutput<
+        pub policycontroller: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkehub::FeatureMembershipPolicycontroller>,
         >,
         /// The project of the feature
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FeatureMembershipResult {

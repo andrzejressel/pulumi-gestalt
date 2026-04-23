@@ -51,39 +51,39 @@ pub mod resolver_firewall_rule {
     pub struct ResolverFirewallRuleArgs {
         /// The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list. Valid values: `ALLOW`, `BLOCK`, `ALERT`.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// The DNS record's type. This determines the format of the record value that you provided in BlockOverrideDomain. Value values: `CNAME`.
         #[builder(into, default)]
-        pub block_override_dns_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub block_override_dns_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The custom DNS record to send back in response to the query.
         #[builder(into, default)]
-        pub block_override_domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub block_override_domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Minimum value of 0. Maximum value of 604800.
         #[builder(into, default)]
-        pub block_override_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub block_override_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The way that you want DNS Firewall to block the request. Valid values: `NODATA`, `NXDOMAIN`, `OVERRIDE`.
         #[builder(into, default)]
-        pub block_response: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub block_response: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the domain list that you want to use in the rule.
         #[builder(into)]
-        pub firewall_domain_list_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_domain_list_id: pulumi_gestalt_rust::Input<String>,
         /// Evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS. Valid values are `INSPECT_REDIRECTION_DOMAIN` and `TRUST_REDIRECTION_DOMAIN`. Default value is `INSPECT_REDIRECTION_DOMAIN`.
         #[builder(into, default)]
-        pub firewall_domain_redirection_action: pulumi_gestalt_rust::InputOrOutput<
+        pub firewall_domain_redirection_action: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The unique identifier of the firewall rule group where you want to create the rule.
         #[builder(into)]
-        pub firewall_rule_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_rule_group_id: pulumi_gestalt_rust::Input<String>,
         /// A name that lets you identify the rule, to manage and use it.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The setting that determines the processing order of the rule in the rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// The query type you want the rule to evaluate. Additional details can be found [here](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
         #[builder(into, default)]
-        pub q_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub q_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ResolverFirewallRuleResult {

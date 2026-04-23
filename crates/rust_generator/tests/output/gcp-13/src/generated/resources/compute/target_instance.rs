@@ -201,7 +201,7 @@ pub mod target_instance {
     pub struct TargetInstanceArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Compute instance VM handling traffic for this target instance.
         /// Accepts the instance self-link, relative path
         /// (e.g. `projects/project/zones/zone/instances/instance`) or name. If
@@ -212,7 +212,7 @@ pub mod target_instance {
         ///
         /// - - -
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -221,26 +221,26 @@ pub mod target_instance {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// NAT option controlling how IPs are NAT'ed to the instance.
         /// Currently only NO_NAT (default value) is supported.
         /// Default value is `NO_NAT`.
         /// Possible values are: `NO_NAT`.
         #[builder(into, default)]
-        pub nat_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nat_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource URL for the security policy associated with this target instance.
         #[builder(into, default)]
-        pub security_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// URL of the zone where the target instance resides.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TargetInstanceResult {

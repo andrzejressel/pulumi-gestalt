@@ -40,10 +40,10 @@ pub mod network_acl_association {
     pub struct NetworkAclAssociationArgs {
         /// The ID of the network ACL.
         #[builder(into)]
-        pub network_acl_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_acl_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the associated Subnet.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkAclAssociationResult {

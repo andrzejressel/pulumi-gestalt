@@ -154,41 +154,41 @@ pub mod pipeline {
     pub struct PipelineArgs {
         /// One or more artifact_store blocks. Artifact stores are documented below.
         #[builder(into)]
-        pub artifact_stores: pulumi_gestalt_rust::InputOrOutput<
+        pub artifact_stores: pulumi_gestalt_rust::Input<
             Vec<super::super::types::codepipeline::PipelineArtifactStore>,
         >,
         /// The method that the pipeline will use to handle multiple executions. The default mode is `SUPERSEDED`. For value values, refer to the [AWS documentation](https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PipelineDeclaration.html#CodePipeline-Type-PipelineDeclaration-executionMode).
         ///
         /// **Note:** `QUEUED` or `PARALLEL` mode can only be used with V2 pipelines.
         #[builder(into, default)]
-        pub execution_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub execution_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the pipeline.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of the pipeline. Possible values are: `V1` and `V2`. Default value is `V1`.
         #[builder(into, default)]
-        pub pipeline_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pipeline_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A service role Amazon Resource Name (ARN) that grants AWS CodePipeline permission to make calls to AWS services on your behalf.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A stage block. Stages are documented below.
         #[builder(into)]
-        pub stages: pulumi_gestalt_rust::InputOrOutput<
+        pub stages: pulumi_gestalt_rust::Input<
             Vec<super::super::types::codepipeline::PipelineStage>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A trigger block. Valid only when `pipeline_type` is `V2`. Triggers are documented below.
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::codepipeline::PipelineTrigger>>,
         >,
         /// A pipeline-level variable block. Valid only when `pipeline_type` is `V2`. Variable are documented below.
         #[builder(into, default)]
-        pub variables: pulumi_gestalt_rust::InputOrOutput<
+        pub variables: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::codepipeline::PipelineVariable>>,
         >,
     }

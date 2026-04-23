@@ -73,15 +73,15 @@ pub mod extension_association {
     pub struct ExtensionAssociationArgs {
         /// The ARN of the extension defined in the association.
         #[builder(into)]
-        pub extension_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub extension_arn: pulumi_gestalt_rust::Input<String>,
         /// The parameter names and values defined for the association.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ARN of the application, configuration profile, or environment to associate with the extension.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ExtensionAssociationResult {

@@ -38,13 +38,13 @@ pub mod custom_domain_association {
     pub struct CustomDomainAssociationArgs {
         /// Custom domain endpoint to association. Specify a base domain e.g., `example.com` or a subdomain e.g., `subdomain.example.com`.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Whether to associate the subdomain with the App Runner service in addition to the base domain. Defaults to `true`.
         #[builder(into, default)]
-        pub enable_www_subdomain: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_www_subdomain: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ARN of the App Runner service.
         #[builder(into)]
-        pub service_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomDomainAssociationResult {

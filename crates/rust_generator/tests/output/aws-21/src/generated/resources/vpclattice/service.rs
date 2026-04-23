@@ -39,21 +39,21 @@ pub mod service {
     pub struct ServiceArgs {
         /// Type of IAM policy. Either `NONE` or `AWS_IAM`.
         #[builder(into, default)]
-        pub auth_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auth_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the certificate.
         #[builder(into, default)]
-        pub certificate_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom domain name of the service.
         #[builder(into, default)]
-        pub custom_domain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_domain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.Must be between 3 and 40 characters in length.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

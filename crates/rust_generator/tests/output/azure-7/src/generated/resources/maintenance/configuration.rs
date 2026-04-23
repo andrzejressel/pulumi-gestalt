@@ -41,42 +41,42 @@ pub mod configuration {
     pub struct ConfigurationArgs {
         /// The in guest user patch mode. Possible values are `Platform` or `User`. Must be specified when `scope` is `InGuestPatch`.
         #[builder(into, default)]
-        pub in_guest_user_patch_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub in_guest_user_patch_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `install_patches` block as defined below.
         ///
         /// > **NOTE:** `install_patches` must be specified when `scope` is `InGuestPatch`.
         #[builder(into, default)]
-        pub install_patches: pulumi_gestalt_rust::InputOrOutput<
+        pub install_patches: pulumi_gestalt_rust::Input<
             Option<super::super::types::maintenance::ConfigurationInstallPatches>,
         >,
         /// Specified the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Maintenance Configuration. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of properties to assign to the resource.
         #[builder(into, default)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the Resource Group where the Maintenance Configuration should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The scope of the Maintenance Configuration. Possible values are `Extension`, `Host`, `InGuestPatch`, `OSImage`, `SQLDB` or `SQLManagedInstance`.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource. The key could not contain upper case letter.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The visibility of the Maintenance Configuration. The only allowable value is `Custom`. Defaults to `Custom`.
         #[builder(into, default)]
-        pub visibility: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub visibility: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `window` block as defined below.
         #[builder(into, default)]
-        pub window: pulumi_gestalt_rust::InputOrOutput<
+        pub window: pulumi_gestalt_rust::Input<
             Option<super::super::types::maintenance::ConfigurationWindow>,
         >,
     }

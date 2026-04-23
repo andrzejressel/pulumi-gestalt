@@ -10,7 +10,7 @@ pub mod get_vpc_attachment {
     pub struct GetVpcAttachmentArgs {
         /// One or more configuration blocks containing name-values filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ec2transitgateway::GetVpcAttachmentFilter,
@@ -19,10 +19,10 @@ pub mod get_vpc_attachment {
         >,
         /// Identifier of the EC2 Transit Gateway VPC Attachment.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value tags for the EC2 Transit Gateway VPC Attachment
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

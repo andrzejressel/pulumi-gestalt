@@ -56,15 +56,15 @@ pub mod billing_account_sink {
     pub struct BillingAccountSinkArgs {
         /// Options that affect sinks exporting data to BigQuery. Structure documented below.
         #[builder(into, default)]
-        pub bigquery_options: pulumi_gestalt_rust::InputOrOutput<
+        pub bigquery_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::logging::BillingAccountSinkBigqueryOptions>,
         >,
         /// The billing account exported to the sink.
         #[builder(into)]
-        pub billing_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_account: pulumi_gestalt_rust::Input<String>,
         /// A description of this sink. The maximum length of the description is 8000 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The destination of the sink (or, in other words, where logs are written to). Can be a
         /// Cloud Storage bucket, a PubSub topic, a BigQuery dataset or a Cloud Logging bucket. Examples:
         ///
@@ -75,23 +75,23 @@ pub mod billing_account_sink {
         ///
         /// The writer associated with the sink must have access to write to the above resource.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination: pulumi_gestalt_rust::Input<String>,
         /// If set to True, then this sink is disabled and it does not export any log entries.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
         #[builder(into, default)]
-        pub exclusions: pulumi_gestalt_rust::InputOrOutput<
+        pub exclusions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::logging::BillingAccountSinkExclusion>>,
         >,
         /// The filter to apply when exporting logs. Only log entries that match the filter are exported.
         /// See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to
         /// write a filter.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the logging sink.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BillingAccountSinkResult {

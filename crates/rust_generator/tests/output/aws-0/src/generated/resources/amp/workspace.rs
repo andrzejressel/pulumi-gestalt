@@ -79,18 +79,18 @@ pub mod workspace {
     pub struct WorkspaceArgs {
         /// The alias of the prometheus workspace. See more [in AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-onboard-create-workspace.html).
         #[builder(into, default)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN for the KMS encryption key. If this argument is not provided, then the AWS owned encryption key will be used to encrypt the data in the workspace. See more [in AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html)
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Logging configuration for the workspace. See Logging Configuration below for details.
         #[builder(into, default)]
-        pub logging_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::amp::WorkspaceLoggingConfiguration>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

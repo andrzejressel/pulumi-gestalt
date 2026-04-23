@@ -67,19 +67,19 @@ pub mod custom_service {
     pub struct CustomServiceArgs {
         /// Name used for UI elements listing this Service.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional service ID to use. If not given, the server will generate a
         /// service ID.
         #[builder(into, default)]
-        pub service_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for how to query telemetry on a Service.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub telemetry: pulumi_gestalt_rust::InputOrOutput<
+        pub telemetry: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::CustomServiceTelemetry>,
         >,
         /// Labels which have been used to annotate the service. Label keys must start
@@ -89,7 +89,7 @@ pub mod custom_service {
         /// label entries may be stored. For labels which do not have a semantic value,
         /// the empty string may be supplied for the label value.
         #[builder(into, default)]
-        pub user_labels: pulumi_gestalt_rust::InputOrOutput<
+        pub user_labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

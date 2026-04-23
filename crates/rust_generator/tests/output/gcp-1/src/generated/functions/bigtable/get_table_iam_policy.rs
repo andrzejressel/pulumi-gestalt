@@ -10,12 +10,12 @@ pub mod get_table_iam_policy {
     pub struct GetTableIamPolicyArgs {
         /// The name or relative resource id of the instance that owns the table.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name or relative resource id of the table to manage IAM policies for.
         #[builder(into)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTableIamPolicyResult {

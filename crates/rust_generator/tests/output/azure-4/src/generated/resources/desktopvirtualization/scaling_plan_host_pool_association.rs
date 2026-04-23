@@ -102,13 +102,13 @@ pub mod scaling_plan_host_pool_association {
     pub struct ScalingPlanHostPoolAssociationArgs {
         /// Should the Scaling Plan be enabled on this Host Pool.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The resource ID for the Virtual Desktop Host Pool. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub host_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The resource ID for the Virtual Desktop Scaling Plan. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub scaling_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scaling_plan_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ScalingPlanHostPoolAssociationResult {

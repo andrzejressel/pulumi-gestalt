@@ -51,58 +51,58 @@ pub mod receipt_rule {
     pub struct ReceiptRuleArgs {
         /// A list of Add Header Action blocks. Documented below.
         #[builder(into, default)]
-        pub add_header_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub add_header_actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ses::ReceiptRuleAddHeaderAction>>,
         >,
         /// The name of the rule to place this rule after
         #[builder(into, default)]
-        pub after: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub after: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Bounce Action blocks. Documented below.
         #[builder(into, default)]
-        pub bounce_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub bounce_actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ses::ReceiptRuleBounceAction>>,
         >,
         /// If true, the rule will be enabled
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of Lambda Action blocks. Documented below.
         #[builder(into, default)]
-        pub lambda_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub lambda_actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ses::ReceiptRuleLambdaAction>>,
         >,
         /// The name of the rule
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of email addresses
         #[builder(into, default)]
-        pub recipients: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub recipients: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the rule set
         #[builder(into)]
-        pub rule_set_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_set_name: pulumi_gestalt_rust::Input<String>,
         /// A list of S3 Action blocks. Documented below.
         #[builder(into, default)]
-        pub s3_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub s3_actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ses::ReceiptRuleS3Action>>,
         >,
         /// If true, incoming emails will be scanned for spam and viruses
         #[builder(into, default)]
-        pub scan_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub scan_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of SNS Action blocks. Documented below.
         #[builder(into, default)]
-        pub sns_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub sns_actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ses::ReceiptRuleSnsAction>>,
         >,
         /// A list of Stop Action blocks. Documented below.
         #[builder(into, default)]
-        pub stop_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub stop_actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ses::ReceiptRuleStopAction>>,
         >,
         /// `Require` or `Optional`
         #[builder(into, default)]
-        pub tls_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tls_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of WorkMail Action blocks. Documented below.
         #[builder(into, default)]
-        pub workmail_actions: pulumi_gestalt_rust::InputOrOutput<
+        pub workmail_actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ses::ReceiptRuleWorkmailAction>>,
         >,
     }

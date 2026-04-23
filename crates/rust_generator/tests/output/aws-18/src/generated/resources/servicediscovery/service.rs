@@ -91,39 +91,39 @@ pub mod service {
     pub struct ServiceArgs {
         /// The description of the service.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A complex type that contains information about the resource record sets that you want Amazon Route 53 to create when you register an instance. See `dns_config` Block for details.
         #[builder(into, default)]
-        pub dns_config: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicediscovery::ServiceDnsConfig>,
         >,
         /// A boolean that indicates all instances should be deleted from the service so that the service can be destroyed without error. These instances are not recoverable. Defaults to `false`.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A complex type that contains settings for an optional health check. Only for Public DNS namespaces. See `health_check_config` Block for details.
         #[builder(into, default)]
-        pub health_check_config: pulumi_gestalt_rust::InputOrOutput<
+        pub health_check_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicediscovery::ServiceHealthCheckConfig>,
         >,
         /// A complex type that contains settings for ECS managed health checks. See `health_check_custom_config` Block for details.
         #[builder(into, default)]
-        pub health_check_custom_config: pulumi_gestalt_rust::InputOrOutput<
+        pub health_check_custom_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicediscovery::ServiceHealthCheckCustomConfig>,
         >,
         /// The name of the service.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the namespace that you want to use to create the service.
         #[builder(into, default)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the service. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// If present, specifies that the service instances are only discoverable using the `DiscoverInstances` API operation. No DNS records is registered for the service instances. The only valid value is `HTTP`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ServiceResult {

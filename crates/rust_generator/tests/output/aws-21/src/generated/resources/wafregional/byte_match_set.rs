@@ -44,12 +44,12 @@ pub mod byte_match_set {
     pub struct ByteMatchSetArgs {
         /// Settings for the ByteMatchSet, such as the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests. ByteMatchTuple documented below.
         #[builder(into, default)]
-        pub byte_match_tuples: pulumi_gestalt_rust::InputOrOutput<
+        pub byte_match_tuples: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafregional::ByteMatchSetByteMatchTuple>>,
         >,
         /// The name or description of the ByteMatchSet.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ByteMatchSetResult {

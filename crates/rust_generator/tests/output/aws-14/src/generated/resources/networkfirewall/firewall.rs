@@ -36,42 +36,40 @@ pub mod firewall {
     pub struct FirewallArgs {
         /// A flag indicating whether the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. Defaults to `false`.
         #[builder(into, default)]
-        pub delete_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub delete_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A friendly description of the firewall.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// KMS encryption configuration settings. See Encryption Configuration below for details.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkfirewall::FirewallEncryptionConfiguration>,
         >,
         /// The Amazon Resource Name (ARN) of the VPC Firewall policy.
         #[builder(into)]
-        pub firewall_policy_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_policy_arn: pulumi_gestalt_rust::Input<String>,
         /// A flag indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. Defaults to `false`.
         #[builder(into, default)]
-        pub firewall_policy_change_protection: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub firewall_policy_change_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A friendly name of the firewall.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A flag indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. Defaults to `false`.
         #[builder(into, default)]
-        pub subnet_change_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub subnet_change_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Set of configuration blocks describing the public subnets. Each subnet must belong to a different Availability Zone in the VPC. AWS Network Firewall creates a firewall endpoint in each subnet. See Subnet Mapping below for details.
         #[builder(into)]
-        pub subnet_mappings: pulumi_gestalt_rust::InputOrOutput<
+        pub subnet_mappings: pulumi_gestalt_rust::Input<
             Vec<super::super::types::networkfirewall::FirewallSubnetMapping>,
         >,
         /// Map of resource tags to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The unique identifier of the VPC where AWS Network Firewall should create the firewall.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FirewallResult {

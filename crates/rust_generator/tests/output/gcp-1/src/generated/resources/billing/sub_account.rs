@@ -43,14 +43,14 @@ pub mod sub_account {
         /// will be changed to "Destroyed" along with a timestamp.  If set to "" this will not occur.
         /// Default is "".
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the billing account.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the master billing account that the subaccount
         /// will be created under in the form `{billing_account_id}` or `billingAccounts/{billing_account_id}`.
         #[builder(into)]
-        pub master_billing_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub master_billing_account: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubAccountResult {

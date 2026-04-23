@@ -97,33 +97,33 @@ pub mod project {
         /// that, for quota purposes, you will still need to have 1 network slot available to create the project successfully, even
         /// if you set auto_create_network to false, since the network will exist momentarily.
         #[builder(into, default)]
-        pub auto_create_network: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_create_network: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The alphanumeric ID of the billing account this project
         /// belongs to. The user or service account performing this operation with the provider
         /// must have at mininum Billing Account User privileges (`roles/billing.user`) on the billing account.
         /// See [Google Cloud Billing API Access Control](https://cloud.google.com/billing/docs/how-to/billing-access)
         /// for more details.
         #[builder(into, default)]
-        pub billing_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub billing_account: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The numeric ID of the folder this project should be
         /// created under. Only one of `org_id` or `folder_id` may be
         /// specified. If the `folder_id` is specified, then the project is
         /// created under the specified folder. Changing this forces the
         /// project to be migrated to the newly specified folder.
         #[builder(into, default)]
-        pub folder_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value label pairs to assign to the project.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The display name of the project.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The numeric ID of the organization this project belongs to.
         /// Changing this forces a new project to be created.  Only one of
         /// `org_id` or `folder_id` may be specified. If the `org_id` is
@@ -131,13 +131,13 @@ pub mod project {
         /// this forces the project to be migrated to the newly specified
         /// organization.
         #[builder(into, default)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub org_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project ID. Changing this forces a new project to be created.
         #[builder(into, default)]
-        pub project_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored when empty. The field is immutable and causes resource replacement when mutated. This field is only set at create time and modifying this field after creation will trigger recreation. To apply tags to an existing resource, see the `gcp.tags.TagValue` resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

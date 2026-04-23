@@ -91,10 +91,10 @@ pub mod configuration_policy_association {
     pub struct ConfigurationPolicyAssociationArgs {
         /// The universally unique identifier (UUID) of the configuration policy.
         #[builder(into)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_id: pulumi_gestalt_rust::Input<String>,
         /// The identifier of the target account, organizational unit, or the root to associate with the specified configuration.
         #[builder(into)]
-        pub target_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConfigurationPolicyAssociationResult {

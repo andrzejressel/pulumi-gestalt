@@ -53,19 +53,19 @@ pub mod local_rulestack_prefix_list {
     pub struct LocalRulestackPrefixListArgs {
         /// The comment for Audit purposes.
         #[builder(into, default)]
-        pub audit_comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub audit_comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description for the Prefix List.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Palo Alto Local Rulestack Prefix List.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Prefixes.
         #[builder(into)]
-        pub prefix_lists: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub prefix_lists: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ID of the Local Rulestack on which to create this Prefix List. Changing this forces a new Palo Alto Local Rulestack Prefix List to be created.
         #[builder(into)]
-        pub rulestack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rulestack_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LocalRulestackPrefixListResult {

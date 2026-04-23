@@ -19,10 +19,10 @@ pub mod user_policies_exclusive {
     pub struct UserPoliciesExclusiveArgs {
         /// A list of inline policy names to be assigned to the user. Policies attached to this user but not configured in this argument will be removed.
         #[builder(into)]
-        pub policy_names: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub policy_names: pulumi_gestalt_rust::Input<Vec<String>>,
         /// IAM user name.
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserPoliciesExclusiveResult {

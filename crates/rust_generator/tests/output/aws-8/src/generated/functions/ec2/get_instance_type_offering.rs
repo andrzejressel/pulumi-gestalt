@@ -10,17 +10,15 @@ pub mod get_instance_type_offering {
     pub struct GetInstanceTypeOfferingArgs {
         /// One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html) for supported filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetInstanceTypeOfferingFilter>>,
         >,
         /// Location type. Defaults to `region`. Valid values: `availability-zone`, `availability-zone-id`, and `region`.
         #[builder(into, default)]
-        pub location_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred EC2 Instance Types. The first match in this list will be returned. If no preferred matches are found and the original search returned more than one result, an error is returned.
         #[builder(into, default)]
-        pub preferred_instance_types: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub preferred_instance_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceTypeOfferingResult {

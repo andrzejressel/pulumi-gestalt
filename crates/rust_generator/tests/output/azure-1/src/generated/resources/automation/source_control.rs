@@ -63,36 +63,36 @@ pub mod source_control {
     pub struct SourceControlArgs {
         /// Whether auto async the Source Control.
         #[builder(into, default)]
-        pub automatic_sync: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub automatic_sync: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of Automation Account to manage this Source Control. Changing this forces a new Automation Source Control to be created.
         #[builder(into)]
-        pub automation_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_id: pulumi_gestalt_rust::Input<String>,
         /// Specify the repo branch of the Source Control. Empty value is valid only for `VsoTfvc`.
         #[builder(into, default)]
-        pub branch: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub branch: pulumi_gestalt_rust::Input<Option<String>>,
         /// A short description of the Source Control.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The folder path of the source control. This Path must be relative.
         #[builder(into)]
-        pub folder_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder_path: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Automation Source Control. Changing this forces a new Automation Source Control to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether auto publish the Source Control. Defaults to `true`.
         #[builder(into, default)]
-        pub publish_runbook_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publish_runbook_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Repository URL of the source control.
         #[builder(into)]
-        pub repository_url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_url: pulumi_gestalt_rust::Input<String>,
         /// A `security` block as defined below.
         #[builder(into)]
-        pub security: pulumi_gestalt_rust::InputOrOutput<
+        pub security: pulumi_gestalt_rust::Input<
             super::super::types::automation::SourceControlSecurity,
         >,
         /// The source type of Source Control, possible vaules are `VsoGit`, `VsoTfvc` and `GitHub`, and the value is case sensitive.
         #[builder(into)]
-        pub source_control_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_control_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SourceControlResult {

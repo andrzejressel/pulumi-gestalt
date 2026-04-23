@@ -52,10 +52,10 @@ pub mod snapshot_schedule_association {
     pub struct SnapshotScheduleAssociationArgs {
         /// The cluster identifier.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The snapshot schedule identifier.
         #[builder(into)]
-        pub schedule_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schedule_identifier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SnapshotScheduleAssociationResult {

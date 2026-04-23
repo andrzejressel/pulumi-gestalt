@@ -10,10 +10,10 @@ pub mod get_disk_encryption_set {
     pub struct GetDiskEncryptionSetArgs {
         /// The name of the existing Disk Encryption Set.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Disk Encryption Set exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDiskEncryptionSetResult {

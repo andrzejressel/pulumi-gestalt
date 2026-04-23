@@ -26,51 +26,51 @@ pub mod logpush_job {
     pub struct LogpushJobArgs {
         /// The account identifier to target for the resource. Must provide only one of `account_id`, `zone_id`.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The kind of the dataset to use with the logpush job. Available values: `access_requests`, `casb_findings`, `firewall_events`, `http_requests`, `spectrum_events`, `nel_reports`, `audit_logs`, `gateway_dns`, `gateway_http`, `gateway_network`, `dns_logs`, `network_analytics_logs`, `workers_trace_events`, `device_posture_results`, `zero_trust_network_sessions`, `magic_ids_detections`, `page_shield_events`.
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset: pulumi_gestalt_rust::Input<String>,
         /// Uniquely identifies a resource (such as an s3 bucket) where data will be pushed. Additional configuration parameters supported by the destination may be included. See [Logpush destination documentation](https://developers.cloudflare.com/logs/reference/logpush-api-configuration#destination).
         #[builder(into)]
-        pub destination_conf: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_conf: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable the job.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Use filters to select the events to include and/or remove from your logs. For more information, refer to [Filters](https://developers.cloudflare.com/logs/reference/logpush-api-configuration/filters/).
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// A higher frequency will result in logs being pushed on faster with smaller files. `low` frequency will push logs less often with larger files. Available values: `high`, `low`. Defaults to `high`.
         #[builder(into, default)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub frequency: pulumi_gestalt_rust::Input<Option<String>>,
         /// The kind of logpush job to create. Available values: `edge`, `instant-logs`, `""`.
         #[builder(into, default)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration string for the Logshare API. It specifies things like requested fields and timestamp formats. See [Logpush options documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#options).
         #[builder(into, default)]
-        pub logpull_options: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub logpull_options: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum uncompressed file size of a batch of logs. Value must be between 5MB and 1GB.
         #[builder(into, default)]
-        pub max_upload_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_upload_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum interval in seconds for log batches. Value must be between 30 and 300.
         #[builder(into, default)]
-        pub max_upload_interval_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_upload_interval_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum number of log lines per batch. Value must be between 1000 and 1,000,000.
         #[builder(into, default)]
-        pub max_upload_records: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_upload_records: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the logpush job to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Structured replacement for logpull*options. When including this field, the logpull*option field will be ignored.
         #[builder(into, default)]
-        pub output_options: pulumi_gestalt_rust::InputOrOutput<
+        pub output_options: pulumi_gestalt_rust::Input<
             Option<super::types::LogpushJobOutputOptions>,
         >,
         /// Ownership challenge token to prove destination ownership, required when destination is Amazon S3, Google Cloud Storage, Microsoft Azure or Sumo Logic. See [Developer documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#usage).
         #[builder(into, default)]
-        pub ownership_challenge: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ownership_challenge: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. Must provide only one of `account_id`, `zone_id`.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LogpushJobResult {

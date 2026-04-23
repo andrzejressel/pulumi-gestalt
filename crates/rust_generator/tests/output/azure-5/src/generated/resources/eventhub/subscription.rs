@@ -55,61 +55,59 @@ pub mod subscription {
     pub struct SubscriptionArgs {
         /// The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `PT5M`. Defaults to `P10675199DT2H48M5.4775807S`.
         #[builder(into, default)]
-        pub auto_delete_on_idle: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_delete_on_idle: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean flag which controls whether the Subscription supports batched operations.
         #[builder(into, default)]
-        pub batched_operations_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub batched_operations_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `client_scoped_subscription` block as defined below.
         #[builder(into, default)]
-        pub client_scoped_subscription: pulumi_gestalt_rust::InputOrOutput<
+        pub client_scoped_subscription: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::SubscriptionClientScopedSubscription>,
         >,
         /// whether the subscription is scoped to a client id. Defaults to `false`.
         ///
         /// > **NOTE:** Client Scoped Subscription can only be used for JMS subscription (Java Message Service).
         #[builder(into, default)]
-        pub client_scoped_subscription_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub client_scoped_subscription_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean flag which controls whether the Subscription has dead letter support on filter evaluation exceptions. Defaults to `true`.
         #[builder(into, default)]
-        pub dead_lettering_on_filter_evaluation_error: pulumi_gestalt_rust::InputOrOutput<
+        pub dead_lettering_on_filter_evaluation_error: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Boolean flag which controls whether the Subscription has dead letter support when a message expires.
         #[builder(into, default)]
-        pub dead_lettering_on_message_expiration: pulumi_gestalt_rust::InputOrOutput<
+        pub dead_lettering_on_message_expiration: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the value used when TimeToLive is not set on a message itself. Defaults to `P10675199DT2H48M5.4775807S`.
         #[builder(into, default)]
-        pub default_message_ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_message_ttl: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a Queue or Topic to automatically forward Dead Letter messages to.
         #[builder(into, default)]
-        pub forward_dead_lettered_messages_to: pulumi_gestalt_rust::InputOrOutput<
+        pub forward_dead_lettered_messages_to: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name of a Queue or Topic to automatically forward messages to.
         #[builder(into, default)]
-        pub forward_to: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub forward_to: pulumi_gestalt_rust::Input<Option<String>>,
         /// The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P0DT0H1M0S` . The maximum value is `5` minutes or `P0DT0H5M0S` . Defaults to `PT1M`.
         #[builder(into, default)]
-        pub lock_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lock_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of deliveries.
         #[builder(into)]
-        pub max_delivery_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub max_delivery_count: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean flag which controls whether this Subscription supports the concept of a session. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub requires_session: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub requires_session: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The status of the Subscription. Possible values are `Active`,`ReceiveDisabled`, or `Disabled`. Defaults to `Active`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub topic_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub topic_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionResult {

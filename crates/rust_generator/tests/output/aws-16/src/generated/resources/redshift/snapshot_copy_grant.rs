@@ -48,13 +48,13 @@ pub mod snapshot_copy_grant {
     pub struct SnapshotCopyGrantArgs {
         /// The unique identifier for the customer master key (CMK) that the grant applies to. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you must use the key ARN. If not specified, the default key is used.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A friendly name for identifying the grant.
         #[builder(into)]
-        pub snapshot_copy_grant_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub snapshot_copy_grant_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -78,13 +78,13 @@ pub mod service_connection_policy {
     pub struct ServiceConnectionPolicyArgs {
         /// Free-text description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-defined labels.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the ServiceConnectionPolicy.
@@ -92,21 +92,21 @@ pub mod service_connection_policy {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of a ServiceConnectionPolicy. Format: projects/{project}/locations/{location}/serviceConnectionPolicies/{service_connection_policy} See: https://google.aip.dev/122#fields-representing-resource-names
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource path of the consumer network. Example: - projects/{projectNumOrId}/global/networks/{resourceId}.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration used for Private Service Connect connections. Used when Infrastructure is PSC.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub psc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub psc_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkconnectivity::ServiceConnectionPolicyPscConfig,
             >,
@@ -114,7 +114,7 @@ pub mod service_connection_policy {
         /// The service class identifier for which this ServiceConnectionPolicy is for. The service class identifier is a unique, symbolic representation of a ServiceClass.
         /// It is provided by the Service Producer. Google services have a prefix of gcp. For example, gcp-cloud-sql. 3rd party services do not. For example, test-service-a3dfcx.
         #[builder(into)]
-        pub service_class: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_class: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceConnectionPolicyResult {

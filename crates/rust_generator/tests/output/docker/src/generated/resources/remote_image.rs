@@ -79,27 +79,25 @@ pub mod remote_image {
     pub struct RemoteImageArgs {
         /// Configuration to build an image. Please see [docker build command reference](https://docs.docker.com/engine/reference/commandline/build/#options) too.
         #[builder(into, default)]
-        pub build: pulumi_gestalt_rust::InputOrOutput<
-            Option<super::types::RemoteImageBuild>,
-        >,
+        pub build: pulumi_gestalt_rust::Input<Option<super::types::RemoteImageBuild>>,
         /// Always remove intermediate containers
         #[builder(into, default)]
-        pub force_remove: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_remove: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
         #[builder(into, default)]
-        pub keep_locally: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub keep_locally: pulumi_gestalt_rust::Input<Option<bool>>,
         /// type of ulimit, e.g. `nofile`
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Set platform if server is multi-platform capable
         #[builder(into, default)]
-        pub platform: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of values which cause an image pull when changed. This is used to store the image digest from the registry when using the docker*registry*image.
         #[builder(into, default)]
-        pub pull_triggers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub pull_triggers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of arbitrary strings that, when changed, will force the `docker.RemoteImage` resource to be replaced. This can be used to rebuild an image when contents of source code folders change
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

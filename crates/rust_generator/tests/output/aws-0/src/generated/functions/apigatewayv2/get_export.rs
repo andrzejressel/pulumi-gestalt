@@ -10,22 +10,22 @@ pub mod get_export {
     pub struct GetExportArgs {
         /// API identifier.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// Version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is `1.0`.
         #[builder(into, default)]
-        pub export_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub export_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to include API Gateway extensions in the exported API definition. API Gateway extensions are included by default.
         #[builder(into, default)]
-        pub include_extensions: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_extensions: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Output type of the exported definition file. Valid values are `JSON` and `YAML`.
         #[builder(into)]
-        pub output_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub output_type: pulumi_gestalt_rust::Input<String>,
         /// Version of the API specification to use. `OAS30`, for OpenAPI 3.0, is the only supported value.
         #[builder(into)]
-        pub specification: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub specification: pulumi_gestalt_rust::Input<String>,
         /// Name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.
         #[builder(into, default)]
-        pub stage_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stage_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetExportResult {

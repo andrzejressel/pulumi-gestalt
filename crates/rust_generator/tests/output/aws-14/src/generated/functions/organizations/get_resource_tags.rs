@@ -10,10 +10,10 @@ pub mod get_resource_tags {
     pub struct GetResourceTagsArgs {
         /// ID of the resource with the tags to list. See details below.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// Map of key=value pairs for each tag set on the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

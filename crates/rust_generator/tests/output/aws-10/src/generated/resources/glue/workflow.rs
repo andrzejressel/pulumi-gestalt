@@ -51,21 +51,21 @@ pub mod workflow {
     pub struct WorkflowArgs {
         /// A map of default run properties for this workflow. These properties are passed to all jobs associated to the workflow.
         #[builder(into, default)]
-        pub default_run_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub default_run_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Description of the workflow.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Prevents exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.
         #[builder(into, default)]
-        pub max_concurrent_runs: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_concurrent_runs: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name you assign to this workflow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

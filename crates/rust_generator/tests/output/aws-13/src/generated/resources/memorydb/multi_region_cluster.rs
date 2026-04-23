@@ -52,43 +52,43 @@ pub mod multi_region_cluster {
     pub struct MultiRegionClusterArgs {
         /// description for the multi-region cluster.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the engine to be used for the multi-region cluster. Valid values are `redis` and `valkey`.
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version of the engine to be used for the multi-region cluster. Downgrades are not supported.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A suffix to be added to the multi-region cluster name. An AWS generated prefix is automatically applied to the multi-region cluster name when it is created.
         #[builder(into)]
-        pub multi_region_cluster_name_suffix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub multi_region_cluster_name_suffix: pulumi_gestalt_rust::Input<String>,
         /// The name of the multi-region parameter group to be associated with the cluster.
         #[builder(into, default)]
-        pub multi_region_parameter_group_name: pulumi_gestalt_rust::InputOrOutput<
+        pub multi_region_parameter_group_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The node type to be used for the multi-region cluster.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub node_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_type: pulumi_gestalt_rust::Input<String>,
         /// The number of shards for the multi-region cluster.
         #[builder(into, default)]
-        pub num_shards: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub num_shards: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::memorydb::MultiRegionClusterTimeouts>,
         >,
         /// A flag to enable in-transit encryption on the cluster.
         #[builder(into, default)]
-        pub tls_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub update_strategy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub update_strategy: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MultiRegionClusterResult {

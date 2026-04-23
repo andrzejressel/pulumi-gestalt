@@ -10,10 +10,10 @@ pub mod get_route_calculator {
     pub struct GetRouteCalculatorArgs {
         /// Name of the route calculator resource.
         #[builder(into)]
-        pub calculator_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub calculator_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags for the route calculator.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

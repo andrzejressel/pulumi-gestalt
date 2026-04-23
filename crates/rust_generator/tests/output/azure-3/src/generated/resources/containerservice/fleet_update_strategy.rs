@@ -60,13 +60,13 @@ pub mod fleet_update_strategy {
     pub struct FleetUpdateStrategyArgs {
         /// The ID of the Fleet Manager. Changing this forces a new Kubernetes Fleet Update Strategy to be created.
         #[builder(into)]
-        pub kubernetes_fleet_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_fleet_manager_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Kubernetes Fleet Update Strategy. Changing this forces a new Kubernetes Fleet Update Strategy to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `stage` blocks as defined below.
         #[builder(into)]
-        pub stages: pulumi_gestalt_rust::InputOrOutput<
+        pub stages: pulumi_gestalt_rust::Input<
             Vec<super::super::types::containerservice::FleetUpdateStrategyStage>,
         >,
     }

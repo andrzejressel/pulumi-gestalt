@@ -45,70 +45,70 @@ pub mod canary {
     pub struct CanaryArgs {
         /// configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. See Artifact Config.
         #[builder(into, default)]
-        pub artifact_config: pulumi_gestalt_rust::InputOrOutput<
+        pub artifact_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::synthetics::CanaryArtifactConfig>,
         >,
         /// Location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary.
         #[builder(into)]
-        pub artifact_s3_location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub artifact_s3_location: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether to also delete the Lambda functions and layers used by this canary. The default is `false`.
         #[builder(into, default)]
-        pub delete_lambda: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub delete_lambda: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ARN of the IAM role to be used to run the canary. see [AWS Docs](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html#API_CreateCanary_RequestSyntax) for permissions needs for IAM Role.
         #[builder(into)]
-        pub execution_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub execution_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
         #[builder(into, default)]
-        pub failure_retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub failure_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Entry point to use for the source code when running the canary. This value must end with the string `.handler` .
         #[builder(into)]
-        pub handler: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub handler: pulumi_gestalt_rust::Input<String>,
         /// Name for this canary. Has a maximum length of 21 characters. Valid characters are lowercase alphanumeric, hyphen, or underscore.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for individual canary runs. Detailed below.
         #[builder(into, default)]
-        pub run_config: pulumi_gestalt_rust::InputOrOutput<
+        pub run_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::synthetics::CanaryRunConfig>,
         >,
         /// Runtime version to use for the canary. Versions change often so consult the [Amazon CloudWatch documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html) for the latest valid versions. Values include `syn-python-selenium-1.0`, `syn-nodejs-puppeteer-3.0`, `syn-nodejs-2.2`, `syn-nodejs-2.1`, `syn-nodejs-2.0`, and `syn-1.0`.
         #[builder(into)]
-        pub runtime_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub runtime_version: pulumi_gestalt_rust::Input<String>,
         /// Full bucket name which is used if your canary script is located in S3. The bucket must already exist. **Conflicts with `zip_file`.**
         #[builder(into, default)]
-        pub s3_bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// S3 key of your script. **Conflicts with `zip_file`.**
         #[builder(into, default)]
-        pub s3_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// S3 version ID of your script. **Conflicts with `zip_file`.**
         #[builder(into, default)]
-        pub s3_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block providing how often the canary is to run and when these test runs are to stop. Detailed below.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             super::super::types::synthetics::CanarySchedule,
         >,
         /// Whether to run or stop the canary.
         #[builder(into, default)]
-        pub start_canary: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_canary: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
         #[builder(into, default)]
-        pub success_retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub success_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::synthetics::CanaryVpcConfig>,
         >,
         /// ZIP file that contains the script, if you input your canary script directly into the canary instead of referring to an S3 location. It can be up to 225KB. **Conflicts with `s3_bucket`, `s3_key`, and `s3_version`.**
         #[builder(into, default)]
-        pub zip_file: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zip_file: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CanaryResult {

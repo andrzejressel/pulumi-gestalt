@@ -65,22 +65,22 @@ pub mod alert_rule_anomaly_duplicate {
     pub struct AlertRuleAnomalyDuplicateArgs {
         /// The ID of the built-in Anomaly Alert Rule. Changing this forces a new Duplicated Anomaly Alert Rule to be created.
         #[builder(into)]
-        pub built_in_rule_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub built_in_rule_id: pulumi_gestalt_rust::Input<String>,
         /// The Display Name of the built-in Anomaly Alert Rule.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Should the Duplicated Anomaly Alert Rule be enabled?
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The ID of the Log Analytics Workspace. Changing this forces a new Duplicated Anomaly Alert Rule to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// mode of the Duplicated Anomaly Alert Rule. Possible Values are `Production` and `Flighting`.
         #[builder(into)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mode: pulumi_gestalt_rust::Input<String>,
         /// A list of `multi_select_observation` blocks as defined below.
         #[builder(into, default)]
-        pub multi_select_observations: pulumi_gestalt_rust::InputOrOutput<
+        pub multi_select_observations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::AlertRuleAnomalyDuplicateMultiSelectObservation,
@@ -89,7 +89,7 @@ pub mod alert_rule_anomaly_duplicate {
         >,
         /// A list of `prioritized_exclude_observation` blocks as defined below.
         #[builder(into, default)]
-        pub prioritized_exclude_observations: pulumi_gestalt_rust::InputOrOutput<
+        pub prioritized_exclude_observations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::AlertRuleAnomalyDuplicatePrioritizedExcludeObservation,
@@ -98,7 +98,7 @@ pub mod alert_rule_anomaly_duplicate {
         >,
         /// A list of `single_select_observation` blocks as defined below.
         #[builder(into, default)]
-        pub single_select_observations: pulumi_gestalt_rust::InputOrOutput<
+        pub single_select_observations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::AlertRuleAnomalyDuplicateSingleSelectObservation,
@@ -109,7 +109,7 @@ pub mod alert_rule_anomaly_duplicate {
         ///
         /// > **NOTE:** un-specified `multi_select_observation`, `single_select_observation`, `prioritized_exclude_observation` and `threshold_observation` will be inherited from the built-in Anomaly Alert Rule.
         #[builder(into, default)]
-        pub threshold_observations: pulumi_gestalt_rust::InputOrOutput<
+        pub threshold_observations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::sentinel::AlertRuleAnomalyDuplicateThresholdObservation,

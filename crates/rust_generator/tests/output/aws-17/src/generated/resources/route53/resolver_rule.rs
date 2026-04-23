@@ -72,26 +72,26 @@ pub mod resolver_rule {
     pub struct ResolverRuleArgs {
         /// DNS queries for this domain name are forwarded to the IP addresses that are specified using `target_ip`.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify using `target_ip`.
         /// This argument should only be specified for `FORWARD` type rules.
         #[builder(into, default)]
-        pub resolver_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resolver_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rule type. Valid values are `FORWARD`, `SYSTEM` and `RECURSIVE`.
         #[builder(into)]
-        pub rule_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_type: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
         /// This argument should only be specified for `FORWARD` type rules.
         #[builder(into, default)]
-        pub target_ips: pulumi_gestalt_rust::InputOrOutput<
+        pub target_ips: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::route53::ResolverRuleTargetIp>>,
         >,
     }

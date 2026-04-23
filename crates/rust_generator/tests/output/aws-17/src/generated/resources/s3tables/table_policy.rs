@@ -64,18 +64,18 @@ pub mod table_policy {
         /// Must be between 1 and 255 characters in length.
         /// Can consist of lowercase letters, numbers, and underscores, and must begin and end with a lowercase letter or number.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the namespace for this table.
         /// Must be between 1 and 255 characters in length.
         /// Can consist of lowercase letters, numbers, and underscores, and must begin and end with a lowercase letter or number.
         #[builder(into)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace: pulumi_gestalt_rust::Input<String>,
         /// Amazon Web Services resource-based policy document in JSON format.
         #[builder(into)]
-        pub resource_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_policy: pulumi_gestalt_rust::Input<String>,
         /// ARN referencing the Table Bucket that contains this Namespace.
         #[builder(into)]
-        pub table_bucket_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_bucket_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TablePolicyResult {

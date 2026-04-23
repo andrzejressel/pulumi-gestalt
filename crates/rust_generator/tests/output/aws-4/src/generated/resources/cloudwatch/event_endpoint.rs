@@ -68,26 +68,26 @@ pub mod event_endpoint {
     pub struct EventEndpointArgs {
         /// A description of the global endpoint.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The event buses to use. The names of the event buses must be identical in each Region. Exactly two event buses are required. Documented below.
         #[builder(into)]
-        pub event_buses: pulumi_gestalt_rust::InputOrOutput<
+        pub event_buses: pulumi_gestalt_rust::Input<
             Vec<super::super::types::cloudwatch::EventEndpointEventBus>,
         >,
         /// The name of the global endpoint.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters used for replication. Documented below.
         #[builder(into, default)]
-        pub replication_config: pulumi_gestalt_rust::InputOrOutput<
+        pub replication_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventEndpointReplicationConfig>,
         >,
         /// The ARN of the IAM role used for replication between event buses.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters used for routing, including the health check and secondary Region. Documented below.
         #[builder(into)]
-        pub routing_config: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_config: pulumi_gestalt_rust::Input<
             super::super::types::cloudwatch::EventEndpointRoutingConfig,
         >,
     }

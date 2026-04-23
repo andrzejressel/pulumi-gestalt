@@ -67,19 +67,19 @@ pub mod subnet {
     pub struct SubnetArgs {
         /// The IP address range of the subnet in CIDR format.
         #[builder(into)]
-        pub ip_cidr_range: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip_cidr_range: pulumi_gestalt_rust::Input<String>,
         /// The ID of the subnet. For userDefined subnets, this name should be in the format of "service-n",
         /// where n ranges from 1 to 5.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of the private cloud to create a new subnet in.
         /// Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
         /// For example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubnetResult {

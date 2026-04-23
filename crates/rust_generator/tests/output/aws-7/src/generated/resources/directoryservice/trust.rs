@@ -96,40 +96,40 @@ pub mod trust {
         /// Set of IPv4 addresses for the DNS server associated with the remote Directory.
         /// Can contain between 1 and 4 values.
         #[builder(into, default)]
-        pub conditional_forwarder_ip_addrs: pulumi_gestalt_rust::InputOrOutput<
+        pub conditional_forwarder_ip_addrs: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Whether to delete the conditional forwarder when deleting the Trust relationship.
         #[builder(into, default)]
-        pub delete_associated_conditional_forwarder: pulumi_gestalt_rust::InputOrOutput<
+        pub delete_associated_conditional_forwarder: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// ID of the Directory.
         #[builder(into)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// Fully qualified domain name of the remote Directory.
         #[builder(into)]
-        pub remote_domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub remote_domain_name: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable selective authentication.
         /// Valid values are `Enabled` and `Disabled`.
         /// Default value is `Disabled`.
         #[builder(into, default)]
-        pub selective_auth: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub selective_auth: pulumi_gestalt_rust::Input<Option<String>>,
         /// The direction of the Trust relationship.
         /// Valid values are `One-Way: Outgoing`, `One-Way: Incoming`, and `Two-Way`.
         #[builder(into)]
-        pub trust_direction: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trust_direction: pulumi_gestalt_rust::Input<String>,
         /// Password for the Trust.
         /// Does not need to match the passwords for either Directory.
         /// Can contain upper- and lower-case letters, numbers, and punctuation characters.
         /// May be up to 128 characters long.
         #[builder(into)]
-        pub trust_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trust_password: pulumi_gestalt_rust::Input<String>,
         /// Type of the Trust relationship.
         /// Valid values are `Forest` and `External`.
         /// Default value is `Forest`.
         #[builder(into, default)]
-        pub trust_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub trust_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TrustResult {

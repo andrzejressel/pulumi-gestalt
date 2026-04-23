@@ -80,19 +80,19 @@ pub mod membership_rbac_role_binding {
     pub struct MembershipRbacRoleBindingArgs {
         /// Location of the Membership
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Id of the membership
         #[builder(into)]
-        pub membership_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub membership_id: pulumi_gestalt_rust::Input<String>,
         /// The client-provided identifier of the RBAC Role Binding.
         #[builder(into)]
-        pub membership_rbac_role_binding_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub membership_rbac_role_binding_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Role to bind to the principal.
         /// Structure is documented below.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<
+        pub role: pulumi_gestalt_rust::Input<
             super::super::types::gkehub::MembershipRbacRoleBindingRole,
         >,
         /// Principal that is be authorized in the cluster (at least of one the oneof
@@ -100,7 +100,7 @@ pub mod membership_rbac_role_binding {
         /// user is the name of the user as seen by the kubernetes cluster, example
         /// "alice" or "alice@domain.tld"
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MembershipRbacRoleBindingResult {

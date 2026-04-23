@@ -10,11 +10,11 @@ pub mod get_regions {
     pub struct GetRegionsArgs {
         /// Project from which to list available regions. Defaults to project declared in the provider.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Allows to filter list of regions based on their current status. Status can be either `UP` or `DOWN`.
         /// Defaults to no filtering (all available regions - both `UP` and `DOWN`).
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegionsResult {

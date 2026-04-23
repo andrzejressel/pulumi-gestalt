@@ -57,12 +57,12 @@ pub mod iam_binding {
     #[allow(dead_code)]
     pub struct IAMBindingArgs {
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::folder::IamBindingCondition>,
         >,
         /// The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
         /// An array of identities that will be granted the privilege in the `role`.
         /// Each entry can have one of the following values:
         /// * **user:{emailid}**: An email address that is associated with a specific Google account. For example, alice@gmail.com.
@@ -71,12 +71,12 @@ pub mod iam_binding {
         /// * **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
         /// * For more details on format and restrictions see https://cloud.google.com/billing/reference/rest/v1/Policy#Binding
         #[builder(into)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub members: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The role that should be applied. Only one
         /// `gcp.folder.IAMBinding` can be used per role. Note that custom roles must be of the format
         /// `[projects|organizations]/{parent-name}/roles/{role-name}`.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IAMBindingResult {

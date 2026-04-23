@@ -1,5 +1,5 @@
 use crate::{
-    Context, CustomResourceOptions, InputOrOutput, Output, PulumiAny, RegisterResourceRequest,
+    Context, CustomResourceOptions, Input, Output, PulumiAny, RegisterResourceRequest,
     ResourceRequestObjectField,
 };
 use bon::Builder;
@@ -10,7 +10,7 @@ use bon::Builder;
 pub struct StashArgs {
     /// The value to store in stash state.
     #[builder(into)]
-    pub input: InputOrOutput<PulumiAny>,
+    pub input: Input<PulumiAny>,
 }
 
 /// Output object returned from stash creation.

@@ -70,21 +70,21 @@ pub mod domain_mapping {
         ///
         /// - - -
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Whether the domain creation should override any existing mappings for this domain.
         /// By default, overrides are rejected.
         /// Default value is `STRICT`.
         /// Possible values are: `STRICT`, `OVERRIDE`.
         #[builder(into, default)]
-        pub override_strategy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub override_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// SSL configuration for this domain. If unconfigured, this domain will not serve with SSL.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ssl_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub ssl_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appengine::DomainMappingSslSettings>,
         >,
     }

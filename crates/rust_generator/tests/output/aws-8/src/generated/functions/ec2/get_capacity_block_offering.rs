@@ -10,19 +10,19 @@ pub mod get_capacity_block_offering {
     pub struct GetCapacityBlockOfferingArgs {
         /// The amount of time of the Capacity Block reservation in hours.
         #[builder(into)]
-        pub capacity_duration_hours: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub capacity_duration_hours: pulumi_gestalt_rust::Input<i32>,
         /// The date and time at which the Capacity Block Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)
         #[builder(into, default)]
-        pub end_date_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_date_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of instances for which to reserve capacity.
         #[builder(into)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub instance_count: pulumi_gestalt_rust::Input<i32>,
         /// The instance type for which to reserve capacity.
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// The date and time at which the Capacity Block Reservation starts. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)
         #[builder(into, default)]
-        pub start_date_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_date_range: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetCapacityBlockOfferingResult {

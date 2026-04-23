@@ -10,18 +10,18 @@ pub mod get_blob {
     pub struct GetBlobArgs {
         /// A map of custom blob metadata.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the Blob.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Storage Account where the Container exists.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Storage Container where the Blob exists.
         #[builder(into)]
-        pub storage_container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBlobResult {

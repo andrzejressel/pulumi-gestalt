@@ -409,7 +409,7 @@ pub mod connection_profile {
         /// Specifies required connection parameters, and the parameters required to create an AlloyDB destination cluster.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub alloydb: pulumi_gestalt_rust::InputOrOutput<
+        pub alloydb: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::databasemigrationservice::ConnectionProfileAlloydb,
             >,
@@ -417,7 +417,7 @@ pub mod connection_profile {
         /// Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloudsql: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudsql: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::databasemigrationservice::ConnectionProfileCloudsql,
             >,
@@ -427,31 +427,31 @@ pub mod connection_profile {
         ///
         /// - - -
         #[builder(into)]
-        pub connection_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_profile_id: pulumi_gestalt_rust::Input<String>,
         /// The connection profile display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource labels for connection profile to use to annotate any related underlying resources such as Compute Engine VMs.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where the connection profile should reside.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies connection parameters required specifically for MySQL databases.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub mysql: pulumi_gestalt_rust::InputOrOutput<
+        pub mysql: pulumi_gestalt_rust::Input<
             Option<super::super::types::databasemigrationservice::ConnectionProfileMysql>,
         >,
         /// Specifies connection parameters required specifically for Oracle databases.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub oracle: pulumi_gestalt_rust::InputOrOutput<
+        pub oracle: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::databasemigrationservice::ConnectionProfileOracle,
             >,
@@ -459,7 +459,7 @@ pub mod connection_profile {
         /// Specifies connection parameters required specifically for PostgreSQL databases.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub postgresql: pulumi_gestalt_rust::InputOrOutput<
+        pub postgresql: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::databasemigrationservice::ConnectionProfilePostgresql,
             >,
@@ -467,7 +467,7 @@ pub mod connection_profile {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConnectionProfileResult {

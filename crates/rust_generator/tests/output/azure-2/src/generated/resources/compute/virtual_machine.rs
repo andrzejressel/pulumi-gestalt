@@ -100,118 +100,110 @@ pub mod virtual_machine {
     pub struct VirtualMachineArgs {
         /// An `additional_capabilities` block as defined below.
         #[builder(into, default)]
-        pub additional_capabilities: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_capabilities: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::VirtualMachineAdditionalCapabilities>,
         >,
         /// The ID of the Availability Set in which the Virtual Machine should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub availability_set_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_set_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `boot_diagnostics` block as defined below.
         #[builder(into, default)]
-        pub boot_diagnostics: pulumi_gestalt_rust::InputOrOutput<
+        pub boot_diagnostics: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::VirtualMachineBootDiagnostics>,
         >,
         /// Should the Data Disks (either the Managed Disks / VHD Blobs) be deleted when the Virtual Machine is destroyed? Defaults to `false`.
         ///
         /// > **Note:** This setting works when instance is deleted via the provider only and don't forget to delete disks manually if you deleted VM manually. It can increase spending.
         #[builder(into, default)]
-        pub delete_data_disks_on_termination: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub delete_data_disks_on_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the OS Disk (either the Managed Disk / VHD Blob) be deleted when the Virtual Machine is destroyed? Defaults to `false`.
         ///
         /// > **Note:** This setting works when instance is deleted via the provider only and don't forget to delete disks manually if you deleted VM manually. It can increase spending.
         #[builder(into, default)]
-        pub delete_os_disk_on_termination: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub delete_os_disk_on_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::VirtualMachineIdentity>,
         >,
         /// Specifies the BYOL Type for this Virtual Machine. This is only applicable to Windows Virtual Machines. Possible values are `Windows_Client` and `Windows_Server`.
         #[builder(into, default)]
-        pub license_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub license_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Azure Region where the Virtual Machine exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Virtual Machine. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Network Interface IDs which should be associated with the Virtual Machine.
         #[builder(into)]
-        pub network_interface_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub network_interface_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// An `os_profile` block as defined below. Required when `create_option` in the `storage_os_disk` block is set to `FromImage`.
         #[builder(into, default)]
-        pub os_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub os_profile: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::VirtualMachineOsProfile>,
         >,
         /// (Required, when a Linux machine) An `os_profile_linux_config` block as defined below.
         #[builder(into, default)]
-        pub os_profile_linux_config: pulumi_gestalt_rust::InputOrOutput<
+        pub os_profile_linux_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::VirtualMachineOsProfileLinuxConfig>,
         >,
         /// One or more `os_profile_secrets` blocks as defined below.
         #[builder(into, default)]
-        pub os_profile_secrets: pulumi_gestalt_rust::InputOrOutput<
+        pub os_profile_secrets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::VirtualMachineOsProfileSecret>>,
         >,
         /// (Required, when a Windows machine) An `os_profile_windows_config` block as defined below.
         #[builder(into, default)]
-        pub os_profile_windows_config: pulumi_gestalt_rust::InputOrOutput<
+        pub os_profile_windows_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::VirtualMachineOsProfileWindowsConfig>,
         >,
         /// A `plan` block as defined below.
         #[builder(into, default)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<
+        pub plan: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::VirtualMachinePlan>,
         >,
         /// The ID of the Network Interface (which must be attached to the Virtual Machine) which should be the Primary Network Interface for this Virtual Machine.
         #[builder(into, default)]
-        pub primary_network_interface_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub primary_network_interface_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Proximity Placement Group to which this Virtual Machine should be assigned. Changing this forces a new resource to be created
         #[builder(into, default)]
-        pub proximity_placement_group_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub proximity_placement_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group in which the Virtual Machine should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `storage_data_disk` blocks as defined below.
         ///
         /// > **Please Note:** Data Disks can also be attached either using this block or the `azure.compute.DataDiskAttachment` resource - but not both.
         #[builder(into, default)]
-        pub storage_data_disks: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_data_disks: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::VirtualMachineStorageDataDisk>>,
         >,
         /// A `storage_image_reference` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub storage_image_reference: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_image_reference: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::VirtualMachineStorageImageReference>,
         >,
         /// A `storage_os_disk` block as defined below.
         #[builder(into)]
-        pub storage_os_disk: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_os_disk: pulumi_gestalt_rust::Input<
             super::super::types::compute::VirtualMachineStorageOsDisk,
         >,
         /// A mapping of tags to assign to the Virtual Machine.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the [size of the Virtual Machine](https://docs.microsoft.com/azure/virtual-machines/sizes-general). See also [Azure VM Naming Conventions](https://docs.microsoft.com/azure/virtual-machines/vm-naming-conventions).
         #[builder(into)]
-        pub vm_size: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vm_size: pulumi_gestalt_rust::Input<String>,
         /// A list of a single item of the Availability Zone which the Virtual Machine should be allocated in. Changing this forces a new resource to be created.
         ///
         /// > **Please Note**: Availability Zones are [only supported in several regions at this time](https://docs.microsoft.com/azure/availability-zones/az-overview).
         ///
         /// For more information on the different example configurations, please check out the [Azure documentation](https://docs.microsoft.com/en-gb/rest/api/compute/virtualmachines/createorupdate#examples)
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VirtualMachineResult {

@@ -97,11 +97,11 @@ pub mod table {
     pub struct TableArgs {
         /// The id of the parent database.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options of a Hive table.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub hive_options: pulumi_gestalt_rust::InputOrOutput<
+        pub hive_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::biglake::TableHiveOptions>,
         >,
         /// Output only. The name of the Table. Format:
@@ -110,11 +110,11 @@ pub mod table {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The database type.
         /// Possible values are: `HIVE`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TableResult {

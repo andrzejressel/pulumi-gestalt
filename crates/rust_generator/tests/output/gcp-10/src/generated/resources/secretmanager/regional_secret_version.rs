@@ -130,23 +130,23 @@ pub mod regional_secret_version {
         /// * DISABLE
         /// * ABANDON
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The current state of the regional secret version.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If set to 'true', the secret data is expected to be base64-encoded string and would be sent as is.
         #[builder(into, default)]
-        pub is_secret_data_base64: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_secret_data_base64: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Secret Manager regional secret resource.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret: pulumi_gestalt_rust::Input<String>,
         /// The secret data. Must be no larger than 64KiB.
         /// **Note**: This property is sensitive and will not be displayed in the plan.
         #[builder(into)]
-        pub secret_data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_data: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegionalSecretVersionResult {

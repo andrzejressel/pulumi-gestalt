@@ -59,19 +59,19 @@ pub mod user {
         /// has non-provider-managed IAM access keys, login profile or MFA devices. Without `force_destroy`
         /// a user with non-provider-managed access keys and login profile will fail to be destroyed.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The user's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: `=,.@-_.`. User names are not distinguished by case. For example, you cannot create users named both "TESTUSER" and "testuser".
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Path in which to create the user.
         #[builder(into, default)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the policy that is used to set the permissions boundary for the user.
         #[builder(into, default)]
-        pub permissions_boundary: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub permissions_boundary: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of tags for the IAM user. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

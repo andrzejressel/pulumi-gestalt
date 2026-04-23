@@ -10,7 +10,7 @@ pub mod get_contacts_rotation {
     pub struct GetContactsRotationArgs {
         /// The Amazon Resource Name (ARN) of the rotation.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetContactsRotationResult {

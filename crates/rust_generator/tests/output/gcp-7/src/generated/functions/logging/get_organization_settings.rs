@@ -10,7 +10,7 @@ pub mod get_organization_settings {
     pub struct GetOrganizationSettingsArgs {
         /// The ID of the organization for which to retrieve settings.
         #[builder(into)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOrganizationSettingsResult {

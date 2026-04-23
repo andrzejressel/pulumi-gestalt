@@ -45,22 +45,22 @@ pub mod zero_trust_dex_test {
     pub struct ZeroTrustDexTestArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The configuration object which contains the details for the WARP client to conduct the test.
         #[builder(into)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<super::types::ZeroTrustDexTestData>,
+        pub data: pulumi_gestalt_rust::Input<super::types::ZeroTrustDexTestData>,
         /// Additional details about the test.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// Determines whether or not the test is active.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// How often the test will run.
         #[builder(into)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub interval: pulumi_gestalt_rust::Input<String>,
         /// The name of the Device Dex Test. Must be unique.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustDexTestResult {

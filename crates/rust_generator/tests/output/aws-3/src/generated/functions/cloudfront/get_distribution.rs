@@ -10,9 +10,9 @@ pub mod get_distribution {
     pub struct GetDistributionArgs {
         /// Identifier for the distribution. For example: `EDFDVBD632BHDS5`.
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

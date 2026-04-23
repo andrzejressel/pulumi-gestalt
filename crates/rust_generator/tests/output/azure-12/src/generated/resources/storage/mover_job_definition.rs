@@ -113,31 +113,31 @@ pub mod mover_job_definition {
     pub struct MoverJobDefinitionArgs {
         /// Specifies the name of the Storage Mover Agent to assign for new Job Runs of this Storage Mover Job Definition.
         #[builder(into, default)]
-        pub agent_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub agent_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the strategy to use for copy. Possible values are `Additive` and `Mirror`.
         #[builder(into)]
-        pub copy_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub copy_mode: pulumi_gestalt_rust::Input<String>,
         /// Specifies a description for this Storage Mover Job Definition.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Storage Mover Job Definition. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Storage Mover Source Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the sub path to use when reading from the Storage Mover Source Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source_sub_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_sub_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Storage Mover Project. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_mover_project_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_mover_project_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Storage Mover target Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the sub path to use when writing to the Storage Mover Target Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub target_sub_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_sub_path: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MoverJobDefinitionResult {

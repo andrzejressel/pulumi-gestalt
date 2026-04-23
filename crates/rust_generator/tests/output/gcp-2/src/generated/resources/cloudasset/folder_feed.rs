@@ -94,42 +94,42 @@ pub mod folder_feed {
         /// //compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1. See
         /// https://cloud.google.com/apis/design/resourceNames#fullResourceName for more info.
         #[builder(into, default)]
-        pub asset_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub asset_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of types of the assets to receive updates. You must specify either or both of assetNames and assetTypes. Only
         /// asset updates matching specified assetNames and assetTypes are exported to the feed. For example:
         /// "compute.googleapis.com/Disk" See https://cloud.google.com/asset-inventory/docs/supported-asset-types for a list of all
         /// supported asset types.
         #[builder(into, default)]
-        pub asset_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub asset_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The project whose identity will be used when sending messages to the
         /// destination pubsub topic. It also specifies the project for API
         /// enablement check, quota, and billing.
         #[builder(into)]
-        pub billing_project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_project: pulumi_gestalt_rust::Input<String>,
         /// A condition which determines whether an asset update should be published. If specified, an asset will be returned only
         /// when the expression evaluates to true. When set, expression field must be a valid CEL expression on a TemporalAsset with
         /// name temporal_asset. Example: a Feed with expression "temporal_asset.deleted == true" will only publish Asset deletions.
         /// Other fields of condition are optional.
         #[builder(into, default)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<
+        pub condition: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudasset::FolderFeedCondition>,
         >,
         /// Asset content type. If not specified, no content but the asset name and type will be returned. Possible values:
         /// ["CONTENT_TYPE_UNSPECIFIED", "RESOURCE", "IAM_POLICY", "ORG_POLICY", "OS_INVENTORY", "ACCESS_POLICY"]
         #[builder(into, default)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// This is the client-assigned asset feed identifier and it needs to be unique under a specific parent.
         #[builder(into)]
-        pub feed_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub feed_id: pulumi_gestalt_rust::Input<String>,
         /// Output configuration for asset feed destination.
         /// Structure is documented below.
         #[builder(into)]
-        pub feed_output_config: pulumi_gestalt_rust::InputOrOutput<
+        pub feed_output_config: pulumi_gestalt_rust::Input<
             super::super::types::cloudasset::FolderFeedFeedOutputConfig,
         >,
         /// The folder this feed should be created in.
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FolderFeedResult {

@@ -53,13 +53,13 @@ pub mod mover_project {
     pub struct MoverProjectArgs {
         /// Specifies a description for this Storage Mover Project.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Storage Mover Project. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the storage mover for this Storage Mover Project. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_mover_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_mover_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MoverProjectResult {

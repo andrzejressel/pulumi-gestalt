@@ -10,15 +10,15 @@ pub mod get_domain {
     pub struct GetDomainArgs {
         /// Name of the domain.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Off Peak update options
         #[builder(into, default)]
-        pub off_peak_window_options: pulumi_gestalt_rust::InputOrOutput<
+        pub off_peak_window_options: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::opensearch::GetDomainOffPeakWindowOptions>,
         >,
         /// Tags assigned to the domain.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

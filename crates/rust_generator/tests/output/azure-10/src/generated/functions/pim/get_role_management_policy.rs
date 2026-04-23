@@ -10,10 +10,10 @@ pub mod get_role_management_policy {
     pub struct GetRoleManagementPolicyArgs {
         /// The scoped Role Definition ID of the role for which this policy applies.
         #[builder(into)]
-        pub role_definition_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_definition_id: pulumi_gestalt_rust::Input<String>,
         /// The scope to which this Role Management Policy applies. Can refer to a management group, a subscription, a resource group or a resource.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRoleManagementPolicyResult {

@@ -44,12 +44,12 @@ pub mod instance_access_control_attributes {
     pub struct InstanceAccessControlAttributesArgs {
         /// See AccessControlAttribute for more details.
         #[builder(into)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Vec<super::super::types::ssoadmin::InstanceAccessControlAttributesAttribute>,
         >,
         /// The Amazon Resource Name (ARN) of the SSO Instance.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct InstanceAccessControlAttributesResult {

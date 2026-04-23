@@ -39,15 +39,15 @@ pub mod group {
     pub struct GroupArgs {
         /// A string containing the description of the group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A string containing the name of the group. This value is commonly displayed when the group is referenced.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The globally unique identifier for the identity store.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub identity_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_store_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GroupResult {

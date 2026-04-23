@@ -124,20 +124,20 @@ pub mod recorder {
     pub struct RecorderArgs {
         /// The name of the recorder. Defaults to `default`. Changing it recreates the resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Recording group - see below.
         #[builder(into, default)]
-        pub recording_group: pulumi_gestalt_rust::InputOrOutput<
+        pub recording_group: pulumi_gestalt_rust::Input<
             Option<super::super::types::cfg::RecorderRecordingGroup>,
         >,
         /// Recording mode - see below.
         #[builder(into, default)]
-        pub recording_mode: pulumi_gestalt_rust::InputOrOutput<
+        pub recording_mode: pulumi_gestalt_rust::Input<
             Option<super::super::types::cfg::RecorderRecordingMode>,
         >,
         /// Amazon Resource Name (ARN) of the IAM role. Used to make read or write requests to the delivery channel and to describe the AWS resources associated with the account. See [AWS Docs](http://docs.aws.amazon.com/config/latest/developerguide/iamrole-permissions.html) for more details.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RecorderResult {

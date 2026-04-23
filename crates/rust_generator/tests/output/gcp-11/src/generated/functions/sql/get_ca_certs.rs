@@ -10,10 +10,10 @@ pub mod get_ca_certs {
     pub struct GetCaCertsArgs {
         /// The name or self link of the instance.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs. If `project` is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetCaCertsResult {

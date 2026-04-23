@@ -38,10 +38,10 @@ pub mod group_association {
     pub struct GroupAssociationArgs {
         /// ARN of the canary.
         #[builder(into)]
-        pub canary_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub canary_arn: pulumi_gestalt_rust::Input<String>,
         /// Name of the group that the canary will be associated with.
         #[builder(into)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GroupAssociationResult {

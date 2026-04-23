@@ -38,57 +38,57 @@ pub mod registered_domain {
     pub struct RegisteredDomainArgs {
         /// Details about the domain administrative contact. See Contact Blocks for more details.
         #[builder(into, default)]
-        pub admin_contact: pulumi_gestalt_rust::InputOrOutput<
+        pub admin_contact: pulumi_gestalt_rust::Input<
             Option<super::super::types::route53domains::RegisteredDomainAdminContact>,
         >,
         /// Whether domain administrative contact information is concealed from WHOIS queries. Default: `true`.
         #[builder(into, default)]
-        pub admin_privacy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub admin_privacy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the domain registration is set to renew automatically. Default: `true`.
         #[builder(into, default)]
-        pub auto_renew: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_renew: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Details about the domain billing contact. See Contact Blocks for more details.
         #[builder(into, default)]
-        pub billing_contact: pulumi_gestalt_rust::InputOrOutput<
+        pub billing_contact: pulumi_gestalt_rust::Input<
             Option<super::super::types::route53domains::RegisteredDomainBillingContact>,
         >,
         /// Whether domain billing contact information is concealed from WHOIS queries. Default: `true`.
         #[builder(into, default)]
-        pub billing_privacy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub billing_privacy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the registered domain.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The list of nameservers for the domain. See `name_server` Blocks for more details.
         #[builder(into, default)]
-        pub name_servers: pulumi_gestalt_rust::InputOrOutput<
+        pub name_servers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::route53domains::RegisteredDomainNameServer>>,
         >,
         /// Details about the domain registrant. See Contact Blocks for more details.
         #[builder(into, default)]
-        pub registrant_contact: pulumi_gestalt_rust::InputOrOutput<
+        pub registrant_contact: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::route53domains::RegisteredDomainRegistrantContact,
             >,
         >,
         /// Whether domain registrant contact information is concealed from WHOIS queries. Default: `true`.
         #[builder(into, default)]
-        pub registrant_privacy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub registrant_privacy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Details about the domain technical contact. See Contact Blocks for more details.
         #[builder(into, default)]
-        pub tech_contact: pulumi_gestalt_rust::InputOrOutput<
+        pub tech_contact: pulumi_gestalt_rust::Input<
             Option<super::super::types::route53domains::RegisteredDomainTechContact>,
         >,
         /// Whether domain technical contact information is concealed from WHOIS queries. Default: `true`.
         #[builder(into, default)]
-        pub tech_privacy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tech_privacy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the domain is locked for transfer. Default: `true`.
         #[builder(into, default)]
-        pub transfer_lock: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub transfer_lock: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct RegisteredDomainResult {

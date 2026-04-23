@@ -10,10 +10,10 @@ pub mod get_bot_alias {
     pub struct GetBotAliasArgs {
         /// Name of the bot.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the bot alias. The name is case sensitive.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBotAliasResult {

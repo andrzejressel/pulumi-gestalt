@@ -10,13 +10,13 @@ pub mod get_geofence_collection {
     pub struct GetGeofenceCollectionArgs {
         /// Name of the geofence collection.
         #[builder(into)]
-        pub collection_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub collection_name: pulumi_gestalt_rust::Input<String>,
         /// Key identifier for an AWS KMS customer managed key assigned to the Amazon Location resource.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags for the geofence collection.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

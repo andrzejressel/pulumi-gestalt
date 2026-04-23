@@ -9,30 +9,30 @@ pub mod get_logs {
     #[allow(dead_code)]
     pub struct GetLogsArgs {
         #[builder(into, default)]
-        pub details: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub details: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Discard headers that docker appends to each log entry
         #[builder(into, default)]
-        pub discard_headers: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub discard_headers: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub follow: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub follow: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If true populate computed value `logs_list_string`
         #[builder(into, default)]
-        pub logs_list_string_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub logs_list_string_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Docker Container
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub show_stderr: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub show_stderr: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub show_stdout: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub show_stdout: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub since: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub since: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tail: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tail: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub timestamps: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub timestamps: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub until: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub until: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetLogsResult {

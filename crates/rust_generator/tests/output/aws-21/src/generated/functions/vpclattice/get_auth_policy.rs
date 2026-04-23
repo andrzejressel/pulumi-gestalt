@@ -10,13 +10,13 @@ pub mod get_auth_policy {
     pub struct GetAuthPolicyArgs {
         /// The auth policy. The policy string in JSON must not contain newlines or blank lines.
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
         #[builder(into)]
-        pub resource_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_identifier: pulumi_gestalt_rust::Input<String>,
         /// The state of the auth policy. The auth policy is only active when the auth type is set to AWS_IAM. If you provide a policy, then authentication and authorization decisions are made based on this policy and the client's IAM policy. If the Auth type is NONE, then, any auth policy you provide will remain inactive.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAuthPolicyResult {

@@ -125,44 +125,44 @@ pub mod branch_rule {
     pub struct BranchRuleArgs {
         /// Determines if allow stale reviews or approvals before merging to the branch.
         #[builder(into, default)]
-        pub allow_stale_reviews: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_stale_reviews: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID for the BranchRule.
         #[builder(into)]
-        pub branch_rule_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub branch_rule_id: pulumi_gestalt_rust::Input<String>,
         /// Determines if the branch rule is disabled or not.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The BranchRule matches branches based on the specified regular expression. Use .* to match all branches.
         #[builder(into)]
-        pub include_pattern: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub include_pattern: pulumi_gestalt_rust::Input<String>,
         /// The location for the Repository.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The minimum number of approvals required for the branch rule to be matched.
         #[builder(into, default)]
-        pub minimum_approvals_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub minimum_approvals_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The minimum number of reviews required for the branch rule to be matched.
         #[builder(into, default)]
-        pub minimum_reviews_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub minimum_reviews_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID for the Repository.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub repository_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_id: pulumi_gestalt_rust::Input<String>,
         /// Determines if require comments resolved before merging to the branch.
         #[builder(into, default)]
-        pub require_comments_resolved: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub require_comments_resolved: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Determines if require linear history before merging to the branch.
         #[builder(into, default)]
-        pub require_linear_history: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub require_linear_history: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Determines if the branch rule requires a pull request or not.
         #[builder(into, default)]
-        pub require_pull_request: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub require_pull_request: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct BranchRuleResult {

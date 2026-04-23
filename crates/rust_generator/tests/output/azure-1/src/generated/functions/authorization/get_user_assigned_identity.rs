@@ -10,10 +10,10 @@ pub mod get_user_assigned_identity {
     pub struct GetUserAssignedIdentityArgs {
         /// The name of the User Assigned Identity.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the User Assigned Identity exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetUserAssignedIdentityResult {

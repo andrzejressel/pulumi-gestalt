@@ -10,10 +10,10 @@ pub mod get_slot_type {
     pub struct GetSlotTypeArgs {
         /// Name of the slot type. The name is case sensitive.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Version of the slot type.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSlotTypeResult {

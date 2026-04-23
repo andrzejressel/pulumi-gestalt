@@ -10,7 +10,7 @@ pub mod get_iam_policy {
     pub struct GetIamPolicyArgs {
         /// The fully-qualified name of the service account to apply policy to.
         #[builder(into)]
-        pub service_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetIamPolicyResult {

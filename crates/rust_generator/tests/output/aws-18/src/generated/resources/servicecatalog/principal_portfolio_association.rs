@@ -38,18 +38,18 @@ pub mod principal_portfolio_association {
     pub struct PrincipalPortfolioAssociationArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Portfolio identifier.
         #[builder(into)]
-        pub portfolio_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub portfolio_id: pulumi_gestalt_rust::Input<String>,
         /// Principal ARN.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub principal_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_arn: pulumi_gestalt_rust::Input<String>,
         /// Principal type. Setting this argument empty (e.g., `principal_type = ""`) will result in an error. Valid values are `IAM` and `IAM_PATTERN`. Default is `IAM`.
         #[builder(into, default)]
-        pub principal_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub principal_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PrincipalPortfolioAssociationResult {

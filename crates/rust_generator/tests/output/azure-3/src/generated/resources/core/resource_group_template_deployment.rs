@@ -22,34 +22,34 @@ pub mod resource_group_template_deployment {
     pub struct ResourceGroupTemplateDeploymentArgs {
         /// The Debug Level which should be used for this Resource Group Template Deployment. Possible values are `none`, `requestContent`, `responseContent` and `requestContent, responseContent`.
         #[builder(into, default)]
-        pub debug_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub debug_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Deployment Mode for this Resource Group Template Deployment. Possible values are `Complete` (where resources in the Resource Group not specified in the ARM Template will be destroyed) and `Incremental` (where resources are additive only).
         ///
         /// > **Note:** If `deployment_mode` is set to `Complete` then resources within this Resource Group which are not defined in the ARM Template will be deleted.
         #[builder(into)]
-        pub deployment_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployment_mode: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Resource Group Template Deployment. Changing this forces a new Resource Group Template Deployment to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The contents of the ARM Template parameters file - containing a JSON list of parameters.
         ///
         /// > An example of how to pass variables into an ARM Template can be seen in the example.
         #[builder(into, default)]
-        pub parameters_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameters_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Resource Group Template Deployment should exist. Changing this forces a new Resource Group Template Deployment to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Resource Group Template Deployment.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The contents of the ARM Template which should be deployed into this Resource Group. Cannot be specified with `template_spec_version_id`.
         #[builder(into, default)]
-        pub template_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Template Spec Version to deploy. Cannot be specified with `template_content`.
         #[builder(into, default)]
-        pub template_spec_version_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_spec_version_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ResourceGroupTemplateDeploymentResult {

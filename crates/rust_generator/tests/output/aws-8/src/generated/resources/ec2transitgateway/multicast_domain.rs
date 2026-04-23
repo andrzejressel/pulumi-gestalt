@@ -151,23 +151,21 @@ pub mod multicast_domain {
     pub struct MulticastDomainArgs {
         /// Whether to automatically accept cross-account subnet associations that are associated with the EC2 Transit Gateway Multicast Domain. Valid values: `disable`, `enable`. Default value: `disable`.
         #[builder(into, default)]
-        pub auto_accept_shared_associations: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub auto_accept_shared_associations: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable Internet Group Management Protocol (IGMP) version 2 for the EC2 Transit Gateway Multicast Domain. Valid values: `disable`, `enable`. Default value: `disable`.
         #[builder(into, default)]
-        pub igmpv2_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub igmpv2_support: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable support for statically configuring multicast group sources for the EC2 Transit Gateway Multicast Domain. Valid values: `disable`, `enable`. Default value: `disable`.
         #[builder(into, default)]
-        pub static_sources_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub static_sources_support: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value tags for the EC2 Transit Gateway Multicast Domain. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// EC2 Transit Gateway identifier. The EC2 Transit Gateway must have `multicast_support` enabled.
         #[builder(into)]
-        pub transit_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MulticastDomainResult {

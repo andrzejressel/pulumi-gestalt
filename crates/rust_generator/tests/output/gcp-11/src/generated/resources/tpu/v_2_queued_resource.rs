@@ -80,20 +80,20 @@ pub mod v_2_queued_resource {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines a TPU resource.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub tpu: pulumi_gestalt_rust::InputOrOutput<
+        pub tpu: pulumi_gestalt_rust::Input<
             Option<super::super::types::tpu::V2QueuedResourceTpu>,
         >,
         /// The GCP location for the Queued Resource. If it is not provided, the provider zone is used.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct V2QueuedResourceResult {

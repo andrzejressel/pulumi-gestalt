@@ -38,41 +38,37 @@ pub mod domain_configuration {
     pub struct DomainConfigurationArgs {
         /// An object that specifies the authorization service for a domain. See the `authorizer_config` Block below for details.
         #[builder(into, default)]
-        pub authorizer_config: pulumi_gestalt_rust::InputOrOutput<
+        pub authorizer_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::DomainConfigurationAuthorizerConfig>,
         >,
         /// Fully-qualified domain name.
         #[builder(into, default)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the domain configuration. This value must be unique to a region.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains. When using a custom `domain_name`, the cert must include it.
         #[builder(into, default)]
-        pub server_certificate_arns: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub server_certificate_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The type of service delivered by the endpoint. Note: Amazon Web Services IoT Core currently supports only the `DATA` service type.
         #[builder(into, default)]
-        pub service_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The status to which the domain configuration should be set. Valid values are `ENABLED` and `DISABLED`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An object that specifies the TLS configuration for a domain. See the `tls_config` Block below for details.
         #[builder(into, default)]
-        pub tls_config: pulumi_gestalt_rust::InputOrOutput<
+        pub tls_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::DomainConfigurationTlsConfig>,
         >,
         /// The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.
         #[builder(into, default)]
-        pub validation_certificate_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub validation_certificate_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DomainConfigurationResult {

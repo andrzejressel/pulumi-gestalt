@@ -45,22 +45,22 @@ pub mod api_cache {
     pub struct ApiCacheArgs {
         /// Caching behavior. Valid values are `FULL_REQUEST_CACHING` and `PER_RESOLVER_CACHING`.
         #[builder(into)]
-        pub api_caching_behavior: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_caching_behavior: pulumi_gestalt_rust::Input<String>,
         /// GraphQL API ID.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// At-rest encryption flag for cache. You cannot update this setting after creation.
         #[builder(into, default)]
-        pub at_rest_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub at_rest_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Transit encryption flag when connecting to cache. You cannot update this setting after creation.
         #[builder(into, default)]
-        pub transit_encryption_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub transit_encryption_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// TTL in seconds for cache entries.
         #[builder(into)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub ttl: pulumi_gestalt_rust::Input<i32>,
         /// Cache instance type. Valid values are `SMALL`, `MEDIUM`, `LARGE`, `XLARGE`, `LARGE_2X`, `LARGE_4X`, `LARGE_8X`, `LARGE_12X`, `T2_SMALL`, `T2_MEDIUM`, `R4_LARGE`, `R4_XLARGE`, `R4_2XLARGE`, `R4_4XLARGE`, `R4_8XLARGE`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiCacheResult {

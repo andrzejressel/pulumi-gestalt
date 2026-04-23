@@ -163,10 +163,10 @@ pub mod cloud_vm_cluster {
     pub struct CloudVmClusterArgs {
         /// CIDR range of the backup subnet.
         #[builder(into)]
-        pub backup_subnet_cidr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_subnet_cidr: pulumi_gestalt_rust::Input<String>,
         /// Network settings. CIDR to use for cluster IP allocation.
         #[builder(into)]
-        pub cidr: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cidr: pulumi_gestalt_rust::Input<String>,
         /// The ID of the VM Cluster to create. This value is restricted
         /// to (^a-z?$) and must be a maximum of 63
         /// characters in length. The value must start with a letter and end with
@@ -175,39 +175,39 @@ pub mod cloud_vm_cluster {
         ///
         /// - - -
         #[builder(into)]
-        pub cloud_vm_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cloud_vm_cluster_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User friendly name for this resource.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Exadata Infrastructure resource on which VM cluster
         /// resource is created, in the following format:
         /// projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
         #[builder(into)]
-        pub exadata_infrastructure: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub exadata_infrastructure: pulumi_gestalt_rust::Input<String>,
         /// Labels or tags associated with the VM Cluster.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. See documentation for resource type `oracledatabase.googleapis.com/DbNode`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the VPC network.
         /// Format: projects/{project}/global/networks/{network}
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Various properties and settings associated with Exadata VM cluster.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::oracledatabase::CloudVmClusterProperties>,
         >,
     }

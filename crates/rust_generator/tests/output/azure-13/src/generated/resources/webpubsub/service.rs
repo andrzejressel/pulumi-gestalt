@@ -47,50 +47,48 @@ pub mod service {
     pub struct ServiceArgs {
         /// Whether to enable AAD auth? Defaults to `true`.
         #[builder(into, default)]
-        pub aad_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub aad_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the number of units associated with this Web PubSub resource. Valid values are `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `20`, `30`, `40`, `50`, `60`, `70`, `80`, `90`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900` and `1000`.
         ///
         /// > **NOTE:** The valid capacity range for sku `Free_F1` is `1`, for sku `Premium_P2` is from `100` to `1000`, and from `1` to `100` for sku `Standard_S1` and `Premium_P1`.
         #[builder(into, default)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::webpubsub::ServiceIdentity>,
         >,
         /// A `live_trace` block as defined below.
         #[builder(into, default)]
-        pub live_trace: pulumi_gestalt_rust::InputOrOutput<
+        pub live_trace: pulumi_gestalt_rust::Input<
             Option<super::super::types::webpubsub::ServiceLiveTrace>,
         >,
         /// Whether to enable local auth? Defaults to `true`.
         #[builder(into, default)]
-        pub local_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the Web PubSub service exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Web PubSub service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable public network access? Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Web PubSub service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies which SKU to use. Possible values are `Free_F1`, `Standard_S1`, `Premium_P1` and `Premium_P2`.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whether to request client certificate during TLS handshake? Defaults to `false`.
         #[builder(into, default)]
-        pub tls_client_cert_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls_client_cert_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ServiceResult {

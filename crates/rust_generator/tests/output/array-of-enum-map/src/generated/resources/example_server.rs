@@ -9,7 +9,7 @@ pub mod example_server {
     #[allow(dead_code)]
     pub struct ExampleServerArgs {
         #[builder(into, default)]
-        pub map_array_enum: pulumi_gestalt_rust::InputOrOutput<
+        pub map_array_enum: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     std::collections::HashMap<

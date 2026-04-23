@@ -48,18 +48,18 @@ pub mod mount_target {
     pub struct MountTargetArgs {
         /// The ID of the file system for which the mount target is intended.
         #[builder(into)]
-        pub file_system_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file_system_id: pulumi_gestalt_rust::Input<String>,
         /// The address (within the address range of the specified subnet) at
         /// which the file system may be mounted via the mount target.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of up to 5 VPC security group IDs (that must
         /// be for the same VPC as subnet specified) in effect for the mount target.
         #[builder(into, default)]
-        pub security_groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the subnet to add the mount target in.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MountTargetResult {

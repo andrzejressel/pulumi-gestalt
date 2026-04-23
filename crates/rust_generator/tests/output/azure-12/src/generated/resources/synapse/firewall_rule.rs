@@ -72,16 +72,16 @@ pub mod firewall_rule {
         ///
         /// > **NOTE:** The Azure feature `Allow access to Azure services` requires the `name` to be `AllowAllWindowsAzureIps`.
         #[builder(into)]
-        pub end_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub end_ip_address: pulumi_gestalt_rust::Input<String>,
         /// The Name of the firewall rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The starting IP address to allow through the firewall for this rule.
         #[builder(into)]
-        pub start_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_ip_address: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Synapse Workspace on which to create the Firewall Rule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub synapse_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub synapse_workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FirewallRuleResult {

@@ -55,10 +55,10 @@ pub mod workspace {
     pub struct WorkspaceArgs {
         /// The scope of VMs to send their security data to the desired workspace, unless overridden by a setting with more specific scope.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Log Analytics Workspace to save the data in.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceResult {

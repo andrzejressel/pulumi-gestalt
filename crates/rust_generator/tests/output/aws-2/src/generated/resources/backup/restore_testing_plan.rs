@@ -44,25 +44,23 @@ pub mod restore_testing_plan {
     pub struct RestoreTestingPlanArgs {
         /// The name of the restore testing plan. Must be between 1 and 50 characters long and contain only alphanumeric characters and underscores.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the recovery point selection configuration. See RecoveryPointSelection section for more details.
         #[builder(into, default)]
-        pub recovery_point_selection: pulumi_gestalt_rust::InputOrOutput<
+        pub recovery_point_selection: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::RestoreTestingPlanRecoveryPointSelection>,
         >,
         /// The schedule expression for the restore testing plan.
         #[builder(into)]
-        pub schedule_expression: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schedule_expression: pulumi_gestalt_rust::Input<String>,
         /// The timezone for the schedule expression. If not provided, the state value will be used.
         #[builder(into, default)]
-        pub schedule_expression_timezone: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub schedule_expression_timezone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of hours in the start window for the restore testing plan. Must be between 1 and 168.
         #[builder(into, default)]
-        pub start_window_hours: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub start_window_hours: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

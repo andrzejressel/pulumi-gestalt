@@ -58,16 +58,16 @@ pub mod source_credential {
     pub struct SourceCredentialArgs {
         /// The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API.
         #[builder(into)]
-        pub auth_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auth_type: pulumi_gestalt_rust::Input<String>,
         /// The source provider used for this project.
         #[builder(into)]
-        pub server_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_type: pulumi_gestalt_rust::Input<String>,
         /// For `GitHub` or `GitHub Enterprise`, this is the personal access token. For `Bitbucket`, this is the app password.
         #[builder(into)]
-        pub token: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub token: pulumi_gestalt_rust::Input<String>,
         /// The Bitbucket username when the authType is `BASIC_AUTH`. This parameter is not valid for other types of source providers or connections.
         #[builder(into, default)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SourceCredentialResult {

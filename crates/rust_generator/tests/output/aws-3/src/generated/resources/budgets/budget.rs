@@ -220,63 +220,63 @@ pub mod budget {
     pub struct BudgetArgs {
         /// The ID of the target account for budget. Will use current user's account_id by default if omitted.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object containing AutoAdjustData which determines the budget amount for an auto-adjusting budget.
         #[builder(into, default)]
-        pub auto_adjust_data: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_adjust_data: pulumi_gestalt_rust::Input<
             Option<super::super::types::budgets::BudgetAutoAdjustData>,
         >,
         /// Whether this budget tracks monetary cost or usage.
         #[builder(into)]
-        pub budget_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub budget_type: pulumi_gestalt_rust::Input<String>,
         /// A list of CostFilter name/values pair to apply to budget.
         #[builder(into, default)]
-        pub cost_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub cost_filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::budgets::BudgetCostFilter>>,
         >,
         /// Object containing CostTypes The types of cost included in a budget, such as tax and subscriptions.
         #[builder(into, default)]
-        pub cost_types: pulumi_gestalt_rust::InputOrOutput<
+        pub cost_types: pulumi_gestalt_rust::Input<
             Option<super::super::types::budgets::BudgetCostTypes>,
         >,
         /// The amount of cost or usage being measured for a budget.
         #[builder(into, default)]
-        pub limit_amount: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub limit_amount: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unit of measurement used for the budget forecast, actual spend, or budget threshold, such as dollars or GB. See [Spend](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/data-type-spend.html) documentation.
         #[builder(into, default)]
-        pub limit_unit: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub limit_unit: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a budget. Unique within accounts.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The prefix of the name of a budget. Unique within accounts.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object containing Budget Notifications. Can be used multiple times to define more than one budget notification.
         #[builder(into, default)]
-        pub notifications: pulumi_gestalt_rust::InputOrOutput<
+        pub notifications: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::budgets::BudgetNotification>>,
         >,
         /// Object containing Planned Budget Limits. Can be used multiple times to plan more than one budget limit. See [PlannedBudgetLimits](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_Budget.html#awscostmanagement-Type-budgets_Budget-PlannedBudgetLimits) documentation.
         #[builder(into, default)]
-        pub planned_limits: pulumi_gestalt_rust::InputOrOutput<
+        pub planned_limits: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::budgets::BudgetPlannedLimit>>,
         >,
         /// Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The end of the time period covered by the budget. There are no restrictions on the end date. Format: `2017-01-01_12:00`.
         #[builder(into, default)]
-        pub time_period_end: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_period_end: pulumi_gestalt_rust::Input<Option<String>>,
         /// The start of the time period covered by the budget. If you don't specify a start date, AWS defaults to the start of your chosen time period. The start date must come before the end date. Format: `2017-01-01_12:00`.
         #[builder(into, default)]
-        pub time_period_start: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_period_start: pulumi_gestalt_rust::Input<Option<String>>,
         /// The length of time until a budget resets the actual and forecasted spend. Valid values: `MONTHLY`, `QUARTERLY`, `ANNUALLY`, and `DAILY`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub time_unit: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub time_unit: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BudgetResult {

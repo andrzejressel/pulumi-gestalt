@@ -95,31 +95,31 @@ pub mod glossary_term {
     pub struct GlossaryTermArgs {
         /// Identifier of domain.
         #[builder(into, default)]
-        pub domain_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of glossary.
         #[builder(into)]
-        pub glossary_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub glossary_identifier: pulumi_gestalt_rust::Input<String>,
         /// Long description of entry.
         #[builder(into, default)]
-        pub long_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub long_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of glossary term.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Short description of entry.
         #[builder(into, default)]
-        pub short_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub short_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// If glossary term is ENABLED or DISABLED.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object classifying the term relations through the following attributes:
         #[builder(into, default)]
-        pub term_relations: pulumi_gestalt_rust::InputOrOutput<
+        pub term_relations: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::GlossaryTermTermRelations>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::GlossaryTermTimeouts>,
         >,
     }

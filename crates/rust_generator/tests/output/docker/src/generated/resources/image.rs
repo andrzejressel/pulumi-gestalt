@@ -148,20 +148,20 @@ pub mod image {
     pub struct ImageArgs {
         /// The Docker build context
         #[builder(into, default)]
-        pub build: pulumi_gestalt_rust::InputOrOutput<Option<super::types::DockerBuild>>,
+        pub build: pulumi_gestalt_rust::Input<Option<super::types::DockerBuild>>,
         /// A flag to build an image on preview
         #[builder(into, default)]
-        pub build_on_preview: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub build_on_preview: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The image name, of the format repository[:tag], e.g. `docker.io/username/demo-image:v1`.
         /// This reference is not unique to each build and push.For the unique manifest SHA of a pushed docker image, or the local image ID, please use `repoDigest`.
         #[builder(into)]
-        pub image_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_name: pulumi_gestalt_rust::Input<String>,
         /// The registry to push the image to
         #[builder(into, default)]
-        pub registry: pulumi_gestalt_rust::InputOrOutput<Option<super::types::Registry>>,
+        pub registry: pulumi_gestalt_rust::Input<Option<super::types::Registry>>,
         /// A flag to skip a registry push.
         #[builder(into, default)]
-        pub skip_push: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_push: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ImageResult {

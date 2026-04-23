@@ -54,10 +54,10 @@ pub mod sink_policy {
     pub struct SinkPolicyArgs {
         /// JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// ARN of the sink to attach this policy to.
         #[builder(into)]
-        pub sink_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sink_identifier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SinkPolicyResult {

@@ -89,16 +89,16 @@ pub mod lock {
         ///
         /// > **Note:** `CanNotDelete` means authorized users are able to read and modify the resources, but not delete. `ReadOnly` means authorized users can only read from a resource, but they can't modify or delete it.
         #[builder(into)]
-        pub lock_level: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lock_level: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Management Lock. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies some notes about the lock. Maximum of 512 characters. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub notes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notes: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the scope at which the Management Lock should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LockResult {

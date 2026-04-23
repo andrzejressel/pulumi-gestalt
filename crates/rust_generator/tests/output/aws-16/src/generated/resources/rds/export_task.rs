@@ -143,29 +143,29 @@ pub mod export_task {
     pub struct ExportTaskArgs {
         /// Data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are documented in the [AWS StartExportTask API documentation](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestParameters).
         #[builder(into, default)]
-        pub export_onlies: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub export_onlies: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Unique identifier for the snapshot export task.
         #[builder(into)]
-        pub export_task_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub export_task_identifier: pulumi_gestalt_rust::Input<String>,
         /// ARN of the IAM role to use for writing to the Amazon S3 bucket.
         #[builder(into)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<String>,
         /// ID of the Amazon Web Services KMS key to use to encrypt the snapshot.
         #[builder(into)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Amazon S3 bucket to export the snapshot to.
         #[builder(into)]
-        pub s3_bucket_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub s3_bucket_name: pulumi_gestalt_rust::Input<String>,
         /// Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.
         #[builder(into, default)]
-        pub s3_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the snapshot to export.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub source_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_arn: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::ExportTaskTimeouts>,
         >,
     }

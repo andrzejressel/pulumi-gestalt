@@ -78,13 +78,13 @@ pub mod backup {
     pub struct BackupArgs {
         /// A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource labels to represent user-provided metadata.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the location of the instance. This can be a region for ENTERPRISE tier instances.
@@ -92,7 +92,7 @@ pub mod backup {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name of the backup. The name must be unique within the specified instance.
         /// The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -101,17 +101,17 @@ pub mod backup {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the file share in the source Cloud Filestore instance that the backup is created from.
         #[builder(into)]
-        pub source_file_share: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_file_share: pulumi_gestalt_rust::Input<String>,
         /// The resource name of the source Cloud Filestore instance, in the format projects/{projectId}/locations/{locationId}/instances/{instanceId}, used to create this backup.
         #[builder(into)]
-        pub source_instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_instance: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupResult {

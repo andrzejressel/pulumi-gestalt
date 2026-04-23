@@ -561,91 +561,91 @@ pub mod event_target {
     pub struct EventTargetArgs {
         /// Parameters used when you are using the rule to invoke an AppSync GraphQL API mutation. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub appsync_target: pulumi_gestalt_rust::InputOrOutput<
+        pub appsync_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetAppsyncTarget>,
         >,
         /// The Amazon Resource Name (ARN) of the target.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Parameters used when you are using the rule to invoke an Amazon Batch Job. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub batch_target: pulumi_gestalt_rust::InputOrOutput<
+        pub batch_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetBatchTarget>,
         >,
         /// Parameters used when you are providing a dead letter config. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub dead_letter_config: pulumi_gestalt_rust::InputOrOutput<
+        pub dead_letter_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetDeadLetterConfig>,
         >,
         /// Parameters used when you are using the rule to invoke Amazon ECS Task. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub ecs_target: pulumi_gestalt_rust::InputOrOutput<
+        pub ecs_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetEcsTarget>,
         >,
         /// The name or ARN of the event bus to associate with the rule.
         /// If you omit this, the `default` event bus is used.
         #[builder(into, default)]
-        pub event_bus_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_bus_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Used to delete managed rules created by AWS. Defaults to `false`.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Parameters used when you are using the rule to invoke an API Gateway REST endpoint. Documented below. A maximum of 1 is allowed.
         #[builder(into, default)]
-        pub http_target: pulumi_gestalt_rust::InputOrOutput<
+        pub http_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetHttpTarget>,
         >,
         /// Valid JSON text passed to the target. Conflicts with `input_path` and `input_transformer`.
         #[builder(into, default)]
-        pub input: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub input: pulumi_gestalt_rust::Input<Option<String>>,
         /// The value of the [JSONPath](http://goessner.net/articles/JsonPath/) that is used for extracting part of the matched event when passing it to the target. Conflicts with `input` and `input_transformer`.
         #[builder(into, default)]
-        pub input_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub input_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters used when you are providing a custom input to a target based on certain event data. Conflicts with `input` and `input_path`.
         #[builder(into, default)]
-        pub input_transformer: pulumi_gestalt_rust::InputOrOutput<
+        pub input_transformer: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetInputTransformer>,
         >,
         /// Parameters used when you are using the rule to invoke an Amazon Kinesis Stream. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub kinesis_target: pulumi_gestalt_rust::InputOrOutput<
+        pub kinesis_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetKinesisTarget>,
         >,
         /// Parameters used when you are using the rule to invoke an Amazon Redshift Statement. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub redshift_target: pulumi_gestalt_rust::InputOrOutput<
+        pub redshift_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetRedshiftTarget>,
         >,
         /// Parameters used when you are providing retry policies. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub retry_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub retry_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetRetryPolicy>,
         >,
         /// The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. Required if `ecs_target` is used or target in `arn` is EC2 instance, Kinesis data stream, Step Functions state machine, or Event Bus in different account or region.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the rule you want to add targets to.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub rule: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule: pulumi_gestalt_rust::Input<String>,
         /// Parameters used when you are using the rule to invoke Amazon EC2 Run Command. Documented below. A maximum of 5 are allowed.
         #[builder(into, default)]
-        pub run_command_targets: pulumi_gestalt_rust::InputOrOutput<
+        pub run_command_targets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudwatch::EventTargetRunCommandTarget>>,
         >,
         /// Parameters used when you are using the rule to invoke an Amazon SageMaker Pipeline. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub sagemaker_pipeline_target: pulumi_gestalt_rust::InputOrOutput<
+        pub sagemaker_pipeline_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetSagemakerPipelineTarget>,
         >,
         /// Parameters used when you are using the rule to invoke an Amazon SQS Queue. Documented below. A maximum of 1 are allowed.
         #[builder(into, default)]
-        pub sqs_target: pulumi_gestalt_rust::InputOrOutput<
+        pub sqs_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudwatch::EventTargetSqsTarget>,
         >,
         /// The unique target assignment ID. If missing, will generate a random, unique id.
         #[builder(into, default)]
-        pub target_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EventTargetResult {

@@ -10,10 +10,10 @@ pub mod get_folder {
     pub struct GetFolderArgs {
         /// The name of the Folder in the form `{folder_id}` or `folders/{folder_id}`.
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
         /// `true` to find the organization that the folder belongs, `false` to avoid the lookup. It searches up the tree. (defaults to `false`)
         #[builder(into, default)]
-        pub lookup_organization: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub lookup_organization: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetFolderResult {

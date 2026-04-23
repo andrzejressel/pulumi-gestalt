@@ -61,19 +61,19 @@ pub mod environment_certificate {
     pub struct EnvironmentCertificateArgs {
         /// The Certificate Private Key as a base64 encoded PFX or PEM. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub certificate_blob_base64: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_blob_base64: pulumi_gestalt_rust::Input<String>,
         /// The password for the Certificate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub certificate_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_password: pulumi_gestalt_rust::Input<String>,
         /// The Container App Managed Environment ID to configure this Certificate on. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_app_environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_app_environment_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Container Apps Environment Certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,25 +10,25 @@ pub mod get_tags {
     pub struct GetTagsArgs {
         /// Configuration block for the `Expression` object used to categorize costs. See `filter` block below for details.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::costexplorer::GetTagsFilter>,
         >,
         /// Value that you want to search for.
         #[builder(into, default)]
-        pub search_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub search_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the value by which you want to sort the data. `sort_by` block below for details.
         #[builder(into, default)]
-        pub sort_bies: pulumi_gestalt_rust::InputOrOutput<
+        pub sort_bies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::costexplorer::GetTagsSortBy>>,
         >,
         /// Key of the tag that you want to return values for.
         #[builder(into, default)]
-        pub tag_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tag_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the start and end dates for retrieving the dimension values. See `time_period` block below for details.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub time_period: pulumi_gestalt_rust::InputOrOutput<
+        pub time_period: pulumi_gestalt_rust::Input<
             super::super::super::types::costexplorer::GetTagsTimePeriod,
         >,
     }

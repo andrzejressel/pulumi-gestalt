@@ -40,7 +40,7 @@ pub mod organization_configuration {
     pub struct OrganizationConfigurationArgs {
         /// Configuration block for auto enabling. See below.
         #[builder(into)]
-        pub auto_enable: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_enable: pulumi_gestalt_rust::Input<
             super::super::types::inspector2::OrganizationConfigurationAutoEnable,
         >,
     }

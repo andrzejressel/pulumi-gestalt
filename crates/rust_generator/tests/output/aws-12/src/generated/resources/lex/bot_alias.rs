@@ -39,21 +39,21 @@ pub mod bot_alias {
     pub struct BotAliasArgs {
         /// The name of the bot.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// The version of the bot.
         #[builder(into)]
-        pub bot_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_version: pulumi_gestalt_rust::Input<String>,
         /// The settings that determine how Amazon Lex uses conversation logs for the alias. Attributes are documented under conversation_logs.
         #[builder(into, default)]
-        pub conversation_logs: pulumi_gestalt_rust::InputOrOutput<
+        pub conversation_logs: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::BotAliasConversationLogs>,
         >,
         /// A description of the alias. Must be less than or equal to 200 characters in length.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the alias. The name is not case sensitive. Must be less than or equal to 100 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BotAliasResult {

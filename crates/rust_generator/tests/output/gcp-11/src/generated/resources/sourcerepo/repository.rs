@@ -74,25 +74,23 @@ pub mod repository {
     pub struct RepositoryArgs {
         /// If set to true, skip repository creation if a repository with the same name already exists.
         #[builder(into, default)]
-        pub create_ignore_already_exists: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub create_ignore_already_exists: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Resource name of the repository, of the form `{{repo}}`.
         /// The repo name may contain slashes. eg, `name/with/slash`
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// How this repository publishes a change in the repository through Cloud Pub/Sub.
         /// Keyed by the topic names.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub pubsub_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub pubsub_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::sourcerepo::RepositoryPubsubConfig>>,
         >,
     }

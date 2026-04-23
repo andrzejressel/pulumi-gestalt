@@ -10,10 +10,10 @@ pub mod get_containers {
     pub struct GetContainersArgs {
         /// A prefix match used for the Storage Container `name` field.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Account that the Storage Containers reside in.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetContainersResult {

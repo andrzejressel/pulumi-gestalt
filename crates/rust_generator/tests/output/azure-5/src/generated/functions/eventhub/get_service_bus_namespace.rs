@@ -10,10 +10,10 @@ pub mod get_service_bus_namespace {
     pub struct GetServiceBusNamespaceArgs {
         /// Specifies the name of the ServiceBus Namespace.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Resource Group where the ServiceBus Namespace exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServiceBusNamespaceResult {

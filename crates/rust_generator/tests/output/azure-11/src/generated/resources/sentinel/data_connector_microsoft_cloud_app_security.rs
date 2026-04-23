@@ -63,23 +63,23 @@ pub mod data_connector_microsoft_cloud_app_security {
     pub struct DataConnectorMicrosoftCloudAppSecurityArgs {
         /// Should the alerts be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub alerts_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub alerts_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the Discovery Logs be enabled? Defaults to `true`.
         ///
         /// > **NOTE:** One of either `alerts_enabled` or `discovery_logs_enabled` has to be specified.
         #[builder(into, default)]
-        pub discovery_logs_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub discovery_logs_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Log Analytics Workspace that this Microsoft Cloud App Security Data Connector resides in. Changing this forces a new Microsoft Cloud App Security Data Connector to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Microsoft Cloud App Security Data Connector. Changing this forces a new Microsoft Cloud App Security Data Connector to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Tenant that this Microsoft Cloud App Security Data Connector connects to.
         ///
         /// > **NOTE** Currently, only the same tenant as the running account is allowed. Cross-tenant scenario is not supported yet.
         #[builder(into, default)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DataConnectorMicrosoftCloudAppSecurityResult {

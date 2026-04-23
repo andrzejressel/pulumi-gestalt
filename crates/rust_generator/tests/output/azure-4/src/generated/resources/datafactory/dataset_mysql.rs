@@ -65,40 +65,40 @@ pub mod dataset_mysql {
         ///
         /// The following supported arguments are specific to MySQL Dataset:
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset MySQL.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Dataset MySQL.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The folder that this Dataset is in. If not specified, the Dataset will appear at the root level.
         #[builder(into, default)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Data Factory Linked Service name in which to associate the Dataset with.
         #[builder(into)]
-        pub linked_service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub linked_service_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Data Factory Dataset MySQL. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Dataset MySQL.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `schema_column` block as defined below.
         #[builder(into, default)]
-        pub schema_columns: pulumi_gestalt_rust::InputOrOutput<
+        pub schema_columns: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datafactory::DatasetMysqlSchemaColumn>>,
         >,
         /// The table name of the Data Factory Dataset MySQL.
         #[builder(into, default)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub table_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DatasetMysqlResult {

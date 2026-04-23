@@ -10,7 +10,7 @@ pub mod get_group {
     pub struct GetGroupArgs {
         /// Specify the exact name of the desired autoscaling group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGroupResult {

@@ -67,34 +67,34 @@ pub mod source_control {
         ///
         /// > **NOTE:** Function apps are not supported at this time.
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// The branch name to use for deployments. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub branch: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub branch: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `github_action_configuration` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub github_action_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub github_action_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appservice::SourceControlGithubActionConfiguration,
             >,
         >,
         /// The URL for the repository. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub repo_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub repo_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should the Deployment Rollback be enabled? Defaults to `false`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Azure can typically set this value automatically based on the `repo_url` value.
         #[builder(into, default)]
-        pub rollback_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub rollback_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the App use local Git configuration. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub use_local_git: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_local_git: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should code be deployed manually. Set to `false` to enable continuous integration, such as webhooks into online repos such as GitHub. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub use_manual_integration: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_manual_integration: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The repository specified is Mercurial. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub use_mercurial: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_mercurial: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SourceControlResult {

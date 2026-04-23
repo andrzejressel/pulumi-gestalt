@@ -52,10 +52,10 @@ pub mod listener_certificate {
     pub struct ListenerCertificateArgs {
         /// The ARN of the certificate to attach to the listener.
         #[builder(into)]
-        pub certificate_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_arn: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the listener to which to attach the certificate.
         #[builder(into)]
-        pub listener_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub listener_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ListenerCertificateResult {

@@ -38,24 +38,24 @@ pub mod data_integration {
     pub struct DataIntegrationArgs {
         /// Specifies the description of the Data Integration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the KMS key Amazon Resource Name (ARN) for the Data Integration.
         #[builder(into)]
-        pub kms_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kms_key: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Data Integration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block that defines the name of the data and how often it should be pulled from the source. The Schedule Config block is documented below.
         #[builder(into)]
-        pub schedule_config: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule_config: pulumi_gestalt_rust::Input<
             super::super::types::appintegrations::DataIntegrationScheduleConfig,
         >,
         /// Specifies the URI of the data source. Create an AppFlow Connector Profile and reference the name of the profile in the URL. An example of this value for Salesforce is `Salesforce://AppFlow/example` where `example` is the name of the AppFlow Connector Profile.
         #[builder(into)]
-        pub source_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_uri: pulumi_gestalt_rust::Input<String>,
         /// Tags to apply to the Data Integration. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

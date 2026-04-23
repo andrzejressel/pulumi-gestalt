@@ -39,19 +39,19 @@ pub mod service_network_vpc_association {
     pub struct ServiceNetworkVpcAssociationArgs {
         /// The IDs of the security groups.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID or Amazon Resource Identifier (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.
         /// The following arguments are optional:
         #[builder(into)]
-        pub service_network_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_network_identifier: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the VPC.
         #[builder(into)]
-        pub vpc_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_identifier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceNetworkVpcAssociationResult {

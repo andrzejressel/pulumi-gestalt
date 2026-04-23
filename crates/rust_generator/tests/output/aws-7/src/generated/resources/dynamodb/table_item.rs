@@ -54,16 +54,16 @@ pub mod table_item {
     pub struct TableItemArgs {
         /// Hash key to use for lookups and identification of the item
         #[builder(into)]
-        pub hash_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hash_key: pulumi_gestalt_rust::Input<String>,
         /// JSON representation of a map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.
         #[builder(into)]
-        pub item: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub item: pulumi_gestalt_rust::Input<String>,
         /// Range key to use for lookups and identification of the item. Required if there is range key defined in the table.
         #[builder(into, default)]
-        pub range_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub range_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the table to contain the item.
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TableItemResult {

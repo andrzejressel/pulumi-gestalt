@@ -100,12 +100,12 @@ pub mod replication_configuration {
     pub struct ReplicationConfigurationArgs {
         /// A destination configuration block (documented below).
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<
+        pub destination: pulumi_gestalt_rust::Input<
             super::super::types::efs::ReplicationConfigurationDestination,
         >,
         /// The ID of the file system that is to be replicated.
         #[builder(into)]
-        pub source_file_system_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_file_system_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReplicationConfigurationResult {

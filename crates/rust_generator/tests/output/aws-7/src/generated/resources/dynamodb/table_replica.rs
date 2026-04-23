@@ -52,26 +52,24 @@ pub mod table_replica {
     pub struct TableReplicaArgs {
         /// Whether deletion protection is enabled (true) or disabled (false) on the table replica.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ARN of the _main_ or global table which this resource will replicate.
         ///
         /// Optional arguments:
         #[builder(into)]
-        pub global_table_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_table_arn: pulumi_gestalt_rust::Input<String>,
         /// ARN of the CMK that should be used for the AWS KMS encryption. This argument should only be used if the key is different from the default KMS-managed DynamoDB key, `alias/aws/dynamodb`. **Note:** This attribute will _not_ be populated with the ARN of _default_ keys.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable Point In Time Recovery for the table replica. Default is `false`.
         #[builder(into, default)]
-        pub point_in_time_recovery: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub point_in_time_recovery: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Storage class of the table replica. Valid values are `STANDARD` and `STANDARD_INFREQUENT_ACCESS`. If not used, the table replica will use the same class as the global table.
         #[builder(into, default)]
-        pub table_class_override: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub table_class_override: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to populate on the created table. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

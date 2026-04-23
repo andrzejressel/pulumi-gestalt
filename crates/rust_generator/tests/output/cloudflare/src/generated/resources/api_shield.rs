@@ -33,12 +33,12 @@ pub mod api_shield {
     pub struct ApiShieldArgs {
         /// Characteristics define properties across which auth-ids can be computed in a privacy-preserving manner.
         #[builder(into, default)]
-        pub auth_id_characteristics: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_id_characteristics: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::ApiShieldAuthIdCharacteristic>>,
         >,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiShieldResult {

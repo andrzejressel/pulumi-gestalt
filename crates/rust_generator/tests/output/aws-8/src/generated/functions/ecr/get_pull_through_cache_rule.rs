@@ -10,7 +10,7 @@ pub mod get_pull_through_cache_rule {
     pub struct GetPullThroughCacheRuleArgs {
         /// The repository name prefix to use when caching images from the source registry.
         #[builder(into)]
-        pub ecr_repository_prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ecr_repository_prefix: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPullThroughCacheRuleResult {

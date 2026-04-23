@@ -56,21 +56,21 @@ pub mod function_url {
     pub struct FunctionUrlArgs {
         /// The type of authentication that the function URL uses. Set to `"AWS_IAM"` to restrict access to authenticated IAM users only. Set to `"NONE"` to bypass IAM authentication and create a public endpoint. See the [AWS documentation](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html) for more details.
         #[builder(into)]
-        pub authorization_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authorization_type: pulumi_gestalt_rust::Input<String>,
         /// The [cross-origin resource sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) settings for the function URL. Documented below.
         #[builder(into, default)]
-        pub cors: pulumi_gestalt_rust::InputOrOutput<
+        pub cors: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionUrlCors>,
         >,
         /// The name (or ARN) of the Lambda function.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// Determines how the Lambda function responds to an invocation. Valid values are `BUFFERED` (default) and `RESPONSE_STREAM`. See more in [Configuring a Lambda function to stream responses](https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html).
         #[builder(into, default)]
-        pub invoke_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub invoke_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The alias name or `"$LATEST"`.
         #[builder(into, default)]
-        pub qualifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub qualifier: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FunctionUrlResult {

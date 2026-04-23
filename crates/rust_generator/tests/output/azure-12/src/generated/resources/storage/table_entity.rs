@@ -55,18 +55,18 @@ pub mod table_entity {
     pub struct TableEntityArgs {
         /// A map of key/value pairs that describe the entity to be inserted/merged in to the storage table.
         #[builder(into)]
-        pub entity: pulumi_gestalt_rust::InputOrOutput<
+        pub entity: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
         /// The key for the partition where the entity will be inserted/merged. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub partition_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partition_key: pulumi_gestalt_rust::Input<String>,
         /// The key for the row where the entity will be inserted/merged. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub row_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub row_key: pulumi_gestalt_rust::Input<String>,
         /// The Storage Share ID in which this file will be placed into. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TableEntityResult {

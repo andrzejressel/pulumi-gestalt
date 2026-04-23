@@ -42,10 +42,10 @@ pub mod email_identity_feedback_attributes {
     pub struct EmailIdentityFeedbackAttributesArgs {
         /// Sets the feedback forwarding configuration for the identity.
         #[builder(into, default)]
-        pub email_forwarding_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub email_forwarding_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The email identity.
         #[builder(into)]
-        pub email_identity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_identity: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EmailIdentityFeedbackAttributesResult {

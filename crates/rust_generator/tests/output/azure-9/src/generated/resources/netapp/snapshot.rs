@@ -96,22 +96,22 @@ pub mod snapshot {
     pub struct SnapshotArgs {
         /// The name of the NetApp account in which the NetApp Pool should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the NetApp Snapshot. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the NetApp pool in which the NetApp Volume should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub pool_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pool_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group where the NetApp Snapshot should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the NetApp volume in which the NetApp Snapshot should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub volume_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SnapshotResult {

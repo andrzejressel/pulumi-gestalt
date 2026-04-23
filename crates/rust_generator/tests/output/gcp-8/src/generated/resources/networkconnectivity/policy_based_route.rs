@@ -111,16 +111,16 @@ pub mod policy_based_route {
     pub struct PolicyBasedRouteArgs {
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The filter to match L4 traffic.
         /// Structure is documented below.
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             super::super::types::networkconnectivity::PolicyBasedRouteFilter,
         >,
         /// The interconnect attachments that this policy-based route applies to.
         #[builder(into, default)]
-        pub interconnect_attachment: pulumi_gestalt_rust::InputOrOutput<
+        pub interconnect_attachment: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkconnectivity::PolicyBasedRouteInterconnectAttachment,
             >,
@@ -128,31 +128,31 @@ pub mod policy_based_route {
         /// User-defined labels. **Note**: This field is non-authoritative, and will only manage the labels present in your
         /// configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the policy based route.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Fully-qualified URL of the network that this route applies to, for example: projects/my-project/global/networks/my-network.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The IP address of a global-access-enabled L4 ILB that is the next hop for matching packets.
         #[builder(into, default)]
-        pub next_hop_ilb_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_ilb_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// Other routes that will be referenced to determine the next hop of the packet. Possible values: ["DEFAULT_ROUTING"]
         #[builder(into, default)]
-        pub next_hop_other_routes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_other_routes: pulumi_gestalt_rust::Input<Option<String>>,
         /// The priority of this policy-based route. Priority is used to break ties in cases where there are more than one matching
         /// policy-based routes found. In cases where multiple policy-based routes are matched, the one with the lowest-numbered
         /// priority value wins. The default value is 1000. The priority value must be from 1 to 65535, inclusive.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// VM instances to which this policy-based route applies to.
         #[builder(into, default)]
-        pub virtual_machine: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_machine: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkconnectivity::PolicyBasedRouteVirtualMachine,
             >,

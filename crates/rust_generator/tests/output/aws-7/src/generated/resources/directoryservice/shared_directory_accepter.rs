@@ -49,7 +49,7 @@ pub mod shared_directory_accepter {
     pub struct SharedDirectoryAccepterArgs {
         /// Identifier of the directory that is stored in the directory consumer account that corresponds to the shared directory in the owner account.
         #[builder(into)]
-        pub shared_directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub shared_directory_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SharedDirectoryAccepterResult {

@@ -37,9 +37,9 @@ pub mod vpc_block_public_access_options {
     pub struct VpcBlockPublicAccessOptionsArgs {
         /// Block mode. Needs to be one of `block-bidirectional`, `block-ingress`, `off`. If this resource is deleted, then this value will be set to `off` in the AWS account and region.
         #[builder(into)]
-        pub internet_gateway_block_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub internet_gateway_block_mode: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::VpcBlockPublicAccessOptionsTimeouts>,
         >,
     }

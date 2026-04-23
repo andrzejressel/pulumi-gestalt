@@ -47,35 +47,35 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// The ID of the associated App Service plan. Must be specified when the certificate is used inside an App Service Environment hosted App Service or with Premium App Service plans. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub app_service_plan_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub app_service_plan_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Key Vault secret. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Exactly one of `key_vault_secret_id` or `pfx_blob` must be specified.
         #[builder(into, default)]
-        pub key_vault_secret_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_secret_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password to access the certificate's private key. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The base64-encoded contents of the certificate. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Exactly one of `key_vault_secret_id` or `pfx_blob` must be specified.
         #[builder(into, default)]
-        pub pfx_blob: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pfx_blob: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the certificate. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The resource group must be the same as that which the app service plan is defined in - otherwise the certificate will not show as available for the app services.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

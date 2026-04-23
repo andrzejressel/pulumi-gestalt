@@ -52,28 +52,28 @@ pub mod table {
         /// Format of the table.
         /// Must be `ICEBERG`.
         #[builder(into)]
-        pub format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub format: pulumi_gestalt_rust::Input<String>,
         /// A single table bucket maintenance configuration block.
         /// See `maintenance_configuration` below
         #[builder(into, default)]
-        pub maintenance_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3tables::TableMaintenanceConfiguration>,
         >,
         /// Name of the table.
         /// Must be between 1 and 255 characters in length.
         /// Can consist of lowercase letters, numbers, and underscores, and must begin and end with a lowercase letter or number.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the namespace for this table.
         /// Must be between 1 and 255 characters in length.
         /// Can consist of lowercase letters, numbers, and underscores, and must begin and end with a lowercase letter or number.
         #[builder(into)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace: pulumi_gestalt_rust::Input<String>,
         /// ARN referencing the Table Bucket that contains this Namespace.
         ///
         /// The following argument is optional:
         #[builder(into)]
-        pub table_bucket_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_bucket_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TableResult {

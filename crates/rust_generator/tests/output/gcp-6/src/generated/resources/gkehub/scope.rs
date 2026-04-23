@@ -67,7 +67,7 @@ pub mod scope {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Scope-level cluster namespace labels. For the member clusters bound
@@ -76,19 +76,19 @@ pub mod scope {
         /// labels (`namespace_labels` in the Fleet Namespace resource) if they
         /// share a key. Keys and values must be Kubernetes-conformant.
         #[builder(into, default)]
-        pub namespace_labels: pulumi_gestalt_rust::InputOrOutput<
+        pub namespace_labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The client-provided identifier of the scope.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub scope_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ScopeResult {

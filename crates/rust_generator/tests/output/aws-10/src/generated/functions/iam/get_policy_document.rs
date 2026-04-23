@@ -9,30 +9,26 @@ pub mod get_policy_document {
     #[allow(dead_code)]
     pub struct GetPolicyDocumentArgs {
         #[builder(into, default)]
-        pub override_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub override_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of IAM policy documents that are merged together into the exported document. In merging, statements with non-blank `sid`s will override statements with the same `sid` from earlier documents in the list. Statements with non-blank `sid`s will also override statements with the same `sid` from `source_policy_documents`.  Non-overriding statements will be added to the exported document.
         #[builder(into, default)]
-        pub override_policy_documents: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub override_policy_documents: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// ID for the policy document.
         #[builder(into, default)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub source_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of IAM policy documents that are merged together into the exported document. Statements defined in `source_policy_documents` must have unique `sid`s. Statements with the same `sid` from `override_policy_documents` will override source statements.
         #[builder(into, default)]
-        pub source_policy_documents: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub source_policy_documents: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block for a policy statement. Detailed below.
         #[builder(into, default)]
-        pub statements: pulumi_gestalt_rust::InputOrOutput<
+        pub statements: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::iam::GetPolicyDocumentStatement>>,
         >,
         /// IAM policy document version. Valid values are `2008-10-17` and `2012-10-17`. Defaults to `2012-10-17`. For more information, see the [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_version.html).
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetPolicyDocumentResult {

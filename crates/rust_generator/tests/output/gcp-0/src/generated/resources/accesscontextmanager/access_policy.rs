@@ -75,17 +75,17 @@ pub mod access_policy {
         /// The parent of this AccessPolicy in the Cloud Resource Hierarchy.
         /// Format: 'organizations/{{organization_id}}'
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Folder or project on which this policy is applicable.
         /// Format: 'folders/{{folder_id}}' or 'projects/{{project_number}}'
         #[builder(into, default)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scopes: pulumi_gestalt_rust::Input<Option<String>>,
         /// Human readable title. Does not affect behavior.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub title: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub title: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessPolicyResult {

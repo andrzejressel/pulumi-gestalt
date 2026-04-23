@@ -43,10 +43,10 @@ pub mod env_group_attachment {
         ///
         /// - - -
         #[builder(into)]
-        pub envgroup_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub envgroup_id: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the environment.
         #[builder(into)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnvGroupAttachmentResult {

@@ -78,46 +78,46 @@ pub mod trigger_blob_event {
     pub struct TriggerBlobEventArgs {
         /// Specifies if the Data Factory Blob Event Trigger is activated. Defaults to `true`.
         #[builder(into, default)]
-        pub activated: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub activated: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of additional properties to associate with the Data Factory Blob Event Trigger.
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Blob Event Trigger.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The pattern that blob path starts with for trigger to fire.
         #[builder(into, default)]
-        pub blob_path_begins_with: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub blob_path_begins_with: pulumi_gestalt_rust::Input<Option<String>>,
         /// The pattern that blob path ends with for trigger to fire.
         ///
         /// > **Note:** At least one of `blob_path_begins_with` and `blob_path_ends_with` must be set.
         #[builder(into, default)]
-        pub blob_path_ends_with: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub blob_path_ends_with: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of Data Factory in which to associate the Trigger with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Blob Event Trigger.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of events that will fire this trigger. Possible values are `Microsoft.Storage.BlobCreated` and `Microsoft.Storage.BlobDeleted`.
         #[builder(into)]
-        pub events: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub events: pulumi_gestalt_rust::Input<Vec<String>>,
         /// are blobs with zero bytes ignored?
         #[builder(into, default)]
-        pub ignore_empty_blobs: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ignore_empty_blobs: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Data Factory Blob Event Trigger. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `pipeline` blocks as defined below.
         #[builder(into)]
-        pub pipelines: pulumi_gestalt_rust::InputOrOutput<
+        pub pipelines: pulumi_gestalt_rust::Input<
             Vec<super::super::types::datafactory::TriggerBlobEventPipeline>,
         >,
         /// The ID of Storage Account in which blob event will be listened. Changing this forces a new resource.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TriggerBlobEventResult {

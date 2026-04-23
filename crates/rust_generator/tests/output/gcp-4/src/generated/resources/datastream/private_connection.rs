@@ -68,29 +68,29 @@ pub mod private_connection {
     pub struct PrivateConnectionArgs {
         /// If set to true, will skip validations.
         #[builder(into, default)]
-        pub create_without_validation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub create_without_validation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Display name.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Labels. **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please
         /// refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the location this private connection is located in.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The private connectivity identifier.
         #[builder(into)]
-        pub private_connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_connection_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The VPC Peering configuration is used to create VPC peering
         /// between Datastream and the consumer's VPC.
         /// Structure is documented below.
         #[builder(into)]
-        pub vpc_peering_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_peering_config: pulumi_gestalt_rust::Input<
             super::super::types::datastream::PrivateConnectionVpcPeeringConfig,
         >,
     }

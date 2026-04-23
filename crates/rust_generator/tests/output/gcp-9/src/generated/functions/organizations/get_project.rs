@@ -10,7 +10,7 @@ pub mod get_project {
     pub struct GetProjectArgs {
         /// The project ID. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetProjectResult {

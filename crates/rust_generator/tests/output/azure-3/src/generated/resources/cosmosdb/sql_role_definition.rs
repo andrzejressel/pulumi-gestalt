@@ -63,29 +63,29 @@ pub mod sql_role_definition {
     pub struct SqlRoleDefinitionArgs {
         /// The name of the Cosmos DB Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// A list of fully qualified scopes at or below which Role Assignments may be created using this Cosmos DB SQL Role Definition. It will allow application of this Cosmos DB SQL Role Definition on the entire Database Account or any underlying Database/Collection. Scopes higher than Database Account are not enforceable as assignable scopes.
         ///
         /// > **NOTE:** The resources referenced in assignable scopes need not exist.
         #[builder(into)]
-        pub assignable_scopes: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub assignable_scopes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// An user-friendly name for the Cosmos DB SQL Role Definition which must be unique for the Database Account.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `permissions` block as defined below.
         #[builder(into)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::cosmosdb::SqlRoleDefinitionPermission>,
         >,
         /// The name of the Resource Group in which the Cosmos DB SQL Role Definition is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The GUID as the name of the Cosmos DB SQL Role Definition - one will be generated if not specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub role_definition_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_definition_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the Cosmos DB SQL Role Definition. Possible values are `BuiltInRole` and `CustomRole`. Defaults to `CustomRole`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SqlRoleDefinitionResult {

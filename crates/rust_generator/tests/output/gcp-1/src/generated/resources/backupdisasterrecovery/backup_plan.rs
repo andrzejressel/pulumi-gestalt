@@ -67,27 +67,27 @@ pub mod backup_plan {
     pub struct BackupPlanArgs {
         /// The ID of the backup plan
         #[builder(into)]
-        pub backup_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_plan_id: pulumi_gestalt_rust::Input<String>,
         /// The backup rules for this `BackupPlan`. There must be at least one `BackupRule` message.
         /// Structure is documented below.
         #[builder(into)]
-        pub backup_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub backup_rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::backupdisasterrecovery::BackupPlanBackupRule>,
         >,
         /// Backup vault where the backups gets stored using this Backup plan.
         #[builder(into)]
-        pub backup_vault: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_vault: pulumi_gestalt_rust::Input<String>,
         /// The description allows for additional details about 'BackupPlan' and its use cases to be provided.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location for the backup plan
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource type to which the `BackupPlan` will be applied. Examples include, "compute.googleapis.com/Instance" and "storage.googleapis.com/Bucket".
         #[builder(into)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupPlanResult {

@@ -80,24 +80,24 @@ pub mod schema {
     pub struct SchemaArgs {
         /// The unique id of the data store.
         #[builder(into)]
-        pub data_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_store_id: pulumi_gestalt_rust::Input<String>,
         /// The JSON representation of the schema.
         #[builder(into, default)]
-        pub json_schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub json_schema: pulumi_gestalt_rust::Input<Option<String>>,
         /// The geographic location where the data store should reside. The value can
         /// only be one of "global", "us" and "eu".
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique id of the schema.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub schema_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SchemaResult {

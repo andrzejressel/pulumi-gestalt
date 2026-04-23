@@ -24,18 +24,18 @@ pub mod test_grid_project {
     pub struct TestGridProjectArgs {
         /// Human-readable description of the project.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Selenium testing project.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The VPC security groups and subnets that are attached to a project. See VPC Config below.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::devicefarm::TestGridProjectVpcConfig>,
         >,
     }

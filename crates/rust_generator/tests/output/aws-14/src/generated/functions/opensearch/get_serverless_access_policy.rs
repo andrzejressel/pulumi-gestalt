@@ -10,10 +10,10 @@ pub mod get_serverless_access_policy {
     pub struct GetServerlessAccessPolicyArgs {
         /// Name of the policy.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Type of access policy. Must be `data`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServerlessAccessPolicyResult {

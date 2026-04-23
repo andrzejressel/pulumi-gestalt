@@ -39,27 +39,27 @@ pub mod snapshot {
     pub struct SnapshotArgs {
         /// A description of what the snapshot is.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the Outpost on which to create a local snapshot.
         #[builder(into, default)]
-        pub outpost_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub outpost_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether to permanently restore an archived snapshot.
         #[builder(into, default)]
-        pub permanent_restore: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub permanent_restore: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.
         #[builder(into, default)]
-        pub storage_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the snapshot. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
         #[builder(into, default)]
-        pub temporary_restore_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub temporary_restore_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Volume ID of which to make a snapshot.
         #[builder(into)]
-        pub volume_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SnapshotResult {

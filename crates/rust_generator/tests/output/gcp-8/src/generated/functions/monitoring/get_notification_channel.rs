@@ -10,27 +10,27 @@ pub mod get_notification_channel {
     pub struct GetNotificationChannelArgs {
         /// The display name for this notification channel.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels (corresponding to the
         /// NotificationChannelDescriptor schema) to filter the notification channels by.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the notification channel.
         ///
         /// - - -
         ///
         /// Other optional fields include:
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-provided key-value labels to filter by.
         #[builder(into, default)]
-        pub user_labels: pulumi_gestalt_rust::InputOrOutput<
+        pub user_labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

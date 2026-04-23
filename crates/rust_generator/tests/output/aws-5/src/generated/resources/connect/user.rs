@@ -189,39 +189,39 @@ pub mod user {
     pub struct UserArgs {
         /// The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory. This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.
         #[builder(into, default)]
-        pub directory_user_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub directory_user_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier of the hierarchy group for the user.
         #[builder(into, default)]
-        pub hierarchy_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hierarchy_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block that contains information about the identity of the user. Documented below.
         #[builder(into, default)]
-        pub identity_info: pulumi_gestalt_rust::InputOrOutput<
+        pub identity_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::connect::UserIdentityInfo>,
         >,
         /// Specifies the identifier of the hosting Amazon Connect Instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from `[a-zA-Z0-9_-.\@]+`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block that contains information about the phone settings for the user. Documented below.
         #[builder(into)]
-        pub phone_config: pulumi_gestalt_rust::InputOrOutput<
+        pub phone_config: pulumi_gestalt_rust::Input<
             super::super::types::connect::UserPhoneConfig,
         >,
         /// The identifier of the routing profile for the user.
         #[builder(into)]
-        pub routing_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub routing_profile_id: pulumi_gestalt_rust::Input<String>,
         /// A list of identifiers for the security profiles for the user. Specify a minimum of 1 and maximum of 10 security profile ids. For more information, see [Best Practices for Security Profiles](https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html) in the Amazon Connect Administrator Guide.
         #[builder(into)]
-        pub security_profile_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub security_profile_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Tags to apply to the user. If configured with a provider
         /// `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

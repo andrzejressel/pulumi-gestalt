@@ -58,10 +58,10 @@ pub mod log_service {
     pub struct LogServiceArgs {
         /// ID of directory.
         #[builder(into)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the cloudwatch log group to which the logs should be published. The log group should be already created and the directory service principal should be provided with required permission to create stream and publish logs. Changing this value would delete the current subscription and create a new one. A directory can only have one log subscription at a time.
         #[builder(into)]
-        pub log_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LogServiceResult {

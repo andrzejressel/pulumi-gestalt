@@ -10,13 +10,13 @@ pub mod get_tunnel {
     pub struct GetTunnelArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// If true, only include deleted tunnels. If false, exclude deleted tunnels. If empty, all tunnels will be included. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub is_deleted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_deleted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the tunnel. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTunnelResult {

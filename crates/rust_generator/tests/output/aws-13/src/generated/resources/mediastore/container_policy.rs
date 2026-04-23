@@ -63,10 +63,10 @@ pub mod container_policy {
     pub struct ContainerPolicyArgs {
         /// The name of the container.
         #[builder(into)]
-        pub container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_name: pulumi_gestalt_rust::Input<String>,
         /// The contents of the policy.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ContainerPolicyResult {

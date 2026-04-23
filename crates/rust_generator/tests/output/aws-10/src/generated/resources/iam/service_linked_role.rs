@@ -35,16 +35,16 @@ pub mod service_linked_role {
     pub struct ServiceLinkedRoleArgs {
         /// The AWS service to which this role is attached. You use a string similar to a URL but without the `http://` in front. For example: `elasticbeanstalk.amazonaws.com`. To find the full list of services that support service-linked roles, check [the docs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html).
         #[builder(into)]
-        pub aws_service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub aws_service_name: pulumi_gestalt_rust::Input<String>,
         /// Additional string appended to the role name. Not all AWS services support custom suffixes.
         #[builder(into, default)]
-        pub custom_suffix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_suffix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the role.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of tags for the IAM role. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

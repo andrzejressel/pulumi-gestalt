@@ -73,12 +73,12 @@ pub mod registry_scanning_configuration {
     pub struct RegistryScanningConfigurationArgs {
         /// One or multiple blocks specifying scanning rules to determine which repository filters are used and at what frequency scanning will occur. See below for schema.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ecr::RegistryScanningConfigurationRule>>,
         >,
         /// the scanning type to set for the registry. Can be either `ENHANCED` or `BASIC`.
         #[builder(into)]
-        pub scan_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scan_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegistryScanningConfigurationResult {

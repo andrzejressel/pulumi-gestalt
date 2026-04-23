@@ -187,30 +187,30 @@ pub mod data_transfer_config {
         /// just [today-1]. Only valid if the data source supports the feature.
         /// Set the value to 0 to use the default value.
         #[builder(into, default)]
-        pub data_refresh_window_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub data_refresh_window_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The data source id. Cannot be changed once the transfer config is created.
         #[builder(into)]
-        pub data_source_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_source_id: pulumi_gestalt_rust::Input<String>,
         /// The BigQuery target dataset id.
         #[builder(into, default)]
-        pub destination_dataset_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination_dataset_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// When set to true, no runs are scheduled for a given transfer.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The user specified display name for the transfer config.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Email notifications will be sent according to these preferences to the
         /// email address of the user who owns this transfer config.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub email_preferences: pulumi_gestalt_rust::InputOrOutput<
+        pub email_preferences: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::DataTransferConfigEmailPreferences>,
         >,
         /// Represents the encryption configuration for a transfer.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bigquery::DataTransferConfigEncryptionConfiguration,
             >,
@@ -218,13 +218,11 @@ pub mod data_transfer_config {
         /// The geographic location where the transfer config should reside.
         /// Examples: US, EU, asia-northeast1. The default value is US.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Pub/Sub topic where notifications will be sent after transfer runs
         /// associated with this transfer config finish.
         #[builder(into, default)]
-        pub notification_pubsub_topic: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub notification_pubsub_topic: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters specific to each data source. For more information see the bq tab in the 'Setting up a data transfer'
         /// section for each data source. For example the parameters for Cloud Storage transfers are listed here:
         /// https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
@@ -233,13 +231,13 @@ pub mod data_transfer_config {
         ///
         /// - - -
         #[builder(into)]
-        pub params: pulumi_gestalt_rust::InputOrOutput<
+        pub params: pulumi_gestalt_rust::Input<
             std::collections::HashMap<String, String>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Data transfer schedule. If the data source does not support a custom
         /// schedule, this should be empty. If it is empty, the default value for
         /// the data source will be used. The specified times are in UTC. Examples
@@ -250,11 +248,11 @@ pub mod data_transfer_config {
         /// NOTE: The minimum interval time between recurring transfers depends
         /// on the data source; refer to the documentation for your data source.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schedule: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options customizing the data transfer schedule.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub schedule_options: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::DataTransferConfigScheduleOptions>,
         >,
         /// Different parameters are configured primarily using the the `params` field on this
@@ -265,14 +263,14 @@ pub mod data_transfer_config {
         /// to a different credential configuration in the config will require an apply to update state.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub sensitive_params: pulumi_gestalt_rust::InputOrOutput<
+        pub sensitive_params: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::DataTransferConfigSensitiveParams>,
         >,
         /// Service account email. If this field is set, transfer config will
         /// be created with this service account credentials. It requires that
         /// requesting user calling this API has permissions to act as this service account.
         #[builder(into, default)]
-        pub service_account_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DataTransferConfigResult {

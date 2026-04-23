@@ -10,7 +10,7 @@ pub mod get_domain_identity {
     pub struct GetDomainIdentityArgs {
         /// Name of the domain
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDomainIdentityResult {

@@ -54,24 +54,24 @@ pub mod cname_record {
     pub struct CnameRecordArgs {
         /// The name of the DNS CNAME Record. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The target of the CNAME.
         #[builder(into)]
-        pub record: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub record: pulumi_gestalt_rust::Input<String>,
         /// Specifies the resource group where the resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Time To Live (TTL) of the DNS record in seconds. Possible values are between `0` and `2147483647`.
         #[builder(into)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub ttl: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the Private DNS Zone where the resource exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub zone_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CnameRecordResult {

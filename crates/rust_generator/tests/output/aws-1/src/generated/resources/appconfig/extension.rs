@@ -62,23 +62,23 @@ pub mod extension {
     pub struct ExtensionArgs {
         /// The action points defined in the extension. Detailed below.
         #[builder(into)]
-        pub action_points: pulumi_gestalt_rust::InputOrOutput<
+        pub action_points: pulumi_gestalt_rust::Input<
             Vec<super::super::types::appconfig::ExtensionActionPoint>,
         >,
         /// Information about the extension.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the CreateExtensionAssociation API action. For Lambda extension actions, these parameters are included in the Lambda request object. Detailed below.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appconfig::ExtensionParameter>>,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

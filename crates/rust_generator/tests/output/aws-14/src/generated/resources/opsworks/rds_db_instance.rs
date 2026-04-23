@@ -30,16 +30,16 @@ pub mod rds_db_instance {
     pub struct RdsDbInstanceArgs {
         /// A db password
         #[builder(into)]
-        pub db_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_password: pulumi_gestalt_rust::Input<String>,
         /// A db username
         #[builder(into)]
-        pub db_user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_user: pulumi_gestalt_rust::Input<String>,
         /// The db instance to register for this stack. Changing this will force a new resource.
         #[builder(into)]
-        pub rds_db_instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rds_db_instance_arn: pulumi_gestalt_rust::Input<String>,
         /// The stack to register a db instance for. Changing this will force a new resource.
         #[builder(into)]
-        pub stack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RdsDbInstanceResult {

@@ -153,36 +153,36 @@ pub mod workstation_cluster {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Human-readable name for this resource.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration options for a custom domain.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub domain_config: pulumi_gestalt_rust::InputOrOutput<
+        pub domain_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::workstations::WorkstationClusterDomainConfig>,
         >,
         /// Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where the workstation cluster should reside.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative resource name of the VPC network on which the instance can be accessed.
         /// It is specified in the following form: "projects/{projectNumber}/global/networks/{network_id}".
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// Configuration for private cluster.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub private_cluster_config: pulumi_gestalt_rust::InputOrOutput<
+        pub private_cluster_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::workstations::WorkstationClusterPrivateClusterConfig,
             >,
@@ -190,17 +190,17 @@ pub mod workstation_cluster {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Compute Engine subnetwork in which instances associated with this cluster will be created.
         /// Must be part of the subnetwork specified for this cluster.
         #[builder(into)]
-        pub subnetwork: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnetwork: pulumi_gestalt_rust::Input<String>,
         /// ID to use for the workstation cluster.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub workstation_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workstation_cluster_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkstationClusterResult {

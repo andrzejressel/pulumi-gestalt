@@ -39,66 +39,64 @@ pub mod cluster {
         /// List of Availability Zones in which the
         /// nodes will be created
         #[builder(into, default)]
-        pub availability_zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub availability_zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The type of encryption the
         /// cluster's endpoint should support. Valid values are: `NONE` and `TLS`.
         /// Default value is `NONE`.
         #[builder(into, default)]
-        pub cluster_endpoint_encryption_type: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cluster_endpoint_encryption_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Group identifier. DAX converts this name to
         /// lowercase
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Description for the cluster
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valid Amazon Resource Name (ARN) that identifies
         /// an IAM role. At runtime, DAX will assume this role and use the role's
         /// permissions to access DynamoDB on your behalf
         #[builder(into)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Specifies the weekly time range for when
         /// maintenance on the cluster is performed. The format is `ddd:hh24:mi-ddd:hh24:mi`
         /// (24H Clock UTC). The minimum maintenance window is a 60 minute period. Example:
         /// `sun:05:00-sun:09:00`
         #[builder(into, default)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The compute and memory capacity of the nodes. See
         /// [Nodes](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.cluster.html#DAX.concepts.nodes) for supported node types
         #[builder(into)]
-        pub node_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_type: pulumi_gestalt_rust::Input<String>,
         /// An Amazon Resource Name (ARN) of an
         /// SNS topic to send DAX notifications to. Example:
         /// `arn:aws:sns:us-east-1:012345678999:my_sns_topic`
         #[builder(into, default)]
-        pub notification_topic_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notification_topic_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the parameter group to associate
         /// with this DAX cluster
         #[builder(into, default)]
-        pub parameter_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of nodes in the DAX cluster. A
         /// replication factor of 1 will create a single-node cluster, without any read
         /// replicas
         #[builder(into)]
-        pub replication_factor: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub replication_factor: pulumi_gestalt_rust::Input<i32>,
         /// One or more VPC security groups associated
         /// with the cluster
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Encrypt at rest options
         #[builder(into, default)]
-        pub server_side_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub server_side_encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::dax::ClusterServerSideEncryption>,
         >,
         /// Name of the subnet group to be used for the
         /// cluster
         #[builder(into, default)]
-        pub subnet_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

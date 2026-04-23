@@ -61,18 +61,18 @@ pub mod module {
     pub struct ModuleArgs {
         /// The name of the automation account in which the Module is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// A `module_link` block as defined below.
         #[builder(into)]
-        pub module_link: pulumi_gestalt_rust::InputOrOutput<
+        pub module_link: pulumi_gestalt_rust::Input<
             super::super::types::automation::ModuleModuleLink,
         >,
         /// Specifies the name of the Module. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Module is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ModuleResult {

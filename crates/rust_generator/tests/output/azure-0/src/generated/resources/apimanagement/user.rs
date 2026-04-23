@@ -60,36 +60,36 @@ pub mod user {
     pub struct UserArgs {
         /// The name of the API Management Service in which the User should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The kind of confirmation email which will be sent to this user. Possible values are `invite` and `signup`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub confirmation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub confirmation: pulumi_gestalt_rust::Input<Option<String>>,
         /// The email address associated with this user.
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
         /// The first name for this user.
         #[builder(into)]
-        pub first_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub first_name: pulumi_gestalt_rust::Input<String>,
         /// The last name for this user.
         #[builder(into)]
-        pub last_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub last_name: pulumi_gestalt_rust::Input<String>,
         /// A note about this user.
         #[builder(into, default)]
-        pub note: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub note: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password associated with this user.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The state of this user. Possible values are `active`, `blocked` and `pending`.
         ///
         /// > **NOTE:** the State can be changed from Pending > Active/Blocked but not from Active/Blocked > Pending.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Identifier for this User, which must be unique within the API Management Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub user_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserResult {

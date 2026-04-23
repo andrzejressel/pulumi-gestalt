@@ -37,22 +37,22 @@ pub mod sharedflow_deployment {
     pub struct SharedflowDeploymentArgs {
         /// The resource ID of the environment.
         #[builder(into)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment: pulumi_gestalt_rust::Input<String>,
         /// The Apigee Organization associated with the Sharedflow
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// Revision of the Sharedflow to be deployed.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub revision: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub revision: pulumi_gestalt_rust::Input<String>,
         /// The service account represents the identity of the deployed proxy, and determines what permissions it has. The format must be {ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// Id of the Sharedflow to be deployed.
         #[builder(into)]
-        pub sharedflow_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sharedflow_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SharedflowDeploymentResult {

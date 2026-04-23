@@ -10,17 +10,17 @@ pub mod get_script {
     pub struct GetScriptArgs {
         /// List of the edges in the DAG. Defined below.
         #[builder(into)]
-        pub dag_edges: pulumi_gestalt_rust::InputOrOutput<
+        pub dag_edges: pulumi_gestalt_rust::Input<
             Vec<super::super::super::types::glue::GetScriptDagEdge>,
         >,
         /// List of the nodes in the DAG. Defined below.
         #[builder(into)]
-        pub dag_nodes: pulumi_gestalt_rust::InputOrOutput<
+        pub dag_nodes: pulumi_gestalt_rust::Input<
             Vec<super::super::super::types::glue::GetScriptDagNode>,
         >,
         /// Programming language of the resulting code from the DAG. Defaults to `PYTHON`. Valid values are `PYTHON` and `SCALA`.
         #[builder(into, default)]
-        pub language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetScriptResult {

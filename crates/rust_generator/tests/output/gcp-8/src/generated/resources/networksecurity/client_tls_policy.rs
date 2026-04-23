@@ -80,39 +80,39 @@ pub mod client_tls_policy {
         /// Defines a mechanism to provision client identity (public and private keys) for peer to peer authentication. The presence of this dictates mTLS.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub client_certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub client_certificate: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networksecurity::ClientTlsPolicyClientCertificate,
             >,
         >,
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of label tags associated with the ClientTlsPolicy resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the client tls policy.
         /// The default value is `global`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the ClientTlsPolicy resource.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the mechanism to obtain the Certificate Authority certificate to validate the server certificate. If empty, client does not validate the server certificate.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub server_validation_cas: pulumi_gestalt_rust::InputOrOutput<
+        pub server_validation_cas: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::networksecurity::ClientTlsPolicyServerValidationCa,
@@ -121,7 +121,7 @@ pub mod client_tls_policy {
         >,
         /// Server Name Indication string to present to the server during TLS handshake. E.g: "secure.example.com".
         #[builder(into, default)]
-        pub sni: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sni: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ClientTlsPolicyResult {

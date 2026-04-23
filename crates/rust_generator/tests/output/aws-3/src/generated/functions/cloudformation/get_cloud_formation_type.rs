@@ -10,16 +10,16 @@ pub mod get_cloud_formation_type {
     pub struct GetCloudFormationTypeArgs {
         /// ARN of the CloudFormation Type. For example, `arn:aws:cloudformation:us-west-2::type/resource/AWS-EC2-VPC`.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// CloudFormation Registry Type. For example, `RESOURCE`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// CloudFormation Type name. For example, `AWS::EC2::VPC`.
         #[builder(into, default)]
-        pub type_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the CloudFormation Type version.
         #[builder(into, default)]
-        pub version_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetCloudFormationTypeResult {

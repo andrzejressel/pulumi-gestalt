@@ -50,21 +50,19 @@ pub mod hybrid_connection {
     pub struct HybridConnectionArgs {
         /// Specifies the name of the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Azure Relay in which to create the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub relay_namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub relay_namespace_name: pulumi_gestalt_rust::Input<String>,
         /// Specify if client authorization is needed for this hybrid connection. Changing this forces a new resource to be created. Defaults to `true`.
         #[builder(into, default)]
-        pub requires_client_authorization: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub requires_client_authorization: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored.
         #[builder(into, default)]
-        pub user_metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_metadata: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HybridConnectionResult {

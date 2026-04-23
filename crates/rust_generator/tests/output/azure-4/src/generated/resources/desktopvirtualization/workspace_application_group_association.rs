@@ -72,10 +72,10 @@ pub mod workspace_application_group_association {
     pub struct WorkspaceApplicationGroupAssociationArgs {
         /// The resource ID for the Virtual Desktop Application Group. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_group_id: pulumi_gestalt_rust::Input<String>,
         /// The resource ID for the Virtual Desktop Workspace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceApplicationGroupAssociationResult {

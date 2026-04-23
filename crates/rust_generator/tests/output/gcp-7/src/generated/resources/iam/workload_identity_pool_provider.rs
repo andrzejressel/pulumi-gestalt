@@ -334,7 +334,7 @@ pub mod workload_identity_pool_provider {
         /// The expression must output a boolean representing whether to allow the federation.
         /// The following keywords may be referenced in the expressions:
         #[builder(into, default)]
-        pub attribute_condition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub attribute_condition: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maps attributes from authentication credentials issued by an external identity provider
         /// to Google Cloud attributes, such as `subject` and `segment`.
         /// Each key must be a string specifying the Google Cloud IAM attribute to map to.
@@ -387,46 +387,46 @@ pub mod workload_identity_pool_provider {
         /// {"google.subject": "assertion.sub"}
         /// ```
         #[builder(into, default)]
-        pub attribute_mapping: pulumi_gestalt_rust::InputOrOutput<
+        pub attribute_mapping: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An Amazon Web Services identity provider. Not compatible with the property oidc or saml.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub aws: pulumi_gestalt_rust::InputOrOutput<
+        pub aws: pulumi_gestalt_rust::Input<
             Option<super::super::types::iam::WorkloadIdentityPoolProviderAws>,
         >,
         /// A description for the provider. Cannot exceed 256 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the provider is disabled. You cannot use a disabled provider to exchange tokens.
         /// However, existing tokens still grant access.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A display name for the provider. Cannot exceed 32 characters.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An OpenId Connect 1.0 identity provider. Not compatible with the property aws or saml.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub oidc: pulumi_gestalt_rust::InputOrOutput<
+        pub oidc: pulumi_gestalt_rust::Input<
             Option<super::super::types::iam::WorkloadIdentityPoolProviderOidc>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// An SAML 2.0 identity provider. Not compatible with the property oidc or aws.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub saml: pulumi_gestalt_rust::InputOrOutput<
+        pub saml: pulumi_gestalt_rust::Input<
             Option<super::super::types::iam::WorkloadIdentityPoolProviderSaml>,
         >,
         /// The ID used for the pool, which is the final component of the pool resource name. This
         /// value should be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix
         /// `gcp-` is reserved for use by Google, and may not be specified.
         #[builder(into)]
-        pub workload_identity_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workload_identity_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The ID for the provider, which becomes the final component of the resource name. This
         /// value must be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix
         /// `gcp-` is reserved for use by Google, and may not be specified.
@@ -434,14 +434,12 @@ pub mod workload_identity_pool_provider {
         ///
         /// - - -
         #[builder(into)]
-        pub workload_identity_pool_provider_id: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub workload_identity_pool_provider_id: pulumi_gestalt_rust::Input<String>,
         /// An X.509-type identity provider represents a CA. It is trusted to assert a
         /// client identity if the client has a certificate that chains up to this CA.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub x509: pulumi_gestalt_rust::InputOrOutput<
+        pub x509: pulumi_gestalt_rust::Input<
             Option<super::super::types::iam::WorkloadIdentityPoolProviderX509>,
         >,
     }

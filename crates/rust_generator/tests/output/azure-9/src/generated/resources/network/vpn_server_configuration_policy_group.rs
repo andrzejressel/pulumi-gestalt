@@ -71,21 +71,21 @@ pub mod vpn_server_configuration_policy_group {
     pub struct VpnServerConfigurationPolicyGroupArgs {
         /// Is this a default VPN Server Configuration Policy Group? Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub is_default: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_default: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Name which should be used for this VPN Server Configuration Policy Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `policy` blocks as documented below.
         #[builder(into)]
-        pub policies: pulumi_gestalt_rust::InputOrOutput<
+        pub policies: pulumi_gestalt_rust::Input<
             Vec<super::super::types::network::VpnServerConfigurationPolicyGroupPolicy>,
         >,
         /// The priority of this VPN Server Configuration Policy Group. Defaults to `0`.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the VPN Server Configuration that the VPN Server Configuration Policy Group belongs to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub vpn_server_configuration_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpn_server_configuration_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpnServerConfigurationPolicyGroupResult {

@@ -10,16 +10,16 @@ pub mod get_account_jwt {
     pub struct GetAccountJwtArgs {
         /// Delegate chain of approvals needed to perform full impersonation. Specify the fully qualified service account name.
         #[builder(into, default)]
-        pub delegates: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub delegates: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Number of seconds until the JWT expires. If set and non-zero an `exp` claim will be added to the payload derived from the current timestamp plus expires_in seconds.
         #[builder(into, default)]
-        pub expires_in: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub expires_in: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The JSON-encoded JWT claims set to include in the self-signed JWT.
         #[builder(into)]
-        pub payload: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub payload: pulumi_gestalt_rust::Input<String>,
         /// The email of the service account that will sign the JWT.
         #[builder(into)]
-        pub target_service_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_service_account: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccountJwtResult {

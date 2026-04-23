@@ -10,13 +10,13 @@ pub mod get_device {
     pub struct GetDeviceArgs {
         /// ID of the device.
         #[builder(into)]
-        pub device_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub device_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the global network.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the device.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

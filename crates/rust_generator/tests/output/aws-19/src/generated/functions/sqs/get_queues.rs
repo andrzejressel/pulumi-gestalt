@@ -10,7 +10,7 @@ pub mod get_queues {
     pub struct GetQueuesArgs {
         /// A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue URLs and names are case-sensitive.
         #[builder(into, default)]
-        pub queue_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub queue_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetQueuesResult {

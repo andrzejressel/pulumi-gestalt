@@ -51,35 +51,33 @@ pub mod hci_extension {
     pub struct HciExtensionArgs {
         /// The ID of the Azure Stack HCI Cluster Arc Setting. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub arc_setting_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arc_setting_id: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true. Changing this forces a new resource to be created. Possible values are `true` and `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub auto_upgrade_minor_version_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub auto_upgrade_minor_version_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates whether the extension should be automatically upgraded by the platform if there is a newer version available. Possible values are `true` and `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub automatic_upgrade_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub automatic_upgrade_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Azure Stack HCI Extension. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The json formatted protected settings for the extension.
         #[builder(into, default)]
-        pub protected_settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protected_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the extension handler publisher, such as `Microsoft.Azure.Monitor`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub publisher: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub publisher: pulumi_gestalt_rust::Input<String>,
         /// The json formatted public settings for the extension.
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the type of the extension. For example `CustomScriptExtension` or `AzureMonitorLinuxAgent`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Specifies the version of the script handler.
         ///
         /// > **NOTE:** `type_handler_version` cannot be set when `automatic_upgrade_enabled` is set to `true`.
         #[builder(into, default)]
-        pub type_handler_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_handler_version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HciExtensionResult {

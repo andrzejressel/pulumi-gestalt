@@ -11,19 +11,19 @@ pub mod get_policy {
         /// ARN of the IAM policy.
         /// Conflicts with `name` and `path_prefix`.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the IAM policy.
         /// Conflicts with `arn`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Prefix of the path to the IAM policy.
         /// Defaults to a slash (`/`).
         /// Conflicts with `arn`.
         #[builder(into, default)]
-        pub path_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of tags for the IAM Policy.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -118,27 +118,27 @@ pub mod posture {
     pub struct PostureArgs {
         /// Description of the posture.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location of the resource, eg: global.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// List of policy sets for the posture.
         /// Structure is documented below.
         #[builder(into)]
-        pub policy_sets: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_sets: pulumi_gestalt_rust::Input<
             Vec<super::super::types::securityposture::PosturePolicySet>,
         >,
         /// Id of the posture. It is an immutable field.
         #[builder(into)]
-        pub posture_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub posture_id: pulumi_gestalt_rust::Input<String>,
         /// State of the posture. Update to state field should not be triggered along with
         /// with other field updates.
         /// Possible values are: `DEPRECATED`, `DRAFT`, `ACTIVE`.
         #[builder(into)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub state: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PostureResult {

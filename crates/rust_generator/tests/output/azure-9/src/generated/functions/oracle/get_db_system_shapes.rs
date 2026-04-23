@@ -10,7 +10,7 @@ pub mod get_db_system_shapes {
     pub struct GetDbSystemShapesArgs {
         /// The Azure Region to query for the system shapes in.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDbSystemShapesResult {

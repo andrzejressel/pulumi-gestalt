@@ -10,10 +10,10 @@ pub mod get_virtual_machine_manager_inventory_items {
     pub struct GetVirtualMachineManagerInventoryItemsArgs {
         /// The inventory type of the System Center Virtual Machine Manager Inventory Item. Possible values are `Cloud`, `VirtualMachine`, `VirtualMachineTemplate` and `VirtualNetwork`.
         #[builder(into)]
-        pub inventory_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub inventory_type: pulumi_gestalt_rust::Input<String>,
         /// The ID of the System Center Virtual Machine Manager Server.
         #[builder(into)]
-        pub system_center_virtual_machine_manager_server_id: pulumi_gestalt_rust::InputOrOutput<
+        pub system_center_virtual_machine_manager_server_id: pulumi_gestalt_rust::Input<
             String,
         >,
     }

@@ -10,12 +10,12 @@ pub mod get_product {
     pub struct GetProductArgs {
         /// List of filters. Passed directly to the API (see GetProducts API reference). These filters must describe a single product, this resource will fail if more than one product is returned by the API.
         #[builder(into)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Vec<super::super::super::types::pricing::GetProductFilter>,
         >,
         /// Code of the service. Available service codes can be fetched using the DescribeServices pricing API call.
         #[builder(into)]
-        pub service_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_code: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetProductResult {

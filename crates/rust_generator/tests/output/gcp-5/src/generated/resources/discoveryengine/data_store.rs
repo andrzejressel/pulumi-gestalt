@@ -114,28 +114,26 @@ pub mod data_store {
         /// The content config of the data store.
         /// Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
         #[builder(into)]
-        pub content_config: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content_config: pulumi_gestalt_rust::Input<String>,
         /// If true, an advanced data store for site search will be created. If the
         /// data store is not configured as site search (GENERIC vertical and
         /// PUBLIC_WEBSITE contentConfig), this flag will be ignored.
         #[builder(into, default)]
-        pub create_advanced_site_search: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub create_advanced_site_search: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The unique id of the data store.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub data_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_store_id: pulumi_gestalt_rust::Input<String>,
         /// The display name of the data store. This field must be a UTF-8 encoded
         /// string with a length limit of 128 characters.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration for Document understanding and enrichment.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub document_processing_config: pulumi_gestalt_rust::InputOrOutput<
+        pub document_processing_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::discoveryengine::DataStoreDocumentProcessingConfig,
             >,
@@ -143,15 +141,15 @@ pub mod data_store {
         /// The industry vertical that the data store registers.
         /// Possible values are: `GENERIC`, `MEDIA`, `HEALTHCARE_FHIR`.
         #[builder(into)]
-        pub industry_vertical: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub industry_vertical: pulumi_gestalt_rust::Input<String>,
         /// The geographic location where the data store should reside. The value can
         /// only be one of "global", "us" and "eu".
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean flag indicating whether to skip the default schema creation for
         /// the data store. Only enable this flag if you are certain that the default
         /// schema is incompatible with your use case.
@@ -160,13 +158,11 @@ pub mod data_store {
         /// This flag cannot be specified if `data_store.starting_schema` is
         /// specified.
         #[builder(into, default)]
-        pub skip_default_schema_creation: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub skip_default_schema_creation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The solutions that the data store enrolls.
         /// Each value may be one of: `SOLUTION_TYPE_RECOMMENDATION`, `SOLUTION_TYPE_SEARCH`, `SOLUTION_TYPE_CHAT`, `SOLUTION_TYPE_GENERATIVE_CHAT`.
         #[builder(into, default)]
-        pub solution_types: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub solution_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct DataStoreResult {

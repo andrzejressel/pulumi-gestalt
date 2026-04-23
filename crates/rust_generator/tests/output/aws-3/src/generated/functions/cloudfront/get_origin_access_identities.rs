@@ -10,7 +10,7 @@ pub mod get_origin_access_identities {
     pub struct GetOriginAccessIdentitiesArgs {
         /// Filter origin access identities by comment.
         #[builder(into, default)]
-        pub comments: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub comments: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct GetOriginAccessIdentitiesResult {

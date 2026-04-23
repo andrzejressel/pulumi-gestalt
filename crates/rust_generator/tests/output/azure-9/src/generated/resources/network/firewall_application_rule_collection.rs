@@ -89,22 +89,22 @@ pub mod firewall_application_rule_collection {
     pub struct FirewallApplicationRuleCollectionArgs {
         /// Specifies the action the rule will apply to matching traffic. Possible values are `Allow` and `Deny`.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Firewall in which the Application Rule Collection should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub azure_firewall_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub azure_firewall_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Application Rule Collection which must be unique within the Firewall. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the priority of the rule collection. Possible values are between `100` - `65000`.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the name of the Resource Group in which the Firewall exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `rule` blocks as defined below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::network::FirewallApplicationRuleCollectionRule>,
         >,
     }

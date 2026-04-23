@@ -217,36 +217,36 @@ pub mod rule_group {
     pub struct RuleGroupArgs {
         /// The maximum number of operating resources that this rule group can use. For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules. For a stateful rule group, the minimum capacity required is the number of individual rules.
         #[builder(into)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub capacity: pulumi_gestalt_rust::Input<i32>,
         /// A friendly description of the rule group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// KMS encryption configuration settings. See Encryption Configuration below for details.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkfirewall::RuleGroupEncryptionConfiguration,
             >,
         >,
         /// A friendly name of the rule group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration block that defines the rule group rules. Required unless `rules` is specified. See Rule Group below for details.
         #[builder(into, default)]
-        pub rule_group: pulumi_gestalt_rust::InputOrOutput<
+        pub rule_group: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkfirewall::RuleGroupRuleGroup>,
         >,
         /// The stateful rule group rules specifications in Suricata file format, with one rule per line. Use this to import your existing Suricata compatible rule groups. Required unless `rule_group` is specified.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rules: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of key:value pairs to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whether the rule group is stateless (containing stateless rules) or stateful (containing stateful rules). Valid values include: `STATEFUL` or `STATELESS`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RuleGroupResult {

@@ -10,7 +10,7 @@ pub mod get_security_group_rules {
     pub struct GetSecurityGroupRulesArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::vpc::GetSecurityGroupRulesFilter>>,
         >,
         /// Map of tags, each pair of which must exactly match
@@ -19,7 +19,7 @@ pub mod get_security_group_rules {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

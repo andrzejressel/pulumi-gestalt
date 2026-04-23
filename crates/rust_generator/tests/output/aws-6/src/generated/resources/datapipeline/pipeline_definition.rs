@@ -67,26 +67,26 @@ pub mod pipeline_definition {
     pub struct PipelineDefinitionArgs {
         /// Configuration block for the parameter objects used in the pipeline definition. See below
         #[builder(into, default)]
-        pub parameter_objects: pulumi_gestalt_rust::InputOrOutput<
+        pub parameter_objects: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::datapipeline::PipelineDefinitionParameterObject>,
             >,
         >,
         /// Configuration block for the parameter values used in the pipeline definition. See below
         #[builder(into, default)]
-        pub parameter_values: pulumi_gestalt_rust::InputOrOutput<
+        pub parameter_values: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::datapipeline::PipelineDefinitionParameterValue>,
             >,
         >,
         /// ID of the pipeline.
         #[builder(into)]
-        pub pipeline_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pipeline_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for the objects that define the pipeline. See below
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub pipeline_objects: pulumi_gestalt_rust::InputOrOutput<
+        pub pipeline_objects: pulumi_gestalt_rust::Input<
             Vec<super::super::types::datapipeline::PipelineDefinitionPipelineObject>,
         >,
     }

@@ -59,20 +59,18 @@ pub mod volume {
     pub struct VolumeArgs {
         /// Driver type for the volume. Defaults to `local`.
         #[builder(into, default)]
-        pub driver: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub driver: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options specific to the driver.
         #[builder(into, default)]
-        pub driver_opts: pulumi_gestalt_rust::InputOrOutput<
+        pub driver_opts: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// User-defined key/value metadata
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<super::types::VolumeLabel>>,
-        >,
+        pub labels: pulumi_gestalt_rust::Input<Option<Vec<super::types::VolumeLabel>>>,
         /// The name of the Docker volume (will be generated if not provided).
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VolumeResult {

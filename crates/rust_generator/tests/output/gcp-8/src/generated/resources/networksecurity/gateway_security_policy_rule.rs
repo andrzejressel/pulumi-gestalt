@@ -113,44 +113,44 @@ pub mod gateway_security_policy_rule {
     pub struct GatewaySecurityPolicyRuleArgs {
         /// CEL expression for matching on L7/application level criteria.
         #[builder(into, default)]
-        pub application_matcher: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub application_matcher: pulumi_gestalt_rust::Input<Option<String>>,
         /// Profile which tells what the primitive action should be. Possible values are: * ALLOW * DENY.
         /// Possible values are: `BASIC_PROFILE_UNSPECIFIED`, `ALLOW`, `DENY`.
         #[builder(into)]
-        pub basic_profile: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub basic_profile: pulumi_gestalt_rust::Input<String>,
         /// Free-text description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the rule is enforced.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The name of the gatewat security policy this rule belongs to.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub gateway_security_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_security_policy: pulumi_gestalt_rust::Input<String>,
         /// The location of the gateway security policy.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource. ame is the full resource name so projects/{project}/locations/{location}/gatewaySecurityPolicies/{gateway_security_policy}/rules/{rule}
         /// rule should match the pattern: (^a-z?$).
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Priority of the rule. Lower number corresponds to higher precedence.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// CEL expression for matching on session criteria.
         #[builder(into)]
-        pub session_matcher: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub session_matcher: pulumi_gestalt_rust::Input<String>,
         /// Flag to enable TLS inspection of traffic matching on. Can only be true if the
         /// parent GatewaySecurityPolicy references a TLSInspectionConfig.
         #[builder(into, default)]
-        pub tls_inspection_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls_inspection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GatewaySecurityPolicyRuleResult {

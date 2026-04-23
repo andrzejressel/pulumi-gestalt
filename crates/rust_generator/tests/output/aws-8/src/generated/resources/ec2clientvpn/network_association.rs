@@ -37,10 +37,10 @@ pub mod network_association {
     pub struct NetworkAssociationArgs {
         /// The ID of the Client VPN endpoint.
         #[builder(into)]
-        pub client_vpn_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_vpn_endpoint_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the subnet to associate with the Client VPN endpoint.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkAssociationResult {

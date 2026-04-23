@@ -87,24 +87,24 @@ pub mod firewall_rule {
         ///
         /// - - -
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// An optional string description of this rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A positive integer that defines the order of rule evaluation.
         /// Rules with the lowest priority are evaluated first.
         /// A default rule at priority Int32.MaxValue matches all IPv4 and
         /// IPv6 traffic when no previous rule matches. Only the action of
         /// this rule can be modified by the user.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// IP address or range, defined using CIDR notation, of requests that this rule applies to.
         #[builder(into)]
-        pub source_range: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_range: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FirewallRuleResult {

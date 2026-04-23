@@ -73,22 +73,22 @@ pub mod cache_policy {
     pub struct CachePolicyArgs {
         /// Description for the cache policy.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time, in seconds, that objects are allowed to remain in the CloudFront cache before CloudFront sends a new request to the origin server to check if the object has been updated.
         #[builder(into, default)]
-        pub default_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum amount of time, in seconds, that objects stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated.
         #[builder(into, default)]
-        pub max_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimum amount of time, in seconds, that objects should remain in the CloudFront cache before a new request is sent to the origin to check for updates.
         #[builder(into, default)]
-        pub min_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Unique name used to identify the cache policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for including HTTP headers, cookies, and URL query strings in the cache key. For more information, refer to the Parameters In Cache Key And Forwarded To Origin section.
         #[builder(into)]
-        pub parameters_in_cache_key_and_forwarded_to_origin: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters_in_cache_key_and_forwarded_to_origin: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOrigin,
         >,
     }

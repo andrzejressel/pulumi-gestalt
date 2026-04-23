@@ -10,10 +10,10 @@ pub mod get_registry_cache_rule {
     pub struct GetRegistryCacheRuleArgs {
         /// The ID of the container registry where the cache rule should apply. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_registry_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_registry_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Container Registry Cache Rule. Only Alphanumeric characters allowed. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRegistryCacheRuleResult {

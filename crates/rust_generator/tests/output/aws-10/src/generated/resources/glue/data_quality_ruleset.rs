@@ -92,21 +92,21 @@ pub mod data_quality_ruleset {
     pub struct DataQualityRulesetArgs {
         /// Description of the data quality ruleset.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the data quality ruleset.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A Data Quality Definition Language (DQDL) ruleset. For more information, see the AWS Glue developer guide.
         #[builder(into)]
-        pub ruleset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ruleset: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A Configuration block specifying a target table associated with the data quality ruleset. See `target_table` below.
         #[builder(into, default)]
-        pub target_table: pulumi_gestalt_rust::InputOrOutput<
+        pub target_table: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::DataQualityRulesetTargetTable>,
         >,
     }

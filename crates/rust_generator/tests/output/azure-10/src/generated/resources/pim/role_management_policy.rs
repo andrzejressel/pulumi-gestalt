@@ -112,30 +112,30 @@ pub mod role_management_policy {
     pub struct RoleManagementPolicyArgs {
         /// An `activation_rules` block as defined below.
         #[builder(into, default)]
-        pub activation_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub activation_rules: pulumi_gestalt_rust::Input<
             Option<super::super::types::pim::RoleManagementPolicyActivationRules>,
         >,
         /// An `active_assignment_rules` block as defined below.
         #[builder(into, default)]
-        pub active_assignment_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub active_assignment_rules: pulumi_gestalt_rust::Input<
             Option<super::super::types::pim::RoleManagementPolicyActiveAssignmentRules>,
         >,
         /// An `eligible_assignment_rules` block as defined below.
         #[builder(into, default)]
-        pub eligible_assignment_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub eligible_assignment_rules: pulumi_gestalt_rust::Input<
             Option<super::super::types::pim::RoleManagementPolicyEligibleAssignmentRules>,
         >,
         /// A `notification_rules` block as defined below.
         #[builder(into, default)]
-        pub notification_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_rules: pulumi_gestalt_rust::Input<
             Option<super::super::types::pim::RoleManagementPolicyNotificationRules>,
         >,
         /// The scoped Role Definition ID of the role for which this policy will apply. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub role_definition_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_definition_id: pulumi_gestalt_rust::Input<String>,
         /// The scope to which this Role Management Policy will apply. Can refer to a management group, a subscription, a resource group or a resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RoleManagementPolicyResult {

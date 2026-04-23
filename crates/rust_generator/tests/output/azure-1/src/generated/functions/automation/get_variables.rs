@@ -10,7 +10,7 @@ pub mod get_variables {
     pub struct GetVariablesArgs {
         /// The resource ID of the automation account.
         #[builder(into)]
-        pub automation_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVariablesResult {

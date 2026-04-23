@@ -134,13 +134,13 @@ pub mod environment_keyvaluemaps_entries {
         ///
         /// - - -
         #[builder(into)]
-        pub env_keyvaluemap_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub env_keyvaluemap_id: pulumi_gestalt_rust::Input<String>,
         /// Required. Resource URI that can be used to identify the scope of the key value map entries.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Data or payload that is being retrieved and associated with the unique key.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnvironmentKeyvaluemapsEntriesResult {

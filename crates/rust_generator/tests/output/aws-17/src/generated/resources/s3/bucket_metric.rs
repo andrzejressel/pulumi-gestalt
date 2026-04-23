@@ -83,15 +83,15 @@ pub mod bucket_metric {
     pub struct BucketMetricArgs {
         /// Name of the bucket to put metric configuration.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// [Object filtering](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html#metrics-configurations-filter) that accepts a prefix, tags, or a logical AND of prefix and tags (documented below).
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketMetricFilter>,
         >,
         /// Unique identifier of the metrics configuration for the bucket. Must be less than or equal to 64 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BucketMetricResult {

@@ -10,18 +10,18 @@ pub mod get_sdk {
     pub struct GetSdkArgs {
         /// Key-value map of query string parameters `sdk_type` properties of the SDK. For SDK Type of `objectivec` or `swift`, a parameter named `classPrefix` is required. For SDK Type of `android`, parameters named `groupId`, `artifactId`, `artifactVersion`, and `invokerPackage` are required. For SDK Type of `java`, parameters named `serviceName` and `javaPackageName` are required.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of the associated REST API.
         #[builder(into)]
-        pub rest_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api_id: pulumi_gestalt_rust::Input<String>,
         /// Language for the generated SDK. Currently `java`, `javascript`, `android`, `objectivec` (for iOS), `swift` (for iOS), and `ruby` are supported.
         #[builder(into)]
-        pub sdk_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sdk_type: pulumi_gestalt_rust::Input<String>,
         /// Name of the Stage that will be exported.
         #[builder(into)]
-        pub stage_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stage_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSdkResult {

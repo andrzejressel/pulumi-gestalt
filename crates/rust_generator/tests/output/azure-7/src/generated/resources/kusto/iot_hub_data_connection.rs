@@ -96,45 +96,43 @@ pub mod iot_hub_data_connection {
     pub struct IotHubDataConnectionArgs {
         /// Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the IotHub consumer group this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub consumer_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub consumer_group: pulumi_gestalt_rust::Input<String>,
         /// Specifies the data format of the IoTHub messages. Allowed values: `APACHEAVRO`, `AVRO`, `CSV`, `JSON`, `MULTIJSON`, `ORC`, `PARQUET`, `PSV`, `RAW`, `SCSV`, `SINGLEJSON`, `SOHSV`, `TSV`, `TSVE`, `TXT` and `W3CLOGFILE`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub data_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Kusto Database this data connection will be added to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Indication for database routing information from the data connection, by default only database routing information is allowed. Allowed values: `Single`, `Multi`. Changing this forces a new resource to be created. Defaults to `Single`.
         #[builder(into, default)]
-        pub database_routing_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database_routing_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the System Properties that each IoT Hub message should contain. Changing this forces a new resource to be created. Possible values are `message-id`, `sequence-number`, `to`, `absolute-expiry-time`, `iothub-enqueuedtime`, `correlation-id`, `user-id`, `iothub-ack`, `iothub-connection-device-id`, `iothub-connection-auth-generation-id` and `iothub-connection-auth-method`.
         #[builder(into, default)]
-        pub event_system_properties: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub event_system_properties: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the resource id of the IotHub this data connection will use for ingestion. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_id: pulumi_gestalt_rust::Input<String>,
         /// The location where the Kusto Database should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the mapping rule used for the message ingestion. Mapping rule must exist before resource is created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub mapping_rule_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mapping_rule_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Kusto IotHub Data Connection to create. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Resource Group where the Kusto Database should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the IotHub Shared Access Policy this data connection will use for ingestion, which must have read permission. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub shared_access_policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub shared_access_policy_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the target table name used for the message ingestion. Table must exist before resource is created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub table_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IotHubDataConnectionResult {

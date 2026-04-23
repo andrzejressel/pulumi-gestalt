@@ -79,16 +79,16 @@ pub mod route_server_bgp_connection {
     pub struct RouteServerBgpConnectionArgs {
         /// The name which should be used for this Route Server Bgp Connection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The peer autonomous system number for the Route Server Bgp Connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub peer_asn: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub peer_asn: pulumi_gestalt_rust::Input<i32>,
         /// The peer ip address for the Route Server Bgp Connection. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub peer_ip: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_ip: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Route Server within which this Bgp connection should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub route_server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_server_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteServerBgpConnectionResult {

@@ -47,16 +47,16 @@ pub mod bucket_acl {
         ///
         /// - - -
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Configure this ACL to be the default ACL.
         #[builder(into, default)]
-        pub default_acl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_acl: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [canned GCS ACL](https://cloud.google.com/storage/docs/access-control/lists#predefined-acl) to apply. Must be set if `role_entity` is not.
         #[builder(into, default)]
-        pub predefined_acl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub predefined_acl: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of role/entity pairs in the form `ROLE:entity`. See [GCS Bucket ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls)  for more details. Must be set if `predefined_acl` is not.
         #[builder(into, default)]
-        pub role_entities: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub role_entities: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct BucketACLResult {

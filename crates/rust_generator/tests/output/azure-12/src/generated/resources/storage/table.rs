@@ -56,15 +56,15 @@ pub mod table {
     pub struct TableArgs {
         /// One or more `acl` blocks as defined below.
         #[builder(into, default)]
-        pub acls: pulumi_gestalt_rust::InputOrOutput<
+        pub acls: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::storage::TableAcl>>,
         >,
         /// The name of the storage table. Only Alphanumeric characters allowed, starting with a letter. Must be unique within the storage account the table is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the storage account in which to create the storage table. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TableResult {

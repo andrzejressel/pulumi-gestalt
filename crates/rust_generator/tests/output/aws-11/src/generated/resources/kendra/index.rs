@@ -488,15 +488,15 @@ pub mod index {
     pub struct IndexArgs {
         /// A block that sets the number of additional document storage and query capacity units that should be used by the index. Detailed below.
         #[builder(into, default)]
-        pub capacity_units: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_units: pulumi_gestalt_rust::Input<
             Option<super::super::types::kendra::IndexCapacityUnits>,
         >,
         /// The description of the Index.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more blocks that specify the configuration settings for any metadata applied to the documents in the index. Minimum number of 0 items. Maximum number of 500 items. If specified, you must define all elements, including those that are provided by default. These index fields are documented at [Amazon Kendra Index documentation](https://docs.aws.amazon.com/kendra/latest/dg/hiw-index.html). For an example resource that defines these default index fields, refer to the default example above. For an example resource that appends additional index fields, refer to the append example above. All arguments for each block must be specified. Note that blocks cannot be removed since index fields cannot be deleted. This argument is detailed below.
         #[builder(into, default)]
-        pub document_metadata_configuration_updates: pulumi_gestalt_rust::InputOrOutput<
+        pub document_metadata_configuration_updates: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::kendra::IndexDocumentMetadataConfigurationUpdate,
@@ -505,35 +505,35 @@ pub mod index {
         >,
         /// The Amazon Kendra edition to use for the index. Choose `DEVELOPER_EDITION` for indexes intended for development, testing, or proof of concept. Use `ENTERPRISE_EDITION` for your production databases. Once you set the edition for an index, it can't be changed. Defaults to `ENTERPRISE_EDITION`
         #[builder(into, default)]
-        pub edition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub edition: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Index.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the `BatchPutDocument` API to index documents from an Amazon S3 bucket.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A block that specifies the identifier of the AWS KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs. Detailed below.
         #[builder(into, default)]
-        pub server_side_encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub server_side_encryption_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::kendra::IndexServerSideEncryptionConfiguration>,
         >,
         /// Tags to apply to the Index. If configured with a provider
         /// `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The user context policy. Valid values are `ATTRIBUTE_FILTER` or `USER_TOKEN`. For more information, refer to [UserContextPolicy](https://docs.aws.amazon.com/kendra/latest/APIReference/API_CreateIndex.html#kendra-CreateIndex-request-UserContextPolicy). Defaults to `ATTRIBUTE_FILTER`.
         #[builder(into, default)]
-        pub user_context_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_context_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block that enables fetching access levels of groups and users from an AWS Single Sign-On identity source. To configure this, see [UserGroupResolutionConfiguration](https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html). Detailed below.
         #[builder(into, default)]
-        pub user_group_resolution_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub user_group_resolution_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::kendra::IndexUserGroupResolutionConfiguration>,
         >,
         /// A block that specifies the user token configuration. Detailed below.
         #[builder(into, default)]
-        pub user_token_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub user_token_configurations: pulumi_gestalt_rust::Input<
             Option<super::super::types::kendra::IndexUserTokenConfigurations>,
         >,
     }

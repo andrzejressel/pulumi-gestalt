@@ -24,28 +24,26 @@ pub mod pages_project {
     pub struct PagesProjectArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration for the project build process. Read more about the build configuration in the [developer documentation](https://developers.cloudflare.com/pages/platform/build-configuration).
         #[builder(into, default)]
-        pub build_config: pulumi_gestalt_rust::InputOrOutput<
+        pub build_config: pulumi_gestalt_rust::Input<
             Option<super::types::PagesProjectBuildConfig>,
         >,
         /// Configuration for deployments in a project.
         #[builder(into, default)]
-        pub deployment_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub deployment_configs: pulumi_gestalt_rust::Input<
             Option<super::types::PagesProjectDeploymentConfigs>,
         >,
         /// Name of the project.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the branch that is used for the production environment.
         #[builder(into)]
-        pub production_branch: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub production_branch: pulumi_gestalt_rust::Input<String>,
         /// Configuration for the project source. Read more about the source configuration in the [developer documentation](https://developers.cloudflare.com/pages/platform/branch-build-controls/).
         #[builder(into, default)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
-            Option<super::types::PagesProjectSource>,
-        >,
+        pub source: pulumi_gestalt_rust::Input<Option<super::types::PagesProjectSource>>,
     }
     #[allow(dead_code)]
     pub struct PagesProjectResult {

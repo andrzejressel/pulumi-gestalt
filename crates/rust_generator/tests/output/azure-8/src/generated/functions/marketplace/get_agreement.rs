@@ -10,13 +10,13 @@ pub mod get_agreement {
     pub struct GetAgreementArgs {
         /// The Offer of the Marketplace Image.
         #[builder(into)]
-        pub offer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub offer: pulumi_gestalt_rust::Input<String>,
         /// The Plan of the Marketplace Image.
         #[builder(into)]
-        pub plan: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plan: pulumi_gestalt_rust::Input<String>,
         /// The Publisher of the Marketplace Image.
         #[builder(into)]
-        pub publisher: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub publisher: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAgreementResult {

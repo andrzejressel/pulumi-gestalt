@@ -21,10 +21,10 @@ pub mod multi_region_access_point_policy {
     pub struct MultiRegionAccessPointPolicyArgs {
         /// The AWS account ID for the owner of the Multi-Region Access Point. Defaults to automatically determined account ID of the AWS provider.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration block containing details about the policy for the Multi-Region Access Point. See Details Configuration Block below for more details
         #[builder(into)]
-        pub details: pulumi_gestalt_rust::InputOrOutput<
+        pub details: pulumi_gestalt_rust::Input<
             super::super::types::s3control::MultiRegionAccessPointPolicyDetails,
         >,
     }

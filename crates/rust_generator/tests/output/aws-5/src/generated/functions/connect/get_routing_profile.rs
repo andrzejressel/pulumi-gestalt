@@ -10,16 +10,16 @@ pub mod get_routing_profile {
     pub struct GetRoutingProfileArgs {
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Returns information on a specific Routing Profile by name
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Returns information on a specific Routing Profile by Routing Profile id
         #[builder(into, default)]
-        pub routing_profile_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub routing_profile_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the Routing Profile.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

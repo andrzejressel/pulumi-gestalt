@@ -10,7 +10,7 @@ pub mod get_data_lake_settings {
     pub struct GetDataLakeSettingsArgs {
         /// Identifier for the Data Catalog. By default, the account ID.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDataLakeSettingsResult {

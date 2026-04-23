@@ -49,13 +49,13 @@ pub mod account_registration {
     pub struct AccountRegistrationArgs {
         /// Identifier for the delegated administrator account.
         #[builder(into, default)]
-        pub delegated_admin_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delegated_admin_account: pulumi_gestalt_rust::Input<Option<String>>,
         /// Flag to deregister AuditManager in the account upon destruction. Defaults to `false` (ie. AuditManager will remain active in the account, even if this resource is removed).
         #[builder(into, default)]
-        pub deregister_on_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deregister_on_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// KMS key identifier.
         #[builder(into, default)]
-        pub kms_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountRegistrationResult {

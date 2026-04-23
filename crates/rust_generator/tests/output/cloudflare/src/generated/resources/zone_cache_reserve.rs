@@ -39,10 +39,10 @@ pub mod zone_cache_reserve {
     pub struct ZoneCacheReserveArgs {
         /// Whether to enable or disable Cache Reserve support for a given zone.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneCacheReserveResult {

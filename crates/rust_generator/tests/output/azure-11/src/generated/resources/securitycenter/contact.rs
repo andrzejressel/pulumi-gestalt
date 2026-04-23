@@ -42,19 +42,19 @@ pub mod contact {
     pub struct ContactArgs {
         /// Whether to send security alerts notifications to the security contact.
         #[builder(into)]
-        pub alert_notifications: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub alert_notifications: pulumi_gestalt_rust::Input<bool>,
         /// Whether to send security alerts notifications to subscription admins.
         #[builder(into)]
-        pub alerts_to_admins: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub alerts_to_admins: pulumi_gestalt_rust::Input<bool>,
         /// The email of the Security Center Contact.
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
         /// The name of the Security Center Contact. Defaults to `default1`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The phone number of the Security Center Contact.
         #[builder(into, default)]
-        pub phone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub phone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ContactResult {

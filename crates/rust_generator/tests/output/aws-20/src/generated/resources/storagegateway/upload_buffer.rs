@@ -60,13 +60,13 @@ pub mod upload_buffer {
     pub struct UploadBufferArgs {
         /// Local disk identifier. For example, `pci-0000:03:00.0-scsi-0:0:0:0`.
         #[builder(into, default)]
-        pub disk_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Local disk path. For example, `/dev/nvme1n1`.
         #[builder(into, default)]
-        pub disk_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the gateway.
         #[builder(into)]
-        pub gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UploadBufferResult {

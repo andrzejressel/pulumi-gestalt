@@ -108,20 +108,18 @@ pub mod account_encryption {
     pub struct AccountEncryptionArgs {
         /// Specify the versionless ID of the encryption key.
         #[builder(into)]
-        pub encryption_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub encryption_key: pulumi_gestalt_rust::Input<String>,
         /// The ID of the NetApp account where volume under it will have customer managed keys-based encryption enabled.
         #[builder(into)]
-        pub netapp_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub netapp_account_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the System Assigned Manged Identity. Conflicts with `user_assigned_identity_id`.
         #[builder(into, default)]
-        pub system_assigned_identity_principal_id: pulumi_gestalt_rust::InputOrOutput<
+        pub system_assigned_identity_principal_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the User Assigned Managed Identity. Conflicts with `system_assigned_identity_principal_id`.
         #[builder(into, default)]
-        pub user_assigned_identity_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub user_assigned_identity_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountEncryptionResult {

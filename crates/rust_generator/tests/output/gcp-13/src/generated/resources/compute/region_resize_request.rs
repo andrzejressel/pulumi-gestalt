@@ -115,32 +115,32 @@ pub mod region_resize_request {
     pub struct RegionResizeRequestArgs {
         /// An optional description of this resize-request.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The reference of the regional instance group manager this ResizeRequest is a part of.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub instance_group_manager: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_group_manager: pulumi_gestalt_rust::Input<String>,
         /// The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The reference of the compute region scoping this request.
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
         /// Requested run duration for instances that will be created by this request. At the end of the run duration instances will be deleted.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub requested_run_duration: pulumi_gestalt_rust::InputOrOutput<
+        pub requested_run_duration: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::RegionResizeRequestRequestedRunDuration>,
         >,
         /// The number of instances to be created by this resize request. The group's target size will be increased by this number.
         #[builder(into)]
-        pub resize_by: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub resize_by: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct RegionResizeRequestResult {

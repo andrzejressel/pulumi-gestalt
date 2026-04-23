@@ -107,23 +107,23 @@ pub mod invocation {
     pub struct InvocationArgs {
         /// Name of the lambda function.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// JSON payload to the lambda function.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub input: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub input: pulumi_gestalt_rust::Input<String>,
         /// Lifecycle scope of the resource to manage. Valid values are `CREATE_ONLY` and `CRUD`. Defaults to `CREATE_ONLY`. `CREATE_ONLY` will invoke the function only on creation or replacement. `CRUD` will invoke the function on each lifecycle event, and augment the input JSON payload with additional lifecycle information.
         #[builder(into, default)]
-        pub lifecycle_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lifecycle_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Qualifier (i.e., version) of the lambda function. Defaults to `$LATEST`.
         #[builder(into, default)]
-        pub qualifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub qualifier: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub terraform_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub terraform_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of arbitrary keys and values that, when changed, will trigger a re-invocation.
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

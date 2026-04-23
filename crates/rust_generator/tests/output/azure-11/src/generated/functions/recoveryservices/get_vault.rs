@@ -10,10 +10,10 @@ pub mod get_vault {
     pub struct GetVaultArgs {
         /// Specifies the name of the Recovery Services Vault.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Recovery Services Vault resides.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVaultResult {

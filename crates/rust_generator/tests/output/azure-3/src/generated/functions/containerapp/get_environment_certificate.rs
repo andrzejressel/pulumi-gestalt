@@ -10,10 +10,10 @@ pub mod get_environment_certificate {
     pub struct GetEnvironmentCertificateArgs {
         /// The ID of the Container App Environment to configure this Certificate on. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_app_environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_app_environment_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Container Apps Certificate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEnvironmentCertificateResult {

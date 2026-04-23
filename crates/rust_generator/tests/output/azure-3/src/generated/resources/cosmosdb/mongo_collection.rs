@@ -55,36 +55,36 @@ pub mod mongo_collection {
     pub struct MongoCollectionArgs {
         /// The name of the Cosmos DB Account in which the Cosmos DB Mongo Collection is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The default time to live of Analytical Storage for this Mongo Collection. If present and the value is set to `-1`, it is equal to infinity, and items don’t expire by default. If present and the value is set to some number `n` – items will expire `n` seconds after their last modified time.
         #[builder(into, default)]
-        pub analytical_storage_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub analytical_storage_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub autoscale_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscale_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::MongoCollectionAutoscaleSettings>,
         >,
         /// The name of the Cosmos DB Mongo Database in which the Cosmos DB Mongo Collection is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// The default Time To Live in seconds. If the value is `-1`, items are not automatically expired.
         #[builder(into, default)]
-        pub default_ttl_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_ttl_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more `index` blocks as defined below.
         #[builder(into, default)]
-        pub indices: pulumi_gestalt_rust::InputOrOutput<
+        pub indices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cosmosdb::MongoCollectionIndex>>,
         >,
         /// Specifies the name of the Cosmos DB Mongo Collection. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Cosmos DB Mongo Collection is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the key to partition on for sharding. There must not be any other unique index keys. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub shard_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub shard_key: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub throughput: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct MongoCollectionResult {

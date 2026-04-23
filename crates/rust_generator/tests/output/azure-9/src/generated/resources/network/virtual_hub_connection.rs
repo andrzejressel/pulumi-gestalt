@@ -72,21 +72,21 @@ pub mod virtual_hub_connection {
     pub struct VirtualHubConnectionArgs {
         /// Should Internet Security be enabled to secure internet traffic? Defaults to `false`.
         #[builder(into, default)]
-        pub internet_security_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub internet_security_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Name which should be used for this Connection, which must be unique within the Virtual Hub. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Virtual Network which the Virtual Hub should be connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub remote_virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub remote_virtual_network_id: pulumi_gestalt_rust::Input<String>,
         /// A `routing` block as defined below.
         #[builder(into, default)]
-        pub routing: pulumi_gestalt_rust::InputOrOutput<
+        pub routing: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::VirtualHubConnectionRouting>,
         >,
         /// The ID of the Virtual Hub within which this connection should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_hub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualHubConnectionResult {

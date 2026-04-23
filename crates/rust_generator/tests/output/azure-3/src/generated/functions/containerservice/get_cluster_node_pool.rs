@@ -10,13 +10,13 @@ pub mod get_cluster_node_pool {
     pub struct GetClusterNodePoolArgs {
         /// The Name of the Kubernetes Cluster where this Node Pool is located.
         #[builder(into)]
-        pub kubernetes_cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kubernetes_cluster_name: pulumi_gestalt_rust::Input<String>,
         /// The name of this Kubernetes Cluster Node Pool.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Kubernetes Cluster exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetClusterNodePoolResult {

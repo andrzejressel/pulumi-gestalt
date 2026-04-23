@@ -9,13 +9,13 @@ pub mod get_peered_dns_domain {
     #[allow(dead_code)]
     pub struct GetPeeredDnsDomainArgs {
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPeeredDnsDomainResult {

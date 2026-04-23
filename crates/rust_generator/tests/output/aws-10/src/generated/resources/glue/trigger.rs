@@ -171,45 +171,45 @@ pub mod trigger {
     pub struct TriggerArgs {
         /// List of actions initiated by this trigger when it fires. See Actions Below.
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::glue::TriggerAction>,
         >,
         /// A description of the new trigger.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Start the trigger. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. See Event Batching Condition.
         #[builder(into, default)]
-        pub event_batching_conditions: pulumi_gestalt_rust::InputOrOutput<
+        pub event_batching_conditions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::glue::TriggerEventBatchingCondition>>,
         >,
         /// The name of the trigger.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A predicate to specify when the new trigger should fire. Required when trigger type is `CONDITIONAL`. See Predicate Below.
         #[builder(into, default)]
-        pub predicate: pulumi_gestalt_rust::InputOrOutput<
+        pub predicate: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::TriggerPredicate>,
         >,
         /// A cron expression used to specify the schedule. [Time-Based Schedules for Jobs and Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html)
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schedule: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to true to start `SCHEDULED` and `CONDITIONAL` triggers when created. True is not supported for `ON_DEMAND` triggers.
         #[builder(into, default)]
-        pub start_on_creation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_on_creation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of trigger. Valid values are `CONDITIONAL`, `EVENT`, `ON_DEMAND`, and `SCHEDULED`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// A workflow to which the trigger should be associated to. Every workflow graph (DAG) needs a starting trigger (`ON_DEMAND` or `SCHEDULED` type) and can contain multiple additional `CONDITIONAL` triggers.
         #[builder(into, default)]
-        pub workflow_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workflow_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TriggerResult {

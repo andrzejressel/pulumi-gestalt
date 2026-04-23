@@ -39,27 +39,27 @@ pub mod tenant_template_deployment {
     pub struct TenantTemplateDeploymentArgs {
         /// The Debug Level which should be used for this Resource Group Template Deployment. Possible values are `none`, `requestContent`, `responseContent` and `requestContent, responseContent`.
         #[builder(into, default)]
-        pub debug_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub debug_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Template should exist. Changing this forces a new Template to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Template. Changing this forces a new Template to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The contents of the ARM Template parameters file - containing a JSON list of parameters.
         #[builder(into, default)]
-        pub parameters_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameters_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Template.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The contents of the ARM Template which should be deployed into this Resource Group. Cannot be specified with `template_spec_version_id`.
         #[builder(into, default)]
-        pub template_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Template Spec Version to deploy. Cannot be specified with `template_content`.
         #[builder(into, default)]
-        pub template_spec_version_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_spec_version_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TenantTemplateDeploymentResult {

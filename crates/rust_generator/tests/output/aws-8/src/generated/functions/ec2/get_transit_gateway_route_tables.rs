@@ -10,7 +10,7 @@ pub mod get_transit_gateway_route_tables {
     pub struct GetTransitGatewayRouteTablesArgs {
         /// Custom filter block as described below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::ec2::GetTransitGatewayRouteTablesFilter>,
             >,
@@ -21,7 +21,7 @@ pub mod get_transit_gateway_route_tables {
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

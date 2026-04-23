@@ -10,16 +10,16 @@ pub mod get_account_id_token {
     pub struct GetAccountIdTokenArgs {
         /// Delegate chain of approvals needed to perform full impersonation. Specify the fully qualified service account name.   Used only when using impersonation mode.
         #[builder(into, default)]
-        pub delegates: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub delegates: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Include the verified email in the claim. Used only when using impersonation mode.
         #[builder(into, default)]
-        pub include_email: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_email: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The audience claim for the `id_token`.
         #[builder(into)]
-        pub target_audience: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_audience: pulumi_gestalt_rust::Input<String>,
         /// The email of the service account being impersonated.  Used only when using impersonation mode.
         #[builder(into, default)]
-        pub target_service_account: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_service_account: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAccountIdTokenResult {

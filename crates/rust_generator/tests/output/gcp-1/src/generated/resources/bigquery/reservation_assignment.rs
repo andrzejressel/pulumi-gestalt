@@ -74,23 +74,23 @@ pub mod reservation_assignment {
     pub struct ReservationAssignmentArgs {
         /// The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.
         #[builder(into)]
-        pub assignee: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub assignee: pulumi_gestalt_rust::Input<String>,
         /// Types of job, which could be specified when using the reservation. Possible values: JOB_TYPE_UNSPECIFIED, PIPELINE, QUERY
         #[builder(into)]
-        pub job_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub job_type: pulumi_gestalt_rust::Input<String>,
         /// The location for the resource
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The reservation for the resource
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub reservation: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub reservation: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReservationAssignmentResult {

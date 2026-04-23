@@ -55,12 +55,12 @@ pub mod security_configuration {
     pub struct SecurityConfigurationArgs {
         /// Configuration block containing encryption configuration. Detailed below.
         #[builder(into)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             super::super::types::glue::SecurityConfigurationEncryptionConfiguration,
         >,
         /// Name of the security configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SecurityConfigurationResult {

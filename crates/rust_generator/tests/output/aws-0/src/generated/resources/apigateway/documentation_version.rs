@@ -47,13 +47,13 @@ pub mod documentation_version {
     pub struct DocumentationVersionArgs {
         /// Description of the API documentation version.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the associated Rest API
         #[builder(into)]
-        pub rest_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api_id: pulumi_gestalt_rust::Input<String>,
         /// Version identifier of the API documentation snapshot.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DocumentationVersionResult {

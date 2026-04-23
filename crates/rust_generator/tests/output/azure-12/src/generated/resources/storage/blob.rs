@@ -57,55 +57,55 @@ pub mod blob {
     pub struct BlobArgs {
         /// The access tier of the storage blob. Possible values are `Archive`, `Cool` and `Hot`.
         #[builder(into, default)]
-        pub access_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Controls the [cache control header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) content of the response when blob is requested .
         #[builder(into, default)]
-        pub cache_control: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cache_control: pulumi_gestalt_rust::Input<Option<String>>,
         /// The MD5 sum of the blob contents. Cannot be defined if `source_uri` is defined, or if blob type is Append or Page. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub content_md5: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_md5: pulumi_gestalt_rust::Input<Option<String>>,
         /// The content type of the storage blob. Cannot be defined if `source_uri` is defined. Defaults to `application/octet-stream`.
         #[builder(into, default)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The encryption scope to use for this blob.
         #[builder(into, default)]
-        pub encryption_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encryption_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of custom blob metadata.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the storage blob. Must be unique within the storage container the blob is located. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of workers per CPU core to run for concurrent uploads. Defaults to `8`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** `parallelism` is only applicable for Page blobs - support for [Block Blobs is blocked on the upstream issue](https://github.com/tombuildsstuff/giovanni/issues/15).
         #[builder(into, default)]
-        pub parallelism: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub parallelism: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Used only for `page` blobs to specify the size in bytes of the blob to be created. Must be a multiple of 512. Defaults to `0`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** `size` is required if `source_uri` is not set.
         #[builder(into, default)]
-        pub size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An absolute path to a file on the local system. This field cannot be specified for Append blobs and cannot be specified if `source_content` or `source_uri` is specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source: pulumi_gestalt_rust::Input<Option<String>>,
         /// The content for this blob which should be defined inline. This field can only be specified for Block blobs and cannot be specified if `source` or `source_uri` is specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URI of an existing blob, or a file in the Azure File service, to use as the source contents for the blob to be created. Changing this forces a new resource to be created. This field cannot be specified for Append blobs and cannot be specified if `source` or `source_content` is specified.
         #[builder(into, default)]
-        pub source_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the storage account in which to create the storage container. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the storage container in which this blob should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_name: pulumi_gestalt_rust::Input<String>,
         /// The type of the storage blob to be created. Possible values are `Append`, `Block` or `Page`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BlobResult {

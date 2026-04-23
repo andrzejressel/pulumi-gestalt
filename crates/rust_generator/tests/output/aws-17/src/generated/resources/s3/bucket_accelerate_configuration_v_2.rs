@@ -51,13 +51,13 @@ pub mod bucket_accelerate_configuration_v_2 {
     pub struct BucketAccelerateConfigurationV2Args {
         /// Name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Account ID of the expected bucket owner.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Transfer acceleration state of the bucket. Valid values: `Enabled`, `Suspended`.
         #[builder(into)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub status: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BucketAccelerateConfigurationV2Result {

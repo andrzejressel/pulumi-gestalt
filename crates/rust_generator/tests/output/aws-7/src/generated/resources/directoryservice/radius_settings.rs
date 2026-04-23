@@ -42,31 +42,31 @@ pub mod radius_settings {
     pub struct RadiusSettingsArgs {
         /// The protocol specified for your RADIUS endpoints. Valid values: `PAP`, `CHAP`, `MS-CHAPv1`, `MS-CHAPv2`.
         #[builder(into)]
-        pub authentication_protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_protocol: pulumi_gestalt_rust::Input<String>,
         /// The identifier of the directory for which you want to manager RADIUS settings.
         #[builder(into)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// Display label.
         #[builder(into)]
-        pub display_label: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_label: pulumi_gestalt_rust::Input<String>,
         /// The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the AWS Directory Service servers.
         #[builder(into)]
-        pub radius_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub radius_port: pulumi_gestalt_rust::Input<i32>,
         /// The maximum number of times that communication with the RADIUS server is attempted. Minimum value of `0`. Maximum value of `10`.
         #[builder(into)]
-        pub radius_retries: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub radius_retries: pulumi_gestalt_rust::Input<i32>,
         /// An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.
         #[builder(into)]
-        pub radius_servers: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub radius_servers: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The amount of time, in seconds, to wait for the RADIUS server to respond. Minimum value of `1`. Maximum value of `50`.
         #[builder(into)]
-        pub radius_timeout: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub radius_timeout: pulumi_gestalt_rust::Input<i32>,
         /// Required for enabling RADIUS on the directory.
         #[builder(into)]
-        pub shared_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub shared_secret: pulumi_gestalt_rust::Input<String>,
         /// Not currently used.
         #[builder(into, default)]
-        pub use_same_username: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_same_username: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct RadiusSettingsResult {

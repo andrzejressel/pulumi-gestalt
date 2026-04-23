@@ -67,27 +67,27 @@ pub mod configuration {
     pub struct ConfigurationArgs {
         /// Authentication strategy associated with the configuration. Valid values are `simple` and `ldap`. `ldap` is not supported for `engine_type` `RabbitMQ`.
         #[builder(into, default)]
-        pub authentication_strategy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Broker configuration in XML format for `ActiveMQ` or [Cuttlefish](https://github.com/Kyorai/cuttlefish) format for `RabbitMQ`. See [official docs](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-broker-configuration-parameters.html) for supported parameters and format of the XML.
         #[builder(into)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data: pulumi_gestalt_rust::Input<String>,
         /// Description of the configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of broker engine. Valid values are `ActiveMQ` and `RabbitMQ`.
         #[builder(into)]
-        pub engine_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_type: pulumi_gestalt_rust::Input<String>,
         /// Version of the broker engine.
         #[builder(into)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_version: pulumi_gestalt_rust::Input<String>,
         /// Name of the configuration.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,10 +10,10 @@ pub mod get_subscribed_rule_group {
     pub struct GetSubscribedRuleGroupArgs {
         /// Name of the WAF rule group.
         #[builder(into, default)]
-        pub metric_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metric_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the WAF rule group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSubscribedRuleGroupResult {

@@ -111,16 +111,16 @@ pub mod workspace_aad_admin {
     pub struct WorkspaceAadAdminArgs {
         /// The login name of the Azure AD Administrator of this Synapse Workspace.
         #[builder(into)]
-        pub login: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub login: pulumi_gestalt_rust::Input<String>,
         /// The object id of the Azure AD Administrator of this Synapse Workspace.
         #[builder(into)]
-        pub object_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Synapse Workspace where the Azure AD Administrator should be configured.
         #[builder(into)]
-        pub synapse_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub synapse_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The tenant id of the Azure AD Administrator of this Synapse Workspace.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceAadAdminResult {

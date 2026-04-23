@@ -147,7 +147,7 @@ pub mod connectivity_test {
     pub struct ConnectivityTestArgs {
         /// The user-supplied description of the Connectivity Test. Maximum of 512 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Destination specification of the Connectivity Test.
         /// You can use a combination of destination IP address, Compute
         /// Engine VM instance, or VPC network to uniquely identify the
@@ -164,28 +164,28 @@ pub mod connectivity_test {
         /// don't intend to test.
         /// Structure is documented below.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<
+        pub destination: pulumi_gestalt_rust::Input<
             super::super::types::networkmanagement::ConnectivityTestDestination,
         >,
         /// Resource labels to represent user-provided metadata. **Note**: This field is non-authoritative, and will only manage the
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Unique name for the connectivity test.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// IP Protocol of the test. When not provided, "TCP" is assumed.
         #[builder(into, default)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// Other projects that may be relevant for reachability analysis. This is applicable to scenarios where a test can cross
         /// project boundaries.
         #[builder(into, default)]
-        pub related_projects: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub related_projects: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Required. Source specification of the Connectivity Test.
         /// You can use a combination of source IP address, virtual machine
         /// (VM) instance, or Compute Engine network to uniquely identify the
@@ -206,7 +206,7 @@ pub mod connectivity_test {
         /// you don't intend to test.
         /// Structure is documented below.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             super::super::types::networkmanagement::ConnectivityTestSource,
         >,
     }

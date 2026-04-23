@@ -115,43 +115,43 @@ pub mod entry_type {
     pub struct EntryTypeArgs {
         /// Description of the EntryType.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User friendly display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The entry type id of the entry type.
         #[builder(into, default)]
-        pub entry_type_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub entry_type_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-defined labels for the EntryType.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where entry type will be created in.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The platform that Entries of this type belongs to.
         #[builder(into, default)]
-        pub platform: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// AspectInfo for the entry type.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub required_aspects: pulumi_gestalt_rust::InputOrOutput<
+        pub required_aspects: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::dataplex::EntryTypeRequiredAspect>>,
         >,
         /// The system that Entries of this type belongs to.
         #[builder(into, default)]
-        pub system: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub system: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates the class this Entry Type belongs to, for example, TABLE, DATABASE, MODEL.
         #[builder(into, default)]
-        pub type_aliases: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub type_aliases: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct EntryTypeResult {

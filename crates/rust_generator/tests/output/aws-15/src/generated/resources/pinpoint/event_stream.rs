@@ -75,13 +75,13 @@ pub mod event_stream {
     pub struct EventStreamArgs {
         /// The application ID.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery stream to which you want to publish events.
         #[builder(into)]
-        pub destination_stream_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_stream_arn: pulumi_gestalt_rust::Input<String>,
         /// The IAM role that authorizes Amazon Pinpoint to publish events to the stream in your account.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EventStreamResult {

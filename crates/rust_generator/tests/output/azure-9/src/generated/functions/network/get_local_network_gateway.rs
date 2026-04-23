@@ -10,10 +10,10 @@ pub mod get_local_network_gateway {
     pub struct GetLocalNetworkGatewayArgs {
         /// The name of the Local Network Gateway.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Local Network Gateway exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetLocalNetworkGatewayResult {

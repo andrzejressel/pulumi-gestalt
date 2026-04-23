@@ -37,27 +37,27 @@ pub mod network_insights_path {
     pub struct NetworkInsightsPathArgs {
         /// ID or ARN of the resource which is the destination of the path. Can be an Instance, Internet Gateway, Network Interface, Transit Gateway, VPC Endpoint, VPC Peering Connection or VPN Gateway. If the resource is in another account, you must specify an ARN.
         #[builder(into, default)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination: pulumi_gestalt_rust::Input<Option<String>>,
         /// IP address of the destination resource.
         #[builder(into, default)]
-        pub destination_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// Destination port to analyze access to.
         #[builder(into, default)]
-        pub destination_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub destination_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Protocol to use for analysis. Valid options are `tcp` or `udp`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// ID or ARN of the resource which is the source of the path. Can be an Instance, Internet Gateway, Network Interface, Transit Gateway, VPC Endpoint, VPC Peering Connection or VPN Gateway. If the resource is in another account, you must specify an ARN.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
         /// IP address of the source resource.
         #[builder(into, default)]
-        pub source_ip: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_ip: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

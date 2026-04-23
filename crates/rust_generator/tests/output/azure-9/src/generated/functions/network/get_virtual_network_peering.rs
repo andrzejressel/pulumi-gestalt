@@ -10,10 +10,10 @@ pub mod get_virtual_network_peering {
     pub struct GetVirtualNetworkPeeringArgs {
         /// The name of this virtual network peering.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the virtual network.
         #[builder(into)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVirtualNetworkPeeringResult {

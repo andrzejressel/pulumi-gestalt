@@ -100,47 +100,45 @@ pub mod service {
     pub struct ServiceArgs {
         /// ARN of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.
         #[builder(into, default)]
-        pub auto_scaling_configuration_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub auto_scaling_configuration_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an AWS managed CMK. See Encryption Configuration below for more details.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::apprunner::ServiceEncryptionConfiguration>,
         >,
         /// Settings of the health check that AWS App Runner performs to monitor the health of your service. See Health Check Configuration below for more details.
         #[builder(into, default)]
-        pub health_check_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub health_check_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::apprunner::ServiceHealthCheckConfiguration>,
         >,
         /// The runtime configuration of instances (scaling units) of the App Runner service. See Instance Configuration below for more details.
         #[builder(into, default)]
-        pub instance_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::apprunner::ServiceInstanceConfiguration>,
         >,
         /// Configuration settings related to network traffic of the web application that the App Runner service runs. See Network Configuration below for more details.
         #[builder(into, default)]
-        pub network_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub network_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::apprunner::ServiceNetworkConfiguration>,
         >,
         /// The observability configuration of your service. See Observability Configuration below for more details.
         #[builder(into, default)]
-        pub observability_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub observability_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::apprunner::ServiceObservabilityConfiguration>,
         >,
         /// Name of the service.
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
         /// The source to deploy to the App Runner service. Can be a code or an image repository. See Source Configuration below for more details.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub source_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub source_configuration: pulumi_gestalt_rust::Input<
             super::super::types::apprunner::ServiceSourceConfiguration,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -66,21 +66,21 @@ pub mod shared_private_link_service {
     pub struct SharedPrivateLinkServiceArgs {
         /// Specify the name of the Azure Search Shared Private Link Resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the request message for requesting approval of the Shared Private Link Enabled Remote Resource.
         #[builder(into, default)]
-        pub request_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the id of the Azure Search Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub search_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub search_service_id: pulumi_gestalt_rust::Input<String>,
         /// Specify the sub resource name which the Azure Search Private Endpoint is able to connect to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subresource_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subresource_name: pulumi_gestalt_rust::Input<String>,
         /// Specify the ID of the Shared Private Link Enabled Remote Resource which this Azure Search Private Endpoint should be connected to. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The sub resource name should match with the type of the target resource id that's being specified.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SharedPrivateLinkServiceResult {

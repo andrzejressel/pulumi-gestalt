@@ -38,17 +38,17 @@ pub mod capacity_block_reservation {
     pub struct CapacityBlockReservationArgs {
         /// The Capacity Block Reservation ID.
         #[builder(into)]
-        pub capacity_block_offering_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub capacity_block_offering_id: pulumi_gestalt_rust::Input<String>,
         /// The type of operating system for which to reserve capacity. Valid options are `Linux/UNIX`, `Red Hat Enterprise Linux`, `SUSE Linux`, `Windows`, `Windows with SQL Server`, `Windows with SQL Server Enterprise`, `Windows with SQL Server Standard` or `Windows with SQL Server Web`.
         #[builder(into)]
-        pub instance_platform: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_platform: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::CapacityBlockReservationTimeouts>,
         >,
     }

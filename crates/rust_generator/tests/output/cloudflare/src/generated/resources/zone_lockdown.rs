@@ -40,23 +40,23 @@ pub mod zone_lockdown {
     pub struct ZoneLockdownArgs {
         /// A list of IP addresses or IP ranges to match the request against specified in target, value pairs.
         #[builder(into)]
-        pub configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub configurations: pulumi_gestalt_rust::Input<
             Vec<super::types::ZoneLockdownConfiguration>,
         >,
         /// A description about the lockdown entry. Typically used as a reminder or explanation for the lockdown.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean of whether this zone lockdown is currently paused. Defaults to `false`.
         #[builder(into, default)]
-        pub paused: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub paused: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A list of simple wildcard patterns to match requests against. The order of the urls is unimportant.
         #[builder(into)]
-        pub urls: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub urls: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneLockdownResult {

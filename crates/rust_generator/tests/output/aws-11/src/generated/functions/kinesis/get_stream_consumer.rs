@@ -10,13 +10,13 @@ pub mod get_stream_consumer {
     pub struct GetStreamConsumerArgs {
         /// ARN of the stream consumer.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the stream consumer.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the data stream the consumer is registered with.
         #[builder(into)]
-        pub stream_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetStreamConsumerResult {

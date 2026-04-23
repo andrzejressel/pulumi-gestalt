@@ -97,22 +97,22 @@ pub mod protection_group {
     pub struct ProtectionGroupArgs {
         /// Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
         #[builder(into)]
-        pub aggregation: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub aggregation: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set `pattern` to ARBITRARY and you must not set it for any other `pattern` setting.
         #[builder(into, default)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The criteria to use to choose the protected resources for inclusion in the group.
         #[builder(into)]
-        pub pattern: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pattern: pulumi_gestalt_rust::Input<String>,
         /// The name of the protection group.
         #[builder(into)]
-        pub protection_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protection_group_id: pulumi_gestalt_rust::Input<String>,
         /// The resource type to include in the protection group. You must set this when you set `pattern` to BY_RESOURCE_TYPE and you must not set it for any other `pattern` setting.
         #[builder(into, default)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

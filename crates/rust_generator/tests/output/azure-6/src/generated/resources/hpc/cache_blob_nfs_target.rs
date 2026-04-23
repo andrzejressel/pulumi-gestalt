@@ -24,35 +24,33 @@ pub mod cache_blob_nfs_target {
     pub struct CacheBlobNfsTargetArgs {
         /// The name of the access policy applied to this target. Defaults to `default`.
         #[builder(into, default)]
-        pub access_policy_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_policy_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the HPC Cache, which the HPC Cache Blob NFS Target will be added to. Changing this forces a new HPC Cache Blob NFS Target to be created.
         #[builder(into)]
-        pub cache_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cache_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this HPC Cache Blob NFS Target. Changing this forces a new HPC Cache Blob NFS Target to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The client-facing file path of the HPC Cache Blob NFS Target.
         #[builder(into)]
-        pub namespace_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_path: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the HPC Cache Blob NFS Target should exist. Changing this forces a new HPC Cache Blob NFS Target to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Resource Manager ID of the Storage Container used as the HPC Cache Blob NFS Target. Changing this forces a new resource to be created.
         ///
         /// > **Note:** This is the Resource Manager ID of the Storage Container, rather than the regular ID - and can be accessed on the `azure.storage.Container` Data Source/Resource as `resource_manager_id`.
         #[builder(into)]
-        pub storage_container_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_id: pulumi_gestalt_rust::Input<String>,
         /// The type of usage of the HPC Cache Blob NFS Target. Possible values are: `READ_HEAVY_INFREQ`, `READ_HEAVY_CHECK_180`, `READ_ONLY`, `READ_WRITE`, `WRITE_WORKLOAD_15`, `WRITE_AROUND`, `WRITE_WORKLOAD_CHECK_30`, `WRITE_WORKLOAD_CHECK_60` and `WRITE_WORKLOAD_CLOUDWS`.
         #[builder(into)]
-        pub usage_model: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub usage_model: pulumi_gestalt_rust::Input<String>,
         /// The amount of time the cache waits before it checks the back-end storage for file updates. Possible values are between `1` and `31536000`.
         #[builder(into, default)]
-        pub verification_timer_in_seconds: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub verification_timer_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The amount of time the cache waits after the last file change before it copies the changed file to back-end storage. Possible values are between `1` and `31536000`.
         #[builder(into, default)]
-        pub write_back_timer_in_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub write_back_timer_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct CacheBlobNfsTargetResult {

@@ -67,37 +67,37 @@ pub mod document {
     pub struct DocumentArgs {
         /// One or more configuration blocks describing attachments sources to a version of a document. See `attachments_source` block below for details.
         #[builder(into, default)]
-        pub attachments_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub attachments_sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ssm::DocumentAttachmentsSource>>,
         >,
         /// The content for the SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.
         #[builder(into)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content: pulumi_gestalt_rust::Input<String>,
         /// The format of the document. Valid values: `JSON`, `TEXT`, `YAML`.
         #[builder(into, default)]
-        pub document_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub document_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the document. For a list of valid values, see the [API Reference](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html#systemsmanager-CreateDocument-request-DocumentType).
         #[builder(into)]
-        pub document_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub document_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the document.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Additional permissions to attach to the document. See Permissions below for details.
         #[builder(into, default)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A map of tags to assign to the object. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The target type which defines the kinds of resources the document can run on. For example, `/AWS::EC2::Instance`. For a list of valid resource types, see [AWS resource and property types reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).
         #[builder(into, default)]
-        pub target_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version of the artifact associated with the document. For example, `12.6`. This value is unique across all versions of a document, and can't be changed.
         #[builder(into, default)]
-        pub version_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DocumentResult {

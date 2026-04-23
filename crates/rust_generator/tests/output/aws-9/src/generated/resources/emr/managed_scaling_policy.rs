@@ -59,10 +59,10 @@ pub mod managed_scaling_policy {
     pub struct ManagedScalingPolicyArgs {
         /// ID of the EMR cluster
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration block with compute limit settings. Described below.
         #[builder(into)]
-        pub compute_limits: pulumi_gestalt_rust::InputOrOutput<
+        pub compute_limits: pulumi_gestalt_rust::Input<
             Vec<super::super::types::emr::ManagedScalingPolicyComputeLimit>,
         >,
     }

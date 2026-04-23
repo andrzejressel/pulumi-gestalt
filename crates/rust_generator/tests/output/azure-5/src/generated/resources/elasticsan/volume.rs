@@ -131,20 +131,20 @@ pub mod volume {
     pub struct VolumeArgs {
         /// A `create_source` block as defined below.
         #[builder(into, default)]
-        pub create_source: pulumi_gestalt_rust::InputOrOutput<
+        pub create_source: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsan::VolumeCreateSource>,
         >,
         /// Specifies the name of this Elastic SAN Volume. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the size of the Elastic SAN Volume in GiB. The size should be within the remaining capacity of the parent Elastic SAN. Possible values are between `1` and `65536` (16 TiB).
         ///
         /// > **NOTE:** The size can only be increased. If `create_source` is specified, then the size must be equal to or greater than the source's size.
         #[builder(into)]
-        pub size_in_gib: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub size_in_gib: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the Volume Group ID within which this Elastic SAN Volume should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub volume_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VolumeResult {

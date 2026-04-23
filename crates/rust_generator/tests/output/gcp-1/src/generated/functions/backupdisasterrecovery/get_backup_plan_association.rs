@@ -12,12 +12,12 @@ pub mod get_backup_plan_association {
         ///
         /// - - -
         #[builder(into)]
-        pub backup_plan_association_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_plan_association_id: pulumi_gestalt_rust::Input<String>,
         /// The location in which the Backupplan association resource belongs.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBackupPlanAssociationResult {

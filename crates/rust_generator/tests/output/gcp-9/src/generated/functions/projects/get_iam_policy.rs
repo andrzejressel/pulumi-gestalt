@@ -11,7 +11,7 @@ pub mod get_iam_policy {
         /// The project id of the target project. This is not
         /// inferred from the provider.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetIamPolicyResult {

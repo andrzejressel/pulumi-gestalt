@@ -264,34 +264,34 @@ pub mod instance {
         /// If provided, it must be a different zone from the one provided in
         /// [locationId].
         #[builder(into, default)]
-        pub alternative_location_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alternative_location_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Indicates whether OSS Redis AUTH is enabled for the
         /// instance. If set to "true" AUTH is enabled on the instance.
         /// Default value is "false" meaning AUTH is disabled.
         #[builder(into, default)]
-        pub auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The full name of the Google Compute Engine network to which the
         /// instance is connected. If left unspecified, the default network
         /// will be used.
         #[builder(into, default)]
-        pub authorized_network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorized_network: pulumi_gestalt_rust::Input<Option<String>>,
         /// The connection mode of the Redis instance.
         /// Default value is `DIRECT_PEERING`.
         /// Possible values are: `DIRECT_PEERING`, `PRIVATE_SERVICE_ACCESS`.
         #[builder(into, default)]
-        pub connect_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connect_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The KMS key reference that you want to use to encrypt the data at rest for this Redis
         /// instance. If this is provided, CMEK is enabled.
         #[builder(into, default)]
-        pub customer_managed_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_managed_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// An arbitrary and optional user-provided name for the instance.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource labels to represent user provided metadata.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The zone where the instance will be provisioned. If not provided,
@@ -300,35 +300,35 @@ pub mod instance {
         /// zonal failures. If [alternativeLocationId] is also provided, it must
         /// be different from [locationId].
         #[builder(into, default)]
-        pub location_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maintenance policy for an instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub maintenance_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::redis::InstanceMaintenancePolicy>,
         >,
         /// The self service update maintenance version.
         #[builder(into, default)]
-        pub maintenance_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub maintenance_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Redis memory size in GiB.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub memory_size_gb: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub memory_size_gb: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the instance or a fully qualified identifier for the instance.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Persistence configuration for an instance.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub persistence_config: pulumi_gestalt_rust::InputOrOutput<
+        pub persistence_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::redis::InstancePersistenceConfig>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Read replica mode. Can only be specified when trying to create the instance.
         /// If not set, Memorystore Redis backend will default to READ_REPLICAS_DISABLED.
         /// - READ_REPLICAS_DISABLED: If disabled, read endpoint will not be provided and the
@@ -337,54 +337,54 @@ pub mod instance {
         /// can scale up and down the number of replicas.
         /// Possible values are: `READ_REPLICAS_DISABLED`, `READ_REPLICAS_ENABLED`.
         #[builder(into, default)]
-        pub read_replicas_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub read_replicas_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Redis configuration parameters, according to http://redis.io/topics/config.
         /// Please check Memorystore documentation for the list of supported parameters:
         /// https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances#Instance.FIELDS.redis_configs
         #[builder(into, default)]
-        pub redis_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub redis_configs: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The version of Redis software. If not provided, latest supported
         /// version will be used. Please check the API documentation linked
         /// at the top for the latest valid values.
         #[builder(into, default)]
-        pub redis_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub redis_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Redis region of the instance.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The number of replica nodes. The valid range for the Standard Tier with
         /// read replicas enabled is [1-5] and defaults to 2. If read replicas are not enabled
         /// for a Standard Tier instance, the only valid value is 1 and the default is 1.
         /// The valid value for basic tier is 0 and the default is also 0.
         #[builder(into, default)]
-        pub replica_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub replica_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The CIDR range of internal addresses that are reserved for this
         /// instance. If not provided, the service will choose an unused /29
         /// block, for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be
         /// unique and non-overlapping with existing subnets in an authorized
         /// network.
         #[builder(into, default)]
-        pub reserved_ip_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reserved_ip_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Additional IP range for node placement. Required when enabling read replicas on
         /// an existing instance. For DIRECT_PEERING mode value must be a CIDR range of size /28, or
         /// "auto". For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address
         /// range associated with the private service access connection, or "auto".
         #[builder(into, default)]
-        pub secondary_ip_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub secondary_ip_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service tier of the instance. Must be one of these values:
         /// - BASIC: standalone instance
         /// - STANDARD_HA: highly available primary/replica instances
         /// Default value is `BASIC`.
         /// Possible values are: `BASIC`, `STANDARD_HA`.
         #[builder(into, default)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The TLS mode of the Redis instance, If not provided, TLS is disabled for the instance.
         /// - SERVER_AUTHENTICATION: Client to Server traffic encryption enabled with server authentication
         /// Default value is `DISABLED`.
         /// Possible values are: `SERVER_AUTHENTICATION`, `DISABLED`.
         #[builder(into, default)]
-        pub transit_encryption_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub transit_encryption_mode: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

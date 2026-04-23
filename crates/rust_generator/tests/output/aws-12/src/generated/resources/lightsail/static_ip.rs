@@ -27,7 +27,7 @@ pub mod static_ip {
     pub struct StaticIpArgs {
         /// The name for the allocated static IP
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StaticIpResult {

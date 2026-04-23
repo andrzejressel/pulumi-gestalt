@@ -42,26 +42,26 @@ pub mod vpc_ipam {
     pub struct VpcIpamArgs {
         /// Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes.
         #[builder(into, default)]
-        pub cascade: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cascade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A description for the IPAM.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enable this option to use your own GUA ranges as private IPv6 addresses. Default: `false`.
         #[builder(into, default)]
-        pub enable_private_gua: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_private_gua: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Determines which locales can be chosen when you create pools. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC's Region. You specify a region using the region_name parameter. You **must** set your provider block region as an operating_region.
         #[builder(into)]
-        pub operating_regions: pulumi_gestalt_rust::InputOrOutput<
+        pub operating_regions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::ec2::VpcIpamOperatingRegion>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// specifies the IPAM tier. Valid options include `free` and `advanced`. Default is `advanced`.
         #[builder(into, default)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tier: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VpcIpamResult {

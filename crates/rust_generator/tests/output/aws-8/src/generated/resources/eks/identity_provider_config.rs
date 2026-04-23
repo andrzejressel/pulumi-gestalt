@@ -42,15 +42,15 @@ pub mod identity_provider_config {
     pub struct IdentityProviderConfigArgs {
         /// Name of the EKS Cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Nested attribute containing [OpenID Connect](https://openid.net/connect/) identity provider information for the cluster. Detailed below.
         #[builder(into)]
-        pub oidc: pulumi_gestalt_rust::InputOrOutput<
+        pub oidc: pulumi_gestalt_rust::Input<
             super::super::types::eks::IdentityProviderConfigOidc,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -74,18 +74,18 @@ pub mod brand {
         ///
         /// - - -
         #[builder(into)]
-        pub application_title: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_title: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Support email displayed on the OAuth consent screen. Can be either a
         /// user or group email. When a user email is specified, the caller must
         /// be the user with the associated email address. When a group email is
         /// specified, the caller can be either a user or a service account which
         /// is an owner of the specified group in Cloud Identity.
         #[builder(into)]
-        pub support_email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub support_email: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BrandResult {

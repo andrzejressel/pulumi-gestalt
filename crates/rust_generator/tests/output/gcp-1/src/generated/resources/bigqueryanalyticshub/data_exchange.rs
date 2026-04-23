@@ -98,37 +98,37 @@ pub mod data_exchange {
     pub struct DataExchangeArgs {
         /// The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces.
         #[builder(into)]
-        pub data_exchange_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_exchange_id: pulumi_gestalt_rust::Input<String>,
         /// Description of the data exchange.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Human-readable display name of the data exchange. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and must not start or end with spaces.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Documentation describing the data exchange.
         #[builder(into, default)]
-        pub documentation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub documentation: pulumi_gestalt_rust::Input<Option<String>>,
         /// Base64 encoded image representing the data exchange.
         #[builder(into, default)]
-        pub icon: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub icon: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the location this data exchange.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Email or URL of the primary point of contact of the data exchange.
         #[builder(into, default)]
-        pub primary_contact: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub primary_contact: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configurable data sharing environment option for a data exchange.
         /// This field is required for data clean room exchanges.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub sharing_environment_config: pulumi_gestalt_rust::InputOrOutput<
+        pub sharing_environment_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bigqueryanalyticshub::DataExchangeSharingEnvironmentConfig,
             >,

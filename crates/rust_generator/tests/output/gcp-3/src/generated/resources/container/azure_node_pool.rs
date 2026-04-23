@@ -123,50 +123,50 @@ pub mod azure_node_pool {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Autoscaler configuration for this node pool.
         #[builder(into)]
-        pub autoscaling: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscaling: pulumi_gestalt_rust::Input<
             super::super::types::container::AzureNodePoolAutoscaling,
         >,
         /// Optional. The Azure availability zone of the nodes in this nodepool. When unspecified, it defaults to `1`.
         #[builder(into, default)]
-        pub azure_availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub azure_availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The azureCluster for the resource
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// The node configuration of the node pool.
         #[builder(into)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<
+        pub config: pulumi_gestalt_rust::Input<
             super::super::types::container::AzureNodePoolConfig,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The Management configuration for this node pool.
         #[builder(into, default)]
-        pub management: pulumi_gestalt_rust::InputOrOutput<
+        pub management: pulumi_gestalt_rust::Input<
             Option<super::super::types::container::AzureNodePoolManagement>,
         >,
         /// The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.
         #[builder(into)]
-        pub max_pods_constraint: pulumi_gestalt_rust::InputOrOutput<
+        pub max_pods_constraint: pulumi_gestalt_rust::Input<
             super::super::types::container::AzureNodePoolMaxPodsConstraint,
         >,
         /// The name of this resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARM ID of the subnet where the node pool VMs run. Make sure it's a subnet under the virtual network in the cluster configuration.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// The Kubernetes version (e.g. `1.19.10-gke.1000`) running on this node pool.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AzureNodePoolResult {

@@ -56,23 +56,19 @@ pub mod smart_detection_rule {
         ///
         /// > **Note:** At least one read or write permission must be defined.
         #[builder(into, default)]
-        pub additional_email_recipients: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub additional_email_recipients: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the Application Insights component on which the Smart Detection Rule operates. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_insights_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_insights_id: pulumi_gestalt_rust::Input<String>,
         /// Is the Application Insights Smart Detection Rule enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Application Insights Smart Detection Rule. Valid values include `Slow page load time`, `Slow server response time`, `Potential memory leak detected`, `Potential security issue detected`, `Long dependency duration`, `Degradation in server response time`, `Degradation in dependency duration`, `Degradation in trace severity ratio`, `Abnormal rise in exception volume`, `Abnormal rise in daily data volume`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Do emails get sent to subscription owners? Defaults to `true`.
         #[builder(into, default)]
-        pub send_emails_to_subscription_owners: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub send_emails_to_subscription_owners: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SmartDetectionRuleResult {

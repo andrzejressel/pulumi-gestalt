@@ -126,44 +126,44 @@ pub mod external_access_rule {
         /// The action that the external access rule performs.
         /// Possible values are: `ALLOW`, `DENY`.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// User-provided description for the external access rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// If destination ranges are specified, the external access rule applies only to
         /// traffic that has a destination IP address in these ranges.
         /// Structure is documented below.
         #[builder(into)]
-        pub destination_ip_ranges: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_ip_ranges: pulumi_gestalt_rust::Input<
             Vec<super::super::types::vmwareengine::ExternalAccessRuleDestinationIpRange>,
         >,
         /// A list of destination ports to which the external access rule applies.
         #[builder(into)]
-        pub destination_ports: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub destination_ports: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The IP protocol to which the external access rule applies.
         #[builder(into)]
-        pub ip_protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip_protocol: pulumi_gestalt_rust::Input<String>,
         /// The ID of the external access rule.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of the network policy.
         /// Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
         /// For example: projects/my-project/locations/us-west1-a/networkPolicies/my-policy
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// External access rule priority, which determines the external access rule to use when multiple rules apply.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// If source ranges are specified, the external access rule applies only to
         /// traffic that has a source IP address in these ranges.
         /// Structure is documented below.
         #[builder(into)]
-        pub source_ip_ranges: pulumi_gestalt_rust::InputOrOutput<
+        pub source_ip_ranges: pulumi_gestalt_rust::Input<
             Vec<super::super::types::vmwareengine::ExternalAccessRuleSourceIpRange>,
         >,
         /// A list of source ports to which the external access rule applies.
         #[builder(into)]
-        pub source_ports: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub source_ports: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct ExternalAccessRuleResult {

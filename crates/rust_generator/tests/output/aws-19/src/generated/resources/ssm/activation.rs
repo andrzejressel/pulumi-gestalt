@@ -62,22 +62,22 @@ pub mod activation {
     pub struct ActivationArgs {
         /// The description of the resource that you want to register.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// UTC timestamp in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) by which this activation request should expire. The default value is 24 hours from resource creation time. This provider will only perform drift detection of its value when present in a configuration.
         #[builder(into, default)]
-        pub expiration_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiration_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM Role to attach to the managed instance.
         #[builder(into)]
-        pub iam_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role: pulumi_gestalt_rust::Input<String>,
         /// The default name of the registered managed instance.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The maximum number of managed instances you want to register. The default value is 1 instance.
         #[builder(into, default)]
-        pub registration_limit: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub registration_limit: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A map of tags to assign to the object. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

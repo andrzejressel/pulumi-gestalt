@@ -36,37 +36,37 @@ pub mod agent_data_source {
     pub struct AgentDataSourceArgs {
         /// Data deletion policy for a data source. Valid values: `RETAIN`, `DELETE`.
         #[builder(into, default)]
-        pub data_deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details about how the data source is stored. See `data_source_configuration` block for details.
         #[builder(into, default)]
-        pub data_source_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub data_source_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentDataSourceDataSourceConfiguration>,
         >,
         /// Description of the data source.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique identifier of the knowledge base to which the data source belongs.
         #[builder(into)]
-        pub knowledge_base_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub knowledge_base_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the data source.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details about the configuration of the server-side encryption. See `server_side_encryption_configuration` block for details.
         #[builder(into, default)]
-        pub server_side_encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub server_side_encryption_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bedrock::AgentDataSourceServerSideEncryptionConfiguration,
             >,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentDataSourceTimeouts>,
         >,
         /// Details about the configuration of the server-side encryption. See `vector_ingestion_configuration` block for details.
         #[builder(into, default)]
-        pub vector_ingestion_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub vector_ingestion_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bedrock::AgentDataSourceVectorIngestionConfiguration,
             >,

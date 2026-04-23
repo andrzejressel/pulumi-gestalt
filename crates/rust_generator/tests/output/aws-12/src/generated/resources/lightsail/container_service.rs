@@ -102,19 +102,19 @@ pub mod container_service {
     pub struct ContainerServiceArgs {
         /// A Boolean value indicating whether the container service is disabled. Defaults to `false`.
         #[builder(into, default)]
-        pub is_disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name for the container service. Names must be of length 1 to 63, and be
         /// unique within each AWS Region in your Lightsail account.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The power specification for the container service. The power specifies the amount of memory,
         /// the number of vCPUs, and the monthly price of each node of the container service.
         /// Possible values: `nano`, `micro`, `small`, `medium`, `large`, `xlarge`.
         #[builder(into)]
-        pub power: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub power: pulumi_gestalt_rust::Input<String>,
         /// An object to describe the configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories. See Private Registry Access below for more details.
         #[builder(into, default)]
-        pub private_registry_access: pulumi_gestalt_rust::InputOrOutput<
+        pub private_registry_access: pulumi_gestalt_rust::Input<
             Option<super::super::types::lightsail::ContainerServicePrivateRegistryAccess>,
         >,
         /// The public domain names to use with the container service, such as example.com
@@ -123,19 +123,19 @@ pub mod container_service {
         /// service. If you don't specify public domain names, then you can use the default domain of the container service.
         /// Defined below.
         #[builder(into, default)]
-        pub public_domain_names: pulumi_gestalt_rust::InputOrOutput<
+        pub public_domain_names: pulumi_gestalt_rust::Input<
             Option<super::super::types::lightsail::ContainerServicePublicDomainNames>,
         >,
         /// The scale specification for the container service. The scale specifies the allocated compute
         /// nodes of the container service.
         #[builder(into)]
-        pub scale: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub scale: pulumi_gestalt_rust::Input<i32>,
         /// Map of container service tags. To create a key-only tag, use an empty string as the value. To tag at launch, specify the tags in the Launch Template. If
         /// configured with a provider
         /// `default_tags` configuration block
         /// present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

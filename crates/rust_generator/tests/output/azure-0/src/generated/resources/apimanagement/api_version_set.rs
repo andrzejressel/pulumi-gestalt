@@ -58,32 +58,32 @@ pub mod api_version_set {
     pub struct ApiVersionSetArgs {
         /// The name of the API Management Service in which the API Version Set should exist. May only contain alphanumeric characters and dashes up to 50 characters in length. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The description of API Version Set.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of this API Version Set.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Version Set. May only contain alphanumeric characters and dashes up to 80 characters in length. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the parent API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Header which should be read from Inbound Requests which defines the API Version.
         ///
         /// > **NOTE:** This must be specified when `versioning_scheme` is set to `Header`.
         #[builder(into, default)]
-        pub version_header_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_header_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Query String which should be read from Inbound Requests which defines the API Version.
         ///
         /// > **NOTE:** This must be specified when `versioning_scheme` is set to `Query`.
         #[builder(into, default)]
-        pub version_query_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_query_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies where in an Inbound HTTP Request that the API Version should be read from. Possible values are `Header`, `Query` and `Segment`.
         #[builder(into)]
-        pub versioning_scheme: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub versioning_scheme: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiVersionSetResult {

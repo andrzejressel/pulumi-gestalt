@@ -23,17 +23,17 @@ pub mod control_tower_control {
     pub struct ControlTowerControlArgs {
         /// The ARN of the control. Only Strongly recommended and Elective controls are permitted, with the exception of the Region deny guardrail.
         #[builder(into)]
-        pub control_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub control_identifier: pulumi_gestalt_rust::Input<String>,
         /// Parameter values which are specified to configure the control when you enable it. See Parameters for more details.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::controltower::ControlTowerControlParameter>>,
         >,
         /// The ARN of the organizational unit.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_identifier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ControlTowerControlResult {

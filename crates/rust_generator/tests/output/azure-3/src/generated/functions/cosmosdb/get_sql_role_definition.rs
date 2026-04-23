@@ -10,13 +10,13 @@ pub mod get_sql_role_definition {
     pub struct GetSqlRoleDefinitionArgs {
         /// The name of the Cosmos DB Account.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Cosmos DB SQL Role Definition is created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The GUID as the name of the Cosmos DB SQL Role Definition.
         #[builder(into)]
-        pub role_definition_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_definition_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSqlRoleDefinitionResult {

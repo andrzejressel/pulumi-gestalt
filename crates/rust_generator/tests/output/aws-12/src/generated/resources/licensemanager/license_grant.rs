@@ -38,16 +38,16 @@ pub mod license_grant {
     pub struct LicenseGrantArgs {
         /// A list of the allowed operations for the grant. This is a subset of the allowed operations on the license.
         #[builder(into)]
-        pub allowed_operations: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub allowed_operations: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The ARN of the license to grant.
         #[builder(into)]
-        pub license_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub license_arn: pulumi_gestalt_rust::Input<String>,
         /// The Name of the grant.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The target account for the grant in the form of the ARN for an account principal of the root user.
         #[builder(into)]
-        pub principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LicenseGrantResult {

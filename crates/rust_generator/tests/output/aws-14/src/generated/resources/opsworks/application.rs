@@ -61,63 +61,61 @@ pub mod application {
     pub struct ApplicationArgs {
         /// SCM configuration of the app as described below.
         #[builder(into, default)]
-        pub app_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub app_sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::opsworks::ApplicationAppSource>>,
         >,
         /// Run bundle install when deploying for application of type `rails`.
         #[builder(into, default)]
-        pub auto_bundle_on_deploy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_bundle_on_deploy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify activity and workflow workers for your app using the aws-flow gem.
         #[builder(into, default)]
-        pub aws_flow_ruby_settings: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_flow_ruby_settings: pulumi_gestalt_rust::Input<Option<String>>,
         /// The data source's ARN.
         #[builder(into, default)]
-        pub data_source_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_source_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The database name.
         #[builder(into, default)]
-        pub data_source_database_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub data_source_database_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The data source's type one of `AutoSelectOpsworksMysqlInstance`, `OpsworksMysqlInstance`, or `RdsDbInstance`.
         #[builder(into, default)]
-        pub data_source_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_source_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description of the app.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Subfolder for the document root for application of type `rails`.
         #[builder(into, default)]
-        pub document_root: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub document_root: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of virtual host alias.
         #[builder(into, default)]
-        pub domains: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub domains: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to enable SSL for the app. This must be set in order to let `ssl_configuration.private_key`, `ssl_configuration.certificate` and `ssl_configuration.chain` take effect.
         #[builder(into, default)]
-        pub enable_ssl: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_ssl: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Object to define environment variables.  Object is described below.
         #[builder(into, default)]
-        pub environments: pulumi_gestalt_rust::InputOrOutput<
+        pub environments: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::opsworks::ApplicationEnvironment>>,
         >,
         /// A human-readable name for the application.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Rails environment for application of type `rails`.
         #[builder(into, default)]
-        pub rails_env: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rails_env: pulumi_gestalt_rust::Input<Option<String>>,
         /// A short, machine-readable name for the application. This can only be defined on resource creation and ignored on resource update.
         #[builder(into, default)]
-        pub short_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub short_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SSL configuration of the app. Object is described below.
         #[builder(into, default)]
-        pub ssl_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub ssl_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::opsworks::ApplicationSslConfiguration>>,
         >,
         /// ID of the stack the application will belong to.
         #[builder(into)]
-        pub stack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_id: pulumi_gestalt_rust::Input<String>,
         /// Opsworks application type. One of `aws-flow-ruby`, `java`, `rails`, `php`, `nodejs`, `static` or `other`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {

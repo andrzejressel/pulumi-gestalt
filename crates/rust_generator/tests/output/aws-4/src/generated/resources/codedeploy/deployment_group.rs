@@ -225,63 +225,63 @@ pub mod deployment_group {
     pub struct DeploymentGroupArgs {
         /// Configuration block of alarms associated with the deployment group (documented below).
         #[builder(into, default)]
-        pub alarm_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub alarm_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::codedeploy::DeploymentGroupAlarmConfiguration>,
         >,
         /// The name of the application.
         #[builder(into)]
-        pub app_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration block of the automatic rollback configuration associated with the deployment group (documented below).
         #[builder(into, default)]
-        pub auto_rollback_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_rollback_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::codedeploy::DeploymentGroupAutoRollbackConfiguration,
             >,
         >,
         /// Autoscaling groups associated with the deployment group.
         #[builder(into, default)]
-        pub autoscaling_groups: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub autoscaling_groups: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block of the blue/green deployment options for a deployment group (documented below).
         #[builder(into, default)]
-        pub blue_green_deployment_config: pulumi_gestalt_rust::InputOrOutput<
+        pub blue_green_deployment_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::codedeploy::DeploymentGroupBlueGreenDeploymentConfig,
             >,
         >,
         /// The name of the group's deployment config. The default is "CodeDeployDefault.OneAtATime".
         #[builder(into, default)]
-        pub deployment_config_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deployment_config_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the deployment group.
         #[builder(into)]
-        pub deployment_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployment_group_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration block of the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer (documented below).
         #[builder(into, default)]
-        pub deployment_style: pulumi_gestalt_rust::InputOrOutput<
+        pub deployment_style: pulumi_gestalt_rust::Input<
             Option<super::super::types::codedeploy::DeploymentGroupDeploymentStyle>,
         >,
         /// Tag filters associated with the deployment group. See the AWS docs for details.
         #[builder(into, default)]
-        pub ec2_tag_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub ec2_tag_filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::codedeploy::DeploymentGroupEc2TagFilter>>,
         >,
         /// Configuration block(s) of Tag filters associated with the deployment group, which are also referred to as tag groups (documented below). See the AWS docs for details.
         #[builder(into, default)]
-        pub ec2_tag_sets: pulumi_gestalt_rust::InputOrOutput<
+        pub ec2_tag_sets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::codedeploy::DeploymentGroupEc2TagSet>>,
         >,
         /// Configuration block(s) of the ECS services for a deployment group (documented below).
         #[builder(into, default)]
-        pub ecs_service: pulumi_gestalt_rust::InputOrOutput<
+        pub ecs_service: pulumi_gestalt_rust::Input<
             Option<super::super::types::codedeploy::DeploymentGroupEcsService>,
         >,
         /// Single configuration block of the load balancer to use in a blue/green deployment (documented below).
         #[builder(into, default)]
-        pub load_balancer_info: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancer_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfo>,
         >,
         /// On premise tag filters associated with the group. See the AWS docs for details.
         #[builder(into, default)]
-        pub on_premises_instance_tag_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub on_premises_instance_tag_filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::codedeploy::DeploymentGroupOnPremisesInstanceTagFilter,
@@ -290,23 +290,21 @@ pub mod deployment_group {
         >,
         /// Configuration block of Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision. Valid values are `UPDATE` and `IGNORE`. Defaults to `UPDATE`.
         #[builder(into, default)]
-        pub outdated_instances_strategy: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub outdated_instances_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service role ARN that allows deployments.
         #[builder(into)]
-        pub service_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.
         #[builder(into, default)]
-        pub termination_hook_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub termination_hook_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block(s) of the triggers for the deployment group (documented below).
         #[builder(into, default)]
-        pub trigger_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub trigger_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::codedeploy::DeploymentGroupTriggerConfiguration>,
             >,

@@ -44,51 +44,51 @@ pub mod stage {
     pub struct StageArgs {
         /// Enables access logs for the API stage. See Access Log Settings below.
         #[builder(into, default)]
-        pub access_log_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub access_log_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::StageAccessLogSettings>,
         >,
         /// Whether a cache cluster is enabled for the stage
         #[builder(into, default)]
-        pub cache_cluster_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cache_cluster_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Size of the cache cluster for the stage, if enabled. Allowed values include `0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118` and `237`.
         #[builder(into, default)]
-        pub cache_cluster_size: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cache_cluster_size: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration settings of a canary deployment. See Canary Settings below.
         #[builder(into, default)]
-        pub canary_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub canary_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::StageCanarySettings>,
         >,
         /// Identifier of a client certificate for the stage.
         #[builder(into, default)]
-        pub client_certificate_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_certificate_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the deployment that the stage points to
         #[builder(into)]
-        pub deployment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployment: pulumi_gestalt_rust::Input<String>,
         /// Description of the stage.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of the associated API documentation
         #[builder(into, default)]
-        pub documentation_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub documentation_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the associated REST API
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
         /// Name of the stage
         #[builder(into)]
-        pub stage_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stage_name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Map that defines the stage variables
         #[builder(into, default)]
-        pub variables: pulumi_gestalt_rust::InputOrOutput<
+        pub variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whether active tracing with X-ray is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub xray_tracing_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub xray_tracing_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct StageResult {

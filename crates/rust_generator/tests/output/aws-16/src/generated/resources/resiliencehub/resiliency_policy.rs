@@ -46,33 +46,33 @@ pub mod resiliency_policy {
         /// Data Location Constraint of the Policy.
         /// Valid values are `AnyLocation`, `SameContinent`, and `SameCountry`.
         #[builder(into, default)]
-        pub data_location_constraint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_location_constraint: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of Resiliency Policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of Resiliency Policy.
         /// Must be between 2 and 60 characters long.
         /// Must start with an alphanumeric character and contain alphanumeric characters, underscores, or hyphens.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds. See `policy`.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<
+        pub policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::resiliencehub::ResiliencyPolicyPolicy>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resiliency Policy Tier.
         /// Valid values are `MissionCritical`, `Critical`, `Important`, `CoreServices`, `NonCritical`, and `NotApplicable`.
         #[builder(into)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tier: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::resiliencehub::ResiliencyPolicyTimeouts>,
         >,
     }

@@ -10,19 +10,19 @@ pub mod get_catalog_table {
     pub struct GetCatalogTableArgs {
         /// ID of the Glue Catalog and database where the table metadata resides. If omitted, this defaults to the current AWS Account ID.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the metadata database where the table metadata resides.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the table.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with `transaction_id`. Specified in RFC 3339 format, e.g. `2006-01-02T15:04:05Z07:00`.
         #[builder(into, default)]
-        pub query_as_of_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub query_as_of_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The transaction ID at which to read the table contents.
         #[builder(into, default)]
-        pub transaction_id: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub transaction_id: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct GetCatalogTableResult {

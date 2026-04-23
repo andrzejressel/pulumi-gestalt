@@ -48,13 +48,13 @@ pub mod group_membership {
     pub struct GroupMembershipArgs {
         /// The IAM Group name to attach the list of `users` to
         #[builder(into)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group: pulumi_gestalt_rust::Input<String>,
         /// The name to identify the Group Membership
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IAM User names to associate with the Group
         #[builder(into)]
-        pub users: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub users: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct GroupMembershipResult {

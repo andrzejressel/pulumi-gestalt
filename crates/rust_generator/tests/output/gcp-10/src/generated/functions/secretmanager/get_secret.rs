@@ -10,10 +10,10 @@ pub mod get_secret {
     pub struct GetSecretArgs {
         /// The ID of the project in which the resource belongs.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the secret.
         #[builder(into)]
-        pub secret_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSecretResult {

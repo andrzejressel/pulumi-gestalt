@@ -10,23 +10,23 @@ pub mod get_object {
     pub struct GetObjectArgs {
         /// Name of the bucket to read the object from. Alternatively, an [S3 access point](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html) ARN can be specified
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// To retrieve the object's checksum, this argument must be `ENABLED`. If you enable `checksum_mode` and the object is encrypted with KMS, you must have permission to use the `kms:Decrypt` action. Valid values: `ENABLED`
         #[builder(into, default)]
-        pub checksum_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub checksum_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Full path to the object inside the bucket
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub range: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the object.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specific version ID of the object returned (defaults to latest version)
         #[builder(into, default)]
-        pub version_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetObjectResult {

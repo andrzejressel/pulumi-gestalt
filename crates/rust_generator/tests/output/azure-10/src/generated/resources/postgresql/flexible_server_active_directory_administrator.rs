@@ -68,22 +68,22 @@ pub mod flexible_server_active_directory_administrator {
     pub struct FlexibleServerActiveDirectoryAdministratorArgs {
         /// The object ID of a user, service principal or security group in the Azure Active Directory tenant set as the Flexible Server Admin. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub object_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_id: pulumi_gestalt_rust::Input<String>,
         /// The name of Azure Active Directory principal. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub principal_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_name: pulumi_gestalt_rust::Input<String>,
         /// The type of Azure Active Directory principal. Possible values are `Group`, `ServicePrincipal` and `User`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub principal_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group for the PostgreSQL Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the PostgreSQL Flexible Server on which to set the administrator. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_name: pulumi_gestalt_rust::Input<String>,
         /// The Azure Tenant ID. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FlexibleServerActiveDirectoryAdministratorResult {

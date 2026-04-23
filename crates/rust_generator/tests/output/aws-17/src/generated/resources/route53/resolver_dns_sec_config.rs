@@ -41,7 +41,7 @@ pub mod resolver_dns_sec_config {
     pub struct ResolverDnsSecConfigArgs {
         /// The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResolverDnsSecConfigResult {

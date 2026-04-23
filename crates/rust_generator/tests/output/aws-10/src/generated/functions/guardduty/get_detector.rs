@@ -10,7 +10,7 @@ pub mod get_detector {
     pub struct GetDetectorArgs {
         /// ID of the detector.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDetectorResult {

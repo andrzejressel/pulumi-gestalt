@@ -55,13 +55,13 @@ pub mod account_rai_blocklist {
     pub struct AccountRaiBlocklistArgs {
         /// The ID of the Cognitive Services Account. Changing this forces a new Cognitive Account Rai Blocklist to be created.
         #[builder(into)]
-        pub cognitive_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cognitive_account_id: pulumi_gestalt_rust::Input<String>,
         /// A short description for the Cognitive Account Rai Blocklist.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Cognitive Account Rai Blocklist. Changing this forces a new Cognitive Account Rai Blocklist to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountRaiBlocklistResult {

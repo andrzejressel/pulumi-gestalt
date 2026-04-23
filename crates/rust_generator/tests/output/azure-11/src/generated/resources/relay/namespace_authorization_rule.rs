@@ -51,22 +51,22 @@ pub mod namespace_authorization_rule {
     pub struct NamespaceAuthorizationRuleArgs {
         /// Grants listen access to this Authorization Rule. Defaults to `false`.
         #[builder(into, default)]
-        pub listen: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub listen: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Grants manage access to this Authorization Rule. When this property is `true` - both `listen` and `send` must be set to `true` too. Defaults to `false`.
         #[builder(into, default)]
-        pub manage: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Azure Relay Namespace Authorization Rule. Changing this forces a new Azure Relay Namespace Authorization Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Azure Relay Namespace for which this Azure Relay Namespace Authorization Rule will be created. Changing this forces a new Azure Relay Namespace Authorization Rule to be created.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Azure Relay Namespace Authorization Rule should exist. Changing this forces a new Azure Relay Namespace Authorization Rule to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Grants send access to this Authorization Rule. Defaults to `false`.
         #[builder(into, default)]
-        pub send: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub send: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct NamespaceAuthorizationRuleResult {

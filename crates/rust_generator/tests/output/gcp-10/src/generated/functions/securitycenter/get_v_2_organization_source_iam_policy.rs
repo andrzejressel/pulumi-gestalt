@@ -9,10 +9,10 @@ pub mod get_v_2_organization_source_iam_policy {
     #[allow(dead_code)]
     pub struct GetV2OrganizationSourceIamPolicyArgs {
         #[builder(into)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization: pulumi_gestalt_rust::Input<String>,
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetV2OrganizationSourceIamPolicyResult {

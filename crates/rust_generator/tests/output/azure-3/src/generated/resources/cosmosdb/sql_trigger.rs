@@ -59,19 +59,19 @@ pub mod sql_trigger {
     pub struct SqlTriggerArgs {
         /// Body of the Trigger.
         #[builder(into)]
-        pub body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub body: pulumi_gestalt_rust::Input<String>,
         /// The id of the Cosmos DB SQL Container to create the SQL Trigger within. Changing this forces a new SQL Trigger to be created.
         #[builder(into)]
-        pub container_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this SQL Trigger. Changing this forces a new SQL Trigger to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The operation the trigger is associated with. Possible values are `All`, `Create`, `Update`, `Delete` and `Replace`.
         #[builder(into)]
-        pub operation: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub operation: pulumi_gestalt_rust::Input<String>,
         /// Type of the Trigger. Possible values are `Pre` and `Post`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SqlTriggerResult {

@@ -65,70 +65,64 @@ pub mod network_security_rule {
     pub struct NetworkSecurityRuleArgs {
         /// Specifies whether network traffic is allowed or denied. Possible values are `Allow` and `Deny`.
         #[builder(into)]
-        pub access: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access: pulumi_gestalt_rust::Input<String>,
         /// A description for this rule. Restricted to 140 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// CIDR or destination IP range or * to match any IP. Tags such as `VirtualNetwork`, `AzureLoadBalancer` and `Internet` can also be used. Besides, it also supports all available Service Tags like ‘Sql.WestEurope‘, ‘Storage.EastUS‘, etc. You can list the available service tags with the CLI: ```shell az network list-service-tags --location westcentralus```. For further information please see [Azure CLI - az network list-service-tags](https://docs.microsoft.com/cli/azure/network?view=azure-cli-latest#az-network-list-service-tags). This is required if `destination_address_prefixes` is not specified.
         #[builder(into, default)]
-        pub destination_address_prefix: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub destination_address_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of destination address prefixes. Tags may not be used. This is required if `destination_address_prefix` is not specified.
         #[builder(into, default)]
-        pub destination_address_prefixes: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_address_prefixes: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A List of destination Application Security Group IDs
         #[builder(into, default)]
-        pub destination_application_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_application_security_group_ids: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any. This is required if `destination_port_ranges` is not specified.
         #[builder(into, default)]
-        pub destination_port_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination_port_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of destination ports or port ranges. This is required if `destination_port_range` is not specified.
         #[builder(into, default)]
-        pub destination_port_ranges: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub destination_port_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The direction specifies if rule will be evaluated on incoming or outgoing traffic. Possible values are `Inbound` and `Outbound`.
         #[builder(into)]
-        pub direction: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub direction: pulumi_gestalt_rust::Input<String>,
         /// The name of the security rule. This needs to be unique across all Rules in the Network Security Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Network Security Group that we want to attach the rule to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_security_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_security_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// Network protocol this rule applies to. Possible values include `Tcp`, `Udp`, `Icmp`, `Esp`, `Ah` or `*` (which matches all).
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the Network Security Rule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// CIDR or source IP range or * to match any IP. Tags such as `VirtualNetwork`, `AzureLoadBalancer` and `Internet` can also be used. This is required if `source_address_prefixes` is not specified.
         #[builder(into, default)]
-        pub source_address_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_address_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of source address prefixes. Tags may not be used. This is required if `source_address_prefix` is not specified.
         #[builder(into, default)]
-        pub source_address_prefixes: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub source_address_prefixes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A List of source Application Security Group IDs
         #[builder(into, default)]
-        pub source_application_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub source_application_security_group_ids: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Source Port or Range. Integer or range between `0` and `65535` or `*` to match any. This is required if `source_port_ranges` is not specified.
         #[builder(into, default)]
-        pub source_port_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_port_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of source ports or port ranges. This is required if `source_port_range` is not specified.
         #[builder(into, default)]
-        pub source_port_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub source_port_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct NetworkSecurityRuleResult {

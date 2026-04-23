@@ -60,10 +60,10 @@ pub mod rest_api_policy {
     pub struct RestApiPolicyArgs {
         /// JSON formatted policy document that controls access to the API Gateway.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// ID of the REST API.
         #[builder(into)]
-        pub rest_api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RestApiPolicyResult {

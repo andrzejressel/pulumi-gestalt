@@ -81,30 +81,30 @@ pub mod endpoint {
     pub struct EndpointArgs {
         /// An optional description of the endpoint.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location for the endpoint.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the endpoint in the format projects/{project_id}/locations/{locationId}/endpoints/{endpointId}.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the VPC network that is connected to the IDS endpoint. This can either contain the VPC network name itself (like "src-net") or the full URL to the network (like "projects/{project_id}/global/networks/src-net").
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The minimum alert severity level that is reported by the endpoint.
         /// Possible values are: `INFORMATIONAL`, `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.
         #[builder(into)]
-        pub severity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub severity: pulumi_gestalt_rust::Input<String>,
         /// Configuration for threat IDs excluded from generating alerts. Limit: 99 IDs.
         #[builder(into, default)]
-        pub threat_exceptions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub threat_exceptions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct EndpointResult {

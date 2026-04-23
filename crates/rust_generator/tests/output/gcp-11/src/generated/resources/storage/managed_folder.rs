@@ -76,20 +76,20 @@ pub mod managed_folder {
     pub struct ManagedFolderArgs {
         /// The name of the bucket that contains the managed folder.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Allows the deletion of a managed folder even if contains
         /// objects. If a non-empty managed folder is deleted, any objects
         /// within the folder will remain in a simulated folder with the
         /// same name.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the managed folder expressed as a path. Must include
         /// trailing '/'. For example, `example_dir/example_dir2/`.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagedFolderResult {

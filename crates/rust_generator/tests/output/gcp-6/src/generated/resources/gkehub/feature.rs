@@ -493,14 +493,14 @@ pub mod feature {
         /// Optional. Fleet Default Membership Configuration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub fleet_default_member_config: pulumi_gestalt_rust::InputOrOutput<
+        pub fleet_default_member_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfig>,
         >,
         /// GCP labels for this Feature.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the resource
@@ -508,18 +508,18 @@ pub mod feature {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The full, unique name of this Feature resource
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Hub-wide Feature configuration. If this Feature does not support any Hub-wide configuration, this field may be unused.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spec: pulumi_gestalt_rust::InputOrOutput<
+        pub spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkehub::FeatureSpec>,
         >,
     }

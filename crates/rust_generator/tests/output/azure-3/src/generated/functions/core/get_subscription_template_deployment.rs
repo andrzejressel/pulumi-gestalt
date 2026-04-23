@@ -10,7 +10,7 @@ pub mod get_subscription_template_deployment {
     pub struct GetSubscriptionTemplateDeploymentArgs {
         /// The name of this Subscription Template Deployment.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSubscriptionTemplateDeploymentResult {

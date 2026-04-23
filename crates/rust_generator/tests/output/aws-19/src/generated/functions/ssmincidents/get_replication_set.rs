@@ -10,7 +10,7 @@ pub mod get_replication_set {
     pub struct GetReplicationSetArgs {
         /// All tags applied to the replication set.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

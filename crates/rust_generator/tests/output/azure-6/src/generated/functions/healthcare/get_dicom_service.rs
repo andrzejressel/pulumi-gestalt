@@ -10,10 +10,10 @@ pub mod get_dicom_service {
     pub struct GetDicomServiceArgs {
         /// The name of the Healthcare DICOM Service
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The id of the Healthcare Workspace in which the Healthcare DICOM Service exists.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDicomServiceResult {

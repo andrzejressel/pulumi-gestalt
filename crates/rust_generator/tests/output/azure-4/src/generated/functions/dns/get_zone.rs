@@ -10,12 +10,12 @@ pub mod get_zone {
     pub struct GetZoneArgs {
         /// The name of the DNS Zone.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the DNS Zone exists.
         /// If the Name of the Resource Group is not provided, the first DNS Zone from the list of DNS Zones
         /// in your subscription that matches `name` will be returned.
         #[builder(into, default)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetZoneResult {

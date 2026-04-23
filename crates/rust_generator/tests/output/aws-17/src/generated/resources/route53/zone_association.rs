@@ -72,13 +72,13 @@ pub mod zone_association {
     pub struct ZoneAssociationArgs {
         /// The VPC to associate with the private hosted zone.
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
         /// The VPC's region. Defaults to the region of the AWS provider.
         #[builder(into, default)]
-        pub vpc_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The private hosted zone to associate.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneAssociationResult {

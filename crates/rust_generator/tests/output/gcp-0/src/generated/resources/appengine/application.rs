@@ -56,7 +56,7 @@ pub mod application {
     pub struct ApplicationArgs {
         /// The domain to authenticate users with when using App Engine's User API.
         #[builder(into, default)]
-        pub auth_domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auth_domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the Cloud Firestore or Cloud Datastore database associated with this application.
         /// Can be `CLOUD_FIRESTORE` or `CLOUD_DATASTORE_COMPATIBILITY` for new
         /// instances.  To support old instances, the value `CLOUD_DATASTORE` is accepted by the provider, but will be rejected by the API.
@@ -64,29 +64,29 @@ pub mod application {
         /// `gcp.firestore.Database`
         /// resource instead.
         #[builder(into, default)]
-        pub database_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block of optional settings to configure specific App Engine features:
         #[builder(into, default)]
-        pub feature_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub feature_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appengine::ApplicationFeatureSettings>,
         >,
         /// Settings for enabling Cloud Identity Aware Proxy
         #[builder(into, default)]
-        pub iap: pulumi_gestalt_rust::InputOrOutput<
+        pub iap: pulumi_gestalt_rust::Input<
             Option<super::super::types::appengine::ApplicationIap>,
         >,
         /// The [location](https://cloud.google.com/appengine/docs/locations)
         /// to serve the app from.
         #[builder(into)]
-        pub location_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location_id: pulumi_gestalt_rust::Input<String>,
         /// The project ID to create the application under.
         /// ~>**NOTE:** GCP only accepts project ID, not project number. If you are using number,
         /// you may get a "Permission denied" error.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The serving status of the app.
         #[builder(into, default)]
-        pub serving_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub serving_status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {

@@ -91,30 +91,30 @@ pub mod datastore_fileshare {
     pub struct DatastoreFileshareArgs {
         /// The access key of the Storage Account. Conflicts with `shared_access_signature`.
         #[builder(into, default)]
-        pub account_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Text used to describe the asset. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies which identity to use when retrieving data from the specified source. Defaults to `None`. Possible values are `None`, `WorkspaceSystemAssignedIdentity` and `WorkspaceUserAssignedIdentity`.
         #[builder(into, default)]
-        pub service_data_identity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_data_identity: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Shared Access Signature of the Storage Account. Conflicts with `account_key`.
         #[builder(into, default)]
-        pub shared_access_signature: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub shared_access_signature: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Account File Share. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into)]
-        pub storage_fileshare_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_fileshare_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Machine Learning Workspace. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DatastoreFileshareResult {

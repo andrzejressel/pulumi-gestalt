@@ -44,13 +44,13 @@ pub mod key_group {
     pub struct KeyGroupArgs {
         /// A comment to describe the key group..
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of the identifiers of the public keys in the key group.
         #[builder(into)]
-        pub items: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub items: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A name to identify the key group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct KeyGroupResult {

@@ -50,27 +50,27 @@ pub mod findings_filter {
     pub struct FindingsFilterArgs {
         /// The action to perform on findings that meet the filter criteria (`finding_criteria`). Valid values are: `ARCHIVE`, suppress (automatically archive) the findings; and, `NOOP`, don't perform any action on the findings.
         #[builder(into)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action: pulumi_gestalt_rust::Input<String>,
         /// A custom description of the filter. The description can contain as many as 512 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The criteria to use to filter findings.
         #[builder(into)]
-        pub finding_criteria: pulumi_gestalt_rust::InputOrOutput<
+        pub finding_criteria: pulumi_gestalt_rust::Input<
             super::super::types::macie::FindingsFilterFindingCriteria,
         >,
         /// A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.
         #[builder(into, default)]
-        pub position: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub position: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A map of key-value pairs that specifies the tags to associate with the filter.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -98,43 +98,43 @@ pub mod nat_rule {
     pub struct NatRuleArgs {
         /// Specifies a reference to backendAddressPool resource.
         #[builder(into, default)]
-        pub backend_address_pool_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub backend_address_pool_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port used for internal connections on the endpoint. Possible values range between 1 and 65535, inclusive.
         #[builder(into)]
-        pub backend_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub backend_port: pulumi_gestalt_rust::Input<i32>,
         /// Are the Floating IPs enabled for this Load Balancer Rule? A "floating” IP is reassigned to a secondary server in case the primary server fails. Required to configure a SQL AlwaysOn Availability Group. Defaults to `false`.
         #[builder(into, default)]
-        pub enable_floating_ip: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_floating_ip: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is TCP Reset enabled for this Load Balancer Rule?
         #[builder(into, default)]
-        pub enable_tcp_reset: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_tcp_reset: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the frontend IP configuration exposing this rule.
         #[builder(into)]
-        pub frontend_ip_configuration_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frontend_ip_configuration_name: pulumi_gestalt_rust::Input<String>,
         /// The port for the external endpoint. Port numbers for each Rule must be unique within the Load Balancer. Possible values range between 1 and 65534, inclusive.
         #[builder(into, default)]
-        pub frontend_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub frontend_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The port range end for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534, inclusive.
         #[builder(into, default)]
-        pub frontend_port_end: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub frontend_port_end: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The port range start for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534, inclusive.
         #[builder(into, default)]
-        pub frontend_port_start: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub frontend_port_start: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the idle timeout in minutes for TCP connections. Valid values are between `4` and `30` minutes. Defaults to `4` minutes.
         #[builder(into, default)]
-        pub idle_timeout_in_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub idle_timeout_in_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Load Balancer in which to create the NAT Rule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub loadbalancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub loadbalancer_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the NAT Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The transport protocol for the external endpoint. Possible values are `Udp`, `Tcp` or `All`.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NatRuleResult {

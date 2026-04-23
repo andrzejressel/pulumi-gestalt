@@ -37,13 +37,13 @@ pub mod thing_group_membership {
     pub struct ThingGroupMembershipArgs {
         /// Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.
         #[builder(into, default)]
-        pub override_dynamic_group: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub override_dynamic_group: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the group to which you are adding a thing.
         #[builder(into)]
-        pub thing_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub thing_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the thing to add to a group.
         #[builder(into)]
-        pub thing_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub thing_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ThingGroupMembershipResult {

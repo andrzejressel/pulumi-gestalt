@@ -33,18 +33,18 @@ pub mod lb {
     pub struct LbArgs {
         /// The health check path of the load balancer. Default value "/".
         #[builder(into, default)]
-        pub health_check_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub health_check_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The instance port the load balancer will connect.
         #[builder(into)]
-        pub instance_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub instance_port: pulumi_gestalt_rust::Input<i32>,
         #[builder(into, default)]
-        pub ip_address_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Lightsail load balancer.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -224,7 +224,7 @@ pub mod job {
         /// send a request to the service instance
         /// Structure is documented below.
         #[builder(into, default)]
-        pub app_engine_http_target: pulumi_gestalt_rust::InputOrOutput<
+        pub app_engine_http_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudscheduler::JobAppEngineHttpTarget>,
         >,
         /// The deadline for job attempts. If the request handler does not respond by this deadline then the request is
@@ -236,17 +236,17 @@ pub mod job {
         /// * **Note**: For PubSub targets, this field is ignored - setting it will introduce an unresolvable diff.
         /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s"
         #[builder(into, default)]
-        pub attempt_deadline: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub attempt_deadline: pulumi_gestalt_rust::Input<Option<String>>,
         /// A human-readable description for the job.
         /// This string must not contain more than 500 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// HTTP target.
         /// If the job providers a http_target the cron will
         /// send a request to the targeted url
         /// Structure is documented below.
         #[builder(into, default)]
-        pub http_target: pulumi_gestalt_rust::InputOrOutput<
+        pub http_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudscheduler::JobHttpTarget>,
         >,
         /// The name of the job.
@@ -254,40 +254,40 @@ pub mod job {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Sets the job to a paused state. Jobs default to being enabled when this property is not set.
         #[builder(into, default)]
-        pub paused: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub paused: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Pub/Sub target
         /// If the job providers a Pub/Sub target the cron will publish
         /// a message to the provided topic
         /// Structure is documented below.
         #[builder(into, default)]
-        pub pubsub_target: pulumi_gestalt_rust::InputOrOutput<
+        pub pubsub_target: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudscheduler::JobPubsubTarget>,
         >,
         /// Region where the scheduler job resides. If it is not provided, this provider will use the provider default.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// By default, if a job does not complete successfully,
         /// meaning that an acknowledgement is not received from the handler,
         /// then it will be retried with exponential backoff according to the settings
         /// Structure is documented below.
         #[builder(into, default)]
-        pub retry_config: pulumi_gestalt_rust::InputOrOutput<
+        pub retry_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudscheduler::JobRetryConfig>,
         >,
         /// Describes the schedule on which the job will be executed.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schedule: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the time zone to be used in interpreting schedule.
         /// The value of this field must be a time zone name from the tz database.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct JobResult {

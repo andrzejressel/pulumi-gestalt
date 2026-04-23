@@ -56,21 +56,21 @@ pub mod workspace {
         /// Identifies the dataset addressed by this request. Must be in the format
         /// 'projects/{project}/locations/{location}/datasets/{dataset}'
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset: pulumi_gestalt_rust::Input<String>,
         /// The user labels. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg",
         /// "count": "3" } **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the workspace, in the format 'projects/{projectId}/locations/{location}/datasets/{datasetId}/dataMapperWorkspaces/{workspaceId}'
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Settings associated with this workspace.
         /// Structure is documented below.
         #[builder(into)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             super::super::types::healthcare::WorkspaceSettings,
         >,
     }

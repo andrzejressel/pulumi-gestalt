@@ -28,16 +28,16 @@ pub mod vpc_network_performance_metric_subscription {
     pub struct VpcNetworkPerformanceMetricSubscriptionArgs {
         /// The target Region or Availability Zone that the metric subscription is enabled for. For example, `eu-west-1`.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination: pulumi_gestalt_rust::Input<String>,
         /// The metric used for the enabled subscription. Valid values: `aggregate-latency`. Default: `aggregate-latency`.
         #[builder(into, default)]
-        pub metric: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metric: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source Region or Availability Zone that the metric subscription is enabled for. For example, `us-east-1`.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
         /// The statistic used for the enabled subscription. Valid values: `p50`. Default: `p50`.
         #[builder(into, default)]
-        pub statistic: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub statistic: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VpcNetworkPerformanceMetricSubscriptionResult {

@@ -64,78 +64,74 @@ pub mod service {
     pub struct ServiceArgs {
         /// Whether to enable AAD auth? Defaults to `true`.
         #[builder(into, default)]
-        pub aad_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub aad_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies if Connectivity Logs are enabled or not. Defaults to `false`.
         #[builder(into, default)]
-        pub connectivity_logs_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub connectivity_logs_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `cors` block as documented below.
         #[builder(into, default)]
-        pub cors: pulumi_gestalt_rust::InputOrOutput<
+        pub cors: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::signalr::ServiceCor>>,
         >,
         /// Specifies if Http Request Logs are enabled or not. Defaults to `false`.
         #[builder(into, default)]
-        pub http_request_logs_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub http_request_logs_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::signalr::ServiceIdentity>,
         >,
         /// A `live_trace` block as defined below.
         #[builder(into, default)]
-        pub live_trace: pulumi_gestalt_rust::InputOrOutput<
+        pub live_trace: pulumi_gestalt_rust::Input<
             Option<super::super::types::signalr::ServiceLiveTrace>,
         >,
         #[builder(into, default)]
-        pub live_trace_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub live_trace_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to enable local auth? Defaults to `true`.
         #[builder(into, default)]
-        pub local_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the SignalR service exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if Messaging Logs are enabled or not. Defaults to `false`.
         #[builder(into, default)]
-        pub messaging_logs_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub messaging_logs_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the SignalR service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable public network access? Defaults to `true`.
         ///
         /// > **Note:** `public_network_access_enabled` cannot be set to `false` in `Free` sku tier.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the resource group in which to create the SignalR service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the client connection timeout. Defaults to `30`.
         #[builder(into, default)]
-        pub serverless_connection_timeout_in_seconds: pulumi_gestalt_rust::InputOrOutput<
+        pub serverless_connection_timeout_in_seconds: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Specifies the service mode. Possible values are `Classic`, `Default` and `Serverless`. Defaults to `Default`.
         #[builder(into, default)]
-        pub service_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `sku` block as documented below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
-            super::super::types::signalr::ServiceSku,
-        >,
+        pub sku: pulumi_gestalt_rust::Input<super::super::types::signalr::ServiceSku>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Whether to request client certificate during TLS handshake? Defaults to `false`.
         ///
         /// > **Note:** `tls_client_cert_enabled` cannot be set to `true` in `Free` sku tier.
         #[builder(into, default)]
-        pub tls_client_cert_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls_client_cert_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `upstream_endpoint` block as documented below. Using this block requires the SignalR service to be Serverless. When creating multiple blocks they will be processed in the order they are defined in.
         #[builder(into, default)]
-        pub upstream_endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub upstream_endpoints: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::signalr::ServiceUpstreamEndpoint>>,
         >,
     }

@@ -64,16 +64,16 @@ pub mod eventhub_namespace_disaster_recovery_config {
     pub struct EventhubNamespaceDisasterRecoveryConfigArgs {
         /// Specifies the name of the Disaster Recovery Config. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the primary EventHub Namespace to replicate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the EventHub Namespace to replicate to.
         #[builder(into)]
-        pub partner_namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partner_namespace_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the Disaster Recovery Config exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EventhubNamespaceDisasterRecoveryConfigResult {

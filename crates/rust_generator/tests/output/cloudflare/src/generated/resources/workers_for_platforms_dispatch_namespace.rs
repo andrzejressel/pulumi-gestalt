@@ -45,10 +45,10 @@ pub mod workers_for_platforms_dispatch_namespace {
     pub struct WorkersForPlatformsDispatchNamespaceArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Workers for Platforms namespace.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkersForPlatformsDispatchNamespaceResult {

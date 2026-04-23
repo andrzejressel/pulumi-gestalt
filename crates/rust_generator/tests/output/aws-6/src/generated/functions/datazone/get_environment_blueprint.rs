@@ -10,13 +10,13 @@ pub mod get_environment_blueprint {
     pub struct GetEnvironmentBlueprintArgs {
         /// ID of the domain.
         #[builder(into)]
-        pub domain_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_id: pulumi_gestalt_rust::Input<String>,
         /// Whether the blueprint is managed by Amazon DataZone.
         #[builder(into)]
-        pub managed: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub managed: pulumi_gestalt_rust::Input<bool>,
         /// Name of the blueprint.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEnvironmentBlueprintResult {

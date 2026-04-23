@@ -52,12 +52,12 @@ pub mod enabler {
         /// Set of account IDs.
         /// Can contain one of: the Organization's Administrator Account, or one or more Member Accounts.
         #[builder(into)]
-        pub account_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub account_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Type of resources to scan.
         /// Valid values are `EC2`, `ECR`, `LAMBDA` and `LAMBDA_CODE`.
         /// At least one item is required.
         #[builder(into)]
-        pub resource_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub resource_types: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct EnablerResult {

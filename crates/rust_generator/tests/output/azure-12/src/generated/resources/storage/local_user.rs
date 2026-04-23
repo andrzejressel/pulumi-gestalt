@@ -83,29 +83,29 @@ pub mod local_user {
     pub struct LocalUserArgs {
         /// The home directory of the Storage Account Local User.
         #[builder(into, default)]
-        pub home_directory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub home_directory: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Storage Account Local User. Changing this forces a new Storage Account Local User to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `permission_scope` blocks as defined below.
         #[builder(into, default)]
-        pub permission_scopes: pulumi_gestalt_rust::InputOrOutput<
+        pub permission_scopes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::storage::LocalUserPermissionScope>>,
         >,
         /// One or more `ssh_authorized_key` blocks as defined below.
         #[builder(into, default)]
-        pub ssh_authorized_keys: pulumi_gestalt_rust::InputOrOutput<
+        pub ssh_authorized_keys: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::storage::LocalUserSshAuthorizedKey>>,
         >,
         /// Specifies whether SSH Key Authentication is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub ssh_key_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ssh_key_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether SSH Password Authentication is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub ssh_password_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ssh_password_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Storage Account that this Storage Account Local User resides in. Changing this forces a new Storage Account Local User to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LocalUserResult {

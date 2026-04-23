@@ -80,28 +80,28 @@ pub mod output_synapse {
     pub struct OutputSynapseArgs {
         /// The name of the Azure SQL database. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Output. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password that will be used to connect to the Azure SQL database.
         #[builder(into)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub password: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the SQL server containing the Azure SQL database. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the table in the Azure SQL database. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table: pulumi_gestalt_rust::Input<String>,
         /// The user name that will be used to connect to the Azure SQL database. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OutputSynapseResult {

@@ -10,16 +10,16 @@ pub mod get_docker_image {
     pub struct GetDockerImageArgs {
         /// The image name to fetch. If no digest or tag is provided, then the latest modified image will be used.
         #[builder(into)]
-        pub image_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_name: pulumi_gestalt_rust::Input<String>,
         /// The location of the artifact registry.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The project ID in which the resource belongs. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The last part of the repository name to fetch from.
         #[builder(into)]
-        pub repository_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDockerImageResult {

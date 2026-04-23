@@ -73,13 +73,13 @@ pub mod assignment_dedicated_host {
     pub struct AssignmentDedicatedHostArgs {
         /// Specifies the Dedicated Host ID to which the Maintenance Configuration will be assigned. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub dedicated_host_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dedicated_host_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Maintenance Configuration Resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub maintenance_configuration_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub maintenance_configuration_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AssignmentDedicatedHostResult {

@@ -184,75 +184,75 @@ pub mod callback_function {
     pub struct CallbackFunctionArgs {
         /// Instruction set architecture for your Lambda function. Valid values are `["x86_64"]` and `["arm64"]`. Default is `["x86_64"]`. Removing this attribute, function's architecture stay the same.
         #[builder(into, default)]
-        pub architectures: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub architectures: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Javascript function to use as the entrypoint for the AWS Lambda out of. Either callback or callbackFactory must be provided.
         #[builder(into, default)]
-        pub callback: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub callback: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Javascript function that will be called to produce the callback function that is the entrypoint for the AWS Lambda. Either callback or callbackFactory must be provided.
         #[builder(into, default)]
-        pub callback_factory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub callback_factory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Options to control which paths/packages should be included or excluded in the zip file containing the code for the AWS lambda.
         #[builder(into, default)]
-        pub code_path_options: pulumi_gestalt_rust::InputOrOutput<
+        pub code_path_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::CodePathOptions>,
         >,
         /// To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.
         #[builder(into, default)]
-        pub code_signing_config_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub code_signing_config_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub dead_letter_config: pulumi_gestalt_rust::InputOrOutput<
+        pub dead_letter_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionDeadLetterConfig>,
         >,
         /// Description of what your Lambda Function does.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<
+        pub environment: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionEnvironment>,
         >,
         /// The amount of Ephemeral storage(`/tmp`) to allocate for the Lambda Function in MB. This parameter is used to expand the total amount of Ephemeral storage available, beyond the default amount of `512`MB. Detailed below.
         #[builder(into, default)]
-        pub ephemeral_storage: pulumi_gestalt_rust::InputOrOutput<
+        pub ephemeral_storage: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionEphemeralStorage>,
         >,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub file_system_config: pulumi_gestalt_rust::InputOrOutput<
+        pub file_system_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionFileSystemConfig>,
         >,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub image_config: pulumi_gestalt_rust::InputOrOutput<
+        pub image_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionImageConfig>,
         >,
         /// ECR image URI containing the function's deployment package. Exactly one of `filename`, `image_uri`,  or `s3_bucket` must be specified.
         #[builder(into, default)]
-        pub image_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key that is used to encrypt environment variables. If this configuration is not provided when environment variables are in use, AWS Lambda uses a default service key. If this configuration is provided when environment variables are not in use, the AWS Lambda API does not save this configuration and the provider will show a perpetual difference of adding the key. To fix the perpetual difference, remove this configuration.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of Lambda Layer Version ARNs (maximum of 5) to attach to your Lambda Function. See [Lambda Layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)
         #[builder(into, default)]
-        pub layers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub layers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Configuration block used to specify advanced logging settings. Detailed below.
         #[builder(into, default)]
-        pub logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionLoggingConfig>,
         >,
         /// Amount of memory in MB your Lambda Function can use at runtime. Defaults to `128`. See [Limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html)
         #[builder(into, default)]
-        pub memory_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub memory_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Unique name for your Lambda Function.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Lambda deployment package type. Valid values are `Zip` and `Image`. Defaults to `Zip`.
         #[builder(into, default)]
-        pub package_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub package_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IAM policy ARNs to attach to the Function. Only one of `role` or `policies` can be provided. If neither is provided, the default policies will be used instead.
         #[builder(into, default)]
-        pub policies: pulumi_gestalt_rust::InputOrOutput<
+        pub policies: pulumi_gestalt_rust::Input<
             Option<
                 pulumi_gestalt_rust::OneOf2<
                     std::collections::HashMap<String, String>,
@@ -262,70 +262,66 @@ pub mod callback_function {
         >,
         /// Whether to publish creation/change as new Lambda Function Version. Defaults to `false`.
         #[builder(into, default)]
-        pub publish: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publish: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to replace the security groups on the function's VPC configuration prior to destruction.
         /// Removing these security group associations prior to function destruction can speed up security group deletion times of AWS's internal cleanup operations.
         /// By default, the security groups will be replaced with the `default` security group in the function's configured VPC.
         /// Set the `replacement_security_group_ids` attribute to use a custom list of security groups for replacement.
         #[builder(into, default)]
-        pub replace_security_groups_on_destroy: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub replace_security_groups_on_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of security group IDs to assign to the function's VPC configuration prior to destruction.
         /// `replace_security_groups_on_destroy` must be set to `true` to use this attribute.
         #[builder(into, default)]
-        pub replacement_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub replacement_security_group_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// Amount of reserved concurrent executions for this lambda function. A value of `0` disables lambda from being triggered and `-1` removes any concurrency limitations. Defaults to Unreserved Concurrency Limits `-1`. See [Managing Concurrency](https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html)
         #[builder(into, default)]
-        pub reserved_concurrent_executions: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub reserved_concurrent_executions: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The execution role for the Lambda Function. The role provides the function's identity and access to AWS services and resources. Only one of `role` or `policies` can be provided. If neither is provided, the default policies will be used instead.
         #[builder(into, default)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Lambda runtime to use. If not provided, will default to `NodeJS20dX`.
         #[builder(into, default)]
-        pub runtime: pulumi_gestalt_rust::InputOrOutput<
+        pub runtime: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::Runtime>,
         >,
         /// S3 bucket location containing the function's deployment package. This bucket must reside in the same AWS region where you are creating the Lambda function. Exactly one of `filename`, `image_uri`, or `s3_bucket` must be specified. When `s3_bucket` is set, `s3_key` is required.
         #[builder(into, default)]
-        pub s3_bucket: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_bucket: pulumi_gestalt_rust::Input<Option<String>>,
         /// S3 key of an object containing the function's deployment package. When `s3_bucket` is set, `s3_key` is required.
         #[builder(into, default)]
-        pub s3_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Object version containing the function's deployment package. Conflicts with `filename` and `image_uri`.
         #[builder(into, default)]
-        pub s3_object_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_object_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to true if you do not wish the function to be deleted at destroy time, and instead just remove the function from the Pulumi state.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Snap start settings block. Detailed below.
         #[builder(into, default)]
-        pub snap_start: pulumi_gestalt_rust::InputOrOutput<
+        pub snap_start: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionSnapStart>,
         >,
         /// Virtual attribute used to trigger replacement when source code changes. Must be set to a base64-encoded SHA256 hash of the package file specified with either `filename` or `s3_key`.
         #[builder(into, default)]
-        pub source_code_hash: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_code_hash: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the object. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Amount of time your Lambda Function has to run in seconds. Defaults to `3`. See [Limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html).
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub tracing_config: pulumi_gestalt_rust::InputOrOutput<
+        pub tracing_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionTracingConfig>,
         >,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::FunctionVpcConfig>,
         >,
     }

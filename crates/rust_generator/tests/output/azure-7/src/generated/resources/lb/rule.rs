@@ -76,45 +76,43 @@ pub mod rule {
         ///
         /// > **NOTE:** In most cases users can only set one Backend Address Pool ID in the `backend_address_pool_ids`. Especially, when the sku of the LB is `Gateway`, users can set up to two IDs in the `backend_address_pool_ids`.
         #[builder(into, default)]
-        pub backend_address_pool_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub backend_address_pool_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The port used for internal connections on the endpoint. Possible values range between 0 and 65535, inclusive. A port of `0` means "Any Port".
         #[builder(into)]
-        pub backend_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub backend_port: pulumi_gestalt_rust::Input<i32>,
         /// Is snat enabled for this Load Balancer Rule? Default `false`.
         #[builder(into, default)]
-        pub disable_outbound_snat: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_outbound_snat: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Are the Floating IPs enabled for this Load Balancer Rule? A "floating” IP is reassigned to a secondary server in case the primary server fails. Required to configure a SQL AlwaysOn Availability Group. Defaults to `false`.
         #[builder(into, default)]
-        pub enable_floating_ip: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_floating_ip: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is TCP Reset enabled for this Load Balancer Rule?
         #[builder(into, default)]
-        pub enable_tcp_reset: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_tcp_reset: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the frontend IP configuration to which the rule is associated.
         #[builder(into)]
-        pub frontend_ip_configuration_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frontend_ip_configuration_name: pulumi_gestalt_rust::Input<String>,
         /// The port for the external endpoint. Port numbers for each Rule must be unique within the Load Balancer. Possible values range between 0 and 65534, inclusive. A port of `0` means "Any Port".
         #[builder(into)]
-        pub frontend_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub frontend_port: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the idle timeout in minutes for TCP connections. Valid values are between `4` and `100` minutes. Defaults to `4` minutes.
         #[builder(into, default)]
-        pub idle_timeout_in_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub idle_timeout_in_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the load balancing distribution type to be used by the Load Balancer. Possible values are: `Default` – The load balancer is configured to use a 5 tuple hash to map traffic to available servers. `SourceIP` – The load balancer is configured to use a 2 tuple hash to map traffic to available servers. `SourceIPProtocol` – The load balancer is configured to use a 3 tuple hash to map traffic to available servers. Also known as Session Persistence, where in the Azure portal the options are called `None`, `Client IP` and `Client IP and Protocol` respectively. Defaults to `Default`.
         #[builder(into, default)]
-        pub load_distribution: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub load_distribution: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Load Balancer in which to create the Rule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub loadbalancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub loadbalancer_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the LB Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to a Probe used by this Load Balancing Rule.
         #[builder(into, default)]
-        pub probe_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub probe_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The transport protocol for the external endpoint. Possible values are `Tcp`, `Udp` or `All`.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RuleResult {

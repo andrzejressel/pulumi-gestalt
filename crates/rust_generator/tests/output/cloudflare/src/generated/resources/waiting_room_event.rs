@@ -40,49 +40,49 @@ pub mod waiting_room_event {
     pub struct WaitingRoomEventArgs {
         /// This is a templated html file that will be rendered at the edge.
         #[builder(into, default)]
-        pub custom_page_html: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_page_html: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description to let users add more details about the event.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Disables automatic renewal of session cookies.
         #[builder(into, default)]
-        pub disable_session_renewal: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_session_renewal: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ISO 8601 timestamp that marks the end of the event. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub event_end_time: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub event_end_time: pulumi_gestalt_rust::Input<String>,
         /// ISO 8601 timestamp that marks the start of the event. Must occur at least 1 minute before `event_end_time`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub event_start_time: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub event_start_time: pulumi_gestalt_rust::Input<String>,
         /// A unique name to identify the event. Only alphanumeric characters, hyphens, and underscores are allowed. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The number of new users that will be let into the route every minute.
         #[builder(into, default)]
-        pub new_users_per_minute: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub new_users_per_minute: pulumi_gestalt_rust::Input<Option<i32>>,
         /// ISO 8601 timestamp that marks when to begin queueing all users before the event starts. Must occur at least 5 minutes before `event_start_time`.
         #[builder(into, default)]
-        pub prequeue_start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prequeue_start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The queueing method used by the waiting room. Available values: `fifo`, `random`, `passthrough`, `reject`.
         #[builder(into, default)]
-        pub queueing_method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub queueing_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// Lifetime of a cookie (in minutes) set by Cloudflare for users who get access to the origin.
         #[builder(into, default)]
-        pub session_duration: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub session_duration: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Users in the prequeue will be shuffled randomly at the `event_start_time`. Requires that `prequeue_start_time` is not null. Defaults to `false`.
         #[builder(into, default)]
-        pub shuffle_at_event_start: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub shuffle_at_event_start: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If suspended, the event is ignored and traffic will be handled based on the waiting room configuration.
         #[builder(into, default)]
-        pub suspended: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub suspended: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The total number of active user sessions on the route at a point in time.
         #[builder(into, default)]
-        pub total_active_users: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub total_active_users: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Waiting Room ID the event should apply to. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub waiting_room_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub waiting_room_id: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WaitingRoomEventResult {

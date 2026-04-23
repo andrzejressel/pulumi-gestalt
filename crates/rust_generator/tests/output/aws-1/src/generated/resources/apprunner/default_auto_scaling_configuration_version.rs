@@ -47,7 +47,7 @@ pub mod default_auto_scaling_configuration_version {
     pub struct DefaultAutoScalingConfigurationVersionArgs {
         /// The ARN of the App Runner auto scaling configuration that you want to set as the default.
         #[builder(into)]
-        pub auto_scaling_configuration_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auto_scaling_configuration_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DefaultAutoScalingConfigurationVersionResult {

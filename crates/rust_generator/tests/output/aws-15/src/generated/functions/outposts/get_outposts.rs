@@ -10,16 +10,16 @@ pub mod get_outposts {
     pub struct GetOutpostsArgs {
         /// Availability Zone name.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Availability Zone identifier.
         #[builder(into, default)]
-        pub availability_zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS Account identifier of the Outpost owner.
         #[builder(into, default)]
-        pub owner_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Site identifier.
         #[builder(into, default)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub site_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetOutpostsResult {
