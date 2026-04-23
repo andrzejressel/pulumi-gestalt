@@ -492,7 +492,7 @@ func transformResourceOptions(options *pcl.ResourceOptions) (*astproto.ResourceO
 }
 
 func transformResource(resource *pcl.Resource) (*astproto.Resource, error) {
-	token := resource.Token
+	token, _ := resource.GetToken()
 	if resource.Schema != nil {
 		token = resource.Schema.Token // resource.Token() does not contain "index"
 	}

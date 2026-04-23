@@ -29,9 +29,9 @@ fn test_integration() -> Result<()> {
 
     assert!(
         str.contains(
-            "GetRequiredPlugins: plugins=[name:\"random\"  kind:\"resource\"  version:\"4.15.1\"]"
+            "GetRequiredPlugins: plugins=[name:\\\"random\\\"  kind:\\\"resource\\\"  version:\\\"4.15.1\\\"]"
         ) || str.contains(
-            "GetRequiredPlugins: plugins=[name:\"random\" kind:\"resource\" version:\"4.15.1\"]"
+            "GetRequiredPlugins: plugins=[name:\\\"random\\\" kind:\\\"resource\\\" version:\\\"4.15.1\\\"]"
         ),
         "random plugin not found in stack output [{}]",
         str
