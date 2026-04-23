@@ -60,22 +60,21 @@ fn collect_used_types_output(
 
 fn collect_type(package: &Package, r#type: &Type, used_types: &mut HashSet<ElementId>) {
     match r#type {
-        Type::Ref(Ref::Type(id))
-            if used_types.insert(id.clone()) => {
-                // Recursively collect types used by this type
-                if let Some(t) = package.types.get(id) {
-                    match &t.deref().value {
-                        GlobalTypeValue::Object(_, props) => {
-                            for prop in props {
-                                collect_type(package, &prop.r#type, used_types);
-                            }
+        Type::Ref(Ref::Type(id)) if used_types.insert(id.clone()) => {
+            // Recursively collect types used by this type
+            if let Some(t) = package.types.get(id) {
+                match &t.deref().value {
+                    GlobalTypeValue::Object(_, props) => {
+                        for prop in props {
+                            collect_type(package, &prop.r#type, used_types);
                         }
-                        GlobalTypeValue::IntegerEnum(_, _) => {}
-                        GlobalTypeValue::StringEnum(_, _) => {}
-                        GlobalTypeValue::NumberEnum(_, _) => {}
                     }
+                    GlobalTypeValue::IntegerEnum(_, _) => {}
+                    GlobalTypeValue::StringEnum(_, _) => {}
+                    GlobalTypeValue::NumberEnum(_, _) => {}
                 }
             }
+        }
         Type::Array(t) | Type::Object(t) | Type::Option(t) => {
             collect_type(package, t, used_types);
         }
