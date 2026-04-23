@@ -7,7 +7,7 @@ toolchain go1.26.2
 require (
 	github.com/golang/protobuf v1.5.4
 	github.com/pkg/errors v0.9.1
-	github.com/pulumi/pulumi/sdk/v3 v3.230.0
+	github.com/pulumi/pulumi/sdk/v3 v3.231.0
 	google.golang.org/grpc v1.80.0
 )
 
