@@ -20,7 +20,7 @@ pulumi_gestalt_proto = { workspace = true, features = ["language_server"] }
 prettyplease.workspace = true
 syn.workspace = true
 rust2go = "0.4.2"
-rootcause.workspace = true
+rootcause = { workspace = true, features = ["compat-anyhow1"] }
 
 [lints]
 workspace = true

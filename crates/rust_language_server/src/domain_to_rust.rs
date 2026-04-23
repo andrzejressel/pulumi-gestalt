@@ -4,7 +4,8 @@
 /// mapping, stdlib calls, etc.) into concrete Rust syntax constructs
 /// (let bindings, method calls, function calls, etc.).
 use crate::domain_ir::{
-    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, Statement, StdlibFn, UnaryOp,
+    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, ResourceToken, Statement, StdlibFn,
+    UnaryOp,
 };
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use rootcause::Result;
@@ -71,7 +72,7 @@ fn lower_statement(stmt: &Statement) -> Result<RustStatement> {
 fn lower_resource(
     name: &str,
     logical_name: &str,
-    token: &str,
+    token: &ResourceToken,
     inputs: &[(String, Expr)],
 ) -> Result<RustStatement> {
     let (module_path, struct_name) =
@@ -140,13 +141,13 @@ fn wrap_as_pulumi_any(expr: RustExpr) -> RustExpr {
     }
 }
 
-fn get_full_resource_path(token: &str) -> Result<(String, String)> {
+fn get_full_resource_path(token: &ResourceToken) -> Result<(String, String)> {
     match token {
-        "pulumi:index:Stash" => Ok((
+        ResourceToken::Stash => Ok((
             "pulumi_gestalt_rust::resources::stash".to_string(),
             "Stash".to_string(),
         )),
-        another => bail!("Unknown resource token: {}", another),
+        ResourceToken::Custom{provider_name, element_id} => Ok(("test".to_string(), "test".to_string())),
     }
 }
 

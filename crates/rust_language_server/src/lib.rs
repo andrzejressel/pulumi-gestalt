@@ -103,7 +103,7 @@ impl G2RCall for G2RCallImpl {
             };
         }
 
-        if let Err(error) = pulumi_gestalt_generator::generate_rust(&_model_package, dir) {
+        if let Err(error) = pulumi_gestalt_generator::generate_rust(&_model_package, &dir.join("src")) {
             return GeneratePackageResult {
                 error: format!("failed to generate package: {error:?}"),
             };

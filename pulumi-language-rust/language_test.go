@@ -174,7 +174,6 @@ var expectedFailures = map[string]string{
 	"l2-component-component-resource-ref":          "sdk snapshot validation for component: walk expected dir: lstat testdata/sdks/component-13.3.7: no such file or directory",
 	"l2-component-program-resource-ref":            "sdk snapshot validation for component: walk expected dir: lstat testdata/sdks/component-13.3.7: no such file or directory",
 	"l2-component-property-deps":                   "sdk snapshot validation for component-property-deps: walk expected dir: lstat testdata/sdks/component-property-deps-1.33.7: no such file or directory",
-	"l2-destroy":                                   "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l2-discriminated-union":                       "sdk snapshot validation for discriminated-union: walk expected dir: lstat testdata/sdks/discriminated-union-31.0.0: no such file or directory",
 	"l2-elide-index":                               "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l2-engine-update-options":                     "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",

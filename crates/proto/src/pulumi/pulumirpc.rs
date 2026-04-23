@@ -24,8 +24,10 @@ pub struct PluginDependency {
     /// a map of the checksums for the plugin, will be empty from old language runtimes. The keys should match
     /// the os and architecture names used in pulumi releases, e.g. "darwin-amd64", "windows-arm64".
     #[prost(map = "string, bytes", tag = "5")]
-    pub checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
 }
 /// PluginAttach is used to attach an already running plugin to the engine.
 ///
@@ -68,8 +70,10 @@ pub struct PackageDependency {
     /// a map of the checksums for the plugin, will be empty from old language runtimes. The keys should match
     /// the os and architecture names used in pulumi releases, e.g. "darwin-amd64", "windows-arm64".
     #[prost(map = "string, bytes", tag = "5")]
-    pub checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
     /// The optional parameterization for this package.
     #[prost(message, optional, tag = "6")]
     pub parameterization: ::core::option::Option<PackageParameterization>,
@@ -182,10 +186,10 @@ pub mod engine_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value
+        clippy::let_unit_value,
     )]
-    use tonic::codegen::http::Uri;
     use tonic::codegen::*;
+    use tonic::codegen::http::Uri;
     /// Engine is an auxiliary service offered to language and resource provider plugins. Its main purpose today is
     /// to serve as a common logging endpoint, but it also serves as a state storage mechanism for language hosts
     /// that can't store their own global state.
@@ -227,13 +231,14 @@ pub mod engine_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                    http::Request<tonic::body::Body>,
-                    Response = http::Response<
-                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
-                    >,
+                http::Request<tonic::body::Body>,
+                Response = http::Response<
+                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
                 >,
-            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
-                Into<StdError> + std::marker::Send + std::marker::Sync,
+            >,
+            <T as tonic::codegen::Service<
+                http::Request<tonic::body::Body>,
+            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             EngineClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -273,14 +278,18 @@ pub mod engine_client {
             &mut self,
             request: impl tonic::IntoRequest<super::LogRequest>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/pulumirpc.Engine/Log");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("pulumirpc.Engine", "Log"));
+            req.extensions_mut().insert(GrpcMethod::new("pulumirpc.Engine", "Log"));
             self.inner.unary(req, path, codec).await
         }
         /// GetRootResource gets the URN of the root resource, the resource that should be the root of all
@@ -288,13 +297,22 @@ pub mod engine_client {
         pub async fn get_root_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::GetRootResourceRequest>,
-        ) -> std::result::Result<tonic::Response<super::GetRootResourceResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::GetRootResourceResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.Engine/GetRootResource");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.Engine/GetRootResource",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.Engine", "GetRootResource"));
@@ -304,13 +322,22 @@ pub mod engine_client {
         pub async fn set_root_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::SetRootResourceRequest>,
-        ) -> std::result::Result<tonic::Response<super::SetRootResourceResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::SetRootResourceResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.Engine/SetRootResource");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.Engine/SetRootResource",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.Engine", "SetRootResource"));
@@ -322,11 +349,18 @@ pub mod engine_client {
             &mut self,
             request: impl tonic::IntoRequest<super::StartDebuggingRequest>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.Engine/StartDebugging");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.Engine/StartDebugging",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.Engine", "StartDebugging"));
@@ -336,14 +370,22 @@ pub mod engine_client {
         pub async fn require_pulumi_version(
             &mut self,
             request: impl tonic::IntoRequest<super::RequirePulumiVersionRequest>,
-        ) -> std::result::Result<tonic::Response<super::RequirePulumiVersionResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::RequirePulumiVersionResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.Engine/RequirePulumiVersion");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.Engine/RequirePulumiVersion",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.Engine", "RequirePulumiVersion"));
@@ -358,7 +400,7 @@ pub mod engine_server {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value
+        clippy::let_unit_value,
     )]
     use tonic::codegen::*;
     /// Generated trait containing gRPC methods that should be implemented for use with EngineServer.
@@ -374,12 +416,18 @@ pub mod engine_server {
         async fn get_root_resource(
             &self,
             request: tonic::Request<super::GetRootResourceRequest>,
-        ) -> std::result::Result<tonic::Response<super::GetRootResourceResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetRootResourceResponse>,
+            tonic::Status,
+        >;
         /// SetRootResource sets the URN of the root resource.
         async fn set_root_resource(
             &self,
             request: tonic::Request<super::SetRootResourceRequest>,
-        ) -> std::result::Result<tonic::Response<super::SetRootResourceResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::SetRootResourceResponse>,
+            tonic::Status,
+        >;
         /// StartDebugging indicates to the engine that the program has started under a debugger, and the engine
         /// should notify the user of how to connect to the debugger.
         async fn start_debugging(
@@ -390,7 +438,10 @@ pub mod engine_server {
         async fn require_pulumi_version(
             &self,
             request: tonic::Request<super::RequirePulumiVersionRequest>,
-        ) -> std::result::Result<tonic::Response<super::RequirePulumiVersionResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::RequirePulumiVersionResponse>,
+            tonic::Status,
+        >;
     }
     /// Engine is an auxiliary service offered to language and resource provider plugins. Its main purpose today is
     /// to serve as a common logging endpoint, but it also serves as a state storage mechanism for language hosts
@@ -416,7 +467,10 @@ pub mod engine_server {
                 max_encoding_message_size: None,
             }
         }
-        pub fn with_interceptor<F>(inner: T, interceptor: F) -> InterceptedService<Self, F>
+        pub fn with_interceptor<F>(
+            inner: T,
+            interceptor: F,
+        ) -> InterceptedService<Self, F>
         where
             F: tonic::service::Interceptor,
         {
@@ -471,15 +525,21 @@ pub mod engine_server {
                 "/pulumirpc.Engine/Log" => {
                     #[allow(non_camel_case_types)]
                     struct LogSvc<T: Engine>(pub Arc<T>);
-                    impl<T: Engine> tonic::server::UnaryService<super::LogRequest> for LogSvc<T> {
+                    impl<T: Engine> tonic::server::UnaryService<super::LogRequest>
+                    for LogSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::LogRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { <T as Engine>::log(&inner, request).await };
+                            let fut = async move {
+                                <T as Engine>::log(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -508,11 +568,15 @@ pub mod engine_server {
                 "/pulumirpc.Engine/GetRootResource" => {
                     #[allow(non_camel_case_types)]
                     struct GetRootResourceSvc<T: Engine>(pub Arc<T>);
-                    impl<T: Engine> tonic::server::UnaryService<super::GetRootResourceRequest>
-                        for GetRootResourceSvc<T>
-                    {
+                    impl<
+                        T: Engine,
+                    > tonic::server::UnaryService<super::GetRootResourceRequest>
+                    for GetRootResourceSvc<T> {
                         type Response = super::GetRootResourceResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::GetRootResourceRequest>,
@@ -549,11 +613,15 @@ pub mod engine_server {
                 "/pulumirpc.Engine/SetRootResource" => {
                     #[allow(non_camel_case_types)]
                     struct SetRootResourceSvc<T: Engine>(pub Arc<T>);
-                    impl<T: Engine> tonic::server::UnaryService<super::SetRootResourceRequest>
-                        for SetRootResourceSvc<T>
-                    {
+                    impl<
+                        T: Engine,
+                    > tonic::server::UnaryService<super::SetRootResourceRequest>
+                    for SetRootResourceSvc<T> {
                         type Response = super::SetRootResourceResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::SetRootResourceRequest>,
@@ -590,9 +658,15 @@ pub mod engine_server {
                 "/pulumirpc.Engine/StartDebugging" => {
                     #[allow(non_camel_case_types)]
                     struct StartDebuggingSvc<T: Engine>(pub Arc<T>);
-                    impl<T: Engine> tonic::server::UnaryService<super::StartDebuggingRequest> for StartDebuggingSvc<T> {
+                    impl<
+                        T: Engine,
+                    > tonic::server::UnaryService<super::StartDebuggingRequest>
+                    for StartDebuggingSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::StartDebuggingRequest>,
@@ -629,11 +703,15 @@ pub mod engine_server {
                 "/pulumirpc.Engine/RequirePulumiVersion" => {
                     #[allow(non_camel_case_types)]
                     struct RequirePulumiVersionSvc<T: Engine>(pub Arc<T>);
-                    impl<T: Engine> tonic::server::UnaryService<super::RequirePulumiVersionRequest>
-                        for RequirePulumiVersionSvc<T>
-                    {
+                    impl<
+                        T: Engine,
+                    > tonic::server::UnaryService<super::RequirePulumiVersionRequest>
+                    for RequirePulumiVersionSvc<T> {
                         type Response = super::RequirePulumiVersionResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::RequirePulumiVersionRequest>,
@@ -667,19 +745,25 @@ pub mod engine_server {
                     };
                     Box::pin(fut)
                 }
-                _ => Box::pin(async move {
-                    let mut response = http::Response::new(tonic::body::Body::default());
-                    let headers = response.headers_mut();
-                    headers.insert(
-                        tonic::Status::GRPC_STATUS,
-                        (tonic::Code::Unimplemented as i32).into(),
-                    );
-                    headers.insert(
-                        http::header::CONTENT_TYPE,
-                        tonic::metadata::GRPC_CONTENT_TYPE,
-                    );
-                    Ok(response)
-                }),
+                _ => {
+                    Box::pin(async move {
+                        let mut response = http::Response::new(
+                            tonic::body::Body::default(),
+                        );
+                        let headers = response.headers_mut();
+                        headers
+                            .insert(
+                                tonic::Status::GRPC_STATUS,
+                                (tonic::Code::Unimplemented as i32).into(),
+                            );
+                        headers
+                            .insert(
+                                http::header::CONTENT_TYPE,
+                                tonic::metadata::GRPC_CONTENT_TYPE,
+                            );
+                        Ok(response)
+                    })
+                }
             }
         }
     }
@@ -916,8 +1000,10 @@ pub struct ConfigureRequest {
     /// }
     /// ```
     #[prost(map = "string, string", tag = "1")]
-    pub variables:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    pub variables: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
     ///
     /// A map of input properties for the provider.
     /// : ::{warning}
@@ -1070,8 +1156,10 @@ pub struct CallRequest {
     pub stack: ::prost::alloc::string::String,
     /// the configuration variables to apply before running.
     #[prost(map = "string, string", tag = "8")]
-    pub config:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    pub config: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
     /// the configuration keys that have secret values.
     #[prost(string, repeated, tag = "9")]
     pub config_secret_keys: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -1196,7 +1284,15 @@ pub mod check_request {
         /// * `DISABLE`: The provider should disable automatic naming and return an error if no explicit name
         ///   is provided by user's program.
         #[derive(
-            Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
+            Clone,
+            Copy,
+            Debug,
+            PartialEq,
+            Eq,
+            Hash,
+            PartialOrd,
+            Ord,
+            ::prost::Enumeration
         )]
         #[repr(i32)]
         pub enum Mode {
@@ -1318,7 +1414,17 @@ pub struct PropertyDiff {
 /// Nested message and enum types in `PropertyDiff`.
 pub mod property_diff {
     /// The type of property diff kinds.
-    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+    #[derive(
+        Clone,
+        Copy,
+        Debug,
+        PartialEq,
+        Eq,
+        Hash,
+        PartialOrd,
+        Ord,
+        ::prost::Enumeration
+    )]
     #[repr(i32)]
     pub enum Kind {
         /// This property was added.
@@ -1411,7 +1517,10 @@ pub struct DiffResponse {
     /// property located at that path. If a provider does not implement this, the caller (typically the Pulumi engine)
     /// will compute a representation based on the simple diff fields (`changes`, `replaces`, and so on).
     #[prost(map = "string, message", tag = "6")]
-    pub detailed_diff: ::std::collections::HashMap<::prost::alloc::string::String, PropertyDiff>,
+    pub detailed_diff: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        PropertyDiff,
+    >,
     /// True if and only if this response contains a `detailedDiff`.
     #[prost(bool, tag = "7")]
     pub has_detailed_diff: bool,
@@ -1419,7 +1528,17 @@ pub struct DiffResponse {
 /// Nested message and enum types in `DiffResponse`.
 pub mod diff_response {
     /// The type of high-level diff results.
-    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+    #[derive(
+        Clone,
+        Copy,
+        Debug,
+        PartialEq,
+        Eq,
+        Hash,
+        PartialOrd,
+        Ord,
+        ::prost::Enumeration
+    )]
     #[repr(i32)]
     pub enum DiffChanges {
         /// A diff was performed but it is unknown whether there are changes or not. This exists to support legacy
@@ -1662,8 +1781,10 @@ pub struct ConstructRequest {
     pub stack: ::prost::alloc::string::String,
     /// Configuration for the specified project and stack.
     #[prost(map = "string, string", tag = "3")]
-    pub config:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    pub config: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
     /// True if and only if the request is being made as part of a preview/dry run, in which case the provider should not
     /// actually construct the component.
     #[prost(bool, tag = "4")]
@@ -1701,8 +1822,10 @@ pub struct ConstructRequest {
     >,
     /// A map of package names to provider references for the component resource and its nested resources.
     #[prost(map = "string, string", tag = "13")]
-    pub providers:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    pub providers: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
     /// A list of URNs that this resource and its nested resources depend on.
     #[prost(string, repeated, tag = "15")]
     pub dependencies: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -1718,7 +1841,9 @@ pub struct ConstructRequest {
     pub protect: ::core::option::Option<bool>,
     /// A list of input properties whose values should be treated as [secret](output-secrets).
     #[prost(string, repeated, tag = "18")]
-    pub additional_secret_outputs: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    pub additional_secret_outputs: ::prost::alloc::vec::Vec<
+        ::prost::alloc::string::String,
+    >,
     /// A set of custom timeouts that specify how long the caller is prepared to wait for the various CRUD operations of
     /// this resource's nested resources.
     #[prost(message, optional, tag = "19")]
@@ -1935,10 +2060,10 @@ pub mod resource_provider_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value
+        clippy::let_unit_value,
     )]
-    use tonic::codegen::http::Uri;
     use tonic::codegen::*;
+    use tonic::codegen::http::Uri;
     /// The ResourceProvider service defines a standard interface for [resource providers](providers). A resource provider
     /// manages a set of configuration, resources, functions and so on in a single package, and offers methods such as CRUD
     /// operations on resources and invocations of functions. Resource providers are primarily managed by the Pulumi engine
@@ -1981,13 +2106,14 @@ pub mod resource_provider_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                    http::Request<tonic::body::Body>,
-                    Response = http::Response<
-                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
-                    >,
+                http::Request<tonic::body::Body>,
+                Response = http::Response<
+                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
                 >,
-            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
-                Into<StdError> + std::marker::Send + std::marker::Sync,
+            >,
+            <T as tonic::codegen::Service<
+                http::Request<tonic::body::Body>,
+            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             ResourceProviderClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -2030,14 +2156,22 @@ pub mod resource_provider_client {
         pub async fn handshake(
             &mut self,
             request: impl tonic::IntoRequest<super::ProviderHandshakeRequest>,
-        ) -> std::result::Result<tonic::Response<super::ProviderHandshakeResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::ProviderHandshakeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Handshake");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Handshake",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Handshake"));
@@ -2073,32 +2207,47 @@ pub mod resource_provider_client {
         pub async fn parameterize(
             &mut self,
             request: impl tonic::IntoRequest<super::ParameterizeRequest>,
-        ) -> std::result::Result<tonic::Response<super::ParameterizeResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::ParameterizeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Parameterize");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Parameterize",
+            );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceProvider",
-                "Parameterize",
-            ));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Parameterize"));
             self.inner.unary(req, path, codec).await
         }
         /// GetSchema fetches the schema for this resource provider.
         pub async fn get_schema(
             &mut self,
             request: impl tonic::IntoRequest<super::GetSchemaRequest>,
-        ) -> std::result::Result<tonic::Response<super::GetSchemaResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::GetSchemaResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/GetSchema");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/GetSchema",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "GetSchema"));
@@ -2126,12 +2275,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::CheckRequest>,
         ) -> std::result::Result<tonic::Response<super::CheckResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/CheckConfig");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/CheckConfig",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "CheckConfig"));
@@ -2153,12 +2308,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::DiffRequest>,
         ) -> std::result::Result<tonic::Response<super::DiffResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/DiffConfig");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/DiffConfig",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "DiffConfig"));
@@ -2193,13 +2354,22 @@ pub mod resource_provider_client {
         pub async fn configure(
             &mut self,
             request: impl tonic::IntoRequest<super::ConfigureRequest>,
-        ) -> std::result::Result<tonic::Response<super::ConfigureResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigureResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Configure");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Configure",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Configure"));
@@ -2210,11 +2380,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::InvokeRequest>,
         ) -> std::result::Result<tonic::Response<super::InvokeResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Invoke");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Invoke",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Invoke"));
@@ -2225,11 +2402,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::CallRequest>,
         ) -> std::result::Result<tonic::Response<super::CallResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Call");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Call",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Call"));
@@ -2251,11 +2435,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::CheckRequest>,
         ) -> std::result::Result<tonic::Response<super::CheckResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Check");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Check",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Check"));
@@ -2270,11 +2461,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::DiffRequest>,
         ) -> std::result::Result<tonic::Response<super::DiffResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Diff");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Diff",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Diff"));
@@ -2292,11 +2490,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::CreateRequest>,
         ) -> std::result::Result<tonic::Response<super::CreateResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Create");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Create",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Create"));
@@ -2309,11 +2514,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::ReadRequest>,
         ) -> std::result::Result<tonic::Response<super::ReadResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Read");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Read",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Read"));
@@ -2324,11 +2536,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateRequest>,
         ) -> std::result::Result<tonic::Response<super::UpdateResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Update");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Update",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Update"));
@@ -2341,11 +2560,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::DeleteRequest>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Delete");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Delete",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Delete"));
@@ -2368,13 +2594,22 @@ pub mod resource_provider_client {
         pub async fn construct(
             &mut self,
             request: impl tonic::IntoRequest<super::ConstructRequest>,
-        ) -> std::result::Result<tonic::Response<super::ConstructResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::ConstructResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Construct");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Construct",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Construct"));
@@ -2389,11 +2624,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<()>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Cancel");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Cancel",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Cancel"));
@@ -2404,17 +2646,21 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<()>,
         ) -> std::result::Result<tonic::Response<super::PluginInfo>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/GetPluginInfo");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/GetPluginInfo",
+            );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceProvider",
-                "GetPluginInfo",
-            ));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "GetPluginInfo"));
             self.inner.unary(req, path, codec).await
         }
         /// Attach sends the engine address to an already running plugin.
@@ -2422,11 +2668,18 @@ pub mod resource_provider_client {
             &mut self,
             request: impl tonic::IntoRequest<super::PluginAttach>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/Attach");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/Attach",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "Attach"));
@@ -2450,14 +2703,22 @@ pub mod resource_provider_client {
         pub async fn get_mapping(
             &mut self,
             request: impl tonic::IntoRequest<super::GetMappingRequest>,
-        ) -> std::result::Result<tonic::Response<super::GetMappingResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::GetMappingResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/GetMapping");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/GetMapping",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "GetMapping"));
@@ -2477,14 +2738,22 @@ pub mod resource_provider_client {
         pub async fn get_mappings(
             &mut self,
             request: impl tonic::IntoRequest<super::GetMappingsRequest>,
-        ) -> std::result::Result<tonic::Response<super::GetMappingsResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::GetMappingsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceProvider/GetMappings");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceProvider/GetMappings",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceProvider", "GetMappings"));
@@ -2499,7 +2768,7 @@ pub mod resource_provider_server {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value
+        clippy::let_unit_value,
     )]
     use tonic::codegen::*;
     /// Generated trait containing gRPC methods that should be implemented for use with ResourceProviderServer.
@@ -2513,7 +2782,10 @@ pub mod resource_provider_server {
         async fn handshake(
             &self,
             request: tonic::Request<super::ProviderHandshakeRequest>,
-        ) -> std::result::Result<tonic::Response<super::ProviderHandshakeResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ProviderHandshakeResponse>,
+            tonic::Status,
+        >;
         /// `Parameterize` is the primary means of supporting [parameterized providers](parameterized-providers), which allow
         /// a caller to change a provider's behavior ahead of its [configuration](pulumirpc.ResourceProvider.Configure) and
         /// subsequent use. Where a [](pulumirpc.ResourceProvider.Configure) call allows a caller to influence provider
@@ -2544,12 +2816,18 @@ pub mod resource_provider_server {
         async fn parameterize(
             &self,
             request: tonic::Request<super::ParameterizeRequest>,
-        ) -> std::result::Result<tonic::Response<super::ParameterizeResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ParameterizeResponse>,
+            tonic::Status,
+        >;
         /// GetSchema fetches the schema for this resource provider.
         async fn get_schema(
             &self,
             request: tonic::Request<super::GetSchemaRequest>,
-        ) -> std::result::Result<tonic::Response<super::GetSchemaResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetSchemaResponse>,
+            tonic::Status,
+        >;
         /// `CheckConfig` validates a set of configuration inputs that will be passed to this provider instance.
         /// `CheckConfig` is to provider resources what [](pulumirpc.ResourceProvider.Check) is to individual resources, and
         /// is the first stage in configuring (that is, eventually executing a [](pulumirpc.ResourceProvider.Configure) call)
@@ -2617,7 +2895,10 @@ pub mod resource_provider_server {
         async fn configure(
             &self,
             request: tonic::Request<super::ConfigureRequest>,
-        ) -> std::result::Result<tonic::Response<super::ConfigureResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigureResponse>,
+            tonic::Status,
+        >;
         /// Invoke dynamically executes a built-in function in the provider.
         async fn invoke(
             &self,
@@ -2701,7 +2982,10 @@ pub mod resource_provider_server {
         async fn construct(
             &self,
             request: tonic::Request<super::ConstructRequest>,
-        ) -> std::result::Result<tonic::Response<super::ConstructResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ConstructResponse>,
+            tonic::Status,
+        >;
         /// Cancel signals the provider to gracefully shut down and abort any ongoing resource operations.
         /// Operations aborted in this way will return an error (e.g., `Update` and `Create` will either return a
         /// creation error or an initialization error). Since Cancel is advisory and non-blocking, it is up
@@ -2739,7 +3023,10 @@ pub mod resource_provider_server {
         async fn get_mapping(
             &self,
             request: tonic::Request<super::GetMappingRequest>,
-        ) -> std::result::Result<tonic::Response<super::GetMappingResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetMappingResponse>,
+            tonic::Status,
+        >;
         /// `GetMappings` is an optional method designed to aid in [converting programs and state from other
         /// ecosystems](converters). `GetMappings` accepts a "conversion key". This corresponds to a source language, for
         /// which we want to retrieve mappings for names etc. from that source language into Pulumi. An example key might
@@ -2754,7 +3041,10 @@ pub mod resource_provider_server {
         async fn get_mappings(
             &self,
             request: tonic::Request<super::GetMappingsRequest>,
-        ) -> std::result::Result<tonic::Response<super::GetMappingsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetMappingsResponse>,
+            tonic::Status,
+        >;
     }
     /// The ResourceProvider service defines a standard interface for [resource providers](providers). A resource provider
     /// manages a set of configuration, resources, functions and so on in a single package, and offers methods such as CRUD
@@ -2781,7 +3071,10 @@ pub mod resource_provider_server {
                 max_encoding_message_size: None,
             }
         }
-        pub fn with_interceptor<F>(inner: T, interceptor: F) -> InterceptedService<Self, F>
+        pub fn with_interceptor<F>(
+            inner: T,
+            interceptor: F,
+        ) -> InterceptedService<Self, F>
         where
             F: tonic::service::Interceptor,
         {
@@ -2836,12 +3129,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Handshake" => {
                     #[allow(non_camel_case_types)]
                     struct HandshakeSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider>
-                        tonic::server::UnaryService<super::ProviderHandshakeRequest>
-                        for HandshakeSvc<T>
-                    {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::ProviderHandshakeRequest>
+                    for HandshakeSvc<T> {
                         type Response = super::ProviderHandshakeResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::ProviderHandshakeRequest>,
@@ -2878,12 +3174,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Parameterize" => {
                     #[allow(non_camel_case_types)]
                     struct ParameterizeSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider>
-                        tonic::server::UnaryService<super::ParameterizeRequest>
-                        for ParameterizeSvc<T>
-                    {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::ParameterizeRequest>
+                    for ParameterizeSvc<T> {
                         type Response = super::ParameterizeResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::ParameterizeRequest>,
@@ -2920,9 +3219,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/GetSchema" => {
                     #[allow(non_camel_case_types)]
                     struct GetSchemaSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::GetSchemaRequest> for GetSchemaSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::GetSchemaRequest>
+                    for GetSchemaSvc<T> {
                         type Response = super::GetSchemaResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::GetSchemaRequest>,
@@ -2959,9 +3264,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/CheckConfig" => {
                     #[allow(non_camel_case_types)]
                     struct CheckConfigSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::CheckRequest> for CheckConfigSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::CheckRequest>
+                    for CheckConfigSvc<T> {
                         type Response = super::CheckResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::CheckRequest>,
@@ -2998,9 +3309,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/DiffConfig" => {
                     #[allow(non_camel_case_types)]
                     struct DiffConfigSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::DiffRequest> for DiffConfigSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::DiffRequest>
+                    for DiffConfigSvc<T> {
                         type Response = super::DiffResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::DiffRequest>,
@@ -3037,9 +3354,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Configure" => {
                     #[allow(non_camel_case_types)]
                     struct ConfigureSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::ConfigureRequest> for ConfigureSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::ConfigureRequest>
+                    for ConfigureSvc<T> {
                         type Response = super::ConfigureResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::ConfigureRequest>,
@@ -3076,9 +3399,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Invoke" => {
                     #[allow(non_camel_case_types)]
                     struct InvokeSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::InvokeRequest> for InvokeSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::InvokeRequest>
+                    for InvokeSvc<T> {
                         type Response = super::InvokeResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::InvokeRequest>,
@@ -3115,16 +3444,22 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Call" => {
                     #[allow(non_camel_case_types)]
                     struct CallSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::CallRequest> for CallSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::CallRequest> for CallSvc<T> {
                         type Response = super::CallResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::CallRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut =
-                                async move { <T as ResourceProvider>::call(&inner, request).await };
+                            let fut = async move {
+                                <T as ResourceProvider>::call(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -3153,9 +3488,14 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Check" => {
                     #[allow(non_camel_case_types)]
                     struct CheckSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::CheckRequest> for CheckSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::CheckRequest> for CheckSvc<T> {
                         type Response = super::CheckResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::CheckRequest>,
@@ -3192,16 +3532,22 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Diff" => {
                     #[allow(non_camel_case_types)]
                     struct DiffSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::DiffRequest> for DiffSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::DiffRequest> for DiffSvc<T> {
                         type Response = super::DiffResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::DiffRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut =
-                                async move { <T as ResourceProvider>::diff(&inner, request).await };
+                            let fut = async move {
+                                <T as ResourceProvider>::diff(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -3230,9 +3576,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Create" => {
                     #[allow(non_camel_case_types)]
                     struct CreateSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::CreateRequest> for CreateSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::CreateRequest>
+                    for CreateSvc<T> {
                         type Response = super::CreateResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::CreateRequest>,
@@ -3269,16 +3621,22 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Read" => {
                     #[allow(non_camel_case_types)]
                     struct ReadSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::ReadRequest> for ReadSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::ReadRequest> for ReadSvc<T> {
                         type Response = super::ReadResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::ReadRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut =
-                                async move { <T as ResourceProvider>::read(&inner, request).await };
+                            let fut = async move {
+                                <T as ResourceProvider>::read(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -3307,9 +3665,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Update" => {
                     #[allow(non_camel_case_types)]
                     struct UpdateSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::UpdateRequest> for UpdateSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::UpdateRequest>
+                    for UpdateSvc<T> {
                         type Response = super::UpdateResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::UpdateRequest>,
@@ -3346,9 +3710,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Delete" => {
                     #[allow(non_camel_case_types)]
                     struct DeleteSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::DeleteRequest> for DeleteSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::DeleteRequest>
+                    for DeleteSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::DeleteRequest>,
@@ -3385,9 +3755,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Construct" => {
                     #[allow(non_camel_case_types)]
                     struct ConstructSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::ConstructRequest> for ConstructSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::ConstructRequest>
+                    for ConstructSvc<T> {
                         type Response = super::ConstructResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::ConstructRequest>,
@@ -3424,9 +3800,13 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Cancel" => {
                     #[allow(non_camel_case_types)]
                     struct CancelSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<()> for CancelSvc<T> {
+                    impl<T: ResourceProvider> tonic::server::UnaryService<()>
+                    for CancelSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(&mut self, request: tonic::Request<()>) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
@@ -3460,13 +3840,18 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/GetPluginInfo" => {
                     #[allow(non_camel_case_types)]
                     struct GetPluginInfoSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<()> for GetPluginInfoSvc<T> {
+                    impl<T: ResourceProvider> tonic::server::UnaryService<()>
+                    for GetPluginInfoSvc<T> {
                         type Response = super::PluginInfo;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(&mut self, request: tonic::Request<()>) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ResourceProvider>::get_plugin_info(&inner, request).await
+                                <T as ResourceProvider>::get_plugin_info(&inner, request)
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -3496,9 +3881,14 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/Attach" => {
                     #[allow(non_camel_case_types)]
                     struct AttachSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::PluginAttach> for AttachSvc<T> {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::PluginAttach> for AttachSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::PluginAttach>,
@@ -3535,11 +3925,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/GetMapping" => {
                     #[allow(non_camel_case_types)]
                     struct GetMappingSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::GetMappingRequest>
-                        for GetMappingSvc<T>
-                    {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::GetMappingRequest>
+                    for GetMappingSvc<T> {
                         type Response = super::GetMappingResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::GetMappingRequest>,
@@ -3576,11 +3970,15 @@ pub mod resource_provider_server {
                 "/pulumirpc.ResourceProvider/GetMappings" => {
                     #[allow(non_camel_case_types)]
                     struct GetMappingsSvc<T: ResourceProvider>(pub Arc<T>);
-                    impl<T: ResourceProvider> tonic::server::UnaryService<super::GetMappingsRequest>
-                        for GetMappingsSvc<T>
-                    {
+                    impl<
+                        T: ResourceProvider,
+                    > tonic::server::UnaryService<super::GetMappingsRequest>
+                    for GetMappingsSvc<T> {
                         type Response = super::GetMappingsResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::GetMappingsRequest>,
@@ -3614,19 +4012,25 @@ pub mod resource_provider_server {
                     };
                     Box::pin(fut)
                 }
-                _ => Box::pin(async move {
-                    let mut response = http::Response::new(tonic::body::Body::default());
-                    let headers = response.headers_mut();
-                    headers.insert(
-                        tonic::Status::GRPC_STATUS,
-                        (tonic::Code::Unimplemented as i32).into(),
-                    );
-                    headers.insert(
-                        http::header::CONTENT_TYPE,
-                        tonic::metadata::GRPC_CONTENT_TYPE,
-                    );
-                    Ok(response)
-                }),
+                _ => {
+                    Box::pin(async move {
+                        let mut response = http::Response::new(
+                            tonic::body::Body::default(),
+                        );
+                        let headers = response.headers_mut();
+                        headers
+                            .insert(
+                                tonic::Status::GRPC_STATUS,
+                                (tonic::Code::Unimplemented as i32).into(),
+                            );
+                        headers
+                            .insert(
+                                http::header::CONTENT_TYPE,
+                                tonic::metadata::GRPC_CONTENT_TYPE,
+                            );
+                        Ok(response)
+                    })
+                }
             }
         }
     }
@@ -3706,10 +4110,10 @@ pub mod callbacks_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value
+        clippy::let_unit_value,
     )]
-    use tonic::codegen::http::Uri;
     use tonic::codegen::*;
+    use tonic::codegen::http::Uri;
     /// Callbacks is a service for invoking functions in one runtime from other processes.
     #[derive(Debug, Clone)]
     pub struct CallbacksClient<T> {
@@ -3749,13 +4153,14 @@ pub mod callbacks_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                    http::Request<tonic::body::Body>,
-                    Response = http::Response<
-                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
-                    >,
+                http::Request<tonic::body::Body>,
+                Response = http::Response<
+                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
                 >,
-            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
-                Into<StdError> + std::marker::Send + std::marker::Sync,
+            >,
+            <T as tonic::codegen::Service<
+                http::Request<tonic::body::Body>,
+            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             CallbacksClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -3794,13 +4199,22 @@ pub mod callbacks_client {
         pub async fn invoke(
             &mut self,
             request: impl tonic::IntoRequest<super::CallbackInvokeRequest>,
-        ) -> std::result::Result<tonic::Response<super::CallbackInvokeResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::CallbackInvokeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.Callbacks/Invoke");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.Callbacks/Invoke",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.Callbacks", "Invoke"));
@@ -3815,7 +4229,7 @@ pub mod callbacks_server {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value
+        clippy::let_unit_value,
     )]
     use tonic::codegen::*;
     /// Generated trait containing gRPC methods that should be implemented for use with CallbacksServer.
@@ -3825,7 +4239,10 @@ pub mod callbacks_server {
         async fn invoke(
             &self,
             request: tonic::Request<super::CallbackInvokeRequest>,
-        ) -> std::result::Result<tonic::Response<super::CallbackInvokeResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::CallbackInvokeResponse>,
+            tonic::Status,
+        >;
     }
     /// Callbacks is a service for invoking functions in one runtime from other processes.
     #[derive(Debug)]
@@ -3849,7 +4266,10 @@ pub mod callbacks_server {
                 max_encoding_message_size: None,
             }
         }
-        pub fn with_interceptor<F>(inner: T, interceptor: F) -> InterceptedService<Self, F>
+        pub fn with_interceptor<F>(
+            inner: T,
+            interceptor: F,
+        ) -> InterceptedService<Self, F>
         where
             F: tonic::service::Interceptor,
         {
@@ -3904,16 +4324,23 @@ pub mod callbacks_server {
                 "/pulumirpc.Callbacks/Invoke" => {
                     #[allow(non_camel_case_types)]
                     struct InvokeSvc<T: Callbacks>(pub Arc<T>);
-                    impl<T: Callbacks> tonic::server::UnaryService<super::CallbackInvokeRequest> for InvokeSvc<T> {
+                    impl<
+                        T: Callbacks,
+                    > tonic::server::UnaryService<super::CallbackInvokeRequest>
+                    for InvokeSvc<T> {
                         type Response = super::CallbackInvokeResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::CallbackInvokeRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut =
-                                async move { <T as Callbacks>::invoke(&inner, request).await };
+                            let fut = async move {
+                                <T as Callbacks>::invoke(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -3939,19 +4366,25 @@ pub mod callbacks_server {
                     };
                     Box::pin(fut)
                 }
-                _ => Box::pin(async move {
-                    let mut response = http::Response::new(tonic::body::Body::default());
-                    let headers = response.headers_mut();
-                    headers.insert(
-                        tonic::Status::GRPC_STATUS,
-                        (tonic::Code::Unimplemented as i32).into(),
-                    );
-                    headers.insert(
-                        http::header::CONTENT_TYPE,
-                        tonic::metadata::GRPC_CONTENT_TYPE,
-                    );
-                    Ok(response)
-                }),
+                _ => {
+                    Box::pin(async move {
+                        let mut response = http::Response::new(
+                            tonic::body::Body::default(),
+                        );
+                        let headers = response.headers_mut();
+                        headers
+                            .insert(
+                                tonic::Status::GRPC_STATUS,
+                                (tonic::Code::Unimplemented as i32).into(),
+                            );
+                        headers
+                            .insert(
+                                http::header::CONTENT_TYPE,
+                                tonic::metadata::GRPC_CONTENT_TYPE,
+                            );
+                        Ok(response)
+                    })
+                }
             }
         }
     }
@@ -4019,7 +4452,9 @@ pub struct ReadResourceRequest {
     pub accept_secrets: bool,
     /// a list of output properties that should also be treated as secret, in addition to ones we detect.
     #[prost(string, repeated, tag = "10")]
-    pub additional_secret_outputs: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    pub additional_secret_outputs: ::prost::alloc::vec::Vec<
+        ::prost::alloc::string::String,
+    >,
     /// when true operations should return resource references as strongly typed.
     #[prost(bool, tag = "12")]
     pub accept_resources: bool,
@@ -4028,8 +4463,10 @@ pub struct ReadResourceRequest {
     pub plugin_download_url: ::prost::alloc::string::String,
     /// a map of checksums of the provider to use when servicing this request.
     #[prost(map = "string, bytes", tag = "15")]
-    pub plugin_checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub plugin_checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
     /// the optional source position of the user code that initiated the read.
     #[prost(message, optional, tag = "14")]
     pub source_position: ::core::option::Option<SourcePosition>,
@@ -4100,7 +4537,9 @@ pub struct RegisterResourceRequest {
     pub accept_secrets: bool,
     /// a list of output properties that should also be treated as secret, in addition to ones we detect.
     #[prost(string, repeated, tag = "14")]
-    pub additional_secret_outputs: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    pub additional_secret_outputs: ::prost::alloc::vec::Vec<
+        ::prost::alloc::string::String,
+    >,
     /// a list of additional URNs that should be considered the same.
     #[prost(string, repeated, tag = "15")]
     pub alias_ur_ns: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -4109,7 +4548,9 @@ pub struct RegisterResourceRequest {
     pub import_id: ::prost::alloc::string::String,
     /// ability to pass a custom Timeout block.
     #[prost(message, optional, tag = "17")]
-    pub custom_timeouts: ::core::option::Option<register_resource_request::CustomTimeouts>,
+    pub custom_timeouts: ::core::option::Option<
+        register_resource_request::CustomTimeouts,
+    >,
     /// true if the deleteBeforeReplace property should be treated as defined even if it is false.
     #[prost(bool, tag = "18")]
     pub delete_before_replace_defined: bool,
@@ -4124,8 +4565,10 @@ pub struct RegisterResourceRequest {
     pub accept_resources: bool,
     /// an optional reference to the provider map to manage this resource's CRUD operations.
     #[prost(map = "string, string", tag = "22")]
-    pub providers:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    pub providers: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
     /// a list of properties that if changed should force a replacement.
     #[prost(string, repeated, tag = "23")]
     pub replace_on_changes: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -4134,8 +4577,10 @@ pub struct RegisterResourceRequest {
     pub plugin_download_url: ::prost::alloc::string::String,
     /// a map of checksums expected for the provider plugin.
     #[prost(map = "string, bytes", tag = "30")]
-    pub plugin_checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub plugin_checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
     /// if true the engine will not call the resource providers delete method for this resource.
     #[prost(bool, optional, tag = "25")]
     pub retain_on_delete: ::core::option::Option<bool>,
@@ -4185,8 +4630,10 @@ pub struct RegisterResourceRequest {
     pub hide_diffs: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// environment variable remappings for provider resources (NEW_KEY -> OLD_KEY)
     #[prost(map = "string, string", tag = "41")]
-    pub env_var_mappings:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    pub env_var_mappings: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
 }
 /// Nested message and enum types in `RegisterResourceRequest`.
 pub mod register_resource_request {
@@ -4299,8 +4746,10 @@ pub struct ResourceInvokeRequest {
     pub plugin_download_url: ::prost::alloc::string::String,
     /// a map of checksums expected for the provider plugin.
     #[prost(map = "string, bytes", tag = "8")]
-    pub plugin_checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub plugin_checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
     /// the optional source position of the user code that initiated the invoke.
     #[prost(message, optional, tag = "7")]
     pub source_position: ::core::option::Option<SourcePosition>,
@@ -4339,8 +4788,10 @@ pub struct ResourceCallRequest {
     pub plugin_download_url: ::prost::alloc::string::String,
     /// a map of checksums of the provider to use when servicing this request.
     #[prost(map = "string, bytes", tag = "16")]
-    pub plugin_checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub plugin_checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
     /// the optional source position of the user code that initiated the call.
     #[prost(message, optional, tag = "15")]
     pub source_position: ::core::option::Option<SourcePosition>,
@@ -4382,7 +4833,9 @@ pub struct TransformResourceOptions {
     #[prost(string, tag = "7")]
     pub provider: ::prost::alloc::string::String,
     #[prost(message, optional, tag = "8")]
-    pub custom_timeouts: ::core::option::Option<register_resource_request::CustomTimeouts>,
+    pub custom_timeouts: ::core::option::Option<
+        register_resource_request::CustomTimeouts,
+    >,
     #[prost(string, tag = "9")]
     pub plugin_download_url: ::prost::alloc::string::String,
     #[prost(bool, optional, tag = "10")]
@@ -4392,13 +4845,19 @@ pub struct TransformResourceOptions {
     #[prost(bool, optional, tag = "12")]
     pub delete_before_replace: ::core::option::Option<bool>,
     #[prost(string, repeated, tag = "13")]
-    pub additional_secret_outputs: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    pub additional_secret_outputs: ::prost::alloc::vec::Vec<
+        ::prost::alloc::string::String,
+    >,
     #[prost(map = "string, string", tag = "14")]
-    pub providers:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    pub providers: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
     #[prost(map = "string, bytes", tag = "15")]
-    pub plugin_checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub plugin_checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
     #[prost(message, optional, tag = "16")]
     pub hooks: ::core::option::Option<register_resource_request::ResourceHooksBinding>,
     #[prost(string, tag = "17")]
@@ -4473,8 +4932,10 @@ pub struct TransformInvokeOptions {
     #[prost(string, tag = "3")]
     pub version: ::prost::alloc::string::String,
     #[prost(map = "string, bytes", tag = "4")]
-    pub plugin_checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub plugin_checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
 }
 /// ResourceHookRequest is the request object for resource hook callbacks in CallbackInvokeRequest.
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -4565,8 +5026,10 @@ pub struct RegisterPackageRequest {
     pub download_url: ::prost::alloc::string::String,
     /// the optional plugin checksums.
     #[prost(map = "string, bytes", tag = "4")]
-    pub checksums:
-        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::vec::Vec<u8>>,
+    pub checksums: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::vec::Vec<u8>,
+    >,
     /// the optional parameterization for this package.
     #[prost(message, optional, tag = "5")]
     pub parameterization: ::core::option::Option<Parameterization>,
@@ -4650,10 +5113,10 @@ pub mod resource_monitor_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value
+        clippy::let_unit_value,
     )]
-    use tonic::codegen::http::Uri;
     use tonic::codegen::*;
+    use tonic::codegen::http::Uri;
     /// ResourceMonitor is the interface a source uses to talk back to the planning monitor orchestrating the execution.
     #[derive(Debug, Clone)]
     pub struct ResourceMonitorClient<T> {
@@ -4693,13 +5156,14 @@ pub mod resource_monitor_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                    http::Request<tonic::body::Body>,
-                    Response = http::Response<
-                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
-                    >,
+                http::Request<tonic::body::Body>,
+                Response = http::Response<
+                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
                 >,
-            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
-                Into<StdError> + std::marker::Send + std::marker::Sync,
+            >,
+            <T as tonic::codegen::Service<
+                http::Request<tonic::body::Body>,
+            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             ResourceMonitorClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -4737,30 +5201,43 @@ pub mod resource_monitor_client {
         pub async fn supports_feature(
             &mut self,
             request: impl tonic::IntoRequest<super::SupportsFeatureRequest>,
-        ) -> std::result::Result<tonic::Response<super::SupportsFeatureResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::SupportsFeatureResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceMonitor/SupportsFeature");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/SupportsFeature",
+            );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "SupportsFeature",
-            ));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("pulumirpc.ResourceMonitor", "SupportsFeature"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn invoke(
             &mut self,
             request: impl tonic::IntoRequest<super::ResourceInvokeRequest>,
         ) -> std::result::Result<tonic::Response<super::InvokeResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceMonitor/Invoke");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/Invoke",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceMonitor", "Invoke"));
@@ -4770,11 +5247,18 @@ pub mod resource_monitor_client {
             &mut self,
             request: impl tonic::IntoRequest<super::ResourceCallRequest>,
         ) -> std::result::Result<tonic::Response<super::CallResponse>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static("/pulumirpc.ResourceMonitor/Call");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/Call",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceMonitor", "Call"));
@@ -4783,14 +5267,22 @@ pub mod resource_monitor_client {
         pub async fn read_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::ReadResourceRequest>,
-        ) -> std::result::Result<tonic::Response<super::ReadResourceResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::ReadResourceResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceMonitor/ReadResource");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/ReadResource",
+            );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("pulumirpc.ResourceMonitor", "ReadResource"));
@@ -4799,37 +5291,53 @@ pub mod resource_monitor_client {
         pub async fn register_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::RegisterResourceRequest>,
-        ) -> std::result::Result<tonic::Response<super::RegisterResourceResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterResourceResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceMonitor/RegisterResource");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/RegisterResource",
+            );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "RegisterResource",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("pulumirpc.ResourceMonitor", "RegisterResource"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn register_resource_outputs(
             &mut self,
             request: impl tonic::IntoRequest<super::RegisterResourceOutputsRequest>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/pulumirpc.ResourceMonitor/RegisterResourceOutputs",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "RegisterResourceOutputs",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "pulumirpc.ResourceMonitor",
+                        "RegisterResourceOutputs",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// Register a resource transform for the stack
@@ -4837,18 +5345,26 @@ pub mod resource_monitor_client {
             &mut self,
             request: impl tonic::IntoRequest<super::Callback>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/pulumirpc.ResourceMonitor/RegisterStackTransform",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "RegisterStackTransform",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "pulumirpc.ResourceMonitor",
+                        "RegisterStackTransform",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// Register an invoke transform for the stack
@@ -4856,18 +5372,26 @@ pub mod resource_monitor_client {
             &mut self,
             request: impl tonic::IntoRequest<super::Callback>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/pulumirpc.ResourceMonitor/RegisterStackInvokeTransform",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "RegisterStackInvokeTransform",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "pulumirpc.ResourceMonitor",
+                        "RegisterStackInvokeTransform",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// Register a resource hook that can be called by the engine during certain
@@ -4876,18 +5400,23 @@ pub mod resource_monitor_client {
             &mut self,
             request: impl tonic::IntoRequest<super::RegisterResourceHookRequest>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/pulumirpc.ResourceMonitor/RegisterResourceHook",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "RegisterResourceHook",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("pulumirpc.ResourceMonitor", "RegisterResourceHook"),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// Register an error hook that can be called by the engine when an operation fails and is retryable.
@@ -4897,18 +5426,23 @@ pub mod resource_monitor_client {
             &mut self,
             request: impl tonic::IntoRequest<super::RegisterErrorHookRequest>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/pulumirpc.ResourceMonitor/RegisterErrorHook",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "RegisterErrorHook",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("pulumirpc.ResourceMonitor", "RegisterErrorHook"),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// Registers a package and allocates a packageRef. The same package can be registered multiple times in Pulumi.
@@ -4916,19 +5450,25 @@ pub mod resource_monitor_client {
         pub async fn register_package(
             &mut self,
             request: impl tonic::IntoRequest<super::RegisterPackageRequest>,
-        ) -> std::result::Result<tonic::Response<super::RegisterPackageResponse>, tonic::Status>
-        {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterPackageResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/pulumirpc.ResourceMonitor/RegisterPackage");
+            let path = http::uri::PathAndQuery::from_static(
+                "/pulumirpc.ResourceMonitor/RegisterPackage",
+            );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "RegisterPackage",
-            ));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("pulumirpc.ResourceMonitor", "RegisterPackage"));
             self.inner.unary(req, path, codec).await
         }
         /// SignalAndWaitForShutdown lets the resource monitor know that no more
@@ -4941,18 +5481,26 @@ pub mod resource_monitor_client {
             &mut self,
             request: impl tonic::IntoRequest<()>,
         ) -> std::result::Result<tonic::Response<()>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
-            })?;
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/pulumirpc.ResourceMonitor/SignalAndWaitForShutdown",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "pulumirpc.ResourceMonitor",
-                "SignalAndWaitForShutdown",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "pulumirpc.ResourceMonitor",
+                        "SignalAndWaitForShutdown",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
     }
@@ -4964,7 +5512,7 @@ pub mod resource_monitor_server {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value
+        clippy::let_unit_value,
     )]
     use tonic::codegen::*;
     /// Generated trait containing gRPC methods that should be implemented for use with ResourceMonitorServer.
@@ -4973,7 +5521,10 @@ pub mod resource_monitor_server {
         async fn supports_feature(
             &self,
             request: tonic::Request<super::SupportsFeatureRequest>,
-        ) -> std::result::Result<tonic::Response<super::SupportsFeatureResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::SupportsFeatureResponse>,
+            tonic::Status,
+        >;
         async fn invoke(
             &self,
             request: tonic::Request<super::ResourceInvokeRequest>,
@@ -4985,11 +5536,17 @@ pub mod resource_monitor_server {
         async fn read_resource(
             &self,
             request: tonic::Request<super::ReadResourceRequest>,
-        ) -> std::result::Result<tonic::Response<super::ReadResourceResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ReadResourceResponse>,
+            tonic::Status,
+        >;
         async fn register_resource(
             &self,
             request: tonic::Request<super::RegisterResourceRequest>,
-        ) -> std::result::Result<tonic::Response<super::RegisterResourceResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterResourceResponse>,
+            tonic::Status,
+        >;
         async fn register_resource_outputs(
             &self,
             request: tonic::Request<super::RegisterResourceOutputsRequest>,
@@ -5022,7 +5579,10 @@ pub mod resource_monitor_server {
         async fn register_package(
             &self,
             request: tonic::Request<super::RegisterPackageRequest>,
-        ) -> std::result::Result<tonic::Response<super::RegisterPackageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterPackageResponse>,
+            tonic::Status,
+        >;
         /// SignalAndWaitForShutdown lets the resource monitor know that no more
         /// events will be generated. This call blocks until the resource monitor is
         /// finished, which will happen once all the steps have executed. This allows
@@ -5056,7 +5616,10 @@ pub mod resource_monitor_server {
                 max_encoding_message_size: None,
             }
         }
-        pub fn with_interceptor<F>(inner: T, interceptor: F) -> InterceptedService<Self, F>
+        pub fn with_interceptor<F>(
+            inner: T,
+            interceptor: F,
+        ) -> InterceptedService<Self, F>
         where
             F: tonic::service::Interceptor,
         {
@@ -5111,19 +5674,23 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/SupportsFeature" => {
                     #[allow(non_camel_case_types)]
                     struct SupportsFeatureSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor>
-                        tonic::server::UnaryService<super::SupportsFeatureRequest>
-                        for SupportsFeatureSvc<T>
-                    {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::SupportsFeatureRequest>
+                    for SupportsFeatureSvc<T> {
                         type Response = super::SupportsFeatureResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::SupportsFeatureRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ResourceMonitor>::supports_feature(&inner, request).await
+                                <T as ResourceMonitor>::supports_feature(&inner, request)
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5153,11 +5720,15 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/Invoke" => {
                     #[allow(non_camel_case_types)]
                     struct InvokeSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor>
-                        tonic::server::UnaryService<super::ResourceInvokeRequest> for InvokeSvc<T>
-                    {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::ResourceInvokeRequest>
+                    for InvokeSvc<T> {
                         type Response = super::InvokeResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::ResourceInvokeRequest>,
@@ -5194,16 +5765,23 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/Call" => {
                     #[allow(non_camel_case_types)]
                     struct CallSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor> tonic::server::UnaryService<super::ResourceCallRequest> for CallSvc<T> {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::ResourceCallRequest>
+                    for CallSvc<T> {
                         type Response = super::CallResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::ResourceCallRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut =
-                                async move { <T as ResourceMonitor>::call(&inner, request).await };
+                            let fut = async move {
+                                <T as ResourceMonitor>::call(&inner, request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -5232,11 +5810,15 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/ReadResource" => {
                     #[allow(non_camel_case_types)]
                     struct ReadResourceSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor> tonic::server::UnaryService<super::ReadResourceRequest>
-                        for ReadResourceSvc<T>
-                    {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::ReadResourceRequest>
+                    for ReadResourceSvc<T> {
                         type Response = super::ReadResourceResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::ReadResourceRequest>,
@@ -5273,19 +5855,23 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/RegisterResource" => {
                     #[allow(non_camel_case_types)]
                     struct RegisterResourceSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor>
-                        tonic::server::UnaryService<super::RegisterResourceRequest>
-                        for RegisterResourceSvc<T>
-                    {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::RegisterResourceRequest>
+                    for RegisterResourceSvc<T> {
                         type Response = super::RegisterResourceResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::RegisterResourceRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ResourceMonitor>::register_resource(&inner, request).await
+                                <T as ResourceMonitor>::register_resource(&inner, request)
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5315,19 +5901,27 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/RegisterResourceOutputs" => {
                     #[allow(non_camel_case_types)]
                     struct RegisterResourceOutputsSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor>
-                        tonic::server::UnaryService<super::RegisterResourceOutputsRequest>
-                        for RegisterResourceOutputsSvc<T>
-                    {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::RegisterResourceOutputsRequest>
+                    for RegisterResourceOutputsSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::RegisterResourceOutputsRequest>,
+                            request: tonic::Request<
+                                super::RegisterResourceOutputsRequest,
+                            >,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ResourceMonitor>::register_resource_outputs(&inner, request)
+                                <T as ResourceMonitor>::register_resource_outputs(
+                                        &inner,
+                                        request,
+                                    )
                                     .await
                             };
                             Box::pin(fut)
@@ -5359,17 +5953,22 @@ pub mod resource_monitor_server {
                     #[allow(non_camel_case_types)]
                     struct RegisterStackTransformSvc<T: ResourceMonitor>(pub Arc<T>);
                     impl<T: ResourceMonitor> tonic::server::UnaryService<super::Callback>
-                        for RegisterStackTransformSvc<T>
-                    {
+                    for RegisterStackTransformSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::Callback>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ResourceMonitor>::register_stack_transform(&inner, request)
+                                <T as ResourceMonitor>::register_stack_transform(
+                                        &inner,
+                                        request,
+                                    )
                                     .await
                             };
                             Box::pin(fut)
@@ -5399,12 +5998,16 @@ pub mod resource_monitor_server {
                 }
                 "/pulumirpc.ResourceMonitor/RegisterStackInvokeTransform" => {
                     #[allow(non_camel_case_types)]
-                    struct RegisterStackInvokeTransformSvc<T: ResourceMonitor>(pub Arc<T>);
+                    struct RegisterStackInvokeTransformSvc<T: ResourceMonitor>(
+                        pub Arc<T>,
+                    );
                     impl<T: ResourceMonitor> tonic::server::UnaryService<super::Callback>
-                        for RegisterStackInvokeTransformSvc<T>
-                    {
+                    for RegisterStackInvokeTransformSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::Callback>,
@@ -5412,9 +6015,10 @@ pub mod resource_monitor_server {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 <T as ResourceMonitor>::register_stack_invoke_transform(
-                                    &inner, request,
-                                )
-                                .await
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5444,19 +6048,25 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/RegisterResourceHook" => {
                     #[allow(non_camel_case_types)]
                     struct RegisterResourceHookSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor>
-                        tonic::server::UnaryService<super::RegisterResourceHookRequest>
-                        for RegisterResourceHookSvc<T>
-                    {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::RegisterResourceHookRequest>
+                    for RegisterResourceHookSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::RegisterResourceHookRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ResourceMonitor>::register_resource_hook(&inner, request)
+                                <T as ResourceMonitor>::register_resource_hook(
+                                        &inner,
+                                        request,
+                                    )
                                     .await
                             };
                             Box::pin(fut)
@@ -5487,19 +6097,23 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/RegisterErrorHook" => {
                     #[allow(non_camel_case_types)]
                     struct RegisterErrorHookSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor>
-                        tonic::server::UnaryService<super::RegisterErrorHookRequest>
-                        for RegisterErrorHookSvc<T>
-                    {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::RegisterErrorHookRequest>
+                    for RegisterErrorHookSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::RegisterErrorHookRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ResourceMonitor>::register_error_hook(&inner, request).await
+                                <T as ResourceMonitor>::register_error_hook(&inner, request)
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5529,19 +6143,23 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/RegisterPackage" => {
                     #[allow(non_camel_case_types)]
                     struct RegisterPackageSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor>
-                        tonic::server::UnaryService<super::RegisterPackageRequest>
-                        for RegisterPackageSvc<T>
-                    {
+                    impl<
+                        T: ResourceMonitor,
+                    > tonic::server::UnaryService<super::RegisterPackageRequest>
+                    for RegisterPackageSvc<T> {
                         type Response = super::RegisterPackageResponse;
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::RegisterPackageRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ResourceMonitor>::register_package(&inner, request).await
+                                <T as ResourceMonitor>::register_package(&inner, request)
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5571,16 +6189,21 @@ pub mod resource_monitor_server {
                 "/pulumirpc.ResourceMonitor/SignalAndWaitForShutdown" => {
                     #[allow(non_camel_case_types)]
                     struct SignalAndWaitForShutdownSvc<T: ResourceMonitor>(pub Arc<T>);
-                    impl<T: ResourceMonitor> tonic::server::UnaryService<()> for SignalAndWaitForShutdownSvc<T> {
+                    impl<T: ResourceMonitor> tonic::server::UnaryService<()>
+                    for SignalAndWaitForShutdownSvc<T> {
                         type Response = ();
-                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
                         fn call(&mut self, request: tonic::Request<()>) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 <T as ResourceMonitor>::signal_and_wait_for_shutdown(
-                                    &inner, request,
-                                )
-                                .await
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5607,19 +6230,25 @@ pub mod resource_monitor_server {
                     };
                     Box::pin(fut)
                 }
-                _ => Box::pin(async move {
-                    let mut response = http::Response::new(tonic::body::Body::default());
-                    let headers = response.headers_mut();
-                    headers.insert(
-                        tonic::Status::GRPC_STATUS,
-                        (tonic::Code::Unimplemented as i32).into(),
-                    );
-                    headers.insert(
-                        http::header::CONTENT_TYPE,
-                        tonic::metadata::GRPC_CONTENT_TYPE,
-                    );
-                    Ok(response)
-                }),
+                _ => {
+                    Box::pin(async move {
+                        let mut response = http::Response::new(
+                            tonic::body::Body::default(),
+                        );
+                        let headers = response.headers_mut();
+                        headers
+                            .insert(
+                                tonic::Status::GRPC_STATUS,
+                                (tonic::Code::Unimplemented as i32).into(),
+                            );
+                        headers
+                            .insert(
+                                http::header::CONTENT_TYPE,
+                                tonic::metadata::GRPC_CONTENT_TYPE,
+                            );
+                        Ok(response)
+                    })
+                }
             }
         }
     }

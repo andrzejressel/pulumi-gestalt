@@ -1,0 +1,98 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "aresource",
+        "value": {
+          "FunctionCall": {
+            "path": "test::create",
+            "args": [
+              {
+                "Ref": {
+                  "Identifier": "ctx"
+                }
+              },
+              {
+                "StringLiteral": "aresource"
+              },
+              {
+                "MethodCall": {
+                  "receiver": {
+                    "MethodCall": {
+                      "receiver": {
+                        "FunctionCall": {
+                          "path": "test::testArgs::builder",
+                          "args": []
+                        }
+                      },
+                      "method": "value",
+                      "type_params": [],
+                      "args": [
+                        {
+                          "MacroCall": {
+                            "path": "pulumi_gestalt_rust::pulumi_any!",
+                            "body": "true"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "method": "build_struct",
+                  "type_params": [],
+                  "args": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "other",
+        "value": {
+          "FunctionCall": {
+            "path": "test::create",
+            "args": [
+              {
+                "Ref": {
+                  "Identifier": "ctx"
+                }
+              },
+              {
+                "StringLiteral": "other"
+              },
+              {
+                "MethodCall": {
+                  "receiver": {
+                    "MethodCall": {
+                      "receiver": {
+                        "FunctionCall": {
+                          "path": "test::testArgs::builder",
+                          "args": []
+                        }
+                      },
+                      "method": "value",
+                      "type_params": [],
+                      "args": [
+                        {
+                          "MacroCall": {
+                            "path": "pulumi_gestalt_rust::pulumi_any!",
+                            "body": "true"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "method": "build_struct",
+                  "type_params": [],
+                  "args": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
