@@ -1,0 +1,292 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "a",
+        "logicalName": "a",
+        "configType": {
+          "numberType": {}
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "b",
+        "logicalName": "b",
+        "configType": {
+          "numberType": {}
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "c",
+        "logicalName": "c",
+        "configType": {
+          "intType": {}
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "d",
+        "logicalName": "d",
+        "configType": {
+          "intType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "maxResult",
+        "logicalName": "maxResult",
+        "value": {
+          "functionCallExpression": {
+            "name": "max",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "a",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "a"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "numberType": {}
+                  }
+                },
+                "type": {
+                  "numberType": {}
+                }
+              },
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "b",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "b"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "numberType": {}
+                  }
+                },
+                "type": {
+                  "numberType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "numberType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "minResult",
+        "logicalName": "minResult",
+        "value": {
+          "functionCallExpression": {
+            "name": "min",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "a",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "a"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "numberType": {}
+                  }
+                },
+                "type": {
+                  "numberType": {}
+                }
+              },
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "b",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "b"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "numberType": {}
+                  }
+                },
+                "type": {
+                  "numberType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "numberType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "intMaxResult",
+        "logicalName": "intMaxResult",
+        "value": {
+          "functionCallExpression": {
+            "name": "max",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "c",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "c"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "intType": {}
+                  }
+                },
+                "type": {
+                  "intType": {}
+                }
+              },
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "d",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "d"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "intType": {}
+                  }
+                },
+                "type": {
+                  "intType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "intType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "intMinResult",
+        "logicalName": "intMinResult",
+        "value": {
+          "functionCallExpression": {
+            "name": "min",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "c",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "c"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "intType": {}
+                  }
+                },
+                "type": {
+                  "intType": {}
+                }
+              },
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "d",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "d"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "intType": {}
+                  }
+                },
+                "type": {
+                  "intType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "intType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ]
+}

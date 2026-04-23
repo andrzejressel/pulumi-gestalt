@@ -1,0 +1,108 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "a",
+        "config_type": "Number",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "b",
+        "config_type": "Number",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "c",
+        "config_type": "Int",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "d",
+        "config_type": "Int",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "maxResult",
+        "value": {
+          "StdlibCall": {
+            "func": "Max",
+            "args": [
+              {
+                "Variable": "a"
+              },
+              {
+                "Variable": "b"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "minResult",
+        "value": {
+          "StdlibCall": {
+            "func": "Min",
+            "args": [
+              {
+                "Variable": "a"
+              },
+              {
+                "Variable": "b"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "intMaxResult",
+        "value": {
+          "StdlibCall": {
+            "func": "Max",
+            "args": [
+              {
+                "Variable": "c"
+              },
+              {
+                "Variable": "d"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "intMinResult",
+        "value": {
+          "StdlibCall": {
+            "func": "Min",
+            "args": [
+              {
+                "Variable": "c"
+              },
+              {
+                "Variable": "d"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
