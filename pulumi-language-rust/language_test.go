@@ -161,7 +161,6 @@ func TestRegenerateJsonWithTests(t *testing.T) {
 // skip them with an informative message until they are fixed.
 var expectedFailures = map[string]string{
 	"l1-builtin-can":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2034",
-	"l1-builtin-min-max":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2123",
 	"l1-builtin-to-json":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2027",
 	"l1-builtin-try":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2035",
 	"l1-config-types-object":                       "https://github.com/andrzejressel/pulumi-gestalt/issues/2037",
