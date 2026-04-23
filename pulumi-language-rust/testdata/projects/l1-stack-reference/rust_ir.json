@@ -1,0 +1,116 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "ref_",
+        "value": {
+          "FunctionCall": {
+            "path": "pulumi_gestalt_rust::resources::stack_reference::create",
+            "args": [
+              {
+                "Ref": {
+                  "Identifier": "ctx"
+                }
+              },
+              {
+                "StringLiteral": "ref"
+              },
+              {
+                "MethodCall": {
+                  "receiver": {
+                    "MethodCall": {
+                      "receiver": {
+                        "FunctionCall": {
+                          "path": "pulumi_gestalt_rust::resources::stack_reference::StackReferenceArgs::builder",
+                          "args": []
+                        }
+                      },
+                      "method": "name",
+                      "type_params": [],
+                      "args": [
+                        {
+                          "StringLiteral": "organization/other/dev"
+                        }
+                      ]
+                    }
+                  },
+                  "method": "build_struct",
+                  "type_params": [],
+                  "args": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "plain"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "ref_"
+                  },
+                  "method": "get_output",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Ref": {
+                        "StringLiteral": "plain"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "secret"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "ref_"
+                  },
+                  "method": "get_output",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Ref": {
+                        "StringLiteral": "secret"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

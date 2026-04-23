@@ -91,6 +91,12 @@ pub enum Expr {
         args: Vec<Expr>,
     },
 
+    // Stack reference output access: getOutput(ref, "key")
+    GetStackOutput {
+        resource: Box<Expr>,
+        key: Box<Expr>,
+    },
+
     // Generic
     BinaryOp {
         left: Box<Expr>,

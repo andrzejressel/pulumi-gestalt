@@ -74,7 +74,7 @@ fn lower_resource(
     token: &str,
     inputs: &[(String, Expr)],
 ) -> Result<RustStatement> {
-    let (module_path, struct_name) =
+    let (module_path, struct_name, wrap_inputs) =
         get_full_resource_path(token).context("Failed to resolve resource token")?;
 
     // Build the args via the builder: ModulePath::TypeArgs::builder().field(val)...build_struct()
@@ -84,7 +84,11 @@ fn lower_resource(
     };
     let builder_with_fields = inputs.iter().fold(builder_start, |acc, (field, expr)| {
         let lowered = lower_expr(expr);
-        let input_val = wrap_as_pulumi_any(lowered);
+        let input_val = if wrap_inputs {
+            wrap_as_pulumi_any(lowered)
+        } else {
+            lowered
+        };
         RustExpr::MethodCall {
             receiver: Box::new(acc),
             method: field.clone(),
@@ -140,11 +144,18 @@ fn wrap_as_pulumi_any(expr: RustExpr) -> RustExpr {
     }
 }
 
-fn get_full_resource_path(token: &str) -> Result<(String, String)> {
+fn get_full_resource_path(token: &str) -> Result<(String, String, bool)> {
     match token {
+        // (module_path, struct_name, wrap_inputs_as_pulumi_any)
         "pulumi:index:Stash" => Ok((
             "pulumi_gestalt_rust::resources::stash".to_string(),
             "Stash".to_string(),
+            true,
+        )),
+        "pulumi:pulumi:StackReference" => Ok((
+            "pulumi_gestalt_rust::resources::stack_reference".to_string(),
+            "StackReference".to_string(),
+            false,
         )),
         another => bail!("Unknown resource token: {}", another),
     }
@@ -403,6 +414,12 @@ fn lower_expr(expr: &Expr) -> RustExpr {
             }
         }
         Expr::StdlibCall { func, args } => lower_stdlib_call(func, args),
+        Expr::GetStackOutput { resource, key } => RustExpr::MethodCall {
+            receiver: Box::new(lower_expr(resource)),
+            method: "get_output".to_string(),
+            type_params: vec![],
+            args: vec![RustExpr::Ref(Box::new(lower_expr(key)))],
+        },
         Expr::BinaryOp { left, op, right } => RustExpr::BinaryOp {
             left: Box::new(lower_expr(left)),
             op: bin_op_str(op),
