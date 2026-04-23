@@ -10,20 +10,20 @@ pub mod get_instance {
     pub struct GetInstanceArgs {
         /// The name of the instance. One of `name` or `self_link` must be provided.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If `self_link` is provided, this value is ignored.  If neither `self_link`
         /// nor `project` are provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The self link of the instance. One of `name` or `self_link` must be provided.
         #[builder(into, default)]
-        pub self_link: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub self_link: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone of the instance. If `self_link` is provided, this
         /// value is ignored.  If neither `self_link` nor `zone` are provided, the
         /// provider zone is used.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceResult {

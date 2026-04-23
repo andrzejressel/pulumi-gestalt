@@ -86,64 +86,64 @@ pub mod authz_extension {
     pub struct AuthzExtensionArgs {
         /// The :authority header in the gRPC request sent from Envoy to the extension service.
         #[builder(into)]
-        pub authority: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authority: pulumi_gestalt_rust::Input<String>,
         /// A human-readable description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Determines how the proxy behaves if the call to the extension fails or times out.
         /// When set to TRUE, request or response processing continues without error. Any subsequent extensions in the extension chain are also executed. When set to FALSE or the default setting of FALSE is used, one of the following happens:
         /// * If response headers have not been delivered to the downstream client, a generic 500 error is returned to the client. The error response can be tailored by configuring a custom error response in the load balancer.
         /// * If response headers have been delivered, then the HTTP stream to the downstream client is reset.
         #[builder(into, default)]
-        pub fail_open: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub fail_open: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of the HTTP headers to forward to the extension (from the client). If omitted, all headers are sent. Each element is a string indicating the header name.
         #[builder(into, default)]
-        pub forward_headers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub forward_headers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Set of labels associated with the AuthzExtension resource.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// All backend services and forwarding rules referenced by this extension must share the same load balancing scheme.
         /// For more information, refer to [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service).
         /// Possible values are: `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`.
         #[builder(into)]
-        pub load_balancing_scheme: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancing_scheme: pulumi_gestalt_rust::Input<String>,
         /// The location of the resource.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The metadata provided here is included as part of the metadata_context (of type google.protobuf.Struct) in the ProcessingRequest message sent to the extension server. The metadata is available under the namespace com.google.authz_extension.<resourceName>. The following variables are supported in the metadata Struct:
         /// {forwarding_rule_id} - substituted with the forwarding rule's fully qualified resource name.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier. Name of the AuthzExtension resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The reference to the service that runs the extension.
         /// To configure a callout extension, service must be a fully-qualified reference to a [backend service](https://cloud.google.com/compute/docs/reference/rest/v1/backendServices) in the format:
         /// https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService} or https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
         /// Specifies the timeout for each individual message on the stream. The timeout must be between 10-10000 milliseconds.
         #[builder(into)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub timeout: pulumi_gestalt_rust::Input<String>,
         /// The format of communication supported by the callout extension.
         /// Default value is `EXT_PROC_GRPC`.
         /// Possible values are: `WIRE_FORMAT_UNSPECIFIED`, `EXT_PROC_GRPC`.
         #[builder(into, default)]
-        pub wire_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub wire_format: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AuthzExtensionResult {

@@ -31,15 +31,15 @@ pub mod get_addresses {
         /// (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell")
         /// AND (scheduling.automaticRestart = true)
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The google project in which addresses are listed.
         /// Defaults to provider's configuration if missing.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region that should be considered to search addresses.
         /// All regions are considered if missing.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAddressesResult {

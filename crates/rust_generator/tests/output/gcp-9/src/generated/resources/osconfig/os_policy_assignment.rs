@@ -115,40 +115,40 @@ pub mod os_policy_assignment {
     pub struct OsPolicyAssignmentArgs {
         /// OS policy assignment description. Length of the description is limited to 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Filter to select VMs. Structure is
         /// documented below.
         #[builder(into)]
-        pub instance_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_filter: pulumi_gestalt_rust::Input<
             super::super::types::osconfig::OsPolicyAssignmentInstanceFilter,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Resource name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of OS policies to be applied to the VMs.
         /// Structure is documented below.
         #[builder(into)]
-        pub os_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub os_policies: pulumi_gestalt_rust::Input<
             Vec<super::super::types::osconfig::OsPolicyAssignmentOsPolicy>,
         >,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rollout to deploy the OS policy assignment. A rollout
         /// is triggered in the following situations: 1) OSPolicyAssignment is created.
         /// 2) OSPolicyAssignment is updated and the update contains changes to one of
         /// the following fields: - instance_filter - os_policies 3) OSPolicyAssignment
         /// is deleted. Structure is documented below.
         #[builder(into)]
-        pub rollout: pulumi_gestalt_rust::InputOrOutput<
+        pub rollout: pulumi_gestalt_rust::Input<
             super::super::types::osconfig::OsPolicyAssignmentRollout,
         >,
         /// Set to true to skip awaiting rollout during resource creation and update.
         #[builder(into, default)]
-        pub skip_await_rollout: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_await_rollout: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct OsPolicyAssignmentResult {

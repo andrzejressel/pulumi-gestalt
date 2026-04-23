@@ -10,7 +10,7 @@ pub mod get_account_iam_policy {
     pub struct GetAccountIamPolicyArgs {
         /// The billing account id.
         #[builder(into)]
-        pub billing_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccountIamPolicyResult {

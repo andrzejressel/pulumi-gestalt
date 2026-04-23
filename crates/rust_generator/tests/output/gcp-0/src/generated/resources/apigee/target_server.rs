@@ -135,34 +135,34 @@ pub mod target_server {
     pub struct TargetServerArgs {
         /// A human-readable description of this TargetServer.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apigee environment group associated with the Apigee environment,
         /// in the format `organizations/{{org_name}}/environments/{{env_name}}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub env_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub env_id: pulumi_gestalt_rust::Input<String>,
         /// The host name this target connects to. Value must be a valid hostname as described by RFC-1123.
         #[builder(into)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host: pulumi_gestalt_rust::Input<String>,
         /// Enabling/disabling a TargetServer is useful when TargetServers are used in load balancing configurations, and one or more TargetServers need to taken out of rotation periodically. Defaults to true.
         #[builder(into, default)]
-        pub is_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The resource id of this reference. Values must match the regular expression [\w\s-.]+.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port number this target connects to on the given host. Value must be between 1 and 65535, inclusive.
         #[builder(into)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub port: pulumi_gestalt_rust::Input<i32>,
         /// Immutable. The protocol used by this TargetServer.
         /// Possible values are: `HTTP`, `HTTP2`, `GRPC_TARGET`, `GRPC`, `EXTERNAL_CALLOUT`.
         #[builder(into, default)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies TLS configuration info for this TargetServer. The JSON name is sSLInfo for legacy/backwards compatibility reasons -- Edge originally supported SSL, and the name is still used for TLS configuration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub s_sl_info: pulumi_gestalt_rust::InputOrOutput<
+        pub s_sl_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigee::TargetServerSSlInfo>,
         >,
     }

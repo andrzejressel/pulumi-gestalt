@@ -207,33 +207,33 @@ pub mod instance {
     pub struct InstanceArgs {
         /// Desired state of the Workbench Instance. Set this field to `ACTIVE` to start the Instance, and `STOPPED` to stop the Instance.
         #[builder(into, default)]
-        pub desired_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub desired_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. If true, the workbench instance will not register with the proxy.
         #[builder(into, default)]
-        pub disable_proxy_access: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_proxy_access: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The definition of how to configure a VM instance outside of Resources and Identity.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub gce_setup: pulumi_gestalt_rust::InputOrOutput<
+        pub gce_setup: pulumi_gestalt_rust::Input<
             Option<super::super::types::workbench::InstanceGceSetup>,
         >,
         /// Required. User-defined unique ID of this instance.
         #[builder(into, default)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// 'Optional. Input only. The owner of this instance after creation. Format:
         /// `alias@example.com` Currently supports one owner only. If not specified, all of
         /// the service account users of your VM instance''s service account can use the instance.
         /// If specified, sets the access mode to `Single user`. For more details, see
         /// https://cloud.google.com/vertex-ai/docs/workbench/instances/manage-access-jupyterlab'
         #[builder(into, default)]
-        pub instance_owners: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub instance_owners: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Optional. Labels to apply to this instance. These can be later modified
         /// by the UpdateInstance method.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Part of `parent`. See documentation of `projectsId`.
@@ -241,14 +241,14 @@ pub mod instance {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of this workbench instance. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

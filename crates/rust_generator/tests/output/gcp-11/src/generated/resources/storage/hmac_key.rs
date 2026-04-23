@@ -71,18 +71,18 @@ pub mod hmac_key {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The email address of the key's associated service account.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub service_account_email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_account_email: pulumi_gestalt_rust::Input<String>,
         /// The state of the key. Can be set to one of ACTIVE, INACTIVE.
         /// Default value is `ACTIVE`.
         /// Possible values are: `ACTIVE`, `INACTIVE`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HmacKeyResult {

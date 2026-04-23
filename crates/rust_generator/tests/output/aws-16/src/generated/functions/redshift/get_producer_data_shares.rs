@@ -10,7 +10,7 @@ pub mod get_producer_data_shares {
     pub struct GetProducerDataSharesArgs {
         /// An array of all data shares in the producer. See `data_shares` below.
         #[builder(into, default)]
-        pub data_shares: pulumi_gestalt_rust::InputOrOutput<
+        pub data_shares: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::redshift::GetProducerDataSharesDataShare>,
             >,
@@ -19,10 +19,10 @@ pub mod get_producer_data_shares {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub producer_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub producer_arn: pulumi_gestalt_rust::Input<String>,
         /// Status of a datashare in the producer. Valid values are `ACTIVE`, `AUTHORIZED`, `PENDING_AUTHORIZATION`, `DEAUTHORIZED`, and `REJECTED`. Omit this argument to return all statuses.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetProducerDataSharesResult {

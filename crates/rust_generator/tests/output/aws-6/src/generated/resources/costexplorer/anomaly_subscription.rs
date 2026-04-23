@@ -220,29 +220,29 @@ pub mod anomaly_subscription {
     pub struct AnomalySubscriptionArgs {
         /// The unique identifier for the AWS account in which the anomaly subscription ought to be created.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The frequency that anomaly reports are sent. Valid Values: `DAILY` | `IMMEDIATE` | `WEEKLY`.
         #[builder(into)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frequency: pulumi_gestalt_rust::Input<String>,
         /// A list of cost anomaly monitors.
         #[builder(into)]
-        pub monitor_arn_lists: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub monitor_arn_lists: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name for the subscription.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A subscriber configuration. Multiple subscribers can be defined.
         #[builder(into)]
-        pub subscribers: pulumi_gestalt_rust::InputOrOutput<
+        pub subscribers: pulumi_gestalt_rust::Input<
             Vec<super::super::types::costexplorer::AnomalySubscriptionSubscriber>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An Expression object used to specify the anomalies that you want to generate alerts for. See Threshold Expression.
         #[builder(into, default)]
-        pub threshold_expression: pulumi_gestalt_rust::InputOrOutput<
+        pub threshold_expression: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::costexplorer::AnomalySubscriptionThresholdExpression,
             >,

@@ -35,10 +35,10 @@ pub mod custom_hostname_fallback_origin {
     pub struct CustomHostnameFallbackOriginArgs {
         /// Hostname you intend to fallback requests to. Origin must be a proxied A/AAAA/CNAME DNS record within Clouldflare.
         #[builder(into)]
-        pub origin: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub origin: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomHostnameFallbackOriginResult {

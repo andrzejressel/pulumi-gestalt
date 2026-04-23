@@ -76,33 +76,33 @@ pub mod tenant_inbound_saml_config {
     pub struct TenantInboundSamlConfigArgs {
         /// Human friendly display name.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// If this config allows users to sign in with the provider.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// SAML IdP configuration when the project acts as the relying party
         /// Structure is documented below.
         #[builder(into)]
-        pub idp_config: pulumi_gestalt_rust::InputOrOutput<
+        pub idp_config: pulumi_gestalt_rust::Input<
             super::super::types::identityplatform::TenantInboundSamlConfigIdpConfig,
         >,
         /// The name of the InboundSamlConfig resource. Must start with 'saml.' and can only have alphanumeric characters,
         /// hyphens, underscores or periods. The part after 'saml.' must also start with a lowercase letter, end with an
         /// alphanumeric character, and have at least 2 characters.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// SAML SP (Service Provider) configuration when the project acts as the relying party to receive
         /// and accept an authentication assertion issued by a SAML identity provider.
         /// Structure is documented below.
         #[builder(into)]
-        pub sp_config: pulumi_gestalt_rust::InputOrOutput<
+        pub sp_config: pulumi_gestalt_rust::Input<
             super::super::types::identityplatform::TenantInboundSamlConfigSpConfig,
         >,
         /// The name of the tenant where this inbound SAML config resource exists
         #[builder(into)]
-        pub tenant: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TenantInboundSamlConfigResult {

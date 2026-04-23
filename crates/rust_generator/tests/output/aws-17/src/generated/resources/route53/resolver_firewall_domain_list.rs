@@ -33,13 +33,13 @@ pub mod resolver_firewall_domain_list {
     pub struct ResolverFirewallDomainListArgs {
         /// A array of domains for the firewall domain list.
         #[builder(into, default)]
-        pub domains: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub domains: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A name that lets you identify the domain list, to manage and use it.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. f configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

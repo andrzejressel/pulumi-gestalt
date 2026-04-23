@@ -66,27 +66,25 @@ pub mod cluster_managed_private_endpoint {
     pub struct ClusterManagedPrivateEndpointArgs {
         /// The name of the Kusto Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// The group id in which the managed private endpoint is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Managed Private Endpoints to create. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARM resource ID of the resource for which the managed private endpoint is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub private_link_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_link_resource_id: pulumi_gestalt_rust::Input<String>,
         /// The region of the resource to which the managed private endpoint is created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub private_link_resource_region: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub private_link_resource_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user request message.
         #[builder(into, default)]
-        pub request_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Resource Group where the Kusto Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterManagedPrivateEndpointResult {

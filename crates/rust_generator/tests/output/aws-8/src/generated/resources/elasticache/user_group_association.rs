@@ -70,10 +70,10 @@ pub mod user_group_association {
     pub struct UserGroupAssociationArgs {
         /// ID of the user group.
         #[builder(into)]
-        pub user_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_group_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the user to associated with the user group.
         #[builder(into)]
-        pub user_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserGroupAssociationResult {

@@ -82,11 +82,11 @@ pub mod global_network_endpoint_group {
         /// The default port used if the port number is not specified in the
         /// network endpoint.
         #[builder(into, default)]
-        pub default_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An optional description of this resource. Provide this property when
         /// you create the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource; provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -95,18 +95,18 @@ pub mod global_network_endpoint_group {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of network endpoints in this network endpoint group.
         /// Possible values are: `INTERNET_IP_PORT`, `INTERNET_FQDN_PORT`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub network_endpoint_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_endpoint_type: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GlobalNetworkEndpointGroupResult {

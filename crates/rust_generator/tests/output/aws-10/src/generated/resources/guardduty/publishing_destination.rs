@@ -121,18 +121,18 @@ pub mod publishing_destination {
     pub struct PublishingDestinationArgs {
         /// The bucket arn and prefix under which the findings get exported. Bucket-ARN is required, the prefix is optional and will be `AWSLogs/[Account-ID]/GuardDuty/[Region]/` if not provided
         #[builder(into)]
-        pub destination_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_arn: pulumi_gestalt_rust::Input<String>,
         /// Currently there is only "S3" available as destination type which is also the default value
         ///
         /// > **Note:** In case of missing permissions (S3 Bucket Policy _or_ KMS Key permissions) the resource will fail to create. If the permissions are changed after resource creation, this can be asked from the AWS API via the "DescribePublishingDestination" call (https://docs.aws.amazon.com/cli/latest/reference/guardduty/describe-publishing-destination.html).
         #[builder(into, default)]
-        pub destination_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The detector ID of the GuardDuty.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the KMS key used to encrypt GuardDuty findings. GuardDuty enforces this to be encrypted.
         #[builder(into)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PublishingDestinationResult {

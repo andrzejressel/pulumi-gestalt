@@ -52,13 +52,13 @@ pub mod custom_domain_association {
     pub struct CustomDomainAssociationArgs {
         /// ARN of the certificate for the custom domain association.
         #[builder(into)]
-        pub custom_domain_certificate_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_domain_certificate_arn: pulumi_gestalt_rust::Input<String>,
         /// Custom domain to associate with the workgroup.
         #[builder(into)]
-        pub custom_domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_domain_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the workgroup.
         #[builder(into)]
-        pub workgroup_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workgroup_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomDomainAssociationResult {

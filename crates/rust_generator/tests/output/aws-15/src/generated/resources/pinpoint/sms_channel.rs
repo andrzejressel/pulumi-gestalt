@@ -34,16 +34,16 @@ pub mod sms_channel {
     pub struct SmsChannelArgs {
         /// ID of the application.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// Whether the channel is enabled or disabled. By default, it is set to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Identifier of the sender for your messages.
         #[builder(into, default)]
-        pub sender_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sender_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Short Code registered with the phone provider.
         #[builder(into, default)]
-        pub short_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub short_code: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SmsChannelResult {

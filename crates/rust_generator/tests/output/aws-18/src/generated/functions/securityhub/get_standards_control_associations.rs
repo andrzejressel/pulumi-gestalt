@@ -10,7 +10,7 @@ pub mod get_standards_control_associations {
     pub struct GetStandardsControlAssociationsArgs {
         /// The identifier of the control (identified with `SecurityControlId`, `SecurityControlArn`, or a mix of both parameters).
         #[builder(into)]
-        pub security_control_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_control_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetStandardsControlAssociationsResult {

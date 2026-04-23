@@ -170,34 +170,34 @@ pub mod metric {
         /// The resource name of the Log Bucket that owns the Log Metric. Only Log Buckets in projects
         /// are supported. The bucket has to be in the same project as the metric.
         #[builder(into, default)]
-        pub bucket_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bucket_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The bucketOptions are required when the logs-based metric is using a DISTRIBUTION value type and it
         /// describes the bucket boundaries used to create a histogram of the extracted values.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub bucket_options: pulumi_gestalt_rust::InputOrOutput<
+        pub bucket_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::logging::MetricBucketOptions>,
         >,
         /// A description of this metric, which is used in documentation. The maximum length of the
         /// description is 8000 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set to True, then this metric is disabled and it does not generate any points.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An advanced logs filter (https://cloud.google.com/logging/docs/view/advanced-filters) which
         /// is used to match log entries.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter: pulumi_gestalt_rust::Input<String>,
         /// A map from a label key string to an extractor expression which is used to extract data from a log
         /// entry field and assign as the label value. Each label key specified in the LabelDescriptor must
         /// have an associated extractor expression in this map. The syntax of the extractor expression is
         /// the same as for the valueExtractor field.
         #[builder(into, default)]
-        pub label_extractors: pulumi_gestalt_rust::InputOrOutput<
+        pub label_extractors: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The optional metric descriptor associated with the logs-based metric.
@@ -206,7 +206,7 @@ pub mod metric {
         /// number of log entries matching the filter expression.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub metric_descriptor: pulumi_gestalt_rust::InputOrOutput<
+        pub metric_descriptor: pulumi_gestalt_rust::Input<
             Option<super::super::types::logging::MetricMetricDescriptor>,
         >,
         /// The client-assigned metric identifier. Examples - "error_count", "nginx/requests".
@@ -215,11 +215,11 @@ pub mod metric {
         /// character (/) denotes a hierarchy of name pieces, and it cannot be the first character
         /// of the name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A valueExtractor is required when using a distribution logs-based metric to extract the values to
         /// record from a log entry. Two functions are supported for value extraction - EXTRACT(field) or
         /// REGEXP_EXTRACT(field, regex). The argument are 1. field - The name of the log entry field from which
@@ -228,7 +228,7 @@ pub mod metric {
         /// log entry field. The value of the field is converted to a string before applying the regex. It is an
         /// error to specify a regex that does not include exactly one capture group.
         #[builder(into, default)]
-        pub value_extractor: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub value_extractor: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MetricResult {

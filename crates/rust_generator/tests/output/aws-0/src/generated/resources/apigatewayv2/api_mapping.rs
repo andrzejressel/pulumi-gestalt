@@ -40,16 +40,16 @@ pub mod api_mapping {
     pub struct ApiMappingArgs {
         /// API identifier.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// The API mapping key. Refer to [REST API](https://docs.aws.amazon.com/apigateway/latest/developerguide/rest-api-mappings.html), [HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-mappings.html) or [WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-mappings.html).
         #[builder(into, default)]
-        pub api_mapping_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_mapping_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Domain name. Use the `aws.apigatewayv2.DomainName` resource to configure a domain name.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// API stage. Use the `aws.apigatewayv2.Stage` resource to configure an API stage.
         #[builder(into)]
-        pub stage: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stage: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiMappingResult {

@@ -35,7 +35,7 @@ pub mod bucket_access_key {
     pub struct BucketAccessKeyArgs {
         /// The name of the bucket that the new access key will belong to, and grant access to.
         #[builder(into)]
-        pub bucket_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BucketAccessKeyResult {

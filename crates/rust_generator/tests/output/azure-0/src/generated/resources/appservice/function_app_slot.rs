@@ -83,7 +83,7 @@ pub mod function_app_slot {
     pub struct FunctionAppSlotArgs {
         /// The ID of the App Service Plan within which to create this Function App Slot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub app_service_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_plan_id: pulumi_gestalt_rust::Input<String>,
         /// A key-value pair of App Settings.
         ///
         /// > **Note:** When integrating a `CI/CD pipeline` and expecting to run from a deployed package in `Azure` you must seed your `app settings` as part of the application code for function app to be successfully deployed. `Important Default key pairs`: (`"WEBSITE_RUN_FROM_PACKAGE" = ""`, `"FUNCTIONS_WORKER_RUNTIME" = "node"` (or python, etc), `"WEBSITE_NODE_DEFAULT_VERSION" = "10.14.1"`, `"APPINSIGHTS_INSTRUMENTATIONKEY" = ""`).
@@ -92,72 +92,72 @@ pub mod function_app_slot {
         ///
         /// > **Note:**  When using an App Service Plan in the `Free` or `Shared` Tiers `use_32_bit_worker_process` must be set to `true`.
         #[builder(into, default)]
-        pub app_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub app_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An `auth_settings` block as defined below.
         #[builder(into, default)]
-        pub auth_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub auth_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::FunctionAppSlotAuthSettings>,
         >,
         /// A `connection_string` block as defined below.
         #[builder(into, default)]
-        pub connection_strings: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_strings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::appservice::FunctionAppSlotConnectionString>>,
         >,
         /// The amount of memory in gigabyte-seconds that your application is allowed to consume per day. Setting this value only affects function apps under the consumption plan.
         #[builder(into, default)]
-        pub daily_memory_time_quota: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub daily_memory_time_quota: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Should the built-in logging of the Function App be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enable_builtin_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_builtin_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is the Function App enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Function App within which to create the Function App Slot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub function_app_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_app_name: pulumi_gestalt_rust::Input<String>,
         /// Can the Function App only be accessed via HTTPS? Defaults to `false`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::FunctionAppSlotIdentity>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Function App. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A string indicating the Operating System type for this function app. The only possible value is `linux`. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** This value will be `linux` for Linux Derivatives or an empty string for Windows (default).
         #[builder(into, default)]
-        pub os_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub os_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Function App Slot. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `site_config` object as defined below.
         #[builder(into, default)]
-        pub site_config: pulumi_gestalt_rust::InputOrOutput<
+        pub site_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::FunctionAppSlotSiteConfig>,
         >,
         /// The access key which will be used to access the backend storage account for the Function App.
         #[builder(into)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<String>,
         /// The backend storage account name which will be used by the Function App (such as the dashboard, logs). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The runtime version associated with the Function App. Defaults to `~1`.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FunctionAppSlotResult {

@@ -38,13 +38,13 @@ pub mod action_target {
     pub struct ActionTargetArgs {
         /// The name of the custom action target.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// The ID for the custom action target.
         #[builder(into)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identifier: pulumi_gestalt_rust::Input<String>,
         /// The description for the custom action target.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ActionTargetResult {

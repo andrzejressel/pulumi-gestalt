@@ -52,32 +52,32 @@ pub mod hci_logical_network {
     pub struct HciLogicalNetworkArgs {
         /// The ID of Custom Location where the Azure Stack HCI Logical Network should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub custom_location_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_location_id: pulumi_gestalt_rust::Input<String>,
         /// A list of IPv4 addresses of DNS servers available to VMs deployed in the Logical Networks. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub dns_servers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub dns_servers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Azure Region where the Azure Stack HCI Logical Network should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Azure Stack HCI Logical Network. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Azure Stack HCI Logical Network should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `subnet` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subnet: pulumi_gestalt_rust::InputOrOutput<
+        pub subnet: pulumi_gestalt_rust::Input<
             super::super::types::stack::HciLogicalNetworkSubnet,
         >,
         /// A mapping of tags which should be assigned to the Azure Stack HCI Logical Network.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the virtual switch on the cluster used to associate with the Azure Stack HCI Logical Network. Possible switch names can be retrieved by following this [Azure guide](https://learn.microsoft.com/azure-stack/hci/manage/create-logical-networks?tabs=azurecli#prerequisites). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_switch_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_switch_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HciLogicalNetworkResult {

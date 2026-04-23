@@ -46,18 +46,18 @@ pub mod random_integer {
     pub struct RandomIntegerArgs {
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
         #[builder(into, default)]
-        pub keepers: pulumi_gestalt_rust::InputOrOutput<
+        pub keepers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The maximum inclusive value of the range.
         #[builder(into)]
-        pub max: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub max: pulumi_gestalt_rust::Input<i32>,
         /// The minimum inclusive value of the range.
         #[builder(into)]
-        pub min: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub min: pulumi_gestalt_rust::Input<i32>,
         /// A custom seed to always produce the same value.
         #[builder(into, default)]
-        pub seed: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub seed: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RandomIntegerResult {

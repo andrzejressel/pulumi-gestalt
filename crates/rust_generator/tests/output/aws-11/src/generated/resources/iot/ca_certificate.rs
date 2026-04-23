@@ -71,32 +71,30 @@ pub mod ca_certificate {
     pub struct CaCertificateArgs {
         /// Boolean flag to indicate if the certificate should be active for device authentication.
         #[builder(into)]
-        pub active: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub active: pulumi_gestalt_rust::Input<bool>,
         /// Boolean flag to indicate if the certificate should be active for device regisration.
         #[builder(into)]
-        pub allow_auto_registration: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub allow_auto_registration: pulumi_gestalt_rust::Input<bool>,
         /// PEM encoded CA certificate.
         #[builder(into)]
-        pub ca_certificate_pem: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ca_certificate_pem: pulumi_gestalt_rust::Input<String>,
         /// The certificate mode in which the CA will be registered. Valida values: `DEFAULT` and `SNI_ONLY`. Default: `DEFAULT`.
         #[builder(into, default)]
-        pub certificate_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information about the registration configuration. See below.
         #[builder(into, default)]
-        pub registration_config: pulumi_gestalt_rust::InputOrOutput<
+        pub registration_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::iot::CaCertificateRegistrationConfig>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// PEM encoded verification certificate containing the common name of a registration code. Review
         /// [CreateVerificationCSR](https://docs.aws.amazon.com/iot/latest/developerguide/register-CA-cert.html). Reuired if `certificate_mode` is `DEFAULT`.
         #[builder(into, default)]
-        pub verification_certificate_pem: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub verification_certificate_pem: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CaCertificateResult {

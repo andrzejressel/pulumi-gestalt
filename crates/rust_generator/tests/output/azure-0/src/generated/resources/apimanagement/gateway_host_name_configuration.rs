@@ -79,33 +79,31 @@ pub mod gateway_host_name_configuration {
     pub struct GatewayHostNameConfigurationArgs {
         /// The ID of the API Management Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_id: pulumi_gestalt_rust::Input<String>,
         /// The certificate ID to be used for TLS connection establishment.
         #[builder(into)]
-        pub certificate_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Management Gateway. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub gateway_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_name: pulumi_gestalt_rust::Input<String>,
         /// The host name to use for the API Management Gateway Host Name Configuration.
         #[builder(into)]
-        pub host_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_name: pulumi_gestalt_rust::Input<String>,
         /// Whether HTTP/2.0 is supported. Defaults to `true`.
         #[builder(into, default)]
-        pub http2_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub http2_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the API Management Gateway Host Name Configuration. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the API Management Gateway requests a client certificate.
         #[builder(into, default)]
-        pub request_client_certificate_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub request_client_certificate_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether TLS 1.0 is supported.
         #[builder(into, default)]
-        pub tls10_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls10_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether TLS 1.1 is supported.
         #[builder(into, default)]
-        pub tls11_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tls11_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GatewayHostNameConfigurationResult {

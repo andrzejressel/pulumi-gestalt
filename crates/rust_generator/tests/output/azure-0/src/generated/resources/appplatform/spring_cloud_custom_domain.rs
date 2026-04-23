@@ -76,16 +76,16 @@ pub mod spring_cloud_custom_domain {
     pub struct SpringCloudCustomDomainArgs {
         /// Specifies the name of the Spring Cloud Certificate that binds to the Spring Cloud Custom Domain. Required when `thumbprint` is specified
         #[builder(into, default)]
-        pub certificate_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Spring Cloud Custom Domain. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the resource ID of the Spring Cloud Application. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_app_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the thumbprint of the Spring Cloud Certificate that binds to the Spring Cloud Custom Domain. Required when `certificate_name` is specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub thumbprint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub thumbprint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudCustomDomainResult {

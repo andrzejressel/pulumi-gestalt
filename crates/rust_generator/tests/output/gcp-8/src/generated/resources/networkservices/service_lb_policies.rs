@@ -83,44 +83,44 @@ pub mod service_lb_policies {
         /// Option to specify if an unhealthy MIG/NEG should be considered for global load balancing and traffic routing.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub auto_capacity_drain: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_capacity_drain: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::networkservices::ServiceLbPoliciesAutoCapacityDrain,
             >,
         >,
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to specify health based failover behavior. This is not related to Network load balancer FailoverPolicy.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub failover_config: pulumi_gestalt_rust::InputOrOutput<
+        pub failover_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkservices::ServiceLbPoliciesFailoverConfig>,
         >,
         /// Set of label tags associated with the ServiceLbPolicy resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of load balancing algorithm to be used. The default behavior is WATERFALL_BY_REGION.
         /// Possible values are: `SPRAY_TO_REGION`, `SPRAY_TO_WORLD`, `WATERFALL_BY_REGION`, `WATERFALL_BY_ZONE`.
         #[builder(into, default)]
-        pub load_balancing_algorithm: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub load_balancing_algorithm: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the service lb policy.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the ServiceLbPolicy resource. It matches pattern `projects/{project}/locations/{location}/serviceLbPolicies/{service_lb_policy_name}`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ServiceLbPoliciesResult {

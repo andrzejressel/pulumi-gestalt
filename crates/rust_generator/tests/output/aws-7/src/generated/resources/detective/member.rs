@@ -40,19 +40,19 @@ pub mod member {
     pub struct MemberArgs {
         /// AWS account ID for the account.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// If set to true, then the root user of the invited account will _not_ receive an email notification. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. By default, this is set to `false`.
         #[builder(into, default)]
-        pub disable_email_notification: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_email_notification: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Email address for the account.
         #[builder(into)]
-        pub email_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_address: pulumi_gestalt_rust::Input<String>,
         /// ARN of the behavior graph to invite the member accounts to contribute their data to.
         #[builder(into)]
-        pub graph_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub graph_arn: pulumi_gestalt_rust::Input<String>,
         /// A custom message to include in the invitation. Amazon Detective adds this message to the standard content that it sends for an invitation.
         #[builder(into, default)]
-        pub message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub message: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MemberResult {

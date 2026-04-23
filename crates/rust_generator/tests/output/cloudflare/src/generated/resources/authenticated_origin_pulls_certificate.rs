@@ -48,16 +48,16 @@ pub mod authenticated_origin_pulls_certificate {
     pub struct AuthenticatedOriginPullsCertificateArgs {
         /// The public client certificate. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate: pulumi_gestalt_rust::Input<String>,
         /// The private key of the client certificate. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub private_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_key: pulumi_gestalt_rust::Input<String>,
         /// The form of Authenticated Origin Pulls to upload the certificate to. Available values: `per-zone`, `per-hostname`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AuthenticatedOriginPullsCertificateResult {

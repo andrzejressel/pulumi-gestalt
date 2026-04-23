@@ -52,10 +52,10 @@ pub mod frontdoor_rule_set {
     pub struct FrontdoorRuleSetArgs {
         /// The ID of the Front Door Profile. Changing this forces a new Front Door Rule Set to be created.
         #[builder(into)]
-        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Front Door Rule Set. Changing this forces a new Front Door Rule Set to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FrontdoorRuleSetResult {

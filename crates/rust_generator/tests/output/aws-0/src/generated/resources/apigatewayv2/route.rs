@@ -77,53 +77,49 @@ pub mod route {
     pub struct RouteArgs {
         /// API identifier.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// Boolean whether an API key is required for the route. Defaults to `false`. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub api_key_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub api_key_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Authorization scopes supported by this route. The scopes are used with a JWT authorizer to authorize the method invocation.
         #[builder(into, default)]
-        pub authorization_scopes: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub authorization_scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Authorization type for the route.
         /// For WebSocket APIs, valid values are `NONE` for open access, `AWS_IAM` for using AWS IAM permissions, and `CUSTOM` for using a Lambda authorizer.
         /// For HTTP APIs, valid values are `NONE` for open access, `JWT` for using JSON Web Tokens, `AWS_IAM` for using AWS IAM permissions, and `CUSTOM` for using a Lambda authorizer.
         /// Defaults to `NONE`.
         #[builder(into, default)]
-        pub authorization_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the `aws.apigatewayv2.Authorizer` resource to be associated with this route.
         #[builder(into, default)]
-        pub authorizer_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorizer_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [model selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions) for the route. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub model_selection_expression: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub model_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// Operation name for the route. Must be between 1 and 64 characters in length.
         #[builder(into, default)]
-        pub operation_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub operation_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Request models for the route. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub request_models: pulumi_gestalt_rust::InputOrOutput<
+        pub request_models: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Request parameters for the route. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub request_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub request_parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigatewayv2::RouteRequestParameter>>,
         >,
         /// Route key for the route. For HTTP APIs, the route key can be either `$default`, or a combination of an HTTP method and resource path, for example, `GET /pets`.
         #[builder(into)]
-        pub route_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_key: pulumi_gestalt_rust::Input<String>,
         /// The [route response selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-route-response-selection-expressions) for the route. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub route_response_selection_expression: pulumi_gestalt_rust::InputOrOutput<
+        pub route_response_selection_expression: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Target for the route, of the form `integrations/`*`IntegrationID`*, where *`IntegrationID`* is the identifier of an `aws.apigatewayv2.Integration` resource.
         #[builder(into, default)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RouteResult {

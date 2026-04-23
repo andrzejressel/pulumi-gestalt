@@ -84,7 +84,7 @@ pub mod invocation_logging_configuration {
     pub struct InvocationLoggingConfigurationArgs {
         /// The logging configuration values to set.
         #[builder(into, default)]
-        pub logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfig,
             >,

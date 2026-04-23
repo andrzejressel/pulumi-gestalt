@@ -49,10 +49,10 @@ pub mod policy_attachment {
     pub struct PolicyAttachmentArgs {
         /// The name of the policy to attach.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// The identity to which the policy is attached.
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyAttachmentResult {

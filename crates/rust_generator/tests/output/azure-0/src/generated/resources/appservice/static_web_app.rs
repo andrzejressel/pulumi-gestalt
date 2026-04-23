@@ -45,52 +45,46 @@ pub mod static_web_app {
     pub struct StaticWebAppArgs {
         /// A key-value pair of App Settings.
         #[builder(into, default)]
-        pub app_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub app_settings: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `basic_auth` block as defined below.
         #[builder(into, default)]
-        pub basic_auth: pulumi_gestalt_rust::InputOrOutput<
+        pub basic_auth: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::StaticWebAppBasicAuth>,
         >,
         /// Should changes to the configuration file be permitted. Defaults to `true`.
         #[builder(into, default)]
-        pub configuration_file_changes_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub configuration_file_changes_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::appservice::StaticWebAppIdentity>,
         >,
         /// The Azure Region where the Static Web App should exist. Changing this forces a new Static Web App to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Static Web App. Changing this forces a new Static Web App to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Are Preview (Staging) environments enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub preview_environments_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub preview_environments_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should public network access be enabled for the Static Web App. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Static Web App should exist. Changing this forces a new Static Web App to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the SKU size of the Static Web App. Possible values are `Free` or `Standard`. Defaults to `Free`.
         #[builder(into, default)]
-        pub sku_size: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku_size: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the SKU tier of the Static Web App. Possible values are `Free` or `Standard`. Defaults to `Free`.
         #[builder(into, default)]
-        pub sku_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

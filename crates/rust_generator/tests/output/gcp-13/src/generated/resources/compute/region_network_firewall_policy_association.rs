@@ -92,23 +92,23 @@ pub mod region_network_firewall_policy_association {
     pub struct RegionNetworkFirewallPolicyAssociationArgs {
         /// The target that the firewall policy is attached to.
         #[builder(into)]
-        pub attachment_target: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub attachment_target: pulumi_gestalt_rust::Input<String>,
         /// The firewall policy of the resource.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub firewall_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_policy: pulumi_gestalt_rust::Input<String>,
         /// The name for an association.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of this resource.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RegionNetworkFirewallPolicyAssociationResult {

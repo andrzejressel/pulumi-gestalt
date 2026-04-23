@@ -10,10 +10,10 @@ pub mod get_sink {
     pub struct GetSinkArgs {
         /// ARN of the sink.
         #[builder(into)]
-        pub sink_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sink_identifier: pulumi_gestalt_rust::Input<String>,
         /// Tags assigned to the sink.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

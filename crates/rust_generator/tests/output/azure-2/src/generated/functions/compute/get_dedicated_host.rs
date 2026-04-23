@@ -10,13 +10,13 @@ pub mod get_dedicated_host {
     pub struct GetDedicatedHostArgs {
         /// Specifies the name of the Dedicated Host Group the Dedicated Host is located in.
         #[builder(into)]
-        pub dedicated_host_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dedicated_host_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Dedicated Host.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group the Dedicated Host is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDedicatedHostResult {

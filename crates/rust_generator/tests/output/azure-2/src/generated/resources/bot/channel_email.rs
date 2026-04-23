@@ -56,22 +56,22 @@ pub mod channel_email {
     pub struct ChannelEmailArgs {
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// The email address that the Bot will authenticate with.
         #[builder(into)]
-        pub email_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_address: pulumi_gestalt_rust::Input<String>,
         /// The email password that the Bot will authenticate with.
         #[builder(into, default)]
-        pub email_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub email_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The magic code used to set up OAUTH authentication.
         #[builder(into, default)]
-        pub magic_code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub magic_code: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Bot Channel. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ChannelEmailResult {

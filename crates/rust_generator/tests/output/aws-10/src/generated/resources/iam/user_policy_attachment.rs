@@ -42,10 +42,10 @@ pub mod user_policy_attachment {
     pub struct UserPolicyAttachmentArgs {
         /// The ARN of the policy you want to apply
         #[builder(into)]
-        pub policy_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_arn: pulumi_gestalt_rust::Input<String>,
         /// The user the policy should be applied to
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserPolicyAttachmentResult {

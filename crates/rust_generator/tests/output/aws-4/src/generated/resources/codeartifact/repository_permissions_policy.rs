@@ -64,19 +64,19 @@ pub mod repository_permissions_policy {
     pub struct RepositoryPermissionsPolicyArgs {
         /// The name of the domain on which to set the resource policy.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// The account number of the AWS account that owns the domain.
         #[builder(into, default)]
-        pub domain_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// A JSON policy string to be set as the access control resource policy on the provided domain.
         #[builder(into)]
-        pub policy_document: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_document: pulumi_gestalt_rust::Input<String>,
         /// The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy.
         #[builder(into, default)]
-        pub policy_revision: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_revision: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the repository to set the resource policy on.
         #[builder(into)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RepositoryPermissionsPolicyResult {

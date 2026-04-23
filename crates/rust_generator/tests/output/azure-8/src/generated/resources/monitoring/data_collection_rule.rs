@@ -20,56 +20,54 @@ pub mod data_collection_rule {
     pub struct DataCollectionRuleArgs {
         /// The resource ID of the Data Collection Endpoint that this rule can be used with.
         #[builder(into, default)]
-        pub data_collection_endpoint_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub data_collection_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `data_flow` blocks as defined below.
         #[builder(into)]
-        pub data_flows: pulumi_gestalt_rust::InputOrOutput<
+        pub data_flows: pulumi_gestalt_rust::Input<
             Vec<super::super::types::monitoring::DataCollectionRuleDataFlow>,
         >,
         /// A `data_sources` block as defined below. This property is optional and can be omitted if the rule is meant to be used via direct calls to the provisioned endpoint.
         #[builder(into, default)]
-        pub data_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub data_sources: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::DataCollectionRuleDataSources>,
         >,
         /// The description of the Data Collection Rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `destinations` block as defined below.
         #[builder(into)]
-        pub destinations: pulumi_gestalt_rust::InputOrOutput<
+        pub destinations: pulumi_gestalt_rust::Input<
             super::super::types::monitoring::DataCollectionRuleDestinations,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::DataCollectionRuleIdentity>,
         >,
         /// The kind of the Data Collection Rule. Possible values are `Linux`, `Windows`, `AgentDirectToStore` and `WorkspaceTransforms`. A rule of kind `Linux` does not allow for `windows_event_log` data sources. And a rule of kind `Windows` does not allow for `syslog` data sources. If kind is not specified, all kinds of data sources are allowed.
         ///
         /// > **NOTE** Once `kind` has been set, changing it forces a new Data Collection Rule to be created.
         #[builder(into, default)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Data Collection Rule should exist. Changing this forces a new Data Collection Rule to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Data Collection Rule. Changing this forces a new Data Collection Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Data Collection Rule should exist. Changing this forces a new Data Collection Rule to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `stream_declaration` block as defined below.
         #[builder(into, default)]
-        pub stream_declarations: pulumi_gestalt_rust::InputOrOutput<
+        pub stream_declarations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::monitoring::DataCollectionRuleStreamDeclaration>,
             >,
         >,
         /// A mapping of tags which should be assigned to the Data Collection Rule.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

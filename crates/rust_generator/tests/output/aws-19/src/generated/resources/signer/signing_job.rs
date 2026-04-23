@@ -63,18 +63,18 @@ pub mod signing_job {
     pub struct SigningJobArgs {
         /// The S3 bucket in which to save your signed object. See Destination below for details.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<
+        pub destination: pulumi_gestalt_rust::Input<
             super::super::types::signer::SigningJobDestination,
         >,
         /// Set this argument to `true` to ignore signing job failures and retrieve failed status and reason. Default `false`.
         #[builder(into, default)]
-        pub ignore_signing_job_failure: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ignore_signing_job_failure: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the profile to initiate the signing operation.
         #[builder(into)]
-        pub profile_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub profile_name: pulumi_gestalt_rust::Input<String>,
         /// The S3 bucket that contains the object to sign. See Source below for details.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             super::super::types::signer::SigningJobSource,
         >,
     }

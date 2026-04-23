@@ -156,33 +156,33 @@ pub mod volume_group {
     pub struct VolumeGroupArgs {
         /// Specifies the Elastic SAN ID within which this Elastic SAN Volume Group should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub elastic_san_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub elastic_san_id: pulumi_gestalt_rust::Input<String>,
         /// An `encryption` block as defined below.
         ///
         /// > **NOTE:** The `encryption` block can only be set when `encryption_type` is set to `EncryptionAtRestWithCustomerManagedKey`.
         #[builder(into, default)]
-        pub encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsan::VolumeGroupEncryption>,
         >,
         /// Specifies the type of the key used to encrypt the data of the disk. Possible values are `EncryptionAtRestWithCustomerManagedKey` and `EncryptionAtRestWithPlatformKey`. Defaults to `EncryptionAtRestWithPlatformKey`.
         #[builder(into, default)]
-        pub encryption_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encryption_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below. Specifies the Managed Identity which should be assigned to this Elastic SAN Volume Group.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticsan::VolumeGroupIdentity>,
         >,
         /// Specifies the name of this Elastic SAN Volume Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `network_rule` blocks as defined below.
         #[builder(into, default)]
-        pub network_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub network_rules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::elasticsan::VolumeGroupNetworkRule>>,
         >,
         /// Specifies the type of the storage target. The only possible value is `Iscsi`. Defaults to `Iscsi`.
         #[builder(into, default)]
-        pub protocol_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protocol_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VolumeGroupResult {

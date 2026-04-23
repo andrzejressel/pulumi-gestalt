@@ -10,7 +10,7 @@ pub mod get_tag_values {
     pub struct GetTagValuesArgs {
         /// The resource name of the parent tagKey in format `tagKey/{name}`.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTagValuesResult {

@@ -9,15 +9,15 @@ pub mod flexible_server_active_directory_administratory {
     #[allow(dead_code)]
     pub struct FlexibleServerActiveDirectoryAdministratoryArgs {
         #[builder(into)]
-        pub identity_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub login: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub login: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub object_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FlexibleServerActiveDirectoryAdministratoryResult {

@@ -41,24 +41,24 @@ pub mod s_3_location {
     pub struct S3LocationArgs {
         /// A list of DataSync Agent ARNs with which this location will be associated.
         #[builder(into, default)]
-        pub agent_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub agent_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Amazon Resource Name (ARN) of the S3 Bucket.
         #[builder(into)]
-        pub s3_bucket_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub s3_bucket_arn: pulumi_gestalt_rust::Input<String>,
         /// Configuration block containing information for connecting to S3.
         #[builder(into)]
-        pub s3_config: pulumi_gestalt_rust::InputOrOutput<
+        pub s3_config: pulumi_gestalt_rust::Input<
             super::super::types::datasync::S3LocationS3Config,
         >,
         /// The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. [Valid values](https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes)
         #[builder(into, default)]
-        pub s3_storage_class: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_storage_class: pulumi_gestalt_rust::Input<Option<String>>,
         /// Prefix to perform actions as source or destination.
         #[builder(into)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subdirectory: pulumi_gestalt_rust::Input<String>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -70,30 +70,30 @@ pub mod v_2_project_mute_config {
     pub struct V2ProjectMuteConfigArgs {
         /// A description of the mute config.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// An expression that defines the filter to apply across create/update
         /// events of findings. While creating a filter string, be mindful of
         /// the scope in which the mute configuration is being created. E.g.,
         /// If a filter contains project = X but is created under the
         /// project = Y scope, it might not match any findings.
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter: pulumi_gestalt_rust::Input<String>,
         /// location Id is provided by project. If not provided, Use global as default.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique identifier provided by the client within the parent scope.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub mute_config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mute_config_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of the mute config.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct V2ProjectMuteConfigResult {

@@ -42,19 +42,19 @@ pub mod mtls_certificate {
     pub struct MtlsCertificateArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Whether this is a CA or leaf certificate. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub ca: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub ca: pulumi_gestalt_rust::Input<bool>,
         /// Certificate you intend to use with mTLS-enabled services. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub certificates: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificates: pulumi_gestalt_rust::Input<String>,
         /// Optional unique name for the certificate. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The certificate's private key. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub private_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_key: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MtlsCertificateResult {

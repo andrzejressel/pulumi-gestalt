@@ -10,7 +10,7 @@ pub mod get_principal_application_assignments {
     pub struct GetPrincipalApplicationAssignmentsArgs {
         /// List of principals assigned to the application. See the `application_assignments` attribute reference below.
         #[builder(into, default)]
-        pub application_assignments: pulumi_gestalt_rust::InputOrOutput<
+        pub application_assignments: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ssoadmin::GetPrincipalApplicationAssignmentsApplicationAssignment,
@@ -19,13 +19,13 @@ pub mod get_principal_application_assignments {
         >,
         /// ARN of the instance of IAM Identity Center.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// An identifier for an object in IAM Identity Center, such as a user or group.
         #[builder(into)]
-        pub principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_id: pulumi_gestalt_rust::Input<String>,
         /// Entity type for which the assignment will be created. Valid values are `USER` or `GROUP`.
         #[builder(into)]
-        pub principal_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPrincipalApplicationAssignmentsResult {

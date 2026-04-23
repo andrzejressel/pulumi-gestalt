@@ -10,7 +10,7 @@ pub mod get_networks {
     pub struct GetNetworksArgs {
         /// The name of the project.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetNetworksResult {

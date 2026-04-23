@@ -10,13 +10,13 @@ pub mod get_virtual_machine_configuration_assignment {
     pub struct GetVirtualMachineConfigurationAssignmentArgs {
         /// Specifies the name of the Guest Configuration Assignment.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Name of the Resource Group where the Guest Configuration Assignment exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Only retrieve Policy Set Definitions from this Management Group.
         #[builder(into)]
-        pub virtual_machine_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVirtualMachineConfigurationAssignmentResult {

@@ -53,32 +53,26 @@ pub mod storage_defender {
     pub struct StorageDefenderArgs {
         /// The max GB to be scanned per Month. Must be `-1` or above `0`. Omit this property or set to `-1` if no capping is needed. Defaults to `-1`.
         #[builder(into, default)]
-        pub malware_scanning_on_upload_cap_gb_per_month: pulumi_gestalt_rust::InputOrOutput<
+        pub malware_scanning_on_upload_cap_gb_per_month: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Whether On Upload malware scanning should be enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub malware_scanning_on_upload_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub malware_scanning_on_upload_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the settings defined for this storage account should override the settings defined for the subscription. Defaults to `false`.
         #[builder(into, default)]
-        pub override_subscription_settings_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub override_subscription_settings_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The Event Grid Topic where every scan result will be sent to. When you set an Event Grid custom topic, you must set `override_subscription_settings_enabled` to `true` to override the subscription-level settings.
         #[builder(into, default)]
-        pub scan_results_event_grid_topic_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub scan_results_event_grid_topic_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether Sensitive Data Discovery should be enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub sensitive_data_discovery_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub sensitive_data_discovery_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the storage account the defender applied to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct StorageDefenderResult {

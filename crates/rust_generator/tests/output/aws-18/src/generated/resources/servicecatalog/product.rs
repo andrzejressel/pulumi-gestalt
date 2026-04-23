@@ -41,43 +41,43 @@ pub mod product {
     pub struct ProductArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the product.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Distributor (i.e., vendor) of the product.
         #[builder(into, default)]
-        pub distributor: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub distributor: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the product.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Owner of the product.
         #[builder(into)]
-        pub owner: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owner: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for provisioning artifact (i.e., version) parameters. See `provisioning_artifact_parameters` Block for details.
         #[builder(into)]
-        pub provisioning_artifact_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub provisioning_artifact_parameters: pulumi_gestalt_rust::Input<
             super::super::types::servicecatalog::ProductProvisioningArtifactParameters,
         >,
         /// Support information about the product.
         #[builder(into, default)]
-        pub support_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub support_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Contact email for product support.
         #[builder(into, default)]
-        pub support_email: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub support_email: pulumi_gestalt_rust::Input<Option<String>>,
         /// Contact URL for product support.
         #[builder(into, default)]
-        pub support_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub support_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags to apply to the product. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Type of product. See [AWS Docs](https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html#API_CreateProduct_RequestSyntax) for valid list of values.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProductResult {

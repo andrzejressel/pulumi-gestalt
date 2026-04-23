@@ -75,47 +75,47 @@ pub mod target_pool {
         /// URL to the backup target pool. Must also set
         /// failover_ratio.
         #[builder(into, default)]
-        pub backup_pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub backup_pool: pulumi_gestalt_rust::Input<Option<String>>,
         /// Textual description field.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ratio (0 to 1) of failed nodes before using the
         /// backup pool (which must also be set).
         #[builder(into, default)]
-        pub failover_ratio: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub failover_ratio: pulumi_gestalt_rust::Input<Option<f64>>,
         /// List of zero or one health check name or self_link. Only
         /// legacy `gcp.compute.HttpHealthCheck` is supported.
         #[builder(into, default)]
-        pub health_checks: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub health_checks: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of instances in the pool. They can be given as
         /// URLs, or in the form of "zone/name". Note that the instances need not exist
         /// at the time of target pool creation, so there is no need to use the
         /// interpolation to create a dependency on the instances from the
         /// target pool.
         #[builder(into, default)]
-        pub instances: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub instances: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A unique name for the resource, required by GCE. Changing
         /// this forces a new resource to be created.
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Where the target pool resides. Defaults to project
         /// region.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource URL for the security policy associated with this target pool.
         #[builder(into, default)]
-        pub security_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// How to distribute load. Options are "NONE" (no
         /// affinity). "CLIENT_IP" (hash of the source/dest addresses / ports), and
         /// "CLIENT_IP_PROTO" also includes the protocol (default "NONE").
         #[builder(into, default)]
-        pub session_affinity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub session_affinity: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TargetPoolResult {

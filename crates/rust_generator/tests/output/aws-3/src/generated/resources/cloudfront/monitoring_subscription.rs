@@ -44,10 +44,10 @@ pub mod monitoring_subscription {
     pub struct MonitoringSubscriptionArgs {
         /// The ID of the distribution that you are enabling metrics for.
         #[builder(into)]
-        pub distribution_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub distribution_id: pulumi_gestalt_rust::Input<String>,
         /// A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.
         #[builder(into)]
-        pub monitoring_subscription: pulumi_gestalt_rust::InputOrOutput<
+        pub monitoring_subscription: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::MonitoringSubscriptionMonitoringSubscription,
         >,
     }

@@ -57,22 +57,22 @@ pub mod channel_sms {
     pub struct ChannelSmsArgs {
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The phone number for the SMS Channel.
         #[builder(into)]
-        pub phone_number: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub phone_number: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group where the SMS Channel should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The account security identifier (SID) for the SMS Channel.
         #[builder(into)]
-        pub sms_channel_account_security_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sms_channel_account_security_id: pulumi_gestalt_rust::Input<String>,
         /// The authorization token for the SMS Channel.
         #[builder(into)]
-        pub sms_channel_auth_token: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sms_channel_auth_token: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ChannelSmsResult {

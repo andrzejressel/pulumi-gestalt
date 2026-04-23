@@ -79,38 +79,36 @@ pub mod pipeline {
     pub struct PipelineArgs {
         /// A JSON object that contains the activities that will be associated with the Data Factory Pipeline.
         #[builder(into, default)]
-        pub activities_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub activities_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of tags that can be used for describing the Data Factory Pipeline.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The max number of concurrent runs for the Data Factory Pipeline. Must be between `1` and `50`.
         #[builder(into, default)]
-        pub concurrency: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub concurrency: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Pipeline.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The folder that this Pipeline is in. If not specified, the Pipeline will appear at the root level.
         #[builder(into, default)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder: pulumi_gestalt_rust::Input<Option<String>>,
         /// The TimeSpan value after which an Azure Monitoring Metric is fired.
         #[builder(into, default)]
-        pub moniter_metrics_after_duration: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub moniter_metrics_after_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Data Factory Pipeline. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Pipeline.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A map of variables to associate with the Data Factory Pipeline.
         #[builder(into, default)]
-        pub variables: pulumi_gestalt_rust::InputOrOutput<
+        pub variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

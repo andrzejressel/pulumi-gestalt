@@ -47,72 +47,66 @@ pub mod analytics_workspace {
     pub struct AnalyticsWorkspaceArgs {
         /// Specifies if the log Analytics Workspace allow users accessing to data associated with resources they have permission to view, without permission to workspace. Defaults to `true`.
         #[builder(into, default)]
-        pub allow_resource_only_permissions: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub allow_resource_only_permissions: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Customer Managed Storage mandatory for query management?
         #[builder(into, default)]
-        pub cmk_for_query_forced: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cmk_for_query_forced: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The workspace daily quota for ingestion in GB. Defaults to -1 (unlimited) if omitted.
         ///
         /// > **NOTE:** When `sku` is set to `Free` this field should not be set and has a default value of `0.5`.
         #[builder(into, default)]
-        pub daily_quota_gb: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub daily_quota_gb: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The ID of the Data Collection Rule to use for this workspace.
         #[builder(into, default)]
-        pub data_collection_rule_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_collection_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::operationalinsights::AnalyticsWorkspaceIdentity>,
         >,
         /// Whether to remove the data in the Log Analytics Workspace immediately after 30 days.
         #[builder(into, default)]
-        pub immediate_data_purge_on30_days_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub immediate_data_purge_on30_days_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Should the Log Analytics Workspace support ingestion over the Public Internet? Defaults to `true`.
         #[builder(into, default)]
-        pub internet_ingestion_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub internet_ingestion_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Should the Log Analytics Workspace support querying over the Public Internet? Defaults to `true`.
         #[builder(into, default)]
-        pub internet_query_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub internet_query_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies if the log Analytics workspace should enforce authentication using Azure AD. Defaults to `false`.
         #[builder(into, default)]
-        pub local_authentication_disabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub local_authentication_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Log Analytics Workspace. Workspace name should include 4-63 letters, digits or '-'. The '-' shouldn't be the first or the last symbol. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The capacity reservation level in GB for this workspace. Possible values are `100`, `200`, `300`, `400`, `500`, `1000`, `2000` and `5000`.
         ///
         /// > **NOTE:** `reservation_capacity_in_gb_per_day` can only be used when the `sku` is set to `CapacityReservation`.
         #[builder(into, default)]
-        pub reservation_capacity_in_gb_per_day: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub reservation_capacity_in_gb_per_day: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the resource group in which the Log Analytics workspace is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The workspace data retention in days. Possible values are either 7 (Free Tier only) or range between 30 and 730.
         #[builder(into, default)]
-        pub retention_in_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the SKU of the Log Analytics Workspace. Possible values are `PerNode`, `Premium`, `Standard`, `Standalone`, `Unlimited`, `CapacityReservation`, and `PerGB2018` (new SKU as of `2018-04-03`). Defaults to `PerGB2018`.
         ///
         /// > **NOTE:** A new pricing model took effect on `2018-04-03`, which requires the SKU `PerGB2018`. If you're provisioned resources before this date you have the option of remaining with the previous Pricing SKU and using the other SKUs defined above. More information about [the Pricing SKUs is available at the following URI](https://aka.ms/PricingTierWarning).
         ///
         /// > **NOTE:** Changing `sku` forces a new Log Analytics Workspace to be created, except when changing between `PerGB2018` and `CapacityReservation`. However, changing `sku` to `CapacityReservation` or changing `reservation_capacity_in_gb_per_day` to a higher tier will lead to a 31-days commitment period, during which the SKU cannot be changed to a lower one. Please refer to [official documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs#commitment-tiers) for further information.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         ///
         /// > **NOTE:** If a `azure.operationalinsights.AnalyticsWorkspace` is connected to a `azure.loganalytics.Cluster` via a `azure.loganalytics.LinkedService` you will not be able to modify the workspaces `sku` field until the link between the workspace and the cluster has been broken by deleting the `azure.loganalytics.LinkedService` resource. All other fields are modifiable while the workspace is linked to a cluster.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

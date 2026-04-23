@@ -151,15 +151,15 @@ pub mod configuration_policy {
     pub struct ConfigurationPolicyArgs {
         /// Defines how Security Hub is configured. See below.
         #[builder(into)]
-        pub configuration_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_policy: pulumi_gestalt_rust::Input<
             super::super::types::securityhub::ConfigurationPolicyConfigurationPolicy,
         >,
         /// The description of the configuration policy.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the configuration policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConfigurationPolicyResult {

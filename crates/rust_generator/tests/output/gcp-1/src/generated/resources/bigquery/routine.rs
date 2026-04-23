@@ -318,46 +318,46 @@ pub mod routine {
         /// Input/output argument of a function or a stored procedure.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub arguments: pulumi_gestalt_rust::InputOrOutput<
+        pub arguments: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::bigquery::RoutineArgument>>,
         >,
         /// If set to DATA_MASKING, the function is validated and made available as a masking function. For more information, see https://cloud.google.com/bigquery/docs/user-defined-functions#custom-mask
         /// Possible values are: `DATA_MASKING`.
         #[builder(into, default)]
-        pub data_governance_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data_governance_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the dataset containing this routine
         #[builder(into)]
-        pub dataset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset_id: pulumi_gestalt_rust::Input<String>,
         /// The body of the routine. For functions, this is the expression in the AS clause.
         /// If language=SQL, it is the substring inside (but excluding) the parentheses.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub definition_body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub definition_body: pulumi_gestalt_rust::Input<String>,
         /// The description of the routine if defined.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The determinism level of the JavaScript UDF if defined.
         /// Possible values are: `DETERMINISM_LEVEL_UNSPECIFIED`, `DETERMINISTIC`, `NOT_DETERMINISTIC`.
         #[builder(into, default)]
-        pub determinism_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub determinism_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. If language = "JAVASCRIPT", this field stores the path of the
         /// imported JAVASCRIPT libraries.
         #[builder(into, default)]
-        pub imported_libraries: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub imported_libraries: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The language of the routine.
         /// Possible values are: `SQL`, `JAVASCRIPT`, `PYTHON`, `JAVA`, `SCALA`.
         #[builder(into, default)]
-        pub language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub language: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Remote function specific options.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub remote_function_options: pulumi_gestalt_rust::InputOrOutput<
+        pub remote_function_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::RoutineRemoteFunctionOptions>,
         >,
         /// Optional. Can be set only if routineType = "TABLE_VALUED_FUNCTION".
@@ -365,7 +365,7 @@ pub mod routine {
         /// that references this routine. If present, then the columns in the evaluated table result will
         /// be cast to match the column types specificed in return table type, at query time.
         #[builder(into, default)]
-        pub return_table_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub return_table_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A JSON schema for the return type. Optional if language = "SQL"; required otherwise.
         /// If absent, the return type is inferred from definitionBody at query time in each query
         /// that references this routine. If present, then the evaluated result will be cast to
@@ -376,18 +376,18 @@ pub mod routine {
         /// cannot suppress the recurring diff this causes. As a workaround, we recommend using
         /// the schema as returned by the API.
         #[builder(into, default)]
-        pub return_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub return_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the the routine. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 256 characters.
         #[builder(into)]
-        pub routine_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub routine_id: pulumi_gestalt_rust::Input<String>,
         /// The type of routine.
         /// Possible values are: `SCALAR_FUNCTION`, `PROCEDURE`, `TABLE_VALUED_FUNCTION`.
         #[builder(into)]
-        pub routine_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub routine_type: pulumi_gestalt_rust::Input<String>,
         /// Optional. If language is one of "PYTHON", "JAVA", "SCALA", this field stores the options for spark stored procedure.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark_options: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::RoutineSparkOptions>,
         >,
     }

@@ -10,13 +10,13 @@ pub mod get_resolver_firewall_rules {
     pub struct GetResolverFirewallRulesArgs {
         /// The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list.
         #[builder(into, default)]
-        pub action: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub action: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique identifier of the firewall rule group that you want to retrieve the rules for.
         #[builder(into)]
-        pub firewall_rule_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_rule_group_id: pulumi_gestalt_rust::Input<String>,
         /// The setting that determines the processing order of the rules in a rule group.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct GetResolverFirewallRulesResult {

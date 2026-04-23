@@ -61,18 +61,18 @@ pub mod alert_rule_fusion {
     pub struct AlertRuleFusionArgs {
         /// The GUID of the alert rule template which is used for this Sentinel Fusion Alert Rule. Changing this forces a new Sentinel Fusion Alert Rule to be created.
         #[builder(into)]
-        pub alert_rule_template_guid: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alert_rule_template_guid: pulumi_gestalt_rust::Input<String>,
         /// Should this Sentinel Fusion Alert Rule be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Log Analytics Workspace this Sentinel Fusion Alert Rule belongs to. Changing this forces a new Sentinel Fusion Alert Rule to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `source` blocks as defined below.
         #[builder(into, default)]
-        pub sources: pulumi_gestalt_rust::InputOrOutput<
+        pub sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::sentinel::AlertRuleFusionSource>>,
         >,
     }

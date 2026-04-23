@@ -10,7 +10,7 @@ pub mod get_local_gateway_virtual_interface_group {
     pub struct GetLocalGatewayVirtualInterfaceGroupArgs {
         /// One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html) for supported filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ec2::GetLocalGatewayVirtualInterfaceGroupFilter,
@@ -19,13 +19,13 @@ pub mod get_local_gateway_virtual_interface_group {
         >,
         /// Identifier of EC2 Local Gateway Virtual Interface Group.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of EC2 Local Gateway.
         #[builder(into, default)]
-        pub local_gateway_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub local_gateway_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags, each pair of which must exactly match a pair on the desired local gateway route table.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

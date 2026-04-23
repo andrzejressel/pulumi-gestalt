@@ -10,10 +10,10 @@ pub mod get_service_principal {
     pub struct GetServicePrincipalArgs {
         /// Region you'd like the SPN for. By default, uses the current region.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the service you want to generate a Service Principal Name for.
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServicePrincipalResult {

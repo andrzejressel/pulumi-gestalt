@@ -43,41 +43,39 @@ pub mod image {
     pub struct ImageArgs {
         /// One or more `data_disk` blocks as defined below.
         #[builder(into, default)]
-        pub data_disks: pulumi_gestalt_rust::InputOrOutput<
+        pub data_disks: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::compute::ImageDataDisk>>,
         >,
         /// The HyperVGenerationType of the VirtualMachine created from the image as `V1`, `V2`. Defaults to `V1`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** `zone_resilient` can only be set to `true` if the image is stored in a region that supports availability zones.
         #[builder(into, default)]
-        pub hyper_v_generation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hyper_v_generation: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specified the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the image. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `os_disk` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub os_disk: pulumi_gestalt_rust::InputOrOutput<
+        pub os_disk: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::ImageOsDisk>,
         >,
         /// The name of the resource group in which to create the image. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Virtual Machine ID from which to create the image.
         #[builder(into, default)]
-        pub source_virtual_machine_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub source_virtual_machine_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Is zone resiliency enabled? Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub zone_resilient: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub zone_resilient: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct ImageResult {

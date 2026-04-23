@@ -10,10 +10,10 @@ pub mod get_custom_key_store {
     pub struct GetCustomKeyStoreArgs {
         /// The ID for the custom key store.
         #[builder(into, default)]
-        pub custom_key_store_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_key_store_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user-specified friendly name for the custom key store.
         #[builder(into, default)]
-        pub custom_key_store_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_key_store_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetCustomKeyStoreResult {

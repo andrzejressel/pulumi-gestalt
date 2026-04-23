@@ -57,28 +57,28 @@ pub mod channel_slack {
     pub struct ChannelSlackArgs {
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// The Client ID that will be used to authenticate with Slack.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// The Client Secret that will be used to authenticate with Slack.
         #[builder(into)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_secret: pulumi_gestalt_rust::Input<String>,
         /// The Slack Landing Page URL.
         #[builder(into, default)]
-        pub landing_page_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub landing_page_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Bot Channel. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Signing Secret that will be used to sign the requests.
         #[builder(into, default)]
-        pub signing_secret: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub signing_secret: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Verification Token that will be used to authenticate with Slack.
         #[builder(into)]
-        pub verification_token: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub verification_token: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ChannelSlackResult {

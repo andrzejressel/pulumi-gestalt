@@ -50,10 +50,10 @@ pub mod virtual_network_dns_servers {
     pub struct VirtualNetworkDnsServersArgs {
         /// List of IP addresses of DNS servers
         #[builder(into, default)]
-        pub dns_servers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub dns_servers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the Virtual Network that should be linked to the DNS Zone. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkDnsServersResult {

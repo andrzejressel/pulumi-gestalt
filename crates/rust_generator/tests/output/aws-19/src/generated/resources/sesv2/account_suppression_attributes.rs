@@ -35,7 +35,7 @@ pub mod account_suppression_attributes {
     pub struct AccountSuppressionAttributesArgs {
         /// A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. Valid values: `COMPLAINT`, `BOUNCE`.
         #[builder(into)]
-        pub suppressed_reasons: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub suppressed_reasons: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountSuppressionAttributesResult {

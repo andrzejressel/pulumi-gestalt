@@ -47,33 +47,31 @@ pub mod document_ai_warehouse_location {
         /// The access control mode for accessing the customer data.
         /// Possible values are: `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_GCI`, `ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_BYOID`, `ACL_MODE_UNIVERSAL_ACCESS`.
         #[builder(into)]
-        pub access_control_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_control_mode: pulumi_gestalt_rust::Input<String>,
         /// The type of database used to store customer data.
         /// Possible values are: `DB_INFRA_SPANNER`, `DB_CLOUD_SQL_POSTGRES`.
         #[builder(into)]
-        pub database_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_type: pulumi_gestalt_rust::Input<String>,
         /// The default role for the person who create a document.
         /// Possible values are: `DOCUMENT_ADMIN`, `DOCUMENT_EDITOR`, `DOCUMENT_VIEWER`.
         #[builder(into, default)]
-        pub document_creator_default_role: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub document_creator_default_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// The KMS key used for CMEK encryption. It is required that
         /// the kms key is in the same region as the endpoint. The
         /// same key will be used for all provisioned resources, if
         /// encryption is available. If the kmsKey is left empty, no
         /// encryption will be enforced.
         #[builder(into, default)]
-        pub kms_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location in which the instance is to be provisioned. It takes the form projects/{projectNumber}/locations/{location}.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The unique identifier of the project.
         #[builder(into)]
-        pub project_number: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project_number: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DocumentAiWarehouseLocationResult {

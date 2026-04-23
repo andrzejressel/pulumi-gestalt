@@ -9,24 +9,22 @@ pub mod get_coip_pool {
     #[allow(dead_code)]
     pub struct GetCoipPoolArgs {
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetCoipPoolFilter>>,
         >,
         /// Local Gateway Route Table Id assigned to desired COIP Pool
         #[builder(into, default)]
-        pub local_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub local_gateway_route_table_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the specific COIP Pool to retrieve.
         #[builder(into, default)]
-        pub pool_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pool_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mapping of tags, each pair of which must exactly match
         /// a pair on the desired COIP Pool.
         ///
         /// More complex filters can be expressed using one or more `filter` sub-blocks,
         /// which take the following arguments:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

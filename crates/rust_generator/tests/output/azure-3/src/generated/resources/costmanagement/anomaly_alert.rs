@@ -42,22 +42,22 @@ pub mod anomaly_alert {
     pub struct AnomalyAlertArgs {
         /// The display name which should be used for this Cost Anomaly Alert.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of email addresses which the Anomaly Alerts are send to.
         #[builder(into)]
-        pub email_addresses: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub email_addresses: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The email subject of the Cost Anomaly Alerts. Maximum length of the subject is 70.
         #[builder(into)]
-        pub email_subject: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_subject: pulumi_gestalt_rust::Input<String>,
         /// The message of the Cost Anomaly Alert. Maximum length of the message is 250.
         #[builder(into, default)]
-        pub message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub message: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Cost Anomaly Alert. Changing this forces a new resource to be created. The name can contain only lowercase letters, numbers and hyphens.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Subscription this Cost Anomaly Alert is scoped to. Changing this forces a new resource to be created. When not supplied this defaults to the subscription configured in the provider.
         #[builder(into, default)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subscription_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AnomalyAlertResult {

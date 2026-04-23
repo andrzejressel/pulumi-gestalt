@@ -125,37 +125,37 @@ pub mod backup_schedule {
         ///
         /// - - -
         #[builder(into)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database: pulumi_gestalt_rust::Input<String>,
         /// The schedule creates only full backups..
         #[builder(into, default)]
-        pub full_backup_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub full_backup_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::spanner::BackupScheduleFullBackupSpec>,
         >,
         /// The schedule creates incremental backup chains.
         #[builder(into, default)]
-        pub incremental_backup_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub incremental_backup_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::spanner::BackupScheduleIncrementalBackupSpec>,
         >,
         /// The instance to create the database on.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// A unique identifier for the backup schedule, which cannot be changed after
         /// the backup schedule is created. Values are of the form [a-z][-a-z0-9]*[a-z0-9].
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// At what relative time in the future, compared to its creation time, the backup should be deleted, e.g. keep backups for 7 days.
         /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: '3.5s'.
         /// You can set this to a value up to 366 days.
         #[builder(into)]
-        pub retention_duration: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub retention_duration: pulumi_gestalt_rust::Input<String>,
         /// Defines specifications of the backup schedule.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spec: pulumi_gestalt_rust::InputOrOutput<
+        pub spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::spanner::BackupScheduleSpec>,
         >,
     }

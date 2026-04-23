@@ -39,16 +39,16 @@ pub mod configuration {
     pub struct ConfigurationArgs {
         /// Description of the configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of Apache Kafka versions which can use this configuration.
         #[builder(into, default)]
-        pub kafka_versions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub kafka_versions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Contents of the server.properties file. Supported properties are documented in the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration-properties.html).
         #[builder(into)]
-        pub server_properties: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_properties: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConfigurationResult {

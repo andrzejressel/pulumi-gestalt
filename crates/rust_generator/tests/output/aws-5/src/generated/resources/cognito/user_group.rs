@@ -66,19 +66,19 @@ pub mod user_group {
     pub struct UserGroupArgs {
         /// The description of the user group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the user group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The precedence of the user group.
         #[builder(into, default)]
-        pub precedence: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub precedence: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ARN of the IAM role to be associated with the user group.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user pool ID.
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserGroupResult {

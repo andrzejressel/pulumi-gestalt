@@ -10,7 +10,7 @@
 pub struct ProviderArgs {
     /// BETA FEATURE - Options to configure the Helm Release resource.
     #[builder(into, default)]
-    pub helm_release_settings: pulumi_gestalt_rust::InputOrOutput<
+    pub helm_release_settings: pulumi_gestalt_rust::Input<
         Option<super::types::HelmReleaseSettings>,
     >,
 }

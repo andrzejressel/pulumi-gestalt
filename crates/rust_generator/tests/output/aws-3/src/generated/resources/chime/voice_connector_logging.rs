@@ -44,13 +44,13 @@ pub mod voice_connector_logging {
     pub struct VoiceConnectorLoggingArgs {
         /// When true, enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
         #[builder(into, default)]
-        pub enable_media_metric_logs: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_media_metric_logs: pulumi_gestalt_rust::Input<Option<bool>>,
         /// When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
         #[builder(into, default)]
-        pub enable_sip_logs: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_sip_logs: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Chime Voice Connector ID.
         #[builder(into)]
-        pub voice_connector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub voice_connector_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VoiceConnectorLoggingResult {

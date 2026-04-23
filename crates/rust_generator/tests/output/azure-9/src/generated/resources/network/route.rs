@@ -59,22 +59,22 @@ pub mod route {
     pub struct RouteArgs {
         /// The destination to which the route applies. Can be CIDR (such as `10.1.0.0/16`) or [Azure Service Tag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) (such as `ApiManagement`, `AzureBackup` or `AzureMonitor`) format.
         #[builder(into)]
-        pub address_prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address_prefix: pulumi_gestalt_rust::Input<String>,
         /// The name of the route. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Contains the IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is `VirtualAppliance`.
         #[builder(into, default)]
-        pub next_hop_in_ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub next_hop_in_ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of Azure hop the packet should be sent to. Possible values are `VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance` and `None`.
         #[builder(into)]
-        pub next_hop_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub next_hop_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the route. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the route table within which create the route. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub route_table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteResult {

@@ -22,36 +22,36 @@ pub mod certificate_pack {
     pub struct CertificatePackArgs {
         /// Which certificate authority to issue the certificate pack. Available values: `digicert`, `lets_encrypt`, `google`, `ssl_com`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub certificate_authority: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_authority: pulumi_gestalt_rust::Input<String>,
         /// Whether or not to include Cloudflare branding. This will add `sni.cloudflaressl.com` as the Common Name if set to `true`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub cloudflare_branding: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cloudflare_branding: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of hostnames to provision the certificate pack for. The zone name must be included as a host. Note: If using Let's Encrypt, you cannot use individual subdomains and only a wildcard for subdomain is available. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub hosts: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub hosts: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Certificate pack configuration type. Available values: `advanced`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub validation_errors: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_errors: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::CertificatePackValidationError>>,
         >,
         /// Which validation method to use in order to prove domain ownership. Available values: `txt`, `http`, `email`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub validation_method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub validation_method: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub validation_records: pulumi_gestalt_rust::InputOrOutput<
+        pub validation_records: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::CertificatePackValidationRecord>>,
         >,
         /// How long the certificate is valid for. Note: If using Let's Encrypt, this value can only be 90 days. Available values: `14`, `30`, `90`, `365`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub validity_days: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub validity_days: pulumi_gestalt_rust::Input<i32>,
         /// Whether or not to wait for a certificate pack to reach status `active` during creation. Defaults to `false`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub wait_for_active_status: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_for_active_status: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificatePackResult {

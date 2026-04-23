@@ -265,29 +265,29 @@ pub mod policy {
     pub struct PolicyArgs {
         /// Name of the policy. Must be between 1 and 255 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy type. Valid values are `StepScaling` and `TargetTrackingScaling`. Defaults to `StepScaling`. Certain services only support only one policy type. For more information see the [Target Tracking Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html) and [Step Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html) documentation.
         #[builder(into, default)]
-        pub policy_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the `ResourceId` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// Scalable dimension of the scalable target. Documentation can be found in the `ScalableDimension` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)
         #[builder(into)]
-        pub scalable_dimension: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scalable_dimension: pulumi_gestalt_rust::Input<String>,
         /// AWS service namespace of the scalable target. Documentation can be found in the `ServiceNamespace` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)
         #[builder(into)]
-        pub service_namespace: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_namespace: pulumi_gestalt_rust::Input<String>,
         /// Step scaling policy configuration, requires `policy_type = "StepScaling"` (default). See supported fields below.
         #[builder(into, default)]
-        pub step_scaling_policy_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub step_scaling_policy_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appautoscaling::PolicyStepScalingPolicyConfiguration,
             >,
         >,
         /// Target tracking policy, requires `policy_type = "TargetTrackingScaling"`. See supported fields below.
         #[builder(into, default)]
-        pub target_tracking_scaling_policy_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub target_tracking_scaling_policy_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appautoscaling::PolicyTargetTrackingScalingPolicyConfiguration,
             >,

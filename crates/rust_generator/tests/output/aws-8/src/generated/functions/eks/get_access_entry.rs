@@ -10,12 +10,12 @@ pub mod get_access_entry {
     pub struct GetAccessEntryArgs {
         /// Name of the EKS Cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// The IAM Principal ARN which requires Authentication access to the EKS cluster.
         #[builder(into)]
-        pub principal_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_arn: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

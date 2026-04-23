@@ -36,16 +36,16 @@ pub mod web_analytics_site {
     pub struct WebAnalyticsSiteArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Whether Cloudflare will automatically inject the JavaScript snippet for orange-clouded sites. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub auto_install: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub auto_install: pulumi_gestalt_rust::Input<bool>,
         /// The hostname to use for gray-clouded sites. Must provide only one of `zone_tag`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier for orange-clouded sites. Must provide only one of `host`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub zone_tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_tag: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct WebAnalyticsSiteResult {

@@ -10,44 +10,44 @@ pub mod get_account_blob_container_sas {
     pub struct GetAccountBlobContainerSasArgs {
         /// The `Cache-Control` response header that is sent when this SAS token is used.
         #[builder(into, default)]
-        pub cache_control: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cache_control: pulumi_gestalt_rust::Input<Option<String>>,
         /// The connection string for the storage account to which this SAS applies. Typically directly from the `primary_connection_string` attribute of an `azure.storage.Account` resource.
         #[builder(into)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_string: pulumi_gestalt_rust::Input<String>,
         /// Name of the container.
         #[builder(into)]
-        pub container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_name: pulumi_gestalt_rust::Input<String>,
         /// The `Content-Disposition` response header that is sent when this SAS token is used.
         #[builder(into, default)]
-        pub content_disposition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_disposition: pulumi_gestalt_rust::Input<Option<String>>,
         /// The `Content-Encoding` response header that is sent when this SAS token is used.
         #[builder(into, default)]
-        pub content_encoding: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_encoding: pulumi_gestalt_rust::Input<Option<String>>,
         /// The `Content-Language` response header that is sent when this SAS token is used.
         #[builder(into, default)]
-        pub content_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// The `Content-Type` response header that is sent when this SAS token is used.
         #[builder(into, default)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The expiration time and date of this SAS. Must be a valid ISO-8601 format time/date string.
         ///
         /// > **NOTE:** The [ISO-8601 Time offset from UTC](https://en.wikipedia.org/wiki/ISO_8601#Time_offsets_from_UTC) is currently not supported by the service, which will result into 409 error.
         #[builder(into)]
-        pub expiry: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub expiry: pulumi_gestalt_rust::Input<String>,
         /// Only permit `https` access. If `false`, both `http` and `https` are permitted. Defaults to `true`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Single IPv4 address or range (connected with a dash) of IPv4 addresses.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `permissions` block as defined below.
         #[builder(into)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             super::super::super::types::storage::GetAccountBlobContainerSasPermissions,
         >,
         /// The starting time and date of validity of this SAS. Must be a valid ISO-8601 format time/date string.
         #[builder(into)]
-        pub start: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccountBlobContainerSasResult {

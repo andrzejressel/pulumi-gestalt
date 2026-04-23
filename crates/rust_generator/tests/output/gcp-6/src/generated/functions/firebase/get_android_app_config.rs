@@ -9,9 +9,9 @@ pub mod get_android_app_config {
     #[allow(dead_code)]
     pub struct GetAndroidAppConfigArgs {
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAndroidAppConfigResult {

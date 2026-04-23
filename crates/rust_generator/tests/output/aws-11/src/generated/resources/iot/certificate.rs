@@ -59,24 +59,24 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// Boolean flag to indicate if the certificate should be active
         #[builder(into)]
-        pub active: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub active: pulumi_gestalt_rust::Input<bool>,
         /// The CA certificate for the certificate to be registered. If this is set, the CA needs to be registered with AWS IoT beforehand.
         #[builder(into, default)]
-        pub ca_pem: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ca_pem: pulumi_gestalt_rust::Input<Option<String>>,
         /// The certificate to be registered. If `ca_pem` is unspecified, review
         /// [RegisterCertificateWithoutCA](https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html).
         /// If `ca_pem` is specified, review
         /// [RegisterCertificate](https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificate.html)
         /// for more information on registering a certificate.
         #[builder(into, default)]
-        pub certificate_pem: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_pem: pulumi_gestalt_rust::Input<Option<String>>,
         /// The certificate signing request. Review
         /// [CreateCertificateFromCsr](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html)
         /// for more information on generating a certificate from a certificate signing request (CSR).
         /// If none is specified both the certificate and keys will be generated, review [CreateKeysAndCertificate](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateKeysAndCertificate.html)
         /// for more information on generating keys and a certificate.
         #[builder(into, default)]
-        pub csr: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub csr: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CertificateResult {

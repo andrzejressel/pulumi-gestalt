@@ -591,20 +591,20 @@ pub mod repository {
         /// unique within a repository and be under 128 characters in length.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cleanup_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub cleanup_policies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::artifactregistry::RepositoryCleanupPolicy>>,
         >,
         /// If true, the cleanup pipeline is prevented from deleting versions in this
         /// repository.
         #[builder(into, default)]
-        pub cleanup_policy_dry_run: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cleanup_policy_dry_run: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The user-provided description of the repository.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Docker repository config contains repository level configuration for the repositories of docker type.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub docker_config: pulumi_gestalt_rust::InputOrOutput<
+        pub docker_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::artifactregistry::RepositoryDockerConfig>,
         >,
         /// The format of packages that are stored in the repository. Supported formats
@@ -612,13 +612,13 @@ pub mod repository {
         /// You can only create alpha formats if you are a member of the
         /// [alpha user group](https://cloud.google.com/artifact-registry/docs/supported-formats#alpha-access).
         #[builder(into)]
-        pub format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub format: pulumi_gestalt_rust::Input<String>,
         /// The Cloud KMS resource name of the customer managed encryption key that’s
         /// used to encrypt the contents of the Repository. Has the form:
         /// `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
         /// This value may not be changed after the Repository has been created.
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels with user-defined metadata.
         /// This field may contain up to 64 entries. Label keys and values may be no
         /// longer than 63 characters. Label keys must begin with a lowercase letter
@@ -628,7 +628,7 @@ pub mod repository {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the repository's location. In addition to specific regions,
@@ -638,28 +638,28 @@ pub mod repository {
         /// gcp.artifactregistry.getLocations
         /// data source for possible values.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// MavenRepositoryConfig is maven related repository details.
         /// Provides additional configuration details for repositories of the maven
         /// format type.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub maven_config: pulumi_gestalt_rust::InputOrOutput<
+        pub maven_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::artifactregistry::RepositoryMavenConfig>,
         >,
         /// The mode configures the repository to serve artifacts from different sources.
         /// Default value is `STANDARD_REPOSITORY`.
         /// Possible values are: `STANDARD_REPOSITORY`, `VIRTUAL_REPOSITORY`, `REMOTE_REPOSITORY`.
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration specific for a Remote Repository.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub remote_repository_config: pulumi_gestalt_rust::InputOrOutput<
+        pub remote_repository_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::artifactregistry::RepositoryRemoteRepositoryConfig,
             >,
@@ -670,11 +670,11 @@ pub mod repository {
         ///
         /// - - -
         #[builder(into)]
-        pub repository_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration specific for a Virtual Repository.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub virtual_repository_config: pulumi_gestalt_rust::InputOrOutput<
+        pub virtual_repository_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::artifactregistry::RepositoryVirtualRepositoryConfig,
             >,

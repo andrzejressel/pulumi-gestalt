@@ -54,29 +54,29 @@ pub mod trigger_recurrence {
     pub struct TriggerRecurrenceArgs {
         /// Specifies the Frequency at which this Trigger should be run. Possible values include `Month`, `Week`, `Day`, `Hour`, `Minute` and `Second`.
         #[builder(into)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frequency: pulumi_gestalt_rust::Input<String>,
         /// Specifies interval used for the Frequency, for example a value of `4` for `interval` and `hour` for `frequency` would run the Trigger every 4 hours.
         #[builder(into)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub interval: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub logic_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub logic_app_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Recurrence Triggers to be created within the Logic App Workflow. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** This name must be unique across all Triggers within the Logic App Workflow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `schedule` block as specified below.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::logicapps::TriggerRecurrenceSchedule>,
         >,
         /// Specifies the start date and time for this trigger in RFC3339 format: `2000-01-02T03:04:05Z`.
         #[builder(into, default)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the time zone for this trigger. Supported time zone options are listed [here](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values)
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TriggerRecurrenceResult {

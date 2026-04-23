@@ -44,22 +44,22 @@ pub mod user {
     pub struct UserArgs {
         /// Access permissions string used for this user.
         #[builder(into)]
-        pub access_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_string: pulumi_gestalt_rust::Input<String>,
         /// Denotes the user's authentication properties. Detailed below.
         #[builder(into)]
-        pub authentication_mode: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication_mode: pulumi_gestalt_rust::Input<
             super::super::types::memorydb::UserAuthenticationMode,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the MemoryDB user. Up to 40 characters.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserResult {

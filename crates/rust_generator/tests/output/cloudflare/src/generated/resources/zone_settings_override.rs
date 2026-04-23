@@ -69,12 +69,12 @@ pub mod zone_settings_override {
     #[allow(dead_code)]
     pub struct ZoneSettingsOverrideArgs {
         #[builder(into, default)]
-        pub settings: pulumi_gestalt_rust::InputOrOutput<
+        pub settings: pulumi_gestalt_rust::Input<
             Option<super::types::ZoneSettingsOverrideSettings>,
         >,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneSettingsOverrideResult {

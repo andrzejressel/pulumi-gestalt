@@ -148,13 +148,13 @@ pub mod v_2_vm {
         /// as `accelerator_type`. If neither is specified, `accelerator_type` defaults to 'v2-8'.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub accelerator_config: pulumi_gestalt_rust::InputOrOutput<
+        pub accelerator_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::tpu::V2VmAcceleratorConfig>,
         >,
         /// TPU accelerator type for the TPU. `accelerator_type` cannot be used at the same time as
         /// `accelerator_config`. If neither is specified, `accelerator_type` defaults to 'v2-8'.
         #[builder(into, default)]
-        pub accelerator_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accelerator_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must
         /// be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger
         /// block would be wasteful (a node can only consume one IP address). Errors will occur if the
@@ -162,79 +162,79 @@ pub mod v_2_vm {
         /// with any subnetworks in the user's provided network, or the provided network is peered with
         /// another network that is using that CIDR block.
         #[builder(into, default)]
-        pub cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// The additional data disks for the Node.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub data_disks: pulumi_gestalt_rust::InputOrOutput<
+        pub data_disks: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::tpu::V2VmDataDisk>>,
         >,
         /// Text description of the TPU.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource labels to represent user-provided metadata.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The immutable name of the TPU.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network configurations for the TPU node.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::tpu::V2VmNetworkConfig>,
         >,
         /// Repeated network configurations for the TPU node. This field is used to specify multiple
         /// network configs for the TPU node.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub network_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub network_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::tpu::V2VmNetworkConfig>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Runtime version for the TPU.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub runtime_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub runtime_version: pulumi_gestalt_rust::Input<String>,
         /// The scheduling options for this node.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub scheduling_config: pulumi_gestalt_rust::InputOrOutput<
+        pub scheduling_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::tpu::V2VmSchedulingConfig>,
         >,
         /// The Google Cloud Platform Service Account to be used by the TPU node VMs. If None is
         /// specified, the default compute service account will be used.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<
+        pub service_account: pulumi_gestalt_rust::Input<
             Option<super::super::types::tpu::V2VmServiceAccount>,
         >,
         /// Shielded Instance options.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub shielded_instance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub shielded_instance_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::tpu::V2VmShieldedInstanceConfig>,
         >,
         /// Tags to apply to the TPU Node. Tags are used to identify valid sources or targets for network firewalls.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The GCP location for the TPU. If it is not provided, the provider zone is used.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct V2VmResult {

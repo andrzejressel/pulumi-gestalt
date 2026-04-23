@@ -10,16 +10,16 @@ pub mod get_public_i_ps {
     pub struct GetPublicIPsArgs {
         /// The Allocation Type for the Public IP Address. Possible values include `Static` or `Dynamic`.
         #[builder(into, default)]
-        pub allocation_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub allocation_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Filter to include IP Addresses which are attached to a device, such as a VM/LB (`Attached`) or unattached (`Unattached`).
         #[builder(into, default)]
-        pub attachment_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub attachment_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A prefix match used for the IP Addresses `name` field, case sensitive.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the resource group.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPublicIPsResult {

@@ -91,28 +91,28 @@ pub mod collector_policy {
     pub struct CollectorPolicyArgs {
         /// An `ipfx_emission` block as defined below. Changing this forces a new Network Function Collector Policy to be created.
         #[builder(into)]
-        pub ipfx_emission: pulumi_gestalt_rust::InputOrOutput<
+        pub ipfx_emission: pulumi_gestalt_rust::Input<
             super::super::types::networkfunction::CollectorPolicyIpfxEmission,
         >,
         /// An `ipfx_ingestion` block as defined below. Changing this forces a new Network Function Collector Policy to be created.
         #[builder(into)]
-        pub ipfx_ingestion: pulumi_gestalt_rust::InputOrOutput<
+        pub ipfx_ingestion: pulumi_gestalt_rust::Input<
             super::super::types::networkfunction::CollectorPolicyIpfxIngestion,
         >,
         /// Specifies the Azure Region where the Network Function Collector Policy should exist. Changing this forces a new Network Function Collector Policy to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Network Function Collector Policy. Changing this forces a new Network Function Collector Policy to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Network Function Collector Policy.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Azure Traffic Collector ID of the Network Function Collector Policy. Changing this forces a new Network Function Collector Policy to be created.
         #[builder(into)]
-        pub traffic_collector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub traffic_collector_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CollectorPolicyResult {

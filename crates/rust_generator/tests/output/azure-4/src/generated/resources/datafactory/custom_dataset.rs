@@ -121,43 +121,43 @@ pub mod custom_dataset {
     pub struct CustomDatasetArgs {
         /// A map of additional properties to associate with the Data Factory Dataset.
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Data Factory ID in which to associate the Dataset with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Dataset.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The folder that this Dataset is in. If not specified, the Dataset will appear at the root level.
         #[builder(into, default)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `linked_service` block as defined below.
         #[builder(into)]
-        pub linked_service: pulumi_gestalt_rust::InputOrOutput<
+        pub linked_service: pulumi_gestalt_rust::Input<
             super::super::types::datafactory::CustomDatasetLinkedService,
         >,
         /// Specifies the name of the Data Factory Dataset. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Dataset.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A JSON object that contains the schema of the Data Factory Dataset.
         #[builder(into, default)]
-        pub schema_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schema_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of dataset that will be associated with Data Factory. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// A JSON object that contains the properties of the Data Factory Dataset.
         #[builder(into)]
-        pub type_properties_json: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_properties_json: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomDatasetResult {

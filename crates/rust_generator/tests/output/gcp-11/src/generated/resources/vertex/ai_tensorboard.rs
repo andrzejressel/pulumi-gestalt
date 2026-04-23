@@ -99,17 +99,17 @@ pub mod ai_tensorboard {
     pub struct AiTensorboardArgs {
         /// Description of this Tensorboard.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// User provided name of this Tensorboard.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Customer-managed encryption key spec for a Tensorboard. If set, this Tensorboard and all sub-resources of this Tensorboard will be secured by this key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub encryption_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiTensorboardEncryptionSpec>,
         >,
         /// The labels with user-defined metadata to organize your Tensorboards.
@@ -117,16 +117,16 @@ pub mod ai_tensorboard {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the tensorboard. eg us-central1
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiTensorboardResult {

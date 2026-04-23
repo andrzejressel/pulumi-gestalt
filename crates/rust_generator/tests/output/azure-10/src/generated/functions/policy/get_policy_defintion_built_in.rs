@@ -12,13 +12,13 @@ pub mod get_policy_defintion_built_in {
         ///
         /// > **NOTE** As `display_name` is not unique errors may occur when there are multiple policy definitions with same display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Only retrieve Policy Definitions from this Management Group.
         #[builder(into, default)]
-        pub management_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub management_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Policy Definition. Conflicts with `display_name`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetPolicyDefintionBuiltInResult {

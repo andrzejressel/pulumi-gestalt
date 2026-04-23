@@ -10,12 +10,12 @@ pub mod get_consent_store_iam_policy {
     pub struct GetConsentStoreIamPolicyArgs {
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub consent_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub consent_store_id: pulumi_gestalt_rust::Input<String>,
         /// Identifies the dataset addressed by this request. Must be in the format
         /// 'projects/{project}/locations/{location}/datasets/{dataset}'
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetConsentStoreIamPolicyResult {

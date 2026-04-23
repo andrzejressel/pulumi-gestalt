@@ -10,39 +10,39 @@ pub mod get_account_sas {
     pub struct GetAccountSasArgs {
         /// The connection string for the storage account to which this SAS applies. Typically directly from the `primary_connection_string` attribute of a `azure.storage.Account` resource.
         #[builder(into)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_string: pulumi_gestalt_rust::Input<String>,
         /// The expiration time and date of this SAS. Must be a valid ISO-8601 format time/date string.
         ///
         /// > **NOTE:** The [ISO-8601 Time offset from UTC](https://en.wikipedia.org/wiki/ISO_8601#Time_offsets_from_UTC) is currently not supported by the service, which will result into 409 error.
         #[builder(into)]
-        pub expiry: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub expiry: pulumi_gestalt_rust::Input<String>,
         /// Only permit `https` access. If `false`, both `http` and `https` are permitted. Defaults to `true`.
         #[builder(into, default)]
-        pub https_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub https_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// IP address, or a range of IP addresses, from which to accept requests. When specifying a range, note that the range is inclusive.
         #[builder(into, default)]
-        pub ip_addresses: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_addresses: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `permissions` block as defined below.
         #[builder(into)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             super::super::super::types::storage::GetAccountSasPermissions,
         >,
         /// A `resource_types` block as defined below.
         #[builder(into)]
-        pub resource_types: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_types: pulumi_gestalt_rust::Input<
             super::super::super::types::storage::GetAccountSasResourceTypes,
         >,
         /// A `services` block as defined below.
         #[builder(into)]
-        pub services: pulumi_gestalt_rust::InputOrOutput<
+        pub services: pulumi_gestalt_rust::Input<
             super::super::super::types::storage::GetAccountSasServices,
         >,
         /// Specifies the signed storage service version to use to authorize requests made with this account SAS. Defaults to `2017-07-29`.
         #[builder(into, default)]
-        pub signed_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub signed_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The starting time and date of validity of this SAS. Must be a valid ISO-8601 format time/date string.
         #[builder(into)]
-        pub start: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccountSasResult {

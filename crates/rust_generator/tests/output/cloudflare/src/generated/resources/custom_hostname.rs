@@ -36,31 +36,29 @@ pub mod custom_hostname {
     pub struct CustomHostnameArgs {
         /// Custom metadata associated with custom hostname. Only supports primitive string values, all other values are accessible via the API directly.
         #[builder(into, default)]
-        pub custom_metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The custom origin server used for certificates.
         #[builder(into, default)]
-        pub custom_origin_server: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_origin_server: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [custom origin SNI](https://developers.cloudflare.com/ssl/ssl-for-saas/hostname-specific-behavior/custom-origin) used for certificates.
         #[builder(into, default)]
-        pub custom_origin_sni: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_origin_sni: pulumi_gestalt_rust::Input<Option<String>>,
         /// Hostname you intend to request a certificate for. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// SSL properties used when creating the custom hostname.
         #[builder(into, default)]
-        pub ssls: pulumi_gestalt_rust::InputOrOutput<
+        pub ssls: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::CustomHostnameSsl>>,
         >,
         /// Whether to wait for a custom hostname SSL sub-object to reach status `pending_validation` during creation. Defaults to `false`.
         #[builder(into, default)]
-        pub wait_for_ssl_pending_validation: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub wait_for_ssl_pending_validation: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomHostnameResult {

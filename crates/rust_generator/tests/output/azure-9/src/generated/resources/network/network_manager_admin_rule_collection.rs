@@ -70,16 +70,16 @@ pub mod network_manager_admin_rule_collection {
     pub struct NetworkManagerAdminRuleCollectionArgs {
         /// A description of the Network Manager Admin Rule Collection.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Network Manager Admin Rule Collection. Changing this forces a new Network Manager Admin Rule Collection to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Network Group ID which this Network Manager Admin Rule Collection applies to.
         #[builder(into)]
-        pub network_group_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub network_group_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the ID of the Network Manager Security Admin Configuration. Changing this forces a new Network Manager Admin Rule Collection to be created.
         #[builder(into)]
-        pub security_admin_configuration_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_admin_configuration_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkManagerAdminRuleCollectionResult {

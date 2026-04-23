@@ -37,40 +37,40 @@ pub mod device {
     pub struct DeviceArgs {
         /// The AWS location of the device. Documented below.
         #[builder(into, default)]
-        pub aws_location: pulumi_gestalt_rust::InputOrOutput<
+        pub aws_location: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkmanager::DeviceAwsLocation>,
         >,
         /// A description of the device.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the global network.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// The location of the device. Documented below.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<
+        pub location: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkmanager::DeviceLocation>,
         >,
         /// The model of device.
         #[builder(into, default)]
-        pub model: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub model: pulumi_gestalt_rust::Input<Option<String>>,
         /// The serial number of the device.
         #[builder(into, default)]
-        pub serial_number: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub serial_number: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the site.
         #[builder(into, default)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub site_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value tags for the device. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of device.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The vendor of the device.
         #[builder(into, default)]
-        pub vendor: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vendor: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DeviceResult {

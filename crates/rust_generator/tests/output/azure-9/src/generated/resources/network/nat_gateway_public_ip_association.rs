@@ -63,10 +63,10 @@ pub mod nat_gateway_public_ip_association {
     pub struct NatGatewayPublicIpAssociationArgs {
         /// The ID of the NAT Gateway. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub nat_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub nat_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Public IP which this NAT Gateway which should be connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub public_ip_address_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub public_ip_address_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NatGatewayPublicIpAssociationResult {

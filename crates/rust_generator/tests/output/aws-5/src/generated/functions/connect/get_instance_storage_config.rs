@@ -10,13 +10,13 @@ pub mod get_instance_storage_config {
     pub struct GetInstanceStorageConfigArgs {
         /// The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
         #[builder(into)]
-        pub association_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub association_id: pulumi_gestalt_rust::Input<String>,
         /// Reference to the hosting Amazon Connect Instance
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// A valid resource type. Valid Values: `AGENT_EVENTS` | `ATTACHMENTS` | `CALL_RECORDINGS` | `CHAT_TRANSCRIPTS` | `CONTACT_EVALUATIONS` | `CONTACT_TRACE_RECORDS` | `MEDIA_STREAMS` | `REAL_TIME_CONTACT_ANALYSIS_SEGMENTS` | `SCHEDULED_REPORTS` |  `SCREEN_RECORDINGS`.
         #[builder(into)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceStorageConfigResult {

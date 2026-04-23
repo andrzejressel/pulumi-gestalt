@@ -11,12 +11,12 @@ pub mod get_tag_template_iam_policy {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub tag_template: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tag_template: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTagTemplateIamPolicyResult {

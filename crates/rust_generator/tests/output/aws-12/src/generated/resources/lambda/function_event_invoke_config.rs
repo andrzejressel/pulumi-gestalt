@@ -145,7 +145,7 @@ pub mod function_event_invoke_config {
     pub struct FunctionEventInvokeConfigArgs {
         /// Configuration block with destination configuration. See below for details.
         #[builder(into, default)]
-        pub destination_config: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::lambda::FunctionEventInvokeConfigDestinationConfig,
             >,
@@ -154,18 +154,16 @@ pub mod function_event_invoke_config {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// Maximum age of a request that Lambda sends to a function for processing in seconds. Valid values between 60 and 21600.
         #[builder(into, default)]
-        pub maximum_event_age_in_seconds: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub maximum_event_age_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximum number of times to retry when the function returns an error. Valid values between 0 and 2. Defaults to 2.
         #[builder(into, default)]
-        pub maximum_retry_attempts: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub maximum_retry_attempts: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Lambda Function published version, `$LATEST`, or Lambda Alias name.
         #[builder(into, default)]
-        pub qualifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub qualifier: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FunctionEventInvokeConfigResult {

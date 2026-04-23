@@ -58,28 +58,28 @@ pub mod firewall_endpoint {
     pub struct FirewallEndpointArgs {
         /// Project to bill on endpoint uptime usage.
         #[builder(into)]
-        pub billing_project_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub billing_project_id: pulumi_gestalt_rust::Input<String>,
         /// A map of key/value label pairs to assign to the resource.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location (zone) of the firewall endpoint.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The name of the firewall endpoint resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the parent this firewall endpoint belongs to.
         /// Format: organizations/{organization_id}.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FirewallEndpointResult {

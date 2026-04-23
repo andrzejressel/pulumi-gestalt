@@ -10,10 +10,10 @@ pub mod get_report_plan {
     pub struct GetReportPlanArgs {
         /// Backup report plan name.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Metadata that you can assign to help organize the report plans you create.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

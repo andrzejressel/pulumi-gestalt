@@ -75,21 +75,21 @@ pub mod resolver_inbound_endpoint {
     pub struct ResolverInboundEndpointArgs {
         /// One `ip_configurations` block as defined below. Changing this forces a new Private DNS Resolver Inbound Endpoint to be created.
         #[builder(into)]
-        pub ip_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_configurations: pulumi_gestalt_rust::Input<
             super::super::types::privatedns::ResolverInboundEndpointIpConfigurations,
         >,
         /// Specifies the Azure Region where the Private DNS Resolver Inbound Endpoint should exist. Changing this forces a new Private DNS Resolver Inbound Endpoint to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Private DNS Resolver Inbound Endpoint. Changing this forces a new Private DNS Resolver Inbound Endpoint to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Private DNS Resolver Inbound Endpoint. Changing this forces a new Private DNS Resolver Inbound Endpoint to be created.
         #[builder(into)]
-        pub private_dns_resolver_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_dns_resolver_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Private DNS Resolver Inbound Endpoint.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

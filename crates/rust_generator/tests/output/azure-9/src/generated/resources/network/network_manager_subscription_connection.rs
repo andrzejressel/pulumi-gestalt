@@ -56,16 +56,16 @@ pub mod network_manager_subscription_connection {
     pub struct NetworkManagerSubscriptionConnectionArgs {
         /// A description of the Network Manager Subscription Connection.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Network Subscription Network Manager Connection. Changing this forces a new Network Subscription Network Manager Connection to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Network Manager which the Subscription is connected to.
         #[builder(into)]
-        pub network_manager_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_manager_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the target Subscription. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkManagerSubscriptionConnectionResult {

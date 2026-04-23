@@ -57,80 +57,80 @@ pub mod kx_cluster {
     pub struct KxClusterArgs {
         /// Configuration based on which FinSpace will scale in or scale out nodes in your cluster. See auto_scaling_configuration.
         #[builder(into, default)]
-        pub auto_scaling_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_scaling_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::finspace::KxClusterAutoScalingConfiguration>,
         >,
         /// The availability zone identifiers for the requested regions. Required when `az_mode` is set to SINGLE.
         #[builder(into, default)]
-        pub availability_zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of availability zones you want to assign per cluster. This can be one of the following:
         /// * SINGLE - Assigns one availability zone per cluster.
         /// * MULTI - Assigns all the availability zones per cluster.
         #[builder(into)]
-        pub az_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub az_mode: pulumi_gestalt_rust::Input<String>,
         /// Configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. See cache_storage_configuration.
         #[builder(into, default)]
-        pub cache_storage_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub cache_storage_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::finspace::KxClusterCacheStorageConfiguration>,
             >,
         >,
         /// Structure for the metadata of a cluster. Includes information like the CPUs needed, memory of instances, and number of instances. See capacity_configuration.
         #[builder(into, default)]
-        pub capacity_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::finspace::KxClusterCapacityConfiguration>,
         >,
         /// Details of the custom code that you want to use inside a cluster when analyzing data. Consists of the S3 source bucket, location, object version, and the relative path from where the custom code is loaded into the cluster. See code.
         #[builder(into, default)]
-        pub code: pulumi_gestalt_rust::InputOrOutput<
+        pub code: pulumi_gestalt_rust::Input<
             Option<super::super::types::finspace::KxClusterCode>,
         >,
         /// List of key-value pairs to make available inside the cluster.
         #[builder(into, default)]
-        pub command_line_arguments: pulumi_gestalt_rust::InputOrOutput<
+        pub command_line_arguments: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// KX database that will be available for querying. Defined below.
         #[builder(into, default)]
-        pub databases: pulumi_gestalt_rust::InputOrOutput<
+        pub databases: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::finspace::KxClusterDatabase>>,
         >,
         /// Description of the cluster.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique identifier for the KX environment.
         #[builder(into)]
-        pub environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_id: pulumi_gestalt_rust::Input<String>,
         /// An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.
         #[builder(into, default)]
-        pub execution_role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub execution_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// Path to Q program that will be run at launch of a cluster. This is a relative path within .zip file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, somedir/init.q.
         #[builder(into, default)]
-        pub initialization_script: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub initialization_script: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name for the cluster that you want to create.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of FinSpace Managed kdb to run.
         #[builder(into)]
-        pub release_label: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub release_label: pulumi_gestalt_rust::Input<String>,
         /// Size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose `type` as RDB. All the data written to this storage space is lost when the cluster node is restarted. See savedown_storage_configuration.
         #[builder(into, default)]
-        pub savedown_storage_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub savedown_storage_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::finspace::KxClusterSavedownStorageConfiguration>,
         >,
         /// The structure that stores the configuration details of a scaling group.
         #[builder(into, default)]
-        pub scaling_group_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub scaling_group_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::finspace::KxClusterScalingGroupConfiguration>,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type Tickerplant , the location of the TP volume on the cluster will be available by using the global variable .aws.tp_log_path.
         #[builder(into, default)]
-        pub tickerplant_log_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub tickerplant_log_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::finspace::KxClusterTickerplantLogConfiguration>,
             >,
@@ -142,12 +142,12 @@ pub mod kx_cluster {
         /// * GP - A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only `SINGLE` AZ mode.
         /// * Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Configuration details about the network where the Privatelink endpoint of the cluster resides. See vpc_configuration.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vpc_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_configuration: pulumi_gestalt_rust::Input<
             super::super::types::finspace::KxClusterVpcConfiguration,
         >,
     }

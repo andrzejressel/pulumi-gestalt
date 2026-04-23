@@ -74,31 +74,31 @@ pub mod topic {
     pub struct TopicArgs {
         /// The cluster name.
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// Configuration for the topic that are overridden from the cluster defaults. The key of the map is a Kafka topic property name, for example: `cleanup.policy=compact`, `compression.type=producer`.
         #[builder(into, default)]
-        pub configs: pulumi_gestalt_rust::InputOrOutput<
+        pub configs: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the location of the Kafka resource. See https://cloud.google.com/managed-kafka/docs/locations for a list of supported locations.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The number of partitions in a topic. You can increase the partition count for a topic, but you cannot decrease it. Increasing partitions for a topic that uses a key might change how messages are distributed.
         #[builder(into, default)]
-        pub partition_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub partition_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of replicas of each partition. A replication factor of 3 is recommended for high availability.
         #[builder(into)]
-        pub replication_factor: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub replication_factor: pulumi_gestalt_rust::Input<i32>,
         /// The ID to use for the topic, which will become the final component of the topic's name. This value is structured like: `my-topic-name`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub topic_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub topic_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TopicResult {

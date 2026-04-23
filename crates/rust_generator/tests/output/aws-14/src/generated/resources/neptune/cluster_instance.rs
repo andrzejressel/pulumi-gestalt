@@ -56,65 +56,59 @@ pub mod cluster_instance {
         /// Specifies whether any instance modifications
         /// are applied immediately, or during the next maintenance window. Default is`false`.
         #[builder(into, default)]
-        pub apply_immediately: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates that minor engine upgrades will be applied automatically to the instance during the maintenance window. Default is `true`.
         #[builder(into, default)]
-        pub auto_minor_version_upgrade: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_minor_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The EC2 Availability Zone that the neptune instance is created in.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier of the `aws.neptune.Cluster` in which to launch this instance.
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The name of the database engine to be used for the neptune instance. Defaults to `neptune`. Valid Values: `neptune`.
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// The neptune engine version. Currently configuring this argumnet has no effect.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The identifier for the neptune instance, if omitted, this provider will assign a random, unique identifier.
         #[builder(into, default)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique identifier beginning with the specified prefix. Conflicts with `identifier`.
         #[builder(into, default)]
-        pub identifier_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identifier_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The instance class to use.
         #[builder(into)]
-        pub instance_class: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_class: pulumi_gestalt_rust::Input<String>,
         /// The name of the neptune parameter group to associate with this instance.
         #[builder(into, default)]
-        pub neptune_parameter_group_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub neptune_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A subnet group to associate with this neptune instance. **NOTE:** This must match the `neptune_subnet_group_name` of the attached `aws.neptune.Cluster`.
         #[builder(into, default)]
-        pub neptune_subnet_group_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub neptune_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port on which the DB accepts connections. Defaults to `8182`.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The daily time range during which automated backups are created if automated backups are enabled. Eg: "04:00-09:00"
         #[builder(into, default)]
-        pub preferred_backup_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The window to perform maintenance in.
         /// Syntax: "ddd:hh24:mi-ddd:hh24:mi". Eg: "Mon:00:00-Mon:03:00".
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Default 0. Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoter to writer.
         #[builder(into, default)]
-        pub promotion_tier: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub promotion_tier: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Bool to control if instance is publicly accessible. Default is `false`.
         #[builder(into, default)]
-        pub publicly_accessible: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Determines whether a final DB snapshot is created before the DB instance is deleted.
         #[builder(into, default)]
-        pub skip_final_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of tags to assign to the instance. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

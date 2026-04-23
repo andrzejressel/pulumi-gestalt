@@ -40,28 +40,24 @@ pub mod integration_response {
     pub struct IntegrationResponseArgs {
         /// API identifier.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// How to handle response payload content type conversions. Valid values: `CONVERT_TO_BINARY`, `CONVERT_TO_TEXT`.
         #[builder(into, default)]
-        pub content_handling_strategy: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub content_handling_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the `aws.apigatewayv2.Integration`.
         #[builder(into)]
-        pub integration_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_id: pulumi_gestalt_rust::Input<String>,
         /// Integration response key.
         #[builder(into)]
-        pub integration_response_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_response_key: pulumi_gestalt_rust::Input<String>,
         /// Map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client.
         #[builder(into, default)]
-        pub response_templates: pulumi_gestalt_rust::InputOrOutput<
+        pub response_templates: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The [template selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-template-selection-expressions) for the integration response.
         #[builder(into, default)]
-        pub template_selection_expression: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub template_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IntegrationResponseResult {

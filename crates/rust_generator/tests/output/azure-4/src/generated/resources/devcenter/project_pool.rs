@@ -102,30 +102,30 @@ pub mod project_pool {
     pub struct ProjectPoolArgs {
         /// The name of the Dev Center Dev Box Definition.
         #[builder(into)]
-        pub dev_box_definition_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_box_definition_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Dev Center Attached Network in parent Project of the Dev Center Project Pool.
         #[builder(into)]
-        pub dev_center_attached_network_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_attached_network_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the associated Dev Center Project. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub dev_center_project_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_project_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether owners of Dev Boxes in the Dev Center Project Pool are added as local administrators on the Dev Box.
         #[builder(into)]
-        pub local_administrator_enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub local_administrator_enabled: pulumi_gestalt_rust::Input<bool>,
         /// The Azure Region where the Dev Center Project Pool should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this Dev Center Project Pool. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The specified time in minutes to wait before stopping a Dev Center Dev Box once disconnect is detected. Possible values are between `60` and `480`.
         #[builder(into, default)]
-        pub stop_on_disconnect_grace_period_minutes: pulumi_gestalt_rust::InputOrOutput<
+        pub stop_on_disconnect_grace_period_minutes: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// A mapping of tags which should be assigned to the Dev Center Project Pool.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

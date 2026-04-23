@@ -44,13 +44,13 @@ pub mod apns_channel {
     pub struct ApnsChannelArgs {
         /// The application ID.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// The ID assigned to your iOS app. To find this value, choose Certificates, IDs & Profiles, choose App IDs in the Identifiers section, and choose your app.
         #[builder(into, default)]
-        pub bundle_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bundle_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The pem encoded TLS Certificate from Apple.
         #[builder(into, default)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default authentication method used for APNs.
         /// __NOTE__: Amazon Pinpoint uses this default for every APNs push notification that you send using the console.
         /// You can override the default when you send a message programmatically using the Amazon Pinpoint API, the AWS CLI, or an AWS SDK.
@@ -60,26 +60,24 @@ pub mod apns_channel {
         ///
         /// If you choose to use __Certificate credentials__ you will have to provide:
         #[builder(into, default)]
-        pub default_authentication_method: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub default_authentication_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the channel is enabled or disabled. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Certificate Private Key file (ie. `.key` file).
         ///
         /// If you choose to use __Key credentials__ you will have to provide:
         #[builder(into, default)]
-        pub private_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub private_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID assigned to your Apple developer account team. This value is provided on the Membership page.
         #[builder(into, default)]
-        pub team_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub team_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The `.p8` file that you download from your Apple developer account when you create an authentication key.
         #[builder(into, default)]
-        pub token_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID assigned to your signing key. To find this value, choose Certificates, IDs & Profiles, and choose your key in the Keys section.
         #[builder(into, default)]
-        pub token_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_key_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApnsChannelResult {

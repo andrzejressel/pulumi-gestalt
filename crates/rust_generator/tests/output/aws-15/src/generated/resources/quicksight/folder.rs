@@ -85,29 +85,29 @@ pub mod folder {
     pub struct FolderArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier for the folder.
         #[builder(into)]
-        pub folder_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder_id: pulumi_gestalt_rust::Input<String>,
         /// The type of folder. By default, it is `SHARED`. Valid values are: `SHARED`.
         #[builder(into, default)]
-        pub folder_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Display name for the folder.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for the parent folder. If not set, creates a root-level folder.
         #[builder(into, default)]
-        pub parent_folder_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent_folder_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of resource permissions on the folder. Maximum of 64 items. See permissions.
         #[builder(into, default)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::FolderPermission>>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

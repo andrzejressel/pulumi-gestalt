@@ -102,16 +102,14 @@ pub mod consent_store {
         ///
         /// - - -
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset: pulumi_gestalt_rust::Input<String>,
         /// Default time to live for consents in this store. Must be at least 24 hours. Updating this field will not affect the expiration time of existing consents.
         /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub default_consent_ttl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_consent_ttl: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, [consents.patch] [google.cloud.healthcare.v1.consent.UpdateConsent] creates the consent if it does not already exist.
         #[builder(into, default)]
-        pub enable_consent_create_on_update: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub enable_consent_create_on_update: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User-supplied key-value pairs used to organize Consent stores.
         /// Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must
         /// conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}][\p{Ll}\p{Lo}\p{N}_-]{0,62}`
@@ -124,13 +122,13 @@ pub mod consent_store {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of this ConsentStore, for example:
         /// "consent1"
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ConsentStoreResult {

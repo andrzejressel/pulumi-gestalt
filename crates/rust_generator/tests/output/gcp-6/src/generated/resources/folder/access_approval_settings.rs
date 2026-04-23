@@ -138,24 +138,24 @@ pub mod access_approval_settings {
         /// Google-managed key should be used for signing. This property will be ignored if set by an ancestor of the resource, and
         /// new non-empty values may not be set.
         #[builder(into, default)]
-        pub active_key_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub active_key_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Google Cloud Services for which the given resource has Access Approval enrolled.
         /// Access requests for the resource given by name against any of these services contained here will be required
         /// to have explicit approval. Enrollment can only be done on an all or nothing basis.
         /// A maximum of 10 enrolled services will be enforced, to be expanded as the set of supported services is expanded.
         /// Structure is documented below.
         #[builder(into)]
-        pub enrolled_services: pulumi_gestalt_rust::InputOrOutput<
+        pub enrolled_services: pulumi_gestalt_rust::Input<
             Vec<super::super::types::folder::AccessApprovalSettingsEnrolledService>,
         >,
         /// ID of the folder of the access approval settings.
         #[builder(into)]
-        pub folder_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder_id: pulumi_gestalt_rust::Input<String>,
         /// A list of email addresses to which notifications relating to approval requests should be sent. Notifications relating to
         /// a resource will be sent to all emails in the settings of ancestor resources of that resource. A maximum of 50 email
         /// addresses are allowed.
         #[builder(into, default)]
-        pub notification_emails: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub notification_emails: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct AccessApprovalSettingsResult {

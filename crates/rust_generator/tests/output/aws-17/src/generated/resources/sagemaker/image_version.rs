@@ -38,10 +38,10 @@ pub mod image_version {
     pub struct ImageVersionArgs {
         /// The registry path of the container image on which this image version is based.
         #[builder(into)]
-        pub base_image: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub base_image: pulumi_gestalt_rust::Input<String>,
         /// The name of the image. Must be unique to your account.
         #[builder(into)]
-        pub image_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ImageVersionResult {

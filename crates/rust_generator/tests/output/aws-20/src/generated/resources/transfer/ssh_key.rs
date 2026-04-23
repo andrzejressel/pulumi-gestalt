@@ -96,13 +96,13 @@ pub mod ssh_key {
     pub struct SshKeyArgs {
         /// The public key portion of an SSH key pair.
         #[builder(into)]
-        pub body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub body: pulumi_gestalt_rust::Input<String>,
         /// The Server ID of the Transfer Server (e.g., `s-12345678`)
         #[builder(into)]
-        pub server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the user account that is assigned to one or more servers.
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SshKeyResult {

@@ -10,21 +10,21 @@ pub mod get_resource_share {
     pub struct GetResourceShareArgs {
         /// Filter used to scope the list e.g., by tags. See [related docs] (https://docs.aws.amazon.com/ram/latest/APIReference/API_TagFilter.html).
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ram::GetResourceShareFilter>>,
         >,
         /// Name of the resource share to retrieve.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Owner of the resource share. Valid values are `SELF` or `OTHER-ACCOUNTS`.
         #[builder(into)]
-        pub resource_owner: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_owner: pulumi_gestalt_rust::Input<String>,
         /// Specifies that you want to retrieve details of only those resource shares that have this status. Valid values are `PENDING`, `ACTIVE`, `FAILED`, `DELETING`, and `DELETED`.
         #[builder(into, default)]
-        pub resource_share_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_share_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags attached to the resource share.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -45,13 +45,13 @@ pub mod lication_load_balancer_frontend {
     pub struct LicationLoadBalancerFrontendArgs {
         /// The ID of the Application Gateway for Containers. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_load_balancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_load_balancer_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Application Gateway for Containers Frontend. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Application Gateway for Containers Frontend.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

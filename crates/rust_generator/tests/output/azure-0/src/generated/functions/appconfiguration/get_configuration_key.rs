@@ -10,13 +10,13 @@ pub mod get_configuration_key {
     pub struct GetConfigurationKeyArgs {
         /// Specifies the id of the App Configuration.
         #[builder(into)]
-        pub configuration_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_store_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the App Configuration Key.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// The label of the App Configuration Key.
         #[builder(into, default)]
-        pub label: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub label: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetConfigurationKeyResult {

@@ -54,30 +54,30 @@ pub mod subscriber {
     pub struct SubscriberArgs {
         /// The Amazon S3 or Lake Formation access type.
         #[builder(into, default)]
-        pub access_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The supported AWS services from which logs and events are collected. Security Lake supports log and event collection for natively supported AWS services. See `source` Blocks below.
         #[builder(into, default)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             Option<super::super::types::securitylake::SubscriberSource>,
         >,
         /// The description for your subscriber account in Security Lake.
         #[builder(into, default)]
-        pub subscriber_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subscriber_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The AWS identity used to access your data. See `subscriber_identity` Block below.
         #[builder(into, default)]
-        pub subscriber_identity: pulumi_gestalt_rust::InputOrOutput<
+        pub subscriber_identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::securitylake::SubscriberSubscriberIdentity>,
         >,
         /// The name of your Security Lake subscriber account.
         #[builder(into, default)]
-        pub subscriber_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subscriber_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::securitylake::SubscriberTimeouts>,
         >,
     }

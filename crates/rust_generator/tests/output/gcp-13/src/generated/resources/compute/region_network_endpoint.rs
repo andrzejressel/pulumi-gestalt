@@ -165,35 +165,35 @@ pub mod region_network_endpoint {
     pub struct RegionNetworkEndpointArgs {
         /// Client destination port for the `GCE_VM_IP_PORTMAP` NEG.
         #[builder(into, default)]
-        pub client_destination_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub client_destination_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Fully qualified domain name of network endpoint.
         /// This can only be specified when network_endpoint_type of the NEG is INTERNET_FQDN_PORT.
         #[builder(into, default)]
-        pub fqdn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fqdn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for a specific VM instance that the IP address belongs to.
         /// This is required for network endpoints of type GCE_VM_IP_PORTMAP.
         #[builder(into, default)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance: pulumi_gestalt_rust::Input<Option<String>>,
         /// IPv4 address external endpoint.
         /// This can only be specified when network_endpoint_type of the NEG is INTERNET_IP_PORT.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// Port number of network endpoint.
         #[builder(into)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub port: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region where the containing network endpoint group is located.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network endpoint group this endpoint is part of.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub region_network_endpoint_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region_network_endpoint_group: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegionNetworkEndpointResult {

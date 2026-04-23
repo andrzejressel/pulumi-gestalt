@@ -60,19 +60,19 @@ pub mod event_hub_consumer_group {
     pub struct EventHubConsumerGroupArgs {
         /// Specifies the name of the EventHub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the EventHub Consumer Group resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the grandparent EventHub Namespace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which the EventHub Consumer Group's grandparent Namespace exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the user metadata.
         #[builder(into, default)]
-        pub user_metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_metadata: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EventHubConsumerGroupResult {

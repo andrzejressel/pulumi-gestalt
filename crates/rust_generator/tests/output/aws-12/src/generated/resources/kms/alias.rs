@@ -39,14 +39,14 @@ pub mod alias {
     pub struct AliasArgs {
         /// The display name of the alias. The name must start with the word "alias" followed by a forward slash (alias/)
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates an unique alias beginning with the specified prefix.
         /// The name must start with the word "alias" followed by a forward slash (alias/).  Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier for the key for which the alias is for, can be either an ARN or key_id.
         #[builder(into)]
-        pub target_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_key_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AliasResult {

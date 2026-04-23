@@ -62,29 +62,29 @@ pub mod deployment {
     pub struct DeploymentArgs {
         /// The ID of the Cognitive Services Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cognitive_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cognitive_account_id: pulumi_gestalt_rust::Input<String>,
         /// Whether dynamic throttling is enabled.
         #[builder(into, default)]
-        pub dynamic_throttling_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub dynamic_throttling_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `model` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub model: pulumi_gestalt_rust::InputOrOutput<
+        pub model: pulumi_gestalt_rust::Input<
             super::super::types::cognitive::DeploymentModel,
         >,
         /// The name of the Cognitive Services Account Deployment. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of RAI policy.
         #[builder(into, default)]
-        pub rai_policy_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rai_policy_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
+        pub sku: pulumi_gestalt_rust::Input<
             super::super::types::cognitive::DeploymentSku,
         >,
         /// Deployment model version upgrade option. Possible values are `OnceNewDefaultVersionAvailable`, `OnceCurrentVersionExpired`, and `NoAutoUpgrade`. Defaults to `OnceNewDefaultVersionAvailable`.
         #[builder(into, default)]
-        pub version_upgrade_option: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_upgrade_option: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DeploymentResult {

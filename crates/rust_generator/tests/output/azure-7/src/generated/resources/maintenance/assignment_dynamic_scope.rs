@@ -22,17 +22,17 @@ pub mod assignment_dynamic_scope {
     pub struct AssignmentDynamicScopeArgs {
         /// A `filter` block as defined below.
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             super::super::types::maintenance::AssignmentDynamicScopeFilter,
         >,
         /// The ID of the Maintenance Configuration Resource. Changing this forces a new Dynamic Maintenance Assignment to be created.
         #[builder(into)]
-        pub maintenance_configuration_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub maintenance_configuration_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Dynamic Maintenance Assignment. Changing this forces a new Dynamic Maintenance Assignment to be created.
         ///
         /// > **Note:** The `name` must be unique per subscription.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AssignmentDynamicScopeResult {

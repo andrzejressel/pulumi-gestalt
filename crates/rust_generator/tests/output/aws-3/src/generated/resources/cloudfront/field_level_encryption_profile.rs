@@ -48,15 +48,15 @@ pub mod field_level_encryption_profile {
     pub struct FieldLevelEncryptionProfileArgs {
         /// An optional comment about the Field Level Encryption Profile.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The encryption entities config block for field-level encryption profiles that contains an attribute `items` which includes the encryption key and field pattern specifications.
         #[builder(into)]
-        pub encryption_entities: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_entities: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::FieldLevelEncryptionProfileEncryptionEntities,
         >,
         /// The name of the Field Level Encryption Profile.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FieldLevelEncryptionProfileResult {

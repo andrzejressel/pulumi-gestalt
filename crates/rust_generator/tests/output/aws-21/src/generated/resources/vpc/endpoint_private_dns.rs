@@ -41,10 +41,10 @@ pub mod endpoint_private_dns {
     pub struct EndpointPrivateDnsArgs {
         /// Indicates whether a private hosted zone is associated with the VPC. Only applicable for `Interface` endpoints.
         #[builder(into)]
-        pub private_dns_enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub private_dns_enabled: pulumi_gestalt_rust::Input<bool>,
         /// VPC endpoint identifier.
         #[builder(into)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointPrivateDnsResult {

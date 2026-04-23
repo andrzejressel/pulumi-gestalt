@@ -51,61 +51,61 @@ pub mod ami {
     pub struct AmiArgs {
         /// Machine architecture for created instances. Defaults to "x86_64".
         #[builder(into, default)]
-        pub architecture: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub architecture: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boot mode of the AMI. For more information, see [Boot modes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html) in the Amazon Elastic Compute Cloud User Guide.
         #[builder(into, default)]
-        pub boot_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub boot_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Date and time to deprecate the AMI. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)
         #[builder(into, default)]
-        pub deprecation_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deprecation_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Longer, human-readable description for the AMI.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Nested block describing an EBS block device that should be
         /// attached to created instances. The structure of this block is described below.
         #[builder(into, default)]
-        pub ebs_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub ebs_block_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::AmiEbsBlockDevice>>,
         >,
         /// Whether enhanced networking with ENA is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub ena_support: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ena_support: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Nested block describing an ephemeral block device that
         /// should be attached to created instances. The structure of this block is described below.
         #[builder(into, default)]
-        pub ephemeral_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub ephemeral_block_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::AmiEphemeralBlockDevice>>,
         >,
         #[builder(into, default)]
-        pub image_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// If EC2 instances started from this image should require the use of the Instance Metadata Service V2 (IMDSv2), set this argument to `v2.0`. For more information, see [Configure instance metadata options for new instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration).
         #[builder(into, default)]
-        pub imds_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub imds_support: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub kernel_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kernel_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Region-unique name for the AMI.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub ramdisk_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ramdisk_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the root device (for example, `/dev/sda1`, or `/dev/xvda`).
         #[builder(into, default)]
-        pub root_device_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub root_device_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub sriov_net_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sriov_net_support: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// If the image is configured for NitroTPM support, the value is `v2.0`. For more information, see [NitroTPM](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html) in the Amazon Elastic Compute Cloud User Guide.
         #[builder(into, default)]
-        pub tpm_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tpm_support: pulumi_gestalt_rust::Input<Option<String>>,
         /// Keyword to choose what virtualization mode created instances
         /// will use. Can be either "paravirtual" (the default) or "hvm". The choice of virtualization type
         /// changes the set of further arguments that are required, as described below.
         #[builder(into, default)]
-        pub virtualization_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtualization_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AmiResult {

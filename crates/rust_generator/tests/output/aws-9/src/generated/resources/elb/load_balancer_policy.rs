@@ -88,18 +88,18 @@ pub mod load_balancer_policy {
     pub struct LoadBalancerPolicyArgs {
         /// The load balancer on which the policy is defined.
         #[builder(into)]
-        pub load_balancer_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub load_balancer_name: pulumi_gestalt_rust::Input<String>,
         /// Policy attribute to apply to the policy.
         #[builder(into, default)]
-        pub policy_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_attributes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::elb::LoadBalancerPolicyPolicyAttribute>>,
         >,
         /// The name of the load balancer policy.
         #[builder(into)]
-        pub policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_name: pulumi_gestalt_rust::Input<String>,
         /// The policy type.
         #[builder(into)]
-        pub policy_type_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_type_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LoadBalancerPolicyResult {

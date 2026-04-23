@@ -79,40 +79,40 @@ pub mod remediation_configuration {
     pub struct RemediationConfigurationArgs {
         /// Remediation is triggered automatically if `true`.
         #[builder(into, default)]
-        pub automatic: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub automatic: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the AWS Config rule.
         #[builder(into)]
-        pub config_rule_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub config_rule_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for execution controls. See below.
         #[builder(into, default)]
-        pub execution_controls: pulumi_gestalt_rust::InputOrOutput<
+        pub execution_controls: pulumi_gestalt_rust::Input<
             Option<super::super::types::cfg::RemediationConfigurationExecutionControls>,
         >,
         /// Maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
         #[builder(into, default)]
-        pub maximum_automatic_attempts: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub maximum_automatic_attempts: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Can be specified multiple times for each parameter. Each parameter block supports arguments below.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cfg::RemediationConfigurationParameter>>,
         >,
         /// Type of resource.
         #[builder(into, default)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60 seconds.
         #[builder(into, default)]
-        pub retry_attempt_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retry_attempt_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Target ID is the name of the public document.
         #[builder(into)]
-        pub target_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_id: pulumi_gestalt_rust::Input<String>,
         /// Type of the target. Target executes remediation. For example, SSM document.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_type: pulumi_gestalt_rust::Input<String>,
         /// Version of the target. For example, version of the SSM document
         #[builder(into, default)]
-        pub target_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RemediationConfigurationResult {

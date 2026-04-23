@@ -21,19 +21,19 @@ pub mod managed_hardware_security_module_role_assignment {
         /// The ID of a Managed Hardware Security Module resource. Changing this forces a new Managed Hardware Security Module to be created.
         /// *
         #[builder(into)]
-        pub managed_hsm_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_hsm_id: pulumi_gestalt_rust::Input<String>,
         /// The name in GUID notation which should be used for this Managed Hardware Security Module Role Assignment. Changing this forces a new Managed Hardware Security Module to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The principal ID to be assigned to this role. It can point to a user, service principal, or security group. Changing this forces a new Managed Hardware Security Module to be created.
         #[builder(into)]
-        pub principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_id: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the role definition to assign. Changing this forces a new Managed Hardware Security Module to be created.
         #[builder(into)]
-        pub role_definition_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_definition_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the scope to create the role assignment. Changing this forces a new Managed Hardware Security Module to be created.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedHardwareSecurityModuleRoleAssignmentResult {

@@ -277,19 +277,17 @@ pub mod instance {
         /// which the customers can provide during the instance creation. By default, the customer
         /// project associated with the Apigee organization will be included to the list.
         #[builder(into, default)]
-        pub consumer_accept_lists: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub consumer_accept_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Description of the instance.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Customer Managed Encryption Key (CMEK) used for disk and volume encryption. Required for Apigee paid subscriptions only.
         /// Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
         #[builder(into, default)]
-        pub disk_encryption_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_encryption_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Display name of the instance.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// IP range represents the customer-provided CIDR block of length 22 that will be used for
         /// the Apigee instance creation. This optional range, if provided, should be freely
         /// available as part of larger named range the customer has allocated to the Service
@@ -298,24 +296,24 @@ pub mod instance {
         /// for configuring their firewall needs to allow traffic from Apigee.
         /// Input format: "a.b.c.d/22"
         #[builder(into, default)]
-        pub ip_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Compute Engine location where the instance resides.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Resource ID of the instance.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apigee Organization associated with the Apigee instance,
         /// in the format `organizations/{{org_name}}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// The size of the CIDR block range that will be reserved by the instance. For valid values,
         /// see [CidrRange](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.instances#CidrRange) on the documentation.
         #[builder(into, default)]
-        pub peering_cidr_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub peering_cidr_range: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

@@ -106,12 +106,12 @@ pub mod action_group {
     pub struct ActionGroupArgs {
         /// One or more `arm_role_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub arm_role_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub arm_role_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupArmRoleReceiver>>,
         >,
         /// One or more `automation_runbook_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub automation_runbook_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub automation_runbook_receivers: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::monitoring::ActionGroupAutomationRunbookReceiver,
@@ -120,69 +120,69 @@ pub mod action_group {
         >,
         /// One or more `azure_app_push_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub azure_app_push_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_app_push_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupAzureAppPushReceiver>>,
         >,
         /// One or more `azure_function_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub azure_function_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_function_receivers: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::monitoring::ActionGroupAzureFunctionReceiver>,
             >,
         >,
         /// One or more `email_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub email_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub email_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupEmailReceiver>>,
         >,
         /// Whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more `event_hub_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub event_hub_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub event_hub_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupEventHubReceiver>>,
         >,
         /// One or more `itsm_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub itsm_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub itsm_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupItsmReceiver>>,
         >,
         /// The Azure Region where the Action Group should exist. Changing this forces a new Action Group to be created. Defaults to `global`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `logic_app_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub logic_app_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub logic_app_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupLogicAppReceiver>>,
         >,
         /// The name of the Action Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Action Group instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The short name of the action group. This will be used in SMS messages.
         #[builder(into)]
-        pub short_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub short_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `sms_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub sms_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub sms_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupSmsReceiver>>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// One or more `voice_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub voice_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub voice_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupVoiceReceiver>>,
         >,
         /// One or more `webhook_receiver` blocks as defined below.
         #[builder(into, default)]
-        pub webhook_receivers: pulumi_gestalt_rust::InputOrOutput<
+        pub webhook_receivers: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::ActionGroupWebhookReceiver>>,
         >,
     }

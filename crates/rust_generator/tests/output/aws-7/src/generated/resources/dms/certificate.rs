@@ -35,16 +35,16 @@ pub mod certificate {
         ///
         /// - Must contain from 1 to 255 alphanumeric characters and hyphens.
         #[builder(into)]
-        pub certificate_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_id: pulumi_gestalt_rust::Input<String>,
         /// The contents of the .pem X.509 certificate file for the certificate. Either `certificate_pem` or `certificate_wallet` must be set.
         #[builder(into, default)]
-        pub certificate_pem: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_pem: pulumi_gestalt_rust::Input<Option<String>>,
         /// The contents of the Oracle Wallet certificate for use with SSL, provided as a base64-encoded String. Either `certificate_pem` or `certificate_wallet` must be set.
         #[builder(into, default)]
-        pub certificate_wallet: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_wallet: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

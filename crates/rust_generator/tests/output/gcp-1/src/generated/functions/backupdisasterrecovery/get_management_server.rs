@@ -9,7 +9,7 @@ pub mod get_management_server {
     #[allow(dead_code)]
     pub struct GetManagementServerArgs {
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetManagementServerResult {

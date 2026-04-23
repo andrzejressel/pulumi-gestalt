@@ -58,7 +58,7 @@ pub mod shared_vpc_host_project {
     pub struct SharedVPCHostProjectArgs {
         /// The ID of the project that will serve as a Shared VPC host project
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SharedVPCHostProjectResult {

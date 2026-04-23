@@ -36,10 +36,10 @@ pub mod thing_principal_attachment {
     pub struct ThingPrincipalAttachmentArgs {
         /// The AWS IoT Certificate ARN or Amazon Cognito Identity ID.
         #[builder(into)]
-        pub principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal: pulumi_gestalt_rust::Input<String>,
         /// The name of the thing.
         #[builder(into)]
-        pub thing: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub thing: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ThingPrincipalAttachmentResult {

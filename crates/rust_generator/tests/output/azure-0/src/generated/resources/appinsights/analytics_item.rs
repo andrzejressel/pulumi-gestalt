@@ -60,22 +60,22 @@ pub mod analytics_item {
     pub struct AnalyticsItemArgs {
         /// The ID of the Application Insights component on which the Analytics Item exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_insights_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_insights_id: pulumi_gestalt_rust::Input<String>,
         /// The content for the Analytics Item, for example the query text if `type` is `query`.
         #[builder(into)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content: pulumi_gestalt_rust::Input<String>,
         /// The alias to use for the function. Required when `type` is `function`.
         #[builder(into, default)]
-        pub function_alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub function_alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Application Insights Analytics Item. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The scope for the Analytics Item. Can be `shared` or `user`. Changing this forces a new resource to be created. Must be `shared` for functions.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
         /// The type of Analytics Item to create. Can be one of `query`, `function`, `folder`, `recent`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AnalyticsItemResult {

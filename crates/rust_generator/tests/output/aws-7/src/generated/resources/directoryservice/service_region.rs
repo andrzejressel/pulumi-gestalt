@@ -23,23 +23,23 @@ pub mod service_region {
     pub struct ServiceRegionArgs {
         /// The number of domain controllers desired in the replicated directory. Minimum value of `2`.
         #[builder(into, default)]
-        pub desired_number_of_domain_controllers: pulumi_gestalt_rust::InputOrOutput<
+        pub desired_number_of_domain_controllers: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The identifier of the directory to which you want to add Region replication.
         #[builder(into)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Region where you want to add domain controllers for replication.
         #[builder(into)]
-        pub region_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region_name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// VPC information in the replicated Region. Detailed below.
         #[builder(into)]
-        pub vpc_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_settings: pulumi_gestalt_rust::Input<
             super::super::types::directoryservice::ServiceRegionVpcSettings,
         >,
     }

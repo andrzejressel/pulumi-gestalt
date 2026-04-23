@@ -97,10 +97,10 @@ pub mod scram_secret_association {
     pub struct ScramSecretAssociationArgs {
         /// Amazon Resource Name (ARN) of the MSK cluster.
         #[builder(into)]
-        pub cluster_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_arn: pulumi_gestalt_rust::Input<String>,
         /// List of AWS Secrets Manager secret ARNs.
         #[builder(into)]
-        pub secret_arn_lists: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub secret_arn_lists: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct ScramSecretAssociationResult {

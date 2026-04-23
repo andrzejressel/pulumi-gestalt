@@ -9,9 +9,9 @@ pub mod get_service_consumers_iam_policy {
     #[allow(dead_code)]
     pub struct GetServiceConsumersIamPolicyArgs {
         #[builder(into)]
-        pub consumer_project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub consumer_project: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServiceConsumersIamPolicyResult {

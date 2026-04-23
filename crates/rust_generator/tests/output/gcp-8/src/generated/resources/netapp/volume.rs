@@ -85,106 +85,106 @@ pub mod volume {
         /// Backup configuration for the volume.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub backup_config: pulumi_gestalt_rust::InputOrOutput<
+        pub backup_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::VolumeBackupConfig>,
         >,
         /// Capacity of the volume (in GiB).
         #[builder(into)]
-        pub capacity_gib: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub capacity_gib: pulumi_gestalt_rust::Input<String>,
         /// Policy to determine if the volume should be deleted forcefully.
         /// Volumes may have nested snapshot resources. Deleting such a volume will fail.
         /// Setting this parameter to FORCE will delete volumes including nested snapshots.
         /// Possible values: DEFAULT, FORCE.
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Export policy of the volume for NFSV3 and/or NFSV4.1 access.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub export_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub export_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::VolumeExportPolicy>,
         >,
         /// Flag indicating if the volume is a kerberos volume or not, export policy rules control kerberos security modes (krb5, krb5i, krb5p).
         #[builder(into, default)]
-        pub kerberos_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub kerberos_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Optional. Flag indicating if the volume will be a large capacity volume or a regular volume.
         #[builder(into, default)]
-        pub large_capacity: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub large_capacity: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the pool location. Usually a region name, expect for some STANDARD service level pools which require a zone name.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Optional. Flag indicating if the volume will have an IP address per node for volumes supporting multiple IP endpoints.
         /// Only the volume with largeCapacity will be allowed to have multiple endpoints.
         #[builder(into, default)]
-        pub multiple_endpoints: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub multiple_endpoints: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the volume. Needs to be unique per location.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The protocol of the volume. Allowed combinations are `['NFSV3']`, `['NFSV4']`, `['SMB']`, `['NFSV3', 'NFSV4']`, `['SMB', 'NFSV3']` and `['SMB', 'NFSV4']`.
         /// Each value may be one of: `NFSV3`, `NFSV4`, `SMB`.
         #[builder(into)]
-        pub protocols: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub protocols: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Used to create this volume from a snapshot (= cloning) or an backup.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub restore_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub restore_parameters: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::VolumeRestoreParameters>,
         >,
         /// List of actions that are restricted on this volume.
         /// Each value may be one of: `DELETE`.
         #[builder(into, default)]
-        pub restricted_actions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub restricted_actions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Security Style of the Volume. Use UNIX to use UNIX or NFSV4 ACLs for file permissions.
         /// Use NTFS to use NTFS ACLs for file permissions. Can only be set for volumes which use SMB together with NFS as protocol.
         /// Possible values are: `NTFS`, `UNIX`.
         #[builder(into, default)]
-        pub security_style: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_style: pulumi_gestalt_rust::Input<Option<String>>,
         /// Share name (SMB) or export path (NFS) of the volume. Needs to be unique per location.
         #[builder(into)]
-        pub share_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub share_name: pulumi_gestalt_rust::Input<String>,
         /// Settings for volumes with SMB access.
         /// Each value may be one of: `ENCRYPT_DATA`, `BROWSABLE`, `CHANGE_NOTIFY`, `NON_BROWSABLE`, `OPLOCKS`, `SHOW_SNAPSHOT`, `SHOW_PREVIOUS_VERSIONS`, `ACCESS_BASED_ENUMERATION`, `CONTINUOUSLY_AVAILABLE`.
         #[builder(into, default)]
-        pub smb_settings: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub smb_settings: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// If enabled, a NFS volume will contain a read-only .snapshot directory which provides access to each of the volume's snapshots. Will enable "Previous Versions" support for SMB.
         #[builder(into, default)]
-        pub snapshot_directory: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub snapshot_directory: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Snapshot policy defines the schedule for automatic snapshot creation.
         /// To disable automatic snapshot creation you have to remove the whole snapshot_policy block.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub snapshot_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub snapshot_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::VolumeSnapshotPolicy>,
         >,
         /// Name of the storage pool to create the volume in. Pool needs enough spare capacity to accommodate the volume.
         #[builder(into)]
-        pub storage_pool: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_pool: pulumi_gestalt_rust::Input<String>,
         /// Tiering policy for the volume.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub tiering_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub tiering_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::netapp::VolumeTieringPolicy>,
         >,
         /// Unix permission the mount point will be created with. Default is 0770. Applicable for UNIX security style volumes only.
         #[builder(into, default)]
-        pub unix_permissions: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub unix_permissions: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VolumeResult {

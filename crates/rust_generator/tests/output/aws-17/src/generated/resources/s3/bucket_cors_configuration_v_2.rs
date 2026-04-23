@@ -63,15 +63,15 @@ pub mod bucket_cors_configuration_v_2 {
     pub struct BucketCorsConfigurationV2Args {
         /// Name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Set of origins and methods (cross-origin access that you want to allow). See below. You can configure up to 100 rules.
         #[builder(into)]
-        pub cors_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub cors_rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::s3::BucketCorsConfigurationV2CorsRule>,
         >,
         /// Account ID of the expected bucket owner.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BucketCorsConfigurationV2Result {

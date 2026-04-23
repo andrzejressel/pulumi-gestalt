@@ -57,31 +57,31 @@ pub mod ingestion_destination {
     pub struct IngestionDestinationArgs {
         /// The Amazon Resource Name (ARN) of the app bundle to use for the request.
         #[builder(into)]
-        pub app_bundle_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_bundle_arn: pulumi_gestalt_rust::Input<String>,
         /// Contains information about the destination of ingested data.
         #[builder(into, default)]
-        pub destination_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appfabric::IngestionDestinationDestinationConfiguration,
             >,
         >,
         /// The Amazon Resource Name (ARN) of the ingestion to use for the request.
         #[builder(into)]
-        pub ingestion_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ingestion_arn: pulumi_gestalt_rust::Input<String>,
         /// Contains information about how ingested data is processed.
         #[builder(into, default)]
-        pub processing_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub processing_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appfabric::IngestionDestinationProcessingConfiguration,
             >,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::appfabric::IngestionDestinationTimeouts>,
         >,
     }

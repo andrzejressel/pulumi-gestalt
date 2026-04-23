@@ -66,85 +66,85 @@ pub mod dataset_delimited_text {
         ///
         /// The following supported locations for a Delimited Text Dataset (exactly one of them must be set):
         #[builder(into, default)]
-        pub additional_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of tags that can be used for describing the Data Factory Dataset.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An `azure_blob_fs_location` block as defined below.
         #[builder(into, default)]
-        pub azure_blob_fs_location: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_blob_fs_location: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::DatasetDelimitedTextAzureBlobFsLocation,
             >,
         >,
         /// An `azure_blob_storage_location` block as defined below.
         #[builder(into, default)]
-        pub azure_blob_storage_location: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_blob_storage_location: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::DatasetDelimitedTextAzureBlobStorageLocation,
             >,
         >,
         /// The column delimiter. Defaults to `,`.
         #[builder(into, default)]
-        pub column_delimiter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub column_delimiter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The compression codec used to read/write text files. Valid values are `None`, `bzip2`, `gzip`, `deflate`, `ZipDeflate`, `TarGzip`, `Tar`, `snappy` and `lz4`. Please note these values are case sensitive.
         #[builder(into, default)]
-        pub compression_codec: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compression_codec: pulumi_gestalt_rust::Input<Option<String>>,
         /// The compression ratio for the Data Factory Dataset. Valid values are `Fastest` or `Optimal`. Please note these values are case sensitive.
         #[builder(into, default)]
-        pub compression_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compression_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Dataset.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The encoding format for the file.
         #[builder(into, default)]
-        pub encoding: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encoding: pulumi_gestalt_rust::Input<Option<String>>,
         /// The escape character. Defaults to `\`.
         #[builder(into, default)]
-        pub escape_character: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub escape_character: pulumi_gestalt_rust::Input<Option<String>>,
         /// When used as input, treat the first row of data as headers. When used as output, write the headers into the output as the first row of data. Defaults to `false`.
         #[builder(into, default)]
-        pub first_row_as_header: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub first_row_as_header: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The folder that this Dataset is in. If not specified, the Dataset will appear at the root level.
         #[builder(into, default)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `http_server_location` block as defined below.
         ///
         /// The following supported arguments are specific to Delimited Text Dataset:
         #[builder(into, default)]
-        pub http_server_location: pulumi_gestalt_rust::InputOrOutput<
+        pub http_server_location: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::DatasetDelimitedTextHttpServerLocation,
             >,
         >,
         /// The Data Factory Linked Service name in which to associate the Dataset with.
         #[builder(into)]
-        pub linked_service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub linked_service_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Data Factory Dataset. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The null value string. Defaults to `""`.
         #[builder(into, default)]
-        pub null_value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub null_value: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of parameters to associate with the Data Factory Dataset.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The quote character. Defaults to `"`.
         #[builder(into, default)]
-        pub quote_character: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub quote_character: pulumi_gestalt_rust::Input<Option<String>>,
         /// The row delimiter. Defaults to any of the following values on read: `\r\n`, `\r`, `\n`, and `\n` or `\r\n` on write by mapping data flow and Copy activity respectively.
         #[builder(into, default)]
-        pub row_delimiter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub row_delimiter: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `schema_column` block as defined below.
         #[builder(into, default)]
-        pub schema_columns: pulumi_gestalt_rust::InputOrOutput<
+        pub schema_columns: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::datafactory::DatasetDelimitedTextSchemaColumn>,
             >,

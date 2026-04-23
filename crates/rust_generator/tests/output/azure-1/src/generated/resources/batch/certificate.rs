@@ -68,25 +68,25 @@ pub mod certificate {
     pub struct CertificateArgs {
         /// Specifies the name of the Batch account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The base64-encoded contents of the certificate.
         #[builder(into)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate: pulumi_gestalt_rust::Input<String>,
         /// The format of the certificate. Possible values are `Cer` or `Pfx`.
         #[builder(into)]
-        pub format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub format: pulumi_gestalt_rust::Input<String>,
         /// The password to access the certificate's private key. This can only be specified when `format` is `Pfx`.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Batch account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The thumbprint of the certificate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub thumbprint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub thumbprint: pulumi_gestalt_rust::Input<String>,
         /// The algorithm of the certificate thumbprint. At this time the only supported value is `SHA1`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub thumbprint_algorithm: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub thumbprint_algorithm: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateResult {

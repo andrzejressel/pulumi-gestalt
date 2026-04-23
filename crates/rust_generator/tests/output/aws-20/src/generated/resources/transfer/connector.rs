@@ -73,31 +73,31 @@ pub mod connector {
     pub struct ConnectorArgs {
         /// The IAM Role which provides read and write access to the parent directory of the file location mentioned in the StartFileTransfer request.
         #[builder(into)]
-        pub access_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_role: pulumi_gestalt_rust::Input<String>,
         /// Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
         #[builder(into, default)]
-        pub as2_config: pulumi_gestalt_rust::InputOrOutput<
+        pub as2_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::transfer::ConnectorAs2Config>,
         >,
         /// The IAM Role which is required for allowing the connector to turn on CloudWatch logging for Amazon S3 events.
         #[builder(into, default)]
-        pub logging_role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub logging_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the security policy for the connector.
         #[builder(into, default)]
-        pub security_policy_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub security_policy_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
         #[builder(into, default)]
-        pub sftp_config: pulumi_gestalt_rust::InputOrOutput<
+        pub sftp_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::transfer::ConnectorSftpConfig>,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The URL of the partners AS2 endpoint or SFTP endpoint.
         #[builder(into)]
-        pub url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub url: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConnectorResult {

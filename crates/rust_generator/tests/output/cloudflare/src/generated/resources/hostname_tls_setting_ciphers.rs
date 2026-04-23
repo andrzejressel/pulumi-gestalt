@@ -36,16 +36,16 @@ pub mod hostname_tls_setting_ciphers {
     pub struct HostnameTlsSettingCiphersArgs {
         /// Hostname that belongs to this zone name. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// Ports to use within the IP rule.
         #[builder(into, default)]
-        pub ports: pulumi_gestalt_rust::InputOrOutput<Option<Vec<i32>>>,
+        pub ports: pulumi_gestalt_rust::Input<Option<Vec<i32>>>,
         /// Ciphers suites value.
         #[builder(into)]
-        pub values: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub values: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HostnameTlsSettingCiphersResult {

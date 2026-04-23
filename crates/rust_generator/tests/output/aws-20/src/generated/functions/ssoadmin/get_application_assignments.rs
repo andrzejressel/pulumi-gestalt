@@ -10,10 +10,10 @@ pub mod get_application_assignments {
     pub struct GetApplicationAssignmentsArgs {
         /// ARN of the application.
         #[builder(into)]
-        pub application_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_arn: pulumi_gestalt_rust::Input<String>,
         /// List of principals assigned to the application. See the `application_assignments` attribute reference below.
         #[builder(into, default)]
-        pub application_assignments: pulumi_gestalt_rust::InputOrOutput<
+        pub application_assignments: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ssoadmin::GetApplicationAssignmentsApplicationAssignment,

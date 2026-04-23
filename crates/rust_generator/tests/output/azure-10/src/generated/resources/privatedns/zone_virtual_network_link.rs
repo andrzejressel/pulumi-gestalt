@@ -62,24 +62,24 @@ pub mod zone_virtual_network_link {
     pub struct ZoneVirtualNetworkLinkArgs {
         /// The name of the Private DNS Zone Virtual Network Link. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Private DNS zone (without a terminating dot). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub private_dns_zone_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_dns_zone_name: pulumi_gestalt_rust::Input<String>,
         /// Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub registration_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub registration_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the resource group where the Private DNS Zone exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Virtual Network that should be linked to the DNS Zone. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZoneVirtualNetworkLinkResult {

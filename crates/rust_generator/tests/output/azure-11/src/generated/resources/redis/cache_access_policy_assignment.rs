@@ -60,19 +60,19 @@ pub mod cache_access_policy_assignment {
     pub struct CacheAccessPolicyAssignmentArgs {
         /// The name of the Access Policy to be assigned. Changing this forces a new Redis Cache Access Policy Assignment to be created.
         #[builder(into)]
-        pub access_policy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_policy_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Redis Cache Access Policy Assignment. Changing this forces a new Redis Cache Access Policy Assignment to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The principal ID to be assigned the Access Policy. Changing this forces a new Redis Cache Access Policy Assignment to be created.
         #[builder(into)]
-        pub object_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_id: pulumi_gestalt_rust::Input<String>,
         /// The alias of the principal ID. User-friendly name for object ID. Also represents username for token based authentication. Changing this forces a new Redis Cache Access Policy Assignment to be created.
         #[builder(into)]
-        pub object_id_alias: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_id_alias: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Redis Cache. Changing this forces a new Redis Cache Access Policy Assignment to be created.
         #[builder(into)]
-        pub redis_cache_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub redis_cache_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CacheAccessPolicyAssignmentResult {

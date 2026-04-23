@@ -10,13 +10,13 @@ pub mod get_instance {
     pub struct GetInstanceArgs {
         /// Returns information on a specific connect instance by alias
         #[builder(into, default)]
-        pub instance_alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// Returns information on a specific connect instance by id
         #[builder(into, default)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assigned to the instance.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

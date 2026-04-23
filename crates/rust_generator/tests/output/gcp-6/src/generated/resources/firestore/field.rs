@@ -158,33 +158,33 @@ pub mod field {
     pub struct FieldArgs {
         /// The id of the collection group to configure.
         #[builder(into)]
-        pub collection: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub collection: pulumi_gestalt_rust::Input<String>,
         /// The Firestore database id. Defaults to `"(default)"`.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database: pulumi_gestalt_rust::Input<Option<String>>,
         /// The id of the field to configure.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub field: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub field: pulumi_gestalt_rust::Input<String>,
         /// The single field index configuration for this field.
         /// Creating an index configuration for this field will override any inherited configuration with the
         /// indexes specified. Configuring the index configuration with an empty block disables all indexes on
         /// the field.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub index_config: pulumi_gestalt_rust::InputOrOutput<
+        pub index_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::firestore::FieldIndexConfig>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The TTL configuration for this Field. If set to an empty block (i.e. `ttl_config {}`), a TTL policy is configured based on the field. If unset, a TTL policy is not configured (or will be disabled upon updating the resource).
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ttl_config: pulumi_gestalt_rust::InputOrOutput<
+        pub ttl_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::firestore::FieldTtlConfig>,
         >,
     }

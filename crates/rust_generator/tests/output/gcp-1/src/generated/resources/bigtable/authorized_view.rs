@@ -91,27 +91,27 @@ pub mod authorized_view {
     #[allow(dead_code)]
     pub struct AuthorizedViewArgs {
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Bigtable instance in which the authorized view belongs.
         #[builder(into)]
-        pub instance_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the authorized view. Must be 1-50 characters and must only contain hyphens, underscores, periods, letters and numbers.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// An AuthorizedView permitting access to an explicit subset of a Table. Structure is documented below.
         ///
         /// -----
         #[builder(into, default)]
-        pub subset_view: pulumi_gestalt_rust::InputOrOutput<
+        pub subset_view: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigtable::AuthorizedViewSubsetView>,
         >,
         /// The name of the Bigtable table in which the authorized view belongs.
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AuthorizedViewResult {

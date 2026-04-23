@@ -10,10 +10,10 @@ pub mod get_named_query {
     pub struct GetNamedQueryArgs {
         /// The plain language name for the query. Maximum length of 128.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The workgroup to which the query belongs. Defaults to `primary`.
         #[builder(into, default)]
-        pub workgroup: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workgroup: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetNamedQueryResult {

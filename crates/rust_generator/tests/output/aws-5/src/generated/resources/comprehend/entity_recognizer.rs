@@ -69,30 +69,30 @@ pub mod entity_recognizer {
     pub struct EntityRecognizerArgs {
         /// The ARN for an IAM Role which allows Comprehend to read the training and testing data.
         #[builder(into)]
-        pub data_access_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_access_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Configuration for the training and testing data.
         /// See the `input_data_config` Configuration Block section below.
         #[builder(into)]
-        pub input_data_config: pulumi_gestalt_rust::InputOrOutput<
+        pub input_data_config: pulumi_gestalt_rust::Input<
             super::super::types::comprehend::EntityRecognizerInputDataConfig,
         >,
         /// Two-letter language code for the language.
         /// One of `en`, `es`, `fr`, `it`, `de`, or `pt`.
         #[builder(into)]
-        pub language_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub language_code: pulumi_gestalt_rust::Input<String>,
         /// The ID or ARN of a KMS Key used to encrypt trained Entity Recognizers.
         #[builder(into, default)]
-        pub model_kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub model_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name for the Entity Recognizer.
         /// Has a maximum length of 63 characters.
         /// Can contain upper- and lower-case letters, numbers, and hypen (`-`).
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` Configuration Block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name for the version of the Entity Recognizer.
@@ -103,20 +103,20 @@ pub mod entity_recognizer {
         /// Can contain upper- and lower-case letters, numbers, and hypen (`-`).
         /// Conflicts with `version_name_prefix`.
         #[builder(into, default)]
-        pub version_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique version name beginning with the specified prefix.
         /// Has a maximum length of 37 characters.
         /// Can contain upper- and lower-case letters, numbers, and hypen (`-`).
         /// Conflicts with `version_name`.
         #[builder(into, default)]
-        pub version_name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID or ARN of a KMS Key used to encrypt storage volumes during job processing.
         #[builder(into, default)]
-        pub volume_kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub volume_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration parameters for VPC to contain Entity Recognizer resources.
         /// See the `vpc_config` Configuration Block section below.
         #[builder(into, default)]
-        pub vpc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::comprehend::EntityRecognizerVpcConfig>,
         >,
     }

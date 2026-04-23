@@ -49,75 +49,71 @@ pub mod fleet {
     pub struct FleetArgs {
         /// Reserved.
         #[builder(into, default)]
-        pub context: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub context: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2. Valid values: `no-termination`, `termination`. Defaults to `termination`. Supported only for fleets of type `maintain`.
         #[builder(into, default)]
-        pub excess_capacity_termination_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub excess_capacity_termination_policy: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Information about the instances that were launched by the fleet. Available only when `type` is set to `instant`.
         #[builder(into, default)]
-        pub fleet_instance_sets: pulumi_gestalt_rust::InputOrOutput<
+        pub fleet_instance_sets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::FleetFleetInstanceSet>>,
         >,
         /// The state of the EC2 Fleet.
         #[builder(into, default)]
-        pub fleet_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fleet_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of units fulfilled by this request compared to the set target capacity.
         #[builder(into, default)]
-        pub fulfilled_capacity: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub fulfilled_capacity: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The number of units fulfilled by this request compared to the set target On-Demand capacity.
         #[builder(into, default)]
-        pub fulfilled_on_demand_capacity: pulumi_gestalt_rust::InputOrOutput<
-            Option<f64>,
-        >,
+        pub fulfilled_on_demand_capacity: pulumi_gestalt_rust::Input<Option<f64>>,
         /// Nested argument containing EC2 Launch Template configurations. Defined below.
         #[builder(into)]
-        pub launch_template_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub launch_template_configs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::ec2::FleetLaunchTemplateConfig>,
         >,
         /// Nested argument containing On-Demand configurations. Defined below.
         #[builder(into, default)]
-        pub on_demand_options: pulumi_gestalt_rust::InputOrOutput<
+        pub on_demand_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::FleetOnDemandOptions>,
         >,
         /// Whether EC2 Fleet should replace unhealthy instances. Defaults to `false`. Supported only for fleets of type `maintain`.
         #[builder(into, default)]
-        pub replace_unhealthy_instances: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub replace_unhealthy_instances: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Nested argument containing Spot configurations. Defined below.
         #[builder(into, default)]
-        pub spot_options: pulumi_gestalt_rust::InputOrOutput<
+        pub spot_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::FleetSpotOptions>,
         >,
         /// Map of Fleet tags. To tag instances at launch, specify the tags in the Launch Template. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Nested argument containing target capacity configurations. Defined below.
         #[builder(into)]
-        pub target_capacity_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub target_capacity_specification: pulumi_gestalt_rust::Input<
             super::super::types::ec2::FleetTargetCapacitySpecification,
         >,
         /// Whether to terminate instances for an EC2 Fleet if it is deleted successfully. Defaults to `false`.
         #[builder(into, default)]
-        pub terminate_instances: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub terminate_instances: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether running instances should be terminated when the EC2 Fleet expires. Defaults to `false`.
         #[builder(into, default)]
-        pub terminate_instances_with_expiration: pulumi_gestalt_rust::InputOrOutput<
+        pub terminate_instances_with_expiration: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The type of request. Indicates whether the EC2 Fleet only requests the target capacity, or also attempts to maintain it. Valid values: `maintain`, `request`, `instant`. Defaults to `maintain`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The start date and time of the request, in UTC format (for example, YYYY-MM-DDTHH:MM:SSZ). The default is to start fulfilling the request immediately.
         #[builder(into, default)]
-        pub valid_from: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub valid_from: pulumi_gestalt_rust::Input<Option<String>>,
         /// The end date and time of the request, in UTC format (for example, YYYY-MM-DDTHH:MM:SSZ). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.
         #[builder(into, default)]
-        pub valid_until: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub valid_until: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FleetResult {

@@ -10,16 +10,16 @@ pub mod get_record_set {
     pub struct GetRecordSetArgs {
         /// The Name of the zone.
         #[builder(into)]
-        pub managed_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_zone: pulumi_gestalt_rust::Input<String>,
         /// The DNS name for the resource.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project for the Google Cloud.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The RRSet type. [See this table for supported types](https://cloud.google.com/dns/docs/records#record_type).
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRecordSetResult {

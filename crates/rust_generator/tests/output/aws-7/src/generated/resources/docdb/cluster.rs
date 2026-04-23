@@ -50,117 +50,103 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// A value that indicates whether major version upgrades are allowed. Constraints: You must allow major version upgrades when specifying a value for the EngineVersion parameter that is a different major version than the DB cluster's current version.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether any cluster modifications
         /// are applied immediately, or during the next maintenance window. Default is
         /// `false`.
         #[builder(into, default)]
-        pub apply_immediately: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of EC2 Availability Zones that
         /// instances in the DB cluster can be created in.
         #[builder(into, default)]
-        pub availability_zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub availability_zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The days to retain backups for. Default `1`
         #[builder(into, default)]
-        pub backup_retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub backup_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The cluster identifier. If omitted, the provider will assign a random, unique identifier.
         #[builder(into, default)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifier`.
         #[builder(into, default)]
-        pub cluster_identifier_prefix: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub cluster_identifier_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of DocumentDB Instances that are a part of this cluster
         #[builder(into, default)]
-        pub cluster_members: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub cluster_members: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A cluster parameter group to associate with the cluster.
         #[builder(into, default)]
-        pub db_cluster_parameter_group_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub db_cluster_parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A DB subnet group to associate with this DB instance.
         #[builder(into, default)]
-        pub db_subnet_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of log types to export to cloudwatch. If omitted, no logs will be exported.
         /// The following log types are supported: `audit`, `profiler`.
         #[builder(into, default)]
-        pub enabled_cloudwatch_logs_exports: pulumi_gestalt_rust::InputOrOutput<
+        pub enabled_cloudwatch_logs_exports: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The name of the database engine to be used for this DB cluster. Defaults to `docdb`. Valid values: `docdb`.
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// The database engine version. Updating this argument results in an outage.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of your final DB snapshot
         /// when this DB cluster is deleted. If omitted, no final snapshot will be
         /// made.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The global cluster identifier specified on `aws.docdb.GlobalCluster`.
         #[builder(into, default)]
-        pub global_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub global_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN for the KMS encryption key. When specifying `kms_key_id`, `storage_encrypted` needs to be set to true.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Password for the master DB user. Note that this may
         /// show up in logs, and it will be stored in the state file. Please refer to the DocumentDB Naming Constraints.
         #[builder(into, default)]
-        pub master_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub master_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// Username for the master DB user.
         #[builder(into, default)]
-        pub master_username: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub master_username: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port on which the DB accepts connections
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.Time in UTC
         /// Default: A 30-minute window selected at random from an 8-hour block of time per regionE.g., 04:00-09:00
         #[builder(into, default)]
-        pub preferred_backup_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// The weekly time range during which system maintenance can occur, in (UTC) e.g., wed:04:00-wed:04:30
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration block for restoring a DB instance to an arbitrary point in time. Requires the `identifier` argument to be set with the name of the new DB instance to be created. See Restore To Point In Time below for details.
         #[builder(into, default)]
-        pub restore_to_point_in_time: pulumi_gestalt_rust::InputOrOutput<
+        pub restore_to_point_in_time: pulumi_gestalt_rust::Input<
             Option<super::super::types::docdb::ClusterRestoreToPointInTime>,
         >,
         /// Determines whether a final DB snapshot is created before the DB cluster is deleted. If true is specified, no DB snapshot is created. If false is specified, a DB snapshot is created before the DB cluster is deleted, using the value from `final_snapshot_identifier`. Default is `false`.
         #[builder(into, default)]
-        pub skip_final_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether or not to create this cluster from a snapshot. You can use either the name or ARN when specifying a DB cluster snapshot, or the ARN when specifying a DB snapshot. Automated snapshots **should not** be used for this attribute, unless from a different cluster. Automated snapshots are deleted as part of cluster destruction when the resource is replaced.
         #[builder(into, default)]
-        pub snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the DB cluster is encrypted. The default is `false`.
         #[builder(into, default)]
-        pub storage_encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub storage_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The storage type to associate with the DB cluster. Valid values: `standard`, `iopt1`.
         #[builder(into, default)]
-        pub storage_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the DB cluster. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// List of VPC security groups to associate
         /// with the Cluster
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

@@ -46,30 +46,30 @@ pub mod location_azure_blob {
     pub struct LocationAzureBlobArgs {
         /// The access tier that you want your objects or files transferred into. Valid values: `HOT`, `COOL` and `ARCHIVE`. Default: `HOT`.
         #[builder(into, default)]
-        pub access_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of DataSync Agent ARNs with which this location will be associated.
         #[builder(into)]
-        pub agent_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub agent_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The authentication method DataSync uses to access your Azure Blob Storage. Valid values: `SAS`.
         #[builder(into)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authentication_type: pulumi_gestalt_rust::Input<String>,
         /// The type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Valid values: `BLOB`. Default: `BLOB`.
         #[builder(into, default)]
-        pub blob_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub blob_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URL of the Azure Blob Storage container involved in your transfer.
         #[builder(into)]
-        pub container_url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_url: pulumi_gestalt_rust::Input<String>,
         /// The SAS configuration that allows DataSync to access your Azure Blob Storage. See configuration below.
         #[builder(into, default)]
-        pub sas_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub sas_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::LocationAzureBlobSasConfiguration>,
         >,
         /// Path segments if you want to limit your transfer to a virtual directory in the container.
         #[builder(into, default)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subdirectory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

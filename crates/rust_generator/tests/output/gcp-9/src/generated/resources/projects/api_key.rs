@@ -183,16 +183,16 @@ pub mod api_key {
     pub struct ApiKeyArgs {
         /// Human-readable display name of this API key. Modifiable by user.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of the key. The name must be unique within the project, must conform with RFC-1034, is restricted to lower-cased letters, and has a maximum length of 63 characters. In another word, the name must match the regular expression: `a-z?`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key restrictions.
         #[builder(into, default)]
-        pub restrictions: pulumi_gestalt_rust::InputOrOutput<
+        pub restrictions: pulumi_gestalt_rust::Input<
             Option<super::super::types::projects::ApiKeyRestrictions>,
         >,
     }

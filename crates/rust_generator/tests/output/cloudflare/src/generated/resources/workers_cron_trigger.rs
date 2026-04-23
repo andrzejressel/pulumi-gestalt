@@ -48,13 +48,13 @@ pub mod workers_cron_trigger {
     pub struct WorkersCronTriggerArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Cron expressions to execute the Worker script.
         #[builder(into)]
-        pub schedules: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub schedules: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Worker script to target for the schedules.
         #[builder(into)]
-        pub script_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub script_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkersCronTriggerResult {

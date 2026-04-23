@@ -315,28 +315,26 @@ pub mod instance {
     pub struct InstanceArgs {
         /// The allocated storage in gibibytes. If `max_allocated_storage` is configured, this argument represents the initial storage allocation and differences from the configuration will be ignored automatically when Storage Autoscaling occurs. If `replicate_source_db` is set, the value is ignored during the creation of the instance.
         #[builder(into, default)]
-        pub allocated_storage: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub allocated_storage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Indicates that major version
         /// upgrades are allowed. Changing this parameter does not result in an outage and
         /// the change is asynchronously applied as soon as possible.
         #[builder(into, default)]
-        pub allow_major_version_upgrade: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub allow_major_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether any database modifications
         /// are applied immediately, or during the next maintenance window. Default is
         /// `false`. See [Amazon RDS Documentation for more
         /// information.](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html)
         #[builder(into, default)]
-        pub apply_immediately: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub apply_immediately: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Indicates that minor engine upgrades
         /// will be applied automatically to the DB instance during the maintenance window.
         /// Defaults to true.
         #[builder(into, default)]
-        pub auto_minor_version_upgrade: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_minor_version_upgrade: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The AZ for the RDS instance.
         #[builder(into, default)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The days to retain backups for.
         /// Must be between `0` and `35`.
         /// Default is `0`.
@@ -344,48 +342,46 @@ pub mod instance {
         /// uses low-downtime updates,
         /// or will use [RDS Blue/Green deployments][blue-green].
         #[builder(into, default)]
-        pub backup_retention_period: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub backup_retention_period: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies where automated backups and manual snapshots are stored. Possible values are `region` (default) and `outposts`. See [Working with Amazon RDS on AWS Outposts](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html) for more information.
         #[builder(into, default)]
-        pub backup_target: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub backup_target: pulumi_gestalt_rust::Input<Option<String>>,
         /// The daily time range (in UTC) during which automated backups are created if they are enabled.
         /// Example: "09:46-10:16". Must not overlap with `maintenance_window`.
         #[builder(into, default)]
-        pub backup_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Enables low-downtime updates using [RDS Blue/Green deployments][blue-green].
         /// See `blue_green_update` below.
         #[builder(into, default)]
-        pub blue_green_update: pulumi_gestalt_rust::InputOrOutput<
+        pub blue_green_update: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::InstanceBlueGreenUpdate>,
         >,
         /// The identifier of the CA certificate for the DB instance.
         #[builder(into, default)]
-        pub ca_cert_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ca_cert_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// The character set name to use for DB encoding in Oracle and Microsoft SQL instances (collation).
         /// This can't be changed.
         /// See [Oracle Character Sets Supported in Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.OracleCharacterSets.html) or
         /// [Server-Level Collation for Microsoft SQL Server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.SQLServer.CommonDBATasks.Collation.html) for more information.
         /// Cannot be set  with `replicate_source_db`, `restore_to_point_in_time`, `s3_import`, or `snapshot_identifier`.
         #[builder(into, default)]
-        pub character_set_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub character_set_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Copy all Instance `tags` to snapshots. Default is `false`.
         #[builder(into, default)]
-        pub copy_tags_to_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_tags_to_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance.
         #[builder(into, default)]
-        pub custom_iam_instance_profile: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub custom_iam_instance_profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance. See [CoIP for RDS on Outposts](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html#rds-on-outposts.coip) for more information.
         ///
         /// > **NOTE:** Removing the `replicate_source_db` attribute from an existing RDS
         /// Replicate database managed by the provider will promote the database to a fully
         /// standalone database.
         #[builder(into, default)]
-        pub customer_owned_ip_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub customer_owned_ip_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the database to create when the DB instance is created. If this parameter is not specified, no database is created in the DB instance. Note that this does not apply for Oracle or SQL Server engines. See the [AWS documentation](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/create-db-instance.html) for more details on what applies for those engines. If you are providing an Oracle db name, it needs to be in all upper case. Cannot be specified for a replica.
         #[builder(into, default)]
-        pub db_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of DB subnet group.
         /// DB instance will be created in the VPC associated with the DB subnet group.
         /// If unspecified, will be created in the `default` Subnet Group.
@@ -393,80 +389,78 @@ pub mod instance {
         /// When working with read replicas created in a different region, defaults to the `default` Subnet Group.
         /// See [DBSubnetGroupName in API action CreateDBInstanceReadReplica](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html) for additional read replica constraints.
         #[builder(into, default)]
-        pub db_subnet_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_subnet_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use a dedicated log volume (DLV) for the DB instance. Requires Provisioned IOPS. See the [AWS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.dlv) for more details.
         #[builder(into, default)]
-        pub dedicated_log_volume: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub dedicated_log_volume: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether to remove automated backups immediately after the DB instance is deleted. Default is `true`.
         #[builder(into, default)]
-        pub delete_automated_backups: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub delete_automated_backups: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If the DB instance should have deletion protection enabled. The database can't be deleted when this value is set to `true`. The default is `false`.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Directory Service Active Directory domain to create the instance in. Conflicts with `domain_fqdn`, `domain_ou`, `domain_auth_secret_arn` and a `domain_dns_ips`.
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN for the Secrets Manager secret with the self managed Active Directory credentials for the user joining the domain. Conflicts with `domain` and `domain_iam_role_name`.
         #[builder(into, default)]
-        pub domain_auth_secret_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_auth_secret_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 DNS IP addresses of your primary and secondary self managed Active Directory domain controllers. Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list. Conflicts with `domain` and `domain_iam_role_name`.
         #[builder(into, default)]
-        pub domain_dns_ips: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub domain_dns_ips: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The fully qualified domain name (FQDN) of the self managed Active Directory domain. Conflicts with `domain` and `domain_iam_role_name`.
         #[builder(into, default)]
-        pub domain_fqdn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_fqdn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the IAM role to be used when making API calls to the Directory Service. Conflicts with `domain_fqdn`, `domain_ou`, `domain_auth_secret_arn` and a `domain_dns_ips`.
         #[builder(into, default)]
-        pub domain_iam_role_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_iam_role_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The self managed Active Directory organizational unit for your DB instance to join. Conflicts with `domain` and `domain_iam_role_name`.
         #[builder(into, default)]
-        pub domain_ou: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_ou: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of log types to enable for exporting to CloudWatch logs. If omitted, no logs will be exported. For supported values, see the EnableCloudwatchLogsExports.member.N parameter in [API action CreateDBInstance](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html).
         #[builder(into, default)]
-        pub enabled_cloudwatch_logs_exports: pulumi_gestalt_rust::InputOrOutput<
+        pub enabled_cloudwatch_logs_exports: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The database engine to use. For supported values, see the Engine parameter in [API action CreateDBInstance](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html). Note that for Amazon Aurora instances the engine must match the DB cluster's engine'. For information on the difference between the available Aurora MySQL engines see [Comparison between Aurora MySQL 1 and Aurora MySQL 2](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Updates.20180206.html) in the Amazon RDS User Guide.
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// The life cycle type for this DB instance. This setting applies only to RDS for MySQL and RDS for PostgreSQL. Valid values are `open-source-rds-extended-support`, `open-source-rds-extended-support-disabled`. Default value is `open-source-rds-extended-support`. [Using Amazon RDS Extended Support]: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html
         #[builder(into, default)]
-        pub engine_lifecycle_support: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_lifecycle_support: pulumi_gestalt_rust::Input<Option<String>>,
         /// The engine version to use. If `auto_minor_version_upgrade` is enabled, you can provide a prefix of the version such as `8.0` (for `8.0.36`). The actual engine version used is returned in the attribute `engine_version_actual`, see Attribute Reference below. For supported values, see the EngineVersion parameter in [API action CreateDBInstance](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html). Note that for Amazon Aurora instances the engine version must match the DB cluster's engine version'.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of your final DB snapshot
         /// when this DB instance is deleted. Must be provided if `skip_final_snapshot` is
         /// set to `false`. The value must begin with a letter, only contain alphanumeric characters and hyphens, and not end with a hyphen or contain two consecutive hyphens. Must not be provided when deleting a read replica.
         #[builder(into, default)]
-        pub final_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub final_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether mappings of AWS Identity and Access Management (IAM) accounts to database
         /// accounts is enabled.
         #[builder(into, default)]
-        pub iam_database_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub iam_database_authentication_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The name of the RDS instance, if omitted, this provider will assign a random, unique identifier. Required if `restore_to_point_in_time` is specified.
         #[builder(into, default)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique identifier beginning with the specified prefix. Conflicts with `identifier`.
         #[builder(into, default)]
-        pub identifier_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identifier_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// The instance type of the RDS instance.
         #[builder(into)]
-        pub instance_class: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_class: pulumi_gestalt_rust::Input<String>,
         /// The amount of provisioned IOPS. Setting this implies a
         /// storage_type of "io1" or "io2". Can only be set when `storage_type` is `"io1"`, `"io2` or `"gp3"`.
         /// Cannot be specified for gp3 storage if the `allocated_storage` value is below a per-`engine` threshold.
         /// See the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#gp3-storage) for details.
         #[builder(into, default)]
-        pub iops: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub iops: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ARN for the KMS encryption key. If creating an
         /// encrypted replica, set this to the destination KMS ARN.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// License model information for this DB instance. Valid values for this field are as follows:
         /// * RDS for MariaDB: `general-public-license`
         /// * RDS for Microsoft SQL Server: `license-included`
@@ -474,89 +468,81 @@ pub mod instance {
         /// * RDS for Oracle: `bring-your-own-license | license-included`
         /// * RDS for PostgreSQL: `postgresql-license`
         #[builder(into, default)]
-        pub license_model: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub license_model: pulumi_gestalt_rust::Input<Option<String>>,
         /// The window to perform maintenance in.
         /// Syntax: "ddd:hh24:mi-ddd:hh24:mi". Eg: "Mon:00:00-Mon:03:00". See [RDS
         /// Maintenance Window
         /// docs](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow)
         /// for more information.
         #[builder(into, default)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set to true to allow RDS to manage the master user password in Secrets Manager. Cannot be set if `password` is provided.
         #[builder(into, default)]
-        pub manage_master_user_password: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub manage_master_user_password: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN. If not specified, the default KMS key for your Amazon Web Services account is used.
         #[builder(into, default)]
-        pub master_user_secret_kms_key_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub master_user_secret_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance. Configuring this will automatically ignore differences to `allocated_storage`. Must be greater than or equal to `allocated_storage` or `0` to disable Storage Autoscaling.
         #[builder(into, default)]
-        pub max_allocated_storage: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_allocated_storage: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The interval, in seconds, between points
         /// when Enhanced Monitoring metrics are collected for the DB instance. To disable
         /// collecting Enhanced Monitoring metrics, specify 0. The default is 0. Valid
         /// Values: 0, 1, 5, 10, 15, 30, 60.
         #[builder(into, default)]
-        pub monitoring_interval: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub monitoring_interval: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ARN for the IAM role that permits RDS
         /// to send enhanced monitoring metrics to CloudWatch Logs. You can find more
         /// information on the [AWS
         /// Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html)
         /// what IAM permissions are needed to allow Enhanced Monitoring for RDS Instances.
         #[builder(into, default)]
-        pub monitoring_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub monitoring_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies if the RDS instance is multi-AZ
         #[builder(into, default)]
-        pub multi_az: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub multi_az: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The national character set is used in the NCHAR, NVARCHAR2, and NCLOB data types for Oracle instances. This can't be changed. See [Oracle Character Sets
         /// Supported in Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.OracleCharacterSets.html).
         #[builder(into, default)]
-        pub nchar_character_set_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub nchar_character_set_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network type of the DB instance. Valid values: `IPV4`, `DUAL`.
         #[builder(into, default)]
-        pub network_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the DB option group to associate.
         #[builder(into, default)]
-        pub option_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub option_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the DB parameter group to associate.
         #[builder(into, default)]
-        pub parameter_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameter_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// (Required unless `manage_master_user_password` is set to true or unless a `snapshot_identifier` or `replicate_source_db`
         /// is provided or `manage_master_user_password` is set.) Password for the master DB user. Note that this may show up in
         /// logs, and it will be stored in the state file. Cannot be set if `manage_master_user_password` is set to `true`.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether Performance Insights are enabled. Defaults to false.
         #[builder(into, default)]
-        pub performance_insights_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub performance_insights_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN for the KMS key to encrypt Performance Insights data. When specifying `performance_insights_kms_key_id`, `performance_insights_enabled` needs to be set to true. Once KMS key is set, it can never be changed.
         #[builder(into, default)]
-        pub performance_insights_kms_key_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub performance_insights_kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time in days to retain Performance Insights data. Valid values are `7`, `731` (2 years) or a multiple of `31`. When specifying `performance_insights_retention_period`, `performance_insights_enabled` needs to be set to true. Defaults to '7'.
         #[builder(into, default)]
-        pub performance_insights_retention_period: pulumi_gestalt_rust::InputOrOutput<
+        pub performance_insights_retention_period: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// The port on which the DB accepts connections.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Bool to control if instance is publicly
         /// accessible. Default is `false`.
         #[builder(into, default)]
-        pub publicly_accessible: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether the replica is in either `mounted` or `open-read-only` mode. This attribute
         /// is only supported by Oracle instances. Oracle replicas operate in `open-read-only` mode unless otherwise specified. See [Working with Oracle Read Replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html) for more information.
         #[builder(into, default)]
-        pub replica_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub replica_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies that this resource is a Replica database, and to use this value as the source database.
         /// If replicating an Amazon RDS Database Instance in the same region, use the `identifier` of the source DB, unless also specifying the `db_subnet_group_name`.
         /// If specifying the `db_subnet_group_name` in the same region, use the `arn` of the source DB.
@@ -564,17 +550,17 @@ pub mod instance {
         /// Note that if you are creating a cross-region replica of an encrypted database you will also need to specify a `kms_key_id`.
         /// See [DB Instance Replication][instance-replication] and [Working with PostgreSQL and MySQL Read Replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html) for more information on using Replication.
         #[builder(into, default)]
-        pub replicate_source_db: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub replicate_source_db: pulumi_gestalt_rust::Input<Option<String>>,
         /// A configuration block for restoring a DB instance to an arbitrary point in time.
         /// Requires the `identifier` argument to be set with the name of the new DB instance to be created.
         /// See Restore To Point In Time below for details.
         #[builder(into, default)]
-        pub restore_to_point_in_time: pulumi_gestalt_rust::InputOrOutput<
+        pub restore_to_point_in_time: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::InstanceRestoreToPointInTime>,
         >,
         /// Restore from a Percona Xtrabackup in S3.  See [Importing Data into an Amazon RDS MySQL DB Instance](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html)
         #[builder(into, default)]
-        pub s3_import: pulumi_gestalt_rust::InputOrOutput<
+        pub s3_import: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::InstanceS3Import>,
         >,
         /// Determines whether a final DB snapshot is
@@ -583,29 +569,29 @@ pub mod instance {
         /// instance is deleted, using the value from `final_snapshot_identifier`. Default
         /// is `false`.
         #[builder(into, default)]
-        pub skip_final_snapshot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_final_snapshot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies whether or not to create this database from a snapshot.
         /// This corresponds to the snapshot ID you'd find in the RDS console, e.g: rds:production-2015-06-26-06-05.
         #[builder(into, default)]
-        pub snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the DB instance is
         /// encrypted. Note that if you are creating a cross-region read replica this field
         /// is ignored and you should instead declare `kms_key_id` with a valid ARN. The
         /// default is `false` if not specified.
         #[builder(into, default)]
-        pub storage_encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub storage_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The storage throughput value for the DB instance. Can only be set when `storage_type` is `"gp3"`. Cannot be specified if the `allocated_storage` value is below a per-`engine` threshold. See the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#gp3-storage) for details.
         #[builder(into, default)]
-        pub storage_throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub storage_throughput: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One of "standard" (magnetic), "gp2" (general
         /// purpose SSD), "gp3" (general purpose SSD that needs `iops` independently)
         /// "io1" (provisioned IOPS SSD) or "io2" (block express storage provisioned IOPS
         /// SSD). The default is "io1" if `iops` is specified, "gp2" if not.
         #[builder(into, default)]
-        pub storage_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Time zone of the DB instance. `timezone` is currently
@@ -614,21 +600,19 @@ pub mod instance {
         /// Guide](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone)
         /// for more information.
         #[builder(into, default)]
-        pub timezone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub timezone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to upgrade the storage file system configuration on the read replica.
         /// Can only be set with `replicate_source_db`.
         #[builder(into, default)]
-        pub upgrade_storage_config: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub upgrade_storage_config: pulumi_gestalt_rust::Input<Option<bool>>,
         /// (Required unless a `snapshot_identifier` or `replicate_source_db`
         /// is provided) Username for the master DB user. Cannot be specified for a replica.
         #[builder(into, default)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub username: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of VPC security groups to
         /// associate.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct InstanceResult {

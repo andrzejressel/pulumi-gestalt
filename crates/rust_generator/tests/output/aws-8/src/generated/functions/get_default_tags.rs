@@ -9,7 +9,7 @@ pub mod get_default_tags {
     #[allow(dead_code)]
     pub struct GetDefaultTagsArgs {
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDefaultTagsResult {

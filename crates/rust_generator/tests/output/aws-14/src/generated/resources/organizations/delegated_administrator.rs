@@ -36,10 +36,10 @@ pub mod delegated_administrator {
     pub struct DelegatedAdministratorArgs {
         /// The account ID number of the member account in the organization to register as a delegated administrator.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The service principal of the AWS service for which you want to make the member account a delegated administrator.
         #[builder(into)]
-        pub service_principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_principal: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DelegatedAdministratorResult {

@@ -39,16 +39,16 @@ pub mod tunnel_virtual_network {
     pub struct TunnelVirtualNetworkArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Description of the tunnel virtual network.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether this virtual network is the default one for the account. This means IP Routes belong to this virtual network and Teams Clients in the account route through this virtual network, unless specified otherwise for each case.
         #[builder(into, default)]
-        pub is_default_network: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_default_network: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A user-friendly name chosen when the virtual network is created.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TunnelVirtualNetworkResult {

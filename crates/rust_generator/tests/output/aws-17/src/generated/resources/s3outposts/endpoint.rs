@@ -37,19 +37,19 @@ pub mod endpoint {
     pub struct EndpointArgs {
         /// Type of access for the network connectivity. Valid values are `Private` or `CustomerOwnedIp`.
         #[builder(into, default)]
-        pub access_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of a Customer Owned IP Pool. For more on customer owned IP addresses see the [User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/local-rack.html#local-gateway-subnet).
         #[builder(into, default)]
-        pub customer_owned_ipv4_pool: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_owned_ipv4_pool: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the Outpost to contain this endpoint.
         #[builder(into)]
-        pub outpost_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub outpost_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the EC2 Security Group.
         #[builder(into)]
-        pub security_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_group_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the EC2 Subnet.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointResult {

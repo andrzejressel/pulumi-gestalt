@@ -51,10 +51,10 @@ pub mod resource {
     pub struct ResourceArgs {
         /// Name or ARN of the resource group to add resources to.
         #[builder(into)]
-        pub group_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_arn: pulumi_gestalt_rust::Input<String>,
         /// ARN of the resource to be added to the group.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourceResult {

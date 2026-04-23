@@ -42,51 +42,49 @@ pub mod spectrum_application {
     pub struct SpectrumApplicationArgs {
         /// Enables Argo Smart Routing.
         #[builder(into, default)]
-        pub argo_smart_routing: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub argo_smart_routing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name and type of DNS record for the Spectrum application.
         #[builder(into)]
-        pub dns: pulumi_gestalt_rust::InputOrOutput<
-            super::types::SpectrumApplicationDns,
-        >,
+        pub dns: pulumi_gestalt_rust::Input<super::types::SpectrumApplicationDns>,
         /// The anycast edge IP configuration for the hostname of this application.
         #[builder(into, default)]
-        pub edge_ips: pulumi_gestalt_rust::InputOrOutput<
+        pub edge_ips: pulumi_gestalt_rust::Input<
             Option<super::types::SpectrumApplicationEdgeIps>,
         >,
         /// Enables the IP Firewall for this application.
         #[builder(into, default)]
-        pub ip_firewall: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ip_firewall: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of destination addresses to the origin. e.g. `tcp://192.0.2.1:22`.
         #[builder(into, default)]
-        pub origin_directs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub origin_directs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A destination DNS addresses to the origin.
         #[builder(into, default)]
-        pub origin_dns: pulumi_gestalt_rust::InputOrOutput<
+        pub origin_dns: pulumi_gestalt_rust::Input<
             Option<super::types::SpectrumApplicationOriginDns>,
         >,
         /// Origin port to proxy traffice to. Conflicts with `origin_port_range`.
         #[builder(into, default)]
-        pub origin_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub origin_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Origin port range to proxy traffice to. When using a range, the protocol field must also specify a range, e.g. `tcp/22-23`. Conflicts with `origin_port`.
         #[builder(into, default)]
-        pub origin_port_range: pulumi_gestalt_rust::InputOrOutput<
+        pub origin_port_range: pulumi_gestalt_rust::Input<
             Option<super::types::SpectrumApplicationOriginPortRange>,
         >,
         /// The port configuration at Cloudflare's edge. e.g. `tcp/22`.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// Enables a proxy protocol to the origin. Available values: `off`, `v1`, `v2`, `simple`.
         #[builder(into, default)]
-        pub proxy_protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub proxy_protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// TLS configuration option for Cloudflare to connect to your origin. Available values: `off`, `flexible`, `full`, `strict`.
         #[builder(into, default)]
-        pub tls: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tls: pulumi_gestalt_rust::Input<Option<String>>,
         /// Sets application type. Available values: `direct`, `http`, `https`.
         #[builder(into, default)]
-        pub traffic_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub traffic_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpectrumApplicationResult {

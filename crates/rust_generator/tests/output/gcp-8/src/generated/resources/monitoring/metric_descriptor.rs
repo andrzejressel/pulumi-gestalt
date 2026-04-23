@@ -117,40 +117,40 @@ pub mod metric_descriptor {
     pub struct MetricDescriptorArgs {
         /// A detailed description of the metric, which can be used in documentation.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example "Request count".
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The set of labels that can be used to describe a specific instance of this metric type. In order to delete a label, the entire resource must be deleted, then created with the desired labels.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::MetricDescriptorLabel>>,
         >,
         /// The launch stage of the metric definition.
         /// Possible values are: `LAUNCH_STAGE_UNSPECIFIED`, `UNIMPLEMENTED`, `PRELAUNCH`, `EARLY_ACCESS`, `ALPHA`, `BETA`, `GA`, `DEPRECATED`.
         #[builder(into, default)]
-        pub launch_stage: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub launch_stage: pulumi_gestalt_rust::Input<Option<String>>,
         /// Metadata which can be used to guide usage of the metric.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::MetricDescriptorMetadata>,
         >,
         /// Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metricKind and valueType might not be supported.
         /// Possible values are: `METRIC_KIND_UNSPECIFIED`, `GAUGE`, `DELTA`, `CUMULATIVE`.
         #[builder(into)]
-        pub metric_kind: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub metric_kind: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The metric type, including its DNS name prefix. The type is not URL-encoded. All service defined metrics must be prefixed with the service name, in the format of {service name}/{relative metric name}, such as cloudsql.googleapis.com/database/cpu/utilization. The relative metric name must have only upper and lower-case letters, digits, '/' and underscores '_' are allowed. Additionally, the maximum number of characters allowed for the relative_metric_name is 100. All user-defined metric types have the DNS name custom.googleapis.com, external.googleapis.com, or logging.googleapis.com/user/.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// The units in which the metric value is reported. It is only applicable if the
         /// valueType is INT64, DOUBLE, or DISTRIBUTION. The unit defines the representation of
         /// the stored metric values.
@@ -169,11 +169,11 @@ pub mod metric_descriptor {
         /// More info can be found in the API documentation
         /// (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors).
         #[builder(into, default)]
-        pub unit: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub unit: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the measurement is an integer, a floating-point number, etc. Some combinations of metricKind and valueType might not be supported.
         /// Possible values are: `BOOL`, `INT64`, `DOUBLE`, `STRING`, `DISTRIBUTION`.
         #[builder(into)]
-        pub value_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MetricDescriptorResult {

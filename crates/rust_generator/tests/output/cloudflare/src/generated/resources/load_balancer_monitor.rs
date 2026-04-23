@@ -21,57 +21,57 @@ pub mod load_balancer_monitor {
     pub struct LoadBalancerMonitorArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Do not validate the certificate when monitor use HTTPS.  Only valid if `type` is "http" or "https".
         #[builder(into, default)]
-        pub allow_insecure: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_insecure: pulumi_gestalt_rust::Input<Option<bool>>,
         /// To be marked unhealthy the monitored origin must fail this healthcheck N consecutive times. Defaults to `0`.
         #[builder(into, default)]
-        pub consecutive_down: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub consecutive_down: pulumi_gestalt_rust::Input<Option<i32>>,
         /// To be marked healthy the monitored origin must pass this healthcheck N consecutive times. Defaults to `0`.
         #[builder(into, default)]
-        pub consecutive_up: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub consecutive_up: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Free text description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A case-insensitive sub-string to look for in the response body. If this string is not found, the origin will be marked as unhealthy. Only valid if `type` is "http" or "https".
         #[builder(into, default)]
-        pub expected_body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// The expected HTTP response code or code range of the health check. Eg `2xx`. Only valid and required if `type` is "http" or "https".
         #[builder(into, default)]
-        pub expected_codes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_codes: pulumi_gestalt_rust::Input<Option<String>>,
         /// Follow redirects if returned by the origin. Only valid if `type` is "http" or "https".
         #[builder(into, default)]
-        pub follow_redirects: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub follow_redirects: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden.
         #[builder(into, default)]
-        pub headers: pulumi_gestalt_rust::InputOrOutput<
+        pub headers: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::LoadBalancerMonitorHeader>>,
         >,
         /// The interval between each health check. Shorter intervals may improve failover time, but will increase load on the origins as we check from multiple locations. Defaults to `60`.
         #[builder(into, default)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub interval: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The method to use for the health check.
         #[builder(into, default)]
-        pub method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub method: pulumi_gestalt_rust::Input<Option<String>>,
         /// The endpoint path to health check against.
         #[builder(into, default)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The port number to use for the healthcheck, required when creating a TCP monitor.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Assign this monitor to emulate the specified zone while probing. Only valid if `type` is "http" or "https".
         #[builder(into, default)]
-        pub probe_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub probe_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. Defaults to `2`.
         #[builder(into, default)]
-        pub retries: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retries: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The timeout (in seconds) before marking the health check as failed. Defaults to `5`.
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The protocol to use for the healthcheck. Available values: `http`, `https`, `tcp`, `udp_icmp`, `icmp_ping`, `smtp`. Defaults to `http`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LoadBalancerMonitorResult {

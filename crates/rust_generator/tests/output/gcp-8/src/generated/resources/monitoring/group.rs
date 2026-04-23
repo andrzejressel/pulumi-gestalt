@@ -92,28 +92,28 @@ pub mod group {
         /// A user-assigned name for this group, used only for display
         /// purposes.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The filter used to determine which monitored resources
         /// belong to this group.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filter: pulumi_gestalt_rust::Input<String>,
         /// If true, the members of this group are considered to be a
         /// cluster. The system can perform additional analysis on
         /// groups that are clusters.
         #[builder(into, default)]
-        pub is_cluster: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_cluster: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the group's parent, if it has one. The format is
         /// "projects/{project_id_or_number}/groups/{group_id}". For
         /// groups with no parent, parentName is the empty string, "".
         #[builder(into, default)]
-        pub parent_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GroupResult {

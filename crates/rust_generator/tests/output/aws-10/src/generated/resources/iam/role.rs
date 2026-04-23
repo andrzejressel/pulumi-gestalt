@@ -204,39 +204,39 @@ pub mod role {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub assume_role_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub assume_role_policy: pulumi_gestalt_rust::Input<String>,
         /// Description of the role.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to force detaching any policies the role has before destroying it. Defaults to `false`.
         #[builder(into, default)]
-        pub force_detach_policies: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_detach_policies: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block defining an exclusive set of IAM inline policies associated with the IAM role. See below. If no blocks are configured, Pulumi will not manage any inline policies in this resource. Configuring one empty block (i.e., `inline_policy {}`) will cause Pulumi to remove _all_ inline policies added out of band on `apply`.
         #[builder(into, default)]
-        pub inline_policies: pulumi_gestalt_rust::InputOrOutput<
+        pub inline_policies: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::iam::RoleInlinePolicy>>,
         >,
         /// Set of exclusive IAM managed policy ARNs to attach to the IAM role. If this attribute is not configured, Pulumi will ignore policy attachments to this resource. When configured, Pulumi will align the role's managed policy attachments with this set by attaching or detaching managed policies. Configuring an empty set (i.e., `managed_policy_arns = []`) will cause Pulumi to remove _all_ managed policy attachments.
         #[builder(into, default)]
-        pub managed_policy_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub managed_policy_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours.
         #[builder(into, default)]
-        pub max_session_duration: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_session_duration: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Friendly name of the role. If omitted, the provider will assign a random, unique name. See [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html) for more information.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique friendly name beginning with the specified prefix. Conflicts with `name`.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Path to the role. See [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html) for more information.
         #[builder(into, default)]
-        pub path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub path: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN of the policy that is used to set the permissions boundary for the role.
         #[builder(into, default)]
-        pub permissions_boundary: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub permissions_boundary: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of tags for the IAM role. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

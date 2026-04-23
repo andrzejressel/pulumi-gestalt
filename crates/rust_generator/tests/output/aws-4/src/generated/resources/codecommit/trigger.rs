@@ -39,10 +39,10 @@ pub mod trigger {
     pub struct TriggerArgs {
         /// The name for the repository. This needs to be less than 100 characters.
         #[builder(into)]
-        pub repository_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the trigger.
         #[builder(into)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Vec<super::super::types::codecommit::TriggerTrigger>,
         >,
     }

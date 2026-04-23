@@ -92,12 +92,12 @@ pub mod user_hierarchy_structure {
     pub struct UserHierarchyStructureArgs {
         /// A block that defines the hierarchy structure's levels. The `hierarchy_structure` block is documented below.
         #[builder(into)]
-        pub hierarchy_structure: pulumi_gestalt_rust::InputOrOutput<
+        pub hierarchy_structure: pulumi_gestalt_rust::Input<
             super::super::types::connect::UserHierarchyStructureHierarchyStructure,
         >,
         /// Specifies the identifier of the hosting Amazon Connect Instance.
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserHierarchyStructureResult {

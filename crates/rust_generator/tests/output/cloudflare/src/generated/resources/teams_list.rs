@@ -40,24 +40,24 @@ pub mod teams_list {
     pub struct TeamsListArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The description of the teams list.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The items of the teams list.
         #[builder(into, default)]
-        pub items: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub items: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The items of the teams list that has explicit description.
         #[builder(into, default)]
-        pub items_with_descriptions: pulumi_gestalt_rust::InputOrOutput<
+        pub items_with_descriptions: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::TeamsListItemsWithDescription>>,
         >,
         /// Name of the teams list.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The teams list type. Available values: `IP`, `SERIAL`, `URL`, `DOMAIN`, `EMAIL`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TeamsListResult {

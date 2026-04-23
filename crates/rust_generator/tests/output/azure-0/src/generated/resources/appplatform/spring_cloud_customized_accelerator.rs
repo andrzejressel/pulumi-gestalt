@@ -73,30 +73,30 @@ pub mod spring_cloud_customized_accelerator {
     pub struct SpringCloudCustomizedAcceleratorArgs {
         /// Specifies a list of accelerator tags.
         #[builder(into, default)]
-        pub accelerator_tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub accelerator_tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the type of the Spring Cloud Customized Accelerator. Possible values are `Accelerator` and `Fragment`. Defaults to `Accelerator`.
         #[builder(into, default)]
-        pub accelerator_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accelerator_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the description of the Spring Cloud Customized Accelerator.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the display name of the Spring Cloud Customized Accelerator..
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `git_repository` block as defined below.
         #[builder(into)]
-        pub git_repository: pulumi_gestalt_rust::InputOrOutput<
+        pub git_repository: pulumi_gestalt_rust::Input<
             super::super::types::appplatform::SpringCloudCustomizedAcceleratorGitRepository,
         >,
         /// Specifies the icon URL of the Spring Cloud Customized Accelerator..
         #[builder(into, default)]
-        pub icon_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub icon_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Spring Cloud Customized Accelerator. Changing this forces a new Spring Cloud Customized Accelerator to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud Accelerator. Changing this forces a new Spring Cloud Customized Accelerator to be created.
         #[builder(into)]
-        pub spring_cloud_accelerator_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_accelerator_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudCustomizedAcceleratorResult {

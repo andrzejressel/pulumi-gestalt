@@ -26,126 +26,118 @@ pub mod access_application {
     pub struct AccessApplicationArgs {
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// When set to true, users can authenticate to this application using their WARP session. When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
         #[builder(into, default)]
-        pub allow_authenticate_via_warp: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub allow_authenticate_via_warp: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The identity providers selected for the application.
         #[builder(into, default)]
-        pub allowed_idps: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub allowed_idps: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The logo URL of the app launcher.
         #[builder(into, default)]
-        pub app_launcher_logo_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub app_launcher_logo_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to show/hide applications in App Launcher. Defaults to `true`.
         #[builder(into, default)]
-        pub app_launcher_visible: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub app_launcher_visible: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Option to skip identity provider selection if only one is configured in `allowed_idps`. Defaults to `false`.
         #[builder(into, default)]
-        pub auto_redirect_to_identity: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_redirect_to_identity: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The background color of the app launcher.
         #[builder(into, default)]
-        pub bg_color: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bg_color: pulumi_gestalt_rust::Input<Option<String>>,
         /// CORS configuration for the Access Application. See below for reference structure.
         #[builder(into, default)]
-        pub cors_headers: pulumi_gestalt_rust::InputOrOutput<
+        pub cors_headers: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::AccessApplicationCorsHeader>>,
         >,
         /// Option that returns a custom error message when a user is denied access to the application.
         #[builder(into, default)]
-        pub custom_deny_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_deny_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option that redirects to a custom URL when a user is denied access to the application via identity based rules.
         #[builder(into, default)]
-        pub custom_deny_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_deny_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option that redirects to a custom URL when a user is denied access to the application via non identity rules.
         #[builder(into, default)]
-        pub custom_non_identity_deny_url: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub custom_non_identity_deny_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The custom pages selected for the application.
         #[builder(into, default)]
-        pub custom_pages: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub custom_pages: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The primary hostname and path that Access will secure. If the app is visible in the App Launcher dashboard, this is the domain that will be displayed.
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to provide increased security against compromised authorization tokens and CSRF attacks by requiring an additional "binding" cookie on requests. Defaults to `false`.
         #[builder(into, default)]
-        pub enable_binding_cookie: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_binding_cookie: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The footer links of the app launcher.
         #[builder(into, default)]
-        pub footer_links: pulumi_gestalt_rust::InputOrOutput<
+        pub footer_links: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::AccessApplicationFooterLink>>,
         >,
         /// The background color of the header bar in the app launcher.
         #[builder(into, default)]
-        pub header_bg_color: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub header_bg_color: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to add the `HttpOnly` cookie flag to access tokens.
         #[builder(into, default)]
-        pub http_only_cookie_attribute: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub http_only_cookie_attribute: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The landing page design of the app launcher.
         #[builder(into, default)]
-        pub landing_page_design: pulumi_gestalt_rust::InputOrOutput<
+        pub landing_page_design: pulumi_gestalt_rust::Input<
             Option<super::types::AccessApplicationLandingPageDesign>,
         >,
         /// Image URL for the logo shown in the app launcher dashboard.
         #[builder(into, default)]
-        pub logo_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub logo_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Friendly name of the Access Application.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Allows options preflight requests to bypass Access authentication and go directly to the origin. Cannot turn on if cors_headers is set. Defaults to `false`.
         #[builder(into, default)]
-        pub options_preflight_bypass: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub options_preflight_bypass: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The policies associated with the application, in ascending order of precedence. Warning: Do not use this field while you still have this application ID referenced as `application_id` in any `cloudflare.AccessPolicy` resource, as it can result in an inconsistent state.
         #[builder(into, default)]
-        pub policies: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub policies: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// SaaS configuration for the Access Application.
         #[builder(into, default)]
-        pub saas_app: pulumi_gestalt_rust::InputOrOutput<
+        pub saas_app: pulumi_gestalt_rust::Input<
             Option<super::types::AccessApplicationSaasApp>,
         >,
         /// Defines the same-site cookie setting for access tokens. Available values: `none`, `lax`, `strict`.
         #[builder(into, default)]
-        pub same_site_cookie_attribute: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub same_site_cookie_attribute: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for provisioning to this application via SCIM. This is currently in closed beta.
         #[builder(into, default)]
-        pub scim_config: pulumi_gestalt_rust::InputOrOutput<
+        pub scim_config: pulumi_gestalt_rust::Input<
             Option<super::types::AccessApplicationScimConfig>,
         >,
         /// List of domains that access will secure. Only present for self_hosted, vnc, and ssh applications. Always includes the value set as `domain`.
         #[builder(into, default)]
-        pub self_hosted_domains: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub self_hosted_domains: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Option to return a 401 status code in service authentication rules on failed requests. Defaults to `false`.
         #[builder(into, default)]
-        pub service_auth401_redirect: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub service_auth401_redirect: pulumi_gestalt_rust::Input<Option<bool>>,
         /// How often a user will be forced to re-authorise. Must be in the format `48h` or `2h45m`. Defaults to `24h`.
         #[builder(into, default)]
-        pub session_duration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub session_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Option to skip the App Launcher landing page. Defaults to `false`.
         #[builder(into, default)]
-        pub skip_app_launcher_login_page: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub skip_app_launcher_login_page: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Option to skip the authorization interstitial when using the CLI. Defaults to `false`.
         #[builder(into, default)]
-        pub skip_interstitial: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_interstitial: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The itags associated with the application.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The payload for an infrastructure application which defines the port, protocol, and target attributes. Only applicable to Infrastructure Applications, in which case this field is required.
         #[builder(into, default)]
-        pub target_criterias: pulumi_gestalt_rust::InputOrOutput<
+        pub target_criterias: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::AccessApplicationTargetCriteria>>,
         >,
         /// The application type. Available values: `app_launcher`, `bookmark`, `biso`, `dash_sso`, `saas`, `self_hosted`, `ssh`, `vnc`, `warp`, `infrastructure`. Defaults to `self_hosted`.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. Conflicts with `account_id`.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccessApplicationResult {

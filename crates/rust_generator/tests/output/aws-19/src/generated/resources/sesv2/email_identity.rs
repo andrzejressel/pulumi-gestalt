@@ -96,20 +96,20 @@ pub mod email_identity {
     pub struct EmailIdentityArgs {
         /// The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.
         #[builder(into, default)]
-        pub configuration_set_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub configuration_set_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The configuration of the DKIM authentication settings for an email domain identity.
         #[builder(into, default)]
-        pub dkim_signing_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub dkim_signing_attributes: pulumi_gestalt_rust::Input<
             Option<super::super::types::sesv2::EmailIdentityDkimSigningAttributes>,
         >,
         /// The email address or domain to verify.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub email_identity: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_identity: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

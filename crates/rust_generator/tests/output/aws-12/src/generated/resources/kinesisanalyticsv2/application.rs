@@ -264,42 +264,42 @@ pub mod application {
     pub struct ApplicationArgs {
         /// The application's configuration
         #[builder(into, default)]
-        pub application_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub application_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesisanalyticsv2::ApplicationApplicationConfiguration,
             >,
         >,
         /// The application's mode. Valid values are `STREAMING`, `INTERACTIVE`.
         #[builder(into, default)]
-        pub application_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub application_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// A CloudWatch log stream to monitor application configuration errors.
         #[builder(into, default)]
-        pub cloudwatch_logging_options: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudwatch_logging_options: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesisanalyticsv2::ApplicationCloudwatchLoggingOptions,
             >,
         >,
         /// A summary description of the application.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to force stop an unresponsive Flink-based application.
         #[builder(into, default)]
-        pub force_stop: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_stop: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the application.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The runtime environment for the application. Valid values: `SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`, `FLINK-1_13`, `FLINK-1_15`, `FLINK-1_18`, `FLINK-1_19`.
         #[builder(into)]
-        pub runtime_environment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub runtime_environment: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.
         #[builder(into)]
-        pub service_execution_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_execution_role: pulumi_gestalt_rust::Input<String>,
         /// Whether to start or stop the application.
         #[builder(into, default)]
-        pub start_application: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_application: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of tags to assign to the application. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

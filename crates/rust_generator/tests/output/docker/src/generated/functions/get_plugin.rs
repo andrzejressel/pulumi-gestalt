@@ -10,10 +10,10 @@ pub mod get_plugin {
     pub struct GetPluginArgs {
         /// The alias of the Docker plugin. If the tag is omitted, `:latest` is complemented to the attribute value.
         #[builder(into, default)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the plugin, which has precedence over the `alias` of both are given
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetPluginResult {

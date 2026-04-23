@@ -54,13 +54,13 @@ pub mod license_association {
     pub struct LicenseAssociationArgs {
         /// A token from Grafana Labs that ties your AWS account with a Grafana Labs account.
         #[builder(into, default)]
-        pub grafana_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub grafana_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of license for the workspace license association. Valid values are `ENTERPRISE` and `ENTERPRISE_FREE_TRIAL`.
         #[builder(into)]
-        pub license_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub license_type: pulumi_gestalt_rust::Input<String>,
         /// The workspace id.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LicenseAssociationResult {

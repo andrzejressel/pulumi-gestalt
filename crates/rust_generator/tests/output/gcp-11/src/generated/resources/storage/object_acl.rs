@@ -54,19 +54,19 @@ pub mod object_acl {
     pub struct ObjectACLArgs {
         /// The name of the bucket the object is stored in.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// The name of the object to apply the acl to.
         ///
         /// - - -
         #[builder(into)]
-        pub object: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object: pulumi_gestalt_rust::Input<String>,
         /// The "canned" [predefined ACL](https://cloud.google.com/storage/docs/access-control#predefined-acl) to apply. Must be set if `role_entity` is not.
         #[builder(into, default)]
-        pub predefined_acl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub predefined_acl: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of role/entity pairs in the form `ROLE:entity`. See [GCS Object ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls) for more details.
         /// Must be set if `predefined_acl` is not.
         #[builder(into, default)]
-        pub role_entities: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub role_entities: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ObjectACLResult {

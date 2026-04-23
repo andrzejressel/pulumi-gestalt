@@ -60,10 +60,10 @@ pub mod log_data_protection_policy {
     pub struct LogDataProtectionPolicyArgs {
         /// The name of the log group under which the log stream is to be created.
         #[builder(into)]
-        pub log_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the data protection policy in JSON. Read more at [Data protection policy syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-start.html#mask-sensitive-log-data-policysyntax).
         #[builder(into)]
-        pub policy_document: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_document: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LogDataProtectionPolicyResult {

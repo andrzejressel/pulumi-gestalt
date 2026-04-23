@@ -94,16 +94,16 @@ pub mod health_check {
     pub struct HealthCheckArgs {
         /// The minimum number of child health checks that must be healthy for Route 53 to consider the parent health check to be healthy. Valid values are integers between 0 and 256, inclusive
         #[builder(into, default)]
-        pub child_health_threshold: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub child_health_threshold: pulumi_gestalt_rust::Input<Option<i32>>,
         /// For a specified parent health check, a list of HealthCheckId values for the associated child health checks.
         #[builder(into, default)]
-        pub child_healthchecks: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub child_healthchecks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the CloudWatch alarm.
         #[builder(into, default)]
-        pub cloudwatch_alarm_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cloudwatch_alarm_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The CloudWatchRegion that the CloudWatch alarm was created in.
         #[builder(into, default)]
-        pub cloudwatch_alarm_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cloudwatch_alarm_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean value that stops Route 53 from performing health checks. When set to true, Route 53 will do the following depending on the type of health check:
         /// * For health checks that check the health of endpoints, Route5 53 stops submitting requests to your application, server, or other resource.
         /// * For calculated health checks, Route 53 stops aggregating the status of the referenced health checks.
@@ -111,60 +111,58 @@ pub mod health_check {
         ///
         /// > **Note:** After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of `invert_healthcheck`.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A boolean value that indicates whether Route53 should send the `fqdn` to the endpoint when performing the health check. This defaults to AWS' defaults: when the `type` is "HTTPS" `enable_sni` defaults to `true`, when `type` is anything else `enable_sni` defaults to `false`.
         #[builder(into, default)]
-        pub enable_sni: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_sni: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The number of consecutive health checks that an endpoint must pass or fail.
         #[builder(into, default)]
-        pub failure_threshold: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub failure_threshold: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The fully qualified domain name of the endpoint to be checked. If a value is set for `ip_address`, the value set for `fqdn` will be passed in the `Host` header.
         #[builder(into, default)]
-        pub fqdn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fqdn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The status of the health check when CloudWatch has insufficient data about the state of associated alarm. Valid values are `Healthy` , `Unhealthy` and `LastKnownStatus`.
         #[builder(into, default)]
-        pub insufficient_data_health_status: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub insufficient_data_health_status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A boolean value that indicates whether the status of health check should be inverted. For example, if a health check is healthy but Inverted is True , then Route 53 considers the health check to be unhealthy.
         #[builder(into, default)]
-        pub invert_healthcheck: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub invert_healthcheck: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The IP address of the endpoint to be checked.
         #[builder(into, default)]
-        pub ip_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// A Boolean value that indicates whether you want Route 53 to measure the latency between health checkers in multiple AWS regions and your endpoint and to display CloudWatch latency graphs in the Route 53 console.
         #[builder(into, default)]
-        pub measure_latency: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub measure_latency: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The port of the endpoint to be checked.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// This is a reference name used in Caller Reference
         /// (helpful for identifying single health_check set amongst others)
         #[builder(into, default)]
-        pub reference_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reference_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of AWS regions that you want Amazon Route 53 health checkers to check the specified endpoint from.
         #[builder(into, default)]
-        pub regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health-check request.
         #[builder(into, default)]
-        pub request_interval: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub request_interval: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The path that you want Amazon Route 53 to request when performing health checks.
         #[builder(into, default)]
-        pub resource_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control. This is used when health check type is `RECOVERY_CONTROL`
         #[builder(into, default)]
-        pub routing_control_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub routing_control_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// String searched in the first 5120 bytes of the response body for check to be considered healthy. Only valid with `HTTP_STR_MATCH` and `HTTPS_STR_MATCH`.
         #[builder(into, default)]
-        pub search_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub search_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the health check. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The protocol to use when performing health checks. Valid values are `HTTP`, `HTTPS`, `HTTP_STR_MATCH`, `HTTPS_STR_MATCH`, `TCP`, `CALCULATED`, `CLOUDWATCH_METRIC` and `RECOVERY_CONTROL`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HealthCheckResult {

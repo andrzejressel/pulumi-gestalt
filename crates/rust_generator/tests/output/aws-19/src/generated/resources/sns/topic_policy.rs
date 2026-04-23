@@ -66,10 +66,10 @@ pub mod topic_policy {
     pub struct TopicPolicyArgs {
         /// The ARN of the SNS topic
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// The fully-formed AWS policy as JSON.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TopicPolicyResult {

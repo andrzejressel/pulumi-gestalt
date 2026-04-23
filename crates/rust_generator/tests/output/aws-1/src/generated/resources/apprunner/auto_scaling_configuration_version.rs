@@ -34,19 +34,19 @@ pub mod auto_scaling_configuration_version {
     pub struct AutoScalingConfigurationVersionArgs {
         /// Name of the auto scaling configuration.
         #[builder(into)]
-        pub auto_scaling_configuration_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auto_scaling_configuration_name: pulumi_gestalt_rust::Input<String>,
         /// Maximal number of concurrent requests that you want an instance to process. When the number of concurrent requests goes over this limit, App Runner scales up your service.
         #[builder(into, default)]
-        pub max_concurrency: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_concurrency: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Maximal number of instances that App Runner provisions for your service.
         #[builder(into, default)]
-        pub max_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Minimal number of instances that App Runner provisions for your service.
         #[builder(into, default)]
-        pub min_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub min_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,7 +10,7 @@ pub mod get_profiling_group {
     pub struct GetProfilingGroupArgs {
         /// The name of the profiling group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetProfilingGroupResult {

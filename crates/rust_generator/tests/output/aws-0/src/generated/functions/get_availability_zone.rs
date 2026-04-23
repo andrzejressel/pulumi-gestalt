@@ -10,21 +10,21 @@ pub mod get_availability_zone {
     pub struct GetAvailabilityZoneArgs {
         /// Set to `true` to include all Availability Zones and Local Zones regardless of your opt in status.
         #[builder(into, default)]
-        pub all_availability_zones: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub all_availability_zones: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block(s) for filtering. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::GetAvailabilityZoneFilter>>,
         >,
         /// Full name of the availability zone to select.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specific availability zone state to require. May be any of `"available"`, `"information"` or `"impaired"`.
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Zone ID of the availability zone to select.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAvailabilityZoneResult {

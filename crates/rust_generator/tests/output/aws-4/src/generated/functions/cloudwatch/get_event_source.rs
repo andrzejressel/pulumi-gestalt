@@ -10,7 +10,7 @@ pub mod get_event_source {
     pub struct GetEventSourceArgs {
         /// Specifying this limits the results to only those partner event sources with names that start with the specified prefix
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetEventSourceResult {

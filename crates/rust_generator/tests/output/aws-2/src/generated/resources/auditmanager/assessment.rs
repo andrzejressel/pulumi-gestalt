@@ -66,35 +66,35 @@ pub mod assessment {
     pub struct AssessmentArgs {
         /// Assessment report storage destination configuration. See `assessment_reports_destination` below.
         #[builder(into, default)]
-        pub assessment_reports_destination: pulumi_gestalt_rust::InputOrOutput<
+        pub assessment_reports_destination: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::auditmanager::AssessmentAssessmentReportsDestination,
             >,
         >,
         /// Description of the assessment.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique identifier of the framework the assessment will be created from.
         #[builder(into)]
-        pub framework_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub framework_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the assessment.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of roles for the assessment. See `roles` below.
         #[builder(into)]
-        pub roles: pulumi_gestalt_rust::InputOrOutput<
+        pub roles: pulumi_gestalt_rust::Input<
             Vec<super::super::types::auditmanager::AssessmentRole>,
         >,
         /// Amazon Web Services accounts and services that are in scope for the assessment. See `scope` below.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<
+        pub scope: pulumi_gestalt_rust::Input<
             Option<super::super::types::auditmanager::AssessmentScope>,
         >,
         /// A map of tags to assign to the assessment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

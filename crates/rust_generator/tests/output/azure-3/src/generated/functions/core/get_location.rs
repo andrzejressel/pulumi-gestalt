@@ -10,7 +10,7 @@ pub mod get_location {
     pub struct GetLocationArgs {
         /// Specifies the supported Azure location where the resource exists.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetLocationResult {

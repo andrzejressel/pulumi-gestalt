@@ -56,13 +56,13 @@ pub mod express_route_port_authorization {
     pub struct ExpressRoutePortAuthorizationArgs {
         /// The name of the Express Route Port in which to create the Authorization. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub express_route_port_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub express_route_port_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the ExpressRoute Port. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the ExpressRoute Port. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ExpressRoutePortAuthorizationResult {

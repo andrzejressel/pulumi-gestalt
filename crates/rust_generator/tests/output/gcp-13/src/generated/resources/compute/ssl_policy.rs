@@ -81,16 +81,16 @@ pub mod ssl_policy {
         /// *must* be present when using the `CUSTOM` profile. This argument
         /// *must not* be present when using any other profile.
         #[builder(into, default)]
-        pub custom_features: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub custom_features: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The minimum version of SSL protocol that can be used by the clients
         /// to establish a connection with the load balancer.
         /// Default value is `TLS_1_0`.
         /// Possible values are: `TLS_1_0`, `TLS_1_1`, `TLS_1_2`.
         #[builder(into, default)]
-        pub min_tls_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub min_tls_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -102,7 +102,7 @@ pub mod ssl_policy {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Profile specifies the set of SSL features that can be used by the
         /// load balancer when negotiating SSL with clients. If using `CUSTOM`,
         /// the set of SSL features to enable must be specified in the
@@ -113,11 +113,11 @@ pub mod ssl_policy {
         /// Default value is `COMPATIBLE`.
         /// Possible values are: `COMPATIBLE`, `MODERN`, `RESTRICTED`, `CUSTOM`.
         #[builder(into, default)]
-        pub profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub profile: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SSLPolicyResult {

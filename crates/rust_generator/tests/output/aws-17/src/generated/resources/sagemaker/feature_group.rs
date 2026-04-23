@@ -51,41 +51,41 @@ pub mod feature_group {
     pub struct FeatureGroupArgs {
         /// A free-form description of a Feature Group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the feature that stores the EventTime of a Record in a Feature Group.
         #[builder(into)]
-        pub event_time_feature_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub event_time_feature_name: pulumi_gestalt_rust::Input<String>,
         /// A list of Feature names and types. See Feature Definition Below.
         #[builder(into)]
-        pub feature_definitions: pulumi_gestalt_rust::InputOrOutput<
+        pub feature_definitions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::sagemaker::FeatureGroupFeatureDefinition>,
         >,
         /// The name of the Feature Group. The name must be unique within an AWS Region in an AWS account.
         #[builder(into)]
-        pub feature_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub feature_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Offline Feature Store Configuration. See Offline Store Config Below.
         #[builder(into, default)]
-        pub offline_store_config: pulumi_gestalt_rust::InputOrOutput<
+        pub offline_store_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::FeatureGroupOfflineStoreConfig>,
         >,
         /// The Online Feature Store Configuration. See Online Store Config Below.
         #[builder(into, default)]
-        pub online_store_config: pulumi_gestalt_rust::InputOrOutput<
+        pub online_store_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::FeatureGroupOnlineStoreConfig>,
         >,
         /// The name of the Feature whose value uniquely identifies a Record defined in the Feature Store. Only the latest record per identifier value will be stored in the Online Store.
         #[builder(into)]
-        pub record_identifier_feature_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub record_identifier_feature_name: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the Offline Store if an `offline_store_config` is provided.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Map of resource tags for the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub throughput_config: pulumi_gestalt_rust::InputOrOutput<
+        pub throughput_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::FeatureGroupThroughputConfig>,
         >,
     }

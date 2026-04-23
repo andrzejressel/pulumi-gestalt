@@ -12,7 +12,7 @@ pub mod get_delegation_set {
         ///
         /// The following attribute is additionally exported:
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDelegationSetResult {

@@ -10,7 +10,7 @@ pub mod get_remote_image {
     pub struct GetRemoteImageArgs {
         /// The name of the Docker image, including any tags or SHA256 repo digests.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRemoteImageResult {

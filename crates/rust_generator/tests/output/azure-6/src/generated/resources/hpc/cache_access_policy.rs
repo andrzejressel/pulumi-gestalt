@@ -79,15 +79,15 @@ pub mod cache_access_policy {
     pub struct CacheAccessPolicyArgs {
         /// One or more `access_rule` blocks (up to three) as defined below.
         #[builder(into)]
-        pub access_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub access_rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::hpc::CacheAccessPolicyAccessRule>,
         >,
         /// The ID of the HPC Cache that this HPC Cache Access Policy resides in. Changing this forces a new HPC Cache Access Policy to be created.
         #[builder(into)]
-        pub hpc_cache_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hpc_cache_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this HPC Cache Access Policy. Changing this forces a new HPC Cache Access Policy to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CacheAccessPolicyResult {

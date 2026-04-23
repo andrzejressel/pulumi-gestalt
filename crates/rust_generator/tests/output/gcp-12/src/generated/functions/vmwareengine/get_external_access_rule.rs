@@ -10,10 +10,10 @@ pub mod get_external_access_rule {
     pub struct GetExternalAccessRuleArgs {
         /// Name of the resource.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The resource name of the network policy that this cluster belongs.
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetExternalAccessRuleResult {

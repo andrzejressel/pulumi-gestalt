@@ -36,10 +36,10 @@ pub mod cluster_snapshot {
     pub struct ClusterSnapshotArgs {
         /// The DocumentDB Cluster Identifier from which to take the snapshot.
         #[builder(into)]
-        pub db_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// The Identifier for the snapshot.
         #[builder(into)]
-        pub db_cluster_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterSnapshotResult {

@@ -10,21 +10,21 @@ pub mod get_route {
     pub struct GetRouteArgs {
         /// Name of the service mesh in which the virtual router exists.
         #[builder(into)]
-        pub mesh_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mesh_name: pulumi_gestalt_rust::Input<String>,
         /// AWS account ID of the service mesh's owner.
         #[builder(into, default)]
-        pub mesh_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mesh_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the route.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the virtual router in which the route exists.
         #[builder(into)]
-        pub virtual_router_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_router_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetRouteResult {

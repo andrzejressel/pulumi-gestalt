@@ -106,7 +106,7 @@ pub mod trust_config {
         /// the certificate is parseable, proof of private key possession is established, and constraints on the certificate's SAN field are met.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub allowlisted_certificates: pulumi_gestalt_rust::InputOrOutput<
+        pub allowlisted_certificates: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::certificatemanager::TrustConfigAllowlistedCertificate,
@@ -115,12 +115,12 @@ pub mod trust_config {
         >,
         /// One or more paragraphs of text description of a trust config.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of label tags associated with the trust config.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The trust config location.
@@ -128,19 +128,19 @@ pub mod trust_config {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// A user-defined name of the trust config. Trust config names must be unique globally.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of trust stores to perform validation against.
         /// This field is supported when TrustConfig is configured with Load Balancers, currently not supported for SPIFFE certificate validation.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub trust_stores: pulumi_gestalt_rust::InputOrOutput<
+        pub trust_stores: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::certificatemanager::TrustConfigTrustStore>>,
         >,
     }

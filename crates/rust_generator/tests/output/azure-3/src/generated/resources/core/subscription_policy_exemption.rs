@@ -54,33 +54,33 @@ pub mod subscription_policy_exemption {
     pub struct SubscriptionPolicyExemptionArgs {
         /// A description to use for this Policy Exemption.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A friendly display name to use for this Policy Exemption.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The category of this policy exemption. Possible values are `Waiver` and `Mitigated`.
         #[builder(into)]
-        pub exemption_category: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub exemption_category: pulumi_gestalt_rust::Input<String>,
         /// The expiration date and time in UTC ISO 8601 format of this policy exemption.
         #[builder(into, default)]
-        pub expires_on: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expires_on: pulumi_gestalt_rust::Input<Option<String>>,
         /// The metadata for this policy exemption. This is a JSON string representing additional metadata that should be stored with the policy exemption.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Policy Exemption. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Policy Assignment to be exempted at the specified Scope. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub policy_assignment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_assignment_id: pulumi_gestalt_rust::Input<String>,
         /// The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition.
         #[builder(into, default)]
-        pub policy_definition_reference_ids: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_definition_reference_ids: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The Subscription ID where the Policy Exemption should be applied. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionPolicyExemptionResult {

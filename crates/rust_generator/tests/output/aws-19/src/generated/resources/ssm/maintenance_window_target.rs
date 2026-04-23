@@ -90,25 +90,25 @@ pub mod maintenance_window_target {
     pub struct MaintenanceWindowTargetArgs {
         /// The description of the maintenance window target.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the maintenance window target.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// User-provided value that will be included in any CloudWatch events raised while running tasks for these targets in this Maintenance Window.
         #[builder(into, default)]
-        pub owner_information: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_information: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of target being registered with the Maintenance Window. Possible values are `INSTANCE` and `RESOURCE_GROUP`.
         #[builder(into)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type: pulumi_gestalt_rust::Input<String>,
         /// The targets to register with the maintenance window. In other words, the instances to run commands on when the maintenance window runs. You can specify targets using instance IDs, resource group names, or tags that have been applied to instances. For more information about these examples formats see
         /// (https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html)
         #[builder(into)]
-        pub targets: pulumi_gestalt_rust::InputOrOutput<
+        pub targets: pulumi_gestalt_rust::Input<
             Vec<super::super::types::ssm::MaintenanceWindowTargetTarget>,
         >,
         /// The Id of the maintenance window to register the target with.
         #[builder(into)]
-        pub window_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub window_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MaintenanceWindowTargetResult {

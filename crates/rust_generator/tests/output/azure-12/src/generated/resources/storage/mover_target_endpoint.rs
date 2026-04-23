@@ -74,19 +74,19 @@ pub mod mover_target_endpoint {
     pub struct MoverTargetEndpointArgs {
         /// Specifies a description for the Storage Mover Target Endpoint.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Storage Mover Target Endpoint. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the storage account for this Storage Mover Target Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the storage blob container for this Storage Mover Target Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the storage mover for this Storage Mover Target Endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_mover_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_mover_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MoverTargetEndpointResult {

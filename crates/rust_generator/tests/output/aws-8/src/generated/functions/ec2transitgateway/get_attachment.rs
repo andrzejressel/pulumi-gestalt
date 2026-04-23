@@ -10,21 +10,19 @@ pub mod get_attachment {
     pub struct GetAttachmentArgs {
         /// One or more configuration blocks containing name-values filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::ec2transitgateway::GetAttachmentFilter>,
             >,
         >,
         /// Key-value tags for the attachment.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the attachment.
         #[builder(into, default)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAttachmentResult {

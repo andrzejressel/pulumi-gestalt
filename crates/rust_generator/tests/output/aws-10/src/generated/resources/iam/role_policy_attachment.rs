@@ -69,10 +69,10 @@ pub mod role_policy_attachment {
     pub struct RolePolicyAttachmentArgs {
         /// The ARN of the policy you want to apply
         #[builder(into)]
-        pub policy_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the IAM role to which the policy should be applied
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RolePolicyAttachmentResult {

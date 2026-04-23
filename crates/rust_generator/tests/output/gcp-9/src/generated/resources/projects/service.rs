@@ -53,7 +53,7 @@ pub mod service {
         /// will be returned if the service to be disabled has usage in last 30 days.
         /// Defaults to `false`.
         #[builder(into, default)]
-        pub check_if_service_has_usage_on_destroy: pulumi_gestalt_rust::InputOrOutput<
+        pub check_if_service_has_usage_on_destroy: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// If `true`, services that are enabled
@@ -61,16 +61,16 @@ pub mod service {
         /// destroyed. If `false` or unset, an error will be generated if any enabled
         /// services depend on this service when destroying it.
         #[builder(into, default)]
-        pub disable_dependent_services: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_dependent_services: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub disable_on_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_on_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The project ID. If not provided, the provider project
         /// is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The service to enable.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceResult {

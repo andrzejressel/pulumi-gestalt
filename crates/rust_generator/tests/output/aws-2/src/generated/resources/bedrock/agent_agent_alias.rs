@@ -95,29 +95,29 @@ pub mod agent_agent_alias {
     pub struct AgentAgentAliasArgs {
         /// Name of the alias.
         #[builder(into)]
-        pub agent_alias_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agent_alias_name: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the agent to create an alias for.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub agent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub agent_id: pulumi_gestalt_rust::Input<String>,
         /// Description of the alias.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Details about the routing configuration of the alias. See `routing_configuration` Block for details.
         #[builder(into, default)]
-        pub routing_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::bedrock::AgentAgentAliasRoutingConfiguration>,
             >,
         >,
         /// Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::AgentAgentAliasTimeouts>,
         >,
     }

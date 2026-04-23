@@ -55,10 +55,10 @@ pub mod vpc_endpoint_connection_accepter {
     pub struct VpcEndpointConnectionAccepterArgs {
         /// AWS VPC Endpoint ID.
         #[builder(into)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<String>,
         /// AWS VPC Endpoint Service ID.
         #[builder(into)]
-        pub vpc_endpoint_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_endpoint_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcEndpointConnectionAccepterResult {

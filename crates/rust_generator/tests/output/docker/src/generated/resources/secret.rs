@@ -17,15 +17,13 @@ pub mod secret {
     pub struct SecretArgs {
         /// Base64-url-safe-encoded secret data
         #[builder(into)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data: pulumi_gestalt_rust::Input<String>,
         /// User-defined key/value metadata
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<super::types::SecretLabel>>,
-        >,
+        pub labels: pulumi_gestalt_rust::Input<Option<Vec<super::types::SecretLabel>>>,
         /// User-defined name of the secret
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SecretResult {

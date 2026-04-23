@@ -28,13 +28,13 @@ pub mod logging_options {
     pub struct LoggingOptionsArgs {
         /// The default logging level. Valid Values: `"DEBUG"`, `"INFO"`, `"ERROR"`, `"WARN"`, `"DISABLED"`.
         #[builder(into)]
-        pub default_log_level: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_log_level: pulumi_gestalt_rust::Input<String>,
         /// If `true` all logs are disabled. The default is `false`.
         #[builder(into, default)]
-        pub disable_all_logs: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_all_logs: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN of the role that allows IoT to write to Cloudwatch logs.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LoggingOptionsResult {

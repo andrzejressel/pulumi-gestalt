@@ -263,7 +263,7 @@ pub mod bare_metal_cluster {
         /// The Admin Cluster this Bare Metal User Cluster belongs to.
         /// This is the full resource name of the Admin Cluster's hub membership.
         #[builder(into)]
-        pub admin_cluster_membership: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_cluster_membership: pulumi_gestalt_rust::Input<String>,
         /// Annotations on the Bare Metal User Cluster. This field has the same restrictions as Kubernetes annotations. The total
         /// size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required),
         /// separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with
@@ -271,91 +271,91 @@ pub mod bare_metal_cluster {
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
         /// 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A human readable description of this Bare Metal User Cluster.
         #[builder(into)]
-        pub bare_metal_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bare_metal_version: pulumi_gestalt_rust::Input<String>,
         /// Binary Authorization related configurations.
         #[builder(into, default)]
-        pub binary_authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub binary_authorization: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterBinaryAuthorization>,
         >,
         /// Specifies the User Cluster's observability infrastructure.
         #[builder(into, default)]
-        pub cluster_operations: pulumi_gestalt_rust::InputOrOutput<
+        pub cluster_operations: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterClusterOperations>,
         >,
         /// Specifies the control plane configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub control_plane: pulumi_gestalt_rust::InputOrOutput<
+        pub control_plane: pulumi_gestalt_rust::Input<
             super::super::types::gkeonprem::BareMetalClusterControlPlane,
         >,
         /// (Output)
         /// The description of the validation check.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the load balancer configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub load_balancer: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancer: pulumi_gestalt_rust::Input<
             super::super::types::gkeonprem::BareMetalClusterLoadBalancer,
         >,
         /// The location of the resource.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Specifies the workload node configurations.
         #[builder(into, default)]
-        pub maintenance_config: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterMaintenanceConfig>,
         >,
         /// The bare metal cluster name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Network configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             super::super::types::gkeonprem::BareMetalClusterNetworkConfig,
         >,
         /// Specifies the node access related settings for the bare metal user cluster.
         #[builder(into, default)]
-        pub node_access_config: pulumi_gestalt_rust::InputOrOutput<
+        pub node_access_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterNodeAccessConfig>,
         >,
         /// Specifies the workload node configurations.
         #[builder(into, default)]
-        pub node_config: pulumi_gestalt_rust::InputOrOutput<
+        pub node_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterNodeConfig>,
         >,
         /// OS environment related configurations.
         #[builder(into, default)]
-        pub os_environment_config: pulumi_gestalt_rust::InputOrOutput<
+        pub os_environment_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterOsEnvironmentConfig>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the cluster proxy configuration.
         #[builder(into, default)]
-        pub proxy: pulumi_gestalt_rust::InputOrOutput<
+        pub proxy: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterProxy>,
         >,
         /// Specifies the security related settings for the Bare Metal User Cluster.
         #[builder(into, default)]
-        pub security_config: pulumi_gestalt_rust::InputOrOutput<
+        pub security_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterSecurityConfig>,
         >,
         /// Specifies the cluster storage configuration.
         /// Structure is documented below.
         #[builder(into)]
-        pub storage: pulumi_gestalt_rust::InputOrOutput<
+        pub storage: pulumi_gestalt_rust::Input<
             super::super::types::gkeonprem::BareMetalClusterStorage,
         >,
         /// The cluster upgrade policy.
         #[builder(into, default)]
-        pub upgrade_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub upgrade_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::gkeonprem::BareMetalClusterUpgradePolicy>,
         >,
     }

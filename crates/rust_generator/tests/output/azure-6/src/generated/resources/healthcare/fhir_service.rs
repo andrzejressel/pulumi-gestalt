@@ -74,59 +74,57 @@ pub mod fhir_service {
     pub struct FhirServiceArgs {
         /// A list of the access policies of the service instance.
         #[builder(into, default)]
-        pub access_policy_object_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub access_policy_object_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An `authentication` block as defined below.
         #[builder(into)]
-        pub authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication: pulumi_gestalt_rust::Input<
             super::super::types::healthcare::FhirServiceAuthentication,
         >,
         /// Specifies the name of the storage account which the operation configuration information is exported to.
         #[builder(into, default)]
-        pub configuration_export_storage_account_name: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration_export_storage_account_name: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A list of azure container registry settings used for convert data operation of the service instance.
         #[builder(into, default)]
-        pub container_registry_login_server_urls: pulumi_gestalt_rust::InputOrOutput<
+        pub container_registry_login_server_urls: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A `cors` block as defined below.
         #[builder(into, default)]
-        pub cors: pulumi_gestalt_rust::InputOrOutput<
+        pub cors: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::FhirServiceCors>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::healthcare::FhirServiceIdentity>,
         >,
         /// Specifies the kind of the Healthcare FHIR Service. Possible values are: `fhir-Stu3` and `fhir-R4`. Defaults to `fhir-R4`. Changing this forces a new Healthcare FHIR Service to be created.
         #[builder(into, default)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Azure Region where the Healthcare FHIR Service should be created. Changing this forces a new Healthcare FHIR Service to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Healthcare FHIR Service. Changing this forces a new Healthcare FHIR Service to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// [A list](https://www.terraform.io/docs/configuration/attr-as-blocks.html) of `oci_artifact` objects as defined below to describe [OCI artifacts for export](https://learn.microsoft.com/en-gb/azure/healthcare-apis/fhir/de-identified-export).
         #[builder(into, default)]
-        pub oci_artifacts: pulumi_gestalt_rust::InputOrOutput<
+        pub oci_artifacts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::healthcare::FhirServiceOciArtifact>>,
         >,
         /// Specifies the name of the Resource Group in which to create the Healthcare FHIR Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the Healthcare FHIR Service.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the id of the Healthcare Workspace where the Healthcare FHIR Service should exist. Changing this forces a new Healthcare FHIR Service to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FhirServiceResult {

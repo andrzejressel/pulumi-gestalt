@@ -57,61 +57,61 @@ pub mod shared_image_version {
         ///
         /// > **NOTE:** `blob_uri` and `storage_account_id` must be specified together
         #[builder(into, default)]
-        pub blob_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub blob_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether this Shared Image Version can be deleted from the Azure Regions this is replicated to. Defaults to `false`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub deletion_of_replicated_locations_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub deletion_of_replicated_locations_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The end of life date in RFC3339 format of the Image Version.
         #[builder(into, default)]
-        pub end_of_life_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_of_life_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should this Image Version be excluded from the `latest` filter? If set to `true` this Image Version won't be returned for the `latest` version. Defaults to `false`.
         #[builder(into, default)]
-        pub exclude_from_latest: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exclude_from_latest: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Shared Image Gallery in which the Shared Image exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub gallery_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gallery_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Shared Image within the Shared Image Gallery in which this Version should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub image_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_name: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region in which the Shared Image Gallery exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Managed Image or Virtual Machine ID which should be used for this Shared Image Version. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The ID can be sourced from the `azure.compute.Image` data source or resource
         ///
         /// > **NOTE:** You must specify exact one of `blob_uri`, `managed_image_id` and `os_disk_snapshot_id`.
         #[builder(into, default)]
-        pub managed_image_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub managed_image_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version number for this Image Version, such as `1.0.0`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the OS disk snapshot which should be used for this Shared Image Version. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** You must specify exact one of `blob_uri`, `managed_image_id` and `os_disk_snapshot_id`.
         #[builder(into, default)]
-        pub os_disk_snapshot_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub os_disk_snapshot_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mode to be used for replication. Possible values are `Full` and `Shallow`. Defaults to `Full`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub replication_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub replication_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the Shared Image Gallery exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Storage Account where the Blob exists. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** `blob_uri` and `storage_account_id` must be specified together
         #[builder(into, default)]
-        pub storage_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A collection of tags which should be applied to this resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// One or more `target_region` blocks as documented below.
         #[builder(into)]
-        pub target_regions: pulumi_gestalt_rust::InputOrOutput<
+        pub target_regions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::compute::SharedImageVersionTargetRegion>,
         >,
     }

@@ -41,46 +41,42 @@ pub mod image {
     pub struct ImageArgs {
         /// Amazon Resource Name (ARN) of the container recipe.
         #[builder(into, default)]
-        pub container_recipe_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub container_recipe_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the Image Builder Distribution Configuration.
         #[builder(into, default)]
-        pub distribution_configuration_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub distribution_configuration_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether additional information about the image being created is collected. Defaults to `true`.
         #[builder(into, default)]
-        pub enhanced_image_metadata_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub enhanced_image_metadata_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Amazon Resource Name (ARN) of the service-linked role to be used by Image Builder to [execute workflows](https://docs.aws.amazon.com/imagebuilder/latest/userguide/manage-image-workflows.html).
         #[builder(into, default)]
-        pub execution_role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub execution_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the image recipe.
         #[builder(into, default)]
-        pub image_recipe_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_recipe_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block with image scanning configuration. Detailed below.
         #[builder(into, default)]
-        pub image_scanning_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub image_scanning_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::imagebuilder::ImageImageScanningConfiguration>,
         >,
         /// Configuration block with image tests configuration. Detailed below.
         #[builder(into, default)]
-        pub image_tests_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub image_tests_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::imagebuilder::ImageImageTestsConfiguration>,
         >,
         /// Amazon Resource Name (ARN) of the Image Builder Infrastructure Configuration.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub infrastructure_configuration_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub infrastructure_configuration_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags for the Image Builder Image. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block with the workflow configuration. Detailed below.
         #[builder(into, default)]
-        pub workflows: pulumi_gestalt_rust::InputOrOutput<
+        pub workflows: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::imagebuilder::ImageWorkflow>>,
         >,
     }

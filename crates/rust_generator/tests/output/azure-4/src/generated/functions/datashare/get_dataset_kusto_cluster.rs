@@ -10,10 +10,10 @@ pub mod get_dataset_kusto_cluster {
     pub struct GetDatasetKustoClusterArgs {
         /// The name of this Data Share Kusto Cluster Dataset.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the Data Share where this Data Share Kusto Cluster Dataset should be created.
         #[builder(into)]
-        pub share_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub share_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDatasetKustoClusterResult {

@@ -132,23 +132,23 @@ pub mod default_network_acl {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub default_network_acl_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_network_acl_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for an egress rule. Detailed below.
         #[builder(into, default)]
-        pub egress: pulumi_gestalt_rust::InputOrOutput<
+        pub egress: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::DefaultNetworkAclEgress>>,
         >,
         /// Configuration block for an ingress rule. Detailed below.
         #[builder(into, default)]
-        pub ingress: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::DefaultNetworkAclIngress>>,
         >,
         /// List of Subnet IDs to apply the ACL to. See the notes above on Managing Subnets in the Default Network ACL
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

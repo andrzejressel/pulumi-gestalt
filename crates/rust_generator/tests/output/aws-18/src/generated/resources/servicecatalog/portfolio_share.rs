@@ -47,27 +47,27 @@ pub mod portfolio_share {
     pub struct PortfolioShareArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Portfolio identifier.
         #[builder(into)]
-        pub portfolio_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub portfolio_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the principal with whom you will share the portfolio. Valid values AWS account IDs and ARNs of AWS Organizations and organizational units.
         #[builder(into)]
-        pub principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_id: pulumi_gestalt_rust::Input<String>,
         /// Enables or disables Principal sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled.
         #[builder(into, default)]
-        pub share_principals: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub share_principals: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether to enable sharing of `aws.servicecatalog.TagOption` resources when creating the portfolio share.
         #[builder(into, default)]
-        pub share_tag_options: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub share_tag_options: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Type of portfolio share. Valid values are `ACCOUNT` (an external account), `ORGANIZATION` (a share to every account in an organization), `ORGANIZATIONAL_UNIT`, `ORGANIZATION_MEMBER_ACCOUNT` (a share to an account in an organization).
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// Whether to wait (up to the timeout) for the share to be accepted. Organizational shares are automatically accepted.
         #[builder(into, default)]
-        pub wait_for_acceptance: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_for_acceptance: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct PortfolioShareResult {

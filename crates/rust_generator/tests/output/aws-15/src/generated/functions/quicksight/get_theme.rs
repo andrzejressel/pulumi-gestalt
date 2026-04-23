@@ -10,17 +10,17 @@ pub mod get_theme {
     pub struct GetThemeArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags assigned to the resource, including those inherited from the provider `default_tags` configuration block.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of the theme.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub theme_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub theme_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetThemeResult {

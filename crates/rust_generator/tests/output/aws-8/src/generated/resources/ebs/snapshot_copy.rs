@@ -39,36 +39,36 @@ pub mod snapshot_copy {
     pub struct SnapshotCopyArgs {
         /// Specifies a completion duration to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration.  Value must be between 15 and 2880 minutes, in 15 minute increments only.
         #[builder(into, default)]
-        pub completion_duration_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub completion_duration_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A description of what the snapshot is.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the snapshot is encrypted.
         #[builder(into, default)]
-        pub encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN for the KMS encryption key.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether to permanently restore an archived snapshot.
         #[builder(into, default)]
-        pub permanent_restore: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub permanent_restore: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The region of the source snapshot.
         #[builder(into)]
-        pub source_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_region: pulumi_gestalt_rust::Input<String>,
         /// The ARN for the snapshot to be copied.
         #[builder(into)]
-        pub source_snapshot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_snapshot_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.
         #[builder(into, default)]
-        pub storage_tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_tier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags for the snapshot.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.
         #[builder(into, default)]
-        pub temporary_restore_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub temporary_restore_days: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct SnapshotCopyResult {

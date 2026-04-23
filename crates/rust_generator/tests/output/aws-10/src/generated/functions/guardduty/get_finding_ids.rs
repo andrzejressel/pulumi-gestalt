@@ -10,7 +10,7 @@ pub mod get_finding_ids {
     pub struct GetFindingIdsArgs {
         /// ID of the GuardDuty detector.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFindingIdsResult {

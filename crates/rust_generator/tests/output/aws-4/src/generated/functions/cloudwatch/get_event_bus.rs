@@ -10,7 +10,7 @@ pub mod get_event_bus {
     pub struct GetEventBusArgs {
         /// Name of the event bus.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetEventBusResult {

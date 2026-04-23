@@ -10,7 +10,7 @@ pub mod get_runtime_versions {
     pub struct GetRuntimeVersionsArgs {
         /// List of runtime versions. See `runtime_versions` attribute reference.
         #[builder(into, default)]
-        pub runtime_versions: pulumi_gestalt_rust::InputOrOutput<
+        pub runtime_versions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::synthetics::GetRuntimeVersionsRuntimeVersion,

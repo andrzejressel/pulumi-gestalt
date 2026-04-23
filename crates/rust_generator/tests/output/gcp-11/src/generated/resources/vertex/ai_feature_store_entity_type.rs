@@ -104,34 +104,34 @@ pub mod ai_feature_store_entity_type {
     pub struct AiFeatureStoreEntityTypeArgs {
         /// Optional. Description of the EntityType.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub featurestore: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub featurestore: pulumi_gestalt_rust::Input<String>,
         /// A set of key/value label pairs to assign to this EntityType.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The default monitoring configuration for all Features under this EntityType.
         /// If this is populated with [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is disabled.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub monitoring_config: pulumi_gestalt_rust::InputOrOutput<
+        pub monitoring_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfig>,
         >,
         /// The name of the EntityType. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than offlineStorageTtlDays since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.
         #[builder(into, default)]
-        pub offline_storage_ttl_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub offline_storage_ttl_days: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct AiFeatureStoreEntityTypeResult {

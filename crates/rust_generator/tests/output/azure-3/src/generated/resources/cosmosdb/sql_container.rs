@@ -63,56 +63,56 @@ pub mod sql_container {
     pub struct SqlContainerArgs {
         /// The name of the Cosmos DB Account to create the container within. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The default time to live of Analytical Storage for this SQL container. If present and the value is set to `-1`, it is equal to infinity, and items don’t expire by default. If present and the value is set to some number `n` – items will expire `n` seconds after their last modified time.
         #[builder(into, default)]
-        pub analytical_storage_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub analytical_storage_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An `autoscale_settings` block as defined below. This must be set upon database creation otherwise it cannot be updated without a manual destroy-apply.
         ///
         /// > **Note:** Switching between autoscale and manual throughput is not supported via this provider and must be completed via the Azure Portal and refreshed.
         #[builder(into, default)]
-        pub autoscale_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscale_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::SqlContainerAutoscaleSettings>,
         >,
         /// A `conflict_resolution_policy` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub conflict_resolution_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub conflict_resolution_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::SqlContainerConflictResolutionPolicy>,
         >,
         /// The name of the Cosmos DB SQL Database to create the container within. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// The default time to live of SQL container. If missing, items are not expired automatically. If present and the value is set to `-1`, it is equal to infinity, and items don’t expire by default. If present and the value is set to some number `n` – items will expire `n` seconds after their last modified time.
         #[builder(into, default)]
-        pub default_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An `indexing_policy` block as defined below.
         #[builder(into, default)]
-        pub indexing_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub indexing_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::SqlContainerIndexingPolicy>,
         >,
         /// Specifies the name of the Cosmos DB SQL Container. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Define a partition key kind. Possible values are `Hash` and `MultiHash`. Defaults to `Hash`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub partition_key_kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub partition_key_kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of partition key paths. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub partition_key_paths: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub partition_key_paths: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Define a partition key version. Possible values are `1`and `2`. This should be set to `2` in order to use large partition keys.
         ///
         /// > **Note:** If `partition_key_version` is not specified when creating a new resource, you can update `partition_key_version` to `1`, updating to `2` forces a new resource to be created.
         #[builder(into, default)]
-        pub partition_key_version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub partition_key_version: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the resource group in which the Cosmos DB SQL Container is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The throughput of SQL container (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon container creation otherwise it cannot be updated without a manual resource destroy-apply.
         #[builder(into, default)]
-        pub throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub throughput: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more `unique_key` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub unique_keys: pulumi_gestalt_rust::InputOrOutput<
+        pub unique_keys: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cosmosdb::SqlContainerUniqueKey>>,
         >,
     }

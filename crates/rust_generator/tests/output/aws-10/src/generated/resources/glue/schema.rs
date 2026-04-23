@@ -41,25 +41,25 @@ pub mod schema {
     pub struct SchemaArgs {
         /// The compatibility mode of the schema. Values values are: `NONE`, `DISABLED`, `BACKWARD`, `BACKWARD_ALL`, `FORWARD`, `FORWARD_ALL`, `FULL`, and `FULL_ALL`.
         #[builder(into)]
-        pub compatibility: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub compatibility: pulumi_gestalt_rust::Input<String>,
         /// The data format of the schema definition. Valid values are `AVRO`, `JSON` and `PROTOBUF`.
         #[builder(into)]
-        pub data_format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_format: pulumi_gestalt_rust::Input<String>,
         /// A description of the schema.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the Glue Registry to create the schema in.
         #[builder(into, default)]
-        pub registry_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub registry_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The schema definition using the `data_format` setting for `schema_name`.
         #[builder(into)]
-        pub schema_definition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema_definition: pulumi_gestalt_rust::Input<String>,
         /// The Name of the schema.
         #[builder(into)]
-        pub schema_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schema_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

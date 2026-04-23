@@ -86,40 +86,40 @@ pub mod key {
     pub struct KeyArgs {
         /// Specifies the curve to use when creating an `EC` key. Possible values are `P-256`, `P-256K`, `P-384`, and `P-521`. This field will be required in a future release if `key_type` is `EC` or `EC-HSM`. The API will default to `P-256` if nothing is specified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub curve: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub curve: pulumi_gestalt_rust::Input<Option<String>>,
         /// Expiration UTC datetime (Y-m-d'T'H:M:S'Z').
         ///
         /// > **Note:** Removing this field from the config forces a new resource to be created.
         #[builder(into, default)]
-        pub expiration_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiration_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of JSON web key operations. Possible values include: `decrypt`, `encrypt`, `sign`, `unwrapKey`, `verify` and `wrapKey`. Please note these values are case sensitive.
         #[builder(into)]
-        pub key_opts: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub key_opts: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the Size of the RSA key to create in bytes. For example, 1024 or 2048. *Note*: This field is required if `key_type` is `RSA` or `RSA-HSM`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub key_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub key_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the Key Type to use for this Key Vault Key. Possible values are `EC` (Elliptic Curve), `EC-HSM`, `RSA` and `RSA-HSM`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_type: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Key Vault where the Key should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Key Vault Key. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key not usable before the provided UTC datetime (Y-m-d'T'H:M:S'Z').
         ///
         /// > **Note:** Once `expiration_date` is set, it's not possible to unset the key even if it is deleted & recreated as underlying Azure API uses the restore of the purged key.
         #[builder(into, default)]
-        pub not_before_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub not_before_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `rotation_policy` block as defined below.
         #[builder(into, default)]
-        pub rotation_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub rotation_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyvault::KeyRotationPolicy>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -78,7 +78,7 @@ pub mod product_subscription {
         /// * `arn:aws:securityhub:${var.region}::product/turbot/turbot`
         /// * `arn:aws:securityhub:${var.region}::product/twistlock/twistlock-enterprise`
         #[builder(into)]
-        pub product_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProductSubscriptionResult {

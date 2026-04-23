@@ -149,29 +149,29 @@ pub mod data_policy {
         /// The data masking policy that specifies the data masking rule to use.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub data_masking_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub data_masking_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquerydatapolicy::DataPolicyDataMaskingPolicy>,
         >,
         /// User-assigned (human readable) ID of the data policy that needs to be unique within a project. Used as {dataPolicyId} in part of the resource name.
         #[builder(into)]
-        pub data_policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_policy_id: pulumi_gestalt_rust::Input<String>,
         /// The enrollment level of the service.
         /// Possible values are: `COLUMN_LEVEL_SECURITY_POLICY`, `DATA_MASKING_POLICY`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub data_policy_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_policy_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the location of the data policy.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Policy tag resource name, in the format of projects/{project_number}/locations/{locationId}/taxonomies/{taxonomyId}/policyTags/{policyTag_id}.
         #[builder(into)]
-        pub policy_tag: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_tag: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DataPolicyResult {

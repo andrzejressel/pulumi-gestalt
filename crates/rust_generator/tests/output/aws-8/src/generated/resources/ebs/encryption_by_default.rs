@@ -35,7 +35,7 @@ pub mod encryption_by_default {
     pub struct EncryptionByDefaultArgs {
         /// Whether or not default EBS encryption is enabled. Valid values are `true` or `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct EncryptionByDefaultResult {

@@ -72,10 +72,10 @@ pub mod core_network_policy_attachment {
     pub struct CoreNetworkPolicyAttachmentArgs {
         /// The ID of the core network that a policy will be attached to and made `LIVE`.
         #[builder(into)]
-        pub core_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub core_network_id: pulumi_gestalt_rust::Input<String>,
         /// Policy document for creating a core network. Note that updating this argument will result in the new policy document version being set as the `LATEST` and `LIVE` policy document. Refer to the [Core network policies documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policy-change-sets.html) for more information.
         #[builder(into)]
-        pub policy_document: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_document: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CoreNetworkPolicyAttachmentResult {

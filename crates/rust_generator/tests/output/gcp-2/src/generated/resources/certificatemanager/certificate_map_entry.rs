@@ -96,15 +96,15 @@ pub mod certificate_map_entry {
         /// There can be defined up to fifteen certificates in each Certificate Map Entry.
         /// Each certificate must match pattern projects/*/locations/*/certificates/*.
         #[builder(into)]
-        pub certificates: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub certificates: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A human-readable description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A Hostname (FQDN, e.g. example.com) or a wildcard hostname expression (*.example.com)
         /// for a set of hostnames with common suffix. Used as Server Name Indication (SNI) for
         /// selecting a proper certificate.
         #[builder(into, default)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hostname: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of labels associated with a Certificate Map Entry.
         /// An object containing a list of "key": value pairs.
         /// Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
@@ -112,7 +112,7 @@ pub mod certificate_map_entry {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A map entry that is inputted into the cetrificate map
@@ -120,19 +120,19 @@ pub mod certificate_map_entry {
         ///
         /// - - -
         #[builder(into)]
-        pub map: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub map: pulumi_gestalt_rust::Input<String>,
         /// A predefined matcher for particular cases, other than SNI selection
         #[builder(into, default)]
-        pub matcher: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub matcher: pulumi_gestalt_rust::Input<Option<String>>,
         /// A user-defined name of the Certificate Map Entry. Certificate Map Entry
         /// names must be unique globally and match pattern
         /// 'projects/*/locations/*/certificateMaps/*/certificateMapEntries/*'
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CertificateMapEntryResult {

@@ -49,28 +49,28 @@ pub mod outbound_connection {
     pub struct OutboundConnectionArgs {
         /// Accepts the connection.
         #[builder(into, default)]
-        pub accept_connection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub accept_connection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the connection alias that will be used by the customer for this connection.
         #[builder(into)]
-        pub connection_alias: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connection_alias: pulumi_gestalt_rust::Input<String>,
         /// Specifies the connection mode. Accepted values are `DIRECT` or `VPC_ENDPOINT`.
         #[builder(into, default)]
-        pub connection_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the outbound connection.
         #[builder(into, default)]
-        pub connection_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_properties: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::opensearch::OutboundConnectionConnectionProperties,
             >,
         >,
         /// Configuration block for the local Opensearch domain.
         #[builder(into)]
-        pub local_domain_info: pulumi_gestalt_rust::InputOrOutput<
+        pub local_domain_info: pulumi_gestalt_rust::Input<
             super::super::types::opensearch::OutboundConnectionLocalDomainInfo,
         >,
         /// Configuration block for the remote Opensearch domain.
         #[builder(into)]
-        pub remote_domain_info: pulumi_gestalt_rust::InputOrOutput<
+        pub remote_domain_info: pulumi_gestalt_rust::Input<
             super::super::types::opensearch::OutboundConnectionRemoteDomainInfo,
         >,
     }

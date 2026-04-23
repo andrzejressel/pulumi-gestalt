@@ -50,43 +50,43 @@ pub mod exadata_infrastructure {
     pub struct ExadataInfrastructureArgs {
         /// The number of compute servers for the Cloud Exadata Infrastructure. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into)]
-        pub compute_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub compute_count: pulumi_gestalt_rust::Input<i32>,
         /// The email address used by Oracle to send notifications regarding databases and infrastructure. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into, default)]
-        pub customer_contacts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub customer_contacts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The user-friendly name for the Cloud Exadata Infrastructure resource. The name does not need to be unique. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The Azure Region where the Cloud Exadata Infrastructure should exist. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `maintenance_window` blocks as defined below. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into, default)]
-        pub maintenance_windows: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_windows: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::oracle::ExadataInfrastructureMaintenanceWindow>,
             >,
         >,
         /// The name which should be used for this Cloud Exadata Infrastructure. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the ODB@A Infrastructure should exist. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The shape of the ODB@A infrastructure resource. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into)]
-        pub shape: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub shape: pulumi_gestalt_rust::Input<String>,
         /// The number of storage servers for the Cloud Exadata Infrastructure. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into)]
-        pub storage_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub storage_count: pulumi_gestalt_rust::Input<i32>,
         /// A mapping of tags which should be assigned to the Cloud Exadata Infrastructure.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Cloud Exadata Infrastructure zones. Changing this forces a new Cloud Exadata Infrastructure to be created.
         #[builder(into)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub zones: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct ExadataInfrastructureResult {

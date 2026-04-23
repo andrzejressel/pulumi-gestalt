@@ -88,13 +88,13 @@ pub mod organization_configuration {
     pub struct OrganizationConfigurationArgs {
         /// Whether to automatically enable Security Hub for new accounts in the organization.
         #[builder(into)]
-        pub auto_enable: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub auto_enable: pulumi_gestalt_rust::Input<bool>,
         /// Whether to automatically enable Security Hub default standards for new member accounts in the organization. By default, this parameter is equal to `DEFAULT`, and new member accounts are automatically enabled with default Security Hub standards. To opt out of enabling default standards for new member accounts, set this parameter equal to `NONE`.
         #[builder(into, default)]
-        pub auto_enable_standards: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_enable_standards: pulumi_gestalt_rust::Input<Option<String>>,
         /// Provides information about the way an organization is configured in Security Hub.
         #[builder(into, default)]
-        pub organization_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub organization_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::securityhub::OrganizationConfigurationOrganizationConfiguration,
             >,

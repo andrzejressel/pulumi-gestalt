@@ -42,30 +42,30 @@ pub mod authorizer {
     pub struct AuthorizerArgs {
         /// The ARN of the authorizer's Lambda function.
         #[builder(into)]
-        pub authorizer_function_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub authorizer_function_arn: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether the HTTP caching is enabled or not. Default: `false`.
         #[builder(into, default)]
-        pub enable_caching_for_http: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_caching_for_http: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the authorizer.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether AWS IoT validates the token signature in an authorization request. Default: `false`.
         #[builder(into, default)]
-        pub signing_disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub signing_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The status of Authorizer request at creation. Valid values: `ACTIVE`, `INACTIVE`. Default: `ACTIVE`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the token key used to extract the token from the HTTP headers. This value is required if signing is enabled in your authorizer.
         #[builder(into, default)]
-        pub token_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The public keys used to verify the digital signature returned by your custom authentication service. This value is required if signing is enabled in your authorizer.
         #[builder(into, default)]
-        pub token_signing_public_keys: pulumi_gestalt_rust::InputOrOutput<
+        pub token_signing_public_keys: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -44,13 +44,13 @@ pub mod resource {
     pub struct ResourceArgs {
         /// ID of the parent API resource
         #[builder(into)]
-        pub parent_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_id: pulumi_gestalt_rust::Input<String>,
         /// Last path segment of this API resource.
         #[builder(into)]
-        pub path_part: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub path_part: pulumi_gestalt_rust::Input<String>,
         /// ID of the associated REST API
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourceResult {

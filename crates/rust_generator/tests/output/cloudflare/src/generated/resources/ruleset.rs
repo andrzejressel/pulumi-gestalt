@@ -32,27 +32,25 @@ pub mod ruleset {
     pub struct RulesetArgs {
         /// The account identifier to target for the resource.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Brief summary of the ruleset and its intended use.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of Ruleset to create. Available values: `custom`, `managed`, `root`, `zone`.
         #[builder(into)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub kind: pulumi_gestalt_rust::Input<String>,
         /// Name of the ruleset.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Point in the request/response lifecycle where the ruleset will be created. Available values: `ddos_l4`, `ddos_l7`, `http_config_settings`, `http_custom_errors`, `http_log_custom_fields`, `http_ratelimit`, `http_request_cache_settings`, `http_request_dynamic_redirect`, `http_request_firewall_custom`, `http_request_firewall_managed`, `http_request_late_transform`, `http_request_origin`, `http_request_redirect`, `http_request_sanitize`, `http_request_sbfm`, `http_request_transform`, `http_response_compression`, `http_response_firewall_managed`, `http_response_headers_transform`, `magic_transit`.
         #[builder(into)]
-        pub phase: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub phase: pulumi_gestalt_rust::Input<String>,
         /// List of rules to apply to the ruleset.
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<super::types::RulesetRule>>,
-        >,
+        pub rules: pulumi_gestalt_rust::Input<Option<Vec<super::types::RulesetRule>>>,
         /// The zone identifier to target for the resource.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RulesetResult {

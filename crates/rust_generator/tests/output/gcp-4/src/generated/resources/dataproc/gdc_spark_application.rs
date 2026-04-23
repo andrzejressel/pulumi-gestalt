@@ -203,55 +203,55 @@ pub mod gdc_spark_application {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// An ApplicationEnvironment from which to inherit configuration properties.
         #[builder(into, default)]
-        pub application_environment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub application_environment: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of container image uris for additional file dependencies. Dependent files are sequentially copied from each image. If a file with the same name exists in 2 images then the file from later image is used.
         #[builder(into, default)]
-        pub dependency_images: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub dependency_images: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// User-provided human-readable name to be used in user interfaces.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The labels to associate with this application. Labels may be used for filtering and billing tracking.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the spark application.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The Kubernetes namespace in which to create the application. This namespace must already exist on the cluster.
         #[builder(into, default)]
-        pub namespace: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// application-specific properties.
         #[builder(into, default)]
-        pub properties: pulumi_gestalt_rust::InputOrOutput<
+        pub properties: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Represents the PySparkApplicationConfig.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub pyspark_application_config: pulumi_gestalt_rust::InputOrOutput<
+        pub pyspark_application_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataproc::GdcSparkApplicationPysparkApplicationConfig,
             >,
         >,
         /// The id of the service instance to which this spark application belongs.
         #[builder(into)]
-        pub serviceinstance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub serviceinstance: pulumi_gestalt_rust::Input<String>,
         /// Represents the SparkApplicationConfig.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark_application_config: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_application_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataproc::GdcSparkApplicationSparkApplicationConfig,
             >,
@@ -261,11 +261,11 @@ pub mod gdc_spark_application {
         ///
         /// - - -
         #[builder(into)]
-        pub spark_application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spark_application_id: pulumi_gestalt_rust::Input<String>,
         /// Represents the SparkRApplicationConfig.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark_r_application_config: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_r_application_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataproc::GdcSparkApplicationSparkRApplicationConfig,
             >,
@@ -273,14 +273,14 @@ pub mod gdc_spark_application {
         /// Represents the SparkRApplicationConfig.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark_sql_application_config: pulumi_gestalt_rust::InputOrOutput<
+        pub spark_sql_application_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataproc::GdcSparkApplicationSparkSqlApplicationConfig,
             >,
         >,
         /// The Dataproc version of this application.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GdcSparkApplicationResult {

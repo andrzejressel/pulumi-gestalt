@@ -10,7 +10,7 @@ pub mod get_traffic_policy_document {
     pub struct GetTrafficPolicyDocumentArgs {
         /// Configuration block for the definitions of the endpoints that you want to use in this traffic policy. See below
         #[builder(into, default)]
-        pub endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoints: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::route53::GetTrafficPolicyDocumentEndpoint,
@@ -19,23 +19,23 @@ pub mod get_traffic_policy_document {
         >,
         /// DNS type of all of the resource record sets that Amazon Route 53 will create based on this traffic policy.
         #[builder(into, default)]
-        pub record_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub record_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for definitions of the rules that you want to use in this traffic policy. See below
         #[builder(into, default)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::super::types::route53::GetTrafficPolicyDocumentRule>,
             >,
         >,
         /// An endpoint to be as the starting point for the traffic policy.
         #[builder(into, default)]
-        pub start_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         /// A rule to be as the starting point for the traffic policy.
         #[builder(into, default)]
-        pub start_rule: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_rule: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of the traffic policy format.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetTrafficPolicyDocumentResult {

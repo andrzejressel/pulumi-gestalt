@@ -92,10 +92,10 @@ pub mod cluster_customer_managed_key {
     pub struct ClusterCustomerManagedKeyArgs {
         /// The ID of the Key Vault Key to use for encryption.
         #[builder(into)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Log Analytics Cluster. Changing this forces a new Log Analytics Cluster Customer Managed Key to be created.
         #[builder(into)]
-        pub log_analytics_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_cluster_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterCustomerManagedKeyResult {

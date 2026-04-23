@@ -10,21 +10,21 @@ pub mod get_zone {
     pub struct GetZoneArgs {
         /// Hosted Zone name of the desired Hosted Zone.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Used with `name` field to get a private Hosted Zone.
         #[builder(into, default)]
-        pub private_zone: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub private_zone: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Used with `name` field. A map of tags, each pair of which must exactly match a pair on the desired Hosted Zone.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Used with `name` field to get a private Hosted Zone associated with the vpc_id (in this case, private_zone is not mandatory).
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Hosted Zone id of the desired Hosted Zone.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetZoneResult {

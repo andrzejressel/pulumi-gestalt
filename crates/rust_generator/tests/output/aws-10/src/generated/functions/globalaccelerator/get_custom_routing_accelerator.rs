@@ -10,14 +10,14 @@ pub mod get_custom_routing_accelerator {
     pub struct GetCustomRoutingAcceleratorArgs {
         /// Full ARN of the custom routing accelerator.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name of the custom routing accelerator.
         ///
         /// > **NOTE:** When both `arn` and `name` are specified, `arn` takes precedence.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

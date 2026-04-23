@@ -76,59 +76,59 @@ pub mod app {
     pub struct AppArgs {
         /// The ID of the Container App Environment within which this Container App should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub container_app_environment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_app_environment_id: pulumi_gestalt_rust::Input<String>,
         /// A `dapr` block as detailed below.
         #[builder(into, default)]
-        pub dapr: pulumi_gestalt_rust::InputOrOutput<
+        pub dapr: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerapp::AppDapr>,
         >,
         /// An `identity` block as detailed below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerapp::AppIdentity>,
         >,
         /// An `ingress` block as detailed below.
         #[builder(into, default)]
-        pub ingress: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress: pulumi_gestalt_rust::Input<
             Option<super::super::types::containerapp::AppIngress>,
         >,
         /// The maximum of inactive revisions allowed for this Container App.
         #[builder(into, default)]
-        pub max_inactive_revisions: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_inactive_revisions: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name for this Container App. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `registry` block as detailed below.
         #[builder(into, default)]
-        pub registries: pulumi_gestalt_rust::InputOrOutput<
+        pub registries: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerapp::AppRegistry>>,
         >,
         /// The name of the resource group in which the Container App Environment is to be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The revisions operational mode for the Container App. Possible values include `Single` and `Multiple`. In `Single` mode, a single revision is in operation at any given time. In `Multiple` mode, more than one revision can be active at a time and can be configured with load distribution via the `traffic_weight` block in the `ingress` configuration.
         #[builder(into)]
-        pub revision_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub revision_mode: pulumi_gestalt_rust::Input<String>,
         /// One or more `secret` block as detailed below.
         #[builder(into, default)]
-        pub secrets: pulumi_gestalt_rust::InputOrOutput<
+        pub secrets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containerapp::AppSecret>>,
         >,
         /// A mapping of tags to assign to the Container App.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `template` block as detailed below.
         #[builder(into)]
-        pub template: pulumi_gestalt_rust::InputOrOutput<
+        pub template: pulumi_gestalt_rust::Input<
             super::super::types::containerapp::AppTemplate,
         >,
         /// The name of the Workload Profile in the Container App Environment to place this Container App.
         ///
         /// > **Note:** Omit this value to use the default `Consumption` Workload Profile.
         #[builder(into, default)]
-        pub workload_profile_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workload_profile_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppResult {

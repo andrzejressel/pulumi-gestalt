@@ -70,26 +70,26 @@ pub mod vpc_peering_connection_accepter {
         /// A configuration block that describes [VPC Peering Connection]
         /// (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the accepter VPC.
         #[builder(into, default)]
-        pub accepter: pulumi_gestalt_rust::InputOrOutput<
+        pub accepter: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::VpcPeeringConnectionAccepterAccepter>,
         >,
         /// Whether or not to accept the peering request. Defaults to `false`.
         #[builder(into, default)]
-        pub auto_accept: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_accept: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A configuration block that describes [VPC Peering Connection]
         /// (https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options set for the requester VPC.
         #[builder(into, default)]
-        pub requester: pulumi_gestalt_rust::InputOrOutput<
+        pub requester: pulumi_gestalt_rust::Input<
             Option<super::super::types::ec2::VpcPeeringConnectionAccepterRequester>,
         >,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The VPC Peering Connection ID to manage.
         #[builder(into)]
-        pub vpc_peering_connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_peering_connection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcPeeringConnectionAccepterResult {

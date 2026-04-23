@@ -48,12 +48,12 @@ pub mod default_object_acl {
     pub struct DefaultObjectACLArgs {
         /// The name of the bucket it applies to.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// List of role/entity pairs in the form `ROLE:entity`.
         /// See [GCS Object ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls) for more details.
         /// Omitting the field is the same as providing an empty list.
         #[builder(into, default)]
-        pub role_entities: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub role_entities: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct DefaultObjectACLResult {

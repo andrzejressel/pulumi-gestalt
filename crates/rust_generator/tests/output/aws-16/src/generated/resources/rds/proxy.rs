@@ -19,40 +19,36 @@ pub mod proxy {
     pub struct ProxyArgs {
         /// Configuration block(s) with authorization mechanisms to connect to the associated instances or clusters. Described below.
         #[builder(into)]
-        pub auths: pulumi_gestalt_rust::InputOrOutput<
-            Vec<super::super::types::rds::ProxyAuth>,
-        >,
+        pub auths: pulumi_gestalt_rust::Input<Vec<super::super::types::rds::ProxyAuth>>,
         /// Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.
         #[builder(into, default)]
-        pub debug_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub debug_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify `MYSQL`. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify `POSTGRESQL`. For RDS for Microsoft SQL Server, specify `SQLSERVER`. Valid values are `MYSQL`, `POSTGRESQL`, and `SQLSERVER`.
         #[builder(into)]
-        pub engine_family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_family: pulumi_gestalt_rust::Input<String>,
         /// The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.
         #[builder(into, default)]
-        pub idle_client_timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub idle_client_timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.
         #[builder(into, default)]
-        pub require_tls: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub require_tls: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// One or more VPC security group IDs to associate with the new proxy.
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// One or more VPC subnet IDs to associate with the new proxy.
         #[builder(into)]
-        pub vpc_subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub vpc_subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct ProxyResult {

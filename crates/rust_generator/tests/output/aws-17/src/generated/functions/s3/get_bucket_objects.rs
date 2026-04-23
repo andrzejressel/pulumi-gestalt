@@ -10,25 +10,25 @@ pub mod get_bucket_objects {
     pub struct GetBucketObjectsArgs {
         /// Lists object keys in this S3 bucket. Alternatively, an [S3 access point](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html) ARN can be specified
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Character used to group keys (Default: none)
         #[builder(into, default)]
-        pub delimiter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub delimiter: pulumi_gestalt_rust::Input<Option<String>>,
         /// Encodes keys using this method (Default: none; besides none, only "url" can be used)
         #[builder(into, default)]
-        pub encoding_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub encoding_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean specifying whether to populate the owner list (Default: false)
         #[builder(into, default)]
-        pub fetch_owner: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub fetch_owner: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Maximum object keys to return (Default: 1000)
         #[builder(into, default)]
-        pub max_keys: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_keys: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Limits results to object keys with this prefix (Default: none)
         #[builder(into, default)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Returns key names lexicographically after a specific object key in your bucket (Default: none; S3 lists object keys in UTF-8 character encoding in lexicographical order)
         #[builder(into, default)]
-        pub start_after: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_after: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBucketObjectsResult {

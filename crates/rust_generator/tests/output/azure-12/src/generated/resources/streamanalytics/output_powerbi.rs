@@ -48,30 +48,28 @@ pub mod output_powerbi {
     pub struct OutputPowerbiArgs {
         /// The name of the Power BI dataset.
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Power BI group, this must be a valid UUID.
         #[builder(into)]
-        pub group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Power BI group. Use this property to help remember which specific Power BI group id was used.
         #[builder(into)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Output. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Power BI table under the specified dataset.
         #[builder(into)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table: pulumi_gestalt_rust::Input<String>,
         /// The user display name of the user that was used to obtain the refresh token.
         #[builder(into, default)]
-        pub token_user_display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_user_display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user principal name (UPN) of the user that was used to obtain the refresh token.
         #[builder(into, default)]
-        pub token_user_principal_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub token_user_principal_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OutputPowerbiResult {

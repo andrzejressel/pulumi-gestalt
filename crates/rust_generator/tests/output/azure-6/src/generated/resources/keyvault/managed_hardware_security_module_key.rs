@@ -80,33 +80,33 @@ pub mod managed_hardware_security_module_key {
     pub struct ManagedHardwareSecurityModuleKeyArgs {
         /// Specifies the curve to use when creating an `EC-HSM` key. Possible values are `P-256`, `P-256K`, `P-384`, and `P-521`. This field is required if `key_type` is `EC-HSM`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub curve: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub curve: pulumi_gestalt_rust::Input<Option<String>>,
         /// Expiration UTC datetime (Y-m-d'T'H:M:S'Z'). When this parameter gets changed on reruns, if newer date is ahead of current date, an update is performed. If the newer date is before the current date, resource will be force created.
         #[builder(into, default)]
-        pub expiration_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiration_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of JSON web key operations. Possible values include: `decrypt`, `encrypt`, `sign`, `unwrapKey`, `verify` and `wrapKey`. Please note these values are case-sensitive.
         #[builder(into)]
-        pub key_opts: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub key_opts: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Specifies the Size of the RSA key to create in bytes. For example, 1024 or 2048. *Note*: This field is required if `key_type` is `RSA-HSM` or `oct-HSM`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub key_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub key_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the Key Type to use for this Key Vault Managed Hardware Security Module Key. Possible values are `EC-HSM`, `oct-HSM` and `RSA-HSM`. More details see [HSM-protected keys](https://learn.microsoft.com/en-us/azure/key-vault/keys/about-keys#hsm-protected-keys). Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_type: pulumi_gestalt_rust::Input<String>,
         /// Specifies the ID of the Key Vault Managed Hardware Security Module that they key will be owned by. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub managed_hsm_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_hsm_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Key Vault Managed Hardware Security Module Key. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key not usable before the provided UTC datetime (Y-m-d'T'H:M:S'Z').
         ///
         /// > **Note:** Once `expiration_date` is set, it's not possible to unset the key even if it is deleted & recreated as underlying Azure API uses the restore of the purged key.
         #[builder(into, default)]
-        pub not_before_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub not_before_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -53,13 +53,13 @@ pub mod shared_vpc_service_project {
     pub struct SharedVPCServiceProjectArgs {
         /// The deletion policy for the shared VPC service. Setting ABANDON allows the resource to be abandoned rather than deleted. Possible values are: "ABANDON".
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of a host project to associate.
         #[builder(into)]
-        pub host_project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host_project: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project that will serve as a Shared VPC service project.
         #[builder(into)]
-        pub service_project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SharedVPCServiceProjectResult {

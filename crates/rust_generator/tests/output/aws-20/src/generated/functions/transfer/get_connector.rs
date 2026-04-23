@@ -10,7 +10,7 @@ pub mod get_connector {
     pub struct GetConnectorArgs {
         /// Unique identifier for connector
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetConnectorResult {

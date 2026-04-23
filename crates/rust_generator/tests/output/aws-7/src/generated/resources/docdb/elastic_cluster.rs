@@ -42,55 +42,51 @@ pub mod elastic_cluster {
     pub struct ElasticClusterArgs {
         /// Name of the Elastic DocumentDB cluster administrator
         #[builder(into)]
-        pub admin_user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_user_name: pulumi_gestalt_rust::Input<String>,
         /// Password for the Elastic DocumentDB cluster administrator. Can contain any printable ASCII characters. Must be at least 8 characters
         #[builder(into)]
-        pub admin_user_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_user_password: pulumi_gestalt_rust::Input<String>,
         /// Authentication type for the Elastic DocumentDB cluster. Valid values are `PLAIN_TEXT` and `SECRET_ARN`
         #[builder(into)]
-        pub auth_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auth_type: pulumi_gestalt_rust::Input<String>,
         /// The number of days for which automatic snapshots are retained. It should be in between 1 and 35. If not specified, the default value of 1 is set.
         #[builder(into, default)]
-        pub backup_retention_period: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub backup_retention_period: pulumi_gestalt_rust::Input<Option<f64>>,
         /// ARN of a KMS key that is used to encrypt the Elastic DocumentDB cluster. If not specified, the default encryption key that KMS creates for your account is used.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Elastic DocumentDB cluster
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The daily time range during which automated backups are created if automated backups are enabled, as determined by the `backup_retention_period`.
         #[builder(into, default)]
-        pub preferred_backup_window: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_backup_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Weekly time range during which system maintenance can occur in UTC. Format: `ddd:hh24:mi-ddd:hh24:mi`. If not specified, AWS will choose a random 30-minute window on a random day of the week.
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64
         #[builder(into)]
-        pub shard_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub shard_capacity: pulumi_gestalt_rust::Input<i32>,
         /// Number of shards assigned to the elastic cluster. Maximum is 32
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub shard_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub shard_count: pulumi_gestalt_rust::Input<i32>,
         /// IDs of subnets in which the Elastic DocumentDB Cluster operates.
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the collection. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::docdb::ElasticClusterTimeouts>,
         >,
         /// List of VPC security groups to associate with the Elastic DocumentDB Cluster
         #[builder(into, default)]
-        pub vpc_security_group_ids: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub vpc_security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ElasticClusterResult {

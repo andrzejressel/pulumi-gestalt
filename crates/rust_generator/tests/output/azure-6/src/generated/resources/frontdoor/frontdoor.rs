@@ -96,51 +96,51 @@ pub mod frontdoor {
     pub struct FrontdoorArgs {
         /// A `backend_pool_health_probe` block as defined below.
         #[builder(into)]
-        pub backend_pool_health_probes: pulumi_gestalt_rust::InputOrOutput<
+        pub backend_pool_health_probes: pulumi_gestalt_rust::Input<
             Vec<super::super::types::frontdoor::FrontdoorBackendPoolHealthProbe>,
         >,
         /// A `backend_pool_load_balancing` block as defined below.
         #[builder(into)]
-        pub backend_pool_load_balancings: pulumi_gestalt_rust::InputOrOutput<
+        pub backend_pool_load_balancings: pulumi_gestalt_rust::Input<
             Vec<super::super::types::frontdoor::FrontdoorBackendPoolLoadBalancing>,
         >,
         /// A `backend_pool_settings` block as defined below.
         #[builder(into, default)]
-        pub backend_pool_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub backend_pool_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::frontdoor::FrontdoorBackendPoolSetting>>,
         >,
         /// A `backend_pool` block as defined below.
         ///
         /// > Azure by default allows specifying up to 50 Backend Pools - but this quota can be increased via Microsoft Support.
         #[builder(into)]
-        pub backend_pools: pulumi_gestalt_rust::InputOrOutput<
+        pub backend_pools: pulumi_gestalt_rust::Input<
             Vec<super::super::types::frontdoor::FrontdoorBackendPool>,
         >,
         /// A friendly name for the Front Door service.
         #[builder(into, default)]
-        pub friendly_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub friendly_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `frontend_endpoint` block as defined below.
         #[builder(into)]
-        pub frontend_endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub frontend_endpoints: pulumi_gestalt_rust::Input<
             Vec<super::super::types::frontdoor::FrontdoorFrontendEndpoint>,
         >,
         /// Should the Front Door Load Balancer be Enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub load_balancer_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub load_balancer_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Front Door service. Must be globally unique. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group in which the Front Door service should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `routing_rule` block as defined below.
         #[builder(into)]
-        pub routing_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::frontdoor::FrontdoorRoutingRule>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

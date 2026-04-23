@@ -53,21 +53,19 @@ pub mod local_rulestack_fqdn_list {
     pub struct LocalRulestackFqdnListArgs {
         /// The comment for Audit purposes.
         #[builder(into, default)]
-        pub audit_comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub audit_comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description for the FQDN List.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Fully Qualified Domain Names.
         #[builder(into)]
-        pub fully_qualified_domain_names: pulumi_gestalt_rust::InputOrOutput<
-            Vec<String>,
-        >,
+        pub fully_qualified_domain_names: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name which should be used for this Palo Alto Local Rulestack FQDN List.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the TODO. Changing this forces a new Palo Alto Local Rulestack FQDN List to be created.
         #[builder(into)]
-        pub rulestack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rulestack_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LocalRulestackFqdnListResult {

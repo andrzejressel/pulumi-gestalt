@@ -72,62 +72,58 @@ pub mod workspace {
     pub struct WorkspaceArgs {
         /// The type of account access for the workspace. Valid values are `CURRENT_ACCOUNT` and `ORGANIZATION`. If `ORGANIZATION` is specified, then `organizational_units` must also be present.
         #[builder(into)]
-        pub account_access_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_access_type: pulumi_gestalt_rust::Input<String>,
         /// The authentication providers for the workspace. Valid values are `AWS_SSO`, `SAML`, or both.
         #[builder(into)]
-        pub authentication_providers: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub authentication_providers: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The configuration string for the workspace that you create. For more information about the format and configuration options available, see [Working in your Grafana workspace](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html).
         #[builder(into, default)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub configuration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The data sources for the workspace. Valid values are `AMAZON_OPENSEARCH_SERVICE`, `ATHENA`, `CLOUDWATCH`, `PROMETHEUS`, `REDSHIFT`, `SITEWISE`, `TIMESTREAM`, `XRAY`
         #[builder(into, default)]
-        pub data_sources: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub data_sources: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The workspace description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the version of Grafana to support in the new workspace. Supported values are `8.4`, `9.4` and `10.4`. If not specified, defaults to the latest version.
         #[builder(into, default)]
-        pub grafana_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub grafana_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Grafana workspace name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for network access to your workspace.See Network Access Control below.
         #[builder(into, default)]
-        pub network_access_control: pulumi_gestalt_rust::InputOrOutput<
+        pub network_access_control: pulumi_gestalt_rust::Input<
             Option<super::super::types::grafana::WorkspaceNetworkAccessControl>,
         >,
         /// The notification destinations. If a data source is specified here, Amazon Managed Grafana will create IAM roles and permissions needed to use these destinations. Must be set to `SNS`.
         #[builder(into, default)]
-        pub notification_destinations: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub notification_destinations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The role name that the workspace uses to access resources through Amazon Organizations.
         #[builder(into, default)]
-        pub organization_role_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub organization_role_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Organizations organizational units that the workspace is authorized to use data sources from.
         #[builder(into, default)]
-        pub organizational_units: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub organizational_units: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The permission type of the workspace. If `SERVICE_MANAGED` is specified, the IAM roles and IAM policy attachments are generated automatically. If `CUSTOMER_MANAGED` is specified, the IAM roles and IAM policy attachments will not be created.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub permission_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub permission_type: pulumi_gestalt_rust::Input<String>,
         /// The IAM role ARN that the workspace assumes.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The AWS CloudFormation stack set name that provisions IAM roles to be used by the workspace.
         #[builder(into, default)]
-        pub stack_set_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stack_set_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See VPC Configuration below.
         #[builder(into, default)]
-        pub vpc_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::grafana::WorkspaceVpcConfiguration>,
         >,
     }

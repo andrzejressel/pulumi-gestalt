@@ -127,24 +127,24 @@ pub mod express_route_circuit_connection {
     pub struct ExpressRouteCircuitConnectionArgs {
         /// The IPv4 address space from which to allocate customer address for global reach. Changing this forces a new Express Route Circuit Connection to be created.
         #[builder(into)]
-        pub address_prefix_ipv4: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub address_prefix_ipv4: pulumi_gestalt_rust::Input<String>,
         /// The IPv6 address space from which to allocate customer addresses for global reach.
         ///
         /// > **NOTE:** `address_prefix_ipv6` cannot be set when ExpressRoute Circuit Connection with ExpressRoute Circuit based on ExpressRoute Port.
         #[builder(into, default)]
-        pub address_prefix_ipv6: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub address_prefix_ipv6: pulumi_gestalt_rust::Input<Option<String>>,
         /// The authorization key which is associated with the Express Route Circuit Connection.
         #[builder(into, default)]
-        pub authorization_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Express Route Circuit Connection. Changing this forces a new Express Route Circuit Connection to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the peered Express Route Circuit Private Peering. Changing this forces a new Express Route Circuit Connection to be created.
         #[builder(into)]
-        pub peer_peering_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_peering_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Express Route Circuit Private Peering that this Express Route Circuit Connection connects with. Changing this forces a new Express Route Circuit Connection to be created.
         #[builder(into)]
-        pub peering_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peering_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ExpressRouteCircuitConnectionResult {

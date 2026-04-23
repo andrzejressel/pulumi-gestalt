@@ -58,18 +58,18 @@ pub mod managed_cluster {
     pub struct ManagedClusterArgs {
         /// Controls how connections to the cluster are authenticated. A `authentication` block as defined below.
         #[builder(into, default)]
-        pub authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicefabric::ManagedClusterAuthentication>,
         >,
         /// If true, backup service is enabled.
         #[builder(into, default)]
-        pub backup_service_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub backup_service_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Port to use when connecting to the cluster.
         #[builder(into)]
-        pub client_connection_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub client_connection_port: pulumi_gestalt_rust::Input<i32>,
         /// One or more `custom_fabric_setting` blocks as defined below.
         #[builder(into, default)]
-        pub custom_fabric_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_fabric_settings: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::servicefabric::ManagedClusterCustomFabricSetting,
@@ -78,49 +78,49 @@ pub mod managed_cluster {
         >,
         /// Hostname for the cluster. If unset the cluster's name will be used..
         #[builder(into, default)]
-        pub dns_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dns_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, DNS service is enabled.
         #[builder(into, default)]
-        pub dns_service_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub dns_service_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Port that should be used by the Service Fabric Explorer to visualize applications and cluster status.
         #[builder(into)]
-        pub http_gateway_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub http_gateway_port: pulumi_gestalt_rust::Input<i32>,
         /// One or more `lb_rule` blocks as defined below.
         #[builder(into)]
-        pub lb_rules: pulumi_gestalt_rust::InputOrOutput<
+        pub lb_rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::servicefabric::ManagedClusterLbRule>,
         >,
         /// The Azure Region where the Resource Group should exist. Changing this forces a new Resource Group to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Resource Group. Changing this forces a new Resource Group to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `node_type` blocks as defined below.
         #[builder(into, default)]
-        pub node_types: pulumi_gestalt_rust::InputOrOutput<
+        pub node_types: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::servicefabric::ManagedClusterNodeType>>,
         >,
         /// Administrator password for the VMs that will be created as part of this cluster.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Resource Group should exist. Changing this forces a new Resource Group to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// SKU for this cluster. Changing this forces a new resource to be created. Default is `Basic`, allowed values are either `Basic` or `Standard`.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Resource Group.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Upgrade wave for the fabric runtime. Default is `Wave0`, allowed value must be one of `Wave0`, `Wave1`, or `Wave2`.
         #[builder(into, default)]
-        pub upgrade_wave: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub upgrade_wave: pulumi_gestalt_rust::Input<Option<String>>,
         /// Administrator password for the VMs that will be created as part of this cluster.
         #[builder(into, default)]
-        pub username: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub username: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagedClusterResult {

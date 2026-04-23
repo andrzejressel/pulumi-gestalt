@@ -41,13 +41,13 @@ pub mod source_code_token {
     pub struct SourceCodeTokenArgs {
         /// The OAuth access token.
         #[builder(into)]
-        pub token: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub token: pulumi_gestalt_rust::Input<String>,
         /// The OAuth access token secret.
         #[builder(into, default)]
-        pub token_secret: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub token_secret: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source control type. Possible values are `BitBucket`, `Dropbox`, `GitHub` and `OneDrive`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SourceCodeTokenResult {

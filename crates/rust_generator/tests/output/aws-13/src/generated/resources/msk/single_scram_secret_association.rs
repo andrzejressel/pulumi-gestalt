@@ -36,10 +36,10 @@ pub mod single_scram_secret_association {
     pub struct SingleScramSecretAssociationArgs {
         /// Amazon Resource Name (ARN) of the MSK cluster.
         #[builder(into)]
-        pub cluster_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_arn: pulumi_gestalt_rust::Input<String>,
         /// AWS Secrets Manager secret ARN.
         #[builder(into)]
-        pub secret_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SingleScramSecretAssociationResult {

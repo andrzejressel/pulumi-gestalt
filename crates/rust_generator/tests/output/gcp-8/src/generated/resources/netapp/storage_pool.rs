@@ -89,62 +89,62 @@ pub mod storage_pool {
         /// Specifies the Active Directory policy to be used. Format: `projects/{{project}}/locations/{{location}}/activeDirectories/{{name}}`.
         /// The policy needs to be in the same location as the storage pool.
         #[builder(into, default)]
-        pub active_directory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub active_directory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. True if the storage pool supports Auto Tiering enabled volumes. Default is false.
         /// Auto-tiering can be enabled after storage pool creation but it can't be disabled once enabled.
         #[builder(into, default)]
-        pub allow_auto_tiering: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub allow_auto_tiering: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Capacity of the storage pool (in GiB).
         #[builder(into)]
-        pub capacity_gib: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub capacity_gib: pulumi_gestalt_rust::Input<String>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the CMEK policy to be used for volume encryption. Format: `projects/{{project}}/locations/{{location}}/kmsConfigs/{{name}}`.
         /// The policy needs to be in the same location as the storage pool.
         #[builder(into, default)]
-        pub kms_config: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_config: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// When enabled, the volumes uses Active Directory as LDAP name service for UID/GID lookups. Required to enable extended group support for NFSv3,
         /// using security identifiers for NFSv4.1 or principal names for kerberized NFSv4.1.
         #[builder(into, default)]
-        pub ldap_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ldap_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the location. For zonal Flex pools specify a zone name, in all other cases a region name.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name of the storage pool. Needs to be unique per location/region.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// VPC network name with format: `projects/{{project}}/global/networks/{{network}}`
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the replica zone for regional Flex pools. `zone` and `replica_zone` values can be swapped to initiate a
         /// [zone switch](https://cloud.google.com/netapp/volumes/docs/configure-and-use/storage-pools/edit-or-delete-storage-pool#switch_active_and_replica_zones).
         #[builder(into, default)]
-        pub replica_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub replica_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// Service level of the storage pool.
         /// Possible values are: `PREMIUM`, `EXTREME`, `STANDARD`, `FLEX`.
         #[builder(into)]
-        pub service_level: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_level: pulumi_gestalt_rust::Input<String>,
         /// Specifies the active zone for regional Flex pools. `zone` and `replica_zone` values can be swapped to initiate a
         /// [zone switch](https://cloud.google.com/netapp/volumes/docs/configure-and-use/storage-pools/edit-or-delete-storage-pool#switch_active_and_replica_zones).
         /// If you want to create a zonal Flex pool, specify a zone name for `location` and omit `zone`.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StoragePoolResult {

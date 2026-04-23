@@ -10,15 +10,15 @@ pub mod get_infrastructure_configuration {
     pub struct GetInfrastructureConfigurationArgs {
         /// ARN of the infrastructure configuration.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags for the infrastructure created by the infrastructure configuration.
         #[builder(into, default)]
-        pub resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Key-value map of resource tags for the infrastructure configuration.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -50,7 +50,7 @@ pub mod organization_admin_account {
     pub struct OrganizationAdminAccountArgs {
         /// The AWS account identifier of the account to designate as the Security Hub administrator account.
         #[builder(into)]
-        pub admin_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub admin_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OrganizationAdminAccountResult {

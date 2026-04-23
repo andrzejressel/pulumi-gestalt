@@ -11,27 +11,27 @@ pub mod get_listener_rule {
         /// List of actions associated with the rule, sorted by `order`.
         /// Detailed below.
         #[builder(into, default)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::lb::GetListenerRuleAction>>,
         >,
         /// ARN of the Listener Rule.
         /// Either `arn` or `listener_arn` must be set.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of conditions associated with the rule.
         /// Detailed below.
         #[builder(into, default)]
-        pub conditions: pulumi_gestalt_rust::InputOrOutput<
+        pub conditions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::lb::GetListenerRuleCondition>>,
         >,
         /// ARN of the associated Listener.
         /// Either `arn` or `listener_arn` must be set.
         #[builder(into, default)]
-        pub listener_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub listener_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Priority of the Listener Rule within the Listener.
         /// Must be set if `listener_arn` is set, otherwise must not be set.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<f64>>,
     }
     #[allow(dead_code)]
     pub struct GetListenerRuleResult {

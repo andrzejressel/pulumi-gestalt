@@ -10,15 +10,15 @@ pub mod get_regions {
     pub struct GetRegionsArgs {
         /// If true the source will query all regions regardless of availability.
         #[builder(into, default)]
-        pub all_regions: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub all_regions: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block(s) to use as filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::GetRegionsFilter>>,
         >,
         /// Identifier of the current partition (e.g., `aws` in AWS Commercial, `aws-cn` in AWS China).
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegionsResult {

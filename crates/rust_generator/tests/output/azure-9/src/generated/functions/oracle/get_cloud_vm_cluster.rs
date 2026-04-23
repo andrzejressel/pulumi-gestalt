@@ -10,10 +10,10 @@ pub mod get_cloud_vm_cluster {
     pub struct GetCloudVmClusterArgs {
         /// The name of this Cloud VM Cluster.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Cloud VM Cluster exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCloudVmClusterResult {

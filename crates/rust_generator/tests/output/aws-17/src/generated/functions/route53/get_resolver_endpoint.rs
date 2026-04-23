@@ -14,12 +14,12 @@ pub mod get_resolver_endpoint {
         ///
         /// In addition to all arguments above, the following attributes are exported:
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::route53::GetResolverEndpointFilter>>,
         >,
         /// ID of the Route53 Resolver Endpoint.
         #[builder(into, default)]
-        pub resolver_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resolver_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetResolverEndpointResult {

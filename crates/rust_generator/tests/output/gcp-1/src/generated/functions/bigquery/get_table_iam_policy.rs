@@ -9,13 +9,13 @@ pub mod get_table_iam_policy {
     #[allow(dead_code)]
     pub struct GetTableIamPolicyArgs {
         #[builder(into)]
-        pub dataset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the project will be parsed from the identifier of the parent resource. If no project is provided in the parent identifier and no project is specified, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetTableIamPolicyResult {

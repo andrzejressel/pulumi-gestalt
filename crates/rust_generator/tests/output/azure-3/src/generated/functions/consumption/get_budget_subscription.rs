@@ -10,10 +10,10 @@ pub mod get_budget_subscription {
     pub struct GetBudgetSubscriptionArgs {
         /// The name of this Consumption Budget.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the subscription.
         #[builder(into)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBudgetSubscriptionResult {

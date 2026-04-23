@@ -58,10 +58,10 @@ pub mod catalog_database {
     pub struct CatalogDatabaseArgs {
         /// ID of the Glue Catalog to create the database in. If omitted, this defaults to the AWS Account ID.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a set of default permissions on the table for principals. See `create_table_default_permission` below.
         #[builder(into, default)]
-        pub create_table_default_permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub create_table_default_permissions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::glue::CatalogDatabaseCreateTableDefaultPermission,
@@ -70,31 +70,31 @@ pub mod catalog_database {
         >,
         /// Description of the database.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block that references an entity outside the AWS Glue Data Catalog. See `federated_database` below.
         #[builder(into, default)]
-        pub federated_database: pulumi_gestalt_rust::InputOrOutput<
+        pub federated_database: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::CatalogDatabaseFederatedDatabase>,
         >,
         /// Location of the database (for example, an HDFS path).
         #[builder(into, default)]
-        pub location_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the database. The acceptable characters are lowercase letters, numbers, and the underscore character.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of key-value pairs that define parameters and properties of the database.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for a target database for resource linking. See `target_database` below.
         #[builder(into, default)]
-        pub target_database: pulumi_gestalt_rust::InputOrOutput<
+        pub target_database: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::CatalogDatabaseTargetDatabase>,
         >,
     }

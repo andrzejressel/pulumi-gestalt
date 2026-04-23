@@ -95,29 +95,29 @@ pub mod credential_service_principal {
     pub struct CredentialServicePrincipalArgs {
         /// List of tags that can be used for describing the Data Factory Credential.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Data Factory ID in which to associate the Credential with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The description for the Data Factory Credential.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Credential. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Client ID of the Service Principal.
         #[builder(into)]
-        pub service_principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_principal_id: pulumi_gestalt_rust::Input<String>,
         /// A `service_principal_key` block as defined below.
         #[builder(into, default)]
-        pub service_principal_key: pulumi_gestalt_rust::InputOrOutput<
+        pub service_principal_key: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::datafactory::CredentialServicePrincipalServicePrincipalKey,
             >,
         >,
         /// The Tenant ID of the Service Principal.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CredentialServicePrincipalResult {

@@ -10,18 +10,18 @@ pub mod get_queue_authorization_rule {
     pub struct GetQueueAuthorizationRuleArgs {
         /// The name of this ServiceBus Queue Authorisation Rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the ServiceBus Namespace.
         #[builder(into, default)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub queue_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub queue_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the ServiceBus Queue.
         #[builder(into, default)]
-        pub queue_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub queue_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the ServiceBus Queue Authorisation Rule exists.
         #[builder(into, default)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetQueueAuthorizationRuleResult {

@@ -19,75 +19,75 @@ pub mod v_2_models_intent {
     pub struct V2modelsIntentArgs {
         /// Identifier of the bot associated with this intent.
         #[builder(into)]
-        pub bot_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_id: pulumi_gestalt_rust::Input<String>,
         /// Version of the bot associated with this intent.
         #[builder(into)]
-        pub bot_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_version: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for the response that Amazon Lex sends to the user when the intent is closed. See `closing_setting`.
         #[builder(into, default)]
-        pub closing_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub closing_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsIntentClosingSetting>,
         >,
         #[builder(into, default)]
-        pub confirmation_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub confirmation_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsIntentConfirmationSetting>,
         >,
         /// Description of the intent. Use the description to help identify the intent in lists.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for invoking the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction. See `dialog_code_hook`.
         #[builder(into, default)]
-        pub dialog_code_hook: pulumi_gestalt_rust::InputOrOutput<
+        pub dialog_code_hook: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsIntentDialogCodeHook>,
         >,
         /// Configuration block for invoking the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user. See `fulfillment_code_hook`.
         #[builder(into, default)]
-        pub fulfillment_code_hook: pulumi_gestalt_rust::InputOrOutput<
+        pub fulfillment_code_hook: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHook>,
         >,
         /// Configuration block for the response that is sent to the user at the beginning of a conversation, before eliciting slot values. See `initial_response_setting`.
         #[builder(into, default)]
-        pub initial_response_setting: pulumi_gestalt_rust::InputOrOutput<
+        pub initial_response_setting: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsIntentInitialResponseSetting>,
         >,
         /// Configuration blocks for contexts that must be active for this intent to be considered by Amazon Lex. When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent. A context can be automatically activated using the outputContexts property or it can be set at runtime. See `input_context`.
         #[builder(into, default)]
-        pub input_contexts: pulumi_gestalt_rust::InputOrOutput<
+        pub input_contexts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lex::V2ModelsIntentInputContext>>,
         >,
         /// Configuration block for information required to use the AMAZON.KendraSearchIntent intent to connect to an Amazon Kendra index. The AMAZON.KendraSearchIntent intent is called when Amazon Lex can't determine another intent to invoke. See `kendra_configuration`.
         #[builder(into, default)]
-        pub kendra_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub kendra_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsIntentKendraConfiguration>,
         >,
         /// Identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale.
         #[builder(into)]
-        pub locale_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub locale_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration blocks for contexts that the intent activates when it is fulfilled. You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. When you use the outputContextsList property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active. See `output_context`.
         #[builder(into, default)]
-        pub output_contexts: pulumi_gestalt_rust::InputOrOutput<
+        pub output_contexts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lex::V2ModelsIntentOutputContext>>,
         >,
         /// Identifier for the built-in intent to base this intent on.
         #[builder(into, default)]
-        pub parent_intent_signature: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent_intent_signature: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for strings that a user might say to signal the intent. See `sample_utterance`.
         #[builder(into, default)]
-        pub sample_utterances: pulumi_gestalt_rust::InputOrOutput<
+        pub sample_utterances: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lex::V2ModelsIntentSampleUtterance>>,
         >,
         /// Configuration block for a new list of slots and their priorities that are contained by the intent. This is ignored on create and only valid for updates. See `slot_priority`.
         #[builder(into, default)]
-        pub slot_priorities: pulumi_gestalt_rust::InputOrOutput<
+        pub slot_priorities: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::lex::V2ModelsIntentSlotPriority>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::lex::V2ModelsIntentTimeouts>,
         >,
     }

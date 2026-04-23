@@ -10,18 +10,18 @@ pub mod get_traffic_manager_profile {
     pub struct GetTrafficManagerProfileArgs {
         /// Specifies the name of the Traffic Manager Profile.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group the Traffic Manager Profile is located in.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Indicates whether Traffic View is enabled for the Traffic Manager profile.
         #[builder(into, default)]
-        pub traffic_view_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub traffic_view_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetTrafficManagerProfileResult {

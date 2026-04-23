@@ -14,22 +14,20 @@ pub mod get_query_log_config {
         ///
         /// In addition to all arguments above, the following attributes are exported:
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::route53::GetQueryLogConfigFilter>>,
         >,
         /// The name of the query logging configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the Route53 Resolver Query Logging Configuration.
         #[builder(into, default)]
-        pub resolver_query_log_config_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub resolver_query_log_config_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the service.
         ///
         /// [1]: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_Filter.html
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

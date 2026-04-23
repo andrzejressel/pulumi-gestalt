@@ -10,13 +10,13 @@ pub mod get_ipam_preview_next_cidr {
     pub struct GetIpamPreviewNextCidrArgs {
         /// Exclude a particular CIDR range from being returned by the pool.
         #[builder(into, default)]
-        pub disallowed_cidrs: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub disallowed_cidrs: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// ID of the pool to which you want to assign a CIDR.
         #[builder(into)]
-        pub ipam_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ipam_pool_id: pulumi_gestalt_rust::Input<String>,
         /// Netmask length of the CIDR you would like to preview from the IPAM pool.
         #[builder(into, default)]
-        pub netmask_length: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub netmask_length: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct GetIpamPreviewNextCidrResult {

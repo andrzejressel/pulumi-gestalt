@@ -41,7 +41,7 @@ pub mod organization_configuration_feature {
     pub struct OrganizationConfigurationFeatureArgs {
         /// Additional feature configuration block for features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
         #[builder(into, default)]
-        pub additional_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::guardduty::OrganizationConfigurationFeatureAdditionalConfiguration,
@@ -50,13 +50,13 @@ pub mod organization_configuration_feature {
         >,
         /// The status of the feature that is configured for the member accounts within the organization. Valid values: `NEW`, `ALL`, `NONE`.
         #[builder(into)]
-        pub auto_enable: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auto_enable: pulumi_gestalt_rust::Input<String>,
         /// The ID of the detector that configures the delegated administrator.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the feature that will be configured for the organization. Valid values: `S3_DATA_EVENTS`, `EKS_AUDIT_LOGS`, `EBS_MALWARE_PROTECTION`, `RDS_LOGIN_EVENTS`, `EKS_RUNTIME_MONITORING`, `LAMBDA_NETWORK_LOGS`, `RUNTIME_MONITORING`. Only one of two features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING` can be added, adding both features will cause an error. Refer to the [AWS Documentation](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DetectorFeatureConfiguration.html) for the current list of supported values.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OrganizationConfigurationFeatureResult {

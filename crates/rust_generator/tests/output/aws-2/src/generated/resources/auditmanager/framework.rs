@@ -46,23 +46,23 @@ pub mod framework {
     pub struct FrameworkArgs {
         /// Compliance type that the new custom framework supports, such as `CIS` or `HIPAA`.
         #[builder(into, default)]
-        pub compliance_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compliance_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block(s) for the control sets that are associated with the framework. See `control_sets` Block below for details.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub control_sets: pulumi_gestalt_rust::InputOrOutput<
+        pub control_sets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::auditmanager::FrameworkControlSet>>,
         >,
         /// Description of the framework.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the framework.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the framework. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -19,12 +19,12 @@ pub mod matchmaking_rule_set {
     pub struct MatchmakingRuleSetArgs {
         /// Name of the matchmaking rule set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// JSON encoded string containing rule set data.
         #[builder(into)]
-        pub rule_set_body: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_set_body: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

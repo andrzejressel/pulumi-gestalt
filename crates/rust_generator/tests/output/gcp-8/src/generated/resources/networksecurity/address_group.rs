@@ -101,20 +101,20 @@ pub mod address_group {
     pub struct AddressGroupArgs {
         /// Capacity of the Address Group.
         #[builder(into)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub capacity: pulumi_gestalt_rust::Input<i32>,
         /// Free-text description of the resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of items.
         #[builder(into, default)]
-        pub items: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub items: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Set of label tags associated with the AddressGroup resource.
         /// An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the gateway security policy.
@@ -123,21 +123,21 @@ pub mod address_group {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the AddressGroup resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the parent this address group belongs to. Format: organizations/{organization_id} or projects/{project_id}.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of supported purposes of the Address Group.
         /// Each value may be one of: `DEFAULT`, `CLOUD_ARMOR`.
         #[builder(into, default)]
-        pub purposes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub purposes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The type of the Address Group. Possible values are "IPV4" or "IPV6".
         /// Possible values are: `IPV4`, `IPV6`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AddressGroupResult {

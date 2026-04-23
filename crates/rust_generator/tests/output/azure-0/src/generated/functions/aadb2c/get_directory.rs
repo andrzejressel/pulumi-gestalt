@@ -10,10 +10,10 @@ pub mod get_directory {
     pub struct GetDirectoryArgs {
         /// Domain name of the B2C tenant, including the `.onmicrosoft.com` suffix.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the AAD B2C Directory exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDirectoryResult {

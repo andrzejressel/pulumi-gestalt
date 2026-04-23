@@ -539,44 +539,44 @@ pub mod workstation_config {
         /// A list of port ranges specifying single ports or ranges of ports that are externally accessible in the workstation. Allowed ports must be one of 22, 80, or within range 1024-65535. If not specified defaults to ports 22, 80, and ports 1024-65535.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub allowed_ports: pulumi_gestalt_rust::InputOrOutput<
+        pub allowed_ports: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::workstations::WorkstationConfigAllowedPort>>,
         >,
         /// Client-specified annotations. This is distinct from labels.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Container that will be run for each workstation using this configuration when that workstation is started.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub container: pulumi_gestalt_rust::InputOrOutput<
+        pub container: pulumi_gestalt_rust::Input<
             Option<super::super::types::workstations::WorkstationConfigContainer>,
         >,
         /// Disables support for plain TCP connections in the workstation. By default the service supports TCP connections via a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain tcp connections, such as ssh. When enabled, all communication must occur over https or wss.
         #[builder(into, default)]
-        pub disable_tcp_connections: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_tcp_connections: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Human-readable name for this resource.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to enable Linux `auditd` logging on the workstation. When enabled, a service account must also be specified that has `logging.buckets.write` permission on the project. Operating system audit logging is distinct from Cloud Audit Logs.
         #[builder(into, default)]
-        pub enable_audit_agent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_audit_agent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Encrypts resources of this workstation configuration using a customer-managed encryption key.
         /// If specified, the boot disk of the Compute Engine instance and the persistent disk are encrypted using this encryption key. If this field is not set, the disks are encrypted using a generated key. Customer-managed encryption keys do not protect disk metadata.
         /// If the customer-managed encryption key is rotated, when the workstation instance is stopped, the system attempts to recreate the persistent disk with the new version of the key. Be sure to keep older versions of the key until the persistent disk is recreated. Otherwise, data on the persistent disk will be lost.
         /// If the encryption key is revoked, the workstation session will automatically be stopped within 7 hours.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::workstations::WorkstationConfigEncryptionKey>,
         >,
         /// Ephemeral directories which won't persist across workstation sessions.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ephemeral_directories: pulumi_gestalt_rust::InputOrOutput<
+        pub ephemeral_directories: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::workstations::WorkstationConfigEphemeralDirectory,
@@ -586,18 +586,18 @@ pub mod workstation_config {
         /// Runtime host for a workstation.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<
+        pub host: pulumi_gestalt_rust::Input<
             Option<super::super::types::workstations::WorkstationConfigHost>,
         >,
         /// How long to wait before automatically stopping an instance that hasn't recently received any user traffic. A value of 0 indicates that this instance should never time out from idleness. Defaults to 20 minutes.
         /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub idle_timeout: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub idle_timeout: pulumi_gestalt_rust::Input<Option<String>>,
         /// Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where the workstation cluster config should reside.
@@ -605,14 +605,14 @@ pub mod workstation_config {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Maximum number of workstations under this configuration a user can have workstations.workstation.use permission on. Only enforced on CreateWorkstation API calls on the user issuing the API request.
         #[builder(into, default)]
-        pub max_usable_workstations: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_usable_workstations: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Directories to persist across workstation sessions.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub persistent_directories: pulumi_gestalt_rust::InputOrOutput<
+        pub persistent_directories: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::workstations::WorkstationConfigPersistentDirectory,
@@ -622,11 +622,11 @@ pub mod workstation_config {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Readiness checks to be performed on a workstation.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub readiness_checks: pulumi_gestalt_rust::InputOrOutput<
+        pub readiness_checks: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::workstations::WorkstationConfigReadinessCheck>,
             >,
@@ -634,17 +634,17 @@ pub mod workstation_config {
         /// Specifies the zones used to replicate the VM and disk resources within the region. If set, exactly two zones within the workstation cluster's region must be specified—for example, `['us-central1-a', 'us-central1-f']`.
         /// If this field is empty, two default zones within the region are used. Immutable after the workstation configuration is created.
         #[builder(into, default)]
-        pub replica_zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub replica_zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// How long to wait before automatically stopping a workstation after it was started. A value of 0 indicates that workstations using this configuration should never time out from running duration. Must be greater than 0 and less than 24 hours if `encryption_key` is set. Defaults to 12 hours.
         /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
         #[builder(into, default)]
-        pub running_timeout: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub running_timeout: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the parent workstation cluster.
         #[builder(into)]
-        pub workstation_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workstation_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The ID to be assigned to the workstation cluster config.
         #[builder(into)]
-        pub workstation_config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workstation_config_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkstationConfigResult {

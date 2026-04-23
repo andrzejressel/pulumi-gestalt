@@ -10,10 +10,10 @@ pub mod get_signing_profile {
     pub struct GetSigningProfileArgs {
         /// Name of the target signing profile.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// List of tags associated with the signing profile.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

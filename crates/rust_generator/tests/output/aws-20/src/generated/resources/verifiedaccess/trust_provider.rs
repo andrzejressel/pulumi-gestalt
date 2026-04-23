@@ -37,38 +37,36 @@ pub mod trust_provider {
     pub struct TrustProviderArgs {
         /// A description for the AWS Verified Access trust provider.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A block of options for device identity based trust providers.
         #[builder(into, default)]
-        pub device_options: pulumi_gestalt_rust::InputOrOutput<
+        pub device_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::verifiedaccess::TrustProviderDeviceOptions>,
         >,
         /// The type of device-based trust provider.
         #[builder(into, default)]
-        pub device_trust_provider_type: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub device_trust_provider_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The OpenID Connect details for an oidc-type, user-identity based trust provider.
         #[builder(into, default)]
-        pub oidc_options: pulumi_gestalt_rust::InputOrOutput<
+        pub oidc_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::verifiedaccess::TrustProviderOidcOptions>,
         >,
         /// The identifier to be used when working with policy rules.
         #[builder(into)]
-        pub policy_reference_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_reference_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of trust provider can be either user or device-based.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub trust_provider_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub trust_provider_type: pulumi_gestalt_rust::Input<String>,
         /// The type of user-based trust provider.
         #[builder(into, default)]
-        pub user_trust_provider_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_trust_provider_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TrustProviderResult {

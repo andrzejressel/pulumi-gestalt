@@ -33,10 +33,10 @@ pub mod app_bundle {
     pub struct AppBundleArgs {
         /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) key to use to encrypt the application data. If this is not specified, an AWS owned key is used for encryption.
         #[builder(into, default)]
-        pub customer_managed_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub customer_managed_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -35,18 +35,18 @@ pub mod vpc_ingress_connection {
     pub struct VpcIngressConnectionArgs {
         /// Specifications for the customer’s Amazon VPC and the related AWS PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource. See Ingress VPC Configuration below for more details.
         #[builder(into)]
-        pub ingress_vpc_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress_vpc_configuration: pulumi_gestalt_rust::Input<
             super::super::types::apprunner::VpcIngressConnectionIngressVpcConfiguration,
         >,
         /// A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your AWS account in the AWS Region.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) for this App Runner service that is used to create the VPC Ingress Connection resource.
         #[builder(into)]
-        pub service_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

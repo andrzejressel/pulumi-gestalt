@@ -70,39 +70,39 @@ pub mod reference_input_blob {
     pub struct ReferenceInputBlobArgs {
         /// The authentication mode for the Stream Analytics Reference Input. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         #[builder(into, default)]
-        pub authentication_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The date format. Wherever `{date}` appears in `path_pattern`, the value of this property is used as the date format instead.
         #[builder(into)]
-        pub date_format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub date_format: pulumi_gestalt_rust::Input<String>,
         /// The name of the Reference Input Blob. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The blob path pattern. Not a regular expression. It represents a pattern against which blob names will be matched to determine whether or not they should be included as input or output to the job.
         #[builder(into)]
-        pub path_pattern: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub path_pattern: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `serialization` block as defined below.
         #[builder(into)]
-        pub serialization: pulumi_gestalt_rust::InputOrOutput<
+        pub serialization: pulumi_gestalt_rust::Input<
             super::super::types::streamanalytics::ReferenceInputBlobSerialization,
         >,
         /// The Access Key which should be used to connect to this Storage Account. Required if `authentication_mode` is `ConnectionString`.
         #[builder(into, default)]
-        pub storage_account_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_account_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Storage Account that has the blob container with reference data.
         #[builder(into)]
-        pub storage_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Container within the Storage Account.
         #[builder(into)]
-        pub storage_container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
         /// The time format. Wherever `{time}` appears in `path_pattern`, the value of this property is used as the time format instead.
         #[builder(into)]
-        pub time_format: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub time_format: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReferenceInputBlobResult {

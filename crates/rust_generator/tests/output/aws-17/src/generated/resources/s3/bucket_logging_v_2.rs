@@ -71,26 +71,26 @@ pub mod bucket_logging_v_2 {
     pub struct BucketLoggingV2Args {
         /// Name of the bucket.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Account ID of the expected bucket owner.
         #[builder(into, default)]
-        pub expected_bucket_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expected_bucket_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the bucket where you want Amazon S3 to store server access logs.
         #[builder(into)]
-        pub target_bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_bucket: pulumi_gestalt_rust::Input<String>,
         /// Set of configuration blocks with information for granting permissions. See below.
         #[builder(into, default)]
-        pub target_grants: pulumi_gestalt_rust::InputOrOutput<
+        pub target_grants: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::s3::BucketLoggingV2TargetGrant>>,
         >,
         /// Amazon S3 key format for log objects. See below.
         #[builder(into, default)]
-        pub target_object_key_format: pulumi_gestalt_rust::InputOrOutput<
+        pub target_object_key_format: pulumi_gestalt_rust::Input<
             Option<super::super::types::s3::BucketLoggingV2TargetObjectKeyFormat>,
         >,
         /// Prefix for all log object keys.
         #[builder(into)]
-        pub target_prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_prefix: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BucketLoggingV2Result {

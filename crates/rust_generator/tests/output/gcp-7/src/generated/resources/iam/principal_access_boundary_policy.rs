@@ -57,33 +57,31 @@ pub mod principal_access_boundary_policy {
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Principal access boundary policy details
         /// Structure is documented below.
         #[builder(into, default)]
-        pub details: pulumi_gestalt_rust::InputOrOutput<
+        pub details: pulumi_gestalt_rust::Input<
             Option<super::super::types::iam::PrincipalAccessBoundaryPolicyDetails>,
         >,
         /// The description of the principal access boundary policy. Must be less than or equal to 63 characters.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location the principal access boundary policy is in.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The parent organization of the principal access boundary policy.
         #[builder(into)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization: pulumi_gestalt_rust::Input<String>,
         /// The ID to use to create the principal access boundary policy.
         /// This value must start with a lowercase letter followed by up to 62 lowercase letters, numbers, hyphens, or dots. Pattern, /a-z{2,62}/.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub principal_access_boundary_policy_id: pulumi_gestalt_rust::InputOrOutput<
-            String,
-        >,
+        pub principal_access_boundary_policy_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PrincipalAccessBoundaryPolicyResult {

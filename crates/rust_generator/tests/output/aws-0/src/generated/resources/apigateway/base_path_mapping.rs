@@ -37,19 +37,19 @@ pub mod base_path_mapping {
     pub struct BasePathMappingArgs {
         /// Path segment that must be prepended to the path when accessing the API via this mapping. If omitted, the API is exposed at the root of the given domain.
         #[builder(into, default)]
-        pub base_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub base_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// Already-registered domain name to connect the API to.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The identifier for the domain name resource. Supported only for private custom domain names.
         #[builder(into, default)]
-        pub domain_name_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the API to connect.
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
         /// Name of a specific deployment stage to expose at the given path. If omitted, callers may select any stage by including its name as a path element after the base path.
         #[builder(into, default)]
-        pub stage_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stage_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BasePathMappingResult {

@@ -36,13 +36,13 @@ pub mod domain_name {
     pub struct DomainNameArgs {
         /// ARN of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate. The certifiacte must reside in us-east-1.
         #[builder(into)]
-        pub certificate_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_arn: pulumi_gestalt_rust::Input<String>,
         /// A description of the Domain Name.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Domain name.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainNameResult {

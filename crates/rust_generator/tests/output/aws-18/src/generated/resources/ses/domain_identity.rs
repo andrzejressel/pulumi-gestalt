@@ -55,7 +55,7 @@ pub mod domain_identity {
     pub struct DomainIdentityArgs {
         /// The domain name to assign to SES
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainIdentityResult {

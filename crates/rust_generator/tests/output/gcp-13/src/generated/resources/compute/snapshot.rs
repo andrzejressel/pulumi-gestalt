@@ -127,15 +127,15 @@ pub mod snapshot {
         /// example, for chargeback tracking.  When you describe your snapshot
         /// resource, this field is visible only if it has a non-empty value.
         #[builder(into, default)]
-        pub chain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub chain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels to apply to this Snapshot.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name of the resource; provided by the client when the resource is
@@ -146,11 +146,11 @@ pub mod snapshot {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Encrypts the snapshot using a customer-supplied encryption key.
         /// After you encrypt a snapshot using a customer-supplied key, you must
         /// provide the same key if you use the snapshot later. For example, you
@@ -163,7 +163,7 @@ pub mod snapshot {
         /// key and you do not need to provide a key to use the snapshot later.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub snapshot_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub snapshot_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SnapshotSnapshotEncryptionKey>,
         >,
         /// A reference to the disk used to create this snapshot.
@@ -171,21 +171,21 @@ pub mod snapshot {
         ///
         /// - - -
         #[builder(into)]
-        pub source_disk: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_disk: pulumi_gestalt_rust::Input<String>,
         /// The customer-supplied encryption key of the source snapshot. Required
         /// if the source snapshot is protected by a customer-supplied encryption
         /// key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub source_disk_encryption_key: pulumi_gestalt_rust::InputOrOutput<
+        pub source_disk_encryption_key: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SnapshotSourceDiskEncryptionKey>,
         >,
         /// Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
         #[builder(into, default)]
-        pub storage_locations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub storage_locations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A reference to the zone where the disk is hosted.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SnapshotResult {

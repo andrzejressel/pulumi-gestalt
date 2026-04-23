@@ -10,22 +10,22 @@ pub mod get_resolver_rule {
     pub struct GetResolverRuleArgs {
         /// Domain name the desired resolver rule forwards DNS queries for. Conflicts with `resolver_rule_id`.
         #[builder(into, default)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Friendly name of the desired resolver rule. Conflicts with `resolver_rule_id`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the outbound resolver endpoint of the desired resolver rule. Conflicts with `resolver_rule_id`.
         #[builder(into, default)]
-        pub resolver_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resolver_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the desired resolver rule. Conflicts with `domain_name`, `name`, `resolver_endpoint_id` and `rule_type`.
         #[builder(into, default)]
-        pub resolver_rule_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resolver_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rule type of the desired resolver rule. Valid values are `FORWARD`, `SYSTEM` and `RECURSIVE`. Conflicts with `resolver_rule_id`.
         #[builder(into, default)]
-        pub rule_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rule_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags assigned to the resolver rule.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

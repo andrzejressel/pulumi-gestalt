@@ -39,15 +39,15 @@ pub mod sharedflow {
         ///
         /// - - -
         #[builder(into)]
-        pub config_bundle: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub config_bundle: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub detect_md5hash: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub detect_md5hash: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the shared flow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apigee Organization name associated with the Apigee instance.
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SharedflowResult {

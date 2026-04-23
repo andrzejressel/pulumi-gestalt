@@ -41,47 +41,47 @@ pub mod sampling_rule {
     pub struct SamplingRuleArgs {
         /// Matches attributes derived from the request.
         #[builder(into, default)]
-        pub attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub attributes: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The percentage of matching requests to instrument, after the reservoir is exhausted.
         #[builder(into)]
-        pub fixed_rate: pulumi_gestalt_rust::InputOrOutput<f64>,
+        pub fixed_rate: pulumi_gestalt_rust::Input<f64>,
         /// Matches the hostname from a request URL.
         #[builder(into)]
-        pub host: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub host: pulumi_gestalt_rust::Input<String>,
         /// Matches the HTTP method of a request.
         #[builder(into)]
-        pub http_method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub http_method: pulumi_gestalt_rust::Input<String>,
         /// The priority of the sampling rule.
         #[builder(into)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub priority: pulumi_gestalt_rust::Input<i32>,
         /// A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.
         #[builder(into)]
-        pub reservoir_size: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub reservoir_size: pulumi_gestalt_rust::Input<i32>,
         /// Matches the ARN of the AWS resource on which the service runs.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the sampling rule.
         #[builder(into, default)]
-        pub rule_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rule_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Matches the `name` that the service uses to identify itself in segments.
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
         /// Matches the `origin` that the service uses to identify its type in segments.
         #[builder(into)]
-        pub service_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_type: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Matches the path from a request URL.
         #[builder(into)]
-        pub url_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub url_path: pulumi_gestalt_rust::Input<String>,
         /// The version of the sampling rule format (`1` )
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub version: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct SamplingRuleResult {

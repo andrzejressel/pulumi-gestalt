@@ -416,22 +416,22 @@ pub mod job {
         /// annotations present in your configuration. Please refer to the field 'effective_annotations' for all of the annotations
         /// present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Settings for the Binary Authorization feature.
         #[builder(into, default)]
-        pub binary_authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub binary_authorization: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudrunv2::JobBinaryAuthorization>,
         >,
         /// Arbitrary identifier for the API client.
         #[builder(into, default)]
-        pub client: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client: pulumi_gestalt_rust::Input<Option<String>>,
         /// Arbitrary version identifier for the API client.
         #[builder(into, default)]
-        pub client_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with
         /// Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment,
         /// state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or
@@ -441,7 +441,7 @@ pub mod job {
         /// non-authoritative, and will only manage the labels present in your configuration. Please refer to the field
         /// 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The launch stage as defined by [Google Cloud Platform Launch
@@ -451,27 +451,27 @@ pub mod job {
         /// input, but only BETA and GA-level features are used, this field will be BETA on output. Possible values:
         /// ["UNIMPLEMENTED", "PRELAUNCH", "EARLY_ACCESS", "ALPHA", "BETA", "GA", "DEPRECATED"]
         #[builder(into, default)]
-        pub launch_stage: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub launch_stage: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the cloud run job
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the Job.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique string used as a suffix creating a new execution upon job create or update. The Job will become ready when the
         /// execution is successfully completed. The sum of job name and token length must be fewer than 63 characters.
         #[builder(into, default)]
-        pub run_execution_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub run_execution_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// A unique string used as a suffix creating a new execution upon job create or update. The Job will become ready when the
         /// execution is successfully started. The sum of job name and token length must be fewer than 63 characters.
         #[builder(into, default)]
-        pub start_execution_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_execution_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// The template used to create executions for this Job.
         /// Structure is documented below.
         #[builder(into)]
-        pub template: pulumi_gestalt_rust::InputOrOutput<
+        pub template: pulumi_gestalt_rust::Input<
             super::super::types::cloudrunv2::JobTemplate,
         >,
     }

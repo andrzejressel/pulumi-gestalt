@@ -68,35 +68,35 @@ pub mod security_scan_config {
         /// If specified, service will use the authentication configuration during scanning.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityScanConfigAuthentication>,
         >,
         /// The blacklist URL patterns as described in
         /// https://cloud.google.com/security-scanner/docs/excluded-urls
         #[builder(into, default)]
-        pub blacklist_patterns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub blacklist_patterns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The user provider display name of the ScanConfig.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Controls export of scan configurations and results to Cloud Security Command Center.
         /// Default value is `ENABLED`.
         /// Possible values are: `ENABLED`, `DISABLED`.
         #[builder(into, default)]
-        pub export_to_security_command_center: pulumi_gestalt_rust::InputOrOutput<
+        pub export_to_security_command_center: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The maximum QPS during scanning. A valid value ranges from 5 to 20 inclusively.
         /// Defaults to 15.
         #[builder(into, default)]
-        pub max_qps: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_qps: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The schedule of the ScanConfig
         /// Structure is documented below.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::SecurityScanConfigSchedule>,
         >,
         /// The starting URLs from which the scanner finds site pages.
@@ -104,16 +104,16 @@ pub mod security_scan_config {
         ///
         /// - - -
         #[builder(into)]
-        pub starting_urls: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub starting_urls: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be used as a default.
         /// Each value may be one of: `APP_ENGINE`, `COMPUTE`.
         #[builder(into, default)]
-        pub target_platforms: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub target_platforms: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Type of the user agents used for scanning
         /// Default value is `CHROME_LINUX`.
         /// Possible values are: `USER_AGENT_UNSPECIFIED`, `CHROME_LINUX`, `CHROME_ANDROID`, `SAFARI_IPHONE`.
         #[builder(into, default)]
-        pub user_agent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_agent: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SecurityScanConfigResult {

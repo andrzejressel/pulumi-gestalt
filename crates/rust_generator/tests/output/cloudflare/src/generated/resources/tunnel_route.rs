@@ -20,19 +20,19 @@ pub mod tunnel_route {
     pub struct TunnelRouteArgs {
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Description of the tunnel route.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IPv4 or IPv6 network that should use this tunnel route, in CIDR notation.
         #[builder(into)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network: pulumi_gestalt_rust::Input<String>,
         /// The ID of the tunnel that will service the tunnel route.
         #[builder(into)]
-        pub tunnel_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tunnel_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the virtual network for which this route is being added; uses the default virtual network of the account if none is provided. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TunnelRouteResult {

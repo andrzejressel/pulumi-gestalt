@@ -45,18 +45,18 @@ pub mod reserved_instance {
     pub struct ReservedInstanceArgs {
         /// Number of instances to reserve. Default value is `1`.
         #[builder(into, default)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub instance_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// ID of the Reserved DB instance offering to purchase. To determine an `offering_id`, see the `aws.rds.getReservedInstanceOffering` data source.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub offering_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub offering_id: pulumi_gestalt_rust::Input<String>,
         /// Customer-specified identifier to track this reservation.
         #[builder(into, default)]
-        pub reservation_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reservation_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the DB reservation. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

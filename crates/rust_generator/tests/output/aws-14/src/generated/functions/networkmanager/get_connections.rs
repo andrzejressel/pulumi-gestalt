@@ -10,13 +10,13 @@ pub mod get_connections {
     pub struct GetConnectionsArgs {
         /// ID of the device of the connections to retrieve.
         #[builder(into, default)]
-        pub device_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub device_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the Global Network of the connections to retrieve.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// Restricts the list to the connections with these tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

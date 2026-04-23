@@ -98,60 +98,58 @@ pub mod environment {
     #[allow(dead_code)]
     pub struct EnvironmentArgs {
         #[builder(into, default)]
-        pub apply_changes_during_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub apply_changes_during_maintenance_window: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Engine type must be `microfocus` or `bluage`.
         #[builder(into)]
-        pub engine_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_type: pulumi_gestalt_rust::Input<String>,
         /// The specific version of the engine for the Environment.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Force update the environment even if applications are running.
         #[builder(into, default)]
-        pub force_update: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_update: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub high_availability_config: pulumi_gestalt_rust::InputOrOutput<
+        pub high_availability_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::m2::EnvironmentHighAvailabilityConfig>,
         >,
         /// M2 Instance Type.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// ARN of the KMS key to use for the Environment.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the runtime environment. Must be unique within the account.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format `ddd:hh24:mi-ddd:hh24:mi` and must be less than 24 hours. If not provided a random value will be used.
         #[builder(into, default)]
-        pub preferred_maintenance_window: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub preferred_maintenance_window: pulumi_gestalt_rust::Input<Option<String>>,
         /// Allow applications deployed to this environment to be publicly accessible.
         #[builder(into, default)]
-        pub publicly_accessible: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of security group ids.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub storage_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::m2::EnvironmentStorageConfiguration>,
         >,
         /// List of subnet ids to deploy environment to.
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value tags for the place index. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::m2::EnvironmentTimeouts>,
         >,
     }

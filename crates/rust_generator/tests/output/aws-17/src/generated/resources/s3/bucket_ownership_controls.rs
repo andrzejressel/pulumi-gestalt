@@ -46,10 +46,10 @@ pub mod bucket_ownership_controls {
     pub struct BucketOwnershipControlsArgs {
         /// Name of the bucket that you want to associate this access point with.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Configuration block(s) with Ownership Controls rules. Detailed below.
         #[builder(into)]
-        pub rule: pulumi_gestalt_rust::InputOrOutput<
+        pub rule: pulumi_gestalt_rust::Input<
             super::super::types::s3::BucketOwnershipControlsRule,
         >,
     }

@@ -71,23 +71,23 @@ pub mod report_group {
     pub struct ReportGroupArgs {
         /// If `true`, deletes any reports that belong to a report group before deleting the report group. If `false`, you must delete any reports in the report group before deleting it. Default value is `false`.
         #[builder(into, default)]
-        pub delete_reports: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub delete_reports: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Information about the destination where the raw data of this Report Group is exported. see Export Config documented below.
         #[builder(into)]
-        pub export_config: pulumi_gestalt_rust::InputOrOutput<
+        pub export_config: pulumi_gestalt_rust::Input<
             super::super::types::codebuild::ReportGroupExportConfig,
         >,
         /// The name of a Report Group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of the Report Group. Valid value are `TEST` and `CODE_COVERAGE`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReportGroupResult {

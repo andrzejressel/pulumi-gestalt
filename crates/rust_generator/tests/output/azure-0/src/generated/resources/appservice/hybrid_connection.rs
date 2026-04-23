@@ -88,22 +88,22 @@ pub mod hybrid_connection {
     pub struct HybridConnectionArgs {
         /// Specifies the name of the App Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub app_service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_service_name: pulumi_gestalt_rust::Input<String>,
         /// The hostname of the endpoint.
         #[builder(into)]
-        pub hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hostname: pulumi_gestalt_rust::Input<String>,
         /// The port of the endpoint.
         #[builder(into)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub port: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the Service Bus Relay. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub relay_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub relay_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the App Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Service Bus key which has Send permissions. Defaults to `RootManageSharedAccessKey`.
         #[builder(into, default)]
-        pub send_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub send_key_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HybridConnectionResult {

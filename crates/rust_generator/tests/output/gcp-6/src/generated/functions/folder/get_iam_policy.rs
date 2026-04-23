@@ -10,7 +10,7 @@ pub mod get_iam_policy {
     pub struct GetIamPolicyArgs {
         /// The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetIamPolicyResult {

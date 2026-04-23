@@ -10,10 +10,10 @@ pub mod get_function_app_host_keys {
     pub struct GetFunctionAppHostKeysArgs {
         /// The name of the Function App.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Function App exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFunctionAppHostKeysResult {

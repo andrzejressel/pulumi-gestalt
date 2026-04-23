@@ -10,7 +10,7 @@ pub mod get_account_public_access_block {
     pub struct GetAccountPublicAccessBlockArgs {
         /// AWS account ID to configure. Defaults to automatically determined account ID of the AWS provider.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAccountPublicAccessBlockResult {

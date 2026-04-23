@@ -40,15 +40,15 @@ pub mod policy_template {
     pub struct PolicyTemplateArgs {
         /// Provides a description for the policy template.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Policy Store.
         #[builder(into)]
-        pub policy_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_store_id: pulumi_gestalt_rust::Input<String>,
         /// Defines the content of the statement, written in Cedar policy language.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub statement: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub statement: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicyTemplateResult {

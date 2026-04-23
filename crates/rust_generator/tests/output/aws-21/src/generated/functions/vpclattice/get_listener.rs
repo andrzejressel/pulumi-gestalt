@@ -10,13 +10,13 @@ pub mod get_listener {
     pub struct GetListenerArgs {
         /// ID or Amazon Resource Name (ARN) of the listener
         #[builder(into)]
-        pub listener_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub listener_identifier: pulumi_gestalt_rust::Input<String>,
         /// ID or Amazon Resource Name (ARN) of the service network
         #[builder(into)]
-        pub service_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_identifier: pulumi_gestalt_rust::Input<String>,
         /// List of tags associated with the listener.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

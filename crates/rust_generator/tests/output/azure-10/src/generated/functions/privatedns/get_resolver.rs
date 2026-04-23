@@ -10,10 +10,10 @@ pub mod get_resolver {
     pub struct GetResolverArgs {
         /// Name of the Private DNS Resolver.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Name of the Resource Group where the Private DNS Resolver exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResolverResult {

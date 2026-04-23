@@ -157,34 +157,34 @@ pub mod security_group_rule {
     pub struct SecurityGroupRuleArgs {
         /// List of CIDR blocks. Cannot be specified with `source_security_group_id` or `self`.
         #[builder(into, default)]
-        pub cidr_blocks: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub cidr_blocks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Description of the rule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Start port (or ICMP type number if protocol is "icmp" or "icmpv6").
         #[builder(into)]
-        pub from_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub from_port: pulumi_gestalt_rust::Input<i32>,
         /// List of IPv6 CIDR blocks. Cannot be specified with `source_security_group_id` or `self`.
         #[builder(into, default)]
-        pub ipv6_cidr_blocks: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ipv6_cidr_blocks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of Prefix List IDs.
         #[builder(into, default)]
-        pub prefix_list_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub prefix_list_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Protocol. If not icmp, icmpv6, tcp, udp, or all use the [protocol number](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// Security group to apply this rule to.
         #[builder(into)]
-        pub security_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_group_id: pulumi_gestalt_rust::Input<String>,
         /// Whether the security group itself will be added as a source to this ingress rule. Cannot be specified with `cidr_blocks`, `ipv6_cidr_blocks`, or `source_security_group_id`.
         #[builder(into, default)]
-        pub self_: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub self_: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Security group id to allow access to/from, depending on the `type`. Cannot be specified with `cidr_blocks`, `ipv6_cidr_blocks`, or `self`.
         #[builder(into, default)]
-        pub source_security_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_security_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// End port (or ICMP code if protocol is "icmp").
         #[builder(into)]
-        pub to_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub to_port: pulumi_gestalt_rust::Input<i32>,
         /// Type of rule being created. Valid options are `ingress` (inbound)
         /// or `egress` (outbound).
         ///
@@ -192,7 +192,7 @@ pub mod security_group_rule {
         ///
         /// > **Note** Although `cidr_blocks`, `ipv6_cidr_blocks`, `prefix_list_ids`, and `source_security_group_id` are all marked as optional, you _must_ provide one of them in order to configure the source of the traffic.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SecurityGroupRuleResult {

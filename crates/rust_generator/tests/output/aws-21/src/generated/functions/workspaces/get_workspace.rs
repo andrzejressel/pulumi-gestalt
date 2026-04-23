@@ -10,18 +10,18 @@ pub mod get_workspace {
     pub struct GetWorkspaceArgs {
         /// ID of the directory for the WorkSpace. You have to specify `user_name` along with `directory_id`. You cannot combine this parameter with `workspace_id`.
         #[builder(into, default)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub directory_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags for the WorkSpace.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// User name of the user for the WorkSpace. This user name must exist in the directory for the WorkSpace. You cannot combine this parameter with `workspace_id`.
         #[builder(into, default)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the WorkSpace. You cannot combine this parameter with `directory_id`.
         #[builder(into, default)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub workspace_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetWorkspaceResult {

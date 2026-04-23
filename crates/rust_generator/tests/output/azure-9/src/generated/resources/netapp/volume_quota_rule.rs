@@ -144,26 +144,26 @@ pub mod volume_quota_rule {
     pub struct VolumeQuotaRuleArgs {
         /// The Azure Region where the Volume Quota Rule should exist. Changing this forces a new Volume Quota Rule to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Volume Quota Rule. Changing this forces a new Volume Quota Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Quota size in kibibytes.
         #[builder(into)]
-        pub quota_size_in_kib: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub quota_size_in_kib: pulumi_gestalt_rust::Input<i32>,
         /// Quota Target. This can be Unix UID/GID for NFSv3/NFSv4.1 volumes and Windows User SID for CIFS based volumes. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** `quota_target ` must be used when `quota_type` is `IndividualGroupQuota` or `IndividualUserQuota`
         ///
         /// > **NOTE:** more information about this resource can be found at [Understand default and individual user and group quotas](https://learn.microsoft.com/en-us/azure/azure-netapp-files/default-individual-user-group-quotas-introduction)
         #[builder(into, default)]
-        pub quota_target: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub quota_target: pulumi_gestalt_rust::Input<Option<String>>,
         /// Quota type. Possible values are `DefaultGroupQuota`, `DefaultUserQuota`, `IndividualGroupQuota` and `IndividualUserQuota`. Please note that `IndividualGroupQuota` and `DefaultGroupQuota` are not applicable to SMB and dual-protocol volumes. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub quota_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub quota_type: pulumi_gestalt_rust::Input<String>,
         /// The NetApp volume ID where the Volume Quota Rule is assigned to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub volume_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VolumeQuotaRuleResult {

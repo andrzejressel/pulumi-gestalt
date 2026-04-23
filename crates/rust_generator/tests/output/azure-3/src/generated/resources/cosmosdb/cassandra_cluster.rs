@@ -81,58 +81,56 @@ pub mod cassandra_cluster {
     pub struct CassandraClusterArgs {
         /// The authentication method that is used to authenticate clients. Possible values are `None` and `Cassandra`. Defaults to `Cassandra`.
         #[builder(into, default)]
-        pub authentication_method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of TLS certificates that is used to authorize client connecting to the Cassandra Cluster.
         #[builder(into, default)]
-        pub client_certificate_pems: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub client_certificate_pems: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The initial admin password for this Cassandra Cluster. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub default_admin_password: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_admin_password: pulumi_gestalt_rust::Input<String>,
         /// The ID of the delegated management subnet for this Cassandra Cluster. Changing this forces a new Cassandra Cluster to be created.
         #[builder(into)]
-        pub delegated_management_subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub delegated_management_subnet_id: pulumi_gestalt_rust::Input<String>,
         /// A list of TLS certificates that is used to authorize gossip from unmanaged Cassandra Data Center.
         #[builder(into, default)]
-        pub external_gossip_certificate_pems: pulumi_gestalt_rust::InputOrOutput<
+        pub external_gossip_certificate_pems: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// A list of IP Addresses of the seed nodes in unmanaged the Cassandra Data Center which will be added to the seed node lists of all managed nodes.
         #[builder(into, default)]
-        pub external_seed_node_ip_addresses: pulumi_gestalt_rust::InputOrOutput<
+        pub external_seed_node_ip_addresses: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The number of hours to wait between taking a backup of the Cassandra Cluster. Defaults to `24`.
         ///
         /// > **Note:** To disable this feature, set this property to `0`.
         #[builder(into, default)]
-        pub hours_between_backups: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub hours_between_backups: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::CassandraClusterIdentity>,
         >,
         /// The Azure Region where the Cassandra Cluster should exist. Changing this forces a new Cassandra Cluster to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Cassandra Cluster. Changing this forces a new Cassandra Cluster to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is the automatic repair enabled on the Cassandra Cluster? Defaults to `true`.
         #[builder(into, default)]
-        pub repair_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub repair_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Cassandra Cluster should exist. Changing this forces a new Cassandra Cluster to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags assigned to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The version of Cassandra what the Cluster converges to run. Possible values are `3.11` and `4.0`. Defaults to `3.11`. Changing this forces a new Cassandra Cluster to be created.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CassandraClusterResult {

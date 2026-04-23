@@ -10,10 +10,10 @@ pub mod get_patch_baselines {
     pub struct GetPatchBaselinesArgs {
         /// Only return baseline identities where `default_baseline` is `true`.
         #[builder(into, default)]
-        pub default_baselines: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub default_baselines: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Key-value pairs used to filter the results. See `filter` below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ssm::GetPatchBaselinesFilter>>,
         >,
     }

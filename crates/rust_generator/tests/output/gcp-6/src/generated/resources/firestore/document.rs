@@ -156,23 +156,23 @@ pub mod document {
     pub struct DocumentArgs {
         /// The collection ID, relative to database. For example: chatrooms or chatrooms/my-document/private-messages.
         #[builder(into)]
-        pub collection: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub collection: pulumi_gestalt_rust::Input<String>,
         /// The Firestore database id. Defaults to `"(default)"`.
         #[builder(into, default)]
-        pub database: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database: pulumi_gestalt_rust::Input<Option<String>>,
         /// The client-assigned document ID to use for this document during creation.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub document_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub document_id: pulumi_gestalt_rust::Input<String>,
         /// The document's [fields](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents) formated as a json string.
         #[builder(into)]
-        pub fields: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub fields: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DocumentResult {

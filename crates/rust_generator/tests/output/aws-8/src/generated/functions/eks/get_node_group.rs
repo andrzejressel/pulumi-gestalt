@@ -10,13 +10,13 @@ pub mod get_node_group {
     pub struct GetNodeGroupArgs {
         /// Name of the cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the node group.
         #[builder(into)]
-        pub node_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub node_group_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

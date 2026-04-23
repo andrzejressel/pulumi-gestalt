@@ -94,28 +94,28 @@ pub mod output_function {
     pub struct OutputFunctionArgs {
         /// The API key for the Function.
         #[builder(into)]
-        pub api_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_key: pulumi_gestalt_rust::Input<String>,
         /// The maximum number of events in each batch that's sent to the function. Defaults to `100`.
         #[builder(into, default)]
-        pub batch_max_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub batch_max_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The maximum batch size in bytes that's sent to the function. Defaults to `262144` (256 kB).
         #[builder(into, default)]
-        pub batch_max_in_bytes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub batch_max_in_bytes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the Function App.
         #[builder(into)]
-        pub function_app: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_app: pulumi_gestalt_rust::Input<String>,
         /// The name of the function in the Function App.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Stream Analytics Output. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Stream Analytics Output should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Stream Analytics Job. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub stream_analytics_job_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_analytics_job_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OutputFunctionResult {

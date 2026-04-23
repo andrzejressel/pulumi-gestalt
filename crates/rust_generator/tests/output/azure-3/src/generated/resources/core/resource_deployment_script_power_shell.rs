@@ -63,20 +63,20 @@ pub mod resource_deployment_script_power_shell {
     pub struct ResourceDeploymentScriptPowerShellArgs {
         /// Specifies the cleanup preference when the script execution gets in a terminal state. Possible values are `Always`, `OnExpiration`, `OnSuccess`. Defaults to `Always`. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub cleanup_preference: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cleanup_preference: pulumi_gestalt_rust::Input<Option<String>>,
         /// Command line arguments to pass to the script. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub command_line: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub command_line: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `container` block as defined below. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub container: pulumi_gestalt_rust::InputOrOutput<
+        pub container: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::core::ResourceDeploymentScriptPowerShellContainer,
             >,
         >,
         /// An `environment_variable` block as defined below. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub environment_variables: pulumi_gestalt_rust::InputOrOutput<
+        pub environment_variables: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::core::ResourceDeploymentScriptPowerShellEnvironmentVariable,
@@ -85,53 +85,51 @@ pub mod resource_deployment_script_power_shell {
         >,
         /// Gets or sets how the deployment script should be forced to execute even if the script resource has not changed. Can be current time stamp or a GUID. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub force_update_tag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub force_update_tag: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::core::ResourceDeploymentScriptPowerShellIdentity>,
         >,
         /// Specifies the Azure Region where the Resource Deployment Script should exist. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name which should be used for this Resource Deployment Script. The name length must be from 1 to 260 characters. The name can only contain alphanumeric, underscore, parentheses, hyphen and period, and it cannot end with a period. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Uri for the script. This is the entry point for the external script. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub primary_script_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub primary_script_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group where the Resource Deployment Script should exist. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Interval for which the service retains the script resource after it reaches a terminal state. Resource will be deleted when this duration expires. The time duration should be between `1` hour and `26` hours (inclusive) and should be specified in ISO 8601 format. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into)]
-        pub retention_interval: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub retention_interval: pulumi_gestalt_rust::Input<String>,
         /// Script body. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub script_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub script_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `storage_account` block as defined below. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub storage_account: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::core::ResourceDeploymentScriptPowerShellStorageAccount,
             >,
         >,
         /// Supporting files for the external script. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub supporting_script_uris: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub supporting_script_uris: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A mapping of tags which should be assigned to the Resource Deployment Script.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Maximum allowed script execution time specified in ISO 8601 format. Needs to be greater than 0 and smaller than 1 day. Defaults to `P1D`. Changing this forces a new Resource Deployment Script to be created.
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the version of the Azure PowerShell that should be used in the format `X.Y` (e.g. `9.7`). A canonical list of versions [is available from the Microsoft Container Registry API](https://mcr.microsoft.com/v2/azure-powershell/tags/list). Changing this forces a new Resource Deployment Script to be created.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ResourceDeploymentScriptPowerShellResult {

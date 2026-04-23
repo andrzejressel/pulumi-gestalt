@@ -9,7 +9,7 @@ pub mod get_secret {
     #[allow(dead_code)]
     pub struct GetSecretArgs {
         #[builder(into)]
-        pub secrets: pulumi_gestalt_rust::InputOrOutput<
+        pub secrets: pulumi_gestalt_rust::Input<
             Vec<super::super::super::types::kms::GetSecretSecret>,
         >,
     }

@@ -69,26 +69,26 @@ pub mod oauth_idp_config {
         ///
         /// - - -
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// The client secret of the OAuth client, to enable OIDC code flow.
         #[builder(into, default)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_secret: pulumi_gestalt_rust::Input<Option<String>>,
         /// Human friendly display name.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If this config allows users to sign in with the provider.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// For OIDC Idps, the issuer identifier.
         #[builder(into)]
-        pub issuer: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub issuer: pulumi_gestalt_rust::Input<String>,
         /// The name of the OauthIdpConfig. Must start with `oidc.`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OauthIdpConfigResult {

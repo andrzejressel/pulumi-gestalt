@@ -36,27 +36,27 @@ pub mod keystores_aliases_pkcs_12 {
     pub struct KeystoresAliasesPkcs12Args {
         /// Alias Name
         #[builder(into)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alias: pulumi_gestalt_rust::Input<String>,
         /// Environment associated with the alias
         #[builder(into)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment: pulumi_gestalt_rust::Input<String>,
         /// PKCS12 file content
         ///
         /// - - -
         #[builder(into)]
-        pub file: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file: pulumi_gestalt_rust::Input<String>,
         /// Hash of the pkcs file
         #[builder(into)]
-        pub filehash: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub filehash: pulumi_gestalt_rust::Input<String>,
         /// Keystore Name
         #[builder(into)]
-        pub keystore: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub keystore: pulumi_gestalt_rust::Input<String>,
         /// Organization ID associated with the alias, without organization/ prefix
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// Password for the PKCS12 file if it's encrypted
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct KeystoresAliasesPkcs12Result {

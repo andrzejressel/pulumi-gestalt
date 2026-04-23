@@ -227,7 +227,7 @@ pub mod ai_index_endpoint_deployed_index {
         /// A description of resources that the DeployedIndex uses, which to large degree are decided by Vertex AI, and optionally allows only a modest additional configuration.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub automatic_resources: pulumi_gestalt_rust::InputOrOutput<
+        pub automatic_resources: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiIndexEndpointDeployedIndexAutomaticResources,
             >,
@@ -239,7 +239,7 @@ pub mod ai_index_endpoint_deployed_index {
         /// n1-standard-16 and n1-standard-32 are still available, but we recommend e2-standard-16 and e2-highmem-16 for cost efficiency.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub dedicated_resources: pulumi_gestalt_rust::InputOrOutput<
+        pub dedicated_resources: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiIndexEndpointDeployedIndexDedicatedResources,
             >,
@@ -247,41 +247,41 @@ pub mod ai_index_endpoint_deployed_index {
         /// If set, the authentication is enabled for the private endpoint.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub deployed_index_auth_config: pulumi_gestalt_rust::InputOrOutput<
+        pub deployed_index_auth_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiIndexEndpointDeployedIndexDeployedIndexAuthConfig,
             >,
         >,
         /// The user specified ID of the DeployedIndex. The ID can be up to 128 characters long and must start with a letter and only contain letters, numbers, and underscores. The ID must be unique within the project it is created in.
         #[builder(into)]
-        pub deployed_index_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployed_index_id: pulumi_gestalt_rust::Input<String>,
         /// The deployment group can be no longer than 64 characters (eg: 'test', 'prod'). If not set, we will use the 'default' deployment group.
         /// Creating deployment_groups with reserved_ip_ranges is a recommended practice when the peered network has multiple peering ranges. This creates your deployments from predictable IP spaces for easier traffic administration. Also, one deployment_group (except 'default') can only be used with the same reserved_ip_ranges which means if the deployment_group has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or [d, e] is disallowed. [See the official documentation here](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.indexEndpoints#DeployedIndex.FIELDS.deployment_group).
         /// Note: we only support up to 5 deployment groups (not including 'default').
         #[builder(into, default)]
-        pub deployment_group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deployment_group: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the Index. The name can be up to 128 characters long and can consist of any UTF-8 characters.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, private endpoint's access logs are sent to Cloud Logging.
         #[builder(into, default)]
-        pub enable_access_logging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_access_logging: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Index this is the deployment of.
         #[builder(into)]
-        pub index: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index: pulumi_gestalt_rust::Input<String>,
         /// Identifies the index endpoint. Must be in the format
         /// 'projects/{{project}}/locations/{{region}}/indexEndpoints/{{indexEndpoint}}'
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub index_endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_endpoint: pulumi_gestalt_rust::Input<String>,
         /// A list of reserved ip ranges under the VPC network that can be used for this DeployedIndex.
         /// If set, we will deploy the index within the provided ip ranges. Otherwise, the index might be deployed to any ip ranges under the provided VPC network.
         /// The value should be the name of the address (https://cloud.google.com/compute/docs/reference/rest/v1/addresses) Example: ['vertex-ai-ip-range'].
         /// For more information about subnets and network IP ranges, please see https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
         #[builder(into, default)]
-        pub reserved_ip_ranges: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub reserved_ip_ranges: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct AiIndexEndpointDeployedIndexResult {

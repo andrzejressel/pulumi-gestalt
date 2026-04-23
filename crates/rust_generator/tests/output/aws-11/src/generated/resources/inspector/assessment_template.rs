@@ -52,28 +52,28 @@ pub mod assessment_template {
     pub struct AssessmentTemplateArgs {
         /// The duration of the inspector run.
         #[builder(into)]
-        pub duration: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub duration: pulumi_gestalt_rust::Input<i32>,
         /// A block that enables sending notifications about a specified assessment template event to a designated SNS topic. See Event Subscriptions for details.
         #[builder(into, default)]
-        pub event_subscriptions: pulumi_gestalt_rust::InputOrOutput<
+        pub event_subscriptions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::inspector::AssessmentTemplateEventSubscription>,
             >,
         >,
         /// The name of the assessment template.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The rules to be used during the run.
         #[builder(into)]
-        pub rules_package_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub rules_package_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Key-value map of tags for the Inspector assessment template. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The assessment target ARN to attach the template to.
         #[builder(into)]
-        pub target_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AssessmentTemplateResult {

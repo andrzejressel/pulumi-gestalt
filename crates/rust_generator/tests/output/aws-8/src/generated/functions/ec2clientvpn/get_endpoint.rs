@@ -10,15 +10,15 @@ pub mod get_endpoint {
     pub struct GetEndpointArgs {
         /// ID of the Client VPN endpoint.
         #[builder(into, default)]
-        pub client_vpn_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_vpn_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more configuration blocks containing name-values filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2clientvpn::GetEndpointFilter>>,
         >,
         /// Map of tags, each pair of which must exactly match a pair on the desired endpoint.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -53,13 +53,13 @@ pub mod cache_access_policy {
     pub struct CacheAccessPolicyArgs {
         /// The name of the Redis Cache Access Policy. Changing this forces a new Redis Cache Access Policy to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Permissions that are going to be assigned to this Redis Cache Access Policy.
         #[builder(into)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub permissions: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Redis Cache. Changing this forces a new Redis Cache Access Policy to be created.
         #[builder(into)]
-        pub redis_cache_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub redis_cache_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CacheAccessPolicyResult {

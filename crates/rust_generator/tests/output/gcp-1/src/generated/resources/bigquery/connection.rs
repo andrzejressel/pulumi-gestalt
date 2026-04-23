@@ -348,46 +348,46 @@ pub mod connection {
         /// Connection properties specific to Amazon Web Services.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub aws: pulumi_gestalt_rust::InputOrOutput<
+        pub aws: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::ConnectionAws>,
         >,
         /// Container for connection properties specific to Azure.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub azure: pulumi_gestalt_rust::InputOrOutput<
+        pub azure: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::ConnectionAzure>,
         >,
         /// Container for connection properties for delegation of access to GCP resources.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloud_resource: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_resource: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::ConnectionCloudResource>,
         >,
         /// Connection properties specific to Cloud Spanner
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloud_spanner: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_spanner: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::ConnectionCloudSpanner>,
         >,
         /// Connection properties specific to the Cloud SQL.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub cloud_sql: pulumi_gestalt_rust::InputOrOutput<
+        pub cloud_sql: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::ConnectionCloudSql>,
         >,
         /// Optional connection id that should be assigned to the created connection.
         #[builder(into, default)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A descriptive description for the connection
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A descriptive name for the connection
         #[builder(into, default)]
-        pub friendly_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub friendly_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The Cloud KMS key that is used for encryption.
         /// Example: projects/[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The geographic location where the connection should reside.
         /// Cloud SQL instance must be in the same location as the connection
         /// with following exceptions: Cloud SQL us-central1 maps to BigQuery US, Cloud SQL europe-west1 maps to BigQuery EU.
@@ -396,15 +396,15 @@ pub mod connection {
         /// AWS allowed regions are aws-us-east-1
         /// Azure allowed regions are azure-eastus2
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Container for connection properties to execute stored procedures for Apache Spark. resources.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub spark: pulumi_gestalt_rust::InputOrOutput<
+        pub spark: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::ConnectionSpark>,
         >,
     }

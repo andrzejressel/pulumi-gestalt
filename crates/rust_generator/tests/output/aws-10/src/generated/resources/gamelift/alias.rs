@@ -33,18 +33,18 @@ pub mod alias {
     pub struct AliasArgs {
         /// Description of the alias.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the alias.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the fleet and/or routing type to use for the alias.
         #[builder(into)]
-        pub routing_strategy: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_strategy: pulumi_gestalt_rust::Input<
             super::super::types::gamelift::AliasRoutingStrategy,
         >,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -58,36 +58,36 @@ pub mod hub {
         ///
         /// > **NOTE:** Removing the `apns_credential` block will currently force a recreation of this resource [due to this bug in the Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go/issues/2246) - we'll remove this limitation when the SDK bug is fixed.
         #[builder(into, default)]
-        pub apns_credential: pulumi_gestalt_rust::InputOrOutput<
+        pub apns_credential: pulumi_gestalt_rust::Input<
             Option<super::super::types::notificationhub::HubApnsCredential>,
         >,
         /// A `browser_credential` block as defined below.
         #[builder(into, default)]
-        pub browser_credential: pulumi_gestalt_rust::InputOrOutput<
+        pub browser_credential: pulumi_gestalt_rust::Input<
             Option<super::super::types::notificationhub::HubBrowserCredential>,
         >,
         /// A `gcm_credential` block as defined below.
         ///
         /// > **NOTE:** Removing the `gcm_credential` block will currently force a recreation of this resource [due to this bug in the Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go/issues/2246) - we'll remove this limitation when the SDK bug is fixed.
         #[builder(into, default)]
-        pub gcm_credential: pulumi_gestalt_rust::InputOrOutput<
+        pub gcm_credential: pulumi_gestalt_rust::Input<
             Option<super::super::types::notificationhub::HubGcmCredential>,
         >,
         /// The Azure Region in which this Notification Hub Namespace exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name to use for this Notification Hub. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Notification Hub Namespace in which to create this Notification Hub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Notification Hub Namespace exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

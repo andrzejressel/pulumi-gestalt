@@ -10,17 +10,17 @@ pub mod get_attached_install_manifest {
     pub struct GetAttachedInstallManifestArgs {
         /// The name that will be used when creating the attached cluster resource.
         #[builder(into)]
-        pub cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The location to list versions for.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The platform version for the cluster. A list of valid values can be retrieved using the `gcp.container.getAttachedVersions` data source.
         #[builder(into)]
-        pub platform_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub platform_version: pulumi_gestalt_rust::Input<String>,
         /// ID of the project to list available platform versions for. Should match the project the cluster will be deployed to.
         /// Defaults to the project that the provider is authenticated with.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAttachedInstallManifestResult {

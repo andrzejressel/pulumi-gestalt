@@ -262,50 +262,50 @@ pub mod instance {
     pub struct InstanceArgs {
         /// Looker instance Admin settings.
         #[builder(into, default)]
-        pub admin_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub admin_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::looker::InstanceAdminSettings>,
         >,
         /// Network name in the consumer project in the format of: projects/{project}/global/networks/{network} Note that the
         /// consumer network may be in a different GCP project than the consumer project that is hosting the Looker Instance.
         #[builder(into, default)]
-        pub consumer_network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub consumer_network: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom domain settings for a Looker instance.
         #[builder(into, default)]
-        pub custom_domain: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_domain: pulumi_gestalt_rust::Input<
             Option<super::super::types::looker::InstanceCustomDomain>,
         >,
         /// Policy to determine if the cluster should be deleted forcefully. If setting deletion_policy = "FORCE", the Looker
         /// instance will be deleted regardless of its nested resources. If set to "DEFAULT", Looker instances that still have
         /// nested resources will return an error. Possible values: DEFAULT, FORCE
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maintenance denial period for this instance. You must allow at least 14 days of maintenance availability between any two
         /// deny maintenance periods.
         #[builder(into, default)]
-        pub deny_maintenance_period: pulumi_gestalt_rust::InputOrOutput<
+        pub deny_maintenance_period: pulumi_gestalt_rust::Input<
             Option<super::super::types::looker::InstanceDenyMaintenancePeriod>,
         >,
         /// Looker instance encryption settings.
         #[builder(into, default)]
-        pub encryption_config: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::looker::InstanceEncryptionConfig>,
         >,
         /// FIPS 140-2 Encryption enablement for Looker (Google Cloud Core).
         #[builder(into, default)]
-        pub fips_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub fips_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Maintenance window for an instance. Maintenance of your instance takes place once a month, and will require your
         /// instance to be restarted during updates, which will temporarily disrupt service.
         #[builder(into, default)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_window: pulumi_gestalt_rust::Input<
             Option<super::super::types::looker::InstanceMaintenanceWindow>,
         >,
         /// The ID of the instance or a fully qualified identifier for the instance.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Looker Instance OAuth login settings.
         /// Structure is documented below.
         #[builder(into)]
-        pub oauth_config: pulumi_gestalt_rust::InputOrOutput<
+        pub oauth_config: pulumi_gestalt_rust::Input<
             super::super::types::looker::InstanceOauthConfig,
         >,
         /// Platform editions for a Looker instance. Each edition maps to a set of instance features, like its size. Must be one of
@@ -318,37 +318,37 @@ pub mod instance {
         /// "LOOKER_CORE_ENTERPRISE_ANNUAL", "LOOKER_CORE_EMBED_ANNUAL", "LOOKER_CORE_NONPROD_STANDARD_ANNUAL",
         /// "LOOKER_CORE_NONPROD_ENTERPRISE_ANNUAL", "LOOKER_CORE_NONPROD_EMBED_ANNUAL"]
         #[builder(into, default)]
-        pub platform_edition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform_edition: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether private IP is enabled on the Looker instance.
         #[builder(into, default)]
-        pub private_ip_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub private_ip_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information for Private Service Connect (PSC) setup for a Looker instance.
         #[builder(into, default)]
-        pub psc_config: pulumi_gestalt_rust::InputOrOutput<
+        pub psc_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::looker::InstancePscConfig>,
         >,
         /// Whether Public Service Connect (PSC) is enabled on the Looker instance
         #[builder(into, default)]
-        pub psc_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub psc_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether public IP is enabled on the Looker instance.
         #[builder(into, default)]
-        pub public_ip_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub public_ip_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Looker region of the instance.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of a reserved IP address range within the consumer network, to be used for private service access connection. User
         /// may or may not specify this in a request.
         #[builder(into, default)]
-        pub reserved_range: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reserved_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// Metadata about users for a Looker instance. These settings are only available when platform edition LOOKER_CORE_STANDARD
         /// is set. There are ten Standard and two Developer users included in the cost of the product. You can allocate additional
         /// Standard, Viewer, and Developer users for this instance. It is an optional step and can be modified later. With the
         /// Standard edition of Looker (Google Cloud core), you can provision up to 50 total users, distributed across Viewer,
         /// Standard, and Developer.
         #[builder(into, default)]
-        pub user_metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub user_metadata: pulumi_gestalt_rust::Input<
             Option<super::super::types::looker::InstanceUserMetadata>,
         >,
     }

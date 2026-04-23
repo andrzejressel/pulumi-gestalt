@@ -67,10 +67,10 @@ pub mod spring_cloud_active_deployment {
     pub struct SpringCloudActiveDeploymentArgs {
         /// Specifies the name of Spring Cloud Deployment which is going to be active.
         #[builder(into)]
-        pub deployment_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployment_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the id of the Spring Cloud Application. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub spring_cloud_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_app_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudActiveDeploymentResult {

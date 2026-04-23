@@ -74,55 +74,53 @@ pub mod location_hdfs {
     pub struct LocationHdfsArgs {
         /// A list of DataSync Agent ARNs with which this location will be associated.
         #[builder(into)]
-        pub agent_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub agent_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The type of authentication used to determine the identity of the user. Valid values are `SIMPLE` and `KERBEROS`.
         #[builder(into, default)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).
         #[builder(into, default)]
-        pub block_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub block_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. Use `kerberos_keytab_base64` instead whenever the value is not a valid UTF-8 string. If `KERBEROS` is specified for `authentication_type`, this parameter (or `kerberos_keytab_base64`) is required.
         #[builder(into, default)]
-        pub kerberos_keytab: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kerberos_keytab: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use instead of `kerberos_keytab` to pass base64-encoded binary data directly. If `KERBEROS` is specified for `authentication_type`, this parameter (or `kerberos_keytab`) is required.
         #[builder(into, default)]
-        pub kerberos_keytab_base64: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kerberos_keytab_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// The krb5.conf file that contains the Kerberos configuration information. Use `kerberos_krb5_conf_base64` instead whenever the value is not a valid UTF-8 string. If `KERBEROS` is specified for `authentication_type`, this parameter (or `kerberos_krb5_conf_base64`) is required.
         #[builder(into, default)]
-        pub kerberos_krb5_conf: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kerberos_krb5_conf: pulumi_gestalt_rust::Input<Option<String>>,
         /// Use instead of `kerberos_krb5_conf` to pass base64-encoded binary data directly. If `KERBEROS` is specified for `authentication_type`, this parameter (or `kerberos_krb5_conf`) is required.
         #[builder(into, default)]
-        pub kerberos_krb5_conf_base64: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub kerberos_krb5_conf_base64: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Kerberos principal with access to the files and folders on the HDFS cluster. If `KERBEROS` is specified for `authentication_type`, this parameter is required.
         #[builder(into, default)]
-        pub kerberos_principal: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kerberos_principal: pulumi_gestalt_rust::Input<Option<String>>,
         /// The URI of the HDFS cluster's Key Management Server (KMS).
         #[builder(into, default)]
-        pub kms_key_provider_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_provider_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode. See configuration below.
         #[builder(into)]
-        pub name_nodes: pulumi_gestalt_rust::InputOrOutput<
+        pub name_nodes: pulumi_gestalt_rust::Input<
             Vec<super::super::types::datasync::LocationHdfsNameNode>,
         >,
         /// The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If `qop_configuration` isn't specified, `rpc_protection` and `data_transfer_protection` default to `PRIVACY`. If you set RpcProtection or DataTransferProtection, the other parameter assumes the same value.  See configuration below.
         #[builder(into, default)]
-        pub qop_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub qop_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::LocationHdfsQopConfiguration>,
         >,
         /// The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.
         #[builder(into, default)]
-        pub replication_factor: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub replication_factor: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The user name used to identify the client on the host operating system. If `SIMPLE` is specified for `authentication_type`, this parameter is required.
         #[builder(into, default)]
-        pub simple_user: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub simple_user: pulumi_gestalt_rust::Input<Option<String>>,
         /// A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to /.
         #[builder(into, default)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subdirectory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

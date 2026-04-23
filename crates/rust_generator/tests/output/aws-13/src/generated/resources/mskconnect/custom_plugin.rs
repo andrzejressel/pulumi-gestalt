@@ -49,23 +49,23 @@ pub mod custom_plugin {
     pub struct CustomPluginArgs {
         /// The type of the plugin file. Allowed values are `ZIP` and `JAR`.
         #[builder(into)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content_type: pulumi_gestalt_rust::Input<String>,
         /// A summary description of the custom plugin.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Information about the location of a custom plugin. See `location` Block for details.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<
+        pub location: pulumi_gestalt_rust::Input<
             super::super::types::mskconnect::CustomPluginLocation,
         >,
         /// The name of the custom plugin..
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

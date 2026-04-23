@@ -10,10 +10,10 @@ pub mod get_dataset_data_lake_gen_2 {
     pub struct GetDatasetDataLakeGen2Args {
         /// The name of this Data Share Data Lake Gen2 Dataset.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the Data Share where this Data Share Data Lake Gen2 Dataset should be created.
         #[builder(into)]
-        pub share_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub share_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDatasetDataLakeGen2Result {

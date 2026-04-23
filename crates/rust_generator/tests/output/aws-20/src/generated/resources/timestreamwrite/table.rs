@@ -70,30 +70,30 @@ pub mod table {
     pub struct TableArgs {
         /// The name of the Timestream database.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Contains properties to set on the table when enabling magnetic store writes. See Magnetic Store Write Properties below for more details.
         #[builder(into, default)]
-        pub magnetic_store_write_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub magnetic_store_write_properties: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::timestreamwrite::TableMagneticStoreWriteProperties,
             >,
         >,
         /// The retention duration for the memory store and magnetic store. See Retention Properties below for more details. If not provided, `magnetic_store_retention_period_in_days` default to 73000 and `memory_store_retention_period_in_hours` defaults to 6.
         #[builder(into, default)]
-        pub retention_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::timestreamwrite::TableRetentionProperties>,
         >,
         /// The schema of the table. See Schema below for more details.
         #[builder(into, default)]
-        pub schema: pulumi_gestalt_rust::InputOrOutput<
+        pub schema: pulumi_gestalt_rust::Input<
             Option<super::super::types::timestreamwrite::TableSchema>,
         >,
         /// The name of the Timestream table.
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

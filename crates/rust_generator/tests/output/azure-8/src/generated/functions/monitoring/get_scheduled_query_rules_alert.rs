@@ -10,10 +10,10 @@ pub mod get_scheduled_query_rules_alert {
     pub struct GetScheduledQueryRulesAlertArgs {
         /// Specifies the name of the scheduled query rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the resource group where the scheduled query rule is located.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetScheduledQueryRulesAlertResult {

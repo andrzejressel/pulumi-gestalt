@@ -35,16 +35,16 @@ pub mod resource_group {
     pub struct ResourceGroupArgs {
         /// The Azure Region where the Resource Group should exist. Changing this forces a new Resource Group to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the resource or application that manages this Resource Group.
         #[builder(into, default)]
-        pub managed_by: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub managed_by: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name which should be used for this Resource Group. Changing this forces a new Resource Group to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Resource Group.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

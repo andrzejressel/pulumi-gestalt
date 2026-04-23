@@ -77,63 +77,63 @@ pub mod catalog_table {
     pub struct CatalogTableArgs {
         /// ID of the Glue Catalog and database to create the table in. If omitted, this defaults to the AWS Account ID plus the database name.
         #[builder(into, default)]
-        pub catalog_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub catalog_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.
         ///
         /// The follow arguments are optional:
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// Description of the table.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the table. For Hive compatibility, this must be entirely lowercase.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for open table formats. See `open_table_format_input` below.
         #[builder(into, default)]
-        pub open_table_format_input: pulumi_gestalt_rust::InputOrOutput<
+        pub open_table_format_input: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::CatalogTableOpenTableFormatInput>,
         >,
         /// Owner of the table.
         #[builder(into, default)]
-        pub owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// Properties associated with this table, as a list of key-value pairs.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block for a maximum of 3 partition indexes. See `partition_index` below.
         #[builder(into, default)]
-        pub partition_indices: pulumi_gestalt_rust::InputOrOutput<
+        pub partition_indices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::glue::CatalogTablePartitionIndex>>,
         >,
         /// Configuration block of columns by which the table is partitioned. Only primitive types are supported as partition keys. See `partition_keys` below.
         #[builder(into, default)]
-        pub partition_keys: pulumi_gestalt_rust::InputOrOutput<
+        pub partition_keys: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::glue::CatalogTablePartitionKey>>,
         >,
         /// Retention time for this table.
         #[builder(into, default)]
-        pub retention: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Configuration block for information about the physical storage of this table. For more information, refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-StorageDescriptor). See `storage_descriptor` below.
         #[builder(into, default)]
-        pub storage_descriptor: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_descriptor: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::CatalogTableStorageDescriptor>,
         >,
         /// Type of this table (EXTERNAL_TABLE, VIRTUAL_VIEW, etc.). While optional, some Athena DDL queries such as `ALTER TABLE` and `SHOW CREATE TABLE` will fail if this argument is empty.
         #[builder(into, default)]
-        pub table_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub table_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block of a target table for resource linking. See `target_table` below.
         #[builder(into, default)]
-        pub target_table: pulumi_gestalt_rust::InputOrOutput<
+        pub target_table: pulumi_gestalt_rust::Input<
             Option<super::super::types::glue::CatalogTableTargetTable>,
         >,
         /// If the table is a view, the expanded text of the view; otherwise null.
         #[builder(into, default)]
-        pub view_expanded_text: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub view_expanded_text: pulumi_gestalt_rust::Input<Option<String>>,
         /// If the table is a view, the original text of the view; otherwise null.
         #[builder(into, default)]
-        pub view_original_text: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub view_original_text: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CatalogTableResult {

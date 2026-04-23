@@ -50,21 +50,21 @@ pub mod namespace_authorization_rule {
     pub struct NamespaceAuthorizationRuleArgs {
         /// Grants listen access to this this Authorization Rule. Defaults to `false`.
         #[builder(into, default)]
-        pub listen: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub listen: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Grants manage access to this this Authorization Rule. When this property is `true` - both `listen` and `send` must be too. Defaults to `false`.
         #[builder(into, default)]
-        pub manage: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the ServiceBus Namespace Authorization Rule resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the ServiceBus Namespace. Changing this forces a new resource to be created.
         ///
         /// > **NOTE** At least one of the 3 permissions below needs to be set.
         #[builder(into)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_id: pulumi_gestalt_rust::Input<String>,
         /// Grants send access to this this Authorization Rule. Defaults to `false`.
         #[builder(into, default)]
-        pub send: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub send: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct NamespaceAuthorizationRuleResult {

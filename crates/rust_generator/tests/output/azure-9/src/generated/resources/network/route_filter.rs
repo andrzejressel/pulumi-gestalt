@@ -46,21 +46,21 @@ pub mod route_filter {
     pub struct RouteFilterArgs {
         /// The Azure Region where the Route Filter should exist. Changing this forces a new Route Filter to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name which should be used for this Route Filter.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Route Filter should exist. Changing this forces a new Route Filter to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `rule` block as defined below.
         #[builder(into, default)]
-        pub rule: pulumi_gestalt_rust::InputOrOutput<
+        pub rule: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::RouteFilterRule>,
         >,
         /// A mapping of tags which should be assigned to the Route Filter.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -55,21 +55,21 @@ pub mod service_integration {
     pub struct ServiceIntegrationArgs {
         /// Information about whether DevOps Guru is configured to encrypt server-side data using KMS. See `kms_server_side_encryption` below.
         #[builder(into, default)]
-        pub kms_server_side_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub kms_server_side_encryption: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::devopsguru::ServiceIntegrationKmsServerSideEncryption,
             >,
         >,
         /// Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. See `logs_anomaly_detection` below.
         #[builder(into, default)]
-        pub logs_anomaly_detection: pulumi_gestalt_rust::InputOrOutput<
+        pub logs_anomaly_detection: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::devopsguru::ServiceIntegrationLogsAnomalyDetection,
             >,
         >,
         /// Information about whether DevOps Guru is configured to create an OpsItem in AWS Systems Manager OpsCenter for each created insight. See `ops_center` below.
         #[builder(into, default)]
-        pub ops_center: pulumi_gestalt_rust::InputOrOutput<
+        pub ops_center: pulumi_gestalt_rust::Input<
             Option<super::super::types::devopsguru::ServiceIntegrationOpsCenter>,
         >,
     }

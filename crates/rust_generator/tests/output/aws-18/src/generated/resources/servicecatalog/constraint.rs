@@ -39,24 +39,24 @@ pub mod constraint {
     pub struct ConstraintArgs {
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         #[builder(into, default)]
-        pub accept_language: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub accept_language: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the constraint.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Constraint parameters in JSON format. The syntax depends on the constraint type. See details below.
         #[builder(into)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parameters: pulumi_gestalt_rust::Input<String>,
         /// Portfolio identifier.
         #[builder(into)]
-        pub portfolio_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub portfolio_id: pulumi_gestalt_rust::Input<String>,
         /// Product identifier.
         #[builder(into)]
-        pub product_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub product_id: pulumi_gestalt_rust::Input<String>,
         /// Type of constraint. Valid values are `LAUNCH`, `NOTIFICATION`, `RESOURCE_UPDATE`, `STACKSET`, and `TEMPLATE`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConstraintResult {

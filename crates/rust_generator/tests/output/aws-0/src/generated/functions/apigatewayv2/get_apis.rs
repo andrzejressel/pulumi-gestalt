@@ -10,14 +10,14 @@ pub mod get_apis {
     pub struct GetApisArgs {
         /// API name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// API protocol.
         #[builder(into, default)]
-        pub protocol_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protocol_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags, each pair of which must exactly match
         /// a pair on the desired APIs.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,10 +10,10 @@ pub mod get_images {
     pub struct GetImagesArgs {
         /// The name of the Resource Group in which the Image exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to filter the list of images against.
         #[builder(into, default)]
-        pub tags_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub tags_filter: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

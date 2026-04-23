@@ -10,10 +10,10 @@ pub mod get_place_index {
     pub struct GetPlaceIndexArgs {
         /// Name of the place index resource.
         #[builder(into)]
-        pub index_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub index_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags for the place index.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

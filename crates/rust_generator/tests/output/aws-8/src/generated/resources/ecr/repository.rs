@@ -41,27 +41,27 @@ pub mod repository {
     pub struct RepositoryArgs {
         /// Encryption configuration for the repository. See below for schema.
         #[builder(into, default)]
-        pub encryption_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configurations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ecr::RepositoryEncryptionConfiguration>>,
         >,
         /// If `true`, will delete the repository even if it contains images.
         /// Defaults to `false`.
         #[builder(into, default)]
-        pub force_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration block that defines image scanning configuration for the repository. By default, image scanning must be manually triggered. See the [ECR User Guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html) for more information about image scanning.
         #[builder(into, default)]
-        pub image_scanning_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub image_scanning_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::ecr::RepositoryImageScanningConfiguration>,
         >,
         /// The tag mutability setting for the repository. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `MUTABLE`.
         #[builder(into, default)]
-        pub image_tag_mutability: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_tag_mutability: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the repository.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

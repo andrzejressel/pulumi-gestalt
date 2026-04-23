@@ -39,13 +39,13 @@ pub mod traffic_mirror_filter {
     pub struct TrafficMirrorFilterArgs {
         /// A description of the filter.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of amazon network services that should be mirrored. Valid values: `amazon-dns`.
         #[builder(into, default)]
-        pub network_services: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub network_services: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

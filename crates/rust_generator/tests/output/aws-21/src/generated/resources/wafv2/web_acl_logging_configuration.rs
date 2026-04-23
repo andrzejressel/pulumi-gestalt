@@ -93,22 +93,22 @@ pub mod web_acl_logging_configuration {
     pub struct WebAclLoggingConfigurationArgs {
         /// Configuration block that allows you to associate Amazon Kinesis Data Firehose, Cloudwatch Log log group, or S3 bucket Amazon Resource Names (ARNs) with the web ACL. **Note:** data firehose, log group, or bucket name **must** be prefixed with `aws-waf-logs-`, e.g. `aws-waf-logs-example-firehose`, `aws-waf-logs-example-log-group`, or `aws-waf-logs-example-bucket`.
         #[builder(into)]
-        pub log_destination_configs: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub log_destination_configs: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Configuration block that specifies which web requests are kept in the logs and which are dropped. It allows filtering based on the rule action and the web request labels applied by matching rules during web ACL evaluation. For more details, refer to the Logging Filter section below.
         #[builder(into, default)]
-        pub logging_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::wafv2::WebAclLoggingConfigurationLoggingFilter>,
         >,
         /// Configuration for parts of the request that you want to keep out of the logs. Up to 100 `redacted_fields` blocks are supported. See Redacted Fields below for more details.
         #[builder(into, default)]
-        pub redacted_fields: pulumi_gestalt_rust::InputOrOutput<
+        pub redacted_fields: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::wafv2::WebAclLoggingConfigurationRedactedField>,
             >,
         >,
         /// Amazon Resource Name (ARN) of the web ACL that you want to associate with `log_destination_configs`.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WebAclLoggingConfigurationResult {

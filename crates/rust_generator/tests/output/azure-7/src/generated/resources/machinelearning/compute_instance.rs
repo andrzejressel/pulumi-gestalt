@@ -113,48 +113,48 @@ pub mod compute_instance {
     pub struct ComputeInstanceArgs {
         /// A `assign_to_user` block as defined below. A user explicitly assigned to a personal compute instance. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub assign_to_user: pulumi_gestalt_rust::InputOrOutput<
+        pub assign_to_user: pulumi_gestalt_rust::Input<
             Option<super::super::types::machinelearning::ComputeInstanceAssignToUser>,
         >,
         /// The Compute Instance Authorization type. Possible values include: `personal`. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub authorization_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the Machine Learning Compute Instance. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// An `identity` block as defined below. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::machinelearning::ComputeInstanceIdentity>,
         >,
         /// Whether local authentication methods is enabled. Defaults to `true`. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub local_auth_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub local_auth_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Machine Learning Workspace. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into)]
-        pub machine_learning_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub machine_learning_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Machine Learning Compute Instance. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the compute instance will have a public ip. To set this to false a `subnet_resource_id` needs to be set. Defaults to `true`. Changing this forces a new Machine Learning Compute Cluster to be created.
         #[builder(into, default)]
-        pub node_public_ip_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub node_public_ip_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `ssh` block as defined below. Specifies policy and settings for SSH access. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub ssh: pulumi_gestalt_rust::InputOrOutput<
+        pub ssh: pulumi_gestalt_rust::Input<
             Option<super::super::types::machinelearning::ComputeInstanceSsh>,
         >,
         /// Virtual network subnet resource ID the compute nodes belong to. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub subnet_resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Machine Learning Compute Instance. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The Virtual Machine Size. Changing this forces a new Machine Learning Compute Instance to be created.
         #[builder(into)]
-        pub virtual_machine_size: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_machine_size: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ComputeInstanceResult {

@@ -72,23 +72,23 @@ pub mod shared_private_link_resource {
     pub struct SharedPrivateLinkResourceArgs {
         /// Specify the name of the Web Pubsub Shared Private Link Resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the request message for requesting approval of the Shared Private Link Enabled Remote Resource.
         #[builder(into, default)]
-        pub request_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub request_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the sub resource name which the Web Pubsub Private Endpoint is able to connect to. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The available sub resource can be retrieved by using `azure.webpubsub.getPrivateLinkResource` data source.
         #[builder(into)]
-        pub subresource_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subresource_name: pulumi_gestalt_rust::Input<String>,
         /// Specify the ID of the Shared Private Link Enabled Remote Resource which this Web Pubsub Private Endpoint should be connected to. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The sub resource name should match with the type of the target resource id that's being specified.
         #[builder(into)]
-        pub target_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_resource_id: pulumi_gestalt_rust::Input<String>,
         /// Specify the id of the Web Pubsub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub web_pubsub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_pubsub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SharedPrivateLinkResourceResult {

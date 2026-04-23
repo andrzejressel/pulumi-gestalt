@@ -38,45 +38,45 @@ pub mod capacity_reservation {
     pub struct CapacityReservationArgs {
         /// The Availability Zone in which to create the Capacity Reservation.
         #[builder(into)]
-        pub availability_zone: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub availability_zone: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether the Capacity Reservation supports EBS-optimized instances.
         #[builder(into, default)]
-        pub ebs_optimized: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ebs_optimized: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)
         #[builder(into, default)]
-        pub end_date: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_date: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates the way in which the Capacity Reservation ends. Specify either `unlimited` or `limited`.
         #[builder(into, default)]
-        pub end_date_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_date_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether the Capacity Reservation supports instances with temporary, block-level storage.
         #[builder(into, default)]
-        pub ephemeral_storage: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ephemeral_storage: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The number of instances for which to reserve capacity.
         #[builder(into)]
-        pub instance_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub instance_count: pulumi_gestalt_rust::Input<i32>,
         /// Indicates the type of instance launches that the Capacity Reservation accepts. Specify either `open` or `targeted`.
         #[builder(into, default)]
-        pub instance_match_criteria: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_match_criteria: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of operating system for which to reserve capacity. Valid options are `Linux/UNIX`, `Red Hat Enterprise Linux`, `SUSE Linux`, `Windows`, `Windows with SQL Server`, `Windows with SQL Server Enterprise`, `Windows with SQL Server Standard` or `Windows with SQL Server Web`.
         #[builder(into)]
-        pub instance_platform: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_platform: pulumi_gestalt_rust::Input<String>,
         /// The instance type for which to reserve capacity.
         #[builder(into)]
-        pub instance_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_type: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation.
         #[builder(into, default)]
-        pub outpost_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub outpost_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Resource Name (ARN) of the cluster placement group in which to create the Capacity Reservation.
         #[builder(into, default)]
-        pub placement_group_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub placement_group_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Indicates the tenancy of the Capacity Reservation. Specify either `default` or `dedicated`.
         #[builder(into, default)]
-        pub tenancy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenancy: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CapacityReservationResult {

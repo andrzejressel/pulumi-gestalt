@@ -65,36 +65,36 @@ pub mod vpc_connection {
     pub struct VpcConnectionArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IP addresses of DNS resolver endpoints for the VPC connection.
         #[builder(into, default)]
-        pub dns_resolvers: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub dns_resolvers: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The display name for the VPC connection.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IAM role to associate with the VPC connection.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// A list of security group IDs for the VPC connection.
         #[builder(into)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A list of subnet IDs for the VPC connection.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::VpcConnectionTimeouts>,
         >,
         /// The ID of the VPC connection.
         #[builder(into)]
-        pub vpc_connection_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_connection_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcConnectionResult {

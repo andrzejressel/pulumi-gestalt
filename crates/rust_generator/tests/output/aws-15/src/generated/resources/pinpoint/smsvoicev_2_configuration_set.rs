@@ -37,16 +37,16 @@ pub mod smsvoicev_2_configuration_set {
     pub struct Smsvoicev2ConfigurationSetArgs {
         /// The default message type. Must either be "TRANSACTIONAL" or "PROMOTIONAL"
         #[builder(into, default)]
-        pub default_message_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_message_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default sender ID to use for this configuration set.
         #[builder(into, default)]
-        pub default_sender_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_sender_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the configuration set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

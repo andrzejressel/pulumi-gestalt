@@ -72,19 +72,19 @@ pub mod lite_reservation {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the pubsub lite reservation.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The reserved throughput capacity. Every unit of throughput capacity is
         /// equivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed
         /// messages.
         #[builder(into)]
-        pub throughput_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub throughput_capacity: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct LiteReservationResult {

@@ -194,13 +194,13 @@ pub mod managed_instance_transparent_data_encryption {
     pub struct ManagedInstanceTransparentDataEncryptionArgs {
         /// When enabled, the SQL Managed Instance will continuously check the key vault for any new versions of the key being used as the TDE protector. If a new version of the key is detected, the TDE protector on the SQL Managed Instance will be automatically rotated to the latest key version within 60 minutes.
         #[builder(into, default)]
-        pub auto_rotation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_rotation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// To use customer managed keys from Azure Key Vault, provide the AKV Key ID. To use service managed keys, omit this field.
         #[builder(into, default)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the MS SQL Managed Instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub managed_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_instance_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedInstanceTransparentDataEncryptionResult {

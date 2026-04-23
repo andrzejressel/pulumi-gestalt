@@ -60,16 +60,16 @@ pub mod connection {
     pub struct ConnectionArgs {
         /// The Amazon Resource Name (ARN) of the host associated with the connection. Conflicts with `provider_type`
         #[builder(into, default)]
-        pub host_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the connection to be created. The name must be unique in the calling AWS account. Changing `name` will create a new resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the external provider where your third-party code repository is configured. Valid values are `Bitbucket`, `GitHub`, `GitHubEnterpriseServer`, `GitLab` or `GitLabSelfManaged`. Changing `provider_type` will create a new resource. Conflicts with `host_arn`
         #[builder(into, default)]
-        pub provider_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub provider_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of key-value resource tags to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

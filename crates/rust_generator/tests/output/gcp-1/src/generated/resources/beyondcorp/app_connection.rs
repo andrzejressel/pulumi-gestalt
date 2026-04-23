@@ -145,40 +145,40 @@ pub mod app_connection {
         /// Address of the remote application endpoint for the BeyondCorp AppConnection.
         /// Structure is documented below.
         #[builder(into)]
-        pub application_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub application_endpoint: pulumi_gestalt_rust::Input<
             super::super::types::beyondcorp::AppConnectionApplicationEndpoint,
         >,
         /// List of AppConnectors that are authorised to be associated with this AppConnection
         #[builder(into, default)]
-        pub connectors: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub connectors: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An arbitrary user-provided name for the AppConnection.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Gateway used by the AppConnection.
         #[builder(into, default)]
-        pub gateway: pulumi_gestalt_rust::InputOrOutput<
+        pub gateway: pulumi_gestalt_rust::Input<
             Option<super::super::types::beyondcorp::AppConnectionGateway>,
         >,
         /// Resource labels to represent user provided metadata. **Note**: This field is non-authoritative, and will only manage the
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// ID of the AppConnection.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the AppConnection.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The type of network connectivity used by the AppConnection. Refer to
         /// https://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#type for a list of possible
         /// values.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppConnectionResult {

@@ -54,53 +54,53 @@ pub mod table {
     pub struct TableArgs {
         /// Specifies the read/write throughput capacity mode for the table.
         #[builder(into, default)]
-        pub capacity_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub capacity_specification: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyspaces::TableCapacitySpecification>,
         >,
         /// Enables client-side timestamps for the table. By default, the setting is disabled.
         #[builder(into, default)]
-        pub client_side_timestamps: pulumi_gestalt_rust::InputOrOutput<
+        pub client_side_timestamps: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyspaces::TableClientSideTimestamps>,
         >,
         /// A description of the table.
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<
+        pub comment: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyspaces::TableComment>,
         >,
         /// The default Time to Live setting in seconds for the table. More information can be found in the [Developer Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl).
         #[builder(into, default)]
-        pub default_time_to_live: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_time_to_live: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies how the encryption key for encryption at rest is managed for the table. More information can be found in the [Developer Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html).
         #[builder(into, default)]
-        pub encryption_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_specification: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyspaces::TableEncryptionSpecification>,
         >,
         /// The name of the keyspace that the table is going to be created in.
         #[builder(into)]
-        pub keyspace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub keyspace_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies if point-in-time recovery is enabled or disabled for the table. More information can be found in the [Developer Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html).
         #[builder(into, default)]
-        pub point_in_time_recovery: pulumi_gestalt_rust::InputOrOutput<
+        pub point_in_time_recovery: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyspaces::TablePointInTimeRecovery>,
         >,
         /// Describes the schema of the table.
         #[builder(into)]
-        pub schema_definition: pulumi_gestalt_rust::InputOrOutput<
+        pub schema_definition: pulumi_gestalt_rust::Input<
             super::super::types::keyspaces::TableSchemaDefinition,
         >,
         /// The name of the table.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Enables Time to Live custom settings for the table. More information can be found in the [Developer Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html).
         #[builder(into, default)]
-        pub ttl: pulumi_gestalt_rust::InputOrOutput<
+        pub ttl: pulumi_gestalt_rust::Input<
             Option<super::super::types::keyspaces::TableTtl>,
         >,
     }

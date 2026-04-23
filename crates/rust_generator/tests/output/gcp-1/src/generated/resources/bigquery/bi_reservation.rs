@@ -60,20 +60,20 @@ pub mod bi_reservation {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Preferred tables to use BI capacity for.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub preferred_tables: pulumi_gestalt_rust::InputOrOutput<
+        pub preferred_tables: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::bigquery::BiReservationPreferredTable>>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Size of a reservation, in bytes.
         #[builder(into, default)]
-        pub size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub size: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct BiReservationResult {

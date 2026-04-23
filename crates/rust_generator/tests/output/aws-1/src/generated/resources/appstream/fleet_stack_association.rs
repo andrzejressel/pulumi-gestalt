@@ -51,10 +51,10 @@ pub mod fleet_stack_association {
     pub struct FleetStackAssociationArgs {
         /// Name of the fleet.
         #[builder(into)]
-        pub fleet_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub fleet_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the stack.
         #[builder(into)]
-        pub stack_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FleetStackAssociationResult {

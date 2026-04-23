@@ -71,32 +71,32 @@ pub mod scope_rbac_role_binding {
         /// Principal that is be authorized in the cluster (at least of one the oneof is required). Updating one will unset the
         /// other automatically. group is the group, as seen by the kubernetes cluster.
         #[builder(into, default)]
-        pub group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub group: pulumi_gestalt_rust::Input<Option<String>>,
         /// Labels for this ScopeRBACRoleBinding. **Note**: This field is non-authoritative, and will only manage the labels present
         /// in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Role to bind to the principal.
         /// Structure is documented below.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<
+        pub role: pulumi_gestalt_rust::Input<
             super::super::types::gkehub::ScopeRbacRoleBindingRole,
         >,
         /// Id of the scope
         #[builder(into)]
-        pub scope_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope_id: pulumi_gestalt_rust::Input<String>,
         /// The client-provided identifier of the RBAC Role Binding.
         #[builder(into)]
-        pub scope_rbac_role_binding_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope_rbac_role_binding_id: pulumi_gestalt_rust::Input<String>,
         /// Principal that is be authorized in the cluster (at least of one the oneof is required). Updating one will unset the
         /// other automatically. user is the name of the user as seen by the kubernetes cluster, example "alice" or
         /// "alice@domain.tld"
         #[builder(into, default)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ScopeRbacRoleBindingResult {

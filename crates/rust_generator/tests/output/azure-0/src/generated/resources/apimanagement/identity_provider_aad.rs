@@ -58,25 +58,25 @@ pub mod identity_provider_aad {
     pub struct IdentityProviderAadArgs {
         /// List of allowed AAD Tenants.
         #[builder(into)]
-        pub allowed_tenants: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub allowed_tenants: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The Name of the API Management Service where this AAD Identity Provider should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// Client Id of the Application in the AAD Identity Provider.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
         /// The client library to be used in the AAD Identity Provider.
         #[builder(into, default)]
-        pub client_library: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_library: pulumi_gestalt_rust::Input<Option<String>>,
         /// Client secret of the Application in the AAD Identity Provider.
         #[builder(into)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_secret: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The AAD Tenant to use instead of Common when logging into Active Directory.
         #[builder(into, default)]
-        pub signin_tenant: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub signin_tenant: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IdentityProviderAadResult {

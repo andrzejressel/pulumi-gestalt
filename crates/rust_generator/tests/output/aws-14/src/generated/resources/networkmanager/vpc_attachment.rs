@@ -39,25 +39,25 @@ pub mod vpc_attachment {
     pub struct VpcAttachmentArgs {
         /// The ID of a core network for the VPC attachment.
         #[builder(into)]
-        pub core_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub core_network_id: pulumi_gestalt_rust::Input<String>,
         /// Options for the VPC attachment.
         #[builder(into, default)]
-        pub options: pulumi_gestalt_rust::InputOrOutput<
+        pub options: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkmanager::VpcAttachmentOptions>,
         >,
         /// The subnet ARN of the VPC attachment.
         #[builder(into)]
-        pub subnet_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Key-value tags for the attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ARN of the VPC.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vpc_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcAttachmentResult {

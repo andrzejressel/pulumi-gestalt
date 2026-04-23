@@ -10,13 +10,13 @@ pub mod get_frontdoor_custom_domain {
     pub struct GetFrontdoorCustomDomainArgs {
         /// The name of the Front Door Custom Domain.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Front Door Profile which the Front Door Custom Domain is bound to.
         #[builder(into)]
-        pub profile_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub profile_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Front Door Profile exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFrontdoorCustomDomainResult {

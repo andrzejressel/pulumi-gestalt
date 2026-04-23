@@ -10,9 +10,9 @@ pub mod get_instance_iam_policy {
     pub struct GetInstanceIamPolicyArgs {
         /// The name or relative resource id of the instance to manage IAM policies for.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceIamPolicyResult {

@@ -150,24 +150,24 @@ pub mod backup_instance_postgresql {
     pub struct BackupInstancePostgresqlArgs {
         /// The ID of the Backup Policy.
         #[builder(into)]
-        pub backup_policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_policy_id: pulumi_gestalt_rust::Input<String>,
         /// The ID or versionless ID of the key vault secret which stores the connection string of the database.
         #[builder(into, default)]
-        pub database_credential_key_vault_secret_id: pulumi_gestalt_rust::InputOrOutput<
+        pub database_credential_key_vault_secret_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the source database. Changing this forces a new Backup Instance PostgreSQL to be created.
         #[builder(into)]
-        pub database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_id: pulumi_gestalt_rust::Input<String>,
         /// The location of the source database. Changing this forces a new Backup Instance PostgreSQL to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Backup Instance PostgreSQL. Changing this forces a new Backup Instance PostgreSQL to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Backup Vault within which the PostgreSQL Backup Instance should exist. Changing this forces a new Backup Instance PostgreSQL to be created.
         #[builder(into)]
-        pub vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct BackupInstancePostgresqlResult {

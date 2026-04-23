@@ -689,74 +689,74 @@ pub mod firehose_delivery_stream {
     pub struct FirehoseDeliveryStreamArgs {
         /// The Amazon Resource Name (ARN) specifying the Stream
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// This is the destination to where the data is delivered. The only options are `s3` (Deprecated, use `extended_s3` instead), `extended_s3`, `redshift`, `elasticsearch`, `splunk`, `http_endpoint`, `opensearch`, `opensearchserverless` and `snowflake`.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub destination_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub destination_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration options when `destination` is `elasticsearch`. See `elasticsearch_configuration` block below for details.
         #[builder(into, default)]
-        pub elasticsearch_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub elasticsearch_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfiguration,
             >,
         >,
         /// Enhanced configuration options for the s3 destination. See `extended_s3_configuration` block below for details.
         #[builder(into, default)]
-        pub extended_s3_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub extended_s3_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3Configuration,
             >,
         >,
         /// Configuration options when `destination` is `http_endpoint`. Requires the user to also specify an `s3_configuration` block.  See `http_endpoint_configuration` block below for details.
         #[builder(into, default)]
-        pub http_endpoint_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub http_endpoint_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfiguration,
             >,
         >,
         /// Configuration options when `destination` is `iceberg`. See `iceberg_configuration` block below for details.
         #[builder(into, default)]
-        pub iceberg_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub iceberg_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfiguration,
             >,
         >,
         /// The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. See `kinesis_source_configuration` block below for details.
         #[builder(into, default)]
-        pub kinesis_source_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub kinesis_source_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamKinesisSourceConfiguration,
             >,
         >,
         /// The configuration for the Amazon MSK cluster to be used as the source for a delivery stream. See `msk_source_configuration` block below for details.
         #[builder(into, default)]
-        pub msk_source_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub msk_source_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamMskSourceConfiguration,
             >,
         >,
         /// A name to identify the stream. This is unique to the AWS account and region the Stream is created in. When using for WAF logging, name must be prefixed with `aws-waf-logs-`. See [AWS Documentation](https://docs.aws.amazon.com/waf/latest/developerguide/waf-policies.html#waf-policies-logging-config) for more details.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration options when `destination` is `opensearch`. See `opensearch_configuration` block below for details.
         #[builder(into, default)]
-        pub opensearch_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub opensearch_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfiguration,
             >,
         >,
         /// Configuration options when `destination` is `opensearchserverless`. See `opensearchserverless_configuration` block below for details.
         #[builder(into, default)]
-        pub opensearchserverless_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub opensearchserverless_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfiguration,
             >,
         >,
         /// Configuration options when `destination` is `redshift`. Requires the user to also specify an `s3_configuration` block. See `redshift_configuration` block below for details.
         #[builder(into, default)]
-        pub redshift_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub redshift_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfiguration,
             >,
@@ -765,32 +765,32 @@ pub mod firehose_delivery_stream {
         ///
         /// **NOTE:** Server-side encryption should not be enabled when a kinesis stream is configured as the source of the firehose delivery stream.
         #[builder(into, default)]
-        pub server_side_encryption: pulumi_gestalt_rust::InputOrOutput<
+        pub server_side_encryption: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamServerSideEncryption,
             >,
         >,
         /// Configuration options when `destination` is `snowflake`. See `snowflake_configuration` block below for details.
         #[builder(into, default)]
-        pub snowflake_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub snowflake_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfiguration,
             >,
         >,
         /// Configuration options when `destination` is `splunk`. See `splunk_configuration` block below for details.
         #[builder(into, default)]
-        pub splunk_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub splunk_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::FirehoseDeliveryStreamSplunkConfiguration,
             >,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub version_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct FirehoseDeliveryStreamResult {

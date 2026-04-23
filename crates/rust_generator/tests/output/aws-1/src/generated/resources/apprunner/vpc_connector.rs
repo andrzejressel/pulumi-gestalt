@@ -37,18 +37,18 @@ pub mod vpc_connector {
     pub struct VpcConnectorArgs {
         /// List of IDs of security groups that App Runner should use for access to AWS resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.
         #[builder(into)]
-        pub security_groups: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub security_groups: pulumi_gestalt_rust::Input<Vec<String>>,
         /// List of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.
         #[builder(into)]
-        pub subnets: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnets: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Name for the VPC connector.
         #[builder(into)]
-        pub vpc_connector_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_connector_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcConnectorResult {

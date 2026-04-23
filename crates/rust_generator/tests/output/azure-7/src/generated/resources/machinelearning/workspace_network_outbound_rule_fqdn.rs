@@ -84,13 +84,13 @@ pub mod workspace_network_outbound_rule_fqdn {
     pub struct WorkspaceNetworkOutboundRuleFqdnArgs {
         /// Specifies the fully qualified domain name to allow for outbound traffic.
         #[builder(into)]
-        pub destination_fqdn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_fqdn: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Machine Learning Workspace FQDN Network Outbound Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the Machine Learning Workspace. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceNetworkOutboundRuleFqdnResult {

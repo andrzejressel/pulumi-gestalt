@@ -57,101 +57,93 @@ pub mod event_subscription {
     pub struct EventSubscriptionArgs {
         /// A `advanced_filter` block as defined below.
         #[builder(into, default)]
-        pub advanced_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventSubscriptionAdvancedFilter>,
         >,
         /// Specifies whether advanced filters should be evaluated against an array of values instead of expecting a singular value. Defaults to `false`.
         #[builder(into, default)]
-        pub advanced_filtering_on_arrays_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub advanced_filtering_on_arrays_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// An `azure_function_endpoint` block as defined below.
         #[builder(into, default)]
-        pub azure_function_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_function_endpoint: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventSubscriptionAzureFunctionEndpoint>,
         >,
         /// A `dead_letter_identity` block as defined below.
         ///
         /// > **Note:** `storage_blob_dead_letter_destination` must be specified when a `dead_letter_identity` is specified
         #[builder(into, default)]
-        pub dead_letter_identity: pulumi_gestalt_rust::InputOrOutput<
+        pub dead_letter_identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventSubscriptionDeadLetterIdentity>,
         >,
         /// A `delivery_identity` block as defined below.
         #[builder(into, default)]
-        pub delivery_identity: pulumi_gestalt_rust::InputOrOutput<
+        pub delivery_identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventSubscriptionDeliveryIdentity>,
         >,
         /// One or more `delivery_property` blocks as defined below.
         #[builder(into, default)]
-        pub delivery_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub delivery_properties: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::eventhub::EventSubscriptionDeliveryProperty>>,
         >,
         /// Specifies the event delivery schema for the event subscription. Possible values include: `EventGridSchema`, `CloudEventSchemaV1_0`, `CustomInputSchema`. Defaults to `EventGridSchema`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub event_delivery_schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub event_delivery_schema: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the id where the Event Hub is located.
         #[builder(into, default)]
-        pub eventhub_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub eventhub_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the expiration time of the event subscription (Datetime Format `RFC 3339`).
         #[builder(into, default)]
-        pub expiration_time_utc: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiration_time_utc: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the id where the Hybrid Connection is located.
         #[builder(into, default)]
-        pub hybrid_connection_endpoint_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub hybrid_connection_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of applicable event types that need to be part of the event subscription.
         #[builder(into, default)]
-        pub included_event_types: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub included_event_types: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of labels to assign to the event subscription.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub labels: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the name of the EventGrid Event Subscription resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `retry_policy` block as defined below.
         #[builder(into, default)]
-        pub retry_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub retry_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventSubscriptionRetryPolicy>,
         >,
         /// Specifies the scope at which the EventGrid Event Subscription should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scope: pulumi_gestalt_rust::Input<String>,
         /// Specifies the id where the Service Bus Queue is located.
         #[builder(into, default)]
-        pub service_bus_queue_endpoint_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub service_bus_queue_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the id where the Service Bus Topic is located.
         #[builder(into, default)]
-        pub service_bus_topic_endpoint_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub service_bus_topic_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `storage_blob_dead_letter_destination` block as defined below.
         #[builder(into, default)]
-        pub storage_blob_dead_letter_destination: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_blob_dead_letter_destination: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::eventhub::EventSubscriptionStorageBlobDeadLetterDestination,
             >,
         >,
         /// A `storage_queue_endpoint` block as defined below.
         #[builder(into, default)]
-        pub storage_queue_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_queue_endpoint: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventSubscriptionStorageQueueEndpoint>,
         >,
         /// A `subject_filter` block as defined below.
         #[builder(into, default)]
-        pub subject_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub subject_filter: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventSubscriptionSubjectFilter>,
         >,
         /// A `webhook_endpoint` block as defined below.
         ///
         /// > **NOTE:** One of `eventhub_endpoint_id`, `hybrid_connection_endpoint_id`, `service_bus_queue_endpoint_id`, `service_bus_topic_endpoint_id`, `storage_queue_endpoint`, `webhook_endpoint` or `azure_function_endpoint` must be specified.
         #[builder(into, default)]
-        pub webhook_endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub webhook_endpoint: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventSubscriptionWebhookEndpoint>,
         >,
     }

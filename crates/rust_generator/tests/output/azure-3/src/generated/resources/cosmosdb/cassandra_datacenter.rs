@@ -93,48 +93,42 @@ pub mod cassandra_datacenter {
     pub struct CassandraDatacenterArgs {
         /// Determines whether availability zones are enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub availability_zones_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub availability_zones_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The key URI of the customer key to use for the encryption of the backup Storage Account.
         #[builder(into, default)]
-        pub backup_storage_customer_key_uri: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub backup_storage_customer_key_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The fragment of the cassandra.yaml configuration file to be included in the cassandra.yaml for all nodes in this Cassandra Datacenter. The fragment should be Base64 encoded and only a subset of keys is allowed.
         #[builder(into, default)]
-        pub base64_encoded_yaml_fragment: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub base64_encoded_yaml_fragment: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Cassandra Cluster. Changing this forces a new Cassandra Datacenter to be created.
         #[builder(into)]
-        pub cassandra_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cassandra_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the delegated management subnet for this Cassandra Datacenter. Changing this forces a new Cassandra Datacenter to be created.
         #[builder(into)]
-        pub delegated_management_subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub delegated_management_subnet_id: pulumi_gestalt_rust::Input<String>,
         /// Determines the number of p30 disks that are attached to each node.
         #[builder(into, default)]
-        pub disk_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub disk_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Disk SKU that is used for this Cassandra Datacenter. Defaults to `P30`.
         #[builder(into, default)]
-        pub disk_sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub disk_sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Cassandra Datacenter should exist. Changing this forces a new Cassandra Datacenter to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The key URI of the customer key to use for the encryption of the Managed Disk.
         #[builder(into, default)]
-        pub managed_disk_customer_key_uri: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub managed_disk_customer_key_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Cassandra Datacenter. Changing this forces a new Cassandra Datacenter to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of nodes the Cassandra Datacenter should have. The number should be equal or greater than `3`. Defaults to `3`.
         #[builder(into, default)]
-        pub node_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub node_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Determines the selected sku.
         ///
         /// > **NOTE:** In v4.0 of the provider the `sku_name` will have a default value of `Standard_E16s_v5`.
         #[builder(into, default)]
-        pub sku_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct CassandraDatacenterResult {

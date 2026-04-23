@@ -106,24 +106,24 @@ pub mod cache_blob_target {
     pub struct CacheBlobTargetArgs {
         /// The name of the access policy applied to this target. Defaults to `default`.
         #[builder(into, default)]
-        pub access_policy_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_policy_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name HPC Cache, which the HPC Cache Blob Target will be added to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cache_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cache_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the HPC Cache Blob Target. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The client-facing file path of the HPC Cache Blob Target.
         #[builder(into)]
-        pub namespace_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_path: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which to create the HPC Cache Blob Target. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The Resource Manager ID of the Storage Container used as the HPC Cache Blob Target. Changing this forces a new resource to be created.
         ///
         /// > **Note:** This is the Resource Manager ID of the Storage Container, rather than the regular ID - and can be accessed on the `azure.storage.Container` Data Source/Resource as `resource_manager_id`.
         #[builder(into)]
-        pub storage_container_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CacheBlobTargetResult {

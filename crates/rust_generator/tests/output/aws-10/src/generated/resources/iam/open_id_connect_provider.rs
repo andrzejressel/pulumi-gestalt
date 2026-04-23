@@ -60,17 +60,17 @@ pub mod open_id_connect_provider {
     pub struct OpenIdConnectProviderArgs {
         /// List of client IDs (audiences) that identify the application registered with the OpenID Connect provider. This is the value sent as the `client_id` parameter in OAuth requests.
         #[builder(into)]
-        pub client_id_lists: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub client_id_lists: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Map of resource tags for the IAM OIDC provider. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub thumbprint_lists: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub thumbprint_lists: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// URL of the identity provider, corresponding to the `iss` claim.
         #[builder(into)]
-        pub url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub url: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct OpenIdConnectProviderResult {

@@ -10,14 +10,14 @@ pub mod get_accelerator {
     pub struct GetAcceleratorArgs {
         /// Full ARN of the Global Accelerator.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name of the Global Accelerator.
         ///
         /// > **NOTE:** When both `arn` and `name` are specified, `arn` takes precedence.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAcceleratorResult {

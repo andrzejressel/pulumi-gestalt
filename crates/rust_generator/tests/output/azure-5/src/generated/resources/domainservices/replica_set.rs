@@ -270,13 +270,13 @@ pub mod replica_set {
     pub struct ReplicaSetArgs {
         /// The ID of the Domain Service for which to create this Replica Set. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub domain_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_service_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure location where this Replica Set should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the subnet in which to place this Replica Set. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ReplicaSetResult {

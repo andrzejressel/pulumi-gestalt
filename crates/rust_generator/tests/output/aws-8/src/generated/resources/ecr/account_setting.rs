@@ -36,10 +36,10 @@ pub mod account_setting {
     pub struct AccountSettingArgs {
         /// The name of the ECR Scan Type. This should be `BASIC_SCAN_TYPE_VERSION`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The value of the ECR Scan Type. This can be `AWS_NATIVE` or `CLAIR`.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccountSettingResult {

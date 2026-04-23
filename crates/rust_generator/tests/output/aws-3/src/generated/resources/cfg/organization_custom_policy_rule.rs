@@ -44,51 +44,45 @@ pub mod organization_custom_policy_rule {
     pub struct OrganizationCustomPolicyRuleArgs {
         /// List of AWS account identifiers to exclude from the rule
         #[builder(into, default)]
-        pub debug_log_delivery_accounts: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub debug_log_delivery_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Description of the rule
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of AWS account identifiers to exclude from the rule
         #[builder(into, default)]
-        pub excluded_accounts: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub excluded_accounts: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A string in JSON format that is passed to the AWS Config Rule Lambda Function
         #[builder(into, default)]
-        pub input_parameters: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub input_parameters: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maximum frequency with which AWS Config runs evaluations for a rule, if the rule is triggered at a periodic frequency. Defaults to `TwentyFour_Hours` for periodic frequency triggered rules. Valid values: `One_Hour`, `Three_Hours`, `Six_Hours`, `Twelve_Hours`, or `TwentyFour_Hours`.
         #[builder(into, default)]
-        pub maximum_execution_frequency: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub maximum_execution_frequency: pulumi_gestalt_rust::Input<Option<String>>,
         /// name of the rule
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// runtime system for your organization AWS Config Custom Policy rules
         #[builder(into)]
-        pub policy_runtime: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_runtime: pulumi_gestalt_rust::Input<String>,
         /// policy definition containing the logic for your organization AWS Config Custom Policy rule
         #[builder(into)]
-        pub policy_text: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_text: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the AWS resource to evaluate
         #[builder(into, default)]
-        pub resource_id_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_id_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of types of AWS resources to evaluate
         #[builder(into, default)]
-        pub resource_types_scopes: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub resource_types_scopes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Tag key of AWS resources to evaluate
         #[builder(into, default)]
-        pub tag_key_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tag_key_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tag value of AWS resources to evaluate
         #[builder(into, default)]
-        pub tag_value_scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tag_value_scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of notification types that trigger AWS Config to run an evaluation for the rule. Valid values: `ConfigurationItemChangeNotification`, `OversizedConfigurationItemChangeNotification`
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub trigger_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub trigger_types: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct OrganizationCustomPolicyRuleResult {

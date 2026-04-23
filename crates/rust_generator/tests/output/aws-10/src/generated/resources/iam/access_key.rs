@@ -74,13 +74,13 @@ pub mod access_key {
     pub struct AccessKeyArgs {
         /// Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:some_person_that_exists`, for use in the `encrypted_secret` output attribute. If providing a base-64 encoded PGP public key, make sure to provide the "raw" version and not the "armored" one (e.g. avoid passing the `-a` option to `gpg --export`).
         #[builder(into, default)]
-        pub pgp_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pgp_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Access key status to apply. Defaults to `Active`. Valid values are `Active` and `Inactive`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// IAM user to associate with this access key.
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessKeyResult {

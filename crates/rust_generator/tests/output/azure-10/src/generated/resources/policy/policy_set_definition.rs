@@ -57,25 +57,25 @@ pub mod policy_set_definition {
     pub struct PolicySetDefinitionArgs {
         /// The description of the policy set definition.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the policy set definition.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The id of the Management Group where this policy set definition should be defined. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub management_group_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub management_group_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The metadata for the policy set definition. This is a JSON object representing additional metadata that should be stored with the policy definition.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the policy set definition. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameters for the policy set definition. This field is a JSON object that allows you to parameterize your policy definition.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parameters: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `policy_definition_group` blocks as defined below.
         #[builder(into, default)]
-        pub policy_definition_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_definition_groups: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::policy::PolicySetDefinitionPolicyDefinitionGroup,
@@ -84,14 +84,14 @@ pub mod policy_set_definition {
         >,
         /// One or more `policy_definition_reference` blocks as defined below.
         #[builder(into)]
-        pub policy_definition_references: pulumi_gestalt_rust::InputOrOutput<
+        pub policy_definition_references: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::policy::PolicySetDefinitionPolicyDefinitionReference,
             >,
         >,
         /// The policy set type. Possible values are `BuiltIn`, `Custom`, `NotSpecified` and `Static`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub policy_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PolicySetDefinitionResult {

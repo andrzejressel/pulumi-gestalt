@@ -40,10 +40,10 @@ pub mod route_table_propagation {
     pub struct RouteTablePropagationArgs {
         /// Identifier of EC2 Transit Gateway Attachment.
         #[builder(into)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of EC2 Transit Gateway Route Table.
         #[builder(into)]
-        pub transit_gateway_route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_route_table_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RouteTablePropagationResult {

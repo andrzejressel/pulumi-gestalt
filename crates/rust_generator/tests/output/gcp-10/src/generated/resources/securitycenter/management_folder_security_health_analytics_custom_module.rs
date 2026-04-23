@@ -158,7 +158,7 @@ pub mod management_folder_security_health_analytics_custom_module {
         /// The user specified custom configuration for the module.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub custom_config: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::securitycenter::ManagementFolderSecurityHealthAnalyticsCustomModuleCustomConfig,
             >,
@@ -169,20 +169,20 @@ pub mod management_folder_security_health_analytics_custom_module {
         /// 128 characters, start with a lowercase letter, and contain alphanumeric
         /// characters or underscores only.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The enablement state of the custom module.
         /// Possible values are: `ENABLED`, `DISABLED`.
         #[builder(into, default)]
-        pub enablement_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub enablement_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Numerical ID of the parent folder.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
         /// Location ID of the parent organization. If not provided, 'global' will be used as the default location.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagementFolderSecurityHealthAnalyticsCustomModuleResult {

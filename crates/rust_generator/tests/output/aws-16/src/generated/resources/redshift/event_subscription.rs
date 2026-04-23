@@ -52,28 +52,28 @@ pub mod event_subscription {
     pub struct EventSubscriptionArgs {
         /// A boolean flag to enable/disable the subscription. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of event categories for a SourceType that you want to subscribe to. See https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html or run `aws redshift describe-event-categories`.
         #[builder(into, default)]
-        pub event_categories: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub event_categories: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name of the Redshift event subscription.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The event severity to be published by the notification subscription. Valid options are `INFO` or `ERROR`. Default value of `INFO`.
         #[builder(into, default)]
-        pub severity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub severity: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the SNS topic to send events to.
         #[builder(into)]
-        pub sns_topic_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sns_topic_arn: pulumi_gestalt_rust::Input<String>,
         /// A list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the response. If specified, a `source_type` must also be specified.
         #[builder(into, default)]
-        pub source_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub source_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The type of source that will be generating the events. Valid options are `cluster`, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, or `scheduled-action`. If not set, all sources will be subscribed to.
         #[builder(into, default)]
-        pub source_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -66,18 +66,16 @@ pub mod namespace_disaster_recovery_config {
     pub struct NamespaceDisasterRecoveryConfigArgs {
         /// The Shared access policies used to access the connection string for the alias.
         #[builder(into, default)]
-        pub alias_authorization_rule_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub alias_authorization_rule_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Disaster Recovery Config. This is the alias DNS name that will be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Service Bus Namespace to replicate to.
         #[builder(into)]
-        pub partner_namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partner_namespace_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the primary Service Bus Namespace to replicate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub primary_namespace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub primary_namespace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NamespaceDisasterRecoveryConfigResult {

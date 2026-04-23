@@ -34,23 +34,23 @@ pub mod snapshot_schedule {
     pub struct SnapshotScheduleArgs {
         /// The definition of the snapshot schedule. The definition is made up of schedule expressions, for example `cron(30 12 *)` or `rate(12 hours)`.
         #[builder(into)]
-        pub definitions: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub definitions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The description of the snapshot schedule.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to destroy all associated clusters with this snapshot schedule on deletion. Must be enabled and applied before attempting deletion.
         #[builder(into, default)]
-        pub force_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The snapshot schedule identifier. If omitted, this provider will assign a random, unique identifier.
         #[builder(into, default)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique
         /// identifier beginning with the specified prefix. Conflicts with `identifier`.
         #[builder(into, default)]
-        pub identifier_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identifier_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

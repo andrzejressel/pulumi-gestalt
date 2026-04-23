@@ -67,25 +67,25 @@ pub mod tag_template {
     pub struct TagTemplateArgs {
         /// The display name for this template.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of tag template field IDs and the settings for the field. This set is an exhaustive list of the allowed fields. This set must contain at least one field and at most 500 fields. The change of field_id will be resulting in re-creating of field. The change of primitive_type will be resulting in re-creating of field, however if the field is a required, you cannot update it.
         /// Structure is documented below.
         #[builder(into)]
-        pub fields: pulumi_gestalt_rust::InputOrOutput<
+        pub fields: pulumi_gestalt_rust::Input<
             Vec<super::super::types::datacatalog::TagTemplateField>,
         >,
         /// This confirms the deletion of any possible tags using this template. Must be set to true in order to delete the tag
         /// template.
         #[builder(into, default)]
-        pub force_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub force_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Template location region.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The id of the tag template to create.
         #[builder(into)]
-        pub tag_template_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tag_template_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct TagTemplateResult {

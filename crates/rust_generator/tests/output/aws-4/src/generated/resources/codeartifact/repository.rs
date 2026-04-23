@@ -108,29 +108,29 @@ pub mod repository {
     pub struct RepositoryArgs {
         /// The description of the repository.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The domain that contains the created repository.
         #[builder(into)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain: pulumi_gestalt_rust::Input<String>,
         /// The account number of the AWS account that owns the domain.
         #[builder(into, default)]
-        pub domain_owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain_owner: pulumi_gestalt_rust::Input<Option<String>>,
         /// An array of external connections associated with the repository. Only one external connection can be set per repository. see External Connections.
         #[builder(into, default)]
-        pub external_connections: pulumi_gestalt_rust::InputOrOutput<
+        pub external_connections: pulumi_gestalt_rust::Input<
             Option<super::super::types::codeartifact::RepositoryExternalConnections>,
         >,
         /// The name of the repository to create.
         #[builder(into)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. see Upstream
         #[builder(into, default)]
-        pub upstreams: pulumi_gestalt_rust::InputOrOutput<
+        pub upstreams: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::codeartifact::RepositoryUpstream>>,
         >,
     }

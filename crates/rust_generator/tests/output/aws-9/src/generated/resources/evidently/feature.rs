@@ -104,32 +104,32 @@ pub mod feature {
     pub struct FeatureArgs {
         /// The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature. This variation must also be listed in the `variations` structure. If you omit `default_variation`, the first variation listed in the `variations` structure is used as the default variation.
         #[builder(into, default)]
-        pub default_variation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_variation: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the description of the feature.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.
         #[builder(into, default)]
-        pub entity_overrides: pulumi_gestalt_rust::InputOrOutput<
+        pub entity_overrides: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specify `ALL_RULES` to activate the traffic allocation specified by any ongoing launches or experiments. Specify `DEFAULT_VARIATION` to serve the default variation to all users instead.
         #[builder(into, default)]
-        pub evaluation_strategy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub evaluation_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the new feature. Minimum length of `1`. Maximum length of `127`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name or ARN of the project that is to contain the new feature.
         #[builder(into)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub project: pulumi_gestalt_rust::Input<String>,
         /// Tags to apply to the feature. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// One or more blocks that contain the configuration of the feature's different variations. Detailed below
         #[builder(into)]
-        pub variations: pulumi_gestalt_rust::InputOrOutput<
+        pub variations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::evidently::FeatureVariation>,
         >,
     }

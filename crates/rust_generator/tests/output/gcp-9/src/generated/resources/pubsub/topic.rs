@@ -215,7 +215,7 @@ pub mod topic {
         /// Settings for ingestion from a data source into this topic.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub ingestion_data_source_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub ingestion_data_source_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::TopicIngestionDataSourceSettings>,
         >,
         /// The resource name of the Cloud KMS CryptoKey to be used to protect access
@@ -224,13 +224,13 @@ pub mod topic {
         /// `roles/cloudkms.cryptoKeyEncrypterDecrypter` to use this feature.
         /// The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of key/value label pairs to assign to this Topic.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Indicates the minimum duration to retain a message after it is published
@@ -242,15 +242,13 @@ pub mod topic {
         /// The rotation period has the format of a decimal number, followed by the
         /// letter `s` (seconds). Cannot be more than 31 days or less than 10 minutes.
         #[builder(into, default)]
-        pub message_retention_duration: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub message_retention_duration: pulumi_gestalt_rust::Input<Option<String>>,
         /// Policy constraining the set of Google Cloud Platform regions where
         /// messages published to the topic may be stored. If not present, then no
         /// constraints are in effect.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub message_storage_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub message_storage_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::TopicMessageStoragePolicy>,
         >,
         /// Name of the topic.
@@ -258,15 +256,15 @@ pub mod topic {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Settings for validating messages published against a schema.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub schema_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub schema_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::pubsub::TopicSchemaSettings>,
         >,
     }

@@ -114,60 +114,60 @@ pub mod config {
     pub struct ConfigArgs {
         /// List of domains authorized for OAuth redirects.
         #[builder(into, default)]
-        pub authorized_domains: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub authorized_domains: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether anonymous users will be auto-deleted after a period of 30 days
         #[builder(into, default)]
-        pub autodelete_anonymous_users: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub autodelete_anonymous_users: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Configuration related to blocking functions.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub blocking_functions: pulumi_gestalt_rust::InputOrOutput<
+        pub blocking_functions: pulumi_gestalt_rust::Input<
             Option<super::super::types::identityplatform::ConfigBlockingFunctions>,
         >,
         /// Options related to how clients making requests on behalf of a project should be configured.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub client: pulumi_gestalt_rust::InputOrOutput<
+        pub client: pulumi_gestalt_rust::Input<
             Option<super::super::types::identityplatform::ConfigClient>,
         >,
         /// Options related to how clients making requests on behalf of a project should be configured.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub mfa: pulumi_gestalt_rust::InputOrOutput<
+        pub mfa: pulumi_gestalt_rust::Input<
             Option<super::super::types::identityplatform::ConfigMfa>,
         >,
         /// Configuration related to monitoring project activity.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub monitoring: pulumi_gestalt_rust::InputOrOutput<
+        pub monitoring: pulumi_gestalt_rust::Input<
             Option<super::super::types::identityplatform::ConfigMonitoring>,
         >,
         /// Configuration related to multi-tenant functionality.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub multi_tenant: pulumi_gestalt_rust::InputOrOutput<
+        pub multi_tenant: pulumi_gestalt_rust::Input<
             Option<super::super::types::identityplatform::ConfigMultiTenant>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration related to quotas.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub quota: pulumi_gestalt_rust::InputOrOutput<
+        pub quota: pulumi_gestalt_rust::Input<
             Option<super::super::types::identityplatform::ConfigQuota>,
         >,
         /// Configuration related to local sign in methods.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub sign_in: pulumi_gestalt_rust::InputOrOutput<
+        pub sign_in: pulumi_gestalt_rust::Input<
             Option<super::super::types::identityplatform::ConfigSignIn>,
         >,
         /// Configures the regions where users are allowed to send verification SMS for the project or tenant. This is based on the calling code of the destination phone number.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub sms_region_config: pulumi_gestalt_rust::InputOrOutput<
+        pub sms_region_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::identityplatform::ConfigSmsRegionConfig>,
         >,
     }

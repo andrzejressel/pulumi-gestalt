@@ -631,42 +631,42 @@ pub mod service {
         /// annotations present in your configuration. Please refer to the field 'effective_annotations' for all of the annotations
         /// present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Settings for the Binary Authorization feature.
         #[builder(into, default)]
-        pub binary_authorization: pulumi_gestalt_rust::InputOrOutput<
+        pub binary_authorization: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudrunv2::ServiceBinaryAuthorization>,
         >,
         /// Arbitrary identifier for the API client.
         #[builder(into, default)]
-        pub client: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client: pulumi_gestalt_rust::Input<Option<String>>,
         /// Arbitrary version identifier for the API client.
         #[builder(into, default)]
-        pub client_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a
         /// string. The custom audiences are encoded in the token and used to authenticate requests. For more information, see
         /// https://cloud.google.com/run/docs/configuring/custom-audiences.
         #[builder(into, default)]
-        pub custom_audiences: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub custom_audiences: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Disables public resolution of the default URI of this service.
         #[builder(into, default)]
-        pub default_uri_disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub default_uri_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// User-provided description of the Service. This field currently has a 512-character limit.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Provides the ingress settings for this Service. On output, returns the currently observed ingress settings, or
         /// INGRESS_TRAFFIC_UNSPECIFIED if no revision is active. Possible values: ["INGRESS_TRAFFIC_ALL",
         /// "INGRESS_TRAFFIC_INTERNAL_ONLY", "INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER"]
         #[builder(into, default)]
-        pub ingress: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ingress: pulumi_gestalt_rust::Input<Option<String>>,
         /// Disables IAM permission check for run.routes.invoke for callers of this service. This feature is available by invitation
         /// only. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
         #[builder(into, default)]
-        pub invoker_iam_disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub invoker_iam_disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with
         /// Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment,
         /// state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or
@@ -676,7 +676,7 @@ pub mod service {
         /// non-authoritative, and will only manage the labels present in your configuration. Please refer to the field
         /// 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The launch stage as defined by [Google Cloud Platform Launch
@@ -686,30 +686,30 @@ pub mod service {
         /// input, but only BETA and GA-level features are used, this field will be BETA on output. Possible values:
         /// ["UNIMPLEMENTED", "PRELAUNCH", "EARLY_ACCESS", "ALPHA", "BETA", "GA", "DEPRECATED"]
         #[builder(into, default)]
-        pub launch_stage: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub launch_stage: pulumi_gestalt_rust::Input<Option<String>>,
         /// The location of the cloud run service
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the Service.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Scaling settings that apply to the whole service
         #[builder(into, default)]
-        pub scaling: pulumi_gestalt_rust::InputOrOutput<
+        pub scaling: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudrunv2::ServiceScaling>,
         >,
         /// The template used to create revisions for this Service.
         /// Structure is documented below.
         #[builder(into)]
-        pub template: pulumi_gestalt_rust::InputOrOutput<
+        pub template: pulumi_gestalt_rust::Input<
             super::super::types::cloudrunv2::ServiceTemplate,
         >,
         /// Specifies how to distribute traffic over a collection of Revisions belonging to the Service. If traffic is empty or not
         /// provided, defaults to 100% traffic to the latest Ready Revision.
         #[builder(into, default)]
-        pub traffics: pulumi_gestalt_rust::InputOrOutput<
+        pub traffics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudrunv2::ServiceTraffic>>,
         >,
     }

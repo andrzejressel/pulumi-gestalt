@@ -10,17 +10,17 @@ pub mod get_region_instance_group_manager {
     pub struct GetRegionInstanceGroupManagerArgs {
         /// The name of the instance group. Either `name` or `self_link` must be provided.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it is not provided, the provider project is used.
         ///
         /// * `Region` - (Optional) The region where the managed instance group resides. If not provided, the provider region is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The self link of the instance group. Either `name` or `self_link` must be provided.
         #[builder(into, default)]
-        pub self_link: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub self_link: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetRegionInstanceGroupManagerResult {

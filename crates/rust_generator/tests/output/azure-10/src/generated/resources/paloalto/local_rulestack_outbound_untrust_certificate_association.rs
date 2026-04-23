@@ -50,7 +50,7 @@ pub mod local_rulestack_outbound_untrust_certificate_association {
     pub struct LocalRulestackOutboundUntrustCertificateAssociationArgs {
         /// The ID of the Certificate to use as the Outbound Untrust Certificate. Changing this forces a new Palo Alto Networks Rulestack Outbound Untrust Certificate Association to be created.
         #[builder(into)]
-        pub certificate_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LocalRulestackOutboundUntrustCertificateAssociationResult {

@@ -44,37 +44,37 @@ pub mod ami_from_instance {
     pub struct AmiFromInstanceArgs {
         /// Date and time to deprecate the AMI. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)
         #[builder(into, default)]
-        pub deprecation_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deprecation_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// Longer, human-readable description for the AMI.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Nested block describing an EBS block device that should be
         /// attached to created instances. The structure of this block is described below.
         #[builder(into, default)]
-        pub ebs_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub ebs_block_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::AmiFromInstanceEbsBlockDevice>>,
         >,
         /// Nested block describing an ephemeral block device that
         /// should be attached to created instances. The structure of this block is described below.
         #[builder(into, default)]
-        pub ephemeral_block_devices: pulumi_gestalt_rust::InputOrOutput<
+        pub ephemeral_block_devices: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::ec2::AmiFromInstanceEphemeralBlockDevice>>,
         >,
         /// Region-unique name for the AMI.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean that overrides the behavior of stopping
         /// the instance before snapshotting. This is risky since it may cause a snapshot of an
         /// inconsistent filesystem state, but can be used to avoid downtime if the user otherwise
         /// guarantees that no filesystem writes will be underway at the time of snapshot.
         #[builder(into, default)]
-        pub snapshot_without_reboot: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub snapshot_without_reboot: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the instance to use as the basis of the AMI.
         #[builder(into)]
-        pub source_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_instance_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

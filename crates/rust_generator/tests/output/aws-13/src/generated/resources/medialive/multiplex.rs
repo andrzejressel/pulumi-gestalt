@@ -48,23 +48,23 @@ pub mod multiplex {
     pub struct MultiplexArgs {
         /// A list of availability zones. You must specify exactly two.
         #[builder(into)]
-        pub availability_zones: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub availability_zones: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Multiplex settings. See Multiplex Settings for more details.
         #[builder(into, default)]
-        pub multiplex_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub multiplex_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::medialive::MultiplexMultiplexSettings>,
         >,
         /// name of Multiplex.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to start the Multiplex. Defaults to `false`.
         #[builder(into, default)]
-        pub start_multiplex: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_multiplex: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of tags to assign to the Multiplex. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

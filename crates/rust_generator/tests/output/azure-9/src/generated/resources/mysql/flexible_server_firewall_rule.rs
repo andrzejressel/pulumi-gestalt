@@ -131,19 +131,19 @@ pub mod flexible_server_firewall_rule {
         ///
         /// > **NOTE:** The Azure feature `Allow access to Azure services` can be enabled by setting `start_ip_address` and `end_ip_address` to `0.0.0.0` which ([is documented in the Azure API Docs](https://docs.microsoft.com/rest/api/sql/firewallrules/createorupdate)).
         #[builder(into)]
-        pub end_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub end_ip_address: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the MySQL Firewall Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the MySQL Flexible Server exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the MySQL Flexible Server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Start IP Address associated with this Firewall Rule.
         #[builder(into)]
-        pub start_ip_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_ip_address: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct FlexibleServerFirewallRuleResult {

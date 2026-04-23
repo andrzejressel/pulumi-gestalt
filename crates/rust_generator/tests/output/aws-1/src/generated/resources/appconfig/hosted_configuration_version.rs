@@ -81,19 +81,19 @@ pub mod hosted_configuration_version {
     pub struct HostedConfigurationVersionArgs {
         /// Application ID.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// Configuration profile ID.
         #[builder(into)]
-        pub configuration_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_profile_id: pulumi_gestalt_rust::Input<String>,
         /// Content of the configuration or the configuration data.
         #[builder(into)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content: pulumi_gestalt_rust::Input<String>,
         /// Standard MIME type describing the format of the configuration content. For more information, see [Content-Type](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17).
         #[builder(into)]
-        pub content_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content_type: pulumi_gestalt_rust::Input<String>,
         /// Description of the configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct HostedConfigurationVersionResult {

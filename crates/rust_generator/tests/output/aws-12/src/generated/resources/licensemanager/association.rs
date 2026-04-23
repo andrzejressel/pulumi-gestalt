@@ -57,10 +57,10 @@ pub mod association {
     pub struct AssociationArgs {
         /// ARN of the license configuration.
         #[builder(into)]
-        pub license_configuration_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub license_configuration_arn: pulumi_gestalt_rust::Input<String>,
         /// ARN of the resource associated with the license configuration.
         #[builder(into)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AssociationResult {

@@ -37,13 +37,13 @@ pub mod workspace_service_account {
     pub struct WorkspaceServiceAccountArgs {
         /// The permission level to use for this service account. For more information about the roles and the permissions each has, see the [User roles](https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html) documentation.
         #[builder(into)]
-        pub grafana_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub grafana_role: pulumi_gestalt_rust::Input<String>,
         /// A name for the service account. The name must be unique within the workspace, as it determines the ID associated with the service account.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Grafana workspace with which the service account is associated.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceServiceAccountResult {

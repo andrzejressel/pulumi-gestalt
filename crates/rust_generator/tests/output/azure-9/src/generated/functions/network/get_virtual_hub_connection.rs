@@ -10,13 +10,13 @@ pub mod get_virtual_hub_connection {
     pub struct GetVirtualHubConnectionArgs {
         /// The name of the Connection which should be retrieved.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the Virtual Hub Connection exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Virtual Hub where this Connection exists.
         #[builder(into)]
-        pub virtual_hub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub virtual_hub_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVirtualHubConnectionResult {

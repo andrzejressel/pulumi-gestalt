@@ -37,10 +37,10 @@ pub mod application_snapshot {
     pub struct ApplicationSnapshotArgs {
         /// The name of an existing  Kinesis Analytics v2 Application. Note that the application must be running for a snapshot to be created.
         #[builder(into)]
-        pub application_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the application snapshot.
         #[builder(into)]
-        pub snapshot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub snapshot_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApplicationSnapshotResult {

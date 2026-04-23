@@ -10,10 +10,10 @@ pub mod get_alert_rule {
     pub struct GetAlertRuleArgs {
         /// The ID of the Log Analytics Workspace this Sentinel Alert Rule belongs to.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Sentinel Alert Rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAlertRuleResult {

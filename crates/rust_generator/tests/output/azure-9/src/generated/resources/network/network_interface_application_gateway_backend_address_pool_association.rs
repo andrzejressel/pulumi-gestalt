@@ -20,13 +20,13 @@ pub mod network_interface_application_gateway_backend_address_pool_association {
     pub struct NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationArgs {
         /// The ID of the Application Gateway's Backend Address Pool which this Network Interface which should be connected to. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub backend_address_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backend_address_pool_id: pulumi_gestalt_rust::Input<String>,
         /// The Name of the IP Configuration within the Network Interface which should be connected to the Backend Address Pool. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub ip_configuration_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ip_configuration_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Network Interface. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationResult {

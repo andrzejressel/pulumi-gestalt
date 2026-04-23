@@ -10,10 +10,10 @@ pub mod get_sync_group {
     pub struct GetSyncGroupArgs {
         /// The name of this Storage Sync Group.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The resource ID of the Storage Sync where this Storage Sync Group is.
         #[builder(into)]
-        pub storage_sync_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_sync_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSyncGroupResult {

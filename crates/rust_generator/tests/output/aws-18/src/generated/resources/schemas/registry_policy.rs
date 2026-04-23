@@ -50,10 +50,10 @@ pub mod registry_policy {
     pub struct RegistryPolicyArgs {
         /// Resource Policy for EventBridge Schema Registry
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// Name of EventBridge Schema Registry
         #[builder(into)]
-        pub registry_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub registry_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RegistryPolicyResult {

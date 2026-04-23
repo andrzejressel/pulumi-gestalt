@@ -107,10 +107,10 @@ pub mod managed_certificate {
     pub struct ManagedCertificateArgs {
         /// The ID of the App Service Custom Hostname Binding for the Certificate. Changing this forces a new App Service Managed Certificate to be created.
         #[builder(into)]
-        pub custom_hostname_binding_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_hostname_binding_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the App Service Managed Certificate.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

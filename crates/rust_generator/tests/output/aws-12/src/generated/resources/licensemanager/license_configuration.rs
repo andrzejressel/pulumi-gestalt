@@ -51,25 +51,25 @@ pub mod license_configuration {
     pub struct LicenseConfigurationArgs {
         /// Description of the license configuration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of licenses managed by the license configuration.
         #[builder(into, default)]
-        pub license_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub license_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Sets the number of available licenses as a hard limit.
         #[builder(into, default)]
-        pub license_count_hard_limit: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub license_count_hard_limit: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Dimension to use to track license inventory. Specify either `vCPU`, `Instance`, `Core` or `Socket`.
         #[builder(into)]
-        pub license_counting_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub license_counting_type: pulumi_gestalt_rust::Input<String>,
         /// Array of configured License Manager rules.
         #[builder(into, default)]
-        pub license_rules: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub license_rules: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Name of the license configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,7 +10,7 @@ pub mod get_geographical_location {
     pub struct GetGeographicalLocationArgs {
         /// Specifies the name of the Location, for example `World`, `Europe` or `Germany`.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetGeographicalLocationResult {

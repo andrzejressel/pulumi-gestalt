@@ -36,34 +36,34 @@ pub mod keystores_aliases_key_cert_file {
     pub struct KeystoresAliasesKeyCertFileArgs {
         /// Alias Name
         #[builder(into)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub alias: pulumi_gestalt_rust::Input<String>,
         /// Cert content
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub cert: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cert: pulumi_gestalt_rust::Input<String>,
         /// Chain of certificates under this alias.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub certs_info: pulumi_gestalt_rust::InputOrOutput<
+        pub certs_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigee::KeystoresAliasesKeyCertFileCertsInfo>,
         >,
         /// Environment associated with the alias
         #[builder(into)]
-        pub environment: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment: pulumi_gestalt_rust::Input<String>,
         /// Private Key content, omit if uploading to truststore
         #[builder(into, default)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Keystore Name
         #[builder(into)]
-        pub keystore: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub keystore: pulumi_gestalt_rust::Input<String>,
         /// Organization ID associated with the alias, without organization/ prefix
         #[builder(into)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub org_id: pulumi_gestalt_rust::Input<String>,
         /// Password for the Private Key if it's encrypted
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct KeystoresAliasesKeyCertFileResult {

@@ -41,7 +41,7 @@ pub mod detector_feature {
     pub struct DetectorFeatureArgs {
         /// Additional feature configuration block for features`EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
         #[builder(into, default)]
-        pub additional_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub additional_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::guardduty::DetectorFeatureAdditionalConfiguration,
@@ -50,13 +50,13 @@ pub mod detector_feature {
         >,
         /// Amazon GuardDuty detector ID.
         #[builder(into)]
-        pub detector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detector_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the detector feature. Valid values: `S3_DATA_EVENTS`, `EKS_AUDIT_LOGS`, `EBS_MALWARE_PROTECTION`, `RDS_LOGIN_EVENTS`, `EKS_RUNTIME_MONITORING`, `LAMBDA_NETWORK_LOGS`, `RUNTIME_MONITORING`. Only one of two features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING` can be added, adding both features will cause an error. Refer to the [AWS Documentation](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DetectorFeatureConfiguration.html) for the current list of supported values.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The status of the detector feature. Valid values: `ENABLED`, `DISABLED`.
         #[builder(into)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub status: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DetectorFeatureResult {

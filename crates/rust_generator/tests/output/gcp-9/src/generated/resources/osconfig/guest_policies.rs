@@ -171,15 +171,15 @@ pub mod guest_policies {
         /// [handles assignment conflicts](https://cloud.google.com/compute/docs/os-config-management/create-guest-policy#handle-conflicts).
         /// Structure is documented below.
         #[builder(into)]
-        pub assignment: pulumi_gestalt_rust::InputOrOutput<
+        pub assignment: pulumi_gestalt_rust::Input<
             super::super::types::osconfig::GuestPoliciesAssignment,
         >,
         /// Description of the guest policy. Length of the description is limited to 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The etag for this guest policy. If this is provided on update, it must match the server's etag.
         #[builder(into, default)]
-        pub etag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub etag: pulumi_gestalt_rust::Input<Option<String>>,
         /// The logical name of the guest policy in the project with the following restrictions:
         /// * Must contain only lowercase letters, numbers, and hyphens.
         /// * Must start with a letter.
@@ -187,24 +187,24 @@ pub mod guest_policies {
         /// * Must end with a number or a letter.
         /// * Must be unique within the project.
         #[builder(into)]
-        pub guest_policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub guest_policy_id: pulumi_gestalt_rust::Input<String>,
         /// A list of package repositories to configure on the VM instance. This is done before any other configs are applied so
         /// they can use these repos. Package repositories are only configured if the corresponding package manager(s) are
         /// available.
         #[builder(into, default)]
-        pub package_repositories: pulumi_gestalt_rust::InputOrOutput<
+        pub package_repositories: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::osconfig::GuestPoliciesPackageRepository>>,
         >,
         /// The software packages to be managed by this policy.
         #[builder(into, default)]
-        pub packages: pulumi_gestalt_rust::InputOrOutput<
+        pub packages: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::osconfig::GuestPoliciesPackage>>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of Recipes to install on the VM instance.
         #[builder(into, default)]
-        pub recipes: pulumi_gestalt_rust::InputOrOutput<
+        pub recipes: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::osconfig::GuestPoliciesRecipe>>,
         >,
     }

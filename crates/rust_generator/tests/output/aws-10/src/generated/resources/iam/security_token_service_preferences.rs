@@ -27,7 +27,7 @@ pub mod security_token_service_preferences {
     pub struct SecurityTokenServicePreferencesArgs {
         /// The version of the STS global endpoint token. Valid values: `v1Token`, `v2Token`.
         #[builder(into)]
-        pub global_endpoint_token_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_endpoint_token_version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SecurityTokenServicePreferencesResult {

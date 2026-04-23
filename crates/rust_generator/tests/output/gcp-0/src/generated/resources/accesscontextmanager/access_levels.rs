@@ -72,7 +72,7 @@ pub mod access_levels {
         /// The desired Access Levels that should replace all existing Access Levels in the Access Policy.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub access_levels: pulumi_gestalt_rust::InputOrOutput<
+        pub access_levels: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::accesscontextmanager::AccessLevelsAccessLevel>,
             >,
@@ -83,7 +83,7 @@ pub mod access_levels {
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessLevelsResult {

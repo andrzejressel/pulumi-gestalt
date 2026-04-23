@@ -11,21 +11,21 @@ pub mod get_open_zfs_snapshot {
         /// One or more name/value pairs to filter off of. The
         /// supported names are file-system-id or volume-id.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::fsx::GetOpenZfsSnapshotFilter>>,
         >,
         /// If more than one result is returned, use the most recent snapshot.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Name of the snapshot.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Returns information on a specific snapshot_id.
         #[builder(into, default)]
-        pub snapshot_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub snapshot_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// List of Tag values, with a maximum of 50 elements.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

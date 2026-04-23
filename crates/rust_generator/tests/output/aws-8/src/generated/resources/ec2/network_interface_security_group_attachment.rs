@@ -95,10 +95,10 @@ pub mod network_interface_security_group_attachment {
     pub struct NetworkInterfaceSecurityGroupAttachmentArgs {
         /// The ID of the network interface to attach to.
         #[builder(into)]
-        pub network_interface_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_interface_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the security group.
         #[builder(into)]
-        pub security_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NetworkInterfaceSecurityGroupAttachmentResult {

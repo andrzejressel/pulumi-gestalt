@@ -55,27 +55,27 @@ pub mod certificate_issuer {
     pub struct CertificateIssuerArgs {
         /// The account number with the third-party Certificate Issuer.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `admin` blocks as defined below.
         #[builder(into, default)]
-        pub admins: pulumi_gestalt_rust::InputOrOutput<
+        pub admins: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::keyvault::CertificateIssuerAdmin>>,
         >,
         /// The ID of the Key Vault in which to create the Certificate Issuer. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Key Vault Certificate Issuer. Changing this forces a new Key Vault Certificate Issuer to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the organization as provided to the issuer.
         #[builder(into, default)]
-        pub org_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub org_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The password associated with the account and organization ID at the third-party Certificate Issuer. If not specified, will not overwrite any previous value.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the third-party Certificate Issuer. Possible values are: `DigiCert`, `GlobalSign`, `OneCertV2-PrivateCA`, `OneCertV2-PublicCA` and `SslAdminV2`.
         #[builder(into)]
-        pub provider_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provider_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CertificateIssuerResult {

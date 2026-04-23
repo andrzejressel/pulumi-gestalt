@@ -10,10 +10,10 @@ pub mod get_client {
     pub struct GetClientArgs {
         /// The name of the brand.
         #[builder(into)]
-        pub brand: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub brand: pulumi_gestalt_rust::Input<String>,
         /// The client_id of the brand.
         #[builder(into)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub client_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetClientResult {

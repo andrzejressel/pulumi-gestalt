@@ -10,10 +10,10 @@ pub mod get_confidential_ledger {
     pub struct GetConfidentialLedgerArgs {
         /// Specifies the name of this Confidential Ledger.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Resource Group where this Confidential Ledger exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetConfidentialLedgerResult {

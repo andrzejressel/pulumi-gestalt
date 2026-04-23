@@ -35,7 +35,7 @@ pub mod vpc_ipam_organization_admin_account {
     #[allow(dead_code)]
     pub struct VpcIpamOrganizationAdminAccountArgs {
         #[builder(into)]
-        pub delegated_admin_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub delegated_admin_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcIpamOrganizationAdminAccountResult {

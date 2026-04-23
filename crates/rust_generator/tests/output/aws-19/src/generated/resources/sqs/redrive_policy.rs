@@ -52,10 +52,10 @@ pub mod redrive_policy {
     pub struct RedrivePolicyArgs {
         /// The URL of the SQS Queue to which to attach the policy
         #[builder(into)]
-        pub queue_url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub queue_url: pulumi_gestalt_rust::Input<String>,
         /// The JSON redrive policy for the SQS queue. Accepts two key/val pairs: `deadLetterTargetArn` and `maxReceiveCount`. Learn more in the [Amazon SQS dead-letter queues documentation](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html).
         #[builder(into)]
-        pub redrive_policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub redrive_policy: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RedrivePolicyResult {

@@ -98,46 +98,46 @@ pub mod ml_transform {
     pub struct MLTransformArgs {
         /// Description of the ML Transform.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The version of glue to use, for example "1.0". For information about available versions, see the [AWS Glue Release Notes](https://docs.aws.amazon.com/glue/latest/dg/release-notes.html).
         #[builder(into, default)]
-        pub glue_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub glue_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of AWS Glue table definitions used by the transform. see Input Record Tables.
         #[builder(into)]
-        pub input_record_tables: pulumi_gestalt_rust::InputOrOutput<
+        pub input_record_tables: pulumi_gestalt_rust::Input<
             Vec<super::super::types::glue::MlTransformInputRecordTable>,
         >,
         /// The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from `2` to `100` DPUs; the default is `10`. `max_capacity` is a mutually exclusive option with `number_of_workers` and `worker_type`.
         #[builder(into, default)]
-        pub max_capacity: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub max_capacity: pulumi_gestalt_rust::Input<Option<f64>>,
         /// The maximum number of times to retry this ML Transform if it fails.
         #[builder(into, default)]
-        pub max_retries: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_retries: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name you assign to this ML Transform. It must be unique in your account.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of workers of a defined `worker_type` that are allocated when an ML Transform runs. Required with `worker_type`.
         #[builder(into, default)]
-        pub number_of_workers: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub number_of_workers: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type. see Parameters.
         #[builder(into)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             super::super::types::glue::MlTransformParameters,
         >,
         /// The ARN of the IAM role associated with this ML Transform.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ML Transform timeout in minutes. The default is 2880 minutes (48 hours).
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The type of predefined worker that is allocated when an ML Transform runs. Accepts a value of `Standard`, `G.1X`, or `G.2X`. Required with `number_of_workers`.
         #[builder(into, default)]
-        pub worker_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub worker_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MLTransformResult {

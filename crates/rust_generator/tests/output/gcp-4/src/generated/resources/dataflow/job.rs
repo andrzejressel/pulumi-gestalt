@@ -115,80 +115,76 @@ pub mod job {
     pub struct JobArgs {
         /// List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
         #[builder(into, default)]
-        pub additional_experiments: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub additional_experiments: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Enable/disable the use of [Streaming Engine](https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#streaming-engine) for the job. Note that Streaming Engine is enabled by default for pipelines developed against the Beam SDK for Python v2.21.0 or later when using Python 3.
         #[builder(into, default)]
-        pub enable_streaming_engine: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enable_streaming_engine: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The configuration for VM IPs.  Options are `"WORKER_IP_PUBLIC"` or `"WORKER_IP_PRIVATE"`.
         #[builder(into, default)]
-        pub ip_configuration: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ip_configuration: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name for the Cloud KMS key for the job. Key format is: `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`
         #[builder(into, default)]
-        pub kms_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// User labels to be specified for the job. Keys and values should follow the restrictions
         /// specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration. Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The machine type to use for the job.
         #[builder(into, default)]
-        pub machine_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub machine_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of workers permitted to work on the job.  More workers may improve processing speed at additional cost.
         #[builder(into, default)]
-        pub max_workers: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_workers: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A unique name for the resource, required by Dataflow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network to which VMs will be assigned. If it is not provided, "default" will be used.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// One of "drain" or "cancel".  Specifies behavior of deletion during `pulumi destroy`.  See above note.
         #[builder(into, default)]
-        pub on_delete: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub on_delete: pulumi_gestalt_rust::Input<Option<String>>,
         /// **Template specific** Key/Value pairs to be forwarded to the pipeline's options; keys are
         /// case-sensitive based on the language on which the pipeline is coded, mostly Java.
         /// **Note**: do not configure Dataflow options here in parameters.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The project in which the resource belongs. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region in which the created job should run.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Service Account email used to create the job. This should be just an email e.g. `myserviceaccount@myproject.iam.gserviceaccount.com`. Do not include any `serviceAccount:` or other prefix.
         #[builder(into, default)]
-        pub service_account_email: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_account_email: pulumi_gestalt_rust::Input<Option<String>>,
         /// If set to `true`, Pulumi will treat `DRAINING` and `CANCELLING` as terminal states when deleting the resource, and will remove the resource from Pulumi state and move on.  See above note.
         #[builder(into, default)]
-        pub skip_wait_on_job_termination: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub skip_wait_on_job_termination: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The subnetwork to which VMs will be assigned. Should be of the form "regions/REGION/subnetworks/SUBNETWORK". If the [subnetwork is located in a Shared VPC network](https://cloud.google.com/dataflow/docs/guides/specifying-networks#shared), you must use the complete URL. For example `"googleapis.com/compute/v1/projects/PROJECT_ID/regions/REGION/subnetworks/SUBNET_NAME"`
         #[builder(into, default)]
-        pub subnetwork: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnetwork: pulumi_gestalt_rust::Input<Option<String>>,
         /// A writeable location on GCS for the Dataflow job to dump its temporary data.
         ///
         /// - - -
         #[builder(into)]
-        pub temp_gcs_location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub temp_gcs_location: pulumi_gestalt_rust::Input<String>,
         /// The GCS path to the Dataflow job template.
         #[builder(into)]
-        pub template_gcs_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub template_gcs_path: pulumi_gestalt_rust::Input<String>,
         /// Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced with the corresponding name prefixes of the new job. This field is not used outside of update.
         #[builder(into, default)]
-        pub transform_name_mapping: pulumi_gestalt_rust::InputOrOutput<
+        pub transform_name_mapping: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The zone in which the created job should run. If it is not provided, the provider zone is used.
         #[builder(into, default)]
-        pub zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct JobResult {

@@ -40,29 +40,29 @@ pub mod app {
     pub struct AppArgs {
         /// The name of the app.
         #[builder(into)]
-        pub app_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_name: pulumi_gestalt_rust::Input<String>,
         /// The type of app. Valid values are `JupyterServer`, `KernelGateway`, `RStudioServerPro`, `RSessionGateway`, `TensorBoard`, `CodeEditor`, `JupyterLab`, `DetailedProfiler`, and `Canvas`.
         #[builder(into)]
-        pub app_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_type: pulumi_gestalt_rust::Input<String>,
         /// The domain ID.
         #[builder(into)]
-        pub domain_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_id: pulumi_gestalt_rust::Input<String>,
         /// The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.See Resource Spec below.
         #[builder(into, default)]
-        pub resource_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::AppResourceSpec>,
         >,
         /// The name of the space. At least one of `user_profile_name` or `space_name` required.
         #[builder(into, default)]
-        pub space_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub space_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The user profile name. At least one of `user_profile_name` or `space_name` required.
         #[builder(into, default)]
-        pub user_profile_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_profile_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppResult {

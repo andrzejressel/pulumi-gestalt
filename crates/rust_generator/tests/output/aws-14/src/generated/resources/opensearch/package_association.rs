@@ -55,10 +55,10 @@ pub mod package_association {
     pub struct PackageAssociationArgs {
         /// Name of the domain to associate the package with.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Internal ID of the package to associate with a domain.
         #[builder(into)]
-        pub package_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub package_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PackageAssociationResult {

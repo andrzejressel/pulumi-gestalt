@@ -10,10 +10,10 @@ pub mod get_public_ipv_4_pool {
     pub struct GetPublicIpv4PoolArgs {
         /// AWS resource IDs of a public IPv4 pool (as a string) for which this data source will fetch detailed information.
         #[builder(into)]
-        pub pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pool_id: pulumi_gestalt_rust::Input<String>,
         /// Any tags for the address pool.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

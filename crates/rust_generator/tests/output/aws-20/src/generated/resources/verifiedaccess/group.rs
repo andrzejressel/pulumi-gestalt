@@ -58,25 +58,25 @@ pub mod group {
     pub struct GroupArgs {
         /// Description of the verified access group.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The policy document that is associated with this resource.
         #[builder(into, default)]
-        pub policy_document: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_document: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block to use KMS keys for server-side encryption.
         #[builder(into, default)]
-        pub sse_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub sse_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::verifiedaccess::GroupSseConfiguration>,
         >,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The id of the verified access instance this group is associated with.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub verifiedaccess_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub verifiedaccess_instance_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GroupResult {

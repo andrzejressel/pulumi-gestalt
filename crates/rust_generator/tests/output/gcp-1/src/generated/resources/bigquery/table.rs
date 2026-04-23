@@ -95,30 +95,30 @@ pub mod table {
     pub struct TableArgs {
         /// Specifies the configuration of a BigLake managed table. Structure is documented below
         #[builder(into, default)]
-        pub biglake_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub biglake_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableBiglakeConfiguration>,
         >,
         /// Specifies column names to use for data clustering.
         /// Up to four top-level columns are allowed, and should be specified in
         /// descending priority order.
         #[builder(into, default)]
-        pub clusterings: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub clusterings: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The dataset ID to create the table in.
         /// Changing this forces a new resource to be created.
         #[builder(into)]
-        pub dataset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dataset_id: pulumi_gestalt_rust::Input<String>,
         /// Whether or not to allow the provider to destroy the instance. Unless this field is set to false
         /// in state, a `=destroy` or `=update` that would delete the instance will fail.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The field description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies how the table should be encrypted.
         /// If left blank, the table will be encrypted with a Google-managed key; that process
         /// is transparent to the user.  Structure is documented below.
         #[builder(into, default)]
-        pub encryption_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableEncryptionConfiguration>,
         >,
         /// The time when this table expires, in
@@ -126,30 +126,30 @@ pub mod table {
         /// indefinitely. Expired tables will be deleted and their storage
         /// reclaimed.
         #[builder(into, default)]
-        pub expiration_time: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub expiration_time: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Describes the data format,
         /// location, and other properties of a table stored outside of BigQuery.
         /// By defining these properties, the data source can then be queried as
         /// if it were a standard BigQuery table. Structure is documented below.
         #[builder(into, default)]
-        pub external_data_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub external_data_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableExternalDataConfiguration>,
         >,
         /// A descriptive name for the table.
         #[builder(into, default)]
-        pub friendly_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub friendly_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of labels to assign to the resource.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// If specified, configures this table as a materialized view.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub materialized_view: pulumi_gestalt_rust::InputOrOutput<
+        pub materialized_view: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableMaterializedView>,
         >,
         /// The maximum staleness of data that could be
@@ -157,62 +157,62 @@ pub mod table {
         /// string encoding of [SQL IntervalValue
         /// type](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#interval_type).
         #[builder(into, default)]
-        pub max_staleness: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub max_staleness: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// If specified, configures range-based
         /// partitioning for this table. Structure is documented below.
         #[builder(into, default)]
-        pub range_partitioning: pulumi_gestalt_rust::InputOrOutput<
+        pub range_partitioning: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableRangePartitioning>,
         >,
         /// If set to true, queries over this table
         /// require a partition filter that can be used for partition elimination to be
         /// specified.
         #[builder(into, default)]
-        pub require_partition_filter: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub require_partition_filter: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The tags attached to this table. Tag keys are
         /// globally unique. Tag key is expected to be in the namespaced format, for
         /// example "123456789012/environment" where 123456789012 is the ID of the
         /// parent organization or project resource for this tag key. Tag value is
         /// expected to be the short name, for example "Production".
         #[builder(into, default)]
-        pub resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A JSON schema for the table.
         #[builder(into, default)]
-        pub schema: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub schema: pulumi_gestalt_rust::Input<Option<String>>,
         /// Defines the primary key and foreign keys.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub table_constraints: pulumi_gestalt_rust::InputOrOutput<
+        pub table_constraints: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableTableConstraints>,
         >,
         /// A unique ID for the resource.
         /// Changing this forces a new resource to be created.
         #[builder(into)]
-        pub table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_id: pulumi_gestalt_rust::Input<String>,
         /// Replication info of a table created
         /// using "AS REPLICA" DDL like:
         /// `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv`.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub table_replication_info: pulumi_gestalt_rust::InputOrOutput<
+        pub table_replication_info: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableTableReplicationInfo>,
         >,
         /// If specified, configures time-based
         /// partitioning for this table. Structure is documented below.
         #[builder(into, default)]
-        pub time_partitioning: pulumi_gestalt_rust::InputOrOutput<
+        pub time_partitioning: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableTimePartitioning>,
         >,
         /// If specified, configures this table as a view.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub view: pulumi_gestalt_rust::InputOrOutput<
+        pub view: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::TableView>,
         >,
     }

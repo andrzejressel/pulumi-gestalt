@@ -69,24 +69,24 @@ pub mod trust_anchor {
     pub struct TrustAnchorArgs {
         /// Whether or not the Trust Anchor should be enabled.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Trust Anchor.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub notification_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_settings: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::rolesanywhere::TrustAnchorNotificationSetting>,
             >,
         >,
         /// The source of trust, documented below
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             super::super::types::rolesanywhere::TrustAnchorSource,
         >,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

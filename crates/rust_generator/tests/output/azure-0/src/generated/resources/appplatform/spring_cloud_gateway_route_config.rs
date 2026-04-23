@@ -83,41 +83,41 @@ pub mod spring_cloud_gateway_route_config {
     pub struct SpringCloudGatewayRouteConfigArgs {
         /// Specifies a list of filters which are used to modify the request before sending it to the target endpoint, or the received response in app level.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub filters: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The name which should be used for this Spring Cloud Gateway Route Config. Changing this forces a new Spring Cloud Gateway Route Config to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `open_api` blocks as defined below.
         #[builder(into, default)]
-        pub open_api: pulumi_gestalt_rust::InputOrOutput<
+        pub open_api: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::appplatform::SpringCloudGatewayRouteConfigOpenApi,
             >,
         >,
         /// Specifies a list of conditions to evaluate a route for each request in app level. Each predicate may be evaluated against request headers and parameter values. All of the predicates associated with a route must evaluate to true for the route to be matched to the request.
         #[builder(into, default)]
-        pub predicates: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub predicates: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Specifies the protocol of routed Spring Cloud App. Allowed values are `HTTP` and `HTTPS`. Defaults to `HTTP`.
         ///
         /// > **Note:** You likely want to use `HTTPS` in a production environment, since `HTTP` offers no encryption.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// One or more `route` blocks as defined below.
         #[builder(into, default)]
-        pub routes: pulumi_gestalt_rust::InputOrOutput<
+        pub routes: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::appplatform::SpringCloudGatewayRouteConfigRoute>,
             >,
         >,
         /// The ID of the Spring Cloud App.
         #[builder(into, default)]
-        pub spring_cloud_app_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub spring_cloud_app_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud Gateway. Changing this forces a new Spring Cloud Gateway Route Config to be created.
         #[builder(into)]
-        pub spring_cloud_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// Should the sso validation be enabled in app level?
         #[builder(into, default)]
-        pub sso_validation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sso_validation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudGatewayRouteConfigResult {

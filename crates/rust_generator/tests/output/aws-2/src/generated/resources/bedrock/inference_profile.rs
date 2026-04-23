@@ -41,24 +41,24 @@ pub mod inference_profile {
     pub struct InferenceProfileArgs {
         /// The description of the inference profile.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The source of the model this inference profile will track metrics and cost for. See `model_source`.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub model_source: pulumi_gestalt_rust::InputOrOutput<
+        pub model_source: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::InferenceProfileModelSource>,
         >,
         /// The name of the inference profile.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags for the inference profile.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::bedrock::InferenceProfileTimeouts>,
         >,
     }

@@ -450,80 +450,80 @@ pub mod metastore_service {
         /// Default value is `MYSQL`.
         /// Possible values are: `MYSQL`, `SPANNER`.
         #[builder(into, default)]
-        pub database_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub database_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates if the dataproc metastore should be protected against accidental deletions.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Information used to configure the Dataproc Metastore service to encrypt
         /// customer data at rest.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub encryption_config: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::MetastoreServiceEncryptionConfig>,
         >,
         /// Configuration information specific to running Hive metastore software as the metastore service.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub hive_metastore_config: pulumi_gestalt_rust::InputOrOutput<
+        pub hive_metastore_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::MetastoreServiceHiveMetastoreConfig>,
         >,
         /// User-defined labels for the metastore service.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location where the metastore service should reside.
         /// The default value is `global`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The one hour maintenance window of the metastore service.
         /// This specifies when the service can be restarted for maintenance purposes in UTC time.
         /// Maintenance window is not needed for services with the `SPANNER` database type.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_window: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::MetastoreServiceMaintenanceWindow>,
         >,
         /// The setting that defines how metastore metadata should be integrated with external services and systems.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub metadata_integration: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata_integration: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::MetastoreServiceMetadataIntegration>,
         >,
         /// The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:
         /// "projects/{projectNumber}/global/networks/{network_id}".
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// The configuration specifying the network settings for the Dataproc Metastore service.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub network_config: pulumi_gestalt_rust::InputOrOutput<
+        pub network_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::MetastoreServiceNetworkConfig>,
         >,
         /// The TCP port at which the metastore service is reached. Default: 9083.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The release channel of the service. If unspecified, defaults to `STABLE`.
         /// Default value is `STABLE`.
         /// Possible values are: `CANARY`, `STABLE`.
         #[builder(into, default)]
-        pub release_channel: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub release_channel: pulumi_gestalt_rust::Input<Option<String>>,
         /// Represents the scaling configuration of a metastore service.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub scaling_config: pulumi_gestalt_rust::InputOrOutput<
+        pub scaling_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::MetastoreServiceScalingConfig>,
         >,
         /// The configuration of scheduled backup for the metastore service.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub scheduled_backup: pulumi_gestalt_rust::InputOrOutput<
+        pub scheduled_backup: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::MetastoreServiceScheduledBackup>,
         >,
         /// The ID of the metastore service. The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_),
@@ -533,17 +533,17 @@ pub mod metastore_service {
         ///
         /// - - -
         #[builder(into)]
-        pub service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_id: pulumi_gestalt_rust::Input<String>,
         /// The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub telemetry_config: pulumi_gestalt_rust::InputOrOutput<
+        pub telemetry_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataproc::MetastoreServiceTelemetryConfig>,
         >,
         /// The tier of the service.
         /// Possible values are: `DEVELOPER`, `ENTERPRISE`.
         #[builder(into, default)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tier: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MetastoreServiceResult {

@@ -81,30 +81,30 @@ pub mod endpoint_eventhub {
     pub struct EndpointEventhubArgs {
         /// Type used to authenticate against the Event Hub endpoint. Possible values are `keyBased` and `identityBased`. Defaults to `keyBased`.
         #[builder(into, default)]
-        pub authentication_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authentication_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The connection string for the endpoint. This attribute can only be specified and is mandatory when `authentication_type` is `keyBased`.
         #[builder(into, default)]
-        pub connection_string: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_string: pulumi_gestalt_rust::Input<Option<String>>,
         /// URI of the Event Hubs Namespace endpoint. This attribute can only be specified and is mandatory when `authentication_type` is `identityBased`.
         #[builder(into, default)]
-        pub endpoint_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Event Hub. This attribute can only be specified and is mandatory when `authentication_type` is `identityBased`.
         #[builder(into, default)]
-        pub entity_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub entity_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the User Managed Identity used to authenticate against the Event Hub endpoint.
         ///
         /// > **NOTE:** `identity_id` can only be specified when `authentication_type` is `identityBased`. It must be one of the `identity_ids` of the Iot Hub. If not specified when `authentication_type` is `identityBased`, System Assigned Managed Identity of the Iot Hub will be used.
         #[builder(into, default)]
-        pub identity_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identity_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The IoTHub ID for the endpoint. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the endpoint. The name must be unique across endpoint types. The following names are reserved: `events`, `operationsMonitoringEvents`, `fileNotifications` and `$default`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group under which the Event Hub has been created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointEventhubResult {

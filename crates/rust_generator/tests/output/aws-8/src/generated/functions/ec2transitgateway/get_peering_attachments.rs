@@ -10,7 +10,7 @@ pub mod get_peering_attachments {
     pub struct GetPeeringAttachmentsArgs {
         /// One or more configuration blocks containing name-values filters. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::ec2transitgateway::GetPeeringAttachmentsFilter,

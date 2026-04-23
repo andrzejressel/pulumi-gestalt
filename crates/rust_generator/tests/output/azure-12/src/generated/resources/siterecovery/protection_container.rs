@@ -57,16 +57,16 @@ pub mod protection_container {
     pub struct ProtectionContainerArgs {
         /// The name of the protection container. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of fabric that should contain this protection container. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_fabric_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_fabric_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the vault that should be updated. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the resource group where the vault that should be updated is located. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProtectionContainerResult {

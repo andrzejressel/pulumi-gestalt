@@ -49,16 +49,16 @@ pub mod gateway_association_proposal {
     pub struct GatewayAssociationProposalArgs {
         /// VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.
         #[builder(into, default)]
-        pub allowed_prefixes: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub allowed_prefixes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the VGW or transit gateway with which to associate the Direct Connect gateway.
         #[builder(into)]
-        pub associated_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub associated_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// Direct Connect Gateway identifier.
         #[builder(into)]
-        pub dx_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dx_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// AWS Account identifier of the Direct Connect Gateway's owner.
         #[builder(into)]
-        pub dx_gateway_owner_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dx_gateway_owner_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GatewayAssociationProposalResult {

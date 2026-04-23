@@ -167,24 +167,24 @@ pub mod ai_endpoint {
     pub struct AiEndpointArgs {
         /// If true, the endpoint will be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS will be isolated from other users' traffic and will have better performance and reliability. Note: Once you enabled dedicated endpoint, you won't be able to send request to the shared DNS {region}-aiplatform.googleapis.com. The limitation will be removed soon.
         #[builder(into, default)]
-        pub dedicated_endpoint_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub dedicated_endpoint_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The description of the Endpoint.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. The display name of the Endpoint. The name can be up to 128 characters long and can consist of any UTF-8 characters.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Customer-managed encryption key spec for an Endpoint. If set, this Endpoint and all sub-resources of this Endpoint will be secured by this key.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub encryption_spec: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_spec: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiEndpointEncryptionSpec>,
         >,
         /// The labels with user-defined metadata to organize your Endpoints. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the resource
@@ -192,17 +192,17 @@ pub mod ai_endpoint {
         ///
         /// - - -
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// The resource name of the Endpoint. The name must be numeric with no leading zeros and can be at most 10 digits.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The full name of the Google Compute Engine [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks) to which the Endpoint should be peered. Private services access must already be configured for the network. If left unspecified, the Endpoint is not peered with any network. Only one of the fields, network or enable_private_service_connect, can be set. [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert): `projects/{project}/global/networks/{network}`. Where `{project}` is a project number, as in `12345`, and `{network}` is network name. Only one of the fields, `network` or `privateServiceConnectConfig`, can be set.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configures the request-response logging for online prediction.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub predict_request_response_logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub predict_request_response_logging_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiEndpointPredictRequestResponseLoggingConfig,
             >,
@@ -210,16 +210,16 @@ pub mod ai_endpoint {
         /// Configuration for private service connect. `network` and `privateServiceConnectConfig` are mutually exclusive.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub private_service_connect_config: pulumi_gestalt_rust::InputOrOutput<
+        pub private_service_connect_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::vertex::AiEndpointPrivateServiceConnectConfig>,
         >,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region for the resource
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map from a DeployedModel's id to the percentage of this Endpoint's traffic that should be forwarded to that DeployedModel.
         /// If a DeployedModel's id is not listed in this map, then it receives no traffic.
         /// The traffic percentage values must add up to 100, or map must be empty if the Endpoint is to not accept any traffic at a moment. See
@@ -227,7 +227,7 @@ pub mod ai_endpoint {
         /// [documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1beta1/projects.locations.endpoints/deployModel) for more information.
         /// > **Note:** To set the map to empty, set `"{}"`, apply, and then remove the field from your config.
         #[builder(into, default)]
-        pub traffic_split: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub traffic_split: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiEndpointResult {

@@ -66,40 +66,40 @@ pub mod fleet {
     pub struct FleetArgs {
         /// Number of machines allocated to the ﬂeet.
         #[builder(into)]
-        pub base_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub base_capacity: pulumi_gestalt_rust::Input<i32>,
         /// Compute resources the compute fleet uses. See [compute types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types) for more information and valid values.
         #[builder(into)]
-        pub compute_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub compute_type: pulumi_gestalt_rust::Input<String>,
         /// Environment type of the compute fleet. See [environment types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types) for more information and valid values.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub environment_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub environment_type: pulumi_gestalt_rust::Input<String>,
         /// The service role associated with the compute fleet.
         #[builder(into, default)]
-        pub fleet_service_role: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fleet_service_role: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon Machine Image (AMI) of the compute fleet.
         #[builder(into, default)]
-        pub image_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Fleet name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Overflow behavior for compute fleet. Valid values: `ON_DEMAND`, `QUEUE`.
         #[builder(into, default)]
-        pub overflow_behavior: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub overflow_behavior: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block. Detailed below. This option is only valid when your overflow behavior is `QUEUE`.
         #[builder(into, default)]
-        pub scaling_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub scaling_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::codebuild::FleetScalingConfiguration>,
         >,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub vpc_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_configs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::codebuild::FleetVpcConfig>>,
         >,
     }

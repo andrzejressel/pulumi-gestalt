@@ -57,25 +57,25 @@ pub mod cluster_principal_assignment {
     pub struct ClusterPrincipalAssignmentArgs {
         /// The name of the cluster in which to create the resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Kusto cluster principal assignment. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The object id of the principal. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_id: pulumi_gestalt_rust::Input<String>,
         /// The type of the principal. Valid values include `App`, `Group`, `User`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub principal_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_type: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The cluster role assigned to the principal. Valid values include `AllDatabasesAdmin` and `AllDatabasesViewer`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         /// The tenant id in which the principal resides. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ClusterPrincipalAssignmentResult {

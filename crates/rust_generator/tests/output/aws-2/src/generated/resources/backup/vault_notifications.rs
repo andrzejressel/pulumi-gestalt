@@ -62,13 +62,13 @@ pub mod vault_notifications {
     pub struct VaultNotificationsArgs {
         /// An array of events that indicate the status of jobs to back up resources to the backup vault.
         #[builder(into)]
-        pub backup_vault_events: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub backup_vault_events: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Name of the backup vault to add notifications for.
         #[builder(into)]
-        pub backup_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events
         #[builder(into)]
-        pub sns_topic_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sns_topic_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VaultNotificationsResult {

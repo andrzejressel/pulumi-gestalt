@@ -117,35 +117,35 @@ pub mod database {
         /// for more details and supported values. Postgres databases only support
         /// a value of `UTF8` at creation time.
         #[builder(into, default)]
-        pub charset: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub charset: pulumi_gestalt_rust::Input<Option<String>>,
         /// The collation value. See MySQL's
         /// [Supported Character Sets and Collations](https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html)
         /// and Postgres' [Collation Support](https://www.postgresql.org/docs/9.6/static/collation.html)
         /// for more details and supported values. Postgres databases only support
         /// a value of `en_US.UTF8` at creation time.
         #[builder(into, default)]
-        pub collation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub collation: pulumi_gestalt_rust::Input<Option<String>>,
         /// The deletion policy for the database. Setting ABANDON allows the resource
         /// to be abandoned rather than deleted. This is useful for Postgres, where databases cannot be
         /// deleted from the API if there are users other than cloudsqlsuperuser with access. Possible
         /// values are: "ABANDON", "DELETE". Defaults to "DELETE".
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Cloud SQL instance. This does not include the project
         /// ID.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The name of the database in the Cloud SQL instance.
         /// This does not include the project ID or instance name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DatabaseResult {

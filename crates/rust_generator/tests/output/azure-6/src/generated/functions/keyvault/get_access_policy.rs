@@ -12,7 +12,7 @@ pub mod get_access_policy {
         /// `Secret Management`, `Certificate Management`, `Key & Secret Management`, `Key & Certificate Management`,
         /// `Secret & Certificate Management`,  `Key, Secret, & Certificate Management`
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccessPolicyResult {

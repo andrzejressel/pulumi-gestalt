@@ -13,20 +13,20 @@ pub mod get_instance_template {
         /// If multiple instance templates match, either adjust the filter or specify `most_recent`.
         /// One of `name`, `filter` or `self_link_unique` must be provided.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// If `filter` is provided, ensures the most recent template is returned when multiple instance templates match. One of `name`, `filter` or `self_link_unique` must be provided.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the instance template. One of `name`, `filter` or `self_link_unique` must be provided.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If `project` is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The self_link_unique URI of the instance template. One of `name`, `filter` or `self_link_unique` must be provided.
         #[builder(into, default)]
-        pub self_link_unique: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub self_link_unique: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetInstanceTemplateResult {

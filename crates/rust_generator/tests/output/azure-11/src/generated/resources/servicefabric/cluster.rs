@@ -57,27 +57,27 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// A List of one or more features which should be enabled, such as `DnsService`.
         #[builder(into, default)]
-        pub add_on_features: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub add_on_features: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An `azure_active_directory` block as defined below.
         #[builder(into, default)]
-        pub azure_active_directory: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_active_directory: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicefabric::ClusterAzureActiveDirectory>,
         >,
         /// A `certificate` block as defined below. Conflicts with `certificate_common_names`.
         #[builder(into, default)]
-        pub certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicefabric::ClusterCertificate>,
         >,
         /// A `certificate_common_names` block as defined below. Conflicts with `certificate`.
         #[builder(into, default)]
-        pub certificate_common_names: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate_common_names: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicefabric::ClusterCertificateCommonNames>,
         >,
         /// A `client_certificate_common_name` block as defined below.
         ///
         /// > **NOTE:** If Client Certificates are enabled then at a Certificate must be configured on the cluster.
         #[builder(into, default)]
-        pub client_certificate_common_names: pulumi_gestalt_rust::InputOrOutput<
+        pub client_certificate_common_names: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::servicefabric::ClusterClientCertificateCommonName,
@@ -86,7 +86,7 @@ pub mod cluster {
         >,
         /// One or more `client_certificate_thumbprint` blocks as defined below.
         #[builder(into, default)]
-        pub client_certificate_thumbprints: pulumi_gestalt_rust::InputOrOutput<
+        pub client_certificate_thumbprints: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::servicefabric::ClusterClientCertificateThumbprint,
@@ -95,75 +95,75 @@ pub mod cluster {
         >,
         /// Required if Upgrade Mode set to `Manual`, Specifies the Version of the Cluster Code of the cluster.
         #[builder(into, default)]
-        pub cluster_code_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_code_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `diagnostics_config` block as defined below.
         #[builder(into, default)]
-        pub diagnostics_config: pulumi_gestalt_rust::InputOrOutput<
+        pub diagnostics_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicefabric::ClusterDiagnosticsConfig>,
         >,
         /// One or more `fabric_settings` blocks as defined below.
         #[builder(into, default)]
-        pub fabric_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub fabric_settings: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::servicefabric::ClusterFabricSetting>>,
         >,
         /// Specifies the Azure Region where the Service Fabric Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Management Endpoint of the cluster such as `http://example.com`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub management_endpoint: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub management_endpoint: pulumi_gestalt_rust::Input<String>,
         /// The name of the Service Fabric Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `node_type` blocks as defined below.
         #[builder(into)]
-        pub node_types: pulumi_gestalt_rust::InputOrOutput<
+        pub node_types: pulumi_gestalt_rust::Input<
             Vec<super::super::types::servicefabric::ClusterNodeType>,
         >,
         /// Specifies the Reliability Level of the Cluster. Possible values include `None`, `Bronze`, `Silver`, `Gold` and `Platinum`.
         ///
         /// > **NOTE:** The Reliability Level of the Cluster depends on the number of nodes in the Cluster: `Platinum` requires at least 9 VM's, `Gold` requires at least 7 VM's, `Silver` requires at least 5 VM's, `Bronze` requires at least 3 VM's.
         #[builder(into)]
-        pub reliability_level: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub reliability_level: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Service Fabric Cluster exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `reverse_proxy_certificate` block as defined below. Conflicts with `reverse_proxy_certificate_common_names`.
         #[builder(into, default)]
-        pub reverse_proxy_certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub reverse_proxy_certificate: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicefabric::ClusterReverseProxyCertificate>,
         >,
         /// A `reverse_proxy_certificate_common_names` block as defined below. Conflicts with `reverse_proxy_certificate`.
         #[builder(into, default)]
-        pub reverse_proxy_certificate_common_names: pulumi_gestalt_rust::InputOrOutput<
+        pub reverse_proxy_certificate_common_names: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::servicefabric::ClusterReverseProxyCertificateCommonNames,
             >,
         >,
         /// Specifies the logical grouping of VMs in upgrade domains. Possible values are `Hierarchical` or `Parallel`.
         #[builder(into, default)]
-        pub service_fabric_zonal_upgrade_mode: pulumi_gestalt_rust::InputOrOutput<
+        pub service_fabric_zonal_upgrade_mode: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the Upgrade Mode of the cluster. Possible values are `Automatic` or `Manual`.
         #[builder(into)]
-        pub upgrade_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub upgrade_mode: pulumi_gestalt_rust::Input<String>,
         /// A `upgrade_policy` block as defined below.
         #[builder(into, default)]
-        pub upgrade_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub upgrade_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::servicefabric::ClusterUpgradePolicy>,
         >,
         /// Specifies the Image expected for the Service Fabric Cluster, such as `Windows`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub vm_image: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vm_image: pulumi_gestalt_rust::Input<String>,
         /// Specifies the upgrade mode for the virtual machine scale set updates that happen in all availability zones at once. Possible values are `Hierarchical` or `Parallel`.
         #[builder(into, default)]
-        pub vmss_zonal_upgrade_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vmss_zonal_upgrade_mode: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ClusterResult {

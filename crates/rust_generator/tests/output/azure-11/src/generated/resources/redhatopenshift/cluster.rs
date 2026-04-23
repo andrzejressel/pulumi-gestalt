@@ -144,51 +144,51 @@ pub mod cluster {
     pub struct ClusterArgs {
         /// An `api_server_profile` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_server_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub api_server_profile: pulumi_gestalt_rust::Input<
             super::super::types::redhatopenshift::ClusterApiServerProfile,
         >,
         /// A `cluster_profile` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cluster_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub cluster_profile: pulumi_gestalt_rust::Input<
             super::super::types::redhatopenshift::ClusterClusterProfile,
         >,
         /// An `ingress_profile` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub ingress_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub ingress_profile: pulumi_gestalt_rust::Input<
             super::super::types::redhatopenshift::ClusterIngressProfile,
         >,
         /// The location where the Azure Red Hat OpenShift Cluster should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `main_profile` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub main_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub main_profile: pulumi_gestalt_rust::Input<
             super::super::types::redhatopenshift::ClusterMainProfile,
         >,
         /// The name of the Azure Red Hat OpenShift Cluster to create. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_profile` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub network_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub network_profile: pulumi_gestalt_rust::Input<
             super::super::types::redhatopenshift::ClusterNetworkProfile,
         >,
         /// Specifies the Resource Group where the Azure Red Hat OpenShift Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `service_principal` block as defined below.
         #[builder(into)]
-        pub service_principal: pulumi_gestalt_rust::InputOrOutput<
+        pub service_principal: pulumi_gestalt_rust::Input<
             super::super::types::redhatopenshift::ClusterServicePrincipal,
         >,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `worker_profile` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub worker_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub worker_profile: pulumi_gestalt_rust::Input<
             super::super::types::redhatopenshift::ClusterWorkerProfile,
         >,
     }

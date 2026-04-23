@@ -10,10 +10,10 @@ pub mod get_saml_provider {
     pub struct GetSamlProviderArgs {
         /// ARN assigned by AWS for the provider.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// Tags attached to the SAML provider.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

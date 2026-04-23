@@ -225,60 +225,58 @@ pub mod job_definition {
     pub struct JobDefinitionArgs {
         /// Valid [container properties](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html) provided as a single valid JSON document. This parameter is only valid if the `type` parameter is `container`.
         #[builder(into, default)]
-        pub container_properties: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub container_properties: pulumi_gestalt_rust::Input<Option<String>>,
         /// When updating a job definition a new revision is created. This parameter determines if the previous version is `deregistered` (`INACTIVE`) or left  `ACTIVE`. Defaults to `true`.
         #[builder(into, default)]
-        pub deregister_on_new_revision: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub deregister_on_new_revision: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Valid [ECS properties](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html) provided as a single valid JSON document. This parameter is only valid if the `type` parameter is `container`.
         #[builder(into, default)]
-        pub ecs_properties: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ecs_properties: pulumi_gestalt_rust::Input<Option<String>>,
         /// Valid eks properties. This parameter is only valid if the `type` parameter is `container`.
         #[builder(into, default)]
-        pub eks_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub eks_properties: pulumi_gestalt_rust::Input<
             Option<super::super::types::batch::JobDefinitionEksProperties>,
         >,
         /// Name of the job definition.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Valid [node properties](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html) provided as a single valid JSON document. This parameter is required if the `type` parameter is `multinode`.
         #[builder(into, default)]
-        pub node_properties: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub node_properties: pulumi_gestalt_rust::Input<Option<String>>,
         /// Parameter substitution placeholders to set in the job definition.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Platform capabilities required by the job definition. If no value is specified, it defaults to `EC2`. To run the job on Fargate resources, specify `FARGATE`.
         #[builder(into, default)]
-        pub platform_capabilities: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub platform_capabilities: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Whether to propagate the tags from the job definition to the corresponding Amazon ECS task. Default is `false`.
         #[builder(into, default)]
-        pub propagate_tags: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub propagate_tags: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Retry strategy to use for failed jobs that are submitted with this job definition. Maximum number of `retry_strategy` is `1`.  Defined below.
         #[builder(into, default)]
-        pub retry_strategy: pulumi_gestalt_rust::InputOrOutput<
+        pub retry_strategy: pulumi_gestalt_rust::Input<
             Option<super::super::types::batch::JobDefinitionRetryStrategy>,
         >,
         /// Scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. Allowed values `0` through `9999`.
         #[builder(into, default)]
-        pub scheduling_priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub scheduling_priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Timeout for jobs so that if a job runs longer, AWS Batch terminates the job. Maximum number of `timeout` is `1`. Defined below.
         #[builder(into, default)]
-        pub timeout: pulumi_gestalt_rust::InputOrOutput<
+        pub timeout: pulumi_gestalt_rust::Input<
             Option<super::super::types::batch::JobDefinitionTimeout>,
         >,
         /// Type of job definition. Must be `container` or `multinode`.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct JobDefinitionResult {

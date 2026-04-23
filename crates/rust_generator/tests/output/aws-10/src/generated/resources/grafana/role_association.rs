@@ -49,18 +49,18 @@ pub mod role_association {
     pub struct RoleAssociationArgs {
         /// The AWS SSO group ids to be assigned the role given in `role`.
         #[builder(into, default)]
-        pub group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The grafana role. Valid values can be found [here](https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateInstruction.html#ManagedGrafana-Type-UpdateInstruction-role).
         #[builder(into)]
-        pub role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role: pulumi_gestalt_rust::Input<String>,
         /// The AWS SSO user ids to be assigned the role given in `role`.
         #[builder(into, default)]
-        pub user_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub user_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The workspace id.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RoleAssociationResult {

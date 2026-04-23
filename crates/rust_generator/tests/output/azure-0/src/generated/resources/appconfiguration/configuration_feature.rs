@@ -65,38 +65,38 @@ pub mod configuration_feature {
     pub struct ConfigurationFeatureArgs {
         /// Specifies the id of the App Configuration. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub configuration_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_store_id: pulumi_gestalt_rust::Input<String>,
         /// The description of the App Configuration Feature.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The status of the App Configuration Feature. By default, this is set to false.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub etag: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub etag: pulumi_gestalt_rust::Input<Option<String>>,
         /// The key of the App Configuration Feature. The value for `name` will be used if this is unspecified. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The label of the App Configuration Feature. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub label: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub label: pulumi_gestalt_rust::Input<Option<String>>,
         /// Should this App Configuration Feature be Locked to prevent changes?
         #[builder(into, default)]
-        pub locked: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub locked: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the App Configuration Feature. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A number representing the value of the percentage required to enable this feature.
         #[builder(into, default)]
-        pub percentage_filter_value: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub percentage_filter_value: pulumi_gestalt_rust::Input<Option<f64>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `targeting_filter` block as defined below.
         #[builder(into, default)]
-        pub targeting_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub targeting_filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::appconfiguration::ConfigurationFeatureTargetingFilter,
@@ -105,7 +105,7 @@ pub mod configuration_feature {
         >,
         /// A `timewindow_filter` block as defined below.
         #[builder(into, default)]
-        pub timewindow_filters: pulumi_gestalt_rust::InputOrOutput<
+        pub timewindow_filters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::appconfiguration::ConfigurationFeatureTimewindowFilter,

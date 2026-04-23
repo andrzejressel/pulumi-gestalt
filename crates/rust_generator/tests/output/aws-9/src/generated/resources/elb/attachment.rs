@@ -32,10 +32,10 @@ pub mod attachment {
     pub struct AttachmentArgs {
         /// The name of the ELB.
         #[builder(into)]
-        pub elb: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub elb: pulumi_gestalt_rust::Input<String>,
         /// Instance ID to place in the ELB pool.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AttachmentResult {

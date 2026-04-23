@@ -53,30 +53,30 @@ pub mod integration_account_assembly {
     pub struct IntegrationAccountAssemblyArgs {
         /// The name of the Logic App Integration Account Assembly.
         #[builder(into)]
-        pub assembly_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub assembly_name: pulumi_gestalt_rust::Input<String>,
         /// The version of the Logic App Integration Account Assembly. Defaults to `0.0.0.0`.
         #[builder(into, default)]
-        pub assembly_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub assembly_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// The content of the Logic App Integration Account Assembly.
         #[builder(into, default)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content: pulumi_gestalt_rust::Input<Option<String>>,
         /// The content link URI of the Logic App Integration Account Assembly.
         #[builder(into, default)]
-        pub content_link_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_link_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Logic App Integration Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub integration_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_account_name: pulumi_gestalt_rust::Input<String>,
         /// The metadata of the Logic App Integration Account Assembly.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name which should be used for this Logic App Integration Account Assembly Artifact. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Logic App Integration Account Assembly Artifact should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IntegrationAccountAssemblyResult {

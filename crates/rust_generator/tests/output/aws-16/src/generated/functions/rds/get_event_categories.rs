@@ -10,7 +10,7 @@ pub mod get_event_categories {
     pub struct GetEventCategoriesArgs {
         /// Type of source that will be generating the events. Valid options are db-instance, db-security-group, db-parameter-group, db-snapshot, db-cluster or db-cluster-snapshot.
         #[builder(into, default)]
-        pub source_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetEventCategoriesResult {

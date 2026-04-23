@@ -53,40 +53,40 @@ pub mod subscription_cost_management_view {
     pub struct SubscriptionCostManagementViewArgs {
         /// Whether the costs data in the Cost Management View are accumulated over time. Changing this forces a new Cost Management View for a Subscription to be created.
         #[builder(into)]
-        pub accumulated: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub accumulated: pulumi_gestalt_rust::Input<bool>,
         /// Chart type of the main view in Cost Analysis. Possible values are `Area`, `GroupedColumn`, `Line`, `StackedColumn` and `Table`.
         #[builder(into)]
-        pub chart_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub chart_type: pulumi_gestalt_rust::Input<String>,
         /// A `dataset` block as defined below.
         #[builder(into)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<
+        pub dataset: pulumi_gestalt_rust::Input<
             super::super::types::core::SubscriptionCostManagementViewDataset,
         >,
         /// User visible input name of the Cost Management View.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// One or more `kpi` blocks as defined below, to show in Cost Analysis UI.
         #[builder(into, default)]
-        pub kpis: pulumi_gestalt_rust::InputOrOutput<
+        pub kpis: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::core::SubscriptionCostManagementViewKpi>>,
         >,
         /// The name which should be used for this Cost Management View for a Subscription. Changing this forces a new Cost Management View for a Subscription to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `pivot` blocks as defined below, containing the configuration of 3 sub-views in the Cost Analysis UI. Non table views should have three pivots.
         #[builder(into, default)]
-        pub pivots: pulumi_gestalt_rust::InputOrOutput<
+        pub pivots: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::core::SubscriptionCostManagementViewPivot>>,
         >,
         /// The type of the report. The only possible value is `Usage`.
         #[builder(into)]
-        pub report_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub report_type: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Subscription this View is scoped to. Changing this forces a new Cost Management View for a Subscription to be created.
         #[builder(into)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subscription_id: pulumi_gestalt_rust::Input<String>,
         /// The time frame for pulling data for the report. Possible values are `Custom`, `MonthToDate`, `WeekToDate` and `YearToDate`.
         #[builder(into)]
-        pub timeframe: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub timeframe: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionCostManagementViewResult {

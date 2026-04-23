@@ -40,86 +40,78 @@ pub mod stack {
     pub struct StackArgs {
         /// If set to `"LATEST"`, OpsWorks will automatically install the latest version.
         #[builder(into, default)]
-        pub agent_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub agent_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// If `manage_berkshelf` is enabled, the version of Berkshelf to use.
         #[builder(into, default)]
-        pub berkshelf_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub berkshelf_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Color to paint next to the stack's resources in the OpsWorks console.
         #[builder(into, default)]
-        pub color: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub color: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the configuration manager to use. Defaults to "Chef".
         #[builder(into, default)]
-        pub configuration_manager_name: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub configuration_manager_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of the configuration manager to use. Defaults to "11.4".
         #[builder(into, default)]
-        pub configuration_manager_version: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub configuration_manager_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// When `use_custom_cookbooks` is set, provide this sub-object as described below.
         #[builder(into, default)]
-        pub custom_cookbooks_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_cookbooks_sources: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::opsworks::StackCustomCookbooksSource>>,
         >,
         /// Custom JSON attributes to apply to the entire stack.
         #[builder(into, default)]
-        pub custom_json: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_json: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the availability zone where instances will be created by default.
         /// Cannot be set when `vpc_id` is set.
         #[builder(into, default)]
-        pub default_availability_zone: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub default_availability_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of an IAM Instance Profile that created instances will have by default.
         #[builder(into)]
-        pub default_instance_profile_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub default_instance_profile_arn: pulumi_gestalt_rust::Input<String>,
         /// Name of OS that will be installed on instances by default.
         #[builder(into, default)]
-        pub default_os: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_os: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the type of root device instances will have by default.
         #[builder(into, default)]
-        pub default_root_device_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_root_device_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the SSH keypair that instances will have by default.
         #[builder(into, default)]
-        pub default_ssh_key_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_ssh_key_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the subnet in which instances will be created by default.
         /// Required if `vpc_id` is set to a VPC other than the default VPC, and forbidden if it isn't.
         #[builder(into, default)]
-        pub default_subnet_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_subnet_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Keyword representing the naming scheme that will be used for instance hostnames within this stack.
         #[builder(into, default)]
-        pub hostname_theme: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hostname_theme: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean value controlling whether Opsworks will run Berkshelf for this stack.
         #[builder(into, default)]
-        pub manage_berkshelf: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage_berkshelf: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the stack.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the region where the stack will exist.
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
         /// The ARN of an IAM role that the OpsWorks service will act as.
         #[builder(into)]
-        pub service_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_role_arn: pulumi_gestalt_rust::Input<String>,
         /// A map of tags to assign to the resource.
         /// If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Boolean value controlling whether the custom cookbook settings are enabled.
         #[builder(into, default)]
-        pub use_custom_cookbooks: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub use_custom_cookbooks: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean value controlling whether the standard OpsWorks security groups apply to created instances.
         #[builder(into, default)]
-        pub use_opsworks_security_groups: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub use_opsworks_security_groups: pulumi_gestalt_rust::Input<Option<bool>>,
         /// ID of the VPC that this stack belongs to.
         /// Defaults to the region's default VPC.
         #[builder(into, default)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StackResult {

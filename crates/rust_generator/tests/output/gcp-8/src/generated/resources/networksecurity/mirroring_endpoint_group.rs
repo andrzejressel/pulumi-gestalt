@@ -65,17 +65,17 @@ pub mod mirroring_endpoint_group {
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `networksecurity.googleapis.com/MirroringEndpointGroup`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Required. Immutable. The Mirroring Deployment Group that this resource is connected to. Format
         /// is:
         /// `projects/{project}/locations/global/mirroringDeploymentGroups/{mirroringDeploymentGroup}`
         #[builder(into)]
-        pub mirroring_deployment_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mirroring_deployment_group: pulumi_gestalt_rust::Input<String>,
         /// Required. Id of the requesting object
         /// If auto-generating Id server-side, remove this field and
         /// mirroring_endpoint_group_id from the method_signature of Create RPC
@@ -83,11 +83,11 @@ pub mod mirroring_endpoint_group {
         ///
         /// - - -
         #[builder(into)]
-        pub mirroring_endpoint_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mirroring_endpoint_group_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MirroringEndpointGroupResult {

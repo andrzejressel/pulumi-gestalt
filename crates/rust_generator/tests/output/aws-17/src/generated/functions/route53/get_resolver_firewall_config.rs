@@ -12,7 +12,7 @@ pub mod get_resolver_firewall_config {
         ///
         /// The following attribute is additionally exported:
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResolverFirewallConfigResult {

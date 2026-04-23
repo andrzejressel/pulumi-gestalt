@@ -57,16 +57,16 @@ pub mod identity_provider_facebook {
     pub struct IdentityProviderFacebookArgs {
         /// The Name of the API Management Service where this Facebook Identity Provider should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// App ID for Facebook.
         #[builder(into)]
-        pub app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_id: pulumi_gestalt_rust::Input<String>,
         /// App Secret for Facebook.
         #[builder(into)]
-        pub app_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub app_secret: pulumi_gestalt_rust::Input<String>,
         /// The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IdentityProviderFacebookResult {

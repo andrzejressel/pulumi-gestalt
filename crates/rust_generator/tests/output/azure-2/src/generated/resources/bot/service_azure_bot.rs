@@ -72,77 +72,69 @@ pub mod service_azure_bot {
         ///
         /// > **Note:** In order to utilize CMEK, you must add the `Key Vault Crypto Service Encryption User` role to the Azure-defined `Bot Service CMEK Prod` Service Principal. You must also enable `soft_delete_enabled` and `purge_protection_enabled` on the `azure.keyvault.KeyVault` that `cmk_key_vault_key_url` refers to. [See Azure Documentation](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-encryption?view=azure-bot-service-4.0#how-to-configure-your-azure-key-vault-instance)
         #[builder(into, default)]
-        pub cmk_key_vault_key_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cmk_key_vault_key_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Application Insights API Key to associate with this Azure Bot Service.
         #[builder(into, default)]
-        pub developer_app_insights_api_key: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub developer_app_insights_api_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the Application Insights instance to associate with this Azure Bot Service.
         #[builder(into, default)]
-        pub developer_app_insights_application_id: pulumi_gestalt_rust::InputOrOutput<
+        pub developer_app_insights_application_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The Application Insight Key to associate with this Azure Bot Service.
         #[builder(into, default)]
-        pub developer_app_insights_key: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub developer_app_insights_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name that the Azure Bot Service will be displayed as. This defaults to the value set for `name` if not specified.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Bot Service endpoint.
         #[builder(into, default)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub endpoint: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Icon Url of the Azure Bot Service. Defaults to `https://docs.botframework.com/static/devportal/client/images/bot-framework-default.png`.
         #[builder(into, default)]
-        pub icon_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub icon_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is local authentication enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub local_authentication_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub local_authentication_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The supported Azure location where the Azure Bot Service should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of LUIS App IDs to associate with this Azure Bot Service.
         #[builder(into, default)]
-        pub luis_app_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub luis_app_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The LUIS key to associate with this Azure Bot Service.
         #[builder(into, default)]
-        pub luis_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub luis_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Microsoft Application ID for the Azure Bot Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub microsoft_app_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub microsoft_app_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Microsoft App Managed Identity for this Azure Bot Service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub microsoft_app_msi_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub microsoft_app_msi_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Tenant ID of the Microsoft App for this Azure Bot Service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub microsoft_app_tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub microsoft_app_tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Microsoft App Type for this Azure Bot Service. Possible values are `MultiTenant`, `SingleTenant` and `UserAssignedMSI`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub microsoft_app_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub microsoft_app_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Azure Bot Service. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether public network access is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub public_network_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub public_network_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Resource Group where the Azure Bot Service should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The SKU of the Azure Bot Service. Accepted values are `F0` or `S1`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// Is the streaming endpoint enabled for this Azure Bot Service. Defaults to `false`.
         #[builder(into, default)]
-        pub streaming_endpoint_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub streaming_endpoint_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A mapping of tags which should be assigned to this Azure Bot Service.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,10 +10,10 @@ pub mod get_protection {
     pub struct GetProtectionArgs {
         /// Unique identifier for the protection.
         #[builder(into, default)]
-        pub protection_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub protection_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ARN (Amazon Resource Name) of the resource being protected.
         #[builder(into, default)]
-        pub resource_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetProtectionResult {

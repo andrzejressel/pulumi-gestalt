@@ -135,7 +135,7 @@ pub mod next_generation_firewall_virtual_network_local_rulestack {
     pub struct NextGenerationFirewallVirtualNetworkLocalRulestackArgs {
         /// One or more `destination_nat` blocks as defined below.
         #[builder(into, default)]
-        pub destination_nats: pulumi_gestalt_rust::InputOrOutput<
+        pub destination_nats: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::paloalto::NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNat,
@@ -144,28 +144,28 @@ pub mod next_generation_firewall_virtual_network_local_rulestack {
         >,
         /// A `dns_settings` block as defined below.
         #[builder(into, default)]
-        pub dns_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub dns_settings: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::paloalto::NextGenerationFirewallVirtualNetworkLocalRulestackDnsSettings,
             >,
         >,
         /// The name which should be used for this Palo Alto Next Generation Firewall Virtual Network Local Rulestack. Changing this forces a new Palo Alto Next Generation Firewall Virtual Network Local Rulestack to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `network_profile` block as defined below.
         #[builder(into)]
-        pub network_profile: pulumi_gestalt_rust::InputOrOutput<
+        pub network_profile: pulumi_gestalt_rust::Input<
             super::super::types::paloalto::NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfile,
         >,
         /// The name of the Resource Group where the Palo Alto Next Generation Firewall Virtual Network Local Rulestack should exist. Changing this forces a new Palo Alto Next Generation Firewall Virtual Network Local Rulestack to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Local Rulestack which will be used to configure this Firewall Resource.
         #[builder(into)]
-        pub rulestack_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rulestack_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Palo Alto Next Generation Firewall Virtual Network Local Rulestack.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

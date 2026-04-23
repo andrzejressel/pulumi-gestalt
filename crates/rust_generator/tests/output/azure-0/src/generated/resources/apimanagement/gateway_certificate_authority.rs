@@ -74,16 +74,16 @@ pub mod gateway_certificate_authority {
     pub struct GatewayCertificateAuthorityArgs {
         /// The ID of the API Management Service. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Management Certificate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub certificate_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Management Gateway. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub gateway_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_name: pulumi_gestalt_rust::Input<String>,
         /// Whether the API Management Gateway Certificate Authority is trusted.
         #[builder(into, default)]
-        pub is_trusted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_trusted: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GatewayCertificateAuthorityResult {

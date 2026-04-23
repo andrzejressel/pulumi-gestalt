@@ -116,22 +116,22 @@ pub mod spring_cloud_certificate {
     pub struct SpringCloudCertificateArgs {
         /// The content of uploaded certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub certificate_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether the private key should be excluded from the Key Vault Certificate. Changing this forces a new resource to be created. Defaults to `false`.
         #[builder(into, default)]
-        pub exclude_private_key: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub exclude_private_key: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the ID of the Key Vault Certificate resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub key_vault_certificate_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub key_vault_certificate_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Spring Cloud Certificate. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the resource group in which to create the Spring Cloud Certificate. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Spring Cloud Service resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudCertificateResult {

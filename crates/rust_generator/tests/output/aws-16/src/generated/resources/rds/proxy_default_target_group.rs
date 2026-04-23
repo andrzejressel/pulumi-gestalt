@@ -60,12 +60,12 @@ pub mod proxy_default_target_group {
     pub struct ProxyDefaultTargetGroupArgs {
         /// The settings that determine the size and behavior of the connection pool for the target group.
         #[builder(into, default)]
-        pub connection_pool_config: pulumi_gestalt_rust::InputOrOutput<
+        pub connection_pool_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::rds::ProxyDefaultTargetGroupConnectionPoolConfig>,
         >,
         /// Name of the RDS DB Proxy.
         #[builder(into)]
-        pub db_proxy_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub db_proxy_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ProxyDefaultTargetGroupResult {

@@ -48,51 +48,51 @@ pub mod stack {
         /// A list of capabilities.
         /// Valid values: `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, or `CAPABILITY_AUTO_EXPAND`
         #[builder(into, default)]
-        pub capabilities: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub capabilities: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Set to true to disable rollback of the stack if stack creation failed.
         /// Conflicts with `on_failure`.
         #[builder(into, default)]
-        pub disable_rollback: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disable_rollback: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN of an IAM role that AWS CloudFormation assumes to create the stack. If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.
         #[builder(into, default)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Stack name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of SNS topic ARNs to publish stack related events.
         #[builder(into, default)]
-        pub notification_arns: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub notification_arns: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Action to be taken if stack creation fails. This must be
         /// one of: `DO_NOTHING`, `ROLLBACK`, or `DELETE`. Conflicts with `disable_rollback`.
         #[builder(into, default)]
-        pub on_failure: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub on_failure: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of Parameter structures that specify input parameters for the stack.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Structure containing the stack policy body.
         /// Conflicts w/ `policy_url`.
         #[builder(into, default)]
-        pub policy_body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location of a file containing the stack policy.
         /// Conflicts w/ `policy_body`.
         #[builder(into, default)]
-        pub policy_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of resource tags to associate with this stack. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Structure containing the template body (max size: 51,200 bytes).
         #[builder(into, default)]
-        pub template_body: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_body: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location of a file containing the template body (max size: 460,800 bytes).
         #[builder(into, default)]
-        pub template_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub template_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The amount of time that can pass before the stack status becomes `CREATE_FAILED`.
         #[builder(into, default)]
-        pub timeout_in_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout_in_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct StackResult {

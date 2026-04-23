@@ -102,27 +102,27 @@ pub mod ai_feature_store_entity_type_feature {
     pub struct AiFeatureStoreEntityTypeFeatureArgs {
         /// Description of the feature.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entitytype}.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub entitytype: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub entitytype: pulumi_gestalt_rust::Input<String>,
         /// A set of key/value label pairs to assign to the feature.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the feature. The feature can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given an entity type.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of Feature value. Immutable. https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.featurestores.entityTypes.features#ValueType
         #[builder(into)]
-        pub value_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AiFeatureStoreEntityTypeFeatureResult {

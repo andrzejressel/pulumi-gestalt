@@ -43,29 +43,27 @@ pub mod efs_location {
     pub struct EfsLocationArgs {
         /// Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.
         #[builder(into, default)]
-        pub access_point_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_point_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block containing EC2 configurations for connecting to the EFS File System.
         #[builder(into)]
-        pub ec2_config: pulumi_gestalt_rust::InputOrOutput<
+        pub ec2_config: pulumi_gestalt_rust::Input<
             super::super::types::datasync::EfsLocationEc2Config,
         >,
         /// Amazon Resource Name (ARN) of EFS File System.
         #[builder(into)]
-        pub efs_file_system_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub efs_file_system_arn: pulumi_gestalt_rust::Input<String>,
         /// Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.
         #[builder(into, default)]
-        pub file_system_access_role_arn: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub file_system_access_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies whether you want DataSync to use TLS encryption when transferring data to or from your Amazon EFS file system. Valid values are `NONE` and `TLS1_2`.
         #[builder(into, default)]
-        pub in_transit_encryption: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub in_transit_encryption: pulumi_gestalt_rust::Input<Option<String>>,
         /// Subdirectory to perform actions as source or destination. Default `/`.
         #[builder(into, default)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subdirectory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

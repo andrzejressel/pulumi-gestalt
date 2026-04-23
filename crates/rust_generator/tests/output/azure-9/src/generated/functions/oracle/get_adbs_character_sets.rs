@@ -10,7 +10,7 @@ pub mod get_adbs_character_sets {
     pub struct GetAdbsCharacterSetsArgs {
         /// The Azure Region to query for the character sets in.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAdbsCharacterSetsResult {

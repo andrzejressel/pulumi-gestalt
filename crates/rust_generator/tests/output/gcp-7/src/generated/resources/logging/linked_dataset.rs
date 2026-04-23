@@ -93,7 +93,7 @@ pub mod linked_dataset {
         /// Views corresponding to the LogViews in the bucket.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub bigquery_datasets: pulumi_gestalt_rust::InputOrOutput<
+        pub bigquery_datasets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::logging::LinkedDatasetBigqueryDataset>>,
         >,
         /// The bucket to which the linked dataset is attached.
@@ -101,19 +101,19 @@ pub mod linked_dataset {
         ///
         /// - - -
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Describes this link. The maximum length of the description is 8000 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The id of the linked dataset.
         #[builder(into)]
-        pub link_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub link_id: pulumi_gestalt_rust::Input<String>,
         /// The location of the linked dataset.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parent of the linked dataset.
         #[builder(into, default)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LinkedDatasetResult {

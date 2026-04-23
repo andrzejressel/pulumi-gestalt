@@ -70,10 +70,10 @@ pub mod logging_configuration {
     pub struct LoggingConfigurationArgs {
         /// The Amazon Resource Name (ARN) of the Network Firewall firewall.
         #[builder(into)]
-        pub firewall_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub firewall_arn: pulumi_gestalt_rust::Input<String>,
         /// A configuration block describing how AWS Network Firewall performs logging for a firewall. See Logging Configuration below for details.
         #[builder(into)]
-        pub logging_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_configuration: pulumi_gestalt_rust::Input<
             super::super::types::networkfirewall::LoggingConfigurationLoggingConfiguration,
         >,
     }

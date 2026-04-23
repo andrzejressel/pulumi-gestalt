@@ -345,40 +345,40 @@ pub mod job {
     pub struct JobArgs {
         /// Copies a table.
         #[builder(into, default)]
-        pub copy: pulumi_gestalt_rust::InputOrOutput<
+        pub copy: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::JobCopy>,
         >,
         /// Configures an extract job.
         #[builder(into, default)]
-        pub extract: pulumi_gestalt_rust::InputOrOutput<
+        pub extract: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::JobExtract>,
         >,
         /// The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters.
         #[builder(into)]
-        pub job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub job_id: pulumi_gestalt_rust::Input<String>,
         /// Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt to terminate the job.
         #[builder(into, default)]
-        pub job_timeout_ms: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub job_timeout_ms: pulumi_gestalt_rust::Input<Option<String>>,
         /// The labels associated with this job. You can use these to organize and group your jobs. **Note**: This field is
         /// non-authoritative, and will only manage the labels present in your configuration. Please refer to the field
         /// 'effective_labels' for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configures a load job.
         #[builder(into, default)]
-        pub load: pulumi_gestalt_rust::InputOrOutput<
+        pub load: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::JobLoad>,
         >,
         /// Specifies where the error occurred, if present.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configures a query job.
         #[builder(into, default)]
-        pub query: pulumi_gestalt_rust::InputOrOutput<
+        pub query: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigquery::JobQuery>,
         >,
     }

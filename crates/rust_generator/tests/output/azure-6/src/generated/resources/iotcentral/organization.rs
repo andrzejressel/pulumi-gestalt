@@ -59,16 +59,16 @@ pub mod organization {
     pub struct OrganizationArgs {
         /// Custom `display_name` for the organization.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The application `id`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iotcentral_application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iotcentral_application_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the organization. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub organization_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization_id: pulumi_gestalt_rust::Input<String>,
         /// The `organization_id` of the parent organization. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub parent_organization_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub parent_organization_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OrganizationResult {

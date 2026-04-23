@@ -24,18 +24,18 @@ pub mod hci_deployment_setting {
     pub struct HciDeploymentSettingArgs {
         /// Specifies a list of IDs of Azure ARC machine resource to be part of cluster. Changing this forces a new Stack HCI Deployment Setting to be created.
         #[builder(into)]
-        pub arc_resource_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub arc_resource_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// One or more `scale_unit` blocks as defined below. Changing this forces a new Stack HCI Deployment Setting to be created.
         #[builder(into)]
-        pub scale_units: pulumi_gestalt_rust::InputOrOutput<
+        pub scale_units: pulumi_gestalt_rust::Input<
             Vec<super::super::types::stack::HciDeploymentSettingScaleUnit>,
         >,
         /// The ID of the Azure Stack HCI cluster. Changing this forces a new Stack HCI Deployment Setting to be created.
         #[builder(into)]
-        pub stack_hci_cluster_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stack_hci_cluster_id: pulumi_gestalt_rust::Input<String>,
         /// The deployment template version. The format must be a set of numbers separated by dots such as `10.0.0.0`. Changing this forces a new Stack HCI Deployment Setting to be created.
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HciDeploymentSettingResult {

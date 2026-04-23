@@ -10,7 +10,7 @@ pub mod get_delegated_services {
     pub struct GetDelegatedServicesArgs {
         /// Account ID number of a delegated administrator account in the organization.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDelegatedServicesResult {

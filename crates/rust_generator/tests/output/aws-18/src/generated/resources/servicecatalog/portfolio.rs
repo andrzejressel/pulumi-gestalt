@@ -37,16 +37,16 @@ pub mod portfolio {
     pub struct PortfolioArgs {
         /// Description of the portfolio
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the portfolio.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the person or organization who owns the portfolio.
         #[builder(into)]
-        pub provider_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub provider_name: pulumi_gestalt_rust::Input<String>,
         /// Tags to apply to the connection. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -10,7 +10,7 @@ pub mod get_replication_group {
     pub struct GetReplicationGroupArgs {
         /// Identifier for the replication group.
         #[builder(into)]
-        pub replication_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replication_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetReplicationGroupResult {

@@ -10,7 +10,7 @@ pub mod get_zone_cache_reserve {
     pub struct GetZoneCacheReserveArgs {
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetZoneCacheReserveResult {

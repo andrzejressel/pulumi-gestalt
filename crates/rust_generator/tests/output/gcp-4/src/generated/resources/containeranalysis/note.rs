@@ -117,31 +117,31 @@ pub mod note {
         /// project.
         /// Structure is documented below.
         #[builder(into)]
-        pub attestation_authority: pulumi_gestalt_rust::InputOrOutput<
+        pub attestation_authority: pulumi_gestalt_rust::Input<
             super::super::types::containeranalysis::NoteAttestationAuthority,
         >,
         /// Time of expiration for this note. Leave empty if note does not expire.
         #[builder(into, default)]
-        pub expiration_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiration_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// A detailed description of the note
         #[builder(into, default)]
-        pub long_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub long_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the note.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Names of other notes related to this note.
         #[builder(into, default)]
-        pub related_note_names: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub related_note_names: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// URLs associated with this note and related metadata.
         #[builder(into, default)]
-        pub related_urls: pulumi_gestalt_rust::InputOrOutput<
+        pub related_urls: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::containeranalysis::NoteRelatedUrl>>,
         >,
         /// A one sentence description of the note.
         #[builder(into, default)]
-        pub short_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub short_description: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NoteResult {

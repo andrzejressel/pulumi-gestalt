@@ -35,10 +35,10 @@ pub mod patch_group {
     pub struct PatchGroupArgs {
         /// The ID of the patch baseline to register the patch group with.
         #[builder(into)]
-        pub baseline_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub baseline_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the patch group that should be registered with the patch baseline.
         #[builder(into)]
-        pub patch_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub patch_group: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PatchGroupResult {

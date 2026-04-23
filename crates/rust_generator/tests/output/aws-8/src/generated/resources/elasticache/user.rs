@@ -71,34 +71,34 @@ pub mod user {
     pub struct UserArgs {
         /// Access permissions string used for this user. See [Specifying Permissions Using an Access String](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html#Access-string) for more details.
         #[builder(into)]
-        pub access_string: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub access_string: pulumi_gestalt_rust::Input<String>,
         /// Denotes the user's authentication properties. Detailed below.
         #[builder(into, default)]
-        pub authentication_mode: pulumi_gestalt_rust::InputOrOutput<
+        pub authentication_mode: pulumi_gestalt_rust::Input<
             Option<super::super::types::elasticache::UserAuthenticationMode>,
         >,
         /// The current supported value is `REDIS`.
         #[builder(into)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine: pulumi_gestalt_rust::Input<String>,
         /// Indicates a password is not required for this user.
         #[builder(into, default)]
-        pub no_password_required: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub no_password_required: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Passwords used for this user. You can create up to two passwords for each user.
         #[builder(into, default)]
-        pub passwords: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub passwords: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of tags to be added to this resource. A tag is a key-value pair.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the user.
         #[builder(into)]
-        pub user_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_id: pulumi_gestalt_rust::Input<String>,
         /// The username of the user.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserResult {

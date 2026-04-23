@@ -57,19 +57,19 @@ pub mod active_directory_administrator {
     pub struct ActiveDirectoryAdministratorArgs {
         /// The login name of the principal to set as the server administrator
         #[builder(into)]
-        pub login: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub login: pulumi_gestalt_rust::Input<String>,
         /// The ID of the principal to set as the server administrator. For a managed identity this should be the Client ID of the identity.
         #[builder(into)]
-        pub object_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group for the PostgreSQL server. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the PostgreSQL Server on which to set the administrator. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub server_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_name: pulumi_gestalt_rust::Input<String>,
         /// The Azure Tenant ID
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ActiveDirectoryAdministratorResult {

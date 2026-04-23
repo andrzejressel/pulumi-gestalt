@@ -36,10 +36,10 @@ pub mod vpc_endpoint_route_table_association {
     pub struct VpcEndpointRouteTableAssociationArgs {
         /// Identifier of the EC2 Route Table to be associated with the VPC Endpoint.
         #[builder(into)]
-        pub route_table_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub route_table_id: pulumi_gestalt_rust::Input<String>,
         /// Identifier of the VPC Endpoint with which the EC2 Route Table will be associated.
         #[builder(into)]
-        pub vpc_endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_endpoint_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VpcEndpointRouteTableAssociationResult {

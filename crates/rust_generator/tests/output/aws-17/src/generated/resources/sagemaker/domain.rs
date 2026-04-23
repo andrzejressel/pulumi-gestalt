@@ -97,57 +97,55 @@ pub mod domain {
     pub struct DomainArgs {
         /// Specifies the VPC used for non-EFS traffic. The default value is `PublicInternetOnly`. Valid values are `PublicInternetOnly` and `VpcOnly`.
         #[builder(into, default)]
-        pub app_network_access_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub app_network_access_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The entity that creates and manages the required security groups for inter-app communication in `VPCOnly` mode. Valid values are `Service` and `Customer`.
         #[builder(into, default)]
-        pub app_security_group_management: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub app_security_group_management: pulumi_gestalt_rust::Input<Option<String>>,
         /// The mode of authentication that members use to access the domain. Valid values are `IAM` and `SSO`.
         #[builder(into)]
-        pub auth_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auth_mode: pulumi_gestalt_rust::Input<String>,
         /// The default space settings. See `default_space_settings` Block below.
         #[builder(into, default)]
-        pub default_space_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub default_space_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::DomainDefaultSpaceSettings>,
         >,
         /// The default user settings. See `default_user_settings` Block below.
         #[builder(into)]
-        pub default_user_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub default_user_settings: pulumi_gestalt_rust::Input<
             super::super::types::sagemaker::DomainDefaultUserSettings,
         >,
         /// The domain name.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The domain settings. See `domain_settings` Block below.
         #[builder(into, default)]
-        pub domain_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub domain_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::DomainDomainSettings>,
         >,
         /// The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained. See `retention_policy` Block below.
         #[builder(into, default)]
-        pub retention_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::sagemaker::DomainRetentionPolicy>,
         >,
         /// The VPC subnets that Studio uses for communication.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Indicates whether custom tag propagation is supported for the domain. Defaults to `DISABLED`. Valid values are: `ENABLED` and `DISABLED`.
         #[builder(into, default)]
-        pub tag_propagation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tag_propagation: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub vpc_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DomainResult {

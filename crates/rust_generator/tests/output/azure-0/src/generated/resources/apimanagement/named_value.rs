@@ -58,30 +58,30 @@ pub mod named_value {
     pub struct NamedValueArgs {
         /// The name of the API Management Service in which the API Management Named Value should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The display name of this API Management Named Value.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Management Named Value. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group in which the API Management Named Value should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether the API Management Named Value is secret. Valid values are `true` or `false`. The default value is `false`.
         ///
         /// > **NOTE:** setting the field `secret` to `true` doesn't make this field sensitive in the provider, instead it marks the value as secret and encrypts the value in Azure.
         #[builder(into, default)]
-        pub secret: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub secret: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A list of tags to be applied to the API Management Named Value.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub tags: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The value of this API Management Named Value.
         #[builder(into, default)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub value: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `value_from_key_vault` block as defined below. If specified, `secret` must also be set to `true`.
         #[builder(into, default)]
-        pub value_from_key_vault: pulumi_gestalt_rust::InputOrOutput<
+        pub value_from_key_vault: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::NamedValueValueFromKeyVault>,
         >,
     }

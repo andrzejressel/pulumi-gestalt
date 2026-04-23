@@ -66,50 +66,50 @@ pub mod gremlin_graph {
     pub struct GremlinGraphArgs {
         /// The name of the CosmosDB Account to create the Gremlin Graph within. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// The time to live of Analytical Storage for this Cosmos DB Gremlin Graph. Possible values are between `-1` to `2147483647` not including `0`. If present and the value is set to `-1`, it means never expire.
         ///
         /// > **Note:** Disabling `analytical_storage_ttl` will force a new resource to be created since it can't be disabled once it's enabled.
         #[builder(into, default)]
-        pub analytical_storage_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub analytical_storage_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         #[builder(into, default)]
-        pub autoscale_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub autoscale_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::GremlinGraphAutoscaleSettings>,
         >,
         /// A `conflict_resolution_policy` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub conflict_resolution_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub conflict_resolution_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::GremlinGraphConflictResolutionPolicy>,
         >,
         /// The name of the Cosmos DB Graph Database in which the Cosmos DB Gremlin Graph is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_name: pulumi_gestalt_rust::Input<String>,
         /// The default time to live (TTL) of the Gremlin graph. If the value is missing or set to "-1", items don’t expire.
         #[builder(into, default)]
-        pub default_ttl: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub default_ttl: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The configuration of the indexing policy. One or more `index_policy` blocks as defined below.
         #[builder(into, default)]
-        pub index_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub index_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::GremlinGraphIndexPolicy>,
         >,
         /// Specifies the name of the Cosmos DB Gremlin Graph. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Define a partition key. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub partition_key_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub partition_key_path: pulumi_gestalt_rust::Input<String>,
         /// Define a partition key version. Changing this forces a new resource to be created. Possible values are `1`and `2`. This should be set to `2` in order to use large partition keys.
         #[builder(into, default)]
-        pub partition_key_version: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub partition_key_version: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the resource group in which the Cosmos DB Gremlin Graph is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The throughput of the Gremlin graph (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual destroy-apply.
         #[builder(into, default)]
-        pub throughput: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub throughput: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more `unique_key` blocks as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub unique_keys: pulumi_gestalt_rust::InputOrOutput<
+        pub unique_keys: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cosmosdb::GremlinGraphUniqueKey>>,
         >,
     }

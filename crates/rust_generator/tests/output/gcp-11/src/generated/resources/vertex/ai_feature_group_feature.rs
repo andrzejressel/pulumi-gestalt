@@ -115,33 +115,33 @@ pub mod ai_feature_group_feature {
     pub struct AiFeatureGroupFeatureArgs {
         /// The description of the FeatureGroup.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Feature Group.
         #[builder(into)]
-        pub feature_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub feature_group: pulumi_gestalt_rust::Input<String>,
         /// The labels with user-defined metadata to organize your FeatureGroup.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The resource name of the Feature Group Feature.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region for the resource. It should be the same as the feature group's region.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
         /// The name of the BigQuery Table/View column hosting data for this version. If no value is provided, will use featureId.
         #[builder(into, default)]
-        pub version_column_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_column_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiFeatureGroupFeatureResult {

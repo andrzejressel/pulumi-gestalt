@@ -11,18 +11,18 @@ pub mod get_secret_version {
         /// If set to 'true', the secret data is
         /// expected to be base64-encoded string.
         #[builder(into, default)]
-        pub is_secret_data_base64: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_secret_data_base64: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The project to get the secret version for. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The secret to get the secret version for.
         #[builder(into)]
-        pub secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret: pulumi_gestalt_rust::Input<String>,
         /// The version of the secret to get. If it
         /// is not provided, the latest version is retrieved.
         #[builder(into, default)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSecretVersionResult {

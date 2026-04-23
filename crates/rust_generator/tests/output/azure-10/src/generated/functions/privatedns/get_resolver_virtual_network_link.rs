@@ -10,10 +10,10 @@ pub mod get_resolver_virtual_network_link {
     pub struct GetResolverVirtualNetworkLinkArgs {
         /// ID of the Private DNS Resolver DNS Forwarding Ruleset.
         #[builder(into)]
-        pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::Input<String>,
         /// Name of the Private DNS Resolver Virtual Network Link.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResolverVirtualNetworkLinkResult {

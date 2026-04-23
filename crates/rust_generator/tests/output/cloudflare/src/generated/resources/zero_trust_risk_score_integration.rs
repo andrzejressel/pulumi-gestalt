@@ -11,19 +11,19 @@ pub mod zero_trust_risk_score_integration {
     pub struct ZeroTrustRiskScoreIntegrationArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// Whether this integration is enabled. If disabled, no risk changes will be exported to the third-party.
         #[builder(into, default)]
-        pub active: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub active: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The type of integration, e.g. 'Okta'. Full list of allowed values can be found here: https://developers.cloudflare.com/api/operations/dlp-zt-risk-score-integration-create#request-body
         #[builder(into)]
-        pub integration_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_type: pulumi_gestalt_rust::Input<String>,
         /// A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). If omitted, a random UUIDv4 is used. https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
         #[builder(into, default)]
-        pub reference_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub reference_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The base url of the tenant, e.g. 'https://tenant.okta.com'. Must be your Okta Tenant URL and not your custom domain.
         #[builder(into)]
-        pub tenant_url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_url: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ZeroTrustRiskScoreIntegrationResult {

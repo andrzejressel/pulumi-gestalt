@@ -48,26 +48,26 @@ pub mod email_routing_rule {
     pub struct EmailRoutingRuleArgs {
         /// Actions to take when a match is found.
         #[builder(into, default)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::EmailRoutingRuleAction>>,
         >,
         /// Whether the email routing rule is enabled.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Matching patterns to forward to your actions.
         #[builder(into, default)]
-        pub matchers: pulumi_gestalt_rust::InputOrOutput<
+        pub matchers: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::EmailRoutingRuleMatcher>>,
         >,
         /// Routing rule name.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The priority of the email routing rule.
         #[builder(into, default)]
-        pub priority: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub priority: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The zone identifier to target for the resource.
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EmailRoutingRuleResult {

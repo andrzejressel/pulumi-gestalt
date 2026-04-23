@@ -88,36 +88,36 @@ pub mod datastore_datalake_gen_2 {
     pub struct DatastoreDatalakeGen2Args {
         /// An URL used for authentication.
         #[builder(into, default)]
-        pub authority_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authority_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The object ID of the Service Principal.
         #[builder(into, default)]
-        pub client_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The secret of the Service Principal.
         #[builder(into, default)]
-        pub client_secret: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub client_secret: pulumi_gestalt_rust::Input<Option<String>>,
         /// Text used to describe the asset. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies which identity to use when retrieving data from the specified source. Defaults to `None`. Possible values are `None`, `WorkspaceSystemAssignedIdentity` and `WorkspaceUserAssignedIdentity`.
         #[builder(into, default)]
-        pub service_data_identity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_data_identity: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Storage Account Container. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into)]
-        pub storage_container_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_container_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Machine Learning DataStore. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Tenant which the Service Principal belongs to.
         #[builder(into, default)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub tenant_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Machine Learning Workspace. Changing this forces a new Machine Learning DataStore to be created.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DatastoreDatalakeGen2Result {

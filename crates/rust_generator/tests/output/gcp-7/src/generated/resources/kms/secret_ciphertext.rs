@@ -73,20 +73,18 @@ pub mod secret_ciphertext {
         /// The additional authenticated data used for integrity checks during encryption and decryption.
         /// **Note**: This property is sensitive and will not be displayed in the plan.
         #[builder(into, default)]
-        pub additional_authenticated_data: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub additional_authenticated_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The full name of the CryptoKey that will be used to encrypt the provided plaintext.
         /// Format: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}/cryptoKeys/{{cryptoKey}}'`
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub crypto_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub crypto_key: pulumi_gestalt_rust::Input<String>,
         /// The plaintext to be encrypted.
         /// **Note**: This property is sensitive and will not be displayed in the plan.
         #[builder(into)]
-        pub plaintext: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plaintext: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SecretCiphertextResult {

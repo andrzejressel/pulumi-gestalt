@@ -84,14 +84,14 @@ pub mod service_network_settings {
         /// Ingress settings for this service. Will apply to all versions.
         /// Structure is documented below.
         #[builder(into)]
-        pub network_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub network_settings: pulumi_gestalt_rust::Input<
             super::super::types::appengine::ServiceNetworkSettingsNetworkSettings,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the service these settings apply to.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServiceNetworkSettingsResult {

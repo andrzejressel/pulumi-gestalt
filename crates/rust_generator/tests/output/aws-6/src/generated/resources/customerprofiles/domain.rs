@@ -94,31 +94,31 @@ pub mod domain {
     pub struct DomainArgs {
         /// The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.
         #[builder(into, default)]
-        pub dead_letter_queue_url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dead_letter_queue_url: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.
         #[builder(into, default)]
-        pub default_encryption_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_encryption_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// The default number of days until the data within the domain expires.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub default_expiration_days: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub default_expiration_days: pulumi_gestalt_rust::Input<i32>,
         /// The name for your Customer Profile domain. It must be unique for your AWS account.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// A block that specifies the process of matching duplicate profiles. Documented below.
         #[builder(into, default)]
-        pub matching: pulumi_gestalt_rust::InputOrOutput<
+        pub matching: pulumi_gestalt_rust::Input<
             Option<super::super::types::customerprofiles::DomainMatching>,
         >,
         /// A block that specifies the process of matching duplicate profiles using the Rule-Based matching. Documented below.
         #[builder(into, default)]
-        pub rule_based_matching: pulumi_gestalt_rust::InputOrOutput<
+        pub rule_based_matching: pulumi_gestalt_rust::Input<
             Option<super::super::types::customerprofiles::DomainRuleBasedMatching>,
         >,
         /// Tags to apply to the domain. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -94,13 +94,13 @@ pub mod sync_authorization {
         /// You might specify multiple service accounts, for example, if you have multiple environments and wish to assign a unique service account to each one.
         /// The service accounts must have **Apigee Synchronizer Manager** role. See also [Create service accounts](https://cloud.google.com/apigee/docs/hybrid/v1.8/sa-about#create-the-service-accounts).
         #[builder(into)]
-        pub identities: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub identities: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Name of the Apigee organization.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SyncAuthorizationResult {

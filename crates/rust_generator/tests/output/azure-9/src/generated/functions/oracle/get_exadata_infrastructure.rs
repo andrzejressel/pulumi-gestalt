@@ -10,10 +10,10 @@ pub mod get_exadata_infrastructure {
     pub struct GetExadataInfrastructureArgs {
         /// The name of this Cloud Exadata Infrastructure.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Cloud Exadata Infrastructure exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetExadataInfrastructureResult {

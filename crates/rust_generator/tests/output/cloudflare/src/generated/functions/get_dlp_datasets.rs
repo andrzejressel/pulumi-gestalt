@@ -10,7 +10,7 @@ pub mod get_dlp_datasets {
     pub struct GetDlpDatasetsArgs {
         /// The account ID to fetch DLP Datasets from.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetDlpDatasetsResult {

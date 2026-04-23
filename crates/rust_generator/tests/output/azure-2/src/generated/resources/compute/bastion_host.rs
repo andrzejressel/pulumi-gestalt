@@ -82,72 +82,72 @@ pub mod bastion_host {
     pub struct BastionHostArgs {
         /// Is Copy/Paste feature enabled for the Bastion Host. Defaults to `true`.
         #[builder(into, default)]
-        pub copy_paste_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub copy_paste_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is File Copy feature enabled for the Bastion Host. Defaults to `false`.
         ///
         /// > **Note:** `file_copy_enabled` is only supported when `sku` is `Standard` or `Premium`.
         #[builder(into, default)]
-        pub file_copy_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub file_copy_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `ip_configuration` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub ip_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub ip_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::compute::BastionHostIpConfiguration>,
         >,
         /// Is IP Connect feature enabled for the Bastion Host. Defaults to `false`.
         ///
         /// > **Note:** `ip_connect_enabled` is only supported when `sku` is `Standard` or `Premium`.
         #[builder(into, default)]
-        pub ip_connect_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ip_connect_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Kerberos authentication feature enabled for the Bastion Host. Defaults to `false`.
         ///
         /// > **Note:** `kerberos_enabled` is only supported when `sku` is `Standard` or `Premium`.
         #[builder(into, default)]
-        pub kerberos_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub kerberos_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created. Review [Azure Bastion Host FAQ](https://docs.microsoft.com/azure/bastion/bastion-faq) for supported locations.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Bastion Host. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Bastion Host. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The number of scale units with which to provision the Bastion Host. Possible values are between `2` and `50`. Defaults to `2`.
         ///
         /// > **Note:** `scale_units` only can be changed when `sku` is `Standard` or `Premium`. `scale_units` is always `2` when `sku` is `Basic`.
         #[builder(into, default)]
-        pub scale_units: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub scale_units: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Is Session Recording feature enabled for the Bastion Host. Defaults to `false`.
         ///
         /// > **Note:** `session_recording_enabled` is only supported when `sku` is `Premium`.
         #[builder(into, default)]
-        pub session_recording_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub session_recording_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Is Shareable Link feature enabled for the Bastion Host. Defaults to `false`.
         ///
         /// > **Note:** `shareable_link_enabled` is only supported when `sku` is `Standard` or `Premium`.
         #[builder(into, default)]
-        pub shareable_link_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub shareable_link_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The SKU of the Bastion Host. Accepted values are `Developer`, `Basic`, `Standard` and `Premium`. Defaults to `Basic`.
         ///
         /// > **Note** Downgrading the SKU will force a new resource to be created.
         #[builder(into, default)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sku: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Is Tunneling feature enabled for the Bastion Host. Defaults to `false`.
         ///
         /// > **Note:** `tunneling_enabled` is only supported when `sku` is `Standard` or `Premium`.
         #[builder(into, default)]
-        pub tunneling_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tunneling_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Virtual Network for the Developer Bastion Host. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub virtual_network_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub virtual_network_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a list of Availability Zones in which this Public Bastion Host should be located. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct BastionHostResult {

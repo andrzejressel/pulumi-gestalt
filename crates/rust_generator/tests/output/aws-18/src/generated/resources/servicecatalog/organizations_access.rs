@@ -25,7 +25,7 @@ pub mod organizations_access {
     pub struct OrganizationsAccessArgs {
         /// Whether to enable AWS Organizations access.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
     }
     #[allow(dead_code)]
     pub struct OrganizationsAccessResult {

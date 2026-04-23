@@ -40,19 +40,19 @@ pub mod sync {
     pub struct SyncArgs {
         /// Incoming traffic policy. Possible values are `AllowAllTraffic` and `AllowVirtualNetworksOnly`. Defaults to `AllowAllTraffic`.
         #[builder(into, default)]
-        pub incoming_traffic_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub incoming_traffic_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Azure Region where the Storage Sync should exist. Changing this forces a new Storage Sync to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Storage Sync. Changing this forces a new Storage Sync to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Storage Sync should exist. Changing this forces a new Storage Sync to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Storage Sync.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

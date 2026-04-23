@@ -51,15 +51,15 @@ pub mod voice_connector_organization {
     pub struct VoiceConnectorOrganizationArgs {
         /// When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector.
         #[builder(into, default)]
-        pub disabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub disabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Set of call distribution properties defined for your SIP hosts. See route below for more details. Minimum of 1. Maximum of 20.
         #[builder(into)]
-        pub routes: pulumi_gestalt_rust::InputOrOutput<
+        pub routes: pulumi_gestalt_rust::Input<
             Vec<super::super::types::chime::VoiceConnectorOrganizationRoute>,
         >,
         /// The Amazon Chime Voice Connector ID.
         #[builder(into)]
-        pub voice_connector_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub voice_connector_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct VoiceConnectorOrganizationResult {

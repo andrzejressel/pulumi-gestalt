@@ -51,15 +51,15 @@ pub mod kinesis_streaming_destination {
     pub struct KinesisStreamingDestinationArgs {
         /// Toggle for the precision of Kinesis data stream timestamp. Valid values: `MILLISECOND` and `MICROSECOND`.
         #[builder(into, default)]
-        pub approximate_creation_date_time_precision: pulumi_gestalt_rust::InputOrOutput<
+        pub approximate_creation_date_time_precision: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ARN for a Kinesis data stream. This must exist in the same account and region as the DynamoDB table.
         #[builder(into)]
-        pub stream_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub stream_arn: pulumi_gestalt_rust::Input<String>,
         /// The name of the DynamoDB table. There can only be one Kinesis streaming destination for a given DynamoDB table.
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct KinesisStreamingDestinationResult {

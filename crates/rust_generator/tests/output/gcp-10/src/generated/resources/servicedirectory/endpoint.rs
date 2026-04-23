@@ -112,32 +112,32 @@ pub mod endpoint {
     pub struct EndpointArgs {
         /// IPv4 or IPv6 address of the endpoint.
         #[builder(into, default)]
-        pub address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Resource ID must be 1-63 characters long, including digits,
         /// lowercase letters or the hyphen character.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub endpoint_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_id: pulumi_gestalt_rust::Input<String>,
         /// Metadata for the endpoint. This data can be consumed
         /// by service clients. The entire metadata dictionary may contain
         /// up to 512 characters, spread across all key-value pairs.
         /// Metadata that goes beyond any these limits will be rejected.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The URL to the network, such as projects/PROJECT_NUMBER/locations/global/networks/NETWORK_NAME.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// Port that the endpoint is running on, must be in the
         /// range of [0, 65535]. If unspecified, the default is 0.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The resource name of the service that this endpoint provides.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointResult {

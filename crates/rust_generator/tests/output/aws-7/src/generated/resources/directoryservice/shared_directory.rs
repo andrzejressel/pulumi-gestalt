@@ -22,18 +22,18 @@ pub mod shared_directory {
     pub struct SharedDirectoryArgs {
         /// Identifier of the Managed Microsoft AD directory that you want to share with other accounts.
         #[builder(into)]
-        pub directory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub directory_id: pulumi_gestalt_rust::Input<String>,
         /// Method used when sharing a directory. Valid values are `ORGANIZATIONS` and `HANDSHAKE`. Default is `HANDSHAKE`.
         #[builder(into, default)]
-        pub method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub method: pulumi_gestalt_rust::Input<Option<String>>,
         /// Message sent by the directory owner to the directory consumer to help the directory consumer administrator determine whether to approve or reject the share invitation.
         #[builder(into, default)]
-        pub notes: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notes: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier for the directory consumer account with whom the directory is to be shared. See below.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub target: pulumi_gestalt_rust::InputOrOutput<
+        pub target: pulumi_gestalt_rust::Input<
             super::super::types::directoryservice::SharedDirectoryTarget,
         >,
     }

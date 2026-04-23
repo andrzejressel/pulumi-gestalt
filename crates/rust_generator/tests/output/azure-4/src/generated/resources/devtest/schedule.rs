@@ -57,48 +57,48 @@ pub mod schedule {
     pub struct ScheduleArgs {
         /// The properties of a daily schedule. If the schedule occurs once each day of the week, specify the daily recurrence. A `daily_recurrence` block as defined below.
         #[builder(into, default)]
-        pub daily_recurrence: pulumi_gestalt_rust::InputOrOutput<
+        pub daily_recurrence: pulumi_gestalt_rust::Input<
             Option<super::super::types::devtest::ScheduleDailyRecurrence>,
         >,
         /// The properties of an hourly schedule. If the schedule occurs multiple times a day, specify the hourly recurrence. A `hourly_recurrence` block as defined below.
         #[builder(into, default)]
-        pub hourly_recurrence: pulumi_gestalt_rust::InputOrOutput<
+        pub hourly_recurrence: pulumi_gestalt_rust::Input<
             Option<super::super::types::devtest::ScheduleHourlyRecurrence>,
         >,
         /// The name of the dev test lab. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub lab_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lab_name: pulumi_gestalt_rust::Input<String>,
         /// The location where the schedule is created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the dev test lab schedule. Valid value for name depends on the `task_type`. For instance for task_type `LabVmsStartupTask` the name needs to be `LabVmAutoStart`. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The notification setting of a schedule. A `notification_settings` block as defined below.
         #[builder(into)]
-        pub notification_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub notification_settings: pulumi_gestalt_rust::Input<
             super::super::types::devtest::ScheduleNotificationSettings,
         >,
         /// The name of the resource group in which to create the dev test lab schedule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The status of this schedule. Possible values are `Enabled` and `Disabled`. Defaults to `Disabled`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The task type of the schedule. Possible values include `LabVmsShutdownTask` and `LabVmAutoStart`.
         #[builder(into)]
-        pub task_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub task_type: pulumi_gestalt_rust::Input<String>,
         /// The time zone ID (e.g. Pacific Standard time).
         #[builder(into)]
-        pub time_zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub time_zone_id: pulumi_gestalt_rust::Input<String>,
         /// The properties of a weekly schedule. If the schedule occurs only some days of the week, specify the weekly recurrence. A `weekly_recurrence` block as defined below.
         #[builder(into, default)]
-        pub weekly_recurrence: pulumi_gestalt_rust::InputOrOutput<
+        pub weekly_recurrence: pulumi_gestalt_rust::Input<
             Option<super::super::types::devtest::ScheduleWeeklyRecurrence>,
         >,
     }

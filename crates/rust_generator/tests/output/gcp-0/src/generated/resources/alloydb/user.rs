@@ -174,23 +174,23 @@ pub mod user {
         /// Identifies the alloydb cluster. Must be in the format
         /// 'projects/{project}/locations/{location}/clusters/{cluster_id}'
         #[builder(into)]
-        pub cluster: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster: pulumi_gestalt_rust::Input<String>,
         /// List of database roles this database user has.
         #[builder(into, default)]
-        pub database_roles: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub database_roles: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Password for this database user.
         #[builder(into, default)]
-        pub password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The database role name of the user.
         #[builder(into)]
-        pub user_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_id: pulumi_gestalt_rust::Input<String>,
         /// The type of this user.
         /// Possible values are: `ALLOYDB_BUILT_IN`, `ALLOYDB_IAM_USER`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub user_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserResult {

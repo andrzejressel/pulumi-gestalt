@@ -109,16 +109,16 @@ pub mod custom_domain {
         ///
         /// > **NOTE:** Please ensure the custom domain name is included in the Subject Alternative Names of the selected Web PubSub Custom Certificate.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Web PubSub Custom Domain. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the Web PubSub Custom Certificate ID of the Web PubSub Custom Domain. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub web_pubsub_custom_certificate_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_pubsub_custom_certificate_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the Web PubSub ID of the Web PubSub Custom Domain. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub web_pubsub_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub web_pubsub_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct CustomDomainResult {

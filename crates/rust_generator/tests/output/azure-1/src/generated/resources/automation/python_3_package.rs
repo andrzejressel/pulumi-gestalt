@@ -52,28 +52,28 @@ pub mod python_3_package {
     pub struct Python3PackageArgs {
         /// The name of the automation account in which the Python3 Package is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The URL of the python package. Changing this forces a new Automation Python3 Package to be created.
         #[builder(into)]
-        pub content_uri: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content_uri: pulumi_gestalt_rust::Input<String>,
         /// Specify the version of the python3 package. The value should meet the system.version class format like `1.1.1`. Changing this forces a new Automation Python3 Package to be created.
         #[builder(into, default)]
-        pub content_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the hash algorithm used to hash the content of the python3 package. Changing this forces a new Automation Python3 Package to be created.
         #[builder(into, default)]
-        pub hash_algorithm: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hash_algorithm: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specity the hash value of the content. Changing this forces a new Automation Python3 Package to be created.
         #[builder(into, default)]
-        pub hash_value: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub hash_value: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Automation Python3 Package. Changing this forces a new Automation Python3 Package to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Python3 Package is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Automation Python3 Package.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

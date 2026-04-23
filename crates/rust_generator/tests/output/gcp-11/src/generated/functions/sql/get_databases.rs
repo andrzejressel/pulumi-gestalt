@@ -10,12 +10,12 @@ pub mod get_databases {
     pub struct GetDatabasesArgs {
         /// The name of the Cloud SQL database instance in which the database belongs.
         #[builder(into)]
-        pub instance: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the instance belongs.
         ///
         /// > **Note** This datasource performs client-side sorting to provide consistent ordering of the databases.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetDatabasesResult {

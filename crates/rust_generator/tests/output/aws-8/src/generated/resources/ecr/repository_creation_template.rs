@@ -85,16 +85,16 @@ pub mod repository_creation_template {
     pub struct RepositoryCreationTemplateArgs {
         /// Which features this template applies to. Must contain one or more of `PULL_THROUGH_CACHE` or `REPLICATION`.
         #[builder(into)]
-        pub applied_fors: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub applied_fors: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A custom IAM role to use for repository creation. Required if using repository tags or KMS encryption.
         #[builder(into, default)]
-        pub custom_role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description for this template.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Encryption configuration for any created repositories. See below for schema.
         #[builder(into, default)]
-        pub encryption_configurations: pulumi_gestalt_rust::InputOrOutput<
+        pub encryption_configurations: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::ecr::RepositoryCreationTemplateEncryptionConfiguration,
@@ -103,18 +103,18 @@ pub mod repository_creation_template {
         >,
         /// The tag mutability setting for any created repositories. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `MUTABLE`.
         #[builder(into, default)]
-        pub image_tag_mutability: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub image_tag_mutability: pulumi_gestalt_rust::Input<Option<String>>,
         /// The lifecycle policy document to apply to any created repositories. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs. Consider using the `aws.ecr.getLifecyclePolicyDocument` data_source to generate/manage the JSON document used for the `lifecycle_policy` argument.
         #[builder(into, default)]
-        pub lifecycle_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub lifecycle_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The repository name prefix to match against. Use `ROOT` to match any prefix that doesn't explicitly match another template.
         #[builder(into)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub prefix: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub repository_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub repository_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to any created repositories.
         #[builder(into, default)]
-        pub resource_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

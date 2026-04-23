@@ -92,22 +92,22 @@ pub mod dataset_blob_storage {
     pub struct DatasetBlobStorageArgs {
         /// The name of the storage account container to be shared with the receiver. Changing this forces a new Data Share Blob Storage Dataset to be created.
         #[builder(into)]
-        pub container_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Data Share in which this Data Share Blob Storage Dataset should be created. Changing this forces a new Data Share Blob Storage Dataset to be created.
         #[builder(into)]
-        pub data_share_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_share_id: pulumi_gestalt_rust::Input<String>,
         /// The path of the file in the storage container to be shared with the receiver. Changing this forces a new Data Share Blob Storage Dataset to be created.
         #[builder(into, default)]
-        pub file_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The path of the folder in the storage container to be shared with the receiver. Changing this forces a new Data Share Blob Storage Dataset to be created.
         #[builder(into, default)]
-        pub folder_path: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub folder_path: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Data Share Blob Storage Dataset. Changing this forces a new Data Share Blob Storage Dataset to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `storage_account` block as defined below. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub storage_account: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account: pulumi_gestalt_rust::Input<
             super::super::types::datashare::DatasetBlobStorageStorageAccount,
         >,
     }

@@ -50,10 +50,10 @@ pub mod collaboration {
     pub struct CollaborationArgs {
         /// The name for the member record for the collaboration creator.
         #[builder(into)]
-        pub creator_display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub creator_display_name: pulumi_gestalt_rust::Input<String>,
         /// The list of member abilities for the creator of the collaboration.  Valid values [may be found here](https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaboration.html#API-CreateCollaboration-request-creatorMemberAbilities).
         #[builder(into)]
-        pub creator_member_abilities: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub creator_member_abilities: pulumi_gestalt_rust::Input<Vec<String>>,
         /// a collection of settings which determine how the [c3r client](https://docs.aws.amazon.com/clean-rooms/latest/userguide/crypto-computing.html) will encrypt data for use within this collaboration.
         /// * `data_encryption_metadata.allow_clear_text` - (Required - Forces new resource) - Indicates whether encrypted tables can contain cleartext data. This is a boolea
         /// field.
@@ -64,30 +64,30 @@ pub mod collaboration {
         /// * `data_encryption_metadata.preserve_nulls` - (Required - Forces new resource) - Indicates whether NULL values are to be copied as NULL to encrypted tables (true)
         /// or cryptographically processed (false).
         #[builder(into, default)]
-        pub data_encryption_metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub data_encryption_metadata: pulumi_gestalt_rust::Input<
             Option<super::super::types::cleanrooms::CollaborationDataEncryptionMetadata>,
         >,
         /// A description for a collaboration.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// Additional members of the collaboration which will be invited to join the collaboration.
         /// * `member.account_id` - (Required - Forces new resource) - The account id for the invited member.
         /// * `member.display_name` - (Required - Forces new resource) - The display name for the invited member.
         /// * `member.member_abilities` - (Required - Forces new resource) - The list of abilities for the invited member. Valid values [may be found here](https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaboration.html#API-CreateCollaboration-request-creatorMemberAbilities).
         #[builder(into, default)]
-        pub members: pulumi_gestalt_rust::InputOrOutput<
+        pub members: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cleanrooms::CollaborationMember>>,
         >,
         /// The name of the collaboration.  Collaboration names do not need to be unique.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Determines if members of the collaboration can enable query logs within their own.
         /// emberships. Valid values [may be found here](https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaboration.html#API-CreateCollaboration-request-queryLogStatus).
         #[builder(into)]
-        pub query_log_status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub query_log_status: pulumi_gestalt_rust::Input<String>,
         /// Key value pairs which tag the collaboration.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

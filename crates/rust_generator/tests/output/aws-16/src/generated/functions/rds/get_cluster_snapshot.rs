@@ -10,33 +10,31 @@ pub mod get_cluster_snapshot {
     pub struct GetClusterSnapshotArgs {
         /// Returns the list of snapshots created by the specific db_cluster
         #[builder(into, default)]
-        pub db_cluster_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub db_cluster_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Returns information on a specific snapshot_id.
         #[builder(into, default)]
-        pub db_cluster_snapshot_identifier: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub db_cluster_snapshot_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set this value to true to include manual DB Cluster Snapshots that are public and can be
         /// copied or restored by any AWS account, otherwise set this value to false. The default is `false`.
         #[builder(into, default)]
-        pub include_public: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_public: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Set this value to true to include shared manual DB Cluster Snapshots from other
         /// AWS accounts that this AWS account has been given permission to copy or restore, otherwise set this value to false.
         /// The default is `false`.
         #[builder(into, default)]
-        pub include_shared: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_shared: pulumi_gestalt_rust::Input<Option<bool>>,
         /// If more than one result is returned, use the most recent Snapshot.
         #[builder(into, default)]
-        pub most_recent: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub most_recent: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Type of snapshots to be returned. If you don't specify a SnapshotType
         /// value, then both automated and manual DB cluster snapshots are returned. Shared and public DB Cluster Snapshots are not
         /// included in the returned results by default. Possible values are, `automated`, `manual`, `shared`, `public` and `awsbackup`.
         #[builder(into, default)]
-        pub snapshot_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub snapshot_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Mapping of tags, each pair of which must exactly match
         /// a pair on the desired DB cluster snapshot.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

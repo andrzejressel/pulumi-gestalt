@@ -99,72 +99,64 @@ pub mod ontap_file_system {
     pub struct OntapFileSystemArgs {
         /// The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 90 days.
         #[builder(into, default)]
-        pub automatic_backup_retention_days: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub automatic_backup_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A recurring daily time, in the format HH:MM. HH is the zero-padded hour of the day (0-23), and MM is the zero-padded minute of the hour. For example, 05:00 specifies 5 AM daily. Requires `automatic_backup_retention_days` to be set.
         #[builder(into, default)]
-        pub daily_automatic_backup_start_time: pulumi_gestalt_rust::InputOrOutput<
+        pub daily_automatic_backup_start_time: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The filesystem deployment type. Supports `MULTI_AZ_1`, `MULTI_AZ_2`, `SINGLE_AZ_1`, and `SINGLE_AZ_2`.
         #[builder(into)]
-        pub deployment_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployment_type: pulumi_gestalt_rust::Input<String>,
         /// The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file system. See Disk Iops Configuration below.
         #[builder(into, default)]
-        pub disk_iops_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub disk_iops_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::fsx::OntapFileSystemDiskIopsConfiguration>,
         >,
         /// Specifies the IP address range in which the endpoints to access your file system will be created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
         #[builder(into, default)]
-        pub endpoint_ip_address_range: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub endpoint_ip_address_range: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ONTAP administrative password for the fsxadmin user that you can use to administer your file system using the ONTAP CLI and REST API.
         #[builder(into, default)]
-        pub fsx_admin_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fsx_admin_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of ha_pairs to deploy for the file system. Valid value is 1 for `SINGLE_AZ_1` or `MULTI_AZ_1` and `MULTI_AZ_2`. Valid values are 1 through 12 for `SINGLE_AZ_2`.
         #[builder(into, default)]
-        pub ha_pairs: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub ha_pairs: pulumi_gestalt_rust::Input<Option<i32>>,
         /// ARN for the KMS Key to encrypt the file system at rest, Defaults to an AWS managed KMS Key.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID for a subnet. A subnet is a range of IP addresses in your virtual private cloud (VPC).
         #[builder(into)]
-        pub preferred_subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub preferred_subnet_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the VPC route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
         #[builder(into, default)]
-        pub route_table_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub route_table_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The storage capacity (GiB) of the file system. Valid values between `1024` and `196608` for file systems with deployment_type `SINGLE_AZ_1` and `MULTI_AZ_1`. Valid values are between `1024` and `524288` for `MULTI_AZ_2`. Valid values between `1024` (`1024` per ha pair) and `1048576` for file systems with deployment_type `SINGLE_AZ_2`. For `SINGLE_AZ_2`, the `1048576` (1PB) maximum is only supported when using 2 or more ha_pairs, the maximum is `524288` (512TB) when using 1 ha_pair.
         #[builder(into)]
-        pub storage_capacity: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub storage_capacity: pulumi_gestalt_rust::Input<i32>,
         /// The filesystem storage type. defaults to `SSD`.
         #[builder(into, default)]
-        pub storage_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of IDs for the subnets that the file system will be accessible from. Up to 2 subnets can be provided.
         #[builder(into)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A map of tags to assign to the file system. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Sets the throughput capacity (in MBps) for the file system that you're creating. Valid values are `128`, `256`, `512`, `1024`, `2048`, and `4096`. This parameter is only supported when not using the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
         #[builder(into, default)]
-        pub throughput_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub throughput_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Sets the per-HA-pair throughput capacity (in MBps) for the file system that you're creating, as opposed to `throughput_capacity` which specifies the total throughput capacity for the file system. Valid value for `MULTI_AZ_1` and `SINGLE_AZ_1` are `128`, `256`, `512`, `1024`, `2048`, and `4096`. Valid values for deployment type `MULTI_AZ_2` and `SINGLE_AZ_2` are `384`,`768`,`1536`,`3072`,`6144` where `ha_pairs` is `1`. Valid values for deployment type `SINGLE_AZ_2` are `1536`, `3072`, and `6144` where `ha_pairs` is greater than 1. This parameter is only supported when specifying the ha_pairs parameter. Either throughput_capacity or throughput_capacity_per_ha_pair must be specified.
         #[builder(into, default)]
-        pub throughput_capacity_per_ha_pair: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub throughput_capacity_per_ha_pair: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone.
         #[builder(into, default)]
-        pub weekly_maintenance_start_time: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub weekly_maintenance_start_time: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct OntapFileSystemResult {

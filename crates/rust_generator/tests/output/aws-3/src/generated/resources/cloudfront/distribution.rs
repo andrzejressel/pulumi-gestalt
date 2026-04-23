@@ -227,70 +227,68 @@ pub mod distribution {
     #[allow(dead_code)]
     pub struct DistributionArgs {
         #[builder(into, default)]
-        pub aliases: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub aliases: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         #[builder(into, default)]
-        pub comment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub comment: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub continuous_deployment_policy_id: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub continuous_deployment_policy_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub custom_error_responses: pulumi_gestalt_rust::InputOrOutput<
+        pub custom_error_responses: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudfront::DistributionCustomErrorResponse>>,
         >,
         #[builder(into)]
-        pub default_cache_behavior: pulumi_gestalt_rust::InputOrOutput<
+        pub default_cache_behavior: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::DistributionDefaultCacheBehavior,
         >,
         #[builder(into, default)]
-        pub default_root_object: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_root_object: pulumi_gestalt_rust::Input<Option<String>>,
         /// `true` if any of the AWS accounts listed as trusted signers have active CloudFront key pairs
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         #[builder(into, default)]
-        pub http_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub http_version: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub is_ipv6_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub is_ipv6_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub logging_config: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudfront::DistributionLoggingConfig>,
         >,
         #[builder(into, default)]
-        pub ordered_cache_behaviors: pulumi_gestalt_rust::InputOrOutput<
+        pub ordered_cache_behaviors: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::cloudfront::DistributionOrderedCacheBehavior>,
             >,
         >,
         #[builder(into, default)]
-        pub origin_groups: pulumi_gestalt_rust::InputOrOutput<
+        pub origin_groups: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudfront::DistributionOriginGroup>>,
         >,
         #[builder(into)]
-        pub origins: pulumi_gestalt_rust::InputOrOutput<
+        pub origins: pulumi_gestalt_rust::Input<
             Vec<super::super::types::cloudfront::DistributionOrigin>,
         >,
         #[builder(into, default)]
-        pub price_class: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub price_class: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub restrictions: pulumi_gestalt_rust::InputOrOutput<
+        pub restrictions: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::DistributionRestrictions,
         >,
         #[builder(into, default)]
-        pub retain_on_delete: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub retain_on_delete: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub staging: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub staging: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into)]
-        pub viewer_certificate: pulumi_gestalt_rust::InputOrOutput<
+        pub viewer_certificate: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::DistributionViewerCertificate,
         >,
         #[builder(into, default)]
-        pub wait_for_deployment: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_for_deployment: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub web_acl_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub web_acl_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DistributionResult {

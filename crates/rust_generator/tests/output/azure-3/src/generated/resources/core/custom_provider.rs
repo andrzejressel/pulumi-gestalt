@@ -51,31 +51,31 @@ pub mod custom_provider {
     pub struct CustomProviderArgs {
         /// Any number of `action` block as defined below. One of `resource_type` or `action` must be specified.
         #[builder(into, default)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::core::CustomProviderAction>>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Custom Provider. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Custom Provider. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Any number of `resource_type` block as defined below. One of `resource_type` or `action` must be specified.
         #[builder(into, default)]
-        pub resource_types: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_types: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::core::CustomProviderResourceType>>,
         >,
         /// A mapping of tags to assign to the resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Any number of `validation` block as defined below.
         #[builder(into, default)]
-        pub validations: pulumi_gestalt_rust::InputOrOutput<
+        pub validations: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::core::CustomProviderValidation>>,
         >,
     }

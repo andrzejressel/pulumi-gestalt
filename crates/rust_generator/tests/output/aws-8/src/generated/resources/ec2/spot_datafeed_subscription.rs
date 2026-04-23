@@ -43,10 +43,10 @@ pub mod spot_datafeed_subscription {
     pub struct SpotDatafeedSubscriptionArgs {
         /// The Amazon S3 bucket in which to store the Spot instance data feed.
         #[builder(into)]
-        pub bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket: pulumi_gestalt_rust::Input<String>,
         /// Path of folder inside bucket to place spot pricing data.
         #[builder(into, default)]
-        pub prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SpotDatafeedSubscriptionResult {

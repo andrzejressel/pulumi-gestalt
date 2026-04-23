@@ -12,19 +12,19 @@ pub mod get_resolver_rules {
         /// The filtering is done locally, so could have a performance impact if the result is large.
         /// This argument should be used along with other arguments to limit the number of results returned.
         #[builder(into, default)]
-        pub name_regex: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_regex: pulumi_gestalt_rust::Input<Option<String>>,
         /// When the desired resolver rules are shared with another AWS account, the account ID of the account that the rules are shared with.
         #[builder(into, default)]
-        pub owner_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the outbound resolver endpoint for the desired resolver rules.
         #[builder(into, default)]
-        pub resolver_endpoint_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resolver_endpoint_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Rule type of the desired resolver rules. Valid values are `FORWARD`, `SYSTEM` and `RECURSIVE`.
         #[builder(into, default)]
-        pub rule_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub rule_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the desired resolver rules are shared and, if so, whether the current account is sharing the rules with another account, or another account is sharing the rules with the current account. Valid values are `NOT_SHARED`, `SHARED_BY_ME` or `SHARED_WITH_ME`
         #[builder(into, default)]
-        pub share_status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub share_status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetResolverRulesResult {

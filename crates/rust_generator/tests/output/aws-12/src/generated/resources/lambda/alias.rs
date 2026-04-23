@@ -39,19 +39,19 @@ pub mod alias {
     pub struct AliasArgs {
         /// Description of the alias.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Lambda Function name or ARN.
         #[builder(into)]
-        pub function_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_name: pulumi_gestalt_rust::Input<String>,
         /// Lambda function version for which you are creating the alias. Pattern: `(\$LATEST|[0-9]+)`.
         #[builder(into)]
-        pub function_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub function_version: pulumi_gestalt_rust::Input<String>,
         /// Name for the alias you are creating. Pattern: `(?!^[0-9]+$)([a-zA-Z0-9-_]+)`
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Lambda alias' route configuration settings. Fields documented below
         #[builder(into, default)]
-        pub routing_config: pulumi_gestalt_rust::InputOrOutput<
+        pub routing_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::lambda::AliasRoutingConfig>,
         >,
     }

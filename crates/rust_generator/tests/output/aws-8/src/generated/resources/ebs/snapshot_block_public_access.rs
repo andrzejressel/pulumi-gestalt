@@ -33,7 +33,7 @@ pub mod snapshot_block_public_access {
     pub struct SnapshotBlockPublicAccessArgs {
         /// The mode in which to enable "Block public access for snapshots" for the region. Allowed values are `block-all-sharing`, `block-new-sharing`, `unblocked`.
         #[builder(into)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub state: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SnapshotBlockPublicAccessResult {

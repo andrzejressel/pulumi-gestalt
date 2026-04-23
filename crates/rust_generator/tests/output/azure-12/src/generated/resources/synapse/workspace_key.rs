@@ -132,18 +132,18 @@ pub mod workspace_key {
         ///
         /// > **Note:** Only one key can actively encrypt a workspace. When performing a key rotation, setting a new key as the active key will disable existing keys.
         #[builder(into)]
-        pub active: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub active: pulumi_gestalt_rust::Input<bool>,
         /// Specifies the name of the workspace key. Should match the name of the key in the synapse workspace.
         #[builder(into)]
-        pub customer_managed_key_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub customer_managed_key_name: pulumi_gestalt_rust::Input<String>,
         /// The Azure Key Vault Key Versionless ID to be used as the Customer Managed Key (CMK) for double encryption
         #[builder(into, default)]
-        pub customer_managed_key_versionless_id: pulumi_gestalt_rust::InputOrOutput<
+        pub customer_managed_key_versionless_id: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The ID of the Synapse Workspace where the encryption key should be configured.
         #[builder(into)]
-        pub synapse_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub synapse_workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceKeyResult {

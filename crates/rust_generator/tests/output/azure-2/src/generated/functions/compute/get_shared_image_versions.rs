@@ -10,16 +10,16 @@ pub mod get_shared_image_versions {
     pub struct GetSharedImageVersionsArgs {
         /// The name of the Shared Image in which the Shared Image exists.
         #[builder(into)]
-        pub gallery_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gallery_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Shared Image in which this Version exists.
         #[builder(into)]
-        pub image_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub image_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group in which the Shared Image Gallery exists.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to filter the list of images against.
         #[builder(into, default)]
-        pub tags_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub tags_filter: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -53,24 +53,22 @@ pub mod address_map {
     pub struct AddressMapArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// If you have legacy TLS clients which do not send the TLS server name indicator, then you can specify one default SNI on the map.
         #[builder(into, default)]
-        pub default_sni: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_sni: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the address map.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether the Address Map is enabled or not.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// The set of IPs on the Address Map.
         #[builder(into, default)]
-        pub ips: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<super::types::AddressMapIp>>,
-        >,
+        pub ips: pulumi_gestalt_rust::Input<Option<Vec<super::types::AddressMapIp>>>,
         /// Zones and Accounts which will be assigned IPs on this Address Map.
         #[builder(into, default)]
-        pub memberships: pulumi_gestalt_rust::InputOrOutput<
+        pub memberships: pulumi_gestalt_rust::Input<
             Option<Vec<super::types::AddressMapMembership>>,
         >,
     }

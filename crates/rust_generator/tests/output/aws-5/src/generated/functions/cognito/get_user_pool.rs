@@ -10,7 +10,7 @@ pub mod get_user_pool {
     pub struct GetUserPoolArgs {
         /// The cognito pool ID
         #[builder(into)]
-        pub user_pool_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_pool_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetUserPoolResult {

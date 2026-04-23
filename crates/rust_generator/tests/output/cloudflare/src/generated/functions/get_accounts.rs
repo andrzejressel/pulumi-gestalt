@@ -10,7 +10,7 @@ pub mod get_accounts {
     pub struct GetAccountsArgs {
         /// The account name to target for the resource.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetAccountsResult {

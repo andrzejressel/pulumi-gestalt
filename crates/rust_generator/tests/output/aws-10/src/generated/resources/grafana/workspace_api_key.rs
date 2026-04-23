@@ -32,16 +32,16 @@ pub mod workspace_api_key {
     pub struct WorkspaceApiKeyArgs {
         /// Specifies the name of the API key. Key names must be unique to the workspace.
         #[builder(into)]
-        pub key_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the permission level of the API key. Valid values are `VIEWER`, `EDITOR`, or `ADMIN`.
         #[builder(into)]
-        pub key_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_role: pulumi_gestalt_rust::Input<String>,
         /// Specifies the time in seconds until the API key expires. Keys can be valid for up to 30 days.
         #[builder(into)]
-        pub seconds_to_live: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub seconds_to_live: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the workspace that the API key is valid for.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceApiKeyResult {

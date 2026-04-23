@@ -62,13 +62,13 @@ pub mod spring_cloud_gateway_custom_domain {
     pub struct SpringCloudGatewayCustomDomainArgs {
         /// The name which should be used for this Spring Cloud Gateway Custom Domain. Changing this forces a new Spring Cloud Gateway Custom Domain to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Spring Cloud Gateway. Changing this forces a new Spring Cloud Gateway Custom Domain to be created.
         #[builder(into)]
-        pub spring_cloud_gateway_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_gateway_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the thumbprint of the Spring Cloud Certificate that binds to the Spring Cloud Gateway Custom Domain.
         #[builder(into, default)]
-        pub thumbprint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub thumbprint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudGatewayCustomDomainResult {

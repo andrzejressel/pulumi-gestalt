@@ -10,24 +10,22 @@ pub mod get_orderable_db_instance {
     pub struct GetOrderableDbInstanceArgs {
         /// DB engine. (Default: `neptune`)
         #[builder(into, default)]
-        pub engine: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of the DB engine. For example, `1.0.1.0`, `1.0.1.2`, `1.0.2.2`, and `1.0.3.0`.
         #[builder(into, default)]
-        pub engine_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub engine_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// DB instance class. Examples of classes are `db.r5.large`, `db.r5.xlarge`, `db.r4.large`, `db.r5.4xlarge`, `db.r5.12xlarge`, `db.r4.xlarge`, and `db.t3.medium`.
         #[builder(into, default)]
-        pub instance_class: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub instance_class: pulumi_gestalt_rust::Input<Option<String>>,
         /// License model. (Default: `amazon-license`)
         #[builder(into, default)]
-        pub license_model: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub license_model: pulumi_gestalt_rust::Input<Option<String>>,
         /// Ordered list of preferred Neptune DB instance classes. The first match in this list will be returned. If no preferred matches are found and the original search returned more than one result, an error is returned.
         #[builder(into, default)]
-        pub preferred_instance_classes: pulumi_gestalt_rust::InputOrOutput<
-            Option<Vec<String>>,
-        >,
+        pub preferred_instance_classes: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Enable to show only VPC offerings.
         #[builder(into, default)]
-        pub vpc: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub vpc: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct GetOrderableDbInstanceResult {

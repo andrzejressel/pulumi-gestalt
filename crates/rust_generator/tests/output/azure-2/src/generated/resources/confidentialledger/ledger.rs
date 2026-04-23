@@ -47,14 +47,14 @@ pub mod ledger {
     pub struct LedgerArgs {
         /// A list of `azuread_based_service_principal` blocks as defined below.
         #[builder(into)]
-        pub azuread_based_service_principals: pulumi_gestalt_rust::InputOrOutput<
+        pub azuread_based_service_principals: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::confidentialledger::LedgerAzureadBasedServicePrincipal,
             >,
         >,
         /// A list of `certificate_based_security_principal` blocks as defined below.
         #[builder(into, default)]
-        pub certificate_based_security_principals: pulumi_gestalt_rust::InputOrOutput<
+        pub certificate_based_security_principals: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::confidentialledger::LedgerCertificateBasedSecurityPrincipal,
@@ -63,19 +63,19 @@ pub mod ledger {
         >,
         /// Specifies the type of Confidential Ledger. Possible values are `Private` and `Public`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub ledger_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ledger_type: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the Confidential Ledger exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Confidential Ledger. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Confidential Ledger exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the Confidential Ledger.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

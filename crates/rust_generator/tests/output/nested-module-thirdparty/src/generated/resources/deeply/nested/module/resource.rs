@@ -9,7 +9,7 @@ pub mod resource {
     #[allow(dead_code)]
     pub struct ResourceArgs {
         #[builder(into, default)]
-        pub baz: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub baz: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ResourceResult {

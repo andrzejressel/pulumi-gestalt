@@ -96,33 +96,33 @@ pub mod sync_server_endpoint {
     pub struct SyncServerEndpointArgs {
         /// Is Cloud Tiering Enabled? Defaults to `false`.
         #[builder(into, default)]
-        pub cloud_tiering_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cloud_tiering_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies how the server initially downloads the Azure file share data. Valid Values includes `NamespaceThenModifiedFiles`, `NamespaceOnly`, and `AvoidTieredFiles`. Defaults to `NamespaceThenModifiedFiles`.
         #[builder(into, default)]
-        pub initial_download_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub initial_download_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies how to handle the local cache. Valid Values include `UpdateLocallyCachedFiles` and `DownloadNewAndModifiedFiles`. Defaults to `UpdateLocallyCachedFiles`.
         #[builder(into, default)]
-        pub local_cache_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub local_cache_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Storage Sync. Changing this forces a new Storage Sync Server Endpoint to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Registered Server that will be associate with the Storage Sync Server Endpoint. Changing this forces a new Storage Sync Server Endpoint to be created.
         ///
         /// > **NOTE:** The target server must already be registered with the parent `azure.storage.Sync` prior to creating this endpoint. For more information on registering a server see the [Microsoft documentation](https://learn.microsoft.com/azure/storage/file-sync/file-sync-server-registration)
         #[builder(into)]
-        pub registered_server_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub registered_server_id: pulumi_gestalt_rust::Input<String>,
         /// The path on the Windows Server to be synced to the Azure file share. Changing this forces a new Storage Sync Server Endpoint to be created.
         #[builder(into)]
-        pub server_local_path: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_local_path: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Storage Sync Group where the Storage Sync Server Endpoint should exist. Changing this forces a new Storage Sync Server Endpoint to be created.
         #[builder(into)]
-        pub storage_sync_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub storage_sync_group_id: pulumi_gestalt_rust::Input<String>,
         /// Files older than the specified age will be tiered to the cloud.
         #[builder(into, default)]
-        pub tier_files_older_than_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub tier_files_older_than_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// What percentage of free space on the volume should be preserved? Defaults to `20`.
         #[builder(into, default)]
-        pub volume_free_space_percent: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub volume_free_space_percent: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct SyncServerEndpointResult {

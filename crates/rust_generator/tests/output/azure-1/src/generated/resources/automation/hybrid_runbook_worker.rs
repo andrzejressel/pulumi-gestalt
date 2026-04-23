@@ -124,19 +124,19 @@ pub mod hybrid_runbook_worker {
     pub struct HybridRunbookWorkerArgs {
         /// The name of the automation account in which the Hybrid Worker is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Automation should exist. Changing this forces a new Automation to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the virtual machine used for this HybridWorker. Changing this forces a new Automation to be created.
         #[builder(into)]
-        pub vm_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vm_resource_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the HybridWorker Group. Changing this forces a new Automation to be created.
         #[builder(into)]
-        pub worker_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub worker_group_name: pulumi_gestalt_rust::Input<String>,
         /// Specify the ID of this HybridWorker in UUID notation. Changing this forces a new Automation to be created.
         #[builder(into)]
-        pub worker_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub worker_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HybridRunbookWorkerResult {

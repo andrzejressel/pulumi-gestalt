@@ -59,58 +59,58 @@ pub mod container_recipe {
     pub struct ContainerRecipeArgs {
         /// Ordered configuration block(s) with components for the container recipe. Detailed below.
         #[builder(into)]
-        pub components: pulumi_gestalt_rust::InputOrOutput<
+        pub components: pulumi_gestalt_rust::Input<
             Vec<super::super::types::imagebuilder::ContainerRecipeComponent>,
         >,
         /// The type of the container to create. Valid values: `DOCKER`.
         #[builder(into)]
-        pub container_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub container_type: pulumi_gestalt_rust::Input<String>,
         /// The description of the container recipe.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Dockerfile template used to build the image as an inline data blob.
         #[builder(into, default)]
-        pub dockerfile_template_data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dockerfile_template_data: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Amazon S3 URI for the Dockerfile that will be used to build the container image.
         #[builder(into, default)]
-        pub dockerfile_template_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dockerfile_template_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block used to configure an instance for building and testing container images. Detailed below.
         #[builder(into, default)]
-        pub instance_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub instance_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::imagebuilder::ContainerRecipeInstanceConfiguration,
             >,
         >,
         /// The KMS key used to encrypt the container image.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the container recipe.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The base image for the container recipe.
         #[builder(into)]
-        pub parent_image: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent_image: pulumi_gestalt_rust::Input<String>,
         /// Specifies the operating system platform when you use a custom base image.
         #[builder(into, default)]
-        pub platform_override: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub platform_override: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags for the container recipe. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The destination repository for the container image. Detailed below.
         #[builder(into)]
-        pub target_repository: pulumi_gestalt_rust::InputOrOutput<
+        pub target_repository: pulumi_gestalt_rust::Input<
             super::super::types::imagebuilder::ContainerRecipeTargetRepository,
         >,
         /// Version of the container recipe.
         ///
         /// The following attributes are optional:
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
         /// The working directory to be used during build and test workflows.
         #[builder(into, default)]
-        pub working_directory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub working_directory: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ContainerRecipeResult {

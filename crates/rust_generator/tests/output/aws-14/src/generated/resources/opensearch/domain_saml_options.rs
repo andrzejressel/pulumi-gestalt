@@ -55,10 +55,10 @@ pub mod domain_saml_options {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// SAML authentication options for an AWS OpenSearch Domain.
         #[builder(into, default)]
-        pub saml_options: pulumi_gestalt_rust::InputOrOutput<
+        pub saml_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::opensearch::DomainSamlOptionsSamlOptions>,
         >,
     }

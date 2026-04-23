@@ -19,10 +19,10 @@ pub mod user_policy_attachments_exclusive {
     pub struct UserPolicyAttachmentsExclusiveArgs {
         /// A list of managed IAM policy ARNs to be attached to the user. Policies attached to this user but not configured in this argument will be removed.
         #[builder(into)]
-        pub policy_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub policy_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// IAM user name.
         #[builder(into)]
-        pub user_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserPolicyAttachmentsExclusiveResult {

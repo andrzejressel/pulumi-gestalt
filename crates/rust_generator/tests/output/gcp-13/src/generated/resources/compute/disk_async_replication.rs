@@ -41,12 +41,12 @@ pub mod disk_async_replication {
     pub struct DiskAsyncReplicationArgs {
         /// The primary disk (source of replication).
         #[builder(into)]
-        pub primary_disk: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub primary_disk: pulumi_gestalt_rust::Input<String>,
         /// The secondary disk (target of replication). You can specify only one value. Structure is documented below.
         ///
         /// The `secondary_disk` block includes:
         #[builder(into)]
-        pub secondary_disk: pulumi_gestalt_rust::InputOrOutput<
+        pub secondary_disk: pulumi_gestalt_rust::Input<
             super::super::types::compute::DiskAsyncReplicationSecondaryDisk,
         >,
     }

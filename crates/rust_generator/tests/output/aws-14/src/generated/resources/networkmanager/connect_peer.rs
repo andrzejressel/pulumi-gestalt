@@ -30,29 +30,29 @@ pub mod connect_peer {
     pub struct ConnectPeerArgs {
         /// The Connect peer BGP options.
         #[builder(into, default)]
-        pub bgp_options: pulumi_gestalt_rust::InputOrOutput<
+        pub bgp_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkmanager::ConnectPeerBgpOptions>,
         >,
         /// The ID of the connection attachment.
         #[builder(into)]
-        pub connect_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub connect_attachment_id: pulumi_gestalt_rust::Input<String>,
         /// A Connect peer core network address.
         #[builder(into, default)]
-        pub core_network_address: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub core_network_address: pulumi_gestalt_rust::Input<Option<String>>,
         /// The inside IP addresses used for BGP peering. Required when the Connect attachment protocol is `GRE`. See `aws.networkmanager.ConnectAttachment` for details.
         #[builder(into, default)]
-        pub inside_cidr_blocks: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub inside_cidr_blocks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Connect peer address.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub peer_address: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub peer_address: pulumi_gestalt_rust::Input<String>,
         /// The subnet ARN for the Connect peer. Required when the Connect attachment protocol is `NO_ENCAP`. See `aws.networkmanager.ConnectAttachment` for details.
         #[builder(into, default)]
-        pub subnet_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnet_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value tags for the attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -64,16 +64,16 @@ pub mod spring_cloud_configuration_service {
     pub struct SpringCloudConfigurationServiceArgs {
         /// The generation of the Spring Cloud Configuration Service. Possible values are `Gen1` and `Gen2`.
         #[builder(into, default)]
-        pub generation: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub generation: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Spring Cloud Configuration Service. The only possible value is `default`. Changing this forces a new Spring Cloud Configuration Service to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies how often to check repository updates. Minimum value is 0.
         #[builder(into, default)]
-        pub refresh_interval_in_seconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub refresh_interval_in_seconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// One or more `repository` blocks as defined below.
         #[builder(into, default)]
-        pub repositories: pulumi_gestalt_rust::InputOrOutput<
+        pub repositories: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::appplatform::SpringCloudConfigurationServiceRepository,
@@ -82,7 +82,7 @@ pub mod spring_cloud_configuration_service {
         >,
         /// The ID of the Spring Cloud Service. Changing this forces a new Spring Cloud Configuration Service to be created.
         #[builder(into)]
-        pub spring_cloud_service_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub spring_cloud_service_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SpringCloudConfigurationServiceResult {

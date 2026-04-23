@@ -10,18 +10,18 @@ pub mod get_data_set {
     pub struct GetDataSetArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier for the data set.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub data_set_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_set_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub tags_all: pulumi_gestalt_rust::InputOrOutput<
+        pub tags_all: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

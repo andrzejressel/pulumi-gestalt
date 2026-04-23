@@ -68,22 +68,22 @@ pub mod data_export_rule {
     pub struct DataExportRuleArgs {
         /// The destination resource ID. It should be a storage account, an event hub namespace or an event hub. If the destination is an event hub namespace, an event hub would be created for each table automatically.
         #[builder(into)]
-        pub destination_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination_resource_id: pulumi_gestalt_rust::Input<String>,
         /// Is this Log Analytics Data Export Rule enabled? Possible values include `true` or `false`. Defaults to `false`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Log Analytics Data Export Rule. Changing this forces a new Log Analytics Data Export Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Log Analytics Data Export should exist. Changing this forces a new Log Analytics Data Export Rule to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A list of table names to export to the destination resource, for example: `["Heartbeat", "SecurityEvent"]`.
         #[builder(into)]
-        pub table_names: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub table_names: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The resource ID of the workspace. Changing this forces a new Log Analytics Data Export Rule to be created.
         #[builder(into)]
-        pub workspace_resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_resource_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DataExportRuleResult {

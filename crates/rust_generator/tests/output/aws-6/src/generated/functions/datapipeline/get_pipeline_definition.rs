@@ -10,7 +10,7 @@ pub mod get_pipeline_definition {
     pub struct GetPipelineDefinitionArgs {
         /// Parameter values used in the pipeline definition. See below
         #[builder(into, default)]
-        pub parameter_values: pulumi_gestalt_rust::InputOrOutput<
+        pub parameter_values: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::super::types::datapipeline::GetPipelineDefinitionParameterValue,
@@ -19,7 +19,7 @@ pub mod get_pipeline_definition {
         >,
         /// ID of the pipeline.
         #[builder(into)]
-        pub pipeline_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pipeline_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPipelineDefinitionResult {

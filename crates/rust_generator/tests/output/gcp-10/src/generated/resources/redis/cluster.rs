@@ -411,70 +411,68 @@ pub mod cluster {
         /// Default value: "AUTH_MODE_DISABLED" Possible values: ["AUTH_MODE_UNSPECIFIED", "AUTH_MODE_IAM_AUTH",
         /// "AUTH_MODE_DISABLED"]
         #[builder(into, default)]
-        pub authorization_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub authorization_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Cross cluster replication config
         #[builder(into, default)]
-        pub cross_cluster_replication_config: pulumi_gestalt_rust::InputOrOutput<
+        pub cross_cluster_replication_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::redis::ClusterCrossClusterReplicationConfig>,
         >,
         /// Optional. Indicates if the cluster is deletion protected or not. If the value if set to true, any delete cluster
         /// operation will fail. Default value is true.
         #[builder(into, default)]
-        pub deletion_protection_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub deletion_protection_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Maintenance policy for a cluster
         #[builder(into, default)]
-        pub maintenance_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::redis::ClusterMaintenancePolicy>,
         >,
         /// Unique name of the resource in this scope including project and location using the form:
         /// projects/{projectId}/locations/{locationId}/clusters/{clusterId}
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The nodeType for the Redis cluster. If not provided, REDIS_HIGHMEM_MEDIUM will be used as default Possible values:
         /// ["REDIS_SHARED_CORE_NANO", "REDIS_HIGHMEM_MEDIUM", "REDIS_HIGHMEM_XLARGE", "REDIS_STANDARD_SMALL"]
         #[builder(into, default)]
-        pub node_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub node_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Persistence config (RDB, AOF) for the cluster.
         #[builder(into, default)]
-        pub persistence_config: pulumi_gestalt_rust::InputOrOutput<
+        pub persistence_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::redis::ClusterPersistenceConfig>,
         >,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. Each PscConfig configures the consumer network where two
         /// network addresses will be designated to the cluster for client access.
         /// Currently, only one PscConfig is supported.
         /// Structure is documented below.
         #[builder(into)]
-        pub psc_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub psc_configs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::redis::ClusterPscConfig>,
         >,
         /// Configure Redis Cluster behavior using a subset of native Redis configuration parameters. Please check Memorystore
         /// documentation for the list of supported parameters:
         /// https://cloud.google.com/memorystore/docs/cluster/supported-instance-configurations
         #[builder(into, default)]
-        pub redis_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub redis_configs: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the region of the Redis cluster.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The number of replica nodes per shard.
         #[builder(into, default)]
-        pub replica_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub replica_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Required. Number of shards for the Redis cluster.
         #[builder(into)]
-        pub shard_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub shard_count: pulumi_gestalt_rust::Input<i32>,
         /// Optional. The in-transit encryption for the Redis cluster. If not provided, encryption is disabled for the cluster.
         /// Default value: "TRANSIT_ENCRYPTION_MODE_DISABLED" Possible values: ["TRANSIT_ENCRYPTION_MODE_UNSPECIFIED",
         /// "TRANSIT_ENCRYPTION_MODE_DISABLED", "TRANSIT_ENCRYPTION_MODE_SERVER_AUTHENTICATION"]
         #[builder(into, default)]
-        pub transit_encryption_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub transit_encryption_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. Zone distribution config for Memorystore Redis cluster.
         #[builder(into, default)]
-        pub zone_distribution_config: pulumi_gestalt_rust::InputOrOutput<
+        pub zone_distribution_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::redis::ClusterZoneDistributionConfig>,
         >,
     }

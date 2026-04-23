@@ -37,7 +37,7 @@ pub mod license_grant_accepter {
     pub struct LicenseGrantAccepterArgs {
         /// The ARN of the grant to accept.
         #[builder(into)]
-        pub grant_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub grant_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LicenseGrantAccepterResult {

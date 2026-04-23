@@ -85,43 +85,43 @@ pub mod policy_file_share {
     pub struct PolicyFileShareArgs {
         /// Configures the Policy backup frequency and times as documented in the `backup` block below.
         #[builder(into)]
-        pub backup: pulumi_gestalt_rust::InputOrOutput<
+        pub backup: pulumi_gestalt_rust::Input<
             super::super::types::backup::PolicyFileShareBackup,
         >,
         /// Specifies the name of the policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the policy. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Configures the policy daily retention as documented in the `retention_daily` block below.
         #[builder(into)]
-        pub retention_daily: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_daily: pulumi_gestalt_rust::Input<
             super::super::types::backup::PolicyFileShareRetentionDaily,
         >,
         /// Configures the policy monthly retention as documented in the `retention_monthly` block below.
         #[builder(into, default)]
-        pub retention_monthly: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_monthly: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyFileShareRetentionMonthly>,
         >,
         /// Configures the policy weekly retention as documented in the `retention_weekly` block below.
         #[builder(into, default)]
-        pub retention_weekly: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_weekly: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyFileShareRetentionWeekly>,
         >,
         /// Configures the policy yearly retention as documented in the `retention_yearly` block below.
         #[builder(into, default)]
-        pub retention_yearly: pulumi_gestalt_rust::InputOrOutput<
+        pub retention_yearly: pulumi_gestalt_rust::Input<
             Option<super::super::types::backup::PolicyFileShareRetentionYearly>,
         >,
         /// Specifies the timezone. [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/). Defaults to `UTC`
         ///
         /// > **NOTE:** The maximum number of snapshots that Azure Files can retain is 200. If your combined snapshot count exceeds 200 based on your retention policies, it will result in an error. See [this](https://docs.microsoft.com/azure/backup/backup-azure-files-faq#what-is-the-maximum-retention-i-can-configure-for-backups) article for more information.
         #[builder(into, default)]
-        pub timezone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub timezone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PolicyFileShareResult {

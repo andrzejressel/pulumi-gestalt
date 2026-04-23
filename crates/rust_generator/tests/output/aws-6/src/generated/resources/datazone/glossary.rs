@@ -108,20 +108,20 @@ pub mod glossary {
     pub struct GlossaryArgs {
         /// Description of the glossary. Must have a length between 0 and 4096.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub domain_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_identifier: pulumi_gestalt_rust::Input<String>,
         /// Name of the glossary. Must have length between 1 and 256.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the project that owns business glossary. Must follow regex of ^[a-zA-Z0-9_-]{1,36}$.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub owning_project_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owning_project_identifier: pulumi_gestalt_rust::Input<String>,
         /// Status of business glossary. Valid values are DISABLED and ENABLED.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GlossaryResult {

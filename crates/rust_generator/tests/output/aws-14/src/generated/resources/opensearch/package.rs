@@ -54,18 +54,18 @@ pub mod package {
     pub struct PackageArgs {
         /// Description of the package.
         #[builder(into, default)]
-        pub package_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub package_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name for the package.
         #[builder(into)]
-        pub package_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub package_name: pulumi_gestalt_rust::Input<String>,
         /// Configuration block for the package source options.
         #[builder(into)]
-        pub package_source: pulumi_gestalt_rust::InputOrOutput<
+        pub package_source: pulumi_gestalt_rust::Input<
             super::super::types::opensearch::PackagePackageSource,
         >,
         /// The type of package.
         #[builder(into)]
-        pub package_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub package_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PackageResult {

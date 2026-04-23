@@ -37,20 +37,20 @@ pub mod vpc_attachment_accepter {
     pub struct VpcAttachmentAccepterArgs {
         /// Key-value tags for the EC2 Transit Gateway VPC Attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the EC2 Transit Gateway Attachment to manage.
         #[builder(into)]
-        pub transit_gateway_attachment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub transit_gateway_attachment_id: pulumi_gestalt_rust::Input<String>,
         /// Boolean whether the VPC Attachment should be associated with the EC2 Transit Gateway association default route table. Default value: `true`.
         #[builder(into, default)]
-        pub transit_gateway_default_route_table_association: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_default_route_table_association: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// Boolean whether the VPC Attachment should propagate routes with the EC2 Transit Gateway propagation default route table. Default value: `true`.
         #[builder(into, default)]
-        pub transit_gateway_default_route_table_propagation: pulumi_gestalt_rust::InputOrOutput<
+        pub transit_gateway_default_route_table_propagation: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
     }

@@ -10,24 +10,24 @@ pub mod get_user {
     pub struct GetUserArgs {
         /// A unique identifier for a user or group that is not the primary identifier. Conflicts with `user_id` and `filter`. Detailed below.
         #[builder(into, default)]
-        pub alternate_identifier: pulumi_gestalt_rust::InputOrOutput<
+        pub alternate_identifier: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::identitystore::GetUserAlternateIdentifier>,
         >,
         /// Configuration block for filtering by a unique attribute of the user. Detailed below.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<
+        pub filter: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::identitystore::GetUserFilter>,
         >,
         /// Identity Store ID associated with the Single Sign-On Instance.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub identity_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identity_store_id: pulumi_gestalt_rust::Input<String>,
         /// The identifier for a user in the Identity Store.
         ///
         /// > Exactly one of the above arguments must be provided. Passing both `filter` and `user_id` is allowed for backwards compatibility.
         #[builder(into, default)]
-        pub user_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub user_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetUserResult {

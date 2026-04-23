@@ -95,21 +95,19 @@ pub mod managed_instance_active_directory_administrator {
     pub struct ManagedInstanceActiveDirectoryAdministratorArgs {
         /// When `true`, only permit logins from AAD users and administrators. When `false`, also allow local database users.
         #[builder(into, default)]
-        pub azuread_authentication_only: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub azuread_authentication_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The login name of the principal to set as the Managed Instance Administrator.
         #[builder(into)]
-        pub login_username: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub login_username: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Azure SQL Managed Instance for which to set the administrator. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub managed_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_instance_id: pulumi_gestalt_rust::Input<String>,
         /// The Object ID of the principal to set as the Managed Instance Administrator.
         #[builder(into)]
-        pub object_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub object_id: pulumi_gestalt_rust::Input<String>,
         /// The Azure Active Directory Tenant ID.
         #[builder(into)]
-        pub tenant_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tenant_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ManagedInstanceActiveDirectoryAdministratorResult {

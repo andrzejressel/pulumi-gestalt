@@ -129,59 +129,57 @@ pub mod api_diagnostic {
     pub struct ApiDiagnosticArgs {
         /// Always log errors. Send telemetry if there is an erroneous condition, regardless of sampling settings.
         #[builder(into, default)]
-        pub always_log_errors: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub always_log_errors: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID (name) of the Diagnostics Logger.
         #[builder(into)]
-        pub api_management_logger_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_logger_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the API Management Service instance. Changing this forces a new API Management Service API Diagnostics Logs to be created.
         #[builder(into)]
-        pub api_management_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the API on which to configure the Diagnostics Logs. Changing this forces a new API Management Service API Diagnostics Logs to be created.
         #[builder(into)]
-        pub api_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_name: pulumi_gestalt_rust::Input<String>,
         /// A `backend_request` block as defined below.
         #[builder(into, default)]
-        pub backend_request: pulumi_gestalt_rust::InputOrOutput<
+        pub backend_request: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiDiagnosticBackendRequest>,
         >,
         /// A `backend_response` block as defined below.
         #[builder(into, default)]
-        pub backend_response: pulumi_gestalt_rust::InputOrOutput<
+        pub backend_response: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiDiagnosticBackendResponse>,
         >,
         /// A `frontend_request` block as defined below.
         #[builder(into, default)]
-        pub frontend_request: pulumi_gestalt_rust::InputOrOutput<
+        pub frontend_request: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiDiagnosticFrontendRequest>,
         >,
         /// A `frontend_response` block as defined below.
         #[builder(into, default)]
-        pub frontend_response: pulumi_gestalt_rust::InputOrOutput<
+        pub frontend_response: pulumi_gestalt_rust::Input<
             Option<super::super::types::apimanagement::ApiDiagnosticFrontendResponse>,
         >,
         /// The HTTP Correlation Protocol to use. Possible values are `None`, `Legacy` or `W3C`.
         #[builder(into, default)]
-        pub http_correlation_protocol: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub http_correlation_protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the Diagnostics Logs. Possible values are `applicationinsights` and `azuremonitor`. Changing this forces a new API Management Service API Diagnostics Logs to be created.
         #[builder(into)]
-        pub identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub identifier: pulumi_gestalt_rust::Input<String>,
         /// Log client IP address.
         #[builder(into, default)]
-        pub log_client_ip: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub log_client_ip: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The format of the Operation Name for Application Insights telemetries. Possible values are `Name`, and `Url`. Defaults to `Name`.
         #[builder(into, default)]
-        pub operation_name_format: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub operation_name_format: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the API Management Service API Diagnostics Logs should exist. Changing this forces a new API Management Service API Diagnostics Logs to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Sampling (%). For high traffic APIs, please read this [documentation](https://docs.microsoft.com/azure/api-management/api-management-howto-app-insights#performance-implications-and-log-sampling) to understand performance implications and log sampling. Valid values are between `0.0` and `100.0`.
         #[builder(into, default)]
-        pub sampling_percentage: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub sampling_percentage: pulumi_gestalt_rust::Input<Option<f64>>,
         /// Logging verbosity. Possible values are `verbose`, `information` or `error`.
         #[builder(into, default)]
-        pub verbosity: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub verbosity: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiDiagnosticResult {

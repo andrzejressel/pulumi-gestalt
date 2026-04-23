@@ -276,62 +276,62 @@ pub mod vpc_flow_logs_config {
         /// Optional. The aggregation interval for the logs. Default value is
         /// INTERVAL_5_SEC.   Possible values:  AGGREGATION_INTERVAL_UNSPECIFIED INTERVAL_5_SEC INTERVAL_30_SEC INTERVAL_1_MIN INTERVAL_5_MIN INTERVAL_10_MIN INTERVAL_15_MIN"
         #[builder(into, default)]
-        pub aggregation_interval: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aggregation_interval: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The user-supplied description of the VPC Flow Logs configuration. Maximum
         /// of 512 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Export filter used to define which VPC Flow Logs should be logged.
         #[builder(into, default)]
-        pub filter_expr: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter_expr: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The value of the field must be in (0, 1]. The sampling rate
         /// of VPC Flow Logs where 1.0 means all collected logs are reported. Setting the
         /// sampling rate to 0.0 is not allowed. If you want to disable VPC Flow Logs, use
         /// the state field instead. Default value is 1.0.
         #[builder(into, default)]
-        pub flow_sampling: pulumi_gestalt_rust::InputOrOutput<Option<f64>>,
+        pub flow_sampling: pulumi_gestalt_rust::Input<Option<f64>>,
         /// Traffic will be logged from the Interconnect Attachment. Format: projects/{project_id}/regions/{region}/interconnectAttachments/{name}
         #[builder(into, default)]
-        pub interconnect_attachment: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub interconnect_attachment: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Resource labels to represent user-provided metadata.
         ///
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource
         /// within its parent collection as described in https://google.aip.dev/122. See documentation
         /// for resource type `networkmanagement.googleapis.com/VpcFlowLogsConfig`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Optional. Configures whether all, none or a subset of metadata fields
         /// should be added to the reported VPC flow logs. Default value is INCLUDE_ALL_METADATA.
         /// Possible values:  METADATA_UNSPECIFIED INCLUDE_ALL_METADATA EXCLUDE_ALL_METADATA CUSTOM_METADATA
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub metadata: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Custom metadata fields to include in the reported VPC flow
         /// logs. Can only be specified if \"metadata\" was set to CUSTOM_METADATA.
         #[builder(into, default)]
-        pub metadata_fields: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub metadata_fields: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. The state of the VPC Flow Log configuration. Default value
         /// is ENABLED. When creating a new configuration, it must be enabled.   Possible
         #[builder(into, default)]
-        pub state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. ID of the `VpcFlowLogsConfig`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub vpc_flow_logs_config_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_flow_logs_config_id: pulumi_gestalt_rust::Input<String>,
         /// Traffic will be logged from the VPN Tunnel. Format: projects/{project_id}/regions/{region}/vpnTunnels/{name}
         #[builder(into, default)]
-        pub vpn_tunnel: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpn_tunnel: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct VpcFlowLogsConfigResult {

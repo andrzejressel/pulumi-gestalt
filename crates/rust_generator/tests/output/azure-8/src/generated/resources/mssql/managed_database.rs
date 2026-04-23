@@ -75,26 +75,26 @@ pub mod managed_database {
     pub struct ManagedDatabaseArgs {
         /// A `long_term_retention_policy` block as defined below.
         #[builder(into, default)]
-        pub long_term_retention_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub long_term_retention_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::ManagedDatabaseLongTermRetentionPolicy>,
         >,
         /// The ID of the Azure SQL Managed Instance on which to create this Managed Database. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub managed_instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub managed_instance_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the Managed Database to create. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `point_in_time_restore` block as defined below. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub point_in_time_restore: pulumi_gestalt_rust::InputOrOutput<
+        pub point_in_time_restore: pulumi_gestalt_rust::Input<
             Option<super::super::types::mssql::ManagedDatabasePointInTimeRestore>,
         >,
         /// The backup retention period in days. This is how many days Point-in-Time Restore will be supported.
         #[builder(into, default)]
-        pub short_term_retention_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub short_term_retention_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

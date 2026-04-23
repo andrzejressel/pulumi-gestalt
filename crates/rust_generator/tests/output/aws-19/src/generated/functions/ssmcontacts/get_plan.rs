@@ -10,7 +10,7 @@ pub mod get_plan {
     pub struct GetPlanArgs {
         /// The Amazon Resource Name (ARN) of the contact or escalation plan.
         #[builder(into)]
-        pub contact_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub contact_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetPlanResult {

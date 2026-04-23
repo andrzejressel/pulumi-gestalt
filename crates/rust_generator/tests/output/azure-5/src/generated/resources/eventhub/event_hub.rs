@@ -50,34 +50,34 @@ pub mod event_hub {
     pub struct EventHubArgs {
         /// A `capture_description` block as defined below.
         #[builder(into, default)]
-        pub capture_description: pulumi_gestalt_rust::InputOrOutput<
+        pub capture_description: pulumi_gestalt_rust::Input<
             Option<super::super::types::eventhub::EventHubCaptureDescription>,
         >,
         /// Specifies the number of days to retain the events for this Event Hub.
         ///
         /// > **Note:** When using a dedicated Event Hubs cluster, maximum value of `message_retention` is 90 days. When using a shared parent EventHub Namespace, maximum value is 7 days; or 1 day when using a Basic SKU for the shared parent EventHub Namespace.
         #[builder(into)]
-        pub message_retention: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub message_retention: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the name of the EventHub resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the EventHub Namespace. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub namespace_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub namespace_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the current number of shards on the Event Hub.
         ///
         /// > **Note:** `partition_count` cannot be changed unless Eventhub Namespace SKU is `Premium` and cannot be decreased.
         ///
         /// > **Note:** When using a dedicated Event Hubs cluster, maximum value of `partition_count` is 1024. When using a shared parent EventHub Namespace, maximum value is 32.
         #[builder(into)]
-        pub partition_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub partition_count: pulumi_gestalt_rust::Input<i32>,
         #[builder(into, default)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the status of the Event Hub resource. Possible values are `Active`, `Disabled` and `SendDisabled`. Defaults to `Active`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct EventHubResult {

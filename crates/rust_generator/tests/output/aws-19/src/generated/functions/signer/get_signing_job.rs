@@ -10,7 +10,7 @@ pub mod get_signing_job {
     pub struct GetSigningJobArgs {
         /// ID of the signing job on output.
         #[builder(into)]
-        pub job_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub job_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSigningJobResult {

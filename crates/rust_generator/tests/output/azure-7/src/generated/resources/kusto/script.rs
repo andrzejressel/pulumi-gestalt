@@ -102,27 +102,27 @@ pub mod script {
     pub struct ScriptArgs {
         /// Flag that indicates whether to continue if one of the command fails.
         #[builder(into, default)]
-        pub continue_on_errors_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub continue_on_errors_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ID of the Kusto Database. Changing this forces a new Kusto Script to be created.
         #[builder(into)]
-        pub database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_id: pulumi_gestalt_rust::Input<String>,
         /// A unique string. If changed the script will be applied again.
         #[builder(into, default)]
-        pub force_an_update_when_value_changed: pulumi_gestalt_rust::InputOrOutput<
+        pub force_an_update_when_value_changed: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// The name which should be used for this Kusto Script. Changing this forces a new Kusto Script to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The SAS token used to access the script. Must be provided when using scriptUrl property. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub sas_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sas_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// The script content. This property should be used when the script is provide inline and not through file in a SA. Must not be used together with `url` and `sas_token` properties. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub script_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub script_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// The url to the KQL script blob file. Must not be used together with scriptContent property. Please reference [this documentation](https://docs.microsoft.com/azure/data-explorer/database-script) that describes the commands that are allowed in the script.
         #[builder(into, default)]
-        pub url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub url: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ScriptResult {

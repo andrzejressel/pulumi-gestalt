@@ -10,12 +10,12 @@ pub mod get_vpc_link {
     pub struct GetVpcLinkArgs {
         /// VPC Link Tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// VPC Link ID
         #[builder(into)]
-        pub vpc_link_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub vpc_link_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVpcLinkResult {

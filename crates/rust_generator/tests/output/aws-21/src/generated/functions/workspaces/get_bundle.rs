@@ -10,13 +10,13 @@ pub mod get_bundle {
     pub struct GetBundleArgs {
         /// ID of the bundle.
         #[builder(into, default)]
-        pub bundle_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bundle_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the bundle. You cannot combine this parameter with `bundle_id`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Owner of the bundles. You have to leave it blank for own bundles. You cannot combine this parameter with `bundle_id`.
         #[builder(into, default)]
-        pub owner: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBundleResult {

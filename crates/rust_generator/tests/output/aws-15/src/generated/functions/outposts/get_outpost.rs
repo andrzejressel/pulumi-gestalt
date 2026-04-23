@@ -10,19 +10,19 @@ pub mod get_outpost {
     pub struct GetOutpostArgs {
         /// ARN.
         #[builder(into, default)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the Outpost.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the Outpost.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS Account identifier of the Outpost owner.
         #[builder(into, default)]
-        pub owner_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub owner_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Outpost tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

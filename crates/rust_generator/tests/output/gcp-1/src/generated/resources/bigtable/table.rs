@@ -89,35 +89,35 @@ pub mod table {
         ///
         /// -----
         #[builder(into, default)]
-        pub automated_backup_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub automated_backup_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigtable::TableAutomatedBackupPolicy>,
         >,
         /// Duration to retain change stream data for the table. Set to 0 to disable. Must be between 1 and 7 days.
         #[builder(into, default)]
-        pub change_stream_retention: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub change_stream_retention: pulumi_gestalt_rust::Input<Option<String>>,
         /// A group of columns within a table which share a common configuration. This can be specified multiple times. Structure is documented below.
         #[builder(into, default)]
-        pub column_families: pulumi_gestalt_rust::InputOrOutput<
+        pub column_families: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::bigtable::TableColumnFamily>>,
         >,
         /// A field to make the table protected against data loss i.e. when set to PROTECTED, deleting the table, the column families in the table, and the instance containing the table would be prohibited. If not provided, deletion protection will be set to UNPROTECTED.
         #[builder(into, default)]
-        pub deletion_protection: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_protection: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Bigtable instance.
         #[builder(into)]
-        pub instance_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the table. Must be 1-50 characters and must only contain hyphens, underscores, periods, letters and numbers.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it
         /// is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of predefined keys to split the table on.
         /// !> **Warning:** Modifying the `split_keys` of an existing table will cause the provider
         /// to delete/recreate the entire `gcp.bigtable.Table` resource.
         #[builder(into, default)]
-        pub split_keys: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub split_keys: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct TableResult {

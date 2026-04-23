@@ -39,25 +39,25 @@ pub mod turnstile_widget {
     pub struct TurnstileWidgetArgs {
         /// The account identifier to target for the resource.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// If bot*fight*mode is set to true, Cloudflare issues computationally expensive challenges in response to malicious bots (Enterprise only).
         #[builder(into, default)]
-        pub bot_fight_mode: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub bot_fight_mode: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Domains where the widget is deployed
         #[builder(into)]
-        pub domains: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub domains: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Widget Mode. Available values: `non-interactive`, `invisible`, `managed`
         #[builder(into)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mode: pulumi_gestalt_rust::Input<String>,
         /// Human readable widget name.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Do not show any Cloudflare branding on the widget (Enterprise only).
         #[builder(into, default)]
-        pub offlabel: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub offlabel: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Region where this widget can be used.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TurnstileWidgetResult {

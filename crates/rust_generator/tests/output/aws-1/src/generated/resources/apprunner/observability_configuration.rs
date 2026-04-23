@@ -33,15 +33,15 @@ pub mod observability_configuration {
     pub struct ObservabilityConfigurationArgs {
         /// Name of the observability configuration.
         #[builder(into)]
-        pub observability_configuration_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub observability_configuration_name: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing. See Trace Configuration below for more details.
         #[builder(into, default)]
-        pub trace_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub trace_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::apprunner::ObservabilityConfigurationTraceConfiguration,
             >,

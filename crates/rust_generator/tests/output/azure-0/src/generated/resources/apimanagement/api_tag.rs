@@ -59,10 +59,10 @@ pub mod api_tag {
     pub struct ApiTagArgs {
         /// The ID of the API Management API. Changing this forces a new API Management API Tag to be created.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the tag. It must be known in the API Management instance. Changing this forces a new API Management API Tag to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ApiTagResult {

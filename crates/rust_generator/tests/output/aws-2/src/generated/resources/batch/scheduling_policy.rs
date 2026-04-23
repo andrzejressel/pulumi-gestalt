@@ -38,15 +38,15 @@ pub mod scheduling_policy {
     #[allow(dead_code)]
     pub struct SchedulingPolicyArgs {
         #[builder(into, default)]
-        pub fair_share_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub fair_share_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::batch::SchedulingPolicyFairSharePolicy>,
         >,
         /// Specifies the name of the scheduling policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

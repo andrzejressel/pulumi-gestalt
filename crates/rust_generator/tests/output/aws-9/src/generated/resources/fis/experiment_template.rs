@@ -63,40 +63,40 @@ pub mod experiment_template {
     pub struct ExperimentTemplateArgs {
         /// Action to be performed during an experiment. See below.
         #[builder(into)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::fis::ExperimentTemplateAction>,
         >,
         /// Description for the experiment template.
         #[builder(into)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub description: pulumi_gestalt_rust::Input<String>,
         /// The experiment options for the experiment template. See experiment_options below for more details!
         #[builder(into, default)]
-        pub experiment_options: pulumi_gestalt_rust::InputOrOutput<
+        pub experiment_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::fis::ExperimentTemplateExperimentOptions>,
         >,
         /// The configuration for experiment logging. See below.
         #[builder(into, default)]
-        pub log_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub log_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::fis::ExperimentTemplateLogConfiguration>,
         >,
         /// ARN of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// When an ongoing experiment should be stopped. See below.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub stop_conditions: pulumi_gestalt_rust::InputOrOutput<
+        pub stop_conditions: pulumi_gestalt_rust::Input<
             Vec<super::super::types::fis::ExperimentTemplateStopCondition>,
         >,
         /// Key-value mapping of tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Target of an action. See below.
         #[builder(into, default)]
-        pub targets: pulumi_gestalt_rust::InputOrOutput<
+        pub targets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::fis::ExperimentTemplateTarget>>,
         >,
     }

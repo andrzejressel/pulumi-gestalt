@@ -119,15 +119,15 @@ pub mod backup {
     pub struct BackupArgs {
         /// The ID of the file system to back up. Required if backing up Lustre or Windows file systems.
         #[builder(into, default)]
-        pub file_system_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_system_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the file system. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level. If you have set `copy_tags_to_backups` to true, and you specify one or more tags, no existing file system tags are copied from the file system to the backup.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the volume to back up. Required if backing up a ONTAP Volume.
         #[builder(into, default)]
-        pub volume_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub volume_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct BackupResult {

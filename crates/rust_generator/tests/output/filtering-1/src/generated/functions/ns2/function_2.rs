@@ -9,11 +9,11 @@ pub mod function_2 {
     #[allow(dead_code)]
     pub struct Function2Args {
         #[builder(into, default)]
-        pub common_type: pulumi_gestalt_rust::InputOrOutput<
+        pub common_type: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::common::CommonType>,
         >,
         #[builder(into, default)]
-        pub type2: pulumi_gestalt_rust::InputOrOutput<
+        pub type2: pulumi_gestalt_rust::Input<
             Option<super::super::super::types::ns2::Type2>,
         >,
     }

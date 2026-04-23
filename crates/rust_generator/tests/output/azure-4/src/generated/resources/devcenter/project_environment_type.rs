@@ -72,34 +72,34 @@ pub mod project_environment_type {
     pub struct ProjectEnvironmentTypeArgs {
         /// A list of roles to assign to the environment creator.
         #[builder(into, default)]
-        pub creator_role_assignment_roles: pulumi_gestalt_rust::InputOrOutput<
+        pub creator_role_assignment_roles: pulumi_gestalt_rust::Input<
             Option<Vec<String>>,
         >,
         /// The ID of the subscription that the Environment Type will be mapped to. The environment's resources will be deployed into this subscription.
         #[builder(into)]
-        pub deployment_target_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub deployment_target_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the associated Dev Center Project. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub dev_center_project_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dev_center_project_id: pulumi_gestalt_rust::Input<String>,
         /// An `identity` block as defined below.
         #[builder(into)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             super::super::types::devcenter::ProjectEnvironmentTypeIdentity,
         >,
         /// The Azure Region where the Dev Center Project Environment Type should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this Dev Center Project Environment Type. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Dev Center Project Environment Type.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `user_role_assignment` block as defined below.
         #[builder(into, default)]
-        pub user_role_assignments: pulumi_gestalt_rust::InputOrOutput<
+        pub user_role_assignments: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::devcenter::ProjectEnvironmentTypeUserRoleAssignment,

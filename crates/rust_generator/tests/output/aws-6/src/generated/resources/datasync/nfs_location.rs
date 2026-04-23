@@ -43,23 +43,23 @@ pub mod nfs_location {
     pub struct NfsLocationArgs {
         /// Configuration block containing mount options used by DataSync to access the NFS Server.
         #[builder(into, default)]
-        pub mount_options: pulumi_gestalt_rust::InputOrOutput<
+        pub mount_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::datasync::NfsLocationMountOptions>,
         >,
         /// Configuration block containing information for connecting to the NFS File System.
         #[builder(into)]
-        pub on_prem_config: pulumi_gestalt_rust::InputOrOutput<
+        pub on_prem_config: pulumi_gestalt_rust::Input<
             super::super::types::datasync::NfsLocationOnPremConfig,
         >,
         /// Specifies the IP address or DNS name of the NFS server. The DataSync Agent(s) use this to mount the NFS server.
         #[builder(into)]
-        pub server_hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_hostname: pulumi_gestalt_rust::Input<String>,
         /// Subdirectory to perform actions as source or destination. Should be exported by the NFS server.
         #[builder(into)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subdirectory: pulumi_gestalt_rust::Input<String>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

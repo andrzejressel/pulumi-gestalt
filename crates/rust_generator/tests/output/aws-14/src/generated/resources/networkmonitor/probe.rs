@@ -49,27 +49,27 @@ pub mod probe {
     pub struct ProbeArgs {
         /// The destination IP address. This must be either IPV4 or IPV6.
         #[builder(into)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub destination: pulumi_gestalt_rust::Input<String>,
         /// The port associated with the destination. This is required only if the protocol is TCP and must be a number between 1 and 65536.
         #[builder(into, default)]
-        pub destination_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub destination_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the monitor.
         #[builder(into)]
-        pub monitor_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub monitor_name: pulumi_gestalt_rust::Input<String>,
         /// The size of the packets sent between the source and destination. This must be a number between 56 and 8500.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub packet_size: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub packet_size: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The protocol used for the network traffic between the source and destination. This must be either TCP or ICMP.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the subnet.
         #[builder(into)]
-        pub source_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value tags for the monitor. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

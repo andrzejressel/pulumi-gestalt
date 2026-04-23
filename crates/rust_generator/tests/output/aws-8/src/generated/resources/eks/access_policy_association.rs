@@ -35,18 +35,18 @@ pub mod access_policy_association {
     pub struct AccessPolicyAssociationArgs {
         /// The configuration block to determine the scope of the access. See `access_scope` Block below.
         #[builder(into)]
-        pub access_scope: pulumi_gestalt_rust::InputOrOutput<
+        pub access_scope: pulumi_gestalt_rust::Input<
             super::super::types::eks::AccessPolicyAssociationAccessScope,
         >,
         /// Name of the EKS Cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// The ARN of the access policy that you're associating.
         #[builder(into)]
-        pub policy_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_arn: pulumi_gestalt_rust::Input<String>,
         /// The IAM Principal ARN which requires Authentication access to the EKS cluster.
         #[builder(into)]
-        pub principal_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccessPolicyAssociationResult {

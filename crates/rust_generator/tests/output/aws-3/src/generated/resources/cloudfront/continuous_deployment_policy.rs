@@ -90,17 +90,17 @@ pub mod continuous_deployment_policy {
     pub struct ContinuousDeploymentPolicyArgs {
         /// Whether this continuous deployment policy is enabled.
         #[builder(into)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub enabled: pulumi_gestalt_rust::Input<bool>,
         /// CloudFront domain name of the staging distribution. See `staging_distribution_dns_names`.
         #[builder(into, default)]
-        pub staging_distribution_dns_names: pulumi_gestalt_rust::InputOrOutput<
+        pub staging_distribution_dns_names: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudfront::ContinuousDeploymentPolicyStagingDistributionDnsNames,
             >,
         >,
         /// Parameters for routing production traffic from primary to staging distributions. See `traffic_config`.
         #[builder(into, default)]
-        pub traffic_config: pulumi_gestalt_rust::InputOrOutput<
+        pub traffic_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::cloudfront::ContinuousDeploymentPolicyTrafficConfig,
             >,

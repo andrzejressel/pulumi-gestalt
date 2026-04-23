@@ -10,13 +10,13 @@ pub mod get_file_system {
     pub struct GetFileSystemArgs {
         /// Restricts the list to the file system with this creation token.
         #[builder(into, default)]
-        pub creation_token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub creation_token: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID that identifies the file system (e.g., fs-ccfc0d65).
         #[builder(into, default)]
-        pub file_system_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_system_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Restricts the list to the file system with these tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

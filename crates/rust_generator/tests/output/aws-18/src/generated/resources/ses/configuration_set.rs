@@ -79,23 +79,23 @@ pub mod configuration_set {
     pub struct ConfigurationSetArgs {
         /// Whether messages that use the configuration set are required to use TLS. See below.
         #[builder(into, default)]
-        pub delivery_options: pulumi_gestalt_rust::InputOrOutput<
+        pub delivery_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ses::ConfigurationSetDeliveryOptions>,
         >,
         /// Name of the configuration set.
         ///
         /// The following argument is optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch. The default value is `false`.
         #[builder(into, default)]
-        pub reputation_metrics_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub reputation_metrics_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether email sending is enabled or disabled for the configuration set. The default value is `true`.
         #[builder(into, default)]
-        pub sending_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub sending_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Domain that is used to redirect email recipients to an Amazon SES-operated domain. See below. **NOTE:** This functionality is best effort.
         #[builder(into, default)]
-        pub tracking_options: pulumi_gestalt_rust::InputOrOutput<
+        pub tracking_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::ses::ConfigurationSetTrackingOptions>,
         >,
     }

@@ -9,7 +9,7 @@ pub mod get_service_iam_policy {
     #[allow(dead_code)]
     pub struct GetServiceIamPolicyArgs {
         #[builder(into)]
-        pub service_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetServiceIamPolicyResult {

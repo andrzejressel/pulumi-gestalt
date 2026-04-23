@@ -10,7 +10,7 @@ pub mod get_contact_channel {
     pub struct GetContactChannelArgs {
         /// Amazon Resource Name (ARN) of the contact channel.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetContactChannelResult {

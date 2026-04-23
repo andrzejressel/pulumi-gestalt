@@ -55,35 +55,35 @@ pub mod backup_policy {
     pub struct BackupPolicyArgs {
         /// The name of the NetApp account in which the NetApp Policy should be created under. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_name: pulumi_gestalt_rust::Input<String>,
         /// Provides the number of daily backups to keep, defaults to `2` which is the minimum, maximum is 1019.
         #[builder(into, default)]
-        pub daily_backups_to_keep: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub daily_backups_to_keep: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Whether the Backup Policy is enabled. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Provides the number of monthly backups to keep, defaults to `1` which is the minimum, maximum is 1019.
         ///
         /// > **Note:** Currently, the combined (daily + weekly + monthy) retention counts cannot exceed 1019.
         #[builder(into, default)]
-        pub monthly_backups_to_keep: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub monthly_backups_to_keep: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the NetApp Backup Policy. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group where the NetApp Backup Policy should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Provides the number of weekly backups to keep, defaults to `1` which is the minimum, maximum is 1019.
         #[builder(into, default)]
-        pub weekly_backups_to_keep: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub weekly_backups_to_keep: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct BackupPolicyResult {

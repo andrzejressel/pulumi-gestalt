@@ -10,7 +10,7 @@ pub mod get_account_encryption {
     pub struct GetAccountEncryptionArgs {
         /// The ID of the NetApp account where customer managed keys-based encryption is enabled.
         #[builder(into)]
-        pub netapp_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub netapp_account_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAccountEncryptionResult {

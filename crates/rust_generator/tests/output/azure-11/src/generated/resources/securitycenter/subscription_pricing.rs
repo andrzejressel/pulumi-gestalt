@@ -59,20 +59,20 @@ pub mod subscription_pricing {
     pub struct SubscriptionPricingArgs {
         /// One or more `extension` blocks as defined below.
         #[builder(into, default)]
-        pub extensions: pulumi_gestalt_rust::InputOrOutput<
+        pub extensions: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::securitycenter::SubscriptionPricingExtension>,
             >,
         >,
         /// The resource type this setting affects. Possible values are `Api`, `AppServices`, `ContainerRegistry`, `KeyVaults`, `KubernetesService`, `SqlServers`, `SqlServerVirtualMachines`, `StorageAccounts`, `VirtualMachines`, `Arm`, `Dns`, `OpenSourceRelationalDatabases`, `Containers`, `CosmosDbs` and `CloudPosture`. Defaults to `VirtualMachines`
         #[builder(into, default)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Resource type pricing subplan. Contact your MSFT representative for possible values.
         #[builder(into, default)]
-        pub subplan: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subplan: pulumi_gestalt_rust::Input<Option<String>>,
         /// The pricing tier to use. Possible values are `Free` and `Standard`.
         #[builder(into)]
-        pub tier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub tier: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionPricingResult {

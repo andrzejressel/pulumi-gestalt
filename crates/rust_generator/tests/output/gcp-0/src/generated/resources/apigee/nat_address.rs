@@ -215,17 +215,17 @@ pub mod nat_address {
     pub struct NatAddressArgs {
         /// Flag that specifies whether the reserved NAT address should be activate.
         #[builder(into, default)]
-        pub activate: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub activate: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Apigee instance associated with the Apigee environment,
         /// in the format `organizations/{{org_name}}/instances/{{instance_name}}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub instance_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_id: pulumi_gestalt_rust::Input<String>,
         /// Resource ID of the NAT address.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NatAddressResult {

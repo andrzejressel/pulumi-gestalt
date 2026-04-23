@@ -39,34 +39,34 @@ pub mod location_object_storage {
     pub struct LocationObjectStorageArgs {
         /// The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use `access_key` and `secret_key` to provide the user name and password, respectively.
         #[builder(into, default)]
-        pub access_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of DataSync Agent ARNs with which this location will be associated.
         #[builder(into)]
-        pub agent_arns: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub agent_arns: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The bucket on the self-managed object storage server that is used to read data from.
         #[builder(into)]
-        pub bucket_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bucket_name: pulumi_gestalt_rust::Input<String>,
         /// The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use `access_key` and `secret_key` to provide the user name and password, respectively.
         #[builder(into, default)]
-        pub secret_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub secret_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded .pem string. The certificate can be up to 32768 bytes (before Base64 encoding).
         #[builder(into, default)]
-        pub server_certificate: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub server_certificate: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network.
         #[builder(into)]
-        pub server_hostname: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_hostname: pulumi_gestalt_rust::Input<String>,
         /// The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (`HTTP`) or TCP 443 (`HTTPS`). You can specify a custom port if your self-managed object storage server requires one.
         #[builder(into, default)]
-        pub server_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub server_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The protocol that the object storage server uses to communicate. Valid values are `HTTP` or `HTTPS`.
         #[builder(into, default)]
-        pub server_protocol: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub server_protocol: pulumi_gestalt_rust::Input<Option<String>>,
         /// A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to /.
         #[builder(into, default)]
-        pub subdirectory: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subdirectory: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value pairs of resource tags to assign to the DataSync Location. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

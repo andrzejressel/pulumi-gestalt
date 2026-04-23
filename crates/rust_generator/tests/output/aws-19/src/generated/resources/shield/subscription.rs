@@ -39,10 +39,10 @@ pub mod subscription {
     pub struct SubscriptionArgs {
         /// Toggle for automated renewal of the subscription. Valid values are `ENABLED` or `DISABLED`. Default is `ENABLED`.
         #[builder(into, default)]
-        pub auto_renew: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub auto_renew: pulumi_gestalt_rust::Input<Option<String>>,
         /// Skip attempting to disable automated renewal upon destruction. If set to `true`, the `auto_renew` value will be left as-is and the resource will simply be removed from state.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct SubscriptionResult {

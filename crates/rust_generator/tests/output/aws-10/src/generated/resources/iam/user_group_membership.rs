@@ -61,10 +61,10 @@ pub mod user_group_membership {
     pub struct UserGroupMembershipArgs {
         /// A list of IAM Groups to add the user to
         #[builder(into)]
-        pub groups: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub groups: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name of the IAM User to add to groups
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct UserGroupMembershipResult {

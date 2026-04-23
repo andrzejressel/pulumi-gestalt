@@ -38,16 +38,16 @@ pub mod workspace_service_account_token {
     pub struct WorkspaceServiceAccountTokenArgs {
         /// A name for the token to create. The name must be unique within the workspace.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Sets how long the token will be valid, in seconds. You can set the time up to 30 days in the future.
         #[builder(into)]
-        pub seconds_to_live: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub seconds_to_live: pulumi_gestalt_rust::Input<i32>,
         /// The ID of the service account for which to create a token.
         #[builder(into)]
-        pub service_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_account_id: pulumi_gestalt_rust::Input<String>,
         /// The Grafana workspace with which the service account token is associated.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkspaceServiceAccountTokenResult {

@@ -13,11 +13,11 @@ pub mod get_engine_versions {
         /// versions may not be available. If `location`, `region`, and `zone` are not
         /// specified, the provider-level zone must be set and is used instead.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the project to list available cluster versions for. Should match the project the cluster will be deployed to.
         /// Defaults to the project that the provider is authenticated with.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// If provided, the provider will only return versions
         /// that match the string prefix. For example, `1.11.` will match all `1.11` series
         /// releases. Since this is just a string match, it's recommended that you append a
@@ -25,7 +25,7 @@ pub mod get_engine_versions {
         /// versions like `1.12.5-gke.10` accidentally. See [the docs on versioning schema](https://cloud.google.com/kubernetes-engine/versioning-and-upgrades#versioning_scheme)
         /// for full details on how version strings are formatted.
         #[builder(into, default)]
-        pub version_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetEngineVersionsResult {

@@ -10,13 +10,13 @@ pub mod get_configuration_profile {
     pub struct GetConfigurationProfileArgs {
         /// ID of the AppConfig application to which this configuration profile belongs.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the Configuration Profile.
         #[builder(into)]
-        pub configuration_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub configuration_profile_id: pulumi_gestalt_rust::Input<String>,
         /// Map of tags for the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

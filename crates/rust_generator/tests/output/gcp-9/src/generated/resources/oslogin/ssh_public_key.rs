@@ -61,19 +61,19 @@ pub mod ssh_public_key {
     pub struct SshPublicKeyArgs {
         /// An expiration time in microseconds since epoch.
         #[builder(into, default)]
-        pub expiration_time_usec: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub expiration_time_usec: pulumi_gestalt_rust::Input<Option<String>>,
         /// Public key text in SSH format, defined by RFC4253 section 6.6.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// The project ID of the Google Cloud Platform project.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user email.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub user: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub user: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct SshPublicKeyResult {

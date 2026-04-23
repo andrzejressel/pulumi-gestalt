@@ -31,19 +31,19 @@ pub mod api_shield_schema {
     pub struct ApiShieldSchemaArgs {
         /// Kind of schema. Defaults to `openapi_v3`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub kind: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kind: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the schema. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Schema file bytes. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source: pulumi_gestalt_rust::Input<String>,
         /// Flag whether schema is enabled for validation.
         #[builder(into, default)]
-        pub validation_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub validation_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         #[builder(into)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub zone_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApiShieldSchemaResult {

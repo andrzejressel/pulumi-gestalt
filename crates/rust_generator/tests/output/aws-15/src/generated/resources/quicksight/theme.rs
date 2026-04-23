@@ -55,36 +55,36 @@ pub mod theme {
     pub struct ThemeArgs {
         /// AWS account ID.
         #[builder(into, default)]
-        pub aws_account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub aws_account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use ListThemes or choose Themes from within an analysis.
         #[builder(into)]
-        pub base_theme_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub base_theme_id: pulumi_gestalt_rust::Input<String>,
         /// The theme configuration, which contains the theme display properties. See configuration.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::quicksight::ThemeConfiguration>,
         >,
         /// Display name of the theme.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A set of resource permissions on the theme. Maximum of 64 items. See permissions.
         #[builder(into, default)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<
+        pub permissions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::quicksight::ThemePermission>>,
         >,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Identifier of the theme.
         #[builder(into)]
-        pub theme_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub theme_id: pulumi_gestalt_rust::Input<String>,
         /// A description of the current theme version being created/updated.
         #[builder(into, default)]
-        pub version_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub version_description: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ThemeResult {

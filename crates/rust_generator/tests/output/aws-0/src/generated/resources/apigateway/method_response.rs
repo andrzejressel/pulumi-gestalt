@@ -137,28 +137,28 @@ pub mod method_response {
     pub struct MethodResponseArgs {
         /// The HTTP verb of the method resource (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`).
         #[builder(into)]
-        pub http_method: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub http_method: pulumi_gestalt_rust::Input<String>,
         /// The Resource identifier for the method resource.
         #[builder(into)]
-        pub resource_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_id: pulumi_gestalt_rust::Input<String>,
         /// A map specifying the model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.
         #[builder(into, default)]
-        pub response_models: pulumi_gestalt_rust::InputOrOutput<
+        pub response_models: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a boolean flag indicating whether the method response parameter is required. The method response header names must match the pattern of `method.response.header.{name}`, where `name` is a valid and unique header name.
         ///
         /// The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in `integration.response.header.{name}`, a static value enclosed within a pair of single quotes (e.g., '`application/json'`), or a JSON expression from the back-end response payload in the form of `integration.response.body.{JSON-expression}`, where `JSON-expression` is a valid JSON expression without the `$` prefix.)
         #[builder(into, default)]
-        pub response_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub response_parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, bool>>,
         >,
         /// The string identifier of the associated REST API.
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
         /// The method response's status code.
         #[builder(into)]
-        pub status_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub status_code: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct MethodResponseResult {

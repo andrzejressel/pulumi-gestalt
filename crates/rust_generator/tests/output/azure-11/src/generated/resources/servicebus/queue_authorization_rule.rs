@@ -57,21 +57,21 @@ pub mod queue_authorization_rule {
     pub struct QueueAuthorizationRuleArgs {
         /// Does this Authorization Rule have Listen permissions to the ServiceBus Queue? Defaults to `false`.
         #[builder(into, default)]
-        pub listen: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub listen: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Does this Authorization Rule have Manage permissions to the ServiceBus Queue? When this property is `true` - both `listen` and `send` must be too. Defaults to `false`.
         #[builder(into, default)]
-        pub manage: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub manage: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the name of the Authorization Rule. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the ID of the ServiceBus Queue. Changing this forces a new resource to be created.
         ///
         /// > **NOTE** At least one of the 3 permissions below needs to be set.
         #[builder(into)]
-        pub queue_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub queue_id: pulumi_gestalt_rust::Input<String>,
         /// Does this Authorization Rule have Send permissions to the ServiceBus Queue? Defaults to `false`.
         #[builder(into, default)]
-        pub send: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub send: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct QueueAuthorizationRuleResult {

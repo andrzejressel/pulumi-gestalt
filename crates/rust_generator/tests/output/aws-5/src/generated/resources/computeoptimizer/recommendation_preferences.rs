@@ -79,25 +79,23 @@ pub mod recommendation_preferences {
     pub struct RecommendationPreferencesArgs {
         /// The status of the enhanced infrastructure metrics recommendation preference. Valid values: `Active`, `Inactive`.
         #[builder(into, default)]
-        pub enhanced_infrastructure_metrics: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub enhanced_infrastructure_metrics: pulumi_gestalt_rust::Input<Option<String>>,
         /// The provider of the external metrics recommendation preference. See External Metrics Preference below.
         #[builder(into, default)]
-        pub external_metrics_preference: pulumi_gestalt_rust::InputOrOutput<
+        pub external_metrics_preference: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::computeoptimizer::RecommendationPreferencesExternalMetricsPreference,
             >,
         >,
         /// The status of the inferred workload types recommendation preference. Valid values: `Active`, `Inactive`.
         #[builder(into, default)]
-        pub inferred_workload_types: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub inferred_workload_types: pulumi_gestalt_rust::Input<Option<String>>,
         /// The preference to control the number of days the utilization metrics of the AWS resource are analyzed. Valid values: `DAYS_14`, `DAYS_32`, `DAYS_93`.
         #[builder(into, default)]
-        pub look_back_period: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub look_back_period: pulumi_gestalt_rust::Input<Option<String>>,
         /// The preference to control which resource type values are considered when generating rightsizing recommendations. See Preferred Resources below.
         #[builder(into, default)]
-        pub preferred_resources: pulumi_gestalt_rust::InputOrOutput<
+        pub preferred_resources: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::computeoptimizer::RecommendationPreferencesPreferredResource,
@@ -106,18 +104,18 @@ pub mod recommendation_preferences {
         >,
         /// The target resource type of the recommendation preferences. Valid values: `Ec2Instance`, `AutoScalingGroup`, `RdsDBInstance`.
         #[builder(into)]
-        pub resource_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_type: pulumi_gestalt_rust::Input<String>,
         /// The status of the savings estimation mode preference. Valid values: `AfterDiscounts`, `BeforeDiscounts`.
         #[builder(into, default)]
-        pub savings_estimation_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub savings_estimation_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The scope of the recommendation preferences. See Scope below.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<
+        pub scope: pulumi_gestalt_rust::Input<
             Option<super::super::types::computeoptimizer::RecommendationPreferencesScope>,
         >,
         /// The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. See Utilization Preferences below.
         #[builder(into, default)]
-        pub utilization_preferences: pulumi_gestalt_rust::InputOrOutput<
+        pub utilization_preferences: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::computeoptimizer::RecommendationPreferencesUtilizationPreference,

@@ -109,10 +109,10 @@ pub mod block_public_access_configuration {
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub block_public_security_group_rules: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub block_public_security_group_rules: pulumi_gestalt_rust::Input<bool>,
         /// Configuration block for defining permitted public security group rule port ranges. Can be defined multiple times per resource. Only valid if `block_public_security_group_rules` is set to `true`.
         #[builder(into, default)]
-        pub permitted_public_security_group_rule_ranges: pulumi_gestalt_rust::InputOrOutput<
+        pub permitted_public_security_group_rule_ranges: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::emr::BlockPublicAccessConfigurationPermittedPublicSecurityGroupRuleRange,

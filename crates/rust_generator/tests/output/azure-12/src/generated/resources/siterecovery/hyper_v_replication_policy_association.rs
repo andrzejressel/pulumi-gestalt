@@ -71,13 +71,13 @@ pub mod hyper_v_replication_policy_association {
     pub struct HyperVReplicationPolicyAssociationArgs {
         /// The ID of the HyperV site to which the policy should be associated. Changing this forces a new association to be created.
         #[builder(into)]
-        pub hyperv_site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub hyperv_site_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the replication policy association. Changing this forces a new association to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the HyperV replication policy which to be associated. Changing this forces a new association to be created.
         #[builder(into)]
-        pub policy_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HyperVReplicationPolicyAssociationResult {

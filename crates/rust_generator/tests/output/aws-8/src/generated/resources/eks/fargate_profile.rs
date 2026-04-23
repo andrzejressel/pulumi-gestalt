@@ -45,26 +45,26 @@ pub mod fargate_profile {
     pub struct FargateProfileArgs {
         /// Name of the EKS Cluster.
         #[builder(into)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the EKS Fargate Profile.
         #[builder(into, default)]
-        pub fargate_profile_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub fargate_profile_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Fargate Profile.
         #[builder(into)]
-        pub pod_execution_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pod_execution_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Configuration block(s) for selecting Kubernetes Pods to execute with this EKS Fargate Profile. Detailed below.
         #[builder(into)]
-        pub selectors: pulumi_gestalt_rust::InputOrOutput<
+        pub selectors: pulumi_gestalt_rust::Input<
             Vec<super::super::types::eks::FargateProfileSelector>,
         >,
         /// Identifiers of private EC2 Subnets to associate with the EKS Fargate Profile. These subnets must have the following resource tag: `kubernetes.io/cluster/CLUSTER_NAME` (where `CLUSTER_NAME` is replaced with the name of the EKS Cluster).
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

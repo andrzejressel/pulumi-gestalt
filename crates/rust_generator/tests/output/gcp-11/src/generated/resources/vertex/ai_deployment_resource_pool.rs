@@ -89,7 +89,7 @@ pub mod ai_deployment_resource_pool {
         /// The underlying dedicated resources that the deployment resource pool uses.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub dedicated_resources: pulumi_gestalt_rust::InputOrOutput<
+        pub dedicated_resources: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiDeploymentResourcePoolDedicatedResources,
             >,
@@ -99,14 +99,14 @@ pub mod ai_deployment_resource_pool {
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of deployment resource pool. eg us-central1
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiDeploymentResourcePoolResult {

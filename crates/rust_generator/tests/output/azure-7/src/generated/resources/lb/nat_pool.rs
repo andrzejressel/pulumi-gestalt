@@ -78,37 +78,37 @@ pub mod nat_pool {
     pub struct NatPoolArgs {
         /// The port used for the internal endpoint. Possible values range between 1 and 65535, inclusive.
         #[builder(into)]
-        pub backend_port: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub backend_port: pulumi_gestalt_rust::Input<i32>,
         /// Are the floating IPs enabled for this Load Balancer Rule? A floating IP is reassigned to a secondary server in case the primary server fails. Required to configure a SQL AlwaysOn Availability Group.
         #[builder(into, default)]
-        pub floating_ip_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub floating_ip_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the frontend IP configuration exposing this rule.
         #[builder(into)]
-        pub frontend_ip_configuration_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frontend_ip_configuration_name: pulumi_gestalt_rust::Input<String>,
         /// The last port number in the range of external ports that will be used to provide Inbound NAT to NICs associated with this Load Balancer. Possible values range between 1 and 65534, inclusive.
         #[builder(into)]
-        pub frontend_port_end: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub frontend_port_end: pulumi_gestalt_rust::Input<i32>,
         /// The first port number in the range of external ports that will be used to provide Inbound NAT to NICs associated with this Load Balancer. Possible values range between 1 and 65534, inclusive.
         #[builder(into)]
-        pub frontend_port_start: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub frontend_port_start: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the idle timeout in minutes for TCP connections. Valid values are between `4` and `30`. Defaults to `4`.
         #[builder(into, default)]
-        pub idle_timeout_in_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub idle_timeout_in_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The ID of the Load Balancer in which to create the NAT pool. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub loadbalancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub loadbalancer_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the NAT pool. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The transport protocol for the external endpoint. Possible values are `All`, `Tcp` and `Udp`.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group in which to create the resource. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Is TCP Reset enabled for this Load Balancer Rule?
         #[builder(into, default)]
-        pub tcp_reset_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub tcp_reset_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct NatPoolResult {

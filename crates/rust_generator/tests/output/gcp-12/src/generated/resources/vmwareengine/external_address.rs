@@ -76,21 +76,21 @@ pub mod external_address {
     pub struct ExternalAddressArgs {
         /// User-provided description for this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The internal IP address of a workload VM.
         #[builder(into)]
-        pub internal_ip: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub internal_ip: pulumi_gestalt_rust::Input<String>,
         /// The ID of the external IP Address.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource name of the private cloud to create a new external address in.
         /// Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
         /// For example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ExternalAddressResult {

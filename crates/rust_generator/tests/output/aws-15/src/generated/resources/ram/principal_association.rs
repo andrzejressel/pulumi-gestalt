@@ -69,10 +69,10 @@ pub mod principal_association {
     pub struct PrincipalAssociationArgs {
         /// The principal to associate with the resource share. Possible values are an AWS account ID, an AWS Organizations Organization ARN, or an AWS Organizations Organization Unit ARN.
         #[builder(into)]
-        pub principal: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the resource share.
         #[builder(into)]
-        pub resource_share_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_share_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct PrincipalAssociationResult {

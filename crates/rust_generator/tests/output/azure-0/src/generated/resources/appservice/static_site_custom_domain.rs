@@ -112,13 +112,13 @@ pub mod static_site_custom_domain {
     pub struct StaticSiteCustomDomainArgs {
         /// The Domain Name which should be associated with this Static Site. Changing this forces a new Static Site Custom Domain to be created.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Static Site. Changing this forces a new Static Site Custom Domain to be created.
         #[builder(into)]
-        pub static_site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub static_site_id: pulumi_gestalt_rust::Input<String>,
         /// One of `cname-delegation` or `dns-txt-token`. Changing this forces a new Static Site Custom Domain to be created.
         #[builder(into, default)]
-        pub validation_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub validation_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StaticSiteCustomDomainResult {

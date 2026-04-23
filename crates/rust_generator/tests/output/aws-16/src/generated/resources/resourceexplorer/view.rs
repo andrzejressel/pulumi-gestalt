@@ -47,26 +47,26 @@ pub mod view {
     pub struct ViewArgs {
         /// Specifies whether the view is the [_default view_](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-about.html#manage-views-about-default) for the AWS Region. Default: `false`.
         #[builder(into, default)]
-        pub default_view: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub default_view: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies which resources are included in the results of queries made using this view. See Filters below for more details.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<super::super::types::resourceexplorer::ViewFilters>,
         >,
         /// Optional fields to be included in search results from this view. See Included Properties below for more details.
         #[builder(into, default)]
-        pub included_properties: pulumi_gestalt_rust::InputOrOutput<
+        pub included_properties: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::resourceexplorer::ViewIncludedProperty>>,
         >,
         /// The name of the view. The name must be no more than 64 characters long, and can include letters, digits, and the dash (-) character. The name must be unique within its AWS Region.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

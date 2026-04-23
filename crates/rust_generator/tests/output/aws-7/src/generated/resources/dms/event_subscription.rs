@@ -39,25 +39,25 @@ pub mod event_subscription {
     pub struct EventSubscriptionArgs {
         /// Whether the event subscription should be enabled.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of event categories to listen for, see `DescribeEventCategories` for a canonical list.
         #[builder(into)]
-        pub event_categories: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub event_categories: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Name of event subscription.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// SNS topic arn to send events on.
         #[builder(into)]
-        pub sns_topic_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sns_topic_arn: pulumi_gestalt_rust::Input<String>,
         /// Ids of sources to listen to. If you don't specify a value, notifications are provided for all sources.
         #[builder(into, default)]
-        pub source_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub source_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Type of source for events. Valid values: `replication-instance` or `replication-task`
         #[builder(into)]
-        pub source_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_type: pulumi_gestalt_rust::Input<String>,
         /// Map of resource tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

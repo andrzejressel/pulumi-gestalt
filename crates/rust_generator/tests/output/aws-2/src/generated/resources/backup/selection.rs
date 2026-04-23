@@ -165,27 +165,27 @@ pub mod selection {
     pub struct SelectionArgs {
         /// A list of conditions that you define to assign resources to your backup plans using tags.
         #[builder(into, default)]
-        pub conditions: pulumi_gestalt_rust::InputOrOutput<
+        pub conditions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::backup::SelectionCondition>>,
         >,
         /// The ARN of the IAM role that AWS Backup uses to authenticate when restoring and backing up the target resource. See the [AWS Backup Developer Guide](https://docs.aws.amazon.com/aws-backup/latest/devguide/access-control.html#managed-policies) for additional information about using AWS managed policies or creating custom policies attached to the IAM role.
         #[builder(into)]
-        pub iam_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iam_role_arn: pulumi_gestalt_rust::Input<String>,
         /// The display name of a resource selection document.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// An array of strings that either contain Amazon Resource Names (ARNs) or match patterns of resources to exclude from a backup plan.
         #[builder(into, default)]
-        pub not_resources: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub not_resources: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The backup plan ID to be associated with the selection of resources.
         #[builder(into)]
-        pub plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub plan_id: pulumi_gestalt_rust::Input<String>,
         /// An array of strings that either contain Amazon Resource Names (ARNs) or match patterns of resources to assign to a backup plan.
         #[builder(into, default)]
-        pub resources: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub resources: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Tag-based conditions used to specify a set of resources to assign to a backup plan.
         #[builder(into, default)]
-        pub selection_tags: pulumi_gestalt_rust::InputOrOutput<
+        pub selection_tags: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::backup::SelectionSelectionTag>>,
         >,
     }

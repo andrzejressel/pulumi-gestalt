@@ -96,21 +96,21 @@ pub mod domain_mapping {
     pub struct DomainMappingArgs {
         /// The location of the cloud run instance. eg us-central1
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Metadata associated with this DomainMapping.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudrun::DomainMappingMetadata>,
         >,
         /// Name should be a [verified](https://support.google.com/webmasters/answer/9008080) domain
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The spec for this DomainMapping.
         /// Structure is documented below.
         #[builder(into)]
-        pub spec: pulumi_gestalt_rust::InputOrOutput<
+        pub spec: pulumi_gestalt_rust::Input<
             super::super::types::cloudrun::DomainMappingSpec,
         >,
     }

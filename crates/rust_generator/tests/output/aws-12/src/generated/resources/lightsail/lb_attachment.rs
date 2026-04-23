@@ -57,10 +57,10 @@ pub mod lb_attachment {
     pub struct LbAttachmentArgs {
         /// The name of the instance to attach to the load balancer.
         #[builder(into)]
-        pub instance_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Lightsail load balancer.
         #[builder(into)]
-        pub lb_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub lb_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LbAttachmentResult {

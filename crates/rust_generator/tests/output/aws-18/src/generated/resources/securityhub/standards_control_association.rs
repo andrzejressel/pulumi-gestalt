@@ -40,18 +40,18 @@ pub mod standards_control_association {
     pub struct StandardsControlAssociationArgs {
         /// The desired enablement status of the control in the standard. Valid values: `ENABLED`, `DISABLED`.
         #[builder(into)]
-        pub association_status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub association_status: pulumi_gestalt_rust::Input<String>,
         /// The unique identifier for the security control whose enablement status you want to update.
         #[builder(into)]
-        pub security_control_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub security_control_id: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub standards_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub standards_arn: pulumi_gestalt_rust::Input<String>,
         /// The reason for updating the control's enablement status in the standard. Required when `association_status` is `DISABLED`.
         #[builder(into, default)]
-        pub updated_reason: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub updated_reason: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct StandardsControlAssociationResult {

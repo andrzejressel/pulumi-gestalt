@@ -54,53 +54,53 @@ pub mod endpoint {
     pub struct EndpointArgs {
         /// The DNS name for users to reach your application.
         #[builder(into)]
-        pub application_domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_domain: pulumi_gestalt_rust::Input<String>,
         /// The type of attachment. Currently, only `vpc` is supported.
         #[builder(into)]
-        pub attachment_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub attachment_type: pulumi_gestalt_rust::Input<String>,
         /// A description for the Verified Access endpoint.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the public TLS/SSL certificate in AWS Certificate Manager to associate with the endpoint. The CN in the certificate must match the DNS name your end users will use to reach your application.
         #[builder(into)]
-        pub domain_certificate_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_certificate_arn: pulumi_gestalt_rust::Input<String>,
         /// A custom identifier that is prepended to the DNS name that is generated for the endpoint.
         #[builder(into)]
-        pub endpoint_domain_prefix: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_domain_prefix: pulumi_gestalt_rust::Input<String>,
         /// The type of Verified Access endpoint to create. Currently `load-balancer` or `network-interface` are supported.
         #[builder(into)]
-        pub endpoint_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub endpoint_type: pulumi_gestalt_rust::Input<String>,
         /// The load balancer details. This parameter is required if the endpoint type is `load-balancer`.
         #[builder(into, default)]
-        pub load_balancer_options: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancer_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::verifiedaccess::EndpointLoadBalancerOptions>,
         >,
         /// The network interface details. This parameter is required if the endpoint type is `network-interface`.
         #[builder(into, default)]
-        pub network_interface_options: pulumi_gestalt_rust::InputOrOutput<
+        pub network_interface_options: pulumi_gestalt_rust::Input<
             Option<super::super::types::verifiedaccess::EndpointNetworkInterfaceOptions>,
         >,
         /// The policy document that is associated with this resource.
         #[builder(into, default)]
-        pub policy_document: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub policy_document: pulumi_gestalt_rust::Input<Option<String>>,
         /// List of the the security groups IDs to associate with the Verified Access endpoint.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The options in use for server side encryption.
         #[builder(into, default)]
-        pub sse_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub sse_specification: pulumi_gestalt_rust::Input<
             Option<super::super::types::verifiedaccess::EndpointSseSpecification>,
         >,
         /// Key-value tags for the Verified Access Endpoint. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The ID of the Verified Access group to associate the endpoint with.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub verified_access_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub verified_access_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EndpointResult {

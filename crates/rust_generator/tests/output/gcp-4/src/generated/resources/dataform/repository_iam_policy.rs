@@ -9,13 +9,13 @@ pub mod repository_iam_policy {
     #[allow(dead_code)]
     pub struct RepositoryIamPolicyArgs {
         #[builder(into)]
-        pub policy_data: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_data: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub repository: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct RepositoryIamPolicyResult {

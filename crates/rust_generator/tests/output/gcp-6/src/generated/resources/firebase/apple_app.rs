@@ -107,28 +107,28 @@ pub mod apple_app {
         /// If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the AppleApp.
         /// This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.
         #[builder(into, default)]
-        pub api_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub api_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The automatically generated Apple ID assigned to the Apple app by Apple in the Apple App Store.
         #[builder(into, default)]
-        pub app_store_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub app_store_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The canonical bundle ID of the Apple app as it would appear in the Apple AppStore.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub bundle_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bundle_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The user-assigned display name of the App.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Apple Developer Team ID associated with the App in the App Store.
         #[builder(into, default)]
-        pub team_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub team_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AppleAppResult {

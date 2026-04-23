@@ -106,59 +106,59 @@ pub mod channel {
     pub struct ChannelArgs {
         /// Specification of CDI inputs for this channel. See CDI Input Specification for more details.
         #[builder(into, default)]
-        pub cdi_input_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub cdi_input_specification: pulumi_gestalt_rust::Input<
             Option<super::super::types::medialive::ChannelCdiInputSpecification>,
         >,
         /// Concise argument description.
         #[builder(into)]
-        pub channel_class: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub channel_class: pulumi_gestalt_rust::Input<String>,
         /// Destinations for channel. See Destinations for more details.
         #[builder(into)]
-        pub destinations: pulumi_gestalt_rust::InputOrOutput<
+        pub destinations: pulumi_gestalt_rust::Input<
             Vec<super::super::types::medialive::ChannelDestination>,
         >,
         /// Encoder settings. See Encoder Settings for more details.
         #[builder(into)]
-        pub encoder_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub encoder_settings: pulumi_gestalt_rust::Input<
             super::super::types::medialive::ChannelEncoderSettings,
         >,
         /// Input attachments for the channel. See Input Attachments for more details.
         #[builder(into)]
-        pub input_attachments: pulumi_gestalt_rust::InputOrOutput<
+        pub input_attachments: pulumi_gestalt_rust::Input<
             Vec<super::super::types::medialive::ChannelInputAttachment>,
         >,
         /// Specification of network and file inputs for the channel.
         #[builder(into)]
-        pub input_specification: pulumi_gestalt_rust::InputOrOutput<
+        pub input_specification: pulumi_gestalt_rust::Input<
             super::super::types::medialive::ChannelInputSpecification,
         >,
         /// The log level to write to Cloudwatch logs.
         #[builder(into, default)]
-        pub log_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub log_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// Maintenance settings for this channel. See Maintenance for more details.
         #[builder(into, default)]
-        pub maintenance: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance: pulumi_gestalt_rust::Input<
             Option<super::super::types::medialive::ChannelMaintenance>,
         >,
         /// Name of the Channel.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Concise argument description.
         #[builder(into, default)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether to start/stop channel. Default: `false`
         #[builder(into, default)]
-        pub start_channel: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_channel: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A map of tags to assign to the channel. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Settings for the VPC outputs. See VPC for more details.
         #[builder(into, default)]
-        pub vpc: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc: pulumi_gestalt_rust::Input<
             Option<super::super::types::medialive::ChannelVpc>,
         >,
     }

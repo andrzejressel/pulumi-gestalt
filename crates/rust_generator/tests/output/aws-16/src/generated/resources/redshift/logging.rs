@@ -58,21 +58,21 @@ pub mod logging {
     pub struct LoggingArgs {
         /// Name of an existing S3 bucket where the log files are to be stored. Required when `log_destination_type` is `s3`. Must be in the same region as the cluster and the cluster must have read bucket and put object permissions. For more information on the permissions required for the bucket, please read the AWS [documentation](http://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html#db-auditing-enable-logging)
         #[builder(into, default)]
-        pub bucket_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bucket_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Identifier of the source cluster.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub cluster_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_identifier: pulumi_gestalt_rust::Input<String>,
         /// Log destination type. Valid values are `s3` and `cloudwatch`.
         #[builder(into, default)]
-        pub log_destination_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub log_destination_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Collection of exported log types. Required when `log_destination_type` is `cloudwatch`. Valid values are `connectionlog`, `useractivitylog`, and `userlog`.
         #[builder(into, default)]
-        pub log_exports: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub log_exports: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Prefix applied to the log file names.
         #[builder(into, default)]
-        pub s3_key_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub s3_key_prefix: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LoggingResult {

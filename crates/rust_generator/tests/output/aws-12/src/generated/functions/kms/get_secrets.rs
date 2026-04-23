@@ -10,7 +10,7 @@ pub mod get_secrets {
     pub struct GetSecretsArgs {
         /// One or more encrypted payload definitions from the KMS service. See the Secret Definitions below.
         #[builder(into)]
-        pub secrets: pulumi_gestalt_rust::InputOrOutput<
+        pub secrets: pulumi_gestalt_rust::Input<
             Vec<super::super::super::types::kms::GetSecretsSecret>,
         >,
     }

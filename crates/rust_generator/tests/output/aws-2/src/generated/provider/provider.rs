@@ -13,131 +13,121 @@
 pub struct ProviderArgs {
     /// The access key for API operations. You can retrieve this from the 'Security & Credentials' section of the AWS console.
     #[builder(into, default)]
-    pub access_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub access_key: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub allowed_account_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+    pub allowed_account_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     #[builder(into, default)]
-    pub assume_role: pulumi_gestalt_rust::InputOrOutput<
+    pub assume_role: pulumi_gestalt_rust::Input<
         Option<super::types::ProviderAssumeRole>,
     >,
     #[builder(into, default)]
-    pub assume_role_with_web_identity: pulumi_gestalt_rust::InputOrOutput<
+    pub assume_role_with_web_identity: pulumi_gestalt_rust::Input<
         Option<super::types::ProviderAssumeRoleWithWebIdentity>,
     >,
     /// File containing custom root and intermediate certificates. Can also be configured using the `AWS_CA_BUNDLE` environment
     /// variable. (Setting `ca_bundle` in the shared config file is not supported.)
     #[builder(into, default)]
-    pub custom_ca_bundle: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub custom_ca_bundle: pulumi_gestalt_rust::Input<Option<String>>,
     /// Configuration block with settings to default resource tags across all resources.
     #[builder(into, default)]
-    pub default_tags: pulumi_gestalt_rust::InputOrOutput<
+    pub default_tags: pulumi_gestalt_rust::Input<
         Option<super::types::ProviderDefaultTags>,
     >,
     /// Address of the EC2 metadata service endpoint to use. Can also be configured using the
     /// `AWS_EC2_METADATA_SERVICE_ENDPOINT` environment variable.
     #[builder(into, default)]
-    pub ec2_metadata_service_endpoint: pulumi_gestalt_rust::InputOrOutput<
-        Option<String>,
-    >,
+    pub ec2_metadata_service_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     /// Protocol to use with EC2 metadata service endpoint.Valid values are `IPv4` and `IPv6`. Can also be configured using the
     /// `AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE` environment variable.
     #[builder(into, default)]
-    pub ec2_metadata_service_endpoint_mode: pulumi_gestalt_rust::InputOrOutput<
-        Option<String>,
-    >,
+    pub ec2_metadata_service_endpoint_mode: pulumi_gestalt_rust::Input<Option<String>>,
     #[builder(into, default)]
-    pub endpoints: pulumi_gestalt_rust::InputOrOutput<
+    pub endpoints: pulumi_gestalt_rust::Input<
         Option<Vec<super::types::ProviderEndpoint>>,
     >,
     #[builder(into, default)]
-    pub forbidden_account_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+    pub forbidden_account_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     /// URL of a proxy to use for HTTP requests when accessing the AWS API. Can also be set using the `HTTP_PROXY` or
     /// `http_proxy` environment variables.
     #[builder(into, default)]
-    pub http_proxy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub http_proxy: pulumi_gestalt_rust::Input<Option<String>>,
     /// URL of a proxy to use for HTTPS requests when accessing the AWS API. Can also be set using the `HTTPS_PROXY` or
     /// `https_proxy` environment variables.
     #[builder(into, default)]
-    pub https_proxy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub https_proxy: pulumi_gestalt_rust::Input<Option<String>>,
     /// Configuration block with settings to ignore resource tags across all resources.
     #[builder(into, default)]
-    pub ignore_tags: pulumi_gestalt_rust::InputOrOutput<
+    pub ignore_tags: pulumi_gestalt_rust::Input<
         Option<super::types::ProviderIgnoreTags>,
     >,
     /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted, default value is `false`
     #[builder(into, default)]
-    pub insecure: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub insecure: pulumi_gestalt_rust::Input<Option<bool>>,
     /// The maximum number of times an AWS API request is being executed. If the API request still fails, an error is thrown.
     #[builder(into, default)]
-    pub max_retries: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+    pub max_retries: pulumi_gestalt_rust::Input<Option<i32>>,
     /// Comma-separated list of hosts that should not use HTTP or HTTPS proxies. Can also be set using the `NO_PROXY` or
     /// `no_proxy` environment variables.
     #[builder(into, default)]
-    pub no_proxy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub no_proxy: pulumi_gestalt_rust::Input<Option<String>>,
     /// The profile for API operations. If not set, the default profile created with `aws configure` will be used.
     #[builder(into, default)]
-    pub profile: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub profile: pulumi_gestalt_rust::Input<Option<String>>,
     /// The region where AWS operations will take place. Examples are us-east-1, us-west-2, etc.
     #[builder(into, default)]
-    pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub region: pulumi_gestalt_rust::Input<Option<String>>,
     /// Specifies how retries are attempted. Valid values are `standard` and `adaptive`. Can also be configured using the
     /// `AWS_RETRY_MODE` environment variable.
     #[builder(into, default)]
-    pub retry_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub retry_mode: pulumi_gestalt_rust::Input<Option<String>>,
     /// Specifies whether S3 API calls in the `us-east-1` region use the legacy global endpoint or a regional endpoint. Valid
     /// values are `legacy` or `regional`. Can also be configured using the `AWS_S3_US_EAST_1_REGIONAL_ENDPOINT` environment
     /// variable or the `s3_us_east_1_regional_endpoint` shared config file parameter
     #[builder(into, default)]
-    pub s3_us_east1_regional_endpoint: pulumi_gestalt_rust::InputOrOutput<
-        Option<String>,
-    >,
+    pub s3_us_east1_regional_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     /// Set this to true to enable the request to use path-style addressing, i.e., https://s3.amazonaws.com/BUCKET/KEY. By
     /// default, the S3 client will use virtual hosted bucket addressing when possible (https://BUCKET.s3.amazonaws.com/KEY).
     /// Specific to the Amazon S3 service.
     #[builder(into, default)]
-    pub s3_use_path_style: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub s3_use_path_style: pulumi_gestalt_rust::Input<Option<bool>>,
     /// The secret key for API operations. You can retrieve this from the 'Security & Credentials' section of the AWS console.
     #[builder(into, default)]
-    pub secret_key: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub secret_key: pulumi_gestalt_rust::Input<Option<String>>,
     /// List of paths to shared config files. If not set, defaults to [~/.aws/config].
     #[builder(into, default)]
-    pub shared_config_files: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+    pub shared_config_files: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     /// List of paths to shared credentials files. If not set, defaults to [~/.aws/credentials].
     #[builder(into, default)]
-    pub shared_credentials_files: pulumi_gestalt_rust::InputOrOutput<
-        Option<Vec<String>>,
-    >,
+    pub shared_credentials_files: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     /// Skip the credentials validation via STS API. Used for AWS API implementations that do not have STS
     /// available/implemented.
     #[builder(into, default)]
-    pub skip_credentials_validation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub skip_credentials_validation: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Skip the AWS Metadata API check. Used for AWS API implementations that do not have a metadata api endpoint.
     #[builder(into, default)]
-    pub skip_metadata_api_check: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub skip_metadata_api_check: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Skip static validation of region name. Used by users of alternative AWS-like APIs or users w/ access to regions that are
     /// not public (yet).
     #[builder(into, default)]
-    pub skip_region_validation: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub skip_region_validation: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Skip requesting the account ID. Used for AWS API implementations that do not have IAM/STS API and/or metadata API.
     #[builder(into, default)]
-    pub skip_requesting_account_id: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub skip_requesting_account_id: pulumi_gestalt_rust::Input<Option<bool>>,
     /// The region where AWS STS operations will take place. Examples are us-east-1 and us-west-2.
     #[builder(into, default)]
-    pub sts_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub sts_region: pulumi_gestalt_rust::Input<Option<String>>,
     /// session token. A session token is only required if you are using temporary security credentials.
     #[builder(into, default)]
-    pub token: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+    pub token: pulumi_gestalt_rust::Input<Option<String>>,
     /// The capacity of the AWS SDK's token bucket rate limiter.
     #[builder(into, default)]
-    pub token_bucket_rate_limiter_capacity: pulumi_gestalt_rust::InputOrOutput<
-        Option<i32>,
-    >,
+    pub token_bucket_rate_limiter_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
     /// Resolve an endpoint with DualStack capability
     #[builder(into, default)]
-    pub use_dualstack_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub use_dualstack_endpoint: pulumi_gestalt_rust::Input<Option<bool>>,
     /// Resolve an endpoint with FIPS capability
     #[builder(into, default)]
-    pub use_fips_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+    pub use_fips_endpoint: pulumi_gestalt_rust::Input<Option<bool>>,
 }
 #[allow(dead_code)]
 pub struct ProviderResult {

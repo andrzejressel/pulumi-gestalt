@@ -193,34 +193,34 @@ pub mod analytics_application {
         /// The CloudWatch log stream options to monitor application errors.
         /// See CloudWatch Logging Options below for more details.
         #[builder(into, default)]
-        pub cloudwatch_logging_options: pulumi_gestalt_rust::InputOrOutput<
+        pub cloudwatch_logging_options: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::AnalyticsApplicationCloudwatchLoggingOptions,
             >,
         >,
         /// SQL Code to transform input data, and generate output.
         #[builder(into, default)]
-        pub code: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub code: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the application.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Input configuration of the application. See Inputs below for more details.
         #[builder(into, default)]
-        pub inputs: pulumi_gestalt_rust::InputOrOutput<
+        pub inputs: pulumi_gestalt_rust::Input<
             Option<super::super::types::kinesis::AnalyticsApplicationInputs>,
         >,
         /// Name of the Kinesis Analytics Application.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Output destination configuration of the application. See Outputs below for more details.
         #[builder(into, default)]
-        pub outputs: pulumi_gestalt_rust::InputOrOutput<
+        pub outputs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::kinesis::AnalyticsApplicationOutput>>,
         >,
         /// An S3 Reference Data Source for the application.
         /// See Reference Data Sources below for more details.
         #[builder(into, default)]
-        pub reference_data_sources: pulumi_gestalt_rust::InputOrOutput<
+        pub reference_data_sources: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::kinesis::AnalyticsApplicationReferenceDataSources,
             >,
@@ -228,10 +228,10 @@ pub mod analytics_application {
         /// Whether to start or stop the Kinesis Analytics Application. To start an application, an input with a defined `starting_position` must be configured.
         /// To modify an application's starting position, first stop the application by setting `start_application = false`, then update `starting_position` and set `start_application = true`.
         #[builder(into, default)]
-        pub start_application: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub start_application: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Key-value map of tags for the Kinesis Analytics Application. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

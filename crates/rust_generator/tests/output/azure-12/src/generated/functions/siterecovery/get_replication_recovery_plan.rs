@@ -10,10 +10,10 @@ pub mod get_replication_recovery_plan {
     pub struct GetReplicationRecoveryPlanArgs {
         /// The name of the Replication Plan.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the vault that should be updated.
         #[builder(into)]
-        pub recovery_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetReplicationRecoveryPlanResult {

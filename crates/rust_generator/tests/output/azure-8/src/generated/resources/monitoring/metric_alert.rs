@@ -88,74 +88,74 @@ pub mod metric_alert {
     pub struct MetricAlertArgs {
         /// One or more `action` blocks as defined below.
         #[builder(into, default)]
-        pub actions: pulumi_gestalt_rust::InputOrOutput<
+        pub actions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::MetricAlertAction>>,
         >,
         /// A `application_insights_web_test_location_availability_criteria` block as defined below.
         ///
         /// > **NOTE** One of either `criteria`, `dynamic_criteria` or `application_insights_web_test_location_availability_criteria` must be specified.
         #[builder(into, default)]
-        pub application_insights_web_test_location_availability_criteria: pulumi_gestalt_rust::InputOrOutput<
+        pub application_insights_web_test_location_availability_criteria: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::monitoring::MetricAlertApplicationInsightsWebTestLocationAvailabilityCriteria,
             >,
         >,
         /// Should the alerts in this Metric Alert be auto resolved? Defaults to `true`.
         #[builder(into, default)]
-        pub auto_mitigate: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub auto_mitigate: pulumi_gestalt_rust::Input<Option<bool>>,
         /// One or more (static) `criteria` blocks as defined below.
         ///
         /// > **NOTE** One of either `criteria`, `dynamic_criteria` or `application_insights_web_test_location_availability_criteria` must be specified.
         #[builder(into, default)]
-        pub criterias: pulumi_gestalt_rust::InputOrOutput<
+        pub criterias: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::monitoring::MetricAlertCriteria>>,
         >,
         /// The description of this Metric Alert.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `dynamic_criteria` block as defined below.
         ///
         /// > **NOTE** One of either `criteria`, `dynamic_criteria` or `application_insights_web_test_location_availability_criteria` must be specified.
         #[builder(into, default)]
-        pub dynamic_criteria: pulumi_gestalt_rust::InputOrOutput<
+        pub dynamic_criteria: pulumi_gestalt_rust::Input<
             Option<super::super::types::monitoring::MetricAlertDynamicCriteria>,
         >,
         /// Should this Metric Alert be enabled? Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The evaluation frequency of this Metric Alert, represented in ISO 8601 duration format. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M` and `PT1H`. Defaults to `PT1M`.
         #[builder(into, default)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub frequency: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Metric Alert. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which to create the Metric Alert instance. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A set of strings of resource IDs at which the metric criteria should be applied.
         #[builder(into)]
-        pub scopes: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub scopes: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The severity of this Metric Alert. Possible values are `0`, `1`, `2`, `3` and `4`. Defaults to `3`.
         #[builder(into, default)]
-        pub severity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub severity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the target resource.
         ///
         /// > This is Required when using a Subscription as scope, a Resource Group as scope or Multiple Scopes.
         #[builder(into, default)]
-        pub target_resource_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_resource_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource type (e.g. `Microsoft.Compute/virtualMachines`) of the target resource.
         ///
         /// > This is Required when using a Subscription as scope, a Resource Group as scope or Multiple Scopes.
         #[builder(into, default)]
-        pub target_resource_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_resource_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// The period of time that is used to monitor alert activity, represented in ISO 8601 duration format. This value must be greater than `frequency`. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M`, `PT1H`, `PT6H`, `PT12H` and `P1D`. Defaults to `PT5M`.
         #[builder(into, default)]
-        pub window_size: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub window_size: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MetricAlertResult {

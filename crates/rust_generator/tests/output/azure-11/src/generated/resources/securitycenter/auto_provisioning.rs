@@ -38,7 +38,7 @@ pub mod auto_provisioning {
     pub struct AutoProvisioningArgs {
         /// Should the security agent be automatically provisioned on Virtual Machines in this subscription? Possible values are `On` (to install the security agent automatically, if it's missing) or `Off` (to not install the security agent automatically).
         #[builder(into)]
-        pub auto_provision: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub auto_provision: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AutoProvisioningResult {

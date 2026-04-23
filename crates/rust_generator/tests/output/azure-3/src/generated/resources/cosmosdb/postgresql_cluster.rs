@@ -49,89 +49,79 @@ pub mod postgresql_cluster {
     pub struct PostgresqlClusterArgs {
         /// The password of the administrator login. This is required when `source_resource_id` is not set.
         #[builder(into, default)]
-        pub administrator_login_password: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub administrator_login_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// The citus extension version on the Azure Cosmos DB for PostgreSQL Cluster. Possible values are `8.3`, `9.0`, `9.1`, `9.2`, `9.3`, `9.4`, `9.5`, `10.0`, `10.1`, `10.2`, `11.0`, `11.1`, `11.2`, `11.3` and `12.1`.
         #[builder(into, default)]
-        pub citus_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub citus_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is public access enabled on coordinator? Defaults to `true`.
         #[builder(into, default)]
-        pub coordinator_public_ip_access_enabled: pulumi_gestalt_rust::InputOrOutput<
+        pub coordinator_public_ip_access_enabled: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The edition of the coordinator server. Possible values are `BurstableGeneralPurpose`, `BurstableMemoryOptimized`, `GeneralPurpose` and `MemoryOptimized`. Defaults to `GeneralPurpose`.
         #[builder(into, default)]
-        pub coordinator_server_edition: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub coordinator_server_edition: pulumi_gestalt_rust::Input<Option<String>>,
         /// The coordinator storage allowed for the Azure Cosmos DB for PostgreSQL Cluster. Possible values are `32768`, `65536`, `131072`, `262144`, `524288`, `1048576`, `2097152`, `4194304`, `8388608`, `16777216`, and `33554432`.
         ///
         /// > **NOTE:** More information on [the types of compute resources available for CosmosDB can be found in the product documentation](https://learn.microsoft.com/azure/cosmos-db/postgresql/resources-compute)
         #[builder(into, default)]
-        pub coordinator_storage_quota_in_mb: pulumi_gestalt_rust::InputOrOutput<
-            Option<i32>,
-        >,
+        pub coordinator_storage_quota_in_mb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The coordinator vCore count for the Azure Cosmos DB for PostgreSQL Cluster. Possible values are `1`, `2`, `4`, `8`, `16`, `32`, `64` and `96`.
         #[builder(into, default)]
-        pub coordinator_vcore_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub coordinator_vcore_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Is high availability enabled for the Azure Cosmos DB for PostgreSQL cluster? Defaults to `false`.
         #[builder(into, default)]
-        pub ha_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ha_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure Region where the Azure Cosmos DB for PostgreSQL Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `maintenance_window` block as defined below.
         #[builder(into, default)]
-        pub maintenance_window: pulumi_gestalt_rust::InputOrOutput<
+        pub maintenance_window: pulumi_gestalt_rust::Input<
             Option<super::super::types::cosmosdb::PostgresqlClusterMaintenanceWindow>,
         >,
         /// The name which should be used for this Azure Cosmos DB for PostgreSQL Cluster. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The worker node count of the Azure Cosmos DB for PostgreSQL Cluster. Possible value is between `0` and `20` except `1`.
         #[builder(into)]
-        pub node_count: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub node_count: pulumi_gestalt_rust::Input<i32>,
         /// Is public access enabled on worker nodes. Defaults to `false`.
         #[builder(into, default)]
-        pub node_public_ip_access_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub node_public_ip_access_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The edition of the node server. Possible values are `BurstableGeneralPurpose`, `BurstableMemoryOptimized`, `GeneralPurpose` and `MemoryOptimized`. Defaults to `MemoryOptimized`.
         #[builder(into, default)]
-        pub node_server_edition: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub node_server_edition: pulumi_gestalt_rust::Input<Option<String>>,
         /// The storage quota in MB on each worker node. Possible values are `32768`, `65536`, `131072`, `262144`, `524288`, `1048576`, `2097152`, `4194304`, `8388608` and `16777216`.
         #[builder(into, default)]
-        pub node_storage_quota_in_mb: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub node_storage_quota_in_mb: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The vCores count on each worker node. Possible values are `1`, `2`, `4`, `8`, `16`, `32`, `64`, `96` and `104`.
         #[builder(into, default)]
-        pub node_vcores: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub node_vcores: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The date and time in UTC (ISO8601 format) for the Azure Cosmos DB for PostgreSQL cluster restore. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub point_in_time_in_utc: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub point_in_time_in_utc: pulumi_gestalt_rust::Input<Option<String>>,
         /// The preferred primary availability zone for the Azure Cosmos DB for PostgreSQL cluster.
         #[builder(into, default)]
-        pub preferred_primary_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub preferred_primary_zone: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Azure Cosmos DB for PostgreSQL Cluster should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Is shards on coordinator enabled for the Azure Cosmos DB for PostgreSQL cluster.
         #[builder(into, default)]
-        pub shards_on_coordinator_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub shards_on_coordinator_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure region of the source Azure Cosmos DB for PostgreSQL cluster for read replica clusters. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source_location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The resource ID of the source Azure Cosmos DB for PostgreSQL cluster for read replica clusters. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub source_resource_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub source_resource_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The major PostgreSQL version on the Azure Cosmos DB for PostgreSQL cluster. Possible values are `11`, `12`, `13`, `14`, `15` and `16`.
         #[builder(into, default)]
-        pub sql_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub sql_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// A mapping of tags which should be assigned to the Azure Cosmos DB for PostgreSQL Cluster.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -53,31 +53,31 @@ pub mod integration_runtime_rule {
     pub struct IntegrationRuntimeRuleArgs {
         /// Cluster will not be recycled and it will be used in next data flow activity run until TTL (time to live) is reached if this is set as `false`. Defaults to `true`.
         #[builder(into, default)]
-        pub cleanup_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub cleanup_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Compute type of the cluster which will execute data flow job. Valid values are `General`, `ComputeOptimized` and `MemoryOptimized`. Defaults to `General`.
         #[builder(into, default)]
-        pub compute_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub compute_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Core count of the cluster which will execute data flow job. Valid values are `8`, `16`, `32`, `48`, `80`, `144` and `272`. Defaults to `8`.
         #[builder(into, default)]
-        pub core_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub core_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// Integration runtime description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the supported Azure location where the resource exists. Use `AutoResolve` to create an auto-resolve integration runtime. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Managed Integration Runtime. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Time to live (in minutes) setting of the cluster which will execute data flow job. Defaults to `0`.
         #[builder(into, default)]
-        pub time_to_live_min: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub time_to_live_min: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Is Integration Runtime compute provisioned within Managed Virtual Network? Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub virtual_network_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub virtual_network_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct IntegrationRuntimeRuleResult {

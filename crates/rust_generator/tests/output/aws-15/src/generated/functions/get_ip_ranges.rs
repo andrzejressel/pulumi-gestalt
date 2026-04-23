@@ -9,12 +9,12 @@ pub mod get_ip_ranges {
     #[allow(dead_code)]
     pub struct GetIpRangesArgs {
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Filter IP ranges by regions (or include all regions, if
         /// omitted). Valid items are `global` (for `cloudfront`) as well as all AWS regions
         /// (e.g., `eu-central-1`)
         #[builder(into, default)]
-        pub regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// Filter IP ranges by services. Valid items are `amazon`
         /// (for amazon.com), `amazon_connect`, `api_gateway`, `cloud9`, `cloudfront`,
         /// `codebuild`, `dynamodb`, `ec2`, `ec2_instance_connect`, `globalaccelerator`,
@@ -24,10 +24,10 @@ pub mod get_ip_ranges {
         /// > **NOTE:** If the specified combination of regions and services does not yield any
         /// CIDR blocks, this call will fail.
         #[builder(into)]
-        pub services: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub services: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Custom URL for source JSON file. Syntax must match [AWS IP Address Ranges documentation](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html). Defaults to `https://ip-ranges.amazonaws.com/ip-ranges.json`.
         #[builder(into, default)]
-        pub url: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub url: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetIpRangesResult {

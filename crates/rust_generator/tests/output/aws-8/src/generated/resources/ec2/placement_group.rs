@@ -37,22 +37,22 @@ pub mod placement_group {
     pub struct PlacementGroupArgs {
         /// The name of the placement group.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The number of partitions to create in the
         /// placement group.  Can only be specified when the `strategy` is set to
         /// `partition`.  Valid values are 1 - 7 (default is `2`).
         #[builder(into, default)]
-        pub partition_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub partition_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Determines how placement groups spread instances. Can only be used
         /// when the `strategy` is set to `spread`. Can be `host` or `rack`. `host` can only be used for Outpost placement groups. Defaults to `rack`.
         #[builder(into, default)]
-        pub spread_level: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub spread_level: pulumi_gestalt_rust::Input<Option<String>>,
         /// The placement strategy. Can be `cluster`, `partition` or `spread`.
         #[builder(into)]
-        pub strategy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub strategy: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

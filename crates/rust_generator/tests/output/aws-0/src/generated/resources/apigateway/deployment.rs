@@ -35,32 +35,32 @@ pub mod deployment {
         /// See `canary_settings below.
         /// Has no effect when `stage_name` is not set.
         #[builder(into, default)]
-        pub canary_settings: pulumi_gestalt_rust::InputOrOutput<
+        pub canary_settings: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigateway::DeploymentCanarySettings>,
         >,
         /// Description of the deployment
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// REST API identifier.
         #[builder(into)]
-        pub rest_api: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rest_api: pulumi_gestalt_rust::Input<String>,
         /// Description to set on the stage managed by the `stage_name` argument.
         /// Has no effect when `stage_name` is not set.
         #[builder(into, default)]
-        pub stage_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stage_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the stage to create with this deployment.
         /// If the specified stage already exists, it will be updated to point to the new deployment.
         /// We recommend using the `aws.apigateway.Stage` resource instead to manage stages.
         #[builder(into, default)]
-        pub stage_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stage_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of arbitrary keys and values that, when changed, will trigger a redeployment.
         #[builder(into, default)]
-        pub triggers: pulumi_gestalt_rust::InputOrOutput<
+        pub triggers: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Map to set on the stage managed by the `stage_name` argument.
         #[builder(into, default)]
-        pub variables: pulumi_gestalt_rust::InputOrOutput<
+        pub variables: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

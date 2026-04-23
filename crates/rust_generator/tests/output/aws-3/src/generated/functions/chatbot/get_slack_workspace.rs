@@ -10,7 +10,7 @@ pub mod get_slack_workspace {
     pub struct GetSlackWorkspaceArgs {
         /// Slack workspace name configured with AWS Chatbot.
         #[builder(into)]
-        pub slack_team_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub slack_team_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSlackWorkspaceResult {

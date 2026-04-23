@@ -36,45 +36,45 @@ pub mod workgroup {
     pub struct WorkgroupArgs {
         /// The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).
         #[builder(into, default)]
-        pub base_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub base_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// An array of parameters to set for more control over a serverless database. See `Config Parameter` below.
         #[builder(into, default)]
-        pub config_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub config_parameters: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::redshiftserverless::WorkgroupConfigParameter>,
             >,
         >,
         /// The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC instead of over the internet.
         #[builder(into, default)]
-        pub enhanced_vpc_routing: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enhanced_vpc_routing: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries, specified in Redshift Processing Units (RPUs).
         #[builder(into, default)]
-        pub max_capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub max_capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The name of the namespace.
         #[builder(into)]
-        pub namespace_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub namespace_name: pulumi_gestalt_rust::Input<String>,
         /// The port number on which the cluster accepts incoming connections.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// A value that specifies whether the workgroup can be accessed from a public network.
         #[builder(into, default)]
-        pub publicly_accessible: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub publicly_accessible: pulumi_gestalt_rust::Input<Option<bool>>,
         /// An array of security group IDs to associate with the workgroup.
         #[builder(into, default)]
-        pub security_group_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub security_group_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// An array of VPC subnet IDs to associate with the workgroup. When set, must contain at least three subnets spanning three Availability Zones. A minimum number of IP addresses is required and scales with the Base Capacity. For more information, see the following [AWS document](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-known-issues.html).
         #[builder(into, default)]
-        pub subnet_ids: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub subnet_ids: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the workgroup.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub workgroup_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workgroup_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkgroupResult {

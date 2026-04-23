@@ -37,18 +37,18 @@ pub mod site {
     pub struct SiteArgs {
         /// Description of the Site.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Global Network to create the site in.
         #[builder(into)]
-        pub global_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub global_network_id: pulumi_gestalt_rust::Input<String>,
         /// The site location as documented below.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<
+        pub location: pulumi_gestalt_rust::Input<
             Option<super::super::types::networkmanager::SiteLocation>,
         >,
         /// Key-value tags for the Site. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

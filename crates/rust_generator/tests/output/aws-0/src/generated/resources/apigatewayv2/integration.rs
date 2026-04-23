@@ -114,76 +114,72 @@ pub mod integration {
     pub struct IntegrationArgs {
         /// API identifier.
         #[builder(into)]
-        pub api_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the VPC link for a private integration. Supported only for HTTP APIs. Must be between 1 and 1024 characters in length.
         #[builder(into, default)]
-        pub connection_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Type of the network connection to the integration endpoint. Valid values: `INTERNET`, `VPC_LINK`. Default is `INTERNET`.
         #[builder(into, default)]
-        pub connection_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub connection_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// How to handle response payload content type conversions. Valid values: `CONVERT_TO_BINARY`, `CONVERT_TO_TEXT`. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub content_handling_strategy: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub content_handling_strategy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Credentials required for the integration, if any.
         #[builder(into, default)]
-        pub credentials_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub credentials_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the integration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Integration's HTTP method. Must be specified if `integration_type` is not `MOCK`.
         #[builder(into, default)]
-        pub integration_method: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_method: pulumi_gestalt_rust::Input<Option<String>>,
         /// AWS service action to invoke. Supported only for HTTP APIs when `integration_type` is `AWS_PROXY`. See the [AWS service integration reference](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html) documentation for supported values. Must be between 1 and 128 characters in length.
         #[builder(into, default)]
-        pub integration_subtype: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_subtype: pulumi_gestalt_rust::Input<Option<String>>,
         /// Integration type of an integration.
         /// Valid values: `AWS` (supported only for WebSocket APIs), `AWS_PROXY`, `HTTP` (supported only for WebSocket APIs), `HTTP_PROXY`, `MOCK` (supported only for WebSocket APIs). For an HTTP API private integration, use `HTTP_PROXY`.
         #[builder(into)]
-        pub integration_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub integration_type: pulumi_gestalt_rust::Input<String>,
         /// URI of the Lambda function for a Lambda proxy integration, when `integration_type` is `AWS_PROXY`.
         /// For an `HTTP` integration, specify a fully-qualified URL. For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service.
         #[builder(into, default)]
-        pub integration_uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub integration_uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the `request_templates` attribute.
         /// Valid values: `WHEN_NO_MATCH`, `WHEN_NO_TEMPLATES`, `NEVER`. Default is `WHEN_NO_MATCH`. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub passthrough_behavior: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub passthrough_behavior: pulumi_gestalt_rust::Input<Option<String>>,
         /// The [format of the payload](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html#http-api-develop-integrations-lambda.proxy-format) sent to an integration. Valid values: `1.0`, `2.0`. Default is `1.0`.
         #[builder(into, default)]
-        pub payload_format_version: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub payload_format_version: pulumi_gestalt_rust::Input<Option<String>>,
         /// For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend.
         /// For HTTP APIs with a specified `integration_subtype`, a key-value map specifying parameters that are passed to `AWS_PROXY` integrations.
         /// For HTTP APIs without a specified `integration_subtype`, a key-value map specifying how to transform HTTP requests before sending them to the backend.
         /// See the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html) for details.
         #[builder(into, default)]
-        pub request_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub request_parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Map of [Velocity](https://velocity.apache.org/) templates that are applied on the request payload based on the value of the Content-Type header sent by the client. Supported only for WebSocket APIs.
         #[builder(into, default)]
-        pub request_templates: pulumi_gestalt_rust::InputOrOutput<
+        pub request_templates: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Mappings to transform the HTTP response from a backend integration before returning the response to clients. Supported only for HTTP APIs.
         #[builder(into, default)]
-        pub response_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub response_parameters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::apigatewayv2::IntegrationResponseParameter>>,
         >,
         /// The [template selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-template-selection-expressions) for the integration.
         #[builder(into, default)]
-        pub template_selection_expression: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub template_selection_expression: pulumi_gestalt_rust::Input<Option<String>>,
         /// Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs.
         /// The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
         /// this provider will only perform drift detection of its value when present in a configuration.
         #[builder(into, default)]
-        pub timeout_milliseconds: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub timeout_milliseconds: pulumi_gestalt_rust::Input<Option<i32>>,
         /// TLS configuration for a private integration. Supported only for HTTP APIs.
         #[builder(into, default)]
-        pub tls_config: pulumi_gestalt_rust::InputOrOutput<
+        pub tls_config: pulumi_gestalt_rust::Input<
             Option<super::super::types::apigatewayv2::IntegrationTlsConfig>,
         >,
     }

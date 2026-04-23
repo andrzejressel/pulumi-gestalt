@@ -40,25 +40,25 @@ pub mod asset_type {
     pub struct AssetTypeArgs {
         /// The description of the custom asset type.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique identifier of the Amazon DataZone domain where the custom asset type is being created.
         #[builder(into)]
-        pub domain_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_identifier: pulumi_gestalt_rust::Input<String>,
         /// The metadata forms that are to be attached to the custom asset type.
         #[builder(into, default)]
-        pub forms_inputs: pulumi_gestalt_rust::InputOrOutput<
+        pub forms_inputs: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datazone::AssetTypeFormsInput>>,
         >,
         /// The name of the custom asset type.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The unique identifier of the Amazon DataZone project that owns the custom asset type.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub owning_project_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub owning_project_identifier: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::datazone::AssetTypeTimeouts>,
         >,
     }

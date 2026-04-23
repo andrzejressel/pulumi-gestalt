@@ -47,10 +47,10 @@ pub mod appregistry_attribute_group_association {
     pub struct AppregistryAttributeGroupAssociationArgs {
         /// ID of the application.
         #[builder(into)]
-        pub application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_id: pulumi_gestalt_rust::Input<String>,
         /// ID of the attribute group to associate with the application.
         #[builder(into)]
-        pub attribute_group_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub attribute_group_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AppregistryAttributeGroupAssociationResult {

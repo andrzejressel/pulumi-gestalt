@@ -62,28 +62,28 @@ pub mod notification_rule {
     pub struct NotificationRuleArgs {
         /// The level of detail to include in the notifications for this resource. Possible values are `BASIC` and `FULL`.
         #[builder(into)]
-        pub detail_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub detail_type: pulumi_gestalt_rust::Input<String>,
         /// A list of event types associated with this notification rule.
         /// For list of allowed events see [here](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api).
         #[builder(into)]
-        pub event_type_ids: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub event_type_ids: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The name of notification rule.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the resource to associate with the notification rule.
         #[builder(into)]
-        pub resource: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource: pulumi_gestalt_rust::Input<String>,
         /// The status of the notification rule. Possible values are `ENABLED` and `DISABLED`, default is `ENABLED`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Configuration blocks containing notification target information. Can be specified multiple times. At least one target must be specified on creation.
         #[builder(into, default)]
-        pub targets: pulumi_gestalt_rust::InputOrOutput<
+        pub targets: pulumi_gestalt_rust::Input<
             Option<
                 Vec<super::super::types::codestarnotifications::NotificationRuleTarget>,
             >,

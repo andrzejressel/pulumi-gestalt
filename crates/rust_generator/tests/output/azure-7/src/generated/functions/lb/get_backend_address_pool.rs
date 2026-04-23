@@ -10,10 +10,10 @@ pub mod get_backend_address_pool {
     pub struct GetBackendAddressPoolArgs {
         /// The ID of the Load Balancer in which the Backend Address Pool exists.
         #[builder(into)]
-        pub loadbalancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub loadbalancer_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the Backend Address Pool.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetBackendAddressPoolResult {

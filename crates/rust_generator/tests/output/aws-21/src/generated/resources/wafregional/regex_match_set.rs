@@ -51,10 +51,10 @@ pub mod regex_match_set {
     pub struct RegexMatchSetArgs {
         /// The name or description of the Regex Match Set.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. See below.
         #[builder(into, default)]
-        pub regex_match_tuples: pulumi_gestalt_rust::InputOrOutput<
+        pub regex_match_tuples: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::wafregional::RegexMatchSetRegexMatchTuple>>,
         >,
     }

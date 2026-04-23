@@ -10,14 +10,14 @@ pub mod get_dedicated_host {
     pub struct GetDedicatedHostArgs {
         /// Configuration block. Detailed below.
         #[builder(into, default)]
-        pub filters: pulumi_gestalt_rust::InputOrOutput<
+        pub filters: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::super::types::ec2::GetDedicatedHostFilter>>,
         >,
         /// ID of the Dedicated Host.
         #[builder(into, default)]
-        pub host_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub host_id: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

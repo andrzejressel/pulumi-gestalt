@@ -10,7 +10,7 @@ pub mod get_subscription {
     pub struct GetSubscriptionArgs {
         /// Specifies the ID of the subscription. If this argument is omitted, the subscription ID of the current Azure Resource Manager provider is used.
         #[builder(into, default)]
-        pub subscription_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subscription_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetSubscriptionResult {

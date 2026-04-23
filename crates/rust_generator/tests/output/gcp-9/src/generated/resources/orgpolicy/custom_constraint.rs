@@ -85,31 +85,31 @@ pub mod custom_constraint {
         /// The action to take if the condition is met.
         /// Possible values are: `ALLOW`, `DENY`.
         #[builder(into)]
-        pub action_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub action_type: pulumi_gestalt_rust::Input<String>,
         /// A CEL condition that refers to a supported service resource, for example `resource.management.autoUpgrade == false`. For details about CEL usage, see [Common Expression Language](https://cloud.google.com/resource-manager/docs/organization-policy/creating-managing-custom-constraints#common_expression_language).
         #[builder(into)]
-        pub condition: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub condition: pulumi_gestalt_rust::Input<String>,
         /// A human-friendly description of the constraint to display as an error message when the policy is violated.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A human-friendly name for the constraint.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of RESTful methods for which to enforce the constraint. Can be `CREATE`, `UPDATE`, or both. Not all Google Cloud services support both methods. To see supported methods for each service, find the service in [Supported services](https://cloud.google.com/resource-manager/docs/organization-policy/custom-constraint-supported-services).
         #[builder(into)]
-        pub method_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub method_types: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Immutable. The name of the custom constraint. This is unique within the organization.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The parent of the resource, an organization. Format should be `organizations/{organization_id}`.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Immutable. The fully qualified name of the Google Cloud REST resource containing the object and field you want to restrict. For example, `container.googleapis.com/NodePool`.
         #[builder(into)]
-        pub resource_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub resource_types: pulumi_gestalt_rust::Input<Vec<String>>,
     }
     #[allow(dead_code)]
     pub struct CustomConstraintResult {

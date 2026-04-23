@@ -53,56 +53,56 @@ pub mod run_book {
     pub struct RunBookArgs {
         /// The name of the automation account in which the Runbook is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The desired content of the runbook.
         ///
         /// > **NOTE** The Azure API requires a `publish_content_link` to be supplied even when specifying your own `content`.
         #[builder(into, default)]
-        pub content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub content: pulumi_gestalt_rust::Input<Option<String>>,
         /// A description for this credential.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A `draft` block as defined below.
         #[builder(into, default)]
-        pub draft: pulumi_gestalt_rust::InputOrOutput<
+        pub draft: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::RunBookDraft>,
         >,
         /// One or more `job_schedule` block as defined below.
         ///
         /// > **NOTE** AzureRM provides a stand-alone azure.automation.JobSchedule and this inlined `job_schedule` property to manage the job schedules. At this time you should choose one of them to manage the job schedule resources.
         #[builder(into, default)]
-        pub job_schedules: pulumi_gestalt_rust::InputOrOutput<
+        pub job_schedules: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::automation::RunBookJobSchedule>>,
         >,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the activity-level tracing options of the runbook, available only for Graphical runbooks. Possible values are `0` for None, `9` for Basic, and `15` for Detailed. Must turn on Verbose logging in order to see the tracing.
         #[builder(into, default)]
-        pub log_activity_trace_level: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub log_activity_trace_level: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Progress log option.
         #[builder(into)]
-        pub log_progress: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub log_progress: pulumi_gestalt_rust::Input<bool>,
         /// Verbose log option.
         #[builder(into)]
-        pub log_verbose: pulumi_gestalt_rust::InputOrOutput<bool>,
+        pub log_verbose: pulumi_gestalt_rust::Input<bool>,
         /// Specifies the name of the Runbook. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One `publish_content_link` block as defined below.
         #[builder(into, default)]
-        pub publish_content_link: pulumi_gestalt_rust::InputOrOutput<
+        pub publish_content_link: pulumi_gestalt_rust::Input<
             Option<super::super::types::automation::RunBookPublishContentLink>,
         >,
         /// The name of the resource group in which the Runbook is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The type of the runbook - can be either `Graph`, `GraphPowerShell`, `GraphPowerShellWorkflow`, `PowerShellWorkflow`, `PowerShell`, `PowerShell72`, `Python3`, `Python2` or `Script`. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub runbook_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub runbook_type: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

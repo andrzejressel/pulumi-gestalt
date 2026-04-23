@@ -62,52 +62,52 @@ pub mod trigger_schedule {
     pub struct TriggerScheduleArgs {
         /// Specifies if the Data Factory Schedule Trigger is activated. Defaults to `true`.
         #[builder(into, default)]
-        pub activated: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub activated: pulumi_gestalt_rust::Input<Option<bool>>,
         /// List of tags that can be used for describing the Data Factory Schedule Trigger.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub annotations: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         #[builder(into)]
-        pub data_factory_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub data_factory_id: pulumi_gestalt_rust::Input<String>,
         /// The Schedule Trigger's description.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The time the Schedule Trigger should end. The time will be represented in UTC.
         #[builder(into, default)]
-        pub end_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub end_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The trigger frequency. Valid values include `Minute`, `Hour`, `Day`, `Week`, `Month`. Defaults to `Minute`.
         #[builder(into, default)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub frequency: pulumi_gestalt_rust::Input<Option<String>>,
         /// The interval for how often the trigger occurs. This defaults to `1`.
         #[builder(into, default)]
-        pub interval: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub interval: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies the name of the Data Factory Schedule Trigger. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/azure/data-factory/naming-rules) for all restrictions.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Data Factory Pipeline name that the trigger will act on.
         #[builder(into, default)]
-        pub pipeline_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub pipeline_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The pipeline parameters that the trigger will act upon.
         #[builder(into, default)]
-        pub pipeline_parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub pipeline_parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A `pipeline` block as defined below.
         #[builder(into, default)]
-        pub pipelines: pulumi_gestalt_rust::InputOrOutput<
+        pub pipelines: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::datafactory::TriggerSchedulePipeline>>,
         >,
         /// A `schedule` block as defined below, which further specifies the recurrence schedule for the trigger. A schedule is capable of limiting or increasing the number of trigger executions specified by the `frequency` and `interval` properties.
         #[builder(into, default)]
-        pub schedule: pulumi_gestalt_rust::InputOrOutput<
+        pub schedule: pulumi_gestalt_rust::Input<
             Option<super::super::types::datafactory::TriggerScheduleSchedule>,
         >,
         /// The time the Schedule Trigger will start. This defaults to the current time. The time will be represented in UTC.
         #[builder(into, default)]
-        pub start_time: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub start_time: pulumi_gestalt_rust::Input<Option<String>>,
         /// The timezone of the start/end time.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TriggerScheduleResult {

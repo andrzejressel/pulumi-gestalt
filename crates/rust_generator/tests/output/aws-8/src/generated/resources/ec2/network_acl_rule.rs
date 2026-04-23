@@ -63,13 +63,13 @@ pub mod network_acl_rule {
     pub struct NetworkAclRuleArgs {
         /// The network range to allow or deny, in CIDR notation (for example 172.16.0.0/24 ).
         #[builder(into, default)]
-        pub cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet). Default `false`.
         #[builder(into, default)]
-        pub egress: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub egress: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The from port to match.
         #[builder(into, default)]
-        pub from_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub from_port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// ICMP protocol: The ICMP code. Required if specifying ICMP for the protocolE.g., -1
         ///
         /// > **NOTE:** If the value of `protocol` is `-1` or `all`, the `from_port` and `to_port` values will be ignored and the rule will apply to all ports.
@@ -78,28 +78,28 @@ pub mod network_acl_rule {
         ///
         /// > Note: For more information on ICMP types and codes, see here: https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
         #[builder(into, default)]
-        pub icmp_code: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub icmp_code: pulumi_gestalt_rust::Input<Option<i32>>,
         /// ICMP protocol: The ICMP type. Required if specifying ICMP for the protocolE.g., -1
         #[builder(into, default)]
-        pub icmp_type: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub icmp_type: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The IPv6 CIDR block to allow or deny.
         #[builder(into, default)]
-        pub ipv6_cidr_block: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ipv6_cidr_block: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the network ACL.
         #[builder(into)]
-        pub network_acl_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub network_acl_id: pulumi_gestalt_rust::Input<String>,
         /// The protocol. A value of -1 means all protocols.
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether to allow or deny the traffic that matches the rule. Accepted values: `allow` | `deny`
         #[builder(into)]
-        pub rule_action: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub rule_action: pulumi_gestalt_rust::Input<String>,
         /// The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.
         #[builder(into)]
-        pub rule_number: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub rule_number: pulumi_gestalt_rust::Input<i32>,
         /// The to port to match.
         #[builder(into, default)]
-        pub to_port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub to_port: pulumi_gestalt_rust::Input<Option<i32>>,
     }
     #[allow(dead_code)]
     pub struct NetworkAclRuleResult {

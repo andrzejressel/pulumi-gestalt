@@ -81,15 +81,15 @@ pub mod project_scc_big_query_export {
         ///
         /// - - -
         #[builder(into)]
-        pub big_query_export_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub big_query_export_id: pulumi_gestalt_rust::Input<String>,
         /// The dataset to write findings' updates to.
         /// Its format is "projects/[projectId]/datasets/[bigquery_dataset_id]".
         /// BigQuery Dataset unique ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_).
         #[builder(into, default)]
-        pub dataset: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub dataset: pulumi_gestalt_rust::Input<Option<String>>,
         /// The description of the notification config (max of 1024 characters).
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Expression that defines the filter to apply across create/update
         /// events of findings. The
         /// expression is a list of zero or more restrictions combined via
@@ -110,11 +110,11 @@ pub mod project_scc_big_query_export {
         /// [Filtering notifications](https://cloud.google.com/security-command-center/docs/how-to-api-filter-notifications)
         /// for information on how to write a filter.
         #[builder(into, default)]
-        pub filter: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub filter: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ProjectSccBigQueryExportResult {

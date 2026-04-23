@@ -77,12 +77,12 @@ pub mod service_perimeter_resource {
         ///
         /// - - -
         #[builder(into)]
-        pub perimeter_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub perimeter_name: pulumi_gestalt_rust::Input<String>,
         /// A GCP resource that is inside of the service perimeter.
         /// Currently only projects are allowed.
         /// Format: projects/{project_number}
         #[builder(into)]
-        pub resource: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ServicePerimeterResourceResult {

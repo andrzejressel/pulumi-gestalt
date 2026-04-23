@@ -21,24 +21,24 @@ pub mod trust_store {
     pub struct TrustStoreArgs {
         /// S3 Bucket name holding the client certificate CA bundle.
         #[builder(into)]
-        pub ca_certificates_bundle_s3_bucket: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ca_certificates_bundle_s3_bucket: pulumi_gestalt_rust::Input<String>,
         /// S3 object key holding the client certificate CA bundle.
         #[builder(into)]
-        pub ca_certificates_bundle_s3_key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub ca_certificates_bundle_s3_key: pulumi_gestalt_rust::Input<String>,
         /// Version Id of CA bundle S3 bucket object, if versioned, defaults to latest if omitted.
         #[builder(into, default)]
-        pub ca_certificates_bundle_s3_object_version: pulumi_gestalt_rust::InputOrOutput<
+        pub ca_certificates_bundle_s3_object_version: pulumi_gestalt_rust::Input<
             Option<String>,
         >,
         /// Name of the Trust Store. If omitted, the provider will assign a random, unique name. This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`. Cannot be longer than 6 characters.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

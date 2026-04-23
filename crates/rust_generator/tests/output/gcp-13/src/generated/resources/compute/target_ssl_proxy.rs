@@ -97,15 +97,15 @@ pub mod target_ssl_proxy {
         ///
         /// - - -
         #[builder(into)]
-        pub backend_service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backend_service: pulumi_gestalt_rust::Input<String>,
         /// A reference to the CertificateMap resource uri that identifies a certificate map
         /// associated with the given target proxy. This field can only be set for global target proxies.
         /// Accepted format is `//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}`.
         #[builder(into, default)]
-        pub certificate_map: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub certificate_map: pulumi_gestalt_rust::Input<Option<String>>,
         /// An optional description of this resource.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the resource. Provided by the client when the resource is
         /// created. The name must be 1-63 characters long, and comply with
         /// RFC1035. Specifically, the name must be 1-63 characters long and match
@@ -114,27 +114,27 @@ pub mod target_ssl_proxy {
         /// characters must be a dash, lowercase letter, or digit, except the last
         /// character, which cannot be a dash.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the type of proxy header to append before sending data to
         /// the backend.
         /// Default value is `NONE`.
         /// Possible values are: `NONE`, `PROXY_V1`.
         #[builder(into, default)]
-        pub proxy_header: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub proxy_header: pulumi_gestalt_rust::Input<Option<String>>,
         /// A list of SslCertificate resources that are used to authenticate
         /// connections between users and the load balancer. At least one
         /// SSL certificate must be specified.
         #[builder(into, default)]
-        pub ssl_certificates: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub ssl_certificates: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A reference to the SslPolicy resource that will be associated with
         /// the TargetSslProxy resource. If not set, the TargetSslProxy
         /// resource will not have any SSL policy configured.
         #[builder(into, default)]
-        pub ssl_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub ssl_policy: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TargetSSLProxyResult {

@@ -92,10 +92,10 @@ pub mod ruleset {
     pub struct RulesetArgs {
         /// The project for the resource
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// `Source` for the `Ruleset`.
         #[builder(into)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             super::super::types::firebaserules::RulesetSource,
         >,
     }

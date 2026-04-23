@@ -10,7 +10,7 @@ pub mod get_hosted_zone {
     pub struct GetHostedZoneArgs {
         /// Region you'd like the zone for. By default, fetches the current region.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetHostedZoneResult {

@@ -67,26 +67,26 @@ pub mod management_organization_event_threat_detection_custom_module {
         /// Config for the module. For the resident module, its config value is defined at this level.
         /// For the inherited module, its config value is inherited from the ancestor module.
         #[builder(into, default)]
-        pub config: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub config: pulumi_gestalt_rust::Input<Option<String>>,
         /// The human readable name to be displayed for the module.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The state of enablement for the module at the given level of the hierarchy.
         /// Possible values are: `ENABLED`, `DISABLED`.
         #[builder(into, default)]
-        pub enablement_state: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub enablement_state: pulumi_gestalt_rust::Input<Option<String>>,
         /// Location ID of the parent organization. Only global is supported at the moment.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Numerical ID of the parent organization.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub organization: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub organization: pulumi_gestalt_rust::Input<String>,
         /// Immutable. Type for the module. e.g. CONFIGURABLE_BAD_IP.
         #[builder(into, default)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub type_: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct ManagementOrganizationEventThreatDetectionCustomModuleResult {

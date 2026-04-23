@@ -50,36 +50,36 @@ pub mod elastic_san {
         ///
         /// > **NOTE** When updating `base_size_in_tib`, the new value should be greater than the existing one.
         #[builder(into)]
-        pub base_size_in_tib: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub base_size_in_tib: pulumi_gestalt_rust::Input<i32>,
         /// Specifies the extended size of the Elastic SAN resource in TiB. Possible values are between `1` and `100`.
         ///
         /// > **NOTE** `extended_size_in_tib` cannot be removed and when updating, the new value should be greater than the existing one.
         #[builder(into, default)]
-        pub extended_size_in_tib: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub extended_size_in_tib: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The Azure Region where the Elastic SAN resource should exist. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of this Elastic SAN resource. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the name of the Resource Group within which this Elastic SAN resource should exist. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A `sku` block as defined below.
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<
+        pub sku: pulumi_gestalt_rust::Input<
             super::super::types::elasticsan::ElasticSanSku,
         >,
         /// A mapping of tags which should be assigned to the Elastic SAN resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Logical zone for the Elastic SAN resource. Changing this forces a new resource to be created.
         ///
         /// > **NOTE** `zones` cannot be specified if `sku.name` is set to `Premium_ZRS`.
         #[builder(into, default)]
-        pub zones: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub zones: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ElasticSanResult {

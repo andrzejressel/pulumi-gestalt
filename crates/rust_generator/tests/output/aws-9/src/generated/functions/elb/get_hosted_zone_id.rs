@@ -11,7 +11,7 @@ pub mod get_hosted_zone_id {
         /// Name of the region whose AWS ELB HostedZoneId is desired.
         /// Defaults to the region from the AWS provider configuration.
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetHostedZoneIdResult {

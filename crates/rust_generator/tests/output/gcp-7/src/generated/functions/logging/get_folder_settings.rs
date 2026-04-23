@@ -10,7 +10,7 @@ pub mod get_folder_settings {
     pub struct GetFolderSettingsArgs {
         /// The ID of the folder for which to retrieve settings.
         #[builder(into)]
-        pub folder: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub folder: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetFolderSettingsResult {

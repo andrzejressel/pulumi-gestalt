@@ -142,45 +142,45 @@ pub mod gc_policy {
     pub struct GCPolicyArgs {
         /// The name of the column family.
         #[builder(into)]
-        pub column_family: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub column_family: pulumi_gestalt_rust::Input<String>,
         /// The deletion policy for the GC policy.
         /// Setting ABANDON allows the resource to be abandoned rather than deleted. This is useful for GC policy as it cannot be deleted in a replicated instance.
         ///
         /// Possible values are: `ABANDON`.
         #[builder(into, default)]
-        pub deletion_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub deletion_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Serialized JSON object to represent a more complex GC policy. Conflicts with `mode`, `max_age` and `max_version`. Conflicts with `mode`, `max_age` and `max_version`.
         #[builder(into, default)]
-        pub gc_rules: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gc_rules: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean for whether to allow ignoring warnings when updating the gc policy.
         /// Setting this to `true` allows relaxing the gc policy for replicated clusters by up to 90 days, but keep in mind this may increase how long clusters are inconsistent. Make sure
         /// you understand the risks listed at https://cloud.google.com/bigtable/docs/garbage-collection#increasing before setting this option.
         ///
         /// -----
         #[builder(into, default)]
-        pub ignore_warnings: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub ignore_warnings: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name of the Bigtable instance.
         #[builder(into)]
-        pub instance_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_name: pulumi_gestalt_rust::Input<String>,
         /// GC policy that applies to all cells older than the given age.
         #[builder(into, default)]
-        pub max_age: pulumi_gestalt_rust::InputOrOutput<
+        pub max_age: pulumi_gestalt_rust::Input<
             Option<super::super::types::bigtable::GcPolicyMaxAge>,
         >,
         /// GC policy that applies to all versions of a cell except for the most recent.
         #[builder(into, default)]
-        pub max_versions: pulumi_gestalt_rust::InputOrOutput<
+        pub max_versions: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::bigtable::GcPolicyMaxVersion>>,
         >,
         /// If multiple policies are set, you should choose between `UNION` OR `INTERSECTION`.
         #[builder(into, default)]
-        pub mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs. If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the table.
         #[builder(into)]
-        pub table: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GCPolicyResult {

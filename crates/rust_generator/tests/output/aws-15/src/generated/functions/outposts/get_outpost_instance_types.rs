@@ -10,7 +10,7 @@ pub mod get_outpost_instance_types {
     pub struct GetOutpostInstanceTypesArgs {
         /// Outpost ARN.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetOutpostInstanceTypesResult {

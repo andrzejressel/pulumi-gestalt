@@ -166,28 +166,28 @@ pub mod hosting_custom_domain {
         /// `GROUPED` cert type, while Blaze plan can select any option.
         /// Possible values are: `GROUPED`, `PROJECT_GROUPED`, `DEDICATED`.
         #[builder(into, default)]
-        pub cert_preference: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cert_preference: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the `CustomDomain`, which is the domain name you'd like to use with Firebase Hosting.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub custom_domain: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub custom_domain: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A domain name that this CustomDomain should direct traffic towards. If
         /// specified, Hosting will respond to requests against this CustomDomain
         /// with an HTTP 301 code, and route traffic to the specified `redirect_target`
         /// instead.
         #[builder(into, default)]
-        pub redirect_target: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub redirect_target: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the site in which to create this custom domain association.
         #[builder(into)]
-        pub site_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub site_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub wait_dns_verification: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub wait_dns_verification: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct HostingCustomDomainResult {

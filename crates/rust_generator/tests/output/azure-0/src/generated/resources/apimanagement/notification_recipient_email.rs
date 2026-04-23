@@ -56,13 +56,13 @@ pub mod notification_recipient_email {
     pub struct NotificationRecipientEmailArgs {
         /// The ID of the API Management Service from which to create this Notification Recipient Email. Changing this forces a new API Management Notification Recipient Email to be created.
         #[builder(into)]
-        pub api_management_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_id: pulumi_gestalt_rust::Input<String>,
         /// The recipient email address. Changing this forces a new API Management Notification Recipient Email to be created.
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
         /// The Notification Name to be received. Changing this forces a new API Management Notification Recipient Email to be created. Possible values are `AccountClosedPublisher`, `BCC`, `NewApplicationNotificationMessage`, `NewIssuePublisherNotificationMessage`, `PurchasePublisherNotificationMessage`, `QuotaLimitApproachingPublisherNotificationMessage`, and `RequestPublisherNotificationMessage`.
         #[builder(into)]
-        pub notification_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub notification_type: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct NotificationRecipientEmailResult {

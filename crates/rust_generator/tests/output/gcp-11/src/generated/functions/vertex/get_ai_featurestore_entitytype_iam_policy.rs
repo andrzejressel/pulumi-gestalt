@@ -10,10 +10,10 @@ pub mod get_ai_featurestore_entitytype_iam_policy {
     pub struct GetAiFeaturestoreEntitytypeIamPolicyArgs {
         /// Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub entitytype: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub entitytype: pulumi_gestalt_rust::Input<String>,
         /// The name of the Featurestore to use, in the format projects/{project}/locations/{location}/featurestores/{featurestore}. Used to find the parent resource to bind the IAM policy to
         #[builder(into)]
-        pub featurestore: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub featurestore: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetAiFeaturestoreEntitytypeIamPolicyResult {

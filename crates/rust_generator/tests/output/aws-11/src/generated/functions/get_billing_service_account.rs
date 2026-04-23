@@ -10,7 +10,7 @@ pub mod get_billing_service_account {
     pub struct GetBillingServiceAccountArgs {
         /// ID of the AWS billing service account.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBillingServiceAccountResult {

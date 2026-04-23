@@ -59,24 +59,24 @@ pub mod channel_facebook {
     pub struct ChannelFacebookArgs {
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub bot_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub bot_name: pulumi_gestalt_rust::Input<String>,
         /// The Facebook Application ID for the Facebook Channel.
         #[builder(into)]
-        pub facebook_application_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub facebook_application_id: pulumi_gestalt_rust::Input<String>,
         /// The Facebook Application Secret for the Facebook Channel.
         #[builder(into)]
-        pub facebook_application_secret: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub facebook_application_secret: pulumi_gestalt_rust::Input<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `page` blocks as defined below.
         #[builder(into)]
-        pub pages: pulumi_gestalt_rust::InputOrOutput<
+        pub pages: pulumi_gestalt_rust::Input<
             Vec<super::super::types::bot::ChannelFacebookPage>,
         >,
         /// The name of the resource group where the Facebook Channel should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ChannelFacebookResult {

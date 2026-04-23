@@ -118,15 +118,15 @@ pub mod identity_source {
     pub struct IdentitySourceArgs {
         /// Specifies the details required to communicate with the identity provider (IdP) associated with this identity source. See Configuration below.
         #[builder(into, default)]
-        pub configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::verifiedpermissions::IdentitySourceConfiguration>,
         >,
         /// Specifies the ID of the policy store in which you want to store this identity source.
         #[builder(into)]
-        pub policy_store_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy_store_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.
         #[builder(into, default)]
-        pub principal_entity_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub principal_entity_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct IdentitySourceResult {

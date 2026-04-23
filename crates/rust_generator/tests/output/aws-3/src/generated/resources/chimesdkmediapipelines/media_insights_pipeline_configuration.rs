@@ -280,27 +280,27 @@ pub mod media_insights_pipeline_configuration {
     pub struct MediaInsightsPipelineConfigurationArgs {
         /// Collection of processors and sinks to transform media and deliver data.
         #[builder(into)]
-        pub elements: pulumi_gestalt_rust::InputOrOutput<
+        pub elements: pulumi_gestalt_rust::Input<
             Vec<
                 super::super::types::chimesdkmediapipelines::MediaInsightsPipelineConfigurationElement,
             >,
         >,
         /// Configuration name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration for real-time alert rules to send EventBridge notifications when certain conditions are met.
         #[builder(into, default)]
-        pub real_time_alert_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub real_time_alert_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::chimesdkmediapipelines::MediaInsightsPipelineConfigurationRealTimeAlertConfiguration,
             >,
         >,
         /// ARN of IAM Role used by service to invoke processors and sinks specified by configuration elements.
         #[builder(into)]
-        pub resource_access_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_access_role_arn: pulumi_gestalt_rust::Input<String>,
         /// Key-value map of tags for the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -55,21 +55,21 @@ pub mod hyperv_network_mapping {
     pub struct HypervNetworkMappingArgs {
         /// The name of the HyperV network mapping. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Recovery Services Vault where the HyperV network mapping should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub recovery_vault_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub recovery_vault_id: pulumi_gestalt_rust::Input<String>,
         /// The Name of the primary network. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source_network_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub source_network_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of source System Center Virtual Machine Manager where the source network exists. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub source_system_center_virtual_machine_manager_name: pulumi_gestalt_rust::InputOrOutput<
+        pub source_system_center_virtual_machine_manager_name: pulumi_gestalt_rust::Input<
             String,
         >,
         /// The id of the recovery network. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub target_network_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_network_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct HypervNetworkMappingResult {

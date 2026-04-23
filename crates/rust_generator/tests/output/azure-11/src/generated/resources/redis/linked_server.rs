@@ -74,19 +74,19 @@ pub mod linked_server {
     pub struct LinkedServerArgs {
         /// The ID of the linked Redis cache. Changing this forces a new Redis to be created.
         #[builder(into)]
-        pub linked_redis_cache_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub linked_redis_cache_id: pulumi_gestalt_rust::Input<String>,
         /// The location of the linked Redis cache. Changing this forces a new Redis to be created.
         #[builder(into)]
-        pub linked_redis_cache_location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub linked_redis_cache_location: pulumi_gestalt_rust::Input<String>,
         /// The name of the Resource Group where the Redis caches exists. Changing this forces a new Redis to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The role of the linked Redis cache (eg "Secondary"). Changing this forces a new Redis to be created. Possible values are `Primary` and `Secondary`.
         #[builder(into)]
-        pub server_role: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub server_role: pulumi_gestalt_rust::Input<String>,
         /// The name of Redis cache to link with. Changing this forces a new Redis to be created. (eg The primary role)
         #[builder(into)]
-        pub target_redis_cache_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_redis_cache_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct LinkedServerResult {

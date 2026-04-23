@@ -100,36 +100,36 @@ pub mod repository_release_config {
         /// Optional. If set, fields of codeCompilationConfig override the default compilation settings that are specified in dataform.json.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub code_compilation_config: pulumi_gestalt_rust::InputOrOutput<
+        pub code_compilation_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataform::RepositoryReleaseConfigCodeCompilationConfig,
             >,
         >,
         /// Optional. Optional schedule (in cron format) for automatic creation of compilation results.
         #[builder(into, default)]
-        pub cron_schedule: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cron_schedule: pulumi_gestalt_rust::Input<Option<String>>,
         /// Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub git_commitish: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub git_commitish: pulumi_gestalt_rust::Input<String>,
         /// The release's name.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the region
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
         /// A reference to the Dataform repository
         #[builder(into, default)]
-        pub repository: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub repository: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Specifies the time zone to be used when interpreting cronSchedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.
         #[builder(into, default)]
-        pub time_zone: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub time_zone: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RepositoryReleaseConfigResult {

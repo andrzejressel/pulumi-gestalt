@@ -146,13 +146,13 @@ pub mod account_customer_managed_key {
     pub struct AccountCustomerManagedKeyArgs {
         /// The ID of the Cognitive Account. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub cognitive_account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cognitive_account_id: pulumi_gestalt_rust::Input<String>,
         /// The Client ID of the User Assigned Identity that has access to the key. This property only needs to be specified when there're multiple identities attached to the Cognitive Account.
         #[builder(into, default)]
-        pub identity_client_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub identity_client_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Key Vault Key which should be used to Encrypt the data in this Cognitive Account.
         #[builder(into)]
-        pub key_vault_key_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_vault_key_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AccountCustomerManagedKeyResult {

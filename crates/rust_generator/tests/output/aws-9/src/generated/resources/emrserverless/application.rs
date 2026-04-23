@@ -90,58 +90,58 @@ pub mod application {
     pub struct ApplicationArgs {
         /// The CPU architecture of an application. Valid values are `ARM64` or `X86_64`. Default value is `X86_64`.
         #[builder(into, default)]
-        pub architecture: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub architecture: pulumi_gestalt_rust::Input<Option<String>>,
         /// The configuration for an application to automatically start on job submission.
         #[builder(into, default)]
-        pub auto_start_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_start_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::emrserverless::ApplicationAutoStartConfiguration>,
         >,
         /// The configuration for an application to automatically stop after a certain amount of time being idle.
         #[builder(into, default)]
-        pub auto_stop_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_stop_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::emrserverless::ApplicationAutoStopConfiguration>,
         >,
         /// The image configuration applied to all worker types.
         #[builder(into, default)]
-        pub image_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub image_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::emrserverless::ApplicationImageConfiguration>,
         >,
         /// The capacity to initialize when the application is created.
         #[builder(into, default)]
-        pub initial_capacities: pulumi_gestalt_rust::InputOrOutput<
+        pub initial_capacities: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::emrserverless::ApplicationInitialCapacity>>,
         >,
         /// Enables the interactive use cases to use when running an application.
         #[builder(into, default)]
-        pub interactive_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub interactive_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::emrserverless::ApplicationInteractiveConfiguration,
             >,
         >,
         /// The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.
         #[builder(into, default)]
-        pub maximum_capacity: pulumi_gestalt_rust::InputOrOutput<
+        pub maximum_capacity: pulumi_gestalt_rust::Input<
             Option<super::super::types::emrserverless::ApplicationMaximumCapacity>,
         >,
         /// The name of the application.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The network configuration for customer VPC connectivity.
         #[builder(into, default)]
-        pub network_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub network_configuration: pulumi_gestalt_rust::Input<
             Option<super::super::types::emrserverless::ApplicationNetworkConfiguration>,
         >,
         /// The EMR release version associated with the application.
         #[builder(into)]
-        pub release_label: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub release_label: pulumi_gestalt_rust::Input<String>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The type of application you want to start, such as `spark` or `hive`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {

@@ -51,16 +51,16 @@ pub mod consumer_group {
     pub struct ConsumerGroupArgs {
         /// The name of the Event Hub-compatible endpoint in the IoT hub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub eventhub_endpoint_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventhub_endpoint_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the IoT Hub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_name: pulumi_gestalt_rust::Input<String>,
         /// The name of this Consumer Group. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group that contains the IoT hub. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ConsumerGroupResult {

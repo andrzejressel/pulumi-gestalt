@@ -10,10 +10,10 @@ pub mod get_volume_quota_rule {
     pub struct GetVolumeQuotaRuleArgs {
         /// The name of this Volume Quota Rule.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// The NetApp volume ID where the Volume Quota Rule is assigned to.
         #[builder(into)]
-        pub volume_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub volume_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetVolumeQuotaRuleResult {

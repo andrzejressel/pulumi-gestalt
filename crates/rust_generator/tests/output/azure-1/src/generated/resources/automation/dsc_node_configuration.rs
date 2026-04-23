@@ -67,16 +67,16 @@ pub mod dsc_node_configuration {
     pub struct DscNodeConfigurationArgs {
         /// The name of the automation account in which the DSC Node Configuration is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The PowerShell DSC Node Configuration (mof content).
         #[builder(into)]
-        pub content_embedded: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub content_embedded: pulumi_gestalt_rust::Input<String>,
         /// Specifies the name of the DSC Node Configuration. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the DSC Node Configuration is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DscNodeConfigurationResult {

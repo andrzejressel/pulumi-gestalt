@@ -146,20 +146,20 @@ pub mod prevention_stored_info_type {
     pub struct PreventionStoredInfoTypeArgs {
         /// A description of the info type.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Dictionary which defines the rule.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub dictionary: pulumi_gestalt_rust::InputOrOutput<
+        pub dictionary: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataloss::PreventionStoredInfoTypeDictionary>,
         >,
         /// User set display name of the info type.
         #[builder(into, default)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub display_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Dictionary which defines the rule.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub large_custom_dictionary: pulumi_gestalt_rust::InputOrOutput<
+        pub large_custom_dictionary: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::dataloss::PreventionStoredInfoTypeLargeCustomDictionary,
             >,
@@ -173,18 +173,18 @@ pub mod prevention_stored_info_type {
         ///
         /// - - -
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// Regular expression which defines the rule.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub regex: pulumi_gestalt_rust::InputOrOutput<
+        pub regex: pulumi_gestalt_rust::Input<
             Option<super::super::types::dataloss::PreventionStoredInfoTypeRegex>,
         >,
         /// The storedInfoType ID can contain uppercase and lowercase letters, numbers, and hyphens;
         /// that is, it must match the regular expression: [a-zA-Z\d-_]+. The maximum length is 100
         /// characters. Can be empty to allow the system to generate one.
         #[builder(into, default)]
-        pub stored_info_type_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stored_info_type_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PreventionStoredInfoTypeResult {

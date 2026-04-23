@@ -83,66 +83,64 @@ pub mod deployment {
     pub struct DeploymentArgs {
         /// An `auto_scale_profile` block as defined below.
         #[builder(into, default)]
-        pub auto_scale_profiles: pulumi_gestalt_rust::InputOrOutput<
+        pub auto_scale_profiles: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::nginx::DeploymentAutoScaleProfile>>,
         >,
         /// Specify the automatic upgrade channel for the NGINX deployment. Defaults to `stable`. The possible values are `stable` and `preview`.
         #[builder(into, default)]
-        pub automatic_upgrade_channel: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub automatic_upgrade_channel: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specify the number of NGINX capacity units for this NGINX deployment.
         ///
         /// > **Note** For more information on NGINX capacity units, please refer to the [NGINX scaling guidance documentation](https://docs.nginx.com/nginxaas/azure/quickstart/scaling/)
         #[builder(into, default)]
-        pub capacity: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub capacity: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Should the metrics be exported to Azure Monitor?
         #[builder(into, default)]
-        pub diagnose_support_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub diagnose_support_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specify the preferred support contact email address for receiving alerts and notifications.
         #[builder(into, default)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub email: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `frontend_private` blocks as defined below. Changing this forces a new NGINX Deployment to be created.
         #[builder(into, default)]
-        pub frontend_privates: pulumi_gestalt_rust::InputOrOutput<
+        pub frontend_privates: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::nginx::DeploymentFrontendPrivate>>,
         >,
         /// A `frontend_public` block as defined below. Changing this forces a new NGINX Deployment to be created.
         #[builder(into, default)]
-        pub frontend_public: pulumi_gestalt_rust::InputOrOutput<
+        pub frontend_public: pulumi_gestalt_rust::Input<
             Option<super::super::types::nginx::DeploymentFrontendPublic>,
         >,
         /// An `identity` block as defined below.
         #[builder(into, default)]
-        pub identity: pulumi_gestalt_rust::InputOrOutput<
+        pub identity: pulumi_gestalt_rust::Input<
             Option<super::super::types::nginx::DeploymentIdentity>,
         >,
         /// The Azure Region where the NGINX Deployment should exist. Changing this forces a new NGINX Deployment to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `logging_storage_account` blocks as defined below.
         #[builder(into, default)]
-        pub logging_storage_accounts: pulumi_gestalt_rust::InputOrOutput<
+        pub logging_storage_accounts: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::nginx::DeploymentLoggingStorageAccount>>,
         >,
         #[builder(into, default)]
-        pub managed_resource_group: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub managed_resource_group: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this NGINX Deployment. Changing this forces a new NGINX Deployment to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more `network_interface` blocks as defined below. Changing this forces a new NGINX Deployment to be created.
         #[builder(into, default)]
-        pub network_interfaces: pulumi_gestalt_rust::InputOrOutput<
+        pub network_interfaces: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::nginx::DeploymentNetworkInterface>>,
         >,
         /// The name of the Resource Group where the NGINX Deployment should exist. Changing this forces a new NGINX Deployment to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub sku: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub sku: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the NGINX Deployment.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

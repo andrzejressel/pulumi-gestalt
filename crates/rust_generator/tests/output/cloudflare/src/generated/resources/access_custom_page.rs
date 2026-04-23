@@ -31,22 +31,22 @@ pub mod access_custom_page {
     pub struct AccessCustomPageArgs {
         /// The account identifier to target for the resource. Conflicts with `zone_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Number of apps to display on the custom page.
         #[builder(into, default)]
-        pub app_count: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub app_count: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Custom HTML to display on the custom page.
         #[builder(into, default)]
-        pub custom_html: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub custom_html: pulumi_gestalt_rust::Input<Option<String>>,
         /// Friendly name of the Access Custom Page configuration.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Type of Access custom page to create. Available values: `identity_denied`, `forbidden`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// The zone identifier to target for the resource. Conflicts with `account_id`. **Modifying this attribute will force creation of a new resource.**
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccessCustomPageResult {

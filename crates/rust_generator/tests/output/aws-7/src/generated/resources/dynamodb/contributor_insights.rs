@@ -33,10 +33,10 @@ pub mod contributor_insights {
     pub struct ContributorInsightsArgs {
         /// The global secondary index name
         #[builder(into, default)]
-        pub index_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub index_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the table to enable contributor insights
         #[builder(into)]
-        pub table_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub table_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ContributorInsightsResult {

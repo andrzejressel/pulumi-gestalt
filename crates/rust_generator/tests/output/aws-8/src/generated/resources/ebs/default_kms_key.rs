@@ -40,7 +40,7 @@ pub mod default_kms_key {
     pub struct DefaultKmsKeyArgs {
         /// The ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt the EBS volume.
         #[builder(into)]
-        pub key_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct DefaultKmsKeyResult {

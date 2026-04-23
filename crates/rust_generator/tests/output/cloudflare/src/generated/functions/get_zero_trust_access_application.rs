@@ -10,16 +10,16 @@ pub mod get_zero_trust_access_application {
     pub struct GetZeroTrustAccessApplicationArgs {
         /// The account identifier to target for the resource. Must provide only one of `zone_id`, `account_id`.
         #[builder(into, default)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub account_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The primary hostname and path that Access will secure. Must provide only one of `name`, `domain`.
         #[builder(into, default)]
-        pub domain: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub domain: pulumi_gestalt_rust::Input<Option<String>>,
         /// Friendly name of the Access Application. Must provide only one of `name`, `domain`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The zone identifier to target for the resource. Must provide only one of `zone_id`, `account_id`.
         #[builder(into, default)]
-        pub zone_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub zone_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetZeroTrustAccessApplicationResult {

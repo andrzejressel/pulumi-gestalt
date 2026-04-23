@@ -80,18 +80,18 @@ pub mod lication_load_balancer_subnet_association {
     pub struct LicationLoadBalancerSubnetAssociationArgs {
         /// The ID of the Application Gateway for Containers. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub application_load_balancer_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub application_load_balancer_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this Application Gateway for Containers Association. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the subnet which the Application Gateway for Containers associated to.
         ///
         /// > **Note:** The subnet to be used must have a delegation for  `Microsoft.ServiceNetworking/trafficControllers` as shown in the example above.
         #[builder(into)]
-        pub subnet_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub subnet_id: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags which should be assigned to the Application Gateway for Containers Association.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

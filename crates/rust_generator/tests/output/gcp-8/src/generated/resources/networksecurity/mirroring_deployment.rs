@@ -104,21 +104,21 @@ pub mod mirroring_deployment {
         /// to. Format is:
         /// projects/{project}/regions/{region}/forwardingRules/{forwardingRule}
         #[builder(into)]
-        pub forwarding_rule: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub forwarding_rule: pulumi_gestalt_rust::Input<String>,
         /// Optional. Labels as key value pairs
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122. See documentation for resource type `networksecurity.googleapis.com/MirroringDeployment`.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Required. Immutable. The Mirroring Deployment Group that this resource is part of. Format is:
         /// `projects/{project}/locations/global/mirroringDeploymentGroups/{mirroringDeploymentGroup}`
         #[builder(into)]
-        pub mirroring_deployment_group: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mirroring_deployment_group: pulumi_gestalt_rust::Input<String>,
         /// Required. Id of the requesting object
         /// If auto-generating Id server-side, remove this field and
         /// mirroring_deployment_id from the method_signature of Create RPC
@@ -126,11 +126,11 @@ pub mod mirroring_deployment {
         ///
         /// - - -
         #[builder(into)]
-        pub mirroring_deployment_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mirroring_deployment_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct MirroringDeploymentResult {

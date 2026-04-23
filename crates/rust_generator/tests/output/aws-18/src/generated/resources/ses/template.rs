@@ -40,16 +40,16 @@ pub mod template {
     pub struct TemplateArgs {
         /// The HTML body of the email. Must be less than 500KB in size, including both the text and HTML parts.
         #[builder(into, default)]
-        pub html: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub html: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the template. Cannot exceed 64 characters. You will refer to this name when you send email.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The subject line of the email.
         #[builder(into, default)]
-        pub subject: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subject: pulumi_gestalt_rust::Input<Option<String>>,
         /// The email body that will be visible to recipients whose email clients do not display HTML. Must be less than 500KB in size, including both the text and HTML parts.
         #[builder(into, default)]
-        pub text: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub text: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct TemplateResult {

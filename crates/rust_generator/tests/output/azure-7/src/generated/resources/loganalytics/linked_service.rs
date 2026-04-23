@@ -57,18 +57,18 @@ pub mod linked_service {
     pub struct LinkedServiceArgs {
         /// The ID of the readable Resource that will be linked to the workspace. This should be used for linking to an Automation Account resource.
         #[builder(into, default)]
-        pub read_access_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub read_access_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the resource group in which the Log Analytics Linked Service is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Log Analytics Workspace that will contain the Log Analytics Linked Service resource.
         #[builder(into)]
-        pub workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The ID of the writable Resource that will be linked to the workspace. This should be used for linking to a Log Analytics Cluster resource.
         ///
         /// > **NOTE:** You must define at least one of the above access resource id attributes (e.g. `read_access_id` or `write_access_id`).
         #[builder(into, default)]
-        pub write_access_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub write_access_id: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct LinkedServiceResult {

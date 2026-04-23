@@ -10,10 +10,10 @@ pub mod get_origin_request_policy {
     pub struct GetOriginRequestPolicyArgs {
         /// Identifier for the origin request policy.
         #[builder(into, default)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Unique name to identify the origin request policy.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetOriginRequestPolicyResult {

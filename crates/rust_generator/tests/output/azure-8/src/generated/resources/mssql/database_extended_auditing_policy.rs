@@ -75,34 +75,32 @@ pub mod database_extended_auditing_policy {
     pub struct DatabaseExtendedAuditingPolicyArgs {
         /// The ID of the SQL database to set the extended auditing policy. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub database_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub database_id: pulumi_gestalt_rust::Input<String>,
         /// Whether to enable the extended auditing policy. Possible values are `true` and `false`. Defaults to `true`.
         ///
         /// ->**NOTE:**  If `enabled` is `true`, `storage_endpoint` or `log_monitoring_enabled` are required.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Enable audit events to Azure Monitor? Defaults to `true`.
         ///
         /// > **NOTE:** To enable sending audit events to Log Analytics, please refer to the example which can be found in the `./examples/sql-azure/sql_auditing_log_analytics` directory within the GitHub Repository.  To enable sending server audit events to Log Analytics, please enable the master database to send audit events to Log Analytics.
         /// To enable audit events to Eventhub, please refer to the example which can be found in the `./examples/sql-azure/sql_auditing_eventhub` directory within the GitHub Repository.
         #[builder(into, default)]
-        pub log_monitoring_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub log_monitoring_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The number of days to retain logs for in the storage account. Defaults to `0`.
         #[builder(into, default)]
-        pub retention_in_days: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub retention_in_days: pulumi_gestalt_rust::Input<Option<i32>>,
         /// The access key to use for the auditing storage account.
         #[builder(into, default)]
-        pub storage_account_access_key: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub storage_account_access_key: pulumi_gestalt_rust::Input<Option<String>>,
         /// Is `storage_account_access_key` value the storage's secondary key?
         #[builder(into, default)]
-        pub storage_account_access_key_is_secondary: pulumi_gestalt_rust::InputOrOutput<
+        pub storage_account_access_key_is_secondary: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// The blob storage endpoint (e.g. <https://example.blob.core.windows.net>). This blob storage will hold all extended auditing logs.
         #[builder(into, default)]
-        pub storage_endpoint: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub storage_endpoint: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DatabaseExtendedAuditingPolicyResult {

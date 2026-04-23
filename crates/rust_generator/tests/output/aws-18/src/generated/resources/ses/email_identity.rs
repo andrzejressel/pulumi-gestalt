@@ -33,7 +33,7 @@ pub mod email_identity {
     pub struct EmailIdentityArgs {
         /// The email address to assign to SES.
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EmailIdentityResult {

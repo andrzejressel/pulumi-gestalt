@@ -81,18 +81,18 @@ pub mod realtime_log_config {
     pub struct RealtimeLogConfigArgs {
         /// The Amazon Kinesis data streams where real-time log data is sent.
         #[builder(into)]
-        pub endpoint: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoint: pulumi_gestalt_rust::Input<
             super::super::types::cloudfront::RealtimeLogConfigEndpoint,
         >,
         /// The fields that are included in each real-time log record. See the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields) for supported values.
         #[builder(into)]
-        pub fields: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub fields: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The unique name to identify this real-time log configuration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. An integer between `1` and `100`, inclusive.
         #[builder(into)]
-        pub sampling_rate: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub sampling_rate: pulumi_gestalt_rust::Input<i32>,
     }
     #[allow(dead_code)]
     pub struct RealtimeLogConfigResult {

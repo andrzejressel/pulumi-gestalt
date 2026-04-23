@@ -10,10 +10,10 @@ pub mod get_dedicated_ip_pool {
     pub struct GetDedicatedIpPoolArgs {
         /// Name of the dedicated IP pool.
         #[builder(into)]
-        pub pool_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub pool_name: pulumi_gestalt_rust::Input<String>,
         /// A map of tags attached to the pool.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

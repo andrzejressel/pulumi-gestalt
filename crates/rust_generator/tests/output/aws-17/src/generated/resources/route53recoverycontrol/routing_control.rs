@@ -58,15 +58,15 @@ pub mod routing_control {
     pub struct RoutingControlArgs {
         /// ARN of the cluster in which this routing control will reside.
         #[builder(into)]
-        pub cluster_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cluster_arn: pulumi_gestalt_rust::Input<String>,
         /// ARN of the control panel in which this routing control will reside.
         #[builder(into, default)]
-        pub control_panel_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub control_panel_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name describing the routing control.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct RoutingControlResult {

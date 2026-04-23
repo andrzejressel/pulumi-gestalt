@@ -73,28 +73,26 @@ pub mod ontap_storage_virtual_machine {
     pub struct OntapStorageVirtualMachineArgs {
         /// Configuration block that Amazon FSx uses to join the FSx ONTAP Storage Virtual Machine(SVM) to your Microsoft Active Directory (AD) directory. Detailed below.
         #[builder(into, default)]
-        pub active_directory_configuration: pulumi_gestalt_rust::InputOrOutput<
+        pub active_directory_configuration: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::fsx::OntapStorageVirtualMachineActiveDirectoryConfiguration,
             >,
         >,
         /// The ID of the Amazon FSx ONTAP File System that this SVM will be created on.
         #[builder(into)]
-        pub file_system_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub file_system_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the SVM. You can use a maximum of 47 alphanumeric characters, plus the underscore (_) special character.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the root volume security style, Valid values are `UNIX`, `NTFS`, and `MIXED`. All volumes created under this SVM will inherit the root security style unless the security style is specified on the volume. Default value is `UNIX`.
         #[builder(into, default)]
-        pub root_volume_security_style: pulumi_gestalt_rust::InputOrOutput<
-            Option<String>,
-        >,
+        pub root_volume_security_style: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the password to use when logging on to the SVM using a secure shell (SSH) connection to the SVM's management endpoint. Doing so enables you to manage the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's fsxadmin user to manage the SVM.
         #[builder(into, default)]
-        pub svm_admin_password: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub svm_admin_password: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the storage virtual machine. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

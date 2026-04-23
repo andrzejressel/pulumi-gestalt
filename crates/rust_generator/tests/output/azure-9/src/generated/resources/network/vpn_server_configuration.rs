@@ -53,7 +53,7 @@ pub mod vpn_server_configuration {
     #[allow(dead_code)]
     pub struct VpnServerConfigurationArgs {
         #[builder(into, default)]
-        pub azure_active_directory_authentications: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_active_directory_authentications: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::VpnServerConfigurationAzureActiveDirectoryAuthentication,
@@ -61,7 +61,7 @@ pub mod vpn_server_configuration {
             >,
         >,
         #[builder(into, default)]
-        pub client_revoked_certificates: pulumi_gestalt_rust::InputOrOutput<
+        pub client_revoked_certificates: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::VpnServerConfigurationClientRevokedCertificate,
@@ -69,7 +69,7 @@ pub mod vpn_server_configuration {
             >,
         >,
         #[builder(into, default)]
-        pub client_root_certificates: pulumi_gestalt_rust::InputOrOutput<
+        pub client_root_certificates: pulumi_gestalt_rust::Input<
             Option<
                 Vec<
                     super::super::types::network::VpnServerConfigurationClientRootCertificate,
@@ -78,33 +78,33 @@ pub mod vpn_server_configuration {
         >,
         /// A `ipsec_policy` block as defined below.
         #[builder(into, default)]
-        pub ipsec_policy: pulumi_gestalt_rust::InputOrOutput<
+        pub ipsec_policy: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::VpnServerConfigurationIpsecPolicy>,
         >,
         /// The Azure location where this VPN Server Configuration should be created. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// The Name which should be used for this VPN Server Configuration. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub radius: pulumi_gestalt_rust::InputOrOutput<
+        pub radius: pulumi_gestalt_rust::Input<
             Option<super::super::types::network::VpnServerConfigurationRadius>,
         >,
         /// The Name of the Resource Group in which this VPN Server Configuration should be created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// A mapping of tags to assign to the resource.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// A list of Authentication Types applicable for this VPN Server Configuration. Possible values are `AAD` (Azure Active Directory), `Certificate` and `Radius`.
         #[builder(into)]
-        pub vpn_authentication_types: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub vpn_authentication_types: pulumi_gestalt_rust::Input<Vec<String>>,
         /// A list of VPN Protocols to use for this Server Configuration. Possible values are `IkeV2` and `OpenVPN`.
         #[builder(into, default)]
-        pub vpn_protocols: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub vpn_protocols: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct VpnServerConfigurationResult {

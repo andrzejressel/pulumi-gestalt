@@ -43,20 +43,20 @@ pub mod sdkvoice_sip_media_application {
     pub struct SdkvoiceSipMediaApplicationArgs {
         /// The AWS Region in which the AWS Chime SDK Voice Sip Media Application is created.
         #[builder(into)]
-        pub aws_region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub aws_region: pulumi_gestalt_rust::Input<String>,
         /// List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported. See `endpoints`.
         #[builder(into)]
-        pub endpoints: pulumi_gestalt_rust::InputOrOutput<
+        pub endpoints: pulumi_gestalt_rust::Input<
             super::super::types::chime::SdkvoiceSipMediaApplicationEndpoints,
         >,
         /// The name of the AWS Chime SDK Voice Sip Media Application.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

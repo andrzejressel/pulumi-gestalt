@@ -40,29 +40,29 @@ pub mod job_schedule {
     pub struct JobScheduleArgs {
         /// The name of the Automation Account in which the Job Schedule is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub automation_account_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub automation_account_name: pulumi_gestalt_rust::Input<String>,
         /// The UUID identifying the Automation Job Schedule.
         #[builder(into, default)]
-        pub job_schedule_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub job_schedule_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of key/value pairs corresponding to the arguments that can be passed to the Runbook. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** The parameter keys/names must strictly be in lowercase, even if this is not the case in the runbook. This is due to a limitation in Azure Automation where the parameter names are normalized. The values specified don't have this limitation.
         #[builder(into, default)]
-        pub parameters: pulumi_gestalt_rust::InputOrOutput<
+        pub parameters: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The name of the resource group in which the Job Schedule is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Name of a Hybrid Worker Group the Runbook will be executed on. Changing this forces a new resource to be created.
         #[builder(into, default)]
-        pub run_on: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub run_on: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of a Runbook to link to a Schedule. It needs to be in the same Automation Account as the Schedule and Job Schedule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub runbook_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub runbook_name: pulumi_gestalt_rust::Input<String>,
         /// The name of the Schedule. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub schedule_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub schedule_name: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct JobScheduleResult {

@@ -64,25 +64,25 @@ pub mod iam_custom_role {
     pub struct IAMCustomRoleArgs {
         /// A human-readable description for the role.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.
         #[builder(into)]
-        pub permissions: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub permissions: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The project that the custom role will be created in.
         /// Defaults to the provider project configuration.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The camel case role id to use for this role. Cannot contain `-` characters.
         #[builder(into, default)]
-        pub role_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub role_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// The current launch stage of the role.
         /// Defaults to `GA`.
         /// List of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).
         #[builder(into, default)]
-        pub stage: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub stage: pulumi_gestalt_rust::Input<Option<String>>,
         /// A human-readable title for the role.
         #[builder(into)]
-        pub title: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub title: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct IAMCustomRoleResult {

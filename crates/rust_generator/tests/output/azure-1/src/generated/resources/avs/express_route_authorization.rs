@@ -60,10 +60,10 @@ pub mod express_route_authorization {
     pub struct ExpressRouteAuthorizationArgs {
         /// The name which should be used for this Azure VMware Solution ExpressRoute Circuit Authorization. Changing this forces a new Azure VMware Solution ExpressRoute Circuit Authorization to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ID of the Azure VMware Solution Private Cloud in which to create this Azure VMware Solution ExpressRoute Circuit Authorization. Changing this forces a new Azure VMware Solution ExpressRoute Circuit Authorization to be created.
         #[builder(into)]
-        pub private_cloud_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_cloud_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct ExpressRouteAuthorizationResult {

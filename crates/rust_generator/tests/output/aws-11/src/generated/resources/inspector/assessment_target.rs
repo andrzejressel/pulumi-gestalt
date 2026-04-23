@@ -36,10 +36,10 @@ pub mod assessment_target {
     pub struct AssessmentTargetArgs {
         /// The name of the assessment target.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Inspector Resource Group Amazon Resource Name (ARN) stating tags for instance matching. If not specified, all EC2 instances in the current AWS account and region are included in the assessment target.
         #[builder(into, default)]
-        pub resource_group_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub resource_group_arn: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AssessmentTargetResult {

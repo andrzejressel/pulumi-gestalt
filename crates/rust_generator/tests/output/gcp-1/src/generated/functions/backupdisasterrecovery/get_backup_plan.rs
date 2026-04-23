@@ -9,11 +9,11 @@ pub mod get_backup_plan {
     #[allow(dead_code)]
     pub struct GetBackupPlanArgs {
         #[builder(into)]
-        pub backup_plan_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub backup_plan_id: pulumi_gestalt_rust::Input<String>,
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct GetBackupPlanResult {

@@ -47,46 +47,46 @@ pub mod scheduled_action {
     pub struct ScheduledActionArgs {
         /// UTC day on which cost analysis data will be emailed. Must be between `1` and `31`. This property is applicable when `frequency` is `Monthly`.
         #[builder(into, default)]
-        pub day_of_month: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub day_of_month: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Specifies a list of day names on which cost analysis data will be emailed. This property is applicable when frequency is `Weekly` or `Monthly`. Possible values are `Friday`, `Monday`, `Saturday`, `Sunday`, `Thursday`, `Tuesday` and `Wednesday`.
         #[builder(into, default)]
-        pub days_of_weeks: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub days_of_weeks: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// User visible input name of the Cost Management Scheduled Action.
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// Email address of the point of contact that should get the unsubscribe requests of Scheduled Action notification emails.
         #[builder(into)]
-        pub email_address_sender: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_address_sender: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of email addresses that will receive the Scheduled Action.
         #[builder(into)]
-        pub email_addresses: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub email_addresses: pulumi_gestalt_rust::Input<Vec<String>>,
         /// Subject of the email. Length is limited to 70 characters.
         #[builder(into)]
-        pub email_subject: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email_subject: pulumi_gestalt_rust::Input<String>,
         /// The end date and time of the Scheduled Action (UTC).
         #[builder(into)]
-        pub end_date: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub end_date: pulumi_gestalt_rust::Input<String>,
         /// Frequency of the schedule. Possible values are `Daily`, `Monthly` and `Weekly`. Value `Monthly` requires either `weeks_of_month` and `days_of_week` or `day_of_month` to be specified. Value `Weekly` requires `days_of_week` to be specified.
         #[builder(into)]
-        pub frequency: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub frequency: pulumi_gestalt_rust::Input<String>,
         /// UTC time at which cost analysis data will be emailed. Must be between `0` and `23`.
         #[builder(into, default)]
-        pub hour_of_day: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub hour_of_day: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Message to be added in the email. Length is limited to 250 characters.
         #[builder(into, default)]
-        pub message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub message: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name which should be used for this Azure Cost Management Scheduled Action. Changing this forces a new Azure Cost Management Scheduled Action to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The start date and time of the Scheduled Action (UTC).
         #[builder(into)]
-        pub start_date: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub start_date: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Cost Management View that is used by the Scheduled Action. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub view_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub view_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies a list of weeks in which cost analysis data will be emailed. This property is applicable when `frequency` is `Monthly` and used in combination with `days_of_week`. Possible values are `First`, `Fourth`, `Last`, `Second` and `Third`.
         #[builder(into, default)]
-        pub weeks_of_months: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub weeks_of_months: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct ScheduledActionResult {

@@ -38,10 +38,10 @@ pub mod availability_zone_group {
     pub struct AvailabilityZoneGroupArgs {
         /// Name of the Availability Zone Group.
         #[builder(into)]
-        pub group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub group_name: pulumi_gestalt_rust::Input<String>,
         /// Indicates whether to enable or disable Availability Zone Group. Valid values: `opted-in` or `not-opted-in`.
         #[builder(into)]
-        pub opt_in_status: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub opt_in_status: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct AvailabilityZoneGroupResult {

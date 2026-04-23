@@ -10,10 +10,10 @@ pub mod get_certificate {
     pub struct GetCertificateArgs {
         /// ARN of the certificate issued by the private certificate authority.
         #[builder(into)]
-        pub arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub arn: pulumi_gestalt_rust::Input<String>,
         /// ARN of the certificate authority.
         #[builder(into)]
-        pub certificate_authority_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub certificate_authority_arn: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetCertificateResult {

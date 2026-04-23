@@ -103,22 +103,22 @@ pub mod account_assignment {
     pub struct AccountAssignmentArgs {
         /// The Amazon Resource Name (ARN) of the SSO Instance.
         #[builder(into)]
-        pub instance_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub instance_arn: pulumi_gestalt_rust::Input<String>,
         /// The Amazon Resource Name (ARN) of the Permission Set that the admin wants to grant the principal access to.
         #[builder(into)]
-        pub permission_set_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub permission_set_arn: pulumi_gestalt_rust::Input<String>,
         /// An identifier for an object in SSO, such as a user or group. PrincipalIds are GUIDs (For example, `f81d4fae-7dec-11d0-a765-00a0c91e6bf6`).
         #[builder(into)]
-        pub principal_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_id: pulumi_gestalt_rust::Input<String>,
         /// The entity type for which the assignment will be created. Valid values: `USER`, `GROUP`.
         #[builder(into)]
-        pub principal_type: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub principal_type: pulumi_gestalt_rust::Input<String>,
         /// An AWS account identifier, typically a 10-12 digit string.
         #[builder(into)]
-        pub target_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub target_id: pulumi_gestalt_rust::Input<String>,
         /// The entity type for which the assignment will be created. Valid values: `AWS_ACCOUNT`.
         #[builder(into, default)]
-        pub target_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub target_type: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AccountAssignmentResult {

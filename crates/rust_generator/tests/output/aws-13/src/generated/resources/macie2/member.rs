@@ -40,27 +40,27 @@ pub mod member {
     pub struct MemberArgs {
         /// The AWS account ID for the account.
         #[builder(into)]
-        pub account_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub account_id: pulumi_gestalt_rust::Input<String>,
         /// The email address for the account.
         #[builder(into)]
-        pub email: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub email: pulumi_gestalt_rust::Input<String>,
         /// Specifies whether to send an email notification to the root user of each account that the invitation will be sent to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To send an email notification to the root user of each account, set this value to `true`.
         #[builder(into, default)]
-        pub invitation_disable_email_notification: pulumi_gestalt_rust::InputOrOutput<
+        pub invitation_disable_email_notification: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A custom message to include in the invitation. Amazon Macie adds this message to the standard content that it sends for an invitation.
         #[builder(into, default)]
-        pub invitation_message: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub invitation_message: pulumi_gestalt_rust::Input<Option<String>>,
         /// Send an invitation to a member
         #[builder(into, default)]
-        pub invite: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub invite: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to `ENABLED`. Valid values are `ENABLED` or `PAUSED`.
         #[builder(into, default)]
-        pub status: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub status: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

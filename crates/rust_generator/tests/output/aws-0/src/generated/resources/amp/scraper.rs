@@ -20,28 +20,28 @@ pub mod scraper {
     pub struct ScraperArgs {
         /// a name to associate with the managed scraper. This is for your use, and does not need to be unique.
         #[builder(into, default)]
-        pub alias: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub alias: pulumi_gestalt_rust::Input<Option<String>>,
         /// Configuration block for the managed scraper to send metrics to. See `destination`.
         #[builder(into, default)]
-        pub destination: pulumi_gestalt_rust::InputOrOutput<
+        pub destination: pulumi_gestalt_rust::Input<
             Option<super::super::types::amp::ScraperDestination>,
         >,
         /// The configuration file to use in the new scraper. For more information, see [Scraper configuration](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration).
         #[builder(into)]
-        pub scrape_configuration: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub scrape_configuration: pulumi_gestalt_rust::Input<String>,
         /// Configuration block to specify where the managed scraper will collect metrics from. See `source`.
         ///
         /// The following arguments are optional:
         #[builder(into, default)]
-        pub source: pulumi_gestalt_rust::InputOrOutput<
+        pub source: pulumi_gestalt_rust::Input<
             Option<super::super::types::amp::ScraperSource>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::amp::ScraperTimeouts>,
         >,
     }

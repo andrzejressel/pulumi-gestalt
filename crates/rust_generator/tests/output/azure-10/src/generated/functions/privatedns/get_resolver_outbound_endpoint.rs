@@ -10,10 +10,10 @@ pub mod get_resolver_outbound_endpoint {
     pub struct GetResolverOutboundEndpointArgs {
         /// Name of the Private DNS Resolver Outbound Endpoint.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// ID of the Private DNS Resolver Outbound Endpoint.
         #[builder(into)]
-        pub private_dns_resolver_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub private_dns_resolver_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetResolverOutboundEndpointResult {

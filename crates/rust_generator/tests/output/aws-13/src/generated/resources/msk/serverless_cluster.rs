@@ -24,20 +24,20 @@ pub mod serverless_cluster {
     pub struct ServerlessClusterArgs {
         /// Specifies client authentication information for the serverless cluster. See below.
         #[builder(into)]
-        pub client_authentication: pulumi_gestalt_rust::InputOrOutput<
+        pub client_authentication: pulumi_gestalt_rust::Input<
             super::super::types::msk::ServerlessClusterClientAuthentication,
         >,
         /// The name of the serverless cluster.
         #[builder(into, default)]
-        pub cluster_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub cluster_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// VPC configuration information. See below.
         #[builder(into)]
-        pub vpc_configs: pulumi_gestalt_rust::InputOrOutput<
+        pub vpc_configs: pulumi_gestalt_rust::Input<
             Vec<super::super::types::msk::ServerlessClusterVpcConfig>,
         >,
     }

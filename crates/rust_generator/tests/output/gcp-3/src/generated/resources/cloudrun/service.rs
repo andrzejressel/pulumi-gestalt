@@ -320,13 +320,13 @@ pub mod service {
         /// be set to 'true' while 'template.metadata.name' is also set. (For legacy support, if 'template.metadata.name' is unset
         /// in state while this field is set to false, the revision name will still autogenerate.)
         #[builder(into, default)]
-        pub autogenerate_revision_name: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub autogenerate_revision_name: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The location of the cloud run instance. eg us-central1
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Metadata associated with this Service, including name, namespace, labels, and annotations.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudrun::ServiceMetadata>,
         >,
         /// Name must be unique within a Google Cloud project and region.
@@ -334,9 +334,9 @@ pub mod service {
         /// for creation idempotence and configuration definition. Cannot be updated.
         /// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// template holds the latest specification for the Revision to be stamped out. The template references the container image,
         /// and may also include labels and annotations that should be attached to the Revision. To correlate a Revision, and/or to
         /// force a Revision to be created when the spec doesn't otherwise change, a nonce label may be provided in the template
@@ -344,7 +344,7 @@ pub mod service {
         /// https://github.com/knative/serving/blob/main/docs/client-conventions.md#associate-modifications-with-revisions Cloud Run
         /// does not currently support referencing a build that is responsible for materializing the container image from source.
         #[builder(into, default)]
-        pub template: pulumi_gestalt_rust::InputOrOutput<
+        pub template: pulumi_gestalt_rust::Input<
             Option<super::super::types::cloudrun::ServiceTemplate>,
         >,
         /// (Output)
@@ -352,7 +352,7 @@ pub mod service {
         /// and Configurations
         /// Structure is documented below.
         #[builder(into, default)]
-        pub traffics: pulumi_gestalt_rust::InputOrOutput<
+        pub traffics: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::cloudrun::ServiceTraffic>>,
         >,
     }

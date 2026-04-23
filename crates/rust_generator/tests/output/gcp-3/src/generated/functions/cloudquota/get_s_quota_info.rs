@@ -10,13 +10,13 @@ pub mod get_s_quota_info {
     pub struct GetSQuotaInfoArgs {
         /// The parent of the quota info. Allowed parents are "projects/[project-id / number]" or "folders/[folder-id / number]" or "organizations/[org-id / number].
         #[builder(into)]
-        pub parent: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub parent: pulumi_gestalt_rust::Input<String>,
         /// The id of the quota, which is unique within the service.
         #[builder(into)]
-        pub quota_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub quota_id: pulumi_gestalt_rust::Input<String>,
         /// The name of the service in which the quota is defined.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSQuotaInfoResult {

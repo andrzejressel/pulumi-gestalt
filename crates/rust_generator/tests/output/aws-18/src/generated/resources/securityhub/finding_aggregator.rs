@@ -78,10 +78,10 @@ pub mod finding_aggregator {
     pub struct FindingAggregatorArgs {
         /// Indicates whether to aggregate findings from all of the available Regions or from a specified list. The options are `ALL_REGIONS`, `ALL_REGIONS_EXCEPT_SPECIFIED` or `SPECIFIED_REGIONS`. When `ALL_REGIONS` or `ALL_REGIONS_EXCEPT_SPECIFIED` are used, Security Hub will automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.
         #[builder(into)]
-        pub linking_mode: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub linking_mode: pulumi_gestalt_rust::Input<String>,
         /// List of regions to include or exclude (required if `linking_mode` is set to `ALL_REGIONS_EXCEPT_SPECIFIED` or `SPECIFIED_REGIONS`)
         #[builder(into, default)]
-        pub specified_regions: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub specified_regions: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
     }
     #[allow(dead_code)]
     pub struct FindingAggregatorResult {

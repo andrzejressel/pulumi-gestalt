@@ -62,13 +62,13 @@ pub mod data_connector_aws_cloud_trail {
     pub struct DataConnectorAwsCloudTrailArgs {
         /// The ARN of the AWS CloudTrail role, which is connected to this AWS CloudTrail Data Connector.
         #[builder(into)]
-        pub aws_role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub aws_role_arn: pulumi_gestalt_rust::Input<String>,
         /// The ID of the Log Analytics Workspace that this AWS CloudTrail Data Connector resides in. Changing this forces a new AWS CloudTrail Data Connector to be created.
         #[builder(into)]
-        pub log_analytics_workspace_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub log_analytics_workspace_id: pulumi_gestalt_rust::Input<String>,
         /// The name which should be used for this AWS CloudTrail Data Connector. Changing this forces a new AWS CloudTrail Data Connector to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct DataConnectorAwsCloudTrailResult {

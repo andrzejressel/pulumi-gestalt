@@ -165,28 +165,28 @@ pub mod listener {
     pub struct ListenerArgs {
         /// Default action block for the default listener rule. Default action blocks are defined below.
         #[builder(into)]
-        pub default_action: pulumi_gestalt_rust::InputOrOutput<
+        pub default_action: pulumi_gestalt_rust::Input<
             super::super::types::vpclattice::ListenerDefaultAction,
         >,
         /// Name of the listener. A listener name must be unique within a service. Valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Listener port. You can specify a value from 1 to 65535. If `port` is not specified and `protocol` is HTTP, the value will default to 80. If `port` is not specified and `protocol` is HTTPS, the value will default to 443.
         #[builder(into, default)]
-        pub port: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub port: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Protocol for the listener. Supported values are `HTTP`, `HTTPS` or `TLS_PASSTHROUGH`
         #[builder(into)]
-        pub protocol: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub protocol: pulumi_gestalt_rust::Input<String>,
         /// Amazon Resource Name (ARN) of the VPC Lattice service. You must include either the `service_arn` or `service_identifier` arguments.
         #[builder(into, default)]
-        pub service_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// ID of the VPC Lattice service. You must include either the `service_arn` or `service_identifier` arguments.
         /// > **NOTE:** You must specify one of the following arguments: `service_arn` or `service_identifier`.
         #[builder(into, default)]
-        pub service_identifier: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub service_identifier: pulumi_gestalt_rust::Input<Option<String>>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -95,19 +95,19 @@ pub mod enrichment {
     pub struct EnrichmentArgs {
         /// The list of endpoints which will be enriched.
         #[builder(into)]
-        pub endpoint_names: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub endpoint_names: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The IoTHub name of the enrichment. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub iothub_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub iothub_name: pulumi_gestalt_rust::Input<String>,
         /// The key of the enrichment. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub key: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub key: pulumi_gestalt_rust::Input<String>,
         /// The name of the resource group under which the IoTHub resource is created. Changing this forces a new resource to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// The value of the enrichment. Value can be any static string, the name of the IoT hub sending the message (use `$iothubname`) or information from the device twin (ex: `$twin.tags.latitude`)
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub value: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct EnrichmentResult {

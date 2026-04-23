@@ -10,10 +10,10 @@ pub mod get_ontap_file_system {
     pub struct GetOntapFileSystemArgs {
         /// Identifier of the file system (e.g. `fs-12345678`).
         #[builder(into)]
-        pub id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub id: pulumi_gestalt_rust::Input<String>,
         /// The tags associated with the file system.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

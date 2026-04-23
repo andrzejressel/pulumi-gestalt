@@ -46,35 +46,35 @@ pub mod workflow {
     pub struct WorkflowArgs {
         /// Change description of the workflow.
         #[builder(into, default)]
-        pub change_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub change_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Inline YAML string with data of the workflow. Exactly one of `data` and `uri` can be specified.
         #[builder(into, default)]
-        pub data: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub data: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the workflow.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the Key Management Service (KMS) Key used to encrypt the workflow.
         #[builder(into, default)]
-        pub kms_key_id: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_id: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name of the workflow.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags for the workflow. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Type of the workflow. Valid values: `BUILD`, `TEST`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
         /// S3 URI with data of the workflow. Exactly one of `data` and `uri` can be specified.
         #[builder(into, default)]
-        pub uri: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub uri: pulumi_gestalt_rust::Input<Option<String>>,
         /// Version of the workflow.
         ///
         /// The following arguments are optional:
         #[builder(into)]
-        pub version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub version: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct WorkflowResult {

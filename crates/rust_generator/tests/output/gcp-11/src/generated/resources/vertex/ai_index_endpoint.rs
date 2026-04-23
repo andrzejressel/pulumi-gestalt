@@ -136,18 +136,18 @@ pub mod ai_index_endpoint {
     pub struct AiIndexEndpointArgs {
         /// The description of the Index.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The display name of the Index. The name can be up to 128 characters long and can consist of any UTF-8 characters.
         ///
         ///
         /// - - -
         #[builder(into)]
-        pub display_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub display_name: pulumi_gestalt_rust::Input<String>,
         /// The labels with user-defined metadata to organize your Indexes.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The full name of the Google Compute Engine [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks) to which the index endpoint should be peered.
@@ -155,11 +155,11 @@ pub mod ai_index_endpoint {
         /// [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert): `projects/{project}/global/networks/{network}`.
         /// Where `{project}` is a project number, as in `12345`, and `{network}` is network name.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Configuration for private service connect. `network` and `privateServiceConnectConfig` are mutually exclusive.
         /// Structure is documented below.
         #[builder(into, default)]
-        pub private_service_connect_config: pulumi_gestalt_rust::InputOrOutput<
+        pub private_service_connect_config: pulumi_gestalt_rust::Input<
             Option<
                 super::super::types::vertex::AiIndexEndpointPrivateServiceConnectConfig,
             >,
@@ -167,13 +167,13 @@ pub mod ai_index_endpoint {
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// If true, the deployed index will be accessible through public endpoint.
         #[builder(into, default)]
-        pub public_endpoint_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub public_endpoint_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The region of the index endpoint. eg us-central1
         #[builder(into, default)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub region: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct AiIndexEndpointResult {

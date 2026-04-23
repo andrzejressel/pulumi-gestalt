@@ -11,10 +11,10 @@ pub mod get_secret_versions {
         /// If true, all deprecated secret versions are included in the response.
         /// If false, no deprecated secret versions are included in the response. If no value is specified, the default value is `false`.
         #[builder(into, default)]
-        pub include_deprecated: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub include_deprecated: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Specifies the secret containing the version that you want to retrieve. You can specify either the ARN or the friendly name of the secret.
         #[builder(into)]
-        pub secret_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub secret_id: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetSecretVersionsResult {

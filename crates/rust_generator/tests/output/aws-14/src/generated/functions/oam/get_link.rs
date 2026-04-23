@@ -10,9 +10,9 @@ pub mod get_link {
     pub struct GetLinkArgs {
         /// ARN of the link.
         #[builder(into)]
-        pub link_identifier: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub link_identifier: pulumi_gestalt_rust::Input<String>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

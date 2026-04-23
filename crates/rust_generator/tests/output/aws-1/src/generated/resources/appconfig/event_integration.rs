@@ -35,21 +35,21 @@ pub mod event_integration {
     pub struct EventIntegrationArgs {
         /// Description of the Event Integration.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Block that defines the configuration information for the event filter. The Event Filter block is documented below.
         #[builder(into)]
-        pub event_filter: pulumi_gestalt_rust::InputOrOutput<
+        pub event_filter: pulumi_gestalt_rust::Input<
             super::super::types::appconfig::EventIntegrationEventFilter,
         >,
         /// EventBridge bus.
         #[builder(into)]
-        pub eventbridge_bus: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub eventbridge_bus: pulumi_gestalt_rust::Input<String>,
         /// Name of the Event Integration.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Tags to apply to the Event Integration. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

@@ -131,15 +131,15 @@ pub mod automation {
         /// details. **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field 'effective_annotations' for all of the annotations present on the resource.
         #[builder(into, default)]
-        pub annotations: pulumi_gestalt_rust::InputOrOutput<
+        pub annotations: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The delivery_pipeline for the resource
         #[builder(into)]
-        pub delivery_pipeline: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub delivery_pipeline: pulumi_gestalt_rust::Input<String>,
         /// Optional. Description of the 'Automation'. Max length is 255 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Optional. Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the
         /// following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and
         /// dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a
@@ -148,35 +148,35 @@ pub mod automation {
         /// labels present in your configuration. Please refer to the field 'effective_labels' for all of the labels present on the
         /// resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location for the resource
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
         /// Name of the `Automation`.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// Required. List of Automation rules associated with the Automation resource. Must have at least one rule and limited to 250 rules per Delivery Pipeline. Note: the order of the rules here is not the same as the order of execution.
         /// Structure is documented below.
         #[builder(into)]
-        pub rules: pulumi_gestalt_rust::InputOrOutput<
+        pub rules: pulumi_gestalt_rust::Input<
             Vec<super::super::types::clouddeploy::AutomationRule>,
         >,
         /// Required. Selected resources to which the automation will be applied.
         /// Structure is documented below.
         #[builder(into)]
-        pub selector: pulumi_gestalt_rust::InputOrOutput<
+        pub selector: pulumi_gestalt_rust::Input<
             super::super::types::clouddeploy::AutomationSelector,
         >,
         /// Required. Email address of the user-managed IAM service account that creates Cloud Deploy release and rollout resources.
         #[builder(into)]
-        pub service_account: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_account: pulumi_gestalt_rust::Input<String>,
         /// Optional. When Suspended, automation is deactivated from execution.
         #[builder(into, default)]
-        pub suspended: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub suspended: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct AutomationResult {

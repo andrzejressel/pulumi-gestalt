@@ -10,7 +10,7 @@ pub mod get_global_networks {
     pub struct GetGlobalNetworksArgs {
         /// Restricts the list to the global networks with these tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

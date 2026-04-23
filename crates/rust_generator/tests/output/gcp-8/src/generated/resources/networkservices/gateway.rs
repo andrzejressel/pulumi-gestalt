@@ -281,79 +281,79 @@ pub mod gateway {
         /// an IP from the subnetwork is allocated This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
         /// Gateways of type 'OPEN_MESH' listen on 0.0.0.0.
         #[builder(into, default)]
-        pub addresses: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub addresses: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// A fully-qualified Certificates URL reference. The proxy presents a Certificate (selected based on SNI) when establishing a TLS connection.
         /// This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
         #[builder(into, default)]
-        pub certificate_urls: pulumi_gestalt_rust::InputOrOutput<Option<Vec<String>>>,
+        pub certificate_urls: pulumi_gestalt_rust::Input<Option<Vec<String>>>,
         /// When deleting a gateway of type 'SECURE_WEB_GATEWAY', this boolean option will also delete auto generated router by the gateway creation.
         /// If there is no other gateway of type 'SECURE_WEB_GATEWAY' remaining for that region and network it will be deleted.
         #[builder(into, default)]
-        pub delete_swg_autogen_router_on_destroy: pulumi_gestalt_rust::InputOrOutput<
+        pub delete_swg_autogen_router_on_destroy: pulumi_gestalt_rust::Input<
             Option<bool>,
         >,
         /// A free-text description of the resource. Max length 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// A fully-qualified GatewaySecurityPolicy URL reference. Defines how a server should apply security policy to inbound (VM to Proxy) initiated connections.
         /// For example: `projects/*/locations/*/gatewaySecurityPolicies/swg-policy`.
         /// This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
         #[builder(into, default)]
-        pub gateway_security_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub gateway_security_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Set of label tags associated with the Gateway resource.
         /// **Note**: This field is non-authoritative, and will only manage the labels present in your configuration.
         /// Please refer to the field `effective_labels` for all of the labels present on the resource.
         #[builder(into, default)]
-        pub labels: pulumi_gestalt_rust::InputOrOutput<
+        pub labels: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The location of the gateway.
         /// The default value is `global`.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Short name of the Gateway resource to be created.
         ///
         ///
         /// - - -
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative resource name identifying the VPC network that is using this configuration.
         /// For example: `projects/*/global/networks/network-1`.
         /// Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
         #[builder(into, default)]
-        pub network: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub network: pulumi_gestalt_rust::Input<Option<String>>,
         /// One or more port numbers (1-65535), on which the Gateway will receive traffic.
         /// The proxy binds to the specified ports. Gateways of type 'SECURE_WEB_GATEWAY' are
         /// limited to 1 port. Gateways of type 'OPEN_MESH' listen on 0.0.0.0 and support multiple ports.
         #[builder(into)]
-        pub ports: pulumi_gestalt_rust::InputOrOutput<Vec<i32>>,
+        pub ports: pulumi_gestalt_rust::Input<Vec<i32>>,
         /// The ID of the project in which the resource belongs.
         /// If it is not provided, the provider project is used.
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The routing mode of the Gateway. This field is configurable only for gateways of type SECURE_WEB_GATEWAY. This field is required for gateways of type SECURE_WEB_GATEWAY.
         /// Possible values are: `NEXT_HOP_ROUTING_MODE`.
         #[builder(into, default)]
-        pub routing_mode: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub routing_mode: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. Scope determines how configuration across multiple Gateway instances are merged.
         /// The configuration for multiple Gateway instances with the same scope will be merged as presented as
         /// a single coniguration to the proxy/load balancer.
         /// Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
         #[builder(into, default)]
-        pub scope: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub scope: pulumi_gestalt_rust::Input<Option<String>>,
         /// A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated.
         /// If empty, TLS termination is disabled.
         #[builder(into, default)]
-        pub server_tls_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub server_tls_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// The relative resource name identifying the subnetwork in which this SWG is allocated.
         /// For example: `projects/*/regions/us-central1/subnetworks/network-1`.
         /// Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY.
         #[builder(into, default)]
-        pub subnetwork: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub subnetwork: pulumi_gestalt_rust::Input<Option<String>>,
         /// Immutable. The type of the customer-managed gateway. Possible values are: * OPEN_MESH * SECURE_WEB_GATEWAY.
         /// Possible values are: `TYPE_UNSPECIFIED`, `OPEN_MESH`, `SECURE_WEB_GATEWAY`.
         #[builder(into)]
-        pub type_: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub type_: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GatewayResult {

@@ -84,52 +84,48 @@ pub mod configuration {
     pub struct ConfigurationArgs {
         /// A `antimalware` block as defined below.
         #[builder(into, default)]
-        pub antimalware: pulumi_gestalt_rust::InputOrOutput<
+        pub antimalware: pulumi_gestalt_rust::Input<
             Option<super::super::types::automanage::ConfigurationAntimalware>,
         >,
         /// Whether the automation account is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub automation_account_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub automation_account_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// A `azure_security_baseline` block as defined below.
         #[builder(into, default)]
-        pub azure_security_baseline: pulumi_gestalt_rust::InputOrOutput<
+        pub azure_security_baseline: pulumi_gestalt_rust::Input<
             Option<super::super::types::automanage::ConfigurationAzureSecurityBaseline>,
         >,
         /// A `backup` block as defined below.
         #[builder(into, default)]
-        pub backup: pulumi_gestalt_rust::InputOrOutput<
+        pub backup: pulumi_gestalt_rust::Input<
             Option<super::super::types::automanage::ConfigurationBackup>,
         >,
         /// Whether the boot diagnostics are enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub boot_diagnostics_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub boot_diagnostics_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the defender for cloud is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub defender_for_cloud_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub defender_for_cloud_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Whether the guest configuration is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub guest_configuration_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub guest_configuration_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The Azure Region where the Automanage Configuration should exist. Changing this forces a new Automanage Configuration to be created.
         #[builder(into, default)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub location: pulumi_gestalt_rust::Input<Option<String>>,
         /// Whether log analytics are enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub log_analytics_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub log_analytics_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The name which should be used for this Automanage Configuration. Changing this forces a new Automanage Configuration to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the Resource Group where the Automanage Configuration should exist. Changing this forces a new Automanage Configuration to be created.
         #[builder(into)]
-        pub resource_group_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub resource_group_name: pulumi_gestalt_rust::Input<String>,
         /// Whether the status change alert is enabled. Defaults to `false`.
         #[builder(into, default)]
-        pub status_change_alert_enabled: pulumi_gestalt_rust::InputOrOutput<
-            Option<bool>,
-        >,
+        pub status_change_alert_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

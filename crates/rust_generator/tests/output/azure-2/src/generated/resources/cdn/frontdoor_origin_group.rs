@@ -69,30 +69,30 @@ pub mod frontdoor_origin_group {
     pub struct FrontdoorOriginGroupArgs {
         /// The ID of the Front Door Profile within which this Front Door Origin Group should exist. Changing this forces a new Front Door Origin Group to be created.
         #[builder(into)]
-        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Input<String>,
         /// A `health_probe` block as defined below.
         #[builder(into, default)]
-        pub health_probe: pulumi_gestalt_rust::InputOrOutput<
+        pub health_probe: pulumi_gestalt_rust::Input<
             Option<super::super::types::cdn::FrontdoorOriginGroupHealthProbe>,
         >,
         /// A `load_balancing` block as defined below.
         #[builder(into)]
-        pub load_balancing: pulumi_gestalt_rust::InputOrOutput<
+        pub load_balancing: pulumi_gestalt_rust::Input<
             super::super::types::cdn::FrontdoorOriginGroupLoadBalancing,
         >,
         /// The name which should be used for this Front Door Origin Group. Changing this forces a new Front Door Origin Group to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Specifies the amount of time which should elapse before shifting traffic to another endpoint when a healthy endpoint becomes unhealthy or a new endpoint is added. Possible values are between `0` and `50` minutes (inclusive). Default is `10` minutes.
         ///
         /// > **NOTE:** This property is currently not used, but will be in the near future.
         #[builder(into, default)]
-        pub restore_traffic_time_to_healed_or_new_endpoint_in_minutes: pulumi_gestalt_rust::InputOrOutput<
+        pub restore_traffic_time_to_healed_or_new_endpoint_in_minutes: pulumi_gestalt_rust::Input<
             Option<i32>,
         >,
         /// Specifies whether session affinity should be enabled on this host. Defaults to `true`.
         #[builder(into, default)]
-        pub session_affinity_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub session_affinity_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
     }
     #[allow(dead_code)]
     pub struct FrontdoorOriginGroupResult {

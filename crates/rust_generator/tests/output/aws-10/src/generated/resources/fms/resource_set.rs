@@ -43,15 +43,15 @@ pub mod resource_set {
     pub struct ResourceSetArgs {
         /// Details about the resource set to be created or updated. See `resource_set` Attribute Reference below.
         #[builder(into, default)]
-        pub resource_sets: pulumi_gestalt_rust::InputOrOutput<
+        pub resource_sets: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::fms::ResourceSetResourceSet>>,
         >,
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         #[builder(into, default)]
-        pub timeouts: pulumi_gestalt_rust::InputOrOutput<
+        pub timeouts: pulumi_gestalt_rust::Input<
             Option<super::super::types::fms::ResourceSetTimeouts>,
         >,
     }

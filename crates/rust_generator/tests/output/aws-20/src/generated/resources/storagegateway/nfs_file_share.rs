@@ -38,70 +38,70 @@ pub mod nfs_file_share {
     pub struct NfsFileShareArgs {
         /// The Amazon Resource Name (ARN) of the storage used for audit logs.
         #[builder(into, default)]
-        pub audit_destination_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub audit_destination_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The region of the S3 bucket used by the file share. Required when specifying `vpc_endpoint_dns_name`.
         #[builder(into, default)]
-        pub bucket_region: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub bucket_region: pulumi_gestalt_rust::Input<Option<String>>,
         /// Refresh cache information. see Cache Attributes for more details.
         #[builder(into, default)]
-        pub cache_attributes: pulumi_gestalt_rust::InputOrOutput<
+        pub cache_attributes: pulumi_gestalt_rust::Input<
             Option<super::super::types::storagegateway::NfsFileShareCacheAttributes>,
         >,
         /// The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses or valid CIDR blocks. Set to `["0.0.0.0/0"]` to not limit access. Minimum 1 item. Maximum 100 items.
         #[builder(into)]
-        pub client_lists: pulumi_gestalt_rust::InputOrOutput<Vec<String>>,
+        pub client_lists: pulumi_gestalt_rust::Input<Vec<String>>,
         /// The default [storage class](https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateNFSFileShare.html#StorageGateway-CreateNFSFileShare-request-DefaultStorageClass) for objects put into an Amazon S3 bucket by the file gateway. Defaults to `S3_STANDARD`.
         #[builder(into, default)]
-        pub default_storage_class: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub default_storage_class: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the file share. Must be set if an S3 prefix name is set in `location_arn`.
         #[builder(into, default)]
-        pub file_share_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub file_share_name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amazon Resource Name (ARN) of the file gateway.
         #[builder(into)]
-        pub gateway_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub gateway_arn: pulumi_gestalt_rust::Input<String>,
         /// Boolean value that enables guessing of the MIME type for uploaded objects based on file extensions. Defaults to `true`.
         #[builder(into, default)]
-        pub guess_mime_type_enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub guess_mime_type_enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean value if `true` to use Amazon S3 server side encryption with your own AWS KMS key, or `false` to use a key managed by Amazon S3. Defaults to `false`.
         #[builder(into, default)]
-        pub kms_encrypted: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub kms_encrypted: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Amazon Resource Name (ARN) for KMS key used for Amazon S3 server side encryption. This value can only be set when `kms_encrypted` is true.
         #[builder(into, default)]
-        pub kms_key_arn: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub kms_key_arn: pulumi_gestalt_rust::Input<Option<String>>,
         /// The ARN of the backed storage used for storing file data.
         #[builder(into)]
-        pub location_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location_arn: pulumi_gestalt_rust::Input<String>,
         /// Nested argument with file share default values. More information below. see NFS File Share Defaults for more details.
         #[builder(into, default)]
-        pub nfs_file_share_defaults: pulumi_gestalt_rust::InputOrOutput<
+        pub nfs_file_share_defaults: pulumi_gestalt_rust::Input<
             Option<super::super::types::storagegateway::NfsFileShareNfsFileShareDefaults>,
         >,
         /// The notification policy of the file share. For more information see the [AWS Documentation](https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateNFSFileShare.html#StorageGateway-CreateNFSFileShare-request-NotificationPolicy). Default value is `{}`.
         #[builder(into, default)]
-        pub notification_policy: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub notification_policy: pulumi_gestalt_rust::Input<Option<String>>,
         /// Access Control List permission for S3 objects. Defaults to `private`.
         #[builder(into, default)]
-        pub object_acl: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub object_acl: pulumi_gestalt_rust::Input<Option<String>>,
         /// Boolean to indicate write status of file share. File share does not accept writes if `true`. Defaults to `false`.
         #[builder(into, default)]
-        pub read_only: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub read_only: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Boolean who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to `true` if you want the requester to pay instead of the bucket owner. Defaults to `false`.
         #[builder(into, default)]
-        pub requester_pays: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub requester_pays: pulumi_gestalt_rust::Input<Option<bool>>,
         /// The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the underlying storage.
         #[builder(into)]
-        pub role_arn: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub role_arn: pulumi_gestalt_rust::Input<String>,
         /// Maps a user to anonymous user. Defaults to `RootSquash`. Valid values: `RootSquash` (only root is mapped to anonymous user), `NoSquash` (no one is mapped to anonymous user), `AllSquash` (everyone is mapped to anonymous user)
         #[builder(into, default)]
-        pub squash: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub squash: pulumi_gestalt_rust::Input<Option<String>>,
         /// Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// The DNS name of the VPC endpoint for S3 PrivateLink.
         #[builder(into, default)]
-        pub vpc_endpoint_dns_name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub vpc_endpoint_dns_name: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct NfsFileShareResult {

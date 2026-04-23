@@ -36,16 +36,16 @@ pub mod template {
     pub struct TemplateArgs {
         /// Quota identifier. To find the quota code for a specific quota, use the aws.servicequotas.ServiceQuota data source.
         #[builder(into)]
-        pub quota_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub quota_code: pulumi_gestalt_rust::Input<String>,
         /// AWS Region to which the template applies.
         #[builder(into)]
-        pub region: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub region: pulumi_gestalt_rust::Input<String>,
         /// Service identifier. To find the service code value for an AWS service, use the aws.servicequotas.getService data source.
         #[builder(into)]
-        pub service_code: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service_code: pulumi_gestalt_rust::Input<String>,
         /// The new, increased value for the quota.
         #[builder(into)]
-        pub value: pulumi_gestalt_rust::InputOrOutput<f64>,
+        pub value: pulumi_gestalt_rust::Input<f64>,
     }
     #[allow(dead_code)]
     pub struct TemplateResult {

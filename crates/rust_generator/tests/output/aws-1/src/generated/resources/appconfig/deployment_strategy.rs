@@ -37,28 +37,28 @@ pub mod deployment_strategy {
     pub struct DeploymentStrategyArgs {
         /// Total amount of time for a deployment to last. Minimum value of 0, maximum value of 1440.
         #[builder(into)]
-        pub deployment_duration_in_minutes: pulumi_gestalt_rust::InputOrOutput<i32>,
+        pub deployment_duration_in_minutes: pulumi_gestalt_rust::Input<i32>,
         /// Description of the deployment strategy. Can be at most 1024 characters.
         #[builder(into, default)]
-        pub description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub description: pulumi_gestalt_rust::Input<Option<String>>,
         /// Amount of time AWS AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back. Minimum value of 0, maximum value of 1440.
         #[builder(into, default)]
-        pub final_bake_time_in_minutes: pulumi_gestalt_rust::InputOrOutput<Option<i32>>,
+        pub final_bake_time_in_minutes: pulumi_gestalt_rust::Input<Option<i32>>,
         /// Percentage of targets to receive a deployed configuration during each interval. Minimum value of 1.0, maximum value of 100.0.
         #[builder(into)]
-        pub growth_factor: pulumi_gestalt_rust::InputOrOutput<f64>,
+        pub growth_factor: pulumi_gestalt_rust::Input<f64>,
         /// Algorithm used to define how percentage grows over time. Valid value: `LINEAR` and `EXPONENTIAL`. Defaults to `LINEAR`.
         #[builder(into, default)]
-        pub growth_type: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub growth_type: pulumi_gestalt_rust::Input<Option<String>>,
         /// Name for the deployment strategy. Must be between 1 and 64 characters in length.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Where to save the deployment strategy. Valid values: `NONE` and `SSM_DOCUMENT`.
         #[builder(into)]
-        pub replicate_to: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub replicate_to: pulumi_gestalt_rust::Input<String>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

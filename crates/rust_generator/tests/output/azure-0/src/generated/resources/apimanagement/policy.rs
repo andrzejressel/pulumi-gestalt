@@ -63,13 +63,13 @@ pub mod policy {
     pub struct PolicyArgs {
         /// The ID of the API Management service. Changing this forces a new API Management service Policy to be created.
         #[builder(into)]
-        pub api_management_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub api_management_id: pulumi_gestalt_rust::Input<String>,
         /// The XML Content for this Policy as a string. To integrate frontend and backend services in Azure API Management, utilize the [`set-backend-service`](https://learn.microsoft.com/azure/api-management/set-backend-service-policy) policy, specifying the `base-url` value. Typically, this value corresponds to the `url` property defined in the `Backend` resource configuration.
         #[builder(into, default)]
-        pub xml_content: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub xml_content: pulumi_gestalt_rust::Input<Option<String>>,
         /// A link to a Policy XML Document, which must be publicly available.
         #[builder(into, default)]
-        pub xml_link: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub xml_link: pulumi_gestalt_rust::Input<Option<String>>,
     }
     #[allow(dead_code)]
     pub struct PolicyResult {

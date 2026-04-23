@@ -10,7 +10,7 @@ pub mod get_extended_locations {
     pub struct GetExtendedLocationsArgs {
         /// The Azure location to retrieve the Extended Locations for.
         #[builder(into)]
-        pub location: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub location: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct GetExtendedLocationsResult {

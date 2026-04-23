@@ -102,16 +102,16 @@ pub mod engine_split_traffic {
     pub struct EngineSplitTrafficArgs {
         /// If set to true traffic will be migrated to this version.
         #[builder(into, default)]
-        pub migrate_traffic: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub migrate_traffic: pulumi_gestalt_rust::Input<Option<bool>>,
         #[builder(into, default)]
-        pub project: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub project: pulumi_gestalt_rust::Input<Option<String>>,
         /// The name of the service these settings apply to.
         #[builder(into)]
-        pub service: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub service: pulumi_gestalt_rust::Input<String>,
         /// Mapping that defines fractional HTTP traffic diversion to different versions within the service.
         /// Structure is documented below.
         #[builder(into)]
-        pub split: pulumi_gestalt_rust::InputOrOutput<
+        pub split: pulumi_gestalt_rust::Input<
             super::super::types::appengine::EngineSplitTrafficSplit,
         >,
     }

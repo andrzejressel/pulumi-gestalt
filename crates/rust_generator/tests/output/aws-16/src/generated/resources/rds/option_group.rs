@@ -65,30 +65,30 @@ pub mod option_group {
     pub struct OptionGroupArgs {
         /// Specifies the name of the engine that this option group should be associated with.
         #[builder(into)]
-        pub engine_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub engine_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the major version of the engine that this option group should be associated with.
         #[builder(into)]
-        pub major_engine_version: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub major_engine_version: pulumi_gestalt_rust::Input<String>,
         /// Name of the option group. If omitted, the provider will assign a random, unique name. Must be lowercase, to match as it is stored in AWS.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Creates a unique name beginning with the specified prefix. Conflicts with `name`. Must be lowercase, to match as it is stored in AWS.
         #[builder(into, default)]
-        pub name_prefix: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name_prefix: pulumi_gestalt_rust::Input<Option<String>>,
         /// Description of the option group. Defaults to "Managed by Pulumi".
         #[builder(into, default)]
-        pub option_group_description: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub option_group_description: pulumi_gestalt_rust::Input<Option<String>>,
         /// The options to apply. See `option` Block below for more details.
         #[builder(into, default)]
-        pub options: pulumi_gestalt_rust::InputOrOutput<
+        pub options: pulumi_gestalt_rust::Input<
             Option<Vec<super::super::types::rds::OptionGroupOption>>,
         >,
         /// Set to true if you do not wish the option group to be deleted at destroy time, and instead just remove the option group from the Pulumi state.
         #[builder(into, default)]
-        pub skip_destroy: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub skip_destroy: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }

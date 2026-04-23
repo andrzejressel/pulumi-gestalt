@@ -57,10 +57,10 @@ pub mod queue_policy {
     pub struct QueuePolicyArgs {
         /// The JSON policy for the SQS queue.
         #[builder(into)]
-        pub policy: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub policy: pulumi_gestalt_rust::Input<String>,
         /// The URL of the SQS Queue to which to attach the policy
         #[builder(into)]
-        pub queue_url: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub queue_url: pulumi_gestalt_rust::Input<String>,
     }
     #[allow(dead_code)]
     pub struct QueuePolicyResult {

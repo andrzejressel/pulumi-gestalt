@@ -95,24 +95,24 @@ pub mod resolver_forwarding_rule {
     pub struct ResolverForwardingRuleArgs {
         /// Specifies the ID of the Private DNS Resolver Forwarding Ruleset. Changing this forces a new Private DNS Resolver Forwarding Rule to be created.
         #[builder(into)]
-        pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub dns_forwarding_ruleset_id: pulumi_gestalt_rust::Input<String>,
         /// Specifies the domain name for the Private DNS Resolver Forwarding Rule. Changing this forces a new Private DNS Resolver Forwarding Rule to be created.
         #[builder(into)]
-        pub domain_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub domain_name: pulumi_gestalt_rust::Input<String>,
         /// Specifies the state of the Private DNS Resolver Forwarding Rule. Defaults to `true`.
         #[builder(into, default)]
-        pub enabled: pulumi_gestalt_rust::InputOrOutput<Option<bool>>,
+        pub enabled: pulumi_gestalt_rust::Input<Option<bool>>,
         /// Metadata attached to the Private DNS Resolver Forwarding Rule.
         #[builder(into, default)]
-        pub metadata: pulumi_gestalt_rust::InputOrOutput<
+        pub metadata: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
         /// Specifies the name which should be used for this Private DNS Resolver Forwarding Rule. Changing this forces a new Private DNS Resolver Forwarding Rule to be created.
         #[builder(into, default)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
+        pub name: pulumi_gestalt_rust::Input<Option<String>>,
         /// Can be specified multiple times to define multiple target DNS servers. Each `target_dns_servers` block as defined below.
         #[builder(into)]
-        pub target_dns_servers: pulumi_gestalt_rust::InputOrOutput<
+        pub target_dns_servers: pulumi_gestalt_rust::Input<
             Vec<super::super::types::privatedns::ResolverForwardingRuleTargetDnsServer>,
         >,
     }

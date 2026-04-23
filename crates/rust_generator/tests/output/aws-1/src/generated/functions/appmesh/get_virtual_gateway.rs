@@ -10,13 +10,13 @@ pub mod get_virtual_gateway {
     pub struct GetVirtualGatewayArgs {
         /// Name of the service mesh in which the virtual gateway exists.
         #[builder(into)]
-        pub mesh_name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub mesh_name: pulumi_gestalt_rust::Input<String>,
         /// Name of the virtual gateway.
         #[builder(into)]
-        pub name: pulumi_gestalt_rust::InputOrOutput<String>,
+        pub name: pulumi_gestalt_rust::Input<String>,
         /// Map of tags.
         #[builder(into, default)]
-        pub tags: pulumi_gestalt_rust::InputOrOutput<
+        pub tags: pulumi_gestalt_rust::Input<
             Option<std::collections::HashMap<String, String>>,
         >,
     }
