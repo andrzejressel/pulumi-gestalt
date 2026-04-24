@@ -34,10 +34,17 @@ impl GitHubWorkflow {
     }
 
     pub fn get_job_full_names(&self) -> Vec<String> {
+        self.get_job_full_names_excluding_prefix("")
+    }
+
+    pub fn get_job_full_names_excluding_prefix(&self, prefix: &str) -> Vec<String> {
         let mut job_names = Vec::new();
 
-        for (job_name, job) in &self.jobs {
-            let job_name = job.name.clone().unwrap_or_else(|| job_name.clone());
+        for (job_key, job) in &self.jobs {
+            if !prefix.is_empty() && job_key.starts_with(prefix) {
+                continue;
+            }
+            let job_name = job.name.clone().unwrap_or_else(|| job_key.clone());
             if let Some(matrix) = job.strategy.as_ref().and_then(|s| s.matrix.as_ref())
                 && !matrix.is_empty()
             {
@@ -150,6 +157,22 @@ jobs:
             "build-generated-provider (aws-1)",
             "build-generated-provider (cloudflare)",
             "build-generated-provider (docker)",
+        ];
+
+        assert_eq!(job_names, expected_job_names);
+    }
+
+    #[test]
+    fn test_generate_full_job_names_excluding_prefix() {
+        let workflow = GitHubWorkflow::from_yaml(YAML_CONTENT).unwrap();
+
+        let job_names = workflow.get_job_full_names_excluding_prefix("build-generated");
+
+        let expected_job_names = [
+            "Build no matrix",
+            "build-base (macos-14)",
+            "build-base (ubuntu-24.04)",
+            "build-base (windows-2022)",
         ];
 
         assert_eq!(job_names, expected_job_names);
