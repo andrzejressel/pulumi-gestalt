@@ -343,7 +343,7 @@ jobs:
         run: git add . && git diff --quiet && git diff --cached --quiet
 
   test-pulumi-language-rust-macos:
-    if: startsWith(github.head_ref, 'mergify/merge-queue/')
+    if: startsWith(github.head_ref, 'mergify/merge-queue/') || github.ref == 'refs/heads/main'
     runs-on: macos-15
     strategy:
       fail-fast: false
