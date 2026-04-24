@@ -1,3 +1,4 @@
+use crate::domain_ir::ResourceToken::Stash;
 /// Lowers the Domain IR into the Rust IR.
 ///
 /// This transform maps Pulumi-semantic concepts (config bindings, output
@@ -10,7 +11,6 @@ use crate::domain_ir::{
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
-use crate::domain_ir::ResourceToken::Stash;
 
 pub fn lower(program: &Program) -> Result<RustFile> {
     let statements = program
@@ -91,7 +91,7 @@ fn lower_resource(
                 let input_val = if matches!(token, Stash) {
                     wrap_as_pulumi_any(lowered)
                 } else {
-                   lowered 
+                    lowered
                 };
                 RustExpr::MethodCall {
                     receiver: Box::new(acc),

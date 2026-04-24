@@ -6,10 +6,10 @@ use crate::golang::{
 use crate::pcl_model::PluginReference;
 use generator::generate_main;
 use prost::Message;
+use rootcause::Result;
 use rootcause::compat::IntoRootcause;
 use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
-use rootcause::Result;
 use std::collections::HashMap;
 use std::fs::create_dir_all;
 use std::path::{Path, PathBuf};

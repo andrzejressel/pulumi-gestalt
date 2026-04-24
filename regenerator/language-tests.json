@@ -22,6 +22,7 @@
     "l1-output-map",
     "l1-output-null",
     "l1-output-number",
-    "l1-output-string"
+    "l1-output-string",
+    "l2-destroy"
   ]
 }
