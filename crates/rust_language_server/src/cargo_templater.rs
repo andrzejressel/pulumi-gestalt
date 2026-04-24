@@ -31,4 +31,5 @@ pub(crate) fn render_cargo_toml(cargo_toml: &CargoToml) -> Result<String, askama
         dependencies: &cargo_toml.dependencies,
     }
     .render()
+    .map(|rendered| rendered.trim().to_string())
 }

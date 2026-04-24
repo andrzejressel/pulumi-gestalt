@@ -43,12 +43,6 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
 
     let mut dependencies = vec![
         Dependency {
-            name: "bon".to_string(),
-            source: cargo_templater::DependencySource::CratesIo {
-                version: "3.9.1".to_string(),
-            },
-        },
-        Dependency {
             name: "anyhow".to_string(),
             source: cargo_templater::DependencySource::CratesIo {
                 version: "1.0.102".to_string(),
@@ -68,7 +62,7 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
 
     let cargo_rs = cargo_templater::render_cargo_toml(&cargo_templater::CargoToml {
         name: "pulumi-rust".to_string(),
-        version: "0.0.0".to_string(),
+        version: "0.1.0".to_string(),
         dependencies,
     })
     .context("Failed to render Cargo.toml")?;
@@ -122,6 +116,7 @@ fn create_provider_dependencies(
 ) -> Vec<Dependency> {
     plugins
         .iter()
+        .filter(|plugin| plugin.name != "pulumi")
         .map(|plugin| {
             let plugin_name = &plugin.name;
             if let Some(local_path) = local_dependencies.get(plugin_name) {
@@ -167,12 +162,6 @@ fn generate_package(req: GeneratePackageRequest) -> Result<()> {
                 name: "bon".to_string(),
                 source: cargo_templater::DependencySource::CratesIo {
                     version: "3.9.1".to_string(),
-                },
-            },
-            Dependency {
-                name: "anyhow".to_string(),
-                source: cargo_templater::DependencySource::CratesIo {
-                    version: "1.0.102".to_string(),
                 },
             },
             Dependency {
