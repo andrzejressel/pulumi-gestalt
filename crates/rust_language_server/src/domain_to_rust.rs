@@ -562,6 +562,18 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
                 lowered_args[2].clone(),
             ],
         },
+        StdlibFn::Max => RustExpr::MethodCall {
+            receiver: Box::new(lowered_args[0].clone()),
+            method: "max".to_string(),
+            type_params: vec![],
+            args: vec![lowered_args[1].clone()],
+        },
+        StdlibFn::Min => RustExpr::MethodCall {
+            receiver: Box::new(lowered_args[0].clone()),
+            method: "min".to_string(),
+            type_params: vec![],
+            args: vec![lowered_args[1].clone()],
+        },
     }
 }
 

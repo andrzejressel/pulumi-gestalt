@@ -154,6 +154,8 @@ pub enum StdlibFn {
     Project,
     Entries,
     Lookup,
+    Min,
+    Max,
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, serde::Serialize)]

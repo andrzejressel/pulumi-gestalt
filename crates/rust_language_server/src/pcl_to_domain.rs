@@ -523,6 +523,20 @@ fn lower_function_call(call: &FunctionCallExpression) -> Result<Expr> {
                 args: args_lowered()?,
             })
         }
+        "min" => {
+            ensure_arity(&call.name, arg_count, 2)?;
+            Ok(Expr::StdlibCall {
+                func: StdlibFn::Min,
+                args: args_lowered()?,
+            })
+        }
+        "max" => {
+            ensure_arity(&call.name, arg_count, 2)?;
+            Ok(Expr::StdlibCall {
+                func: StdlibFn::Max,
+                args: args_lowered()?,
+            })
+        }
         _ => bail!("Unsupported stdlib function: {}", call.name),
     }
 }

@@ -1,0 +1,248 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "a",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "f64"
+                ],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "a"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [a] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "b",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "f64"
+                ],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "b"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [b] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "c",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "i64"
+                ],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "c"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [c] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Let": {
+        "name": "d",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config_deserialize",
+                "type_params": [
+                  "i64"
+                ],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "d"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [d] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "maxResult"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "a"
+                  },
+                  "method": "max",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Identifier": "b"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "minResult"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "a"
+                  },
+                  "method": "min",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Identifier": "b"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "intMaxResult"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "c"
+                  },
+                  "method": "max",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Identifier": "d"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "intMinResult"
+            },
+            {
+              "Ref": {
+                "MethodCall": {
+                  "receiver": {
+                    "Identifier": "c"
+                  },
+                  "method": "min",
+                  "type_params": [],
+                  "args": [
+                    {
+                      "Identifier": "d"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
