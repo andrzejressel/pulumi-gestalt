@@ -51,6 +51,8 @@ pub struct Resource {
     pub inputs: ::prost::alloc::vec::Vec<ResourceInput>,
     #[prost(message, optional, tag = "5")]
     pub options: ::core::option::Option<ResourceOptions>,
+    #[prost(string, optional, tag = "6")]
+    pub provider_name: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ResourceInput {

@@ -45,12 +45,18 @@ typedef struct GenerateProgramResultRef {
 typedef struct GenerateProjectRequestRef {
   struct ListRef protobuf;
   struct StringRef directory;
+  struct ListRef local_dependencies;
   bool testing;
 } GenerateProjectRequestRef;
 
 typedef struct GenerateProjectResultRef {
   struct StringRef error;
 } GenerateProjectResultRef;
+
+typedef struct LocalDependencyRef {
+  struct StringRef name;
+  struct StringRef path;
+} LocalDependencyRef;
 
 const void c_rust2go_internal_drop(void*);
 const void c_G2RCall_generate_package(const void*, const void*);
@@ -245,35 +251,38 @@ func refGeneratePackageRequest(p *GeneratePackageRequest, buffer *[]byte) C.Gene
 }
 
 type GenerateProjectRequest struct {
-	protobuf  []uint8
-	directory string
-	testing   bool
+	protobuf           []uint8
+	directory          string
+	local_dependencies []LocalDependency
+	testing            bool
 }
 
 func newGenerateProjectRequest(p C.GenerateProjectRequestRef) GenerateProjectRequest {
 	return GenerateProjectRequest{
-		protobuf:  new_list_mapper_primitive(newC_uint8_t)(p.protobuf),
-		directory: newString(p.directory),
-		testing:   newC_bool(p.testing),
+		protobuf:           new_list_mapper_primitive(newC_uint8_t)(p.protobuf),
+		directory:          newString(p.directory),
+		local_dependencies: new_list_mapper(newLocalDependency)(p.local_dependencies),
+		testing:            newC_bool(p.testing),
 	}
 }
 func ownGenerateProjectRequest(p C.GenerateProjectRequestRef) GenerateProjectRequest {
 	return GenerateProjectRequest{
-		protobuf:  new_list_mapper(newC_uint8_t)(p.protobuf),
-		directory: ownString(p.directory),
-		testing:   newC_bool(p.testing),
+		protobuf:           new_list_mapper(newC_uint8_t)(p.protobuf),
+		directory:          ownString(p.directory),
+		local_dependencies: new_list_mapper(ownLocalDependency)(p.local_dependencies),
+		testing:            newC_bool(p.testing),
 	}
 }
 func cntGenerateProjectRequest(s *GenerateProjectRequest, cnt *uint) [0]C.GenerateProjectRequestRef {
-	_ = s
-	_ = cnt
+	cnt_list_mapper(cntLocalDependency)(&s.local_dependencies, cnt)
 	return [0]C.GenerateProjectRequestRef{}
 }
 func refGenerateProjectRequest(p *GenerateProjectRequest, buffer *[]byte) C.GenerateProjectRequestRef {
 	return C.GenerateProjectRequestRef{
-		protobuf:  ref_list_mapper_primitive(refC_uint8_t)(&p.protobuf, buffer),
-		directory: refString(&p.directory, buffer),
-		testing:   refC_bool(&p.testing, buffer),
+		protobuf:           ref_list_mapper_primitive(refC_uint8_t)(&p.protobuf, buffer),
+		directory:          refString(&p.directory, buffer),
+		local_dependencies: ref_list_mapper(refLocalDependency)(&p.local_dependencies, buffer),
+		testing:            refC_bool(&p.testing, buffer),
 	}
 }
 
@@ -410,6 +419,35 @@ func refFileWithContent(p *FileWithContent, buffer *[]byte) C.FileWithContentRef
 	return C.FileWithContentRef{
 		path:    refString(&p.path, buffer),
 		content: ref_list_mapper_primitive(refC_uint8_t)(&p.content, buffer),
+	}
+}
+
+type LocalDependency struct {
+	name string
+	path string
+}
+
+func newLocalDependency(p C.LocalDependencyRef) LocalDependency {
+	return LocalDependency{
+		name: newString(p.name),
+		path: newString(p.path),
+	}
+}
+func ownLocalDependency(p C.LocalDependencyRef) LocalDependency {
+	return LocalDependency{
+		name: ownString(p.name),
+		path: ownString(p.path),
+	}
+}
+func cntLocalDependency(s *LocalDependency, cnt *uint) [0]C.LocalDependencyRef {
+	_ = s
+	_ = cnt
+	return [0]C.LocalDependencyRef{}
+}
+func refLocalDependency(p *LocalDependency, buffer *[]byte) C.LocalDependencyRef {
+	return C.LocalDependencyRef{
+		name: refString(&p.name, buffer),
+		path: refString(&p.path, buffer),
 	}
 }
 
