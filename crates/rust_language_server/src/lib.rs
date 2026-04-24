@@ -1,16 +1,21 @@
+use crate::cargo_templater::Dependency;
 use crate::golang::{
     FileWithContent, G2RCall, G2RCallImpl, GeneratePackageRequest, GeneratePackageResult,
     GenerateProgramRequest, GenerateProgramResult, GenerateProjectRequest, GenerateProjectResult,
 };
+use crate::pcl_model::PluginReference;
 use generator::generate_main;
 use prost::Message;
-use rootcause::Result;
+use rootcause::compat::IntoRootcause;
 use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
+use rootcause::Result;
+use std::collections::HashMap;
 use std::fs::create_dir_all;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::{env, fs};
 
+mod cargo_templater;
 mod domain_ir;
 mod domain_to_rust;
 mod generator;
@@ -26,16 +31,47 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
         &*req.protobuf,
     )
     .context("Cannot decode protobuf")?;
-    let current_dir = env::current_dir()
-        .context("Cannot get current directory")?
-        .join("../crates/rust");
-    let current_dir = current_dir
-        .to_str()
-        .context("Current directory is not valid UTF-8")?;
+
     let model_program = pcl_model::map_program(program);
     let result = generate_main(&model_program).context("Failed to generate main.rs")?;
-    let cargo_rs = include_str!("./Cargo.toml.template");
-    let cargo_rs = cargo_rs.replace("{{CURRENT_DIR}}", current_dir);
+
+    let local_dependencies = req
+        .local_dependencies
+        .into_iter()
+        .map(|ld| (ld.name, ld.path))
+        .collect::<HashMap<_, _>>();
+
+    let mut dependencies = vec![
+        Dependency {
+            name: "bon".to_string(),
+            source: cargo_templater::DependencySource::CratesIo {
+                version: "3.9.1".to_string(),
+            },
+        },
+        Dependency {
+            name: "anyhow".to_string(),
+            source: cargo_templater::DependencySource::CratesIo {
+                version: "1.0.102".to_string(),
+            },
+        },
+        Dependency {
+            name: "serde_json".to_string(),
+            source: cargo_templater::DependencySource::CratesIo {
+                version: "1.0.140".to_string(),
+            },
+        },
+        create_pulumi_gestalt_rust_dependency()
+            .context("Failed to create pulumi_gestalt_rust dependency")?,
+    ];
+    dependencies
+        .append(create_provider_dependencies(&model_program.plugins, &local_dependencies).as_mut());
+
+    let cargo_rs = cargo_templater::render_cargo_toml(&cargo_templater::CargoToml {
+        name: "pulumi-rust".to_string(),
+        version: "0.0.0".to_string(),
+        dependencies,
+    })
+    .context("Failed to render Cargo.toml")?;
     let mut files = vec![
         FileWithContent {
             path: "src/main.rs".to_string(),
@@ -80,46 +116,110 @@ fn generate_project(req: GenerateProjectRequest) -> Result<()> {
     Ok(())
 }
 
+fn create_provider_dependencies(
+    plugins: &Vec<PluginReference>,
+    local_dependencies: &HashMap<String, String>,
+) -> Vec<Dependency> {
+    plugins
+        .iter()
+        .map(|plugin| {
+            let plugin_name = &plugin.name;
+            if let Some(local_path) = local_dependencies.get(plugin_name) {
+                Dependency {
+                    name: format!("pulumi_{}", plugin_name),
+                    source: cargo_templater::DependencySource::Local {
+                        path: local_path.clone(),
+                    },
+                }
+            } else {
+                Dependency {
+                    name: format!("pulumi_{}", plugin_name),
+                    source: cargo_templater::DependencySource::CratesIo {
+                        version: plugin.version.clone(),
+                    },
+                }
+            }
+        })
+        .collect()
+}
+
+fn generate_package(req: GeneratePackageRequest) -> Result<()> {
+    let package =
+        pulumi_gestalt_proto::language_server::pulumipackage::Package::decode(&*req.protobuf)
+            .context("Cannot decode package protobuf")?;
+
+    let model_package = package_model::map_package(package);
+
+    let dir = Path::new(&req.directory);
+    if !dir.exists() {
+        create_dir_all(dir).context("Failed to create output directory")?;
+    }
+
+    pulumi_gestalt_generator::generate_rust(&model_package, &dir.join("src"))
+        .into_rootcause()
+        .context("Failed to generate package")?;
+
+    let cargo_rs = cargo_templater::render_cargo_toml(&cargo_templater::CargoToml {
+        name: format!("pulumi_{}", &model_package.name),
+        version: model_package.version.clone(),
+        dependencies: vec![
+            Dependency {
+                name: "bon".to_string(),
+                source: cargo_templater::DependencySource::CratesIo {
+                    version: "3.9.1".to_string(),
+                },
+            },
+            Dependency {
+                name: "anyhow".to_string(),
+                source: cargo_templater::DependencySource::CratesIo {
+                    version: "1.0.102".to_string(),
+                },
+            },
+            Dependency {
+                name: "serde_json".to_string(),
+                source: cargo_templater::DependencySource::CratesIo {
+                    version: "1.0.140".to_string(),
+                },
+            },
+            create_pulumi_gestalt_rust_dependency()
+                .context("Failed to create pulumi_gestalt_rust dependency")?,
+        ],
+    })
+    .context("Failed to render Cargo.toml")?;
+
+    fs::write(dir.join("Cargo.toml"), cargo_rs).context("Failed to write Cargo.toml")?;
+
+    Ok(())
+}
+
+fn get_project_root_dir() -> PathBuf {
+    let cargo_manifest_dir = Path::new(env!("CARGO_MANIFEST_DIR"));
+    cargo_manifest_dir.join("..").join("..")
+}
+
+fn create_pulumi_gestalt_rust_dependency() -> Result<Dependency> {
+    Ok(Dependency {
+        name: "pulumi_gestalt_rust".to_string(),
+        source: cargo_templater::DependencySource::Local {
+            path: get_project_root_dir()
+                .join("crates")
+                .join("rust")
+                .to_str()
+                .context("Failed to convert pulumi_gestalt_rust path to string")?
+                .to_string(),
+        },
+    })
+}
+
 impl G2RCall for G2RCallImpl {
     fn generate_package(req: GeneratePackageRequest) -> GeneratePackageResult {
-        let package = match pulumi_gestalt_proto::language_server::pulumipackage::Package::decode(
-            &*req.protobuf,
-        ) {
-            Ok(package) => package,
-            Err(error) => {
-                return GeneratePackageResult {
-                    error: format!("invalid package bytes: {error:?}"),
-                };
-            }
-        };
-        let _model_package = package_model::map_package(package);
-
-        let dir = Path::new(&req.directory);
-        if !dir.exists()
-            && let Err(error) = create_dir_all(dir)
-        {
-            return GeneratePackageResult {
-                error: format!("failed to create output directory: {error:?}"),
-            };
-        }
-
-        if let Err(error) = pulumi_gestalt_generator::generate_rust(&_model_package, &dir.join("src")) {
-            return GeneratePackageResult {
-                error: format!("failed to generate package: {error:?}"),
-            };
-        }
-
-        if let Err(error) = fs::write(
-            dir.join("Cargo.toml"),
-            include_str!("./Cargo.toml.template"),
-        ) {
-            return GeneratePackageResult {
-                error: format!("failed to write Cargo.toml: {error:?}"),
-            };
-        }
-
-        GeneratePackageResult {
-            error: String::new(),
+        match generate_package(req) {
+            Ok(()) => GeneratePackageResult {
+                error: String::new(),
+            },
+            Err(error) => GeneratePackageResult {
+                error: error.to_string(),
+            },
         }
     }
 
@@ -208,12 +308,4 @@ impl G2RCall for G2RCallImpl {
             },
         }
     }
-}
-
-pub fn generate_project_from_protobuf(protobuf: Vec<u8>, directory: String) -> Result<()> {
-    generate_project(GenerateProjectRequest {
-        protobuf,
-        directory,
-        testing: false,
-    })
 }

@@ -21,6 +21,7 @@ prettyplease.workspace = true
 syn.workspace = true
 rust2go = "0.4.2"
 rootcause = { workspace = true, features = ["compat-anyhow1"] }
+askama.workspace = true
 
 [lints]
 workspace = true

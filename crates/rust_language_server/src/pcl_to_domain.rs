@@ -1,12 +1,11 @@
-use std::fmt::format;
 /// Lowers the PCL IR into the Domain IR.
 ///
 /// This transform resolves PCL-level constructs (protobuf-shaped expressions,
 /// `__apply` intrinsics, stdlib function names) into high-level Pulumi domain
 /// concepts (`OutputMap`, `CombineOutputs`, `StdlibCall`, etc.).
 use crate::domain_ir::{
-    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, ResourceToken, Statement, StdlibFn,
-    UnaryOp,
+    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, ResourceInput, ResourceToken,
+    Statement, StdlibFn, UnaryOp,
 };
 use crate::pcl_model::node::Value;
 use crate::pcl_model::r#type::Value::OutputType;
@@ -16,10 +15,10 @@ use crate::pcl_model::{
     literal_value_expression, traverse_index, traverser,
 };
 use pulumi_gestalt_schema::model::ElementId;
+use rootcause::compat::IntoRootcause;
 use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
-use rootcause::compat::IntoRootcause;
 
 pub fn lower(program: &PclProtobufProgram) -> Result<Program> {
     let statements = program
@@ -106,7 +105,7 @@ fn lower_pulumi_block(block: &PulumiBlock) -> Result<Statement> {
 }
 
 fn lower_resource(resource: &Resource) -> Result<Statement> {
-    let token = create_resource_token(&resource)
+    let token = create_resource_token(resource)
         .context_with(|| format!("Failed to tokenize [{}]", resource.token))?;
     let inputs = resource
         .inputs
@@ -114,7 +113,10 @@ fn lower_resource(resource: &Resource) -> Result<Statement> {
         .map(|input| {
             let expr =
                 lower_expression(&input.value).context("Failed to lower resource input value")?;
-            Ok((input.name.clone(), expr))
+            Ok(ResourceInput {
+                name: input.name.clone(),
+                expression: expr,
+            })
         })
         .collect::<Result<Vec<_>>>()
         .context("Failed to lower resource inputs")?;
@@ -122,7 +124,7 @@ fn lower_resource(resource: &Resource) -> Result<Statement> {
         name: resource.name.clone(),
         logical_name: resource.logical_name.clone(),
         token,
-        inputs
+        inputs,
     })
 }
 
@@ -131,11 +133,16 @@ fn create_resource_token(resource: &Resource) -> Result<ResourceToken> {
         Ok(ResourceToken::Stash)
     } else {
         Ok(ResourceToken::Custom {
-            provider_name: resource.provider_name.clone().context_with(|| format!("Resource [{:?}] is missing provider name", resource))?,
-            element_id: ElementId::new(&resource.token).into_rootcause().context_with(
-                || format!("Failed to convert [{}] into ElementId", resource.token))?
-        },
-        )
+            provider_name: resource
+                .provider_name
+                .clone()
+                .context_with(|| format!("Resource [{:?}] is missing provider name", resource))?,
+            element_id: ElementId::new(&resource.token)
+                .into_rootcause()
+                .context_with(|| {
+                    format!("Failed to convert [{}] into ElementId", resource.token)
+                })?,
+        })
     }
 }
 

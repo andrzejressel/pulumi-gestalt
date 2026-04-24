@@ -75,8 +75,8 @@ func TestLanguage(t *testing.T) {
 		SnapshotEdits: []*testingrpc.PrepareLanguageTestsRequest_Replacement{
 			{
 				Path:        "Cargo.toml",
-				Pattern:     `(?m)# PULUMI_GESTALT_RUST START(.|\n)*PULUMI_GESTALT_RUST END`,
-				Replacement: "pulumi_gestalt_rust = \"VERSION\"",
+				Pattern:     `(pulumi_(\w+)) = .*`,
+				Replacement: `$1 = "VERSION"`,
 			},
 		},
 	})

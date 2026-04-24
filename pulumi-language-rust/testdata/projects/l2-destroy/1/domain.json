@@ -23,30 +23,6 @@
           }
         ]
       }
-    },
-    {
-      "Resource": {
-        "name": "other",
-        "logical_name": "other",
-        "token": {
-          "Custom": {
-            "provider_name": "simple",
-            "element_id": {
-              "namespace": [],
-              "name": "Resource",
-              "raw": "simple:index:Resource"
-            }
-          }
-        },
-        "inputs": [
-          {
-            "name": "value",
-            "expression": {
-              "Bool": true
-            }
-          }
-        ]
-      }
     }
   ]
 }

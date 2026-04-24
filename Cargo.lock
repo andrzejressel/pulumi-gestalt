@@ -3794,6 +3794,7 @@ dependencies = [
 name = "pulumi_gestalt_rust_language_server"
 version = "0.0.0-DEV"
 dependencies = [
+ "askama",
  "prettyplease",
  "prost",
  "pulumi_gestalt_generator",

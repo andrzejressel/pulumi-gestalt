@@ -8,10 +8,5 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
         "aresource",
         pulumi_simple::resource::ResourceArgs::builder().value(true).build_struct(),
     );
-    let other = pulumi_simple::resource::create(
-        &ctx,
-        "other",
-        pulumi_simple::resource::ResourceArgs::builder().value(true).build_struct(),
-    );
     Ok(())
 }

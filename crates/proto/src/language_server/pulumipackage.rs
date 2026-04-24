@@ -141,10 +141,8 @@ pub struct DiscriminatedUnion {
     #[prost(string, tag = "3")]
     pub discriminator: ::prost::alloc::string::String,
     #[prost(map = "string, string", tag = "4")]
-    pub mapping: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        ::prost::alloc::string::String,
-    >,
+    pub mapping:
+        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GlobalType {

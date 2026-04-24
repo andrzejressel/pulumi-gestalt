@@ -30,8 +30,14 @@ pub enum Statement {
         logical_name: String,
         token: ResourceToken,
         /// Input fields: `(field_name, value)`.
-        inputs: Vec<(String, Expr)>,
+        inputs: Vec<ResourceInput>,
     },
+}
+
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
+pub struct ResourceInput {
+    pub name: String,
+    pub expression: Expr,
 }
 
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]
@@ -39,10 +45,9 @@ pub enum ResourceToken {
     Stash,
     Custom {
         provider_name: String,
-        element_id: ElementId
+        element_id: ElementId,
     },
 }
-
 
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]
 pub struct ConfigBinding {

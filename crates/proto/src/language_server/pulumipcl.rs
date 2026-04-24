@@ -131,10 +131,7 @@ pub struct TupleExpressionType {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ObjectExpressionType {
     #[prost(map = "string, message", tag = "1")]
-    pub properties: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        ExpressionType,
-    >,
+    pub properties: ::std::collections::HashMap<::prost::alloc::string::String, ExpressionType>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UnionExpressionType {
@@ -194,7 +191,10 @@ pub struct OutputVariable {
 pub struct Expression {
     #[prost(message, optional, tag = "13")]
     pub r#type: ::core::option::Option<ExpressionType>,
-    #[prost(oneof = "expression::Value", tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12")]
+    #[prost(
+        oneof = "expression::Value",
+        tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12"
+    )]
     pub value: ::core::option::Option<expression::Value>,
 }
 /// Nested message and enum types in `Expression`.
@@ -214,15 +214,11 @@ pub mod expression {
         #[prost(message, tag = "6")]
         FunctionCallExpression(super::FunctionCallExpression),
         #[prost(message, tag = "7")]
-        RelativeTraversalExpression(
-            ::prost::alloc::boxed::Box<super::RelativeTraversalExpression>,
-        ),
+        RelativeTraversalExpression(::prost::alloc::boxed::Box<super::RelativeTraversalExpression>),
         #[prost(message, tag = "8")]
         ScopeTraversalExpression(super::ScopeTraversalExpression),
         #[prost(message, tag = "9")]
-        AnonymousFunctionExpression(
-            ::prost::alloc::boxed::Box<super::AnonymousFunctionExpression>,
-        ),
+        AnonymousFunctionExpression(::prost::alloc::boxed::Box<super::AnonymousFunctionExpression>),
         #[prost(message, tag = "10")]
         ConditionalExpression(::prost::alloc::boxed::Box<super::ConditionalExpression>),
         #[prost(message, tag = "11")]
@@ -265,10 +261,7 @@ pub struct IndexExpression {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ObjectConsExpression {
     #[prost(map = "string, message", tag = "1")]
-    pub properties: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        Expression,
-    >,
+    pub properties: ::std::collections::HashMap<::prost::alloc::string::String, Expression>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TupleConsExpression {

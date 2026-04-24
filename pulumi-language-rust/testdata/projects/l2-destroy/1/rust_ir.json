@@ -43,50 +43,6 @@
           }
         }
       }
-    },
-    {
-      "Let": {
-        "name": "other",
-        "value": {
-          "FunctionCall": {
-            "path": "pulumi_simple::resource::create",
-            "args": [
-              {
-                "Ref": {
-                  "Identifier": "ctx"
-                }
-              },
-              {
-                "StringLiteral": "other"
-              },
-              {
-                "MethodCall": {
-                  "receiver": {
-                    "MethodCall": {
-                      "receiver": {
-                        "FunctionCall": {
-                          "path": "pulumi_simple::resource::ResourceArgs::builder",
-                          "args": []
-                        }
-                      },
-                      "method": "value",
-                      "type_params": [],
-                      "args": [
-                        {
-                          "BoolLiteral": true
-                        }
-                      ]
-                    }
-                  },
-                  "method": "build_struct",
-                  "type_params": [],
-                  "args": []
-                }
-              }
-            ]
-          }
-        }
-      }
     }
   ]
 }
