@@ -8,7 +8,7 @@ require (
 	github.com/pulumi/pulumi/pkg/v3 v3.232.0
 	github.com/pulumi/pulumi/sdk/v3 v3.232.0
 	github.com/stretchr/testify v1.11.1
-	github.com/zclconf/go-cty v1.18.0
+	github.com/zclconf/go-cty v1.18.1
 	go.opentelemetry.io/otel v1.43.0
 	google.golang.org/grpc v1.80.0
 	google.golang.org/protobuf v1.36.11
