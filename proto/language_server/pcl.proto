@@ -34,6 +34,7 @@ message Resource {
   string token = 3;
   repeated ResourceInput inputs = 4;
   optional ResourceOptions options = 5;
+  optional string provider_name = 6;
 }
 
 message ResourceInput {
