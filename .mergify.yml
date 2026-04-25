@@ -46,3 +46,5 @@ pull_request_rules:
       queue:
         name: default
 
+merge_protections_settings:
+  reporting_method: check-runs
