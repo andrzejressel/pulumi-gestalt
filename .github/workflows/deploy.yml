@@ -95,7 +95,7 @@ jobs:
         include:
           - os: ubuntu-24.04
           - os: macos-15
-          - os: windows-2022
+          - os: windows-2025
 
     steps:
       - run: git config --system core.longpaths true
@@ -149,7 +149,7 @@ jobs:
           - rust-target: aarch64-apple-darwin
             os: macos-15
           - rust-target: x86_64-pc-windows-msvc
-            os: windows-2022
+            os: windows-2025
 
     steps:
       - name: Cleanup unused stuff
@@ -174,13 +174,13 @@ jobs:
       - run: git config --system core.longpaths true
         if: runner.os == 'Windows'
       - name: Write release version (non-Windows)
-        if: matrix.os != 'windows-2022'
+        if: matrix.os != 'windows-2025'
         run: |
           VERSION=${GITHUB_REF_NAME#v}
           echo "Version: $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
       - name: Write release version (Windows)
-        if: matrix.os == 'windows-2022'
+        if: matrix.os == 'windows-2025'
         run: |
           $VERSION = $env:GITHUB_REF_NAME -replace "^v"
           echo "Version: $VERSION"
@@ -209,12 +209,12 @@ jobs:
           cp ./target/${{ matrix.rust-target }}/debug/pulumi_gestalt_wasm_runner.exe ./target/${{ matrix.rust-target }}/debug/pulumi_gestalt_wasm_runner-${{ matrix.rust-target }}-debug
           cp ./target/${{ matrix.rust-target }}/release/pulumi_gestalt_wasm_runner.exe ./target/${{ matrix.rust-target }}/release/pulumi_gestalt_wasm_runner-${{ matrix.rust-target }}
           cp ./target/${{ matrix.rust-target }}/release/pulumi_gestalt_wasm_runner.exe ./target/${{ matrix.rust-target }}/release/pulumi_gestalt_wasm_runner-${{ matrix.rust-target }}-release
-        if: matrix.os == 'windows-2022'
+        if: matrix.os == 'windows-2025'
       - run: |
           cp ./target/${{ matrix.rust-target }}/debug/pulumi_gestalt_wasm_runner ./target/${{ matrix.rust-target }}/debug/pulumi_gestalt_wasm_runner-${{ matrix.rust-target }}-debug
           cp ./target/${{ matrix.rust-target }}/release/pulumi_gestalt_wasm_runner ./target/${{ matrix.rust-target }}/release/pulumi_gestalt_wasm_runner-${{ matrix.rust-target }}
           cp ./target/${{ matrix.rust-target }}/release/pulumi_gestalt_wasm_runner ./target/${{ matrix.rust-target }}/release/pulumi_gestalt_wasm_runner-${{ matrix.rust-target }}-release
-        if: matrix.os != 'windows-2022'
+        if: matrix.os != 'windows-2025'
 
       - name: Release
         uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda # v3.0.0
@@ -240,7 +240,7 @@ jobs:
             os: macos-15
             os_type: macos
           - target: windows-x86_64
-            os: windows-2022
+            os: windows-2025
             os_type: windows
     steps:
       - name: Cleanup unused stuff
