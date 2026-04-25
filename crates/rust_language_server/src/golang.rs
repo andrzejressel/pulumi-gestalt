@@ -8,6 +8,7 @@ pub struct GeneratePackageRequest {
 pub struct GenerateProjectRequest {
     pub protobuf: Vec<u8>,
     pub directory: String,
+    pub local_dependencies: Vec<LocalDependency>,
     pub testing: bool,
 }
 
@@ -37,6 +38,12 @@ pub struct GenerateProjectResult {
 pub struct FileWithContent {
     pub path: String,
     pub content: Vec<u8>,
+}
+
+#[derive(rust2go::R2G, Clone)]
+pub struct LocalDependency {
+    pub name: String,
+    pub path: String,
 }
 
 #[rust2go::g2r]

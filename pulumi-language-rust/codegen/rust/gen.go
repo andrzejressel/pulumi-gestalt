@@ -73,7 +73,7 @@ func GenerateProgram(pkg *pcl.Program, testing bool) (map[string][]byte, hcl.Dia
 
 }
 
-func GenerateProject(pkg *pcl.Program, dir string, testing bool) ([]byte, []byte, error) {
+func GenerateProject(pkg *pcl.Program, dir string, localDependencies map[string]string, testing bool) ([]byte, []byte, error) {
 	protobufProgram, err := ast.GenerateProtobuf(pkg)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error generating protobuf program: %v", err)
@@ -95,10 +95,20 @@ func GenerateProject(pkg *pcl.Program, dir string, testing bool) ([]byte, []byte
 		return nil, nil, fmt.Errorf("error normalizing protobuf JSON: %v", err)
 	}
 
+	deps := make([]LocalDependency, len(localDependencies))
+
+	for key, value := range localDependencies {
+		deps = append(deps, LocalDependency{
+			name: key,
+			path: value,
+		})
+	}
+
 	req := GenerateProjectRequest{
-		protobuf:  obj,
-		directory: dir,
-		testing:   testing,
+		protobuf:           obj,
+		directory:          dir,
+		testing:            testing,
+		local_dependencies: deps,
 	}
 
 	result := G2RCallImpl{}.generate_project(&req)
