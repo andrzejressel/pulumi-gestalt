@@ -46,6 +46,9 @@ members = [
     "providers/typesystem",
     "regenerator",
 ]
+exclude = [
+    "pulumi-language-rust/testdata/sdks/simple-2.0.0"
+]
 
 [workspace.package]
 version = "0.0.0-DEV"
