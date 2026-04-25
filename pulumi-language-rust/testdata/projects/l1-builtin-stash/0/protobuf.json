@@ -96,7 +96,8 @@
               }
             }
           }
-        ]
+        ],
+        "provider_name": "pulumi"
       }
     },
     {

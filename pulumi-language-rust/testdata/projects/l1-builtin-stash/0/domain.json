@@ -4,11 +4,11 @@
       "Resource": {
         "name": "myStash",
         "logical_name": "myStash",
-        "token": "pulumi:index:Stash",
+        "token": "Stash",
         "inputs": [
-          [
-            "input",
-            {
+          {
+            "name": "input",
+            "expression": {
               "PulumiAny": {
                 "Object": [
                   [
@@ -37,7 +37,7 @@
                 ]
               }
             }
-          ]
+          }
         ]
       }
     },

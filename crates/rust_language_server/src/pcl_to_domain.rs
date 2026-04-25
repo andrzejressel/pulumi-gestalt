@@ -4,7 +4,8 @@
 /// `__apply` intrinsics, stdlib function names) into high-level Pulumi domain
 /// concepts (`OutputMap`, `CombineOutputs`, `StdlibCall`, etc.).
 use crate::domain_ir::{
-    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, Statement, StdlibFn, UnaryOp,
+    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, ResourceInput, ResourceToken,
+    Statement, StdlibFn, UnaryOp,
 };
 use crate::pcl_model::node::Value;
 use crate::pcl_model::r#type::Value::OutputType;
@@ -13,6 +14,8 @@ use crate::pcl_model::{
     PclProtobufProgram, PulumiBlock, Resource, TemplateExpression, TupleConsExpression, expression,
     literal_value_expression, traverse_index, traverser,
 };
+use pulumi_gestalt_schema::model::ElementId;
+use rootcause::compat::IntoRootcause;
 use rootcause::option_ext::OptionExt;
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
@@ -102,14 +105,18 @@ fn lower_pulumi_block(block: &PulumiBlock) -> Result<Statement> {
 }
 
 fn lower_resource(resource: &Resource) -> Result<Statement> {
-    let token = normalize_token(&resource.token);
+    let token = create_resource_token(resource)
+        .context_with(|| format!("Failed to tokenize [{}]", resource.token))?;
     let inputs = resource
         .inputs
         .iter()
         .map(|input| {
             let expr =
                 lower_expression(&input.value).context("Failed to lower resource input value")?;
-            Ok((input.name.clone(), expr))
+            Ok(ResourceInput {
+                name: input.name.clone(),
+                expression: expr,
+            })
         })
         .collect::<Result<Vec<_>>>()
         .context("Failed to lower resource inputs")?;
@@ -121,16 +128,21 @@ fn lower_resource(resource: &Resource) -> Result<Statement> {
     })
 }
 
-/// Normalises a Pulumi type token to the canonical 3-part form.
-///
-/// A 2-part token like `"pulumi:Stash"` is expanded to `"pulumi:index:Stash"`.
-/// A 3-part token is returned unchanged.
-fn normalize_token(token: &str) -> String {
-    let parts: Vec<&str> = token.split(':').collect();
-    if parts.len() == 2 {
-        format!("{}:index:{}", parts[0], parts[1])
+fn create_resource_token(resource: &Resource) -> Result<ResourceToken> {
+    if resource.token == "pulumi:index:Stash" {
+        Ok(ResourceToken::Stash)
     } else {
-        token.to_string()
+        Ok(ResourceToken::Custom {
+            provider_name: resource
+                .provider_name
+                .clone()
+                .context_with(|| format!("Resource [{:?}] is missing provider name", resource))?,
+            element_id: ElementId::new(&resource.token)
+                .into_rootcause()
+                .context_with(|| {
+                    format!("Failed to convert [{}] into ElementId", resource.token)
+                })?,
+        })
     }
 }
 
