@@ -36,6 +36,7 @@ pub struct Resource {
     pub token: String,
     pub inputs: Vec<ResourceInput>,
     pub options: Option<ResourceOptions>,
+    pub provider_name: Option<String>,
 }
 
 #[derive(Clone, PartialEq, Debug, serde::Serialize)]
@@ -358,6 +359,7 @@ fn map_resource(resource: pb::Resource) -> Resource {
             .map(map_resource_input)
             .collect(),
         options: resource.options.map(map_resource_options),
+        provider_name: resource.provider_name,
     }
 }
 

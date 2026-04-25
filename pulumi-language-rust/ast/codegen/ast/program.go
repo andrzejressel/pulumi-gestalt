@@ -496,10 +496,18 @@ func transformResource(resource *pcl.Resource) (*astproto.Resource, error) {
 	if resource.Schema != nil {
 		token = resource.Schema.Token // resource.Token() does not contain "index"
 	}
+
+	var providerName *string
+	if resource.Schema != nil && resource.Schema.PackageReference != nil {
+		name := resource.Schema.PackageReference.Name()
+		providerName = &name
+	}
+
 	resourceProto := &astproto.Resource{
-		Name:        resource.Name(), // It is deprecated. Should it be removed?
-		Token:       token,
-		LogicalName: resource.LogicalName(),
+		Name:         resource.Name(), // It is deprecated. Should it be removed?
+		Token:        token,
+		LogicalName:  resource.LogicalName(),
+		ProviderName: providerName,
 	}
 
 	inputs := make([]*astproto.ResourceInput, len(resource.Inputs))

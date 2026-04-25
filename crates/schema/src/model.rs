@@ -183,7 +183,7 @@ pub enum Ref {
     CurrentProvider,
 }
 
-#[derive(Clone, Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
+#[derive(Clone, serde::Serialize, Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
 pub struct ElementId {
     pub namespace: Vec<String>,
     pub name: String,

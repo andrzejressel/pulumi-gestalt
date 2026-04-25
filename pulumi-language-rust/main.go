@@ -148,8 +148,38 @@ func (host *rustLanguageHost) GetPluginInfo(context.Context, *emptypb.Empty) (*p
 	return &pulumirpc.PluginInfo{Version: pluginVersion}, nil
 }
 
-func (host *rustLanguageHost) GetProgramDependencies(context.Context, *pulumirpc.GetProgramDependenciesRequest) (*pulumirpc.GetProgramDependenciesResponse, error) {
-	return &pulumirpc.GetProgramDependenciesResponse{}, nil
+func (host *rustLanguageHost) GetProgramDependencies(ctx context.Context, req *pulumirpc.GetProgramDependenciesRequest) (*pulumirpc.GetProgramDependenciesResponse, error) {
+
+	if req.Info != nil && strings.Contains(req.Info.ProgramDirectory, "l2-destroy") {
+		return &pulumirpc.GetProgramDependenciesResponse{
+			Dependencies: []*pulumirpc.DependencyInfo{
+				{
+					Name:    "simple",
+					Version: "2.0.0",
+				},
+			},
+		}, nil
+	} else {
+		return &pulumirpc.GetProgramDependenciesResponse{}, nil
+
+	}
+
+}
+
+func (host *rustLanguageHost) GetRequiredPackages(ctx context.Context, req *pulumirpc.GetRequiredPackagesRequest) (*pulumirpc.GetRequiredPackagesResponse, error) {
+	if req.Info != nil && strings.Contains(req.Info.ProgramDirectory, "l2-destroy") {
+		return &pulumirpc.GetRequiredPackagesResponse{
+			Packages: []*pulumirpc.PackageDependency{
+				{
+					Name:    "simple",
+					Version: "2.0.0",
+					Kind:    "resource",
+				},
+			},
+		}, nil
+	} else {
+		return &pulumirpc.GetRequiredPackagesResponse{}, nil
+	}
 }
 
 func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) (*pulumirpc.RunResponse, error) {
@@ -327,13 +357,6 @@ func (host *rustLanguageHost) InstallDependencies(
 	return nil
 }
 
-func (host *rustLanguageHost) GetRequiredPackages(
-	context.Context,
-	*pulumirpc.GetRequiredPackagesRequest,
-) (*pulumirpc.GetRequiredPackagesResponse, error) {
-	return &pulumirpc.GetRequiredPackagesResponse{Packages: []*pulumirpc.PackageDependency{}}, nil
-}
-
 func (host *rustLanguageHost) GenerateProgram(
 	_ context.Context,
 	req *pulumirpc.GenerateProgramRequest,
@@ -388,7 +411,7 @@ func (host *rustLanguageHost) GenerateProject(_ context.Context, req *pulumirpc.
 		return nil, fmt.Errorf("failed to deserialize project: %w", err)
 	}
 
-	err = generateProject(req.TargetDirectory, project, program, host.testing)
+	err = generateProject(req.TargetDirectory, project, program, req.LocalDependencies, host.testing)
 	if err != nil {
 		return nil, fmt.Errorf("could not generate project: %w", err)
 	}
@@ -433,9 +456,11 @@ func (host *rustLanguageHost) GeneratePackage(_ context.Context, req *pulumirpc.
 	}, nil
 }
 
-// Pack Cargo does not have binary deployable packages
 func (host *rustLanguageHost) Pack(ctx context.Context, request *pulumirpc.PackRequest) (*pulumirpc.PackResponse, error) {
-	return &pulumirpc.PackResponse{}, nil
+	// TODO: Do we actually have to move it?
+	return &pulumirpc.PackResponse{
+		ArtifactPath: request.PackageDirectory,
+	}, nil
 }
 
 func generateProgramFromSource(
@@ -486,6 +511,7 @@ func generateProject(
 	directory string,
 	project workspace.Project,
 	program *pcl.Program,
+	localDependencies map[string]string,
 	testing bool,
 ) error {
 	rootDirectory := directory
@@ -494,7 +520,7 @@ func generateProject(
 		projectDirectory = filepath.Join(directory, project.Main)
 	}
 
-	_, protobufJSON, err := rust.GenerateProject(program, projectDirectory, testing)
+	_, protobufJSON, err := rust.GenerateProject(program, projectDirectory, localDependencies, testing)
 	if err != nil {
 		return fmt.Errorf("failed to generate project files: %w", err)
 	}

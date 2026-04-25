@@ -26,7 +26,8 @@
               }
             }
           }
-        ]
+        ],
+        "provider_name": "pulumi"
       }
     },
     {
