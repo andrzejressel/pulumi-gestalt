@@ -213,7 +213,11 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 			binaryPath = filepath.Join(req.Info.ProgramDirectory, binaryPath)
 		}
 		logging.V(5).Infof("Run: using pre-built binary: %s", binaryPath)
-		cmd = exec.Command(binaryPath) // nolint: gosec
+		resolvedBinary, err := exec.LookPath(binaryPath)
+		if err != nil {
+			return nil, fmt.Errorf("binary not found: %s: %w", binaryPath, err)
+		}
+		cmd = exec.Command(resolvedBinary)
 	} else {
 		// Run from source via cargo.
 		if host.testing {

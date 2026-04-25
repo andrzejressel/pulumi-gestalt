@@ -2,14 +2,26 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <errno.h>
+#include <limits.h>
 
 static char* mapper(const void* context_context, const void* context, const char* content) {
 
 	const char* function_name = (const char*) context;
 
 	if (strcmp(function_name, "double") == 0) {
-		int i = atoi(content);
-		int i2 = i * 2;
+		char *endptr;
+		errno = 0;
+		long i = strtol(content, &endptr, 10);
+		if (errno != 0 || endptr == content) {
+			printf("Invalid integer input\n");
+			exit(2);
+		}
+		if (i > LONG_MAX / 2 || i < LONG_MIN / 2) {
+			printf("Integer overflow\n");
+			exit(2);
+		}
+		long i2 = i * 2;
 
 		char *buffer = malloc(23 * sizeof(char));
 		if (buffer == NULL) {
@@ -17,7 +29,7 @@ static char* mapper(const void* context_context, const void* context, const char
 			exit(2);
 		}
 
-		snprintf(buffer, 23, "%d", i2);
+		snprintf(buffer, 23, "%ld", i2);
 		return buffer;
 	}
 	else if (strcmp(function_name, "static") == 0) {
