@@ -13,7 +13,7 @@ static char* mapper(const void* context_context, const void* context, const char
 		char *endptr;
 		errno = 0;
 		long i = strtol(content, &endptr, 10);
-		if (errno != 0 || endptr == content) {
+		if (errno != 0 || endptr == content || *endptr != '\0') {
 			printf("Invalid integer input\n");
 			exit(2);
 		}
