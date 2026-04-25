@@ -391,6 +391,7 @@ type Resource struct {
 	Token         string                 `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
 	Inputs        []*ResourceInput       `protobuf:"bytes,4,rep,name=inputs,proto3" json:"inputs,omitempty"`
 	Options       *ResourceOptions       `protobuf:"bytes,5,opt,name=options,proto3,oneof" json:"options,omitempty"`
+	ProviderName  *string                `protobuf:"bytes,6,opt,name=provider_name,json=providerName,proto3,oneof" json:"provider_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -458,6 +459,13 @@ func (x *Resource) GetOptions() *ResourceOptions {
 		return x.Options
 	}
 	return nil
+}
+
+func (x *Resource) GetProviderName() string {
+	if x != nil && x.ProviderName != nil {
+		return *x.ProviderName
+	}
+	return ""
 }
 
 type ResourceInput struct {
@@ -2881,15 +2889,17 @@ const file_pcl_proto_rawDesc = "" +
 	"\vpulumiBlock\x18\x05 \x01(\v2\x16.pulumipcl.PulumiBlockH\x00R\vpulumiBlockB\a\n" +
 	"\x05value\"Z\n" +
 	"\vPulumiBlock\x12K\n" +
-	"\x16required_version_range\x18\x01 \x01(\v2\x15.pulumipcl.ExpressionR\x14requiredVersionRange\"\xcf\x01\n" +
+	"\x16required_version_range\x18\x01 \x01(\v2\x15.pulumipcl.ExpressionR\x14requiredVersionRange\"\x8b\x02\n" +
 	"\bResource\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
 	"\vlogicalName\x18\x02 \x01(\tR\vlogicalName\x12\x14\n" +
 	"\x05token\x18\x03 \x01(\tR\x05token\x120\n" +
 	"\x06inputs\x18\x04 \x03(\v2\x18.pulumipcl.ResourceInputR\x06inputs\x129\n" +
-	"\aoptions\x18\x05 \x01(\v2\x1a.pulumipcl.ResourceOptionsH\x00R\aoptions\x88\x01\x01B\n" +
+	"\aoptions\x18\x05 \x01(\v2\x1a.pulumipcl.ResourceOptionsH\x00R\aoptions\x88\x01\x01\x12(\n" +
+	"\rprovider_name\x18\x06 \x01(\tH\x01R\fproviderName\x88\x01\x01B\n" +
 	"\n" +
-	"\b_options\"P\n" +
+	"\b_optionsB\x10\n" +
+	"\x0e_provider_name\"P\n" +
 	"\rResourceInput\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12+\n" +
 	"\x05value\x18\x02 \x01(\v2\x15.pulumipcl.ExpressionR\x05value\"\xf1\x03\n" +
