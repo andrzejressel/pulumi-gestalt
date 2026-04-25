@@ -1,0 +1,14 @@
+[package]
+name = "{{ name }}"
+version = "{{ version }}"
+edition = "2024"
+
+[dependencies]
+{% for dep in dependencies %}
+{%- match dep.source -%}
+{%- when DependencySource::CratesIo { version } -%}
+{{ dep.name }} = "{{ version }}"
+{%- when DependencySource::Local { path } -%}
+{{ dep.name }} = { path = "{{ path }}" }
+{%- endmatch %}
+{% endfor %}
