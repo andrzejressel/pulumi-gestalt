@@ -32,6 +32,7 @@ queue_rules:
       - check-success=test-pulumi-language-rust-macos (l1-output-null)
       - check-success=test-pulumi-language-rust-macos (l1-output-number)
       - check-success=test-pulumi-language-rust-macos (l1-output-string)
+      - check-success=test-pulumi-language-rust-macos (l2-destroy)
 # DO NOT EDIT - MERGE CONDITIONS END
 
 pull_request_rules:
