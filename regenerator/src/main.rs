@@ -152,6 +152,8 @@ fn main() {
     update_tests(&tests, &filtered_tests);
     update_generator_cargo_toml(&tests, &filtered_tests);
     update_github_actions_language_tests(&language_tests.tests);
+    update_github_actions_language_tests_macos(&language_tests.tests);
+    update_mergify_merge_conditions(&language_tests.tests);
     generate_proto::regenerate_proto().expect("Failed to regenerate proto");
 }
 
@@ -197,6 +199,43 @@ fn update_github_actions_language_tests(language_tests: &[String]) {
 
     fs::write(".github/workflows/build.yml", content)
         .expect("Failed to write to .github/workflows/build.yml");
+}
+
+fn update_github_actions_language_tests_macos(language_tests: &[String]) {
+    let content = fs::read_to_string(".github/workflows/build.yml")
+        .expect("Failed to read .github/workflows/build.yml");
+
+    let mut replacement = String::new();
+    replacement.push_str("        test: [");
+    replacement.push_str(&language_tests.join(", "));
+    replacement.push_str("]\n");
+
+    let start_marker = "# DO NOT EDIT - LANGUAGE TEST MACOS START";
+    let end_marker = "# DO NOT EDIT - LANGUAGE TEST MACOS END";
+    let content = replace_between_markers(&content, start_marker, end_marker, &replacement);
+
+    fs::write(".github/workflows/build.yml", content)
+        .expect("Failed to write to .github/workflows/build.yml");
+}
+
+fn update_mergify_merge_conditions(language_tests: &[String]) {
+    let content = fs::read_to_string(".mergify.yml").expect("Failed to read .mergify.yml");
+
+    let replacement = language_tests
+        .iter()
+        .map(|test| {
+            format!(
+                "      - check-success=test-pulumi-language-rust-macos ({})\n",
+                test
+            )
+        })
+        .collect::<String>();
+
+    let start_marker = "# DO NOT EDIT - MERGE CONDITIONS START";
+    let end_marker = "# DO NOT EDIT - MERGE CONDITIONS END";
+    let content = replace_between_markers(&content, start_marker, end_marker, &replacement);
+
+    fs::write(".mergify.yml", content).expect("Failed to write to .mergify.yml");
 }
 
 fn update_rust_generator_test_rs(tests: &[&str], filtered_tests: &[FilteredTest]) {

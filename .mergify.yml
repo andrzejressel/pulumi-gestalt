@@ -6,6 +6,34 @@ queue_rules:
       {{ title }} (#{{ number }})
         
       {{ body }}
+    merge_conditions:
+# DO NOT EDIT - MERGE CONDITIONS START
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-base64)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-cwd)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-file)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-info)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-list)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-min-max)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-object)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-project-root)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-project-root-main)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-require-pulumi-version)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-secret)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-sha1)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-stash)
+      - check-success=test-pulumi-language-rust-macos (l1-config-secret)
+      - check-success=test-pulumi-language-rust-macos (l1-config-types-primitive)
+      - check-success=test-pulumi-language-rust-macos (l1-elide-index)
+      - check-success=test-pulumi-language-rust-macos (l1-empty)
+      - check-success=test-pulumi-language-rust-macos (l1-main)
+      - check-success=test-pulumi-language-rust-macos (l1-output-array)
+      - check-success=test-pulumi-language-rust-macos (l1-output-bool)
+      - check-success=test-pulumi-language-rust-macos (l1-output-map)
+      - check-success=test-pulumi-language-rust-macos (l1-output-null)
+      - check-success=test-pulumi-language-rust-macos (l1-output-number)
+      - check-success=test-pulumi-language-rust-macos (l1-output-string)
+      - check-success=test-pulumi-language-rust-macos (l2-destroy)
+# DO NOT EDIT - MERGE CONDITIONS END
 
 pull_request_rules:
   - name: automatic merge for main when CI passes
