@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "aresource",
+        "logicalName": "aresource",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              },
+              "type": {
+                "boolType": {}
+              }
+            }
+          }
+        ],
+        "provider_name": "simple"
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}
