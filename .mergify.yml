@@ -1,6 +1,6 @@
 queue_rules:
   - name: default
-    max_checks_retries: 10
+    max_checks_retries: 3
     merge_method: squash
     commit_message_template: |
       {{ title }} (#{{ number }})
@@ -46,3 +46,5 @@ pull_request_rules:
       queue:
         name: default
 
+merge_protections_settings:
+  reporting_method: deployments
