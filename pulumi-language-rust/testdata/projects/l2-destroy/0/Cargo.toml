@@ -1,0 +1,10 @@
+[package]
+name = "pulumi-rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.102"
+serde_json = "1.0.140"
+pulumi_gestalt_rust = "VERSION"
+pulumi_simple = "VERSION"

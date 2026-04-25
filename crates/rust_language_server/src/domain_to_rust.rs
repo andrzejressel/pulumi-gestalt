@@ -1,14 +1,15 @@
+use crate::domain_ir::ResourceToken::Stash;
 /// Lowers the Domain IR into the Rust IR.
 ///
 /// This transform maps Pulumi-semantic concepts (config bindings, output
 /// mapping, stdlib calls, etc.) into concrete Rust syntax constructs
 /// (let bindings, method calls, function calls, etc.).
 use crate::domain_ir::{
-    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, Statement, StdlibFn, UnaryOp,
+    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, ResourceInput, ResourceToken,
+    Statement, StdlibFn, UnaryOp,
 };
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use rootcause::Result;
-use rootcause::bail;
 use rootcause::prelude::ResultExt;
 
 pub fn lower(program: &Program) -> Result<RustFile> {
@@ -71,8 +72,8 @@ fn lower_statement(stmt: &Statement) -> Result<RustStatement> {
 fn lower_resource(
     name: &str,
     logical_name: &str,
-    token: &str,
-    inputs: &[(String, Expr)],
+    token: &ResourceToken,
+    inputs: &Vec<ResourceInput>,
 ) -> Result<RustStatement> {
     let (module_path, struct_name) =
         get_full_resource_path(token).context("Failed to resolve resource token")?;
@@ -82,16 +83,23 @@ fn lower_resource(
         path: format!("{module_path}::{struct_name}Args::builder"),
         args: vec![],
     };
-    let builder_with_fields = inputs.iter().fold(builder_start, |acc, (field, expr)| {
-        let lowered = lower_expr(expr);
-        let input_val = wrap_as_pulumi_any(lowered);
-        RustExpr::MethodCall {
-            receiver: Box::new(acc),
-            method: field.clone(),
-            type_params: vec![],
-            args: vec![input_val],
-        }
-    });
+    let builder_with_fields =
+        inputs
+            .iter()
+            .fold(builder_start, |acc, ResourceInput { name, expression }| {
+                let lowered = lower_expr(expression);
+                let input_val = if matches!(token, Stash) {
+                    wrap_as_pulumi_any(lowered)
+                } else {
+                    lowered
+                };
+                RustExpr::MethodCall {
+                    receiver: Box::new(acc),
+                    method: name.clone(),
+                    type_params: vec![],
+                    args: vec![input_val],
+                }
+            });
     let args_expr = RustExpr::MethodCall {
         receiver: Box::new(builder_with_fields),
         method: "build_struct".to_string(),
@@ -140,13 +148,25 @@ fn wrap_as_pulumi_any(expr: RustExpr) -> RustExpr {
     }
 }
 
-fn get_full_resource_path(token: &str) -> Result<(String, String)> {
+fn get_full_resource_path(token: &ResourceToken) -> Result<(String, String)> {
     match token {
-        "pulumi:index:Stash" => Ok((
+        ResourceToken::Stash => Ok((
             "pulumi_gestalt_rust::resources::stash".to_string(),
             "Stash".to_string(),
         )),
-        another => bail!("Unknown resource token: {}", another),
+        ResourceToken::Custom {
+            provider_name,
+            element_id,
+        } => {
+            let mut full_path = format!("pulumi_{provider_name}");
+            for namespace in &element_id.namespace {
+                full_path.push_str("::");
+                full_path.push_str(namespace);
+            }
+            full_path.push_str("::");
+            full_path.push_str(&element_id.name.to_lowercase());
+            Ok((full_path, element_id.name.clone()))
+        } // } => Ok(("test".to_string(), "test".to_string())),
     }
 }
 
