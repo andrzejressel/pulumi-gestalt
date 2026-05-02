@@ -5,7 +5,7 @@ use crate::github::types::{
     RepositoryRulesetRules, RepositoryRulesetRulesPullRequest,
     RepositoryRulesetRulesRequiredStatusChecksRequiredCheck,
 };
-use GithubIntegration::{Any, GithubActions, GithubAdvancedSecurity, Mergify, ReleaserBot};
+use GithubIntegration::{Any, GithubActions, GithubAdvancedSecurity, ReleaserBot};
 use anyhow::Result;
 use github::issue_label::IssueLabelArgs;
 use github::types::RepositoryRulesetRulesRequiredStatusChecks;
@@ -23,7 +23,6 @@ enum GithubIntegration {
     Any,
     GithubActions,
     GithubAdvancedSecurity,
-    Mergify,
     ReleaserBot,
 }
 
@@ -33,7 +32,6 @@ impl GithubIntegration {
             Any => 0,
             GithubActions => 15368,
             GithubAdvancedSecurity => 57789,
-            Mergify => 10562,
             ReleaserBot => 3038871,
         }
     }
@@ -111,7 +109,6 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
                                         create_check("docs/readthedocs.org:pulumi-gestalt", Any),
                                         create_check("CodeQL", GithubAdvancedSecurity),
                                         create_check("clippy", GithubAdvancedSecurity),
-                                        create_check("Mergify Merge Protections", Mergify),
                                     ],
                                     pulumi_gestalt_checks.deref(),
                                 ]
