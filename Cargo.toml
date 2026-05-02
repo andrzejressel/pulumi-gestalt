@@ -6,7 +6,6 @@ resolver = "3"
 members = [
     "changelog",
     "changelog_lib",
-    "crates/c_ffi",
     "crates/core",
     "crates/domain",
     "crates/grpc",
@@ -18,24 +17,19 @@ members = [
     "crates/rust_integration",
     "crates/schema",
     "crates/serde_constant_string",
-    "crates/wasm_runner",
-    "crates/wit", 
     "deploy/repository",
-    "examples/c",
     "examples/common",
     "examples/dependencies",
     "examples/docker",
     "examples/failure",
     "examples/multiple_providers",
     "examples/native",
-    "examples/plugins",
     "examples/raw_rust",
     "examples/secret",
     "examples/stash",
     "examples/simple",
     "examples/test",
     "examples/typesystem",
-    "examples/wasm",
     "providers/aws-mini",
     "providers/azure-mini",
     "providers/cloudflare",
@@ -65,13 +59,12 @@ pulumi_gestalt_generator = { version = "=0.0.0-DEV", path = "crates/rust_generat
 pulumi_gestalt_rust = { version = "=0.0.0-DEV", path = "crates/rust" }
 pulumi_gestalt_rust_language_server = { version = "=0.0.0-DEV", path = "crates/rust_language_server" }
 pulumi_gestalt_proto = { version = "=0.0.0-DEV", path = "crates/proto" }
-pulumi_gestalt_wit = { version = "=0.0.0-DEV", path = "crates/wit" }
+pulumi_gestalt_grpc_connection = { version = "=0.0.0-DEV", path = "crates/grpc" }
 pulumi_gestalt_providers_docker = { version = "=0.0.0-DEV", path = "providers/docker" }
 pulumi_gestalt_providers_random = { version = "=0.0.0-DEV", path = "providers/random" }
 pulumi_gestalt_providers_test = { version = "=0.0.0-DEV", path = "providers/test" }
 pulumi_gestalt_providers_typesystem = { version = "=0.0.0-DEV", path = "providers/typesystem" }
 pulumi_gestalt_examples_common = { version = "=0.0.0-DEV", path = "examples/common" }
-pulumi_gestalt_grpc_connection = { version = "=0.0.0-DEV", path = "crates/grpc" }
 pulumi_gestalt_rust_integration = { version = "=0.0.0-DEV", path = "crates/rust_integration" }
 pulumi_gestalt_schema = { version = "=0.0.0-DEV", path = "crates/schema" }
 changelog_lib = { version = "=0.0.0-DEV", path = "changelog_lib" }
@@ -82,14 +75,11 @@ prost = "0.14.1"
 prost-types = "0.14.1"
 uuid = { version = "1.16.0", features = ["v4", "v7"] }
 futures = "0.3.31"
-wit-bindgen = "0.57.0"
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = { version = "1.0.140" }
 tonic = { version = "0.14.0", default-features = false }
 tonic-prost = "0.14.0"
 tonic-prost-build = "0.14.0"
-wasmtime = "44.0.0"
-wasmtime-wasi = "44.0.0"
 log = { version = "0.4.27", features = ["kv"] }
 log4rs = "1.3.0"
 tokio = { version = "1.45.0", features = ["sync", "macros", "io-util", "rt", "time", "fs", "rt-multi-thread"] }
@@ -110,10 +100,6 @@ proc-macro2 = "1.0.95"
 askama = "0.15.0"
 tempfile = "3.20.0"
 pathdiff = "0.2.3"
-wat = "1.230.0"
-wasmparser = "0.247.0"
-cbindgen = "0.29.0"
-libc = "0.2.172"
 gix = "0.81.0"
 once_cell = "1.21.3"
 proptest = "1.6.0"

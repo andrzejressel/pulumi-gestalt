@@ -6,28 +6,17 @@
 [![Docs](https://readthedocs.org/projects/pulumi-gestalt/badge/?version=latest)](https://app.readthedocs.org/projects/pulumi-gestalt/builds/?version__slug=latest)
 [![codecov](https://codecov.io/gh/andrzejressel/pulumi-gestalt/graph/badge.svg?token=J3IN76CSOP)](https://codecov.io/gh/andrzejressel/pulumi-gestalt)
 
-**Pulumi Gestalt** is a framework designed to simplify the process of adding new language support to the Pulumi
-ecosystem. It provides APIs for **WebAssembly (Wasm)**, **C FFI (Foreign Function Interface)**, and **Rust**, enabling
-seamless integration of new languages with Pulumi.
+**Pulumi Gestalt** is a framework for writing Pulumi programs in Rust.
 
 ## Motivation
 
-Pulumi currently supports a limited number of programming languages. Adding support for a new language typically
-requires significant effort to bridge the language with Pulumi's core infrastructure. Pulumi Gestalt aims to reduce this
-effort by providing a common set of tools and APIs for language integration.
-
-The framework is designed to work with both high-level and low-level languages, allowing developers to focus on
-language-specific integration details without worrying about the underlying Pulumi infrastructure.
+Pulumi Gestalt provides a Rust SDK and code generator that lets you write Pulumi infrastructure programs
+in idiomatic Rust, with full type safety and generated bindings for any Pulumi provider.
 
 ## User Guide
 
 - [Rust](https://pulumi-gestalt.readthedocs.io/latest/languages/rust/)
 
-## Integration Guide
-
-- [C FFI](https://pulumi-gestalt.readthedocs.io/latest/integrations/c-ffi/)
-- [Rust](https://pulumi-gestalt.readthedocs.io/latest/integrations/rust/)
-- [Wasm](https://pulumi-gestalt.readthedocs.io/latest/integrations/wasm/)
 
 ### Quick start
 
