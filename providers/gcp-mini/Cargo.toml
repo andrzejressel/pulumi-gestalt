@@ -5,7 +5,6 @@ edition.workspace = true
 publish = false
 
 [dependencies]
-wit-bindgen.workspace = true
 pulumi_gestalt_rust.workspace = true
 bon.workspace = true
 serde.workspace = true

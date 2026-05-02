@@ -1,8 +1,6 @@
 set windows-shell := ["pwsh.exe", "-c"]
 
-WASI_TARGET := "wasm32-wasip2"
-
-@default: build-language-plugin build-pulumi-test regenerator install-requirements build-wasm-components build-wasm-components-release test-all rust-docs fmt
+@default: build-language-plugin-rust build-pulumi-test regenerator install-requirements test-all rust-docs fmt
 
 # Regenerate "DO NOT EDIT" sections, recreate generator examples (but does not compile them), reformat whole project, check changelog
 housekeeping-ci-flow: regenerator regenerate-pulumi-test-schema regenerate-language-rust regenerate-generator-tests changelog-dry-run fmt
@@ -10,11 +8,7 @@ housekeeping-ci-flow: regenerator regenerate-pulumi-test-schema regenerate-langu
 # Runs all amd64 unit and doc tests tests
 base-ci-flow: test
 
-c-ci-flow: build-language-plugin build-static-library test-examples-c
-
-native-ci-flow: build-language-plugin build-language-plugin-rust build-pulumi-test test-examples-native
-
-wasm-ci-flow: build-language-plugin build-wasm-components build-wasm-components-release test-examples-wasm
+native-ci-flow: build-language-plugin-rust build-pulumi-test test-examples-native
 
 # Regenerates provider from generator's integration test
 generator-ci-flow COMPILATION_NAME:
@@ -26,9 +20,6 @@ test-docs-ci-flow: test-docs
 # https://stackoverflow.com/questions/74524817/why-is-anyhow-not-working-in-the-stable-version
 fix-issues:
     cargo check
-
-build-language-plugin:
-    cd pulumi-language-gestalt && just
 
 build-language-plugin-rust:
     cd pulumi-language-rust && just build
@@ -44,9 +35,6 @@ build-rust-bridge:
 build-pulumi-test:
     cd pulumi-test && just pulumi-test-install
 
-package-language-plugin VERSION:
-    cd pulumi-language-gestalt && just package-language-plugin-all {{VERSION}}
-
 package-language-plugin-rust VERSION:
     cd pulumi-language-rust && just package-language-plugin {{VERSION}}
 
@@ -61,26 +49,11 @@ install-requirements:
     rustup component add llvm-tools-preview
     mise install
 
-# Compiling everything together causes linking issues
-build-wasm-components:
-    cargo build -p pulumi_gestalt_wasm_runner
-    cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_wasm --target={{WASI_TARGET}}
-
-build-wasm-components-release:
-    cargo build -p pulumi_gestalt_wasm_runner --release
-    cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_wasm --target={{WASI_TARGET}} --release
-
-build-static-library:
-    cargo build -p pulumi_native_c
-
 check:
     cargo fmt -- --check
     cargo clippy --tests --all-features
 
 fmt:
-    cd pulumi-language-gestalt && just fmt
     cd pulumi-language-rust && just fmt
     cd pulumi-test && just fmt
     cargo fmt
@@ -113,17 +86,6 @@ publish:
 
 test-provider-compilation COMPILATION_NAME:
     cargo llvm-cov nextest -p pulumi_gestalt_generator --cobertura --output-path covertura.xml --features generator_{{COMPILATION_NAME}} --test '*'
-
-test-examples-wasm:
-    cargo nextest run \
-        -p pulumi_gestalt_example_plugins \
-        -p pulumi_gestalt_example_wasm \
-        --features example_test
-
-test-examples-c:
-    cargo nextest run \
-        -p pulumi_gestalt_example_c \
-        --features example_test
 
 test-examples-native:
     cargo nextest run \
@@ -175,8 +137,7 @@ rust-docs-release $RUSTDOCFLAGS="--html-in-header docs_additions/umami.html":
     just rust-docs
 
 update-version NEW_VERSION:
-    sd "0.0.0-DEV" "{{NEW_VERSION}}" "crates/wit/wit/world.wit" "examples/wasm/src/lib.rs" "examples/plugins/src/lib.rs" \
-    "Cargo.toml" "pulumi-language-rust/main.go"
+    sd "0.0.0-DEV" "{{NEW_VERSION}}" "Cargo.toml" "pulumi-language-rust/main.go"
 
 changelog-generate-for-repo NEW_VERSION:
     cargo run -p changelog -- generate-repo-changelog {{NEW_VERSION}}
