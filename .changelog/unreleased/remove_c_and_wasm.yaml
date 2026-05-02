@@ -4,4 +4,4 @@ description: |
   Removed all C FFI and WebAssembly (Wasm) integration code, examples,
   documentation, and CI jobs. Also removed the generic pulumi-language-gestalt
   plugin. The project now focuses exclusively on native Rust and
-  the pulumi-language-rust plugin.
+  the pulumi-language-rust plugin. I may come back to C/Wasm then Rust part is finished.
