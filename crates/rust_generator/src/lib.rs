@@ -8,6 +8,7 @@ mod description;
 mod model;
 mod output;
 mod utils;
+pub mod converters;
 
 pub fn generate_rust(package: &Package, result_path: &Path) -> Result<()> {
     fs::create_dir_all(result_path)?;

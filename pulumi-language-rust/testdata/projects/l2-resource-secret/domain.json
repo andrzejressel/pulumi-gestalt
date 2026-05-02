@@ -1,0 +1,84 @@
+{
+  "statements": [
+    {
+      "Resource": {
+        "name": "res",
+        "logical_name": "res",
+        "token": {
+          "Custom": {
+            "provider_name": "secret",
+            "element_id": {
+              "namespace": [],
+              "name": "Resource",
+              "raw": "secret:index:Resource"
+            }
+          }
+        },
+        "inputs": [
+          {
+            "name": "private",
+            "expression": {
+              "String": "closed"
+            }
+          },
+          {
+            "name": "public",
+            "expression": {
+              "String": "open"
+            }
+          },
+          {
+            "name": "privateData",
+            "expression": {
+              "PulumiAny": {
+                "Object": [
+                  [
+                    "private",
+                    {
+                      "Expr": {
+                        "String": "closed"
+                      }
+                    }
+                  ],
+                  [
+                    "public",
+                    {
+                      "Expr": {
+                        "String": "open"
+                      }
+                    }
+                  ]
+                ]
+              }
+            }
+          },
+          {
+            "name": "publicData",
+            "expression": {
+              "PulumiAny": {
+                "Object": [
+                  [
+                    "private",
+                    {
+                      "Expr": {
+                        "String": "closed"
+                      }
+                    }
+                  ],
+                  [
+                    "public",
+                    {
+                      "Expr": {
+                        "String": "open"
+                      }
+                    }
+                  ]
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

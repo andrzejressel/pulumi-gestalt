@@ -170,6 +170,12 @@ fn generate_package(req: GeneratePackageRequest) -> Result<()> {
                     version: "1.0.140".to_string(),
                 },
             },
+            Dependency {
+                name: "serde".to_string(),
+                source: cargo_templater::DependencySource::CratesIo {
+                    version: "1.0.219".to_string(),
+                },
+            },
             create_pulumi_gestalt_rust_dependency()
                 .context("Failed to create pulumi_gestalt_rust dependency")?,
         ],

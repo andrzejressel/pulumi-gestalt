@@ -3,6 +3,7 @@ use convert_case::Case;
 use convert_case::Case::UpperCamel;
 use convert_case::Casing;
 use pulumi_gestalt_schema::model::*;
+use crate::converters::pcl_property_name_to_rust;
 
 pub(crate) trait TypeExt {
     fn get_rust_type(&self, depth: usize) -> String;
@@ -120,7 +121,7 @@ pub(crate) trait InputPropertyExt {
 
 impl InputPropertyExt for InputProperty {
     fn get_rust_argument_name(&self) -> String {
-        escape_rust_name(ElementId::create_valid_id(self.name.as_str()).as_str()).into()
+        pcl_property_name_to_rust(&self.name)
     }
 }
 

@@ -251,7 +251,6 @@ var expectedFailures = map[string]string{
 	"l2-resource-primitives":                       "sdk snapshot validation for primitive: walk expected dir: lstat testdata/sdks/primitive-7.0.0: no such file or directory",
 	"l2-resource-primitive-conversions":            "TODO",
 	"l2-resource-provider-inheritance":             "sdk snapshot validation for primitive: walk expected dir: lstat testdata/sdks/primitive-7.0.0: no such file or directory",
-	"l2-resource-secret":                           "sdk snapshot validation for secret: walk expected dir: lstat testdata/sdks/secret-14.0.0: no such file or directory",
 	"l2-resource-simple":                           "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",
 	"l2-snake-names":                               "sdk snapshot validation for snake_names: walk expected dir: lstat testdata/sdks/snake_names-33.0.0: no such file or directory",
 	"l2-target-up-with-new-dependency":             "sdk snapshot validation for simple: walk expected dir: lstat testdata/sdks/simple-2.0.0: no such file or directory",

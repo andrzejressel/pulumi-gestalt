@@ -1,0 +1,87 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "res",
+        "value": {
+          "FunctionCall": {
+            "path": "pulumi_secret::resource::create",
+            "args": [
+              {
+                "Ref": {
+                  "Identifier": "ctx"
+                }
+              },
+              {
+                "StringLiteral": "res"
+              },
+              {
+                "MethodCall": {
+                  "receiver": {
+                    "MethodCall": {
+                      "receiver": {
+                        "MethodCall": {
+                          "receiver": {
+                            "MethodCall": {
+                              "receiver": {
+                                "MethodCall": {
+                                  "receiver": {
+                                    "FunctionCall": {
+                                      "path": "pulumi_secret::resource::ResourceArgs::builder",
+                                      "args": []
+                                    }
+                                  },
+                                  "method": "private",
+                                  "type_params": [],
+                                  "args": [
+                                    {
+                                      "StringLiteral": "closed"
+                                    }
+                                  ]
+                                }
+                              },
+                              "method": "public",
+                              "type_params": [],
+                              "args": [
+                                {
+                                  "StringLiteral": "open"
+                                }
+                              ]
+                            }
+                          },
+                          "method": "private_data",
+                          "type_params": [],
+                          "args": [
+                            {
+                              "MacroCall": {
+                                "path": "pulumi_gestalt_rust::pulumi_any!",
+                                "body": "{\"private\": (\"closed\"), \"public\": (\"open\")}"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "method": "public_data",
+                      "type_params": [],
+                      "args": [
+                        {
+                          "MacroCall": {
+                            "path": "pulumi_gestalt_rust::pulumi_any!",
+                            "body": "{\"private\": (\"closed\"), \"public\": (\"open\")}"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "method": "build_struct",
+                  "type_params": [],
+                  "args": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

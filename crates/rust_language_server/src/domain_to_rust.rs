@@ -11,6 +11,7 @@ use crate::domain_ir::{
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
+use pulumi_gestalt_generator::converters::pcl_property_name_to_rust;
 
 pub fn lower(program: &Program) -> Result<RustFile> {
     let statements = program
@@ -95,7 +96,7 @@ fn lower_resource(
                 };
                 RustExpr::MethodCall {
                     receiver: Box::new(acc),
-                    method: name.clone(),
+                    method: pcl_property_name_to_rust(name),
                     type_params: vec![],
                     args: vec![input_val],
                 }

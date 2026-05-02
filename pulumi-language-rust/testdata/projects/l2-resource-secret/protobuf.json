@@ -1,0 +1,170 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "secret:index:Resource",
+        "inputs": [
+          {
+            "name": "private",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "closed"
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              },
+              "type": {
+                "stringType": {}
+              }
+            }
+          },
+          {
+            "name": "public",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "open"
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              },
+              "type": {
+                "stringType": {}
+              }
+            }
+          },
+          {
+            "name": "privateData",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "private": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "closed"
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        }
+                      ]
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  "public": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "open"
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        }
+                      ]
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                }
+              },
+              "type": {
+                "objectType": {
+                  "properties": {
+                    "private": {
+                      "stringType": {}
+                    },
+                    "public": {
+                      "stringType": {}
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "publicData",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "private": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "closed"
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        }
+                      ]
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  "public": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "open"
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        }
+                      ]
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                }
+              },
+              "type": {
+                "objectType": {
+                  "properties": {
+                    "private": {
+                      "stringType": {}
+                    },
+                    "public": {
+                      "stringType": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "provider_name": "secret"
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "secret",
+      "version": "14.0.0"
+    }
+  ]
+}
