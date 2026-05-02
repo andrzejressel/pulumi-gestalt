@@ -1,10 +1,10 @@
 [tools]
-just = "1.49.0"
+just = "1.50.0"
 "cargo:cargo-nextest" = "0.9.76"
 "cargo:sd" = "1.0.0"
 "cargo:cargo-llvm-cov" = "0.8.0"
 pulumi = "3.232.0"
-"cargo-binstall" = "1.17.5"
+"cargo-binstall" = "1.18.1"
 protoc = "34.1"
 protoc-gen-go = "1.36.11"
 "cargo:https://github.com/ihciah/rust2go" = { version = "rev:d06121090dcd6d5fca5528be6ab8bcc56b3907bc", crate = "rust2go-cli" }
