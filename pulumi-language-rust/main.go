@@ -32,7 +32,7 @@ import (
 	"google.golang.org/protobuf/types/known/emptypb"
 )
 
-const pluginVersion = "0.0.0-DEV"
+const pluginVersion = "0.0.10"
 
 func main() {
 	var tracing string
