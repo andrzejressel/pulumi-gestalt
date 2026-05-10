@@ -1,0 +1,11 @@
+[package]
+name = "pulumi_gestalt_model"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+
+[dependencies]
+futures.workspace = true
+pulumi_gestalt_model_macros = { path = "../model_macros" }

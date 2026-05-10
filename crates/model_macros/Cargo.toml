@@ -1,0 +1,19 @@
+[package]
+name = "pulumi_gestalt_model_macros"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { workspace = true, features = ["full"] }
+quote = { workspace = true }
+proc-macro2 = { workspace = true }
+
+[dev-dependencies]
+pulumi_gestalt_model.workspace = true
+futures.workspace = true
