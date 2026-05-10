@@ -1,6 +1,6 @@
 use proc_macro::TokenStream;
 use quote::quote;
-use syn::{parse_macro_input, Data, DataStruct, DeriveInput, Fields, FieldsNamed};
+use syn::{Data, DataStruct, DeriveInput, Fields, FieldsNamed, parse_macro_input};
 
 #[proc_macro_derive(ToPulumiValue)]
 pub fn to_pulumi_value_derive(input: TokenStream) -> TokenStream {
@@ -17,10 +17,12 @@ pub fn to_pulumi_value_derive(input: TokenStream) -> TokenStream {
     };
 
     let field_names: Vec<_> = fields.iter().map(|f| &f.ident).collect();
-    let field_name_strings: Vec<_> = field_names
+    let field_name_strings: Vec<String> = field_names
         .iter()
         .map(|f| f.as_ref().unwrap().to_string())
         .collect();
+
+    let field_indices: Vec<_> = (0..fields.len()).collect();
 
     let expanded = quote! {
         impl #impl_generics ToPulumiValue for #name #ty_generics #where_clause {
@@ -30,23 +32,15 @@ pub fn to_pulumi_value_derive(input: TokenStream) -> TokenStream {
 
                 async move {
                     let results = futures::future::join_all(vec![#(#field_names),*]).await;
-                    let mut dependencies = std::collections::HashSet::new();
-                    let mut secret = false;
-                    let mut content = Vec::new();
-
-                    let mut results_iter = results.into_iter();
+                    let results_vec: Vec<_> = results.into_iter().collect();
+                    let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
                     #(
-                        let mut val = results_iter.next().expect("join_all result size mismatch");
-                        dependencies.extend(val.dependencies.drain());
-                        secret |= val.secret;
-                        content.push((#field_name_strings.to_string(), val));
+                        map.insert(
+                            #field_name_strings.clone().to_string(),
+                            results_vec[#field_indices].clone(),
+                        );
                     )*
-
-                    PulumiValue {
-                        content: PulumiValueContent::Object(content),
-                        secret,
-                        dependencies,
-                    }
+                    map.to_pulumi_value().await
                 }
                 .boxed()
                 .shared()

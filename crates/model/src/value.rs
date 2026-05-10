@@ -1,7 +1,7 @@
-use std::collections::{BTreeMap, HashMap, HashSet};
-use std::future::Future;
+use crate::output::{NodeValue, Output};
 use futures::FutureExt;
-use crate::output::{Output, NodeValue};
+use std::collections::{BTreeMap, HashSet};
+use std::future::Future;
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum PulumiValueContent {
@@ -11,6 +11,7 @@ pub enum PulumiValueContent {
     Boolean(bool),
     Array(Vec<PulumiValue>),
     Object(Vec<(String, PulumiValue)>),
+    None,
     Nothing,
 }
 
@@ -22,8 +23,15 @@ pub struct PulumiValue {
 }
 
 pub trait ToPulumiValue {
-    fn to_pulumi_value(&self) -> impl Future<Output=PulumiValue> + Clone + Sync + Send;
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Clone + Sync + Send;
 }
+
+impl ToPulumiValue for PulumiValue {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Clone + Sync + Send {
+        futures::future::ready(self.clone())
+    }   
+}
+
 
 impl ToPulumiValue for String {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Clone + Sync + Send {
@@ -101,33 +109,17 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Vec<T> {
     }
 }
 
-impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for HashMap<String, T> {
+impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Option<T> {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Clone + Sync + Send {
-        let futures: Vec<_> = self
-            .iter()
-            .map(|(key, value)| {
-                let key = key.clone();
-                let future = value.to_pulumi_value();
-                async move { (key, future.await) }
-            })
-            .collect();
-
+        let value = self.as_ref().map(ToPulumiValue::to_pulumi_value);
         async move {
-            let results = futures::future::join_all(futures).await;
-            let mut dependencies = HashSet::new();
-            let mut secret = false;
-            let mut content = Vec::new();
-
-            for (key, mut val) in results {
-                dependencies.extend(val.dependencies.drain());
-                secret |= val.secret;
-                content.push((key, val));
-            }
-
-            PulumiValue {
-                content: PulumiValueContent::Object(content),
-                secret,
-                dependencies,
+            match value {
+                Some(future) => future.await,
+                None => PulumiValue {
+                    content: PulumiValueContent::None,
+                    secret: false,
+                    dependencies: HashSet::new(),
+                },
             }
         }
         .boxed()
@@ -248,8 +240,8 @@ mod tests {
     }
 
     #[test]
-    fn test_hashmap() {
-        let mut val = HashMap::new();
+    fn test_btreemap() {
+        let mut val = BTreeMap::new();
         val.insert("a".to_string(), 1i64);
         let pv = block_on(val.to_pulumi_value());
         if let PulumiValueContent::Object(obj) = pv.content {
@@ -259,6 +251,38 @@ mod tests {
         } else {
             panic!("Expected Object");
         }
+    }
+
+    #[test]
+    fn test_option_some_primitive() {
+        let val = Some(42i64);
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+    }
+
+    #[test]
+    fn test_option_none() {
+        let val: Option<i64> = None;
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(pv.content, PulumiValueContent::None);
+        assert!(!pv.secret);
+        assert!(pv.dependencies.is_empty());
+    }
+
+    #[test]
+    fn test_option_some_output_propagates_secret_and_deps() {
+        let mut deps = HashSet::new();
+        deps.insert("dep1".to_string());
+        let node = Node {
+            node_value: NodeValue::Exists(Arc::new(42i64)),
+            secret: true,
+            dependencies: deps,
+        };
+        let val = Some(Output::from_future(futures::future::ready(Arc::new(node))));
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+        assert!(pv.secret);
+        assert!(pv.dependencies.contains("dep1"));
     }
 
     #[test]
@@ -384,7 +408,10 @@ mod tests {
         if let PulumiValueContent::Object(obj) = pv.content {
             assert_eq!(obj.len(), 3);
             assert_eq!(obj[0].0, "a");
-            assert_eq!(obj[0].1.content, PulumiValueContent::String("hello".to_string()));
+            assert_eq!(
+                obj[0].1.content,
+                PulumiValueContent::String("hello".to_string())
+            );
             assert_eq!(obj[1].0, "b");
             assert_eq!(obj[1].1.content, PulumiValueContent::Integer(42));
             assert_eq!(obj[2].0, "c");

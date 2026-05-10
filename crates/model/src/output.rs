@@ -1,11 +1,11 @@
-use std::collections::HashSet;
+use crate::output::NodeValue::Exists;
 use NodeValue::Nothing;
 use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
+use std::collections::HashSet;
 use std::future::Future;
 use std::ops::Deref;
 use std::sync::Arc;
-use crate::output::NodeValue::Exists;
 
 #[derive(Debug, PartialEq)]
 pub(crate) enum NodeValue<T> {
@@ -364,7 +364,7 @@ mod tests {
     fn test_and_then_dependencies_propagation() {
         let mut deps1 = HashSet::new();
         deps1.insert("dep1".to_string());
-        
+
         let out1 = Output::from_future(futures::future::ready(Arc::new(Node {
             node_value: 21.into(),
             secret: false,
