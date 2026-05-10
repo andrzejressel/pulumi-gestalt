@@ -66,7 +66,7 @@ impl<T> Node<T> {
 
 #[derive(Clone)]
 pub struct Output<T> {
-    future: Shared<BoxFuture<'static, Arc<Node<T>>>>,
+    pub(crate) future: Shared<BoxFuture<'static, Arc<Node<T>>>>,
 }
 
 impl<T: Send + Sync + 'static> Output<T> {
@@ -135,7 +135,7 @@ impl<T: Send + Sync + 'static> Output<T> {
         }
     }
 
-    fn from_future(future: impl Future<Output = Arc<Node<T>>> + Send + 'static) -> Self {
+    pub(crate) fn from_future(future: impl Future<Output = Arc<Node<T>>> + Send + 'static) -> Self {
         Self {
             future: future.boxed().shared(),
         }

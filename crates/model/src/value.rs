@@ -1,6 +1,7 @@
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::future::Future;
 use futures::FutureExt;
+use crate::output::{Output, NodeValue};
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum PulumiValueContent {
@@ -168,11 +169,36 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for BTreeMap<String
     }
 }
 
+impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Output<T> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Clone + Sync + Send {
+        let future = self.future.clone();
+        async move {
+            let node = future.await;
+            match &node.node_value {
+                NodeValue::Nothing => PulumiValue {
+                    content: PulumiValueContent::Nothing,
+                    secret: node.secret,
+                    dependencies: node.dependencies.clone(),
+                },
+                NodeValue::Exists(inner) => {
+                    let mut pv = inner.to_pulumi_value().await;
+                    pv.secret |= node.secret;
+                    pv.dependencies.extend(node.dependencies.iter().cloned());
+                    pv
+                }
+            }
+        }
+        .boxed()
+        .shared()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
     use crate::output::{Node, NodeValue};
     use futures::executor::block_on;
+    use std::sync::Arc;
 
     #[test]
     fn test_primitive_string() {
@@ -197,9 +223,9 @@ mod tests {
 
     #[test]
     fn test_primitive_f64() {
-        let val = 3.14f64;
+        let val = 1.23f64;
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Number(3.14));
+        assert_eq!(pv.content, PulumiValueContent::Number(1.23));
     }
 
     #[test]
@@ -236,14 +262,59 @@ mod tests {
     }
 
     #[test]
+    fn test_output_string() {
+        let val = Output::new("hello".to_string());
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(pv.content, PulumiValueContent::String("hello".to_string()));
+        assert!(!pv.secret);
+    }
+
+    #[test]
+    fn test_output_secret() {
+        let val = Output::new_secret(42i64);
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+        assert!(pv.secret);
+    }
+
+    #[test]
+    fn test_output_nothing() {
+        let val: Output<i64> = Output::new_nothing();
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(pv.content, PulumiValueContent::Nothing);
+    }
+
+    #[test]
+    fn test_output_dependencies() {
+        let mut deps = HashSet::new();
+        deps.insert("dep1".to_string());
+        let node = Node {
+            node_value: NodeValue::Exists(Arc::new(42i64)),
+            secret: false,
+            dependencies: deps,
+        };
+        let val = Output::from_future(futures::future::ready(Arc::new(node)));
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+        assert!(pv.dependencies.contains("dep1"));
+    }
+
+    #[test]
+    fn test_nested_output() {
+        let inner = Output::new(42i64);
+        let outer = Output::new(inner);
+        let pv = block_on(outer.to_pulumi_value());
+        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+    }
+
+    #[test]
     fn test_node_clone_no_t_clone() {
         struct NotClone;
         let node = Node {
-            node_value: NodeValue::Exists(std::sync::Arc::new(NotClone)),
+            node_value: NodeValue::Exists(Arc::new(NotClone)),
             secret: false,
             dependencies: HashSet::new(),
         };
         let _cloned = node.clone();
     }
 }
-
