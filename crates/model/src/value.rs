@@ -22,7 +22,7 @@ pub struct PulumiValue {
 }
 
 pub trait ToPulumiValue {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Clone + Sync + Send;
+    fn to_pulumi_value(&self) -> impl Future<Output=PulumiValue> + Clone + Sync + Send;
 }
 
 impl ToPulumiValue for String {
@@ -316,5 +316,82 @@ mod tests {
             dependencies: HashSet::new(),
         };
         let _cloned = node.clone();
+    }
+
+    #[test]
+    fn test_vec_order_preservation() {
+        use futures::channel::oneshot;
+
+        let (tx1, rx1) = oneshot::channel::<Arc<Node<i64>>>();
+        let (tx2, rx2) = oneshot::channel::<Arc<Node<i64>>>();
+
+        let out1 = Output::from_future(rx1.map(|r| r.unwrap()));
+        let out2 = Output::from_future(rx2.map(|r| r.unwrap()));
+
+        let vec_output = vec![out1, out2];
+        let pv_future = vec_output.to_pulumi_value();
+
+        let test_future = async move {
+            // Send the second value first
+            tx2.send(Arc::new(Node {
+                node_value: 2.into(),
+                secret: false,
+                dependencies: HashSet::new(),
+            }))
+            .unwrap();
+
+            // Then send the first value
+            tx1.send(Arc::new(Node {
+                node_value: 1.into(),
+                secret: false,
+                dependencies: HashSet::new(),
+            }))
+            .unwrap();
+
+            pv_future.await
+        };
+
+        let pv = block_on(test_future);
+
+        if let PulumiValueContent::Array(arr) = pv.content {
+            assert_eq!(arr.len(), 2);
+            assert_eq!(arr[0].content, PulumiValueContent::Integer(1));
+            assert_eq!(arr[1].content, PulumiValueContent::Integer(2));
+        } else {
+            panic!("Expected Array");
+        }
+    }
+
+    #[test]
+    fn test_derive_struct() {
+        use crate::ToPulumiValue;
+
+        #[derive(ToPulumiValue)]
+        struct MyStruct {
+            a: String,
+            b: i64,
+            c: Output<bool>,
+        }
+
+        let val = MyStruct {
+            a: "hello".to_string(),
+            b: 42,
+            c: Output::new_secret(true),
+        };
+
+        let pv = block_on(val.to_pulumi_value());
+
+        if let PulumiValueContent::Object(obj) = pv.content {
+            assert_eq!(obj.len(), 3);
+            assert_eq!(obj[0].0, "a");
+            assert_eq!(obj[0].1.content, PulumiValueContent::String("hello".to_string()));
+            assert_eq!(obj[1].0, "b");
+            assert_eq!(obj[1].1.content, PulumiValueContent::Integer(42));
+            assert_eq!(obj[2].0, "c");
+            assert_eq!(obj[2].1.content, PulumiValueContent::Boolean(true));
+            assert!(pv.secret); // Because c is secret
+        } else {
+            panic!("Expected Object");
+        }
     }
 }
