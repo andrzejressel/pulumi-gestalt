@@ -2750,7 +2750,9 @@ dependencies = [
 name = "pulumi_gestalt_model_macros"
 version = "0.0.0-DEV"
 dependencies = [
+ "futures",
  "proc-macro2",
+ "pulumi_gestalt_model",
  "quote",
  "syn",
 ]

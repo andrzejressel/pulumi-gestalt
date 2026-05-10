@@ -13,3 +13,7 @@ proc-macro = true
 syn = { workspace = true, features = ["full"] }
 quote = { workspace = true }
 proc-macro2 = { workspace = true }
+
+[dev-dependencies]
+pulumi_gestalt_model.workspace = true
+futures.workspace = true

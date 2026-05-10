@@ -25,9 +25,12 @@ pub fn to_pulumi_value_derive(input: TokenStream) -> TokenStream {
     let field_indices: Vec<_> = (0..fields.len()).collect();
 
     let expanded = quote! {
-        impl #impl_generics ToPulumiValue for #name #ty_generics #where_clause {
-            fn to_pulumi_value(&self) -> impl std::future::Future<Output = PulumiValue> + Clone + Sync + Send {
+        impl #impl_generics pulumi_gestalt_model::ToPulumiValue for #name #ty_generics #where_clause {
+            fn to_pulumi_value(&self) -> impl std::future::Future<Output = pulumi_gestalt_model::PulumiValue> + Clone + Sync + Send {
                 use futures::FutureExt;
+                use std::collections::BTreeMap;
+                use pulumi_gestalt_model::PulumiValue;
+                use pulumi_gestalt_model::ToPulumiValue;
                 #(let #field_names = self.#field_names.to_pulumi_value().boxed();)*
 
                 async move {
