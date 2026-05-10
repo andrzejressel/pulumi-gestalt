@@ -9,14 +9,14 @@ fn test_derive_struct() {
         a: String,
         b: i64,
         c: Output<bool>,
-        d: Option<String>
+        d: Option<String>,
     }
 
     let val = MyStruct {
         a: "hello".to_string(),
         b: 42,
         c: Output::new_secret(true),
-        d: None
+        d: None,
     };
 
     let pv = block_on(val.to_pulumi_value());
