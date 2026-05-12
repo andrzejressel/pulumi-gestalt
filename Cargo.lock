@@ -2744,6 +2744,7 @@ version = "0.0.0-DEV"
 dependencies = [
  "futures",
  "pulumi_gestalt_model_macros",
+ "rootcause",
 ]
 
 [[package]]
@@ -2751,9 +2752,9 @@ name = "pulumi_gestalt_model_macros"
 version = "0.0.0-DEV"
 dependencies = [
  "futures",
- "proc-macro2",
  "pulumi_gestalt_model",
  "quote",
+ "rootcause",
  "syn",
 ]
 
@@ -2774,6 +2775,7 @@ dependencies = [
  "bon",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
+ "rootcause",
  "serde",
 ]
 
@@ -2802,8 +2804,11 @@ name = "pulumi_gestalt_providers_docker"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",
+ "futures",
  "pulumi_gestalt_build",
+ "pulumi_gestalt_model",
  "pulumi_gestalt_rust",
+ "rootcause",
  "serde",
 ]
 
@@ -2856,6 +2861,7 @@ dependencies = [
  "bon",
  "hex",
  "pulumi_gestalt_build",
+ "pulumi_gestalt_model",
  "pulumi_gestalt_rust_integration",
  "pulumi_gestalt_serde_constant_string",
  "serde",
