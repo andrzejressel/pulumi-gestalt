@@ -8,7 +8,6 @@ publish = false
 pulumi_gestalt_rust.workspace = true
 bon.workspace = true
 serde.workspace = true
-rootcause.workspace = true
 
 [build-dependencies]
 pulumi_gestalt_build.workspace = true
