@@ -7,7 +7,7 @@ use std::future::Future;
 use std::ops::Deref;
 use std::sync::Arc;
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub(crate) enum NodeValue<T> {
     Nothing,
     Exists(Arc<T>),
@@ -37,7 +37,7 @@ impl<T> NodeValue<T> {
     }
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub(crate) struct Node<T> {
     pub(crate) node_value: NodeValue<T>,
     pub(crate) secret: bool,
@@ -64,9 +64,16 @@ impl<T> Node<T> {
     }
 }
 
-#[derive(Clone)]
 pub struct Output<T> {
     pub(crate) future: Shared<BoxFuture<'static, Arc<Node<T>>>>,
+}
+
+impl<T> Clone for Output<T> {
+    fn clone(&self) -> Self {
+        Self {
+            future: self.future.clone(),
+        }
+    }
 }
 
 impl<T: Send + Sync + 'static> Output<T> {
@@ -135,6 +142,10 @@ impl<T: Send + Sync + 'static> Output<T> {
         }
     }
 
+    pub(crate) fn from_node(node: Node<T>) -> Self {
+        Self::from_future(futures::future::ready(Arc::new(node)))
+    }
+
     pub(crate) fn from_future(future: impl Future<Output = Arc<Node<T>>> + Send + 'static) -> Self {
         Self {
             future: future.boxed().shared(),
@@ -175,6 +186,18 @@ impl<T: Send + Sync + 'static> Output<T> {
 mod tests {
     use super::*;
     use std::ops::Deref;
+
+    #[test]
+    fn non_clonable_structs_can_be_cloned() {
+        #[derive(Debug, PartialEq, Eq)]
+        struct A;
+        let output = Output::new(A {});
+        let cloned_output = output.clone();
+
+        let output_res = futures::executor::block_on(output.future);
+        let cloned_output_res = futures::executor::block_on(cloned_output.future);
+        assert_eq!(output_res.deref(), cloned_output_res.deref());
+    }
 
     #[test]
     fn test_create_nonsecret_output() {
