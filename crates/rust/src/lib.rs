@@ -24,6 +24,8 @@ pub use native::{
     CompositeOutput, Context, CustomResourceOptions, InvokeResourceRequest, Output, Provider,
     RegisterResourceRequest, ResourceRequestObjectField,
 };
+pub use pulumi_gestalt_model::FromPulumiValue;
+pub use pulumi_gestalt_model::ToPulumiValue;
 
 /// Entrypoint for execution
 /// ```rust,no_run
