@@ -7,7 +7,7 @@ fn test_derive_struct() {
     #[derive(ToPulumiValue)]
     struct MyStruct {
         a: String,
-        b: i64,
+        b: i32,
         c: Output<bool>,
         d: Option<String>,
     }
