@@ -2925,6 +2925,9 @@ dependencies = [
 name = "pulumi_gestalt_serde_constant_string"
 version = "0.0.0-DEV"
 dependencies = [
+ "futures",
+ "pulumi_gestalt_model",
+ "rootcause",
  "serde",
  "serde_json",
 ]

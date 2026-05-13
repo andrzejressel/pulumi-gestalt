@@ -3,8 +3,8 @@ use crate::{PulumiValue, PulumiValueContent};
 
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
-use std::collections::BTreeMap;
 use std::boxed::Box;
+use std::collections::BTreeMap;
 use std::sync::Arc;
 
 pub trait FromPulumiValue {
@@ -98,13 +98,15 @@ where
     T: FromPulumiValue,
 {
     fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
-        Ok(Box::new(T::from_pulumi_value(value).context_with(move || {
-            format!(
-                "Failed to convert PulumiValue [{:?}] to Box<{}>",
-                value,
-                std::any::type_name::<T>()
-            )
-        })?))
+        Ok(Box::new(T::from_pulumi_value(value).context_with(
+            move || {
+                format!(
+                    "Failed to convert PulumiValue [{:?}] to Box<{}>",
+                    value,
+                    std::any::type_name::<T>()
+                )
+            },
+        )?))
     }
 }
 

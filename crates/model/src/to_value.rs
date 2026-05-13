@@ -1,6 +1,6 @@
-use std::collections::{BTreeMap, HashSet};
-use crate::{Output, PulumiValue, PulumiValueContent};
 use crate::output::NodeValue;
+use crate::{Output, PulumiValue, PulumiValueContent};
+use std::collections::{BTreeMap, HashSet};
 
 pub trait ToPulumiValue {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue>;
@@ -164,11 +164,11 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Output<T> {
 
 #[cfg(test)]
 mod tests {
-    use std::collections::HashSet;
     use super::*;
     use crate::output::{Node, NodeValue};
     use futures::FutureExt;
     use futures::executor::block_on;
+    use std::collections::HashSet;
     use std::sync::Arc;
 
     #[test]
@@ -364,7 +364,7 @@ mod tests {
                 secret: false,
                 dependencies: HashSet::new(),
             }))
-                .unwrap();
+            .unwrap();
 
             // Then send the first value
             tx1.send(Arc::new(Node {
@@ -372,7 +372,7 @@ mod tests {
                 secret: false,
                 dependencies: HashSet::new(),
             }))
-                .unwrap();
+            .unwrap();
 
             pv_future.await
         };
