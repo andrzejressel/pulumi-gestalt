@@ -199,3 +199,5 @@ require (
 )
 
 tool github.com/pulumi/pulumi/pkg/v3/testing/pulumi-test-language
+
+replace github.com/ihciah/rust2go => github.com/andrzejressel/rust2go v0.0.0-20260316163702-d06121090dcd
