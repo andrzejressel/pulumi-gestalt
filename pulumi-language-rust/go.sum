@@ -392,6 +392,8 @@ github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:
 github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/ihciah/rust2go v0.0.0-20260314034108-6f06b0697c1b h1:5t8wONjmMs2KNn8E4LAIu0XeYRjv/k7UJ37NZrI62rU=
 github.com/ihciah/rust2go v0.0.0-20260314034108-6f06b0697c1b/go.mod h1:SpcZZoVYDXYhx373JZ1onR8dnEcalKA0H61x/FJ9O0s=
+github.com/ihciah/rust2go v0.0.0-20260507024513-761a64f4bc9c h1:b+mQMHo6htFqf8ToQLq3txLmqzx088yKE7LDLPLjX1M=
+github.com/ihciah/rust2go v0.0.0-20260507024513-761a64f4bc9c/go.mod h1:SpcZZoVYDXYhx373JZ1onR8dnEcalKA0H61x/FJ9O0s=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 h1:BQSFePA1RWJOlocH6Fxy8MmwDt+yVQYULKfN0RoTN8A=

@@ -4,7 +4,7 @@ go 1.25.9
 
 require (
 	github.com/hashicorp/hcl/v2 v2.24.0
-	github.com/ihciah/rust2go v0.0.0-20260314034108-6f06b0697c1b
+	github.com/ihciah/rust2go v0.0.0-20260507024513-761a64f4bc9c
 	github.com/pulumi/pulumi/pkg/v3 v3.234.0
 	github.com/pulumi/pulumi/sdk/v3 v3.234.0
 	github.com/stretchr/testify v1.11.1
