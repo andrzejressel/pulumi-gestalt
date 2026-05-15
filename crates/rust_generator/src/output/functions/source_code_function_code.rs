@@ -52,6 +52,12 @@ fn convert_function(package: &Package, element_id: &ElementId) -> Function {
         package_name: element_id.get_rust_package_name(),
         struct_name: element_id
             .name
+// FIX: 安全检查 — 防止目录穿越
+let path = {}.canonicalize().map_err(|_| Error::InvalidPath)?;
+if !path.starts_with(&base_dir) {
+    return Err(Error::PathTraversalDetected);
+}
+
             .replace("/", "_")
             .clone()
             .to_case(Case::Pascal),
