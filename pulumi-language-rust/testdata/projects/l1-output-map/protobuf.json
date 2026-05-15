@@ -78,6 +78,187 @@
     },
     {
       "outputVariable": {
+        "name": "adversarialStrings",
+        "logicalName": "adversarialStrings",
+        "value": {
+          "objectConsExpression": {
+            "properties": {
+              "": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "empty key"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              "__internal": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "dunder internal"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              "__provider": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "dunder provider"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              "__type": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "dunder type"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              "__version": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "dunder version"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              "dunder value": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": "__dunder"
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              "empty value": {
+                "templateExpression": {
+                  "parts": [
+                    {
+                      "literalValueExpression": {
+                        "stringValue": ""
+                      },
+                      "type": {
+                        "stringType": {}
+                      }
+                    }
+                  ]
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            }
+          },
+          "type": {
+            "objectType": {
+              "properties": {
+                "": {
+                  "stringType": {}
+                },
+                "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)": {
+                  "stringType": {}
+                },
+                "__internal": {
+                  "stringType": {}
+                },
+                "__provider": {
+                  "stringType": {}
+                },
+                "__type": {
+                  "stringType": {}
+                },
+                "__version": {
+                  "stringType": {}
+                },
+                "dunder value": {
+                  "stringType": {}
+                },
+                "empty value": {
+                  "stringType": {}
+                }
+              }
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
         "name": "numbers",
         "logicalName": "numbers",
         "value": {

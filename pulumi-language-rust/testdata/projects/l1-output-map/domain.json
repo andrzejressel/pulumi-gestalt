@@ -39,6 +39,81 @@
     },
     {
       "Export": {
+        "name": "adversarialStrings",
+        "value": {
+          "PulumiAny": {
+            "Object": [
+              [
+                "",
+                {
+                  "Expr": {
+                    "String": "empty key"
+                  }
+                }
+              ],
+              [
+                "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)",
+                {
+                  "Expr": {
+                    "String": "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)"
+                  }
+                }
+              ],
+              [
+                "__internal",
+                {
+                  "Expr": {
+                    "String": "dunder internal"
+                  }
+                }
+              ],
+              [
+                "__provider",
+                {
+                  "Expr": {
+                    "String": "dunder provider"
+                  }
+                }
+              ],
+              [
+                "__type",
+                {
+                  "Expr": {
+                    "String": "dunder type"
+                  }
+                }
+              ],
+              [
+                "__version",
+                {
+                  "Expr": {
+                    "String": "dunder version"
+                  }
+                }
+              ],
+              [
+                "dunder value",
+                {
+                  "Expr": {
+                    "String": "__dunder"
+                  }
+                }
+              ],
+              [
+                "empty value",
+                {
+                  "Expr": {
+                    "String": ""
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Export": {
         "name": "numbers",
         "value": {
           "PulumiAny": {

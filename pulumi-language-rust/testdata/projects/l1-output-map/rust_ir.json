@@ -58,6 +58,30 @@
           "type_params": [],
           "args": [
             {
+              "StringLiteral": "adversarialStrings"
+            },
+            {
+              "Ref": {
+                "MacroCall": {
+                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "body": "{\"\": (\"empty key\"), \"Some ${common} \\\"characters\\\" 'that' need escaping: \\\\ (backslash), \\t (tab), \\u{1b} (escape), \\u{7} (bell), \\0 (null), \\u{e0021} (tag space)\": (\"Some ${common} \\\"characters\\\" 'that' need escaping: \\\\ (backslash), \\t (tab), \\u{1b} (escape), \\u{7} (bell), \\0 (null), \\u{e0021} (tag space)\"), \"__internal\": (\"dunder internal\"), \"__provider\": (\"dunder provider\"), \"__type\": (\"dunder type\"), \"__version\": (\"dunder version\"), \"dunder value\": (\"__dunder\"), \"empty value\": (\"\")}"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
               "StringLiteral": "numbers"
             },
             {
