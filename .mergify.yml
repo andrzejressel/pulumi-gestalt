@@ -28,7 +28,6 @@ queue_rules:
       - check-success=test-pulumi-language-rust-macos (l1-main)
       - check-success=test-pulumi-language-rust-macos (l1-output-array)
       - check-success=test-pulumi-language-rust-macos (l1-output-bool)
-      - check-success=test-pulumi-language-rust-macos (l1-output-map)
       - check-success=test-pulumi-language-rust-macos (l1-output-null)
       - check-success=test-pulumi-language-rust-macos (l1-output-number)
       - check-success=test-pulumi-language-rust-macos (l1-output-string)
