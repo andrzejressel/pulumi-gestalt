@@ -162,10 +162,12 @@ func TestRegenerateJsonWithTests(t *testing.T) {
 var expectedFailures = map[string]string{
 	"l1-builtin-can":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2034",
 	"l1-builtin-to-json":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2027",
+	"l1-builtin-string":                            "https://github.com/andrzejressel/pulumi-gestalt/issues/2239",
 	"l1-builtin-try":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2035",
 	"l1-config-types-object":                       "https://github.com/andrzejressel/pulumi-gestalt/issues/2037",
 	"l1-keyword-overlap":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2063",
 	"l1-proxy-index":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2066",
+	"l1-output-map":                                "https://github.com/andrzejressel/pulumi-gestalt/issues/2064",
 	"l1-stack-reference":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2067",
 	"l2-builtin-object":                            "sdk snapshot validation for output: walk expected dir: lstat testdata/sdks/output-23.0.0: no such file or directory",
 	"l2-component-call-plain":                      "",
