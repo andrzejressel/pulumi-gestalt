@@ -2892,10 +2892,12 @@ version = "0.0.0-DEV"
 dependencies = [
  "askama",
  "prettyplease",
+ "proc-macro2",
  "prost",
  "pulumi_gestalt_generator",
  "pulumi_gestalt_proto",
  "pulumi_gestalt_schema",
+ "quote",
  "rootcause",
  "rust2go",
  "serde",

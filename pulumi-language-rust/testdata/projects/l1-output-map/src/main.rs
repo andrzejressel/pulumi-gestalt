@@ -10,6 +10,18 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
             { "farewell" : ("Goodbye, world!"), "greeting" : ("Hello, world!") }
         ),
     );
+    ctx.add_export(
+        "adversarialStrings",
+        &pulumi_gestalt_rust::pulumi_any!(
+            { "" : ("empty key"),
+            "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u{1b} (escape), \u{7} (bell), \0 (null), \u{e0021} (tag space)"
+            :
+            ("Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u{1b} (escape), \u{7} (bell), \0 (null), \u{e0021} (tag space)"),
+            "__internal" : ("dunder internal"), "__provider" : ("dunder provider"),
+            "__type" : ("dunder type"), "__version" : ("dunder version"), "dunder value"
+            : ("__dunder"), "empty value" : ("") }
+        ),
+    );
     ctx.add_export("numbers", &pulumi_gestalt_rust::pulumi_any!({ "1" : 1, "2" : 2 }));
     ctx.add_export(
         "keys",

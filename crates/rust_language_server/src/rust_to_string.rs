@@ -3,8 +3,10 @@
 /// This layer handles string escaping, formatting, template wrapping,
 /// and `prettyplease` formatting. It knows nothing about Pulumi semantics.
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
+use quote::quote;
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
+use syn::LitStr;
 
 pub fn render(file: &RustFile) -> Result<String> {
     let statements = file
@@ -35,8 +37,14 @@ fn render_statement(stmt: &RustStatement) -> String {
 
 pub fn render_expr(expr: &RustExpr) -> String {
     match expr {
-        RustExpr::StringLiteral(s) => format!("\"{}\"", s),
-        RustExpr::RawStringLiteral(s) => format!("r#\"{}\"#", s),
+        RustExpr::StringLiteral(s) => {
+            let lit = LitStr::new(s, proc_macro2::Span::call_site());
+            quote! { #lit }.to_string()
+        }
+        RustExpr::RawStringLiteral(s) => {
+            let lit = LitStr::new(s, proc_macro2::Span::call_site());
+            quote! { #lit }.to_string()
+        }
         RustExpr::NumberLiteral(n) => {
             if *n > (f32::MAX as f64) || *n < (f32::MIN as f64) {
                 format!("{}_f64", n)
