@@ -9,8 +9,10 @@ use crate::domain_ir::{
     Statement, StdlibFn, UnaryOp,
 };
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
+use quote::quote;
 use rootcause::Result;
 use rootcause::prelude::ResultExt;
+use syn::LitStr;
 
 pub fn lower(program: &Program) -> Result<RustFile> {
     let statements = program
@@ -580,11 +582,8 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
 fn render_json_value(json: &JsonValue) -> String {
     match json {
         JsonValue::String(s) => {
-            if requires_escaping(s) {
-                format!("r#\"{}\"#", s)
-            } else {
-                format!("\"{}\"", s)
-            }
+            let lit = LitStr::new(s, proc_macro2::Span::call_site());
+            quote! { #lit }.to_string()
         }
         JsonValue::Number(n) => {
             if *n > (f32::MAX as f64) || *n < (f32::MIN as f64) {
@@ -598,7 +597,11 @@ fn render_json_value(json: &JsonValue) -> String {
         JsonValue::Object(props) => {
             let inner = props
                 .iter()
-                .map(|(k, v)| format!("\"{}\": {}", k, render_json_value(v)))
+                .map(|(k, v)| {
+                    let lit = LitStr::new(k, proc_macro2::Span::call_site());
+                    let k = quote! { #lit }.to_string();
+                    format!("{}: {}", k, render_json_value(v))
+                })
                 .collect::<Vec<_>>()
                 .join(", ");
             format!("{{{}}}", inner)
