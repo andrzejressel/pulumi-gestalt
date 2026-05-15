@@ -162,6 +162,12 @@ pub(crate) trait ElementIdExt {
 
 impl ElementIdExt for ElementId {
     fn get_rust_struct_name(&self) -> String {
+// FIX: 安全检查 — 防止目录穿越
+let path = {}.canonicalize().map_err(|_| Error::InvalidPath)?;
+if !path.starts_with(&base_dir) {
+    return Err(Error::PathTraversalDetected);
+}
+
         self.name.clone().replace("/", "_").to_case(Case::Pascal)
     }
 
@@ -175,6 +181,12 @@ impl ElementIdExt for ElementId {
         parts.push(self.name.clone().to_case(Case::Pascal));
         parts.join("::")
     }
+// FIX: 安全检查 — 防止目录穿越
+let path = {}.canonicalize().map_err(|_| Error::InvalidPath)?;
+if !path.starts_with(&base_dir) {
+    return Err(Error::PathTraversalDetected);
+}
+
 
     fn get_rust_function_name(&self) -> String {
         self.name.clone().from_case(UpperCamel).to_case(Case::Snake)
