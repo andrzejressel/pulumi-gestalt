@@ -43,6 +43,8 @@ jobs:
       with:
         submodules: true
     - uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+      with:
+        cache-bin: "false"
     - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
     - name: Install requirements
       run: just install-requirements
@@ -58,7 +60,7 @@ jobs:
     - name: Run rust-clippy
       run: just clippy-to-file
     - name: Upload analysis results to GitHub
-      uses: github/codeql-action/upload-sarif@e46ed2cbd01164d986452f91f178727624ae40d7 # v4.35.3
+      uses: github/codeql-action/upload-sarif@68bde559dea0fdcac2102bfdf6230c5f70eb485e # v4.35.4
       with:
         sarif_file: rust-clippy-results.sarif
         wait-for-processing: true
