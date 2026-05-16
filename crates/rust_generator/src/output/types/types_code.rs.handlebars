@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for {
                             Some(value) => value,
                             None => bail!("Missing field '{{field.name}}' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <{{&field.cycle_safe_type}} as pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue>::from_pulumi_value(field_value)?
+                        pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     {{/each}}
                 })
