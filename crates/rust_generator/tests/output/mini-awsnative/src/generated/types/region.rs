@@ -78,3 +78,33 @@ pub enum Region {
     #[serde(rename = "us-west-2")]
     UsWest2,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum Region {
+        AfSouth1 => "af-south-1",
+        ApEast1 => "ap-east-1",
+        ApNortheast1 => "ap-northeast-1",
+        ApNortheast2 => "ap-northeast-2",
+        ApNortheast3 => "ap-northeast-3",
+        ApSouth1 => "ap-south-1",
+        ApSoutheast1 => "ap-southeast-1",
+        ApSoutheast2 => "ap-southeast-2",
+        CaCentral => "ca-central-1",
+        CnNorth1 => "cn-north-1",
+        CnNorthwest1 => "cn-northwest-1",
+        EuCentral1 => "eu-central-1",
+        EuNorth1 => "eu-north-1",
+        EuWest1 => "eu-west-1",
+        EuWest2 => "eu-west-2",
+        EuWest3 => "eu-west-3",
+        EuSouth1 => "eu-south-1",
+        MeSouth1 => "me-south-1",
+        SaEast1 => "sa-east-1",
+        UsGovEast1 => "us-gov-east-1",
+        UsGovWest1 => "us-gov-west-1",
+        UsEast1 => "us-east-1",
+        UsEast2 => "us-east-2",
+        UsWest1 => "us-west-1",
+        UsWest2 => "us-west-2",
+    }
+}

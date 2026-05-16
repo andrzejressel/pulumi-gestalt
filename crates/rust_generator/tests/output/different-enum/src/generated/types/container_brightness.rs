@@ -32,3 +32,10 @@ impl<'de> pulumi_gestalt_rust::__private::serde::Deserialize<'de> for ContainerB
         }
     }
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_number_enum! {
+    enum ContainerBrightness {
+        ZeroPointOne => 0.1,
+        One => 1.0,
+    }
+}

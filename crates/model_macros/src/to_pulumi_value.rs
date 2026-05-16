@@ -6,6 +6,7 @@ pub fn to_pulumi_value_derive(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
     let name = &input.ident;
     let (impl_generics, ty_generics, where_clause) = input.generics.split_for_impl();
+    let model = crate::pulumi_gestalt_model_path();
 
     let fields = match &input.data {
         Data::Struct(DataStruct {
@@ -21,25 +22,21 @@ pub fn to_pulumi_value_derive(input: TokenStream) -> TokenStream {
         .map(|f| f.as_ref().unwrap().to_string())
         .collect();
 
-    let field_indices: Vec<_> = (0..fields.len()).collect();
-
     let expanded = quote! {
-        impl #impl_generics pulumi_gestalt_model::ToPulumiValue for #name #ty_generics #where_clause {
-            fn to_pulumi_value(&self) -> impl std::future::Future<Output = pulumi_gestalt_model::PulumiValue> + Clone + Sync + Send {
-                use futures::FutureExt;
+        impl #impl_generics #model::ToPulumiValue for #name #ty_generics #where_clause {
+            fn to_pulumi_value(&self) -> impl std::future::Future<Output = #model::PulumiValue> + Clone + Sync + Send {
+                use #model::__private::futures::FutureExt;
                 use std::collections::BTreeMap;
-                use pulumi_gestalt_model::PulumiValue;
-                use pulumi_gestalt_model::ToPulumiValue;
+                use #model::PulumiValue;
+                use #model::ToPulumiValue;
                 #(let #field_names = self.#field_names.to_pulumi_value().boxed();)*
 
                 async move {
-                    let results = futures::future::join_all(vec![#(#field_names),*]).await;
-                    let results_vec: Vec<_> = results.into_iter().collect();
                     let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
                     #(
                         map.insert(
                             #field_name_strings.clone().to_string(),
-                            results_vec[#field_indices].clone(),
+                            #field_names.await,
                         );
                     )*
                     map.to_pulumi_value().await

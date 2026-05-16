@@ -9,3 +9,10 @@ pub enum BuilderVersion {
     #[serde(rename = "BuilderBuildKit")]
     BuilderBuildKit,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum BuilderVersion {
+        BuilderV1 => "BuilderV1",
+        BuilderBuildKit => "BuilderBuildKit",
+    }
+}

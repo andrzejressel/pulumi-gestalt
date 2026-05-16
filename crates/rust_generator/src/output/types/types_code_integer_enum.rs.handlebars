@@ -38,3 +38,11 @@ impl<'de> pulumi_gestalt_rust::__private::serde::Deserialize<'de> for {{enum.str
         }
     }
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_integer_enum! {
+    enum {{enum.struct_name}} {
+        {{#each enum.values as |value|}}
+        {{value.name}} => {{value.value}},
+        {{/each}}
+    }
+}

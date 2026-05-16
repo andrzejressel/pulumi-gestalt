@@ -9,3 +9,11 @@ pub enum TreeSize {
     #[serde(rename = "large")]
     Large,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum TreeSize {
+        Small => "small",
+        Medium => "medium",
+        Large => "large",
+    }
+}

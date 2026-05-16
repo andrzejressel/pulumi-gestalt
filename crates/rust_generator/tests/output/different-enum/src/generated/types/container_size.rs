@@ -35,3 +35,11 @@ impl<'de> pulumi_gestalt_rust::__private::serde::Deserialize<'de> for ContainerS
         }
     }
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_integer_enum! {
+    enum ContainerSize {
+        FourInch => 4,
+        SixInch => 6,
+        EightInch => 8,
+    }
+}

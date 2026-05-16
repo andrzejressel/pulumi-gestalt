@@ -9,3 +9,10 @@ pub enum SupportedFilterTypes {
     #[serde(rename = "DoubleEncryptionStatus")]
     DoubleEncryptionStatus,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum SupportedFilterTypes {
+        ShipToCountries => "ShipToCountries",
+        DoubleEncryptionStatus => "DoubleEncryptionStatus",
+    }
+}

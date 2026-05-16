@@ -32,3 +32,10 @@ impl<'de> pulumi_gestalt_rust::__private::serde::Deserialize<'de> for Diameter {
         }
     }
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_number_enum! {
+    enum Diameter {
+        sixinch => 6.0,
+        twelveinch => 12.0,
+    }
+}

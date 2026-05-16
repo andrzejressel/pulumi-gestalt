@@ -9,3 +9,11 @@ pub enum ContainerColor {
     #[serde(rename = "yellow")]
     Yellow,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum ContainerColor {
+        Red => "red",
+        Blue => "blue",
+        Yellow => "yellow",
+    }
+}

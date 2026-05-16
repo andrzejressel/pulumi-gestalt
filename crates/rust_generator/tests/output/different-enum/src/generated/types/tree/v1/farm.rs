@@ -7,3 +7,10 @@ pub enum Farm {
     #[serde(rename = "Plants'R'Us")]
     PlantsRUs,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum Farm {
+        PulumiPlantersInc => "Pulumi Planters Inc.",
+        PlantsRUs => "Plants'R'Us",
+    }
+}

@@ -10,3 +10,11 @@ pub enum {{enum.struct_name}} {
     {{value.name}},
     {{/each}}
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum {{enum.struct_name}} {
+        {{#each enum.values as |value|}}
+        {{value.name}} => "{{{value.value}}}",
+        {{/each}}
+    }
+}

@@ -6,6 +6,7 @@ pub fn from_pulumi_value_derive(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
     let name = &input.ident;
     let (impl_generics, ty_generics, where_clause) = input.generics.split_for_impl();
+    let model = crate::pulumi_gestalt_model_path();
 
     let fields = match &input.data {
         Data::Struct(DataStruct {
@@ -20,12 +21,12 @@ pub fn from_pulumi_value_derive(input: TokenStream) -> TokenStream {
     let field_types: Vec<_> = fields.iter().map(|f| &f.ty).collect();
 
     let expanded = quote! {
-        impl #impl_generics pulumi_gestalt_model::FromPulumiValue for #name #ty_generics #where_clause {
-            fn from_pulumi_value(value: &pulumi_gestalt_model::PulumiValue) -> rootcause::Result<Self> {
+        impl #impl_generics #model::FromPulumiValue for #name #ty_generics #where_clause {
+            fn from_pulumi_value(value: &#model::PulumiValue) -> #model::__private::rootcause::Result<Self> {
                 use std::collections::BTreeMap;
-                use rootcause::bail;
-                use rootcause::prelude::ResultExt;
-                use pulumi_gestalt_model::{FromPulumiValue, PulumiValue, PulumiValueContent};
+                use #model::__private::rootcause::bail;
+                use #model::__private::rootcause::prelude::ResultExt;
+                use #model::{FromPulumiValue, PulumiValue, PulumiValueContent};
 
                 match value.content {
                     PulumiValueContent::Object(ref obj) => {

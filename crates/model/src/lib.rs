@@ -6,6 +6,7 @@ pub mod value;
 
 #[doc(hidden)]
 pub mod __private {
+    pub use futures;
     pub use rootcause;
 }
 

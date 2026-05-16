@@ -12,3 +12,11 @@ pub enum RubberTreeVariety {
     #[serde(rename = "Tineke")]
     Tineke,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum RubberTreeVariety {
+        Burgundy => "Burgundy",
+        Ruby => "Ruby",
+        Tineke => "Tineke",
+    }
+}

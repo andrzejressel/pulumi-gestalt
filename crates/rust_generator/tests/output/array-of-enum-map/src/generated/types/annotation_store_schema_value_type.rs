@@ -15,3 +15,14 @@ pub enum AnnotationStoreSchemaValueType {
     #[serde(rename = "BOOLEAN")]
     Boolean,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum AnnotationStoreSchemaValueType {
+        Long => "LONG",
+        Int => "INT",
+        String => "STRING",
+        Float => "FLOAT",
+        Double => "DOUBLE",
+        Boolean => "BOOLEAN",
+    }
+}

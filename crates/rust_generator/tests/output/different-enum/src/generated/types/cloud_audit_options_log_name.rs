@@ -15,3 +15,12 @@ pub enum CloudAuditOptionsLogName {
     #[serde(rename = "SYNTHETIC")]
     Synthetic,
 }
+
+pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
+    enum CloudAuditOptionsLogName {
+        UnspecifiedLogName => "UNSPECIFIED_LOG_NAME",
+        AdminActivity => "ADMIN_ACTIVITY",
+        DataAccess => "DATA_ACCESS",
+        Synthetic => "SYNTHETIC",
+    }
+}
