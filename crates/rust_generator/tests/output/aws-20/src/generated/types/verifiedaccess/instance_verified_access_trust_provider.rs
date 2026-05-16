@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -23,4 +23,83 @@ pub struct InstanceVerifiedAccessTrustProvider {
     #[builder(into)]
     #[serde(rename = "verifiedAccessTrustProviderId")]
     pub r#verified_access_trust_provider_id: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for InstanceVerifiedAccessTrustProvider {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("description".to_string(), self.r#description.to_pulumi_value().await);
+            map.insert("device_trust_provider_type".to_string(), self.r#device_trust_provider_type.to_pulumi_value().await);
+            map.insert("trust_provider_type".to_string(), self.r#trust_provider_type.to_pulumi_value().await);
+            map.insert("user_trust_provider_type".to_string(), self.r#user_trust_provider_type.to_pulumi_value().await);
+            map.insert("verified_access_trust_provider_id".to_string(), self.r#verified_access_trust_provider_id.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for InstanceVerifiedAccessTrustProvider {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#description: {
+                        let field_value = match fields_map.get("description") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#device_trust_provider_type: {
+                        let field_value = match fields_map.get("device_trust_provider_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_trust_provider_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#trust_provider_type: {
+                        let field_value = match fields_map.get("trust_provider_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'trust_provider_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#user_trust_provider_type: {
+                        let field_value = match fields_map.get("user_trust_provider_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'user_trust_provider_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#verified_access_trust_provider_id: {
+                        let field_value = match fields_map.get("verified_access_trust_provider_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'verified_access_trust_provider_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

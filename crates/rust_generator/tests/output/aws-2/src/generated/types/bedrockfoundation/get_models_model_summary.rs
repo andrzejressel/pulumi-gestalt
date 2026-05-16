@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -39,4 +39,115 @@ pub struct GetModelsModelSummary {
     #[builder(into)]
     #[serde(rename = "responseStreamingSupported")]
     pub r#response_streaming_supported: bool,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetModelsModelSummary {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("customizations_supporteds".to_string(), self.r#customizations_supporteds.to_pulumi_value().await);
+            map.insert("inference_types_supporteds".to_string(), self.r#inference_types_supporteds.to_pulumi_value().await);
+            map.insert("input_modalities".to_string(), self.r#input_modalities.to_pulumi_value().await);
+            map.insert("model_arn".to_string(), self.r#model_arn.to_pulumi_value().await);
+            map.insert("model_id".to_string(), self.r#model_id.to_pulumi_value().await);
+            map.insert("model_name".to_string(), self.r#model_name.to_pulumi_value().await);
+            map.insert("output_modalities".to_string(), self.r#output_modalities.to_pulumi_value().await);
+            map.insert("provider_name".to_string(), self.r#provider_name.to_pulumi_value().await);
+            map.insert("response_streaming_supported".to_string(), self.r#response_streaming_supported.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetModelsModelSummary {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#customizations_supporteds: {
+                        let field_value = match fields_map.get("customizations_supporteds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'customizations_supporteds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#inference_types_supporteds: {
+                        let field_value = match fields_map.get("inference_types_supporteds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'inference_types_supporteds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#input_modalities: {
+                        let field_value = match fields_map.get("input_modalities") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'input_modalities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#model_arn: {
+                        let field_value = match fields_map.get("model_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'model_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#model_id: {
+                        let field_value = match fields_map.get("model_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'model_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#model_name: {
+                        let field_value = match fields_map.get("model_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'model_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#output_modalities: {
+                        let field_value = match fields_map.get("output_modalities") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'output_modalities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#provider_name: {
+                        let field_value = match fields_map.get("provider_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'provider_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#response_streaming_supported: {
+                        let field_value = match fields_map.get("response_streaming_supported") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'response_streaming_supported' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

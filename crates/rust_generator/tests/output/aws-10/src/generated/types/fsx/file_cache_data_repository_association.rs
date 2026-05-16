@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -42,4 +42,131 @@ pub struct FileCacheDataRepositoryAssociation {
     #[builder(into)]
     #[serde(rename = "tags")]
     pub r#tags: Option<std::collections::HashMap<String, String>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FileCacheDataRepositoryAssociation {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("association_id".to_string(), self.r#association_id.to_pulumi_value().await);
+            map.insert("data_repository_path".to_string(), self.r#data_repository_path.to_pulumi_value().await);
+            map.insert("data_repository_subdirectories".to_string(), self.r#data_repository_subdirectories.to_pulumi_value().await);
+            map.insert("file_cache_id".to_string(), self.r#file_cache_id.to_pulumi_value().await);
+            map.insert("file_cache_path".to_string(), self.r#file_cache_path.to_pulumi_value().await);
+            map.insert("file_system_id".to_string(), self.r#file_system_id.to_pulumi_value().await);
+            map.insert("file_system_path".to_string(), self.r#file_system_path.to_pulumi_value().await);
+            map.insert("imported_file_chunk_size".to_string(), self.r#imported_file_chunk_size.to_pulumi_value().await);
+            map.insert("nfs".to_string(), self.r#nfs.to_pulumi_value().await);
+            map.insert("resource_arn".to_string(), self.r#resource_arn.to_pulumi_value().await);
+            map.insert("tags".to_string(), self.r#tags.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FileCacheDataRepositoryAssociation {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#association_id: {
+                        let field_value = match fields_map.get("association_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'association_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#data_repository_path: {
+                        let field_value = match fields_map.get("data_repository_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_repository_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#data_repository_subdirectories: {
+                        let field_value = match fields_map.get("data_repository_subdirectories") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_repository_subdirectories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#file_cache_id: {
+                        let field_value = match fields_map.get("file_cache_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'file_cache_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#file_cache_path: {
+                        let field_value = match fields_map.get("file_cache_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'file_cache_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#file_system_id: {
+                        let field_value = match fields_map.get("file_system_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'file_system_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#file_system_path: {
+                        let field_value = match fields_map.get("file_system_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'file_system_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#imported_file_chunk_size: {
+                        let field_value = match fields_map.get("imported_file_chunk_size") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'imported_file_chunk_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#nfs: {
+                        let field_value = match fields_map.get("nfs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nfs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::fsx::FileCacheDataRepositoryAssociationNf>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#resource_arn: {
+                        let field_value = match fields_map.get("resource_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#tags: {
+                        let field_value = match fields_map.get("tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<std::collections::HashMap<String, String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -55,4 +55,147 @@ pub struct V2ModelsIntentConfirmationSetting {
     #[builder(into)]
     #[serde(rename = "promptSpecification")]
     pub r#prompt_specification: Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecification>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2ModelsIntentConfirmationSetting {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("active".to_string(), self.r#active.to_pulumi_value().await);
+            map.insert("code_hook".to_string(), self.r#code_hook.to_pulumi_value().await);
+            map.insert("confirmation_conditional".to_string(), self.r#confirmation_conditional.to_pulumi_value().await);
+            map.insert("confirmation_next_step".to_string(), self.r#confirmation_next_step.to_pulumi_value().await);
+            map.insert("confirmation_response".to_string(), self.r#confirmation_response.to_pulumi_value().await);
+            map.insert("declination_conditional".to_string(), self.r#declination_conditional.to_pulumi_value().await);
+            map.insert("declination_next_step".to_string(), self.r#declination_next_step.to_pulumi_value().await);
+            map.insert("declination_response".to_string(), self.r#declination_response.to_pulumi_value().await);
+            map.insert("elicitation_code_hook".to_string(), self.r#elicitation_code_hook.to_pulumi_value().await);
+            map.insert("failure_conditional".to_string(), self.r#failure_conditional.to_pulumi_value().await);
+            map.insert("failure_next_step".to_string(), self.r#failure_next_step.to_pulumi_value().await);
+            map.insert("failure_response".to_string(), self.r#failure_response.to_pulumi_value().await);
+            map.insert("prompt_specification".to_string(), self.r#prompt_specification.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V2ModelsIntentConfirmationSetting {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#active: {
+                        let field_value = match fields_map.get("active") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'active' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#code_hook: {
+                        let field_value = match fields_map.get("code_hook") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'code_hook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHook>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#confirmation_conditional: {
+                        let field_value = match fields_map.get("confirmation_conditional") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'confirmation_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingConfirmationConditional>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#confirmation_next_step: {
+                        let field_value = match fields_map.get("confirmation_next_step") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'confirmation_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingConfirmationNextStep>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#confirmation_response: {
+                        let field_value = match fields_map.get("confirmation_response") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'confirmation_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingConfirmationResponse>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#declination_conditional: {
+                        let field_value = match fields_map.get("declination_conditional") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'declination_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingDeclinationConditional>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#declination_next_step: {
+                        let field_value = match fields_map.get("declination_next_step") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'declination_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingDeclinationNextStep>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#declination_response: {
+                        let field_value = match fields_map.get("declination_response") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'declination_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingDeclinationResponse>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#elicitation_code_hook: {
+                        let field_value = match fields_map.get("elicitation_code_hook") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'elicitation_code_hook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingElicitationCodeHook>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#failure_conditional: {
+                        let field_value = match fields_map.get("failure_conditional") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failure_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingFailureConditional>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#failure_next_step: {
+                        let field_value = match fields_map.get("failure_next_step") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failure_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingFailureNextStep>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#failure_response: {
+                        let field_value = match fields_map.get("failure_response") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failure_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingFailureResponse>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#prompt_specification: {
+                        let field_value = match fields_map.get("prompt_specification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prompt_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecification> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

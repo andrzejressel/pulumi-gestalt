@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -39,4 +39,115 @@ pub struct PipeSourceParametersSelfManagedKafkaParameters {
     #[builder(into)]
     #[serde(rename = "vpc")]
     pub r#vpc: Option<Box<super::super::types::pipes::PipeSourceParametersSelfManagedKafkaParametersVpc>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PipeSourceParametersSelfManagedKafkaParameters {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("additional_bootstrap_servers".to_string(), self.r#additional_bootstrap_servers.to_pulumi_value().await);
+            map.insert("batch_size".to_string(), self.r#batch_size.to_pulumi_value().await);
+            map.insert("consumer_group_id".to_string(), self.r#consumer_group_id.to_pulumi_value().await);
+            map.insert("credentials".to_string(), self.r#credentials.to_pulumi_value().await);
+            map.insert("maximum_batching_window_in_seconds".to_string(), self.r#maximum_batching_window_in_seconds.to_pulumi_value().await);
+            map.insert("server_root_ca_certificate".to_string(), self.r#server_root_ca_certificate.to_pulumi_value().await);
+            map.insert("starting_position".to_string(), self.r#starting_position.to_pulumi_value().await);
+            map.insert("topic_name".to_string(), self.r#topic_name.to_pulumi_value().await);
+            map.insert("vpc".to_string(), self.r#vpc.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PipeSourceParametersSelfManagedKafkaParameters {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#additional_bootstrap_servers: {
+                        let field_value = match fields_map.get("additional_bootstrap_servers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_bootstrap_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#batch_size: {
+                        let field_value = match fields_map.get("batch_size") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'batch_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#consumer_group_id: {
+                        let field_value = match fields_map.get("consumer_group_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'consumer_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#credentials: {
+                        let field_value = match fields_map.get("credentials") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::pipes::PipeSourceParametersSelfManagedKafkaParametersCredentials>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#maximum_batching_window_in_seconds: {
+                        let field_value = match fields_map.get("maximum_batching_window_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'maximum_batching_window_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#server_root_ca_certificate: {
+                        let field_value = match fields_map.get("server_root_ca_certificate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'server_root_ca_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#starting_position: {
+                        let field_value = match fields_map.get("starting_position") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'starting_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#topic_name: {
+                        let field_value = match fields_map.get("topic_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'topic_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#vpc: {
+                        let field_value = match fields_map.get("vpc") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vpc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::pipes::PipeSourceParametersSelfManagedKafkaParametersVpc>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

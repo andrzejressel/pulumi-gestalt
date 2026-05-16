@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -51,4 +51,139 @@ pub struct PartitionStorageDescriptor {
     #[builder(into)]
     #[serde(rename = "storedAsSubDirectories")]
     pub r#stored_as_sub_directories: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PartitionStorageDescriptor {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("bucket_columns".to_string(), self.r#bucket_columns.to_pulumi_value().await);
+            map.insert("columns".to_string(), self.r#columns.to_pulumi_value().await);
+            map.insert("compressed".to_string(), self.r#compressed.to_pulumi_value().await);
+            map.insert("input_format".to_string(), self.r#input_format.to_pulumi_value().await);
+            map.insert("location".to_string(), self.r#location.to_pulumi_value().await);
+            map.insert("number_of_buckets".to_string(), self.r#number_of_buckets.to_pulumi_value().await);
+            map.insert("output_format".to_string(), self.r#output_format.to_pulumi_value().await);
+            map.insert("parameters".to_string(), self.r#parameters.to_pulumi_value().await);
+            map.insert("ser_de_info".to_string(), self.r#ser_de_info.to_pulumi_value().await);
+            map.insert("skewed_info".to_string(), self.r#skewed_info.to_pulumi_value().await);
+            map.insert("sort_columns".to_string(), self.r#sort_columns.to_pulumi_value().await);
+            map.insert("stored_as_sub_directories".to_string(), self.r#stored_as_sub_directories.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PartitionStorageDescriptor {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#bucket_columns: {
+                        let field_value = match fields_map.get("bucket_columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bucket_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#columns: {
+                        let field_value = match fields_map.get("columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::glue::PartitionStorageDescriptorColumn>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#compressed: {
+                        let field_value = match fields_map.get("compressed") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compressed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#input_format: {
+                        let field_value = match fields_map.get("input_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'input_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#location: {
+                        let field_value = match fields_map.get("location") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#number_of_buckets: {
+                        let field_value = match fields_map.get("number_of_buckets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'number_of_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#output_format: {
+                        let field_value = match fields_map.get("output_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'output_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#parameters: {
+                        let field_value = match fields_map.get("parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<std::collections::HashMap<String, String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#ser_de_info: {
+                        let field_value = match fields_map.get("ser_de_info") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ser_de_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::glue::PartitionStorageDescriptorSerDeInfo>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#skewed_info: {
+                        let field_value = match fields_map.get("skewed_info") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'skewed_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::glue::PartitionStorageDescriptorSkewedInfo>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#sort_columns: {
+                        let field_value = match fields_map.get("sort_columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sort_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::glue::PartitionStorageDescriptorSortColumn>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#stored_as_sub_directories: {
+                        let field_value = match fields_map.get("stored_as_sub_directories") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stored_as_sub_directories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

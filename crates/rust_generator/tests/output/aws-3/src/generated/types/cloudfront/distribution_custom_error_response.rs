@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,4 +19,75 @@ pub struct DistributionCustomErrorResponse {
     #[builder(into)]
     #[serde(rename = "responsePagePath")]
     pub r#response_page_path: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DistributionCustomErrorResponse {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("error_caching_min_ttl".to_string(), self.r#error_caching_min_ttl.to_pulumi_value().await);
+            map.insert("error_code".to_string(), self.r#error_code.to_pulumi_value().await);
+            map.insert("response_code".to_string(), self.r#response_code.to_pulumi_value().await);
+            map.insert("response_page_path".to_string(), self.r#response_page_path.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DistributionCustomErrorResponse {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#error_caching_min_ttl: {
+                        let field_value = match fields_map.get("error_caching_min_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'error_caching_min_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#error_code: {
+                        let field_value = match fields_map.get("error_code") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'error_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#response_code: {
+                        let field_value = match fields_map.get("response_code") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'response_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#response_page_path: {
+                        let field_value = match fields_map.get("response_page_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'response_page_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

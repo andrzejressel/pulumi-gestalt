@@ -1,12 +1,14 @@
 #[cfg(test)]
 mod tests {
+    use futures::executor::block_on;
     use pulumi_gestalt_providers_typesystem::deep::nested::module::some_resource::SomeResourceArgs;
+    use pulumi_gestalt_providers_typesystem::types::deep::nested::module::SomeType;
     use pulumi_gestalt_providers_typesystem::types::{
         IntegerEnum, MyEnum, NumberEnum, UnionCase1, UnionCase2, UnionCaseWithConst1,
         UnionCaseWithConst2,
     };
     use pulumi_gestalt_providers_typesystem::typesystem_server::TypesystemServerArgs;
-    use pulumi_gestalt_rust::OneOf2;
+    use pulumi_gestalt_rust::{FromPulumiValue, OneOf2, ToPulumiValue};
 
     #[test]
     fn test_case_deserialization() {
@@ -105,6 +107,24 @@ mod tests {
             serde_json::from_str(&json2).unwrap();
         assert_eq!(deserialized1, oneof1);
         assert_eq!(deserialized2, oneof2);
+    }
+
+    #[test]
+    fn test_to_from_pulumi_value_struct_roundtrip() {
+        let case1 = UnionCase1::builder()
+            .field_1("value1".to_string())
+            .build_struct();
+        let pulumi_value = block_on(case1.to_pulumi_value());
+        let deserialized = UnionCase1::from_pulumi_value(&pulumi_value).unwrap();
+        assert_eq!(deserialized, case1);
+    }
+
+    #[test]
+    fn test_to_from_pulumi_value_enum_roundtrip() {
+        let enum_value = MyEnum::SpecialCharacters;
+        let pulumi_value = block_on(enum_value.to_pulumi_value());
+        let deserialized = MyEnum::from_pulumi_value(&pulumi_value).unwrap();
+        assert_eq!(deserialized, enum_value);
     }
 
     #[allow(dead_code)]

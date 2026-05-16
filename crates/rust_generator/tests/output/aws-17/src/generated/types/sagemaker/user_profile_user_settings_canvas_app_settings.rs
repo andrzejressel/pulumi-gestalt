@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -34,4 +34,107 @@ pub struct UserProfileUserSettingsCanvasAppSettings {
     #[builder(into)]
     #[serde(rename = "workspaceSettings")]
     pub r#workspace_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsWorkspaceSettings>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for UserProfileUserSettingsCanvasAppSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("direct_deploy_settings".to_string(), self.r#direct_deploy_settings.to_pulumi_value().await);
+            map.insert("emr_serverless_settings".to_string(), self.r#emr_serverless_settings.to_pulumi_value().await);
+            map.insert("generative_ai_settings".to_string(), self.r#generative_ai_settings.to_pulumi_value().await);
+            map.insert("identity_provider_oauth_settings".to_string(), self.r#identity_provider_oauth_settings.to_pulumi_value().await);
+            map.insert("kendra_settings".to_string(), self.r#kendra_settings.to_pulumi_value().await);
+            map.insert("model_register_settings".to_string(), self.r#model_register_settings.to_pulumi_value().await);
+            map.insert("time_series_forecasting_settings".to_string(), self.r#time_series_forecasting_settings.to_pulumi_value().await);
+            map.insert("workspace_settings".to_string(), self.r#workspace_settings.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for UserProfileUserSettingsCanvasAppSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#direct_deploy_settings: {
+                        let field_value = match fields_map.get("direct_deploy_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'direct_deploy_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsDirectDeploySettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#emr_serverless_settings: {
+                        let field_value = match fields_map.get("emr_serverless_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'emr_serverless_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsEmrServerlessSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#generative_ai_settings: {
+                        let field_value = match fields_map.get("generative_ai_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'generative_ai_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsGenerativeAiSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#identity_provider_oauth_settings: {
+                        let field_value = match fields_map.get("identity_provider_oauth_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identity_provider_oauth_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsIdentityProviderOauthSetting>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#kendra_settings: {
+                        let field_value = match fields_map.get("kendra_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kendra_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsKendraSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#model_register_settings: {
+                        let field_value = match fields_map.get("model_register_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'model_register_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsModelRegisterSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#time_series_forecasting_settings: {
+                        let field_value = match fields_map.get("time_series_forecasting_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'time_series_forecasting_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsTimeSeriesForecastingSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#workspace_settings: {
+                        let field_value = match fields_map.get("workspace_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'workspace_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsWorkspaceSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

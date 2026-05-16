@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -15,4 +15,67 @@ pub struct SubscriberSourceCustomLogSourceResourceAttribute {
     #[builder(into)]
     #[serde(rename = "tableArn")]
     pub r#table_arn: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for SubscriberSourceCustomLogSourceResourceAttribute {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("crawler_arn".to_string(), self.r#crawler_arn.to_pulumi_value().await);
+            map.insert("database_arn".to_string(), self.r#database_arn.to_pulumi_value().await);
+            map.insert("table_arn".to_string(), self.r#table_arn.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for SubscriberSourceCustomLogSourceResourceAttribute {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#crawler_arn: {
+                        let field_value = match fields_map.get("crawler_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'crawler_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#database_arn: {
+                        let field_value = match fields_map.get("database_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'database_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#table_arn: {
+                        let field_value = match fields_map.get("table_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'table_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -63,5 +63,5 @@ Tests verify the generated code works correctly:
 
 - **Used by `schema`**: For type discriminators in schema model
 - **Used by `rust_generator`**: Generated code uses these types
-- **Works with `model_macros`**: Supports structs deriving `FromPulumiValue` / `ToPulumiValue`
+- **Works with `pulumi_gestalt_model`**: Supports direct `FromPulumiValue` / `ToPulumiValue` implementations on containing structs
 - **Re-exported by `rust`**: Available to Pulumi programs

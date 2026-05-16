@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -30,4 +30,99 @@ pub struct MemcachedLayerEbsVolume {
     #[builder(into)]
     #[serde(rename = "type")]
     pub r#type_: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for MemcachedLayerEbsVolume {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("encrypted".to_string(), self.r#encrypted.to_pulumi_value().await);
+            map.insert("iops".to_string(), self.r#iops.to_pulumi_value().await);
+            map.insert("mount_point".to_string(), self.r#mount_point.to_pulumi_value().await);
+            map.insert("number_of_disks".to_string(), self.r#number_of_disks.to_pulumi_value().await);
+            map.insert("raid_level".to_string(), self.r#raid_level.to_pulumi_value().await);
+            map.insert("size".to_string(), self.r#size.to_pulumi_value().await);
+            map.insert("type_".to_string(), self.r#type_.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for MemcachedLayerEbsVolume {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#encrypted: {
+                        let field_value = match fields_map.get("encrypted") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'encrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#iops: {
+                        let field_value = match fields_map.get("iops") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'iops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#mount_point: {
+                        let field_value = match fields_map.get("mount_point") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mount_point' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#number_of_disks: {
+                        let field_value = match fields_map.get("number_of_disks") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'number_of_disks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#raid_level: {
+                        let field_value = match fields_map.get("raid_level") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'raid_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#size: {
+                        let field_value = match fields_map.get("size") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#type_: {
+                        let field_value = match fields_map.get("type_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

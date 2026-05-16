@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -39,4 +39,115 @@ pub struct KeyKeyAttributesKeyModesOfUse {
     #[builder(into)]
     #[serde(rename = "wrap")]
     pub r#wrap: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KeyKeyAttributesKeyModesOfUse {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("decrypt".to_string(), self.r#decrypt.to_pulumi_value().await);
+            map.insert("derive_key".to_string(), self.r#derive_key.to_pulumi_value().await);
+            map.insert("encrypt".to_string(), self.r#encrypt.to_pulumi_value().await);
+            map.insert("generate".to_string(), self.r#generate.to_pulumi_value().await);
+            map.insert("no_restrictions".to_string(), self.r#no_restrictions.to_pulumi_value().await);
+            map.insert("sign".to_string(), self.r#sign.to_pulumi_value().await);
+            map.insert("unwrap".to_string(), self.r#unwrap.to_pulumi_value().await);
+            map.insert("verify".to_string(), self.r#verify.to_pulumi_value().await);
+            map.insert("wrap".to_string(), self.r#wrap.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for KeyKeyAttributesKeyModesOfUse {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#decrypt: {
+                        let field_value = match fields_map.get("decrypt") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'decrypt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#derive_key: {
+                        let field_value = match fields_map.get("derive_key") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'derive_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#encrypt: {
+                        let field_value = match fields_map.get("encrypt") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'encrypt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#generate: {
+                        let field_value = match fields_map.get("generate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'generate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#no_restrictions: {
+                        let field_value = match fields_map.get("no_restrictions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'no_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#sign: {
+                        let field_value = match fields_map.get("sign") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sign' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#unwrap: {
+                        let field_value = match fields_map.get("unwrap") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'unwrap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#verify: {
+                        let field_value = match fields_map.get("verify") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'verify' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#wrap: {
+                        let field_value = match fields_map.get("wrap") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'wrap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

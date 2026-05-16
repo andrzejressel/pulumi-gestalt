@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -39,4 +39,115 @@ pub struct V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecification {
     #[builder(into)]
     #[serde(rename = "timeoutResponse")]
     pub r#timeout_response: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponse>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecification {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("failure_conditional".to_string(), self.r#failure_conditional.to_pulumi_value().await);
+            map.insert("failure_next_step".to_string(), self.r#failure_next_step.to_pulumi_value().await);
+            map.insert("failure_response".to_string(), self.r#failure_response.to_pulumi_value().await);
+            map.insert("success_conditional".to_string(), self.r#success_conditional.to_pulumi_value().await);
+            map.insert("success_next_step".to_string(), self.r#success_next_step.to_pulumi_value().await);
+            map.insert("success_response".to_string(), self.r#success_response.to_pulumi_value().await);
+            map.insert("timeout_conditional".to_string(), self.r#timeout_conditional.to_pulumi_value().await);
+            map.insert("timeout_next_step".to_string(), self.r#timeout_next_step.to_pulumi_value().await);
+            map.insert("timeout_response".to_string(), self.r#timeout_response.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecification {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#failure_conditional: {
+                        let field_value = match fields_map.get("failure_conditional") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failure_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditional>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#failure_next_step: {
+                        let field_value = match fields_map.get("failure_next_step") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failure_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureNextStep>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#failure_response: {
+                        let field_value = match fields_map.get("failure_response") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failure_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponse>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#success_conditional: {
+                        let field_value = match fields_map.get("success_conditional") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'success_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditional>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#success_next_step: {
+                        let field_value = match fields_map.get("success_next_step") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'success_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessNextStep>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#success_response: {
+                        let field_value = match fields_map.get("success_response") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'success_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponse>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#timeout_conditional: {
+                        let field_value = match fields_map.get("timeout_conditional") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditional>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#timeout_next_step: {
+                        let field_value = match fields_map.get("timeout_next_step") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutNextStep>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#timeout_response: {
+                        let field_value = match fields_map.get("timeout_response") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponse>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

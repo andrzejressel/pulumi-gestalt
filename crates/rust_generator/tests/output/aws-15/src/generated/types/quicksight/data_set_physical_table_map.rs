@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,4 +19,75 @@ pub struct DataSetPhysicalTableMap {
     #[builder(into)]
     #[serde(rename = "s3Source")]
     pub r#s_3_source: Option<Box<super::super::types::quicksight::DataSetPhysicalTableMapS3Source>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataSetPhysicalTableMap {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("custom_sql".to_string(), self.r#custom_sql.to_pulumi_value().await);
+            map.insert("physical_table_map_id".to_string(), self.r#physical_table_map_id.to_pulumi_value().await);
+            map.insert("relational_table".to_string(), self.r#relational_table.to_pulumi_value().await);
+            map.insert("s_3_source".to_string(), self.r#s_3_source.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataSetPhysicalTableMap {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#custom_sql: {
+                        let field_value = match fields_map.get("custom_sql") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_sql' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::quicksight::DataSetPhysicalTableMapCustomSql>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#physical_table_map_id: {
+                        let field_value = match fields_map.get("physical_table_map_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'physical_table_map_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#relational_table: {
+                        let field_value = match fields_map.get("relational_table") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'relational_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::quicksight::DataSetPhysicalTableMapRelationalTable>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_source: {
+                        let field_value = match fields_map.get("s_3_source") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::quicksight::DataSetPhysicalTableMapS3Source>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

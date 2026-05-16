@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -35,4 +35,107 @@ pub struct WebAclRule {
     #[builder(into)]
     #[serde(rename = "visibilityConfig")]
     pub r#visibility_config: Box<super::super::types::wafv2::WebAclRuleVisibilityConfig>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WebAclRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("action".to_string(), self.r#action.to_pulumi_value().await);
+            map.insert("captcha_config".to_string(), self.r#captcha_config.to_pulumi_value().await);
+            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
+            map.insert("override_action".to_string(), self.r#override_action.to_pulumi_value().await);
+            map.insert("priority".to_string(), self.r#priority.to_pulumi_value().await);
+            map.insert("rule_labels".to_string(), self.r#rule_labels.to_pulumi_value().await);
+            map.insert("statement".to_string(), self.r#statement.to_pulumi_value().await);
+            map.insert("visibility_config".to_string(), self.r#visibility_config.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#action: {
+                        let field_value = match fields_map.get("action") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::WebAclRuleAction>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#captcha_config: {
+                        let field_value = match fields_map.get("captcha_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'captcha_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::WebAclRuleCaptchaConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#override_action: {
+                        let field_value = match fields_map.get("override_action") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'override_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::WebAclRuleOverrideAction>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#priority: {
+                        let field_value = match fields_map.get("priority") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'priority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#rule_labels: {
+                        let field_value = match fields_map.get("rule_labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rule_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::wafv2::WebAclRuleRuleLabel>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#statement: {
+                        let field_value = match fields_map.get("statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::wafv2::WebAclRuleStatement> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#visibility_config: {
+                        let field_value = match fields_map.get("visibility_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'visibility_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::wafv2::WebAclRuleVisibilityConfig> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

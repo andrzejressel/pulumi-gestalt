@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -45,4 +45,123 @@ pub struct ScheduleTarget {
     #[builder(into)]
     #[serde(rename = "sqsParameters")]
     pub r#sqs_parameters: Option<Box<super::super::types::scheduler::ScheduleTargetSqsParameters>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ScheduleTarget {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("arn".to_string(), self.r#arn.to_pulumi_value().await);
+            map.insert("dead_letter_config".to_string(), self.r#dead_letter_config.to_pulumi_value().await);
+            map.insert("ecs_parameters".to_string(), self.r#ecs_parameters.to_pulumi_value().await);
+            map.insert("eventbridge_parameters".to_string(), self.r#eventbridge_parameters.to_pulumi_value().await);
+            map.insert("input".to_string(), self.r#input.to_pulumi_value().await);
+            map.insert("kinesis_parameters".to_string(), self.r#kinesis_parameters.to_pulumi_value().await);
+            map.insert("retry_policy".to_string(), self.r#retry_policy.to_pulumi_value().await);
+            map.insert("role_arn".to_string(), self.r#role_arn.to_pulumi_value().await);
+            map.insert("sagemaker_pipeline_parameters".to_string(), self.r#sagemaker_pipeline_parameters.to_pulumi_value().await);
+            map.insert("sqs_parameters".to_string(), self.r#sqs_parameters.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ScheduleTarget {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#arn: {
+                        let field_value = match fields_map.get("arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#dead_letter_config: {
+                        let field_value = match fields_map.get("dead_letter_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dead_letter_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::scheduler::ScheduleTargetDeadLetterConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#ecs_parameters: {
+                        let field_value = match fields_map.get("ecs_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ecs_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::scheduler::ScheduleTargetEcsParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#eventbridge_parameters: {
+                        let field_value = match fields_map.get("eventbridge_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'eventbridge_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::scheduler::ScheduleTargetEventbridgeParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#input: {
+                        let field_value = match fields_map.get("input") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'input' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#kinesis_parameters: {
+                        let field_value = match fields_map.get("kinesis_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kinesis_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::scheduler::ScheduleTargetKinesisParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#retry_policy: {
+                        let field_value = match fields_map.get("retry_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'retry_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::scheduler::ScheduleTargetRetryPolicy>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#role_arn: {
+                        let field_value = match fields_map.get("role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#sagemaker_pipeline_parameters: {
+                        let field_value = match fields_map.get("sagemaker_pipeline_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sagemaker_pipeline_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::scheduler::ScheduleTargetSagemakerPipelineParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#sqs_parameters: {
+                        let field_value = match fields_map.get("sqs_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sqs_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::scheduler::ScheduleTargetSqsParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -23,4 +23,83 @@ pub struct DistributionViewerCertificate {
     #[builder(into)]
     #[serde(rename = "sslSupportMethod")]
     pub r#ssl_support_method: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DistributionViewerCertificate {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("acm_certificate_arn".to_string(), self.r#acm_certificate_arn.to_pulumi_value().await);
+            map.insert("cloudfront_default_certificate".to_string(), self.r#cloudfront_default_certificate.to_pulumi_value().await);
+            map.insert("iam_certificate_id".to_string(), self.r#iam_certificate_id.to_pulumi_value().await);
+            map.insert("minimum_protocol_version".to_string(), self.r#minimum_protocol_version.to_pulumi_value().await);
+            map.insert("ssl_support_method".to_string(), self.r#ssl_support_method.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DistributionViewerCertificate {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#acm_certificate_arn: {
+                        let field_value = match fields_map.get("acm_certificate_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'acm_certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#cloudfront_default_certificate: {
+                        let field_value = match fields_map.get("cloudfront_default_certificate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloudfront_default_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#iam_certificate_id: {
+                        let field_value = match fields_map.get("iam_certificate_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'iam_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_protocol_version: {
+                        let field_value = match fields_map.get("minimum_protocol_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_protocol_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_support_method: {
+                        let field_value = match fields_map.get("ssl_support_method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_support_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

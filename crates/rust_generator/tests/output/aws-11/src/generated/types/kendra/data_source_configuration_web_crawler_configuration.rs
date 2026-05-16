@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -39,4 +39,115 @@ pub struct DataSourceConfigurationWebCrawlerConfiguration {
     #[builder(into)]
     #[serde(rename = "urls")]
     pub r#urls: Box<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfigurationUrls>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataSourceConfigurationWebCrawlerConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("authentication_configuration".to_string(), self.r#authentication_configuration.to_pulumi_value().await);
+            map.insert("crawl_depth".to_string(), self.r#crawl_depth.to_pulumi_value().await);
+            map.insert("max_content_size_per_page_in_mega_bytes".to_string(), self.r#max_content_size_per_page_in_mega_bytes.to_pulumi_value().await);
+            map.insert("max_links_per_page".to_string(), self.r#max_links_per_page.to_pulumi_value().await);
+            map.insert("max_urls_per_minute_crawl_rate".to_string(), self.r#max_urls_per_minute_crawl_rate.to_pulumi_value().await);
+            map.insert("proxy_configuration".to_string(), self.r#proxy_configuration.to_pulumi_value().await);
+            map.insert("url_exclusion_patterns".to_string(), self.r#url_exclusion_patterns.to_pulumi_value().await);
+            map.insert("url_inclusion_patterns".to_string(), self.r#url_inclusion_patterns.to_pulumi_value().await);
+            map.insert("urls".to_string(), self.r#urls.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataSourceConfigurationWebCrawlerConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#authentication_configuration: {
+                        let field_value = match fields_map.get("authentication_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'authentication_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfigurationAuthenticationConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#crawl_depth: {
+                        let field_value = match fields_map.get("crawl_depth") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'crawl_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#max_content_size_per_page_in_mega_bytes: {
+                        let field_value = match fields_map.get("max_content_size_per_page_in_mega_bytes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_content_size_per_page_in_mega_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#max_links_per_page: {
+                        let field_value = match fields_map.get("max_links_per_page") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_links_per_page' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#max_urls_per_minute_crawl_rate: {
+                        let field_value = match fields_map.get("max_urls_per_minute_crawl_rate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_urls_per_minute_crawl_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#proxy_configuration: {
+                        let field_value = match fields_map.get("proxy_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'proxy_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfigurationProxyConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#url_exclusion_patterns: {
+                        let field_value = match fields_map.get("url_exclusion_patterns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'url_exclusion_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#url_inclusion_patterns: {
+                        let field_value = match fields_map.get("url_inclusion_patterns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'url_inclusion_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#urls: {
+                        let field_value = match fields_map.get("urls") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfigurationUrls> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -63,4 +63,163 @@ pub struct EndpointConfigurationProductionVariant {
     #[builder(into)]
     #[serde(rename = "volumeSizeInGb")]
     pub r#volume_size_in_gb: Option<i32>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EndpointConfigurationProductionVariant {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("accelerator_type".to_string(), self.r#accelerator_type.to_pulumi_value().await);
+            map.insert("container_startup_health_check_timeout_in_seconds".to_string(), self.r#container_startup_health_check_timeout_in_seconds.to_pulumi_value().await);
+            map.insert("core_dump_config".to_string(), self.r#core_dump_config.to_pulumi_value().await);
+            map.insert("enable_ssm_access".to_string(), self.r#enable_ssm_access.to_pulumi_value().await);
+            map.insert("inference_ami_version".to_string(), self.r#inference_ami_version.to_pulumi_value().await);
+            map.insert("initial_instance_count".to_string(), self.r#initial_instance_count.to_pulumi_value().await);
+            map.insert("initial_variant_weight".to_string(), self.r#initial_variant_weight.to_pulumi_value().await);
+            map.insert("instance_type".to_string(), self.r#instance_type.to_pulumi_value().await);
+            map.insert("managed_instance_scaling".to_string(), self.r#managed_instance_scaling.to_pulumi_value().await);
+            map.insert("model_data_download_timeout_in_seconds".to_string(), self.r#model_data_download_timeout_in_seconds.to_pulumi_value().await);
+            map.insert("model_name".to_string(), self.r#model_name.to_pulumi_value().await);
+            map.insert("routing_configs".to_string(), self.r#routing_configs.to_pulumi_value().await);
+            map.insert("serverless_config".to_string(), self.r#serverless_config.to_pulumi_value().await);
+            map.insert("variant_name".to_string(), self.r#variant_name.to_pulumi_value().await);
+            map.insert("volume_size_in_gb".to_string(), self.r#volume_size_in_gb.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EndpointConfigurationProductionVariant {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#accelerator_type: {
+                        let field_value = match fields_map.get("accelerator_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'accelerator_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#container_startup_health_check_timeout_in_seconds: {
+                        let field_value = match fields_map.get("container_startup_health_check_timeout_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'container_startup_health_check_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#core_dump_config: {
+                        let field_value = match fields_map.get("core_dump_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'core_dump_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::EndpointConfigurationProductionVariantCoreDumpConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#enable_ssm_access: {
+                        let field_value = match fields_map.get("enable_ssm_access") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_ssm_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#inference_ami_version: {
+                        let field_value = match fields_map.get("inference_ami_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'inference_ami_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#initial_instance_count: {
+                        let field_value = match fields_map.get("initial_instance_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'initial_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#initial_variant_weight: {
+                        let field_value = match fields_map.get("initial_variant_weight") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'initial_variant_weight' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#instance_type: {
+                        let field_value = match fields_map.get("instance_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#managed_instance_scaling: {
+                        let field_value = match fields_map.get("managed_instance_scaling") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_instance_scaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::EndpointConfigurationProductionVariantManagedInstanceScaling>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#model_data_download_timeout_in_seconds: {
+                        let field_value = match fields_map.get("model_data_download_timeout_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'model_data_download_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#model_name: {
+                        let field_value = match fields_map.get("model_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'model_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#routing_configs: {
+                        let field_value = match fields_map.get("routing_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'routing_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::sagemaker::EndpointConfigurationProductionVariantRoutingConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#serverless_config: {
+                        let field_value = match fields_map.get("serverless_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'serverless_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::sagemaker::EndpointConfigurationProductionVariantServerlessConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#variant_name: {
+                        let field_value = match fields_map.get("variant_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'variant_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#volume_size_in_gb: {
+                        let field_value = match fields_map.get("volume_size_in_gb") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'volume_size_in_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

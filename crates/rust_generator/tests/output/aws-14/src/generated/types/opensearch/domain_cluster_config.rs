@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -51,4 +51,139 @@ pub struct DomainClusterConfig {
     #[builder(into)]
     #[serde(rename = "zoneAwarenessEnabled")]
     pub r#zone_awareness_enabled: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DomainClusterConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("cold_storage_options".to_string(), self.r#cold_storage_options.to_pulumi_value().await);
+            map.insert("dedicated_master_count".to_string(), self.r#dedicated_master_count.to_pulumi_value().await);
+            map.insert("dedicated_master_enabled".to_string(), self.r#dedicated_master_enabled.to_pulumi_value().await);
+            map.insert("dedicated_master_type".to_string(), self.r#dedicated_master_type.to_pulumi_value().await);
+            map.insert("instance_count".to_string(), self.r#instance_count.to_pulumi_value().await);
+            map.insert("instance_type".to_string(), self.r#instance_type.to_pulumi_value().await);
+            map.insert("multi_az_with_standby_enabled".to_string(), self.r#multi_az_with_standby_enabled.to_pulumi_value().await);
+            map.insert("warm_count".to_string(), self.r#warm_count.to_pulumi_value().await);
+            map.insert("warm_enabled".to_string(), self.r#warm_enabled.to_pulumi_value().await);
+            map.insert("warm_type".to_string(), self.r#warm_type.to_pulumi_value().await);
+            map.insert("zone_awareness_config".to_string(), self.r#zone_awareness_config.to_pulumi_value().await);
+            map.insert("zone_awareness_enabled".to_string(), self.r#zone_awareness_enabled.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DomainClusterConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cold_storage_options: {
+                        let field_value = match fields_map.get("cold_storage_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cold_storage_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::opensearch::DomainClusterConfigColdStorageOptions>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#dedicated_master_count: {
+                        let field_value = match fields_map.get("dedicated_master_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dedicated_master_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#dedicated_master_enabled: {
+                        let field_value = match fields_map.get("dedicated_master_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dedicated_master_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#dedicated_master_type: {
+                        let field_value = match fields_map.get("dedicated_master_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dedicated_master_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#instance_count: {
+                        let field_value = match fields_map.get("instance_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#instance_type: {
+                        let field_value = match fields_map.get("instance_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#multi_az_with_standby_enabled: {
+                        let field_value = match fields_map.get("multi_az_with_standby_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'multi_az_with_standby_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#warm_count: {
+                        let field_value = match fields_map.get("warm_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'warm_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#warm_enabled: {
+                        let field_value = match fields_map.get("warm_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'warm_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#warm_type: {
+                        let field_value = match fields_map.get("warm_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'warm_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#zone_awareness_config: {
+                        let field_value = match fields_map.get("zone_awareness_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zone_awareness_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::opensearch::DomainClusterConfigZoneAwarenessConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#zone_awareness_enabled: {
+                        let field_value = match fields_map.get("zone_awareness_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zone_awareness_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

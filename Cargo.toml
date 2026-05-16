@@ -47,7 +47,6 @@ pulumi_gestalt_domain = { version = "=0.0.0-DEV", path = "crates/domain" }
 pulumi_gestalt_build = { version = "=0.0.0-DEV", path = "crates/rust_build" }
 pulumi_gestalt_generator = { version = "=0.0.0-DEV", path = "crates/rust_generator" }
 pulumi_gestalt_model = { version = "=0.0.0-DEV", path = "crates/model" }
-pulumi_gestalt_model_macros = { version = "=0.0.0-DEV", path = "crates/model_macros" }
 pulumi_gestalt_rust = { version = "=0.0.0-DEV", path = "crates/rust" }
 pulumi_gestalt_rust_language_server = { version = "=0.0.0-DEV", path = "crates/rust_language_server" }
 pulumi_gestalt_proto = { version = "=0.0.0-DEV", path = "crates/proto" }

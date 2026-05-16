@@ -10,3 +10,4 @@ publish = false
 pulumi_gestalt_rust.workspace = true
 pulumi_gestalt_providers_typesystem.workspace = true
 serde_json.workspace = true
+futures.workspace = true

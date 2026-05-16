@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -27,4 +27,91 @@ pub struct GetResponsePlanActionSsmAutomation {
     #[builder(into)]
     #[serde(rename = "targetAccount")]
     pub r#target_account: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetResponsePlanActionSsmAutomation {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("document_name".to_string(), self.r#document_name.to_pulumi_value().await);
+            map.insert("document_version".to_string(), self.r#document_version.to_pulumi_value().await);
+            map.insert("dynamic_parameters".to_string(), self.r#dynamic_parameters.to_pulumi_value().await);
+            map.insert("parameters".to_string(), self.r#parameters.to_pulumi_value().await);
+            map.insert("role_arn".to_string(), self.r#role_arn.to_pulumi_value().await);
+            map.insert("target_account".to_string(), self.r#target_account.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetResponsePlanActionSsmAutomation {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#document_name: {
+                        let field_value = match fields_map.get("document_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'document_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#document_version: {
+                        let field_value = match fields_map.get("document_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'document_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#dynamic_parameters: {
+                        let field_value = match fields_map.get("dynamic_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dynamic_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <std::collections::HashMap<String, String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#parameters: {
+                        let field_value = match fields_map.get("parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Vec<super::super::types::ssmincidents::GetResponsePlanActionSsmAutomationParameter> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#role_arn: {
+                        let field_value = match fields_map.get("role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#target_account: {
+                        let field_value = match fields_map.get("target_account") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'target_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

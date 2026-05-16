@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -36,4 +36,99 @@ pub struct ScalingPlanScalingInstructionTargetTrackingConfiguration {
     #[builder(into)]
     #[serde(rename = "targetValue")]
     pub r#target_value: f64,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ScalingPlanScalingInstructionTargetTrackingConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("customized_scaling_metric_specification".to_string(), self.r#customized_scaling_metric_specification.to_pulumi_value().await);
+            map.insert("disable_scale_in".to_string(), self.r#disable_scale_in.to_pulumi_value().await);
+            map.insert("estimated_instance_warmup".to_string(), self.r#estimated_instance_warmup.to_pulumi_value().await);
+            map.insert("predefined_scaling_metric_specification".to_string(), self.r#predefined_scaling_metric_specification.to_pulumi_value().await);
+            map.insert("scale_in_cooldown".to_string(), self.r#scale_in_cooldown.to_pulumi_value().await);
+            map.insert("scale_out_cooldown".to_string(), self.r#scale_out_cooldown.to_pulumi_value().await);
+            map.insert("target_value".to_string(), self.r#target_value.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ScalingPlanScalingInstructionTargetTrackingConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#customized_scaling_metric_specification: {
+                        let field_value = match fields_map.get("customized_scaling_metric_specification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'customized_scaling_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::autoscalingplans::ScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#disable_scale_in: {
+                        let field_value = match fields_map.get("disable_scale_in") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disable_scale_in' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#estimated_instance_warmup: {
+                        let field_value = match fields_map.get("estimated_instance_warmup") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'estimated_instance_warmup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#predefined_scaling_metric_specification: {
+                        let field_value = match fields_map.get("predefined_scaling_metric_specification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'predefined_scaling_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::autoscalingplans::ScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#scale_in_cooldown: {
+                        let field_value = match fields_map.get("scale_in_cooldown") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scale_in_cooldown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#scale_out_cooldown: {
+                        let field_value = match fields_map.get("scale_out_cooldown") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scale_out_cooldown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#target_value: {
+                        let field_value = match fields_map.get("target_value") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'target_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

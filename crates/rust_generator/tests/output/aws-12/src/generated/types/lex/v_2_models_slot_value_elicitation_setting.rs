@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -30,4 +30,91 @@ pub struct V2ModelsSlotValueElicitationSetting {
     #[builder(into)]
     #[serde(rename = "waitAndContinueSpecifications")]
     pub r#wait_and_continue_specifications: Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingWaitAndContinueSpecification>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2ModelsSlotValueElicitationSetting {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("default_value_specifications".to_string(), self.r#default_value_specifications.to_pulumi_value().await);
+            map.insert("prompt_specification".to_string(), self.r#prompt_specification.to_pulumi_value().await);
+            map.insert("sample_utterances".to_string(), self.r#sample_utterances.to_pulumi_value().await);
+            map.insert("slot_constraint".to_string(), self.r#slot_constraint.to_pulumi_value().await);
+            map.insert("slot_resolution_settings".to_string(), self.r#slot_resolution_settings.to_pulumi_value().await);
+            map.insert("wait_and_continue_specifications".to_string(), self.r#wait_and_continue_specifications.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V2ModelsSlotValueElicitationSetting {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#default_value_specifications: {
+                        let field_value = match fields_map.get("default_value_specifications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_value_specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingDefaultValueSpecification>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#prompt_specification: {
+                        let field_value = match fields_map.get("prompt_specification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prompt_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecification> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#sample_utterances: {
+                        let field_value = match fields_map.get("sample_utterances") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sample_utterances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingSampleUtterance>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#slot_constraint: {
+                        let field_value = match fields_map.get("slot_constraint") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'slot_constraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#slot_resolution_settings: {
+                        let field_value = match fields_map.get("slot_resolution_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'slot_resolution_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingSlotResolutionSetting>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#wait_and_continue_specifications: {
+                        let field_value = match fields_map.get("wait_and_continue_specifications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'wait_and_continue_specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingWaitAndContinueSpecification>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -38,4 +38,91 @@ pub struct EntityRecognizerInputDataConfig {
     #[builder(into)]
     #[serde(rename = "entityTypes")]
     pub r#entity_types: Vec<super::super::types::comprehend::EntityRecognizerInputDataConfigEntityType>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EntityRecognizerInputDataConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("annotations".to_string(), self.r#annotations.to_pulumi_value().await);
+            map.insert("augmented_manifests".to_string(), self.r#augmented_manifests.to_pulumi_value().await);
+            map.insert("data_format".to_string(), self.r#data_format.to_pulumi_value().await);
+            map.insert("documents".to_string(), self.r#documents.to_pulumi_value().await);
+            map.insert("entity_list".to_string(), self.r#entity_list.to_pulumi_value().await);
+            map.insert("entity_types".to_string(), self.r#entity_types.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EntityRecognizerInputDataConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#annotations: {
+                        let field_value = match fields_map.get("annotations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'annotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigAnnotations>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#augmented_manifests: {
+                        let field_value = match fields_map.get("augmented_manifests") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'augmented_manifests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::comprehend::EntityRecognizerInputDataConfigAugmentedManifest>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#data_format: {
+                        let field_value = match fields_map.get("data_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#documents: {
+                        let field_value = match fields_map.get("documents") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'documents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigDocuments>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#entity_list: {
+                        let field_value = match fields_map.get("entity_list") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entity_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigEntityList>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#entity_types: {
+                        let field_value = match fields_map.get("entity_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entity_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Vec<super::super::types::comprehend::EntityRecognizerInputDataConfigEntityType> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

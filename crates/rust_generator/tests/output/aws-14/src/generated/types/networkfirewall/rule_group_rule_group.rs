@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,4 +19,75 @@ pub struct RuleGroupRuleGroup {
     #[builder(into)]
     #[serde(rename = "statefulRuleOptions")]
     pub r#stateful_rule_options: Option<Box<super::super::types::networkfirewall::RuleGroupRuleGroupStatefulRuleOptions>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RuleGroupRuleGroup {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("reference_sets".to_string(), self.r#reference_sets.to_pulumi_value().await);
+            map.insert("rule_variables".to_string(), self.r#rule_variables.to_pulumi_value().await);
+            map.insert("rules_source".to_string(), self.r#rules_source.to_pulumi_value().await);
+            map.insert("stateful_rule_options".to_string(), self.r#stateful_rule_options.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuleGroupRuleGroup {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#reference_sets: {
+                        let field_value = match fields_map.get("reference_sets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'reference_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::networkfirewall::RuleGroupRuleGroupReferenceSets>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#rule_variables: {
+                        let field_value = match fields_map.get("rule_variables") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rule_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::networkfirewall::RuleGroupRuleGroupRuleVariables>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#rules_source: {
+                        let field_value = match fields_map.get("rules_source") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rules_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::networkfirewall::RuleGroupRuleGroupRulesSource> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#stateful_rule_options: {
+                        let field_value = match fields_map.get("stateful_rule_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateful_rule_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::networkfirewall::RuleGroupRuleGroupStatefulRuleOptions>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -23,4 +23,83 @@ pub struct GetDirectorySelfServicePermission {
     #[builder(into)]
     #[serde(rename = "switchRunningMode")]
     pub r#switch_running_mode: bool,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetDirectorySelfServicePermission {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("change_compute_type".to_string(), self.r#change_compute_type.to_pulumi_value().await);
+            map.insert("increase_volume_size".to_string(), self.r#increase_volume_size.to_pulumi_value().await);
+            map.insert("rebuild_workspace".to_string(), self.r#rebuild_workspace.to_pulumi_value().await);
+            map.insert("restart_workspace".to_string(), self.r#restart_workspace.to_pulumi_value().await);
+            map.insert("switch_running_mode".to_string(), self.r#switch_running_mode.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDirectorySelfServicePermission {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#change_compute_type: {
+                        let field_value = match fields_map.get("change_compute_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'change_compute_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#increase_volume_size: {
+                        let field_value = match fields_map.get("increase_volume_size") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'increase_volume_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#rebuild_workspace: {
+                        let field_value = match fields_map.get("rebuild_workspace") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rebuild_workspace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#restart_workspace: {
+                        let field_value = match fields_map.get("restart_workspace") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'restart_workspace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#switch_running_mode: {
+                        let field_value = match fields_map.get("switch_running_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'switch_running_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

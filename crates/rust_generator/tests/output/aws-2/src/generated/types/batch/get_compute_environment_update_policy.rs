@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -9,4 +9,59 @@ pub struct GetComputeEnvironmentUpdatePolicy {
     #[builder(into)]
     #[serde(rename = "terminateJobsOnUpdate")]
     pub r#terminate_jobs_on_update: bool,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetComputeEnvironmentUpdatePolicy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("job_execution_timeout_minutes".to_string(), self.r#job_execution_timeout_minutes.to_pulumi_value().await);
+            map.insert("terminate_jobs_on_update".to_string(), self.r#terminate_jobs_on_update.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetComputeEnvironmentUpdatePolicy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#job_execution_timeout_minutes: {
+                        let field_value = match fields_map.get("job_execution_timeout_minutes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'job_execution_timeout_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#terminate_jobs_on_update: {
+                        let field_value = match fields_map.get("terminate_jobs_on_update") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'terminate_jobs_on_update' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

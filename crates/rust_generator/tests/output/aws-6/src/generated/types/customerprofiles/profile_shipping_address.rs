@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -43,4 +43,123 @@ pub struct ProfileShippingAddress {
     #[builder(into)]
     #[serde(rename = "state")]
     pub r#state: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ProfileShippingAddress {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("address_1".to_string(), self.r#address_1.to_pulumi_value().await);
+            map.insert("address_2".to_string(), self.r#address_2.to_pulumi_value().await);
+            map.insert("address_3".to_string(), self.r#address_3.to_pulumi_value().await);
+            map.insert("address_4".to_string(), self.r#address_4.to_pulumi_value().await);
+            map.insert("city".to_string(), self.r#city.to_pulumi_value().await);
+            map.insert("country".to_string(), self.r#country.to_pulumi_value().await);
+            map.insert("county".to_string(), self.r#county.to_pulumi_value().await);
+            map.insert("postal_code".to_string(), self.r#postal_code.to_pulumi_value().await);
+            map.insert("province".to_string(), self.r#province.to_pulumi_value().await);
+            map.insert("state".to_string(), self.r#state.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ProfileShippingAddress {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#address_1: {
+                        let field_value = match fields_map.get("address_1") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'address_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#address_2: {
+                        let field_value = match fields_map.get("address_2") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'address_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#address_3: {
+                        let field_value = match fields_map.get("address_3") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'address_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#address_4: {
+                        let field_value = match fields_map.get("address_4") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'address_4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#city: {
+                        let field_value = match fields_map.get("city") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'city' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#country: {
+                        let field_value = match fields_map.get("country") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'country' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#county: {
+                        let field_value = match fields_map.get("county") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'county' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#postal_code: {
+                        let field_value = match fields_map.get("postal_code") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'postal_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#province: {
+                        let field_value = match fields_map.get("province") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'province' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#state: {
+                        let field_value = match fields_map.get("state") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

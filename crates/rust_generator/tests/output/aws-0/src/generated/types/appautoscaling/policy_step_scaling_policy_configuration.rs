@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -39,4 +39,83 @@ pub struct PolicyStepScalingPolicyConfiguration {
     #[builder(into)]
     #[serde(rename = "stepAdjustments")]
     pub r#step_adjustments: Option<Vec<super::super::types::appautoscaling::PolicyStepScalingPolicyConfigurationStepAdjustment>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PolicyStepScalingPolicyConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("adjustment_type".to_string(), self.r#adjustment_type.to_pulumi_value().await);
+            map.insert("cooldown".to_string(), self.r#cooldown.to_pulumi_value().await);
+            map.insert("metric_aggregation_type".to_string(), self.r#metric_aggregation_type.to_pulumi_value().await);
+            map.insert("min_adjustment_magnitude".to_string(), self.r#min_adjustment_magnitude.to_pulumi_value().await);
+            map.insert("step_adjustments".to_string(), self.r#step_adjustments.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PolicyStepScalingPolicyConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#adjustment_type: {
+                        let field_value = match fields_map.get("adjustment_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'adjustment_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#cooldown: {
+                        let field_value = match fields_map.get("cooldown") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cooldown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#metric_aggregation_type: {
+                        let field_value = match fields_map.get("metric_aggregation_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_aggregation_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#min_adjustment_magnitude: {
+                        let field_value = match fields_map.get("min_adjustment_magnitude") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_adjustment_magnitude' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#step_adjustments: {
+                        let field_value = match fields_map.get("step_adjustments") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'step_adjustments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::appautoscaling::PolicyStepScalingPolicyConfigurationStepAdjustment>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

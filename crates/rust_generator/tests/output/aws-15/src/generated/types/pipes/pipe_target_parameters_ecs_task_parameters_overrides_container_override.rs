@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -35,4 +35,107 @@ pub struct PipeTargetParametersEcsTaskParametersOverridesContainerOverride {
     #[builder(into)]
     #[serde(rename = "resourceRequirements")]
     pub r#resource_requirements: Option<Vec<super::super::types::pipes::PipeTargetParametersEcsTaskParametersOverridesContainerOverrideResourceRequirement>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PipeTargetParametersEcsTaskParametersOverridesContainerOverride {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("commands".to_string(), self.r#commands.to_pulumi_value().await);
+            map.insert("cpu".to_string(), self.r#cpu.to_pulumi_value().await);
+            map.insert("environment_files".to_string(), self.r#environment_files.to_pulumi_value().await);
+            map.insert("environments".to_string(), self.r#environments.to_pulumi_value().await);
+            map.insert("memory".to_string(), self.r#memory.to_pulumi_value().await);
+            map.insert("memory_reservation".to_string(), self.r#memory_reservation.to_pulumi_value().await);
+            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
+            map.insert("resource_requirements".to_string(), self.r#resource_requirements.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PipeTargetParametersEcsTaskParametersOverridesContainerOverride {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#commands: {
+                        let field_value = match fields_map.get("commands") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'commands' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#cpu: {
+                        let field_value = match fields_map.get("cpu") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#environment_files: {
+                        let field_value = match fields_map.get("environment_files") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'environment_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::pipes::PipeTargetParametersEcsTaskParametersOverridesContainerOverrideEnvironmentFile>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#environments: {
+                        let field_value = match fields_map.get("environments") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'environments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::pipes::PipeTargetParametersEcsTaskParametersOverridesContainerOverrideEnvironment>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#memory: {
+                        let field_value = match fields_map.get("memory") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'memory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#memory_reservation: {
+                        let field_value = match fields_map.get("memory_reservation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'memory_reservation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#resource_requirements: {
+                        let field_value = match fields_map.get("resource_requirements") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_requirements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::pipes::PipeTargetParametersEcsTaskParametersOverridesContainerOverrideResourceRequirement>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

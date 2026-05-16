@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -27,4 +27,91 @@ pub struct WebAclRuleStatementManagedRuleGroupStatement {
     #[builder(into)]
     #[serde(rename = "version")]
     pub r#version: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WebAclRuleStatementManagedRuleGroupStatement {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("managed_rule_group_configs".to_string(), self.r#managed_rule_group_configs.to_pulumi_value().await);
+            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
+            map.insert("rule_action_overrides".to_string(), self.r#rule_action_overrides.to_pulumi_value().await);
+            map.insert("scope_down_statement".to_string(), self.r#scope_down_statement.to_pulumi_value().await);
+            map.insert("vendor_name".to_string(), self.r#vendor_name.to_pulumi_value().await);
+            map.insert("version".to_string(), self.r#version.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclRuleStatementManagedRuleGroupStatement {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#managed_rule_group_configs: {
+                        let field_value = match fields_map.get("managed_rule_group_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_rule_group_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#rule_action_overrides: {
+                        let field_value = match fields_map.get("rule_action_overrides") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rule_action_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverride>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#scope_down_statement: {
+                        let field_value = match fields_map.get("scope_down_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scope_down_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatement>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#vendor_name: {
+                        let field_value = match fields_map.get("vendor_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vendor_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#version: {
+                        let field_value = match fields_map.get("version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

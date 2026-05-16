@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -29,4 +29,91 @@ pub struct RuleGroupRuleStatementRateBasedStatement {
     #[builder(into)]
     #[serde(rename = "scopeDownStatement")]
     pub r#scope_down_statement: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatement>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RuleGroupRuleStatementRateBasedStatement {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("aggregate_key_type".to_string(), self.r#aggregate_key_type.to_pulumi_value().await);
+            map.insert("custom_keys".to_string(), self.r#custom_keys.to_pulumi_value().await);
+            map.insert("evaluation_window_sec".to_string(), self.r#evaluation_window_sec.to_pulumi_value().await);
+            map.insert("forwarded_ip_config".to_string(), self.r#forwarded_ip_config.to_pulumi_value().await);
+            map.insert("limit".to_string(), self.r#limit.to_pulumi_value().await);
+            map.insert("scope_down_statement".to_string(), self.r#scope_down_statement.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuleGroupRuleStatementRateBasedStatement {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#aggregate_key_type: {
+                        let field_value = match fields_map.get("aggregate_key_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aggregate_key_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#custom_keys: {
+                        let field_value = match fields_map.get("custom_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementCustomKey>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#evaluation_window_sec: {
+                        let field_value = match fields_map.get("evaluation_window_sec") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'evaluation_window_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#forwarded_ip_config: {
+                        let field_value = match fields_map.get("forwarded_ip_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'forwarded_ip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementForwardedIpConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#limit: {
+                        let field_value = match fields_map.get("limit") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#scope_down_statement: {
+                        let field_value = match fields_map.get("scope_down_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scope_down_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatement>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

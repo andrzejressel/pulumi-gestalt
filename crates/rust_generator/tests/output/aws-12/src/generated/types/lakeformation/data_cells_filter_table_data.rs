@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -35,4 +35,107 @@ pub struct DataCellsFilterTableData {
     #[builder(into)]
     #[serde(rename = "versionId")]
     pub r#version_id: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataCellsFilterTableData {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("column_names".to_string(), self.r#column_names.to_pulumi_value().await);
+            map.insert("column_wildcard".to_string(), self.r#column_wildcard.to_pulumi_value().await);
+            map.insert("database_name".to_string(), self.r#database_name.to_pulumi_value().await);
+            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
+            map.insert("row_filter".to_string(), self.r#row_filter.to_pulumi_value().await);
+            map.insert("table_catalog_id".to_string(), self.r#table_catalog_id.to_pulumi_value().await);
+            map.insert("table_name".to_string(), self.r#table_name.to_pulumi_value().await);
+            map.insert("version_id".to_string(), self.r#version_id.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataCellsFilterTableData {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#column_names: {
+                        let field_value = match fields_map.get("column_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'column_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#column_wildcard: {
+                        let field_value = match fields_map.get("column_wildcard") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'column_wildcard' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lakeformation::DataCellsFilterTableDataColumnWildcard>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#database_name: {
+                        let field_value = match fields_map.get("database_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'database_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#row_filter: {
+                        let field_value = match fields_map.get("row_filter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'row_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::lakeformation::DataCellsFilterTableDataRowFilter>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#table_catalog_id: {
+                        let field_value = match fields_map.get("table_catalog_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'table_catalog_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#table_name: {
+                        let field_value = match fields_map.get("table_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'table_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#version_id: {
+                        let field_value = match fields_map.get("version_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'version_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

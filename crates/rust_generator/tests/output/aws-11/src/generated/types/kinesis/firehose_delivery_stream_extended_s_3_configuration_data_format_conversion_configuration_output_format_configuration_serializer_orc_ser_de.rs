@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -43,4 +43,123 @@ pub struct FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConf
     #[builder(into)]
     #[serde(rename = "stripeSizeBytes")]
     pub r#stripe_size_bytes: Option<i32>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("block_size_bytes".to_string(), self.r#block_size_bytes.to_pulumi_value().await);
+            map.insert("bloom_filter_columns".to_string(), self.r#bloom_filter_columns.to_pulumi_value().await);
+            map.insert("bloom_filter_false_positive_probability".to_string(), self.r#bloom_filter_false_positive_probability.to_pulumi_value().await);
+            map.insert("compression".to_string(), self.r#compression.to_pulumi_value().await);
+            map.insert("dictionary_key_threshold".to_string(), self.r#dictionary_key_threshold.to_pulumi_value().await);
+            map.insert("enable_padding".to_string(), self.r#enable_padding.to_pulumi_value().await);
+            map.insert("format_version".to_string(), self.r#format_version.to_pulumi_value().await);
+            map.insert("padding_tolerance".to_string(), self.r#padding_tolerance.to_pulumi_value().await);
+            map.insert("row_index_stride".to_string(), self.r#row_index_stride.to_pulumi_value().await);
+            map.insert("stripe_size_bytes".to_string(), self.r#stripe_size_bytes.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#block_size_bytes: {
+                        let field_value = match fields_map.get("block_size_bytes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'block_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#bloom_filter_columns: {
+                        let field_value = match fields_map.get("bloom_filter_columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bloom_filter_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#bloom_filter_false_positive_probability: {
+                        let field_value = match fields_map.get("bloom_filter_false_positive_probability") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bloom_filter_false_positive_probability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#compression: {
+                        let field_value = match fields_map.get("compression") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#dictionary_key_threshold: {
+                        let field_value = match fields_map.get("dictionary_key_threshold") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dictionary_key_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#enable_padding: {
+                        let field_value = match fields_map.get("enable_padding") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_padding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#format_version: {
+                        let field_value = match fields_map.get("format_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'format_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#padding_tolerance: {
+                        let field_value = match fields_map.get("padding_tolerance") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'padding_tolerance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#row_index_stride: {
+                        let field_value = match fields_map.get("row_index_stride") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'row_index_stride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#stripe_size_bytes: {
+                        let field_value = match fields_map.get("stripe_size_bytes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stripe_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

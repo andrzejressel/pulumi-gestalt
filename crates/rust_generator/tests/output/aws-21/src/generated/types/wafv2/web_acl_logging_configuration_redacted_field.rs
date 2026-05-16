@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,4 +19,75 @@ pub struct WebAclLoggingConfigurationRedactedField {
     #[builder(into)]
     #[serde(rename = "uriPath")]
     pub r#uri_path: Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldUriPath>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WebAclLoggingConfigurationRedactedField {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("method".to_string(), self.r#method.to_pulumi_value().await);
+            map.insert("query_string".to_string(), self.r#query_string.to_pulumi_value().await);
+            map.insert("single_header".to_string(), self.r#single_header.to_pulumi_value().await);
+            map.insert("uri_path".to_string(), self.r#uri_path.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclLoggingConfigurationRedactedField {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#method: {
+                        let field_value = match fields_map.get("method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldMethod>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#query_string: {
+                        let field_value = match fields_map.get("query_string") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldQueryString>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#single_header: {
+                        let field_value = match fields_map.get("single_header") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'single_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldSingleHeader>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#uri_path: {
+                        let field_value = match fields_map.get("uri_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'uri_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldUriPath>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

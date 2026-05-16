@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -11,4 +11,59 @@ pub struct DataCatalogEncryptionSettingsDataCatalogEncryptionSettings {
     #[builder(into)]
     #[serde(rename = "encryptionAtRest")]
     pub r#encryption_at_rest: Box<super::super::types::glue::DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataCatalogEncryptionSettingsDataCatalogEncryptionSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("connection_password_encryption".to_string(), self.r#connection_password_encryption.to_pulumi_value().await);
+            map.insert("encryption_at_rest".to_string(), self.r#encryption_at_rest.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataCatalogEncryptionSettingsDataCatalogEncryptionSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#connection_password_encryption: {
+                        let field_value = match fields_map.get("connection_password_encryption") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connection_password_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::glue::DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#encryption_at_rest: {
+                        let field_value = match fields_map.get("encryption_at_rest") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'encryption_at_rest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::glue::DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

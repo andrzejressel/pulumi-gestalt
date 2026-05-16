@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,4 +19,75 @@ pub struct GetResponseHeadersPolicySecurityHeadersConfigXssProtection {
     #[builder(into)]
     #[serde(rename = "reportUri")]
     pub r#report_uri: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetResponseHeadersPolicySecurityHeadersConfigXssProtection {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("mode_block".to_string(), self.r#mode_block.to_pulumi_value().await);
+            map.insert("override_".to_string(), self.r#override_.to_pulumi_value().await);
+            map.insert("protection".to_string(), self.r#protection.to_pulumi_value().await);
+            map.insert("report_uri".to_string(), self.r#report_uri.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetResponseHeadersPolicySecurityHeadersConfigXssProtection {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#mode_block: {
+                        let field_value = match fields_map.get("mode_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mode_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#override_: {
+                        let field_value = match fields_map.get("override_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'override_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#protection: {
+                        let field_value = match fields_map.get("protection") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#report_uri: {
+                        let field_value = match fields_map.get("report_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'report_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

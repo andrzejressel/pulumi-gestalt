@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -67,4 +67,171 @@ pub struct FlowTaskConnectorOperator {
     #[builder(into)]
     #[serde(rename = "zendesk")]
     pub r#zendesk: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FlowTaskConnectorOperator {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("amplitude".to_string(), self.r#amplitude.to_pulumi_value().await);
+            map.insert("custom_connector".to_string(), self.r#custom_connector.to_pulumi_value().await);
+            map.insert("datadog".to_string(), self.r#datadog.to_pulumi_value().await);
+            map.insert("dynatrace".to_string(), self.r#dynatrace.to_pulumi_value().await);
+            map.insert("google_analytics".to_string(), self.r#google_analytics.to_pulumi_value().await);
+            map.insert("infor_nexus".to_string(), self.r#infor_nexus.to_pulumi_value().await);
+            map.insert("marketo".to_string(), self.r#marketo.to_pulumi_value().await);
+            map.insert("s_3".to_string(), self.r#s_3.to_pulumi_value().await);
+            map.insert("salesforce".to_string(), self.r#salesforce.to_pulumi_value().await);
+            map.insert("sapo_data".to_string(), self.r#sapo_data.to_pulumi_value().await);
+            map.insert("service_now".to_string(), self.r#service_now.to_pulumi_value().await);
+            map.insert("singular".to_string(), self.r#singular.to_pulumi_value().await);
+            map.insert("slack".to_string(), self.r#slack.to_pulumi_value().await);
+            map.insert("trendmicro".to_string(), self.r#trendmicro.to_pulumi_value().await);
+            map.insert("veeva".to_string(), self.r#veeva.to_pulumi_value().await);
+            map.insert("zendesk".to_string(), self.r#zendesk.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FlowTaskConnectorOperator {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#amplitude: {
+                        let field_value = match fields_map.get("amplitude") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'amplitude' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#custom_connector: {
+                        let field_value = match fields_map.get("custom_connector") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_connector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#datadog: {
+                        let field_value = match fields_map.get("datadog") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'datadog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#dynatrace: {
+                        let field_value = match fields_map.get("dynatrace") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dynatrace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#google_analytics: {
+                        let field_value = match fields_map.get("google_analytics") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'google_analytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#infor_nexus: {
+                        let field_value = match fields_map.get("infor_nexus") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'infor_nexus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#marketo: {
+                        let field_value = match fields_map.get("marketo") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'marketo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#s_3: {
+                        let field_value = match fields_map.get("s_3") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#salesforce: {
+                        let field_value = match fields_map.get("salesforce") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'salesforce' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#sapo_data: {
+                        let field_value = match fields_map.get("sapo_data") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sapo_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#service_now: {
+                        let field_value = match fields_map.get("service_now") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_now' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#singular: {
+                        let field_value = match fields_map.get("singular") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'singular' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#slack: {
+                        let field_value = match fields_map.get("slack") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'slack' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#trendmicro: {
+                        let field_value = match fields_map.get("trendmicro") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'trendmicro' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#veeva: {
+                        let field_value = match fields_map.get("veeva") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'veeva' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#zendesk: {
+                        let field_value = match fields_map.get("zendesk") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zendesk' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

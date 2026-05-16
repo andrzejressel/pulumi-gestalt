@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -59,4 +59,155 @@ pub struct FirehoseDeliveryStreamRedshiftConfiguration {
     #[builder(into)]
     #[serde(rename = "username")]
     pub r#username: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FirehoseDeliveryStreamRedshiftConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("cloudwatch_logging_options".to_string(), self.r#cloudwatch_logging_options.to_pulumi_value().await);
+            map.insert("cluster_jdbcurl".to_string(), self.r#cluster_jdbcurl.to_pulumi_value().await);
+            map.insert("copy_options".to_string(), self.r#copy_options.to_pulumi_value().await);
+            map.insert("data_table_columns".to_string(), self.r#data_table_columns.to_pulumi_value().await);
+            map.insert("data_table_name".to_string(), self.r#data_table_name.to_pulumi_value().await);
+            map.insert("password".to_string(), self.r#password.to_pulumi_value().await);
+            map.insert("processing_configuration".to_string(), self.r#processing_configuration.to_pulumi_value().await);
+            map.insert("retry_duration".to_string(), self.r#retry_duration.to_pulumi_value().await);
+            map.insert("role_arn".to_string(), self.r#role_arn.to_pulumi_value().await);
+            map.insert("s_3_backup_configuration".to_string(), self.r#s_3_backup_configuration.to_pulumi_value().await);
+            map.insert("s_3_backup_mode".to_string(), self.r#s_3_backup_mode.to_pulumi_value().await);
+            map.insert("s_3_configuration".to_string(), self.r#s_3_configuration.to_pulumi_value().await);
+            map.insert("secrets_manager_configuration".to_string(), self.r#secrets_manager_configuration.to_pulumi_value().await);
+            map.insert("username".to_string(), self.r#username.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FirehoseDeliveryStreamRedshiftConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cloudwatch_logging_options: {
+                        let field_value = match fields_map.get("cloudwatch_logging_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloudwatch_logging_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptions>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#cluster_jdbcurl: {
+                        let field_value = match fields_map.get("cluster_jdbcurl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cluster_jdbcurl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#copy_options: {
+                        let field_value = match fields_map.get("copy_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'copy_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#data_table_columns: {
+                        let field_value = match fields_map.get("data_table_columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_table_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#data_table_name: {
+                        let field_value = match fields_map.get("data_table_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_table_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#password: {
+                        let field_value = match fields_map.get("password") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#processing_configuration: {
+                        let field_value = match fields_map.get("processing_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'processing_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#retry_duration: {
+                        let field_value = match fields_map.get("retry_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'retry_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#role_arn: {
+                        let field_value = match fields_map.get("role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_backup_configuration: {
+                        let field_value = match fields_map.get("s_3_backup_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_backup_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationS3BackupConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_backup_mode: {
+                        let field_value = match fields_map.get("s_3_backup_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_backup_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_configuration: {
+                        let field_value = match fields_map.get("s_3_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationS3Configuration> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#secrets_manager_configuration: {
+                        let field_value = match fields_map.get("secrets_manager_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secrets_manager_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationSecretsManagerConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#username: {
+                        let field_value = match fields_map.get("username") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

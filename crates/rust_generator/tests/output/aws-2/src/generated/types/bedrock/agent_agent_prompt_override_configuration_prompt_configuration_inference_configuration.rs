@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -23,4 +23,83 @@ pub struct AgentAgentPromptOverrideConfigurationPromptConfigurationInferenceConf
     #[builder(into)]
     #[serde(rename = "topP")]
     pub r#top_p: f64,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AgentAgentPromptOverrideConfigurationPromptConfigurationInferenceConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("max_length".to_string(), self.r#max_length.to_pulumi_value().await);
+            map.insert("stop_sequences".to_string(), self.r#stop_sequences.to_pulumi_value().await);
+            map.insert("temperature".to_string(), self.r#temperature.to_pulumi_value().await);
+            map.insert("top_k".to_string(), self.r#top_k.to_pulumi_value().await);
+            map.insert("top_p".to_string(), self.r#top_p.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AgentAgentPromptOverrideConfigurationPromptConfigurationInferenceConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#max_length: {
+                        let field_value = match fields_map.get("max_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#stop_sequences: {
+                        let field_value = match fields_map.get("stop_sequences") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stop_sequences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#temperature: {
+                        let field_value = match fields_map.get("temperature") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'temperature' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#top_k: {
+                        let field_value = match fields_map.get("top_k") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'top_k' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#top_p: {
+                        let field_value = match fields_map.get("top_p") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'top_p' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

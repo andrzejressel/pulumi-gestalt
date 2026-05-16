@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -55,4 +55,147 @@ pub struct MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalytic
     #[builder(into)]
     #[serde(rename = "vocabularyName")]
     pub r#vocabulary_name: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalyticsProcessorConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+
+            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
+            map.insert("call_analytics_stream_categories".to_string(), self.r#call_analytics_stream_categories.to_pulumi_value().await);
+            map.insert("content_identification_type".to_string(), self.r#content_identification_type.to_pulumi_value().await);
+            map.insert("content_redaction_type".to_string(), self.r#content_redaction_type.to_pulumi_value().await);
+            map.insert("enable_partial_results_stabilization".to_string(), self.r#enable_partial_results_stabilization.to_pulumi_value().await);
+            map.insert("filter_partial_results".to_string(), self.r#filter_partial_results.to_pulumi_value().await);
+            map.insert("language_code".to_string(), self.r#language_code.to_pulumi_value().await);
+            map.insert("language_model_name".to_string(), self.r#language_model_name.to_pulumi_value().await);
+            map.insert("partial_results_stability".to_string(), self.r#partial_results_stability.to_pulumi_value().await);
+            map.insert("pii_entity_types".to_string(), self.r#pii_entity_types.to_pulumi_value().await);
+            map.insert("post_call_analytics_settings".to_string(), self.r#post_call_analytics_settings.to_pulumi_value().await);
+            map.insert("vocabulary_filter_method".to_string(), self.r#vocabulary_filter_method.to_pulumi_value().await);
+            map.insert("vocabulary_filter_name".to_string(), self.r#vocabulary_filter_name.to_pulumi_value().await);
+            map.insert("vocabulary_name".to_string(), self.r#vocabulary_name.to_pulumi_value().await);
+
+            map.to_pulumi_value().await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalyticsProcessorConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+        use std::collections::BTreeMap;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+        use pulumi_gestalt_rust::__private::rootcause::bail;
+
+        match value.content {
+            PulumiValueContent::Object(ref obj) => {
+                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
+                    obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#call_analytics_stream_categories: {
+                        let field_value = match fields_map.get("call_analytics_stream_categories") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'call_analytics_stream_categories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#content_identification_type: {
+                        let field_value = match fields_map.get("content_identification_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'content_identification_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#content_redaction_type: {
+                        let field_value = match fields_map.get("content_redaction_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'content_redaction_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#enable_partial_results_stabilization: {
+                        let field_value = match fields_map.get("enable_partial_results_stabilization") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_partial_results_stabilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#filter_partial_results: {
+                        let field_value = match fields_map.get("filter_partial_results") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'filter_partial_results' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#language_code: {
+                        let field_value = match fields_map.get("language_code") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'language_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#language_model_name: {
+                        let field_value = match fields_map.get("language_model_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'language_model_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#partial_results_stability: {
+                        let field_value = match fields_map.get("partial_results_stability") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'partial_results_stability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#pii_entity_types: {
+                        let field_value = match fields_map.get("pii_entity_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pii_entity_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#post_call_analytics_settings: {
+                        let field_value = match fields_map.get("post_call_analytics_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'post_call_analytics_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<Box<super::super::types::chimesdkmediapipelines::MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalyticsProcessorConfigurationPostCallAnalyticsSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#vocabulary_filter_method: {
+                        let field_value = match fields_map.get("vocabulary_filter_method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vocabulary_filter_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#vocabulary_filter_name: {
+                        let field_value = match fields_map.get("vocabulary_filter_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vocabulary_filter_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                    r#vocabulary_name: {
+                        let field_value = match fields_map.get("vocabulary_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vocabulary_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }
