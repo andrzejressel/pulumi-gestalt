@@ -5,8 +5,8 @@ use crate::domain_ir::ResourceToken::Stash;
 /// mapping, stdlib calls, etc.) into concrete Rust syntax constructs
 /// (let bindings, method calls, function calls, etc.).
 use crate::domain_ir::{
-    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, ResourceInput, ResourceToken,
-    Statement, StdlibFn, UnaryOp,
+    BinOp, ConfigBinding, ConfigType, Expr, ExprValue, JsonValue, Program, ResourceInput,
+    ResourceToken, Statement, StdlibFn, UnaryOp,
 };
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
 use quote::quote;
@@ -315,37 +315,37 @@ fn rust_config_type(ct: &ConfigType) -> String {
 }
 
 fn lower_expr(expr: &Expr) -> RustExpr {
-    match expr {
-        Expr::String(s) => {
+    match &expr.value {
+        ExprValue::String(s) => {
             if requires_escaping(s) {
                 RustExpr::RawStringLiteral(s.clone())
             } else {
                 RustExpr::StringLiteral(s.clone())
             }
         }
-        Expr::Number(n) => RustExpr::NumberLiteral(*n),
-        Expr::Bool(b) => RustExpr::BoolLiteral(*b),
-        Expr::Null => RustExpr::Null,
-        Expr::Variable(name) => RustExpr::Identifier(name.clone()),
-        Expr::FieldAccess(base, field) => {
+        ExprValue::Number(n) => RustExpr::NumberLiteral(*n),
+        ExprValue::Bool(b) => RustExpr::BoolLiteral(*b),
+        ExprValue::Null => RustExpr::Null,
+        ExprValue::Variable(name) => RustExpr::Identifier(name.clone()),
+        ExprValue::FieldAccess(base, field) => {
             RustExpr::FieldAccess(Box::new(lower_expr(base)), field.clone())
         }
-        Expr::IndexAccess(base, index) => {
-            let lowered_index = match index.as_ref() {
-                Expr::String(s) => RustExpr::StringLiteral(s.clone()),
-                Expr::Number(n) => RustExpr::NumberLiteral(*n),
-                other => lower_expr(other),
+        ExprValue::IndexAccess(base, index) => {
+            let lowered_index = match &index.value {
+                ExprValue::String(s) => RustExpr::StringLiteral(s.clone()),
+                ExprValue::Number(n) => RustExpr::NumberLiteral(*n),
+                _ => lower_expr(index),
             };
             RustExpr::IndexAccess(Box::new(lower_expr(base)), Box::new(lowered_index))
         }
-        Expr::List(items) => {
+        ExprValue::List(items) => {
             let elements = items.iter().map(lower_expr).collect::<Vec<_>>();
             RustExpr::Vec {
                 elements,
                 type_hint: None,
             }
         }
-        Expr::Format { parts } => {
+        ExprValue::Format { parts } => {
             if parts.is_empty() {
                 return RustExpr::FunctionCall {
                     path: "String::new".to_string(),
@@ -360,7 +360,7 @@ fn lower_expr(expr: &Expr) -> RustExpr {
             }
             RustExpr::Format { fmt, args }
         }
-        Expr::OutputMap {
+        ExprValue::OutputMap {
             output,
             params,
             body,
@@ -373,7 +373,7 @@ fn lower_expr(expr: &Expr) -> RustExpr {
                 body: Box::new(lower_expr(body)),
             }],
         },
-        Expr::CombineOutputs {
+        ExprValue::CombineOutputs {
             outputs,
             params,
             body,
@@ -393,48 +393,48 @@ fn lower_expr(expr: &Expr) -> RustExpr {
                 }],
             }
         }
-        Expr::MakeSecret(inner) => RustExpr::MethodCall {
+        ExprValue::MakeSecret(inner) => RustExpr::MethodCall {
             receiver: Box::new(lower_expr(inner)),
             method: "secret".to_string(),
             type_params: vec![],
             args: vec![],
         },
-        Expr::MakeUnsecret(inner) => RustExpr::MethodCall {
+        ExprValue::MakeUnsecret(inner) => RustExpr::MethodCall {
             receiver: Box::new(lower_expr(inner)),
             method: "unsecret".to_string(),
             type_params: vec![],
             args: vec![],
         },
-        Expr::NewSecret(inner) => RustExpr::MethodCall {
+        ExprValue::NewSecret(inner) => RustExpr::MethodCall {
             receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
             method: "new_secret".to_string(),
             type_params: vec![],
             args: vec![RustExpr::Ref(Box::new(lower_expr(inner)))],
         },
-        Expr::NewOutput(inner) => RustExpr::MethodCall {
+        ExprValue::NewOutput(inner) => RustExpr::MethodCall {
             receiver: Box::new(RustExpr::Identifier("ctx".to_string())),
             method: "new_output".to_string(),
             type_params: vec![],
             args: vec![RustExpr::Ref(Box::new(lower_expr(inner)))],
         },
-        Expr::PulumiAny(json) => {
+        ExprValue::PulumiAny(json) => {
             let body = render_json_value(json);
             RustExpr::MacroCall {
                 path: "pulumi_gestalt_rust::pulumi_any!".to_string(),
                 body,
             }
         }
-        Expr::StdlibCall { func, args } => lower_stdlib_call(func, args),
-        Expr::BinaryOp { left, op, right } => RustExpr::BinaryOp {
+        ExprValue::StdlibCall { func, args } => lower_stdlib_call(func, args),
+        ExprValue::BinaryOp { left, op, right } => RustExpr::BinaryOp {
             left: Box::new(lower_expr(left)),
             op: bin_op_str(op),
             right: Box::new(lower_expr(right)),
         },
-        Expr::UnaryOp { op, operand } => RustExpr::UnaryOp {
+        ExprValue::UnaryOp { op, operand } => RustExpr::UnaryOp {
             op: unary_op_str(op),
             operand: Box::new(lower_expr(operand)),
         },
-        Expr::Closure { params, body } => RustExpr::Closure {
+        ExprValue::Closure { params, body } => RustExpr::Closure {
             params: params.clone(),
             body: Box::new(lower_expr(body)),
         },

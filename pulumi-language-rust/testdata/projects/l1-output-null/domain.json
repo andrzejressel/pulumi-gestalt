@@ -4,9 +4,19 @@
       "Export": {
         "name": "array",
         "value": {
-          "List": [
-            "Null"
-          ]
+          "expr_type": {
+            "Tuple": [
+              "None"
+            ]
+          },
+          "value": {
+            "List": [
+              {
+                "expr_type": "None",
+                "value": "Null"
+              }
+            ]
+          }
         }
       }
     }

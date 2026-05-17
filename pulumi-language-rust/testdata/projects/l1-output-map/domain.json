@@ -4,8 +4,13 @@
       "Export": {
         "name": "empty",
         "value": {
-          "PulumiAny": {
-            "Object": []
+          "expr_type": {
+            "Object": {}
+          },
+          "value": {
+            "PulumiAny": {
+              "Object": []
+            }
           }
         }
       }
@@ -14,25 +19,39 @@
       "Export": {
         "name": "strings",
         "value": {
-          "PulumiAny": {
-            "Object": [
-              [
-                "farewell",
-                {
-                  "Expr": {
-                    "String": "Goodbye, world!"
+          "expr_type": {
+            "Object": {
+              "farewell": "String",
+              "greeting": "String"
+            }
+          },
+          "value": {
+            "PulumiAny": {
+              "Object": [
+                [
+                  "farewell",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "Goodbye, world!"
+                      }
+                    }
                   }
-                }
-              ],
-              [
-                "greeting",
-                {
-                  "Expr": {
-                    "String": "Hello, world!"
+                ],
+                [
+                  "greeting",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "Hello, world!"
+                      }
+                    }
                   }
-                }
+                ]
               ]
-            ]
+            }
           }
         }
       }
@@ -41,73 +60,111 @@
       "Export": {
         "name": "adversarialStrings",
         "value": {
-          "PulumiAny": {
-            "Object": [
-              [
-                "",
-                {
-                  "Expr": {
-                    "String": "empty key"
+          "expr_type": {
+            "Object": {
+              "": "String",
+              "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)": "String",
+              "__internal": "String",
+              "__provider": "String",
+              "__type": "String",
+              "__version": "String",
+              "dunder value": "String",
+              "empty value": "String"
+            }
+          },
+          "value": {
+            "PulumiAny": {
+              "Object": [
+                [
+                  "",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "empty key"
+                      }
+                    }
                   }
-                }
-              ],
-              [
-                "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)",
-                {
-                  "Expr": {
-                    "String": "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)"
+                ],
+                [
+                  "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "Some ${common} \"characters\" 'that' need escaping: \\ (backslash), \t (tab), \u001b (escape), \u0007 (bell), \u0000 (null), 󠀡 (tag space)"
+                      }
+                    }
                   }
-                }
-              ],
-              [
-                "__internal",
-                {
-                  "Expr": {
-                    "String": "dunder internal"
+                ],
+                [
+                  "__internal",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "dunder internal"
+                      }
+                    }
                   }
-                }
-              ],
-              [
-                "__provider",
-                {
-                  "Expr": {
-                    "String": "dunder provider"
+                ],
+                [
+                  "__provider",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "dunder provider"
+                      }
+                    }
                   }
-                }
-              ],
-              [
-                "__type",
-                {
-                  "Expr": {
-                    "String": "dunder type"
+                ],
+                [
+                  "__type",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "dunder type"
+                      }
+                    }
                   }
-                }
-              ],
-              [
-                "__version",
-                {
-                  "Expr": {
-                    "String": "dunder version"
+                ],
+                [
+                  "__version",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "dunder version"
+                      }
+                    }
                   }
-                }
-              ],
-              [
-                "dunder value",
-                {
-                  "Expr": {
-                    "String": "__dunder"
+                ],
+                [
+                  "dunder value",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": "__dunder"
+                      }
+                    }
                   }
-                }
-              ],
-              [
-                "empty value",
-                {
-                  "Expr": {
-                    "String": ""
+                ],
+                [
+                  "empty value",
+                  {
+                    "Expr": {
+                      "expr_type": "String",
+                      "value": {
+                        "String": ""
+                      }
+                    }
                   }
-                }
+                ]
               ]
-            ]
+            }
           }
         }
       }
@@ -116,21 +173,29 @@
       "Export": {
         "name": "numbers",
         "value": {
-          "PulumiAny": {
-            "Object": [
-              [
-                "1",
-                {
-                  "Number": 1.0
-                }
-              ],
-              [
-                "2",
-                {
-                  "Number": 2.0
-                }
+          "expr_type": {
+            "Object": {
+              "1": "Int",
+              "2": "Int"
+            }
+          },
+          "value": {
+            "PulumiAny": {
+              "Object": [
+                [
+                  "1",
+                  {
+                    "Number": 1.0
+                  }
+                ],
+                [
+                  "2",
+                  {
+                    "Number": 2.0
+                  }
+                ]
               ]
-            ]
+            }
           }
         }
       }
@@ -139,45 +204,57 @@
       "Export": {
         "name": "keys",
         "value": {
-          "PulumiAny": {
-            "Object": [
-              [
-                "MYKEY",
-                {
-                  "Number": 6.0
-                }
-              ],
-              [
-                "MY_KEY",
-                {
-                  "Number": 4.0
-                }
-              ],
-              [
-                "my-key",
-                {
-                  "Number": 2.0
-                }
-              ],
-              [
-                "my.key",
-                {
-                  "Number": 1.0
-                }
-              ],
-              [
-                "my_key",
-                {
-                  "Number": 3.0
-                }
-              ],
-              [
-                "mykey",
-                {
-                  "Number": 5.0
-                }
+          "expr_type": {
+            "Object": {
+              "MYKEY": "Int",
+              "MY_KEY": "Int",
+              "my-key": "Int",
+              "my.key": "Int",
+              "my_key": "Int",
+              "mykey": "Int"
+            }
+          },
+          "value": {
+            "PulumiAny": {
+              "Object": [
+                [
+                  "MYKEY",
+                  {
+                    "Number": 6.0
+                  }
+                ],
+                [
+                  "MY_KEY",
+                  {
+                    "Number": 4.0
+                  }
+                ],
+                [
+                  "my-key",
+                  {
+                    "Number": 2.0
+                  }
+                ],
+                [
+                  "my.key",
+                  {
+                    "Number": 1.0
+                  }
+                ],
+                [
+                  "my_key",
+                  {
+                    "Number": 3.0
+                  }
+                ],
+                [
+                  "mykey",
+                  {
+                    "Number": 5.0
+                  }
+                ]
               ]
-            ]
+            }
           }
         }
       }

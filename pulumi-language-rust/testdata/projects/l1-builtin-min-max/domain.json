@@ -36,16 +36,25 @@
       "Export": {
         "name": "maxResult",
         "value": {
-          "StdlibCall": {
-            "func": "Max",
-            "args": [
-              {
-                "Variable": "a"
-              },
-              {
-                "Variable": "b"
-              }
-            ]
+          "expr_type": "Number",
+          "value": {
+            "StdlibCall": {
+              "func": "Max",
+              "args": [
+                {
+                  "expr_type": "Number",
+                  "value": {
+                    "Variable": "a"
+                  }
+                },
+                {
+                  "expr_type": "Number",
+                  "value": {
+                    "Variable": "b"
+                  }
+                }
+              ]
+            }
           }
         }
       }
@@ -54,16 +63,25 @@
       "Export": {
         "name": "minResult",
         "value": {
-          "StdlibCall": {
-            "func": "Min",
-            "args": [
-              {
-                "Variable": "a"
-              },
-              {
-                "Variable": "b"
-              }
-            ]
+          "expr_type": "Number",
+          "value": {
+            "StdlibCall": {
+              "func": "Min",
+              "args": [
+                {
+                  "expr_type": "Number",
+                  "value": {
+                    "Variable": "a"
+                  }
+                },
+                {
+                  "expr_type": "Number",
+                  "value": {
+                    "Variable": "b"
+                  }
+                }
+              ]
+            }
           }
         }
       }
@@ -72,16 +90,25 @@
       "Export": {
         "name": "intMaxResult",
         "value": {
-          "StdlibCall": {
-            "func": "Max",
-            "args": [
-              {
-                "Variable": "c"
-              },
-              {
-                "Variable": "d"
-              }
-            ]
+          "expr_type": "Int",
+          "value": {
+            "StdlibCall": {
+              "func": "Max",
+              "args": [
+                {
+                  "expr_type": "Int",
+                  "value": {
+                    "Variable": "c"
+                  }
+                },
+                {
+                  "expr_type": "Int",
+                  "value": {
+                    "Variable": "d"
+                  }
+                }
+              ]
+            }
           }
         }
       }
@@ -90,16 +117,25 @@
       "Export": {
         "name": "intMinResult",
         "value": {
-          "StdlibCall": {
-            "func": "Min",
-            "args": [
-              {
-                "Variable": "c"
-              },
-              {
-                "Variable": "d"
-              }
-            ]
+          "expr_type": "Int",
+          "value": {
+            "StdlibCall": {
+              "func": "Min",
+              "args": [
+                {
+                  "expr_type": "Int",
+                  "value": {
+                    "Variable": "c"
+                  }
+                },
+                {
+                  "expr_type": "Int",
+                  "value": {
+                    "Variable": "d"
+                  }
+                }
+              ]
+            }
           }
         }
       }

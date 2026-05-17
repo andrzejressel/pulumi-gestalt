@@ -68,7 +68,13 @@ pub enum ConfigType {
 }
 
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]
-pub enum Expr {
+pub struct Expr {
+    pub expr_type: ExprType,
+    pub value: ExprValue,
+}
+
+#[derive(Clone, Debug, PartialEq, serde::Serialize)]
+pub enum ExprValue {
     // Literals
     String(String),
     Number(f64),
@@ -121,6 +127,22 @@ pub enum Expr {
         params: Vec<String>,
         body: Box<Expr>,
     },
+}
+
+#[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, serde::Serialize)]
+pub enum ExprType {
+    String,
+    Number,
+    Int,
+    Bool,
+    Dynamic,
+    None,
+    List(Box<ExprType>),
+    Map(Box<ExprType>),
+    Output(Box<ExprType>),
+    Tuple(Vec<ExprType>),
+    Object(std::collections::BTreeMap<String, ExprType>),
+    Union(Vec<ExprType>),
 }
 
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]

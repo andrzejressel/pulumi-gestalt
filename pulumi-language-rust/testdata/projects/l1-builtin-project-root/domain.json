@@ -4,9 +4,12 @@
       "Export": {
         "name": "rootDirectoryOutput",
         "value": {
-          "StdlibCall": {
-            "func": "RootDirectory",
-            "args": []
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "RootDirectory",
+              "args": []
+            }
           }
         }
       }
