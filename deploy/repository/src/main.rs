@@ -47,7 +47,7 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
 
     let build_yaml_jobs =
         github_workflow::GitHubWorkflow::from_file("../../.github/workflows/build.yml")?
-            .get_job_full_names_excluding_prefix("test-pulumi-language-rust-macos");
+            .get_job_full_names();
     let codeql_yaml_jobs =
         github_workflow::GitHubWorkflow::from_file("../../.github/workflows/codeql.yml")?
             .get_job_full_names();
