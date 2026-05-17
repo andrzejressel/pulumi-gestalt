@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("daily".to_string(), self.r#daily.to_pulumi_value().await);
-            map.insert("maximum_duration".to_string(), self.r#maximum_duration.to_pulumi_value().await);
-            map.insert("messages_per_second".to_string(), self.r#messages_per_second.to_pulumi_value().await);
-            map.insert("total".to_string(), self.r#total.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "daily".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#daily,
+                )
+                .await,
+            );
+            map.insert(
+                "maximum_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maximum_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "messages_per_second".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#messages_per_second,
+                )
+                .await,
+            );
+            map.insert(
+                "total".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#total,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AppLimits {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#daily: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'daily' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_duration: {
                         let field_value = match fields_map.get("maximum_duration") {
                             Some(value) => value,
                             None => bail!("Missing field 'maximum_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#messages_per_second: {
                         let field_value = match fields_map.get("messages_per_second") {
                             Some(value) => value,
                             None => bail!("Missing field 'messages_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total: {
                         let field_value = match fields_map.get("total") {
                             Some(value) => value,
                             None => bail!("Missing field 'total' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

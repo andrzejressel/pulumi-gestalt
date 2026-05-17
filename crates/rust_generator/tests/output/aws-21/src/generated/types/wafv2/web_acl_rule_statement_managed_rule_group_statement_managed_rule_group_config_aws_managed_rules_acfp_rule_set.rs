@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("creation_path".to_string(), self.r#creation_path.to_pulumi_value().await);
-            map.insert("enable_regex_in_path".to_string(), self.r#enable_regex_in_path.to_pulumi_value().await);
-            map.insert("registration_page_path".to_string(), self.r#registration_page_path.to_pulumi_value().await);
-            map.insert("request_inspection".to_string(), self.r#request_inspection.to_pulumi_value().await);
-            map.insert("response_inspection".to_string(), self.r#response_inspection.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "creation_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#creation_path,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_regex_in_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_regex_in_path,
+                )
+                .await,
+            );
+            map.insert(
+                "registration_page_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#registration_page_path,
+                )
+                .await,
+            );
+            map.insert(
+                "request_inspection".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#request_inspection,
+                )
+                .await,
+            );
+            map.insert(
+                "response_inspection".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#response_inspection,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSet {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#creation_path: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                             Some(value) => value,
                             None => bail!("Missing field 'creation_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_regex_in_path: {
                         let field_value = match fields_map.get("enable_regex_in_path") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_regex_in_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registration_page_path: {
                         let field_value = match fields_map.get("registration_page_path") {
                             Some(value) => value,
                             None => bail!("Missing field 'registration_page_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_inspection: {
                         let field_value = match fields_map.get("request_inspection") {
                             Some(value) => value,
                             None => bail!("Missing field 'request_inspection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspection> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_inspection: {
                         let field_value = match fields_map.get("response_inspection") {
                             Some(value) => value,
                             None => bail!("Missing field 'response_inspection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspection>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

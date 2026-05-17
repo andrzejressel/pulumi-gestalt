@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -25,4 +25,132 @@ pub struct RunBookDraft {
     #[builder(into)]
     #[serde(rename = "parameters")]
     pub r#parameters: Option<Vec<super::super::types::automation::RunBookDraftParameter>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RunBookDraft {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "content_link".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#content_link,
+                )
+                .await,
+            );
+            map.insert(
+                "creation_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#creation_time,
+                )
+                .await,
+            );
+            map.insert(
+                "edit_mode_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#edit_mode_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "last_modified_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#last_modified_time,
+                )
+                .await,
+            );
+            map.insert(
+                "output_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#output_types,
+                )
+                .await,
+            );
+            map.insert(
+                "parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#parameters,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RunBookDraft {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#content_link: {
+                        let field_value = match fields_map.get("content_link") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'content_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#creation_time: {
+                        let field_value = match fields_map.get("creation_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'creation_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#edit_mode_enabled: {
+                        let field_value = match fields_map.get("edit_mode_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'edit_mode_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#last_modified_time: {
+                        let field_value = match fields_map.get("last_modified_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'last_modified_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#output_types: {
+                        let field_value = match fields_map.get("output_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'output_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#parameters: {
+                        let field_value = match fields_map.get("parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

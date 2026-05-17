@@ -26,13 +26,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ont
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("default_retention".to_string(), self.r#default_retention.to_pulumi_value().await);
-            map.insert("maximum_retention".to_string(), self.r#maximum_retention.to_pulumi_value().await);
-            map.insert("minimum_retention".to_string(), self.r#minimum_retention.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "default_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_retention,
+                )
+                .await,
+            );
+            map.insert(
+                "maximum_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maximum_retention,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_retention,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -40,16 +62,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ont
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for OntapVolumeSnaplockConfigurationRetentionPeriod {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#default_retention: {
@@ -57,21 +80,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                             Some(value) => value,
                             None => bail!("Missing field 'default_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodDefaultRetention>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_retention: {
                         let field_value = match fields_map.get("maximum_retention") {
                             Some(value) => value,
                             None => bail!("Missing field 'maximum_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodMaximumRetention>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_retention: {
                         let field_value = match fields_map.get("minimum_retention") {
                             Some(value) => value,
                             None => bail!("Missing field 'minimum_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodMinimumRetention>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

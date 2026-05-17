@@ -82,27 +82,133 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("alignment".to_string(), self.r#alignment.to_pulumi_value().await);
-            map.insert("background_color".to_string(), self.r#background_color.to_pulumi_value().await);
-            map.insert("background_opacity".to_string(), self.r#background_opacity.to_pulumi_value().await);
-            map.insert("font".to_string(), self.r#font.to_pulumi_value().await);
-            map.insert("font_color".to_string(), self.r#font_color.to_pulumi_value().await);
-            map.insert("font_opacity".to_string(), self.r#font_opacity.to_pulumi_value().await);
-            map.insert("font_resolution".to_string(), self.r#font_resolution.to_pulumi_value().await);
-            map.insert("font_size".to_string(), self.r#font_size.to_pulumi_value().await);
-            map.insert("outline_color".to_string(), self.r#outline_color.to_pulumi_value().await);
-            map.insert("outline_size".to_string(), self.r#outline_size.to_pulumi_value().await);
-            map.insert("shadow_color".to_string(), self.r#shadow_color.to_pulumi_value().await);
-            map.insert("shadow_opacity".to_string(), self.r#shadow_opacity.to_pulumi_value().await);
-            map.insert("shadow_x_offset".to_string(), self.r#shadow_x_offset.to_pulumi_value().await);
-            map.insert("shadow_y_offset".to_string(), self.r#shadow_y_offset.to_pulumi_value().await);
-            map.insert("teletext_grid_control".to_string(), self.r#teletext_grid_control.to_pulumi_value().await);
-            map.insert("x_position".to_string(), self.r#x_position.to_pulumi_value().await);
-            map.insert("y_position".to_string(), self.r#y_position.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "alignment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alignment,
+                )
+                .await,
+            );
+            map.insert(
+                "background_color".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#background_color,
+                )
+                .await,
+            );
+            map.insert(
+                "background_opacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#background_opacity,
+                )
+                .await,
+            );
+            map.insert(
+                "font".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#font,
+                )
+                .await,
+            );
+            map.insert(
+                "font_color".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#font_color,
+                )
+                .await,
+            );
+            map.insert(
+                "font_opacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#font_opacity,
+                )
+                .await,
+            );
+            map.insert(
+                "font_resolution".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#font_resolution,
+                )
+                .await,
+            );
+            map.insert(
+                "font_size".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#font_size,
+                )
+                .await,
+            );
+            map.insert(
+                "outline_color".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#outline_color,
+                )
+                .await,
+            );
+            map.insert(
+                "outline_size".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#outline_size,
+                )
+                .await,
+            );
+            map.insert(
+                "shadow_color".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shadow_color,
+                )
+                .await,
+            );
+            map.insert(
+                "shadow_opacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shadow_opacity,
+                )
+                .await,
+            );
+            map.insert(
+                "shadow_x_offset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shadow_x_offset,
+                )
+                .await,
+            );
+            map.insert(
+                "shadow_y_offset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shadow_y_offset,
+                )
+                .await,
+            );
+            map.insert(
+                "teletext_grid_control".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#teletext_grid_control,
+                )
+                .await,
+            );
+            map.insert(
+                "x_position".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#x_position,
+                )
+                .await,
+            );
+            map.insert(
+                "y_position".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#y_position,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -110,16 +216,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#alignment: {
@@ -127,119 +234,119 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'alignment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#background_color: {
                         let field_value = match fields_map.get("background_color") {
                             Some(value) => value,
                             None => bail!("Missing field 'background_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#background_opacity: {
                         let field_value = match fields_map.get("background_opacity") {
                             Some(value) => value,
                             None => bail!("Missing field 'background_opacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font: {
                         let field_value = match fields_map.get("font") {
                             Some(value) => value,
                             None => bail!("Missing field 'font' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettingsFont>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_color: {
                         let field_value = match fields_map.get("font_color") {
                             Some(value) => value,
                             None => bail!("Missing field 'font_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_opacity: {
                         let field_value = match fields_map.get("font_opacity") {
                             Some(value) => value,
                             None => bail!("Missing field 'font_opacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_resolution: {
                         let field_value = match fields_map.get("font_resolution") {
                             Some(value) => value,
                             None => bail!("Missing field 'font_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_size: {
                         let field_value = match fields_map.get("font_size") {
                             Some(value) => value,
                             None => bail!("Missing field 'font_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outline_color: {
                         let field_value = match fields_map.get("outline_color") {
                             Some(value) => value,
                             None => bail!("Missing field 'outline_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outline_size: {
                         let field_value = match fields_map.get("outline_size") {
                             Some(value) => value,
                             None => bail!("Missing field 'outline_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shadow_color: {
                         let field_value = match fields_map.get("shadow_color") {
                             Some(value) => value,
                             None => bail!("Missing field 'shadow_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shadow_opacity: {
                         let field_value = match fields_map.get("shadow_opacity") {
                             Some(value) => value,
                             None => bail!("Missing field 'shadow_opacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shadow_x_offset: {
                         let field_value = match fields_map.get("shadow_x_offset") {
                             Some(value) => value,
                             None => bail!("Missing field 'shadow_x_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shadow_y_offset: {
                         let field_value = match fields_map.get("shadow_y_offset") {
                             Some(value) => value,
                             None => bail!("Missing field 'shadow_y_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#teletext_grid_control: {
                         let field_value = match fields_map.get("teletext_grid_control") {
                             Some(value) => value,
                             None => bail!("Missing field 'teletext_grid_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_position: {
                         let field_value = match fields_map.get("x_position") {
                             Some(value) => value,
                             None => bail!("Missing field 'x_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#y_position: {
                         let field_value = match fields_map.get("y_position") {
                             Some(value) => value,
                             None => bail!("Missing field 'y_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

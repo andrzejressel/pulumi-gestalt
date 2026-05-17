@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("default_resource_spec".to_string(), self.r#default_resource_spec.to_pulumi_value().await);
-            map.insert("domain_execution_role_arn".to_string(), self.r#domain_execution_role_arn.to_pulumi_value().await);
-            map.insert("r_studio_connect_url".to_string(), self.r#r_studio_connect_url.to_pulumi_value().await);
-            map.insert("r_studio_package_manager_url".to_string(), self.r#r_studio_package_manager_url.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "default_resource_spec".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_resource_spec,
+                )
+                .await,
+            );
+            map.insert(
+                "domain_execution_role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#domain_execution_role_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "r_studio_connect_url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#r_studio_connect_url,
+                )
+                .await,
+            );
+            map.insert(
+                "r_studio_package_manager_url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#r_studio_package_manager_url,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DomainDomainSettingsRStudioServerProDomainSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#default_resource_spec: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'default_resource_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::sagemaker::DomainDomainSettingsRStudioServerProDomainSettingsDefaultResourceSpec>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_execution_role_arn: {
                         let field_value = match fields_map.get("domain_execution_role_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'domain_execution_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#r_studio_connect_url: {
                         let field_value = match fields_map.get("r_studio_connect_url") {
                             Some(value) => value,
                             None => bail!("Missing field 'r_studio_connect_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#r_studio_package_manager_url: {
                         let field_value = match fields_map.get("r_studio_package_manager_url") {
                             Some(value) => value,
                             None => bail!("Missing field 'r_studio_package_manager_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -33,15 +33,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("allocation_id".to_string(), self.r#allocation_id.to_pulumi_value().await);
-            map.insert("ipv_6_address".to_string(), self.r#ipv_6_address.to_pulumi_value().await);
-            map.insert("outpost_id".to_string(), self.r#outpost_id.to_pulumi_value().await);
-            map.insert("private_ipv_4_address".to_string(), self.r#private_ipv_4_address.to_pulumi_value().await);
-            map.insert("subnet_id".to_string(), self.r#subnet_id.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allocation_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allocation_id,
+                )
+                .await,
+            );
+            map.insert(
+                "ipv_6_address".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ipv_6_address,
+                )
+                .await,
+            );
+            map.insert(
+                "outpost_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#outpost_id,
+                )
+                .await,
+            );
+            map.insert(
+                "private_ipv_4_address".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#private_ipv_4_address,
+                )
+                .await,
+            );
+            map.insert(
+                "subnet_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subnet_id,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -49,16 +83,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for LoadBalancerSubnetMapping {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#allocation_id: {
@@ -66,35 +101,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                             Some(value) => value,
                             None => bail!("Missing field 'allocation_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_6_address: {
                         let field_value = match fields_map.get("ipv_6_address") {
                             Some(value) => value,
                             None => bail!("Missing field 'ipv_6_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outpost_id: {
                         let field_value = match fields_map.get("outpost_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'outpost_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ipv_4_address: {
                         let field_value = match fields_map.get("private_ipv_4_address") {
                             Some(value) => value,
                             None => bail!("Missing field 'private_ipv_4_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_id: {
                         let field_value = match fields_map.get("subnet_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

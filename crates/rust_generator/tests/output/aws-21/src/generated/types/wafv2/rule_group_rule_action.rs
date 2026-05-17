@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("allow".to_string(), self.r#allow.to_pulumi_value().await);
-            map.insert("block".to_string(), self.r#block.to_pulumi_value().await);
-            map.insert("captcha".to_string(), self.r#captcha.to_pulumi_value().await);
-            map.insert("challenge".to_string(), self.r#challenge.to_pulumi_value().await);
-            map.insert("count".to_string(), self.r#count.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allow".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow,
+                )
+                .await,
+            );
+            map.insert(
+                "block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#block,
+                )
+                .await,
+            );
+            map.insert(
+                "captcha".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#captcha,
+                )
+                .await,
+            );
+            map.insert(
+                "challenge".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#challenge,
+                )
+                .await,
+            );
+            map.insert(
+                "count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#count,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuleGroupRuleAction {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#allow: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                             Some(value) => value,
                             None => bail!("Missing field 'allow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::RuleGroupRuleActionAllow>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block: {
                         let field_value = match fields_map.get("block") {
                             Some(value) => value,
                             None => bail!("Missing field 'block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::RuleGroupRuleActionBlock>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#captcha: {
                         let field_value = match fields_map.get("captcha") {
                             Some(value) => value,
                             None => bail!("Missing field 'captcha' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::RuleGroupRuleActionCaptcha>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#challenge: {
                         let field_value = match fields_map.get("challenge") {
                             Some(value) => value,
                             None => bail!("Missing field 'challenge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::RuleGroupRuleActionChallenge>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#count: {
                         let field_value = match fields_map.get("count") {
                             Some(value) => value,
                             None => bail!("Missing field 'count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::RuleGroupRuleActionCount>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

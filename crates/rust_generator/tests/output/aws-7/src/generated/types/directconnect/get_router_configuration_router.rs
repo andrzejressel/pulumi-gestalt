@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -43,4 +43,132 @@ pub struct GetRouterConfigurationRouter {
     #[builder(into)]
     #[serde(rename = "xsltTemplateNameForMacSec")]
     pub r#xslt_template_name_for_mac_sec: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetRouterConfigurationRouter {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "platform".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#platform,
+                )
+                .await,
+            );
+            map.insert(
+                "router_type_identifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#router_type_identifier,
+                )
+                .await,
+            );
+            map.insert(
+                "software".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#software,
+                )
+                .await,
+            );
+            map.insert(
+                "vendor".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vendor,
+                )
+                .await,
+            );
+            map.insert(
+                "xslt_template_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#xslt_template_name,
+                )
+                .await,
+            );
+            map.insert(
+                "xslt_template_name_for_mac_sec".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#xslt_template_name_for_mac_sec,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetRouterConfigurationRouter {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#platform: {
+                        let field_value = match fields_map.get("platform") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'platform' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#router_type_identifier: {
+                        let field_value = match fields_map.get("router_type_identifier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'router_type_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#software: {
+                        let field_value = match fields_map.get("software") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'software' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vendor: {
+                        let field_value = match fields_map.get("vendor") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vendor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#xslt_template_name: {
+                        let field_value = match fields_map.get("xslt_template_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'xslt_template_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#xslt_template_name_for_mac_sec: {
+                        let field_value = match fields_map.get("xslt_template_name_for_mac_sec") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'xslt_template_name_for_mac_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

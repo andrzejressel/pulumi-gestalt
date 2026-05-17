@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -49,4 +49,160 @@ pub struct CxFlowEventHandlerTriggerFulfillmentMessage {
     #[builder(into)]
     #[serde(rename = "text")]
     pub r#text: Option<Box<super::super::types::diagflow::CxFlowEventHandlerTriggerFulfillmentMessageText>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxFlowEventHandlerTriggerFulfillmentMessage {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "channel".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#channel,
+                )
+                .await,
+            );
+            map.insert(
+                "conversation_success".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#conversation_success,
+                )
+                .await,
+            );
+            map.insert(
+                "live_agent_handoff".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#live_agent_handoff,
+                )
+                .await,
+            );
+            map.insert(
+                "output_audio_text".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#output_audio_text,
+                )
+                .await,
+            );
+            map.insert(
+                "payload".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#payload,
+                )
+                .await,
+            );
+            map.insert(
+                "play_audio".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#play_audio,
+                )
+                .await,
+            );
+            map.insert(
+                "telephony_transfer_call".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#telephony_transfer_call,
+                )
+                .await,
+            );
+            map.insert(
+                "text".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#text,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CxFlowEventHandlerTriggerFulfillmentMessage {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#channel: {
+                        let field_value = match fields_map.get("channel") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'channel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#conversation_success: {
+                        let field_value = match fields_map.get("conversation_success") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'conversation_success' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#live_agent_handoff: {
+                        let field_value = match fields_map.get("live_agent_handoff") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'live_agent_handoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#output_audio_text: {
+                        let field_value = match fields_map.get("output_audio_text") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'output_audio_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#payload: {
+                        let field_value = match fields_map.get("payload") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'payload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#play_audio: {
+                        let field_value = match fields_map.get("play_audio") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'play_audio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#telephony_transfer_call: {
+                        let field_value = match fields_map.get("telephony_transfer_call") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'telephony_transfer_call' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#text: {
+                        let field_value = match fields_map.get("text") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

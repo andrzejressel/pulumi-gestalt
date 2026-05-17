@@ -29,15 +29,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("privileged".to_string(), self.r#privileged.to_pulumi_value().await);
-            map.insert("read_only_root_file_system".to_string(), self.r#read_only_root_file_system.to_pulumi_value().await);
-            map.insert("run_as_group".to_string(), self.r#run_as_group.to_pulumi_value().await);
-            map.insert("run_as_non_root".to_string(), self.r#run_as_non_root.to_pulumi_value().await);
-            map.insert("run_as_user".to_string(), self.r#run_as_user.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "privileged".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#privileged,
+                )
+                .await,
+            );
+            map.insert(
+                "read_only_root_file_system".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#read_only_root_file_system,
+                )
+                .await,
+            );
+            map.insert(
+                "run_as_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#run_as_group,
+                )
+                .await,
+            );
+            map.insert(
+                "run_as_non_root".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#run_as_non_root,
+                )
+                .await,
+            );
+            map.insert(
+                "run_as_user".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#run_as_user,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +79,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobDefinitionEksPropertiesPodPropertiesContainersSecurityContext {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#privileged: {
@@ -62,35 +97,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                             Some(value) => value,
                             None => bail!("Missing field 'privileged' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_only_root_file_system: {
                         let field_value = match fields_map.get("read_only_root_file_system") {
                             Some(value) => value,
                             None => bail!("Missing field 'read_only_root_file_system' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_as_group: {
                         let field_value = match fields_map.get("run_as_group") {
                             Some(value) => value,
                             None => bail!("Missing field 'run_as_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_as_non_root: {
                         let field_value = match fields_map.get("run_as_non_root") {
                             Some(value) => value,
                             None => bail!("Missing field 'run_as_non_root' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_as_user: {
                         let field_value = match fields_map.get("run_as_user") {
                             Some(value) => value,
                             None => bail!("Missing field 'run_as_user' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

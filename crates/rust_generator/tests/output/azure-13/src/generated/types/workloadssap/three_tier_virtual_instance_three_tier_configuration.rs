@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -38,4 +38,160 @@ pub struct ThreeTierVirtualInstanceThreeTierConfiguration {
     #[builder(into)]
     #[serde(rename = "transportCreateAndMount")]
     pub r#transport_create_and_mount: Option<Box<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationTransportCreateAndMount>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ThreeTierVirtualInstanceThreeTierConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "app_resource_group_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#app_resource_group_name,
+                )
+                .await,
+            );
+            map.insert(
+                "application_server_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#application_server_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "central_server_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#central_server_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "database_server_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#database_server_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "high_availability_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#high_availability_type,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_names,
+                )
+                .await,
+            );
+            map.insert(
+                "secondary_ip_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secondary_ip_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "transport_create_and_mount".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#transport_create_and_mount,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ThreeTierVirtualInstanceThreeTierConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#app_resource_group_name: {
+                        let field_value = match fields_map.get("app_resource_group_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'app_resource_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#application_server_configuration: {
+                        let field_value = match fields_map.get("application_server_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'application_server_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#central_server_configuration: {
+                        let field_value = match fields_map.get("central_server_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'central_server_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#database_server_configuration: {
+                        let field_value = match fields_map.get("database_server_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'database_server_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#high_availability_type: {
+                        let field_value = match fields_map.get("high_availability_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'high_availability_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_names: {
+                        let field_value = match fields_map.get("resource_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secondary_ip_enabled: {
+                        let field_value = match fields_map.get("secondary_ip_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secondary_ip_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#transport_create_and_mount: {
+                        let field_value = match fields_map.get("transport_create_and_mount") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'transport_create_and_mount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

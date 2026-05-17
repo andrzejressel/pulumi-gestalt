@@ -26,13 +26,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("first_zone_monitor_duration_in_seconds".to_string(), self.r#first_zone_monitor_duration_in_seconds.to_pulumi_value().await);
-            map.insert("minimum_healthy_hosts_per_zone".to_string(), self.r#minimum_healthy_hosts_per_zone.to_pulumi_value().await);
-            map.insert("monitor_duration_in_seconds".to_string(), self.r#monitor_duration_in_seconds.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "first_zone_monitor_duration_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#first_zone_monitor_duration_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_healthy_hosts_per_zone".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_healthy_hosts_per_zone,
+                )
+                .await,
+            );
+            map.insert(
+                "monitor_duration_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#monitor_duration_in_seconds,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -40,16 +62,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DeploymentConfigZonalConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#first_zone_monitor_duration_in_seconds: {
@@ -57,21 +80,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'first_zone_monitor_duration_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_healthy_hosts_per_zone: {
                         let field_value = match fields_map.get("minimum_healthy_hosts_per_zone") {
                             Some(value) => value,
                             None => bail!("Missing field 'minimum_healthy_hosts_per_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codedeploy::DeploymentConfigZonalConfigMinimumHealthyHostsPerZone>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitor_duration_in_seconds: {
                         let field_value = match fields_map.get("monitor_duration_in_seconds") {
                             Some(value) => value,
                             None => bail!("Missing field 'monitor_duration_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

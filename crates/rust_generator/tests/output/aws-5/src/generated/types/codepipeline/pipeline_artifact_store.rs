@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("encryption_key".to_string(), self.r#encryption_key.to_pulumi_value().await);
-            map.insert("location".to_string(), self.r#location.to_pulumi_value().await);
-            map.insert("region".to_string(), self.r#region.to_pulumi_value().await);
-            map.insert("type_".to_string(), self.r#type_.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "encryption_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encryption_key,
+                )
+                .await,
+            );
+            map.insert(
+                "location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#location,
+                )
+                .await,
+            );
+            map.insert(
+                "region".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#region,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PipelineArtifactStore {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#encryption_key: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'encryption_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codepipeline::PipelineArtifactStoreEncryptionKey>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#location: {
                         let field_value = match fields_map.get("location") {
                             Some(value) => value,
                             None => bail!("Missing field 'location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#region: {
                         let field_value = match fields_map.get("region") {
                             Some(value) => value,
                             None => bail!("Missing field 'region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
                         let field_value = match fields_map.get("type_") {
                             Some(value) => value,
                             None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

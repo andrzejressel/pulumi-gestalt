@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("automation_parameters".to_string(), self.r#automation_parameters.to_pulumi_value().await);
-            map.insert("lambda_parameters".to_string(), self.r#lambda_parameters.to_pulumi_value().await);
-            map.insert("run_command_parameters".to_string(), self.r#run_command_parameters.to_pulumi_value().await);
-            map.insert("step_functions_parameters".to_string(), self.r#step_functions_parameters.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "automation_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#automation_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "lambda_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lambda_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "run_command_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#run_command_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "step_functions_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#step_functions_parameters,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for MaintenanceWindowTaskTaskInvocationParameters {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#automation_parameters: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                             Some(value) => value,
                             None => bail!("Missing field 'automation_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersAutomationParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_parameters: {
                         let field_value = match fields_map.get("lambda_parameters") {
                             Some(value) => value,
                             None => bail!("Missing field 'lambda_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersLambdaParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_command_parameters: {
                         let field_value = match fields_map.get("run_command_parameters") {
                             Some(value) => value,
                             None => bail!("Missing field 'run_command_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#step_functions_parameters: {
                         let field_value = match fields_map.get("step_functions_parameters") {
                             Some(value) => value,
                             None => bail!("Missing field 'step_functions_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

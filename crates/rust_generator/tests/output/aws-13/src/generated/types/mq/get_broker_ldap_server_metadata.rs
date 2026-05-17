@@ -47,21 +47,91 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("hosts".to_string(), self.r#hosts.to_pulumi_value().await);
-            map.insert("role_base".to_string(), self.r#role_base.to_pulumi_value().await);
-            map.insert("role_name".to_string(), self.r#role_name.to_pulumi_value().await);
-            map.insert("role_search_matching".to_string(), self.r#role_search_matching.to_pulumi_value().await);
-            map.insert("role_search_subtree".to_string(), self.r#role_search_subtree.to_pulumi_value().await);
-            map.insert("service_account_password".to_string(), self.r#service_account_password.to_pulumi_value().await);
-            map.insert("service_account_username".to_string(), self.r#service_account_username.to_pulumi_value().await);
-            map.insert("user_base".to_string(), self.r#user_base.to_pulumi_value().await);
-            map.insert("user_role_name".to_string(), self.r#user_role_name.to_pulumi_value().await);
-            map.insert("user_search_matching".to_string(), self.r#user_search_matching.to_pulumi_value().await);
-            map.insert("user_search_subtree".to_string(), self.r#user_search_subtree.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "hosts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hosts,
+                )
+                .await,
+            );
+            map.insert(
+                "role_base".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_base,
+                )
+                .await,
+            );
+            map.insert(
+                "role_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_name,
+                )
+                .await,
+            );
+            map.insert(
+                "role_search_matching".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_search_matching,
+                )
+                .await,
+            );
+            map.insert(
+                "role_search_subtree".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_search_subtree,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account_password".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account_password,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account_username".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account_username,
+                )
+                .await,
+            );
+            map.insert(
+                "user_base".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_base,
+                )
+                .await,
+            );
+            map.insert(
+                "user_role_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_role_name,
+                )
+                .await,
+            );
+            map.insert(
+                "user_search_matching".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_search_matching,
+                )
+                .await,
+            );
+            map.insert(
+                "user_search_subtree".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_search_subtree,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -69,16 +139,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetBrokerLdapServerMetadata {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#hosts: {
@@ -86,77 +157,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'hosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_base: {
                         let field_value = match fields_map.get("role_base") {
                             Some(value) => value,
                             None => bail!("Missing field 'role_base' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_name: {
                         let field_value = match fields_map.get("role_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'role_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_search_matching: {
                         let field_value = match fields_map.get("role_search_matching") {
                             Some(value) => value,
                             None => bail!("Missing field 'role_search_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_search_subtree: {
                         let field_value = match fields_map.get("role_search_subtree") {
                             Some(value) => value,
                             None => bail!("Missing field 'role_search_subtree' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_password: {
                         let field_value = match fields_map.get("service_account_password") {
                             Some(value) => value,
                             None => bail!("Missing field 'service_account_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_username: {
                         let field_value = match fields_map.get("service_account_username") {
                             Some(value) => value,
                             None => bail!("Missing field 'service_account_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_base: {
                         let field_value = match fields_map.get("user_base") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_base' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_role_name: {
                         let field_value = match fields_map.get("user_role_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_role_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_search_matching: {
                         let field_value = match fields_map.get("user_search_matching") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_search_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_search_subtree: {
                         let field_value = match fields_map.get("user_search_subtree") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_search_subtree' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

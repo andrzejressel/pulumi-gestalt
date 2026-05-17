@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Opt
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("db_security_group_memberships".to_string(), self.r#db_security_group_memberships.to_pulumi_value().await);
-            map.insert("option_name".to_string(), self.r#option_name.to_pulumi_value().await);
-            map.insert("option_settings".to_string(), self.r#option_settings.to_pulumi_value().await);
-            map.insert("port".to_string(), self.r#port.to_pulumi_value().await);
-            map.insert("version".to_string(), self.r#version.to_pulumi_value().await);
-            map.insert("vpc_security_group_memberships".to_string(), self.r#vpc_security_group_memberships.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "db_security_group_memberships".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#db_security_group_memberships,
+                )
+                .await,
+            );
+            map.insert(
+                "option_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#option_name,
+                )
+                .await,
+            );
+            map.insert(
+                "option_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#option_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#port,
+                )
+                .await,
+            );
+            map.insert(
+                "version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#version,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc_security_group_memberships".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc_security_group_memberships,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Opt
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for OptionGroupOption {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#db_security_group_memberships: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                             Some(value) => value,
                             None => bail!("Missing field 'db_security_group_memberships' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#option_name: {
                         let field_value = match fields_map.get("option_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'option_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#option_settings: {
                         let field_value = match fields_map.get("option_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'option_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::rds::OptionGroupOptionOptionSetting>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port: {
                         let field_value = match fields_map.get("port") {
                             Some(value) => value,
                             None => bail!("Missing field 'port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version: {
                         let field_value = match fields_map.get("version") {
                             Some(value) => value,
                             None => bail!("Missing field 'version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_security_group_memberships: {
                         let field_value = match fields_map.get("vpc_security_group_memberships") {
                             Some(value) => value,
                             None => bail!("Missing field 'vpc_security_group_memberships' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

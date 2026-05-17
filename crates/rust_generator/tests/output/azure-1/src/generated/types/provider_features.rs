@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -57,4 +57,300 @@ pub struct ProviderFeatures {
     #[builder(into)]
     #[serde(rename = "virtualMachineScaleSet")]
     pub r#virtual_machine_scale_set: Option<Box<super::types::ProviderFeaturesVirtualMachineScaleSet>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ProviderFeatures {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "api_management".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#api_management,
+                )
+                .await,
+            );
+            map.insert(
+                "app_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#app_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "application_insights".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#application_insights,
+                )
+                .await,
+            );
+            map.insert(
+                "cognitive_account".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cognitive_account,
+                )
+                .await,
+            );
+            map.insert(
+                "key_vault".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_vault,
+                )
+                .await,
+            );
+            map.insert(
+                "log_analytics_workspace".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#log_analytics_workspace,
+                )
+                .await,
+            );
+            map.insert(
+                "machine_learning".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#machine_learning,
+                )
+                .await,
+            );
+            map.insert(
+                "managed_disk".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managed_disk,
+                )
+                .await,
+            );
+            map.insert(
+                "netapp".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#netapp,
+                )
+                .await,
+            );
+            map.insert(
+                "postgresql_flexible_server".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#postgresql_flexible_server,
+                )
+                .await,
+            );
+            map.insert(
+                "recovery_service".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recovery_service,
+                )
+                .await,
+            );
+            map.insert(
+                "recovery_services_vaults".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recovery_services_vaults,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_group,
+                )
+                .await,
+            );
+            map.insert(
+                "storage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage,
+                )
+                .await,
+            );
+            map.insert(
+                "subscription".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subscription,
+                )
+                .await,
+            );
+            map.insert(
+                "template_deployment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#template_deployment,
+                )
+                .await,
+            );
+            map.insert(
+                "virtual_machine".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#virtual_machine,
+                )
+                .await,
+            );
+            map.insert(
+                "virtual_machine_scale_set".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#virtual_machine_scale_set,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ProviderFeatures {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#api_management: {
+                        let field_value = match fields_map.get("api_management") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'api_management' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#app_configuration: {
+                        let field_value = match fields_map.get("app_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'app_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#application_insights: {
+                        let field_value = match fields_map.get("application_insights") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'application_insights' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cognitive_account: {
+                        let field_value = match fields_map.get("cognitive_account") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cognitive_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#key_vault: {
+                        let field_value = match fields_map.get("key_vault") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_vault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#log_analytics_workspace: {
+                        let field_value = match fields_map.get("log_analytics_workspace") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'log_analytics_workspace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#machine_learning: {
+                        let field_value = match fields_map.get("machine_learning") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'machine_learning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#managed_disk: {
+                        let field_value = match fields_map.get("managed_disk") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_disk' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#netapp: {
+                        let field_value = match fields_map.get("netapp") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'netapp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#postgresql_flexible_server: {
+                        let field_value = match fields_map.get("postgresql_flexible_server") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'postgresql_flexible_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recovery_service: {
+                        let field_value = match fields_map.get("recovery_service") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recovery_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recovery_services_vaults: {
+                        let field_value = match fields_map.get("recovery_services_vaults") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recovery_services_vaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_group: {
+                        let field_value = match fields_map.get("resource_group") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage: {
+                        let field_value = match fields_map.get("storage") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#subscription: {
+                        let field_value = match fields_map.get("subscription") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'subscription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#template_deployment: {
+                        let field_value = match fields_map.get("template_deployment") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'template_deployment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#virtual_machine: {
+                        let field_value = match fields_map.get("virtual_machine") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'virtual_machine' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#virtual_machine_scale_set: {
+                        let field_value = match fields_map.get("virtual_machine_scale_set") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'virtual_machine_scale_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

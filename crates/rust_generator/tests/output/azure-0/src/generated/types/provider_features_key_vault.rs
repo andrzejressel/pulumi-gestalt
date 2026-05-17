@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -47,4 +47,202 @@ pub struct ProviderFeaturesKeyVault {
     #[builder(into)]
     #[serde(rename = "recoverSoftDeletedSecrets")]
     pub r#recover_soft_deleted_secrets: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ProviderFeaturesKeyVault {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "purge_soft_delete_on_destroy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#purge_soft_delete_on_destroy,
+                )
+                .await,
+            );
+            map.insert(
+                "purge_soft_deleted_certificates_on_destroy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#purge_soft_deleted_certificates_on_destroy,
+                )
+                .await,
+            );
+            map.insert(
+                "purge_soft_deleted_hardware_security_module_keys_on_destroy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#purge_soft_deleted_hardware_security_module_keys_on_destroy,
+                )
+                .await,
+            );
+            map.insert(
+                "purge_soft_deleted_hardware_security_modules_on_destroy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#purge_soft_deleted_hardware_security_modules_on_destroy,
+                )
+                .await,
+            );
+            map.insert(
+                "purge_soft_deleted_keys_on_destroy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#purge_soft_deleted_keys_on_destroy,
+                )
+                .await,
+            );
+            map.insert(
+                "purge_soft_deleted_secrets_on_destroy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#purge_soft_deleted_secrets_on_destroy,
+                )
+                .await,
+            );
+            map.insert(
+                "recover_soft_deleted_certificates".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recover_soft_deleted_certificates,
+                )
+                .await,
+            );
+            map.insert(
+                "recover_soft_deleted_hardware_security_module_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recover_soft_deleted_hardware_security_module_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "recover_soft_deleted_key_vaults".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recover_soft_deleted_key_vaults,
+                )
+                .await,
+            );
+            map.insert(
+                "recover_soft_deleted_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recover_soft_deleted_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "recover_soft_deleted_secrets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recover_soft_deleted_secrets,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ProviderFeaturesKeyVault {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#purge_soft_delete_on_destroy: {
+                        let field_value = match fields_map.get("purge_soft_delete_on_destroy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'purge_soft_delete_on_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#purge_soft_deleted_certificates_on_destroy: {
+                        let field_value = match fields_map.get("purge_soft_deleted_certificates_on_destroy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'purge_soft_deleted_certificates_on_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#purge_soft_deleted_hardware_security_module_keys_on_destroy: {
+                        let field_value = match fields_map.get("purge_soft_deleted_hardware_security_module_keys_on_destroy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'purge_soft_deleted_hardware_security_module_keys_on_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#purge_soft_deleted_hardware_security_modules_on_destroy: {
+                        let field_value = match fields_map.get("purge_soft_deleted_hardware_security_modules_on_destroy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'purge_soft_deleted_hardware_security_modules_on_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#purge_soft_deleted_keys_on_destroy: {
+                        let field_value = match fields_map.get("purge_soft_deleted_keys_on_destroy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'purge_soft_deleted_keys_on_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#purge_soft_deleted_secrets_on_destroy: {
+                        let field_value = match fields_map.get("purge_soft_deleted_secrets_on_destroy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'purge_soft_deleted_secrets_on_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recover_soft_deleted_certificates: {
+                        let field_value = match fields_map.get("recover_soft_deleted_certificates") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recover_soft_deleted_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recover_soft_deleted_hardware_security_module_keys: {
+                        let field_value = match fields_map.get("recover_soft_deleted_hardware_security_module_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recover_soft_deleted_hardware_security_module_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recover_soft_deleted_key_vaults: {
+                        let field_value = match fields_map.get("recover_soft_deleted_key_vaults") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recover_soft_deleted_key_vaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recover_soft_deleted_keys: {
+                        let field_value = match fields_map.get("recover_soft_deleted_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recover_soft_deleted_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recover_soft_deleted_secrets: {
+                        let field_value = match fields_map.get("recover_soft_deleted_secrets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recover_soft_deleted_secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

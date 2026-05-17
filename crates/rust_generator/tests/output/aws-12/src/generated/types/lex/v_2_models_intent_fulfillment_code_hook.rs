@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("active".to_string(), self.r#active.to_pulumi_value().await);
-            map.insert("enabled".to_string(), self.r#enabled.to_pulumi_value().await);
-            map.insert("fulfillment_updates_specification".to_string(), self.r#fulfillment_updates_specification.to_pulumi_value().await);
-            map.insert("post_fulfillment_status_specification".to_string(), self.r#post_fulfillment_status_specification.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "active".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#active,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "fulfillment_updates_specification".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fulfillment_updates_specification,
+                )
+                .await,
+            );
+            map.insert(
+                "post_fulfillment_status_specification".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#post_fulfillment_status_specification,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V2ModelsIntentFulfillmentCodeHook {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#active: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                             Some(value) => value,
                             None => bail!("Missing field 'active' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enabled: {
                         let field_value = match fields_map.get("enabled") {
                             Some(value) => value,
                             None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fulfillment_updates_specification: {
                         let field_value = match fields_map.get("fulfillment_updates_specification") {
                             Some(value) => value,
                             None => bail!("Missing field 'fulfillment_updates_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_fulfillment_status_specification: {
                         let field_value = match fields_map.get("post_fulfillment_status_specification") {
                             Some(value) => value,
                             None => bail!("Missing field 'post_fulfillment_status_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecification>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

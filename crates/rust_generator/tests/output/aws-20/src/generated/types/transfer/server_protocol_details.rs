@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("as_2_transports".to_string(), self.r#as_2_transports.to_pulumi_value().await);
-            map.insert("passive_ip".to_string(), self.r#passive_ip.to_pulumi_value().await);
-            map.insert("set_stat_option".to_string(), self.r#set_stat_option.to_pulumi_value().await);
-            map.insert("tls_session_resumption_mode".to_string(), self.r#tls_session_resumption_mode.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "as_2_transports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#as_2_transports,
+                )
+                .await,
+            );
+            map.insert(
+                "passive_ip".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#passive_ip,
+                )
+                .await,
+            );
+            map.insert(
+                "set_stat_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#set_stat_option,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_session_resumption_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_session_resumption_mode,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ServerProtocolDetails {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#as_2_transports: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                             Some(value) => value,
                             None => bail!("Missing field 'as_2_transports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#passive_ip: {
                         let field_value = match fields_map.get("passive_ip") {
                             Some(value) => value,
                             None => bail!("Missing field 'passive_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#set_stat_option: {
                         let field_value = match fields_map.get("set_stat_option") {
                             Some(value) => value,
                             None => bail!("Missing field 'set_stat_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_session_resumption_mode: {
                         let field_value = match fields_map.get("tls_session_resumption_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'tls_session_resumption_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

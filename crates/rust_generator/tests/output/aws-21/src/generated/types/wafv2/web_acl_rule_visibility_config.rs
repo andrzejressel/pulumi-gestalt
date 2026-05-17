@@ -26,13 +26,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("cloudwatch_metrics_enabled".to_string(), self.r#cloudwatch_metrics_enabled.to_pulumi_value().await);
-            map.insert("metric_name".to_string(), self.r#metric_name.to_pulumi_value().await);
-            map.insert("sampled_requests_enabled".to_string(), self.r#sampled_requests_enabled.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloudwatch_metrics_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudwatch_metrics_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_name,
+                )
+                .await,
+            );
+            map.insert(
+                "sampled_requests_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sampled_requests_enabled,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -40,16 +62,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclRuleVisibilityConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#cloudwatch_metrics_enabled: {
@@ -57,21 +80,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                             Some(value) => value,
                             None => bail!("Missing field 'cloudwatch_metrics_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_name: {
                         let field_value = match fields_map.get("metric_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'metric_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sampled_requests_enabled: {
                         let field_value = match fields_map.get("sampled_requests_enabled") {
                             Some(value) => value,
                             None => bail!("Missing field 'sampled_requests_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

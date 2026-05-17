@@ -34,16 +34,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("access_token".to_string(), self.r#access_token.to_pulumi_value().await);
-            map.insert("client_credentials_arn".to_string(), self.r#client_credentials_arn.to_pulumi_value().await);
-            map.insert("jwt_token".to_string(), self.r#jwt_token.to_pulumi_value().await);
-            map.insert("oauth_2_grant_type".to_string(), self.r#oauth_2_grant_type.to_pulumi_value().await);
-            map.insert("oauth_request".to_string(), self.r#oauth_request.to_pulumi_value().await);
-            map.insert("refresh_token".to_string(), self.r#refresh_token.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "access_token".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_token,
+                )
+                .await,
+            );
+            map.insert(
+                "client_credentials_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_credentials_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "jwt_token".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jwt_token,
+                )
+                .await,
+            );
+            map.insert(
+                "oauth_2_grant_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#oauth_2_grant_type,
+                )
+                .await,
+            );
+            map.insert(
+                "oauth_request".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#oauth_request,
+                )
+                .await,
+            );
+            map.insert(
+                "refresh_token".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#refresh_token,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -51,16 +91,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforce {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#access_token: {
@@ -68,42 +109,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'access_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_credentials_arn: {
                         let field_value = match fields_map.get("client_credentials_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'client_credentials_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwt_token: {
                         let field_value = match fields_map.get("jwt_token") {
                             Some(value) => value,
                             None => bail!("Missing field 'jwt_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_2_grant_type: {
                         let field_value = match fields_map.get("oauth_2_grant_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'oauth_2_grant_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_request: {
                         let field_value = match fields_map.get("oauth_request") {
                             Some(value) => value,
                             None => bail!("Missing field 'oauth_request' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequest>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refresh_token: {
                         let field_value = match fields_map.get("refresh_token") {
                             Some(value) => value,
                             None => bail!("Missing field 'refresh_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

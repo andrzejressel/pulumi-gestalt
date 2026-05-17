@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -33,4 +33,132 @@ pub struct AutonomousDatabasePropertiesConnectionString {
     #[builder(into)]
     #[serde(rename = "profiles")]
     pub r#profiles: Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesConnectionStringProfile>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AutonomousDatabasePropertiesConnectionString {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "all_connection_strings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#all_connection_strings,
+                )
+                .await,
+            );
+            map.insert(
+                "dedicated".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dedicated,
+                )
+                .await,
+            );
+            map.insert(
+                "high".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#high,
+                )
+                .await,
+            );
+            map.insert(
+                "low".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#low,
+                )
+                .await,
+            );
+            map.insert(
+                "medium".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#medium,
+                )
+                .await,
+            );
+            map.insert(
+                "profiles".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#profiles,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AutonomousDatabasePropertiesConnectionString {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#all_connection_strings: {
+                        let field_value = match fields_map.get("all_connection_strings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'all_connection_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dedicated: {
+                        let field_value = match fields_map.get("dedicated") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dedicated' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#high: {
+                        let field_value = match fields_map.get("high") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'high' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#low: {
+                        let field_value = match fields_map.get("low") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'low' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#medium: {
+                        let field_value = match fields_map.get("medium") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'medium' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#profiles: {
+                        let field_value = match fields_map.get("profiles") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'profiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -54,18 +54,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("authenticate_cognito".to_string(), self.r#authenticate_cognito.to_pulumi_value().await);
-            map.insert("authenticate_oidc".to_string(), self.r#authenticate_oidc.to_pulumi_value().await);
-            map.insert("fixed_response".to_string(), self.r#fixed_response.to_pulumi_value().await);
-            map.insert("forward".to_string(), self.r#forward.to_pulumi_value().await);
-            map.insert("order".to_string(), self.r#order.to_pulumi_value().await);
-            map.insert("redirect".to_string(), self.r#redirect.to_pulumi_value().await);
-            map.insert("target_group_arn".to_string(), self.r#target_group_arn.to_pulumi_value().await);
-            map.insert("type_".to_string(), self.r#type_.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "authenticate_cognito".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authenticate_cognito,
+                )
+                .await,
+            );
+            map.insert(
+                "authenticate_oidc".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authenticate_oidc,
+                )
+                .await,
+            );
+            map.insert(
+                "fixed_response".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fixed_response,
+                )
+                .await,
+            );
+            map.insert(
+                "forward".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forward,
+                )
+                .await,
+            );
+            map.insert(
+                "order".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#order,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect,
+                )
+                .await,
+            );
+            map.insert(
+                "target_group_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target_group_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -73,16 +125,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ListenerRuleAction {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#authenticate_cognito: {
@@ -90,56 +143,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                             Some(value) => value,
                             None => bail!("Missing field 'authenticate_cognito' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::alb::ListenerRuleActionAuthenticateCognito>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authenticate_oidc: {
                         let field_value = match fields_map.get("authenticate_oidc") {
                             Some(value) => value,
                             None => bail!("Missing field 'authenticate_oidc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::alb::ListenerRuleActionAuthenticateOidc>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fixed_response: {
                         let field_value = match fields_map.get("fixed_response") {
                             Some(value) => value,
                             None => bail!("Missing field 'fixed_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::alb::ListenerRuleActionFixedResponse>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forward: {
                         let field_value = match fields_map.get("forward") {
                             Some(value) => value,
                             None => bail!("Missing field 'forward' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::alb::ListenerRuleActionForward>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#order: {
                         let field_value = match fields_map.get("order") {
                             Some(value) => value,
                             None => bail!("Missing field 'order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect: {
                         let field_value = match fields_map.get("redirect") {
                             Some(value) => value,
                             None => bail!("Missing field 'redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::alb::ListenerRuleActionRedirect>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_group_arn: {
                         let field_value = match fields_map.get("target_group_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'target_group_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
                         let field_value = match fields_map.get("type_") {
                             Some(value) => value,
                             None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

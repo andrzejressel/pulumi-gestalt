@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("instance_type".to_string(), self.r#instance_type.to_pulumi_value().await);
-            map.insert("lifecycle_config_arn".to_string(), self.r#lifecycle_config_arn.to_pulumi_value().await);
-            map.insert("sagemaker_image_arn".to_string(), self.r#sagemaker_image_arn.to_pulumi_value().await);
-            map.insert("sagemaker_image_version_alias".to_string(), self.r#sagemaker_image_version_alias.to_pulumi_value().await);
-            map.insert("sagemaker_image_version_arn".to_string(), self.r#sagemaker_image_version_arn.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "instance_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instance_type,
+                )
+                .await,
+            );
+            map.insert(
+                "lifecycle_config_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lifecycle_config_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "sagemaker_image_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sagemaker_image_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "sagemaker_image_version_alias".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sagemaker_image_version_alias,
+                )
+                .await,
+            );
+            map.insert(
+                "sagemaker_image_version_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sagemaker_image_version_arn,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DomainDefaultSpaceSettingsKernelGatewayAppSettingsDefaultResourceSpec {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#instance_type: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_config_arn: {
                         let field_value = match fields_map.get("lifecycle_config_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'lifecycle_config_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sagemaker_image_arn: {
                         let field_value = match fields_map.get("sagemaker_image_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'sagemaker_image_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sagemaker_image_version_alias: {
                         let field_value = match fields_map.get("sagemaker_image_version_alias") {
                             Some(value) => value,
                             None => bail!("Missing field 'sagemaker_image_version_alias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sagemaker_image_version_arn: {
                         let field_value = match fields_map.get("sagemaker_image_version_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'sagemaker_image_version_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

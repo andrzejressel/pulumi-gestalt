@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("content_security_policies".to_string(), self.r#content_security_policies.to_pulumi_value().await);
-            map.insert("content_type_options".to_string(), self.r#content_type_options.to_pulumi_value().await);
-            map.insert("frame_options".to_string(), self.r#frame_options.to_pulumi_value().await);
-            map.insert("referrer_policies".to_string(), self.r#referrer_policies.to_pulumi_value().await);
-            map.insert("strict_transport_securities".to_string(), self.r#strict_transport_securities.to_pulumi_value().await);
-            map.insert("xss_protections".to_string(), self.r#xss_protections.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "content_security_policies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#content_security_policies,
+                )
+                .await,
+            );
+            map.insert(
+                "content_type_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#content_type_options,
+                )
+                .await,
+            );
+            map.insert(
+                "frame_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#frame_options,
+                )
+                .await,
+            );
+            map.insert(
+                "referrer_policies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#referrer_policies,
+                )
+                .await,
+            );
+            map.insert(
+                "strict_transport_securities".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#strict_transport_securities,
+                )
+                .await,
+            );
+            map.insert(
+                "xss_protections".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#xss_protections,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetResponseHeadersPolicySecurityHeadersConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#content_security_policies: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'content_security_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_type_options: {
                         let field_value = match fields_map.get("content_type_options") {
                             Some(value) => value,
                             None => bail!("Missing field 'content_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicySecurityHeadersConfigContentTypeOption> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frame_options: {
                         let field_value = match fields_map.get("frame_options") {
                             Some(value) => value,
                             None => bail!("Missing field 'frame_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicySecurityHeadersConfigFrameOption> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#referrer_policies: {
                         let field_value = match fields_map.get("referrer_policies") {
                             Some(value) => value,
                             None => bail!("Missing field 'referrer_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicySecurityHeadersConfigReferrerPolicy> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#strict_transport_securities: {
                         let field_value = match fields_map.get("strict_transport_securities") {
                             Some(value) => value,
                             None => bail!("Missing field 'strict_transport_securities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#xss_protections: {
                         let field_value = match fields_map.get("xss_protections") {
                             Some(value) => value,
                             None => bail!("Missing field 'xss_protections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicySecurityHeadersConfigXssProtection> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

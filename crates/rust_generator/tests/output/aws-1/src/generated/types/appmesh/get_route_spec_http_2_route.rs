@@ -26,14 +26,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("actions".to_string(), self.r#actions.to_pulumi_value().await);
-            map.insert("matches".to_string(), self.r#matches.to_pulumi_value().await);
-            map.insert("retry_policies".to_string(), self.r#retry_policies.to_pulumi_value().await);
-            map.insert("timeouts".to_string(), self.r#timeouts.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#actions,
+                )
+                .await,
+            );
+            map.insert(
+                "matches".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matches,
+                )
+                .await,
+            );
+            map.insert(
+                "retry_policies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retry_policies,
+                )
+                .await,
+            );
+            map.insert(
+                "timeouts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeouts,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -41,16 +69,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetRouteSpecHttp2Route {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#actions: {
@@ -58,28 +87,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteAction> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matches: {
                         let field_value = match fields_map.get("matches") {
                             Some(value) => value,
                             None => bail!("Missing field 'matches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteMatch> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_policies: {
                         let field_value = match fields_map.get("retry_policies") {
                             Some(value) => value,
                             None => bail!("Missing field 'retry_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteRetryPolicy> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeouts: {
                         let field_value = match fields_map.get("timeouts") {
                             Some(value) => value,
                             None => bail!("Missing field 'timeouts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteTimeout> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

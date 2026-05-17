@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -35,4 +35,160 @@ pub struct FrontdoorRoutingRuleForwardingConfiguration {
     #[builder(into)]
     #[serde(rename = "forwardingProtocol")]
     pub r#forwarding_protocol: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FrontdoorRoutingRuleForwardingConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "backend_pool_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#backend_pool_name,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_query_parameter_strip_directive".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_query_parameter_strip_directive,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_query_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_query_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_use_dynamic_compression".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_use_dynamic_compression,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_forwarding_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_forwarding_path,
+                )
+                .await,
+            );
+            map.insert(
+                "forwarding_protocol".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forwarding_protocol,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FrontdoorRoutingRuleForwardingConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#backend_pool_name: {
+                        let field_value = match fields_map.get("backend_pool_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'backend_pool_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_duration: {
+                        let field_value = match fields_map.get("cache_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_enabled: {
+                        let field_value = match fields_map.get("cache_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_query_parameter_strip_directive: {
+                        let field_value = match fields_map.get("cache_query_parameter_strip_directive") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_query_parameter_strip_directive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_query_parameters: {
+                        let field_value = match fields_map.get("cache_query_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_query_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_use_dynamic_compression: {
+                        let field_value = match fields_map.get("cache_use_dynamic_compression") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_use_dynamic_compression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#custom_forwarding_path: {
+                        let field_value = match fields_map.get("custom_forwarding_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_forwarding_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#forwarding_protocol: {
+                        let field_value = match fields_map.get("forwarding_protocol") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'forwarding_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -50,19 +50,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("delete_marker_replication".to_string(), self.r#delete_marker_replication.to_pulumi_value().await);
-            map.insert("destination".to_string(), self.r#destination.to_pulumi_value().await);
-            map.insert("existing_object_replication".to_string(), self.r#existing_object_replication.to_pulumi_value().await);
-            map.insert("filter".to_string(), self.r#filter.to_pulumi_value().await);
-            map.insert("id".to_string(), self.r#id.to_pulumi_value().await);
-            map.insert("prefix".to_string(), self.r#prefix.to_pulumi_value().await);
-            map.insert("priority".to_string(), self.r#priority.to_pulumi_value().await);
-            map.insert("source_selection_criteria".to_string(), self.r#source_selection_criteria.to_pulumi_value().await);
-            map.insert("status".to_string(), self.r#status.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "delete_marker_replication".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delete_marker_replication,
+                )
+                .await,
+            );
+            map.insert(
+                "destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination,
+                )
+                .await,
+            );
+            map.insert(
+                "existing_object_replication".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#existing_object_replication,
+                )
+                .await,
+            );
+            map.insert(
+                "filter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prefix,
+                )
+                .await,
+            );
+            map.insert(
+                "priority".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#priority,
+                )
+                .await,
+            );
+            map.insert(
+                "source_selection_criteria".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_selection_criteria,
+                )
+                .await,
+            );
+            map.insert(
+                "status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#status,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -70,16 +128,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for BucketReplicationConfigRule {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#delete_marker_replication: {
@@ -87,63 +146,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                             Some(value) => value,
                             None => bail!("Missing field 'delete_marker_replication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::s3::BucketReplicationConfigRuleDeleteMarkerReplication>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination: {
                         let field_value = match fields_map.get("destination") {
                             Some(value) => value,
                             None => bail!("Missing field 'destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::s3::BucketReplicationConfigRuleDestination> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#existing_object_replication: {
                         let field_value = match fields_map.get("existing_object_replication") {
                             Some(value) => value,
                             None => bail!("Missing field 'existing_object_replication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::s3::BucketReplicationConfigRuleExistingObjectReplication>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter: {
                         let field_value = match fields_map.get("filter") {
                             Some(value) => value,
                             None => bail!("Missing field 'filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::s3::BucketReplicationConfigRuleFilter>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#id: {
                         let field_value = match fields_map.get("id") {
                             Some(value) => value,
                             None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix: {
                         let field_value = match fields_map.get("prefix") {
                             Some(value) => value,
                             None => bail!("Missing field 'prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#priority: {
                         let field_value = match fields_map.get("priority") {
                             Some(value) => value,
                             None => bail!("Missing field 'priority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_selection_criteria: {
                         let field_value = match fields_map.get("source_selection_criteria") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_selection_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::s3::BucketReplicationConfigRuleSourceSelectionCriteria>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status: {
                         let field_value = match fields_map.get("status") {
                             Some(value) => value,
                             None => bail!("Missing field 'status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

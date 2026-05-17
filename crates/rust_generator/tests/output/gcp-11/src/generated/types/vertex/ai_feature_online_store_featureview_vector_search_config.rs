@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -34,4 +34,146 @@ pub struct AiFeatureOnlineStoreFeatureviewVectorSearchConfig {
     #[builder(into)]
     #[serde(rename = "treeAhConfig")]
     pub r#tree_ah_config: Option<Box<super::super::types::vertex::AiFeatureOnlineStoreFeatureviewVectorSearchConfigTreeAhConfig>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiFeatureOnlineStoreFeatureviewVectorSearchConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "brute_force_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#brute_force_config,
+                )
+                .await,
+            );
+            map.insert(
+                "crowding_column".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#crowding_column,
+                )
+                .await,
+            );
+            map.insert(
+                "distance_measure_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#distance_measure_type,
+                )
+                .await,
+            );
+            map.insert(
+                "embedding_column".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#embedding_column,
+                )
+                .await,
+            );
+            map.insert(
+                "embedding_dimension".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#embedding_dimension,
+                )
+                .await,
+            );
+            map.insert(
+                "filter_columns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter_columns,
+                )
+                .await,
+            );
+            map.insert(
+                "tree_ah_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tree_ah_config,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AiFeatureOnlineStoreFeatureviewVectorSearchConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#brute_force_config: {
+                        let field_value = match fields_map.get("brute_force_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'brute_force_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#crowding_column: {
+                        let field_value = match fields_map.get("crowding_column") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'crowding_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#distance_measure_type: {
+                        let field_value = match fields_map.get("distance_measure_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'distance_measure_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#embedding_column: {
+                        let field_value = match fields_map.get("embedding_column") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'embedding_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#embedding_dimension: {
+                        let field_value = match fields_map.get("embedding_dimension") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'embedding_dimension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#filter_columns: {
+                        let field_value = match fields_map.get("filter_columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'filter_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tree_ah_config: {
+                        let field_value = match fields_map.get("tree_ah_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tree_ah_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

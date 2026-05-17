@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("agent_name".to_string(), self.r#agent_name.to_pulumi_value().await);
-            map.insert("agent_status".to_string(), self.r#agent_status.to_pulumi_value().await);
-            map.insert("agent_version".to_string(), self.r#agent_version.to_pulumi_value().await);
-            map.insert("created_at".to_string(), self.r#created_at.to_pulumi_value().await);
-            map.insert("description".to_string(), self.r#description.to_pulumi_value().await);
-            map.insert("guardrail_configurations".to_string(), self.r#guardrail_configurations.to_pulumi_value().await);
-            map.insert("updated_at".to_string(), self.r#updated_at.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "agent_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#agent_name,
+                )
+                .await,
+            );
+            map.insert(
+                "agent_status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#agent_status,
+                )
+                .await,
+            );
+            map.insert(
+                "agent_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#agent_version,
+                )
+                .await,
+            );
+            map.insert(
+                "created_at".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#created_at,
+                )
+                .await,
+            );
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "guardrail_configurations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#guardrail_configurations,
+                )
+                .await,
+            );
+            map.insert(
+                "updated_at".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#updated_at,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetAgentAgentVersionsAgentVersionSummary {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#agent_name: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'agent_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#agent_status: {
                         let field_value = match fields_map.get("agent_status") {
                             Some(value) => value,
                             None => bail!("Missing field 'agent_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#agent_version: {
                         let field_value = match fields_map.get("agent_version") {
                             Some(value) => value,
                             None => bail!("Missing field 'agent_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#created_at: {
                         let field_value = match fields_map.get("created_at") {
                             Some(value) => value,
                             None => bail!("Missing field 'created_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#description: {
                         let field_value = match fields_map.get("description") {
                             Some(value) => value,
                             None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guardrail_configurations: {
                         let field_value = match fields_map.get("guardrail_configurations") {
                             Some(value) => value,
                             None => bail!("Missing field 'guardrail_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::bedrock::GetAgentAgentVersionsAgentVersionSummaryGuardrailConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#updated_at: {
                         let field_value = match fields_map.get("updated_at") {
                             Some(value) => value,
                             None => bail!("Missing field 'updated_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

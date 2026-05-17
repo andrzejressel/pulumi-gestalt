@@ -54,20 +54,84 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("artifact_identifier".to_string(), self.r#artifact_identifier.to_pulumi_value().await);
-            map.insert("bucket_owner_access".to_string(), self.r#bucket_owner_access.to_pulumi_value().await);
-            map.insert("encryption_disabled".to_string(), self.r#encryption_disabled.to_pulumi_value().await);
-            map.insert("location".to_string(), self.r#location.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("namespace_type".to_string(), self.r#namespace_type.to_pulumi_value().await);
-            map.insert("override_artifact_name".to_string(), self.r#override_artifact_name.to_pulumi_value().await);
-            map.insert("packaging".to_string(), self.r#packaging.to_pulumi_value().await);
-            map.insert("path".to_string(), self.r#path.to_pulumi_value().await);
-            map.insert("type_".to_string(), self.r#type_.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "artifact_identifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#artifact_identifier,
+                )
+                .await,
+            );
+            map.insert(
+                "bucket_owner_access".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bucket_owner_access,
+                )
+                .await,
+            );
+            map.insert(
+                "encryption_disabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encryption_disabled,
+                )
+                .await,
+            );
+            map.insert(
+                "location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#location,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "namespace_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#namespace_type,
+                )
+                .await,
+            );
+            map.insert(
+                "override_artifact_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#override_artifact_name,
+                )
+                .await,
+            );
+            map.insert(
+                "packaging".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#packaging,
+                )
+                .await,
+            );
+            map.insert(
+                "path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#path,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -75,16 +139,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ProjectSecondaryArtifact {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#artifact_identifier: {
@@ -92,70 +157,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'artifact_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_owner_access: {
                         let field_value = match fields_map.get("bucket_owner_access") {
                             Some(value) => value,
                             None => bail!("Missing field 'bucket_owner_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_disabled: {
                         let field_value = match fields_map.get("encryption_disabled") {
                             Some(value) => value,
                             None => bail!("Missing field 'encryption_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#location: {
                         let field_value = match fields_map.get("location") {
                             Some(value) => value,
                             None => bail!("Missing field 'location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#namespace_type: {
                         let field_value = match fields_map.get("namespace_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'namespace_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#override_artifact_name: {
                         let field_value = match fields_map.get("override_artifact_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'override_artifact_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#packaging: {
                         let field_value = match fields_map.get("packaging") {
                             Some(value) => value,
                             None => bail!("Missing field 'packaging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path: {
                         let field_value = match fields_map.get("path") {
                             Some(value) => value,
                             None => bail!("Missing field 'path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
                         let field_value = match fields_map.get("type_") {
                             Some(value) => value,
                             None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -50,19 +50,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("build_status_config".to_string(), self.r#build_status_config.to_pulumi_value().await);
-            map.insert("buildspec".to_string(), self.r#buildspec.to_pulumi_value().await);
-            map.insert("git_clone_depth".to_string(), self.r#git_clone_depth.to_pulumi_value().await);
-            map.insert("git_submodules_config".to_string(), self.r#git_submodules_config.to_pulumi_value().await);
-            map.insert("insecure_ssl".to_string(), self.r#insecure_ssl.to_pulumi_value().await);
-            map.insert("location".to_string(), self.r#location.to_pulumi_value().await);
-            map.insert("report_build_status".to_string(), self.r#report_build_status.to_pulumi_value().await);
-            map.insert("source_identifier".to_string(), self.r#source_identifier.to_pulumi_value().await);
-            map.insert("type_".to_string(), self.r#type_.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "build_status_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#build_status_config,
+                )
+                .await,
+            );
+            map.insert(
+                "buildspec".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#buildspec,
+                )
+                .await,
+            );
+            map.insert(
+                "git_clone_depth".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#git_clone_depth,
+                )
+                .await,
+            );
+            map.insert(
+                "git_submodules_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#git_submodules_config,
+                )
+                .await,
+            );
+            map.insert(
+                "insecure_ssl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#insecure_ssl,
+                )
+                .await,
+            );
+            map.insert(
+                "location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#location,
+                )
+                .await,
+            );
+            map.insert(
+                "report_build_status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#report_build_status,
+                )
+                .await,
+            );
+            map.insert(
+                "source_identifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_identifier,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -70,16 +128,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ProjectSecondarySource {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#build_status_config: {
@@ -87,63 +146,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'build_status_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codebuild::ProjectSecondarySourceBuildStatusConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#buildspec: {
                         let field_value = match fields_map.get("buildspec") {
                             Some(value) => value,
                             None => bail!("Missing field 'buildspec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_clone_depth: {
                         let field_value = match fields_map.get("git_clone_depth") {
                             Some(value) => value,
                             None => bail!("Missing field 'git_clone_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_submodules_config: {
                         let field_value = match fields_map.get("git_submodules_config") {
                             Some(value) => value,
                             None => bail!("Missing field 'git_submodules_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codebuild::ProjectSecondarySourceGitSubmodulesConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#insecure_ssl: {
                         let field_value = match fields_map.get("insecure_ssl") {
                             Some(value) => value,
                             None => bail!("Missing field 'insecure_ssl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#location: {
                         let field_value = match fields_map.get("location") {
                             Some(value) => value,
                             None => bail!("Missing field 'location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#report_build_status: {
                         let field_value = match fields_map.get("report_build_status") {
                             Some(value) => value,
                             None => bail!("Missing field 'report_build_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_identifier: {
                         let field_value = match fields_map.get("source_identifier") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
                         let field_value = match fields_map.get("type_") {
                             Some(value) => value,
                             None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

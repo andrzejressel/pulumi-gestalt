@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -59,4 +59,230 @@ pub struct IoTHubEndpoint {
     #[builder(into)]
     #[serde(rename = "type")]
     pub r#type_: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoTHubEndpoint {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "authentication_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authentication_type,
+                )
+                .await,
+            );
+            map.insert(
+                "batch_frequency_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#batch_frequency_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "connection_string".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_string,
+                )
+                .await,
+            );
+            map.insert(
+                "container_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#container_name,
+                )
+                .await,
+            );
+            map.insert(
+                "encoding".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encoding,
+                )
+                .await,
+            );
+            map.insert(
+                "endpoint_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#endpoint_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "entity_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entity_path,
+                )
+                .await,
+            );
+            map.insert(
+                "file_name_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#file_name_format,
+                )
+                .await,
+            );
+            map.insert(
+                "identity_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identity_id,
+                )
+                .await,
+            );
+            map.insert(
+                "max_chunk_size_in_bytes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_chunk_size_in_bytes,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_group_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_group_name,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for IoTHubEndpoint {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#authentication_type: {
+                        let field_value = match fields_map.get("authentication_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'authentication_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#batch_frequency_in_seconds: {
+                        let field_value = match fields_map.get("batch_frequency_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'batch_frequency_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#connection_string: {
+                        let field_value = match fields_map.get("connection_string") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connection_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#container_name: {
+                        let field_value = match fields_map.get("container_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#encoding: {
+                        let field_value = match fields_map.get("encoding") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'encoding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#endpoint_uri: {
+                        let field_value = match fields_map.get("endpoint_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'endpoint_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#entity_path: {
+                        let field_value = match fields_map.get("entity_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entity_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#file_name_format: {
+                        let field_value = match fields_map.get("file_name_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'file_name_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#identity_id: {
+                        let field_value = match fields_map.get("identity_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identity_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_chunk_size_in_bytes: {
+                        let field_value = match fields_map.get("max_chunk_size_in_bytes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_chunk_size_in_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_group_name: {
+                        let field_value = match fields_map.get("resource_group_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#type_: {
+                        let field_value = match fields_map.get("type_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

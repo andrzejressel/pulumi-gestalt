@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("organization_arns".to_string(), self.r#organization_arns.to_pulumi_value().await);
-            map.insert("organizational_unit_arns".to_string(), self.r#organizational_unit_arns.to_pulumi_value().await);
-            map.insert("user_groups".to_string(), self.r#user_groups.to_pulumi_value().await);
-            map.insert("user_ids".to_string(), self.r#user_ids.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "organization_arns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#organization_arns,
+                )
+                .await,
+            );
+            map.insert(
+                "organizational_unit_arns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#organizational_unit_arns,
+                )
+                .await,
+            );
+            map.insert(
+                "user_groups".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_groups,
+                )
+                .await,
+            );
+            map.insert(
+                "user_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_ids,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#organization_arns: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'organization_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organizational_unit_arns: {
                         let field_value = match fields_map.get("organizational_unit_arns") {
                             Some(value) => value,
                             None => bail!("Missing field 'organizational_unit_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_groups: {
                         let field_value = match fields_map.get("user_groups") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_ids: {
                         let field_value = match fields_map.get("user_ids") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

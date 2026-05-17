@@ -29,13 +29,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("field_to_match".to_string(), self.r#field_to_match.to_pulumi_value().await);
-            map.insert("regex_pattern_set_id".to_string(), self.r#regex_pattern_set_id.to_pulumi_value().await);
-            map.insert("text_transformation".to_string(), self.r#text_transformation.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "field_to_match".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#field_to_match,
+                )
+                .await,
+            );
+            map.insert(
+                "regex_pattern_set_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#regex_pattern_set_id,
+                )
+                .await,
+            );
+            map.insert(
+                "text_transformation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#text_transformation,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -43,16 +65,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RegexMatchSetRegexMatchTuple {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#field_to_match: {
@@ -60,21 +83,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                             Some(value) => value,
                             None => bail!("Missing field 'field_to_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::wafregional::RegexMatchSetRegexMatchTupleFieldToMatch> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regex_pattern_set_id: {
                         let field_value = match fields_map.get("regex_pattern_set_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'regex_pattern_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_transformation: {
                         let field_value = match fields_map.get("text_transformation") {
                             Some(value) => value,
                             None => bail!("Missing field 'text_transformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

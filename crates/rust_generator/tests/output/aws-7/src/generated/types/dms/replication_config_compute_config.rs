@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -44,4 +44,174 @@ pub struct ReplicationConfigComputeConfig {
     #[builder(into)]
     #[serde(rename = "vpcSecurityGroupIds")]
     pub r#vpc_security_group_ids: Option<Vec<String>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ReplicationConfigComputeConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "availability_zone".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#availability_zone,
+                )
+                .await,
+            );
+            map.insert(
+                "dns_name_servers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dns_name_servers,
+                )
+                .await,
+            );
+            map.insert(
+                "kms_key_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kms_key_id,
+                )
+                .await,
+            );
+            map.insert(
+                "max_capacity_units".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_capacity_units,
+                )
+                .await,
+            );
+            map.insert(
+                "min_capacity_units".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_capacity_units,
+                )
+                .await,
+            );
+            map.insert(
+                "multi_az".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#multi_az,
+                )
+                .await,
+            );
+            map.insert(
+                "preferred_maintenance_window".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#preferred_maintenance_window,
+                )
+                .await,
+            );
+            map.insert(
+                "replication_subnet_group_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#replication_subnet_group_id,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc_security_group_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc_security_group_ids,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ReplicationConfigComputeConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#availability_zone: {
+                        let field_value = match fields_map.get("availability_zone") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'availability_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dns_name_servers: {
+                        let field_value = match fields_map.get("dns_name_servers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dns_name_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kms_key_id: {
+                        let field_value = match fields_map.get("kms_key_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_capacity_units: {
+                        let field_value = match fields_map.get("max_capacity_units") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_capacity_units: {
+                        let field_value = match fields_map.get("min_capacity_units") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#multi_az: {
+                        let field_value = match fields_map.get("multi_az") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'multi_az' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#preferred_maintenance_window: {
+                        let field_value = match fields_map.get("preferred_maintenance_window") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'preferred_maintenance_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#replication_subnet_group_id: {
+                        let field_value = match fields_map.get("replication_subnet_group_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'replication_subnet_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vpc_security_group_ids: {
+                        let field_value = match fields_map.get("vpc_security_group_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vpc_security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

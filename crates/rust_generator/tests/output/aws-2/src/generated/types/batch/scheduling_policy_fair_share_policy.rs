@@ -25,13 +25,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("compute_reservation".to_string(), self.r#compute_reservation.to_pulumi_value().await);
-            map.insert("share_decay_seconds".to_string(), self.r#share_decay_seconds.to_pulumi_value().await);
-            map.insert("share_distributions".to_string(), self.r#share_distributions.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "compute_reservation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compute_reservation,
+                )
+                .await,
+            );
+            map.insert(
+                "share_decay_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#share_decay_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "share_distributions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#share_distributions,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -39,16 +61,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for SchedulingPolicyFairSharePolicy {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#compute_reservation: {
@@ -56,21 +79,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                             Some(value) => value,
                             None => bail!("Missing field 'compute_reservation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_decay_seconds: {
                         let field_value = match fields_map.get("share_decay_seconds") {
                             Some(value) => value,
                             None => bail!("Missing field 'share_decay_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_distributions: {
                         let field_value = match fields_map.get("share_distributions") {
                             Some(value) => value,
                             None => bail!("Missing field 'share_distributions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::batch::SchedulingPolicyFairSharePolicyShareDistribution>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

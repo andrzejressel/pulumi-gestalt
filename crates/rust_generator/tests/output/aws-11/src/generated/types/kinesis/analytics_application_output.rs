@@ -40,16 +40,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("id".to_string(), self.r#id.to_pulumi_value().await);
-            map.insert("kinesis_firehose".to_string(), self.r#kinesis_firehose.to_pulumi_value().await);
-            map.insert("kinesis_stream".to_string(), self.r#kinesis_stream.to_pulumi_value().await);
-            map.insert("lambda".to_string(), self.r#lambda.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("schema".to_string(), self.r#schema.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "kinesis_firehose".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kinesis_firehose,
+                )
+                .await,
+            );
+            map.insert(
+                "kinesis_stream".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kinesis_stream,
+                )
+                .await,
+            );
+            map.insert(
+                "lambda".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lambda,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "schema".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#schema,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -57,16 +97,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AnalyticsApplicationOutput {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#id: {
@@ -74,42 +115,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_firehose: {
                         let field_value = match fields_map.get("kinesis_firehose") {
                             Some(value) => value,
                             None => bail!("Missing field 'kinesis_firehose' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputKinesisFirehose>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_stream: {
                         let field_value = match fields_map.get("kinesis_stream") {
                             Some(value) => value,
                             None => bail!("Missing field 'kinesis_stream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputKinesisStream>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda: {
                         let field_value = match fields_map.get("lambda") {
                             Some(value) => value,
                             None => bail!("Missing field 'lambda' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputLambda>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema: {
                         let field_value = match fields_map.get("schema") {
                             Some(value) => value,
                             None => bail!("Missing field 'schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::kinesis::AnalyticsApplicationOutputSchema> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

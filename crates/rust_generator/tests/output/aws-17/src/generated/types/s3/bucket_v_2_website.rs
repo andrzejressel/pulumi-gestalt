@@ -31,14 +31,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("error_document".to_string(), self.r#error_document.to_pulumi_value().await);
-            map.insert("index_document".to_string(), self.r#index_document.to_pulumi_value().await);
-            map.insert("redirect_all_requests_to".to_string(), self.r#redirect_all_requests_to.to_pulumi_value().await);
-            map.insert("routing_rules".to_string(), self.r#routing_rules.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "error_document".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#error_document,
+                )
+                .await,
+            );
+            map.insert(
+                "index_document".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#index_document,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect_all_requests_to".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect_all_requests_to,
+                )
+                .await,
+            );
+            map.insert(
+                "routing_rules".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#routing_rules,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -46,16 +74,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for BucketV2Website {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#error_document: {
@@ -63,28 +92,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                             Some(value) => value,
                             None => bail!("Missing field 'error_document' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#index_document: {
                         let field_value = match fields_map.get("index_document") {
                             Some(value) => value,
                             None => bail!("Missing field 'index_document' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_all_requests_to: {
                         let field_value = match fields_map.get("redirect_all_requests_to") {
                             Some(value) => value,
                             None => bail!("Missing field 'redirect_all_requests_to' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#routing_rules: {
                         let field_value = match fields_map.get("routing_rules") {
                             Some(value) => value,
                             None => bail!("Missing field 'routing_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

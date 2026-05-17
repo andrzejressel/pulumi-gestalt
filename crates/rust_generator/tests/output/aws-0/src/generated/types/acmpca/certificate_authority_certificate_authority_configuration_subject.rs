@@ -66,23 +66,105 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("common_name".to_string(), self.r#common_name.to_pulumi_value().await);
-            map.insert("country".to_string(), self.r#country.to_pulumi_value().await);
-            map.insert("distinguished_name_qualifier".to_string(), self.r#distinguished_name_qualifier.to_pulumi_value().await);
-            map.insert("generation_qualifier".to_string(), self.r#generation_qualifier.to_pulumi_value().await);
-            map.insert("given_name".to_string(), self.r#given_name.to_pulumi_value().await);
-            map.insert("initials".to_string(), self.r#initials.to_pulumi_value().await);
-            map.insert("locality".to_string(), self.r#locality.to_pulumi_value().await);
-            map.insert("organization".to_string(), self.r#organization.to_pulumi_value().await);
-            map.insert("organizational_unit".to_string(), self.r#organizational_unit.to_pulumi_value().await);
-            map.insert("pseudonym".to_string(), self.r#pseudonym.to_pulumi_value().await);
-            map.insert("state".to_string(), self.r#state.to_pulumi_value().await);
-            map.insert("surname".to_string(), self.r#surname.to_pulumi_value().await);
-            map.insert("title".to_string(), self.r#title.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "common_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#common_name,
+                )
+                .await,
+            );
+            map.insert(
+                "country".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#country,
+                )
+                .await,
+            );
+            map.insert(
+                "distinguished_name_qualifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#distinguished_name_qualifier,
+                )
+                .await,
+            );
+            map.insert(
+                "generation_qualifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#generation_qualifier,
+                )
+                .await,
+            );
+            map.insert(
+                "given_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#given_name,
+                )
+                .await,
+            );
+            map.insert(
+                "initials".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#initials,
+                )
+                .await,
+            );
+            map.insert(
+                "locality".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#locality,
+                )
+                .await,
+            );
+            map.insert(
+                "organization".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#organization,
+                )
+                .await,
+            );
+            map.insert(
+                "organizational_unit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#organizational_unit,
+                )
+                .await,
+            );
+            map.insert(
+                "pseudonym".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pseudonym,
+                )
+                .await,
+            );
+            map.insert(
+                "state".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#state,
+                )
+                .await,
+            );
+            map.insert(
+                "surname".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#surname,
+                )
+                .await,
+            );
+            map.insert(
+                "title".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#title,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -90,16 +172,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CertificateAuthorityCertificateAuthorityConfigurationSubject {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#common_name: {
@@ -107,91 +190,91 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'common_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#country: {
                         let field_value = match fields_map.get("country") {
                             Some(value) => value,
                             None => bail!("Missing field 'country' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#distinguished_name_qualifier: {
                         let field_value = match fields_map.get("distinguished_name_qualifier") {
                             Some(value) => value,
                             None => bail!("Missing field 'distinguished_name_qualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#generation_qualifier: {
                         let field_value = match fields_map.get("generation_qualifier") {
                             Some(value) => value,
                             None => bail!("Missing field 'generation_qualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#given_name: {
                         let field_value = match fields_map.get("given_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'given_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initials: {
                         let field_value = match fields_map.get("initials") {
                             Some(value) => value,
                             None => bail!("Missing field 'initials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#locality: {
                         let field_value = match fields_map.get("locality") {
                             Some(value) => value,
                             None => bail!("Missing field 'locality' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organization: {
                         let field_value = match fields_map.get("organization") {
                             Some(value) => value,
                             None => bail!("Missing field 'organization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organizational_unit: {
                         let field_value = match fields_map.get("organizational_unit") {
                             Some(value) => value,
                             None => bail!("Missing field 'organizational_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pseudonym: {
                         let field_value = match fields_map.get("pseudonym") {
                             Some(value) => value,
                             None => bail!("Missing field 'pseudonym' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#state: {
                         let field_value = match fields_map.get("state") {
                             Some(value) => value,
                             None => bail!("Missing field 'state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#surname: {
                         let field_value = match fields_map.get("surname") {
                             Some(value) => value,
                             None => bail!("Missing field 'surname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#title: {
                         let field_value = match fields_map.get("title") {
                             Some(value) => value,
                             None => bail!("Missing field 'title' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

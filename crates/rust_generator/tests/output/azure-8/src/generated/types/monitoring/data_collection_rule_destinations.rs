@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -39,4 +39,160 @@ pub struct DataCollectionRuleDestinations {
     #[builder(into)]
     #[serde(rename = "storageTableDirects")]
     pub r#storage_table_directs: Option<Vec<super::super::types::monitoring::DataCollectionRuleDestinationsStorageTableDirect>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataCollectionRuleDestinations {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "azure_monitor_metrics".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#azure_monitor_metrics,
+                )
+                .await,
+            );
+            map.insert(
+                "event_hub".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#event_hub,
+                )
+                .await,
+            );
+            map.insert(
+                "event_hub_direct".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#event_hub_direct,
+                )
+                .await,
+            );
+            map.insert(
+                "log_analytics".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#log_analytics,
+                )
+                .await,
+            );
+            map.insert(
+                "monitor_accounts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#monitor_accounts,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_blob_directs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_blob_directs,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_blobs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_blobs,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_table_directs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_table_directs,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataCollectionRuleDestinations {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#azure_monitor_metrics: {
+                        let field_value = match fields_map.get("azure_monitor_metrics") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'azure_monitor_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#event_hub: {
+                        let field_value = match fields_map.get("event_hub") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'event_hub' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#event_hub_direct: {
+                        let field_value = match fields_map.get("event_hub_direct") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'event_hub_direct' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#log_analytics: {
+                        let field_value = match fields_map.get("log_analytics") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'log_analytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#monitor_accounts: {
+                        let field_value = match fields_map.get("monitor_accounts") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'monitor_accounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_blob_directs: {
+                        let field_value = match fields_map.get("storage_blob_directs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_blob_directs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_blobs: {
+                        let field_value = match fields_map.get("storage_blobs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_blobs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_table_directs: {
+                        let field_value = match fields_map.get("storage_table_directs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_table_directs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

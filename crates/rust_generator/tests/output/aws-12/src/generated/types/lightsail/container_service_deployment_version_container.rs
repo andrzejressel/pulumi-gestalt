@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("commands".to_string(), self.r#commands.to_pulumi_value().await);
-            map.insert("container_name".to_string(), self.r#container_name.to_pulumi_value().await);
-            map.insert("environment".to_string(), self.r#environment.to_pulumi_value().await);
-            map.insert("image".to_string(), self.r#image.to_pulumi_value().await);
-            map.insert("ports".to_string(), self.r#ports.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "commands".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#commands,
+                )
+                .await,
+            );
+            map.insert(
+                "container_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#container_name,
+                )
+                .await,
+            );
+            map.insert(
+                "environment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#environment,
+                )
+                .await,
+            );
+            map.insert(
+                "image".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#image,
+                )
+                .await,
+            );
+            map.insert(
+                "ports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ports,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ContainerServiceDeploymentVersionContainer {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#commands: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'commands' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_name: {
                         let field_value = match fields_map.get("container_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment: {
                         let field_value = match fields_map.get("environment") {
                             Some(value) => value,
                             None => bail!("Missing field 'environment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<std::collections::HashMap<String, String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image: {
                         let field_value = match fields_map.get("image") {
                             Some(value) => value,
                             None => bail!("Missing field 'image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ports: {
                         let field_value = match fields_map.get("ports") {
                             Some(value) => value,
                             None => bail!("Missing field 'ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<std::collections::HashMap<String, String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

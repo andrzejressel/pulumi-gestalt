@@ -49,16 +49,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("annotations".to_string(), self.r#annotations.to_pulumi_value().await);
-            map.insert("augmented_manifests".to_string(), self.r#augmented_manifests.to_pulumi_value().await);
-            map.insert("data_format".to_string(), self.r#data_format.to_pulumi_value().await);
-            map.insert("documents".to_string(), self.r#documents.to_pulumi_value().await);
-            map.insert("entity_list".to_string(), self.r#entity_list.to_pulumi_value().await);
-            map.insert("entity_types".to_string(), self.r#entity_types.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "annotations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#annotations,
+                )
+                .await,
+            );
+            map.insert(
+                "augmented_manifests".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#augmented_manifests,
+                )
+                .await,
+            );
+            map.insert(
+                "data_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_format,
+                )
+                .await,
+            );
+            map.insert(
+                "documents".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#documents,
+                )
+                .await,
+            );
+            map.insert(
+                "entity_list".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entity_list,
+                )
+                .await,
+            );
+            map.insert(
+                "entity_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entity_types,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -66,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EntityRecognizerInputDataConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#annotations: {
@@ -83,42 +124,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                             Some(value) => value,
                             None => bail!("Missing field 'annotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigAnnotations>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#augmented_manifests: {
                         let field_value = match fields_map.get("augmented_manifests") {
                             Some(value) => value,
                             None => bail!("Missing field 'augmented_manifests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::comprehend::EntityRecognizerInputDataConfigAugmentedManifest>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_format: {
                         let field_value = match fields_map.get("data_format") {
                             Some(value) => value,
                             None => bail!("Missing field 'data_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#documents: {
                         let field_value = match fields_map.get("documents") {
                             Some(value) => value,
                             None => bail!("Missing field 'documents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigDocuments>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_list: {
                         let field_value = match fields_map.get("entity_list") {
                             Some(value) => value,
                             None => bail!("Missing field 'entity_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigEntityList>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_types: {
                         let field_value = match fields_map.get("entity_types") {
                             Some(value) => value,
                             None => bail!("Missing field 'entity_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::comprehend::EntityRecognizerInputDataConfigEntityType> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

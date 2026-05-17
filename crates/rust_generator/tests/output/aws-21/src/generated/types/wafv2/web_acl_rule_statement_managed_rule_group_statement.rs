@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("managed_rule_group_configs".to_string(), self.r#managed_rule_group_configs.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("rule_action_overrides".to_string(), self.r#rule_action_overrides.to_pulumi_value().await);
-            map.insert("scope_down_statement".to_string(), self.r#scope_down_statement.to_pulumi_value().await);
-            map.insert("vendor_name".to_string(), self.r#vendor_name.to_pulumi_value().await);
-            map.insert("version".to_string(), self.r#version.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "managed_rule_group_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managed_rule_group_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "rule_action_overrides".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rule_action_overrides,
+                )
+                .await,
+            );
+            map.insert(
+                "scope_down_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scope_down_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "vendor_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vendor_name,
+                )
+                .await,
+            );
+            map.insert(
+                "version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#version,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclRuleStatementManagedRuleGroupStatement {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#managed_rule_group_configs: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                             Some(value) => value,
                             None => bail!("Missing field 'managed_rule_group_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_action_overrides: {
                         let field_value = match fields_map.get("rule_action_overrides") {
                             Some(value) => value,
                             None => bail!("Missing field 'rule_action_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverride>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scope_down_statement: {
                         let field_value = match fields_map.get("scope_down_statement") {
                             Some(value) => value,
                             None => bail!("Missing field 'scope_down_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatement>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vendor_name: {
                         let field_value = match fields_map.get("vendor_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'vendor_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version: {
                         let field_value = match fields_map.get("version") {
                             Some(value) => value,
                             None => bail!("Missing field 'version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

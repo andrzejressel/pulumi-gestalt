@@ -128,9 +128,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Runtime {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
 
         match &value.content {
             PulumiValueContent::String(s) => match s.as_str() {

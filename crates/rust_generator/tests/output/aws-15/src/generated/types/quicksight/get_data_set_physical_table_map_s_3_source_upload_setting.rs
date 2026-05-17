@@ -29,15 +29,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("contains_header".to_string(), self.r#contains_header.to_pulumi_value().await);
-            map.insert("delimiter".to_string(), self.r#delimiter.to_pulumi_value().await);
-            map.insert("format".to_string(), self.r#format.to_pulumi_value().await);
-            map.insert("start_from_row".to_string(), self.r#start_from_row.to_pulumi_value().await);
-            map.insert("text_qualifier".to_string(), self.r#text_qualifier.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "contains_header".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#contains_header,
+                )
+                .await,
+            );
+            map.insert(
+                "delimiter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delimiter,
+                )
+                .await,
+            );
+            map.insert(
+                "format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#format,
+                )
+                .await,
+            );
+            map.insert(
+                "start_from_row".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#start_from_row,
+                )
+                .await,
+            );
+            map.insert(
+                "text_qualifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#text_qualifier,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +79,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDataSetPhysicalTableMapS3SourceUploadSetting {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#contains_header: {
@@ -62,35 +97,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'contains_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#delimiter: {
                         let field_value = match fields_map.get("delimiter") {
                             Some(value) => value,
                             None => bail!("Missing field 'delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#format: {
                         let field_value = match fields_map.get("format") {
                             Some(value) => value,
                             None => bail!("Missing field 'format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_from_row: {
                         let field_value = match fields_map.get("start_from_row") {
                             Some(value) => value,
                             None => bail!("Missing field 'start_from_row' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_qualifier: {
                         let field_value = match fields_map.get("text_qualifier") {
                             Some(value) => value,
                             None => bail!("Missing field 'text_qualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

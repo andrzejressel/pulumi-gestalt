@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -105,4 +105,286 @@ pub struct ServiceSecurity {
     #[builder(into)]
     #[serde(rename = "tripleDesCiphersEnabled")]
     pub r#triple_des_ciphers_enabled: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ServiceSecurity {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "enable_backend_ssl_30".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_backend_ssl_30,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_backend_tls_10".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_backend_tls_10,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_backend_tls_11".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_backend_tls_11,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_frontend_ssl_30".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_frontend_ssl_30,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_frontend_tls_10".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_frontend_tls_10,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_frontend_tls_11".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_frontend_tls_11,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_rsa_with_aes_128_cbc_sha_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_rsa_with_aes_128_cbc_sha_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_rsa_with_aes_256_cbc_sha_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_rsa_with_aes_256_cbc_sha_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "triple_des_ciphers_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#triple_des_ciphers_enabled,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ServiceSecurity {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#enable_backend_ssl_30: {
+                        let field_value = match fields_map.get("enable_backend_ssl_30") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_backend_ssl_30' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_backend_tls_10: {
+                        let field_value = match fields_map.get("enable_backend_tls_10") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_backend_tls_10' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_backend_tls_11: {
+                        let field_value = match fields_map.get("enable_backend_tls_11") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_backend_tls_11' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_frontend_ssl_30: {
+                        let field_value = match fields_map.get("enable_frontend_ssl_30") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_frontend_ssl_30' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_frontend_tls_10: {
+                        let field_value = match fields_map.get("enable_frontend_tls_10") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_frontend_tls_10' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_frontend_tls_11: {
+                        let field_value = match fields_map.get("enable_frontend_tls_11") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_frontend_tls_11' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_rsa_with_aes_128_cbc_sha_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_rsa_with_aes_128_cbc_sha_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_rsa_with_aes_128_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_rsa_with_aes_256_cbc_sha_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_rsa_with_aes_256_cbc_sha_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_rsa_with_aes_256_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled: {
+                        let field_value = match fields_map.get("tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#triple_des_ciphers_enabled: {
+                        let field_value = match fields_map.get("triple_des_ciphers_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'triple_des_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

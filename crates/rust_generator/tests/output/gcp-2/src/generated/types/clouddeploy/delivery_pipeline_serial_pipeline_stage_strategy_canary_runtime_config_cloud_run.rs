@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,4 +19,104 @@ pub struct DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRu
     #[builder(into)]
     #[serde(rename = "stableRevisionTags")]
     pub r#stable_revision_tags: Option<Vec<String>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "automatic_traffic_control".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#automatic_traffic_control,
+                )
+                .await,
+            );
+            map.insert(
+                "canary_revision_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#canary_revision_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "prior_revision_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prior_revision_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "stable_revision_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stable_revision_tags,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#automatic_traffic_control: {
+                        let field_value = match fields_map.get("automatic_traffic_control") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'automatic_traffic_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#canary_revision_tags: {
+                        let field_value = match fields_map.get("canary_revision_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'canary_revision_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prior_revision_tags: {
+                        let field_value = match fields_map.get("prior_revision_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prior_revision_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stable_revision_tags: {
+                        let field_value = match fields_map.get("stable_revision_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stable_revision_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

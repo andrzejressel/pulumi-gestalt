@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("addresses".to_string(), self.r#addresses.to_pulumi_value().await);
-            map.insert("attribute_matching_model".to_string(), self.r#attribute_matching_model.to_pulumi_value().await);
-            map.insert("email_addresses".to_string(), self.r#email_addresses.to_pulumi_value().await);
-            map.insert("phone_numbers".to_string(), self.r#phone_numbers.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "attribute_matching_model".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#attribute_matching_model,
+                )
+                .await,
+            );
+            map.insert(
+                "email_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#email_addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "phone_numbers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#phone_numbers,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DomainRuleBasedMatchingAttributeTypesSelector {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#addresses: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#attribute_matching_model: {
                         let field_value = match fields_map.get("attribute_matching_model") {
                             Some(value) => value,
                             None => bail!("Missing field 'attribute_matching_model' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_addresses: {
                         let field_value = match fields_map.get("email_addresses") {
                             Some(value) => value,
                             None => bail!("Missing field 'email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#phone_numbers: {
                         let field_value = match fields_map.get("phone_numbers") {
                             Some(value) => value,
                             None => bail!("Missing field 'phone_numbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

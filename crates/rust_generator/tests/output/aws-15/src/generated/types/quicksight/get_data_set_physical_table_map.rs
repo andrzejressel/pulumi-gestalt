@@ -26,14 +26,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("custom_sqls".to_string(), self.r#custom_sqls.to_pulumi_value().await);
-            map.insert("physical_table_map_id".to_string(), self.r#physical_table_map_id.to_pulumi_value().await);
-            map.insert("relational_tables".to_string(), self.r#relational_tables.to_pulumi_value().await);
-            map.insert("s_3_sources".to_string(), self.r#s_3_sources.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "custom_sqls".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_sqls,
+                )
+                .await,
+            );
+            map.insert(
+                "physical_table_map_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#physical_table_map_id,
+                )
+                .await,
+            );
+            map.insert(
+                "relational_tables".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#relational_tables,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_sources".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_sources,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -41,16 +69,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDataSetPhysicalTableMap {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#custom_sqls: {
@@ -58,28 +87,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'custom_sqls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapCustomSql> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#physical_table_map_id: {
                         let field_value = match fields_map.get("physical_table_map_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'physical_table_map_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#relational_tables: {
                         let field_value = match fields_map.get("relational_tables") {
                             Some(value) => value,
                             None => bail!("Missing field 'relational_tables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapRelationalTable> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_sources: {
                         let field_value = match fields_map.get("s_3_sources") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapS3Source> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

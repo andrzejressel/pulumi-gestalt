@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -33,4 +33,146 @@ pub struct FeatureMembershipConfigmanagementConfigSync {
     #[builder(into)]
     #[serde(rename = "stopSyncing")]
     pub r#stop_syncing: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FeatureMembershipConfigmanagementConfigSync {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "git".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#git,
+                )
+                .await,
+            );
+            map.insert(
+                "metrics_gcp_service_account_email".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metrics_gcp_service_account_email,
+                )
+                .await,
+            );
+            map.insert(
+                "oci".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#oci,
+                )
+                .await,
+            );
+            map.insert(
+                "prevent_drift".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prevent_drift,
+                )
+                .await,
+            );
+            map.insert(
+                "source_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_format,
+                )
+                .await,
+            );
+            map.insert(
+                "stop_syncing".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stop_syncing,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FeatureMembershipConfigmanagementConfigSync {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#git: {
+                        let field_value = match fields_map.get("git") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'git' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metrics_gcp_service_account_email: {
+                        let field_value = match fields_map.get("metrics_gcp_service_account_email") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metrics_gcp_service_account_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#oci: {
+                        let field_value = match fields_map.get("oci") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'oci' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prevent_drift: {
+                        let field_value = match fields_map.get("prevent_drift") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prevent_drift' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_format: {
+                        let field_value = match fields_map.get("source_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stop_syncing: {
+                        let field_value = match fields_map.get("stop_syncing") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stop_syncing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

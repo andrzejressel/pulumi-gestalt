@@ -54,20 +54,84 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("enabled".to_string(), self.r#enabled.to_pulumi_value().await);
-            map.insert("health_check_interval_seconds".to_string(), self.r#health_check_interval_seconds.to_pulumi_value().await);
-            map.insert("health_check_timeout_seconds".to_string(), self.r#health_check_timeout_seconds.to_pulumi_value().await);
-            map.insert("healthy_threshold_count".to_string(), self.r#healthy_threshold_count.to_pulumi_value().await);
-            map.insert("matcher".to_string(), self.r#matcher.to_pulumi_value().await);
-            map.insert("path".to_string(), self.r#path.to_pulumi_value().await);
-            map.insert("port".to_string(), self.r#port.to_pulumi_value().await);
-            map.insert("protocol".to_string(), self.r#protocol.to_pulumi_value().await);
-            map.insert("protocol_version".to_string(), self.r#protocol_version.to_pulumi_value().await);
-            map.insert("unhealthy_threshold_count".to_string(), self.r#unhealthy_threshold_count.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "health_check_interval_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#health_check_interval_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "health_check_timeout_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#health_check_timeout_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "healthy_threshold_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#healthy_threshold_count,
+                )
+                .await,
+            );
+            map.insert(
+                "matcher".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matcher,
+                )
+                .await,
+            );
+            map.insert(
+                "path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#path,
+                )
+                .await,
+            );
+            map.insert(
+                "port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#port,
+                )
+                .await,
+            );
+            map.insert(
+                "protocol".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#protocol,
+                )
+                .await,
+            );
+            map.insert(
+                "protocol_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#protocol_version,
+                )
+                .await,
+            );
+            map.insert(
+                "unhealthy_threshold_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#unhealthy_threshold_count,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -75,16 +139,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TargetGroupConfigHealthCheck {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#enabled: {
@@ -92,70 +157,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                             Some(value) => value,
                             None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check_interval_seconds: {
                         let field_value = match fields_map.get("health_check_interval_seconds") {
                             Some(value) => value,
                             None => bail!("Missing field 'health_check_interval_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check_timeout_seconds: {
                         let field_value = match fields_map.get("health_check_timeout_seconds") {
                             Some(value) => value,
                             None => bail!("Missing field 'health_check_timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#healthy_threshold_count: {
                         let field_value = match fields_map.get("healthy_threshold_count") {
                             Some(value) => value,
                             None => bail!("Missing field 'healthy_threshold_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matcher: {
                         let field_value = match fields_map.get("matcher") {
                             Some(value) => value,
                             None => bail!("Missing field 'matcher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::vpclattice::TargetGroupConfigHealthCheckMatcher>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path: {
                         let field_value = match fields_map.get("path") {
                             Some(value) => value,
                             None => bail!("Missing field 'path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port: {
                         let field_value = match fields_map.get("port") {
                             Some(value) => value,
                             None => bail!("Missing field 'port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protocol: {
                         let field_value = match fields_map.get("protocol") {
                             Some(value) => value,
                             None => bail!("Missing field 'protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protocol_version: {
                         let field_value = match fields_map.get("protocol_version") {
                             Some(value) => value,
                             None => bail!("Missing field 'protocol_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unhealthy_threshold_count: {
                         let field_value = match fields_map.get("unhealthy_threshold_count") {
                             Some(value) => value,
                             None => bail!("Missing field 'unhealthy_threshold_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

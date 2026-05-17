@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -112,4 +112,258 @@ pub struct ClusterAddonsConfig {
     #[builder(into)]
     #[serde(rename = "statefulHaConfig")]
     pub r#stateful_ha_config: Option<Box<super::super::types::container::ClusterAddonsConfigStatefulHaConfig>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterAddonsConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloudrun_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudrun_config,
+                )
+                .await,
+            );
+            map.insert(
+                "config_connector_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#config_connector_config,
+                )
+                .await,
+            );
+            map.insert(
+                "dns_cache_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dns_cache_config,
+                )
+                .await,
+            );
+            map.insert(
+                "gce_persistent_disk_csi_driver_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gce_persistent_disk_csi_driver_config,
+                )
+                .await,
+            );
+            map.insert(
+                "gcp_filestore_csi_driver_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gcp_filestore_csi_driver_config,
+                )
+                .await,
+            );
+            map.insert(
+                "gcs_fuse_csi_driver_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gcs_fuse_csi_driver_config,
+                )
+                .await,
+            );
+            map.insert(
+                "gke_backup_agent_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gke_backup_agent_config,
+                )
+                .await,
+            );
+            map.insert(
+                "horizontal_pod_autoscaling".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#horizontal_pod_autoscaling,
+                )
+                .await,
+            );
+            map.insert(
+                "http_load_balancing".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_load_balancing,
+                )
+                .await,
+            );
+            map.insert(
+                "istio_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#istio_config,
+                )
+                .await,
+            );
+            map.insert(
+                "kalm_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kalm_config,
+                )
+                .await,
+            );
+            map.insert(
+                "network_policy_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network_policy_config,
+                )
+                .await,
+            );
+            map.insert(
+                "parallelstore_csi_driver_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#parallelstore_csi_driver_config,
+                )
+                .await,
+            );
+            map.insert(
+                "ray_operator_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ray_operator_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "stateful_ha_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateful_ha_config,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterAddonsConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cloudrun_config: {
+                        let field_value = match fields_map.get("cloudrun_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloudrun_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#config_connector_config: {
+                        let field_value = match fields_map.get("config_connector_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'config_connector_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dns_cache_config: {
+                        let field_value = match fields_map.get("dns_cache_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dns_cache_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gce_persistent_disk_csi_driver_config: {
+                        let field_value = match fields_map.get("gce_persistent_disk_csi_driver_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gce_persistent_disk_csi_driver_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gcp_filestore_csi_driver_config: {
+                        let field_value = match fields_map.get("gcp_filestore_csi_driver_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gcp_filestore_csi_driver_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gcs_fuse_csi_driver_config: {
+                        let field_value = match fields_map.get("gcs_fuse_csi_driver_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gcs_fuse_csi_driver_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gke_backup_agent_config: {
+                        let field_value = match fields_map.get("gke_backup_agent_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gke_backup_agent_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#horizontal_pod_autoscaling: {
+                        let field_value = match fields_map.get("horizontal_pod_autoscaling") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'horizontal_pod_autoscaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#http_load_balancing: {
+                        let field_value = match fields_map.get("http_load_balancing") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'http_load_balancing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#istio_config: {
+                        let field_value = match fields_map.get("istio_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'istio_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kalm_config: {
+                        let field_value = match fields_map.get("kalm_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kalm_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network_policy_config: {
+                        let field_value = match fields_map.get("network_policy_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network_policy_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#parallelstore_csi_driver_config: {
+                        let field_value = match fields_map.get("parallelstore_csi_driver_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'parallelstore_csi_driver_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ray_operator_configs: {
+                        let field_value = match fields_map.get("ray_operator_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ray_operator_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateful_ha_config: {
+                        let field_value = match fields_map.get("stateful_ha_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateful_ha_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

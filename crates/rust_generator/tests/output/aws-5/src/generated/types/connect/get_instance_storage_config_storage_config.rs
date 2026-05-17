@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("kinesis_firehose_configs".to_string(), self.r#kinesis_firehose_configs.to_pulumi_value().await);
-            map.insert("kinesis_stream_configs".to_string(), self.r#kinesis_stream_configs.to_pulumi_value().await);
-            map.insert("kinesis_video_stream_configs".to_string(), self.r#kinesis_video_stream_configs.to_pulumi_value().await);
-            map.insert("s_3_configs".to_string(), self.r#s_3_configs.to_pulumi_value().await);
-            map.insert("storage_type".to_string(), self.r#storage_type.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "kinesis_firehose_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kinesis_firehose_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "kinesis_stream_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kinesis_stream_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "kinesis_video_stream_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kinesis_video_stream_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_type,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetInstanceStorageConfigStorageConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#kinesis_firehose_configs: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'kinesis_firehose_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::connect::GetInstanceStorageConfigStorageConfigKinesisFirehoseConfig> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_stream_configs: {
                         let field_value = match fields_map.get("kinesis_stream_configs") {
                             Some(value) => value,
                             None => bail!("Missing field 'kinesis_stream_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::connect::GetInstanceStorageConfigStorageConfigKinesisStreamConfig> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_video_stream_configs: {
                         let field_value = match fields_map.get("kinesis_video_stream_configs") {
                             Some(value) => value,
                             None => bail!("Missing field 'kinesis_video_stream_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::connect::GetInstanceStorageConfigStorageConfigKinesisVideoStreamConfig> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_configs: {
                         let field_value = match fields_map.get("s_3_configs") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::connect::GetInstanceStorageConfigStorageConfigS3Config> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_type: {
                         let field_value = match fields_map.get("storage_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'storage_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

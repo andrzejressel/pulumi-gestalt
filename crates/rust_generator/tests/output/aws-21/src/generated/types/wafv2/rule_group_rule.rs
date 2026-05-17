@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("action".to_string(), self.r#action.to_pulumi_value().await);
-            map.insert("captcha_config".to_string(), self.r#captcha_config.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("priority".to_string(), self.r#priority.to_pulumi_value().await);
-            map.insert("rule_labels".to_string(), self.r#rule_labels.to_pulumi_value().await);
-            map.insert("statement".to_string(), self.r#statement.to_pulumi_value().await);
-            map.insert("visibility_config".to_string(), self.r#visibility_config.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "action".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#action,
+                )
+                .await,
+            );
+            map.insert(
+                "captcha_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#captcha_config,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "priority".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#priority,
+                )
+                .await,
+            );
+            map.insert(
+                "rule_labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rule_labels,
+                )
+                .await,
+            );
+            map.insert(
+                "statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#statement,
+                )
+                .await,
+            );
+            map.insert(
+                "visibility_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#visibility_config,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuleGroupRule {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#action: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                             Some(value) => value,
                             None => bail!("Missing field 'action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::wafv2::RuleGroupRuleAction> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#captcha_config: {
                         let field_value = match fields_map.get("captcha_config") {
                             Some(value) => value,
                             None => bail!("Missing field 'captcha_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::RuleGroupRuleCaptchaConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#priority: {
                         let field_value = match fields_map.get("priority") {
                             Some(value) => value,
                             None => bail!("Missing field 'priority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_labels: {
                         let field_value = match fields_map.get("rule_labels") {
                             Some(value) => value,
                             None => bail!("Missing field 'rule_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::RuleGroupRuleRuleLabel>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#statement: {
                         let field_value = match fields_map.get("statement") {
                             Some(value) => value,
                             None => bail!("Missing field 'statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::wafv2::RuleGroupRuleStatement> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#visibility_config: {
                         let field_value = match fields_map.get("visibility_config") {
                             Some(value) => value,
                             None => bail!("Missing field 'visibility_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::wafv2::RuleGroupRuleVisibilityConfig> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

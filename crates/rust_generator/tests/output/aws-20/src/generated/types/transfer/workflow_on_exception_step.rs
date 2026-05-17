@@ -37,16 +37,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("copy_step_details".to_string(), self.r#copy_step_details.to_pulumi_value().await);
-            map.insert("custom_step_details".to_string(), self.r#custom_step_details.to_pulumi_value().await);
-            map.insert("decrypt_step_details".to_string(), self.r#decrypt_step_details.to_pulumi_value().await);
-            map.insert("delete_step_details".to_string(), self.r#delete_step_details.to_pulumi_value().await);
-            map.insert("tag_step_details".to_string(), self.r#tag_step_details.to_pulumi_value().await);
-            map.insert("type_".to_string(), self.r#type_.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "copy_step_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#copy_step_details,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_step_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_step_details,
+                )
+                .await,
+            );
+            map.insert(
+                "decrypt_step_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#decrypt_step_details,
+                )
+                .await,
+            );
+            map.insert(
+                "delete_step_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delete_step_details,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_step_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_step_details,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -54,16 +94,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WorkflowOnExceptionStep {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#copy_step_details: {
@@ -71,42 +112,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                             Some(value) => value,
                             None => bail!("Missing field 'copy_step_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::transfer::WorkflowOnExceptionStepCopyStepDetails>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_step_details: {
                         let field_value = match fields_map.get("custom_step_details") {
                             Some(value) => value,
                             None => bail!("Missing field 'custom_step_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::transfer::WorkflowOnExceptionStepCustomStepDetails>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#decrypt_step_details: {
                         let field_value = match fields_map.get("decrypt_step_details") {
                             Some(value) => value,
                             None => bail!("Missing field 'decrypt_step_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::transfer::WorkflowOnExceptionStepDecryptStepDetails>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#delete_step_details: {
                         let field_value = match fields_map.get("delete_step_details") {
                             Some(value) => value,
                             None => bail!("Missing field 'delete_step_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::transfer::WorkflowOnExceptionStepDeleteStepDetails>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_step_details: {
                         let field_value = match fields_map.get("tag_step_details") {
                             Some(value) => value,
                             None => bail!("Missing field 'tag_step_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::transfer::WorkflowOnExceptionStepTagStepDetails>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
                         let field_value = match fields_map.get("type_") {
                             Some(value) => value,
                             None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

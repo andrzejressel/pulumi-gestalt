@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -67,4 +67,258 @@ pub struct WindowsFunctionAppSlotAuthSettings {
     #[builder(into)]
     #[serde(rename = "unauthenticatedClientAction")]
     pub r#unauthenticated_client_action: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WindowsFunctionAppSlotAuthSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "active_directory".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#active_directory,
+                )
+                .await,
+            );
+            map.insert(
+                "additional_login_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#additional_login_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "allowed_external_redirect_urls".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_external_redirect_urls,
+                )
+                .await,
+            );
+            map.insert(
+                "default_provider".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_provider,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "facebook".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#facebook,
+                )
+                .await,
+            );
+            map.insert(
+                "github".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#github,
+                )
+                .await,
+            );
+            map.insert(
+                "google".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#google,
+                )
+                .await,
+            );
+            map.insert(
+                "issuer".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#issuer,
+                )
+                .await,
+            );
+            map.insert(
+                "microsoft".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#microsoft,
+                )
+                .await,
+            );
+            map.insert(
+                "runtime_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#runtime_version,
+                )
+                .await,
+            );
+            map.insert(
+                "token_refresh_extension_hours".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#token_refresh_extension_hours,
+                )
+                .await,
+            );
+            map.insert(
+                "token_store_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#token_store_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "twitter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#twitter,
+                )
+                .await,
+            );
+            map.insert(
+                "unauthenticated_client_action".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#unauthenticated_client_action,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WindowsFunctionAppSlotAuthSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#active_directory: {
+                        let field_value = match fields_map.get("active_directory") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'active_directory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#additional_login_parameters: {
+                        let field_value = match fields_map.get("additional_login_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_login_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allowed_external_redirect_urls: {
+                        let field_value = match fields_map.get("allowed_external_redirect_urls") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allowed_external_redirect_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_provider: {
+                        let field_value = match fields_map.get("default_provider") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_provider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#facebook: {
+                        let field_value = match fields_map.get("facebook") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'facebook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#github: {
+                        let field_value = match fields_map.get("github") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'github' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#google: {
+                        let field_value = match fields_map.get("google") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'google' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#issuer: {
+                        let field_value = match fields_map.get("issuer") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'issuer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#microsoft: {
+                        let field_value = match fields_map.get("microsoft") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'microsoft' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#runtime_version: {
+                        let field_value = match fields_map.get("runtime_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'runtime_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#token_refresh_extension_hours: {
+                        let field_value = match fields_map.get("token_refresh_extension_hours") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'token_refresh_extension_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#token_store_enabled: {
+                        let field_value = match fields_map.get("token_store_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'token_store_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#twitter: {
+                        let field_value = match fields_map.get("twitter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'twitter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#unauthenticated_client_action: {
+                        let field_value = match fields_map.get("unauthenticated_client_action") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'unauthenticated_client_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -117,4 +117,328 @@ pub struct GetRegionInstanceTemplateDisk {
     #[builder(into)]
     #[serde(rename = "type")]
     pub r#type_: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetRegionInstanceTemplateDisk {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "auto_delete".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_delete,
+                )
+                .await,
+            );
+            map.insert(
+                "boot".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#boot,
+                )
+                .await,
+            );
+            map.insert(
+                "device_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_name,
+                )
+                .await,
+            );
+            map.insert(
+                "disk_encryption_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disk_encryption_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "disk_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disk_name,
+                )
+                .await,
+            );
+            map.insert(
+                "disk_size_gb".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disk_size_gb,
+                )
+                .await,
+            );
+            map.insert(
+                "disk_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disk_type,
+                )
+                .await,
+            );
+            map.insert(
+                "interface".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#interface,
+                )
+                .await,
+            );
+            map.insert(
+                "labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#labels,
+                )
+                .await,
+            );
+            map.insert(
+                "mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mode,
+                )
+                .await,
+            );
+            map.insert(
+                "provisioned_iops".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#provisioned_iops,
+                )
+                .await,
+            );
+            map.insert(
+                "provisioned_throughput".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#provisioned_throughput,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_manager_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_manager_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_policies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_policies,
+                )
+                .await,
+            );
+            map.insert(
+                "source".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source,
+                )
+                .await,
+            );
+            map.insert(
+                "source_image".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_image,
+                )
+                .await,
+            );
+            map.insert(
+                "source_image_encryption_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_image_encryption_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "source_snapshot".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_snapshot,
+                )
+                .await,
+            );
+            map.insert(
+                "source_snapshot_encryption_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_snapshot_encryption_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetRegionInstanceTemplateDisk {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#auto_delete: {
+                        let field_value = match fields_map.get("auto_delete") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#boot: {
+                        let field_value = match fields_map.get("boot") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'boot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_name: {
+                        let field_value = match fields_map.get("device_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disk_encryption_keys: {
+                        let field_value = match fields_map.get("disk_encryption_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disk_encryption_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disk_name: {
+                        let field_value = match fields_map.get("disk_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disk_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disk_size_gb: {
+                        let field_value = match fields_map.get("disk_size_gb") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disk_type: {
+                        let field_value = match fields_map.get("disk_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#interface: {
+                        let field_value = match fields_map.get("interface") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'interface' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#labels: {
+                        let field_value = match fields_map.get("labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mode: {
+                        let field_value = match fields_map.get("mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#provisioned_iops: {
+                        let field_value = match fields_map.get("provisioned_iops") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'provisioned_iops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#provisioned_throughput: {
+                        let field_value = match fields_map.get("provisioned_throughput") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'provisioned_throughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_manager_tags: {
+                        let field_value = match fields_map.get("resource_manager_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_manager_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_policies: {
+                        let field_value = match fields_map.get("resource_policies") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source: {
+                        let field_value = match fields_map.get("source") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_image: {
+                        let field_value = match fields_map.get("source_image") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_image_encryption_keys: {
+                        let field_value = match fields_map.get("source_image_encryption_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_image_encryption_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_snapshot: {
+                        let field_value = match fields_map.get("source_snapshot") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_snapshot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_snapshot_encryption_keys: {
+                        let field_value = match fields_map.get("source_snapshot_encryption_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_snapshot_encryption_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#type_: {
+                        let field_value = match fields_map.get("type_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

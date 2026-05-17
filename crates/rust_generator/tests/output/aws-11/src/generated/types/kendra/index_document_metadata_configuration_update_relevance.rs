@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("duration".to_string(), self.r#duration.to_pulumi_value().await);
-            map.insert("freshness".to_string(), self.r#freshness.to_pulumi_value().await);
-            map.insert("importance".to_string(), self.r#importance.to_pulumi_value().await);
-            map.insert("rank_order".to_string(), self.r#rank_order.to_pulumi_value().await);
-            map.insert("values_importance_map".to_string(), self.r#values_importance_map.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#duration,
+                )
+                .await,
+            );
+            map.insert(
+                "freshness".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#freshness,
+                )
+                .await,
+            );
+            map.insert(
+                "importance".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#importance,
+                )
+                .await,
+            );
+            map.insert(
+                "rank_order".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rank_order,
+                )
+                .await,
+            );
+            map.insert(
+                "values_importance_map".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#values_importance_map,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for IndexDocumentMetadataConfigurationUpdateRelevance {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#duration: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                             Some(value) => value,
                             None => bail!("Missing field 'duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#freshness: {
                         let field_value = match fields_map.get("freshness") {
                             Some(value) => value,
                             None => bail!("Missing field 'freshness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#importance: {
                         let field_value = match fields_map.get("importance") {
                             Some(value) => value,
                             None => bail!("Missing field 'importance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rank_order: {
                         let field_value = match fields_map.get("rank_order") {
                             Some(value) => value,
                             None => bail!("Missing field 'rank_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#values_importance_map: {
                         let field_value = match fields_map.get("values_importance_map") {
                             Some(value) => value,
                             None => bail!("Missing field 'values_importance_map' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<std::collections::HashMap<String, i32>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

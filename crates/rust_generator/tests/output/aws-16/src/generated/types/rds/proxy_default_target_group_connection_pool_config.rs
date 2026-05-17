@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("connection_borrow_timeout".to_string(), self.r#connection_borrow_timeout.to_pulumi_value().await);
-            map.insert("init_query".to_string(), self.r#init_query.to_pulumi_value().await);
-            map.insert("max_connections_percent".to_string(), self.r#max_connections_percent.to_pulumi_value().await);
-            map.insert("max_idle_connections_percent".to_string(), self.r#max_idle_connections_percent.to_pulumi_value().await);
-            map.insert("session_pinning_filters".to_string(), self.r#session_pinning_filters.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "connection_borrow_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_borrow_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "init_query".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#init_query,
+                )
+                .await,
+            );
+            map.insert(
+                "max_connections_percent".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_connections_percent,
+                )
+                .await,
+            );
+            map.insert(
+                "max_idle_connections_percent".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_idle_connections_percent,
+                )
+                .await,
+            );
+            map.insert(
+                "session_pinning_filters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_pinning_filters,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ProxyDefaultTargetGroupConnectionPoolConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#connection_borrow_timeout: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'connection_borrow_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#init_query: {
                         let field_value = match fields_map.get("init_query") {
                             Some(value) => value,
                             None => bail!("Missing field 'init_query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_connections_percent: {
                         let field_value = match fields_map.get("max_connections_percent") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_connections_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_idle_connections_percent: {
                         let field_value = match fields_map.get("max_idle_connections_percent") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_idle_connections_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_pinning_filters: {
                         let field_value = match fields_map.get("session_pinning_filters") {
                             Some(value) => value,
                             None => bail!("Missing field 'session_pinning_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

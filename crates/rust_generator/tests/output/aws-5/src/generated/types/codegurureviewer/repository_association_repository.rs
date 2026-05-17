@@ -26,14 +26,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("bitbucket".to_string(), self.r#bitbucket.to_pulumi_value().await);
-            map.insert("codecommit".to_string(), self.r#codecommit.to_pulumi_value().await);
-            map.insert("github_enterprise_server".to_string(), self.r#github_enterprise_server.to_pulumi_value().await);
-            map.insert("s_3_bucket".to_string(), self.r#s_3_bucket.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "bitbucket".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bitbucket,
+                )
+                .await,
+            );
+            map.insert(
+                "codecommit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#codecommit,
+                )
+                .await,
+            );
+            map.insert(
+                "github_enterprise_server".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#github_enterprise_server,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_bucket".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_bucket,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -41,16 +69,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RepositoryAssociationRepository {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#bitbucket: {
@@ -58,28 +87,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                             Some(value) => value,
                             None => bail!("Missing field 'bitbucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codegurureviewer::RepositoryAssociationRepositoryBitbucket>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#codecommit: {
                         let field_value = match fields_map.get("codecommit") {
                             Some(value) => value,
                             None => bail!("Missing field 'codecommit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codegurureviewer::RepositoryAssociationRepositoryCodecommit>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#github_enterprise_server: {
                         let field_value = match fields_map.get("github_enterprise_server") {
                             Some(value) => value,
                             None => bail!("Missing field 'github_enterprise_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codegurureviewer::RepositoryAssociationRepositoryGithubEnterpriseServer>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_bucket: {
                         let field_value = match fields_map.get("s_3_bucket") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codegurureviewer::RepositoryAssociationRepositoryS3Bucket>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

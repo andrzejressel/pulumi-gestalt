@@ -40,17 +40,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("default_substitutions".to_string(), self.r#default_substitutions.to_pulumi_value().await);
-            map.insert("description".to_string(), self.r#description.to_pulumi_value().await);
-            map.insert("headers".to_string(), self.r#headers.to_pulumi_value().await);
-            map.insert("html_part".to_string(), self.r#html_part.to_pulumi_value().await);
-            map.insert("recommender_id".to_string(), self.r#recommender_id.to_pulumi_value().await);
-            map.insert("subject".to_string(), self.r#subject.to_pulumi_value().await);
-            map.insert("text_part".to_string(), self.r#text_part.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "default_substitutions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_substitutions,
+                )
+                .await,
+            );
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#headers,
+                )
+                .await,
+            );
+            map.insert(
+                "html_part".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#html_part,
+                )
+                .await,
+            );
+            map.insert(
+                "recommender_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recommender_id,
+                )
+                .await,
+            );
+            map.insert(
+                "subject".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subject,
+                )
+                .await,
+            );
+            map.insert(
+                "text_part".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#text_part,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -58,16 +104,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EmailTemplateEmailTemplate {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#default_substitutions: {
@@ -75,49 +122,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                             Some(value) => value,
                             None => bail!("Missing field 'default_substitutions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#description: {
                         let field_value = match fields_map.get("description") {
                             Some(value) => value,
                             None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#headers: {
                         let field_value = match fields_map.get("headers") {
                             Some(value) => value,
                             None => bail!("Missing field 'headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::pinpoint::EmailTemplateEmailTemplateHeader>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#html_part: {
                         let field_value = match fields_map.get("html_part") {
                             Some(value) => value,
                             None => bail!("Missing field 'html_part' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recommender_id: {
                         let field_value = match fields_map.get("recommender_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'recommender_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject: {
                         let field_value = match fields_map.get("subject") {
                             Some(value) => value,
                             None => bail!("Missing field 'subject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_part: {
                         let field_value = match fields_map.get("text_part") {
                             Some(value) => value,
                             None => bail!("Missing field 'text_part' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

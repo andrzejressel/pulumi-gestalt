@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -27,4 +27,132 @@ pub struct NamespaceTopicSpacesConfiguration {
     #[builder(into)]
     #[serde(rename = "staticRoutingEnrichments")]
     pub r#static_routing_enrichments: Option<Vec<super::super::types::eventgrid::NamespaceTopicSpacesConfigurationStaticRoutingEnrichment>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for NamespaceTopicSpacesConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "alternative_authentication_name_sources".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alternative_authentication_name_sources,
+                )
+                .await,
+            );
+            map.insert(
+                "dynamic_routing_enrichments".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dynamic_routing_enrichments,
+                )
+                .await,
+            );
+            map.insert(
+                "maximum_client_sessions_per_authentication_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maximum_client_sessions_per_authentication_name,
+                )
+                .await,
+            );
+            map.insert(
+                "maximum_session_expiry_in_hours".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maximum_session_expiry_in_hours,
+                )
+                .await,
+            );
+            map.insert(
+                "route_topic_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#route_topic_id,
+                )
+                .await,
+            );
+            map.insert(
+                "static_routing_enrichments".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#static_routing_enrichments,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for NamespaceTopicSpacesConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#alternative_authentication_name_sources: {
+                        let field_value = match fields_map.get("alternative_authentication_name_sources") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'alternative_authentication_name_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dynamic_routing_enrichments: {
+                        let field_value = match fields_map.get("dynamic_routing_enrichments") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dynamic_routing_enrichments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#maximum_client_sessions_per_authentication_name: {
+                        let field_value = match fields_map.get("maximum_client_sessions_per_authentication_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'maximum_client_sessions_per_authentication_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#maximum_session_expiry_in_hours: {
+                        let field_value = match fields_map.get("maximum_session_expiry_in_hours") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'maximum_session_expiry_in_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#route_topic_id: {
+                        let field_value = match fields_map.get("route_topic_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'route_topic_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#static_routing_enrichments: {
+                        let field_value = match fields_map.get("static_routing_enrichments") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'static_routing_enrichments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

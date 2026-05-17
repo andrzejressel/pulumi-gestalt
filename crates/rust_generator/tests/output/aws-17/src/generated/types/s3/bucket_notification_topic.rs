@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("events".to_string(), self.r#events.to_pulumi_value().await);
-            map.insert("filter_prefix".to_string(), self.r#filter_prefix.to_pulumi_value().await);
-            map.insert("filter_suffix".to_string(), self.r#filter_suffix.to_pulumi_value().await);
-            map.insert("id".to_string(), self.r#id.to_pulumi_value().await);
-            map.insert("topic_arn".to_string(), self.r#topic_arn.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "events".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#events,
+                )
+                .await,
+            );
+            map.insert(
+                "filter_prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter_prefix,
+                )
+                .await,
+            );
+            map.insert(
+                "filter_suffix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter_suffix,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "topic_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#topic_arn,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for BucketNotificationTopic {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#events: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                             Some(value) => value,
                             None => bail!("Missing field 'events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_prefix: {
                         let field_value = match fields_map.get("filter_prefix") {
                             Some(value) => value,
                             None => bail!("Missing field 'filter_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_suffix: {
                         let field_value = match fields_map.get("filter_suffix") {
                             Some(value) => value,
                             None => bail!("Missing field 'filter_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#id: {
                         let field_value = match fields_map.get("id") {
                             Some(value) => value,
                             None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#topic_arn: {
                         let field_value = match fields_map.get("topic_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'topic_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

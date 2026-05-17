@@ -26,13 +26,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("audit_log_destination".to_string(), self.r#audit_log_destination.to_pulumi_value().await);
-            map.insert("file_access_audit_log_level".to_string(), self.r#file_access_audit_log_level.to_pulumi_value().await);
-            map.insert("file_share_access_audit_log_level".to_string(), self.r#file_share_access_audit_log_level.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "audit_log_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audit_log_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "file_access_audit_log_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#file_access_audit_log_level,
+                )
+                .await,
+            );
+            map.insert(
+                "file_share_access_audit_log_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#file_share_access_audit_log_level,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -40,16 +62,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WindowsFileSystemAuditLogConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#audit_log_destination: {
@@ -57,21 +80,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                             Some(value) => value,
                             None => bail!("Missing field 'audit_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_access_audit_log_level: {
                         let field_value = match fields_map.get("file_access_audit_log_level") {
                             Some(value) => value,
                             None => bail!("Missing field 'file_access_audit_log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_share_access_audit_log_level: {
                         let field_value = match fields_map.get("file_share_access_audit_log_level") {
                             Some(value) => value,
                             None => bail!("Missing field 'file_share_access_audit_log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

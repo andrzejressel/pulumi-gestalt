@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("algorithm".to_string(), self.r#algorithm.to_pulumi_value().await);
-            map.insert("exclude_vaults".to_string(), self.r#exclude_vaults.to_pulumi_value().await);
-            map.insert("include_vaults".to_string(), self.r#include_vaults.to_pulumi_value().await);
-            map.insert("recovery_point_types".to_string(), self.r#recovery_point_types.to_pulumi_value().await);
-            map.insert("selection_window_days".to_string(), self.r#selection_window_days.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "algorithm".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#algorithm,
+                )
+                .await,
+            );
+            map.insert(
+                "exclude_vaults".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_vaults,
+                )
+                .await,
+            );
+            map.insert(
+                "include_vaults".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_vaults,
+                )
+                .await,
+            );
+            map.insert(
+                "recovery_point_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recovery_point_types,
+                )
+                .await,
+            );
+            map.insert(
+                "selection_window_days".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#selection_window_days,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RestoreTestingPlanRecoveryPointSelection {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#algorithm: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                             Some(value) => value,
                             None => bail!("Missing field 'algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_vaults: {
                         let field_value = match fields_map.get("exclude_vaults") {
                             Some(value) => value,
                             None => bail!("Missing field 'exclude_vaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_vaults: {
                         let field_value = match fields_map.get("include_vaults") {
                             Some(value) => value,
                             None => bail!("Missing field 'include_vaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recovery_point_types: {
                         let field_value = match fields_map.get("recovery_point_types") {
                             Some(value) => value,
                             None => bail!("Missing field 'recovery_point_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selection_window_days: {
                         let field_value = match fields_map.get("selection_window_days") {
                             Some(value) => value,
                             None => bail!("Missing field 'selection_window_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

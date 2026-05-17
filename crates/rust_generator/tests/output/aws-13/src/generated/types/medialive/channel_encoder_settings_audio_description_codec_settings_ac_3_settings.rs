@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("bitrate".to_string(), self.r#bitrate.to_pulumi_value().await);
-            map.insert("bitstream_mode".to_string(), self.r#bitstream_mode.to_pulumi_value().await);
-            map.insert("coding_mode".to_string(), self.r#coding_mode.to_pulumi_value().await);
-            map.insert("dialnorm".to_string(), self.r#dialnorm.to_pulumi_value().await);
-            map.insert("drc_profile".to_string(), self.r#drc_profile.to_pulumi_value().await);
-            map.insert("lfe_filter".to_string(), self.r#lfe_filter.to_pulumi_value().await);
-            map.insert("metadata_control".to_string(), self.r#metadata_control.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "bitrate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bitrate,
+                )
+                .await,
+            );
+            map.insert(
+                "bitstream_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bitstream_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "coding_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#coding_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "dialnorm".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dialnorm,
+                )
+                .await,
+            );
+            map.insert(
+                "drc_profile".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#drc_profile,
+                )
+                .await,
+            );
+            map.insert(
+                "lfe_filter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lfe_filter,
+                )
+                .await,
+            );
+            map.insert(
+                "metadata_control".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metadata_control,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsAudioDescriptionCodecSettingsAc3Settings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#bitrate: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bitstream_mode: {
                         let field_value = match fields_map.get("bitstream_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'bitstream_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#coding_mode: {
                         let field_value = match fields_map.get("coding_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'coding_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dialnorm: {
                         let field_value = match fields_map.get("dialnorm") {
                             Some(value) => value,
                             None => bail!("Missing field 'dialnorm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#drc_profile: {
                         let field_value = match fields_map.get("drc_profile") {
                             Some(value) => value,
                             None => bail!("Missing field 'drc_profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lfe_filter: {
                         let field_value = match fields_map.get("lfe_filter") {
                             Some(value) => value,
                             None => bail!("Missing field 'lfe_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metadata_control: {
                         let field_value = match fields_map.get("metadata_control") {
                             Some(value) => value,
                             None => bail!("Missing field 'metadata_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

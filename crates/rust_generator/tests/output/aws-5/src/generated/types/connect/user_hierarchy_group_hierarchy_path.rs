@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("level_fives".to_string(), self.r#level_fives.to_pulumi_value().await);
-            map.insert("level_fours".to_string(), self.r#level_fours.to_pulumi_value().await);
-            map.insert("level_ones".to_string(), self.r#level_ones.to_pulumi_value().await);
-            map.insert("level_threes".to_string(), self.r#level_threes.to_pulumi_value().await);
-            map.insert("level_twos".to_string(), self.r#level_twos.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "level_fives".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#level_fives,
+                )
+                .await,
+            );
+            map.insert(
+                "level_fours".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#level_fours,
+                )
+                .await,
+            );
+            map.insert(
+                "level_ones".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#level_ones,
+                )
+                .await,
+            );
+            map.insert(
+                "level_threes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#level_threes,
+                )
+                .await,
+            );
+            map.insert(
+                "level_twos".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#level_twos,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for UserHierarchyGroupHierarchyPath {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#level_fives: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                             Some(value) => value,
                             None => bail!("Missing field 'level_fives' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::connect::UserHierarchyGroupHierarchyPathLevelFife>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level_fours: {
                         let field_value = match fields_map.get("level_fours") {
                             Some(value) => value,
                             None => bail!("Missing field 'level_fours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::connect::UserHierarchyGroupHierarchyPathLevelFour>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level_ones: {
                         let field_value = match fields_map.get("level_ones") {
                             Some(value) => value,
                             None => bail!("Missing field 'level_ones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::connect::UserHierarchyGroupHierarchyPathLevelOne>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level_threes: {
                         let field_value = match fields_map.get("level_threes") {
                             Some(value) => value,
                             None => bail!("Missing field 'level_threes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::connect::UserHierarchyGroupHierarchyPathLevelThree>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level_twos: {
                         let field_value = match fields_map.get("level_twos") {
                             Some(value) => value,
                             None => bail!("Missing field 'level_twos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::connect::UserHierarchyGroupHierarchyPathLevelTwo>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

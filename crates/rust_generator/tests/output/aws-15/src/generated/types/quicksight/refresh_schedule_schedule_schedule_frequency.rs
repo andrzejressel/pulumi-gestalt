@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ref
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("interval".to_string(), self.r#interval.to_pulumi_value().await);
-            map.insert("refresh_on_day".to_string(), self.r#refresh_on_day.to_pulumi_value().await);
-            map.insert("time_of_the_day".to_string(), self.r#time_of_the_day.to_pulumi_value().await);
-            map.insert("timezone".to_string(), self.r#timezone.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#interval,
+                )
+                .await,
+            );
+            map.insert(
+                "refresh_on_day".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#refresh_on_day,
+                )
+                .await,
+            );
+            map.insert(
+                "time_of_the_day".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#time_of_the_day,
+                )
+                .await,
+            );
+            map.insert(
+                "timezone".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timezone,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ref
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RefreshScheduleScheduleScheduleFrequency {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#interval: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                             Some(value) => value,
                             None => bail!("Missing field 'interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refresh_on_day: {
                         let field_value = match fields_map.get("refresh_on_day") {
                             Some(value) => value,
                             None => bail!("Missing field 'refresh_on_day' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::quicksight::RefreshScheduleScheduleScheduleFrequencyRefreshOnDay>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_of_the_day: {
                         let field_value = match fields_map.get("time_of_the_day") {
                             Some(value) => value,
                             None => bail!("Missing field 'time_of_the_day' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timezone: {
                         let field_value = match fields_map.get("timezone") {
                             Some(value) => value,
                             None => bail!("Missing field 'timezone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

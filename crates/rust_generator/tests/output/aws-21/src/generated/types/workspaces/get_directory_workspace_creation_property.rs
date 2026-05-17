@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("custom_security_group_id".to_string(), self.r#custom_security_group_id.to_pulumi_value().await);
-            map.insert("default_ou".to_string(), self.r#default_ou.to_pulumi_value().await);
-            map.insert("enable_internet_access".to_string(), self.r#enable_internet_access.to_pulumi_value().await);
-            map.insert("enable_maintenance_mode".to_string(), self.r#enable_maintenance_mode.to_pulumi_value().await);
-            map.insert("user_enabled_as_local_administrator".to_string(), self.r#user_enabled_as_local_administrator.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "custom_security_group_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_security_group_id,
+                )
+                .await,
+            );
+            map.insert(
+                "default_ou".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_ou,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_internet_access".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_internet_access,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_maintenance_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_maintenance_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "user_enabled_as_local_administrator".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_enabled_as_local_administrator,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDirectoryWorkspaceCreationProperty {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#custom_security_group_id: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'custom_security_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_ou: {
                         let field_value = match fields_map.get("default_ou") {
                             Some(value) => value,
                             None => bail!("Missing field 'default_ou' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_internet_access: {
                         let field_value = match fields_map.get("enable_internet_access") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_internet_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_maintenance_mode: {
                         let field_value = match fields_map.get("enable_maintenance_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_maintenance_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_enabled_as_local_administrator: {
                         let field_value = match fields_map.get("user_enabled_as_local_administrator") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_enabled_as_local_administrator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

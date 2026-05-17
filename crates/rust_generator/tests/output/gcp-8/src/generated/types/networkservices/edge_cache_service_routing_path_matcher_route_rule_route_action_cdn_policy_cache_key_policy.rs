@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -49,4 +49,146 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheK
     #[builder(into)]
     #[serde(rename = "includedQueryParameters")]
     pub r#included_query_parameters: Option<Vec<String>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheKeyPolicy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "exclude_host".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_host,
+                )
+                .await,
+            );
+            map.insert(
+                "exclude_query_string".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_query_string,
+                )
+                .await,
+            );
+            map.insert(
+                "excluded_query_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#excluded_query_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "include_protocol".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_protocol,
+                )
+                .await,
+            );
+            map.insert(
+                "included_cookie_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#included_cookie_names,
+                )
+                .await,
+            );
+            map.insert(
+                "included_header_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#included_header_names,
+                )
+                .await,
+            );
+            map.insert(
+                "included_query_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#included_query_parameters,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheKeyPolicy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#exclude_host: {
+                        let field_value = match fields_map.get("exclude_host") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclude_host' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#exclude_query_string: {
+                        let field_value = match fields_map.get("exclude_query_string") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclude_query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#excluded_query_parameters: {
+                        let field_value = match fields_map.get("excluded_query_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'excluded_query_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#include_protocol: {
+                        let field_value = match fields_map.get("include_protocol") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'include_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#included_cookie_names: {
+                        let field_value = match fields_map.get("included_cookie_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'included_cookie_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#included_header_names: {
+                        let field_value = match fields_map.get("included_header_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'included_header_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#included_query_parameters: {
+                        let field_value = match fields_map.get("included_query_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'included_query_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

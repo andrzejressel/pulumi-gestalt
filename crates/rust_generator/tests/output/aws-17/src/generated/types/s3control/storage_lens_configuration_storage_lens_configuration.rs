@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("account_level".to_string(), self.r#account_level.to_pulumi_value().await);
-            map.insert("aws_org".to_string(), self.r#aws_org.to_pulumi_value().await);
-            map.insert("data_export".to_string(), self.r#data_export.to_pulumi_value().await);
-            map.insert("enabled".to_string(), self.r#enabled.to_pulumi_value().await);
-            map.insert("exclude".to_string(), self.r#exclude.to_pulumi_value().await);
-            map.insert("include".to_string(), self.r#include.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "account_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#account_level,
+                )
+                .await,
+            );
+            map.insert(
+                "aws_org".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aws_org,
+                )
+                .await,
+            );
+            map.insert(
+                "data_export".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_export,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "exclude".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude,
+                )
+                .await,
+            );
+            map.insert(
+                "include".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for StorageLensConfigurationStorageLensConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#account_level: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                             Some(value) => value,
                             None => bail!("Missing field 'account_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevel> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aws_org: {
                         let field_value = match fields_map.get("aws_org") {
                             Some(value) => value,
                             None => bail!("Missing field 'aws_org' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAwsOrg>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_export: {
                         let field_value = match fields_map.get("data_export") {
                             Some(value) => value,
                             None => bail!("Missing field 'data_export' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExport>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enabled: {
                         let field_value = match fields_map.get("enabled") {
                             Some(value) => value,
                             None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude: {
                         let field_value = match fields_map.get("exclude") {
                             Some(value) => value,
                             None => bail!("Missing field 'exclude' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationExclude>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include: {
                         let field_value = match fields_map.get("include") {
                             Some(value) => value,
                             None => bail!("Missing field 'include' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationInclude>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

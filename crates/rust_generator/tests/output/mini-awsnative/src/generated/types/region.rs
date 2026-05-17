@@ -79,32 +79,84 @@ pub enum Region {
     UsWest2,
 }
 
-pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
-    enum Region {
-        AfSouth1 => "af-south-1",
-        ApEast1 => "ap-east-1",
-        ApNortheast1 => "ap-northeast-1",
-        ApNortheast2 => "ap-northeast-2",
-        ApNortheast3 => "ap-northeast-3",
-        ApSouth1 => "ap-south-1",
-        ApSoutheast1 => "ap-southeast-1",
-        ApSoutheast2 => "ap-southeast-2",
-        CaCentral => "ca-central-1",
-        CnNorth1 => "cn-north-1",
-        CnNorthwest1 => "cn-northwest-1",
-        EuCentral1 => "eu-central-1",
-        EuNorth1 => "eu-north-1",
-        EuWest1 => "eu-west-1",
-        EuWest2 => "eu-west-2",
-        EuWest3 => "eu-west-3",
-        EuSouth1 => "eu-south-1",
-        MeSouth1 => "me-south-1",
-        SaEast1 => "sa-east-1",
-        UsGovEast1 => "us-gov-east-1",
-        UsGovWest1 => "us-gov-west-1",
-        UsEast1 => "us-east-1",
-        UsEast2 => "us-east-2",
-        UsWest1 => "us-west-1",
-        UsWest2 => "us-west-2",
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Region {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        let value = match self {
+            Region::AfSouth1 => "af-south-1".to_string(),
+            Region::ApEast1 => "ap-east-1".to_string(),
+            Region::ApNortheast1 => "ap-northeast-1".to_string(),
+            Region::ApNortheast2 => "ap-northeast-2".to_string(),
+            Region::ApNortheast3 => "ap-northeast-3".to_string(),
+            Region::ApSouth1 => "ap-south-1".to_string(),
+            Region::ApSoutheast1 => "ap-southeast-1".to_string(),
+            Region::ApSoutheast2 => "ap-southeast-2".to_string(),
+            Region::CaCentral => "ca-central-1".to_string(),
+            Region::CnNorth1 => "cn-north-1".to_string(),
+            Region::CnNorthwest1 => "cn-northwest-1".to_string(),
+            Region::EuCentral1 => "eu-central-1".to_string(),
+            Region::EuNorth1 => "eu-north-1".to_string(),
+            Region::EuWest1 => "eu-west-1".to_string(),
+            Region::EuWest2 => "eu-west-2".to_string(),
+            Region::EuWest3 => "eu-west-3".to_string(),
+            Region::EuSouth1 => "eu-south-1".to_string(),
+            Region::MeSouth1 => "me-south-1".to_string(),
+            Region::SaEast1 => "sa-east-1".to_string(),
+            Region::UsGovEast1 => "us-gov-east-1".to_string(),
+            Region::UsGovWest1 => "us-gov-west-1".to_string(),
+            Region::UsEast1 => "us-east-1".to_string(),
+            Region::UsEast2 => "us-east-2".to_string(),
+            Region::UsWest1 => "us-west-1".to_string(),
+            Region::UsWest2 => "us-west-2".to_string(),
+        };
+        std::future::ready(pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue {
+            content: pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent::String(value),
+            secret: false,
+            dependencies: std::collections::HashSet::new(),
+        })
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Region {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+
+        match &value.content {
+            PulumiValueContent::String(s) => match s.as_str() {
+                "af-south-1" => Ok(Region::AfSouth1),
+                "ap-east-1" => Ok(Region::ApEast1),
+                "ap-northeast-1" => Ok(Region::ApNortheast1),
+                "ap-northeast-2" => Ok(Region::ApNortheast2),
+                "ap-northeast-3" => Ok(Region::ApNortheast3),
+                "ap-south-1" => Ok(Region::ApSouth1),
+                "ap-southeast-1" => Ok(Region::ApSoutheast1),
+                "ap-southeast-2" => Ok(Region::ApSoutheast2),
+                "ca-central-1" => Ok(Region::CaCentral),
+                "cn-north-1" => Ok(Region::CnNorth1),
+                "cn-northwest-1" => Ok(Region::CnNorthwest1),
+                "eu-central-1" => Ok(Region::EuCentral1),
+                "eu-north-1" => Ok(Region::EuNorth1),
+                "eu-west-1" => Ok(Region::EuWest1),
+                "eu-west-2" => Ok(Region::EuWest2),
+                "eu-west-3" => Ok(Region::EuWest3),
+                "eu-south-1" => Ok(Region::EuSouth1),
+                "me-south-1" => Ok(Region::MeSouth1),
+                "sa-east-1" => Ok(Region::SaEast1),
+                "us-gov-east-1" => Ok(Region::UsGovEast1),
+                "us-gov-west-1" => Ok(Region::UsGovWest1),
+                "us-east-1" => Ok(Region::UsEast1),
+                "us-east-2" => Ok(Region::UsEast2),
+                "us-west-1" => Ok(Region::UsWest1),
+                "us-west-2" => Ok(Region::UsWest2),
+                _ => bail!("Invalid string enum value: {}", s),
+            },
+            _ => bail!("Expected String, got {:?}", value.content),
+        }
     }
 }

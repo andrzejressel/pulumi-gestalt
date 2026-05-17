@@ -40,16 +40,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("annotation_data_s_3_uri".to_string(), self.r#annotation_data_s_3_uri.to_pulumi_value().await);
-            map.insert("attribute_names".to_string(), self.r#attribute_names.to_pulumi_value().await);
-            map.insert("document_type".to_string(), self.r#document_type.to_pulumi_value().await);
-            map.insert("s_3_uri".to_string(), self.r#s_3_uri.to_pulumi_value().await);
-            map.insert("source_documents_s_3_uri".to_string(), self.r#source_documents_s_3_uri.to_pulumi_value().await);
-            map.insert("split".to_string(), self.r#split.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "annotation_data_s_3_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#annotation_data_s_3_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "attribute_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#attribute_names,
+                )
+                .await,
+            );
+            map.insert(
+                "document_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#document_type,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "source_documents_s_3_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_documents_s_3_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "split".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#split,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -57,16 +97,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EntityRecognizerInputDataConfigAugmentedManifest {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#annotation_data_s_3_uri: {
@@ -74,42 +115,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                             Some(value) => value,
                             None => bail!("Missing field 'annotation_data_s_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#attribute_names: {
                         let field_value = match fields_map.get("attribute_names") {
                             Some(value) => value,
                             None => bail!("Missing field 'attribute_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#document_type: {
                         let field_value = match fields_map.get("document_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'document_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_uri: {
                         let field_value = match fields_map.get("s_3_uri") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_documents_s_3_uri: {
                         let field_value = match fields_map.get("source_documents_s_3_uri") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_documents_s_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#split: {
                         let field_value = match fields_map.get("split") {
                             Some(value) => value,
                             None => bail!("Missing field 'split' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

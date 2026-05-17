@@ -55,21 +55,91 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("audio_normalization_settings".to_string(), self.r#audio_normalization_settings.to_pulumi_value().await);
-            map.insert("audio_selector_name".to_string(), self.r#audio_selector_name.to_pulumi_value().await);
-            map.insert("audio_type".to_string(), self.r#audio_type.to_pulumi_value().await);
-            map.insert("audio_type_control".to_string(), self.r#audio_type_control.to_pulumi_value().await);
-            map.insert("audio_watermark_settings".to_string(), self.r#audio_watermark_settings.to_pulumi_value().await);
-            map.insert("codec_settings".to_string(), self.r#codec_settings.to_pulumi_value().await);
-            map.insert("language_code".to_string(), self.r#language_code.to_pulumi_value().await);
-            map.insert("language_code_control".to_string(), self.r#language_code_control.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("remix_settings".to_string(), self.r#remix_settings.to_pulumi_value().await);
-            map.insert("stream_name".to_string(), self.r#stream_name.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "audio_normalization_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_normalization_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "audio_selector_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_selector_name,
+                )
+                .await,
+            );
+            map.insert(
+                "audio_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_type,
+                )
+                .await,
+            );
+            map.insert(
+                "audio_type_control".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_type_control,
+                )
+                .await,
+            );
+            map.insert(
+                "audio_watermark_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_watermark_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "codec_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#codec_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "language_code".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#language_code,
+                )
+                .await,
+            );
+            map.insert(
+                "language_code_control".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#language_code_control,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "remix_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#remix_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "stream_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stream_name,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -77,16 +147,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsAudioDescription {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#audio_normalization_settings: {
@@ -94,77 +165,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'audio_normalization_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioNormalizationSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_selector_name: {
                         let field_value = match fields_map.get("audio_selector_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'audio_selector_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_type: {
                         let field_value = match fields_map.get("audio_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'audio_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_type_control: {
                         let field_value = match fields_map.get("audio_type_control") {
                             Some(value) => value,
                             None => bail!("Missing field 'audio_type_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_watermark_settings: {
                         let field_value = match fields_map.get("audio_watermark_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'audio_watermark_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#codec_settings: {
                         let field_value = match fields_map.get("codec_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'codec_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionCodecSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#language_code: {
                         let field_value = match fields_map.get("language_code") {
                             Some(value) => value,
                             None => bail!("Missing field 'language_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#language_code_control: {
                         let field_value = match fields_map.get("language_code_control") {
                             Some(value) => value,
                             None => bail!("Missing field 'language_code_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remix_settings: {
                         let field_value = match fields_map.get("remix_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'remix_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionRemixSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_name: {
                         let field_value = match fields_map.get("stream_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'stream_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

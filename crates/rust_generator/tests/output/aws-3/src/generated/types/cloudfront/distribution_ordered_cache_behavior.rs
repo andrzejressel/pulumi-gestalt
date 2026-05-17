@@ -94,30 +94,154 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("allowed_methods".to_string(), self.r#allowed_methods.to_pulumi_value().await);
-            map.insert("cache_policy_id".to_string(), self.r#cache_policy_id.to_pulumi_value().await);
-            map.insert("cached_methods".to_string(), self.r#cached_methods.to_pulumi_value().await);
-            map.insert("compress".to_string(), self.r#compress.to_pulumi_value().await);
-            map.insert("default_ttl".to_string(), self.r#default_ttl.to_pulumi_value().await);
-            map.insert("field_level_encryption_id".to_string(), self.r#field_level_encryption_id.to_pulumi_value().await);
-            map.insert("forwarded_values".to_string(), self.r#forwarded_values.to_pulumi_value().await);
-            map.insert("function_associations".to_string(), self.r#function_associations.to_pulumi_value().await);
-            map.insert("lambda_function_associations".to_string(), self.r#lambda_function_associations.to_pulumi_value().await);
-            map.insert("max_ttl".to_string(), self.r#max_ttl.to_pulumi_value().await);
-            map.insert("min_ttl".to_string(), self.r#min_ttl.to_pulumi_value().await);
-            map.insert("origin_request_policy_id".to_string(), self.r#origin_request_policy_id.to_pulumi_value().await);
-            map.insert("path_pattern".to_string(), self.r#path_pattern.to_pulumi_value().await);
-            map.insert("realtime_log_config_arn".to_string(), self.r#realtime_log_config_arn.to_pulumi_value().await);
-            map.insert("response_headers_policy_id".to_string(), self.r#response_headers_policy_id.to_pulumi_value().await);
-            map.insert("smooth_streaming".to_string(), self.r#smooth_streaming.to_pulumi_value().await);
-            map.insert("target_origin_id".to_string(), self.r#target_origin_id.to_pulumi_value().await);
-            map.insert("trusted_key_groups".to_string(), self.r#trusted_key_groups.to_pulumi_value().await);
-            map.insert("trusted_signers".to_string(), self.r#trusted_signers.to_pulumi_value().await);
-            map.insert("viewer_protocol_policy".to_string(), self.r#viewer_protocol_policy.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allowed_methods".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_methods,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_policy_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_policy_id,
+                )
+                .await,
+            );
+            map.insert(
+                "cached_methods".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cached_methods,
+                )
+                .await,
+            );
+            map.insert(
+                "compress".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compress,
+                )
+                .await,
+            );
+            map.insert(
+                "default_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "field_level_encryption_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#field_level_encryption_id,
+                )
+                .await,
+            );
+            map.insert(
+                "forwarded_values".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forwarded_values,
+                )
+                .await,
+            );
+            map.insert(
+                "function_associations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#function_associations,
+                )
+                .await,
+            );
+            map.insert(
+                "lambda_function_associations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lambda_function_associations,
+                )
+                .await,
+            );
+            map.insert(
+                "max_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "min_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "origin_request_policy_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#origin_request_policy_id,
+                )
+                .await,
+            );
+            map.insert(
+                "path_pattern".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#path_pattern,
+                )
+                .await,
+            );
+            map.insert(
+                "realtime_log_config_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#realtime_log_config_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "response_headers_policy_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#response_headers_policy_id,
+                )
+                .await,
+            );
+            map.insert(
+                "smooth_streaming".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#smooth_streaming,
+                )
+                .await,
+            );
+            map.insert(
+                "target_origin_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target_origin_id,
+                )
+                .await,
+            );
+            map.insert(
+                "trusted_key_groups".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#trusted_key_groups,
+                )
+                .await,
+            );
+            map.insert(
+                "trusted_signers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#trusted_signers,
+                )
+                .await,
+            );
+            map.insert(
+                "viewer_protocol_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#viewer_protocol_policy,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -125,16 +249,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DistributionOrderedCacheBehavior {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#allowed_methods: {
@@ -142,140 +267,140 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'allowed_methods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_policy_id: {
                         let field_value = match fields_map.get("cache_policy_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'cache_policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cached_methods: {
                         let field_value = match fields_map.get("cached_methods") {
                             Some(value) => value,
                             None => bail!("Missing field 'cached_methods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compress: {
                         let field_value = match fields_map.get("compress") {
                             Some(value) => value,
                             None => bail!("Missing field 'compress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_ttl: {
                         let field_value = match fields_map.get("default_ttl") {
                             Some(value) => value,
                             None => bail!("Missing field 'default_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_level_encryption_id: {
                         let field_value = match fields_map.get("field_level_encryption_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'field_level_encryption_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_values: {
                         let field_value = match fields_map.get("forwarded_values") {
                             Some(value) => value,
                             None => bail!("Missing field 'forwarded_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::cloudfront::DistributionOrderedCacheBehaviorForwardedValues>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#function_associations: {
                         let field_value = match fields_map.get("function_associations") {
                             Some(value) => value,
                             None => bail!("Missing field 'function_associations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::cloudfront::DistributionOrderedCacheBehaviorFunctionAssociation>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_function_associations: {
                         let field_value = match fields_map.get("lambda_function_associations") {
                             Some(value) => value,
                             None => bail!("Missing field 'lambda_function_associations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::cloudfront::DistributionOrderedCacheBehaviorLambdaFunctionAssociation>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_ttl: {
                         let field_value = match fields_map.get("max_ttl") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_ttl: {
                         let field_value = match fields_map.get("min_ttl") {
                             Some(value) => value,
                             None => bail!("Missing field 'min_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_request_policy_id: {
                         let field_value = match fields_map.get("origin_request_policy_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'origin_request_policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_pattern: {
                         let field_value = match fields_map.get("path_pattern") {
                             Some(value) => value,
                             None => bail!("Missing field 'path_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#realtime_log_config_arn: {
                         let field_value = match fields_map.get("realtime_log_config_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'realtime_log_config_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_headers_policy_id: {
                         let field_value = match fields_map.get("response_headers_policy_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'response_headers_policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#smooth_streaming: {
                         let field_value = match fields_map.get("smooth_streaming") {
                             Some(value) => value,
                             None => bail!("Missing field 'smooth_streaming' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_origin_id: {
                         let field_value = match fields_map.get("target_origin_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'target_origin_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_key_groups: {
                         let field_value = match fields_map.get("trusted_key_groups") {
                             Some(value) => value,
                             None => bail!("Missing field 'trusted_key_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_signers: {
                         let field_value = match fields_map.get("trusted_signers") {
                             Some(value) => value,
                             None => bail!("Missing field 'trusted_signers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#viewer_protocol_policy: {
                         let field_value = match fields_map.get("viewer_protocol_policy") {
                             Some(value) => value,
                             None => bail!("Missing field 'viewer_protocol_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

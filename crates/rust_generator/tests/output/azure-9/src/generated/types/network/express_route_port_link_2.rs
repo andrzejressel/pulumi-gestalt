@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -49,4 +49,202 @@ pub struct ExpressRoutePortLink2 {
     #[builder(into)]
     #[serde(rename = "routerName")]
     pub r#router_name: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ExpressRoutePortLink2 {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "admin_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#admin_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "connector_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connector_type,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "interface_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#interface_name,
+                )
+                .await,
+            );
+            map.insert(
+                "macsec_cak_keyvault_secret_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#macsec_cak_keyvault_secret_id,
+                )
+                .await,
+            );
+            map.insert(
+                "macsec_cipher".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#macsec_cipher,
+                )
+                .await,
+            );
+            map.insert(
+                "macsec_ckn_keyvault_secret_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#macsec_ckn_keyvault_secret_id,
+                )
+                .await,
+            );
+            map.insert(
+                "macsec_sci_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#macsec_sci_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "patch_panel_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#patch_panel_id,
+                )
+                .await,
+            );
+            map.insert(
+                "rack_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rack_id,
+                )
+                .await,
+            );
+            map.insert(
+                "router_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#router_name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ExpressRoutePortLink2 {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#admin_enabled: {
+                        let field_value = match fields_map.get("admin_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'admin_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#connector_type: {
+                        let field_value = match fields_map.get("connector_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connector_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#interface_name: {
+                        let field_value = match fields_map.get("interface_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'interface_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#macsec_cak_keyvault_secret_id: {
+                        let field_value = match fields_map.get("macsec_cak_keyvault_secret_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'macsec_cak_keyvault_secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#macsec_cipher: {
+                        let field_value = match fields_map.get("macsec_cipher") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'macsec_cipher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#macsec_ckn_keyvault_secret_id: {
+                        let field_value = match fields_map.get("macsec_ckn_keyvault_secret_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'macsec_ckn_keyvault_secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#macsec_sci_enabled: {
+                        let field_value = match fields_map.get("macsec_sci_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'macsec_sci_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#patch_panel_id: {
+                        let field_value = match fields_map.get("patch_panel_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'patch_panel_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rack_id: {
+                        let field_value = match fields_map.get("rack_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rack_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#router_name: {
+                        let field_value = match fields_map.get("router_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'router_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

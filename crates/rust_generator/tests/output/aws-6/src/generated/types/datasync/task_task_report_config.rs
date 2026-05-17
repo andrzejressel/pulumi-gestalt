@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("output_type".to_string(), self.r#output_type.to_pulumi_value().await);
-            map.insert("report_level".to_string(), self.r#report_level.to_pulumi_value().await);
-            map.insert("report_overrides".to_string(), self.r#report_overrides.to_pulumi_value().await);
-            map.insert("s_3_destination".to_string(), self.r#s_3_destination.to_pulumi_value().await);
-            map.insert("s_3_object_versioning".to_string(), self.r#s_3_object_versioning.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "output_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#output_type,
+                )
+                .await,
+            );
+            map.insert(
+                "report_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#report_level,
+                )
+                .await,
+            );
+            map.insert(
+                "report_overrides".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#report_overrides,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_object_versioning".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_object_versioning,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TaskTaskReportConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#output_type: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                             Some(value) => value,
                             None => bail!("Missing field 'output_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#report_level: {
                         let field_value = match fields_map.get("report_level") {
                             Some(value) => value,
                             None => bail!("Missing field 'report_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#report_overrides: {
                         let field_value = match fields_map.get("report_overrides") {
                             Some(value) => value,
                             None => bail!("Missing field 'report_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::datasync::TaskTaskReportConfigReportOverrides>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_destination: {
                         let field_value = match fields_map.get("s_3_destination") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::datasync::TaskTaskReportConfigS3Destination> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_object_versioning: {
                         let field_value = match fields_map.get("s_3_object_versioning") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_object_versioning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

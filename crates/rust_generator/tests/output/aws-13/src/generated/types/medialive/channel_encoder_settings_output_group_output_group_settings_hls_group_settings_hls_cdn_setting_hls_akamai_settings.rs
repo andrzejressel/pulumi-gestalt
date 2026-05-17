@@ -38,17 +38,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("connection_retry_interval".to_string(), self.r#connection_retry_interval.to_pulumi_value().await);
-            map.insert("filecache_duration".to_string(), self.r#filecache_duration.to_pulumi_value().await);
-            map.insert("http_transfer_mode".to_string(), self.r#http_transfer_mode.to_pulumi_value().await);
-            map.insert("num_retries".to_string(), self.r#num_retries.to_pulumi_value().await);
-            map.insert("restart_delay".to_string(), self.r#restart_delay.to_pulumi_value().await);
-            map.insert("salt".to_string(), self.r#salt.to_pulumi_value().await);
-            map.insert("token".to_string(), self.r#token.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "connection_retry_interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_retry_interval,
+                )
+                .await,
+            );
+            map.insert(
+                "filecache_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filecache_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "http_transfer_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_transfer_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "num_retries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#num_retries,
+                )
+                .await,
+            );
+            map.insert(
+                "restart_delay".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#restart_delay,
+                )
+                .await,
+            );
+            map.insert(
+                "salt".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#salt,
+                )
+                .await,
+            );
+            map.insert(
+                "token".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#token,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -56,16 +102,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsAkamaiSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#connection_retry_interval: {
@@ -73,49 +120,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'connection_retry_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filecache_duration: {
                         let field_value = match fields_map.get("filecache_duration") {
                             Some(value) => value,
                             None => bail!("Missing field 'filecache_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_transfer_mode: {
                         let field_value = match fields_map.get("http_transfer_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'http_transfer_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_retries: {
                         let field_value = match fields_map.get("num_retries") {
                             Some(value) => value,
                             None => bail!("Missing field 'num_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restart_delay: {
                         let field_value = match fields_map.get("restart_delay") {
                             Some(value) => value,
                             None => bail!("Missing field 'restart_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#salt: {
                         let field_value = match fields_map.get("salt") {
                             Some(value) => value,
                             None => bail!("Missing field 'salt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token: {
                         let field_value = match fields_map.get("token") {
                             Some(value) => value,
                             None => bail!("Missing field 'token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -75,4 +75,300 @@ pub struct ManagedClusterNodeType {
     #[builder(into)]
     #[serde(rename = "vmSize")]
     pub r#vm_size: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ManagedClusterNodeType {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "application_port_range".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#application_port_range,
+                )
+                .await,
+            );
+            map.insert(
+                "capacities".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#capacities,
+                )
+                .await,
+            );
+            map.insert(
+                "data_disk_size_gb".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_disk_size_gb,
+                )
+                .await,
+            );
+            map.insert(
+                "data_disk_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_disk_type,
+                )
+                .await,
+            );
+            map.insert(
+                "ephemeral_port_range".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ephemeral_port_range,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "multiple_placement_groups_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#multiple_placement_groups_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "placement_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#placement_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "primary".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#primary,
+                )
+                .await,
+            );
+            map.insert(
+                "stateless".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateless,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_image_offer".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_image_offer,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_image_publisher".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_image_publisher,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_image_sku".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_image_sku,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_image_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_image_version,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_instance_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_instance_count,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_secrets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_secrets,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_size".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_size,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ManagedClusterNodeType {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#application_port_range: {
+                        let field_value = match fields_map.get("application_port_range") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'application_port_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#capacities: {
+                        let field_value = match fields_map.get("capacities") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'capacities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_disk_size_gb: {
+                        let field_value = match fields_map.get("data_disk_size_gb") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_disk_type: {
+                        let field_value = match fields_map.get("data_disk_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ephemeral_port_range: {
+                        let field_value = match fields_map.get("ephemeral_port_range") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ephemeral_port_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#multiple_placement_groups_enabled: {
+                        let field_value = match fields_map.get("multiple_placement_groups_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'multiple_placement_groups_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#placement_properties: {
+                        let field_value = match fields_map.get("placement_properties") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'placement_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#primary: {
+                        let field_value = match fields_map.get("primary") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'primary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateless: {
+                        let field_value = match fields_map.get("stateless") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateless' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_image_offer: {
+                        let field_value = match fields_map.get("vm_image_offer") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_image_offer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_image_publisher: {
+                        let field_value = match fields_map.get("vm_image_publisher") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_image_publisher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_image_sku: {
+                        let field_value = match fields_map.get("vm_image_sku") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_image_sku' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_image_version: {
+                        let field_value = match fields_map.get("vm_image_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_image_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_instance_count: {
+                        let field_value = match fields_map.get("vm_instance_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_secrets: {
+                        let field_value = match fields_map.get("vm_secrets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_size: {
+                        let field_value = match fields_map.get("vm_size") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

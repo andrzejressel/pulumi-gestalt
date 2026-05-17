@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -23,4 +23,118 @@ pub struct AlertRuleNrtAlertDetailsOverride {
     #[builder(into)]
     #[serde(rename = "tacticsColumnName")]
     pub r#tactics_column_name: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AlertRuleNrtAlertDetailsOverride {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "description_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description_format,
+                )
+                .await,
+            );
+            map.insert(
+                "display_name_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#display_name_format,
+                )
+                .await,
+            );
+            map.insert(
+                "dynamic_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dynamic_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "severity_column_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#severity_column_name,
+                )
+                .await,
+            );
+            map.insert(
+                "tactics_column_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tactics_column_name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AlertRuleNrtAlertDetailsOverride {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#description_format: {
+                        let field_value = match fields_map.get("description_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'description_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#display_name_format: {
+                        let field_value = match fields_map.get("display_name_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'display_name_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dynamic_properties: {
+                        let field_value = match fields_map.get("dynamic_properties") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dynamic_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#severity_column_name: {
+                        let field_value = match fields_map.get("severity_column_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'severity_column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tactics_column_name: {
+                        let field_value = match fields_map.get("tactics_column_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tactics_column_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

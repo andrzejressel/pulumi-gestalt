@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -63,4 +63,174 @@ pub struct AuthorityConfigX509ConfigNameConstraints {
     #[builder(into)]
     #[serde(rename = "permittedUris")]
     pub r#permitted_uris: Option<Vec<String>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AuthorityConfigX509ConfigNameConstraints {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "critical".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#critical,
+                )
+                .await,
+            );
+            map.insert(
+                "excluded_dns_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#excluded_dns_names,
+                )
+                .await,
+            );
+            map.insert(
+                "excluded_email_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#excluded_email_addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "excluded_ip_ranges".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#excluded_ip_ranges,
+                )
+                .await,
+            );
+            map.insert(
+                "excluded_uris".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#excluded_uris,
+                )
+                .await,
+            );
+            map.insert(
+                "permitted_dns_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#permitted_dns_names,
+                )
+                .await,
+            );
+            map.insert(
+                "permitted_email_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#permitted_email_addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "permitted_ip_ranges".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#permitted_ip_ranges,
+                )
+                .await,
+            );
+            map.insert(
+                "permitted_uris".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#permitted_uris,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AuthorityConfigX509ConfigNameConstraints {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#critical: {
+                        let field_value = match fields_map.get("critical") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'critical' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#excluded_dns_names: {
+                        let field_value = match fields_map.get("excluded_dns_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'excluded_dns_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#excluded_email_addresses: {
+                        let field_value = match fields_map.get("excluded_email_addresses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'excluded_email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#excluded_ip_ranges: {
+                        let field_value = match fields_map.get("excluded_ip_ranges") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'excluded_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#excluded_uris: {
+                        let field_value = match fields_map.get("excluded_uris") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'excluded_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#permitted_dns_names: {
+                        let field_value = match fields_map.get("permitted_dns_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'permitted_dns_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#permitted_email_addresses: {
+                        let field_value = match fields_map.get("permitted_email_addresses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'permitted_email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#permitted_ip_ranges: {
+                        let field_value = match fields_map.get("permitted_ip_ranges") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'permitted_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#permitted_uris: {
+                        let field_value = match fields_map.get("permitted_uris") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'permitted_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

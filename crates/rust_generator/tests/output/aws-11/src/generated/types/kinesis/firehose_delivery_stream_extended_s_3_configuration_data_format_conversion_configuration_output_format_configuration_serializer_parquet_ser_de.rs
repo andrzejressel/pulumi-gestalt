@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("block_size_bytes".to_string(), self.r#block_size_bytes.to_pulumi_value().await);
-            map.insert("compression".to_string(), self.r#compression.to_pulumi_value().await);
-            map.insert("enable_dictionary_compression".to_string(), self.r#enable_dictionary_compression.to_pulumi_value().await);
-            map.insert("max_padding_bytes".to_string(), self.r#max_padding_bytes.to_pulumi_value().await);
-            map.insert("page_size_bytes".to_string(), self.r#page_size_bytes.to_pulumi_value().await);
-            map.insert("writer_version".to_string(), self.r#writer_version.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "block_size_bytes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#block_size_bytes,
+                )
+                .await,
+            );
+            map.insert(
+                "compression".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compression,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_dictionary_compression".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_dictionary_compression,
+                )
+                .await,
+            );
+            map.insert(
+                "max_padding_bytes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_padding_bytes,
+                )
+                .await,
+            );
+            map.insert(
+                "page_size_bytes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#page_size_bytes,
+                )
+                .await,
+            );
+            map.insert(
+                "writer_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#writer_version,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerParquetSerDe {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#block_size_bytes: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                             Some(value) => value,
                             None => bail!("Missing field 'block_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compression: {
                         let field_value = match fields_map.get("compression") {
                             Some(value) => value,
                             None => bail!("Missing field 'compression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_dictionary_compression: {
                         let field_value = match fields_map.get("enable_dictionary_compression") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_dictionary_compression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_padding_bytes: {
                         let field_value = match fields_map.get("max_padding_bytes") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_padding_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#page_size_bytes: {
                         let field_value = match fields_map.get("page_size_bytes") {
                             Some(value) => value,
                             None => bail!("Missing field 'page_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#writer_version: {
                         let field_value = match fields_map.get("writer_version") {
                             Some(value) => value,
                             None => bail!("Missing field 'writer_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

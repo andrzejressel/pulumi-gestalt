@@ -55,20 +55,84 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("authentication_request_extra_params".to_string(), self.r#authentication_request_extra_params.to_pulumi_value().await);
-            map.insert("authorization_endpoint".to_string(), self.r#authorization_endpoint.to_pulumi_value().await);
-            map.insert("client_id".to_string(), self.r#client_id.to_pulumi_value().await);
-            map.insert("issuer".to_string(), self.r#issuer.to_pulumi_value().await);
-            map.insert("on_unauthenticated_request".to_string(), self.r#on_unauthenticated_request.to_pulumi_value().await);
-            map.insert("scope".to_string(), self.r#scope.to_pulumi_value().await);
-            map.insert("session_cookie_name".to_string(), self.r#session_cookie_name.to_pulumi_value().await);
-            map.insert("session_timeout".to_string(), self.r#session_timeout.to_pulumi_value().await);
-            map.insert("token_endpoint".to_string(), self.r#token_endpoint.to_pulumi_value().await);
-            map.insert("user_info_endpoint".to_string(), self.r#user_info_endpoint.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "authentication_request_extra_params".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authentication_request_extra_params,
+                )
+                .await,
+            );
+            map.insert(
+                "authorization_endpoint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authorization_endpoint,
+                )
+                .await,
+            );
+            map.insert(
+                "client_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_id,
+                )
+                .await,
+            );
+            map.insert(
+                "issuer".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#issuer,
+                )
+                .await,
+            );
+            map.insert(
+                "on_unauthenticated_request".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#on_unauthenticated_request,
+                )
+                .await,
+            );
+            map.insert(
+                "scope".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scope,
+                )
+                .await,
+            );
+            map.insert(
+                "session_cookie_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_cookie_name,
+                )
+                .await,
+            );
+            map.insert(
+                "session_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "token_endpoint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#token_endpoint,
+                )
+                .await,
+            );
+            map.insert(
+                "user_info_endpoint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_info_endpoint,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -76,16 +140,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetListenerRuleActionAuthenticateOidc {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#authentication_request_extra_params: {
@@ -93,70 +158,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'authentication_request_extra_params' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <std::collections::HashMap<String, String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authorization_endpoint: {
                         let field_value = match fields_map.get("authorization_endpoint") {
                             Some(value) => value,
                             None => bail!("Missing field 'authorization_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_id: {
                         let field_value = match fields_map.get("client_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#issuer: {
                         let field_value = match fields_map.get("issuer") {
                             Some(value) => value,
                             None => bail!("Missing field 'issuer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_unauthenticated_request: {
                         let field_value = match fields_map.get("on_unauthenticated_request") {
                             Some(value) => value,
                             None => bail!("Missing field 'on_unauthenticated_request' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scope: {
                         let field_value = match fields_map.get("scope") {
                             Some(value) => value,
                             None => bail!("Missing field 'scope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_cookie_name: {
                         let field_value = match fields_map.get("session_cookie_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'session_cookie_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_timeout: {
                         let field_value = match fields_map.get("session_timeout") {
                             Some(value) => value,
                             None => bail!("Missing field 'session_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_endpoint: {
                         let field_value = match fields_map.get("token_endpoint") {
                             Some(value) => value,
                             None => bail!("Missing field 'token_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_info_endpoint: {
                         let field_value = match fields_map.get("user_info_endpoint") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_info_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

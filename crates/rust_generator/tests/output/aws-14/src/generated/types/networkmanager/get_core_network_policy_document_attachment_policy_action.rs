@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("add_to_network_function_group".to_string(), self.r#add_to_network_function_group.to_pulumi_value().await);
-            map.insert("association_method".to_string(), self.r#association_method.to_pulumi_value().await);
-            map.insert("require_acceptance".to_string(), self.r#require_acceptance.to_pulumi_value().await);
-            map.insert("segment".to_string(), self.r#segment.to_pulumi_value().await);
-            map.insert("tag_value_of_key".to_string(), self.r#tag_value_of_key.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "add_to_network_function_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#add_to_network_function_group,
+                )
+                .await,
+            );
+            map.insert(
+                "association_method".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#association_method,
+                )
+                .await,
+            );
+            map.insert(
+                "require_acceptance".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#require_acceptance,
+                )
+                .await,
+            );
+            map.insert(
+                "segment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#segment,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_value_of_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_value_of_key,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetCoreNetworkPolicyDocumentAttachmentPolicyAction {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#add_to_network_function_group: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'add_to_network_function_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#association_method: {
                         let field_value = match fields_map.get("association_method") {
                             Some(value) => value,
                             None => bail!("Missing field 'association_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_acceptance: {
                         let field_value = match fields_map.get("require_acceptance") {
                             Some(value) => value,
                             None => bail!("Missing field 'require_acceptance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segment: {
                         let field_value = match fields_map.get("segment") {
                             Some(value) => value,
                             None => bail!("Missing field 'segment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_value_of_key: {
                         let field_value = match fields_map.get("tag_value_of_key") {
                             Some(value) => value,
                             None => bail!("Missing field 'tag_value_of_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

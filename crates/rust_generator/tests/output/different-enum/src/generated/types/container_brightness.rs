@@ -33,9 +33,38 @@ impl<'de> pulumi_gestalt_rust::__private::serde::Deserialize<'de> for ContainerB
     }
 }
 
-pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_number_enum! {
-    enum ContainerBrightness {
-        ZeroPointOne => 0.1,
-        One => 1.0,
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ContainerBrightness {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        let value: f64 = match self {
+            ContainerBrightness::ZeroPointOne => 0.1,
+            ContainerBrightness::One => 1.0,
+        };
+        std::future::ready(pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue {
+            content: pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent::Number(value),
+            secret: false,
+            dependencies: std::collections::HashSet::new(),
+        })
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ContainerBrightness {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+
+        match &value.content {
+            PulumiValueContent::Number(f) => match f {
+                0.1 => Ok(ContainerBrightness::ZeroPointOne),
+                1.0 => Ok(ContainerBrightness::One),
+                _ => bail!("Invalid number enum value: {}", f),
+            },
+            _ => bail!("Expected Number, got {:?}", value.content),
+        }
     }
 }

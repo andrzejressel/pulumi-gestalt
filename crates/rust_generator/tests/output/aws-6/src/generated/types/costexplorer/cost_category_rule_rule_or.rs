@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cos
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("ands".to_string(), self.r#ands.to_pulumi_value().await);
-            map.insert("cost_category".to_string(), self.r#cost_category.to_pulumi_value().await);
-            map.insert("dimension".to_string(), self.r#dimension.to_pulumi_value().await);
-            map.insert("not".to_string(), self.r#not.to_pulumi_value().await);
-            map.insert("ors".to_string(), self.r#ors.to_pulumi_value().await);
-            map.insert("tags".to_string(), self.r#tags.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "ands".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ands,
+                )
+                .await,
+            );
+            map.insert(
+                "cost_category".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cost_category,
+                )
+                .await,
+            );
+            map.insert(
+                "dimension".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dimension,
+                )
+                .await,
+            );
+            map.insert(
+                "not".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#not,
+                )
+                .await,
+            );
+            map.insert(
+                "ors".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ors,
+                )
+                .await,
+            );
+            map.insert(
+                "tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tags,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cos
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CostCategoryRuleRuleOr {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#ands: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'ands' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::costexplorer::CostCategoryRuleRuleOrAnd>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cost_category: {
                         let field_value = match fields_map.get("cost_category") {
                             Some(value) => value,
                             None => bail!("Missing field 'cost_category' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleOrCostCategory>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dimension: {
                         let field_value = match fields_map.get("dimension") {
                             Some(value) => value,
                             None => bail!("Missing field 'dimension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleOrDimension>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not: {
                         let field_value = match fields_map.get("not") {
                             Some(value) => value,
                             None => bail!("Missing field 'not' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleOrNot>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ors: {
                         let field_value = match fields_map.get("ors") {
                             Some(value) => value,
                             None => bail!("Missing field 'ors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::costexplorer::CostCategoryRuleRuleOrOr>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tags: {
                         let field_value = match fields_map.get("tags") {
                             Some(value) => value,
                             None => bail!("Missing field 'tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleOrTags>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

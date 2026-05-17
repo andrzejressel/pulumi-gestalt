@@ -32,14 +32,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("on_failure".to_string(), self.r#on_failure.to_pulumi_value().await);
-            map.insert("parallel_group".to_string(), self.r#parallel_group.to_pulumi_value().await);
-            map.insert("parameters".to_string(), self.r#parameters.to_pulumi_value().await);
-            map.insert("workflow_arn".to_string(), self.r#workflow_arn.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "on_failure".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#on_failure,
+                )
+                .await,
+            );
+            map.insert(
+                "parallel_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#parallel_group,
+                )
+                .await,
+            );
+            map.insert(
+                "parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "workflow_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#workflow_arn,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -47,16 +75,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ImageWorkflow {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#on_failure: {
@@ -64,28 +93,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                             Some(value) => value,
                             None => bail!("Missing field 'on_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parallel_group: {
                         let field_value = match fields_map.get("parallel_group") {
                             Some(value) => value,
                             None => bail!("Missing field 'parallel_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parameters: {
                         let field_value = match fields_map.get("parameters") {
                             Some(value) => value,
                             None => bail!("Missing field 'parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::imagebuilder::ImageWorkflowParameter>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workflow_arn: {
                         let field_value = match fields_map.get("workflow_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'workflow_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

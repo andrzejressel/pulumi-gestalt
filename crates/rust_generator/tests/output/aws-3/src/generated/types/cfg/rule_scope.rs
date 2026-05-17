@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("compliance_resource_id".to_string(), self.r#compliance_resource_id.to_pulumi_value().await);
-            map.insert("compliance_resource_types".to_string(), self.r#compliance_resource_types.to_pulumi_value().await);
-            map.insert("tag_key".to_string(), self.r#tag_key.to_pulumi_value().await);
-            map.insert("tag_value".to_string(), self.r#tag_value.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "compliance_resource_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compliance_resource_id,
+                )
+                .await,
+            );
+            map.insert(
+                "compliance_resource_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compliance_resource_types,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_key,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_value".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_value,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuleScope {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#compliance_resource_id: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                             Some(value) => value,
                             None => bail!("Missing field 'compliance_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compliance_resource_types: {
                         let field_value = match fields_map.get("compliance_resource_types") {
                             Some(value) => value,
                             None => bail!("Missing field 'compliance_resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_key: {
                         let field_value = match fields_map.get("tag_key") {
                             Some(value) => value,
                             None => bail!("Missing field 'tag_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_value: {
                         let field_value = match fields_map.get("tag_value") {
                             Some(value) => value,
                             None => bail!("Missing field 'tag_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

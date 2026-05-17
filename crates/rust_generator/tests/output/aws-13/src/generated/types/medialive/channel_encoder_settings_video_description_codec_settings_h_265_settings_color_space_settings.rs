@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("color_space_passthrough_settings".to_string(), self.r#color_space_passthrough_settings.to_pulumi_value().await);
-            map.insert("dolby_vision_81_settings".to_string(), self.r#dolby_vision_81_settings.to_pulumi_value().await);
-            map.insert("hdr_10_settings".to_string(), self.r#hdr_10_settings.to_pulumi_value().await);
-            map.insert("rec_601_settings".to_string(), self.r#rec_601_settings.to_pulumi_value().await);
-            map.insert("rec_709_settings".to_string(), self.r#rec_709_settings.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "color_space_passthrough_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#color_space_passthrough_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "dolby_vision_81_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dolby_vision_81_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "hdr_10_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hdr_10_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "rec_601_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rec_601_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "rec_709_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rec_709_settings,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#color_space_passthrough_settings: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'color_space_passthrough_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsColorSpacePassthroughSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dolby_vision_81_settings: {
                         let field_value = match fields_map.get("dolby_vision_81_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'dolby_vision_81_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsDolbyVision81Settings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hdr_10_settings: {
                         let field_value = match fields_map.get("hdr_10_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'hdr_10_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsHdr10Settings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rec_601_settings: {
                         let field_value = match fields_map.get("rec_601_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'rec_601_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec601Settings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rec_709_settings: {
                         let field_value = match fields_map.get("rec_709_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'rec_709_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec709Settings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

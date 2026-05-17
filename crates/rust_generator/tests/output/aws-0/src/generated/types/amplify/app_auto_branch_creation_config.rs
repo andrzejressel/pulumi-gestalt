@@ -54,20 +54,84 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("basic_auth_credentials".to_string(), self.r#basic_auth_credentials.to_pulumi_value().await);
-            map.insert("build_spec".to_string(), self.r#build_spec.to_pulumi_value().await);
-            map.insert("enable_auto_build".to_string(), self.r#enable_auto_build.to_pulumi_value().await);
-            map.insert("enable_basic_auth".to_string(), self.r#enable_basic_auth.to_pulumi_value().await);
-            map.insert("enable_performance_mode".to_string(), self.r#enable_performance_mode.to_pulumi_value().await);
-            map.insert("enable_pull_request_preview".to_string(), self.r#enable_pull_request_preview.to_pulumi_value().await);
-            map.insert("environment_variables".to_string(), self.r#environment_variables.to_pulumi_value().await);
-            map.insert("framework".to_string(), self.r#framework.to_pulumi_value().await);
-            map.insert("pull_request_environment_name".to_string(), self.r#pull_request_environment_name.to_pulumi_value().await);
-            map.insert("stage".to_string(), self.r#stage.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "basic_auth_credentials".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#basic_auth_credentials,
+                )
+                .await,
+            );
+            map.insert(
+                "build_spec".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#build_spec,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_auto_build".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_auto_build,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_basic_auth".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_basic_auth,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_performance_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_performance_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_pull_request_preview".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_pull_request_preview,
+                )
+                .await,
+            );
+            map.insert(
+                "environment_variables".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#environment_variables,
+                )
+                .await,
+            );
+            map.insert(
+                "framework".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#framework,
+                )
+                .await,
+            );
+            map.insert(
+                "pull_request_environment_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pull_request_environment_name,
+                )
+                .await,
+            );
+            map.insert(
+                "stage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stage,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -75,16 +139,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AppAutoBranchCreationConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#basic_auth_credentials: {
@@ -92,70 +157,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'basic_auth_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#build_spec: {
                         let field_value = match fields_map.get("build_spec") {
                             Some(value) => value,
                             None => bail!("Missing field 'build_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_auto_build: {
                         let field_value = match fields_map.get("enable_auto_build") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_auto_build' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_basic_auth: {
                         let field_value = match fields_map.get("enable_basic_auth") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_basic_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_performance_mode: {
                         let field_value = match fields_map.get("enable_performance_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_performance_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_pull_request_preview: {
                         let field_value = match fields_map.get("enable_pull_request_preview") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_pull_request_preview' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_variables: {
                         let field_value = match fields_map.get("environment_variables") {
                             Some(value) => value,
                             None => bail!("Missing field 'environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<std::collections::HashMap<String, String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#framework: {
                         let field_value = match fields_map.get("framework") {
                             Some(value) => value,
                             None => bail!("Missing field 'framework' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pull_request_environment_name: {
                         let field_value = match fields_map.get("pull_request_environment_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'pull_request_environment_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stage: {
                         let field_value = match fields_map.get("stage") {
                             Some(value) => value,
                             None => bail!("Missing field 'stage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

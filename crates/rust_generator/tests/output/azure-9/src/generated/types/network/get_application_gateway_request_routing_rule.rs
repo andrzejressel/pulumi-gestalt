@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -67,4 +67,272 @@ pub struct GetApplicationGatewayRequestRoutingRule {
     #[builder(into)]
     #[serde(rename = "urlPathMapName")]
     pub r#url_path_map_name: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetApplicationGatewayRequestRoutingRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "backend_address_pool_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#backend_address_pool_id,
+                )
+                .await,
+            );
+            map.insert(
+                "backend_address_pool_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#backend_address_pool_name,
+                )
+                .await,
+            );
+            map.insert(
+                "backend_http_settings_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#backend_http_settings_id,
+                )
+                .await,
+            );
+            map.insert(
+                "backend_http_settings_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#backend_http_settings_name,
+                )
+                .await,
+            );
+            map.insert(
+                "http_listener_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_listener_id,
+                )
+                .await,
+            );
+            map.insert(
+                "http_listener_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_listener_name,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "priority".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#priority,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect_configuration_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect_configuration_id,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect_configuration_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect_configuration_name,
+                )
+                .await,
+            );
+            map.insert(
+                "rewrite_rule_set_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rewrite_rule_set_id,
+                )
+                .await,
+            );
+            map.insert(
+                "rewrite_rule_set_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rewrite_rule_set_name,
+                )
+                .await,
+            );
+            map.insert(
+                "rule_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rule_type,
+                )
+                .await,
+            );
+            map.insert(
+                "url_path_map_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#url_path_map_id,
+                )
+                .await,
+            );
+            map.insert(
+                "url_path_map_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#url_path_map_name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetApplicationGatewayRequestRoutingRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#backend_address_pool_id: {
+                        let field_value = match fields_map.get("backend_address_pool_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'backend_address_pool_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#backend_address_pool_name: {
+                        let field_value = match fields_map.get("backend_address_pool_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'backend_address_pool_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#backend_http_settings_id: {
+                        let field_value = match fields_map.get("backend_http_settings_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'backend_http_settings_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#backend_http_settings_name: {
+                        let field_value = match fields_map.get("backend_http_settings_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'backend_http_settings_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#http_listener_id: {
+                        let field_value = match fields_map.get("http_listener_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'http_listener_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#http_listener_name: {
+                        let field_value = match fields_map.get("http_listener_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'http_listener_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#priority: {
+                        let field_value = match fields_map.get("priority") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'priority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redirect_configuration_id: {
+                        let field_value = match fields_map.get("redirect_configuration_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redirect_configuration_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redirect_configuration_name: {
+                        let field_value = match fields_map.get("redirect_configuration_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redirect_configuration_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rewrite_rule_set_id: {
+                        let field_value = match fields_map.get("rewrite_rule_set_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rewrite_rule_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rewrite_rule_set_name: {
+                        let field_value = match fields_map.get("rewrite_rule_set_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rewrite_rule_set_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rule_type: {
+                        let field_value = match fields_map.get("rule_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rule_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#url_path_map_id: {
+                        let field_value = match fields_map.get("url_path_map_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'url_path_map_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#url_path_map_name: {
+                        let field_value = match fields_map.get("url_path_map_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'url_path_map_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

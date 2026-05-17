@@ -29,15 +29,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("grpc_retry_events".to_string(), self.r#grpc_retry_events.to_pulumi_value().await);
-            map.insert("http_retry_events".to_string(), self.r#http_retry_events.to_pulumi_value().await);
-            map.insert("max_retries".to_string(), self.r#max_retries.to_pulumi_value().await);
-            map.insert("per_retry_timeouts".to_string(), self.r#per_retry_timeouts.to_pulumi_value().await);
-            map.insert("tcp_retry_events".to_string(), self.r#tcp_retry_events.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "grpc_retry_events".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#grpc_retry_events,
+                )
+                .await,
+            );
+            map.insert(
+                "http_retry_events".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_retry_events,
+                )
+                .await,
+            );
+            map.insert(
+                "max_retries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_retries,
+                )
+                .await,
+            );
+            map.insert(
+                "per_retry_timeouts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#per_retry_timeouts,
+                )
+                .await,
+            );
+            map.insert(
+                "tcp_retry_events".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tcp_retry_events,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +79,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetRouteSpecGrpcRouteRetryPolicy {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#grpc_retry_events: {
@@ -62,35 +97,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'grpc_retry_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_retry_events: {
                         let field_value = match fields_map.get("http_retry_events") {
                             Some(value) => value,
                             None => bail!("Missing field 'http_retry_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_retries: {
                         let field_value = match fields_map.get("max_retries") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#per_retry_timeouts: {
                         let field_value = match fields_map.get("per_retry_timeouts") {
                             Some(value) => value,
                             None => bail!("Missing field 'per_retry_timeouts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteRetryPolicyPerRetryTimeout> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tcp_retry_events: {
                         let field_value = match fields_map.get("tcp_retry_events") {
                             Some(value) => value,
                             None => bail!("Missing field 'tcp_retry_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

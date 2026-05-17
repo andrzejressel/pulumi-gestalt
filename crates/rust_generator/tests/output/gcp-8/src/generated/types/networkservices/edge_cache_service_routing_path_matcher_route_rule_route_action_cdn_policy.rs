@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -96,4 +96,216 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     #[builder(into)]
     #[serde(rename = "signedTokenOptions")]
     pub r#signed_token_options: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicySignedTokenOptions>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "add_signatures".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#add_signatures,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_key_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_key_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "client_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "default_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "max_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "negative_caching".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#negative_caching,
+                )
+                .await,
+            );
+            map.insert(
+                "negative_caching_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#negative_caching_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "signed_request_keyset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#signed_request_keyset,
+                )
+                .await,
+            );
+            map.insert(
+                "signed_request_maximum_expiration_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#signed_request_maximum_expiration_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "signed_request_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#signed_request_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "signed_token_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#signed_token_options,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#add_signatures: {
+                        let field_value = match fields_map.get("add_signatures") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'add_signatures' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_key_policy: {
+                        let field_value = match fields_map.get("cache_key_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_key_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_mode: {
+                        let field_value = match fields_map.get("cache_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_ttl: {
+                        let field_value = match fields_map.get("client_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_ttl: {
+                        let field_value = match fields_map.get("default_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_ttl: {
+                        let field_value = match fields_map.get("max_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#negative_caching: {
+                        let field_value = match fields_map.get("negative_caching") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'negative_caching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#negative_caching_policy: {
+                        let field_value = match fields_map.get("negative_caching_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'negative_caching_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#signed_request_keyset: {
+                        let field_value = match fields_map.get("signed_request_keyset") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'signed_request_keyset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#signed_request_maximum_expiration_ttl: {
+                        let field_value = match fields_map.get("signed_request_maximum_expiration_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'signed_request_maximum_expiration_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#signed_request_mode: {
+                        let field_value = match fields_map.get("signed_request_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'signed_request_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#signed_token_options: {
+                        let field_value = match fields_map.get("signed_token_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'signed_token_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

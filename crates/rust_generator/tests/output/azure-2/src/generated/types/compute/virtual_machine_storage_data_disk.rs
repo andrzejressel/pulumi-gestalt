@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -47,4 +47,174 @@ pub struct VirtualMachineStorageDataDisk {
     #[builder(into)]
     #[serde(rename = "writeAcceleratorEnabled")]
     pub r#write_accelerator_enabled: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VirtualMachineStorageDataDisk {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "caching".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#caching,
+                )
+                .await,
+            );
+            map.insert(
+                "create_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#create_option,
+                )
+                .await,
+            );
+            map.insert(
+                "disk_size_gb".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disk_size_gb,
+                )
+                .await,
+            );
+            map.insert(
+                "lun".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lun,
+                )
+                .await,
+            );
+            map.insert(
+                "managed_disk_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managed_disk_id,
+                )
+                .await,
+            );
+            map.insert(
+                "managed_disk_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managed_disk_type,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "vhd_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vhd_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "write_accelerator_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#write_accelerator_enabled,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for VirtualMachineStorageDataDisk {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#caching: {
+                        let field_value = match fields_map.get("caching") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'caching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#create_option: {
+                        let field_value = match fields_map.get("create_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'create_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disk_size_gb: {
+                        let field_value = match fields_map.get("disk_size_gb") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#lun: {
+                        let field_value = match fields_map.get("lun") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'lun' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#managed_disk_id: {
+                        let field_value = match fields_map.get("managed_disk_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_disk_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#managed_disk_type: {
+                        let field_value = match fields_map.get("managed_disk_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vhd_uri: {
+                        let field_value = match fields_map.get("vhd_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vhd_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#write_accelerator_enabled: {
+                        let field_value = match fields_map.get("write_accelerator_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'write_accelerator_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

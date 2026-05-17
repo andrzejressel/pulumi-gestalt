@@ -53,20 +53,84 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("buffering_interval".to_string(), self.r#buffering_interval.to_pulumi_value().await);
-            map.insert("buffering_size".to_string(), self.r#buffering_size.to_pulumi_value().await);
-            map.insert("catalog_arn".to_string(), self.r#catalog_arn.to_pulumi_value().await);
-            map.insert("cloudwatch_logging_options".to_string(), self.r#cloudwatch_logging_options.to_pulumi_value().await);
-            map.insert("destination_table_configurations".to_string(), self.r#destination_table_configurations.to_pulumi_value().await);
-            map.insert("processing_configuration".to_string(), self.r#processing_configuration.to_pulumi_value().await);
-            map.insert("retry_duration".to_string(), self.r#retry_duration.to_pulumi_value().await);
-            map.insert("role_arn".to_string(), self.r#role_arn.to_pulumi_value().await);
-            map.insert("s_3_backup_mode".to_string(), self.r#s_3_backup_mode.to_pulumi_value().await);
-            map.insert("s_3_configuration".to_string(), self.r#s_3_configuration.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "buffering_interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#buffering_interval,
+                )
+                .await,
+            );
+            map.insert(
+                "buffering_size".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#buffering_size,
+                )
+                .await,
+            );
+            map.insert(
+                "catalog_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#catalog_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "cloudwatch_logging_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudwatch_logging_options,
+                )
+                .await,
+            );
+            map.insert(
+                "destination_table_configurations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_table_configurations,
+                )
+                .await,
+            );
+            map.insert(
+                "processing_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#processing_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "retry_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retry_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_backup_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_backup_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_configuration,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -74,16 +138,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FirehoseDeliveryStreamIcebergConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#buffering_interval: {
@@ -91,70 +156,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                             Some(value) => value,
                             None => bail!("Missing field 'buffering_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#buffering_size: {
                         let field_value = match fields_map.get("buffering_size") {
                             Some(value) => value,
                             None => bail!("Missing field 'buffering_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#catalog_arn: {
                         let field_value = match fields_map.get("catalog_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'catalog_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloudwatch_logging_options: {
                         let field_value = match fields_map.get("cloudwatch_logging_options") {
                             Some(value) => value,
                             None => bail!("Missing field 'cloudwatch_logging_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfigurationCloudwatchLoggingOptions>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_table_configurations: {
                         let field_value = match fields_map.get("destination_table_configurations") {
                             Some(value) => value,
                             None => bail!("Missing field 'destination_table_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfigurationDestinationTableConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#processing_configuration: {
                         let field_value = match fields_map.get("processing_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'processing_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfigurationProcessingConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_duration: {
                         let field_value = match fields_map.get("retry_duration") {
                             Some(value) => value,
                             None => bail!("Missing field 'retry_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
                         let field_value = match fields_map.get("role_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_backup_mode: {
                         let field_value = match fields_map.get("s_3_backup_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_backup_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_configuration: {
                         let field_value = match fields_map.get("s_3_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfigurationS3Configuration> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -39,15 +39,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("augmented_manifests".to_string(), self.r#augmented_manifests.to_pulumi_value().await);
-            map.insert("data_format".to_string(), self.r#data_format.to_pulumi_value().await);
-            map.insert("label_delimiter".to_string(), self.r#label_delimiter.to_pulumi_value().await);
-            map.insert("s_3_uri".to_string(), self.r#s_3_uri.to_pulumi_value().await);
-            map.insert("test_s_3_uri".to_string(), self.r#test_s_3_uri.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "augmented_manifests".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#augmented_manifests,
+                )
+                .await,
+            );
+            map.insert(
+                "data_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_format,
+                )
+                .await,
+            );
+            map.insert(
+                "label_delimiter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#label_delimiter,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "test_s_3_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#test_s_3_uri,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +89,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DocumentClassifierInputDataConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#augmented_manifests: {
@@ -72,35 +107,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'augmented_manifests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::comprehend::DocumentClassifierInputDataConfigAugmentedManifest>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_format: {
                         let field_value = match fields_map.get("data_format") {
                             Some(value) => value,
                             None => bail!("Missing field 'data_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#label_delimiter: {
                         let field_value = match fields_map.get("label_delimiter") {
                             Some(value) => value,
                             None => bail!("Missing field 'label_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_uri: {
                         let field_value = match fields_map.get("s_3_uri") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#test_s_3_uri: {
                         let field_value = match fields_map.get("test_s_3_uri") {
                             Some(value) => value,
                             None => bail!("Missing field 'test_s_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

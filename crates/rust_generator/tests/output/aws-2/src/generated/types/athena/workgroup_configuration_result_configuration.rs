@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("acl_configuration".to_string(), self.r#acl_configuration.to_pulumi_value().await);
-            map.insert("encryption_configuration".to_string(), self.r#encryption_configuration.to_pulumi_value().await);
-            map.insert("expected_bucket_owner".to_string(), self.r#expected_bucket_owner.to_pulumi_value().await);
-            map.insert("output_location".to_string(), self.r#output_location.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "acl_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#acl_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "encryption_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encryption_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "expected_bucket_owner".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#expected_bucket_owner,
+                )
+                .await,
+            );
+            map.insert(
+                "output_location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#output_location,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WorkgroupConfigurationResultConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#acl_configuration: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                             Some(value) => value,
                             None => bail!("Missing field 'acl_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::athena::WorkgroupConfigurationResultConfigurationAclConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_configuration: {
                         let field_value = match fields_map.get("encryption_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'encryption_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::athena::WorkgroupConfigurationResultConfigurationEncryptionConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expected_bucket_owner: {
                         let field_value = match fields_map.get("expected_bucket_owner") {
                             Some(value) => value,
                             None => bail!("Missing field 'expected_bucket_owner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_location: {
                         let field_value = match fields_map.get("output_location") {
                             Some(value) => value,
                             None => bail!("Missing field 'output_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

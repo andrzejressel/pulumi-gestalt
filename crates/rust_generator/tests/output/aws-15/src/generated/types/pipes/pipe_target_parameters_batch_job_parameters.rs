@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("array_properties".to_string(), self.r#array_properties.to_pulumi_value().await);
-            map.insert("container_overrides".to_string(), self.r#container_overrides.to_pulumi_value().await);
-            map.insert("depends_ons".to_string(), self.r#depends_ons.to_pulumi_value().await);
-            map.insert("job_definition".to_string(), self.r#job_definition.to_pulumi_value().await);
-            map.insert("job_name".to_string(), self.r#job_name.to_pulumi_value().await);
-            map.insert("parameters".to_string(), self.r#parameters.to_pulumi_value().await);
-            map.insert("retry_strategy".to_string(), self.r#retry_strategy.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "array_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#array_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "container_overrides".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#container_overrides,
+                )
+                .await,
+            );
+            map.insert(
+                "depends_ons".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#depends_ons,
+                )
+                .await,
+            );
+            map.insert(
+                "job_definition".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#job_definition,
+                )
+                .await,
+            );
+            map.insert(
+                "job_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#job_name,
+                )
+                .await,
+            );
+            map.insert(
+                "parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "retry_strategy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retry_strategy,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PipeTargetParametersBatchJobParameters {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#array_properties: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'array_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::pipes::PipeTargetParametersBatchJobParametersArrayProperties>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_overrides: {
                         let field_value = match fields_map.get("container_overrides") {
                             Some(value) => value,
                             None => bail!("Missing field 'container_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::pipes::PipeTargetParametersBatchJobParametersContainerOverrides>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#depends_ons: {
                         let field_value = match fields_map.get("depends_ons") {
                             Some(value) => value,
                             None => bail!("Missing field 'depends_ons' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::pipes::PipeTargetParametersBatchJobParametersDependsOn>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_definition: {
                         let field_value = match fields_map.get("job_definition") {
                             Some(value) => value,
                             None => bail!("Missing field 'job_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_name: {
                         let field_value = match fields_map.get("job_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'job_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parameters: {
                         let field_value = match fields_map.get("parameters") {
                             Some(value) => value,
                             None => bail!("Missing field 'parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<std::collections::HashMap<String, String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_strategy: {
                         let field_value = match fields_map.get("retry_strategy") {
                             Some(value) => value,
                             None => bail!("Missing field 'retry_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::pipes::PipeTargetParametersBatchJobParametersRetryStrategy>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

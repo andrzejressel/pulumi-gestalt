@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("combine_artifacts".to_string(), self.r#combine_artifacts.to_pulumi_value().await);
-            map.insert("restrictions".to_string(), self.r#restrictions.to_pulumi_value().await);
-            map.insert("service_role".to_string(), self.r#service_role.to_pulumi_value().await);
-            map.insert("timeout_in_mins".to_string(), self.r#timeout_in_mins.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "combine_artifacts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#combine_artifacts,
+                )
+                .await,
+            );
+            map.insert(
+                "restrictions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#restrictions,
+                )
+                .await,
+            );
+            map.insert(
+                "service_role".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_role,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout_in_mins".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout_in_mins,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ProjectBuildBatchConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#combine_artifacts: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'combine_artifacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restrictions: {
                         let field_value = match fields_map.get("restrictions") {
                             Some(value) => value,
                             None => bail!("Missing field 'restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codebuild::ProjectBuildBatchConfigRestrictions>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_role: {
                         let field_value = match fields_map.get("service_role") {
                             Some(value) => value,
                             None => bail!("Missing field 'service_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_in_mins: {
                         let field_value = match fields_map.get("timeout_in_mins") {
                             Some(value) => value,
                             None => bail!("Missing field 'timeout_in_mins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

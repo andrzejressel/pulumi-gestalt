@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -39,4 +39,174 @@ pub struct ConfigurationResponse {
     #[builder(into)]
     #[serde(rename = "specifications")]
     pub r#specifications: Vec<super::types::SpecificationResponse>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ConfigurationResponse {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "availability_information".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#availability_information,
+                )
+                .await,
+            );
+            map.insert(
+                "cost_information".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cost_information,
+                )
+                .await,
+            );
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "dimensions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dimensions,
+                )
+                .await,
+            );
+            map.insert(
+                "display_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#display_name,
+                )
+                .await,
+            );
+            map.insert(
+                "filterable_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filterable_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "hierarchy_information".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hierarchy_information,
+                )
+                .await,
+            );
+            map.insert(
+                "image_information".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#image_information,
+                )
+                .await,
+            );
+            map.insert(
+                "specifications".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#specifications,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ConfigurationResponse {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#availability_information: {
+                        let field_value = match fields_map.get("availability_information") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'availability_information' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cost_information: {
+                        let field_value = match fields_map.get("cost_information") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cost_information' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#description: {
+                        let field_value = match fields_map.get("description") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dimensions: {
+                        let field_value = match fields_map.get("dimensions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dimensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#display_name: {
+                        let field_value = match fields_map.get("display_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#filterable_properties: {
+                        let field_value = match fields_map.get("filterable_properties") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'filterable_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#hierarchy_information: {
+                        let field_value = match fields_map.get("hierarchy_information") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'hierarchy_information' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#image_information: {
+                        let field_value = match fields_map.get("image_information") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'image_information' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#specifications: {
+                        let field_value = match fields_map.get("specifications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

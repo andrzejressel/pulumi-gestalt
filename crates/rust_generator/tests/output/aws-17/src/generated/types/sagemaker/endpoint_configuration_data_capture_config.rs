@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("capture_content_type_header".to_string(), self.r#capture_content_type_header.to_pulumi_value().await);
-            map.insert("capture_options".to_string(), self.r#capture_options.to_pulumi_value().await);
-            map.insert("destination_s_3_uri".to_string(), self.r#destination_s_3_uri.to_pulumi_value().await);
-            map.insert("enable_capture".to_string(), self.r#enable_capture.to_pulumi_value().await);
-            map.insert("initial_sampling_percentage".to_string(), self.r#initial_sampling_percentage.to_pulumi_value().await);
-            map.insert("kms_key_id".to_string(), self.r#kms_key_id.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "capture_content_type_header".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#capture_content_type_header,
+                )
+                .await,
+            );
+            map.insert(
+                "capture_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#capture_options,
+                )
+                .await,
+            );
+            map.insert(
+                "destination_s_3_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_s_3_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_capture".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_capture,
+                )
+                .await,
+            );
+            map.insert(
+                "initial_sampling_percentage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#initial_sampling_percentage,
+                )
+                .await,
+            );
+            map.insert(
+                "kms_key_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kms_key_id,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EndpointConfigurationDataCaptureConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#capture_content_type_header: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                             Some(value) => value,
                             None => bail!("Missing field 'capture_content_type_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::sagemaker::EndpointConfigurationDataCaptureConfigCaptureContentTypeHeader>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#capture_options: {
                         let field_value = match fields_map.get("capture_options") {
                             Some(value) => value,
                             None => bail!("Missing field 'capture_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::sagemaker::EndpointConfigurationDataCaptureConfigCaptureOption> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_s_3_uri: {
                         let field_value = match fields_map.get("destination_s_3_uri") {
                             Some(value) => value,
                             None => bail!("Missing field 'destination_s_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_capture: {
                         let field_value = match fields_map.get("enable_capture") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_capture' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initial_sampling_percentage: {
                         let field_value = match fields_map.get("initial_sampling_percentage") {
                             Some(value) => value,
                             None => bail!("Missing field 'initial_sampling_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_id: {
                         let field_value = match fields_map.get("kms_key_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

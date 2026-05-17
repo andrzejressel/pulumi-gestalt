@@ -28,13 +28,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("deployment_ready_option".to_string(), self.r#deployment_ready_option.to_pulumi_value().await);
-            map.insert("green_fleet_provisioning_option".to_string(), self.r#green_fleet_provisioning_option.to_pulumi_value().await);
-            map.insert("terminate_blue_instances_on_deployment_success".to_string(), self.r#terminate_blue_instances_on_deployment_success.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "deployment_ready_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#deployment_ready_option,
+                )
+                .await,
+            );
+            map.insert(
+                "green_fleet_provisioning_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#green_fleet_provisioning_option,
+                )
+                .await,
+            );
+            map.insert(
+                "terminate_blue_instances_on_deployment_success".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#terminate_blue_instances_on_deployment_success,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -42,16 +64,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DeploymentGroupBlueGreenDeploymentConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#deployment_ready_option: {
@@ -59,21 +82,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'deployment_ready_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codedeploy::DeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#green_fleet_provisioning_option: {
                         let field_value = match fields_map.get("green_fleet_provisioning_option") {
                             Some(value) => value,
                             None => bail!("Missing field 'green_fleet_provisioning_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codedeploy::DeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#terminate_blue_instances_on_deployment_success: {
                         let field_value = match fields_map.get("terminate_blue_instances_on_deployment_success") {
                             Some(value) => value,
                             None => bail!("Missing field 'terminate_blue_instances_on_deployment_success' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::codedeploy::DeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

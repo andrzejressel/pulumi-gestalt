@@ -50,19 +50,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("args".to_string(), self.r#args.to_pulumi_value().await);
-            map.insert("commands".to_string(), self.r#commands.to_pulumi_value().await);
-            map.insert("envs".to_string(), self.r#envs.to_pulumi_value().await);
-            map.insert("image".to_string(), self.r#image.to_pulumi_value().await);
-            map.insert("image_pull_policy".to_string(), self.r#image_pull_policy.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("resources".to_string(), self.r#resources.to_pulumi_value().await);
-            map.insert("security_contexts".to_string(), self.r#security_contexts.to_pulumi_value().await);
-            map.insert("volume_mounts".to_string(), self.r#volume_mounts.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "args".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#args,
+                )
+                .await,
+            );
+            map.insert(
+                "commands".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#commands,
+                )
+                .await,
+            );
+            map.insert(
+                "envs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#envs,
+                )
+                .await,
+            );
+            map.insert(
+                "image".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#image,
+                )
+                .await,
+            );
+            map.insert(
+                "image_pull_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#image_pull_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "resources".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resources,
+                )
+                .await,
+            );
+            map.insert(
+                "security_contexts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#security_contexts,
+                )
+                .await,
+            );
+            map.insert(
+                "volume_mounts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volume_mounts,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -70,16 +128,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetJobDefinitionEksPropertyPodPropertyContainer {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#args: {
@@ -87,63 +146,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'args' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#commands: {
                         let field_value = match fields_map.get("commands") {
                             Some(value) => value,
                             None => bail!("Missing field 'commands' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#envs: {
                         let field_value = match fields_map.get("envs") {
                             Some(value) => value,
                             None => bail!("Missing field 'envs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::batch::GetJobDefinitionEksPropertyPodPropertyContainerEnv> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image: {
                         let field_value = match fields_map.get("image") {
                             Some(value) => value,
                             None => bail!("Missing field 'image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_pull_policy: {
                         let field_value = match fields_map.get("image_pull_policy") {
                             Some(value) => value,
                             None => bail!("Missing field 'image_pull_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resources: {
                         let field_value = match fields_map.get("resources") {
                             Some(value) => value,
                             None => bail!("Missing field 'resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::batch::GetJobDefinitionEksPropertyPodPropertyContainerResource> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_contexts: {
                         let field_value = match fields_map.get("security_contexts") {
                             Some(value) => value,
                             None => bail!("Missing field 'security_contexts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::batch::GetJobDefinitionEksPropertyPodPropertyContainerSecurityContext> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_mounts: {
                         let field_value = match fields_map.get("volume_mounts") {
                             Some(value) => value,
                             None => bail!("Missing field 'volume_mounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::batch::GetJobDefinitionEksPropertyPodPropertyContainerVolumeMount> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

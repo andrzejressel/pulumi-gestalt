@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -31,4 +31,146 @@ pub struct AlertRuleScheduledIncidentGrouping {
     #[builder(into)]
     #[serde(rename = "reopenClosedIncidents")]
     pub r#reopen_closed_incidents: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AlertRuleScheduledIncidentGrouping {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "by_alert_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#by_alert_details,
+                )
+                .await,
+            );
+            map.insert(
+                "by_custom_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#by_custom_details,
+                )
+                .await,
+            );
+            map.insert(
+                "by_entities".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#by_entities,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "entity_matching_method".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entity_matching_method,
+                )
+                .await,
+            );
+            map.insert(
+                "lookback_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lookback_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "reopen_closed_incidents".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#reopen_closed_incidents,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AlertRuleScheduledIncidentGrouping {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#by_alert_details: {
+                        let field_value = match fields_map.get("by_alert_details") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'by_alert_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#by_custom_details: {
+                        let field_value = match fields_map.get("by_custom_details") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'by_custom_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#by_entities: {
+                        let field_value = match fields_map.get("by_entities") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'by_entities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#entity_matching_method: {
+                        let field_value = match fields_map.get("entity_matching_method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entity_matching_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#lookback_duration: {
+                        let field_value = match fields_map.get("lookback_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'lookback_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#reopen_closed_incidents: {
+                        let field_value = match fields_map.get("reopen_closed_incidents") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'reopen_closed_incidents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

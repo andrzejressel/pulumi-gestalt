@@ -46,18 +46,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("allowed_http_methods".to_string(), self.r#allowed_http_methods.to_pulumi_value().await);
-            map.insert("cached_http_methods".to_string(), self.r#cached_http_methods.to_pulumi_value().await);
-            map.insert("default_ttl".to_string(), self.r#default_ttl.to_pulumi_value().await);
-            map.insert("forwarded_cookies".to_string(), self.r#forwarded_cookies.to_pulumi_value().await);
-            map.insert("forwarded_headers".to_string(), self.r#forwarded_headers.to_pulumi_value().await);
-            map.insert("forwarded_query_strings".to_string(), self.r#forwarded_query_strings.to_pulumi_value().await);
-            map.insert("maximum_ttl".to_string(), self.r#maximum_ttl.to_pulumi_value().await);
-            map.insert("minimum_ttl".to_string(), self.r#minimum_ttl.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allowed_http_methods".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_http_methods,
+                )
+                .await,
+            );
+            map.insert(
+                "cached_http_methods".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cached_http_methods,
+                )
+                .await,
+            );
+            map.insert(
+                "default_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "forwarded_cookies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forwarded_cookies,
+                )
+                .await,
+            );
+            map.insert(
+                "forwarded_headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forwarded_headers,
+                )
+                .await,
+            );
+            map.insert(
+                "forwarded_query_strings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forwarded_query_strings,
+                )
+                .await,
+            );
+            map.insert(
+                "maximum_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maximum_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_ttl,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -65,16 +117,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DistributionCacheBehaviorSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#allowed_http_methods: {
@@ -82,56 +135,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'allowed_http_methods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cached_http_methods: {
                         let field_value = match fields_map.get("cached_http_methods") {
                             Some(value) => value,
                             None => bail!("Missing field 'cached_http_methods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_ttl: {
                         let field_value = match fields_map.get("default_ttl") {
                             Some(value) => value,
                             None => bail!("Missing field 'default_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_cookies: {
                         let field_value = match fields_map.get("forwarded_cookies") {
                             Some(value) => value,
                             None => bail!("Missing field 'forwarded_cookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedCookies>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_headers: {
                         let field_value = match fields_map.get("forwarded_headers") {
                             Some(value) => value,
                             None => bail!("Missing field 'forwarded_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedHeaders>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_query_strings: {
                         let field_value = match fields_map.get("forwarded_query_strings") {
                             Some(value) => value,
                             None => bail!("Missing field 'forwarded_query_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedQueryStrings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_ttl: {
                         let field_value = match fields_map.get("maximum_ttl") {
                             Some(value) => value,
                             None => bail!("Missing field 'maximum_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_ttl: {
                         let field_value = match fields_map.get("minimum_ttl") {
                             Some(value) => value,
                             None => bail!("Missing field 'minimum_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

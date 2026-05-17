@@ -13,10 +13,40 @@ pub enum RubberTreeVariety {
     Tineke,
 }
 
-pulumi_gestalt_rust::__private::pulumi_gestalt_model::pulumi_value_string_enum! {
-    enum RubberTreeVariety {
-        Burgundy => "Burgundy",
-        Ruby => "Ruby",
-        Tineke => "Tineke",
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RubberTreeVariety {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        let value = match self {
+            RubberTreeVariety::Burgundy => "Burgundy".to_string(),
+            RubberTreeVariety::Ruby => "Ruby".to_string(),
+            RubberTreeVariety::Tineke => "Tineke".to_string(),
+        };
+        std::future::ready(pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue {
+            content: pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent::String(value),
+            secret: false,
+            dependencies: std::collections::HashSet::new(),
+        })
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RubberTreeVariety {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+
+        match &value.content {
+            PulumiValueContent::String(s) => match s.as_str() {
+                "Burgundy" => Ok(RubberTreeVariety::Burgundy),
+                "Ruby" => Ok(RubberTreeVariety::Ruby),
+                "Tineke" => Ok(RubberTreeVariety::Tineke),
+                _ => bail!("Invalid string enum value: {}", s),
+            },
+            _ => bail!("Expected String, got {:?}", value.content),
+        }
     }
 }

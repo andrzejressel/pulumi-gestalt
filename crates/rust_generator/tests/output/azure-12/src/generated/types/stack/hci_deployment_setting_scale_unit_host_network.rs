@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -19,4 +19,104 @@ pub struct HciDeploymentSettingScaleUnitHostNetwork {
     #[builder(into)]
     #[serde(rename = "storageNetworks")]
     pub r#storage_networks: Vec<super::super::types::stack::HciDeploymentSettingScaleUnitHostNetworkStorageNetwork>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for HciDeploymentSettingScaleUnitHostNetwork {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "intents".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#intents,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_auto_ip_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_auto_ip_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_connectivity_switchless_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_connectivity_switchless_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_networks".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_networks,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for HciDeploymentSettingScaleUnitHostNetwork {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#intents: {
+                        let field_value = match fields_map.get("intents") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'intents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_auto_ip_enabled: {
+                        let field_value = match fields_map.get("storage_auto_ip_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_auto_ip_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_connectivity_switchless_enabled: {
+                        let field_value = match fields_map.get("storage_connectivity_switchless_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_connectivity_switchless_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_networks: {
+                        let field_value = match fields_map.get("storage_networks") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_networks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

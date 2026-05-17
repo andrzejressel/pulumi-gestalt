@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -44,4 +44,132 @@ pub struct QueueHttpTargetUriOverride {
     #[builder(into)]
     #[serde(rename = "uriOverrideEnforceMode")]
     pub r#uri_override_enforce_mode: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for QueueHttpTargetUriOverride {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "host".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#host,
+                )
+                .await,
+            );
+            map.insert(
+                "path_override".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#path_override,
+                )
+                .await,
+            );
+            map.insert(
+                "port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#port,
+                )
+                .await,
+            );
+            map.insert(
+                "query_override".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#query_override,
+                )
+                .await,
+            );
+            map.insert(
+                "scheme".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scheme,
+                )
+                .await,
+            );
+            map.insert(
+                "uri_override_enforce_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#uri_override_enforce_mode,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for QueueHttpTargetUriOverride {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#host: {
+                        let field_value = match fields_map.get("host") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'host' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#path_override: {
+                        let field_value = match fields_map.get("path_override") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'path_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#port: {
+                        let field_value = match fields_map.get("port") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#query_override: {
+                        let field_value = match fields_map.get("query_override") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scheme: {
+                        let field_value = match fields_map.get("scheme") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scheme' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#uri_override_enforce_mode: {
+                        let field_value = match fields_map.get("uri_override_enforce_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'uri_override_enforce_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

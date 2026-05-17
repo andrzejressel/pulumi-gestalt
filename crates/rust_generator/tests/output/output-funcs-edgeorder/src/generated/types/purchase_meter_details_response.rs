@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -28,4 +28,132 @@ pub struct PurchaseMeterDetailsResponse {
     #[builder(into)]
     #[serde(rename = "termId")]
     pub r#term_id: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PurchaseMeterDetailsResponse {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "billing_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#billing_type,
+                )
+                .await,
+            );
+            map.insert(
+                "charging_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#charging_type,
+                )
+                .await,
+            );
+            map.insert(
+                "multiplier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#multiplier,
+                )
+                .await,
+            );
+            map.insert(
+                "product_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#product_id,
+                )
+                .await,
+            );
+            map.insert(
+                "sku_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sku_id,
+                )
+                .await,
+            );
+            map.insert(
+                "term_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#term_id,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PurchaseMeterDetailsResponse {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#billing_type: {
+                        let field_value = match fields_map.get("billing_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'billing_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#charging_type: {
+                        let field_value = match fields_map.get("charging_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'charging_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#multiplier: {
+                        let field_value = match fields_map.get("multiplier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'multiplier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#product_id: {
+                        let field_value = match fields_map.get("product_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'product_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sku_id: {
+                        let field_value = match fields_map.get("sku_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sku_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#term_id: {
+                        let field_value = match fields_map.get("term_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'term_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

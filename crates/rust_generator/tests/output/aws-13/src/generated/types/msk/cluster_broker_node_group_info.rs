@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("az_distribution".to_string(), self.r#az_distribution.to_pulumi_value().await);
-            map.insert("client_subnets".to_string(), self.r#client_subnets.to_pulumi_value().await);
-            map.insert("connectivity_info".to_string(), self.r#connectivity_info.to_pulumi_value().await);
-            map.insert("instance_type".to_string(), self.r#instance_type.to_pulumi_value().await);
-            map.insert("security_groups".to_string(), self.r#security_groups.to_pulumi_value().await);
-            map.insert("storage_info".to_string(), self.r#storage_info.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "az_distribution".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#az_distribution,
+                )
+                .await,
+            );
+            map.insert(
+                "client_subnets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_subnets,
+                )
+                .await,
+            );
+            map.insert(
+                "connectivity_info".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connectivity_info,
+                )
+                .await,
+            );
+            map.insert(
+                "instance_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instance_type,
+                )
+                .await,
+            );
+            map.insert(
+                "security_groups".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#security_groups,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_info".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_info,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterBrokerNodeGroupInfo {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#az_distribution: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'az_distribution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_subnets: {
                         let field_value = match fields_map.get("client_subnets") {
                             Some(value) => value,
                             None => bail!("Missing field 'client_subnets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connectivity_info: {
                         let field_value = match fields_map.get("connectivity_info") {
                             Some(value) => value,
                             None => bail!("Missing field 'connectivity_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfo>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_type: {
                         let field_value = match fields_map.get("instance_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_groups: {
                         let field_value = match fields_map.get("security_groups") {
                             Some(value) => value,
                             None => bail!("Missing field 'security_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_info: {
                         let field_value = match fields_map.get("storage_info") {
                             Some(value) => value,
                             None => bail!("Missing field 'storage_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoStorageInfo>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

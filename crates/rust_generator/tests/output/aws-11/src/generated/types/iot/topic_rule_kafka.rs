@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("client_properties".to_string(), self.r#client_properties.to_pulumi_value().await);
-            map.insert("destination_arn".to_string(), self.r#destination_arn.to_pulumi_value().await);
-            map.insert("headers".to_string(), self.r#headers.to_pulumi_value().await);
-            map.insert("key".to_string(), self.r#key.to_pulumi_value().await);
-            map.insert("partition".to_string(), self.r#partition.to_pulumi_value().await);
-            map.insert("topic".to_string(), self.r#topic.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "client_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "destination_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#headers,
+                )
+                .await,
+            );
+            map.insert(
+                "key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key,
+                )
+                .await,
+            );
+            map.insert(
+                "partition".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#partition,
+                )
+                .await,
+            );
+            map.insert(
+                "topic".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#topic,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TopicRuleKafka {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#client_properties: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                             Some(value) => value,
                             None => bail!("Missing field 'client_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <std::collections::HashMap<String, String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_arn: {
                         let field_value = match fields_map.get("destination_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'destination_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#headers: {
                         let field_value = match fields_map.get("headers") {
                             Some(value) => value,
                             None => bail!("Missing field 'headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::iot::TopicRuleKafkaHeader>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key: {
                         let field_value = match fields_map.get("key") {
                             Some(value) => value,
                             None => bail!("Missing field 'key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#partition: {
                         let field_value = match fields_map.get("partition") {
                             Some(value) => value,
                             None => bail!("Missing field 'partition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#topic: {
                         let field_value = match fields_map.get("topic") {
                             Some(value) => value,
                             None => bail!("Missing field 'topic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

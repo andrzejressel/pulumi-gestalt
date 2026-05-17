@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("idle_timeout_in_minutes".to_string(), self.r#idle_timeout_in_minutes.to_pulumi_value().await);
-            map.insert("lifecycle_management".to_string(), self.r#lifecycle_management.to_pulumi_value().await);
-            map.insert("max_idle_timeout_in_minutes".to_string(), self.r#max_idle_timeout_in_minutes.to_pulumi_value().await);
-            map.insert("min_idle_timeout_in_minutes".to_string(), self.r#min_idle_timeout_in_minutes.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "idle_timeout_in_minutes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#idle_timeout_in_minutes,
+                )
+                .await,
+            );
+            map.insert(
+                "lifecycle_management".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lifecycle_management,
+                )
+                .await,
+            );
+            map.insert(
+                "max_idle_timeout_in_minutes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_idle_timeout_in_minutes,
+                )
+                .await,
+            );
+            map.insert(
+                "min_idle_timeout_in_minutes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_idle_timeout_in_minutes,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DomainDefaultSpaceSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#idle_timeout_in_minutes: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_management: {
                         let field_value = match fields_map.get("lifecycle_management") {
                             Some(value) => value,
                             None => bail!("Missing field 'lifecycle_management' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_idle_timeout_in_minutes: {
                         let field_value = match fields_map.get("max_idle_timeout_in_minutes") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_idle_timeout_in_minutes: {
                         let field_value = match fields_map.get("min_idle_timeout_in_minutes") {
                             Some(value) => value,
                             None => bail!("Missing field 'min_idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

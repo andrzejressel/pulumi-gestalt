@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("api_gateways".to_string(), self.r#api_gateways.to_pulumi_value().await);
-            map.insert("app_runner_services".to_string(), self.r#app_runner_services.to_pulumi_value().await);
-            map.insert("cloudfronts".to_string(), self.r#cloudfronts.to_pulumi_value().await);
-            map.insert("cognito_user_pools".to_string(), self.r#cognito_user_pools.to_pulumi_value().await);
-            map.insert("verified_access_instances".to_string(), self.r#verified_access_instances.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "api_gateways".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#api_gateways,
+                )
+                .await,
+            );
+            map.insert(
+                "app_runner_services".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#app_runner_services,
+                )
+                .await,
+            );
+            map.insert(
+                "cloudfronts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudfronts,
+                )
+                .await,
+            );
+            map.insert(
+                "cognito_user_pools".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cognito_user_pools,
+                )
+                .await,
+            );
+            map.insert(
+                "verified_access_instances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#verified_access_instances,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclAssociationConfigRequestBody {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#api_gateways: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                             Some(value) => value,
                             None => bail!("Missing field 'api_gateways' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::WebAclAssociationConfigRequestBodyApiGateway>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_runner_services: {
                         let field_value = match fields_map.get("app_runner_services") {
                             Some(value) => value,
                             None => bail!("Missing field 'app_runner_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::WebAclAssociationConfigRequestBodyAppRunnerService>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloudfronts: {
                         let field_value = match fields_map.get("cloudfronts") {
                             Some(value) => value,
                             None => bail!("Missing field 'cloudfronts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::WebAclAssociationConfigRequestBodyCloudfront>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cognito_user_pools: {
                         let field_value = match fields_map.get("cognito_user_pools") {
                             Some(value) => value,
                             None => bail!("Missing field 'cognito_user_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::WebAclAssociationConfigRequestBodyCognitoUserPool>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verified_access_instances: {
                         let field_value = match fields_map.get("verified_access_instances") {
                             Some(value) => value,
                             None => bail!("Missing field 'verified_access_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::WebAclAssociationConfigRequestBodyVerifiedAccessInstance>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

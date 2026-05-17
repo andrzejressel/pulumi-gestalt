@@ -29,14 +29,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("desired_capacity".to_string(), self.r#desired_capacity.to_pulumi_value().await);
-            map.insert("max_capacity".to_string(), self.r#max_capacity.to_pulumi_value().await);
-            map.insert("scaling_type".to_string(), self.r#scaling_type.to_pulumi_value().await);
-            map.insert("target_tracking_scaling_configs".to_string(), self.r#target_tracking_scaling_configs.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "desired_capacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#desired_capacity,
+                )
+                .await,
+            );
+            map.insert(
+                "max_capacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_capacity,
+                )
+                .await,
+            );
+            map.insert(
+                "scaling_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scaling_type,
+                )
+                .await,
+            );
+            map.insert(
+                "target_tracking_scaling_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target_tracking_scaling_configs,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -44,16 +72,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FleetScalingConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#desired_capacity: {
@@ -61,28 +90,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                             Some(value) => value,
                             None => bail!("Missing field 'desired_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_capacity: {
                         let field_value = match fields_map.get("max_capacity") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scaling_type: {
                         let field_value = match fields_map.get("scaling_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'scaling_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_tracking_scaling_configs: {
                         let field_value = match fields_map.get("target_tracking_scaling_configs") {
                             Some(value) => value,
                             None => bail!("Missing field 'target_tracking_scaling_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::codebuild::FleetScalingConfigurationTargetTrackingScalingConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -26,4 +26,104 @@ pub struct GetPrivateCloudManagementCluster {
     #[builder(into)]
     #[serde(rename = "stretchedClusterConfigs")]
     pub r#stretched_cluster_configs: Vec<super::super::types::vmwareengine::GetPrivateCloudManagementClusterStretchedClusterConfig>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetPrivateCloudManagementCluster {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "autoscaling_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#autoscaling_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "cluster_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cluster_id,
+                )
+                .await,
+            );
+            map.insert(
+                "node_type_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#node_type_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "stretched_cluster_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stretched_cluster_configs,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetPrivateCloudManagementCluster {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#autoscaling_settings: {
+                        let field_value = match fields_map.get("autoscaling_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'autoscaling_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cluster_id: {
+                        let field_value = match fields_map.get("cluster_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cluster_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#node_type_configs: {
+                        let field_value = match fields_map.get("node_type_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'node_type_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stretched_cluster_configs: {
+                        let field_value = match fields_map.get("stretched_cluster_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stretched_cluster_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

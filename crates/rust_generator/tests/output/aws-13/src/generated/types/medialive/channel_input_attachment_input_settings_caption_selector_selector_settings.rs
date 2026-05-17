@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("ancillary_source_settings".to_string(), self.r#ancillary_source_settings.to_pulumi_value().await);
-            map.insert("arib_source_settings".to_string(), self.r#arib_source_settings.to_pulumi_value().await);
-            map.insert("dvb_sub_source_settings".to_string(), self.r#dvb_sub_source_settings.to_pulumi_value().await);
-            map.insert("embedded_source_settings".to_string(), self.r#embedded_source_settings.to_pulumi_value().await);
-            map.insert("scte_20_source_settings".to_string(), self.r#scte_20_source_settings.to_pulumi_value().await);
-            map.insert("scte_27_source_settings".to_string(), self.r#scte_27_source_settings.to_pulumi_value().await);
-            map.insert("teletext_source_settings".to_string(), self.r#teletext_source_settings.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "ancillary_source_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ancillary_source_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "arib_source_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#arib_source_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "dvb_sub_source_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dvb_sub_source_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "embedded_source_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#embedded_source_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "scte_20_source_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scte_20_source_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "scte_27_source_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scte_27_source_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "teletext_source_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#teletext_source_settings,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#ancillary_source_settings: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'ancillary_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsAncillarySourceSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#arib_source_settings: {
                         let field_value = match fields_map.get("arib_source_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'arib_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsAribSourceSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dvb_sub_source_settings: {
                         let field_value = match fields_map.get("dvb_sub_source_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'dvb_sub_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsDvbSubSourceSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#embedded_source_settings: {
                         let field_value = match fields_map.get("embedded_source_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'embedded_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsEmbeddedSourceSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_20_source_settings: {
                         let field_value = match fields_map.get("scte_20_source_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'scte_20_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsScte20SourceSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_27_source_settings: {
                         let field_value = match fields_map.get("scte_27_source_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'scte_27_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsScte27SourceSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#teletext_source_settings: {
                         let field_value = match fields_map.get("teletext_source_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'teletext_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsTeletextSourceSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -51,4 +51,216 @@ pub struct GetDatabaseInstancesInstanceReplicaConfiguration {
     #[builder(into)]
     #[serde(rename = "verifyServerCertificate")]
     pub r#verify_server_certificate: bool,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetDatabaseInstancesInstanceReplicaConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "ca_certificate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ca_certificate,
+                )
+                .await,
+            );
+            map.insert(
+                "cascadable_replica".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cascadable_replica,
+                )
+                .await,
+            );
+            map.insert(
+                "client_certificate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_certificate,
+                )
+                .await,
+            );
+            map.insert(
+                "client_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_key,
+                )
+                .await,
+            );
+            map.insert(
+                "connect_retry_interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connect_retry_interval,
+                )
+                .await,
+            );
+            map.insert(
+                "dump_file_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dump_file_path,
+                )
+                .await,
+            );
+            map.insert(
+                "failover_target".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#failover_target,
+                )
+                .await,
+            );
+            map.insert(
+                "master_heartbeat_period".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#master_heartbeat_period,
+                )
+                .await,
+            );
+            map.insert(
+                "password".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#password,
+                )
+                .await,
+            );
+            map.insert(
+                "ssl_cipher".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ssl_cipher,
+                )
+                .await,
+            );
+            map.insert(
+                "username".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#username,
+                )
+                .await,
+            );
+            map.insert(
+                "verify_server_certificate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#verify_server_certificate,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDatabaseInstancesInstanceReplicaConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#ca_certificate: {
+                        let field_value = match fields_map.get("ca_certificate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ca_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cascadable_replica: {
+                        let field_value = match fields_map.get("cascadable_replica") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cascadable_replica' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_certificate: {
+                        let field_value = match fields_map.get("client_certificate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_key: {
+                        let field_value = match fields_map.get("client_key") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#connect_retry_interval: {
+                        let field_value = match fields_map.get("connect_retry_interval") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connect_retry_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dump_file_path: {
+                        let field_value = match fields_map.get("dump_file_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dump_file_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#failover_target: {
+                        let field_value = match fields_map.get("failover_target") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failover_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#master_heartbeat_period: {
+                        let field_value = match fields_map.get("master_heartbeat_period") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'master_heartbeat_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#password: {
+                        let field_value = match fields_map.get("password") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_cipher: {
+                        let field_value = match fields_map.get("ssl_cipher") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_cipher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#username: {
+                        let field_value = match fields_map.get("username") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#verify_server_certificate: {
+                        let field_value = match fields_map.get("verify_server_certificate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'verify_server_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

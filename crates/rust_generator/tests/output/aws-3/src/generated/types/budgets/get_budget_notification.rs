@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("comparison_operator".to_string(), self.r#comparison_operator.to_pulumi_value().await);
-            map.insert("notification_type".to_string(), self.r#notification_type.to_pulumi_value().await);
-            map.insert("subscriber_email_addresses".to_string(), self.r#subscriber_email_addresses.to_pulumi_value().await);
-            map.insert("subscriber_sns_topic_arns".to_string(), self.r#subscriber_sns_topic_arns.to_pulumi_value().await);
-            map.insert("threshold".to_string(), self.r#threshold.to_pulumi_value().await);
-            map.insert("threshold_type".to_string(), self.r#threshold_type.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "comparison_operator".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#comparison_operator,
+                )
+                .await,
+            );
+            map.insert(
+                "notification_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#notification_type,
+                )
+                .await,
+            );
+            map.insert(
+                "subscriber_email_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subscriber_email_addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "subscriber_sns_topic_arns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subscriber_sns_topic_arns,
+                )
+                .await,
+            );
+            map.insert(
+                "threshold".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#threshold,
+                )
+                .await,
+            );
+            map.insert(
+                "threshold_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#threshold_type,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetBudgetNotification {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#comparison_operator: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'comparison_operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_type: {
                         let field_value = match fields_map.get("notification_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'notification_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subscriber_email_addresses: {
                         let field_value = match fields_map.get("subscriber_email_addresses") {
                             Some(value) => value,
                             None => bail!("Missing field 'subscriber_email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subscriber_sns_topic_arns: {
                         let field_value = match fields_map.get("subscriber_sns_topic_arns") {
                             Some(value) => value,
                             None => bail!("Missing field 'subscriber_sns_topic_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threshold: {
                         let field_value = match fields_map.get("threshold") {
                             Some(value) => value,
                             None => bail!("Missing field 'threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threshold_type: {
                         let field_value = match fields_map.get("threshold_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'threshold_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

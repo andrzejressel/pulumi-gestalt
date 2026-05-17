@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("connector_operators".to_string(), self.r#connector_operators.to_pulumi_value().await);
-            map.insert("destination_field".to_string(), self.r#destination_field.to_pulumi_value().await);
-            map.insert("source_fields".to_string(), self.r#source_fields.to_pulumi_value().await);
-            map.insert("task_properties".to_string(), self.r#task_properties.to_pulumi_value().await);
-            map.insert("task_type".to_string(), self.r#task_type.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "connector_operators".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connector_operators,
+                )
+                .await,
+            );
+            map.insert(
+                "destination_field".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_field,
+                )
+                .await,
+            );
+            map.insert(
+                "source_fields".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_fields,
+                )
+                .await,
+            );
+            map.insert(
+                "task_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "task_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_type,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FlowTask {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#connector_operators: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                             Some(value) => value,
                             None => bail!("Missing field 'connector_operators' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::appflow::FlowTaskConnectorOperator>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_field: {
                         let field_value = match fields_map.get("destination_field") {
                             Some(value) => value,
                             None => bail!("Missing field 'destination_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_fields: {
                         let field_value = match fields_map.get("source_fields") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_properties: {
                         let field_value = match fields_map.get("task_properties") {
                             Some(value) => value,
                             None => bail!("Missing field 'task_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<std::collections::HashMap<String, String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_type: {
                         let field_value = match fields_map.get("task_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'task_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

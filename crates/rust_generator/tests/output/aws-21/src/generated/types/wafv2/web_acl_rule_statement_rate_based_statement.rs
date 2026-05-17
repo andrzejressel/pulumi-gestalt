@@ -40,16 +40,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("aggregate_key_type".to_string(), self.r#aggregate_key_type.to_pulumi_value().await);
-            map.insert("custom_keys".to_string(), self.r#custom_keys.to_pulumi_value().await);
-            map.insert("evaluation_window_sec".to_string(), self.r#evaluation_window_sec.to_pulumi_value().await);
-            map.insert("forwarded_ip_config".to_string(), self.r#forwarded_ip_config.to_pulumi_value().await);
-            map.insert("limit".to_string(), self.r#limit.to_pulumi_value().await);
-            map.insert("scope_down_statement".to_string(), self.r#scope_down_statement.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "aggregate_key_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aggregate_key_type,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "evaluation_window_sec".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#evaluation_window_sec,
+                )
+                .await,
+            );
+            map.insert(
+                "forwarded_ip_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forwarded_ip_config,
+                )
+                .await,
+            );
+            map.insert(
+                "limit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#limit,
+                )
+                .await,
+            );
+            map.insert(
+                "scope_down_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scope_down_statement,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -57,16 +97,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclRuleStatementRateBasedStatement {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#aggregate_key_type: {
@@ -74,42 +115,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                             Some(value) => value,
                             None => bail!("Missing field 'aggregate_key_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_keys: {
                         let field_value = match fields_map.get("custom_keys") {
                             Some(value) => value,
                             None => bail!("Missing field 'custom_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementCustomKey>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluation_window_sec: {
                         let field_value = match fields_map.get("evaluation_window_sec") {
                             Some(value) => value,
                             None => bail!("Missing field 'evaluation_window_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarded_ip_config: {
                         let field_value = match fields_map.get("forwarded_ip_config") {
                             Some(value) => value,
                             None => bail!("Missing field 'forwarded_ip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementForwardedIpConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#limit: {
                         let field_value = match fields_map.get("limit") {
                             Some(value) => value,
                             None => bail!("Missing field 'limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scope_down_statement: {
                         let field_value = match fields_map.get("scope_down_statement") {
                             Some(value) => value,
                             None => bail!("Missing field 'scope_down_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatement>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

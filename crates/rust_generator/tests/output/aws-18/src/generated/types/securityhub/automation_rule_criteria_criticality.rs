@@ -32,15 +32,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("eq".to_string(), self.r#eq.to_pulumi_value().await);
-            map.insert("gt".to_string(), self.r#gt.to_pulumi_value().await);
-            map.insert("gte".to_string(), self.r#gte.to_pulumi_value().await);
-            map.insert("lt".to_string(), self.r#lt.to_pulumi_value().await);
-            map.insert("lte".to_string(), self.r#lte.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "eq".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#eq,
+                )
+                .await,
+            );
+            map.insert(
+                "gt".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gt,
+                )
+                .await,
+            );
+            map.insert(
+                "gte".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gte,
+                )
+                .await,
+            );
+            map.insert(
+                "lt".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lt,
+                )
+                .await,
+            );
+            map.insert(
+                "lte".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lte,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -48,16 +82,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AutomationRuleCriteriaCriticality {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#eq: {
@@ -65,35 +100,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'eq' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gt: {
                         let field_value = match fields_map.get("gt") {
                             Some(value) => value,
                             None => bail!("Missing field 'gt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gte: {
                         let field_value = match fields_map.get("gte") {
                             Some(value) => value,
                             None => bail!("Missing field 'gte' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lt: {
                         let field_value = match fields_map.get("lt") {
                             Some(value) => value,
                             None => bail!("Missing field 'lt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lte: {
                         let field_value = match fields_map.get("lte") {
                             Some(value) => value,
                             None => bail!("Missing field 'lte' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

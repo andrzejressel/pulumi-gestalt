@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -29,4 +29,118 @@ pub struct VMwareClusterControlPlaneNode {
     #[builder(into)]
     #[serde(rename = "vsphereConfigs")]
     pub r#vsphere_configs: Option<Vec<super::super::types::gkeonprem::VMwareClusterControlPlaneNodeVsphereConfig>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMwareClusterControlPlaneNode {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "auto_resize_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_resize_config,
+                )
+                .await,
+            );
+            map.insert(
+                "cpus".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cpus,
+                )
+                .await,
+            );
+            map.insert(
+                "memory".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#memory,
+                )
+                .await,
+            );
+            map.insert(
+                "replicas".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#replicas,
+                )
+                .await,
+            );
+            map.insert(
+                "vsphere_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vsphere_configs,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for VMwareClusterControlPlaneNode {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#auto_resize_config: {
+                        let field_value = match fields_map.get("auto_resize_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_resize_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cpus: {
+                        let field_value = match fields_map.get("cpus") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#memory: {
+                        let field_value = match fields_map.get("memory") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'memory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#replicas: {
+                        let field_value = match fields_map.get("replicas") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'replicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vsphere_configs: {
+                        let field_value = match fields_map.get("vsphere_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vsphere_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

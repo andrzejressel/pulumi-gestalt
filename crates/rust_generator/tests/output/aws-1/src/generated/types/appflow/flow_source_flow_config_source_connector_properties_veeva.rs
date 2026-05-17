@@ -33,15 +33,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("document_type".to_string(), self.r#document_type.to_pulumi_value().await);
-            map.insert("include_all_versions".to_string(), self.r#include_all_versions.to_pulumi_value().await);
-            map.insert("include_renditions".to_string(), self.r#include_renditions.to_pulumi_value().await);
-            map.insert("include_source_files".to_string(), self.r#include_source_files.to_pulumi_value().await);
-            map.insert("object".to_string(), self.r#object.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "document_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#document_type,
+                )
+                .await,
+            );
+            map.insert(
+                "include_all_versions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_all_versions,
+                )
+                .await,
+            );
+            map.insert(
+                "include_renditions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_renditions,
+                )
+                .await,
+            );
+            map.insert(
+                "include_source_files".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_source_files,
+                )
+                .await,
+            );
+            map.insert(
+                "object".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#object,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -49,16 +83,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FlowSourceFlowConfigSourceConnectorPropertiesVeeva {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#document_type: {
@@ -66,35 +101,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                             Some(value) => value,
                             None => bail!("Missing field 'document_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_all_versions: {
                         let field_value = match fields_map.get("include_all_versions") {
                             Some(value) => value,
                             None => bail!("Missing field 'include_all_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_renditions: {
                         let field_value = match fields_map.get("include_renditions") {
                             Some(value) => value,
                             None => bail!("Missing field 'include_renditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_source_files: {
                         let field_value = match fields_map.get("include_source_files") {
                             Some(value) => value,
                             None => bail!("Missing field 'include_source_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#object: {
                         let field_value = match fields_map.get("object") {
                             Some(value) => value,
                             None => bail!("Missing field 'object' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

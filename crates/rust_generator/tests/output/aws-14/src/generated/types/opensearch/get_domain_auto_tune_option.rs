@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("desired_state".to_string(), self.r#desired_state.to_pulumi_value().await);
-            map.insert("maintenance_schedules".to_string(), self.r#maintenance_schedules.to_pulumi_value().await);
-            map.insert("rollback_on_disable".to_string(), self.r#rollback_on_disable.to_pulumi_value().await);
-            map.insert("use_off_peak_window".to_string(), self.r#use_off_peak_window.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "desired_state".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#desired_state,
+                )
+                .await,
+            );
+            map.insert(
+                "maintenance_schedules".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maintenance_schedules,
+                )
+                .await,
+            );
+            map.insert(
+                "rollback_on_disable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rollback_on_disable,
+                )
+                .await,
+            );
+            map.insert(
+                "use_off_peak_window".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#use_off_peak_window,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDomainAutoTuneOption {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#desired_state: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'desired_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_schedules: {
                         let field_value = match fields_map.get("maintenance_schedules") {
                             Some(value) => value,
                             None => bail!("Missing field 'maintenance_schedules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::opensearch::GetDomainAutoTuneOptionMaintenanceSchedule> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rollback_on_disable: {
                         let field_value = match fields_map.get("rollback_on_disable") {
                             Some(value) => value,
                             None => bail!("Missing field 'rollback_on_disable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_off_peak_window: {
                         let field_value = match fields_map.get("use_off_peak_window") {
                             Some(value) => value,
                             None => bail!("Missing field 'use_off_peak_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

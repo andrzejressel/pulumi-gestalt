@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("dag_processing_logs".to_string(), self.r#dag_processing_logs.to_pulumi_value().await);
-            map.insert("scheduler_logs".to_string(), self.r#scheduler_logs.to_pulumi_value().await);
-            map.insert("task_logs".to_string(), self.r#task_logs.to_pulumi_value().await);
-            map.insert("webserver_logs".to_string(), self.r#webserver_logs.to_pulumi_value().await);
-            map.insert("worker_logs".to_string(), self.r#worker_logs.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "dag_processing_logs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dag_processing_logs,
+                )
+                .await,
+            );
+            map.insert(
+                "scheduler_logs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scheduler_logs,
+                )
+                .await,
+            );
+            map.insert(
+                "task_logs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_logs,
+                )
+                .await,
+            );
+            map.insert(
+                "webserver_logs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#webserver_logs,
+                )
+                .await,
+            );
+            map.insert(
+                "worker_logs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#worker_logs,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EnvironmentLoggingConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#dag_processing_logs: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                             Some(value) => value,
                             None => bail!("Missing field 'dag_processing_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationDagProcessingLogs>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduler_logs: {
                         let field_value = match fields_map.get("scheduler_logs") {
                             Some(value) => value,
                             None => bail!("Missing field 'scheduler_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationSchedulerLogs>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_logs: {
                         let field_value = match fields_map.get("task_logs") {
                             Some(value) => value,
                             None => bail!("Missing field 'task_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationTaskLogs>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#webserver_logs: {
                         let field_value = match fields_map.get("webserver_logs") {
                             Some(value) => value,
                             None => bail!("Missing field 'webserver_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationWebserverLogs>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#worker_logs: {
                         let field_value = match fields_map.get("worker_logs") {
                             Some(value) => value,
                             None => bail!("Missing field 'worker_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::mwaa::EnvironmentLoggingConfigurationWorkerLogs>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -72,4 +72,216 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     #[builder(into)]
     #[serde(rename = "timePartConfig")]
     pub r#time_part_config: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationTimePartConfig>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformation {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "bucketing_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bucketing_config,
+                )
+                .await,
+            );
+            map.insert(
+                "character_mask_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#character_mask_config,
+                )
+                .await,
+            );
+            map.insert(
+                "crypto_deterministic_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#crypto_deterministic_config,
+                )
+                .await,
+            );
+            map.insert(
+                "crypto_hash_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#crypto_hash_config,
+                )
+                .await,
+            );
+            map.insert(
+                "crypto_replace_ffx_fpe_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#crypto_replace_ffx_fpe_config,
+                )
+                .await,
+            );
+            map.insert(
+                "date_shift_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#date_shift_config,
+                )
+                .await,
+            );
+            map.insert(
+                "fixed_size_bucketing_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fixed_size_bucketing_config,
+                )
+                .await,
+            );
+            map.insert(
+                "redact_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redact_config,
+                )
+                .await,
+            );
+            map.insert(
+                "replace_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#replace_config,
+                )
+                .await,
+            );
+            map.insert(
+                "replace_dictionary_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#replace_dictionary_config,
+                )
+                .await,
+            );
+            map.insert(
+                "replace_with_info_type_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#replace_with_info_type_config,
+                )
+                .await,
+            );
+            map.insert(
+                "time_part_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#time_part_config,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformation {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#bucketing_config: {
+                        let field_value = match fields_map.get("bucketing_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bucketing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#character_mask_config: {
+                        let field_value = match fields_map.get("character_mask_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'character_mask_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#crypto_deterministic_config: {
+                        let field_value = match fields_map.get("crypto_deterministic_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'crypto_deterministic_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#crypto_hash_config: {
+                        let field_value = match fields_map.get("crypto_hash_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'crypto_hash_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#crypto_replace_ffx_fpe_config: {
+                        let field_value = match fields_map.get("crypto_replace_ffx_fpe_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'crypto_replace_ffx_fpe_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#date_shift_config: {
+                        let field_value = match fields_map.get("date_shift_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'date_shift_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fixed_size_bucketing_config: {
+                        let field_value = match fields_map.get("fixed_size_bucketing_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fixed_size_bucketing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redact_config: {
+                        let field_value = match fields_map.get("redact_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redact_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#replace_config: {
+                        let field_value = match fields_map.get("replace_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'replace_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#replace_dictionary_config: {
+                        let field_value = match fields_map.get("replace_dictionary_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'replace_dictionary_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#replace_with_info_type_config: {
+                        let field_value = match fields_map.get("replace_with_info_type_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'replace_with_info_type_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#time_part_config: {
+                        let field_value = match fields_map.get("time_part_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'time_part_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

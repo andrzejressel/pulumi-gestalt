@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("equals".to_string(), self.r#equals.to_pulumi_value().await);
-            map.insert("field".to_string(), self.r#field.to_pulumi_value().await);
-            map.insert("greater_than".to_string(), self.r#greater_than.to_pulumi_value().await);
-            map.insert("greater_than_or_equal".to_string(), self.r#greater_than_or_equal.to_pulumi_value().await);
-            map.insert("less_than".to_string(), self.r#less_than.to_pulumi_value().await);
-            map.insert("less_than_or_equal".to_string(), self.r#less_than_or_equal.to_pulumi_value().await);
-            map.insert("not_equals".to_string(), self.r#not_equals.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "equals".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#equals,
+                )
+                .await,
+            );
+            map.insert(
+                "field".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#field,
+                )
+                .await,
+            );
+            map.insert(
+                "greater_than".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#greater_than,
+                )
+                .await,
+            );
+            map.insert(
+                "greater_than_or_equal".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#greater_than_or_equal,
+                )
+                .await,
+            );
+            map.insert(
+                "less_than".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#less_than,
+                )
+                .await,
+            );
+            map.insert(
+                "less_than_or_equal".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#less_than_or_equal,
+                )
+                .await,
+            );
+            map.insert(
+                "not_equals".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#not_equals,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FilterFindingCriteriaCriterion {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#equals: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                             Some(value) => value,
                             None => bail!("Missing field 'equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field: {
                         let field_value = match fields_map.get("field") {
                             Some(value) => value,
                             None => bail!("Missing field 'field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#greater_than: {
                         let field_value = match fields_map.get("greater_than") {
                             Some(value) => value,
                             None => bail!("Missing field 'greater_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#greater_than_or_equal: {
                         let field_value = match fields_map.get("greater_than_or_equal") {
                             Some(value) => value,
                             None => bail!("Missing field 'greater_than_or_equal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#less_than: {
                         let field_value = match fields_map.get("less_than") {
                             Some(value) => value,
                             None => bail!("Missing field 'less_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#less_than_or_equal: {
                         let field_value = match fields_map.get("less_than_or_equal") {
                             Some(value) => value,
                             None => bail!("Missing field 'less_than_or_equal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_equals: {
                         let field_value = match fields_map.get("not_equals") {
                             Some(value) => value,
                             None => bail!("Missing field 'not_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -59,19 +59,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("description".to_string(), self.r#description.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("priority".to_string(), self.r#priority.to_pulumi_value().await);
-            map.insert("response_card".to_string(), self.r#response_card.to_pulumi_value().await);
-            map.insert("sample_utterances".to_string(), self.r#sample_utterances.to_pulumi_value().await);
-            map.insert("slot_constraint".to_string(), self.r#slot_constraint.to_pulumi_value().await);
-            map.insert("slot_type".to_string(), self.r#slot_type.to_pulumi_value().await);
-            map.insert("slot_type_version".to_string(), self.r#slot_type_version.to_pulumi_value().await);
-            map.insert("value_elicitation_prompt".to_string(), self.r#value_elicitation_prompt.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "priority".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#priority,
+                )
+                .await,
+            );
+            map.insert(
+                "response_card".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#response_card,
+                )
+                .await,
+            );
+            map.insert(
+                "sample_utterances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sample_utterances,
+                )
+                .await,
+            );
+            map.insert(
+                "slot_constraint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#slot_constraint,
+                )
+                .await,
+            );
+            map.insert(
+                "slot_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#slot_type,
+                )
+                .await,
+            );
+            map.insert(
+                "slot_type_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#slot_type_version,
+                )
+                .await,
+            );
+            map.insert(
+                "value_elicitation_prompt".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#value_elicitation_prompt,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -79,16 +137,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for IntentSlot {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#description: {
@@ -96,63 +155,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                             Some(value) => value,
                             None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#priority: {
                         let field_value = match fields_map.get("priority") {
                             Some(value) => value,
                             None => bail!("Missing field 'priority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_card: {
                         let field_value = match fields_map.get("response_card") {
                             Some(value) => value,
                             None => bail!("Missing field 'response_card' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_utterances: {
                         let field_value = match fields_map.get("sample_utterances") {
                             Some(value) => value,
                             None => bail!("Missing field 'sample_utterances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_constraint: {
                         let field_value = match fields_map.get("slot_constraint") {
                             Some(value) => value,
                             None => bail!("Missing field 'slot_constraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_type: {
                         let field_value = match fields_map.get("slot_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'slot_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_type_version: {
                         let field_value = match fields_map.get("slot_type_version") {
                             Some(value) => value,
                             None => bail!("Missing field 'slot_type_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_elicitation_prompt: {
                         let field_value = match fields_map.get("value_elicitation_prompt") {
                             Some(value) => value,
                             None => bail!("Missing field 'value_elicitation_prompt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::lex::IntentSlotValueElicitationPrompt>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

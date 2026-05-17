@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -35,4 +35,160 @@ pub struct ContainerNetworkData {
     #[builder(into)]
     #[serde(rename = "networkName")]
     pub r#network_name: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ContainerNetworkData {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "gateway".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gateway,
+                )
+                .await,
+            );
+            map.insert(
+                "global_ipv_6_address".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#global_ipv_6_address,
+                )
+                .await,
+            );
+            map.insert(
+                "global_ipv_6_prefix_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#global_ipv_6_prefix_length,
+                )
+                .await,
+            );
+            map.insert(
+                "ip_address".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ip_address,
+                )
+                .await,
+            );
+            map.insert(
+                "ip_prefix_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ip_prefix_length,
+                )
+                .await,
+            );
+            map.insert(
+                "ipv_6_gateway".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ipv_6_gateway,
+                )
+                .await,
+            );
+            map.insert(
+                "mac_address".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mac_address,
+                )
+                .await,
+            );
+            map.insert(
+                "network_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network_name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ContainerNetworkData {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#gateway: {
+                        let field_value = match fields_map.get("gateway") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gateway' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#global_ipv_6_address: {
+                        let field_value = match fields_map.get("global_ipv_6_address") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'global_ipv_6_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#global_ipv_6_prefix_length: {
+                        let field_value = match fields_map.get("global_ipv_6_prefix_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'global_ipv_6_prefix_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ip_address: {
+                        let field_value = match fields_map.get("ip_address") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ip_prefix_length: {
+                        let field_value = match fields_map.get("ip_prefix_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ip_prefix_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ipv_6_gateway: {
+                        let field_value = match fields_map.get("ipv_6_gateway") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ipv_6_gateway' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mac_address: {
+                        let field_value = match fields_map.get("mac_address") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mac_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network_name: {
+                        let field_value = match fields_map.get("network_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

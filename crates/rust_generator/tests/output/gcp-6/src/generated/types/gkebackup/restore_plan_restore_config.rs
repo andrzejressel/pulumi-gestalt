@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -88,4 +88,216 @@ pub struct RestorePlanRestoreConfig {
     #[builder(into)]
     #[serde(rename = "volumeDataRestorePolicyBindings")]
     pub r#volume_data_restore_policy_bindings: Option<Vec<super::super::types::gkebackup::RestorePlanRestoreConfigVolumeDataRestorePolicyBinding>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RestorePlanRestoreConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "all_namespaces".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#all_namespaces,
+                )
+                .await,
+            );
+            map.insert(
+                "cluster_resource_conflict_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cluster_resource_conflict_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "cluster_resource_restore_scope".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cluster_resource_restore_scope,
+                )
+                .await,
+            );
+            map.insert(
+                "excluded_namespaces".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#excluded_namespaces,
+                )
+                .await,
+            );
+            map.insert(
+                "namespaced_resource_restore_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#namespaced_resource_restore_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "no_namespaces".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#no_namespaces,
+                )
+                .await,
+            );
+            map.insert(
+                "restore_order".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#restore_order,
+                )
+                .await,
+            );
+            map.insert(
+                "selected_applications".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#selected_applications,
+                )
+                .await,
+            );
+            map.insert(
+                "selected_namespaces".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#selected_namespaces,
+                )
+                .await,
+            );
+            map.insert(
+                "transformation_rules".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#transformation_rules,
+                )
+                .await,
+            );
+            map.insert(
+                "volume_data_restore_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volume_data_restore_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "volume_data_restore_policy_bindings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volume_data_restore_policy_bindings,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RestorePlanRestoreConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#all_namespaces: {
+                        let field_value = match fields_map.get("all_namespaces") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'all_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cluster_resource_conflict_policy: {
+                        let field_value = match fields_map.get("cluster_resource_conflict_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cluster_resource_conflict_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cluster_resource_restore_scope: {
+                        let field_value = match fields_map.get("cluster_resource_restore_scope") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cluster_resource_restore_scope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#excluded_namespaces: {
+                        let field_value = match fields_map.get("excluded_namespaces") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'excluded_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#namespaced_resource_restore_mode: {
+                        let field_value = match fields_map.get("namespaced_resource_restore_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'namespaced_resource_restore_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#no_namespaces: {
+                        let field_value = match fields_map.get("no_namespaces") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'no_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#restore_order: {
+                        let field_value = match fields_map.get("restore_order") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'restore_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#selected_applications: {
+                        let field_value = match fields_map.get("selected_applications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'selected_applications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#selected_namespaces: {
+                        let field_value = match fields_map.get("selected_namespaces") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'selected_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#transformation_rules: {
+                        let field_value = match fields_map.get("transformation_rules") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'transformation_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#volume_data_restore_policy: {
+                        let field_value = match fields_map.get("volume_data_restore_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'volume_data_restore_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#volume_data_restore_policy_bindings: {
+                        let field_value = match fields_map.get("volume_data_restore_policy_bindings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'volume_data_restore_policy_bindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

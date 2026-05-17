@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("data_catalog_config".to_string(), self.r#data_catalog_config.to_pulumi_value().await);
-            map.insert("disable_glue_table_creation".to_string(), self.r#disable_glue_table_creation.to_pulumi_value().await);
-            map.insert("s_3_storage_config".to_string(), self.r#s_3_storage_config.to_pulumi_value().await);
-            map.insert("table_format".to_string(), self.r#table_format.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "data_catalog_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_catalog_config,
+                )
+                .await,
+            );
+            map.insert(
+                "disable_glue_table_creation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disable_glue_table_creation,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_storage_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_storage_config,
+                )
+                .await,
+            );
+            map.insert(
+                "table_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#table_format,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FeatureGroupOfflineStoreConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#data_catalog_config: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                             Some(value) => value,
                             None => bail!("Missing field 'data_catalog_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::sagemaker::FeatureGroupOfflineStoreConfigDataCatalogConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_glue_table_creation: {
                         let field_value = match fields_map.get("disable_glue_table_creation") {
                             Some(value) => value,
                             None => bail!("Missing field 'disable_glue_table_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_storage_config: {
                         let field_value = match fields_map.get("s_3_storage_config") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_storage_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::sagemaker::FeatureGroupOfflineStoreConfigS3StorageConfig> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_format: {
                         let field_value = match fields_map.get("table_format") {
                             Some(value) => value,
                             None => bail!("Missing field 'table_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

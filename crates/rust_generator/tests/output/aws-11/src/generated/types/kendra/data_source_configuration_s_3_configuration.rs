@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("access_control_list_configuration".to_string(), self.r#access_control_list_configuration.to_pulumi_value().await);
-            map.insert("bucket_name".to_string(), self.r#bucket_name.to_pulumi_value().await);
-            map.insert("documents_metadata_configuration".to_string(), self.r#documents_metadata_configuration.to_pulumi_value().await);
-            map.insert("exclusion_patterns".to_string(), self.r#exclusion_patterns.to_pulumi_value().await);
-            map.insert("inclusion_patterns".to_string(), self.r#inclusion_patterns.to_pulumi_value().await);
-            map.insert("inclusion_prefixes".to_string(), self.r#inclusion_prefixes.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "access_control_list_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_control_list_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "bucket_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bucket_name,
+                )
+                .await,
+            );
+            map.insert(
+                "documents_metadata_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#documents_metadata_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "exclusion_patterns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclusion_patterns,
+                )
+                .await,
+            );
+            map.insert(
+                "inclusion_patterns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#inclusion_patterns,
+                )
+                .await,
+            );
+            map.insert(
+                "inclusion_prefixes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#inclusion_prefixes,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataSourceConfigurationS3Configuration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#access_control_list_configuration: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'access_control_list_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kendra::DataSourceConfigurationS3ConfigurationAccessControlListConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_name: {
                         let field_value = match fields_map.get("bucket_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#documents_metadata_configuration: {
                         let field_value = match fields_map.get("documents_metadata_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'documents_metadata_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kendra::DataSourceConfigurationS3ConfigurationDocumentsMetadataConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclusion_patterns: {
                         let field_value = match fields_map.get("exclusion_patterns") {
                             Some(value) => value,
                             None => bail!("Missing field 'exclusion_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inclusion_patterns: {
                         let field_value = match fields_map.get("inclusion_patterns") {
                             Some(value) => value,
                             None => bail!("Missing field 'inclusion_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inclusion_prefixes: {
                         let field_value = match fields_map.get("inclusion_prefixes") {
                             Some(value) => value,
                             None => bail!("Missing field 'inclusion_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("arn".to_string(), self.r#arn.to_pulumi_value().await);
-            map.insert("last_reported_at".to_string(), self.r#last_reported_at.to_pulumi_value().await);
-            map.insert("owning_account_id".to_string(), self.r#owning_account_id.to_pulumi_value().await);
-            map.insert("properties".to_string(), self.r#properties.to_pulumi_value().await);
-            map.insert("region".to_string(), self.r#region.to_pulumi_value().await);
-            map.insert("resource_type".to_string(), self.r#resource_type.to_pulumi_value().await);
-            map.insert("service".to_string(), self.r#service.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#arn,
+                )
+                .await,
+            );
+            map.insert(
+                "last_reported_at".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#last_reported_at,
+                )
+                .await,
+            );
+            map.insert(
+                "owning_account_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#owning_account_id,
+                )
+                .await,
+            );
+            map.insert(
+                "properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#properties,
+                )
+                .await,
+            );
+            map.insert(
+                "region".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#region,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_type,
+                )
+                .await,
+            );
+            map.insert(
+                "service".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for SearchResource {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#arn: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                             Some(value) => value,
                             None => bail!("Missing field 'arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_reported_at: {
                         let field_value = match fields_map.get("last_reported_at") {
                             Some(value) => value,
                             None => bail!("Missing field 'last_reported_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#owning_account_id: {
                         let field_value = match fields_map.get("owning_account_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'owning_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#properties: {
                         let field_value = match fields_map.get("properties") {
                             Some(value) => value,
                             None => bail!("Missing field 'properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::resourceexplorer::SearchResourceProperty> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#region: {
                         let field_value = match fields_map.get("region") {
                             Some(value) => value,
                             None => bail!("Missing field 'region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_type: {
                         let field_value = match fields_map.get("resource_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service: {
                         let field_value = match fields_map.get("service") {
                             Some(value) => value,
                             None => bail!("Missing field 'service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

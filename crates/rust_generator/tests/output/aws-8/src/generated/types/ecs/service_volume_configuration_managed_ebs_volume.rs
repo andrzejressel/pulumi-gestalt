@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -43,4 +43,188 @@ pub struct ServiceVolumeConfigurationManagedEbsVolume {
     #[builder(into)]
     #[serde(rename = "volumeType")]
     pub r#volume_type: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ServiceVolumeConfigurationManagedEbsVolume {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "encrypted".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encrypted,
+                )
+                .await,
+            );
+            map.insert(
+                "file_system_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#file_system_type,
+                )
+                .await,
+            );
+            map.insert(
+                "iops".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#iops,
+                )
+                .await,
+            );
+            map.insert(
+                "kms_key_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kms_key_id,
+                )
+                .await,
+            );
+            map.insert(
+                "role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "size_in_gb".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#size_in_gb,
+                )
+                .await,
+            );
+            map.insert(
+                "snapshot_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#snapshot_id,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_specifications".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_specifications,
+                )
+                .await,
+            );
+            map.insert(
+                "throughput".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#throughput,
+                )
+                .await,
+            );
+            map.insert(
+                "volume_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volume_type,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ServiceVolumeConfigurationManagedEbsVolume {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#encrypted: {
+                        let field_value = match fields_map.get("encrypted") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'encrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#file_system_type: {
+                        let field_value = match fields_map.get("file_system_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'file_system_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#iops: {
+                        let field_value = match fields_map.get("iops") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'iops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kms_key_id: {
+                        let field_value = match fields_map.get("kms_key_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#role_arn: {
+                        let field_value = match fields_map.get("role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#size_in_gb: {
+                        let field_value = match fields_map.get("size_in_gb") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'size_in_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#snapshot_id: {
+                        let field_value = match fields_map.get("snapshot_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'snapshot_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tag_specifications: {
+                        let field_value = match fields_map.get("tag_specifications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tag_specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#throughput: {
+                        let field_value = match fields_map.get("throughput") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'throughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#volume_type: {
+                        let field_value = match fields_map.get("volume_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'volume_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -54,20 +54,84 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("alarm_specification".to_string(), self.r#alarm_specification.to_pulumi_value().await);
-            map.insert("auto_rollback".to_string(), self.r#auto_rollback.to_pulumi_value().await);
-            map.insert("checkpoint_delay".to_string(), self.r#checkpoint_delay.to_pulumi_value().await);
-            map.insert("checkpoint_percentages".to_string(), self.r#checkpoint_percentages.to_pulumi_value().await);
-            map.insert("instance_warmup".to_string(), self.r#instance_warmup.to_pulumi_value().await);
-            map.insert("max_healthy_percentage".to_string(), self.r#max_healthy_percentage.to_pulumi_value().await);
-            map.insert("min_healthy_percentage".to_string(), self.r#min_healthy_percentage.to_pulumi_value().await);
-            map.insert("scale_in_protected_instances".to_string(), self.r#scale_in_protected_instances.to_pulumi_value().await);
-            map.insert("skip_matching".to_string(), self.r#skip_matching.to_pulumi_value().await);
-            map.insert("standby_instances".to_string(), self.r#standby_instances.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "alarm_specification".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alarm_specification,
+                )
+                .await,
+            );
+            map.insert(
+                "auto_rollback".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_rollback,
+                )
+                .await,
+            );
+            map.insert(
+                "checkpoint_delay".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#checkpoint_delay,
+                )
+                .await,
+            );
+            map.insert(
+                "checkpoint_percentages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#checkpoint_percentages,
+                )
+                .await,
+            );
+            map.insert(
+                "instance_warmup".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instance_warmup,
+                )
+                .await,
+            );
+            map.insert(
+                "max_healthy_percentage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_healthy_percentage,
+                )
+                .await,
+            );
+            map.insert(
+                "min_healthy_percentage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_healthy_percentage,
+                )
+                .await,
+            );
+            map.insert(
+                "scale_in_protected_instances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scale_in_protected_instances,
+                )
+                .await,
+            );
+            map.insert(
+                "skip_matching".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#skip_matching,
+                )
+                .await,
+            );
+            map.insert(
+                "standby_instances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#standby_instances,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -75,16 +139,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GroupInstanceRefreshPreferences {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#alarm_specification: {
@@ -92,70 +157,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'alarm_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::autoscaling::GroupInstanceRefreshPreferencesAlarmSpecification>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_rollback: {
                         let field_value = match fields_map.get("auto_rollback") {
                             Some(value) => value,
                             None => bail!("Missing field 'auto_rollback' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#checkpoint_delay: {
                         let field_value = match fields_map.get("checkpoint_delay") {
                             Some(value) => value,
                             None => bail!("Missing field 'checkpoint_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#checkpoint_percentages: {
                         let field_value = match fields_map.get("checkpoint_percentages") {
                             Some(value) => value,
                             None => bail!("Missing field 'checkpoint_percentages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<i32>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_warmup: {
                         let field_value = match fields_map.get("instance_warmup") {
                             Some(value) => value,
                             None => bail!("Missing field 'instance_warmup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_healthy_percentage: {
                         let field_value = match fields_map.get("max_healthy_percentage") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_healthy_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_healthy_percentage: {
                         let field_value = match fields_map.get("min_healthy_percentage") {
                             Some(value) => value,
                             None => bail!("Missing field 'min_healthy_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_in_protected_instances: {
                         let field_value = match fields_map.get("scale_in_protected_instances") {
                             Some(value) => value,
                             None => bail!("Missing field 'scale_in_protected_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_matching: {
                         let field_value = match fields_map.get("skip_matching") {
                             Some(value) => value,
                             None => bail!("Missing field 'skip_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#standby_instances: {
                         let field_value = match fields_map.get("standby_instances") {
                             Some(value) => value,
                             None => bail!("Missing field 'standby_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

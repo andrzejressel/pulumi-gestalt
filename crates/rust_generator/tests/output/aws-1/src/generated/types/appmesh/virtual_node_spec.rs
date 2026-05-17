@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("backend_defaults".to_string(), self.r#backend_defaults.to_pulumi_value().await);
-            map.insert("backends".to_string(), self.r#backends.to_pulumi_value().await);
-            map.insert("listeners".to_string(), self.r#listeners.to_pulumi_value().await);
-            map.insert("logging".to_string(), self.r#logging.to_pulumi_value().await);
-            map.insert("service_discovery".to_string(), self.r#service_discovery.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "backend_defaults".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#backend_defaults,
+                )
+                .await,
+            );
+            map.insert(
+                "backends".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#backends,
+                )
+                .await,
+            );
+            map.insert(
+                "listeners".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#listeners,
+                )
+                .await,
+            );
+            map.insert(
+                "logging".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#logging,
+                )
+                .await,
+            );
+            map.insert(
+                "service_discovery".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_discovery,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for VirtualNodeSpec {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#backend_defaults: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                             Some(value) => value,
                             None => bail!("Missing field 'backend_defaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendDefaults>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#backends: {
                         let field_value = match fields_map.get("backends") {
                             Some(value) => value,
                             None => bail!("Missing field 'backends' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::appmesh::VirtualNodeSpecBackend>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#listeners: {
                         let field_value = match fields_map.get("listeners") {
                             Some(value) => value,
                             None => bail!("Missing field 'listeners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::appmesh::VirtualNodeSpecListener>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logging: {
                         let field_value = match fields_map.get("logging") {
                             Some(value) => value,
                             None => bail!("Missing field 'logging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::appmesh::VirtualNodeSpecLogging>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_discovery: {
                         let field_value = match fields_map.get("service_discovery") {
                             Some(value) => value,
                             None => bail!("Missing field 'service_discovery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::appmesh::VirtualNodeSpecServiceDiscovery>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

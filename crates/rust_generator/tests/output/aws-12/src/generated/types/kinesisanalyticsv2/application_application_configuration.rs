@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("application_code_configuration".to_string(), self.r#application_code_configuration.to_pulumi_value().await);
-            map.insert("application_snapshot_configuration".to_string(), self.r#application_snapshot_configuration.to_pulumi_value().await);
-            map.insert("environment_properties".to_string(), self.r#environment_properties.to_pulumi_value().await);
-            map.insert("flink_application_configuration".to_string(), self.r#flink_application_configuration.to_pulumi_value().await);
-            map.insert("run_configuration".to_string(), self.r#run_configuration.to_pulumi_value().await);
-            map.insert("sql_application_configuration".to_string(), self.r#sql_application_configuration.to_pulumi_value().await);
-            map.insert("vpc_configuration".to_string(), self.r#vpc_configuration.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "application_code_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#application_code_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "application_snapshot_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#application_snapshot_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "environment_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#environment_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "flink_application_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#flink_application_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "run_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#run_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "sql_application_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sql_application_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc_configuration,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ApplicationApplicationConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#application_code_configuration: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'application_code_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationApplicationCodeConfiguration> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#application_snapshot_configuration: {
                         let field_value = match fields_map.get("application_snapshot_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'application_snapshot_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationApplicationSnapshotConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_properties: {
                         let field_value = match fields_map.get("environment_properties") {
                             Some(value) => value,
                             None => bail!("Missing field 'environment_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationEnvironmentProperties>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#flink_application_configuration: {
                         let field_value = match fields_map.get("flink_application_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'flink_application_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationFlinkApplicationConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_configuration: {
                         let field_value = match fields_map.get("run_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'run_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationRunConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_application_configuration: {
                         let field_value = match fields_map.get("sql_application_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'sql_application_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_configuration: {
                         let field_value = match fields_map.get("vpc_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'vpc_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationVpcConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

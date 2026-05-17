@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -41,4 +41,146 @@ pub struct GetServiceTemplateSpec {
     #[builder(into)]
     #[serde(rename = "volumes")]
     pub r#volumes: Vec<super::super::types::cloudrun::GetServiceTemplateSpecVolume>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetServiceTemplateSpec {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "container_concurrency".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#container_concurrency,
+                )
+                .await,
+            );
+            map.insert(
+                "containers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#containers,
+                )
+                .await,
+            );
+            map.insert(
+                "node_selector".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#node_selector,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account_name,
+                )
+                .await,
+            );
+            map.insert(
+                "serving_state".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#serving_state,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "volumes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volumes,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetServiceTemplateSpec {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#container_concurrency: {
+                        let field_value = match fields_map.get("container_concurrency") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'container_concurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#containers: {
+                        let field_value = match fields_map.get("containers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'containers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#node_selector: {
+                        let field_value = match fields_map.get("node_selector") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'node_selector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_account_name: {
+                        let field_value = match fields_map.get("service_account_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#serving_state: {
+                        let field_value = match fields_map.get("serving_state") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'serving_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout_seconds: {
+                        let field_value = match fields_map.get("timeout_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#volumes: {
+                        let field_value = match fields_map.get("volumes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'volumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("cloudwatch_logs_log_destination".to_string(), self.r#cloudwatch_logs_log_destination.to_pulumi_value().await);
-            map.insert("firehose_log_destination".to_string(), self.r#firehose_log_destination.to_pulumi_value().await);
-            map.insert("include_execution_datas".to_string(), self.r#include_execution_datas.to_pulumi_value().await);
-            map.insert("level".to_string(), self.r#level.to_pulumi_value().await);
-            map.insert("s_3_log_destination".to_string(), self.r#s_3_log_destination.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloudwatch_logs_log_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudwatch_logs_log_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "firehose_log_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#firehose_log_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "include_execution_datas".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_execution_datas,
+                )
+                .await,
+            );
+            map.insert(
+                "level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#level,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_log_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_log_destination,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PipeLogConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#cloudwatch_logs_log_destination: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'cloudwatch_logs_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::pipes::PipeLogConfigurationCloudwatchLogsLogDestination>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#firehose_log_destination: {
                         let field_value = match fields_map.get("firehose_log_destination") {
                             Some(value) => value,
                             None => bail!("Missing field 'firehose_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::pipes::PipeLogConfigurationFirehoseLogDestination>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_execution_datas: {
                         let field_value = match fields_map.get("include_execution_datas") {
                             Some(value) => value,
                             None => bail!("Missing field 'include_execution_datas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#level: {
                         let field_value = match fields_map.get("level") {
                             Some(value) => value,
                             None => bail!("Missing field 'level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_log_destination: {
                         let field_value = match fields_map.get("s_3_log_destination") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::pipes::PipeLogConfigurationS3LogDestination>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

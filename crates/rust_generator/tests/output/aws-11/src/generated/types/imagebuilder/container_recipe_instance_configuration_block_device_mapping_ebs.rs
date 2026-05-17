@@ -46,18 +46,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("delete_on_termination".to_string(), self.r#delete_on_termination.to_pulumi_value().await);
-            map.insert("encrypted".to_string(), self.r#encrypted.to_pulumi_value().await);
-            map.insert("iops".to_string(), self.r#iops.to_pulumi_value().await);
-            map.insert("kms_key_id".to_string(), self.r#kms_key_id.to_pulumi_value().await);
-            map.insert("snapshot_id".to_string(), self.r#snapshot_id.to_pulumi_value().await);
-            map.insert("throughput".to_string(), self.r#throughput.to_pulumi_value().await);
-            map.insert("volume_size".to_string(), self.r#volume_size.to_pulumi_value().await);
-            map.insert("volume_type".to_string(), self.r#volume_type.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "delete_on_termination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delete_on_termination,
+                )
+                .await,
+            );
+            map.insert(
+                "encrypted".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encrypted,
+                )
+                .await,
+            );
+            map.insert(
+                "iops".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#iops,
+                )
+                .await,
+            );
+            map.insert(
+                "kms_key_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kms_key_id,
+                )
+                .await,
+            );
+            map.insert(
+                "snapshot_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#snapshot_id,
+                )
+                .await,
+            );
+            map.insert(
+                "throughput".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#throughput,
+                )
+                .await,
+            );
+            map.insert(
+                "volume_size".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volume_size,
+                )
+                .await,
+            );
+            map.insert(
+                "volume_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volume_type,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -65,16 +117,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ContainerRecipeInstanceConfigurationBlockDeviceMappingEbs {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#delete_on_termination: {
@@ -82,56 +135,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'delete_on_termination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encrypted: {
                         let field_value = match fields_map.get("encrypted") {
                             Some(value) => value,
                             None => bail!("Missing field 'encrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iops: {
                         let field_value = match fields_map.get("iops") {
                             Some(value) => value,
                             None => bail!("Missing field 'iops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_id: {
                         let field_value = match fields_map.get("kms_key_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_id: {
                         let field_value = match fields_map.get("snapshot_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'snapshot_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#throughput: {
                         let field_value = match fields_map.get("throughput") {
                             Some(value) => value,
                             None => bail!("Missing field 'throughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_size: {
                         let field_value = match fields_map.get("volume_size") {
                             Some(value) => value,
                             None => bail!("Missing field 'volume_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_type: {
                         let field_value = match fields_map.get("volume_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'volume_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -27,4 +27,132 @@ pub struct TransferJobTransferSpecObjectConditions {
     #[builder(into)]
     #[serde(rename = "minTimeElapsedSinceLastModification")]
     pub r#min_time_elapsed_since_last_modification: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TransferJobTransferSpecObjectConditions {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "exclude_prefixes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_prefixes,
+                )
+                .await,
+            );
+            map.insert(
+                "include_prefixes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_prefixes,
+                )
+                .await,
+            );
+            map.insert(
+                "last_modified_before".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#last_modified_before,
+                )
+                .await,
+            );
+            map.insert(
+                "last_modified_since".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#last_modified_since,
+                )
+                .await,
+            );
+            map.insert(
+                "max_time_elapsed_since_last_modification".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_time_elapsed_since_last_modification,
+                )
+                .await,
+            );
+            map.insert(
+                "min_time_elapsed_since_last_modification".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_time_elapsed_since_last_modification,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TransferJobTransferSpecObjectConditions {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#exclude_prefixes: {
+                        let field_value = match fields_map.get("exclude_prefixes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclude_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#include_prefixes: {
+                        let field_value = match fields_map.get("include_prefixes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'include_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#last_modified_before: {
+                        let field_value = match fields_map.get("last_modified_before") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'last_modified_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#last_modified_since: {
+                        let field_value = match fields_map.get("last_modified_since") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'last_modified_since' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_time_elapsed_since_last_modification: {
+                        let field_value = match fields_map.get("max_time_elapsed_since_last_modification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_time_elapsed_since_last_modification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_time_elapsed_since_last_modification: {
+                        let field_value = match fields_map.get("min_time_elapsed_since_last_modification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_time_elapsed_since_last_modification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

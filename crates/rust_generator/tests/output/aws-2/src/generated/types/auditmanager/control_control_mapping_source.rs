@@ -47,18 +47,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("source_description".to_string(), self.r#source_description.to_pulumi_value().await);
-            map.insert("source_frequency".to_string(), self.r#source_frequency.to_pulumi_value().await);
-            map.insert("source_id".to_string(), self.r#source_id.to_pulumi_value().await);
-            map.insert("source_keyword".to_string(), self.r#source_keyword.to_pulumi_value().await);
-            map.insert("source_name".to_string(), self.r#source_name.to_pulumi_value().await);
-            map.insert("source_set_up_option".to_string(), self.r#source_set_up_option.to_pulumi_value().await);
-            map.insert("source_type".to_string(), self.r#source_type.to_pulumi_value().await);
-            map.insert("troubleshooting_text".to_string(), self.r#troubleshooting_text.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "source_description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_description,
+                )
+                .await,
+            );
+            map.insert(
+                "source_frequency".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_frequency,
+                )
+                .await,
+            );
+            map.insert(
+                "source_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_id,
+                )
+                .await,
+            );
+            map.insert(
+                "source_keyword".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_keyword,
+                )
+                .await,
+            );
+            map.insert(
+                "source_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_name,
+                )
+                .await,
+            );
+            map.insert(
+                "source_set_up_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_set_up_option,
+                )
+                .await,
+            );
+            map.insert(
+                "source_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_type,
+                )
+                .await,
+            );
+            map.insert(
+                "troubleshooting_text".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#troubleshooting_text,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -66,16 +118,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ControlControlMappingSource {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#source_description: {
@@ -83,56 +136,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'source_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_frequency: {
                         let field_value = match fields_map.get("source_frequency") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_id: {
                         let field_value = match fields_map.get("source_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_keyword: {
                         let field_value = match fields_map.get("source_keyword") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_keyword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::auditmanager::ControlControlMappingSourceSourceKeyword>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_name: {
                         let field_value = match fields_map.get("source_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_set_up_option: {
                         let field_value = match fields_map.get("source_set_up_option") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_set_up_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_type: {
                         let field_value = match fields_map.get("source_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'source_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#troubleshooting_text: {
                         let field_value = match fields_map.get("troubleshooting_text") {
                             Some(value) => value,
                             None => bail!("Missing field 'troubleshooting_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

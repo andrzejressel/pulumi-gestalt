@@ -50,19 +50,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("containers".to_string(), self.r#containers.to_pulumi_value().await);
-            map.insert("dns_policy".to_string(), self.r#dns_policy.to_pulumi_value().await);
-            map.insert("host_network".to_string(), self.r#host_network.to_pulumi_value().await);
-            map.insert("image_pull_secrets".to_string(), self.r#image_pull_secrets.to_pulumi_value().await);
-            map.insert("init_containers".to_string(), self.r#init_containers.to_pulumi_value().await);
-            map.insert("metadata".to_string(), self.r#metadata.to_pulumi_value().await);
-            map.insert("service_account_name".to_string(), self.r#service_account_name.to_pulumi_value().await);
-            map.insert("share_process_namespace".to_string(), self.r#share_process_namespace.to_pulumi_value().await);
-            map.insert("volumes".to_string(), self.r#volumes.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "containers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#containers,
+                )
+                .await,
+            );
+            map.insert(
+                "dns_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dns_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "host_network".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#host_network,
+                )
+                .await,
+            );
+            map.insert(
+                "image_pull_secrets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#image_pull_secrets,
+                )
+                .await,
+            );
+            map.insert(
+                "init_containers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#init_containers,
+                )
+                .await,
+            );
+            map.insert(
+                "metadata".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metadata,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account_name,
+                )
+                .await,
+            );
+            map.insert(
+                "share_process_namespace".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#share_process_namespace,
+                )
+                .await,
+            );
+            map.insert(
+                "volumes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volumes,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -70,16 +128,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobDefinitionEksPropertiesPodProperties {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#containers: {
@@ -87,63 +146,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                             Some(value) => value,
                             None => bail!("Missing field 'containers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesContainers> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_policy: {
                         let field_value = match fields_map.get("dns_policy") {
                             Some(value) => value,
                             None => bail!("Missing field 'dns_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_network: {
                         let field_value = match fields_map.get("host_network") {
                             Some(value) => value,
                             None => bail!("Missing field 'host_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_pull_secrets: {
                         let field_value = match fields_map.get("image_pull_secrets") {
                             Some(value) => value,
                             None => bail!("Missing field 'image_pull_secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesImagePullSecret>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#init_containers: {
                         let field_value = match fields_map.get("init_containers") {
                             Some(value) => value,
                             None => bail!("Missing field 'init_containers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesInitContainer>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metadata: {
                         let field_value = match fields_map.get("metadata") {
                             Some(value) => value,
                             None => bail!("Missing field 'metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesMetadata>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_name: {
                         let field_value = match fields_map.get("service_account_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'service_account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_process_namespace: {
                         let field_value = match fields_map.get("share_process_namespace") {
                             Some(value) => value,
                             None => bail!("Missing field 'share_process_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volumes: {
                         let field_value = match fields_map.get("volumes") {
                             Some(value) => value,
                             None => bail!("Missing field 'volumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesVolume>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

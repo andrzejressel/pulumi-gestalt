@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -27,4 +27,132 @@ pub struct TargetExecutionConfig {
     #[builder(into)]
     #[serde(rename = "workerPool")]
     pub r#worker_pool: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TargetExecutionConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "artifact_storage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#artifact_storage,
+                )
+                .await,
+            );
+            map.insert(
+                "execution_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#execution_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account,
+                )
+                .await,
+            );
+            map.insert(
+                "usages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#usages,
+                )
+                .await,
+            );
+            map.insert(
+                "verbose".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#verbose,
+                )
+                .await,
+            );
+            map.insert(
+                "worker_pool".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#worker_pool,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TargetExecutionConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#artifact_storage: {
+                        let field_value = match fields_map.get("artifact_storage") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'artifact_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#execution_timeout: {
+                        let field_value = match fields_map.get("execution_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'execution_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_account: {
+                        let field_value = match fields_map.get("service_account") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#usages: {
+                        let field_value = match fields_map.get("usages") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#verbose: {
+                        let field_value = match fields_map.get("verbose") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'verbose' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#worker_pool: {
+                        let field_value = match fields_map.get("worker_pool") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'worker_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

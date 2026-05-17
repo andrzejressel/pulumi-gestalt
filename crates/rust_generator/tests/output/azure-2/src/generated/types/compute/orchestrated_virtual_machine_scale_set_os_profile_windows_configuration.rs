@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -57,4 +57,216 @@ pub struct OrchestratedVirtualMachineScaleSetOsProfileWindowsConfiguration {
     #[builder(into)]
     #[serde(rename = "winrmListeners")]
     pub r#winrm_listeners: Option<Vec<super::super::types::compute::OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationWinrmListener>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OrchestratedVirtualMachineScaleSetOsProfileWindowsConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "additional_unattend_contents".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#additional_unattend_contents,
+                )
+                .await,
+            );
+            map.insert(
+                "admin_password".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#admin_password,
+                )
+                .await,
+            );
+            map.insert(
+                "admin_username".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#admin_username,
+                )
+                .await,
+            );
+            map.insert(
+                "computer_name_prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#computer_name_prefix,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_automatic_updates".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_automatic_updates,
+                )
+                .await,
+            );
+            map.insert(
+                "hotpatching_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hotpatching_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "patch_assessment_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#patch_assessment_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "patch_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#patch_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "provision_vm_agent".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#provision_vm_agent,
+                )
+                .await,
+            );
+            map.insert(
+                "secrets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secrets,
+                )
+                .await,
+            );
+            map.insert(
+                "timezone".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timezone,
+                )
+                .await,
+            );
+            map.insert(
+                "winrm_listeners".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#winrm_listeners,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for OrchestratedVirtualMachineScaleSetOsProfileWindowsConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#additional_unattend_contents: {
+                        let field_value = match fields_map.get("additional_unattend_contents") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_unattend_contents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#admin_password: {
+                        let field_value = match fields_map.get("admin_password") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'admin_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#admin_username: {
+                        let field_value = match fields_map.get("admin_username") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'admin_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#computer_name_prefix: {
+                        let field_value = match fields_map.get("computer_name_prefix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'computer_name_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_automatic_updates: {
+                        let field_value = match fields_map.get("enable_automatic_updates") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_automatic_updates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#hotpatching_enabled: {
+                        let field_value = match fields_map.get("hotpatching_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'hotpatching_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#patch_assessment_mode: {
+                        let field_value = match fields_map.get("patch_assessment_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'patch_assessment_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#patch_mode: {
+                        let field_value = match fields_map.get("patch_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'patch_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#provision_vm_agent: {
+                        let field_value = match fields_map.get("provision_vm_agent") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'provision_vm_agent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secrets: {
+                        let field_value = match fields_map.get("secrets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timezone: {
+                        let field_value = match fields_map.get("timezone") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timezone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#winrm_listeners: {
+                        let field_value = match fields_map.get("winrm_listeners") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'winrm_listeners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

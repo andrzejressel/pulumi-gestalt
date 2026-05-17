@@ -35,15 +35,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("grpc_route".to_string(), self.r#grpc_route.to_pulumi_value().await);
-            map.insert("http_2_route".to_string(), self.r#http_2_route.to_pulumi_value().await);
-            map.insert("http_route".to_string(), self.r#http_route.to_pulumi_value().await);
-            map.insert("priority".to_string(), self.r#priority.to_pulumi_value().await);
-            map.insert("tcp_route".to_string(), self.r#tcp_route.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "grpc_route".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#grpc_route,
+                )
+                .await,
+            );
+            map.insert(
+                "http_2_route".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_2_route,
+                )
+                .await,
+            );
+            map.insert(
+                "http_route".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_route,
+                )
+                .await,
+            );
+            map.insert(
+                "priority".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#priority,
+                )
+                .await,
+            );
+            map.insert(
+                "tcp_route".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tcp_route,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -51,16 +85,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RouteSpec {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#grpc_route: {
@@ -68,35 +103,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                             Some(value) => value,
                             None => bail!("Missing field 'grpc_route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::appmesh::RouteSpecGrpcRoute>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_2_route: {
                         let field_value = match fields_map.get("http_2_route") {
                             Some(value) => value,
                             None => bail!("Missing field 'http_2_route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::appmesh::RouteSpecHttp2Route>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_route: {
                         let field_value = match fields_map.get("http_route") {
                             Some(value) => value,
                             None => bail!("Missing field 'http_route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::appmesh::RouteSpecHttpRoute>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#priority: {
                         let field_value = match fields_map.get("priority") {
                             Some(value) => value,
                             None => bail!("Missing field 'priority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tcp_route: {
                         let field_value = match fields_map.get("tcp_route") {
                             Some(value) => value,
                             None => bail!("Missing field 'tcp_route' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::appmesh::RouteSpecTcpRoute>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -83,4 +83,328 @@ pub struct ZeroTrustGatewayPolicyRuleSettings {
     #[builder(into)]
     #[serde(rename = "untrustedCert")]
     pub r#untrusted_cert: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsUntrustedCert>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ZeroTrustGatewayPolicyRuleSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "add_headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#add_headers,
+                )
+                .await,
+            );
+            map.insert(
+                "allow_child_bypass".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_child_bypass,
+                )
+                .await,
+            );
+            map.insert(
+                "audit_ssh".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audit_ssh,
+                )
+                .await,
+            );
+            map.insert(
+                "biso_admin_controls".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#biso_admin_controls,
+                )
+                .await,
+            );
+            map.insert(
+                "block_page_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#block_page_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "block_page_reason".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#block_page_reason,
+                )
+                .await,
+            );
+            map.insert(
+                "bypass_parent_rule".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bypass_parent_rule,
+                )
+                .await,
+            );
+            map.insert(
+                "check_session".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#check_session,
+                )
+                .await,
+            );
+            map.insert(
+                "dns_resolvers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dns_resolvers,
+                )
+                .await,
+            );
+            map.insert(
+                "egress".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#egress,
+                )
+                .await,
+            );
+            map.insert(
+                "ignore_cname_category_matches".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ignore_cname_category_matches,
+                )
+                .await,
+            );
+            map.insert(
+                "insecure_disable_dnssec_validation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#insecure_disable_dnssec_validation,
+                )
+                .await,
+            );
+            map.insert(
+                "ip_categories".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ip_categories,
+                )
+                .await,
+            );
+            map.insert(
+                "l_4_override".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#l_4_override,
+                )
+                .await,
+            );
+            map.insert(
+                "notification_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#notification_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "override_host".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#override_host,
+                )
+                .await,
+            );
+            map.insert(
+                "override_ips".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#override_ips,
+                )
+                .await,
+            );
+            map.insert(
+                "payload_log".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#payload_log,
+                )
+                .await,
+            );
+            map.insert(
+                "resolve_dns_through_cloudflare".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resolve_dns_through_cloudflare,
+                )
+                .await,
+            );
+            map.insert(
+                "untrusted_cert".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#untrusted_cert,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ZeroTrustGatewayPolicyRuleSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#add_headers: {
+                        let field_value = match fields_map.get("add_headers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'add_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allow_child_bypass: {
+                        let field_value = match fields_map.get("allow_child_bypass") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allow_child_bypass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#audit_ssh: {
+                        let field_value = match fields_map.get("audit_ssh") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'audit_ssh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#biso_admin_controls: {
+                        let field_value = match fields_map.get("biso_admin_controls") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'biso_admin_controls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#block_page_enabled: {
+                        let field_value = match fields_map.get("block_page_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'block_page_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#block_page_reason: {
+                        let field_value = match fields_map.get("block_page_reason") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'block_page_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#bypass_parent_rule: {
+                        let field_value = match fields_map.get("bypass_parent_rule") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bypass_parent_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#check_session: {
+                        let field_value = match fields_map.get("check_session") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'check_session' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dns_resolvers: {
+                        let field_value = match fields_map.get("dns_resolvers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dns_resolvers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#egress: {
+                        let field_value = match fields_map.get("egress") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'egress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ignore_cname_category_matches: {
+                        let field_value = match fields_map.get("ignore_cname_category_matches") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ignore_cname_category_matches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#insecure_disable_dnssec_validation: {
+                        let field_value = match fields_map.get("insecure_disable_dnssec_validation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'insecure_disable_dnssec_validation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ip_categories: {
+                        let field_value = match fields_map.get("ip_categories") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ip_categories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#l_4_override: {
+                        let field_value = match fields_map.get("l_4_override") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'l_4_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#notification_settings: {
+                        let field_value = match fields_map.get("notification_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'notification_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#override_host: {
+                        let field_value = match fields_map.get("override_host") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'override_host' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#override_ips: {
+                        let field_value = match fields_map.get("override_ips") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'override_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#payload_log: {
+                        let field_value = match fields_map.get("payload_log") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'payload_log' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resolve_dns_through_cloudflare: {
+                        let field_value = match fields_map.get("resolve_dns_through_cloudflare") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resolve_dns_through_cloudflare' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#untrusted_cert: {
+                        let field_value = match fields_map.get("untrusted_cert") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'untrusted_cert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

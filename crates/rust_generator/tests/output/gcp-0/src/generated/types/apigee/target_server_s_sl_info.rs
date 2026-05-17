@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -40,4 +40,174 @@ pub struct TargetServerSSlInfo {
     #[builder(into)]
     #[serde(rename = "trustStore")]
     pub r#trust_store: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TargetServerSSlInfo {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "ciphers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ciphers,
+                )
+                .await,
+            );
+            map.insert(
+                "client_auth_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_auth_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "common_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#common_name,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "ignore_validation_errors".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ignore_validation_errors,
+                )
+                .await,
+            );
+            map.insert(
+                "key_alias".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_alias,
+                )
+                .await,
+            );
+            map.insert(
+                "key_store".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_store,
+                )
+                .await,
+            );
+            map.insert(
+                "protocols".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#protocols,
+                )
+                .await,
+            );
+            map.insert(
+                "trust_store".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#trust_store,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TargetServerSSlInfo {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#ciphers: {
+                        let field_value = match fields_map.get("ciphers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ciphers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_auth_enabled: {
+                        let field_value = match fields_map.get("client_auth_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_auth_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#common_name: {
+                        let field_value = match fields_map.get("common_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'common_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ignore_validation_errors: {
+                        let field_value = match fields_map.get("ignore_validation_errors") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ignore_validation_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#key_alias: {
+                        let field_value = match fields_map.get("key_alias") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_alias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#key_store: {
+                        let field_value = match fields_map.get("key_store") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_store' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#protocols: {
+                        let field_value = match fields_map.get("protocols") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#trust_store: {
+                        let field_value = match fields_map.get("trust_store") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'trust_store' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

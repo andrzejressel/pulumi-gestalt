@@ -57,21 +57,91 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("connection_attempts".to_string(), self.r#connection_attempts.to_pulumi_value().await);
-            map.insert("connection_timeout".to_string(), self.r#connection_timeout.to_pulumi_value().await);
-            map.insert("custom_headers".to_string(), self.r#custom_headers.to_pulumi_value().await);
-            map.insert("custom_origin_config".to_string(), self.r#custom_origin_config.to_pulumi_value().await);
-            map.insert("domain_name".to_string(), self.r#domain_name.to_pulumi_value().await);
-            map.insert("origin_access_control_id".to_string(), self.r#origin_access_control_id.to_pulumi_value().await);
-            map.insert("origin_id".to_string(), self.r#origin_id.to_pulumi_value().await);
-            map.insert("origin_path".to_string(), self.r#origin_path.to_pulumi_value().await);
-            map.insert("origin_shield".to_string(), self.r#origin_shield.to_pulumi_value().await);
-            map.insert("s_3_origin_config".to_string(), self.r#s_3_origin_config.to_pulumi_value().await);
-            map.insert("vpc_origin_config".to_string(), self.r#vpc_origin_config.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "connection_attempts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_attempts,
+                )
+                .await,
+            );
+            map.insert(
+                "connection_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_headers,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_origin_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_origin_config,
+                )
+                .await,
+            );
+            map.insert(
+                "domain_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#domain_name,
+                )
+                .await,
+            );
+            map.insert(
+                "origin_access_control_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#origin_access_control_id,
+                )
+                .await,
+            );
+            map.insert(
+                "origin_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#origin_id,
+                )
+                .await,
+            );
+            map.insert(
+                "origin_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#origin_path,
+                )
+                .await,
+            );
+            map.insert(
+                "origin_shield".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#origin_shield,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_origin_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_origin_config,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc_origin_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc_origin_config,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -79,16 +149,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DistributionOrigin {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#connection_attempts: {
@@ -96,77 +167,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'connection_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_timeout: {
                         let field_value = match fields_map.get("connection_timeout") {
                             Some(value) => value,
                             None => bail!("Missing field 'connection_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_headers: {
                         let field_value = match fields_map.get("custom_headers") {
                             Some(value) => value,
                             None => bail!("Missing field 'custom_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::cloudfront::DistributionOriginCustomHeader>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_origin_config: {
                         let field_value = match fields_map.get("custom_origin_config") {
                             Some(value) => value,
                             None => bail!("Missing field 'custom_origin_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::cloudfront::DistributionOriginCustomOriginConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_name: {
                         let field_value = match fields_map.get("domain_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_access_control_id: {
                         let field_value = match fields_map.get("origin_access_control_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'origin_access_control_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_id: {
                         let field_value = match fields_map.get("origin_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'origin_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_path: {
                         let field_value = match fields_map.get("origin_path") {
                             Some(value) => value,
                             None => bail!("Missing field 'origin_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_shield: {
                         let field_value = match fields_map.get("origin_shield") {
                             Some(value) => value,
                             None => bail!("Missing field 'origin_shield' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::cloudfront::DistributionOriginOriginShield>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_origin_config: {
                         let field_value = match fields_map.get("s_3_origin_config") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_origin_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::cloudfront::DistributionOriginS3OriginConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_origin_config: {
                         let field_value = match fields_map.get("vpc_origin_config") {
                             Some(value) => value,
                             None => bail!("Missing field 'vpc_origin_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::cloudfront::DistributionOriginVpcOriginConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

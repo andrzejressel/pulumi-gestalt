@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -57,4 +57,216 @@ pub struct WorkspaceCustomParameters {
     #[builder(into)]
     #[serde(rename = "vnetAddressPrefix")]
     pub r#vnet_address_prefix: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkspaceCustomParameters {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "machine_learning_workspace_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#machine_learning_workspace_id,
+                )
+                .await,
+            );
+            map.insert(
+                "nat_gateway_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nat_gateway_name,
+                )
+                .await,
+            );
+            map.insert(
+                "no_public_ip".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#no_public_ip,
+                )
+                .await,
+            );
+            map.insert(
+                "private_subnet_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#private_subnet_name,
+                )
+                .await,
+            );
+            map.insert(
+                "private_subnet_network_security_group_association_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#private_subnet_network_security_group_association_id,
+                )
+                .await,
+            );
+            map.insert(
+                "public_ip_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#public_ip_name,
+                )
+                .await,
+            );
+            map.insert(
+                "public_subnet_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#public_subnet_name,
+                )
+                .await,
+            );
+            map.insert(
+                "public_subnet_network_security_group_association_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#public_subnet_network_security_group_association_id,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_account_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_account_name,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_account_sku_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_account_sku_name,
+                )
+                .await,
+            );
+            map.insert(
+                "virtual_network_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#virtual_network_id,
+                )
+                .await,
+            );
+            map.insert(
+                "vnet_address_prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vnet_address_prefix,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WorkspaceCustomParameters {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#machine_learning_workspace_id: {
+                        let field_value = match fields_map.get("machine_learning_workspace_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'machine_learning_workspace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#nat_gateway_name: {
+                        let field_value = match fields_map.get("nat_gateway_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nat_gateway_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#no_public_ip: {
+                        let field_value = match fields_map.get("no_public_ip") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'no_public_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#private_subnet_name: {
+                        let field_value = match fields_map.get("private_subnet_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'private_subnet_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#private_subnet_network_security_group_association_id: {
+                        let field_value = match fields_map.get("private_subnet_network_security_group_association_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'private_subnet_network_security_group_association_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#public_ip_name: {
+                        let field_value = match fields_map.get("public_ip_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'public_ip_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#public_subnet_name: {
+                        let field_value = match fields_map.get("public_subnet_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'public_subnet_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#public_subnet_network_security_group_association_id: {
+                        let field_value = match fields_map.get("public_subnet_network_security_group_association_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'public_subnet_network_security_group_association_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_account_name: {
+                        let field_value = match fields_map.get("storage_account_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_account_sku_name: {
+                        let field_value = match fields_map.get("storage_account_sku_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_account_sku_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#virtual_network_id: {
+                        let field_value = match fields_map.get("virtual_network_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'virtual_network_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vnet_address_prefix: {
+                        let field_value = match fields_map.get("vnet_address_prefix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vnet_address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

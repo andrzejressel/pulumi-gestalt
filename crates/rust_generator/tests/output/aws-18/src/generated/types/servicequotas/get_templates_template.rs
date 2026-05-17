@@ -46,18 +46,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("global_quota".to_string(), self.r#global_quota.to_pulumi_value().await);
-            map.insert("quota_code".to_string(), self.r#quota_code.to_pulumi_value().await);
-            map.insert("quota_name".to_string(), self.r#quota_name.to_pulumi_value().await);
-            map.insert("region".to_string(), self.r#region.to_pulumi_value().await);
-            map.insert("service_code".to_string(), self.r#service_code.to_pulumi_value().await);
-            map.insert("service_name".to_string(), self.r#service_name.to_pulumi_value().await);
-            map.insert("unit".to_string(), self.r#unit.to_pulumi_value().await);
-            map.insert("value".to_string(), self.r#value.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "global_quota".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#global_quota,
+                )
+                .await,
+            );
+            map.insert(
+                "quota_code".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#quota_code,
+                )
+                .await,
+            );
+            map.insert(
+                "quota_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#quota_name,
+                )
+                .await,
+            );
+            map.insert(
+                "region".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#region,
+                )
+                .await,
+            );
+            map.insert(
+                "service_code".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_code,
+                )
+                .await,
+            );
+            map.insert(
+                "service_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_name,
+                )
+                .await,
+            );
+            map.insert(
+                "unit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#unit,
+                )
+                .await,
+            );
+            map.insert(
+                "value".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#value,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -65,16 +117,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetTemplatesTemplate {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#global_quota: {
@@ -82,56 +135,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'global_quota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#quota_code: {
                         let field_value = match fields_map.get("quota_code") {
                             Some(value) => value,
                             None => bail!("Missing field 'quota_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#quota_name: {
                         let field_value = match fields_map.get("quota_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'quota_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#region: {
                         let field_value = match fields_map.get("region") {
                             Some(value) => value,
                             None => bail!("Missing field 'region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_code: {
                         let field_value = match fields_map.get("service_code") {
                             Some(value) => value,
                             None => bail!("Missing field 'service_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_name: {
                         let field_value = match fields_map.get("service_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'service_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unit: {
                         let field_value = match fields_map.get("unit") {
                             Some(value) => value,
                             None => bail!("Missing field 'unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value: {
                         let field_value = match fields_map.get("value") {
                             Some(value) => value,
                             None => bail!("Missing field 'value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

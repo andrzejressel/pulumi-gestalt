@@ -41,17 +41,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("access_control_allow_credentials".to_string(), self.r#access_control_allow_credentials.to_pulumi_value().await);
-            map.insert("access_control_allow_headers".to_string(), self.r#access_control_allow_headers.to_pulumi_value().await);
-            map.insert("access_control_allow_methods".to_string(), self.r#access_control_allow_methods.to_pulumi_value().await);
-            map.insert("access_control_allow_origins".to_string(), self.r#access_control_allow_origins.to_pulumi_value().await);
-            map.insert("access_control_expose_headers".to_string(), self.r#access_control_expose_headers.to_pulumi_value().await);
-            map.insert("access_control_max_age_sec".to_string(), self.r#access_control_max_age_sec.to_pulumi_value().await);
-            map.insert("origin_override".to_string(), self.r#origin_override.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "access_control_allow_credentials".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_control_allow_credentials,
+                )
+                .await,
+            );
+            map.insert(
+                "access_control_allow_headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_control_allow_headers,
+                )
+                .await,
+            );
+            map.insert(
+                "access_control_allow_methods".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_control_allow_methods,
+                )
+                .await,
+            );
+            map.insert(
+                "access_control_allow_origins".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_control_allow_origins,
+                )
+                .await,
+            );
+            map.insert(
+                "access_control_expose_headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_control_expose_headers,
+                )
+                .await,
+            );
+            map.insert(
+                "access_control_max_age_sec".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_control_max_age_sec,
+                )
+                .await,
+            );
+            map.insert(
+                "origin_override".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#origin_override,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -59,16 +105,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetResponseHeadersPolicyCorsConfig {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#access_control_allow_credentials: {
@@ -76,49 +123,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'access_control_allow_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#access_control_allow_headers: {
                         let field_value = match fields_map.get("access_control_allow_headers") {
                             Some(value) => value,
                             None => bail!("Missing field 'access_control_allow_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicyCorsConfigAccessControlAllowHeader> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#access_control_allow_methods: {
                         let field_value = match fields_map.get("access_control_allow_methods") {
                             Some(value) => value,
                             None => bail!("Missing field 'access_control_allow_methods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicyCorsConfigAccessControlAllowMethod> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#access_control_allow_origins: {
                         let field_value = match fields_map.get("access_control_allow_origins") {
                             Some(value) => value,
                             None => bail!("Missing field 'access_control_allow_origins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicyCorsConfigAccessControlAllowOrigin> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#access_control_expose_headers: {
                         let field_value = match fields_map.get("access_control_expose_headers") {
                             Some(value) => value,
                             None => bail!("Missing field 'access_control_expose_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cloudfront::GetResponseHeadersPolicyCorsConfigAccessControlExposeHeader> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#access_control_max_age_sec: {
                         let field_value = match fields_map.get("access_control_max_age_sec") {
                             Some(value) => value,
                             None => bail!("Missing field 'access_control_max_age_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_override: {
                         let field_value = match fields_map.get("origin_override") {
                             Some(value) => value,
                             None => bail!("Missing field 'origin_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

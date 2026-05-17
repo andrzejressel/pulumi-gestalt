@@ -31,14 +31,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("base_ejection_duration".to_string(), self.r#base_ejection_duration.to_pulumi_value().await);
-            map.insert("interval".to_string(), self.r#interval.to_pulumi_value().await);
-            map.insert("max_ejection_percent".to_string(), self.r#max_ejection_percent.to_pulumi_value().await);
-            map.insert("max_server_errors".to_string(), self.r#max_server_errors.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "base_ejection_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#base_ejection_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#interval,
+                )
+                .await,
+            );
+            map.insert(
+                "max_ejection_percent".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_ejection_percent,
+                )
+                .await,
+            );
+            map.insert(
+                "max_server_errors".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_server_errors,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -46,16 +74,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for VirtualNodeSpecListenerOutlierDetection {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#base_ejection_duration: {
@@ -63,28 +92,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                             Some(value) => value,
                             None => bail!("Missing field 'base_ejection_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::appmesh::VirtualNodeSpecListenerOutlierDetectionBaseEjectionDuration> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interval: {
                         let field_value = match fields_map.get("interval") {
                             Some(value) => value,
                             None => bail!("Missing field 'interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::appmesh::VirtualNodeSpecListenerOutlierDetectionInterval> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_ejection_percent: {
                         let field_value = match fields_map.get("max_ejection_percent") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_ejection_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_server_errors: {
                         let field_value = match fields_map.get("max_server_errors") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_server_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

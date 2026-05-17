@@ -38,15 +38,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("connection_name".to_string(), self.r#connection_name.to_pulumi_value().await);
-            map.insert("database_name".to_string(), self.r#database_name.to_pulumi_value().await);
-            map.insert("dlq_event_queue_arn".to_string(), self.r#dlq_event_queue_arn.to_pulumi_value().await);
-            map.insert("event_queue_arn".to_string(), self.r#event_queue_arn.to_pulumi_value().await);
-            map.insert("tables".to_string(), self.r#tables.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "connection_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_name,
+                )
+                .await,
+            );
+            map.insert(
+                "database_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#database_name,
+                )
+                .await,
+            );
+            map.insert(
+                "dlq_event_queue_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dlq_event_queue_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "event_queue_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#event_queue_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "tables".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tables,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -54,16 +88,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CrawlerCatalogTarget {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#connection_name: {
@@ -71,35 +106,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'connection_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_name: {
                         let field_value = match fields_map.get("database_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'database_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dlq_event_queue_arn: {
                         let field_value = match fields_map.get("dlq_event_queue_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'dlq_event_queue_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_queue_arn: {
                         let field_value = match fields_map.get("event_queue_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'event_queue_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tables: {
                         let field_value = match fields_map.get("tables") {
                             Some(value) => value,
                             None => bail!("Missing field 'tables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

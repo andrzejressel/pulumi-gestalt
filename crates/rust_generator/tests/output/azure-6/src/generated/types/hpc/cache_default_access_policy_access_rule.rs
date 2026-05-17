@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -37,4 +37,160 @@ pub struct CacheDefaultAccessPolicyAccessRule {
     #[builder(into)]
     #[serde(rename = "suidEnabled")]
     pub r#suid_enabled: Option<bool>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CacheDefaultAccessPolicyAccessRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "access".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access,
+                )
+                .await,
+            );
+            map.insert(
+                "anonymous_gid".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#anonymous_gid,
+                )
+                .await,
+            );
+            map.insert(
+                "anonymous_uid".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#anonymous_uid,
+                )
+                .await,
+            );
+            map.insert(
+                "filter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter,
+                )
+                .await,
+            );
+            map.insert(
+                "root_squash_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#root_squash_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "scope".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scope,
+                )
+                .await,
+            );
+            map.insert(
+                "submount_access_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#submount_access_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "suid_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#suid_enabled,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CacheDefaultAccessPolicyAccessRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#access: {
+                        let field_value = match fields_map.get("access") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#anonymous_gid: {
+                        let field_value = match fields_map.get("anonymous_gid") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'anonymous_gid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#anonymous_uid: {
+                        let field_value = match fields_map.get("anonymous_uid") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'anonymous_uid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#filter: {
+                        let field_value = match fields_map.get("filter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#root_squash_enabled: {
+                        let field_value = match fields_map.get("root_squash_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'root_squash_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scope: {
+                        let field_value = match fields_map.get("scope") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#submount_access_enabled: {
+                        let field_value = match fields_map.get("submount_access_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'submount_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#suid_enabled: {
+                        let field_value = match fields_map.get("suid_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'suid_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

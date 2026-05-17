@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("arn".to_string(), self.r#arn.to_pulumi_value().await);
-            map.insert("format_version".to_string(), self.r#format_version.to_pulumi_value().await);
-            map.insert("namespace".to_string(), self.r#namespace.to_pulumi_value().await);
-            map.insert("permission_policy".to_string(), self.r#permission_policy.to_pulumi_value().await);
-            map.insert("status".to_string(), self.r#status.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#arn,
+                )
+                .await,
+            );
+            map.insert(
+                "format_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#format_version,
+                )
+                .await,
+            );
+            map.insert(
+                "namespace".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#namespace,
+                )
+                .await,
+            );
+            map.insert(
+                "permission_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#permission_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#status,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataSetRowLevelPermissionDataSet {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#arn: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#format_version: {
                         let field_value = match fields_map.get("format_version") {
                             Some(value) => value,
                             None => bail!("Missing field 'format_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#namespace: {
                         let field_value = match fields_map.get("namespace") {
                             Some(value) => value,
                             None => bail!("Missing field 'namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permission_policy: {
                         let field_value = match fields_map.get("permission_policy") {
                             Some(value) => value,
                             None => bail!("Missing field 'permission_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status: {
                         let field_value = match fields_map.get("status") {
                             Some(value) => value,
                             None => bail!("Missing field 'status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

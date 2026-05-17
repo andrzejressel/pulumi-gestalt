@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -37,4 +37,118 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSig
     #[builder(into)]
     #[serde(rename = "tokenTtl")]
     pub r#token_ttl: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#actions,
+                )
+                .await,
+            );
+            map.insert(
+                "copied_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#copied_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "keyset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#keyset,
+                )
+                .await,
+            );
+            map.insert(
+                "token_query_parameter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#token_query_parameter,
+                )
+                .await,
+            );
+            map.insert(
+                "token_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#token_ttl,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#actions: {
+                        let field_value = match fields_map.get("actions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#copied_parameters: {
+                        let field_value = match fields_map.get("copied_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'copied_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#keyset: {
+                        let field_value = match fields_map.get("keyset") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'keyset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#token_query_parameter: {
+                        let field_value = match fields_map.get("token_query_parameter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'token_query_parameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#token_ttl: {
+                        let field_value = match fields_map.get("token_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'token_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

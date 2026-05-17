@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("date_time_parameters".to_string(), self.r#date_time_parameters.to_pulumi_value().await);
-            map.insert("decimal_parameters".to_string(), self.r#decimal_parameters.to_pulumi_value().await);
-            map.insert("integer_parameters".to_string(), self.r#integer_parameters.to_pulumi_value().await);
-            map.insert("string_parameters".to_string(), self.r#string_parameters.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "date_time_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#date_time_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "decimal_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#decimal_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "integer_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#integer_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "string_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#string_parameters,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AnalysisParameters {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#date_time_parameters: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'date_time_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::quicksight::AnalysisParametersDateTimeParameter>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#decimal_parameters: {
                         let field_value = match fields_map.get("decimal_parameters") {
                             Some(value) => value,
                             None => bail!("Missing field 'decimal_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::quicksight::AnalysisParametersDecimalParameter>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integer_parameters: {
                         let field_value = match fields_map.get("integer_parameters") {
                             Some(value) => value,
                             None => bail!("Missing field 'integer_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::quicksight::AnalysisParametersIntegerParameter>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_parameters: {
                         let field_value = match fields_map.get("string_parameters") {
                             Some(value) => value,
                             None => bail!("Missing field 'string_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::quicksight::AnalysisParametersStringParameter>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

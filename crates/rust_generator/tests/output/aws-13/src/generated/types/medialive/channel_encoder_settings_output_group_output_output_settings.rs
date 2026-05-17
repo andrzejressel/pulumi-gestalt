@@ -43,18 +43,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("archive_output_settings".to_string(), self.r#archive_output_settings.to_pulumi_value().await);
-            map.insert("frame_capture_output_settings".to_string(), self.r#frame_capture_output_settings.to_pulumi_value().await);
-            map.insert("hls_output_settings".to_string(), self.r#hls_output_settings.to_pulumi_value().await);
-            map.insert("media_package_output_settings".to_string(), self.r#media_package_output_settings.to_pulumi_value().await);
-            map.insert("ms_smooth_output_settings".to_string(), self.r#ms_smooth_output_settings.to_pulumi_value().await);
-            map.insert("multiplex_output_settings".to_string(), self.r#multiplex_output_settings.to_pulumi_value().await);
-            map.insert("rtmp_output_settings".to_string(), self.r#rtmp_output_settings.to_pulumi_value().await);
-            map.insert("udp_output_settings".to_string(), self.r#udp_output_settings.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "archive_output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#archive_output_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "frame_capture_output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#frame_capture_output_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "hls_output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hls_output_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "media_package_output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#media_package_output_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "ms_smooth_output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ms_smooth_output_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "multiplex_output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#multiplex_output_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "rtmp_output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rtmp_output_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "udp_output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#udp_output_settings,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -62,16 +114,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsOutputGroupOutputOutputSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#archive_output_settings: {
@@ -79,56 +132,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'archive_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frame_capture_output_settings: {
                         let field_value = match fields_map.get("frame_capture_output_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'frame_capture_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsFrameCaptureOutputSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hls_output_settings: {
                         let field_value = match fields_map.get("hls_output_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'hls_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#media_package_output_settings: {
                         let field_value = match fields_map.get("media_package_output_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'media_package_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsMediaPackageOutputSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ms_smooth_output_settings: {
                         let field_value = match fields_map.get("ms_smooth_output_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'ms_smooth_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsMsSmoothOutputSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multiplex_output_settings: {
                         let field_value = match fields_map.get("multiplex_output_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'multiplex_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsMultiplexOutputSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rtmp_output_settings: {
                         let field_value = match fields_map.get("rtmp_output_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'rtmp_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#udp_output_settings: {
                         let field_value = match fields_map.get("udp_output_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'udp_output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

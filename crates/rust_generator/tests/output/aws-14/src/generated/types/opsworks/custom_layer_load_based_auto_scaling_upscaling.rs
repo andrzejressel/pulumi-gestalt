@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("alarms".to_string(), self.r#alarms.to_pulumi_value().await);
-            map.insert("cpu_threshold".to_string(), self.r#cpu_threshold.to_pulumi_value().await);
-            map.insert("ignore_metrics_time".to_string(), self.r#ignore_metrics_time.to_pulumi_value().await);
-            map.insert("instance_count".to_string(), self.r#instance_count.to_pulumi_value().await);
-            map.insert("load_threshold".to_string(), self.r#load_threshold.to_pulumi_value().await);
-            map.insert("memory_threshold".to_string(), self.r#memory_threshold.to_pulumi_value().await);
-            map.insert("thresholds_wait_time".to_string(), self.r#thresholds_wait_time.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "alarms".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alarms,
+                )
+                .await,
+            );
+            map.insert(
+                "cpu_threshold".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cpu_threshold,
+                )
+                .await,
+            );
+            map.insert(
+                "ignore_metrics_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ignore_metrics_time,
+                )
+                .await,
+            );
+            map.insert(
+                "instance_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instance_count,
+                )
+                .await,
+            );
+            map.insert(
+                "load_threshold".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#load_threshold,
+                )
+                .await,
+            );
+            map.insert(
+                "memory_threshold".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#memory_threshold,
+                )
+                .await,
+            );
+            map.insert(
+                "thresholds_wait_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#thresholds_wait_time,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CustomLayerLoadBasedAutoScalingUpscaling {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#alarms: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'alarms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_threshold: {
                         let field_value = match fields_map.get("cpu_threshold") {
                             Some(value) => value,
                             None => bail!("Missing field 'cpu_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_metrics_time: {
                         let field_value = match fields_map.get("ignore_metrics_time") {
                             Some(value) => value,
                             None => bail!("Missing field 'ignore_metrics_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_count: {
                         let field_value = match fields_map.get("instance_count") {
                             Some(value) => value,
                             None => bail!("Missing field 'instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_threshold: {
                         let field_value = match fields_map.get("load_threshold") {
                             Some(value) => value,
                             None => bail!("Missing field 'load_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_threshold: {
                         let field_value = match fields_map.get("memory_threshold") {
                             Some(value) => value,
                             None => bail!("Missing field 'memory_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#thresholds_wait_time: {
                         let field_value = match fields_map.get("thresholds_wait_time") {
                             Some(value) => value,
                             None => bail!("Missing field 'thresholds_wait_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

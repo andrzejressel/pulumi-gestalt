@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -77,4 +77,286 @@ pub struct GetFunctionServiceConfig {
     #[builder(into)]
     #[serde(rename = "vpcConnectorEgressSettings")]
     pub r#vpc_connector_egress_settings: String,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetFunctionServiceConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "all_traffic_on_latest_revision".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#all_traffic_on_latest_revision,
+                )
+                .await,
+            );
+            map.insert(
+                "available_cpu".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_cpu,
+                )
+                .await,
+            );
+            map.insert(
+                "available_memory".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_memory,
+                )
+                .await,
+            );
+            map.insert(
+                "environment_variables".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#environment_variables,
+                )
+                .await,
+            );
+            map.insert(
+                "gcf_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gcf_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "ingress_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ingress_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "max_instance_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_instance_count,
+                )
+                .await,
+            );
+            map.insert(
+                "max_instance_request_concurrency".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_instance_request_concurrency,
+                )
+                .await,
+            );
+            map.insert(
+                "min_instance_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_instance_count,
+                )
+                .await,
+            );
+            map.insert(
+                "secret_environment_variables".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secret_environment_variables,
+                )
+                .await,
+            );
+            map.insert(
+                "secret_volumes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secret_volumes,
+                )
+                .await,
+            );
+            map.insert(
+                "service".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account_email".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account_email,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#uri,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc_connector".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc_connector,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc_connector_egress_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc_connector_egress_settings,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetFunctionServiceConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#all_traffic_on_latest_revision: {
+                        let field_value = match fields_map.get("all_traffic_on_latest_revision") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'all_traffic_on_latest_revision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_cpu: {
+                        let field_value = match fields_map.get("available_cpu") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_cpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_memory: {
+                        let field_value = match fields_map.get("available_memory") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_memory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#environment_variables: {
+                        let field_value = match fields_map.get("environment_variables") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gcf_uri: {
+                        let field_value = match fields_map.get("gcf_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gcf_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ingress_settings: {
+                        let field_value = match fields_map.get("ingress_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ingress_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_instance_count: {
+                        let field_value = match fields_map.get("max_instance_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_instance_request_concurrency: {
+                        let field_value = match fields_map.get("max_instance_request_concurrency") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_instance_request_concurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_instance_count: {
+                        let field_value = match fields_map.get("min_instance_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secret_environment_variables: {
+                        let field_value = match fields_map.get("secret_environment_variables") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secret_environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secret_volumes: {
+                        let field_value = match fields_map.get("secret_volumes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secret_volumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service: {
+                        let field_value = match fields_map.get("service") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_account_email: {
+                        let field_value = match fields_map.get("service_account_email") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_account_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout_seconds: {
+                        let field_value = match fields_map.get("timeout_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#uri: {
+                        let field_value = match fields_map.get("uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vpc_connector: {
+                        let field_value = match fields_map.get("vpc_connector") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vpc_connector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vpc_connector_egress_settings: {
+                        let field_value = match fields_map.get("vpc_connector_egress_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vpc_connector_egress_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

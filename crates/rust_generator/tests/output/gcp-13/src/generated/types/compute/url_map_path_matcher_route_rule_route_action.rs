@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -59,4 +59,146 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     #[builder(into)]
     #[serde(rename = "weightedBackendServices")]
     pub r#weighted_backend_services: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionWeightedBackendService>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for UrlMapPathMatcherRouteRuleRouteAction {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cors_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cors_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "fault_injection_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fault_injection_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "request_mirror_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#request_mirror_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "retry_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retry_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "url_rewrite".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#url_rewrite,
+                )
+                .await,
+            );
+            map.insert(
+                "weighted_backend_services".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#weighted_backend_services,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for UrlMapPathMatcherRouteRuleRouteAction {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cors_policy: {
+                        let field_value = match fields_map.get("cors_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cors_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fault_injection_policy: {
+                        let field_value = match fields_map.get("fault_injection_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fault_injection_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#request_mirror_policy: {
+                        let field_value = match fields_map.get("request_mirror_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'request_mirror_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#retry_policy: {
+                        let field_value = match fields_map.get("retry_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'retry_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout: {
+                        let field_value = match fields_map.get("timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#url_rewrite: {
+                        let field_value = match fields_map.get("url_rewrite") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'url_rewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#weighted_backend_services: {
+                        let field_value = match fields_map.get("weighted_backend_services") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'weighted_backend_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

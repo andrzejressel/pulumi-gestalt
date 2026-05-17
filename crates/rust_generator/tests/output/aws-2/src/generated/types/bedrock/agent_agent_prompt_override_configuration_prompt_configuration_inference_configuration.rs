@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("max_length".to_string(), self.r#max_length.to_pulumi_value().await);
-            map.insert("stop_sequences".to_string(), self.r#stop_sequences.to_pulumi_value().await);
-            map.insert("temperature".to_string(), self.r#temperature.to_pulumi_value().await);
-            map.insert("top_k".to_string(), self.r#top_k.to_pulumi_value().await);
-            map.insert("top_p".to_string(), self.r#top_p.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "max_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_length,
+                )
+                .await,
+            );
+            map.insert(
+                "stop_sequences".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stop_sequences,
+                )
+                .await,
+            );
+            map.insert(
+                "temperature".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#temperature,
+                )
+                .await,
+            );
+            map.insert(
+                "top_k".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#top_k,
+                )
+                .await,
+            );
+            map.insert(
+                "top_p".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#top_p,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AgentAgentPromptOverrideConfigurationPromptConfigurationInferenceConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#max_length: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'max_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stop_sequences: {
                         let field_value = match fields_map.get("stop_sequences") {
                             Some(value) => value,
                             None => bail!("Missing field 'stop_sequences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#temperature: {
                         let field_value = match fields_map.get("temperature") {
                             Some(value) => value,
                             None => bail!("Missing field 'temperature' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#top_k: {
                         let field_value = match fields_map.get("top_k") {
                             Some(value) => value,
                             None => bail!("Missing field 'top_k' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#top_p: {
                         let field_value = match fields_map.get("top_p") {
                             Some(value) => value,
                             None => bail!("Missing field 'top_p' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -24,13 +24,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("cloudwatch_encryption".to_string(), self.r#cloudwatch_encryption.to_pulumi_value().await);
-            map.insert("job_bookmarks_encryption".to_string(), self.r#job_bookmarks_encryption.to_pulumi_value().await);
-            map.insert("s_3_encryption".to_string(), self.r#s_3_encryption.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloudwatch_encryption".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudwatch_encryption,
+                )
+                .await,
+            );
+            map.insert(
+                "job_bookmarks_encryption".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#job_bookmarks_encryption,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_encryption".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_encryption,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -38,16 +60,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for SecurityConfigurationEncryptionConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#cloudwatch_encryption: {
@@ -55,21 +78,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                             Some(value) => value,
                             None => bail!("Missing field 'cloudwatch_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::glue::SecurityConfigurationEncryptionConfigurationCloudwatchEncryption> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_bookmarks_encryption: {
                         let field_value = match fields_map.get("job_bookmarks_encryption") {
                             Some(value) => value,
                             None => bail!("Missing field 'job_bookmarks_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::glue::SecurityConfigurationEncryptionConfigurationJobBookmarksEncryption> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_encryption: {
                         let field_value = match fields_map.get("s_3_encryption") {
                             Some(value) => value,
                             None => bail!("Missing field 's_3_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::glue::SecurityConfigurationEncryptionConfigurationS3Encryption> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

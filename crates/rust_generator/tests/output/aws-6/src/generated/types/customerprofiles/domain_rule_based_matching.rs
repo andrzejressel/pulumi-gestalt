@@ -45,18 +45,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("attribute_types_selector".to_string(), self.r#attribute_types_selector.to_pulumi_value().await);
-            map.insert("conflict_resolution".to_string(), self.r#conflict_resolution.to_pulumi_value().await);
-            map.insert("enabled".to_string(), self.r#enabled.to_pulumi_value().await);
-            map.insert("exporting_config".to_string(), self.r#exporting_config.to_pulumi_value().await);
-            map.insert("matching_rules".to_string(), self.r#matching_rules.to_pulumi_value().await);
-            map.insert("max_allowed_rule_level_for_matching".to_string(), self.r#max_allowed_rule_level_for_matching.to_pulumi_value().await);
-            map.insert("max_allowed_rule_level_for_merging".to_string(), self.r#max_allowed_rule_level_for_merging.to_pulumi_value().await);
-            map.insert("status".to_string(), self.r#status.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "attribute_types_selector".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#attribute_types_selector,
+                )
+                .await,
+            );
+            map.insert(
+                "conflict_resolution".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#conflict_resolution,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "exporting_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exporting_config,
+                )
+                .await,
+            );
+            map.insert(
+                "matching_rules".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matching_rules,
+                )
+                .await,
+            );
+            map.insert(
+                "max_allowed_rule_level_for_matching".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_allowed_rule_level_for_matching,
+                )
+                .await,
+            );
+            map.insert(
+                "max_allowed_rule_level_for_merging".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_allowed_rule_level_for_merging,
+                )
+                .await,
+            );
+            map.insert(
+                "status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#status,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -64,16 +116,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DomainRuleBasedMatching {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#attribute_types_selector: {
@@ -81,56 +134,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                             Some(value) => value,
                             None => bail!("Missing field 'attribute_types_selector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::customerprofiles::DomainRuleBasedMatchingAttributeTypesSelector>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#conflict_resolution: {
                         let field_value = match fields_map.get("conflict_resolution") {
                             Some(value) => value,
                             None => bail!("Missing field 'conflict_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::customerprofiles::DomainRuleBasedMatchingConflictResolution>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enabled: {
                         let field_value = match fields_map.get("enabled") {
                             Some(value) => value,
                             None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exporting_config: {
                         let field_value = match fields_map.get("exporting_config") {
                             Some(value) => value,
                             None => bail!("Missing field 'exporting_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::customerprofiles::DomainRuleBasedMatchingExportingConfig>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matching_rules: {
                         let field_value = match fields_map.get("matching_rules") {
                             Some(value) => value,
                             None => bail!("Missing field 'matching_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::customerprofiles::DomainRuleBasedMatchingMatchingRule>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_allowed_rule_level_for_matching: {
                         let field_value = match fields_map.get("max_allowed_rule_level_for_matching") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_allowed_rule_level_for_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_allowed_rule_level_for_merging: {
                         let field_value = match fields_map.get("max_allowed_rule_level_for_merging") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_allowed_rule_level_for_merging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status: {
                         let field_value = match fields_map.get("status") {
                             Some(value) => value,
                             None => bail!("Missing field 'status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

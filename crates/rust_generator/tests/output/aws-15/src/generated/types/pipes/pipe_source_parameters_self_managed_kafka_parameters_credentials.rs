@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("basic_auth".to_string(), self.r#basic_auth.to_pulumi_value().await);
-            map.insert("client_certificate_tls_auth".to_string(), self.r#client_certificate_tls_auth.to_pulumi_value().await);
-            map.insert("sasl_scram_256_auth".to_string(), self.r#sasl_scram_256_auth.to_pulumi_value().await);
-            map.insert("sasl_scram_512_auth".to_string(), self.r#sasl_scram_512_auth.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "basic_auth".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#basic_auth,
+                )
+                .await,
+            );
+            map.insert(
+                "client_certificate_tls_auth".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_certificate_tls_auth,
+                )
+                .await,
+            );
+            map.insert(
+                "sasl_scram_256_auth".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sasl_scram_256_auth,
+                )
+                .await,
+            );
+            map.insert(
+                "sasl_scram_512_auth".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sasl_scram_512_auth,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PipeSourceParametersSelfManagedKafkaParametersCredentials {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#basic_auth: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'basic_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_certificate_tls_auth: {
                         let field_value = match fields_map.get("client_certificate_tls_auth") {
                             Some(value) => value,
                             None => bail!("Missing field 'client_certificate_tls_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sasl_scram_256_auth: {
                         let field_value = match fields_map.get("sasl_scram_256_auth") {
                             Some(value) => value,
                             None => bail!("Missing field 'sasl_scram_256_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sasl_scram_512_auth: {
                         let field_value = match fields_map.get("sasl_scram_512_auth") {
                             Some(value) => value,
                             None => bail!("Missing field 'sasl_scram_512_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

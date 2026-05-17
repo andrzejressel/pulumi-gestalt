@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -73,4 +73,216 @@ pub struct ClusterClusterConfigGceClusterConfig {
     #[builder(into)]
     #[serde(rename = "zone")]
     pub r#zone: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterClusterConfigGceClusterConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "confidential_instance_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#confidential_instance_config,
+                )
+                .await,
+            );
+            map.insert(
+                "internal_ip_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#internal_ip_only,
+                )
+                .await,
+            );
+            map.insert(
+                "metadata".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metadata,
+                )
+                .await,
+            );
+            map.insert(
+                "network".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network,
+                )
+                .await,
+            );
+            map.insert(
+                "node_group_affinity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#node_group_affinity,
+                )
+                .await,
+            );
+            map.insert(
+                "reservation_affinity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#reservation_affinity,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account_scopes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account_scopes,
+                )
+                .await,
+            );
+            map.insert(
+                "shielded_instance_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shielded_instance_config,
+                )
+                .await,
+            );
+            map.insert(
+                "subnetwork".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subnetwork,
+                )
+                .await,
+            );
+            map.insert(
+                "tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tags,
+                )
+                .await,
+            );
+            map.insert(
+                "zone".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#zone,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterClusterConfigGceClusterConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#confidential_instance_config: {
+                        let field_value = match fields_map.get("confidential_instance_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'confidential_instance_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#internal_ip_only: {
+                        let field_value = match fields_map.get("internal_ip_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'internal_ip_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metadata: {
+                        let field_value = match fields_map.get("metadata") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network: {
+                        let field_value = match fields_map.get("network") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#node_group_affinity: {
+                        let field_value = match fields_map.get("node_group_affinity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'node_group_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#reservation_affinity: {
+                        let field_value = match fields_map.get("reservation_affinity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'reservation_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_account: {
+                        let field_value = match fields_map.get("service_account") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_account_scopes: {
+                        let field_value = match fields_map.get("service_account_scopes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_account_scopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#shielded_instance_config: {
+                        let field_value = match fields_map.get("shielded_instance_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'shielded_instance_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#subnetwork: {
+                        let field_value = match fields_map.get("subnetwork") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'subnetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tags: {
+                        let field_value = match fields_map.get("tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#zone: {
+                        let field_value = match fields_map.get("zone") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

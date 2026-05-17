@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -55,4 +55,230 @@ pub struct EnvironmentConfigNodeConfig {
     #[builder(into)]
     #[serde(rename = "zone")]
     pub r#zone: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EnvironmentConfigNodeConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "composer_internal_ipv_4_cidr_block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#composer_internal_ipv_4_cidr_block,
+                )
+                .await,
+            );
+            map.insert(
+                "composer_network_attachment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#composer_network_attachment,
+                )
+                .await,
+            );
+            map.insert(
+                "disk_size_gb".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disk_size_gb,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_ip_masq_agent".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_ip_masq_agent,
+                )
+                .await,
+            );
+            map.insert(
+                "ip_allocation_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ip_allocation_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "machine_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#machine_type,
+                )
+                .await,
+            );
+            map.insert(
+                "max_pods_per_node".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_pods_per_node,
+                )
+                .await,
+            );
+            map.insert(
+                "network".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network,
+                )
+                .await,
+            );
+            map.insert(
+                "oauth_scopes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#oauth_scopes,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account,
+                )
+                .await,
+            );
+            map.insert(
+                "subnetwork".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subnetwork,
+                )
+                .await,
+            );
+            map.insert(
+                "tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tags,
+                )
+                .await,
+            );
+            map.insert(
+                "zone".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#zone,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EnvironmentConfigNodeConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#composer_internal_ipv_4_cidr_block: {
+                        let field_value = match fields_map.get("composer_internal_ipv_4_cidr_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'composer_internal_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#composer_network_attachment: {
+                        let field_value = match fields_map.get("composer_network_attachment") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'composer_network_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disk_size_gb: {
+                        let field_value = match fields_map.get("disk_size_gb") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_ip_masq_agent: {
+                        let field_value = match fields_map.get("enable_ip_masq_agent") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_ip_masq_agent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ip_allocation_policy: {
+                        let field_value = match fields_map.get("ip_allocation_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ip_allocation_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#machine_type: {
+                        let field_value = match fields_map.get("machine_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'machine_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_pods_per_node: {
+                        let field_value = match fields_map.get("max_pods_per_node") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_pods_per_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network: {
+                        let field_value = match fields_map.get("network") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#oauth_scopes: {
+                        let field_value = match fields_map.get("oauth_scopes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'oauth_scopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_account: {
+                        let field_value = match fields_map.get("service_account") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#subnetwork: {
+                        let field_value = match fields_map.get("subnetwork") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'subnetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tags: {
+                        let field_value = match fields_map.get("tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#zone: {
+                        let field_value = match fields_map.get("zone") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

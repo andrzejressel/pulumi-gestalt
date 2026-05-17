@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("attribute_data_type".to_string(), self.r#attribute_data_type.to_pulumi_value().await);
-            map.insert("developer_only_attribute".to_string(), self.r#developer_only_attribute.to_pulumi_value().await);
-            map.insert("mutable".to_string(), self.r#mutable.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("number_attribute_constraints".to_string(), self.r#number_attribute_constraints.to_pulumi_value().await);
-            map.insert("required".to_string(), self.r#required.to_pulumi_value().await);
-            map.insert("string_attribute_constraints".to_string(), self.r#string_attribute_constraints.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "attribute_data_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#attribute_data_type,
+                )
+                .await,
+            );
+            map.insert(
+                "developer_only_attribute".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#developer_only_attribute,
+                )
+                .await,
+            );
+            map.insert(
+                "mutable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mutable,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "number_attribute_constraints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#number_attribute_constraints,
+                )
+                .await,
+            );
+            map.insert(
+                "required".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#required,
+                )
+                .await,
+            );
+            map.insert(
+                "string_attribute_constraints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#string_attribute_constraints,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetUserPoolSchemaAttribute {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#attribute_data_type: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'attribute_data_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#developer_only_attribute: {
                         let field_value = match fields_map.get("developer_only_attribute") {
                             Some(value) => value,
                             None => bail!("Missing field 'developer_only_attribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mutable: {
                         let field_value = match fields_map.get("mutable") {
                             Some(value) => value,
                             None => bail!("Missing field 'mutable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_attribute_constraints: {
                         let field_value = match fields_map.get("number_attribute_constraints") {
                             Some(value) => value,
                             None => bail!("Missing field 'number_attribute_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cognito::GetUserPoolSchemaAttributeNumberAttributeConstraint> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#required: {
                         let field_value = match fields_map.get("required") {
                             Some(value) => value,
                             None => bail!("Missing field 'required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <bool as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_attribute_constraints: {
                         let field_value = match fields_map.get("string_attribute_constraints") {
                             Some(value) => value,
                             None => bail!("Missing field 'string_attribute_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::cognito::GetUserPoolSchemaAttributeStringAttributeConstraint> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

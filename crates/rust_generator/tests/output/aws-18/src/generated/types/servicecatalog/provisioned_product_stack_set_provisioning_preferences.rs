@@ -38,16 +38,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("accounts".to_string(), self.r#accounts.to_pulumi_value().await);
-            map.insert("failure_tolerance_count".to_string(), self.r#failure_tolerance_count.to_pulumi_value().await);
-            map.insert("failure_tolerance_percentage".to_string(), self.r#failure_tolerance_percentage.to_pulumi_value().await);
-            map.insert("max_concurrency_count".to_string(), self.r#max_concurrency_count.to_pulumi_value().await);
-            map.insert("max_concurrency_percentage".to_string(), self.r#max_concurrency_percentage.to_pulumi_value().await);
-            map.insert("regions".to_string(), self.r#regions.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "accounts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#accounts,
+                )
+                .await,
+            );
+            map.insert(
+                "failure_tolerance_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#failure_tolerance_count,
+                )
+                .await,
+            );
+            map.insert(
+                "failure_tolerance_percentage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#failure_tolerance_percentage,
+                )
+                .await,
+            );
+            map.insert(
+                "max_concurrency_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_concurrency_count,
+                )
+                .await,
+            );
+            map.insert(
+                "max_concurrency_percentage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_concurrency_percentage,
+                )
+                .await,
+            );
+            map.insert(
+                "regions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#regions,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -55,16 +95,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ProvisionedProductStackSetProvisioningPreferences {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#accounts: {
@@ -72,42 +113,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                             Some(value) => value,
                             None => bail!("Missing field 'accounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_tolerance_count: {
                         let field_value = match fields_map.get("failure_tolerance_count") {
                             Some(value) => value,
                             None => bail!("Missing field 'failure_tolerance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_tolerance_percentage: {
                         let field_value = match fields_map.get("failure_tolerance_percentage") {
                             Some(value) => value,
                             None => bail!("Missing field 'failure_tolerance_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrency_count: {
                         let field_value = match fields_map.get("max_concurrency_count") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_concurrency_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrency_percentage: {
                         let field_value = match fields_map.get("max_concurrency_percentage") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_concurrency_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regions: {
                         let field_value = match fields_map.get("regions") {
                             Some(value) => value,
                             None => bail!("Missing field 'regions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

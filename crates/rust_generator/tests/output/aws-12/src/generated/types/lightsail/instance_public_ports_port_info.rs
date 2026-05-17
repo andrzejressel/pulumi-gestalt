@@ -39,16 +39,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("cidr_list_aliases".to_string(), self.r#cidr_list_aliases.to_pulumi_value().await);
-            map.insert("cidrs".to_string(), self.r#cidrs.to_pulumi_value().await);
-            map.insert("from_port".to_string(), self.r#from_port.to_pulumi_value().await);
-            map.insert("ipv_6_cidrs".to_string(), self.r#ipv_6_cidrs.to_pulumi_value().await);
-            map.insert("protocol".to_string(), self.r#protocol.to_pulumi_value().await);
-            map.insert("to_port".to_string(), self.r#to_port.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cidr_list_aliases".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cidr_list_aliases,
+                )
+                .await,
+            );
+            map.insert(
+                "cidrs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cidrs,
+                )
+                .await,
+            );
+            map.insert(
+                "from_port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#from_port,
+                )
+                .await,
+            );
+            map.insert(
+                "ipv_6_cidrs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ipv_6_cidrs,
+                )
+                .await,
+            );
+            map.insert(
+                "protocol".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#protocol,
+                )
+                .await,
+            );
+            map.insert(
+                "to_port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#to_port,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -56,16 +96,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for InstancePublicPortsPortInfo {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#cidr_list_aliases: {
@@ -73,42 +114,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                             Some(value) => value,
                             None => bail!("Missing field 'cidr_list_aliases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cidrs: {
                         let field_value = match fields_map.get("cidrs") {
                             Some(value) => value,
                             None => bail!("Missing field 'cidrs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#from_port: {
                         let field_value = match fields_map.get("from_port") {
                             Some(value) => value,
                             None => bail!("Missing field 'from_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_6_cidrs: {
                         let field_value = match fields_map.get("ipv_6_cidrs") {
                             Some(value) => value,
                             None => bail!("Missing field 'ipv_6_cidrs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protocol: {
                         let field_value = match fields_map.get("protocol") {
                             Some(value) => value,
                             None => bail!("Missing field 'protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#to_port: {
                         let field_value = match fields_map.get("to_port") {
                             Some(value) => value,
                             None => bail!("Missing field 'to_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

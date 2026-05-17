@@ -70,24 +70,112 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("description".to_string(), self.r#description.to_pulumi_value().await);
-            map.insert("engine".to_string(), self.r#engine.to_pulumi_value().await);
-            map.insert("engine_version".to_string(), self.r#engine_version.to_pulumi_value().await);
-            map.insert("maintenance_window".to_string(), self.r#maintenance_window.to_pulumi_value().await);
-            map.insert("name".to_string(), self.r#name.to_pulumi_value().await);
-            map.insert("node_type".to_string(), self.r#node_type.to_pulumi_value().await);
-            map.insert("num_shards".to_string(), self.r#num_shards.to_pulumi_value().await);
-            map.insert("parameter_group_name".to_string(), self.r#parameter_group_name.to_pulumi_value().await);
-            map.insert("port".to_string(), self.r#port.to_pulumi_value().await);
-            map.insert("snapshot_retention_limit".to_string(), self.r#snapshot_retention_limit.to_pulumi_value().await);
-            map.insert("snapshot_window".to_string(), self.r#snapshot_window.to_pulumi_value().await);
-            map.insert("subnet_group_name".to_string(), self.r#subnet_group_name.to_pulumi_value().await);
-            map.insert("topic_arn".to_string(), self.r#topic_arn.to_pulumi_value().await);
-            map.insert("vpc_id".to_string(), self.r#vpc_id.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "engine".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#engine,
+                )
+                .await,
+            );
+            map.insert(
+                "engine_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#engine_version,
+                )
+                .await,
+            );
+            map.insert(
+                "maintenance_window".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maintenance_window,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "node_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#node_type,
+                )
+                .await,
+            );
+            map.insert(
+                "num_shards".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#num_shards,
+                )
+                .await,
+            );
+            map.insert(
+                "parameter_group_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#parameter_group_name,
+                )
+                .await,
+            );
+            map.insert(
+                "port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#port,
+                )
+                .await,
+            );
+            map.insert(
+                "snapshot_retention_limit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#snapshot_retention_limit,
+                )
+                .await,
+            );
+            map.insert(
+                "snapshot_window".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#snapshot_window,
+                )
+                .await,
+            );
+            map.insert(
+                "subnet_group_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subnet_group_name,
+                )
+                .await,
+            );
+            map.insert(
+                "topic_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#topic_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc_id,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -95,16 +183,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetSnapshotClusterConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#description: {
@@ -112,98 +201,98 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#engine: {
                         let field_value = match fields_map.get("engine") {
                             Some(value) => value,
                             None => bail!("Missing field 'engine' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#engine_version: {
                         let field_value = match fields_map.get("engine_version") {
                             Some(value) => value,
                             None => bail!("Missing field 'engine_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_window: {
                         let field_value = match fields_map.get("maintenance_window") {
                             Some(value) => value,
                             None => bail!("Missing field 'maintenance_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name: {
                         let field_value = match fields_map.get("name") {
                             Some(value) => value,
                             None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_type: {
                         let field_value = match fields_map.get("node_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'node_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_shards: {
                         let field_value = match fields_map.get("num_shards") {
                             Some(value) => value,
                             None => bail!("Missing field 'num_shards' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parameter_group_name: {
                         let field_value = match fields_map.get("parameter_group_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'parameter_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port: {
                         let field_value = match fields_map.get("port") {
                             Some(value) => value,
                             None => bail!("Missing field 'port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_retention_limit: {
                         let field_value = match fields_map.get("snapshot_retention_limit") {
                             Some(value) => value,
                             None => bail!("Missing field 'snapshot_retention_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_window: {
                         let field_value = match fields_map.get("snapshot_window") {
                             Some(value) => value,
                             None => bail!("Missing field 'snapshot_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_group_name: {
                         let field_value = match fields_map.get("subnet_group_name") {
                             Some(value) => value,
                             None => bail!("Missing field 'subnet_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#topic_arn: {
                         let field_value = match fields_map.get("topic_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'topic_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_id: {
                         let field_value = match fields_map.get("vpc_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'vpc_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

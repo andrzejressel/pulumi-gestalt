@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -40,4 +40,160 @@ pub struct DatabaseInstanceSettingsIpConfiguration {
     #[builder(into)]
     #[serde(rename = "sslMode")]
     pub r#ssl_mode: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DatabaseInstanceSettingsIpConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allocated_ip_range".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allocated_ip_range,
+                )
+                .await,
+            );
+            map.insert(
+                "authorized_networks".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authorized_networks,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_private_path_for_google_cloud_services".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_private_path_for_google_cloud_services,
+                )
+                .await,
+            );
+            map.insert(
+                "ipv_4_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ipv_4_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "private_network".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#private_network,
+                )
+                .await,
+            );
+            map.insert(
+                "psc_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#psc_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "server_ca_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#server_ca_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "ssl_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ssl_mode,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DatabaseInstanceSettingsIpConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#allocated_ip_range: {
+                        let field_value = match fields_map.get("allocated_ip_range") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allocated_ip_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#authorized_networks: {
+                        let field_value = match fields_map.get("authorized_networks") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'authorized_networks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_private_path_for_google_cloud_services: {
+                        let field_value = match fields_map.get("enable_private_path_for_google_cloud_services") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_private_path_for_google_cloud_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ipv_4_enabled: {
+                        let field_value = match fields_map.get("ipv_4_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ipv_4_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#private_network: {
+                        let field_value = match fields_map.get("private_network") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'private_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#psc_configs: {
+                        let field_value = match fields_map.get("psc_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'psc_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#server_ca_mode: {
+                        let field_value = match fields_map.get("server_ca_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'server_ca_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_mode: {
+                        let field_value = match fields_map.get("ssl_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

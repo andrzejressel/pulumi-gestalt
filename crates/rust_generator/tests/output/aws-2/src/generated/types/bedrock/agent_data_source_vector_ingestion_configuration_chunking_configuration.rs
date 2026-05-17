@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("chunking_strategy".to_string(), self.r#chunking_strategy.to_pulumi_value().await);
-            map.insert("fixed_size_chunking_configuration".to_string(), self.r#fixed_size_chunking_configuration.to_pulumi_value().await);
-            map.insert("hierarchical_chunking_configuration".to_string(), self.r#hierarchical_chunking_configuration.to_pulumi_value().await);
-            map.insert("semantic_chunking_configuration".to_string(), self.r#semantic_chunking_configuration.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "chunking_strategy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#chunking_strategy,
+                )
+                .await,
+            );
+            map.insert(
+                "fixed_size_chunking_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fixed_size_chunking_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "hierarchical_chunking_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hierarchical_chunking_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "semantic_chunking_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#semantic_chunking_configuration,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AgentDataSourceVectorIngestionConfigurationChunkingConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#chunking_strategy: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'chunking_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fixed_size_chunking_configuration: {
                         let field_value = match fields_map.get("fixed_size_chunking_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'fixed_size_chunking_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationChunkingConfigurationFixedSizeChunkingConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hierarchical_chunking_configuration: {
                         let field_value = match fields_map.get("hierarchical_chunking_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'hierarchical_chunking_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHierarchicalChunkingConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#semantic_chunking_configuration: {
                         let field_value = match fields_map.get("semantic_chunking_configuration") {
                             Some(value) => value,
                             None => bail!("Missing field 'semantic_chunking_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationChunkingConfigurationSemanticChunkingConfiguration>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

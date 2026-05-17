@@ -34,15 +34,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("compute_type_name".to_string(), self.r#compute_type_name.to_pulumi_value().await);
-            map.insert("root_volume_size_gib".to_string(), self.r#root_volume_size_gib.to_pulumi_value().await);
-            map.insert("running_mode".to_string(), self.r#running_mode.to_pulumi_value().await);
-            map.insert("running_mode_auto_stop_timeout_in_minutes".to_string(), self.r#running_mode_auto_stop_timeout_in_minutes.to_pulumi_value().await);
-            map.insert("user_volume_size_gib".to_string(), self.r#user_volume_size_gib.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "compute_type_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compute_type_name,
+                )
+                .await,
+            );
+            map.insert(
+                "root_volume_size_gib".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#root_volume_size_gib,
+                )
+                .await,
+            );
+            map.insert(
+                "running_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#running_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "running_mode_auto_stop_timeout_in_minutes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#running_mode_auto_stop_timeout_in_minutes,
+                )
+                .await,
+            );
+            map.insert(
+                "user_volume_size_gib".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_volume_size_gib,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -50,16 +84,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetWorkspaceWorkspaceProperty {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#compute_type_name: {
@@ -67,35 +102,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'compute_type_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_volume_size_gib: {
                         let field_value = match fields_map.get("root_volume_size_gib") {
                             Some(value) => value,
                             None => bail!("Missing field 'root_volume_size_gib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#running_mode: {
                         let field_value = match fields_map.get("running_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'running_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#running_mode_auto_stop_timeout_in_minutes: {
                         let field_value = match fields_map.get("running_mode_auto_stop_timeout_in_minutes") {
                             Some(value) => value,
                             None => bail!("Missing field 'running_mode_auto_stop_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_volume_size_gib: {
                         let field_value = match fields_map.get("user_volume_size_gib") {
                             Some(value) => value,
                             None => bail!("Missing field 'user_volume_size_gib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <i32 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

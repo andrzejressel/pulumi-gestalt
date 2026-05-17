@@ -42,17 +42,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("app_type".to_string(), self.r#app_type.to_pulumi_value().await);
-            map.insert("code_editor_app_settings".to_string(), self.r#code_editor_app_settings.to_pulumi_value().await);
-            map.insert("custom_file_systems".to_string(), self.r#custom_file_systems.to_pulumi_value().await);
-            map.insert("jupyter_lab_app_settings".to_string(), self.r#jupyter_lab_app_settings.to_pulumi_value().await);
-            map.insert("jupyter_server_app_settings".to_string(), self.r#jupyter_server_app_settings.to_pulumi_value().await);
-            map.insert("kernel_gateway_app_settings".to_string(), self.r#kernel_gateway_app_settings.to_pulumi_value().await);
-            map.insert("space_storage_settings".to_string(), self.r#space_storage_settings.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "app_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#app_type,
+                )
+                .await,
+            );
+            map.insert(
+                "code_editor_app_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#code_editor_app_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_file_systems".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_file_systems,
+                )
+                .await,
+            );
+            map.insert(
+                "jupyter_lab_app_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jupyter_lab_app_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "jupyter_server_app_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jupyter_server_app_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "kernel_gateway_app_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kernel_gateway_app_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "space_storage_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#space_storage_settings,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -60,16 +106,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for SpaceSpaceSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#app_type: {
@@ -77,49 +124,49 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                             Some(value) => value,
                             None => bail!("Missing field 'app_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#code_editor_app_settings: {
                         let field_value = match fields_map.get("code_editor_app_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'code_editor_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsCodeEditorAppSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_file_systems: {
                         let field_value = match fields_map.get("custom_file_systems") {
                             Some(value) => value,
                             None => bail!("Missing field 'custom_file_systems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::sagemaker::SpaceSpaceSettingsCustomFileSystem>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jupyter_lab_app_settings: {
                         let field_value = match fields_map.get("jupyter_lab_app_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'jupyter_lab_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsJupyterLabAppSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jupyter_server_app_settings: {
                         let field_value = match fields_map.get("jupyter_server_app_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'jupyter_server_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsJupyterServerAppSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kernel_gateway_app_settings: {
                         let field_value = match fields_map.get("kernel_gateway_app_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'kernel_gateway_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsKernelGatewayAppSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#space_storage_settings: {
                         let field_value = match fields_map.get("space_storage_settings") {
                             Some(value) => value,
                             None => bail!("Missing field 'space_storage_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsSpaceStorageSettings>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

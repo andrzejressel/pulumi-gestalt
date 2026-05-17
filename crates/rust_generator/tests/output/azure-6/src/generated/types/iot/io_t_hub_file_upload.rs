@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -43,4 +43,174 @@ pub struct IoTHubFileUpload {
     #[builder(into)]
     #[serde(rename = "sasTtl")]
     pub r#sas_ttl: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoTHubFileUpload {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "authentication_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authentication_type,
+                )
+                .await,
+            );
+            map.insert(
+                "connection_string".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_string,
+                )
+                .await,
+            );
+            map.insert(
+                "container_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#container_name,
+                )
+                .await,
+            );
+            map.insert(
+                "default_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "identity_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identity_id,
+                )
+                .await,
+            );
+            map.insert(
+                "lock_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lock_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "max_delivery_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_delivery_count,
+                )
+                .await,
+            );
+            map.insert(
+                "notifications".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#notifications,
+                )
+                .await,
+            );
+            map.insert(
+                "sas_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sas_ttl,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for IoTHubFileUpload {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#authentication_type: {
+                        let field_value = match fields_map.get("authentication_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'authentication_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#connection_string: {
+                        let field_value = match fields_map.get("connection_string") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connection_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#container_name: {
+                        let field_value = match fields_map.get("container_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_ttl: {
+                        let field_value = match fields_map.get("default_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#identity_id: {
+                        let field_value = match fields_map.get("identity_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identity_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#lock_duration: {
+                        let field_value = match fields_map.get("lock_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'lock_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_delivery_count: {
+                        let field_value = match fields_map.get("max_delivery_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_delivery_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#notifications: {
+                        let field_value = match fields_map.get("notifications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'notifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sas_ttl: {
+                        let field_value = match fields_map.get("sas_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sas_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

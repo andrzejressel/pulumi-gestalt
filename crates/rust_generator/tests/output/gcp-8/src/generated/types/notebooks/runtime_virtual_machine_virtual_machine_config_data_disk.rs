@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -92,4 +92,216 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigDataDisk {
     #[builder(into)]
     #[serde(rename = "type")]
     pub r#type_: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RuntimeVirtualMachineVirtualMachineConfigDataDisk {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "auto_delete".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_delete,
+                )
+                .await,
+            );
+            map.insert(
+                "boot".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#boot,
+                )
+                .await,
+            );
+            map.insert(
+                "device_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_name,
+                )
+                .await,
+            );
+            map.insert(
+                "guest_os_features".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#guest_os_features,
+                )
+                .await,
+            );
+            map.insert(
+                "index".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#index,
+                )
+                .await,
+            );
+            map.insert(
+                "initialize_params".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#initialize_params,
+                )
+                .await,
+            );
+            map.insert(
+                "interface".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#interface,
+                )
+                .await,
+            );
+            map.insert(
+                "kind".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kind,
+                )
+                .await,
+            );
+            map.insert(
+                "licenses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#licenses,
+                )
+                .await,
+            );
+            map.insert(
+                "mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mode,
+                )
+                .await,
+            );
+            map.insert(
+                "source".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuntimeVirtualMachineVirtualMachineConfigDataDisk {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#auto_delete: {
+                        let field_value = match fields_map.get("auto_delete") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#boot: {
+                        let field_value = match fields_map.get("boot") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'boot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_name: {
+                        let field_value = match fields_map.get("device_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#guest_os_features: {
+                        let field_value = match fields_map.get("guest_os_features") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'guest_os_features' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#index: {
+                        let field_value = match fields_map.get("index") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#initialize_params: {
+                        let field_value = match fields_map.get("initialize_params") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'initialize_params' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#interface: {
+                        let field_value = match fields_map.get("interface") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'interface' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kind: {
+                        let field_value = match fields_map.get("kind") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kind' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#licenses: {
+                        let field_value = match fields_map.get("licenses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'licenses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mode: {
+                        let field_value = match fields_map.get("mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source: {
+                        let field_value = match fields_map.get("source") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#type_: {
+                        let field_value = match fields_map.get("type_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

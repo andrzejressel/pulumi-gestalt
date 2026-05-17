@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -41,4 +41,132 @@ pub struct AiIndexMetadataConfig {
     #[builder(into)]
     #[serde(rename = "shardSize")]
     pub r#shard_size: Option<String>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiIndexMetadataConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "algorithm_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#algorithm_config,
+                )
+                .await,
+            );
+            map.insert(
+                "approximate_neighbors_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#approximate_neighbors_count,
+                )
+                .await,
+            );
+            map.insert(
+                "dimensions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dimensions,
+                )
+                .await,
+            );
+            map.insert(
+                "distance_measure_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#distance_measure_type,
+                )
+                .await,
+            );
+            map.insert(
+                "feature_norm_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#feature_norm_type,
+                )
+                .await,
+            );
+            map.insert(
+                "shard_size".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shard_size,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AiIndexMetadataConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#algorithm_config: {
+                        let field_value = match fields_map.get("algorithm_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'algorithm_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#approximate_neighbors_count: {
+                        let field_value = match fields_map.get("approximate_neighbors_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'approximate_neighbors_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dimensions: {
+                        let field_value = match fields_map.get("dimensions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dimensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#distance_measure_type: {
+                        let field_value = match fields_map.get("distance_measure_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'distance_measure_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#feature_norm_type: {
+                        let field_value = match fields_map.get("feature_norm_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'feature_norm_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#shard_size: {
+                        let field_value = match fields_map.get("shard_size") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'shard_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

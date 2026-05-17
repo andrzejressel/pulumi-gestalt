@@ -26,13 +26,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("breakpoint_percentile_threshold".to_string(), self.r#breakpoint_percentile_threshold.to_pulumi_value().await);
-            map.insert("buffer_size".to_string(), self.r#buffer_size.to_pulumi_value().await);
-            map.insert("max_token".to_string(), self.r#max_token.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "breakpoint_percentile_threshold".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#breakpoint_percentile_threshold,
+                )
+                .await,
+            );
+            map.insert(
+                "buffer_size".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#buffer_size,
+                )
+                .await,
+            );
+            map.insert(
+                "max_token".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_token,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -40,16 +62,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AgentDataSourceVectorIngestionConfigurationChunkingConfigurationSemanticChunkingConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#breakpoint_percentile_threshold: {
@@ -57,21 +80,21 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'breakpoint_percentile_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#buffer_size: {
                         let field_value = match fields_map.get("buffer_size") {
                             Some(value) => value,
                             None => bail!("Missing field 'buffer_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_token: {
                         let field_value = match fields_map.get("max_token") {
                             Some(value) => value,
                             None => bail!("Missing field 'max_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <f64 as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

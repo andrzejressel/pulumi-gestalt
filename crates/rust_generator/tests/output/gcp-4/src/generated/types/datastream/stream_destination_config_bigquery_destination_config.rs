@@ -1,4 +1,4 @@
-#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue, pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue, Debug, PartialEq, Clone)]
+#[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
@@ -32,4 +32,118 @@ pub struct StreamDestinationConfigBigqueryDestinationConfig {
     #[builder(into)]
     #[serde(rename = "sourceHierarchyDatasets")]
     pub r#source_hierarchy_datasets: Option<Box<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets>>,
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for StreamDestinationConfigBigqueryDestinationConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "append_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#append_only,
+                )
+                .await,
+            );
+            map.insert(
+                "data_freshness".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_freshness,
+                )
+                .await,
+            );
+            map.insert(
+                "merge".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#merge,
+                )
+                .await,
+            );
+            map.insert(
+                "single_target_dataset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#single_target_dataset,
+                )
+                .await,
+            );
+            map.insert(
+                "source_hierarchy_datasets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_hierarchy_datasets,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for StreamDestinationConfigBigqueryDestinationConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#append_only: {
+                        let field_value = match fields_map.get("append_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'append_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_freshness: {
+                        let field_value = match fields_map.get("data_freshness") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_freshness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#merge: {
+                        let field_value = match fields_map.get("merge") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'merge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#single_target_dataset: {
+                        let field_value = match fields_map.get("single_target_dataset") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'single_target_dataset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_hierarchy_datasets: {
+                        let field_value = match fields_map.get("source_hierarchy_datasets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_hierarchy_datasets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
 }

@@ -50,19 +50,77 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("allow_cookies".to_string(), self.r#allow_cookies.to_pulumi_value().await);
-            map.insert("enable_xray".to_string(), self.r#enable_xray.to_pulumi_value().await);
-            map.insert("excluded_pages".to_string(), self.r#excluded_pages.to_pulumi_value().await);
-            map.insert("favorite_pages".to_string(), self.r#favorite_pages.to_pulumi_value().await);
-            map.insert("guest_role_arn".to_string(), self.r#guest_role_arn.to_pulumi_value().await);
-            map.insert("identity_pool_id".to_string(), self.r#identity_pool_id.to_pulumi_value().await);
-            map.insert("included_pages".to_string(), self.r#included_pages.to_pulumi_value().await);
-            map.insert("session_sample_rate".to_string(), self.r#session_sample_rate.to_pulumi_value().await);
-            map.insert("telemetries".to_string(), self.r#telemetries.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allow_cookies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_cookies,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_xray".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_xray,
+                )
+                .await,
+            );
+            map.insert(
+                "excluded_pages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#excluded_pages,
+                )
+                .await,
+            );
+            map.insert(
+                "favorite_pages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#favorite_pages,
+                )
+                .await,
+            );
+            map.insert(
+                "guest_role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#guest_role_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "identity_pool_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identity_pool_id,
+                )
+                .await,
+            );
+            map.insert(
+                "included_pages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#included_pages,
+                )
+                .await,
+            );
+            map.insert(
+                "session_sample_rate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_sample_rate,
+                )
+                .await,
+            );
+            map.insert(
+                "telemetries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#telemetries,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -70,16 +128,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AppMonitorAppMonitorConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#allow_cookies: {
@@ -87,63 +146,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'allow_cookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_xray: {
                         let field_value = match fields_map.get("enable_xray") {
                             Some(value) => value,
                             None => bail!("Missing field 'enable_xray' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_pages: {
                         let field_value = match fields_map.get("excluded_pages") {
                             Some(value) => value,
                             None => bail!("Missing field 'excluded_pages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#favorite_pages: {
                         let field_value = match fields_map.get("favorite_pages") {
                             Some(value) => value,
                             None => bail!("Missing field 'favorite_pages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guest_role_arn: {
                         let field_value = match fields_map.get("guest_role_arn") {
                             Some(value) => value,
                             None => bail!("Missing field 'guest_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_pool_id: {
                         let field_value = match fields_map.get("identity_pool_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'identity_pool_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_pages: {
                         let field_value = match fields_map.get("included_pages") {
                             Some(value) => value,
                             None => bail!("Missing field 'included_pages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_sample_rate: {
                         let field_value = match fields_map.get("session_sample_rate") {
                             Some(value) => value,
                             None => bail!("Missing field 'session_sample_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<f64> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#telemetries: {
                         let field_value = match fields_map.get("telemetries") {
                             Some(value) => value,
                             None => bail!("Missing field 'telemetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

@@ -30,14 +30,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("data_resources".to_string(), self.r#data_resources.to_pulumi_value().await);
-            map.insert("exclude_management_event_sources".to_string(), self.r#exclude_management_event_sources.to_pulumi_value().await);
-            map.insert("include_management_events".to_string(), self.r#include_management_events.to_pulumi_value().await);
-            map.insert("read_write_type".to_string(), self.r#read_write_type.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "data_resources".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_resources,
+                )
+                .await,
+            );
+            map.insert(
+                "exclude_management_event_sources".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_management_event_sources,
+                )
+                .await,
+            );
+            map.insert(
+                "include_management_events".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_management_events,
+                )
+                .await,
+            );
+            map.insert(
+                "read_write_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#read_write_type,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -45,16 +73,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TrailEventSelector {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#data_resources: {
@@ -62,28 +91,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                             Some(value) => value,
                             None => bail!("Missing field 'data_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<super::super::types::cloudtrail::TrailEventSelectorDataResource>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_management_event_sources: {
                         let field_value = match fields_map.get("exclude_management_event_sources") {
                             Some(value) => value,
                             None => bail!("Missing field 'exclude_management_event_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<Vec<String>> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_management_events: {
                         let field_value = match fields_map.get("include_management_events") {
                             Some(value) => value,
                             None => bail!("Missing field 'include_management_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_write_type: {
                         let field_value = match fields_map.get("read_write_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'read_write_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

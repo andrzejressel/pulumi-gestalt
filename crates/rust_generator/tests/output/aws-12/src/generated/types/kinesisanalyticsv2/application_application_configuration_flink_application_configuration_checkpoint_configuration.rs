@@ -33,14 +33,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("checkpoint_interval".to_string(), self.r#checkpoint_interval.to_pulumi_value().await);
-            map.insert("checkpointing_enabled".to_string(), self.r#checkpointing_enabled.to_pulumi_value().await);
-            map.insert("configuration_type".to_string(), self.r#configuration_type.to_pulumi_value().await);
-            map.insert("min_pause_between_checkpoints".to_string(), self.r#min_pause_between_checkpoints.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "checkpoint_interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#checkpoint_interval,
+                )
+                .await,
+            );
+            map.insert(
+                "checkpointing_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#checkpointing_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "configuration_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#configuration_type,
+                )
+                .await,
+            );
+            map.insert(
+                "min_pause_between_checkpoints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_pause_between_checkpoints,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -48,16 +76,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#checkpoint_interval: {
@@ -65,28 +94,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                             Some(value) => value,
                             None => bail!("Missing field 'checkpoint_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#checkpointing_enabled: {
                         let field_value = match fields_map.get("checkpointing_enabled") {
                             Some(value) => value,
                             None => bail!("Missing field 'checkpointing_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<bool> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#configuration_type: {
                         let field_value = match fields_map.get("configuration_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'configuration_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <String as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_pause_between_checkpoints: {
                         let field_value = match fields_map.get("min_pause_between_checkpoints") {
                             Some(value) => value,
                             None => bail!("Missing field 'min_pause_between_checkpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

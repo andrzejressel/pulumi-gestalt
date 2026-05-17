@@ -29,14 +29,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("iscsis".to_string(), self.r#iscsis.to_pulumi_value().await);
-            map.insert("managements".to_string(), self.r#managements.to_pulumi_value().await);
-            map.insert("nfs".to_string(), self.r#nfs.to_pulumi_value().await);
-            map.insert("smbs".to_string(), self.r#smbs.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "iscsis".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#iscsis,
+                )
+                .await,
+            );
+            map.insert(
+                "managements".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managements,
+                )
+                .await,
+            );
+            map.insert(
+                "nfs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nfs,
+                )
+                .await,
+            );
+            map.insert(
+                "smbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#smbs,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -44,16 +72,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetOntapStorageVirtualMachineEndpoint {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#iscsis: {
@@ -61,28 +90,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                             Some(value) => value,
                             None => bail!("Missing field 'iscsis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::fsx::GetOntapStorageVirtualMachineEndpointIscsi> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managements: {
                         let field_value = match fields_map.get("managements") {
                             Some(value) => value,
                             None => bail!("Missing field 'managements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::fsx::GetOntapStorageVirtualMachineEndpointManagement> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfs: {
                         let field_value = match fields_map.get("nfs") {
                             Some(value) => value,
                             None => bail!("Missing field 'nfs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::fsx::GetOntapStorageVirtualMachineEndpointNf> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#smbs: {
                         let field_value = match fields_map.get("smbs") {
                             Some(value) => value,
                             None => bail!("Missing field 'smbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Vec<super::super::types::fsx::GetOntapStorageVirtualMachineEndpointSmb> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }

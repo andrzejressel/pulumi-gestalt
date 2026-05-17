@@ -75,29 +75,147 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         async move {
             use std::collections::BTreeMap;
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
 
-            let mut map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> = BTreeMap::new();
-            map.insert("acquisition_point_id".to_string(), self.r#acquisition_point_id.to_pulumi_value().await);
-            map.insert("audio_only_timecode_control".to_string(), self.r#audio_only_timecode_control.to_pulumi_value().await);
-            map.insert("certificate_mode".to_string(), self.r#certificate_mode.to_pulumi_value().await);
-            map.insert("connection_retry_interval".to_string(), self.r#connection_retry_interval.to_pulumi_value().await);
-            map.insert("destination".to_string(), self.r#destination.to_pulumi_value().await);
-            map.insert("event_id".to_string(), self.r#event_id.to_pulumi_value().await);
-            map.insert("event_id_mode".to_string(), self.r#event_id_mode.to_pulumi_value().await);
-            map.insert("event_stop_behavior".to_string(), self.r#event_stop_behavior.to_pulumi_value().await);
-            map.insert("filecache_duration".to_string(), self.r#filecache_duration.to_pulumi_value().await);
-            map.insert("fragment_length".to_string(), self.r#fragment_length.to_pulumi_value().await);
-            map.insert("input_loss_action".to_string(), self.r#input_loss_action.to_pulumi_value().await);
-            map.insert("num_retries".to_string(), self.r#num_retries.to_pulumi_value().await);
-            map.insert("restart_delay".to_string(), self.r#restart_delay.to_pulumi_value().await);
-            map.insert("segmentation_mode".to_string(), self.r#segmentation_mode.to_pulumi_value().await);
-            map.insert("send_delay_ms".to_string(), self.r#send_delay_ms.to_pulumi_value().await);
-            map.insert("sparse_track_type".to_string(), self.r#sparse_track_type.to_pulumi_value().await);
-            map.insert("stream_manifest_behavior".to_string(), self.r#stream_manifest_behavior.to_pulumi_value().await);
-            map.insert("timestamp_offset".to_string(), self.r#timestamp_offset.to_pulumi_value().await);
-            map.insert("timestamp_offset_mode".to_string(), self.r#timestamp_offset_mode.to_pulumi_value().await);
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "acquisition_point_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#acquisition_point_id,
+                )
+                .await,
+            );
+            map.insert(
+                "audio_only_timecode_control".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_only_timecode_control,
+                )
+                .await,
+            );
+            map.insert(
+                "certificate_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#certificate_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "connection_retry_interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_retry_interval,
+                )
+                .await,
+            );
+            map.insert(
+                "destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination,
+                )
+                .await,
+            );
+            map.insert(
+                "event_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#event_id,
+                )
+                .await,
+            );
+            map.insert(
+                "event_id_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#event_id_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "event_stop_behavior".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#event_stop_behavior,
+                )
+                .await,
+            );
+            map.insert(
+                "filecache_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filecache_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "fragment_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fragment_length,
+                )
+                .await,
+            );
+            map.insert(
+                "input_loss_action".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#input_loss_action,
+                )
+                .await,
+            );
+            map.insert(
+                "num_retries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#num_retries,
+                )
+                .await,
+            );
+            map.insert(
+                "restart_delay".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#restart_delay,
+                )
+                .await,
+            );
+            map.insert(
+                "segmentation_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#segmentation_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "send_delay_ms".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#send_delay_ms,
+                )
+                .await,
+            );
+            map.insert(
+                "sparse_track_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sparse_track_type,
+                )
+                .await,
+            );
+            map.insert(
+                "stream_manifest_behavior".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stream_manifest_behavior,
+                )
+                .await,
+            );
+            map.insert(
+                "timestamp_offset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timestamp_offset,
+                )
+                .await,
+            );
+            map.insert(
+                "timestamp_offset_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timestamp_offset_mode,
+                )
+                .await,
+            );
 
-            map.to_pulumi_value().await
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
         }
     }
 }
@@ -105,16 +223,17 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
 impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsOutputGroupOutputGroupSettingsMsSmoothGroupSettings {
     fn from_pulumi_value(
         value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    ) -> pulumi_gestalt_rust::__private::rootcause::Result<Self> {
-        use std::collections::BTreeMap;
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
-        use pulumi_gestalt_rust::__private::rootcause::bail;
 
         match value.content {
-            PulumiValueContent::Object(ref obj) => {
-                let fields_map: BTreeMap<String, pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue> =
-                    obj.iter().cloned().collect();
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
 
                 Ok(Self {
                     r#acquisition_point_id: {
@@ -122,133 +241,133 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                             Some(value) => value,
                             None => bail!("Missing field 'acquisition_point_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_only_timecode_control: {
                         let field_value = match fields_map.get("audio_only_timecode_control") {
                             Some(value) => value,
                             None => bail!("Missing field 'audio_only_timecode_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_mode: {
                         let field_value = match fields_map.get("certificate_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'certificate_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_retry_interval: {
                         let field_value = match fields_map.get("connection_retry_interval") {
                             Some(value) => value,
                             None => bail!("Missing field 'connection_retry_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination: {
                         let field_value = match fields_map.get("destination") {
                             Some(value) => value,
                             None => bail!("Missing field 'destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsMsSmoothGroupSettingsDestination> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_id: {
                         let field_value = match fields_map.get("event_id") {
                             Some(value) => value,
                             None => bail!("Missing field 'event_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_id_mode: {
                         let field_value = match fields_map.get("event_id_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'event_id_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_stop_behavior: {
                         let field_value = match fields_map.get("event_stop_behavior") {
                             Some(value) => value,
                             None => bail!("Missing field 'event_stop_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filecache_duration: {
                         let field_value = match fields_map.get("filecache_duration") {
                             Some(value) => value,
                             None => bail!("Missing field 'filecache_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fragment_length: {
                         let field_value = match fields_map.get("fragment_length") {
                             Some(value) => value,
                             None => bail!("Missing field 'fragment_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_action: {
                         let field_value = match fields_map.get("input_loss_action") {
                             Some(value) => value,
                             None => bail!("Missing field 'input_loss_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_retries: {
                         let field_value = match fields_map.get("num_retries") {
                             Some(value) => value,
                             None => bail!("Missing field 'num_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restart_delay: {
                         let field_value = match fields_map.get("restart_delay") {
                             Some(value) => value,
                             None => bail!("Missing field 'restart_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segmentation_mode: {
                         let field_value = match fields_map.get("segmentation_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'segmentation_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_delay_ms: {
                         let field_value = match fields_map.get("send_delay_ms") {
                             Some(value) => value,
                             None => bail!("Missing field 'send_delay_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<i32> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sparse_track_type: {
                         let field_value = match fields_map.get("sparse_track_type") {
                             Some(value) => value,
                             None => bail!("Missing field 'sparse_track_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_manifest_behavior: {
                         let field_value = match fields_map.get("stream_manifest_behavior") {
                             Some(value) => value,
                             None => bail!("Missing field 'stream_manifest_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timestamp_offset: {
                         let field_value = match fields_map.get("timestamp_offset") {
                             Some(value) => value,
                             None => bail!("Missing field 'timestamp_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timestamp_offset_mode: {
                         let field_value = match fields_map.get("timestamp_offset_mode") {
                             Some(value) => value,
                             None => bail!("Missing field 'timestamp_offset_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
-                        <Option<String> as FromPulumiValue>::from_pulumi_value(field_value)?
+                        FromPulumiValue::from_pulumi_value(field_value)?
                     },
                 })
             }
