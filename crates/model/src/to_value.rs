@@ -1,6 +1,7 @@
-use crate::output::NodeValue;
+use crate::output::{Node, NodeValue};
 use crate::{Output, PulumiValue, PulumiValueContent};
 use std::collections::{BTreeMap, HashMap, HashSet};
+use std::sync::Arc;
 
 pub type ToPulumiObjectFieldFuture<'a> = futures::future::LocalBoxFuture<'a, (String, PulumiValue)>;
 
@@ -22,6 +23,108 @@ pub async fn to_pulumi_object_concurrent<'a>(
     let results = futures::future::join_all(fields).await;
     let map: BTreeMap<String, PulumiValue> = results.into_iter().collect();
     ToPulumiValue::to_pulumi_value(&map).await
+}
+
+pub fn to_pulumi_value_output<T>(value: T) -> Output<PulumiValue>
+where
+    T: ToPulumiValue + Sync + Send + 'static,
+{
+    Output::new(futures::executor::block_on(value.to_pulumi_value()))
+}
+
+pub fn pulumi_value_output(content: PulumiValueContent) -> Output<PulumiValue> {
+    Output::new(PulumiValue {
+        content,
+        secret: false,
+        dependencies: HashSet::new(),
+    })
+}
+
+pub fn pulumi_value_output_array(values: Vec<Output<PulumiValue>>) -> Output<PulumiValue> {
+    Output::from_future(async move {
+        let futures = values.into_iter().map(|output| async move {
+            let node = output.future.await;
+            match &node.node_value {
+                NodeValue::Nothing => PulumiValue {
+                    content: PulumiValueContent::Nothing,
+                    secret: node.secret,
+                    dependencies: node.dependencies.clone(),
+                },
+                NodeValue::Exists(value) => {
+                    let mut value = value.as_ref().clone();
+                    value.secret |= node.secret;
+                    value.dependencies.extend(node.dependencies.iter().cloned());
+                    value
+                }
+            }
+        });
+        let results = futures::future::join_all(futures).await;
+
+        let mut secret = false;
+        let mut dependencies = HashSet::new();
+        let mut content = Vec::new();
+
+        for mut value in results {
+            secret |= value.secret;
+            dependencies.extend(value.dependencies.drain());
+            content.push(value);
+        }
+
+        Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(PulumiValue {
+                content: PulumiValueContent::Array(content),
+                secret,
+                dependencies,
+            })),
+            secret: false,
+            dependencies: HashSet::new(),
+        })
+    })
+}
+
+pub fn pulumi_value_output_object(
+    values: Vec<(String, Output<PulumiValue>)>,
+) -> Output<PulumiValue> {
+    Output::from_future(async move {
+        let futures = values.into_iter().map(|(key, output)| async move {
+            let node = output.future.await;
+            let value = match &node.node_value {
+                NodeValue::Nothing => PulumiValue {
+                    content: PulumiValueContent::Nothing,
+                    secret: node.secret,
+                    dependencies: node.dependencies.clone(),
+                },
+                NodeValue::Exists(value) => {
+                    let mut value = value.as_ref().clone();
+                    value.secret |= node.secret;
+                    value.dependencies.extend(node.dependencies.iter().cloned());
+                    value
+                }
+            };
+            (key, value)
+        });
+        let results = futures::future::join_all(futures).await;
+
+        let mut secret = false;
+        let mut dependencies = HashSet::new();
+        let mut content = Vec::new();
+
+        for (key, mut value) in results {
+            secret |= value.secret;
+            dependencies.extend(value.dependencies.drain());
+            content.push((key, value));
+        }
+
+        Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(PulumiValue {
+                content: PulumiValueContent::Object(content),
+                secret,
+                dependencies,
+            })),
+            secret: false,
+            dependencies: HashSet::new(),
+        })
+    })
 }
 
 pub trait ToPulumiValue {

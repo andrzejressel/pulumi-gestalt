@@ -62,6 +62,223 @@ macro_rules! pulumi_any {
     };
 }
 
+#[doc(hidden)]
+#[macro_export]
+macro_rules! pulumi_any_v2_internal {
+    (null) => {
+        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_output(
+            $crate::__private::pulumi_gestalt_model::PulumiValueContent::None,
+        )
+    };
+    ([$($tt:tt)*]) => {
+        $crate::pulumi_any_v2_internal_array!([] $($tt)*)
+    };
+    ({$($tt:tt)*}) => {
+        $crate::pulumi_any_v2_internal_object!([] $($tt)*)
+    };
+    ($other:expr) => {
+        $crate::__private::pulumi_gestalt_model::__private::to_pulumi_value_output($other)
+    };
+}
+
+#[doc(hidden)]
+#[macro_export]
+macro_rules! pulumi_any_v2_internal_array {
+    ([$($elems:expr,)*]) => {
+        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_output_array(
+            vec![$($elems,)*]
+        )
+    };
+    ([$($elems:expr,)*] , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_array!([$($elems,)*] $($rest)*)
+    };
+    ([$($elems:expr,)*] null , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_array!(
+            [
+                $($elems,)*
+                $crate::pulumi_any_v2_internal!(null),
+            ]
+            $($rest)*
+        )
+    };
+    ([$($elems:expr,)*] [$($inner:tt)*] , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_array!(
+            [
+                $($elems,)*
+                $crate::pulumi_any_v2_internal!([$($inner)*]),
+            ]
+            $($rest)*
+        )
+    };
+    ([$($elems:expr,)*] {$($inner:tt)*} , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_array!(
+            [
+                $($elems,)*
+                $crate::pulumi_any_v2_internal!({$($inner)*}),
+            ]
+            $($rest)*
+        )
+    };
+    ([$($elems:expr,)*] $next:expr , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_array!(
+            [
+                $($elems,)*
+                $crate::pulumi_any_v2_internal!($next),
+            ]
+            $($rest)*
+        )
+    };
+    ([$($elems:expr,)*] null) => {
+        $crate::pulumi_any_v2_internal_array!(
+            [
+                $($elems,)*
+                $crate::pulumi_any_v2_internal!(null),
+            ]
+        )
+    };
+    ([$($elems:expr,)*] [$($inner:tt)*]) => {
+        $crate::pulumi_any_v2_internal_array!(
+            [
+                $($elems,)*
+                $crate::pulumi_any_v2_internal!([$($inner)*]),
+            ]
+        )
+    };
+    ([$($elems:expr,)*] {$($inner:tt)*}) => {
+        $crate::pulumi_any_v2_internal_array!(
+            [
+                $($elems,)*
+                $crate::pulumi_any_v2_internal!({$($inner)*}),
+            ]
+        )
+    };
+    ([$($elems:expr,)*] $next:expr) => {
+        $crate::pulumi_any_v2_internal_array!(
+            [
+                $($elems,)*
+                $crate::pulumi_any_v2_internal!($next),
+            ]
+        )
+    };
+}
+
+#[doc(hidden)]
+#[macro_export]
+macro_rules! pulumi_any_v2_internal_object {
+    ([$($fields:expr,)*]) => {
+        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_output_object(
+            vec![$($fields,)*]
+        )
+    };
+    ([$($fields:expr,)*] , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_object!([$($fields,)*] $($rest)*)
+    };
+    ([$($fields:expr,)*] $key:tt : null , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_object!(
+            [
+                $($fields,)*
+                (
+                    ::std::convert::Into::<::std::string::String>::into($key),
+                    $crate::pulumi_any_v2_internal!(null),
+                ),
+            ]
+            $($rest)*
+        )
+    };
+    ([$($fields:expr,)*] $key:tt : [$($inner:tt)*] , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_object!(
+            [
+                $($fields,)*
+                (
+                    ::std::convert::Into::<::std::string::String>::into($key),
+                    $crate::pulumi_any_v2_internal!([$($inner)*]),
+                ),
+            ]
+            $($rest)*
+        )
+    };
+    ([$($fields:expr,)*] $key:tt : {$($inner:tt)*} , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_object!(
+            [
+                $($fields,)*
+                (
+                    ::std::convert::Into::<::std::string::String>::into($key),
+                    $crate::pulumi_any_v2_internal!({$($inner)*}),
+                ),
+            ]
+            $($rest)*
+        )
+    };
+    ([$($fields:expr,)*] $key:tt : $value:expr , $($rest:tt)*) => {
+        $crate::pulumi_any_v2_internal_object!(
+            [
+                $($fields,)*
+                (
+                    ::std::convert::Into::<::std::string::String>::into($key),
+                    $crate::pulumi_any_v2_internal!($value),
+                ),
+            ]
+            $($rest)*
+        )
+    };
+    ([$($fields:expr,)*] $key:tt : null) => {
+        $crate::pulumi_any_v2_internal_object!(
+            [
+                $($fields,)*
+                (
+                    ::std::convert::Into::<::std::string::String>::into($key),
+                    $crate::pulumi_any_v2_internal!(null),
+                ),
+            ]
+        )
+    };
+    ([$($fields:expr,)*] $key:tt : [$($inner:tt)*]) => {
+        $crate::pulumi_any_v2_internal_object!(
+            [
+                $($fields,)*
+                (
+                    ::std::convert::Into::<::std::string::String>::into($key),
+                    $crate::pulumi_any_v2_internal!([$($inner)*]),
+                ),
+            ]
+        )
+    };
+    ([$($fields:expr,)*] $key:tt : {$($inner:tt)*}) => {
+        $crate::pulumi_any_v2_internal_object!(
+            [
+                $($fields,)*
+                (
+                    ::std::convert::Into::<::std::string::String>::into($key),
+                    $crate::pulumi_any_v2_internal!({$($inner)*}),
+                ),
+            ]
+        )
+    };
+    ([$($fields:expr,)*] $key:tt : $value:expr) => {
+        $crate::pulumi_any_v2_internal_object!(
+            [
+                $($fields,)*
+                (
+                    ::std::convert::Into::<::std::string::String>::into($key),
+                    $crate::pulumi_any_v2_internal!($value),
+                ),
+            ]
+        )
+    };
+}
+
+/// Construct an [`pulumi_gestalt_model::Output<pulumi_gestalt_model::PulumiValue>`] from
+/// JSON-like literals.
+///
+/// The syntax is serde_json-style and supports nested arrays/objects, trailing commas,
+/// and values that are already `pulumi_gestalt_model::Output<T>`.
+#[macro_export]
+macro_rules! pulumi_any_v2 {
+    ($($tt:tt)+) => {
+        $crate::pulumi_any_v2_internal!($($tt)+)
+    };
+}
+
 /// Extension trait for converting values to [`PulumiAny`].
 pub trait ToPulumiAny {
     /// The converted output type.
@@ -99,6 +316,8 @@ where
 #[cfg(test)]
 mod tests {
     use super::{PulumiAny, ToPulumiAny};
+    use pulumi_gestalt_model::__private::futures::executor::block_on;
+    use pulumi_gestalt_model::{Output as ModelOutput, PulumiValueContent, ToPulumiValue};
     use serde::Serialize;
 
     #[derive(Debug, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -184,5 +403,83 @@ mod tests {
         let v = pulumi_any!(42);
         let decoded: i32 = v.deserialize_as().unwrap();
         assert_eq!(decoded, 42);
+    }
+
+    #[test]
+    fn pulumi_any_v2_macro_scalar() {
+        let integer = block_on(pulumi_any_v2!(42).to_pulumi_value());
+        assert_eq!(integer.content, PulumiValueContent::Integer(42));
+
+        let float = block_on(pulumi_any_v2!(1.5f64).to_pulumi_value());
+        assert_eq!(float.content, PulumiValueContent::Number(1.5));
+
+        let boolean = block_on(pulumi_any_v2!(true).to_pulumi_value());
+        assert_eq!(boolean.content, PulumiValueContent::Boolean(true));
+
+        let string = block_on(pulumi_any_v2!("hello").to_pulumi_value());
+        assert_eq!(
+            string.content,
+            PulumiValueContent::String("hello".to_string())
+        );
+    }
+
+    #[test]
+    fn pulumi_any_v2_macro_array_and_object() {
+        let array = block_on(pulumi_any_v2!([1, 2, 3]).to_pulumi_value());
+        match array.content {
+            PulumiValueContent::Array(values) => assert_eq!(values.len(), 3),
+            _ => panic!("Expected array content"),
+        }
+
+        let object = block_on(pulumi_any_v2!({"name": "macro_test", "count": 5}).to_pulumi_value());
+        match object.content {
+            PulumiValueContent::Object(values) => assert_eq!(values.len(), 2),
+            _ => panic!("Expected object content"),
+        }
+    }
+
+    #[test]
+    fn pulumi_any_v2_macro_nested_and_trailing_commas() {
+        let value = block_on(
+            pulumi_any_v2!({
+                "items": [
+                    1,
+                    {"name": "a",},
+                ],
+                "ok": true,
+            })
+            .to_pulumi_value(),
+        );
+
+        match value.content {
+            PulumiValueContent::Object(values) => {
+                assert_eq!(values.len(), 2);
+            }
+            _ => panic!("Expected object content"),
+        }
+    }
+
+    #[test]
+    fn pulumi_any_v2_macro_nested_model_outputs() {
+        let value = block_on(
+            pulumi_any_v2!({
+                "known": ModelOutput::new(7i32),
+                "secret": ModelOutput::new_secret("sensitive"),
+                "unknown": ModelOutput::<i32>::new_nothing(),
+                "nested": [ModelOutput::new(true)],
+            })
+            .to_pulumi_value(),
+        );
+
+        assert!(value.secret);
+        assert!(value.dependencies.is_empty());
+
+        match value.content {
+            PulumiValueContent::Object(fields) => {
+                let unknown = fields.iter().find(|(k, _)| k == "unknown").unwrap();
+                assert_eq!(unknown.1.content, PulumiValueContent::Nothing);
+            }
+            _ => panic!("Expected object content"),
+        }
     }
 }
